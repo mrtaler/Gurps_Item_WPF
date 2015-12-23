@@ -1,0 +1,210 @@
+﻿<Window x:Name="Attach_win" x:Class="Item_WPF.Attach_N_R"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Item_WPF"
+        mc:Ignorable="d"
+        Title="Attach_N_R" Height="426.659" Width="800
+        " Closing="Attach_win_Closing">
+    <Grid>
+        <TabControl x:Name="tabControl" Margin="10,10,10,40">
+            <TabItem Header="Main">
+                <Grid Background="#FFE5E5E5">
+                    <Label x:Name="label" Content="Name" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label1" Content="Long Name" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label2" Content="Description" HorizontalAlignment="Left" Margin="148,66,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="Name_textBox" HorizontalAlignment="Left" Height="23" Margin="102,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="293"/>
+                    <TextBox x:Name="Longname_textBox" HorizontalAlignment="Left" Height="23" Margin="102,38,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="293"/>
+                    <TextBox x:Name="Description_textBox" HorizontalAlignment="Left" Height="163" Margin="10,97,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="385"/>
+                    <Image x:Name="Item_image" HorizontalAlignment="Left" Height="225" Margin="400,10,0,0" VerticalAlignment="Top" Width="356"/>
+                    <Button x:Name="LoadImage_button" Content="Load Image" HorizontalAlignment="Left" Margin="505,240,0,0" VerticalAlignment="Top" Width="88" Click="LoadImage_button_Click"/>
+                    <Button x:Name="DeleteImage_button" Content="Delete Image" HorizontalAlignment="Left" Margin="622,240,0,0" VerticalAlignment="Top" Width="83" Click="DeleteImage_button_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="General">
+                <Grid Background="#FFE5E5E5">
+                    <GroupBox x:Name="groupBox1" Header="General" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="216" Width="260">
+                        <Grid >
+                            <Label x:Name="label3" Content="Weigth" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                            <Label x:Name="label6" Content="Cost" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top"/>
+                            <Label x:Name="label7" Content="Bulk" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top"/>
+                            <Label x:Name="label8" Content="MinST" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top"/>
+                            <Label x:Name="label9" Content="TL" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top"/>
+                            <Label x:Name="label10" Content="LC" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top"/>
+                            <TextBox x:Name="Weigth_TB" HorizontalAlignment="Left" Height="23" Margin="93,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox x:Name="Cost_TB" HorizontalAlignment="Left" Height="23" Margin="93,38,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox x:Name="Bulk_TB" HorizontalAlignment="Left" Height="23" Margin="93,66,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox x:Name="MinST_TB" HorizontalAlignment="Left" Height="23" Margin="93,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <ComboBox x:Name="TL_CB" HorizontalAlignment="Left" Margin="93,122,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="TL_CB_SelectionChanged"/>
+                            <ComboBox x:Name="LC_CB" HorizontalAlignment="Left" Margin="93,149,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="LC_CB_SelectionChanged"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox x:Name="groupBox" Header="TL" HorizontalAlignment="Left" Margin="275,10,0,0" VerticalAlignment="Top" Height="92" Width="283">
+                        <TextBlock x:Name="TL_textBlock" Margin="10,0,-2,5" TextWrapping="Wrap" Text="TextBlock"/>
+                    </GroupBox>
+                    <GroupBox x:Name="groupBox2" Header="LC" HorizontalAlignment="Left" Margin="275,107,0,0" VerticalAlignment="Top" Width="283" Height="119">
+                        <TextBlock x:Name="LC_textBlock" Margin="10,10,2,6" TextWrapping="Wrap" Text="TextBlock"/>
+                    </GroupBox>
+                    <GroupBox x:Name="groupBox3" Header="Item Properties" HorizontalAlignment="Left" Margin="563,10,0,0" VerticalAlignment="Top" Height="216" Width="199">
+                        <Grid>
+                            <CheckBox x:Name="HT_ChB" Content="HT" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="UT_ChB" Content="UT" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="Damageble_ChB" Content="Damageble" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="Repairable_ChB" Content="Repairable" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="WaterDamageble_ChB" Content="Water damageable" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="Metal_ChB" Content="Metal" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="Electronic_ChB" Content="Electronic" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="AttachClass and Point">
+                <Grid Background="#FFE5E5E5">
+                    <GroupBox x:Name="groupBox4" Header="Main Attach class &amp; point" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="193" Width="330">
+                        <Grid>
+                            <Label x:Name="label4" Content="Gurps Attach Type" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.333,1.231"/>
+                            <Label x:Name="label5" Content="GURPS Attach Class" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.421,0.47"/>
+                            <Label x:Name="label11" Content="Attach Slot" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top"/>
+                            <Label x:Name="label12" Content="Mount Type" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.543"/>
+                            <ComboBox x:Name="GAttType_comboBox" HorizontalAlignment="Left" Margin="164,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="GAttType_comboBox_SelectionChanged"/>
+                            <ComboBox x:Name="GAttClass_comboBox" HorizontalAlignment="Left" Margin="164,37,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="GAttClass_comboBox_SelectionChanged"/>
+                            <ComboBox x:Name="MountType_comboBox" HorizontalAlignment="Left" Margin="164,92,0,0" VerticalAlignment="Top" Width="120"/>
+                            <TextBox x:Name="attSlot_textBox" HorizontalAlignment="Left" Height="23" Margin="164,64,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox x:Name="Att1_groupBox" Header="Attach 1" HorizontalAlignment="Left" Margin="421,10,0,0" VerticalAlignment="Top" Height="75" Width="335" Visibility="Hidden">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="21*"/>
+                                <ColumnDefinition Width="302*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="label13" Content="Gurps Attach Type" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.333,1.231" Grid.ColumnSpan="2"/>
+                            <Label x:Name="label14" Content="GURPS Attach Class" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.421,0.47" Grid.ColumnSpan="2"/>
+                            <ComboBox x:Name="GAttType1_comboBox" HorizontalAlignment="Left" Margin="143,0,0,0" VerticalAlignment="Top" Width="120"  Grid.Column="1" SelectionChanged="GAttType1_comboBox_SelectionChanged"/>
+                            <ComboBox x:Name="GAttClass1_comboBox" HorizontalAlignment="Left" Margin="143,27,0,0" VerticalAlignment="Top" Width="120"  Grid.Column="1"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox x:Name="Att2_groupBox" Header="Attach 2" HorizontalAlignment="Left" Margin="421,90,0,0" VerticalAlignment="Top" Height="72" Width="335" Visibility="Hidden">
+                        <Grid>
+                            <Label x:Name="label15" Content="Gurps Attach Type" HorizontalAlignment="Left" Margin="10,-4,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.333,1.231"/>
+                            <Label x:Name="label16" Content="GURPS Attach Class" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.421,0.47"/>
+                            <ComboBox x:Name="GAttType2_comboBox" HorizontalAlignment="Left" Margin="164,0,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="GAttType2_comboBox_SelectionChanged" />
+                            <ComboBox x:Name="GAttClass2_comboBox" HorizontalAlignment="Left" Margin="164,27,0,0" VerticalAlignment="Top" Width="120" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox x:Name="Att3_groupBox" Header="Attach 3" HorizontalAlignment="Left" Margin="421,167,0,0" VerticalAlignment="Top" Height="77" Width="335" Visibility="Hidden">
+                        <Grid>
+                            <Label x:Name="label17" Content="Gurps Attach Type" HorizontalAlignment="Left" Margin="10,-4,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.333,1.231"/>
+                            <Label x:Name="label18" Content="GURPS Attach Class" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.421,0.47"/>
+                            <ComboBox x:Name="GAttType3_comboBox" HorizontalAlignment="Left" Margin="164,0,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="GAttType3_comboBox_SelectionChanged" />
+                            <ComboBox x:Name="GAttClass3_comboBox" HorizontalAlignment="Left" Margin="164,27,0,0" VerticalAlignment="Top" Width="120" />
+                        </Grid>
+                    </GroupBox>
+                    <CheckBox x:Name="Attach1_checkBox" Content="Attach 1" HorizontalAlignment="Left" Margin="352,47,0,0" VerticalAlignment="Top" Checked="Attach1_checkBox_Checked" Unchecked="Attach1_checkBox_Unchecked"/>
+                    <CheckBox x:Name="Attach2_checkBox" Content="Attach 2" HorizontalAlignment="Left" Margin="352,123,0,0" VerticalAlignment="Top" Checked="Attach2_checkBox_Checked" Unchecked="Attach2_checkBox_Unchecked"/>
+                    <CheckBox x:Name="Attach3_checkBox" Content="Attach 3" HorizontalAlignment="Left" Margin="352,200,0,0" VerticalAlignment="Top" Checked="Attach3_checkBox_Checked" Unchecked="Attach3_checkBox_Unchecked"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Attach Bonus">
+                <Grid Background="#FFE5E5E5">
+                    <GroupBox x:Name="groupBox5" Header="Sight" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="298" Width="352">
+                        <Grid>
+                            <GroupBox x:Name="groupBox6" Header="Laser Rangefinder" HorizontalAlignment="Left" Margin="172,80,0,0" VerticalAlignment="Top" Height="104" Width="161">
+                                <Grid>
+                                    <CheckBox x:Name="LaserRangefinder_checkBox" Content="Laser Rangefinder" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="LaserRangefinder_checkBox_Checked" Unchecked="LaserRangefinder_checkBox_Unchecked"/>
+                                    <Label x:Name="label19" Content="Laser LR Range" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top"/>
+                                    <Label x:Name="label20" Content="Laser LR Acc" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top"/>
+                                    <TextBox x:Name="LaserLRRange_textBox" HorizontalAlignment="Left" Height="23" Margin="105,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+                                    <TextBox x:Name="LaserLRAcc_textBox" HorizontalAlignment="Left" Height="23" Margin="105,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox x:Name="groupBox7" Header="Night Vision" HorizontalAlignment="Left" Margin="172,-4,0,0" VerticalAlignment="Top" Height="84" Width="161">
+                                <Grid>
+
+                                    <Label x:Name="label21" Content="Nigt Vision" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+                                    <TextBox x:Name="NigtVision_textBox" HorizontalAlignment="Left" Height="23" Margin="83,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="47"/>
+                                    <CheckBox x:Name="NeedIllumination_checkBox" Content="Need Illumination" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox x:Name="Infravision_checkBox" Content="Infravision" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top"/>
+
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox x:Name="groupBox8" Header="Type" HorizontalAlignment="Left" Margin="0,120,0,0" VerticalAlignment="Top" Height="153" Width="167">
+                                <Grid>
+                                    <CheckBox x:Name="TargetProgram_checkBox" Content="Target Program" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                    <CheckBox x:Name="Collimator_checkBox" Content="Collimator" HorizontalAlignment="Left" Margin="0,20,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox x:Name="BlockIronSight_checkBox" Content="BlockIronSight" HorizontalAlignment="Left" Margin="0,40,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox x:Name="Reflex_checkBox" Content="Reflex" HorizontalAlignment="Left" Margin="0,60,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox x:Name="ImpVisSights_checkBox" Content="ImpVisSights" HorizontalAlignment="Left" Margin="0,78,0,0" VerticalAlignment="Top"/>
+
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox x:Name="groupBox9" Header="Scope" HorizontalAlignment="Left" Margin="0,-4,0,0" VerticalAlignment="Top" Height="124" Width="167">
+                                <Grid>
+                                    <GroupBox x:Name="groupBox10" Header="Magnification" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="94">
+                                        <Grid>
+
+                                            <Label x:Name="label22" Content="MAX" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.639,0.192"/>
+                                            <Label x:Name="label23" Content="MIN" HorizontalAlignment="Left" Margin="43,0,0,0" VerticalAlignment="Top"/>
+                                            <TextBox x:Name="MaxMag_textBox" HorizontalAlignment="Left" Height="23" Margin="0,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="35"/>
+                                            <TextBox x:Name="MinMag_textBox" HorizontalAlignment="Left" Height="23" Margin="43,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="35"/>
+                                            <CheckBox x:Name="Fix_checkBox" Content="Fix" HorizontalAlignment="Left" Margin="1,54,0,0" VerticalAlignment="Top"/>
+
+                                        </Grid>
+                                    </GroupBox>
+                                    <Label x:Name="label24" Content="Acc Add&#xD;&#xA;  MAX" HorizontalAlignment="Left" Margin="99,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.454,0.179"/>
+                                    <TextBox x:Name="AccAddMAx_textBox" HorizontalAlignment="Left" Height="22" Margin="106,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"/>
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox x:Name="groupBox11" Header="Illumination" HorizontalAlignment="Left" Margin="172,184,0,0" VerticalAlignment="Top" Height="89" Width="161">
+                                <Grid>
+                                    <CheckBox x:Name="NeedBat_checkBox" Content="Need Bat" HorizontalAlignment="Left" Margin="72,5,-1,0" VerticalAlignment="Top" Checked="NeedBat_checkBox_Checked"/>
+                                    <CheckBox x:Name="Tritium_checkBox" Content="Tritium" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Checked="Tritium_checkBox_Checked" />
+                                    <Label x:Name="label25" Content="Size Bat" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top"/>
+                                    <ComboBox x:Name="SizeBat_comboBox" HorizontalAlignment="Left" Margin="85,20,0,0" VerticalAlignment="Top" Width="54" Initialized="SizeBat_comboBox_Initialized"/>
+                                    <Label x:Name="label31" Content="Time Work" HorizontalAlignment="Left" Margin="10,42,0,-1" VerticalAlignment="Top"/>
+                                    <TextBox x:Name="BatTimeWork_textBox" HorizontalAlignment="Left" Height="20" Margin="85,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="54"/>
+
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox x:Name="groupBox12" Header="Laser/Light" HorizontalAlignment="Left" Margin="375,10,0,0" VerticalAlignment="Top" Height="298" Width="214">
+                        <Grid>
+                            <GroupBox x:Name="groupBox13" Header="Light" Margin="5,0,0,0" VerticalAlignment="Top" Height="104" HorizontalAlignment="Left" Width="187">
+                                <Grid>
+                                    <CheckBox x:Name="IRFilter_checkBox" Content="IR Filter" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" />
+                                    <Label x:Name="label26" Content="Light Range" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"/>
+                                    <Label x:Name="label27" Content="IR Filter Range" HorizontalAlignment="Left" Margin="10,53,0,0" VerticalAlignment="Top"/>
+                                    <TextBox x:Name="LightRange_textBox" HorizontalAlignment="Left" Height="23" Margin="103,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44"/>
+                                    <TextBox x:Name="IRFilterRange_textBox" HorizontalAlignment="Left" Height="23" Margin="103,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44"/>
+
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox x:Name="groupBox14" Header="Laser" HorizontalAlignment="Left" Margin="5,109,0,5" Width="187">
+                                <Grid>
+                                    <Label x:Name="label28" Content="Laser Range" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                                    <Label x:Name="label29" Content="Laser Color" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top"/>
+                                    <Label x:Name="label30" Content="Laser Day Effect" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top"/>
+                                    <TextBox x:Name="LaserRange_textBox" HorizontalAlignment="Left" Height="23" Margin="89,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76"/>
+                                    <TextBox x:Name="LaserRangeEff_textBox" HorizontalAlignment="Left" Height="23" Margin="109,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56"/>
+                                    <ComboBox x:Name="Laser_Color_comboBox" HorizontalAlignment="Left" Margin="89,41,0,0" VerticalAlignment="Top" Width="76" SelectionChanged="Laser_Color_comboBox_SelectionChanged" Initialized="Laser_Color_comboBox_Initialized" Loaded="Laser_Color_comboBox_Loaded"/>
+
+                                </Grid>
+                            </GroupBox>
+
+                        </Grid>
+                    </GroupBox>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="Save_button" Content="Save" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="75" Click="Save_button_Click"/>
+        <Button x:Name="Cancel_button" Content="Cancel" HorizontalAlignment="Left" Margin="90,0,0,10" VerticalAlignment="Bottom" Width="75" Click="Cancel_button_Click"/>
+        <Button x:Name="Undo_button" Content="AllUndo" HorizontalAlignment="Left" Margin="170,0,0,10" VerticalAlignment="Bottom" Width="75"/>
+
+    </Grid>
+</Window>
