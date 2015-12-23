@@ -183,6 +183,24 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="255" />
         </EntityType>
+        <EntityType Name="CombineWeap">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdWeapon" Type="int" Nullable="false" />
+          <Property Name="ScopeSelect" Type="int" />
+          <Property Name="LaserSelect" Type="int" />
+          <Property Name="LightSelect" Type="int" />
+          <Property Name="BipodSelect" Type="int" />
+          <Property Name="SilenserSelect" Type="int" />
+          <Property Name="LauncherSelect" Type="int" />
+          <Property Name="BayonetSelect" Type="int" />
+          <Property Name="MagazineSelect" Type="int" />
+          <Property Name="InternalSelect" Type="int" />
+          <Property Name="ExternalSelect" Type="int" />
+          <Property Name="StockSelect" Type="int" />
+        </EntityType>
         <EntityType Name="Drug">
           <Key>
             <PropertyRef Name="id" />
@@ -832,6 +850,7 @@
           <EntitySet Name="AvailableAttachSlot" EntityType="Self.AvailableAttachSlot" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Battery" EntityType="Self.Battery" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clothes" EntityType="Self.Clothes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CombineWeap" EntityType="Self.CombineWeap" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Drug" EntityType="Self.Drug" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DrugType" EntityType="Self.DrugType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ExplosionType" EntityType="Self.ExplosionType" Schema="dbo" store:Type="Tables" />
@@ -1133,6 +1152,7 @@
             <Parameter Name="G_sub_att" Mode="In" Type="Int32" />
             <Parameter Name="id_att_mount" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="CombineWeaps" EntityType="item1Model.CombineWeap" />
         </EntityContainer>
         <EntityType Name="AMMO">
           <Key>
@@ -1995,6 +2015,24 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="CombineWeap">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdWeapon" Type="Int32" Nullable="false" />
+          <Property Name="ScopeSelect" Type="Int32" />
+          <Property Name="LaserSelect" Type="Int32" />
+          <Property Name="LightSelect" Type="Int32" />
+          <Property Name="BipodSelect" Type="Int32" />
+          <Property Name="SilenserSelect" Type="Int32" />
+          <Property Name="LauncherSelect" Type="Int32" />
+          <Property Name="BayonetSelect" Type="Int32" />
+          <Property Name="MagazineSelect" Type="Int32" />
+          <Property Name="InternalSelect" Type="Int32" />
+          <Property Name="ExternalSelect" Type="Int32" />
+          <Property Name="StockSelect" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2484,6 +2522,25 @@
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="NEW_ITEM" FunctionName="Хранилище item1Model.NEW_ITEM" />
           <FunctionImportMapping FunctionImportName="NEW_ITEM_att" FunctionName="Хранилище item1Model.NEW_ITEM_att" />
+          <EntitySetMapping Name="CombineWeaps">
+            <EntityTypeMapping TypeName="item1Model.CombineWeap">
+              <MappingFragment StoreEntitySet="CombineWeap">
+                <ScalarProperty Name="StockSelect" ColumnName="StockSelect" />
+                <ScalarProperty Name="ExternalSelect" ColumnName="ExternalSelect" />
+                <ScalarProperty Name="InternalSelect" ColumnName="InternalSelect" />
+                <ScalarProperty Name="MagazineSelect" ColumnName="MagazineSelect" />
+                <ScalarProperty Name="BayonetSelect" ColumnName="BayonetSelect" />
+                <ScalarProperty Name="LauncherSelect" ColumnName="LauncherSelect" />
+                <ScalarProperty Name="SilenserSelect" ColumnName="SilenserSelect" />
+                <ScalarProperty Name="BipodSelect" ColumnName="BipodSelect" />
+                <ScalarProperty Name="LightSelect" ColumnName="LightSelect" />
+                <ScalarProperty Name="LaserSelect" ColumnName="LaserSelect" />
+                <ScalarProperty Name="ScopeSelect" ColumnName="ScopeSelect" />
+                <ScalarProperty Name="IdWeapon" ColumnName="IdWeapon" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

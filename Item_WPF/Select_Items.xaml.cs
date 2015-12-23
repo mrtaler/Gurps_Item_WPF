@@ -44,7 +44,27 @@ namespace Item_WPF
             }
         }
 
-        public Select_Items(string typeName, int attslot, int attmount)           
+        public Select_Items(int attmount)
+        {
+            InitializeComponent();
+            using (item1Entities context = new item1Entities())
+            {
+
+                context.Database.Connection.Open();// открываем соединение с бд
+                Items_dataGrid.ItemsSource = context.CombineWeaps.Select(s => new
+                {
+                    s.id,
+                    s.IdWeapon,
+                    s.LaserSelect,
+                    s.LauncherSelect,
+                }).ToList(); ; // gрузим таблицу итем вместе с подчненной записью
+
+                Items_dataGrid.SelectedValuePath = "id";
+                context.Database.Connection.Close();
+            }
+        }
+
+        public Select_Items(string typeName, int attslot, int attmount)
         {
             InitializeComponent();
             using (item1Entities context = new item1Entities())
@@ -62,15 +82,15 @@ namespace Item_WPF
                     itemsAtt.Add(qwery);
                 }
                 Items_dataGrid.ItemsSource = (from p in itemsAtt
-                                            select new
-                                            {
-                                                p.uiIndex,
-                                                p.szItemName,
-                                                p.ItemClass.name,
-                                                p.TL1.name_TL,
-                                                p.LC1.Name_LC,
-                                                p.usPrice
-                                            }).ToList();
+                                              select new
+                                              {
+                                                  p.uiIndex,
+                                                  p.szItemName,
+                                                  p.ItemClass.name,
+                                                  p.TL1.name_TL,
+                                                  p.LC1.Name_LC,
+                                                  p.usPrice
+                                              }).ToList();
                 Items_dataGrid.SelectedValuePath = "uiIndex";
                 context.Database.Connection.Close();
             }
@@ -84,8 +104,13 @@ namespace Item_WPF
                 string s = "dfb";
 
                 main.label.Content = s;
-                main.IdItemWeapon = Convert.ToInt32(Items_dataGrid.SelectedValue);// нходим ИД выделенной строки
-                this.Close();
+                if (Items_dataGrid.SelectedIndex != -1)
+                {
+                    main.IdItemWeapon = Convert.ToInt32(Items_dataGrid.SelectedValue);// нходим ИД выделенной строки
+                    this.Close();
+                }
+                else this.Close();
+
             }
         }
 

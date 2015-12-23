@@ -200,6 +200,9 @@ namespace Item_WPF
                     Attachment attLaser = (from p in context.Attachments
                                            where p.uiIndex == itemLaser.ubClassIndex
                                            select p).First();// передать этот экземпляр в другую форму.
+                    CombineWeap CW = new CombineWeap();
+                    CW.LaserSelect = IdItemWeapon;
+                    context.SaveChanges();
                     context.Database.Connection.Close();
                     IdItemWeapon = 0;
                     ItemFromGrid Laser_er = new ItemFromGrid();
@@ -256,7 +259,12 @@ namespace Item_WPF
                     Attachment attlight = (from p in context.Attachments
                                            where p.uiIndex == itemLight.ubClassIndex
                                            select p).First();// передать этот экземпляр в другую форму.
+                    CombineWeap CW = new CombineWeap();
+                    CW.LightSelect = IdItemWeapon;
+                    context.SaveChanges();
                     context.Database.Connection.Close();
+
+
                     IdItemWeapon = 0;
                     ItemFromGrid Light_er = new ItemFromGrid();
                     Light_er.Type = "Light";
@@ -314,6 +322,9 @@ namespace Item_WPF
                     Attachment attBipod = (from p in context.Attachments
                                            where p.uiIndex == itemBipod.ubClassIndex
                                            select p).First();// передать этот экземпляр в другую форму.
+                    CombineWeap CW = new CombineWeap();
+                    CW.BipodSelect = IdItemWeapon;
+                    context.SaveChanges();
                     context.Database.Connection.Close();
                     IdItemWeapon = 0;
                     ItemFromGrid Bipod_er = new ItemFromGrid();
@@ -368,6 +379,8 @@ namespace Item_WPF
                     Attachment attSilenser = (from p in context.Attachments
                                               where p.uiIndex == itemSilenser.ubClassIndex
                                               select p).First();// передать этот экземпляр в другую форму.
+                    CombineWeap CW = new CombineWeap();
+                    CW.SilenserSelect = IdItemWeapon;
                     context.Database.Connection.Close();
                     IdItemWeapon = 0;
                     ItemFromGrid Silenser_er = new ItemFromGrid();
@@ -421,6 +434,8 @@ namespace Item_WPF
                     Attachment attLauncher = (from p in context.Attachments
                                               where p.uiIndex == itemLauncher.ubClassIndex
                                               select p).First();// передать этот экземпляр в другую форму.
+                    CombineWeap CW = new CombineWeap();
+                    CW.LauncherSelect = IdItemWeapon;
                     context.Database.Connection.Close();
                     IdItemWeapon = 0;
                     ItemFromGrid Launcher_er = new ItemFromGrid();
@@ -474,6 +489,8 @@ namespace Item_WPF
                     Attachment attStock = (from p in context.Attachments
                                            where p.uiIndex == itemStock.ubClassIndex
                                            select p).First();// передать этот экземпляр в другую форму.
+                    CombineWeap CW = new CombineWeap();
+                    CW.StockSelect = IdItemWeapon;
                     context.Database.Connection.Close();
                     IdItemWeapon = 0;
                     ItemFromGrid Stock_er = new ItemFromGrid();
@@ -527,6 +544,8 @@ namespace Item_WPF
                     Attachment attBayonet = (from p in context.Attachments
                                              where p.uiIndex == itemBayonet.ubClassIndex
                                              select p).First();// передать этот экземпляр в другую форму.
+                    CombineWeap CW = new CombineWeap();
+                    CW.BayonetSelect = IdItemWeapon;
                     context.Database.Connection.Close();
                     IdItemWeapon = 0;
                     ItemFromGrid Bayonet_er = new ItemFromGrid();
@@ -580,6 +599,8 @@ namespace Item_WPF
                     Attachment attMagazine = (from p in context.Attachments
                                               where p.uiIndex == itemMagazine.ubClassIndex
                                               select p).First();// передать этот экземпляр в другую форму.
+                    CombineWeap CW = new CombineWeap();
+                    CW.MagazineSelect = IdItemWeapon;
                     context.Database.Connection.Close();
                     IdItemWeapon = 0;
                     ItemFromGrid Magazine_er = new ItemFromGrid();
@@ -616,241 +637,260 @@ namespace Item_WPF
             selectItems.Owner = this;
             selectItems.ShowDialog();
             Item_dataGrid.Items.Clear();
-            using (item1Entities context = new item1Entities())
+
+            WeaponCombine.Id_WeaponItem = IdItemWeapon;
+            if (IdItemWeapon !=0)
             {
-                context.Database.Connection.Open();
-                ITEM itemLoad = (from z in context.ITEMs
-                                 where z.uiIndex == IdItemWeapon
-                                 select z).First();
-                WEAPON weaponLoad = (from p in context.WEAPONs
-                                     where p.uiIndex == itemLoad.ubClassIndex
-                                     select p).First();
-                IdItemWeapon = 0;
-                if (itemLoad.Item_Image != null)
+                using (item1Entities context = new item1Entities())
                 {
-                    // MemoryStream stream = new MemoryStream(item.Item_Image);
-
-                    using (var ms = new MemoryStream(itemLoad.Item_Image, 0, itemLoad.Item_Image.Length))
+                    context.Database.Connection.Open();
+                    ITEM itemLoad = (from z in context.ITEMs
+                                     where z.uiIndex == IdItemWeapon
+                                     select z).First();
+                    WEAPON weaponLoad = (from p in context.WEAPONs
+                                         where p.uiIndex == itemLoad.ubClassIndex
+                                         select p).First();
+                    CombineWeap CW = new CombineWeap();
+                  
+                    CW.IdWeapon = IdItemWeapon;
+                    context.SaveChanges();
+                    IdItemWeapon = 0;
+                    if (itemLoad.Item_Image != null)
                     {
-                        var image = new BitmapImage();
-                        image.BeginInit();
-                        image.CacheOption = BitmapCacheOption.OnLoad;
-                        image.StreamSource = ms;
-                        image.EndInit();
-                        Weapon_image.Source = image;
-                        //by = itemLoad.Item_Image;
+                        // MemoryStream stream = new MemoryStream(item.Item_Image);
+
+                        using (var ms = new MemoryStream(itemLoad.Item_Image, 0, itemLoad.Item_Image.Length))
+                        {
+                            var image = new BitmapImage();
+                            image.BeginInit();
+                            image.CacheOption = BitmapCacheOption.OnLoad;
+                            image.StreamSource = ms;
+                            image.EndInit();
+                            Weapon_image.Source = image;
+                            //by = itemLoad.Item_Image;
+                        }
+                    }
+                    else Weapon_image.Source = null;
+                    ItemFromGrid er = new ItemFromGrid();
+
+                    er.item_s = itemLoad;
+                    er.weapon_s = weaponLoad;
+
+                    er.Name = itemLoad.szItemName;
+                    er.TL = itemLoad.TL1.name_TL.ToString();
+                    if (weaponLoad.Arm_Division != 1) er.Damage = weaponLoad.Damage + " (" + Convert.ToDouble(weaponLoad.Arm_Division) + ") " + weaponLoad.TypeOfDamage.name;
+                    else er.Damage = weaponLoad.Damage + " " + weaponLoad.TypeOfDamage.name;
+                    er.DefACC = weaponLoad.DefACC.ToString();
+                    er.range = Convert.ToDouble(weaponLoad.Half_Range) + "/" + Convert.ToDouble(weaponLoad.FullRange);
+                    er.weigth = Convert.ToDouble(itemLoad.ubWeight) + "/" + weaponLoad.Shots * Convert.ToDouble(weaponLoad.AMMO.WPS);
+
+                    //ROF
+                    er.Rof = weaponLoad.ROF.ToString();
+                    if (weaponLoad.WeaponType.name == "Shotgun") er.Rof = weaponLoad.ROF.ToString() + "x" + weaponLoad.ROF_for_Sh.ToString();
+                    if (weaponLoad.Full_auto) er.Rof = weaponLoad.ROF.ToString() + "!";
+                    //if (weaponLoad.h//   HCR ROF
+
+                    //Shots
+                    er.Shots = weaponLoad.Shots.ToString();
+                    if (weaponLoad.Add_in_Chamber) er.Shots = weaponLoad.Shots.ToString() + "+1";
+                    if (weaponLoad.single_reload) er.Shots = weaponLoad.Shots.ToString() + "(" + weaponLoad.Time_For_reload + "i)";
+                    else er.Shots = weaponLoad.Shots.ToString() + "(" + weaponLoad.Time_For_reload + ")";
+
+                    er.minST = itemLoad.minST.ToString();
+                    if (itemLoad.TwoHanded) er.minST = itemLoad.minST.ToString() + "†";
+
+                    er.Bulk = itemLoad.ItemSize;
+                    if (weaponLoad.Bulkfolded) er.Bulk = itemLoad.ItemSize + "*";
+
+                    er.rcl = weaponLoad.Recoil.ToString();
+                    er.cost = "$" + Convert.ToDouble(itemLoad.usPrice) + "/$" + weaponLoad.Shots * Convert.ToDouble(weaponLoad.AMMO.CPS);
+                    er.LC = itemLoad.LC1.Name_LC;
+
+                    er.Type = "gun";
+
+                    Item_dataGrid.Items.Add(er);/////////////////////////////////////////////////////////////
+                    Item_dataGrid.ColumnWidth = DataGridLength.Auto;
+                    ScopeIndex = 0;
+                    LaserIndex = 0;
+                    LigtIndex = 0;
+
+                    ScopeSelect_button.Visibility = Visibility.Hidden;      //1
+                    LaserSelect_button.Visibility = Visibility.Hidden;
+                    LightSelect_button.Visibility = Visibility.Hidden;
+                    BipodSelect_button.Visibility = Visibility.Hidden;
+                    SilenserSelect_button.Visibility = Visibility.Hidden;
+                    LauncherSelect_button.Visibility = Visibility.Hidden;
+                    StockSelect_button.Visibility = Visibility.Hidden;
+                    BayonetSelect_button.Visibility = Visibility.Hidden;
+                    MagazineSelect_button.Visibility = Visibility.Hidden;
+                    InternalSelect_button.Visibility = Visibility.Hidden;
+                    ExternalSelect_button.Visibility = Visibility.Hidden;
+
+                    List<AvailableAttachSlot> AvSlot = (from p in context.AvailableAttachSlots
+                                                        where p.rWeaponId == weaponLoad.uiIndex
+                                                        select p).ToList();
+                    foreach (AvailableAttachSlot items in AvSlot)
+                    {
+                        if (items.rATTACHMENTSLOT == 1)
+                        {
+                            ScopeSelect_button.Visibility = Visibility.Visible;
+
+                            mountScope = items.rAttachmentmount;
+
+                            //comboBox_Scope.DataSource = (from p in context.Attachmentmounts
+                            //                             where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
+                            //                             select p).ToList();
+                            //comboBox_Scope.ValueMember = "id";
+                            //comboBox_Scope.DisplayMember = "name";
+                            //comboBox_Scope.SelectedValue = items.rAttachmentmount;
+                        }
+
+
+                        if (items.rATTACHMENTSLOT == 2)
+                        {
+                            LaserSelect_button.Visibility = Visibility.Visible;
+                            mountLaser = items.rAttachmentmount;
+                            //    pictureBox_Laser.Visible = true;
+                            //    //comboBox_Laser.DataSource = (from p in context.Attachmentmounts
+                            //    //                             where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
+                            //    //                             select p).ToList();
+                            //    //comboBox_Laser.ValueMember = "id";
+                            //    //comboBox_Laser.DisplayMember = "name";
+                            //    //comboBox_Laser.SelectedValue = items.rAttachmentmount;
+                        }
+
+                        if (items.rATTACHMENTSLOT == 3)
+                        {
+                            //    pictureBox_Light.Visible = true;
+                            LightSelect_button.Visibility = Visibility.Visible;
+                            mountLight = items.rAttachmentmount;
+                            //    //comboBox_Light.DataSource = (from p in context.Attachmentmounts
+                            //    //                             where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
+                            //    //                             select p).ToList();
+                            //    //comboBox_Light.ValueMember = "id";
+                            //    //comboBox_Light.DisplayMember = "name";
+                            //    //comboBox_Light.SelectedValue = items.rAttachmentmount;
+                        }
+
+                        if (items.rATTACHMENTSLOT == 4)
+                        {
+                            //    pictureBox_Bipod.Visible = true;
+                            mountBipod = items.rAttachmentmount;
+                            BipodSelect_button.Visibility = Visibility.Visible;
+                            //    //comboBox_Bipod.DataSource = (from p in context.Attachmentmounts
+                            //    //                             where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
+                            //    //                             select p).ToList();
+                            //    //comboBox_Bipod.ValueMember = "id";
+                            //    //comboBox_Bipod.DisplayMember = "name";
+                            //    //comboBox_Bipod.SelectedValue = items.rAttachmentmount;
+                        }
+
+                        if (items.rATTACHMENTSLOT == 5)
+                        {
+                            mountSilenser = items.rAttachmentmount;
+                            SilenserSelect_button.Visibility = Visibility.Visible;
+                            //    pictureBox_Silenser.Visible = true;
+                            //    mountSilenser = items.rAttachmentmount;
+                            //    //comboBox_Silenser.DataSource = (from p in context.Attachmentmounts
+                            //    //                                where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
+                            //    //                                select p).ToList();
+                            //    //comboBox_Silenser.ValueMember = "id";
+                            //    //comboBox_Silenser.DisplayMember = "name";
+                            //    //comboBox_Silenser.SelectedValue = items.rAttachmentmount;
+                        }
+
+                        if (items.rATTACHMENTSLOT == 6)
+                        {
+                            mountLauncher = items.rAttachmentmount;
+                            LauncherSelect_button.Visibility = Visibility.Visible;
+                            //    pictureBox_Launcher.Visible = true;
+                            //    //comboBox_Launcher.DataSource = (from p in context.Attachmentmounts
+                            //    //                                where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
+                            //    //                                select p).ToList();
+                            //    //comboBox_Launcher.ValueMember = "id";
+                            //    //comboBox_Launcher.DisplayMember = "name";
+                            //    //comboBox_Launcher.SelectedValue = items.rAttachmentmount;
+                        }
+
+                        if (items.rATTACHMENTSLOT == 7)
+                        {
+                            mountStock = items.rAttachmentmount;
+                            StockSelect_button.Visibility = Visibility.Visible;
+                            //    pictureBox_Stock.Visible = true;
+                            //    //comboBox_Stock.DataSource = (from p in context.Attachmentmounts
+                            //    //                             where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
+                            //    //                             select p).ToList();
+                            //    //comboBox_Stock.ValueMember = "id";
+                            //    //comboBox_Stock.DisplayMember = "name";
+                            //    //comboBox_Stock.SelectedValue = items.rAttachmentmount;
+                        }
+
+                        if (items.rATTACHMENTSLOT == 8)
+                        {
+                            mountBayonet = items.rAttachmentmount;
+                            BayonetSelect_button.Visibility = Visibility.Visible;
+                            //    pictureBox_Bayonet.Visible = true;
+                            //    //comboBox_Bayonet.DataSource = (from p in context.Attachmentmounts
+                            //    //                               where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
+                            //    //                               select p).ToList();
+                            //    //comboBox_Bayonet.ValueMember = "id";
+                            //    //comboBox_Bayonet.DisplayMember = "name";
+                            //    //comboBox_Bayonet.SelectedValue = items.rAttachmentmount;
+                        }
+
+                        if (items.rATTACHMENTSLOT == 9)
+                        {
+                            mountMagazine = items.rAttachmentmount;
+                            MagazineSelect_button.Visibility = Visibility.Visible;
+                            //    pictureBox_Magazine.Visible = true;
+                            //    //comboBox_Magazine.DataSource = (from p in context.Attachmentmounts
+                            //    //                                where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
+                            //    //                                select p).ToList();
+                            //    //comboBox_Magazine.ValueMember = "id";
+                            //    //comboBox_Magazine.DisplayMember = "name";
+                            //    //comboBox_Magazine.SelectedValue = items.rAttachmentmount;
+                        }
+
+                        if (items.rATTACHMENTSLOT == 10)
+                        {
+                            mountInternal = items.rAttachmentmount;
+                            InternalSelect_button.Visibility = Visibility.Visible;
+                            //    pictureBox_Internal.Visible = true;
+                            //    //comboBox_Internal.DataSource = (from p in context.Attachmentmounts
+                            //    //                                where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
+                            //    //                                select p).ToList();
+                            //    //comboBox_Internal.ValueMember = "id";
+                            //    //comboBox_Internal.DisplayMember = "name";
+                            //    //comboBox_Internal.SelectedValue = items.rAttachmentmount;
+                        }
+
+                        if (items.rATTACHMENTSLOT == 11)
+                        {
+                            mountExternal = items.rAttachmentmount;
+                            ExternalSelect_button.Visibility = Visibility.Visible;
+                            //    pictureBox_External.Visible = true;
+                            //    //comboBox_External.DataSource = (from p in context.Attachmentmounts
+                            //    //                                where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
+                            //    //                                select p).ToList();
+                            //    //comboBox_External.ValueMember = "id";
+                            //    //comboBox_External.DisplayMember = "name";
+                            //    //comboBox_External.SelectedValue = items.rAttachmentmount;
+                        }
                     }
                 }
-                else Weapon_image.Source = null;
-                ItemFromGrid er = new ItemFromGrid();
-
-                er.item_s = itemLoad;
-                er.weapon_s = weaponLoad;
-
-                er.Name = itemLoad.szItemName;
-                er.TL = itemLoad.TL1.name_TL.ToString();
-                if (weaponLoad.Arm_Division != 1) er.Damage = weaponLoad.Damage + " (" + Convert.ToDouble(weaponLoad.Arm_Division) + ") " + weaponLoad.TypeOfDamage.name;
-                else er.Damage = weaponLoad.Damage + " " + weaponLoad.TypeOfDamage.name;
-                er.DefACC = weaponLoad.DefACC.ToString();
-                er.range = Convert.ToDouble(weaponLoad.Half_Range) + "/" + Convert.ToDouble(weaponLoad.FullRange);
-                er.weigth = Convert.ToDouble(itemLoad.ubWeight) + "/" + weaponLoad.Shots * Convert.ToDouble(weaponLoad.AMMO.WPS);
-
-                //ROF
-                er.Rof = weaponLoad.ROF.ToString();
-                if (weaponLoad.WeaponType.name == "Shotgun") er.Rof = weaponLoad.ROF.ToString() + "x" + weaponLoad.ROF_for_Sh.ToString();
-                if (weaponLoad.Full_auto) er.Rof = weaponLoad.ROF.ToString() + "!";
-                //if (weaponLoad.h//   HCR ROF
-
-                //Shots
-                er.Shots = weaponLoad.Shots.ToString();
-                if (weaponLoad.Add_in_Chamber) er.Shots = weaponLoad.Shots.ToString() + "+1";
-                if (weaponLoad.single_reload) er.Shots = weaponLoad.Shots.ToString() + "(" + weaponLoad.Time_For_reload + "i)";
-                else er.Shots = weaponLoad.Shots.ToString() + "(" + weaponLoad.Time_For_reload + ")";
-
-                er.minST = itemLoad.minST.ToString();
-                if (itemLoad.TwoHanded) er.minST = itemLoad.minST.ToString() + "†";
-
-                er.Bulk = itemLoad.ItemSize;
-                if (weaponLoad.Bulkfolded) er.Bulk = itemLoad.ItemSize + "*";
-
-                er.rcl = weaponLoad.Recoil.ToString();
-                er.cost = "$" + Convert.ToDouble(itemLoad.usPrice) + "/$" + weaponLoad.Shots * Convert.ToDouble(weaponLoad.AMMO.CPS);
-                er.LC = itemLoad.LC1.Name_LC;
-
-                er.Type = "gun";
-
-                Item_dataGrid.Items.Add(er);/////////////////////////////////////////////////////////////
-                Item_dataGrid.ColumnWidth = DataGridLength.Auto;
-                ScopeIndex = 0;
-                LaserIndex = 0;
-                LigtIndex = 0;
-
-                ScopeSelect_button.Visibility = Visibility.Hidden;      //1
-                LaserSelect_button.Visibility = Visibility.Hidden;
-                LightSelect_button.Visibility = Visibility.Hidden;
-                BipodSelect_button.Visibility = Visibility.Hidden;
-                SilenserSelect_button.Visibility = Visibility.Hidden;
-                LauncherSelect_button.Visibility = Visibility.Hidden;
-                StockSelect_button.Visibility = Visibility.Hidden;
-                BayonetSelect_button.Visibility = Visibility.Hidden;
-                MagazineSelect_button.Visibility = Visibility.Hidden;
-                InternalSelect_button.Visibility = Visibility.Hidden;
-                ExternalSelect_button.Visibility = Visibility.Hidden;
-
-                List<AvailableAttachSlot> AvSlot = (from p in context.AvailableAttachSlots
-                                                    where p.rWeaponId == weaponLoad.uiIndex
-                                                    select p).ToList();
-                foreach (AvailableAttachSlot items in AvSlot)
-                {
-                    if (items.rATTACHMENTSLOT == 1)
-                    {
-                        ScopeSelect_button.Visibility = Visibility.Visible;
-
-                        mountScope = items.rAttachmentmount;
-
-                        //comboBox_Scope.DataSource = (from p in context.Attachmentmounts
-                        //                             where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                        //                             select p).ToList();
-                        //comboBox_Scope.ValueMember = "id";
-                        //comboBox_Scope.DisplayMember = "name";
-                        //comboBox_Scope.SelectedValue = items.rAttachmentmount;
-                    }
-
-
-                    if (items.rATTACHMENTSLOT == 2)
-                    {
-                        LaserSelect_button.Visibility = Visibility.Visible;
-                        mountLaser = items.rAttachmentmount;
-                        //    pictureBox_Laser.Visible = true;
-                        //    //comboBox_Laser.DataSource = (from p in context.Attachmentmounts
-                        //    //                             where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                        //    //                             select p).ToList();
-                        //    //comboBox_Laser.ValueMember = "id";
-                        //    //comboBox_Laser.DisplayMember = "name";
-                        //    //comboBox_Laser.SelectedValue = items.rAttachmentmount;
-                    }
-
-                    if (items.rATTACHMENTSLOT == 3)
-                    {
-                        //    pictureBox_Light.Visible = true;
-                        LightSelect_button.Visibility = Visibility.Visible;
-                        mountLight = items.rAttachmentmount;
-                        //    //comboBox_Light.DataSource = (from p in context.Attachmentmounts
-                        //    //                             where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                        //    //                             select p).ToList();
-                        //    //comboBox_Light.ValueMember = "id";
-                        //    //comboBox_Light.DisplayMember = "name";
-                        //    //comboBox_Light.SelectedValue = items.rAttachmentmount;
-                    }
-
-                    if (items.rATTACHMENTSLOT == 4)
-                    {
-                        //    pictureBox_Bipod.Visible = true;
-                        mountBipod = items.rAttachmentmount;
-                        BipodSelect_button.Visibility = Visibility.Visible;
-                        //    //comboBox_Bipod.DataSource = (from p in context.Attachmentmounts
-                        //    //                             where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                        //    //                             select p).ToList();
-                        //    //comboBox_Bipod.ValueMember = "id";
-                        //    //comboBox_Bipod.DisplayMember = "name";
-                        //    //comboBox_Bipod.SelectedValue = items.rAttachmentmount;
-                    }
-
-                    if (items.rATTACHMENTSLOT == 5)
-                    {
-                        mountSilenser = items.rAttachmentmount;
-                        SilenserSelect_button.Visibility = Visibility.Visible;
-                        //    pictureBox_Silenser.Visible = true;
-                        //    mountSilenser = items.rAttachmentmount;
-                        //    //comboBox_Silenser.DataSource = (from p in context.Attachmentmounts
-                        //    //                                where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                        //    //                                select p).ToList();
-                        //    //comboBox_Silenser.ValueMember = "id";
-                        //    //comboBox_Silenser.DisplayMember = "name";
-                        //    //comboBox_Silenser.SelectedValue = items.rAttachmentmount;
-                    }
-
-                    if (items.rATTACHMENTSLOT == 6)
-                    {
-                        mountLauncher = items.rAttachmentmount;
-                        LauncherSelect_button.Visibility = Visibility.Visible;
-                        //    pictureBox_Launcher.Visible = true;
-                        //    //comboBox_Launcher.DataSource = (from p in context.Attachmentmounts
-                        //    //                                where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                        //    //                                select p).ToList();
-                        //    //comboBox_Launcher.ValueMember = "id";
-                        //    //comboBox_Launcher.DisplayMember = "name";
-                        //    //comboBox_Launcher.SelectedValue = items.rAttachmentmount;
-                    }
-
-                    if (items.rATTACHMENTSLOT == 7)
-                    {
-                        mountStock = items.rAttachmentmount;
-                        StockSelect_button.Visibility = Visibility.Visible;
-                        //    pictureBox_Stock.Visible = true;
-                        //    //comboBox_Stock.DataSource = (from p in context.Attachmentmounts
-                        //    //                             where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                        //    //                             select p).ToList();
-                        //    //comboBox_Stock.ValueMember = "id";
-                        //    //comboBox_Stock.DisplayMember = "name";
-                        //    //comboBox_Stock.SelectedValue = items.rAttachmentmount;
-                    }
-
-                    if (items.rATTACHMENTSLOT == 8)
-                    {
-                        mountBayonet = items.rAttachmentmount;
-                        BayonetSelect_button.Visibility = Visibility.Visible;
-                        //    pictureBox_Bayonet.Visible = true;
-                        //    //comboBox_Bayonet.DataSource = (from p in context.Attachmentmounts
-                        //    //                               where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                        //    //                               select p).ToList();
-                        //    //comboBox_Bayonet.ValueMember = "id";
-                        //    //comboBox_Bayonet.DisplayMember = "name";
-                        //    //comboBox_Bayonet.SelectedValue = items.rAttachmentmount;
-                    }
-
-                    if (items.rATTACHMENTSLOT == 9)
-                    {
-                        mountMagazine = items.rAttachmentmount;
-                        MagazineSelect_button.Visibility = Visibility.Visible;
-                        //    pictureBox_Magazine.Visible = true;
-                        //    //comboBox_Magazine.DataSource = (from p in context.Attachmentmounts
-                        //    //                                where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                        //    //                                select p).ToList();
-                        //    //comboBox_Magazine.ValueMember = "id";
-                        //    //comboBox_Magazine.DisplayMember = "name";
-                        //    //comboBox_Magazine.SelectedValue = items.rAttachmentmount;
-                    }
-
-                    if (items.rATTACHMENTSLOT == 10)
-                    {
-                        mountInternal = items.rAttachmentmount;
-                        InternalSelect_button.Visibility = Visibility.Visible;
-                        //    pictureBox_Internal.Visible = true;
-                        //    //comboBox_Internal.DataSource = (from p in context.Attachmentmounts
-                        //    //                                where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                        //    //                                select p).ToList();
-                        //    //comboBox_Internal.ValueMember = "id";
-                        //    //comboBox_Internal.DisplayMember = "name";
-                        //    //comboBox_Internal.SelectedValue = items.rAttachmentmount;
-                    }
-
-                    if (items.rATTACHMENTSLOT == 11)
-                    {
-                        mountExternal = items.rAttachmentmount;
-                        ExternalSelect_button.Visibility = Visibility.Visible;
-                        //    pictureBox_External.Visible = true;
-                        //    //comboBox_External.DataSource = (from p in context.Attachmentmounts
-                        //    //                                where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                        //    //                                select p).ToList();
-                        //    //comboBox_External.ValueMember = "id";
-                        //    //comboBox_External.DisplayMember = "name";
-                        //    //comboBox_External.SelectedValue = items.rAttachmentmount;
-                    }
-                }
-
             }
         }
+
+        private void Saved_button_Click(object sender, RoutedEventArgs e)
+        {
+            Select_Items selectItems = new Select_Items(1);
+
+            selectItems.Owner = this;
+            selectItems.ShowDialog();
+           
+
+
+            }
 
         private void ScopeSelect_button_Click(object sender, RoutedEventArgs e)
         {
@@ -881,7 +921,12 @@ namespace Item_WPF
                     Attachment attScope = (from p in context.Attachments
                                            where p.uiIndex == itemScope.ubClassIndex
                                            select p).First();// передать этот экземпляр в другую форму.
+
+                    CombineWeap CW = new CombineWeap();
+                    CW.ScopeSelect = IdItemWeapon;
+                    context.SaveChanges();
                     context.Database.Connection.Close();
+                    
                     IdItemWeapon = 0;
                     ItemFromGrid Scope_er = new ItemFromGrid();
                     Scope_er.Type = "Scope";

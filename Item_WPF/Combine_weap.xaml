@@ -32,6 +32,7 @@
         <Button x:Name="ExternalSelect_button" Content="External Select" HorizontalAlignment="Left" Margin="696,285,0,0" VerticalAlignment="Top" Width="95"/>
         <Button x:Name="StockSelect_button" Content="Stock Select" HorizontalAlignment="Left" Margin="696,185,0,0" VerticalAlignment="Top" Width="95" Click="StockSelect_button_Click"/>
         <Image x:Name="ScopeImage" HorizontalAlignment="Left" Height="100" Margin="10,181,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="Saved_button" Content="Saved" HorizontalAlignment="Left" Margin="617,10,0,0" VerticalAlignment="Top" Width="74" Click="Saved_button_Click"/>
 
     </Grid>
 </Window>

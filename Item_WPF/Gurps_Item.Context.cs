@@ -59,6 +59,7 @@ namespace Item_WPF
         public virtual DbSet<WEAPON> WEAPONs { get; set; }
         public virtual DbSet<WeaponClass> WeaponClasses { get; set; }
         public virtual DbSet<WeaponType> WeaponTypes { get; set; }
+        public virtual DbSet<CombineWeap> CombineWeaps { get; set; }
     
         public virtual int NEW_ITEM(string name, string class_ofItem, ObjectParameter returns)
         {
@@ -71,7 +72,6 @@ namespace Item_WPF
                 new ObjectParameter("class_ofItem", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NEW_ITEM", nameParameter, class_ofItemParameter, returns);
-            //
         }
     
         public virtual int NEW_ITEM_att(string name, Nullable<int> g_att_class, Nullable<int> g_sub_att, Nullable<int> id_att_mount)

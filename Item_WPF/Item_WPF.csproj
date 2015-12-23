@@ -108,6 +108,9 @@
     <Compile Include="Cloth.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="CombineWeap.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
     <Compile Include="Combine_weap.xaml.cs">
       <DependentUpon>Combine_weap.xaml</DependentUpon>
     </Compile>
