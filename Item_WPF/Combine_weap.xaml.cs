@@ -167,10 +167,6 @@ namespace Item_WPF
         }
 
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void LaserSelect_button_Click(object sender, RoutedEventArgs e)
         {
@@ -544,9 +540,8 @@ namespace Item_WPF
                     Attachment attBayonet = (from p in context.Attachments
                                              where p.uiIndex == itemBayonet.ubClassIndex
                                              select p).First();// передать этот экземпляр в другую форму.
-                    CombineWeap CW = new CombineWeap();
-                    CW.BayonetSelect = IdItemWeapon;
-                    context.Database.Connection.Close();
+
+                    WeaponCombine.Id_WeaponItem = IdItemWeapon;
                     IdItemWeapon = 0;
                     ItemFromGrid Bayonet_er = new ItemFromGrid();
                     Bayonet_er.Type = "Bayonet";
@@ -638,23 +633,24 @@ namespace Item_WPF
             selectItems.ShowDialog();
             Item_dataGrid.Items.Clear();
 
-            WeaponCombine.Id_WeaponItem = IdItemWeapon;
-            if (IdItemWeapon !=0)
+
+            if (IdItemWeapon != 0)
             {
                 using (item1Entities context = new item1Entities())
                 {
                     context.Database.Connection.Open();
                     ITEM itemLoad = (from z in context.ITEMs
-                                     where z.uiIndex == IdItemWeapon
+                                     where z.uiIndex == WeaponCombine.Id_WeaponItem
                                      select z).First();
                     WEAPON weaponLoad = (from p in context.WEAPONs
                                          where p.uiIndex == itemLoad.ubClassIndex
                                          select p).First();
                     CombineWeap CW = new CombineWeap();
-                  
-                    CW.IdWeapon = IdItemWeapon;
+                    CW.IdWeapon = WeaponCombine.Id_WeaponItem;
+
+                    context.CombineWeaps.Add(CW);
                     context.SaveChanges();
-                    IdItemWeapon = 0;
+                    context.Database.Connection.Close();
                     if (itemLoad.Item_Image != null)
                     {
                         // MemoryStream stream = new MemoryStream(item.Item_Image);
@@ -883,14 +879,13 @@ namespace Item_WPF
 
         private void Saved_button_Click(object sender, RoutedEventArgs e)
         {
-            Select_Items selectItems = new Select_Items(1);
+            Select_Items selectItems = new Select_Items(325);
 
             selectItems.Owner = this;
             selectItems.ShowDialog();
-           
+            //label.Content
 
-
-            }
+        }
 
         private void ScopeSelect_button_Click(object sender, RoutedEventArgs e)
         {
@@ -926,7 +921,7 @@ namespace Item_WPF
                     CW.ScopeSelect = IdItemWeapon;
                     context.SaveChanges();
                     context.Database.Connection.Close();
-                    
+
                     IdItemWeapon = 0;
                     ItemFromGrid Scope_er = new ItemFromGrid();
                     Scope_er.Type = "Scope";

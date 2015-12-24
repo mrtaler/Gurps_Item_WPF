@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ namespace Item_WPF
     /// </summary>
     public partial class Select_Items : Window
     {
+        public bool re33 = false;
         public Select_Items()
         {
             InitializeComponent();
@@ -44,8 +46,9 @@ namespace Item_WPF
             }
         }
 
-        public Select_Items(int attmount)
+        public Select_Items(int att)
         {
+            re33 = true;
             InitializeComponent();
             using (item1Entities context = new item1Entities())
             {
@@ -62,6 +65,7 @@ namespace Item_WPF
                 Items_dataGrid.SelectedValuePath = "id";
                 context.Database.Connection.Close();
             }
+
         }
 
         public Select_Items(string typeName, int attslot, int attmount)
@@ -99,18 +103,46 @@ namespace Item_WPF
         private void Select_button_Click(object sender, RoutedEventArgs e)
         {
             Combine_weap main = this.Owner as Combine_weap;
+
+
             if (main != null)
             {
-                string s = "dfb";
-
-                main.label.Content = s;
-                if (Items_dataGrid.SelectedIndex != -1)
+                if (re33)
                 {
-                    main.IdItemWeapon = Convert.ToInt32(Items_dataGrid.SelectedValue);// нходим ИД выделенной строки
-                    this.Close();
-                }
-                else this.Close();
+                    string s = "selected saved weapon";
+                    main.label.Content = s + " " + Convert.ToInt32(Items_dataGrid.SelectedValue);
 
+                }
+                else
+                {
+
+                    string s = "dfb";
+
+                    main.label.Content = s;
+                    if (Items_dataGrid.SelectedIndex != -1)
+                    {
+                        main.IdItemWeapon = Convert.ToInt32(Items_dataGrid.SelectedValue);// нходим ИД выделенной строки
+                        
+                         if (Items_dataGrid.SelectedItems.Count== 0)  return;
+                        //Label1.Content = ((DataRowView)Items_dataGrid.SelectedItems[0]).Row[3].ToString();
+                         var selectedCell = Items_dataGrid.SelectedCells[2];
+                         var cellContent = selectedCell.Column.GetCellContent(selectedCell.Item);
+                         if (cellContent is TextBlock)
+                         {
+
+                             MessageBox.Show((cellContent as TextBlock).Text);
+                         } 
+  
+
+ //           clientID = (int)((DataRowView)Items_dataGrid.SelectedItems[0]).Row["ID"];
+                        //Label1.Content = Items_dataGrid.SelectedCells.
+
+                        WeaponCombine.Id_WeaponItem = Convert.ToInt32(Items_dataGrid.SelectedValue);
+                        
+                        this.Close();
+                    }
+                    else this.Close();
+                }
             }
         }
 
