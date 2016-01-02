@@ -23,6 +23,13 @@ namespace Item_WPF
         public MainWindow()
         {
             InitializeComponent();
+
+            dataGrid.ColumnWidth = DataGridLength.Auto;
+
+            //DataGridTextColumn textColumn = new DataGridTextColumn();
+            //textColumn.Header = "dice";
+            //textColumn.IsReadOnly = true;
+            //dataGrid.Columns.Add(textColumn);
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -36,6 +43,11 @@ namespace Item_WPF
             Combine_weap combine = new Combine_weap();
             combine.Show();
 
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(Dice.rollDie(6, 3).ToString());
         }
     }
 }

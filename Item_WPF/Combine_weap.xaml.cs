@@ -21,7 +21,7 @@ namespace Item_WPF
     /// </summary>
     public partial class Combine_weap : Window
     {
-        public int IdItemWeapon = 0;
+        public int IdItemWeaposn = 0;
         public int attachScope;
         private int mountScope;
         private int mountLaser;
@@ -35,9 +35,15 @@ namespace Item_WPF
         private int mountInternal;
         private int mountExternal;
 
-        public int ScopeIndex = 0, LaserIndex = 0, LigtIndex = 0;
+        CombineWeap CW = new CombineWeap();
 
-        public class ItemFromGrid
+        //private class Weapon_Item
+        //{
+        //    public ITEM item_s { get; set; }
+        //    public WEAPON weapon_s { get; set; }
+        //}
+
+        private class ItemFromGrid
         {
             public ITEM item_s { get; set; }
             public WEAPON weapon_s { get; set; }
@@ -60,7 +66,56 @@ namespace Item_WPF
             public string cost { get; set; }
             public string LC { get; set; }
             public string Bulk { get; set; }
+            public ItemFromGrid(ITEM itt, WEAPON weap)
+            {
+                Name = itt.szItemName;
+                TL = itt.TL1.name_TL;
 
+                if (weap.Arm_Division != 1) Damage = weap.Damage + " (" + Convert.ToDouble(weap.Arm_Division) + ") " + weap.TypeOfDamage.name;
+                else Damage = weap.Damage + " " + weap.TypeOfDamage.name;
+
+                DefACC = weap.DefACC.ToString();
+                range = Convert.ToDouble(weap.Half_Range) + "/" + Convert.ToDouble(weap.FullRange);
+                weigth = Convert.ToDouble(itt.ubWeight) + "/" + weap.Shots * Convert.ToDouble(weap.AMMO.WPS);
+                //ROF
+                Rof = weap.ROF.ToString();
+                if (weap.WeaponType.name == "Shotgun") Rof = weap.ROF.ToString() + "x" + weap.ROF_for_Sh.ToString();
+                if (weap.Full_auto) Rof = weap.ROF.ToString() + "!";
+                //if (weaponLoad.h//   HCR ROF
+
+                //Shots
+                Shots = weap.Shots.ToString();
+                if (weap.Add_in_Chamber) Shots = weap.Shots.ToString() + "+1";
+                if (weap.single_reload) Shots = weap.Shots.ToString() + "(" + weap.Time_For_reload + "i)";
+                else Shots = Shots.ToString() + "(" + weap.Time_For_reload + ")";
+                //st
+                minST = itt.minST.ToString();
+                if (itt.TwoHanded) minST = itt.minST.ToString() + "†";
+                //Bulk
+                Bulk = itt.ItemSize;
+                if (weap.Bulkfolded) Bulk = itt.ItemSize + "*";
+                //RCL%cost%LC
+                rcl = weap.Recoil.ToString();
+                cost = "$" + Convert.ToDouble(itt.usPrice) + "/$" + weap.Shots * Convert.ToDouble(weap.AMMO.CPS);
+                LC = itt.LC1.Name_LC;
+                //Type
+                Type = itt.ItemClass.name;
+            }
+            public ItemFromGrid(ITEM itt, Attachment att, string type)
+            {
+                Name = itt.szItemName;
+                TL = itt.TL1.name_TL;
+                Type = type;
+
+
+                DefACC = att.AccAddmax.ToString();
+                weigth = itt.ubWeight.ToString();
+                //ROF
+                Bulk = itt.ItemSize;
+                cost = "$" + Convert.ToDouble(itt.usPrice);
+                LC = itt.LC1.Name_LC;
+
+            }
         }
 
         public Combine_weap()
@@ -166,466 +221,21 @@ namespace Item_WPF
             Item_dataGrid.Columns.Add(textColumn13);
         }
 
-
-
-        private void LaserSelect_button_Click(object sender, RoutedEventArgs e)
-        {
-            Select_Items selectItems = new Select_Items("Attachment", 2, mountLaser);
-
-            selectItems.Owner = this;
-            selectItems.ShowDialog();
-
-            if (IdItemWeapon != 0)
-            {
-                List<ItemFromGrid> k = new List<ItemFromGrid>();
-                foreach (ItemFromGrid item in Item_dataGrid.Items)
-                {
-                    if (item.Type == "Laser") k.Add(item);
-                }
-                foreach (ItemFromGrid item in k)
-                {
-                    Item_dataGrid.Items.Remove(item);
-                }
-
-                using (item1Entities context = new item1Entities())
-                {
-                    context.Database.Connection.Open();
-                    ITEM itemLaser = (from p in context.ITEMs
-                                      where p.uiIndex == IdItemWeapon
-                                      select p).First();
-                    Attachment attLaser = (from p in context.Attachments
-                                           where p.uiIndex == itemLaser.ubClassIndex
-                                           select p).First();// передать этот экземпляр в другую форму.
-                    CombineWeap CW = new CombineWeap();
-                    CW.LaserSelect = IdItemWeapon;
-                    context.SaveChanges();
-                    context.Database.Connection.Close();
-                    IdItemWeapon = 0;
-                    ItemFromGrid Laser_er = new ItemFromGrid();
-                    Laser_er.Type = "Laser";
-
-                    Item_dataGrid.Items.Remove(Laser_er);
-                    Laser_er.item_s = itemLaser;
-                    Laser_er.Scope_s = attLaser;
-
-                    Laser_er.Name = itemLaser.szItemName;
-                    Laser_er.TL = itemLaser.TL1.name_TL.ToString();
-                    Laser_er.DefACC = attLaser.AccAddmax.ToString();
-
-                    Laser_er.weigth = itemLaser.ubWeight.ToString();
-                    //ROF
-                    Laser_er.Bulk = itemLaser.ItemSize;
-                    Laser_er.cost = "$" + Convert.ToDouble(itemLaser.usPrice);
-                    Laser_er.LC = itemLaser.LC1.Name_LC;
-                    Item_dataGrid.Items.Add(Laser_er);
-                    LaserIndex = Item_dataGrid.Items.Count - 1;
-                    //if (item.Item_Image != null)
-                    //{
-                    //    MemoryStream stream = new MemoryStream(item.Item_Image);
-                    //    pictureBox_Scope.Image = Image.FromStream(stream);
-                    //}
-
-                }
-            }
-
-        }
-
-        private void LightSelect_button_Click(object sender, RoutedEventArgs e)
-        {
-            Select_Items selectItems = new Select_Items("Attachment", 3, mountLight);
-            selectItems.Owner = this;
-            selectItems.ShowDialog();
-            if (IdItemWeapon != 0)
-            {
-                List<ItemFromGrid> k = new List<ItemFromGrid>();
-                foreach (ItemFromGrid item in Item_dataGrid.Items)
-                {
-                    if (item.Type == "Light") k.Add(item);
-                }
-                foreach (ItemFromGrid item in k)
-                {
-                    Item_dataGrid.Items.Remove(item);
-                }
-                using (item1Entities context = new item1Entities())
-                {
-                    context.Database.Connection.Open();
-                    ITEM itemLight = (from p in context.ITEMs
-                                      where p.uiIndex == IdItemWeapon
-                                      select p).First();
-                    Attachment attlight = (from p in context.Attachments
-                                           where p.uiIndex == itemLight.ubClassIndex
-                                           select p).First();// передать этот экземпляр в другую форму.
-                    CombineWeap CW = new CombineWeap();
-                    CW.LightSelect = IdItemWeapon;
-                    context.SaveChanges();
-                    context.Database.Connection.Close();
-
-
-                    IdItemWeapon = 0;
-                    ItemFromGrid Light_er = new ItemFromGrid();
-                    Light_er.Type = "Light";
-
-                    Light_er.item_s = itemLight;
-                    Light_er.Scope_s = attlight;
-
-                    Light_er.Name = itemLight.szItemName;
-                    Light_er.TL = itemLight.TL1.name_TL.ToString();
-                    Light_er.DefACC = attlight.AccAddmax.ToString();
-                    Light_er.weigth = itemLight.ubWeight.ToString();
-                    Light_er.Bulk = itemLight.ItemSize;
-                    Light_er.cost = "$" + Convert.ToDouble(itemLight.usPrice);
-                    Light_er.LC = itemLight.LC1.Name_LC;
-                    Item_dataGrid.Items.Add(Light_er);
-                    LigtIndex = Item_dataGrid.Items.Count - 1;
-
-                    //if (item.Item_Image != null)
-                    //{
-                    //    MemoryStream stream = new MemoryStream(item.Item_Image);
-                    //    pictureBox_Scope.Image = Image.FromStream(stream);
-                    //}
-
-                }
-            }
-
-        }
-
-        private void BipodSelect_button_Click(object sender, RoutedEventArgs e)
-        {
-            Select_Items selectItems = new Select_Items("Attachment", 4, mountBipod);
-
-            selectItems.Owner = this;
-            selectItems.ShowDialog();
-
-            if (IdItemWeapon != 0)
-            {
-                List<ItemFromGrid> k = new List<ItemFromGrid>();
-                foreach (ItemFromGrid item in Item_dataGrid.Items)
-                {
-                    if (item.Type == "Bipod") k.Add(item);
-                }
-                foreach (ItemFromGrid item in k)
-                {
-                    Item_dataGrid.Items.Remove(item);
-                }
-
-
-                using (item1Entities context = new item1Entities())
-                {
-                    context.Database.Connection.Open();
-                    ITEM itemBipod = (from p in context.ITEMs
-                                      where p.uiIndex == IdItemWeapon
-                                      select p).First();
-                    Attachment attBipod = (from p in context.Attachments
-                                           where p.uiIndex == itemBipod.ubClassIndex
-                                           select p).First();// передать этот экземпляр в другую форму.
-                    CombineWeap CW = new CombineWeap();
-                    CW.BipodSelect = IdItemWeapon;
-                    context.SaveChanges();
-                    context.Database.Connection.Close();
-                    IdItemWeapon = 0;
-                    ItemFromGrid Bipod_er = new ItemFromGrid();
-                    Bipod_er.Type = "Bipod";
-                    Bipod_er.item_s = itemBipod;
-                    Bipod_er.Scope_s = attBipod;
-                    Bipod_er.Name = itemBipod.szItemName;
-                    Bipod_er.TL = itemBipod.TL1.name_TL.ToString();
-                    Bipod_er.DefACC = attBipod.AccAddmax.ToString();
-                    Bipod_er.weigth = itemBipod.ubWeight.ToString();
-                    //ROF
-                    Bipod_er.Bulk = itemBipod.ItemSize;
-                    Bipod_er.cost = "$" + Convert.ToDouble(itemBipod.usPrice);
-                    Bipod_er.LC = itemBipod.LC1.Name_LC;
-                    Item_dataGrid.Items.Add(Bipod_er);
-
-
-                    //if (item.Item_Image != null)
-                    //{
-                    //    MemoryStream stream = new MemoryStream(item.Item_Image);
-                    //    pictureBox_Scope.Image = Image.FromStream(stream);
-                    //}
-                }
-            }
-        }
-
-        private void SilenserSelect_button_Click(object sender, RoutedEventArgs e)
-        {
-            Select_Items selectItems = new Select_Items("Attachment", 5, mountSilenser);
-
-            selectItems.Owner = this;
-            selectItems.ShowDialog();
-
-            if (IdItemWeapon != 0)
-            {
-                List<ItemFromGrid> k = new List<ItemFromGrid>();
-                foreach (ItemFromGrid item in Item_dataGrid.Items)
-                {
-                    if (item.Type == "Silenser") k.Add(item);
-                }
-                foreach (ItemFromGrid item in k)
-                {
-                    Item_dataGrid.Items.Remove(item);
-                }
-
-                using (item1Entities context = new item1Entities())
-                {
-                    context.Database.Connection.Open();
-                    ITEM itemSilenser = (from p in context.ITEMs
-                                         where p.uiIndex == IdItemWeapon
-                                         select p).First();
-                    Attachment attSilenser = (from p in context.Attachments
-                                              where p.uiIndex == itemSilenser.ubClassIndex
-                                              select p).First();// передать этот экземпляр в другую форму.
-                    CombineWeap CW = new CombineWeap();
-                    CW.SilenserSelect = IdItemWeapon;
-                    context.Database.Connection.Close();
-                    IdItemWeapon = 0;
-                    ItemFromGrid Silenser_er = new ItemFromGrid();
-                    Silenser_er.Type = "Silenser";
-                    Silenser_er.item_s = itemSilenser;
-                    Silenser_er.Scope_s = attSilenser;
-                    Silenser_er.Name = itemSilenser.szItemName;
-                    Silenser_er.TL = itemSilenser.TL1.name_TL.ToString();
-                    Silenser_er.DefACC = attSilenser.AccAddmax.ToString();
-                    Silenser_er.weigth = itemSilenser.ubWeight.ToString();
-                    //ROF
-                    Silenser_er.Bulk = itemSilenser.ItemSize;
-                    Silenser_er.cost = "$" + Convert.ToDouble(itemSilenser.usPrice);
-                    Silenser_er.LC = itemSilenser.LC1.Name_LC;
-                    Item_dataGrid.Items.Add(Silenser_er);
-
-                    //if (item.Item_Image != null)
-                    //{
-                    //    MemoryStream stream = new MemoryStream(item.Item_Image);
-                    //    pictureBox_Scope.Image = Image.FromStream(stream);
-                    //}
-                }
-            }
-        }
-
-        private void LauncherSelect_button_Click(object sender, RoutedEventArgs e)
-        {
-            Select_Items selectItems = new Select_Items("Attachment", 6, mountLauncher);
-
-            selectItems.Owner = this;
-            selectItems.ShowDialog();
-
-            if (IdItemWeapon != 0)
-            {
-                List<ItemFromGrid> k = new List<ItemFromGrid>();
-                foreach (ItemFromGrid item in Item_dataGrid.Items)
-                {
-                    if (item.Type == "Launcher") k.Add(item);
-                }
-                foreach (ItemFromGrid item in k)
-                {
-                    Item_dataGrid.Items.Remove(item);
-                }
-
-                using (item1Entities context = new item1Entities())
-                {
-                    context.Database.Connection.Open();
-                    ITEM itemLauncher = (from p in context.ITEMs
-                                         where p.uiIndex == IdItemWeapon
-                                         select p).First();
-                    Attachment attLauncher = (from p in context.Attachments
-                                              where p.uiIndex == itemLauncher.ubClassIndex
-                                              select p).First();// передать этот экземпляр в другую форму.
-                    CombineWeap CW = new CombineWeap();
-                    CW.LauncherSelect = IdItemWeapon;
-                    context.Database.Connection.Close();
-                    IdItemWeapon = 0;
-                    ItemFromGrid Launcher_er = new ItemFromGrid();
-                    Launcher_er.Type = "Launcher";
-                    Launcher_er.item_s = itemLauncher;
-                    Launcher_er.Scope_s = attLauncher;
-                    Launcher_er.Name = itemLauncher.szItemName;
-                    Launcher_er.TL = itemLauncher.TL1.name_TL.ToString();
-                    Launcher_er.DefACC = attLauncher.AccAddmax.ToString();
-                    Launcher_er.weigth = itemLauncher.ubWeight.ToString();
-                    //ROF
-                    Launcher_er.Bulk = itemLauncher.ItemSize;
-                    Launcher_er.cost = "$" + Convert.ToDouble(itemLauncher.usPrice);
-                    Launcher_er.LC = itemLauncher.LC1.Name_LC;
-                    Item_dataGrid.Items.Add(Launcher_er);
-
-                    //if (item.Item_Image != null)
-                    //{
-                    //    MemoryStream stream = new MemoryStream(item.Item_Image);
-                    //    pictureBox_Scope.Image = Image.FromStream(stream);
-                    //}
-                }
-            }
-        }
-
-        private void StockSelect_button_Click(object sender, RoutedEventArgs e)
-        {
-            Select_Items selectItems = new Select_Items("Attachment", 7, mountStock);
-
-            selectItems.Owner = this;
-            selectItems.ShowDialog();
-
-            if (IdItemWeapon != 0)
-            {
-                List<ItemFromGrid> k = new List<ItemFromGrid>();
-                foreach (ItemFromGrid item in Item_dataGrid.Items)
-                {
-                    if (item.Type == "Stock") k.Add(item);
-                }
-                foreach (ItemFromGrid item in k)
-                {
-                    Item_dataGrid.Items.Remove(item);
-                }
-
-                using (item1Entities context = new item1Entities())
-                {
-                    context.Database.Connection.Open();
-                    ITEM itemStock = (from p in context.ITEMs
-                                      where p.uiIndex == IdItemWeapon
-                                      select p).First();
-                    Attachment attStock = (from p in context.Attachments
-                                           where p.uiIndex == itemStock.ubClassIndex
-                                           select p).First();// передать этот экземпляр в другую форму.
-                    CombineWeap CW = new CombineWeap();
-                    CW.StockSelect = IdItemWeapon;
-                    context.Database.Connection.Close();
-                    IdItemWeapon = 0;
-                    ItemFromGrid Stock_er = new ItemFromGrid();
-                    Stock_er.Type = "Stock";
-                    Stock_er.item_s = itemStock;
-                    Stock_er.Scope_s = attStock;
-                    Stock_er.Name = itemStock.szItemName;
-                    Stock_er.TL = itemStock.TL1.name_TL.ToString();
-                    Stock_er.DefACC = attStock.AccAddmax.ToString();
-                    Stock_er.weigth = itemStock.ubWeight.ToString();
-                    //ROF
-                    Stock_er.Bulk = itemStock.ItemSize;
-                    Stock_er.cost = "$" + Convert.ToDouble(itemStock.usPrice);
-                    Stock_er.LC = itemStock.LC1.Name_LC;
-                    Item_dataGrid.Items.Add(Stock_er);
-
-                    //if (item.Item_Image != null)
-                    //{
-                    //    MemoryStream stream = new MemoryStream(item.Item_Image);
-                    //    pictureBox_Scope.Image = Image.FromStream(stream);
-                    //}
-                }
-            }
-        }
-
-        private void BayonetSelect_button_Click(object sender, RoutedEventArgs e)
-        {
-            Select_Items selectItems = new Select_Items("Attachment", 8, mountBayonet);
-
-            selectItems.Owner = this;
-            selectItems.ShowDialog();
-
-            if (IdItemWeapon != 0)
-            {
-                List<ItemFromGrid> k = new List<ItemFromGrid>();
-                foreach (ItemFromGrid item in Item_dataGrid.Items)
-                {
-                    if (item.Type == "Bayonet") k.Add(item);
-                }
-                foreach (ItemFromGrid item in k)
-                {
-                    Item_dataGrid.Items.Remove(item);
-                }
-
-                using (item1Entities context = new item1Entities())
-                {
-                    context.Database.Connection.Open();
-                    ITEM itemBayonet = (from p in context.ITEMs
-                                        where p.uiIndex == IdItemWeapon
-                                        select p).First();
-                    Attachment attBayonet = (from p in context.Attachments
-                                             where p.uiIndex == itemBayonet.ubClassIndex
-                                             select p).First();// передать этот экземпляр в другую форму.
-
-                    WeaponCombine.Id_WeaponItem = IdItemWeapon;
-                    IdItemWeapon = 0;
-                    ItemFromGrid Bayonet_er = new ItemFromGrid();
-                    Bayonet_er.Type = "Bayonet";
-                    Bayonet_er.item_s = itemBayonet;
-                    Bayonet_er.Scope_s = attBayonet;
-                    Bayonet_er.Name = itemBayonet.szItemName;
-                    Bayonet_er.TL = itemBayonet.TL1.name_TL.ToString();
-                    Bayonet_er.DefACC = attBayonet.AccAddmax.ToString();
-                    Bayonet_er.weigth = itemBayonet.ubWeight.ToString();
-                    //ROF
-                    Bayonet_er.Bulk = itemBayonet.ItemSize;
-                    Bayonet_er.cost = "$" + Convert.ToDouble(itemBayonet.usPrice);
-                    Bayonet_er.LC = itemBayonet.LC1.Name_LC;
-                    Item_dataGrid.Items.Add(Bayonet_er);
-
-                    //if (item.Item_Image != null)
-                    //{
-                    //    MemoryStream stream = new MemoryStream(item.Item_Image);
-                    //    pictureBox_Scope.Image = Image.FromStream(stream);
-                    //}
-                }
-            }
-        }
-
-        private void MagazineSelect_button_Click(object sender, RoutedEventArgs e)
-        {
-            Select_Items selectItems = new Select_Items("Attachment", 9, mountMagazine);
-
-            selectItems.Owner = this;
-            selectItems.ShowDialog();
-
-            if (IdItemWeapon != 0)
-            {
-                List<ItemFromGrid> k = new List<ItemFromGrid>();
-                foreach (ItemFromGrid item in Item_dataGrid.Items)
-                {
-                    if (item.Type == "Magazine") k.Add(item);
-                }
-                foreach (ItemFromGrid item in k)
-                {
-                    Item_dataGrid.Items.Remove(item);
-                }
-
-                using (item1Entities context = new item1Entities())
-                {
-                    context.Database.Connection.Open();
-                    ITEM itemMagazine = (from p in context.ITEMs
-                                         where p.uiIndex == IdItemWeapon
-                                         select p).First();
-                    Attachment attMagazine = (from p in context.Attachments
-                                              where p.uiIndex == itemMagazine.ubClassIndex
-                                              select p).First();// передать этот экземпляр в другую форму.
-                    CombineWeap CW = new CombineWeap();
-                    CW.MagazineSelect = IdItemWeapon;
-                    context.Database.Connection.Close();
-                    IdItemWeapon = 0;
-                    ItemFromGrid Magazine_er = new ItemFromGrid();
-                    Magazine_er.Type = "Magazine";
-                    Magazine_er.item_s = itemMagazine;
-                    Magazine_er.Scope_s = attMagazine;
-                    Magazine_er.Name = itemMagazine.szItemName;
-                    Magazine_er.TL = itemMagazine.TL1.name_TL.ToString();
-                    Magazine_er.DefACC = attMagazine.AccAddmax.ToString();
-                    Magazine_er.weigth = itemMagazine.ubWeight.ToString();
-                    //ROF
-                    Magazine_er.Bulk = itemMagazine.ItemSize;
-                    Magazine_er.cost = "$" + Convert.ToDouble(itemMagazine.usPrice);
-                    Magazine_er.LC = itemMagazine.LC1.Name_LC;
-                    Item_dataGrid.Items.Add(Magazine_er);
-
-                    //if (item.Item_Image != null)
-                    //{
-                    //    MemoryStream stream = new MemoryStream(item.Item_Image);
-                    //    pictureBox_Scope.Image = Image.FromStream(stream);
-                    //}
-                }
-            }
-        }
-
-
-
         private void SelectWeapon_button_Click(object sender, RoutedEventArgs e)
         {
-            // new Select_Items(1, "gun").ShowDialog();
+            ScopeSelect_button.Visibility = Visibility.Hidden;      //1
+            LaserSelect_button.Visibility = Visibility.Hidden;
+            LightSelect_button.Visibility = Visibility.Hidden;
+            BipodSelect_button.Visibility = Visibility.Hidden;
+            SilenserSelect_button.Visibility = Visibility.Hidden;
+            LauncherSelect_button.Visibility = Visibility.Hidden;
+            StockSelect_button.Visibility = Visibility.Hidden;
+            BayonetSelect_button.Visibility = Visibility.Hidden;
+            MagazineSelect_button.Visibility = Visibility.Hidden;
+            InternalSelect_button.Visibility = Visibility.Hidden;
+            ExternalSelect_button.Visibility = Visibility.Hidden;
+
+            WeaponCombine.WeapCombNull();
 
             Select_Items selectItems = new Select_Items(1, "gun");
 
@@ -634,23 +244,24 @@ namespace Item_WPF
             Item_dataGrid.Items.Clear();
 
 
-            if (IdItemWeapon != 0)
+            if (IdItemWeaposn != 0)
             {
                 using (item1Entities context = new item1Entities())
                 {
                     context.Database.Connection.Open();
+                    //download weapon from items table and weapon;
                     ITEM itemLoad = (from z in context.ITEMs
                                      where z.uiIndex == WeaponCombine.Id_WeaponItem
                                      select z).First();
                     WEAPON weaponLoad = (from p in context.WEAPONs
                                          where p.uiIndex == itemLoad.ubClassIndex
                                          select p).First();
-                    CombineWeap CW = new CombineWeap();
+                    context.Database.Connection.Close();
+                    //inicialised combine weapon save table
                     CW.IdWeapon = WeaponCombine.Id_WeaponItem;
 
-                    context.CombineWeaps.Add(CW);
-                    context.SaveChanges();
-                    context.Database.Connection.Close();
+
+                    //Загрузка картинки основного оружия
                     if (itemLoad.Item_Image != null)
                     {
                         // MemoryStream stream = new MemoryStream(item.Item_Image);
@@ -663,64 +274,15 @@ namespace Item_WPF
                             image.StreamSource = ms;
                             image.EndInit();
                             Weapon_image.Source = image;
-                            //by = itemLoad.Item_Image;
                         }
                     }
                     else Weapon_image.Source = null;
-                    ItemFromGrid er = new ItemFromGrid();
 
-                    er.item_s = itemLoad;
-                    er.weapon_s = weaponLoad;
+                    ItemFromGrid Weapon_to_Grid = new ItemFromGrid(itemLoad, weaponLoad);
 
-                    er.Name = itemLoad.szItemName;
-                    er.TL = itemLoad.TL1.name_TL.ToString();
-                    if (weaponLoad.Arm_Division != 1) er.Damage = weaponLoad.Damage + " (" + Convert.ToDouble(weaponLoad.Arm_Division) + ") " + weaponLoad.TypeOfDamage.name;
-                    else er.Damage = weaponLoad.Damage + " " + weaponLoad.TypeOfDamage.name;
-                    er.DefACC = weaponLoad.DefACC.ToString();
-                    er.range = Convert.ToDouble(weaponLoad.Half_Range) + "/" + Convert.ToDouble(weaponLoad.FullRange);
-                    er.weigth = Convert.ToDouble(itemLoad.ubWeight) + "/" + weaponLoad.Shots * Convert.ToDouble(weaponLoad.AMMO.WPS);
+                    Item_dataGrid.Items.Add(Weapon_to_Grid);//
 
-                    //ROF
-                    er.Rof = weaponLoad.ROF.ToString();
-                    if (weaponLoad.WeaponType.name == "Shotgun") er.Rof = weaponLoad.ROF.ToString() + "x" + weaponLoad.ROF_for_Sh.ToString();
-                    if (weaponLoad.Full_auto) er.Rof = weaponLoad.ROF.ToString() + "!";
-                    //if (weaponLoad.h//   HCR ROF
-
-                    //Shots
-                    er.Shots = weaponLoad.Shots.ToString();
-                    if (weaponLoad.Add_in_Chamber) er.Shots = weaponLoad.Shots.ToString() + "+1";
-                    if (weaponLoad.single_reload) er.Shots = weaponLoad.Shots.ToString() + "(" + weaponLoad.Time_For_reload + "i)";
-                    else er.Shots = weaponLoad.Shots.ToString() + "(" + weaponLoad.Time_For_reload + ")";
-
-                    er.minST = itemLoad.minST.ToString();
-                    if (itemLoad.TwoHanded) er.minST = itemLoad.minST.ToString() + "†";
-
-                    er.Bulk = itemLoad.ItemSize;
-                    if (weaponLoad.Bulkfolded) er.Bulk = itemLoad.ItemSize + "*";
-
-                    er.rcl = weaponLoad.Recoil.ToString();
-                    er.cost = "$" + Convert.ToDouble(itemLoad.usPrice) + "/$" + weaponLoad.Shots * Convert.ToDouble(weaponLoad.AMMO.CPS);
-                    er.LC = itemLoad.LC1.Name_LC;
-
-                    er.Type = "gun";
-
-                    Item_dataGrid.Items.Add(er);/////////////////////////////////////////////////////////////
                     Item_dataGrid.ColumnWidth = DataGridLength.Auto;
-                    ScopeIndex = 0;
-                    LaserIndex = 0;
-                    LigtIndex = 0;
-
-                    ScopeSelect_button.Visibility = Visibility.Hidden;      //1
-                    LaserSelect_button.Visibility = Visibility.Hidden;
-                    LightSelect_button.Visibility = Visibility.Hidden;
-                    BipodSelect_button.Visibility = Visibility.Hidden;
-                    SilenserSelect_button.Visibility = Visibility.Hidden;
-                    LauncherSelect_button.Visibility = Visibility.Hidden;
-                    StockSelect_button.Visibility = Visibility.Hidden;
-                    BayonetSelect_button.Visibility = Visibility.Hidden;
-                    MagazineSelect_button.Visibility = Visibility.Hidden;
-                    InternalSelect_button.Visibility = Visibility.Hidden;
-                    ExternalSelect_button.Visibility = Visibility.Hidden;
 
                     List<AvailableAttachSlot> AvSlot = (from p in context.AvailableAttachSlots
                                                         where p.rWeaponId == weaponLoad.uiIndex
@@ -730,152 +292,350 @@ namespace Item_WPF
                         if (items.rATTACHMENTSLOT == 1)
                         {
                             ScopeSelect_button.Visibility = Visibility.Visible;
-
                             mountScope = items.rAttachmentmount;
-
-                            //comboBox_Scope.DataSource = (from p in context.Attachmentmounts
-                            //                             where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                            //                             select p).ToList();
-                            //comboBox_Scope.ValueMember = "id";
-                            //comboBox_Scope.DisplayMember = "name";
-                            //comboBox_Scope.SelectedValue = items.rAttachmentmount;
                         }
-
-
                         if (items.rATTACHMENTSLOT == 2)
                         {
                             LaserSelect_button.Visibility = Visibility.Visible;
                             mountLaser = items.rAttachmentmount;
-                            //    pictureBox_Laser.Visible = true;
-                            //    //comboBox_Laser.DataSource = (from p in context.Attachmentmounts
-                            //    //                             where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                            //    //                             select p).ToList();
-                            //    //comboBox_Laser.ValueMember = "id";
-                            //    //comboBox_Laser.DisplayMember = "name";
-                            //    //comboBox_Laser.SelectedValue = items.rAttachmentmount;
                         }
-
                         if (items.rATTACHMENTSLOT == 3)
                         {
-                            //    pictureBox_Light.Visible = true;
                             LightSelect_button.Visibility = Visibility.Visible;
                             mountLight = items.rAttachmentmount;
-                            //    //comboBox_Light.DataSource = (from p in context.Attachmentmounts
-                            //    //                             where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                            //    //                             select p).ToList();
-                            //    //comboBox_Light.ValueMember = "id";
-                            //    //comboBox_Light.DisplayMember = "name";
-                            //    //comboBox_Light.SelectedValue = items.rAttachmentmount;
                         }
-
                         if (items.rATTACHMENTSLOT == 4)
                         {
-                            //    pictureBox_Bipod.Visible = true;
                             mountBipod = items.rAttachmentmount;
                             BipodSelect_button.Visibility = Visibility.Visible;
-                            //    //comboBox_Bipod.DataSource = (from p in context.Attachmentmounts
-                            //    //                             where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                            //    //                             select p).ToList();
-                            //    //comboBox_Bipod.ValueMember = "id";
-                            //    //comboBox_Bipod.DisplayMember = "name";
-                            //    //comboBox_Bipod.SelectedValue = items.rAttachmentmount;
                         }
-
                         if (items.rATTACHMENTSLOT == 5)
                         {
                             mountSilenser = items.rAttachmentmount;
                             SilenserSelect_button.Visibility = Visibility.Visible;
-                            //    pictureBox_Silenser.Visible = true;
-                            //    mountSilenser = items.rAttachmentmount;
-                            //    //comboBox_Silenser.DataSource = (from p in context.Attachmentmounts
-                            //    //                                where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                            //    //                                select p).ToList();
-                            //    //comboBox_Silenser.ValueMember = "id";
-                            //    //comboBox_Silenser.DisplayMember = "name";
-                            //    //comboBox_Silenser.SelectedValue = items.rAttachmentmount;
                         }
-
                         if (items.rATTACHMENTSLOT == 6)
                         {
                             mountLauncher = items.rAttachmentmount;
                             LauncherSelect_button.Visibility = Visibility.Visible;
-                            //    pictureBox_Launcher.Visible = true;
-                            //    //comboBox_Launcher.DataSource = (from p in context.Attachmentmounts
-                            //    //                                where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                            //    //                                select p).ToList();
-                            //    //comboBox_Launcher.ValueMember = "id";
-                            //    //comboBox_Launcher.DisplayMember = "name";
-                            //    //comboBox_Launcher.SelectedValue = items.rAttachmentmount;
                         }
-
                         if (items.rATTACHMENTSLOT == 7)
                         {
                             mountStock = items.rAttachmentmount;
                             StockSelect_button.Visibility = Visibility.Visible;
-                            //    pictureBox_Stock.Visible = true;
-                            //    //comboBox_Stock.DataSource = (from p in context.Attachmentmounts
-                            //    //                             where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                            //    //                             select p).ToList();
-                            //    //comboBox_Stock.ValueMember = "id";
-                            //    //comboBox_Stock.DisplayMember = "name";
-                            //    //comboBox_Stock.SelectedValue = items.rAttachmentmount;
                         }
-
                         if (items.rATTACHMENTSLOT == 8)
                         {
                             mountBayonet = items.rAttachmentmount;
                             BayonetSelect_button.Visibility = Visibility.Visible;
-                            //    pictureBox_Bayonet.Visible = true;
-                            //    //comboBox_Bayonet.DataSource = (from p in context.Attachmentmounts
-                            //    //                               where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                            //    //                               select p).ToList();
-                            //    //comboBox_Bayonet.ValueMember = "id";
-                            //    //comboBox_Bayonet.DisplayMember = "name";
-                            //    //comboBox_Bayonet.SelectedValue = items.rAttachmentmount;
                         }
-
                         if (items.rATTACHMENTSLOT == 9)
                         {
                             mountMagazine = items.rAttachmentmount;
                             MagazineSelect_button.Visibility = Visibility.Visible;
-                            //    pictureBox_Magazine.Visible = true;
-                            //    //comboBox_Magazine.DataSource = (from p in context.Attachmentmounts
-                            //    //                                where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                            //    //                                select p).ToList();
-                            //    //comboBox_Magazine.ValueMember = "id";
-                            //    //comboBox_Magazine.DisplayMember = "name";
-                            //    //comboBox_Magazine.SelectedValue = items.rAttachmentmount;
                         }
-
                         if (items.rATTACHMENTSLOT == 10)
                         {
                             mountInternal = items.rAttachmentmount;
                             InternalSelect_button.Visibility = Visibility.Visible;
-                            //    pictureBox_Internal.Visible = true;
-                            //    //comboBox_Internal.DataSource = (from p in context.Attachmentmounts
-                            //    //                                where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                            //    //                                select p).ToList();
-                            //    //comboBox_Internal.ValueMember = "id";
-                            //    //comboBox_Internal.DisplayMember = "name";
-                            //    //comboBox_Internal.SelectedValue = items.rAttachmentmount;
                         }
-
                         if (items.rATTACHMENTSLOT == 11)
                         {
                             mountExternal = items.rAttachmentmount;
                             ExternalSelect_button.Visibility = Visibility.Visible;
-                            //    pictureBox_External.Visible = true;
-                            //    //comboBox_External.DataSource = (from p in context.Attachmentmounts
-                            //    //                                where p.idAttacClass == items.ATTACHMENTSLOT.nasAttachmentClass
-                            //    //                                select p).ToList();
-                            //    //comboBox_External.ValueMember = "id";
-                            //    //comboBox_External.DisplayMember = "name";
-                            //    //comboBox_External.SelectedValue = items.rAttachmentmount;
                         }
                     }
                 }
             }
         }
+        //1
+        private void ScopeSelect_button_Click(object sender, RoutedEventArgs e)
+        {
+            Select_Items selectItems = new Select_Items("Attachment", 1, mountScope);
+
+            selectItems.Owner = this;
+            selectItems.ShowDialog();
+
+            if (IdItemWeaposn != 0)
+            {
+                List<ItemFromGrid> k = new List<ItemFromGrid>();
+                foreach (ItemFromGrid item in Item_dataGrid.Items) { if (item.Type == "Scope") k.Add(item); }
+                foreach (ItemFromGrid item in k) { Item_dataGrid.Items.Remove(item); }
+                using (item1Entities context = new item1Entities())
+                {
+                    context.Database.Connection.Open();
+                    ITEM itemScope = (from p in context.ITEMs
+                                      where p.uiIndex == WeaponCombine.Id_ScopeItem
+                                      select p).First();
+                    Attachment attScope = (from p in context.Attachments
+                                           where p.uiIndex == itemScope.ubClassIndex
+                                           select p).First();// передать этот экземпляр в другую форму.
+                    CW.ScopeSelect = WeaponCombine.Id_ScopeItem;
+                    IdItemWeaposn = 0;
+                    ItemFromGrid Scope_er = new ItemFromGrid(itemScope, attScope, "Scope");
+                    Item_dataGrid.Items.Add(Scope_er);
+
+                }
+            }
+        }
+        private void LaserSelect_button_Click(object sender, RoutedEventArgs e)
+        {
+            Select_Items selectItems = new Select_Items("Attachment", 2, mountLaser);
+
+            selectItems.Owner = this;
+            selectItems.ShowDialog();
+
+            if (IdItemWeaposn != 0)
+            {
+                List<ItemFromGrid> k = new List<ItemFromGrid>();
+                foreach (ItemFromGrid item in Item_dataGrid.Items) { if (item.Type == "Laser") k.Add(item); }
+                foreach (ItemFromGrid item in k) { Item_dataGrid.Items.Remove(item); }
+
+                using (item1Entities context = new item1Entities())
+                {
+                    context.Database.Connection.Open();
+                    ITEM itemLaser = (from p in context.ITEMs
+                                      where p.uiIndex == WeaponCombine.Id_LaserItem
+                                      select p).First();
+                    Attachment attLaser = (from p in context.Attachments
+                                           where p.uiIndex == itemLaser.ubClassIndex
+                                           select p).First();// передать этот экземпляр в другую форму.
+
+                    context.Database.Connection.Close();
+                    CW.LaserSelect = WeaponCombine.Id_LaserItem;
+                    IdItemWeaposn = 0;
+
+                    ItemFromGrid Laser_er = new ItemFromGrid(itemLaser, attLaser, "Laser");
+                    Item_dataGrid.Items.Add(Laser_er);
+
+                }
+            }
+        }
+
+        private void LightSelect_button_Click(object sender, RoutedEventArgs e)
+        {
+            Select_Items selectItems = new Select_Items("Attachment", 3, mountLight);
+            selectItems.Owner = this;
+            selectItems.ShowDialog();
+            if (IdItemWeaposn != 0)
+            {
+                List<ItemFromGrid> k = new List<ItemFromGrid>();
+                foreach (ItemFromGrid item in Item_dataGrid.Items) { if (item.Type == "Light") k.Add(item); }
+                foreach (ItemFromGrid item in k) { Item_dataGrid.Items.Remove(item); }
+                using (item1Entities context = new item1Entities())
+                {
+                    context.Database.Connection.Open();
+                    ITEM itemLight = (from p in context.ITEMs
+                                      where p.uiIndex == WeaponCombine.Id_LightItem
+                                      select p).First();
+                    Attachment attlight = (from p in context.Attachments
+                                           where p.uiIndex == itemLight.ubClassIndex
+                                           select p).First();// передать этот экземпляр в другую форму.
+                    CW.LightSelect = WeaponCombine.Id_LightItem;
+                    context.Database.Connection.Close();
+                    IdItemWeaposn = 0;
+                    ItemFromGrid Light_er = new ItemFromGrid(itemLight, attlight, "Light");
+
+                    Item_dataGrid.Items.Add(Light_er);
+
+
+                }
+            }
+
+        }
+
+        private void BipodSelect_button_Click(object sender, RoutedEventArgs e)
+        {
+            Select_Items selectItems = new Select_Items("Attachment", 4, mountBipod);
+            selectItems.Owner = this;
+            selectItems.ShowDialog();
+            if (IdItemWeaposn != 0)
+            {
+                List<ItemFromGrid> k = new List<ItemFromGrid>();
+                foreach (ItemFromGrid item in Item_dataGrid.Items) { if (item.Type == "Bipod") k.Add(item); }
+                foreach (ItemFromGrid item in k) { Item_dataGrid.Items.Remove(item); }
+                using (item1Entities context = new item1Entities())
+                {
+                    context.Database.Connection.Open();
+                    ITEM itemBipod = (from p in context.ITEMs
+                                      where p.uiIndex == WeaponCombine.Id_BipodItem
+                                      select p).First();
+                    Attachment attBipod = (from p in context.Attachments
+                                           where p.uiIndex == itemBipod.ubClassIndex
+                                           select p).First();// передать этот экземпляр в другую форму.
+                    CW.BipodSelect = WeaponCombine.Id_BipodItem;
+                    context.Database.Connection.Close();
+                    IdItemWeaposn = 0;
+                    ItemFromGrid Bipod_er = new ItemFromGrid(itemBipod, attBipod, "Bipod");
+
+                    Item_dataGrid.Items.Add(Bipod_er);
+                }
+            }
+        }
+
+        private void SilenserSelect_button_Click(object sender, RoutedEventArgs e)
+        {
+            Select_Items selectItems = new Select_Items("Attachment", 5, mountSilenser);
+
+            selectItems.Owner = this;
+            selectItems.ShowDialog();
+
+            if (IdItemWeaposn != 0)
+            {
+                List<ItemFromGrid> k = new List<ItemFromGrid>();
+                foreach (ItemFromGrid item in Item_dataGrid.Items) { if (item.Type == "Silenser") k.Add(item); }
+                foreach (ItemFromGrid item in k) { Item_dataGrid.Items.Remove(item); }
+
+                using (item1Entities context = new item1Entities())
+                {
+                    context.Database.Connection.Open();
+                    ITEM itemSilenser = (from p in context.ITEMs
+                                         where p.uiIndex == WeaponCombine.Id_SilenserItem
+                                         select p).First();
+                    Attachment attSilenser = (from p in context.Attachments
+                                              where p.uiIndex == itemSilenser.ubClassIndex
+                                              select p).First();// передать этот экземпляр в другую форму.
+
+                    CW.SilenserSelect = WeaponCombine.Id_SilenserItem;
+                    context.Database.Connection.Close();
+                    IdItemWeaposn = 0;
+                    ItemFromGrid Silenser_er = new ItemFromGrid(itemSilenser, attSilenser, "Silenser");
+
+                    Item_dataGrid.Items.Add(Silenser_er);
+                }
+            }
+        }
+
+        private void LauncherSelect_button_Click(object sender, RoutedEventArgs e)
+        {
+            Select_Items selectItems = new Select_Items("Attachment", 6, mountLauncher);
+
+            selectItems.Owner = this;
+            selectItems.ShowDialog();
+
+            if (IdItemWeaposn != 0)
+            {
+                List<ItemFromGrid> k = new List<ItemFromGrid>();
+                foreach (ItemFromGrid item in Item_dataGrid.Items) { if (item.Type == "Launcher") k.Add(item); }
+                foreach (ItemFromGrid item in k) { Item_dataGrid.Items.Remove(item); }
+
+                using (item1Entities context = new item1Entities())
+                {
+                    context.Database.Connection.Open();
+                    ITEM itemLauncher = (from p in context.ITEMs
+                                         where p.uiIndex == WeaponCombine.Id_LauncherItem
+                                         select p).First();
+                    Attachment attLauncher = (from p in context.Attachments
+                                              where p.uiIndex == itemLauncher.ubClassIndex
+                                              select p).First();// передать этот экземпляр в другую форму.
+                    CW.LauncherSelect = WeaponCombine.Id_LauncherItem;
+                    context.Database.Connection.Close();
+                    IdItemWeaposn = 0;
+                    ItemFromGrid Launcher_er = new ItemFromGrid(itemLauncher, attLauncher, "Launcher");
+
+                    Item_dataGrid.Items.Add(Launcher_er);
+                }
+            }
+        }
+
+        private void StockSelect_button_Click(object sender, RoutedEventArgs e)
+        {
+            Select_Items selectItems = new Select_Items("Attachment", 7, mountStock);
+
+            selectItems.Owner = this;
+            selectItems.ShowDialog();
+
+            if (IdItemWeaposn != 0)
+            {
+                List<ItemFromGrid> k = new List<ItemFromGrid>();
+                foreach (ItemFromGrid item in Item_dataGrid.Items) { if (item.Type == "Stock") k.Add(item); }
+                foreach (ItemFromGrid item in k) { Item_dataGrid.Items.Remove(item); }
+
+                using (item1Entities context = new item1Entities())
+                {
+                    context.Database.Connection.Open();
+                    ITEM itemStock = (from p in context.ITEMs
+                                      where p.uiIndex == WeaponCombine.Id_StockItem
+                                      select p).First();
+                    Attachment attStock = (from p in context.Attachments
+                                           where p.uiIndex == itemStock.ubClassIndex
+                                           select p).First();// передать этот экземпляр в другую форму.
+
+                    CW.StockSelect = WeaponCombine.Id_StockItem;
+                    context.Database.Connection.Close();
+                    IdItemWeaposn = 0;
+                    ItemFromGrid Stock_er = new ItemFromGrid(itemStock, attStock, "Stock");
+
+                    Item_dataGrid.Items.Add(Stock_er);
+                }
+            }
+        }
+
+        private void BayonetSelect_button_Click(object sender, RoutedEventArgs e)
+        {
+            Select_Items selectItems = new Select_Items("Attachment", 8, mountBayonet);
+
+            selectItems.Owner = this;
+            selectItems.ShowDialog();
+
+            if (IdItemWeaposn != 0)
+            {
+                List<ItemFromGrid> k = new List<ItemFromGrid>();
+                foreach (ItemFromGrid item in Item_dataGrid.Items) { if (item.Type == "Bayonet") k.Add(item); }
+                foreach (ItemFromGrid item in k) { Item_dataGrid.Items.Remove(item); }
+
+                using (item1Entities context = new item1Entities())
+                {
+                    context.Database.Connection.Open();
+                    ITEM itemBayonet = (from p in context.ITEMs
+                                        where p.uiIndex == WeaponCombine.Id_BayonetItem
+                                        select p).First();
+                    Attachment attBayonet = (from p in context.Attachments
+                                             where p.uiIndex == itemBayonet.ubClassIndex
+                                             select p).First();// передать этот экземпляр в другую форму.
+
+                    CW.BayonetSelect = WeaponCombine.Id_BayonetItem;
+                    IdItemWeaposn = 0;
+                    ItemFromGrid Bayonet_er = new ItemFromGrid(itemBayonet, attBayonet, "Bayonet");
+                    Item_dataGrid.Items.Add(Bayonet_er);
+                }
+            }
+        }
+
+        private void MagazineSelect_button_Click(object sender, RoutedEventArgs e)
+        {
+            Select_Items selectItems = new Select_Items("Attachment", 9, mountMagazine);
+
+            selectItems.Owner = this;
+            selectItems.ShowDialog();
+
+            if (IdItemWeaposn != 0)
+            {
+                List<ItemFromGrid> k = new List<ItemFromGrid>();
+                foreach (ItemFromGrid item in Item_dataGrid.Items) { if (item.Type == "Magazine") k.Add(item); }
+                foreach (ItemFromGrid item in k) { Item_dataGrid.Items.Remove(item); }
+
+                using (item1Entities context = new item1Entities())
+                {
+                    context.Database.Connection.Open();
+                    ITEM itemMagazine = (from p in context.ITEMs
+                                         where p.uiIndex == WeaponCombine.Id_MagazineItem
+                                         select p).First();
+                    Attachment attMagazine = (from p in context.Attachments
+                                              where p.uiIndex == itemMagazine.ubClassIndex
+                                              select p).First();// передать этот экземпляр в другую форму.
+
+                    CW.MagazineSelect = WeaponCombine.Id_MagazineItem;
+                    context.Database.Connection.Close();
+                    IdItemWeaposn = 0;
+                    ItemFromGrid Magazine_er = new ItemFromGrid(itemMagazine, attMagazine, "Magazine");
+
+                    Item_dataGrid.Items.Add(Magazine_er);
+                }
+            }
+        }
+
+
 
         private void Saved_button_Click(object sender, RoutedEventArgs e)
         {
@@ -887,75 +647,23 @@ namespace Item_WPF
 
         }
 
-        private void ScopeSelect_button_Click(object sender, RoutedEventArgs e)
+        private void Save_button_Click(object sender, RoutedEventArgs e)
         {
-            Select_Items selectItems = new Select_Items("Attachment", 1, mountScope);
-
-            selectItems.Owner = this;
-            selectItems.ShowDialog();
-
-            if (IdItemWeapon != 0)
+            using (item1Entities context = new item1Entities())
             {
-                List<ItemFromGrid> k = new List<ItemFromGrid>();
-                foreach (ItemFromGrid item in Item_dataGrid.Items)
+                if (WeaponCombine.Id_WeaponItem != 0)
                 {
-                    if (item.Type == "Scope") k.Add(item);
+                    context.CombineWeaps.Add(CW);
+                                        context.SaveChanges();
+                    label.Content = CW.id.ToString();
+                    WeaponCombine.Id_WeaponItem = 0;
+                    CW = new CombineWeap();
                 }
-                foreach (ItemFromGrid item in k)
-                {
-                    Item_dataGrid.Items.Remove(item);
-                }
-
-
-                using (item1Entities context = new item1Entities())
-                {
-                    context.Database.Connection.Open();
-                    ITEM itemScope = (from p in context.ITEMs
-                                      where p.uiIndex == IdItemWeapon
-                                      select p).First();
-                    Attachment attScope = (from p in context.Attachments
-                                           where p.uiIndex == itemScope.ubClassIndex
-                                           select p).First();// передать этот экземпляр в другую форму.
-
-                    CombineWeap CW = new CombineWeap();
-                    CW.ScopeSelect = IdItemWeapon;
-                    context.SaveChanges();
-                    context.Database.Connection.Close();
-
-                    IdItemWeapon = 0;
-                    ItemFromGrid Scope_er = new ItemFromGrid();
-                    Scope_er.Type = "Scope";
-                    Scope_er.item_s = itemScope;
-                    Scope_er.Scope_s = attScope;
-                    Scope_er.Name = itemScope.szItemName;
-                    Scope_er.TL = itemScope.TL1.name_TL.ToString();
-                    Scope_er.DefACC = attScope.AccAddmax.ToString();
-                    Scope_er.weigth = itemScope.ubWeight.ToString();
-                    //ROF
-                    Scope_er.Bulk = itemScope.ItemSize;
-                    Scope_er.cost = "$" + Convert.ToDouble(itemScope.usPrice);
-                    Scope_er.LC = itemScope.LC1.Name_LC;
-                    Item_dataGrid.Items.Add(Scope_er);
-                    ScopeIndex = Item_dataGrid.Items.Count - 1;
-
-                    if (itemScope.Item_Image != null)
-                    {
-                        // MemoryStream stream = new MemoryStream(item.Item_Image);
-
-                        using (var ms = new MemoryStream(itemScope.Item_Image, 0, itemScope.Item_Image.Length))
-                        {
-                            var image = new BitmapImage();
-                            image.BeginInit();
-                            image.CacheOption = BitmapCacheOption.OnLoad;
-                            image.StreamSource = ms;
-                            image.EndInit();
-                            ScopeImage.Source = image;
-                            //by = itemLoad.Item_Image;
-                        }
-                    }
-                }
+                else MessageBox.Show("CW is NULL");
             }
         }
+
+
 
         private void Del_button_Click(object sender, RoutedEventArgs e)
         {
@@ -966,11 +674,6 @@ namespace Item_WPF
             var cellContent = selectedCell.Column.GetCellContent(selectedCell.Item);
 
             MessageBox.Show((cellContent as TextBlock).Text);
-            if ((cellContent as TextBlock).Text == "Scope") ScopeIndex = 0;
-            else if ((cellContent as TextBlock).Text == "Laser") LaserIndex = 0;
-            else if ((cellContent as TextBlock).Text == "Light") LigtIndex = 0;
-
-
             Item_dataGrid.Items.Remove(Item_dataGrid.SelectedItem);
         }
     }

@@ -14,6 +14,7 @@ IF SCHEMA_ID(N'dbo') IS NULL
   EXECUTE (N'CREATE SCHEMA [dbo]');
 GO
 
+
 -- --------------------------------------------------
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------

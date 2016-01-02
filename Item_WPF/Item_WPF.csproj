@@ -114,7 +114,7 @@
     <Compile Include="Combine_weap.xaml.cs">
       <DependentUpon>Combine_weap.xaml</DependentUpon>
     </Compile>
-    <Compile Include="File_of_Code.cs" />
+    <Compile Include="addin\File_of_Code.cs" />
     <Compile Include="Drug.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
@@ -265,6 +265,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Gurps_Item.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="addin\ItemModelDiagram.dbd" />
     <None Include="Gurps_Item.edmx.diagram">
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
     </None>
