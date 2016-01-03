@@ -34,6 +34,9 @@
         <Image x:Name="ScopeImage" HorizontalAlignment="Left" Height="100" Margin="10,181,0,0" VerticalAlignment="Top" Width="100"/>
         <Button x:Name="Saved_button" Content="Saved" HorizontalAlignment="Left" Margin="617,10,0,0" VerticalAlignment="Top" Width="74" Click="Saved_button_Click"/>
         <Button x:Name="Save_button" Content="Save_Comb" HorizontalAlignment="Left" Margin="617,35,0,0" VerticalAlignment="Top" Width="75" Click="Save_button_Click"/>
+        <Button x:Name="Dice_button" Content="Dice" HorizontalAlignment="Left" Margin="617,60,0,0" VerticalAlignment="Top" Width="75" Click="Dice_button_Click"/>
+        <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Margin="543,117,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" Margin="543,148,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

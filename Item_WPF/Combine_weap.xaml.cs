@@ -35,6 +35,8 @@ namespace Item_WPF
         private int mountInternal;
         private int mountExternal;
 
+        private string Damagee;
+
         CombineWeap CW = new CombineWeap();
 
         //private class Weapon_Item
@@ -281,6 +283,8 @@ namespace Item_WPF
                     ItemFromGrid Weapon_to_Grid = new ItemFromGrid(itemLoad, weaponLoad);
 
                     Item_dataGrid.Items.Add(Weapon_to_Grid);//
+
+                    Damagee = Weapon_to_Grid.Damage;
 
                     Item_dataGrid.ColumnWidth = DataGridLength.Auto;
 
@@ -654,7 +658,7 @@ namespace Item_WPF
                 if (WeaponCombine.Id_WeaponItem != 0)
                 {
                     context.CombineWeaps.Add(CW);
-                                        context.SaveChanges();
+                    context.SaveChanges();
                     label.Content = CW.id.ToString();
                     WeaponCombine.Id_WeaponItem = 0;
                     CW = new CombineWeap();
@@ -675,6 +679,16 @@ namespace Item_WPF
 
             MessageBox.Show((cellContent as TextBlock).Text);
             Item_dataGrid.Items.Remove(Item_dataGrid.SelectedItem);
+        }
+
+        private void Dice_button_Click(object sender, RoutedEventArgs e)
+        {
+            string[] ss;
+            ss = Damagee.Split('d');
+            if (ss.Length == 1) { label1.Content = ss[0]; label2.Content = ""; }
+            else { label1.Content = ss[0]; label2.Content = ss[1]; }
+            label.Content=(Dice.rollDie(Convert.ToInt32(ss[0]),6)).ToString();
+
         }
     }
 }
