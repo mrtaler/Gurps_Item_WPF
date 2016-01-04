@@ -276,8 +276,8 @@ namespace Item_WPF
                 itemSave.TL = Convert.ToInt32(TL_CB.SelectedValue);
                 itemSave.LC = Convert.ToInt32(LC_CB.SelectedValue);
 
-                itemSave.ubWeight = Convert.ToDecimal(Weigth_TB.Text);
-                string dd = Cost_TB.Text.Replace("$", "");
+                itemSave.ubWeight = Convert.ToDecimal(Weigth_TB.Text.Replace(datachange.separatorCh, datachange.separator));
+                string dd = (Cost_TB.Text.Replace("$", "")).Replace(datachange.separatorCh, datachange.separator); 
                 itemSave.usPrice = Convert.ToDecimal(dd);
 
                 itemSave.ItemSize = Bulk_TB.Text;
@@ -378,7 +378,7 @@ namespace Item_WPF
                     attacmentSave.BatTimeWork = Convert.ToInt32(BatTimeWork_textBox.Text);
                 //laser
                 if (LaserRange_textBox.Text != "") attacmentSave.LaserRange = Convert.ToInt32(LaserRange_textBox.Text);
-                if (LaserRangeEff_textBox.Text != "") attacmentSave.laserColorEf = Convert.ToDecimal(LaserRangeEff_textBox.Text);
+                if (LaserRangeEff_textBox.Text != "") attacmentSave.laserColorEf = Convert.ToDecimal(LaserRangeEff_textBox.Text.Replace(datachange.separatorCh, datachange.separator));
                 if (Laser_Color_comboBox.SelectedItem != null) attacmentSave.LaserColor = Laser_Color_comboBox.SelectedValue.ToString();
 
                 context.SaveChanges();

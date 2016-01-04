@@ -268,8 +268,9 @@ namespace Item_WPF
                 itemSave.TL = Convert.ToInt32(TL_CB.SelectedValue);
                 itemSave.LC = Convert.ToInt32(LC_CB.SelectedValue);
 
-                itemSave.ubWeight = Convert.ToDecimal(Weigth_TB.Text);
-                string dd = Cost_TB.Text.Replace("$", "");
+                
+                itemSave.ubWeight = Convert.ToDecimal(Weigth_TB.Text.Replace(datachange.separatorCh, datachange.separator));
+                string dd = (Cost_TB.Text.Replace("$", "").Replace(datachange.separatorCh, datachange.separator));
                 itemSave.usPrice = Convert.ToDecimal(dd);
 
                 itemSave.ItemSize = Bulk_TB.Text;
@@ -295,13 +296,13 @@ namespace Item_WPF
                 //Weapon Damage
                 weaponSave.Damage = Damage_textBox.Text;
                 weaponSave.ubTypeOfDamage = Convert.ToInt32(TypeOfDamage_comboBox.SelectedValue);
-                weaponSave.Arm_Division = Convert.ToDecimal(ArmDivizor_textBox.Text);
+                weaponSave.Arm_Division = Convert.ToDecimal(ArmDivizor_textBox.Text.Replace(datachange.separatorCh, datachange.separator));
                 weaponSave.Linked = Linked_textBox.Text;
                 weaponSave.Follow_Up = FollowUp_textBox.Text;
                 //range
-                weaponSave.MinRange = Convert.ToDecimal(MinRange_textBox.Text);
-                weaponSave.Half_Range = Convert.ToDecimal(HalfRange_textBox.Text);
-                weaponSave.FullRange = Convert.ToDecimal(MaxRange_textBox.Text);
+                weaponSave.MinRange = Convert.ToDecimal(MinRange_textBox.Text.Replace(datachange.separatorCh, datachange.separator));
+                weaponSave.Half_Range = Convert.ToDecimal(HalfRange_textBox.Text.Replace(datachange.separatorCh, datachange.separator));
+                weaponSave.FullRange = Convert.ToDecimal(MaxRange_textBox.Text.Replace(datachange.separatorCh, datachange.separator));
                 //shots
 
                 weaponSave.ROF = Convert.ToInt32(ROF_textBox.Text);
@@ -428,14 +429,9 @@ namespace Item_WPF
                     AVSc.rAttachmentmount = Convert.ToInt32(External_comboBox.SelectedValue);
                     context.AvailableAttachSlots.Add(AVSc);
                 } //
-
-
-
                 context.SaveChanges();
                 context.Database.Connection.Close();
-
             }
-
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

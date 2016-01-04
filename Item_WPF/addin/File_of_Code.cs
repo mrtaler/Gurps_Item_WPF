@@ -5,8 +5,26 @@ using System.Windows.Media.Imaging;
 
 namespace Item_WPF
 {
+    /// <summary>
+    /// класс для обмена данных между формами
+    /// </summary>
     public class datachange
     {
+        /// <summary>
+        /// переменная системного десятичного разделителя
+        /// </summary>
+        public static char separator = System.Globalization.CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0];
+        /// <summary>
+        /// переменная для замены десятичного разделителя( можно установить различные с поиоью else if
+        /// </summary>
+        public static char separatorCh
+        {
+            get {
+                if (separator == '.') return ',';
+                else return '.';
+            }            
+        }
+
         public static int ID_sel;
         public static int ID_change;
         public static byte[] ItemImage;
@@ -14,7 +32,9 @@ namespace Item_WPF
         public static string Pass;
     }
 
-
+    /// <summary>
+    /// класс для фомирования комбинаций оружия
+    /// </summary>
     public class WeaponCombine
     {
         public static int Id_WeaponItem;
@@ -29,7 +49,9 @@ namespace Item_WPF
         public static int Id_MagazineItem;
         public static int Id_InternalItem;
         public static int Id_ExternalItem;
-
+        /// <summary>
+        /// обнуление комбинатора
+        /// </summary>
         public static void WeapCombNull()
         {
             Id_WeaponItem = 0;
@@ -48,13 +70,16 @@ namespace Item_WPF
 
     }
     ///<summary>
-    ///this dice roller
+    ///класс бросатель кубиков
     ///</summary>
     public class Dice
     {
-        ///<summary>
-        ///Drop Dice
-        ///</summary>
+        /// <summary>
+        /// функция бросателя
+        /// </summary>
+        /// <param name="_numDice">количество кубиков</param>
+        /// <param name="_dice">число сторон</param>
+        /// <returns></returns>
         public static int rollDie(int _numDice, int _dice)
         {
             int roll;
