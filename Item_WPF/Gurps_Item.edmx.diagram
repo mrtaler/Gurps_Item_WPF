@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="520cd847813e4f0ab1ad981dc27ed446" Name="Diagram1" ZoomLevel="66">
-        <EntityTypeShape EntityType="item1Model.AMMO" Width="1.5" PointX="8" PointY="11.625" />
+        <EntityTypeShape EntityType="item1Model.AMMO" Width="1.5" PointX="5.875" PointY="6.625" />
         <EntityTypeShape EntityType="item1Model.AMMOUPGRATE" Width="1.5" PointX="17.75" PointY="16.75" />
         <EntityTypeShape EntityType="item1Model.ARMOUR" Width="1.5" PointX="20" PointY="7" />
         <EntityTypeShape EntityType="item1Model.ArmourClass" Width="1.5" PointX="17.75" PointY="7.375" />
@@ -34,10 +34,6 @@
         <EntityTypeShape EntityType="item1Model.nasLayoutClass" Width="1.5" PointX="5.75" PointY="3.5" />
         <EntityTypeShape EntityType="item1Model.TL" Width="1.5" PointX="0.75" PointY="12.25" />
         <EntityTypeShape EntityType="item1Model.TypeOfDamage" Width="1.5" PointX="8" PointY="8.875" />
-        <EntityTypeShape EntityType="item1Model.WEAPON" Width="1.5" PointX="10.25" PointY="7.375" />
-        <EntityTypeShape EntityType="item1Model.WeaponClass" Width="1.5" PointX="5.75" PointY="6.125" />
-        <EntityTypeShape EntityType="item1Model.WeaponType" Width="1.5" PointX="8" PointY="15.25" />
-        <AssociationConnector Association="item1Model.FK_Calibre" />
         <AssociationConnector Association="item1Model.FK_ARMOUR" />
         <AssociationConnector Association="item1Model.FK_Attachment_Attachmentmount" />
         <AssociationConnector Association="item1Model.FK_Attachment_G_AttachClass" />
@@ -50,7 +46,6 @@
         <AssociationConnector Association="item1Model.FK_G_SubAttachClass_ATTACHMENTSLOT1" />
         <AssociationConnector Association="item1Model.FK_nasAttachmentClass_slot" />
         <AssociationConnector Association="item1Model.FK_nasLayoutClass_slot" />
-        <AssociationConnector Association="item1Model.FK_AVeWeaponId" />
         <AssociationConnector Association="item1Model.FK_ITEM_Clothes" />
         <AssociationConnector Association="item1Model.FK_ITEM_DrugType" />
         <AssociationConnector Association="item1Model.FK_EXPLOSIVE" />
@@ -62,11 +57,15 @@
         <AssociationConnector Association="item1Model.FK_ITEM_LC" />
         <AssociationConnector Association="item1Model.FK_ITEM_TL" />
         <AssociationConnector Association="item1Model.FK_LOADBEARINGEQUIPMENT" />
+        <EntityTypeShape EntityType="item1Model.CombineWeap" Width="1.5" PointX="7.625" PointY="18.5" />
+        <EntityTypeShape EntityType="item1Model.WEAPON" Width="1.5" PointX="10.25" PointY="7.75" />
+        <AssociationConnector Association="item1Model.FK_Calibre" />
+        <AssociationConnector Association="item1Model.FK_AVeWeaponId" />
         <AssociationConnector Association="item1Model.FK_WEAPON_TypeOfDamage" />
-        <AssociationConnector Association="item1Model.FK_WeaponClass" />
+        <EntityTypeShape EntityType="item1Model.WeaponClass" Width="1.5" PointX="5.75" PointY="12.125" />
+        <EntityTypeShape EntityType="item1Model.WeaponType" Width="1.5" PointX="7.5" PointY="14.25" />
         <AssociationConnector Association="item1Model.FK_WeaponType" />
         <AssociationConnector Association="item1Model.FK_WeaponType_WeaponClass" />
-        <EntityTypeShape EntityType="item1Model.CombineWeap" Width="1.5" PointX="7.625" PointY="18.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

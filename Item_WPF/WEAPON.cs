@@ -59,7 +59,6 @@ namespace Item_WPF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AvailableAttachSlot> AvailableAttachSlots { get; set; }
         public virtual TypeOfDamage TypeOfDamage { get; set; }
-        public virtual WeaponClass WeaponClass { get; set; }
         public virtual WeaponType WeaponType { get; set; }
     }
 }

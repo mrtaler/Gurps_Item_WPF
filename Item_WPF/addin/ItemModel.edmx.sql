@@ -1117,19 +1117,19 @@ ON [dbo].[WEAPON]
 GO
 
 -- Creating foreign key on [ubWeaponClass] in table 'WEAPONs'
-ALTER TABLE [dbo].[WEAPON]
-ADD CONSTRAINT [FK_WeaponClass]
-FOREIGN KEY ([ubWeaponClass])
-REFERENCES [dbo].[WeaponClass]
-([id])
-ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
+--ALTER TABLE [dbo].[WEAPON]
+--ADD CONSTRAINT [FK_WeaponClass]
+--FOREIGN KEY ([ubWeaponClass])
+--REFERENCES [dbo].[WeaponClass]
+--([id])
+--ON DELETE NO ACTION ON UPDATE NO ACTION;
+--GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_WeaponClass'
-CREATE INDEX [IX_FK_WeaponClass]
-ON [dbo].[WEAPON]
-([ubWeaponClass]);
-GO
+---- Creating non-clustered index for FOREIGN KEY 'FK_WeaponClass'
+--CREATE INDEX [IX_FK_WeaponClass]
+--ON [dbo].[WEAPON]
+--([ubWeaponClass]);
+--GO
 
 -- Creating foreign key on [ubWeaponType] in table 'WEAPONs'
 ALTER TABLE [dbo].[WEAPON]

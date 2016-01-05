@@ -56,10 +56,10 @@ namespace Item_WPF
         public virtual DbSet<nasLayoutClass> nasLayoutClasses { get; set; }
         public virtual DbSet<TL> TLs { get; set; }
         public virtual DbSet<TypeOfDamage> TypeOfDamages { get; set; }
+        public virtual DbSet<CombineWeap> CombineWeaps { get; set; }
         public virtual DbSet<WEAPON> WEAPONs { get; set; }
         public virtual DbSet<WeaponClass> WeaponClasses { get; set; }
         public virtual DbSet<WeaponType> WeaponTypes { get; set; }
-        public virtual DbSet<CombineWeap> CombineWeaps { get; set; }
     
         public virtual int NEW_ITEM(string name, string class_ofItem, ObjectParameter returns)
         {

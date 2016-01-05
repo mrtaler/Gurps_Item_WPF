@@ -103,6 +103,7 @@ namespace Item_WPF
 
 
                 //Type&Class
+
                 ClassOfWeapon_TB.ItemsSource = context.WeaponClasses.ToList();
                 ClassOfWeapon_TB.SelectedValuePath = "id";
                 ClassOfWeapon_TB.DisplayMemberPath = "name";
@@ -240,7 +241,7 @@ namespace Item_WPF
                         External_comboBox.SelectedValue = items.rAttachmentmount;
                     }
                 }
-               
+
                 context.Database.Connection.Close();
             }
 
@@ -268,7 +269,7 @@ namespace Item_WPF
                 itemSave.TL = Convert.ToInt32(TL_CB.SelectedValue);
                 itemSave.LC = Convert.ToInt32(LC_CB.SelectedValue);
 
-                
+
                 itemSave.ubWeight = Convert.ToDecimal(Weigth_TB.Text.Replace(datachange.separatorCh, datachange.separator));
                 string dd = (Cost_TB.Text.Replace("$", "").Replace(datachange.separatorCh, datachange.separator));
                 itemSave.usPrice = Convert.ToDecimal(dd);
@@ -503,24 +504,33 @@ namespace Item_WPF
         {
             using (item1Entities context = new item1Entities())
             {
-                context.Database.Connection.Open();
-                int xx = Convert.ToInt32(ClassOfWeapon_TB.SelectedValue);
+                int ClassWeaponSelected = Convert.ToInt32(ClassOfWeapon_TB.SelectedValue);
                 TypeOfClassWeap_TB.ItemsSource = (from p in context.WeaponTypes
-                                                  where p.WeaponClass.id == xx
+                                                  where p.WeaponClass.id == ClassWeaponSelected
                                                   select p).ToList();
                 TypeOfClassWeap_TB.SelectedValuePath = "id";
                 TypeOfClassWeap_TB.DisplayMemberPath = "name";
-
-                context.Database.Connection.Close();
+                TypeOfClassWeap_TB.SelectedIndex = 0;
             }
-            TypeOfClassWeap_TB.SelectedIndex = 0;
-            TypeOfClassWeap_TB.UpdateLayout();
         }
 
         private void TypeOfClassWeap_TB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             using (item1Entities context = new item1Entities())
             {
+                if (TypeOfClassWeap_TB.SelectedIndex == -1)
+                {
+                    int ClassWeaponSelected = Convert.ToInt32(ClassOfWeapon_TB.SelectedValue);
+                    TypeOfClassWeap_TB.ItemsSource = (from p in context.WeaponTypes
+                                                      where p.WeaponClass.id == ClassWeaponSelected
+                                                      select p).ToList();
+                    TypeOfClassWeap_TB.SelectedValuePath = "id";
+                    TypeOfClassWeap_TB.DisplayMemberPath = "name";
+                    TypeOfClassWeap_TB.SelectedIndex = 0;
+                }
+
+
+
                 int aa = Convert.ToInt32(TypeOfClassWeap_TB.SelectedValue);
                 string xx = (from p in context.WeaponTypes
                              where p.id == aa
@@ -536,6 +546,7 @@ namespace Item_WPF
                     SHROF_textBox.Visibility = Visibility.Hidden;
                     SH_label20.Visibility = Visibility.Hidden;
                 }
+
             }
         }
 
@@ -643,9 +654,9 @@ namespace Item_WPF
             using (item1Entities context = new item1Entities())
             {
                 Silenser_comboBox.ItemsSource = (from p in context.Attachmentmounts
-                                              where p.idAttacClass == 5
-                                              orderby p.name
-                                              select p).ToList();
+                                                 where p.idAttacClass == 5
+                                                 orderby p.name
+                                                 select p).ToList();
                 Silenser_comboBox.SelectedValuePath = "id";
                 Silenser_comboBox.DisplayMemberPath = "name";
                 Silenser_comboBox.Visibility = Visibility.Visible;
@@ -681,9 +692,9 @@ namespace Item_WPF
             using (item1Entities context = new item1Entities())
             {
                 Stock_comboBox.ItemsSource = (from p in context.Attachmentmounts
-                                                 where p.idAttacClass == 7
-                                                 orderby p.name
-                                                 select p).ToList();
+                                              where p.idAttacClass == 7
+                                              orderby p.name
+                                              select p).ToList();
                 Stock_comboBox.SelectedValuePath = "id";
                 Stock_comboBox.DisplayMemberPath = "name";
                 Stock_comboBox.Visibility = Visibility.Visible;
@@ -700,9 +711,9 @@ namespace Item_WPF
             using (item1Entities context = new item1Entities())
             {
                 Bayonet_comboBox.ItemsSource = (from p in context.Attachmentmounts
-                                              where p.idAttacClass == 8
-                                              orderby p.name
-                                              select p).ToList();
+                                                where p.idAttacClass == 8
+                                                orderby p.name
+                                                select p).ToList();
                 Bayonet_comboBox.SelectedValuePath = "id";
                 Bayonet_comboBox.DisplayMemberPath = "name";
                 Bayonet_comboBox.Visibility = Visibility.Visible;
@@ -719,9 +730,9 @@ namespace Item_WPF
             using (item1Entities context = new item1Entities())
             {
                 Magazine_comboBox.ItemsSource = (from p in context.Attachmentmounts
-                                                where p.idAttacClass == 9
-                                                orderby p.name
-                                                select p).ToList();
+                                                 where p.idAttacClass == 9
+                                                 orderby p.name
+                                                 select p).ToList();
                 Magazine_comboBox.SelectedValuePath = "id";
                 Magazine_comboBox.DisplayMemberPath = "name";
                 Magazine_comboBox.Visibility = Visibility.Visible;
