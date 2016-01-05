@@ -84,11 +84,11 @@
                             <Label x:Name="label13" Content="Arm Divizor" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="label14" Content="Follow Up" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="label15" Content="Linked" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top"/>
-                            <TextBox x:Name="Damage_textBox" HorizontalAlignment="Left" Height="23" Margin="98,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75"/>
-                            <TextBox x:Name="ArmDivizor_textBox" HorizontalAlignment="Left" Height="23" Margin="98,76,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75"/>
-                            <TextBox x:Name="FollowUp_textBox" HorizontalAlignment="Left" Height="23" Margin="98,107,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75"/>
+                            <TextBox x:Name="Damage_textBox" HorizontalAlignment="Left" Height="23" Margin="98,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="75"/>
+                            <TextBox x:Name="ArmDivizor_textBox" HorizontalAlignment="Left" Height="23" Margin="98,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
+                            <TextBox x:Name="FollowUp_textBox" HorizontalAlignment="Left" Height="23" Margin="98,107,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="75"/>
                             <ComboBox x:Name="TypeOfDamage_comboBox" HorizontalAlignment="Left" Margin="112,45,0,0" VerticalAlignment="Top" Width="61"/>
-                            <TextBox x:Name="Linked_textBox" HorizontalAlignment="Left" Height="23" Margin="98,138,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75"/>
+                            <TextBox x:Name="Linked_textBox" HorizontalAlignment="Left" Height="23" Margin="98,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="groupBox6" Header="Range" HorizontalAlignment="Left" Margin="210,10,0,0" VerticalAlignment="Top" Height="116" Width="181">
@@ -96,21 +96,21 @@
                             <Label x:Name="label16" Content="Min Range" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.433,0.077"/>
                             <Label x:Name="label17" Content="Half Range" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="label18" Content="Max Range" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top"/>
-                            <TextBox x:Name="MinRange_textBox" HorizontalAlignment="Left" Height="23" Margin="82,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="77"/>
-                            <TextBox x:Name="HalfRange_textBox" HorizontalAlignment="Left" Height="23" Margin="82,38,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="77"/>
-                            <TextBox x:Name="MaxRange_textBox" HorizontalAlignment="Left" Height="23" Margin="82,66,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="77"/>
+                            <TextBox x:Name="MinRange_textBox" HorizontalAlignment="Left" Height="23" Margin="82,10,0,0" TextWrapping="Wrap" Text="min" VerticalAlignment="Top" Width="77"/>
+                            <TextBox x:Name="HalfRange_textBox" HorizontalAlignment="Left" Height="23" Margin="82,38,0,0" TextWrapping="Wrap" Text="half" VerticalAlignment="Top" Width="77"/>
+                            <TextBox x:Name="MaxRange_textBox" HorizontalAlignment="Left" Height="23" Margin="82,66,0,0" TextWrapping="Wrap" Text="max" VerticalAlignment="Top" Width="77"/>
 
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="groupBox7" Header="Shots" HorizontalAlignment="Left" Margin="210,131,0,0" VerticalAlignment="Top" Height="164" Width="181">
                         <Grid>
-                            <Label x:Name="label19" Content="Shots" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top"/>
+                            <Label x:Name="label19" Content="ROF" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="SH_label20" Content="X" HorizontalAlignment="Left" Margin="89,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0.5" Visibility="Hidden"/>
                             <TextBox x:Name="ROF_textBox" HorizontalAlignment="Left" Height="23" Margin="54,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
                             <TextBox x:Name="SHROF_textBox" HorizontalAlignment="Left" Height="23" Margin="111,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" Visibility="Hidden"/>
                             <CheckBox x:Name="FullAuto_checkBox" Content="Full Auto" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Checked="FullAuto_checkBox_Checked"/>
                             <CheckBox x:Name="Add1inChambler_checkbox" Content="1 Add" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="HCROF_checkBox2" Content="HC ROF" HorizontalAlignment="Left" Margin="88,38,0,0" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="HCROF_checkBox2" Content="HC ROF(#)" HorizontalAlignment="Left" Margin="88,38,0,0" VerticalAlignment="Top"/>
                             <CheckBox x:Name="CutOfShots_checkBox" Content="Cut Of Shots" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Checked="CutOfShots_checkBox_Checked" Unchecked="CutOfShots_checkBox_Unchecked"/>
                             <Label x:Name="label20" Content="Cut Of Shots" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
                             <TextBox x:Name="CutOfShots_textBox" HorizontalAlignment="Left" Height="23" Margin="53,98,-4,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
@@ -165,17 +165,17 @@
                     </GroupBox>
                     <GroupBox x:Name="groupBox11" Header="Attach Mount" HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top" Height="361" Width="328">
                         <Grid>
-                            <ComboBox x:Name="Scope_comboBox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
-                            <ComboBox x:Name="Laser_comboBox" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
-                            <ComboBox x:Name="Light_comboBox" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
-                            <ComboBox x:Name="Bipod_comboBox" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
-                            <ComboBox x:Name="Silenser_comboBox" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
-                            <ComboBox x:Name="Launcher_comboBox" HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
-                            <ComboBox x:Name="Stock_comboBox" HorizontalAlignment="Left" Margin="10,172,0,0" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
-                            <ComboBox x:Name="Bayonet_comboBox" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
-                            <ComboBox x:Name="Magazine_comboBox" HorizontalAlignment="Left" Margin="10,226,0,0" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
-                            <ComboBox x:Name="Internal_comboBox" HorizontalAlignment="Left" Margin="10,253,0,0" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
-                            <ComboBox x:Name="External_comboBox" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+                            <ComboBox x:Name="Scope_comboBox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" />
+                            <ComboBox x:Name="Laser_comboBox" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Width="120" />
+                            <ComboBox x:Name="Light_comboBox" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="120" />
+                            <ComboBox x:Name="Bipod_comboBox" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Width="120" />
+                            <ComboBox x:Name="Silenser_comboBox" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top" Width="120"/>
+                            <ComboBox x:Name="Launcher_comboBox" HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top" Width="120"/>
+                            <ComboBox x:Name="Stock_comboBox" HorizontalAlignment="Left" Margin="10,172,0,0" VerticalAlignment="Top" Width="120" />
+                            <ComboBox x:Name="Bayonet_comboBox" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top" Width="120" />
+                            <ComboBox x:Name="Magazine_comboBox" HorizontalAlignment="Left" Margin="10,226,0,0" VerticalAlignment="Top" Width="120"/>
+                            <ComboBox x:Name="Internal_comboBox" HorizontalAlignment="Left" Margin="10,253,0,0" VerticalAlignment="Top" Width="120"/>
+                            <ComboBox x:Name="External_comboBox" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top" Width="120"/>
                             <ComboBox x:Name="comboBox11" HorizontalAlignment="Left" Margin="10,307,0,0" VerticalAlignment="Top" Width="120"/>
 
                         </Grid>

@@ -2068,8 +2068,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>384 px</X>
-              <Y>101 px</Y>
+              <X>250 px</X>
+              <Y>550 px</Y>
             </Location>
             <Size>
               <Width>192 px</Width>
@@ -2121,6 +2121,16 @@
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>478.727264404297 px</X>
+                <Y>1178 px</Y>
+              </PointD>
+              <PointD>
+                <X>344.727264404297 px</X>
+                <Y>1178 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>item1.dbo.ATTACHMENTSLOT.FK_nasAttachmentClass_slot</Path>
@@ -2137,8 +2147,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>8.32297581609964E-06 px</X>
-                  <Y>486.5 px</Y>
+                  <X>134.000008322976 px</X>
+                  <Y>272 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Top</Align>
@@ -2607,8 +2617,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>690 px</X>
-              <Y>760 px</Y>
+              <X>670 px</X>
+              <Y>720 px</Y>
             </Location>
             <Size>
               <Width>143 px</Width>
@@ -2630,8 +2640,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>687 px</X>
-              <Y>1010 px</Y>
+              <X>710 px</X>
+              <Y>530 px</Y>
             </Location>
             <Size>
               <Width>140 px</Width>
@@ -2660,11 +2670,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>68.818181818182 px</X>
-                  <Y>-0.181818181818016 px</Y>
+                  <X>61.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>166</OID>
                   <PortType>FloatAnchor</PortType>
@@ -2672,11 +2682,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>71.818181818182 px</X>
-                  <Y>124.204545454546 px</Y>
+                  <X>81.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>167</OID>
                   <PortType>FloatAnchor</PortType>
@@ -2685,12 +2695,12 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>755.818176269531 px</X>
-                <Y>990 px</Y>
+                <X>771.5 px</X>
+                <Y>677 px</Y>
               </PointD>
               <PointD>
-                <X>761.818176269531 px</X>
-                <Y>990 px</Y>
+                <X>751.5 px</X>
+                <Y>677 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
@@ -2709,11 +2719,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-5.99999445134927 px</X>
-                  <Y>73 px</Y>
+                  <X>20 px</X>
+                  <Y>-41.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Top</Align>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>168</OID>
                   <PortType>FixedAnchor</PortType>
@@ -2762,6 +2772,16 @@
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>929 px</X>
+                <Y>1073.31823730469 px</Y>
+              </PointD>
+              <PointD>
+                <X>929 px</X>
+                <Y>593.318176269531 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>item1.dbo.WEAPON.FK_WeaponType</Path>
@@ -2778,8 +2798,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>61 px</X>
-                  <Y>-5.54865055164555E-05 px</Y>
+                  <X>20 px</X>
+                  <Y>239.999944513494 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -2800,8 +2820,8 @@
           <ScaleMode>Free</ScaleMode>
           <Scale>0.77</Scale>
           <Location>
-            <X>440.25975116531 px</X>
-            <Y>441.558453921947 px</Y>
+            <X>146.753250388437 px</X>
+            <Y>459.74026970261 px</Y>
           </Location>
         </ViewPort>
       </Model>

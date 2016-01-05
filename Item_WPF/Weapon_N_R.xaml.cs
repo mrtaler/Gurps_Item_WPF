@@ -520,17 +520,14 @@ namespace Item_WPF
             {
                 if (TypeOfClassWeap_TB.SelectedIndex == -1)
                 {
-                    int ClassWeaponSelected = Convert.ToInt32(ClassOfWeapon_TB.SelectedValue);
-                    TypeOfClassWeap_TB.ItemsSource = (from p in context.WeaponTypes
-                                                      where p.WeaponClass.id == ClassWeaponSelected
-                                                      select p).ToList();
-                    TypeOfClassWeap_TB.SelectedValuePath = "id";
-                    TypeOfClassWeap_TB.DisplayMemberPath = "name";
+                    //int ClassWeaponSelected = Convert.ToInt32(ClassOfWeapon_TB.SelectedValue);
+                    //TypeOfClassWeap_TB.ItemsSource = (from p in context.WeaponTypes
+                    //                                  where p.WeaponClass.id == ClassWeaponSelected
+                    //                                  select p).ToList();
+                    //TypeOfClassWeap_TB.SelectedValuePath = "id";
+                    //TypeOfClassWeap_TB.DisplayMemberPath = "name";
                     TypeOfClassWeap_TB.SelectedIndex = 0;
                 }
-
-
-
                 int aa = Convert.ToInt32(TypeOfClassWeap_TB.SelectedValue);
                 string xx = (from p in context.WeaponTypes
                              where p.id == aa
@@ -786,5 +783,6 @@ namespace Item_WPF
         {
             this.Close();
         }
+
     }
 }
