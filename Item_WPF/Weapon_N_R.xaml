@@ -87,7 +87,9 @@
                             <TextBox x:Name="Damage_textBox" HorizontalAlignment="Left" Height="23" Margin="98,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="75"/>
                             <TextBox x:Name="ArmDivizor_textBox" HorizontalAlignment="Left" Height="23" Margin="98,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
                             <TextBox x:Name="FollowUp_textBox" HorizontalAlignment="Left" Height="23" Margin="98,107,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="75"/>
-                            <ComboBox x:Name="TypeOfDamage_comboBox" HorizontalAlignment="Left" Margin="112,45,0,0" VerticalAlignment="Top" Width="61"/>
+                            <ComboBox x:Name="TypeOfDamage_comboBox" HorizontalAlignment="Left" Margin="112,45,0,0" VerticalAlignment="Top" Width="61" KeyDown="TypeOfDamage_comboBox_KeyDown" >
+                      
+                            </ComboBox>
                             <TextBox x:Name="Linked_textBox" HorizontalAlignment="Left" Height="23" Margin="98,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
                         </Grid>
                     </GroupBox>
@@ -131,7 +133,7 @@
                             <Label x:Name="label23" Content="Caliber" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="label24" Content="Shots" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="label25" Content="Reload Time" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
-                            <ComboBox x:Name="CAliber_comboBox" HorizontalAlignment="Left" Margin="73,14,0,0" VerticalAlignment="Top" Width="120"/>
+                            <ComboBox x:Name="CAliber_comboBox" HorizontalAlignment="Left" Margin="73,14,0,0" VerticalAlignment="Top" Width="120" KeyDown="CAliber_comboBox_KeyDown"/>
                             <TextBox x:Name="Shots_textBox" HorizontalAlignment="Left" Height="23" Margin="73,45,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
                             <TextBox x:Name="ReloadTime_textbox" HorizontalAlignment="Left" Height="23" Margin="91,76,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="102"/>
                             <CheckBox x:Name="SingleReload_checkBox" Content="Single Reload" HorizontalAlignment="Left" Margin="26,119,0,0" VerticalAlignment="Top" />

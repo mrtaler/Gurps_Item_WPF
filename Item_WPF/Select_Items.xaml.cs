@@ -70,7 +70,7 @@ namespace Item_WPF
                     s.InternalSelect,
                     s.ExternalSelect,
                     s.StockSelect
-                }).ToList(); ; // gрузим таблицу итем вместе с подчненной записью
+                }).ToList(); // gрузим таблицу итем вместе с подчненной записью
 
                 Items_dataGrid.SelectedValuePath = "id";
                 context.Database.Connection.Close();

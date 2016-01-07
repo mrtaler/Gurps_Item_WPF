@@ -784,5 +784,47 @@ namespace Item_WPF
             this.Close();
         }
 
+        private void TypeOfDamage_comboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key ==Key.Enter)
+            {
+                Edit_content_in_simple_Table ECinST = new Edit_content_in_simple_Table("TypeOfDamage");
+                ECinST.ShowDialog();
+                using (item1Entities context = new item1Entities())
+                {
+                    TypeOfDamage_comboBox.ItemsSource = context.TypeOfDamages.ToList();
+                    TypeOfDamage_comboBox.SelectedValuePath = "id";
+                    TypeOfDamage_comboBox.DisplayMemberPath = "name";
+                }
+
+
+                //MessageBox.Show("Текст сообщения", "Заголовок сообщения");
+                //ComboBox c = (sender as ComboBox);
+                //c.Items.Add(c.Text);
+            }
+        }
+
+        private void CAliber_comboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            caliber Calibber = new caliber();
+            Calibber.ShowDialog();
+            using (item1Entities context = new item1Entities())
+            {
+                CAliber_comboBox.ItemsSource = context.AMMOes.ToList();
+                CAliber_comboBox.SelectedValuePath = "id";
+                CAliber_comboBox.DisplayMemberPath = "Caliber_name";
+                CAliber_comboBox.SelectedValue= context.AMMOes.LongCount();
+            }
+        }
     }
 }
+
+//событие для комбобокса для динамического получения выделенных данных
+/*
+private void ComboBox_Selected(object sender, RoutedEventArgs e)
+{
+    ComboBox comboBox = (ComboBox)sender;
+    ComboBoxItem selectedItem = (ComboBoxItem)comboBox.SelectedItem;
+    MessageBox.Show(selectedItem.Content.ToString());
+}*/

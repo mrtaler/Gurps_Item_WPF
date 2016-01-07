@@ -105,6 +105,9 @@
     <Compile Include="Battery.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="litForms\caliber.xaml.cs">
+      <DependentUpon>caliber.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Cloth.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
@@ -120,6 +123,9 @@
     </Compile>
     <Compile Include="DrugType.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="litForms\Edit_content_in_simple_Table.xaml.cs">
+      <DependentUpon>Edit_content_in_simple_Table.xaml</DependentUpon>
     </Compile>
     <Compile Include="ExplosionType.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
@@ -200,7 +206,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="litForms\caliber.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Combine_weap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="litForms\Edit_content_in_simple_Table.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
