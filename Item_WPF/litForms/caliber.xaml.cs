@@ -31,31 +31,12 @@ namespace Item_WPF
             InitializeComponent();
             ammoOK = new ObservableCollection<AMMO>(from z in context.AMMOes select z);
             Loaded += MainWindow_Loaded;
-           
-            DeleteCommand = new MyCommand() { Collection = ammoOK };
         }
         void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             Caliber_dataGrid.ItemsSource = ammoOK;
-        }
-        class MyCommand : ICommand
-        {
-            public ObservableCollection<AMMO> Collection { get; set; }
-
-            public bool CanExecute(object parameter)
-            {
-                return true;
-            }
-            public event EventHandler CanExecuteChanged;
-            public void Execute(object parameter)
-            {
-                Collection.Remove(parameter as AMMO);        
-            }
-        }
-
-
-
-        // Using a DependencyProperty as the backing store for Items.  This enables animation, styling, binding, etc...
+        }  
+                // Using a DependencyProperty as the backing store for Items.  This enables animation, styling, binding, etc...
 
         public static readonly DependencyProperty ItemsProperty =
             DependencyProperty.Register("Items", typeof(ObservableCollection<AMMO>), typeof(MainWindow), new PropertyMetadata(null));
@@ -69,9 +50,28 @@ namespace Item_WPF
         // Using a DependencyProperty as the backing store for DeleteCommand.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty DeleteCommandProperty =
             DependencyProperty.Register("DeleteCommand", typeof(ICommand), typeof(MainWindow), new PropertyMetadata(null));
+
         private void Save_button_Click(object sender, RoutedEventArgs e)
         {
             context.SaveChanges();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int Caliber_id = (Caliber_dataGrid.SelectedItem as AMMO).id;
+                AMMO ammoDel = (from p in context.AMMOes
+                                where p.id == Caliber_id
+                                select p).SingleOrDefault();
+                context.AMMOes.Remove(ammoDel);
+                context.SaveChanges();
+                Caliber_dataGrid.Items.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 
