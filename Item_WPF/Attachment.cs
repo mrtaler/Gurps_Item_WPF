@@ -12,72 +12,999 @@ namespace Item_WPF
     using System;
     using System.Collections.Generic;
     
-    public partial class Attachment
+    public partial class Attachment : System.ComponentModel.INotifyPropertyChanged
     {
+     
+     #region Implement INotifyPropertyChanged
+     
+     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+     
+     protected virtual void OnPropertyChanged(string propertyName)
+     {
+      if (PropertyChanged != null)
+      {
+       PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+      }
+     }
+     
+     #endregion
+     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Attachment()
         {
             this.G_AvAttachClass = new HashSet<G_AvAttachClass>();
         }
     
-        public int uiIndex { get; set; }
-        public string szAttName { get; set; }
-        public int rAttachmentClass { get; set; }
-        public string Attachmentmount { get; set; }
-        public bool HiddenAttachment { get; set; }
-        public Nullable<int> NoiseReduction { get; set; }
-        public bool HideMuzzleFlash { get; set; }
-        public Nullable<int> RangeBonus { get; set; }
-        public Nullable<int> AimBonus { get; set; }
-        public Nullable<int> MinRangeForAimBonus { get; set; }
-        public Nullable<int> MagSizeBonus { get; set; }
-        public Nullable<int> BurstSizeBonus { get; set; }
-        public Nullable<int> RateOfFireBonus { get; set; }
-        public Nullable<int> DamageBonus { get; set; }
-        public Nullable<decimal> ScopeMagFactor { get; set; }
-        public Nullable<int> HearingRangeBonus { get; set; }
-        public Nullable<int> VisionRangeBonus { get; set; }
-        public Nullable<int> NightVisionRangeBonus { get; set; }
-        public Nullable<int> DayVisionRangeBonus { get; set; }
-        public Nullable<int> CaveVisionRangeBonus { get; set; }
-        public Nullable<int> BrightLightVisionRangeBonus { get; set; }
-        public Nullable<int> PercentTunnelVision { get; set; }
-        public Nullable<int> FlashLightRange { get; set; }
-        public Nullable<int> RecoilModifier { get; set; }
-        public int G_SubAttachClass { get; set; }
-        public int G_AttachClass { get; set; }
-        public Nullable<int> Darkness { get; set; }
-        public Nullable<int> Bulk_add { get; set; }
-        public bool Fix { get; set; }
-        public bool Tritium { get; set; }
-        public Nullable<int> ScopeMagMin { get; set; }
-        public Nullable<int> ScopeMagMax { get; set; }
-        public Nullable<int> AccAddmax { get; set; }
-        public int id_Attachmentmount { get; set; }
-        public bool ImpVisSights { get; set; }
-        public bool BlockIronSight { get; set; }
-        public bool Collimator { get; set; }
-        public bool Reflex { get; set; }
-        public bool Targetingprogram { get; set; }
-        public bool Laserrangefinder { get; set; }
-        public Nullable<int> LaserRFrange { get; set; }
-        public Nullable<int> LaserRFAcc { get; set; }
-        public Nullable<int> NightVision { get; set; }
-        public bool NeedIRillumination { get; set; }
-        public bool Infravision { get; set; }
-        public bool IRFilter { get; set; }
-        public Nullable<int> LightRange { get; set; }
-        public Nullable<int> IRLigRange { get; set; }
-        public Nullable<int> LaserRange { get; set; }
-        public string LaserColor { get; set; }
-        public Nullable<decimal> laserColorEf { get; set; }
-        public Nullable<int> BatTimeWork { get; set; }
+        private int _uiIndex;
+     public int uiIndex 
+     { 
+      get
+      {
+       return _uiIndex;
+      } 
+      set
+      {
+       if(_uiIndex != value)
+       {
+        _uiIndex = value;
+        OnPropertyChanged("uiIndex");
+       }
+      }
+     }
+     
+        private string _szAttName;
+     public string szAttName 
+     { 
+      get
+      {
+       return _szAttName;
+      } 
+      set
+      {
+       if(_szAttName != value)
+       {
+        _szAttName = value;
+        OnPropertyChanged("szAttName");
+       }
+      }
+     }
+     
+        private int _rAttachmentClass;
+     public int rAttachmentClass 
+     { 
+      get
+      {
+       return _rAttachmentClass;
+      } 
+      set
+      {
+       if(_rAttachmentClass != value)
+       {
+        _rAttachmentClass = value;
+        OnPropertyChanged("rAttachmentClass");
+       }
+      }
+     }
+     
+        private string _Attachmentmount;
+     public string Attachmentmount 
+     { 
+      get
+      {
+       return _Attachmentmount;
+      } 
+      set
+      {
+       if(_Attachmentmount != value)
+       {
+        _Attachmentmount = value;
+        OnPropertyChanged("Attachmentmount");
+       }
+      }
+     }
+     
+        private bool _HiddenAttachment;
+     public bool HiddenAttachment 
+     { 
+      get
+      {
+       return _HiddenAttachment;
+      } 
+      set
+      {
+       if(_HiddenAttachment != value)
+       {
+        _HiddenAttachment = value;
+        OnPropertyChanged("HiddenAttachment");
+       }
+      }
+     }
+     
+        private Nullable<int> _NoiseReduction;
+     public Nullable<int> NoiseReduction 
+     { 
+      get
+      {
+       return _NoiseReduction;
+      } 
+      set
+      {
+       if(_NoiseReduction != value)
+       {
+        _NoiseReduction = value;
+        OnPropertyChanged("NoiseReduction");
+       }
+      }
+     }
+     
+        private bool _HideMuzzleFlash;
+     public bool HideMuzzleFlash 
+     { 
+      get
+      {
+       return _HideMuzzleFlash;
+      } 
+      set
+      {
+       if(_HideMuzzleFlash != value)
+       {
+        _HideMuzzleFlash = value;
+        OnPropertyChanged("HideMuzzleFlash");
+       }
+      }
+     }
+     
+        private Nullable<int> _RangeBonus;
+     public Nullable<int> RangeBonus 
+     { 
+      get
+      {
+       return _RangeBonus;
+      } 
+      set
+      {
+       if(_RangeBonus != value)
+       {
+        _RangeBonus = value;
+        OnPropertyChanged("RangeBonus");
+       }
+      }
+     }
+     
+        private Nullable<int> _AimBonus;
+     public Nullable<int> AimBonus 
+     { 
+      get
+      {
+       return _AimBonus;
+      } 
+      set
+      {
+       if(_AimBonus != value)
+       {
+        _AimBonus = value;
+        OnPropertyChanged("AimBonus");
+       }
+      }
+     }
+     
+        private Nullable<int> _MinRangeForAimBonus;
+     public Nullable<int> MinRangeForAimBonus 
+     { 
+      get
+      {
+       return _MinRangeForAimBonus;
+      } 
+      set
+      {
+       if(_MinRangeForAimBonus != value)
+       {
+        _MinRangeForAimBonus = value;
+        OnPropertyChanged("MinRangeForAimBonus");
+       }
+      }
+     }
+     
+        private Nullable<int> _MagSizeBonus;
+     public Nullable<int> MagSizeBonus 
+     { 
+      get
+      {
+       return _MagSizeBonus;
+      } 
+      set
+      {
+       if(_MagSizeBonus != value)
+       {
+        _MagSizeBonus = value;
+        OnPropertyChanged("MagSizeBonus");
+       }
+      }
+     }
+     
+        private Nullable<int> _BurstSizeBonus;
+     public Nullable<int> BurstSizeBonus 
+     { 
+      get
+      {
+       return _BurstSizeBonus;
+      } 
+      set
+      {
+       if(_BurstSizeBonus != value)
+       {
+        _BurstSizeBonus = value;
+        OnPropertyChanged("BurstSizeBonus");
+       }
+      }
+     }
+     
+        private Nullable<int> _RateOfFireBonus;
+     public Nullable<int> RateOfFireBonus 
+     { 
+      get
+      {
+       return _RateOfFireBonus;
+      } 
+      set
+      {
+       if(_RateOfFireBonus != value)
+       {
+        _RateOfFireBonus = value;
+        OnPropertyChanged("RateOfFireBonus");
+       }
+      }
+     }
+     
+        private Nullable<int> _DamageBonus;
+     public Nullable<int> DamageBonus 
+     { 
+      get
+      {
+       return _DamageBonus;
+      } 
+      set
+      {
+       if(_DamageBonus != value)
+       {
+        _DamageBonus = value;
+        OnPropertyChanged("DamageBonus");
+       }
+      }
+     }
+     
+        private Nullable<decimal> _ScopeMagFactor;
+     public Nullable<decimal> ScopeMagFactor 
+     { 
+      get
+      {
+       return _ScopeMagFactor;
+      } 
+      set
+      {
+       if(_ScopeMagFactor != value)
+       {
+        _ScopeMagFactor = value;
+        OnPropertyChanged("ScopeMagFactor");
+       }
+      }
+     }
+     
+        private Nullable<int> _HearingRangeBonus;
+     public Nullable<int> HearingRangeBonus 
+     { 
+      get
+      {
+       return _HearingRangeBonus;
+      } 
+      set
+      {
+       if(_HearingRangeBonus != value)
+       {
+        _HearingRangeBonus = value;
+        OnPropertyChanged("HearingRangeBonus");
+       }
+      }
+     }
+     
+        private Nullable<int> _VisionRangeBonus;
+     public Nullable<int> VisionRangeBonus 
+     { 
+      get
+      {
+       return _VisionRangeBonus;
+      } 
+      set
+      {
+       if(_VisionRangeBonus != value)
+       {
+        _VisionRangeBonus = value;
+        OnPropertyChanged("VisionRangeBonus");
+       }
+      }
+     }
+     
+        private Nullable<int> _NightVisionRangeBonus;
+     public Nullable<int> NightVisionRangeBonus 
+     { 
+      get
+      {
+       return _NightVisionRangeBonus;
+      } 
+      set
+      {
+       if(_NightVisionRangeBonus != value)
+       {
+        _NightVisionRangeBonus = value;
+        OnPropertyChanged("NightVisionRangeBonus");
+       }
+      }
+     }
+     
+        private Nullable<int> _DayVisionRangeBonus;
+     public Nullable<int> DayVisionRangeBonus 
+     { 
+      get
+      {
+       return _DayVisionRangeBonus;
+      } 
+      set
+      {
+       if(_DayVisionRangeBonus != value)
+       {
+        _DayVisionRangeBonus = value;
+        OnPropertyChanged("DayVisionRangeBonus");
+       }
+      }
+     }
+     
+        private Nullable<int> _CaveVisionRangeBonus;
+     public Nullable<int> CaveVisionRangeBonus 
+     { 
+      get
+      {
+       return _CaveVisionRangeBonus;
+      } 
+      set
+      {
+       if(_CaveVisionRangeBonus != value)
+       {
+        _CaveVisionRangeBonus = value;
+        OnPropertyChanged("CaveVisionRangeBonus");
+       }
+      }
+     }
+     
+        private Nullable<int> _BrightLightVisionRangeBonus;
+     public Nullable<int> BrightLightVisionRangeBonus 
+     { 
+      get
+      {
+       return _BrightLightVisionRangeBonus;
+      } 
+      set
+      {
+       if(_BrightLightVisionRangeBonus != value)
+       {
+        _BrightLightVisionRangeBonus = value;
+        OnPropertyChanged("BrightLightVisionRangeBonus");
+       }
+      }
+     }
+     
+        private Nullable<int> _PercentTunnelVision;
+     public Nullable<int> PercentTunnelVision 
+     { 
+      get
+      {
+       return _PercentTunnelVision;
+      } 
+      set
+      {
+       if(_PercentTunnelVision != value)
+       {
+        _PercentTunnelVision = value;
+        OnPropertyChanged("PercentTunnelVision");
+       }
+      }
+     }
+     
+        private Nullable<int> _FlashLightRange;
+     public Nullable<int> FlashLightRange 
+     { 
+      get
+      {
+       return _FlashLightRange;
+      } 
+      set
+      {
+       if(_FlashLightRange != value)
+       {
+        _FlashLightRange = value;
+        OnPropertyChanged("FlashLightRange");
+       }
+      }
+     }
+     
+        private Nullable<int> _RecoilModifier;
+     public Nullable<int> RecoilModifier 
+     { 
+      get
+      {
+       return _RecoilModifier;
+      } 
+      set
+      {
+       if(_RecoilModifier != value)
+       {
+        _RecoilModifier = value;
+        OnPropertyChanged("RecoilModifier");
+       }
+      }
+     }
+     
+        private int _G_SubAttachClass;
+     public int G_SubAttachClass 
+     { 
+      get
+      {
+       return _G_SubAttachClass;
+      } 
+      set
+      {
+       if(_G_SubAttachClass != value)
+       {
+        _G_SubAttachClass = value;
+        OnPropertyChanged("G_SubAttachClass");
+       }
+      }
+     }
+     
+        private int _G_AttachClass;
+     public int G_AttachClass 
+     { 
+      get
+      {
+       return _G_AttachClass;
+      } 
+      set
+      {
+       if(_G_AttachClass != value)
+       {
+        _G_AttachClass = value;
+        OnPropertyChanged("G_AttachClass");
+       }
+      }
+     }
+     
+        private Nullable<int> _Darkness;
+     public Nullable<int> Darkness 
+     { 
+      get
+      {
+       return _Darkness;
+      } 
+      set
+      {
+       if(_Darkness != value)
+       {
+        _Darkness = value;
+        OnPropertyChanged("Darkness");
+       }
+      }
+     }
+     
+        private Nullable<int> _Bulk_add;
+     public Nullable<int> Bulk_add 
+     { 
+      get
+      {
+       return _Bulk_add;
+      } 
+      set
+      {
+       if(_Bulk_add != value)
+       {
+        _Bulk_add = value;
+        OnPropertyChanged("Bulk_add");
+       }
+      }
+     }
+     
+        private bool _Fix;
+     public bool Fix 
+     { 
+      get
+      {
+       return _Fix;
+      } 
+      set
+      {
+       if(_Fix != value)
+       {
+        _Fix = value;
+        OnPropertyChanged("Fix");
+       }
+      }
+     }
+     
+        private bool _Tritium;
+     public bool Tritium 
+     { 
+      get
+      {
+       return _Tritium;
+      } 
+      set
+      {
+       if(_Tritium != value)
+       {
+        _Tritium = value;
+        OnPropertyChanged("Tritium");
+       }
+      }
+     }
+     
+        private Nullable<int> _ScopeMagMin;
+     public Nullable<int> ScopeMagMin 
+     { 
+      get
+      {
+       return _ScopeMagMin;
+      } 
+      set
+      {
+       if(_ScopeMagMin != value)
+       {
+        _ScopeMagMin = value;
+        OnPropertyChanged("ScopeMagMin");
+       }
+      }
+     }
+     
+        private Nullable<int> _ScopeMagMax;
+     public Nullable<int> ScopeMagMax 
+     { 
+      get
+      {
+       return _ScopeMagMax;
+      } 
+      set
+      {
+       if(_ScopeMagMax != value)
+       {
+        _ScopeMagMax = value;
+        OnPropertyChanged("ScopeMagMax");
+       }
+      }
+     }
+     
+        private Nullable<int> _AccAddmax;
+     public Nullable<int> AccAddmax 
+     { 
+      get
+      {
+       return _AccAddmax;
+      } 
+      set
+      {
+       if(_AccAddmax != value)
+       {
+        _AccAddmax = value;
+        OnPropertyChanged("AccAddmax");
+       }
+      }
+     }
+     
+        private int _id_Attachmentmount;
+     public int id_Attachmentmount 
+     { 
+      get
+      {
+       return _id_Attachmentmount;
+      } 
+      set
+      {
+       if(_id_Attachmentmount != value)
+       {
+        _id_Attachmentmount = value;
+        OnPropertyChanged("id_Attachmentmount");
+       }
+      }
+     }
+     
+        private bool _ImpVisSights;
+     public bool ImpVisSights 
+     { 
+      get
+      {
+       return _ImpVisSights;
+      } 
+      set
+      {
+       if(_ImpVisSights != value)
+       {
+        _ImpVisSights = value;
+        OnPropertyChanged("ImpVisSights");
+       }
+      }
+     }
+     
+        private bool _BlockIronSight;
+     public bool BlockIronSight 
+     { 
+      get
+      {
+       return _BlockIronSight;
+      } 
+      set
+      {
+       if(_BlockIronSight != value)
+       {
+        _BlockIronSight = value;
+        OnPropertyChanged("BlockIronSight");
+       }
+      }
+     }
+     
+        private bool _Collimator;
+     public bool Collimator 
+     { 
+      get
+      {
+       return _Collimator;
+      } 
+      set
+      {
+       if(_Collimator != value)
+       {
+        _Collimator = value;
+        OnPropertyChanged("Collimator");
+       }
+      }
+     }
+     
+        private bool _Reflex;
+     public bool Reflex 
+     { 
+      get
+      {
+       return _Reflex;
+      } 
+      set
+      {
+       if(_Reflex != value)
+       {
+        _Reflex = value;
+        OnPropertyChanged("Reflex");
+       }
+      }
+     }
+     
+        private bool _Targetingprogram;
+     public bool Targetingprogram 
+     { 
+      get
+      {
+       return _Targetingprogram;
+      } 
+      set
+      {
+       if(_Targetingprogram != value)
+       {
+        _Targetingprogram = value;
+        OnPropertyChanged("Targetingprogram");
+       }
+      }
+     }
+     
+        private bool _Laserrangefinder;
+     public bool Laserrangefinder 
+     { 
+      get
+      {
+       return _Laserrangefinder;
+      } 
+      set
+      {
+       if(_Laserrangefinder != value)
+       {
+        _Laserrangefinder = value;
+        OnPropertyChanged("Laserrangefinder");
+       }
+      }
+     }
+     
+        private Nullable<int> _LaserRFrange;
+     public Nullable<int> LaserRFrange 
+     { 
+      get
+      {
+       return _LaserRFrange;
+      } 
+      set
+      {
+       if(_LaserRFrange != value)
+       {
+        _LaserRFrange = value;
+        OnPropertyChanged("LaserRFrange");
+       }
+      }
+     }
+     
+        private Nullable<int> _LaserRFAcc;
+     public Nullable<int> LaserRFAcc 
+     { 
+      get
+      {
+       return _LaserRFAcc;
+      } 
+      set
+      {
+       if(_LaserRFAcc != value)
+       {
+        _LaserRFAcc = value;
+        OnPropertyChanged("LaserRFAcc");
+       }
+      }
+     }
+     
+        private Nullable<int> _NightVision;
+     public Nullable<int> NightVision 
+     { 
+      get
+      {
+       return _NightVision;
+      } 
+      set
+      {
+       if(_NightVision != value)
+       {
+        _NightVision = value;
+        OnPropertyChanged("NightVision");
+       }
+      }
+     }
+     
+        private bool _NeedIRillumination;
+     public bool NeedIRillumination 
+     { 
+      get
+      {
+       return _NeedIRillumination;
+      } 
+      set
+      {
+       if(_NeedIRillumination != value)
+       {
+        _NeedIRillumination = value;
+        OnPropertyChanged("NeedIRillumination");
+       }
+      }
+     }
+     
+        private bool _Infravision;
+     public bool Infravision 
+     { 
+      get
+      {
+       return _Infravision;
+      } 
+      set
+      {
+       if(_Infravision != value)
+       {
+        _Infravision = value;
+        OnPropertyChanged("Infravision");
+       }
+      }
+     }
+     
+        private bool _IRFilter;
+     public bool IRFilter 
+     { 
+      get
+      {
+       return _IRFilter;
+      } 
+      set
+      {
+       if(_IRFilter != value)
+       {
+        _IRFilter = value;
+        OnPropertyChanged("IRFilter");
+       }
+      }
+     }
+     
+        private Nullable<int> _LightRange;
+     public Nullable<int> LightRange 
+     { 
+      get
+      {
+       return _LightRange;
+      } 
+      set
+      {
+       if(_LightRange != value)
+       {
+        _LightRange = value;
+        OnPropertyChanged("LightRange");
+       }
+      }
+     }
+     
+        private Nullable<int> _IRLigRange;
+     public Nullable<int> IRLigRange 
+     { 
+      get
+      {
+       return _IRLigRange;
+      } 
+      set
+      {
+       if(_IRLigRange != value)
+       {
+        _IRLigRange = value;
+        OnPropertyChanged("IRLigRange");
+       }
+      }
+     }
+     
+        private Nullable<int> _LaserRange;
+     public Nullable<int> LaserRange 
+     { 
+      get
+      {
+       return _LaserRange;
+      } 
+      set
+      {
+       if(_LaserRange != value)
+       {
+        _LaserRange = value;
+        OnPropertyChanged("LaserRange");
+       }
+      }
+     }
+     
+        private string _LaserColor;
+     public string LaserColor 
+     { 
+      get
+      {
+       return _LaserColor;
+      } 
+      set
+      {
+       if(_LaserColor != value)
+       {
+        _LaserColor = value;
+        OnPropertyChanged("LaserColor");
+       }
+      }
+     }
+     
+        private Nullable<decimal> _laserColorEf;
+     public Nullable<decimal> laserColorEf 
+     { 
+      get
+      {
+       return _laserColorEf;
+      } 
+      set
+      {
+       if(_laserColorEf != value)
+       {
+        _laserColorEf = value;
+        OnPropertyChanged("laserColorEf");
+       }
+      }
+     }
+     
+        private Nullable<int> _BatTimeWork;
+     public Nullable<int> BatTimeWork 
+     { 
+      get
+      {
+       return _BatTimeWork;
+      } 
+      set
+      {
+       if(_BatTimeWork != value)
+       {
+        _BatTimeWork = value;
+        OnPropertyChanged("BatTimeWork");
+       }
+      }
+     }
+     
     
-        public virtual Attachmentmount Attachmentmount1 { get; set; }
-        public virtual G_AttachClass G_AttachClass1 { get; set; }
-        public virtual G_SubAttachClass G_SubAttachClass1 { get; set; }
+        private Attachmentmount _Attachmentmount1;
+     public virtual Attachmentmount Attachmentmount1 
+     { 
+      get
+      {
+       return _Attachmentmount1;
+      } 
+      set
+      {
+       if(_Attachmentmount1 != value)
+       {
+        _Attachmentmount1 = value;
+        OnPropertyChanged("Attachmentmount1");
+       }
+      }
+     }
+     
+        private G_AttachClass _G_AttachClass1;
+     public virtual G_AttachClass G_AttachClass1 
+     { 
+      get
+      {
+       return _G_AttachClass1;
+      } 
+      set
+      {
+       if(_G_AttachClass1 != value)
+       {
+        _G_AttachClass1 = value;
+        OnPropertyChanged("G_AttachClass1");
+       }
+      }
+     }
+     
+        private G_SubAttachClass _G_SubAttachClass1;
+     public virtual G_SubAttachClass G_SubAttachClass1 
+     { 
+      get
+      {
+       return _G_SubAttachClass1;
+      } 
+      set
+      {
+       if(_G_SubAttachClass1 != value)
+       {
+        _G_SubAttachClass1 = value;
+        OnPropertyChanged("G_SubAttachClass1");
+       }
+      }
+     }
+     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<G_AvAttachClass> G_AvAttachClass { get; set; }
-        public virtual AttachmentClass AttachmentClass { get; set; }
+        private ICollection<G_AvAttachClass> _G_AvAttachClass;
+     public virtual ICollection<G_AvAttachClass> G_AvAttachClass 
+     { 
+      get
+      {
+       return _G_AvAttachClass;
+      } 
+      set
+      {
+       if(_G_AvAttachClass != value)
+       {
+        _G_AvAttachClass = value;
+        OnPropertyChanged("G_AvAttachClass");
+       }
+      }
+     }
+     
+        private AttachmentClass _AttachmentClass;
+     public virtual AttachmentClass AttachmentClass 
+     { 
+      get
+      {
+       return _AttachmentClass;
+      } 
+      set
+      {
+       if(_AttachmentClass != value)
+       {
+        _AttachmentClass = value;
+        OnPropertyChanged("AttachmentClass");
+       }
+      }
+     }
+     
     }
 }

@@ -12,13 +12,124 @@ namespace Item_WPF
     using System;
     using System.Collections.Generic;
     
-    public partial class Battery
+    public partial class Battery : System.ComponentModel.INotifyPropertyChanged
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string SmolName { get; set; }
-        public string Description { get; set; }
-        public Nullable<decimal> CPP { get; set; }
-        public Nullable<decimal> WPP { get; set; }
+     
+     #region Implement INotifyPropertyChanged
+     
+     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+     
+     protected virtual void OnPropertyChanged(string propertyName)
+     {
+      if (PropertyChanged != null)
+      {
+       PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+      }
+     }
+     
+     #endregion
+     
+        private int _id;
+     public int id 
+     { 
+      get
+      {
+       return _id;
+      } 
+      set
+      {
+       if(_id != value)
+       {
+        _id = value;
+        OnPropertyChanged("id");
+       }
+      }
+     }
+     
+        private string _name;
+     public string name 
+     { 
+      get
+      {
+       return _name;
+      } 
+      set
+      {
+       if(_name != value)
+       {
+        _name = value;
+        OnPropertyChanged("name");
+       }
+      }
+     }
+     
+        private string _SmolName;
+     public string SmolName 
+     { 
+      get
+      {
+       return _SmolName;
+      } 
+      set
+      {
+       if(_SmolName != value)
+       {
+        _SmolName = value;
+        OnPropertyChanged("SmolName");
+       }
+      }
+     }
+     
+        private string _Description;
+     public string Description 
+     { 
+      get
+      {
+       return _Description;
+      } 
+      set
+      {
+       if(_Description != value)
+       {
+        _Description = value;
+        OnPropertyChanged("Description");
+       }
+      }
+     }
+     
+        private Nullable<decimal> _CPP;
+     public Nullable<decimal> CPP 
+     { 
+      get
+      {
+       return _CPP;
+      } 
+      set
+      {
+       if(_CPP != value)
+       {
+        _CPP = value;
+        OnPropertyChanged("CPP");
+       }
+      }
+     }
+     
+        private Nullable<decimal> _WPP;
+     public Nullable<decimal> WPP 
+     { 
+      get
+      {
+       return _WPP;
+      } 
+      set
+      {
+       if(_WPP != value)
+       {
+        _WPP = value;
+        OnPropertyChanged("WPP");
+       }
+      }
+     }
+     
     }
 }

@@ -12,14 +12,125 @@ namespace Item_WPF
     using System;
     using System.Collections.Generic;
     
-    public partial class AvailableAttachSlot
+    public partial class AvailableAttachSlot : System.ComponentModel.INotifyPropertyChanged
     {
-        public int rWeaponId { get; set; }
-        public int rATTACHMENTSLOT { get; set; }
-        public int rAttachmentmount { get; set; }
+     
+     #region Implement INotifyPropertyChanged
+     
+     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+     
+     protected virtual void OnPropertyChanged(string propertyName)
+     {
+      if (PropertyChanged != null)
+      {
+       PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+      }
+     }
+     
+     #endregion
+     
+        private int _rWeaponId;
+     public int rWeaponId 
+     { 
+      get
+      {
+       return _rWeaponId;
+      } 
+      set
+      {
+       if(_rWeaponId != value)
+       {
+        _rWeaponId = value;
+        OnPropertyChanged("rWeaponId");
+       }
+      }
+     }
+     
+        private int _rATTACHMENTSLOT;
+     public int rATTACHMENTSLOT 
+     { 
+      get
+      {
+       return _rATTACHMENTSLOT;
+      } 
+      set
+      {
+       if(_rATTACHMENTSLOT != value)
+       {
+        _rATTACHMENTSLOT = value;
+        OnPropertyChanged("rATTACHMENTSLOT");
+       }
+      }
+     }
+     
+        private int _rAttachmentmount;
+     public int rAttachmentmount 
+     { 
+      get
+      {
+       return _rAttachmentmount;
+      } 
+      set
+      {
+       if(_rAttachmentmount != value)
+       {
+        _rAttachmentmount = value;
+        OnPropertyChanged("rAttachmentmount");
+       }
+      }
+     }
+     
     
-        public virtual Attachmentmount Attachmentmount { get; set; }
-        public virtual ATTACHMENTSLOT ATTACHMENTSLOT { get; set; }
-        public virtual WEAPON WEAPON { get; set; }
+        private Attachmentmount _Attachmentmount;
+     public virtual Attachmentmount Attachmentmount 
+     { 
+      get
+      {
+       return _Attachmentmount;
+      } 
+      set
+      {
+       if(_Attachmentmount != value)
+       {
+        _Attachmentmount = value;
+        OnPropertyChanged("Attachmentmount");
+       }
+      }
+     }
+     
+        private ATTACHMENTSLOT _ATTACHMENTSLOT;
+     public virtual ATTACHMENTSLOT ATTACHMENTSLOT 
+     { 
+      get
+      {
+       return _ATTACHMENTSLOT;
+      } 
+      set
+      {
+       if(_ATTACHMENTSLOT != value)
+       {
+        _ATTACHMENTSLOT = value;
+        OnPropertyChanged("ATTACHMENTSLOT");
+       }
+      }
+     }
+     
+        private WEAPON _WEAPON;
+     public virtual WEAPON WEAPON 
+     { 
+      get
+      {
+       return _WEAPON;
+      } 
+      set
+      {
+       if(_WEAPON != value)
+       {
+        _WEAPON = value;
+        OnPropertyChanged("WEAPON");
+       }
+      }
+     }
+     
     }
 }

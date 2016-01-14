@@ -12,20 +12,115 @@ namespace Item_WPF
     using System;
     using System.Collections.Generic;
     
-    public partial class WeaponType
+    public partial class WeaponType : System.ComponentModel.INotifyPropertyChanged
     {
+     
+     #region Implement INotifyPropertyChanged
+     
+     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+     
+     protected virtual void OnPropertyChanged(string propertyName)
+     {
+      if (PropertyChanged != null)
+      {
+       PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+      }
+     }
+     
+     #endregion
+     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public WeaponType()
         {
             this.WEAPONs = new HashSet<WEAPON>();
         }
     
-        public int id { get; set; }
-        public string name { get; set; }
-        public Nullable<int> Class { get; set; }
+        private int _id;
+     public int id 
+     { 
+      get
+      {
+       return _id;
+      } 
+      set
+      {
+       if(_id != value)
+       {
+        _id = value;
+        OnPropertyChanged("id");
+       }
+      }
+     }
+     
+        private string _name;
+     public string name 
+     { 
+      get
+      {
+       return _name;
+      } 
+      set
+      {
+       if(_name != value)
+       {
+        _name = value;
+        OnPropertyChanged("name");
+       }
+      }
+     }
+     
+        private Nullable<int> _Class;
+     public Nullable<int> Class 
+     { 
+      get
+      {
+       return _Class;
+      } 
+      set
+      {
+       if(_Class != value)
+       {
+        _Class = value;
+        OnPropertyChanged("Class");
+       }
+      }
+     }
+     
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<WEAPON> WEAPONs { get; set; }
-        public virtual WeaponClass WeaponClass { get; set; }
+        private ICollection<WEAPON> _WEAPONs;
+     public virtual ICollection<WEAPON> WEAPONs 
+     { 
+      get
+      {
+       return _WEAPONs;
+      } 
+      set
+      {
+       if(_WEAPONs != value)
+       {
+        _WEAPONs = value;
+        OnPropertyChanged("WEAPONs");
+       }
+      }
+     }
+     
+        private WeaponClass _WeaponClass;
+     public virtual WeaponClass WeaponClass 
+     { 
+      get
+      {
+       return _WeaponClass;
+      } 
+      set
+      {
+       if(_WeaponClass != value)
+       {
+        _WeaponClass = value;
+        OnPropertyChanged("WeaponClass");
+       }
+      }
+     }
+     
     }
 }

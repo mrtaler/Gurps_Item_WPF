@@ -12,18 +12,81 @@ namespace Item_WPF
     using System;
     using System.Collections.Generic;
     
-    public partial class nasAttachmentClass
+    public partial class nasAttachmentClass : System.ComponentModel.INotifyPropertyChanged
     {
+     
+     #region Implement INotifyPropertyChanged
+     
+     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+     
+     protected virtual void OnPropertyChanged(string propertyName)
+     {
+      if (PropertyChanged != null)
+      {
+       PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+      }
+     }
+     
+     #endregion
+     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public nasAttachmentClass()
         {
             this.ATTACHMENTSLOTs = new HashSet<ATTACHMENTSLOT>();
         }
     
-        public int id { get; set; }
-        public string name { get; set; }
+        private int _id;
+     public int id 
+     { 
+      get
+      {
+       return _id;
+      } 
+      set
+      {
+       if(_id != value)
+       {
+        _id = value;
+        OnPropertyChanged("id");
+       }
+      }
+     }
+     
+        private string _name;
+     public string name 
+     { 
+      get
+      {
+       return _name;
+      } 
+      set
+      {
+       if(_name != value)
+       {
+        _name = value;
+        OnPropertyChanged("name");
+       }
+      }
+     }
+     
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ATTACHMENTSLOT> ATTACHMENTSLOTs { get; set; }
+        private ICollection<ATTACHMENTSLOT> _ATTACHMENTSLOTs;
+     public virtual ICollection<ATTACHMENTSLOT> ATTACHMENTSLOTs 
+     { 
+      get
+      {
+       return _ATTACHMENTSLOTs;
+      } 
+      set
+      {
+       if(_ATTACHMENTSLOTs != value)
+       {
+        _ATTACHMENTSLOTs = value;
+        OnPropertyChanged("ATTACHMENTSLOTs");
+       }
+      }
+     }
+     
     }
 }

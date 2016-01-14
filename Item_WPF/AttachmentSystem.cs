@@ -12,9 +12,56 @@ namespace Item_WPF
     using System;
     using System.Collections.Generic;
     
-    public partial class AttachmentSystem
+    public partial class AttachmentSystem : System.ComponentModel.INotifyPropertyChanged
     {
-        public int id { get; set; }
-        public string name { get; set; }
+     
+     #region Implement INotifyPropertyChanged
+     
+     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+     
+     protected virtual void OnPropertyChanged(string propertyName)
+     {
+      if (PropertyChanged != null)
+      {
+       PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+      }
+     }
+     
+     #endregion
+     
+        private int _id;
+     public int id 
+     { 
+      get
+      {
+       return _id;
+      } 
+      set
+      {
+       if(_id != value)
+       {
+        _id = value;
+        OnPropertyChanged("id");
+       }
+      }
+     }
+     
+        private string _name;
+     public string name 
+     { 
+      get
+      {
+       return _name;
+      } 
+      set
+      {
+       if(_name != value)
+       {
+        _name = value;
+        OnPropertyChanged("name");
+       }
+      }
+     }
+     
     }
 }

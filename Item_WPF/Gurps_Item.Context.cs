@@ -20,6 +20,7 @@ namespace Item_WPF
         public item1Entities()
             : base("name=item1Entities")
         {
+    
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

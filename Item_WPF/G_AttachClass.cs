@@ -12,8 +12,23 @@ namespace Item_WPF
     using System;
     using System.Collections.Generic;
     
-    public partial class G_AttachClass
+    public partial class G_AttachClass : System.ComponentModel.INotifyPropertyChanged
     {
+     
+     #region Implement INotifyPropertyChanged
+     
+     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+     
+     protected virtual void OnPropertyChanged(string propertyName)
+     {
+      if (PropertyChanged != null)
+      {
+       PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+      }
+     }
+     
+     #endregion
+     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public G_AttachClass()
         {
@@ -22,14 +37,94 @@ namespace Item_WPF
             this.G_SubAttachClass = new HashSet<G_SubAttachClass>();
         }
     
-        public int id { get; set; }
-        public string name_class { get; set; }
+        private int _id;
+     public int id 
+     { 
+      get
+      {
+       return _id;
+      } 
+      set
+      {
+       if(_id != value)
+       {
+        _id = value;
+        OnPropertyChanged("id");
+       }
+      }
+     }
+     
+        private string _name_class;
+     public string name_class 
+     { 
+      get
+      {
+       return _name_class;
+      } 
+      set
+      {
+       if(_name_class != value)
+       {
+        _name_class = value;
+        OnPropertyChanged("name_class");
+       }
+      }
+     }
+     
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Attachment> Attachments { get; set; }
+        private ICollection<Attachment> _Attachments;
+     public virtual ICollection<Attachment> Attachments 
+     { 
+      get
+      {
+       return _Attachments;
+      } 
+      set
+      {
+       if(_Attachments != value)
+       {
+        _Attachments = value;
+        OnPropertyChanged("Attachments");
+       }
+      }
+     }
+     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<G_AvAttachClass> G_AvAttachClass { get; set; }
+        private ICollection<G_AvAttachClass> _G_AvAttachClass;
+     public virtual ICollection<G_AvAttachClass> G_AvAttachClass 
+     { 
+      get
+      {
+       return _G_AvAttachClass;
+      } 
+      set
+      {
+       if(_G_AvAttachClass != value)
+       {
+        _G_AvAttachClass = value;
+        OnPropertyChanged("G_AvAttachClass");
+       }
+      }
+     }
+     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<G_SubAttachClass> G_SubAttachClass { get; set; }
+        private ICollection<G_SubAttachClass> _G_SubAttachClass;
+     public virtual ICollection<G_SubAttachClass> G_SubAttachClass 
+     { 
+      get
+      {
+       return _G_SubAttachClass;
+      } 
+      set
+      {
+       if(_G_SubAttachClass != value)
+       {
+        _G_SubAttachClass = value;
+        OnPropertyChanged("G_SubAttachClass");
+       }
+      }
+     }
+     
     }
 }

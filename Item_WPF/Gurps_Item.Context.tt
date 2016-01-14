@@ -58,6 +58,7 @@ using System.Linq;
     public <#=code.Escape(container)#>()
         : base("name=<#=container.Name#>")
     {
+
 <#
 if (!loader.IsLazyLoadingEnabled(container))
 {
@@ -65,6 +66,15 @@ if (!loader.IsLazyLoadingEnabled(container))
         this.Configuration.LazyLoadingEnabled = false;
 <#
 }
+
+
+
+
+
+
+
+
+
 
 foreach (var entitySet in container.BaseEntitySets.OfType<EntitySet>())
 {
