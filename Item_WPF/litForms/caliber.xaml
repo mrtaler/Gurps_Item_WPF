@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="caliber" Height="300" Width="529.18">
     <Grid>
-        <DataGrid x:Name="Caliber_dataGrid" Margin="10,10,10,70" AutoGenerateColumns="False" ColumnWidth="*" CanUserDeleteRows="True">
+        <DataGrid x:Name="Caliber_dataGrid" Margin="10,10,10,70" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="id" Binding="{Binding id}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Name" Binding="{Binding Caliber_name}"/>
@@ -19,8 +19,7 @@
                 <DataGridTemplateColumn Width="30">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <!--<Button Content="Х" Command="{Binding Path=DeleteCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" CommandParameter="{Binding}" />-->
-                            <Button Content="X" Click="Button_Click"/>
+                            <Button Content="Х" Command="{Binding Path=DeleteCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" CommandParameter="{Binding}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
