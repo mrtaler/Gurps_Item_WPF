@@ -329,24 +329,17 @@ public class CodeStringGenerator
         
         var endType = _typeMapper.GetTypeName(navProp.ToEndMember.GetEntityType());
         return string.Format(
-            CultureInfo.InvariantCulture,
-            @"private {1} _{2};
- {0} {1} {2} 
- {{ 
-  {3}get
-  {{
-   return _{2};
-  }} 
-  {4}set
-  {{
-   if(_{2} != value)
-   {{
-    _{2} = value;
-    OnPropertyChanged(""{2}"");
-   }}
-  }}
- }}
- ",
+		CultureInfo.InvariantCulture,
+		@"private {1} _{2};
+			{0} {1} {2}
+					{{
+					{3}get
+						{{ return _{2}; }} 
+					{4}set
+					{{ if(_{2} != value)
+					   {{    _{2} = value;    OnPropertyChanged(""{2}"");   }}
+						}}
+					 }} ",
             AccessibilityAndVirtual(Accessibility.ForProperty(navProp)),
             navProp.ToEndMember.RelationshipMultiplicity == RelationshipMultiplicity.Many ? ("ICollection<" + endType + ">") : endType,
             _code.Escape(navProp),

@@ -7,25 +7,31 @@
         mc:Ignorable="d"
         Title="caliber" Height="300" Width="529.18">
     <Grid>
-        <DataGrid x:Name="Caliber_dataGrid" Margin="10,10,10,70" AutoGenerateColumns="False">
+        <DataGrid x:Name="Caliber_dataGrid" Margin="10,10,10,70" AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True" RowEditEnding="Caliber_dataGrid_RowEditEnding"  >
+            <!--ItemsSource="{Binding _ammoOK}"-->
+                  
             <DataGrid.Columns>
-                <DataGridTextColumn Header="id" Binding="{Binding id}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Name" Binding="{Binding Caliber_name}"/>
-                <DataGridTextColumn Header="Alt name" Binding="{Binding alt_caliber_name}"/>
-                <DataGridTextColumn Header="Diam SI" Binding="{Binding Dim_of_bullet_SI}"/>
-                <DataGridTextColumn Header="Diam US" Binding="{Binding Dim_of_bullet_US}"/>
-                <DataGridTextColumn Header="WPS" Binding="{Binding WPS}"/>
-                <DataGridTextColumn Header="CPS" Binding="{Binding CPS}"/>
+                <DataGridTextColumn Header="id"         Binding="{Binding id, Mode=TwoWay}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Name"       Binding="{Binding Caliber_name, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Alt name"   Binding="{Binding alt_caliber_name, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="AV_Upgrates"   Binding="{Binding AV_Upgrates, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Diam SI"    Binding="{Binding Dim_of_bullet_SI, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Diam US"    Binding="{Binding Dim_of_bullet_US, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="WPS"        Binding="{Binding WPS, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="CPS"        Binding="{Binding CPS, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Class_of_Ammo"        Binding="{Binding Class_of_Ammo, Mode=TwoWay}"/>
+                
                 <DataGridTemplateColumn Width="30">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Х" Command="{Binding Path=DeleteCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" CommandParameter="{Binding}" />
+                            <Button Content="X" Click="Button_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="Save_button" Content="save" HorizontalAlignment="Left" Margin="10,239,0,0" VerticalAlignment="Top" Width="75" Click="Save_button_Click"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="90,239,0,0" VerticalAlignment="Top" Width="75" Click="button_Click_1"/>
 
     </Grid>
 </Window>

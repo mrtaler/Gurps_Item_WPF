@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,59 +22,97 @@ namespace Item_WPF
     /// </summary>
     public partial class caliber : Window
     {
-        item1Entities context = new item1Entities();
-        public ObservableCollection<AMMO> ammoOK
-        {
-            get { return (ObservableCollection<AMMO>)GetValue(ItemsProperty); }
-            set { SetValue(ItemsProperty, value); }
-        }
+        //private MainWindowViewModel _mvvm = new MainWindowViewModel();
+        private item1Entities context;
+        public ObservableCollection<AMMO> ammoOK { get; set; }
+        public ObservableCollection<AMMO> ammoOK1 { get; set; }
+        //{
+        //    get { return this._ammoOK = new ObservableCollection<AMMO>(from z in context.AMMOes select z); }
+        //}
         public caliber()
         {
             InitializeComponent();
-            ammoOK = new ObservableCollection<AMMO>(from z in context.AMMOes select z);
-            Loaded += MainWindow_Loaded;
-           
-            DeleteCommand = new MyCommand() { Collection = ammoOK };
-        }
-        void MainWindow_Loaded(object sender, RoutedEventArgs e)
-        {
+            context = new item1Entities();
+            // DataContext = _mvvm;
+            ammoOK = new ObservableCollection<AMMO>(context.AMMOes);
             Caliber_dataGrid.ItemsSource = ammoOK;
-        }
-        class MyCommand : ICommand
-        {
-            public ObservableCollection<AMMO> Collection { get; set; }
 
-            public bool CanExecute(object parameter)
-            {
-                return true;
-            }
-            public event EventHandler CanExecuteChanged;
-            public void Execute(object parameter)
-            {
-                Collection.Remove(parameter as AMMO);        
-            }
+            ammoOK.CollectionChanged += new NotifyCollectionChangedEventHandler(_ammoOK_CollectionChanged);
+
         }
 
 
 
-        // Using a DependencyProperty as the backing store for Items.  This enables animation, styling, binding, etc...
-
-        public static readonly DependencyProperty ItemsProperty =
-            DependencyProperty.Register("Items", typeof(ObservableCollection<AMMO>), typeof(MainWindow), new PropertyMetadata(null));
-
-        public ICommand DeleteCommand
-        {
-            get { return (ICommand)GetValue(DeleteCommandProperty); }
-            set { SetValue(DeleteCommandProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for DeleteCommand.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty DeleteCommandProperty =
-            DependencyProperty.Register("DeleteCommand", typeof(ICommand), typeof(MainWindow), new PropertyMetadata(null));
         private void Save_button_Click(object sender, RoutedEventArgs e)
         {
             context.SaveChanges();
         }
-    }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            //{
+            //    try
+            //    {
+            //        int Caliber_id = (Caliber_dataGrid.SelectedItem as AMMO).id;
+            //        AMMO ammoDel = (from p in context.AMMOes
+            //                        where p.id == Caliber_id
+            //                        select p).First();
+            //        _ammoOK.Remove(ammoDel);
+            //        context.AMMOes.Remove(ammoDel);
+            //        context.SaveChanges();
+            //        Caliber_dataGrid.Items.Refresh();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.ToString());
+            //    }
+            //}
+        }
+
+
+        private void _ammoOK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+
+            if (e.Action == NotifyCollectionChangedAction.Remove)
+            {
+                foreach (AMMO item in e.OldItems)
+                {
+                    MessageBox.Show("dfg");
+                }
+            }
+            //    //else if (e.Action == NotifyCollectionChangedAction.Add)
+            //    //{
+            //    //    foreach (AMMO item in e.NewItems)
+            //    //    {
+            //    //        //Added items
+            //    //        item.PropertyChanged += EntityViewModelPropertyChanged;
+            //    //    }
+            //    //}
+            //    if (e.NewItems != null)
+            //        foreach (AMMO client in e.NewItems)
+            //            context.AMMOes.Add(client);
+
+            //}
+            //public void EntityViewModelPropertyChanged(object sender, PropertyChangedEventArgs e)
+            //{
+
+            //    // This will get called when the property of an object inside the collection changes
+            //    MessageBox.Show("dfg");
+        }
+
+        private void button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Caliber_dataGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
+        {
+            if (e.EditAction == DataGridEditAction.Commit)
+            {
+                AMMO driver = e.Row.DataContext as AMMO;
+                context.AMMOes.Add(driver);
+            }
+        }
+    }
 }

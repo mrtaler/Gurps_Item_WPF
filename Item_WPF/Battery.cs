@@ -11,125 +11,125 @@ namespace Item_WPF
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Battery : System.ComponentModel.INotifyPropertyChanged
     {
-     
-     #region Implement INotifyPropertyChanged
-     
-     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-     
-     protected virtual void OnPropertyChanged(string propertyName)
-     {
-      if (PropertyChanged != null)
-      {
-       PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-      }
-     }
-     
-     #endregion
-     
+
+        #region Implement INotifyPropertyChanged
+
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        #endregion
+
         private int _id;
-     public int id 
-     { 
-      get
-      {
-       return _id;
-      } 
-      set
-      {
-       if(_id != value)
-       {
-        _id = value;
-        OnPropertyChanged("id");
-       }
-      }
-     }
-     
+        public int id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    _id = value;
+                    OnPropertyChanged("id");
+                }
+            }
+        }
+
         private string _name;
-     public string name 
-     { 
-      get
-      {
-       return _name;
-      } 
-      set
-      {
-       if(_name != value)
-       {
-        _name = value;
-        OnPropertyChanged("name");
-       }
-      }
-     }
-     
+        public string name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                if (_name != value)
+                {
+                    _name = value;
+                    OnPropertyChanged("name");
+                }
+            }
+        }
+
         private string _SmolName;
-     public string SmolName 
-     { 
-      get
-      {
-       return _SmolName;
-      } 
-      set
-      {
-       if(_SmolName != value)
-       {
-        _SmolName = value;
-        OnPropertyChanged("SmolName");
-       }
-      }
-     }
-     
+        public string SmolName
+        {
+            get
+            {
+                return _SmolName;
+            }
+            set
+            {
+                if (_SmolName != value)
+                {
+                    _SmolName = value;
+                    OnPropertyChanged("SmolName");
+                }
+            }
+        }
+
         private string _Description;
-     public string Description 
-     { 
-      get
-      {
-       return _Description;
-      } 
-      set
-      {
-       if(_Description != value)
-       {
-        _Description = value;
-        OnPropertyChanged("Description");
-       }
-      }
-     }
-     
+        public string Description
+        {
+            get
+            {
+                return _Description;
+            }
+            set
+            {
+                if (_Description != value)
+                {
+                    _Description = value;
+                    OnPropertyChanged("Description");
+                }
+            }
+        }
+
         private Nullable<decimal> _CPP;
-     public Nullable<decimal> CPP 
-     { 
-      get
-      {
-       return _CPP;
-      } 
-      set
-      {
-       if(_CPP != value)
-       {
-        _CPP = value;
-        OnPropertyChanged("CPP");
-       }
-      }
-     }
-     
+        public Nullable<decimal> CPP
+        {
+            get
+            {
+                return _CPP;
+            }
+            set
+            {
+                if (_CPP != value)
+                {
+                    _CPP = value;
+                    OnPropertyChanged("CPP");
+                }
+            }
+        }
+
         private Nullable<decimal> _WPP;
-     public Nullable<decimal> WPP 
-     { 
-      get
-      {
-       return _WPP;
-      } 
-      set
-      {
-       if(_WPP != value)
-       {
-        _WPP = value;
-        OnPropertyChanged("WPP");
-       }
-      }
-     }
-     
+        public Nullable<decimal> WPP
+        {
+            get
+            {
+                return _WPP;
+            }
+            set
+            {
+                if (_WPP != value)
+                {
+                    _WPP = value;
+                    OnPropertyChanged("WPP");
+                }
+            }
+        }
+
     }
 }

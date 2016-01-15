@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="520cd847813e4f0ab1ad981dc27ed446" Name="Diagram1" ZoomLevel="66">
+      <Diagram DiagramId="520cd847813e4f0ab1ad981dc27ed446" Name="Diagram1" ZoomLevel="147">
         <EntityTypeShape EntityType="item1Model.AMMO" Width="1.5" PointX="5.875" PointY="6.625" />
         <EntityTypeShape EntityType="item1Model.AMMOUPGRATE" Width="1.5" PointX="17.75" PointY="16.75" />
         <EntityTypeShape EntityType="item1Model.ARMOUR" Width="1.5" PointX="20" PointY="7" />

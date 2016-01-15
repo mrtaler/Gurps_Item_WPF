@@ -194,18 +194,12 @@ namespace Item_WPF
         public virtual ICollection<WEAPON> WEAPONs
         {
             get
-            {
-                return _WEAPONs;
-            }
+            { return _WEAPONs; }
             set
             {
                 if (_WEAPONs != value)
-                {
-                    _WEAPONs = value;
-                    OnPropertyChanged("WEAPONs");
-                }
+                { _WEAPONs = value; OnPropertyChanged("WEAPONs"); }
             }
         }
-
     }
 }
