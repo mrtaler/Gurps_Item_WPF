@@ -167,7 +167,7 @@ namespace Item_WPF
 
             using (item1Entities context = new item1Entities())
             {
-                if (dataGridViewAllItems.SelectedValue !=null)
+                if (dataGridViewAllItems.SelectedValue != null)
                 {
 
                     int ID_sel = Convert.ToInt32(dataGridViewAllItems.SelectedValue);
@@ -226,9 +226,21 @@ namespace Item_WPF
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-
             NewItems newitem = new NewItems();
-            newitem.ShowDialog();            
+            newitem.ShowDialog();
+        }
+
+        private void dataGridViewAllItems_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            //bool ew2;
+            //ITEM item1 = (ITEM)e.Row.DataContext;
+            ////ITEM item1 = e.Row.Item as ITEM;
+            //if (item1 != null)
+            //{
+            //    ew2 = item1.used;
+            //    if (ew2) e.Row.Background = System.Windows.Media.Brushes.LightGreen;
+            //    else e.Row.Background = System.Windows.Media.Brushes.White;
+            //}
         }
 
 

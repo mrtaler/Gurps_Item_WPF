@@ -24,43 +24,48 @@ namespace Item_WPF
     public partial class Weapon_N_R : Window
     {
         private item1Entities context;
-        public ObservableCollection<ITEM> item_coll { get; set; }
-        public ObservableCollection<WEAPON> weapon_coll { get; set; }
+        private ObservableCollection<ITEM> item_coll { get; set; }
+        private ObservableCollection<WEAPON> weapon_coll { get; set; }
 
-        ITEM itemLoad;
+        ITEM itemLoad { get; set; }
 
-        WEAPON weaponLoad;
+        WEAPON weaponLoad { get; set; }
 
         byte[] by;
         public Weapon_N_R()
         {
             InitializeComponent();
-            this.Loaded += new RoutedEventHandler(Page_Loaded);
-
-            // загрузка из контекста редактируемых таблиц
             context = new item1Entities();
+            // загрузка из контекста редактируемых таблиц
             item_coll = new ObservableCollection<ITEM>(context.ITEMs);
             weapon_coll = new ObservableCollection<WEAPON>(context.WEAPONs);
+            this.Loaded += new RoutedEventHandler(Page_Loaded);
+        }
 
+        void Page_Loaded(object sender, RoutedEventArgs e)
+        {
             itemLoad = (from z in item_coll
                         where z.uiIndex == datachange.ID_sel
                         select z).First();
-            //            ,
-            //itemUndo = (from z in weapon_coll
-            //            where z.uiIndex == datachange.ID_sel
-            //            select z).First();
+            Main_Grid.DataContext = itemLoad;
+
             weaponLoad = (from p in context.WEAPONs
                           where p.uiIndex == itemLoad.ubClassIndex
                           select p).First();
-            //              ,
-            //weaponUndo = (from p in context.WEAPONs
-            //              where p.uiIndex == itemLoad.ubClassIndex
-            //              select p).First();
+            General_Grid.DataContext = itemLoad;
             this.Title = weaponLoad.szWeaponName;
+
             // вкладка 1
+
             // Name_TB.Text = itemLoad.szItemName;
             //LongName_TB.Text = itemLoad.szLongItemName;
             //Description_TB.Text = itemLoad.szItemDesc;
+
+            //Weigth_TB.Text = itemLoad.ubWeight.ToString();
+            //Cost_TB.Text = "$" + itemLoad.usPrice.ToString();
+            //Bulk_TB.Text = itemLoad.ItemSize.ToString();
+            //MinST_TB.Text = itemLoad.minST.ToString();
+
 
             if (itemLoad.Item_Image != null)
             {
@@ -94,12 +99,6 @@ namespace Item_WPF
             LC_textBlock.Text = (from p in context.LCs
                                  where p.Id_LC == itemLoad.LC
                                  select p.Description).First();
-
-
-            //Weigth_TB.Text = itemLoad.ubWeight.ToString();
-            //Cost_TB.Text = "$" + itemLoad.usPrice.ToString();
-            //Bulk_TB.Text = itemLoad.ItemSize.ToString();
-            //MinST_TB.Text = itemLoad.minST.ToString();
 
             HeavyWeapon_ChB.IsChecked = weaponLoad.HeavyWeapon;
             Mount_ChB.IsChecked = weaponLoad.Mount;
@@ -254,203 +253,193 @@ namespace Item_WPF
                     External_comboBox.Visibility = Visibility.Visible;
                     External_comboBox.SelectedValue = items.rAttachmentmount;
                 }
-
             }
-        }
-
-        void Page_Loaded(object sender, RoutedEventArgs e)
-
-        {
-            Main_Grid.DataContext = itemLoad;
-            General_Grid.DataContext = itemLoad;
-
-
         }
         private void save_button_Click(object sender, RoutedEventArgs e)
         {
-            using (item1Entities context = new item1Entities())
+
+
+            ITEM itemSave = (from z in context.ITEMs
+                             where z.uiIndex == datachange.ID_sel
+                             select z).First();
+            WEAPON weaponSave = (from p in context.WEAPONs
+                                 where p.uiIndex == itemSave.ubClassIndex
+                                 select p).First();
+
+            //itemSave.szItemName = Name_TB.Text;
+            // weaponSave.szWeaponName = Name_TB.Text;
+            //itemSave.szLongItemName = LongName_TB.Text;
+            //itemSave.szItemDesc = Description_TB.Text;
+
+
+            //itemSave.ubWeight = Convert.ToDecimal(Weigth_TB.Text.Replace(datachange.separatorCh, datachange.separator));
+            //string dd = (Cost_TB.Text.Replace("$", "").Replace(datachange.separatorCh, datachange.separator));
+            //itemSave.usPrice = Convert.ToDecimal(dd);
+
+            //itemSave.ItemSize = Bulk_TB.Text;
+            //itemSave.minST = Convert.ToInt32(MinST_TB.Text);
+
+            itemSave.Item_Image = by;
+            itemSave.TL = Convert.ToInt32(TL_CB.SelectedValue);
+            itemSave.LC = Convert.ToInt32(LC_CB.SelectedValue);
+
+
+            weaponSave.HeavyWeapon = Convert.ToBoolean(HeavyWeapon_ChB.IsChecked);
+            weaponSave.Mount = Convert.ToBoolean(Mount_ChB.IsChecked);
+            itemSave.TwoHanded = Convert.ToBoolean(TwoHanded_ChB.IsChecked);
+            itemSave.HT = Convert.ToBoolean(HT_ChB.IsChecked);
+            itemSave.UT = Convert.ToBoolean(UT_ChB.IsChecked);
+            itemSave.NeedsBatteries = Convert.ToBoolean(NeedBat_ChB.IsChecked);
+            itemSave.Damageable = Convert.ToBoolean(Damageble_ChB.IsChecked);
+            itemSave.Repairable = Convert.ToBoolean(Repairable_ChB.IsChecked);
+            itemSave.WaterDamages = Convert.ToBoolean(WaterDamageble_ChB.IsChecked);
+            itemSave.Metal = Convert.ToBoolean(Metal_ChB.IsChecked);
+            itemSave.Electronic = Convert.ToBoolean(Electronic_ChB.IsChecked);
+            weaponSave.Bulkfolded = Convert.ToBoolean(BulkFold_checkBox.IsChecked);
+
+            //3
+            //type&class
+            weaponSave.ubWeaponClass = Convert.ToInt32(ClassOfWeapon_TB.SelectedValue);
+            weaponSave.ubWeaponType = Convert.ToInt32(TypeOfClassWeap_TB.SelectedValue);
+            //Weapon Damage
+            weaponSave.Damage = Damage_textBox.Text;
+            weaponSave.ubTypeOfDamage = Convert.ToInt32(TypeOfDamage_comboBox.SelectedValue);
+            weaponSave.Arm_Division = Convert.ToDecimal(ArmDivizor_textBox.Text.Replace(datachange.separatorCh, datachange.separator));
+            weaponSave.Linked = Linked_textBox.Text;
+            weaponSave.Follow_Up = FollowUp_textBox.Text;
+            //range
+            weaponSave.MinRange = Convert.ToDecimal(MinRange_textBox.Text.Replace(datachange.separatorCh, datachange.separator));
+            weaponSave.Half_Range = Convert.ToDecimal(HalfRange_textBox.Text.Replace(datachange.separatorCh, datachange.separator));
+            weaponSave.FullRange = Convert.ToDecimal(MaxRange_textBox.Text.Replace(datachange.separatorCh, datachange.separator));
+            //shots
+
+            weaponSave.ROF = Convert.ToInt32(ROF_textBox.Text);
+            if (TypeOfClassWeap_TB.Text == "Shotgun")
+
+                weaponSave.ROF_for_Sh = Convert.ToInt32(SHROF_textBox.Text);
+            else weaponSave.ROF_for_Sh = 0;
+
+            weaponSave.Full_auto = Convert.ToBoolean(FullAuto_checkBox.IsChecked);
+            weaponSave.Add_in_Chamber = Convert.ToBoolean(Add1inChambler_checkbox.IsChecked);
+
+            weaponSave.CutOff_shots = Convert.ToBoolean(CutOfShots_checkBox.IsChecked);
+            if (Convert.ToBoolean(CutOfShots_checkBox.IsChecked))
+
+                weaponSave.CutOff_shotsCount = Convert.ToInt32(CutOfShots_textBox.Text);
+            //Acc
+            weaponSave.DefACC = Convert.ToInt32(DefAcc_textBox.Text);
+            weaponSave.Recoil = Convert.ToInt32(Recoil_textBox.Text);
+            //reload
+            weaponSave.ubCalibre = Convert.ToInt32(CAliber_comboBox.SelectedValue);
+
+            weaponSave.Shots = Convert.ToInt32(Shots_textBox.Text);
+            weaponSave.Time_For_reload = Convert.ToInt32(ReloadTime_textbox.Text);
+            weaponSave.single_reload = Convert.ToBoolean(SingleReload_checkBox.IsChecked);
+
+
+            List<AvailableAttachSlot> AvSlot = (from p in context.AvailableAttachSlots
+                                                where p.rWeaponId == weaponSave.uiIndex
+                                                select p).ToList();
+
+            foreach (var AVS in AvSlot)
             {
-                context.Database.Connection.Open();
-                ITEM itemSave = (from z in context.ITEMs
-                                 where z.uiIndex == datachange.ID_sel
-                                 select z).First();
-                WEAPON weaponSave = (from p in context.WEAPONs
-                                     where p.uiIndex == itemSave.ubClassIndex
-                                     select p).First();
-
-                //itemSave.szItemName = Name_TB.Text;
-                weaponSave.szWeaponName = Name_TB.Text;
-                //itemSave.szLongItemName = LongName_TB.Text;
-                //itemSave.szItemDesc = Description_TB.Text;
-                itemSave.Item_Image = by;
-
-                itemSave.TL = Convert.ToInt32(TL_CB.SelectedValue);
-                itemSave.LC = Convert.ToInt32(LC_CB.SelectedValue);
-
-
-                //itemSave.ubWeight = Convert.ToDecimal(Weigth_TB.Text.Replace(datachange.separatorCh, datachange.separator));
-                //string dd = (Cost_TB.Text.Replace("$", "").Replace(datachange.separatorCh, datachange.separator));
-                //itemSave.usPrice = Convert.ToDecimal(dd);
-
-                //itemSave.ItemSize = Bulk_TB.Text;
-                //itemSave.minST = Convert.ToInt32(MinST_TB.Text);
-
-                weaponSave.HeavyWeapon = Convert.ToBoolean(HeavyWeapon_ChB.IsChecked);
-                weaponSave.Mount = Convert.ToBoolean(Mount_ChB.IsChecked);
-                itemSave.TwoHanded = Convert.ToBoolean(TwoHanded_ChB.IsChecked);
-                itemSave.HT = Convert.ToBoolean(HT_ChB.IsChecked);
-                itemSave.UT = Convert.ToBoolean(UT_ChB.IsChecked);
-                itemSave.NeedsBatteries = Convert.ToBoolean(NeedBat_ChB.IsChecked);
-                itemSave.Damageable = Convert.ToBoolean(Damageble_ChB.IsChecked);
-                itemSave.Repairable = Convert.ToBoolean(Repairable_ChB.IsChecked);
-                itemSave.WaterDamages = Convert.ToBoolean(WaterDamageble_ChB.IsChecked);
-                itemSave.Metal = Convert.ToBoolean(Metal_ChB.IsChecked);
-                itemSave.Electronic = Convert.ToBoolean(Electronic_ChB.IsChecked);
-                weaponSave.Bulkfolded = Convert.ToBoolean(BulkFold_checkBox.IsChecked);
-
-                //3
-                //type&class
-                weaponSave.ubWeaponClass = Convert.ToInt32(ClassOfWeapon_TB.SelectedValue);
-                weaponSave.ubWeaponType = Convert.ToInt32(TypeOfClassWeap_TB.SelectedValue);
-                //Weapon Damage
-                weaponSave.Damage = Damage_textBox.Text;
-                weaponSave.ubTypeOfDamage = Convert.ToInt32(TypeOfDamage_comboBox.SelectedValue);
-                weaponSave.Arm_Division = Convert.ToDecimal(ArmDivizor_textBox.Text.Replace(datachange.separatorCh, datachange.separator));
-                weaponSave.Linked = Linked_textBox.Text;
-                weaponSave.Follow_Up = FollowUp_textBox.Text;
-                //range
-                weaponSave.MinRange = Convert.ToDecimal(MinRange_textBox.Text.Replace(datachange.separatorCh, datachange.separator));
-                weaponSave.Half_Range = Convert.ToDecimal(HalfRange_textBox.Text.Replace(datachange.separatorCh, datachange.separator));
-                weaponSave.FullRange = Convert.ToDecimal(MaxRange_textBox.Text.Replace(datachange.separatorCh, datachange.separator));
-                //shots
-
-                weaponSave.ROF = Convert.ToInt32(ROF_textBox.Text);
-                if (TypeOfClassWeap_TB.Text == "Shotgun")
-
-                    weaponSave.ROF_for_Sh = Convert.ToInt32(SHROF_textBox.Text);
-                else weaponSave.ROF_for_Sh = 0;
-
-                weaponSave.Full_auto = Convert.ToBoolean(FullAuto_checkBox.IsChecked);
-                weaponSave.Add_in_Chamber = Convert.ToBoolean(Add1inChambler_checkbox.IsChecked);
-
-                weaponSave.CutOff_shots = Convert.ToBoolean(CutOfShots_checkBox.IsChecked);
-                if (Convert.ToBoolean(CutOfShots_checkBox.IsChecked))
-
-                    weaponSave.CutOff_shotsCount = Convert.ToInt32(CutOfShots_textBox.Text);
-                //Acc
-                weaponSave.DefACC = Convert.ToInt32(DefAcc_textBox.Text);
-                weaponSave.Recoil = Convert.ToInt32(Recoil_textBox.Text);
-                //reload
-                weaponSave.ubCalibre = Convert.ToInt32(CAliber_comboBox.SelectedValue);
-
-                weaponSave.Shots = Convert.ToInt32(Shots_textBox.Text);
-                weaponSave.Time_For_reload = Convert.ToInt32(ReloadTime_textbox.Text);
-                weaponSave.single_reload = Convert.ToBoolean(SingleReload_checkBox.IsChecked);
-
-
-                List<AvailableAttachSlot> AvSlot = (from p in context.AvailableAttachSlots
-                                                    where p.rWeaponId == weaponSave.uiIndex
-                                                    select p).ToList();
-
-                foreach (var AVS in AvSlot)
-                {
-                    context.AvailableAttachSlots.Remove(AVS);
-                }
-
-                if (Convert.ToBoolean(Scope_checkBox.IsChecked))
-                {
-                    AvailableAttachSlot AVSc = new AvailableAttachSlot();
-                    AVSc.rWeaponId = weaponSave.uiIndex;
-                    AVSc.rATTACHMENTSLOT = 1;
-                    AVSc.rAttachmentmount = Convert.ToInt32(Scope_comboBox.SelectedValue);
-                    context.AvailableAttachSlots.Add(AVSc);
-                }
-                if (Convert.ToBoolean(Laser_checkBox.IsChecked))
-                {
-                    AvailableAttachSlot AVSc = new AvailableAttachSlot();
-                    AVSc.rWeaponId = weaponSave.uiIndex;
-                    AVSc.rATTACHMENTSLOT = 2;
-                    AVSc.rAttachmentmount = Convert.ToInt32(Laser_comboBox.SelectedValue);
-                    context.AvailableAttachSlots.Add(AVSc);
-                }
-                if (Convert.ToBoolean(Light_checkBox.IsChecked))
-                {
-                    AvailableAttachSlot AVSc = new AvailableAttachSlot();
-                    AVSc.rWeaponId = weaponSave.uiIndex;
-                    AVSc.rATTACHMENTSLOT = 3;
-                    AVSc.rAttachmentmount = Convert.ToInt32(Light_comboBox.SelectedValue);
-                    context.AvailableAttachSlots.Add(AVSc);
-                }
-
-                if (Convert.ToBoolean(Bipod_checkBox.IsChecked))
-                {
-                    AvailableAttachSlot AVSc = new AvailableAttachSlot();
-                    AVSc.rWeaponId = weaponSave.uiIndex;
-                    AVSc.rATTACHMENTSLOT = 4;
-                    AVSc.rAttachmentmount = Convert.ToInt32(Bipod_comboBox.SelectedValue);
-                    context.AvailableAttachSlots.Add(AVSc);
-                }
-                if (Convert.ToBoolean(Silenser_checkBox.IsChecked))
-                {
-                    AvailableAttachSlot AVSc = new AvailableAttachSlot();
-                    AVSc.rWeaponId = weaponSave.uiIndex;
-                    AVSc.rATTACHMENTSLOT = 5;
-                    AVSc.rAttachmentmount = Convert.ToInt32(Silenser_comboBox.SelectedValue);
-                    context.AvailableAttachSlots.Add(AVSc);
-                }
-                if (Convert.ToBoolean(Launcher_checkBox.IsChecked))
-                {
-                    AvailableAttachSlot AVSc = new AvailableAttachSlot();
-                    AVSc.rWeaponId = weaponSave.uiIndex;
-                    AVSc.rATTACHMENTSLOT = 6;
-                    AVSc.rAttachmentmount = Convert.ToInt32(Launcher_comboBox.SelectedValue);
-                    context.AvailableAttachSlots.Add(AVSc);
-                }
-
-                if (Convert.ToBoolean(Stock_checkBox.IsChecked))
-                {
-                    AvailableAttachSlot AVSc = new AvailableAttachSlot();
-                    AVSc.rWeaponId = weaponSave.uiIndex;
-                    AVSc.rATTACHMENTSLOT = 7;
-                    AVSc.rAttachmentmount = Convert.ToInt32(Stock_comboBox.SelectedValue);
-                    context.AvailableAttachSlots.Add(AVSc);
-                }
-                if (Convert.ToBoolean(Bayonet_checkBox.IsChecked))
-                {
-                    AvailableAttachSlot AVSc = new AvailableAttachSlot();
-                    AVSc.rWeaponId = weaponSave.uiIndex;
-                    AVSc.rATTACHMENTSLOT = 8;
-                    AVSc.rAttachmentmount = Convert.ToInt32(Bayonet_comboBox.SelectedValue);
-                    context.AvailableAttachSlots.Add(AVSc);
-                }
-                if (Convert.ToBoolean(Magazine_checkBox.IsChecked))
-                {
-                    AvailableAttachSlot AVSc = new AvailableAttachSlot();
-                    AVSc.rWeaponId = weaponSave.uiIndex;
-                    AVSc.rATTACHMENTSLOT = 9;
-                    AVSc.rAttachmentmount = Convert.ToInt32(Magazine_comboBox.SelectedValue);
-                    context.AvailableAttachSlots.Add(AVSc);
-                }
-
-                if (Convert.ToBoolean(Internal_checkBox.IsChecked))
-                {
-                    AvailableAttachSlot AVSc = new AvailableAttachSlot();
-                    AVSc.rWeaponId = weaponSave.uiIndex;
-                    AVSc.rATTACHMENTSLOT = 10;
-                    AVSc.rAttachmentmount = Convert.ToInt32(Internal_comboBox.SelectedValue);
-                    context.AvailableAttachSlots.Add(AVSc);
-                }
-                if (Convert.ToBoolean(External_checkBox.IsChecked))
-                {
-                    AvailableAttachSlot AVSc = new AvailableAttachSlot();
-                    AVSc.rWeaponId = weaponSave.uiIndex;
-                    AVSc.rATTACHMENTSLOT = 11;
-                    AVSc.rAttachmentmount = Convert.ToInt32(External_comboBox.SelectedValue);
-                    context.AvailableAttachSlots.Add(AVSc);
-                } //
-                context.SaveChanges();
-                context.Database.Connection.Close();
+                context.AvailableAttachSlots.Remove(AVS);
             }
+
+            if (Convert.ToBoolean(Scope_checkBox.IsChecked))
+            {
+                AvailableAttachSlot AVSc = new AvailableAttachSlot();
+                AVSc.rWeaponId = weaponSave.uiIndex;
+                AVSc.rATTACHMENTSLOT = 1;
+                AVSc.rAttachmentmount = Convert.ToInt32(Scope_comboBox.SelectedValue);
+                context.AvailableAttachSlots.Add(AVSc);
+            }
+            if (Convert.ToBoolean(Laser_checkBox.IsChecked))
+            {
+                AvailableAttachSlot AVSc = new AvailableAttachSlot();
+                AVSc.rWeaponId = weaponSave.uiIndex;
+                AVSc.rATTACHMENTSLOT = 2;
+                AVSc.rAttachmentmount = Convert.ToInt32(Laser_comboBox.SelectedValue);
+                context.AvailableAttachSlots.Add(AVSc);
+            }
+            if (Convert.ToBoolean(Light_checkBox.IsChecked))
+            {
+                AvailableAttachSlot AVSc = new AvailableAttachSlot();
+                AVSc.rWeaponId = weaponSave.uiIndex;
+                AVSc.rATTACHMENTSLOT = 3;
+                AVSc.rAttachmentmount = Convert.ToInt32(Light_comboBox.SelectedValue);
+                context.AvailableAttachSlots.Add(AVSc);
+            }
+
+            if (Convert.ToBoolean(Bipod_checkBox.IsChecked))
+            {
+                AvailableAttachSlot AVSc = new AvailableAttachSlot();
+                AVSc.rWeaponId = weaponSave.uiIndex;
+                AVSc.rATTACHMENTSLOT = 4;
+                AVSc.rAttachmentmount = Convert.ToInt32(Bipod_comboBox.SelectedValue);
+                context.AvailableAttachSlots.Add(AVSc);
+            }
+            if (Convert.ToBoolean(Silenser_checkBox.IsChecked))
+            {
+                AvailableAttachSlot AVSc = new AvailableAttachSlot();
+                AVSc.rWeaponId = weaponSave.uiIndex;
+                AVSc.rATTACHMENTSLOT = 5;
+                AVSc.rAttachmentmount = Convert.ToInt32(Silenser_comboBox.SelectedValue);
+                context.AvailableAttachSlots.Add(AVSc);
+            }
+            if (Convert.ToBoolean(Launcher_checkBox.IsChecked))
+            {
+                AvailableAttachSlot AVSc = new AvailableAttachSlot();
+                AVSc.rWeaponId = weaponSave.uiIndex;
+                AVSc.rATTACHMENTSLOT = 6;
+                AVSc.rAttachmentmount = Convert.ToInt32(Launcher_comboBox.SelectedValue);
+                context.AvailableAttachSlots.Add(AVSc);
+            }
+
+            if (Convert.ToBoolean(Stock_checkBox.IsChecked))
+            {
+                AvailableAttachSlot AVSc = new AvailableAttachSlot();
+                AVSc.rWeaponId = weaponSave.uiIndex;
+                AVSc.rATTACHMENTSLOT = 7;
+                AVSc.rAttachmentmount = Convert.ToInt32(Stock_comboBox.SelectedValue);
+                context.AvailableAttachSlots.Add(AVSc);
+            }
+            if (Convert.ToBoolean(Bayonet_checkBox.IsChecked))
+            {
+                AvailableAttachSlot AVSc = new AvailableAttachSlot();
+                AVSc.rWeaponId = weaponSave.uiIndex;
+                AVSc.rATTACHMENTSLOT = 8;
+                AVSc.rAttachmentmount = Convert.ToInt32(Bayonet_comboBox.SelectedValue);
+                context.AvailableAttachSlots.Add(AVSc);
+            }
+            if (Convert.ToBoolean(Magazine_checkBox.IsChecked))
+            {
+                AvailableAttachSlot AVSc = new AvailableAttachSlot();
+                AVSc.rWeaponId = weaponSave.uiIndex;
+                AVSc.rATTACHMENTSLOT = 9;
+                AVSc.rAttachmentmount = Convert.ToInt32(Magazine_comboBox.SelectedValue);
+                context.AvailableAttachSlots.Add(AVSc);
+            }
+
+            if (Convert.ToBoolean(Internal_checkBox.IsChecked))
+            {
+                AvailableAttachSlot AVSc = new AvailableAttachSlot();
+                AVSc.rWeaponId = weaponSave.uiIndex;
+                AVSc.rATTACHMENTSLOT = 10;
+                AVSc.rAttachmentmount = Convert.ToInt32(Internal_comboBox.SelectedValue);
+                context.AvailableAttachSlots.Add(AVSc);
+            }
+            if (Convert.ToBoolean(External_checkBox.IsChecked))
+            {
+                AvailableAttachSlot AVSc = new AvailableAttachSlot();
+                AVSc.rWeaponId = weaponSave.uiIndex;
+                AVSc.rATTACHMENTSLOT = 11;
+                AVSc.rAttachmentmount = Convert.ToInt32(External_comboBox.SelectedValue);
+                context.AvailableAttachSlots.Add(AVSc);
+            } //
+            context.SaveChanges();
+            context.Database.Connection.Close();
+
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
