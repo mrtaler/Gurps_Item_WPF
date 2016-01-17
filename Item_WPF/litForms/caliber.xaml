@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Item_WPF"
         mc:Ignorable="d"
-        Title="caliber" Height="300" Width="529.18">
+        Title="caliber" Height="300" Width="690.18">
     <Grid>
-        <DataGrid x:Name="Caliber_dataGrid" Margin="10,10,10,70" AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True" RowEditEnding="Caliber_dataGrid_RowEditEnding"  >
+        <DataGrid x:Name="Caliber_dataGrid" Margin="10,10,10,35" AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True" RowEditEnding="Caliber_dataGrid_RowEditEnding"  >
             <!--ItemsSource="{Binding _ammoOK}"-->
-                  
+
             <DataGrid.Columns>
                 <DataGridTextColumn Header="id"         Binding="{Binding id, Mode=TwoWay}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Name"       Binding="{Binding Caliber_name, Mode=TwoWay}"/>
@@ -20,18 +20,17 @@
                 <DataGridTextColumn Header="WPS"        Binding="{Binding WPS, Mode=TwoWay}"/>
                 <DataGridTextColumn Header="CPS"        Binding="{Binding CPS, Mode=TwoWay}"/>
                 <DataGridTextColumn Header="Class_of_Ammo"        Binding="{Binding Class_of_Ammo, Mode=TwoWay}"/>
-                
-                <DataGridTemplateColumn Width="30">
+
+                <!--<DataGridTemplateColumn Width="30">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="X" Click="Button_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                </DataGridTemplateColumn>-->
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="Save_button" Content="save" HorizontalAlignment="Left" Margin="10,239,0,0" VerticalAlignment="Top" Width="75" Click="Save_button_Click"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="90,239,0,0" VerticalAlignment="Top" Width="75" Click="button_Click_1"/>
+        <Button x:Name="Save_button" Content="save" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="75" Click="Save_button_Click"/>
 
     </Grid>
 </Window>

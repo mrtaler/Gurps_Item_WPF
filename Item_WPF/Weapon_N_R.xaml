@@ -12,13 +12,13 @@
         </Grid.RowDefinitions>
         <TabControl x:Name="tabControl" Margin="10,10,10,35">
             <TabItem x:Name="Main_TI" Header="Main">
-                <Grid Background="#FFE5E5E5" Margin="0,0,0,8">
+                <Grid x:Name="Main_Grid" Background="#FFE5E5E5" Margin="0,0,0,8">
                     <Label x:Name="label" Content="Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="87"/>
                     <Label x:Name="label1" Content="Long Name" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="label2" Content="                         Description" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.733,0.551" Width="267"/>
-                    <TextBox x:Name="Name_TB"       Height="23" Margin="102,14,0,0"  TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="302"/>
-                    <TextBox x:Name="LongName_TB"   Height="23" Margin="102,45,0,0"  TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="302"/>
-                    <TextBox x:Name="Description_TB"            Margin="10,101,0,10" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Left" Width="394" VerticalScrollBarVisibility="Visible" AcceptsReturn="True"/>
+                    <TextBox x:Name="Name_TB"       Height="23" Margin="102,14,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="302" Text="{Binding szItemName, Mode=TwoWay}"/>
+                    <TextBox x:Name="LongName_TB"   Height="23" Margin="102,45,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="302" Text="{Binding szLongItemName, Mode=TwoWay}"/>
+                    <TextBox x:Name="Description_TB"            Margin="10,101,0,10" TextWrapping="Wrap" HorizontalAlignment="Left" Width="394" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" Text="{Binding szItemDesc, Mode=TwoWay}"/>
                     <Image x:Name="Item_image" HorizontalAlignment="Left" Height="248" Margin="409,14,0,0" VerticalAlignment="Top" Width="353"/>
                     <Button x:Name="LoadImage_button" Content="LoadImage" HorizontalAlignment="Left" Margin="409,267,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
                     <Button x:Name="DeleteImage_button" Content="DelImage" HorizontalAlignment="Left" Margin="489,267,0,0" VerticalAlignment="Top" Width="75" Click="DeleteImage_button_Click"/>
@@ -27,17 +27,19 @@
             <TabItem x:Name="General_TI" Header="General">
                 <Grid Background="#FFE5E5E5">
                     <GroupBox x:Name="groupBox1" Header="General" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="308" Width="260">
-                        <Grid >
+                        <Grid x:Name="General_Grid" >
                             <Label x:Name="label3" Content="Weigth" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="label6" Content="Cost" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="label7" Content="Bulk" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="label8" Content="MinST" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="label9" Content="TL" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="label10" Content="LC" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top"/>
-                            <TextBox x:Name="Weigth_TB" HorizontalAlignment="Left" Height="23" Margin="93,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                            <TextBox x:Name="Cost_TB" HorizontalAlignment="Left" Height="23" Margin="93,38,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                            <TextBox x:Name="Bulk_TB" HorizontalAlignment="Left" Height="23" Margin="93,66,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                            <TextBox x:Name="MinST_TB" HorizontalAlignment="Left" Height="23" Margin="93,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+                            <TextBox x:Name="Weigth_TB" HorizontalAlignment="Left" Height="23" Margin="93,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"    Text="{Binding ubWeight, Mode=TwoWay}"/>
+                            <TextBox x:Name="Cost_TB" HorizontalAlignment="Left" Height="23" Margin="93,38,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"      Text="{Binding usPrice, Mode=TwoWay}"/>
+                            <TextBox x:Name="Bulk_TB" HorizontalAlignment="Left" Height="23" Margin="93,66,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"      Text="{Binding ItemSize, Mode=TwoWay}"/>
+                            <TextBox x:Name="MinST_TB" HorizontalAlignment="Left" Height="23" Margin="93,94,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"     Text="{Binding minST, Mode=TwoWay}"/>
+                           
                             <ComboBox x:Name="TL_CB" HorizontalAlignment="Left" Margin="93,122,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="TL_CB_SelectionChanged"/>
                             <ComboBox x:Name="LC_CB" HorizontalAlignment="Left" Margin="93,149,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="LC_CB_SelectionChanged"/>
                         </Grid>
@@ -88,7 +90,7 @@
                             <TextBox x:Name="ArmDivizor_textBox" HorizontalAlignment="Left" Height="23" Margin="98,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
                             <TextBox x:Name="FollowUp_textBox" HorizontalAlignment="Left" Height="23" Margin="98,107,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="75"/>
                             <ComboBox x:Name="TypeOfDamage_comboBox" HorizontalAlignment="Left" Margin="112,45,0,0" VerticalAlignment="Top" Width="61" KeyDown="TypeOfDamage_comboBox_KeyDown" >
-                      
+
                             </ComboBox>
                             <TextBox x:Name="Linked_textBox" HorizontalAlignment="Left" Height="23" Margin="98,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
                         </Grid>

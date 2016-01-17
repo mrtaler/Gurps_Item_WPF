@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using System.Collections.ObjectModel;
 
 namespace Item_WPF
 {
@@ -22,232 +23,249 @@ namespace Item_WPF
     /// </summary>
     public partial class Weapon_N_R : Window
     {
+        private item1Entities context;
+        public ObservableCollection<ITEM> item_coll { get; set; }
+        public ObservableCollection<WEAPON> weapon_coll { get; set; }
+
+        ITEM itemLoad;
+
+        WEAPON weaponLoad;
+
         byte[] by;
         public Weapon_N_R()
         {
             InitializeComponent();
+            this.Loaded += new RoutedEventHandler(Page_Loaded);
+
             // загрузка из контекста редактируемых таблиц
-            using (item1Entities context = new item1Entities())
+            context = new item1Entities();
+            item_coll = new ObservableCollection<ITEM>(context.ITEMs);
+            weapon_coll = new ObservableCollection<WEAPON>(context.WEAPONs);
+
+            itemLoad = (from z in item_coll
+                        where z.uiIndex == datachange.ID_sel
+                        select z).First();
+            //            ,
+            //itemUndo = (from z in weapon_coll
+            //            where z.uiIndex == datachange.ID_sel
+            //            select z).First();
+            weaponLoad = (from p in context.WEAPONs
+                          where p.uiIndex == itemLoad.ubClassIndex
+                          select p).First();
+            //              ,
+            //weaponUndo = (from p in context.WEAPONs
+            //              where p.uiIndex == itemLoad.ubClassIndex
+            //              select p).First();
+            this.Title = weaponLoad.szWeaponName;
+            // вкладка 1
+            // Name_TB.Text = itemLoad.szItemName;
+            //LongName_TB.Text = itemLoad.szLongItemName;
+            //Description_TB.Text = itemLoad.szItemDesc;
+
+            if (itemLoad.Item_Image != null)
             {
-                context.Database.Connection.Open();
-                ITEM itemLoad = (from z in context.ITEMs
-                                 where z.uiIndex == datachange.ID_sel
-                                 select z).First(),
-                     itemUndo = (from z in context.ITEMs
-                                 where z.uiIndex == datachange.ID_sel
-                                 select z).First();
-                WEAPON weaponLoad = (from p in context.WEAPONs
-                                     where p.uiIndex == itemLoad.ubClassIndex
-                                     select p).First(),
-                       weaponUndo = (from p in context.WEAPONs
-                                     where p.uiIndex == itemLoad.ubClassIndex
-                                     select p).First();
-                this.Title = weaponLoad.szWeaponName;
-                // вкладка 1
-                Name_TB.Text = itemLoad.szItemName;
-                LongName_TB.Text = itemLoad.szLongItemName;
-                Description_TB.Text = itemLoad.szItemDesc;
-
-                if (itemLoad.Item_Image != null)
+                // MemoryStream stream = new MemoryStream(item.Item_Image);
+                using (var ms = new MemoryStream(itemLoad.Item_Image, 0, itemLoad.Item_Image.Length))
                 {
-                    // MemoryStream stream = new MemoryStream(item.Item_Image);
-                    using (var ms = new MemoryStream(itemLoad.Item_Image, 0, itemLoad.Item_Image.Length))
-                    {
-                        var image = new BitmapImage();
-                        image.BeginInit();
-                        image.CacheOption = BitmapCacheOption.OnLoad;
-                        image.StreamSource = ms;
-                        image.EndInit();
-                        Item_image.Source = image;
-                        by = itemLoad.Item_Image;
-                    }
+                    var image = new BitmapImage();
+                    image.BeginInit();
+                    image.CacheOption = BitmapCacheOption.OnLoad;
+                    image.StreamSource = ms;
+                    image.EndInit();
+                    Item_image.Source = image;
+                    by = itemLoad.Item_Image;
                 }
-                // вкладк №2.
-                TL_CB.ItemsSource = context.TLs.ToList();
-                TL_CB.DisplayMemberPath = "name_TL";
-                TL_CB.SelectedValuePath = "Id_Tl";
-                TL_CB.SelectedValue = itemLoad.TL;
-
-                TL_textBlock.Text = (from p in context.TLs
-                                     where p.Id_Tl == itemLoad.TL
-                                     select p.Description).First();
-
-                LC_CB.ItemsSource = context.LCs.ToList();
-                LC_CB.DisplayMemberPath = "Name_LC";
-                LC_CB.SelectedValuePath = "Id_LC";
-                LC_CB.SelectedValue = itemLoad.LC;
-
-                LC_textBlock.Text = (from p in context.LCs
-                                     where p.Id_LC == itemLoad.LC
-                                     select p.Description).First();
-
-
-                Weigth_TB.Text = itemLoad.ubWeight.ToString();
-                Cost_TB.Text = "$" + itemLoad.usPrice.ToString();
-                Bulk_TB.Text = itemLoad.ItemSize.ToString();
-                MinST_TB.Text = itemLoad.minST.ToString();
-
-                HeavyWeapon_ChB.IsChecked = weaponLoad.HeavyWeapon;
-                Mount_ChB.IsChecked = weaponLoad.Mount;
-                TwoHanded_ChB.IsChecked = itemLoad.TwoHanded;
-                HT_ChB.IsChecked = itemLoad.HT;
-                UT_ChB.IsChecked = itemLoad.UT;
-                NeedBat_ChB.IsChecked = itemLoad.NeedsBatteries;
-                Damageble_ChB.IsChecked = itemLoad.Damageable;
-                Repairable_ChB.IsChecked = itemLoad.Repairable;
-                WaterDamageble_ChB.IsChecked = itemLoad.WaterDamages;
-                Metal_ChB.IsChecked = itemLoad.Metal;
-                Electronic_ChB.IsChecked = itemLoad.Electronic;
-                BulkFold_checkBox.IsChecked = weaponLoad.Bulkfolded;
-                //3
-
-
-                //Type&Class
-
-                ClassOfWeapon_TB.ItemsSource = context.WeaponClasses.ToList();
-                ClassOfWeapon_TB.SelectedValuePath = "id";
-                ClassOfWeapon_TB.DisplayMemberPath = "name";
-                ClassOfWeapon_TB.SelectedValue = weaponLoad.ubWeaponClass;
-
-                TypeOfClassWeap_TB.ItemsSource = (from p in context.WeaponTypes
-                                                  where p.Class == weaponLoad.ubWeaponClass
-                                                  select p).ToList();
-                TypeOfClassWeap_TB.SelectedValuePath = "id";
-                TypeOfClassWeap_TB.DisplayMemberPath = "name";
-                TypeOfClassWeap_TB.SelectedValue = weaponLoad.ubWeaponType;
-
-
-                //Weapon
-
-                Damage_textBox.Text = weaponLoad.Damage;
-
-                TypeOfDamage_comboBox.ItemsSource = context.TypeOfDamages.ToList();
-                TypeOfDamage_comboBox.SelectedValuePath = "id";
-                TypeOfDamage_comboBox.DisplayMemberPath = "name";
-                TypeOfDamage_comboBox.SelectedValue = weaponLoad.ubTypeOfDamage;
-
-                ArmDivizor_textBox.Text = weaponLoad.Arm_Division.ToString();
-                Linked_textBox.Text = weaponLoad.Linked;
-                FollowUp_textBox.Text = weaponLoad.Follow_Up;
-
-
-                //range
-                MinRange_textBox.Text = weaponLoad.MinRange.ToString();
-                HalfRange_textBox.Text = weaponLoad.Half_Range.ToString();
-                MaxRange_textBox.Text = weaponLoad.FullRange.ToString();
-                //Shots
-                ROF_textBox.Text = weaponLoad.ROF.ToString();
-                if (weaponLoad.WeaponType.name == "Shotgun")
-                {
-                    SHROF_textBox.Visibility = Visibility.Visible;
-                    SH_label20.Visibility = Visibility.Visible;
-                    SHROF_textBox.Text = weaponLoad.ROF_for_Sh.ToString();
-                }
-                FullAuto_checkBox.IsChecked = weaponLoad.Full_auto;
-                Add1inChambler_checkbox.IsChecked = weaponLoad.Add_in_Chamber;
-
-                CutOfShots_checkBox.IsChecked = weaponLoad.CutOff_shots;
-                if (Convert.ToBoolean(CutOfShots_checkBox.IsChecked))
-                {
-                    label20.Visibility = Visibility.Visible;
-                    CutOfShots_textBox.Visibility = Visibility.Visible;
-                    CutOfShots_textBox.Text = weaponLoad.CutOff_shotsCount.ToString();
-                }
-                //ACC
-                DefAcc_textBox.Text = weaponLoad.DefACC.ToString();
-                Recoil_textBox.Text = weaponLoad.Recoil.ToString();
-                //Reload
-
-                CAliber_comboBox.ItemsSource = context.AMMOes.ToList();
-                CAliber_comboBox.SelectedValuePath = "id";
-                CAliber_comboBox.DisplayMemberPath = "Caliber_name";
-                CAliber_comboBox.SelectedValue = weaponLoad.ubCalibre;
-
-                Shots_textBox.Text = weaponLoad.Shots.ToString();
-                ReloadTime_textbox.Text = weaponLoad.Time_For_reload.ToString();
-                SingleReload_checkBox.IsChecked = weaponLoad.single_reload;
-
-
-                List<AvailableAttachSlot> AvSlot = (from p in context.AvailableAttachSlots
-                                                    where p.rWeaponId == weaponLoad.uiIndex
-                                                    select p).ToList();
-                foreach (AvailableAttachSlot items in AvSlot)
-                {
-                    if (items.rATTACHMENTSLOT == 1)
-                    {
-                        Scope_checkBox.IsChecked = true;
-                        Scope_comboBox.Visibility = Visibility.Visible;
-                        Scope_comboBox.SelectedValue = items.rAttachmentmount;
-                    }
-                    if (items.rATTACHMENTSLOT == 2)
-                    {
-                        Laser_checkBox.IsChecked = true;
-                        Laser_comboBox.Visibility = Visibility.Visible;
-                        Laser_comboBox.SelectedValue = items.rAttachmentmount;
-                    }
-                    if (items.rATTACHMENTSLOT == 3)
-                    {
-                        Light_checkBox.IsChecked = true;
-                        Light_comboBox.Visibility = Visibility.Visible;
-                        Light_comboBox.SelectedValue = items.rAttachmentmount;
-                    }
-                    if (items.rATTACHMENTSLOT == 4)
-                    {
-                        Bipod_checkBox.IsChecked = true;
-                        Bipod_comboBox.Visibility = Visibility.Visible;
-                        Bipod_comboBox.SelectedValue = items.rAttachmentmount;
-                    }
-                    if (items.rATTACHMENTSLOT == 5)
-                    {
-                        Silenser_checkBox.IsChecked = true;
-                        Silenser_comboBox.Visibility = Visibility.Visible;
-                        Silenser_comboBox.SelectedValue = items.rAttachmentmount;
-                    }
-                    if (items.rATTACHMENTSLOT == 6)
-                    {
-                        Launcher_checkBox.IsChecked = true;
-                        Launcher_comboBox.Visibility = Visibility.Visible;
-                        Launcher_comboBox.SelectedValue = items.rAttachmentmount;
-                    }////////////////
-                    if (items.rATTACHMENTSLOT == 7)
-                    {
-                        Stock_checkBox.IsChecked = true;
-                        Stock_comboBox.Visibility = Visibility.Visible;
-                        Stock_comboBox.SelectedValue = items.rAttachmentmount;
-                    }
-                    if (items.rATTACHMENTSLOT == 8)
-                    {
-                        Bayonet_checkBox.IsChecked = true;
-                        Bayonet_comboBox.Visibility = Visibility.Visible;
-                        Bayonet_comboBox.SelectedValue = items.rAttachmentmount;
-                    }
-
-                    if (items.rATTACHMENTSLOT == 9)
-                    {
-                        Magazine_checkBox.IsChecked = true;
-                        Magazine_comboBox.Visibility = Visibility.Visible;
-                        Magazine_comboBox.SelectedValue = items.rAttachmentmount;
-                    }
-                    if (items.rATTACHMENTSLOT == 10)
-                    {
-                        Internal_checkBox.IsChecked = true;
-                        Internal_comboBox.Visibility = Visibility.Visible;
-                        Internal_comboBox.SelectedValue = items.rAttachmentmount;
-                    }
-                    if (items.rATTACHMENTSLOT == 11)
-                    {
-                        External_checkBox.IsChecked = true;
-                        External_comboBox.Visibility = Visibility.Visible;
-                        External_comboBox.SelectedValue = items.rAttachmentmount;
-                    }
-                }
-
-                context.Database.Connection.Close();
             }
+            // вкладк №2.
+            TL_CB.ItemsSource = context.TLs.ToList();
+            TL_CB.DisplayMemberPath = "name_TL";
+            TL_CB.SelectedValuePath = "Id_Tl";
+            TL_CB.SelectedValue = itemLoad.TL;
 
+            TL_textBlock.Text = (from p in context.TLs
+                                 where p.Id_Tl == itemLoad.TL
+                                 select p.Description).First();
+
+            LC_CB.ItemsSource = context.LCs.ToList();
+            LC_CB.DisplayMemberPath = "Name_LC";
+            LC_CB.SelectedValuePath = "Id_LC";
+            LC_CB.SelectedValue = itemLoad.LC;
+
+            LC_textBlock.Text = (from p in context.LCs
+                                 where p.Id_LC == itemLoad.LC
+                                 select p.Description).First();
+
+
+            //Weigth_TB.Text = itemLoad.ubWeight.ToString();
+            //Cost_TB.Text = "$" + itemLoad.usPrice.ToString();
+            //Bulk_TB.Text = itemLoad.ItemSize.ToString();
+            //MinST_TB.Text = itemLoad.minST.ToString();
+
+            HeavyWeapon_ChB.IsChecked = weaponLoad.HeavyWeapon;
+            Mount_ChB.IsChecked = weaponLoad.Mount;
+            TwoHanded_ChB.IsChecked = itemLoad.TwoHanded;
+            HT_ChB.IsChecked = itemLoad.HT;
+            UT_ChB.IsChecked = itemLoad.UT;
+            NeedBat_ChB.IsChecked = itemLoad.NeedsBatteries;
+            Damageble_ChB.IsChecked = itemLoad.Damageable;
+            Repairable_ChB.IsChecked = itemLoad.Repairable;
+            WaterDamageble_ChB.IsChecked = itemLoad.WaterDamages;
+            Metal_ChB.IsChecked = itemLoad.Metal;
+            Electronic_ChB.IsChecked = itemLoad.Electronic;
+            BulkFold_checkBox.IsChecked = weaponLoad.Bulkfolded;
+            //3
+
+
+            //Type&Class
+
+            ClassOfWeapon_TB.ItemsSource = context.WeaponClasses.ToList();
+            ClassOfWeapon_TB.SelectedValuePath = "id";
+            ClassOfWeapon_TB.DisplayMemberPath = "name";
+            ClassOfWeapon_TB.SelectedValue = weaponLoad.ubWeaponClass;
+
+            TypeOfClassWeap_TB.ItemsSource = (from p in context.WeaponTypes
+                                              where p.Class == weaponLoad.ubWeaponClass
+                                              select p).ToList();
+            TypeOfClassWeap_TB.SelectedValuePath = "id";
+            TypeOfClassWeap_TB.DisplayMemberPath = "name";
+            TypeOfClassWeap_TB.SelectedValue = weaponLoad.ubWeaponType;
+
+
+            //Weapon
+
+            Damage_textBox.Text = weaponLoad.Damage;
+
+            TypeOfDamage_comboBox.ItemsSource = context.TypeOfDamages.ToList();
+            TypeOfDamage_comboBox.SelectedValuePath = "id";
+            TypeOfDamage_comboBox.DisplayMemberPath = "name";
+            TypeOfDamage_comboBox.SelectedValue = weaponLoad.ubTypeOfDamage;
+
+            ArmDivizor_textBox.Text = weaponLoad.Arm_Division.ToString();
+            Linked_textBox.Text = weaponLoad.Linked;
+            FollowUp_textBox.Text = weaponLoad.Follow_Up;
+
+
+            //range
+            MinRange_textBox.Text = weaponLoad.MinRange.ToString();
+            HalfRange_textBox.Text = weaponLoad.Half_Range.ToString();
+            MaxRange_textBox.Text = weaponLoad.FullRange.ToString();
+            //Shots
+            ROF_textBox.Text = weaponLoad.ROF.ToString();
+            if (weaponLoad.WeaponType.name == "Shotgun")
+            {
+                SHROF_textBox.Visibility = Visibility.Visible;
+                SH_label20.Visibility = Visibility.Visible;
+                SHROF_textBox.Text = weaponLoad.ROF_for_Sh.ToString();
+            }
+            FullAuto_checkBox.IsChecked = weaponLoad.Full_auto;
+            Add1inChambler_checkbox.IsChecked = weaponLoad.Add_in_Chamber;
+
+            CutOfShots_checkBox.IsChecked = weaponLoad.CutOff_shots;
+            if (Convert.ToBoolean(CutOfShots_checkBox.IsChecked))
+            {
+                label20.Visibility = Visibility.Visible;
+                CutOfShots_textBox.Visibility = Visibility.Visible;
+                CutOfShots_textBox.Text = weaponLoad.CutOff_shotsCount.ToString();
+            }
+            //ACC
+            DefAcc_textBox.Text = weaponLoad.DefACC.ToString();
+            Recoil_textBox.Text = weaponLoad.Recoil.ToString();
+            //Reload
+
+            CAliber_comboBox.ItemsSource = context.AMMOes.ToList();
+            CAliber_comboBox.SelectedValuePath = "id";
+            CAliber_comboBox.DisplayMemberPath = "Caliber_name";
+            CAliber_comboBox.SelectedValue = weaponLoad.ubCalibre;
+
+            Shots_textBox.Text = weaponLoad.Shots.ToString();
+            ReloadTime_textbox.Text = weaponLoad.Time_For_reload.ToString();
+            SingleReload_checkBox.IsChecked = weaponLoad.single_reload;
+
+
+            List<AvailableAttachSlot> AvSlot = (from p in context.AvailableAttachSlots
+                                                where p.rWeaponId == weaponLoad.uiIndex
+                                                select p).ToList();
+            foreach (AvailableAttachSlot items in AvSlot)
+            {
+                if (items.rATTACHMENTSLOT == 1)
+                {
+                    Scope_checkBox.IsChecked = true;
+                    Scope_comboBox.Visibility = Visibility.Visible;
+                    Scope_comboBox.SelectedValue = items.rAttachmentmount;
+                }
+                if (items.rATTACHMENTSLOT == 2)
+                {
+                    Laser_checkBox.IsChecked = true;
+                    Laser_comboBox.Visibility = Visibility.Visible;
+                    Laser_comboBox.SelectedValue = items.rAttachmentmount;
+                }
+                if (items.rATTACHMENTSLOT == 3)
+                {
+                    Light_checkBox.IsChecked = true;
+                    Light_comboBox.Visibility = Visibility.Visible;
+                    Light_comboBox.SelectedValue = items.rAttachmentmount;
+                }
+                if (items.rATTACHMENTSLOT == 4)
+                {
+                    Bipod_checkBox.IsChecked = true;
+                    Bipod_comboBox.Visibility = Visibility.Visible;
+                    Bipod_comboBox.SelectedValue = items.rAttachmentmount;
+                }
+                if (items.rATTACHMENTSLOT == 5)
+                {
+                    Silenser_checkBox.IsChecked = true;
+                    Silenser_comboBox.Visibility = Visibility.Visible;
+                    Silenser_comboBox.SelectedValue = items.rAttachmentmount;
+                }
+                if (items.rATTACHMENTSLOT == 6)
+                {
+                    Launcher_checkBox.IsChecked = true;
+                    Launcher_comboBox.Visibility = Visibility.Visible;
+                    Launcher_comboBox.SelectedValue = items.rAttachmentmount;
+                }////////////////
+                if (items.rATTACHMENTSLOT == 7)
+                {
+                    Stock_checkBox.IsChecked = true;
+                    Stock_comboBox.Visibility = Visibility.Visible;
+                    Stock_comboBox.SelectedValue = items.rAttachmentmount;
+                }
+                if (items.rATTACHMENTSLOT == 8)
+                {
+                    Bayonet_checkBox.IsChecked = true;
+                    Bayonet_comboBox.Visibility = Visibility.Visible;
+                    Bayonet_comboBox.SelectedValue = items.rAttachmentmount;
+                }
+
+                if (items.rATTACHMENTSLOT == 9)
+                {
+                    Magazine_checkBox.IsChecked = true;
+                    Magazine_comboBox.Visibility = Visibility.Visible;
+                    Magazine_comboBox.SelectedValue = items.rAttachmentmount;
+                }
+                if (items.rATTACHMENTSLOT == 10)
+                {
+                    Internal_checkBox.IsChecked = true;
+                    Internal_comboBox.Visibility = Visibility.Visible;
+                    Internal_comboBox.SelectedValue = items.rAttachmentmount;
+                }
+                if (items.rATTACHMENTSLOT == 11)
+                {
+                    External_checkBox.IsChecked = true;
+                    External_comboBox.Visibility = Visibility.Visible;
+                    External_comboBox.SelectedValue = items.rAttachmentmount;
+                }
+
+            }
         }
 
+        void Page_Loaded(object sender, RoutedEventArgs e)
 
+        {
+            Main_Grid.DataContext = itemLoad;
+            General_Grid.DataContext = itemLoad;
+
+
+        }
         private void save_button_Click(object sender, RoutedEventArgs e)
         {
             using (item1Entities context = new item1Entities())
@@ -260,22 +278,22 @@ namespace Item_WPF
                                      where p.uiIndex == itemSave.ubClassIndex
                                      select p).First();
 
-                itemSave.szItemName = Name_TB.Text;
+                //itemSave.szItemName = Name_TB.Text;
                 weaponSave.szWeaponName = Name_TB.Text;
-                itemSave.szLongItemName = LongName_TB.Text;
-                itemSave.szItemDesc = Description_TB.Text;
+                //itemSave.szLongItemName = LongName_TB.Text;
+                //itemSave.szItemDesc = Description_TB.Text;
                 itemSave.Item_Image = by;
 
                 itemSave.TL = Convert.ToInt32(TL_CB.SelectedValue);
                 itemSave.LC = Convert.ToInt32(LC_CB.SelectedValue);
 
 
-                itemSave.ubWeight = Convert.ToDecimal(Weigth_TB.Text.Replace(datachange.separatorCh, datachange.separator));
-                string dd = (Cost_TB.Text.Replace("$", "").Replace(datachange.separatorCh, datachange.separator));
-                itemSave.usPrice = Convert.ToDecimal(dd);
+                //itemSave.ubWeight = Convert.ToDecimal(Weigth_TB.Text.Replace(datachange.separatorCh, datachange.separator));
+                //string dd = (Cost_TB.Text.Replace("$", "").Replace(datachange.separatorCh, datachange.separator));
+                //itemSave.usPrice = Convert.ToDecimal(dd);
 
-                itemSave.ItemSize = Bulk_TB.Text;
-                itemSave.minST = Convert.ToInt32(MinST_TB.Text);
+                //itemSave.ItemSize = Bulk_TB.Text;
+                //itemSave.minST = Convert.ToInt32(MinST_TB.Text);
 
                 weaponSave.HeavyWeapon = Convert.ToBoolean(HeavyWeapon_ChB.IsChecked);
                 weaponSave.Mount = Convert.ToBoolean(Mount_ChB.IsChecked);
@@ -786,9 +804,9 @@ namespace Item_WPF
 
         private void TypeOfDamage_comboBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key ==Key.Enter)
+            if (e.Key == Key.Enter)
             {
-                Edit_content_in_simple_Table ECinST = new Edit_content_in_simple_Table("TypeOfDamage");
+                Edit_content_in_simple_Table ECinST = new Edit_content_in_simple_Table();
                 ECinST.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
@@ -814,7 +832,7 @@ namespace Item_WPF
                 CAliber_comboBox.ItemsSource = context.AMMOes.ToList();
                 CAliber_comboBox.SelectedValuePath = "id";
                 CAliber_comboBox.DisplayMemberPath = "Caliber_name";
-                CAliber_comboBox.SelectedValue= context.AMMOes.LongCount();
+                CAliber_comboBox.SelectedValue = context.AMMOes.LongCount();
             }
         }
     }

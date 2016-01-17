@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Item_WPF"
         mc:Ignorable="d"
-        Title="Edit_content_in_simple_Table" Height="300" Width="682.328">
+        Title="Edit_content_in_simple_Table" Height="300" Width="533.803">
     <Grid>
-        <DataGrid x:Name="dataGrid" Margin="10,10,183,53" RowEditEnding="dataGrid_RowEditEnding" ItemsSource="{Binding}" AutoGenerateColumns="False" SelectionChanged="dataGrid_SelectionChanged"  CellEditEnding="dataGrid_CellEditEnding" KeyDown="dataGrid_KeyDown" PreviewKeyDown="dataGrid_PreviewKeyDown" >
+        <DataGrid x:Name="TypeOfDamage_dataGrid" Margin="10,10,10,53" ItemsSource="{Binding}" AutoGenerateColumns="False" RowEditEnding="TypeOfDamage_dataGrid_RowEditEnding" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id"         Binding="{Binding id, Mode=TwoWay}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Name"       Binding="{Binding name, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Long Name"   Binding="{Binding LongName, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="mDamage"   Binding="{Binding mDamage, Mode=TwoWay}"/>
+                         </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="Save_button" Content="Save" HorizontalAlignment="Left" Margin="10,0,0,10" Width="75" Height="20" VerticalAlignment="Bottom" Click="Save_button_Click"/>
-        <Button x:Name="Cancel_button" Content="Cancel" HorizontalAlignment="Left" Margin="90,0,0,10" VerticalAlignment="Bottom" Width="75"/>
-        <Button x:Name="Update_button" Content="update" HorizontalAlignment="Left" Margin="170,0,0,10" VerticalAlignment="Bottom" Width="75" Click="Update_button_Click"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Right" Height="23" Margin="0,10,10,0" TextWrapping="Wrap" Text="name" VerticalAlignment="Top" Width="120" />
-        <TextBox x:Name="textBox1" HorizontalAlignment="Right" Height="23" Margin="0,38,10,0" TextWrapping="Wrap" Text="LongName" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Right" Height="23" Margin="0,66,10,0" TextWrapping="Wrap" Text="mDamage" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="Delete_button" Content="Button" HorizontalAlignment="Left" Margin="250,239,0,0" VerticalAlignment="Top" Width="75" Click="Delete_button_Click"/>
+        <Button x:Name="Close_button" Content="Close" HorizontalAlignment="Left" Margin="10,0,0,10" Width="75" Height="20" VerticalAlignment="Bottom" Click="Close_button_Click"/>
 
     </Grid>
 </Window>
