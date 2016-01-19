@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Item_WPF"
         mc:Ignorable="d"
-        Title="Weapon_N_R" Height="485" Width="806" Closing="Window_Closing">
+   
+    Title="{Binding weaponLoad.szWeaponName}"  Height="485" Width="806" Closing="Window_Closing">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -16,7 +18,13 @@
                     <Label x:Name="label" Content="Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="87"/>
                     <Label x:Name="label1" Content="Long Name" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="label2" Content="                         Description" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.733,0.551" Width="267"/>
-                    <TextBox x:Name="Name_TB"       Height="23" Margin="102,14,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="302" Text="{Binding szItemName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox x:Name="Name_TB"       Height="23" Margin="102,14,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="302" >
+                        <TextBox.Text>
+                            <!--<MultiBinding Converter="{StaticResource NameMultiValueConverter}">
+
+                            </MultiBinding>-->
+                        </TextBox.Text>
+                    </TextBox>
                     <TextBox x:Name="LongName_TB"   Height="23" Margin="102,45,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="302" Text="{Binding szLongItemName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <TextBox x:Name="Description_TB"            Margin="10,101,0,10" TextWrapping="Wrap" HorizontalAlignment="Left" Width="394" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" Text="{Binding szItemDesc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <Image x:Name="Item_image" HorizontalAlignment="Left" Height="248" Margin="409,14,0,0" VerticalAlignment="Top" Width="353"/>
@@ -39,7 +47,7 @@
                             <TextBox x:Name="Cost_TB" HorizontalAlignment="Left" Height="23" Margin="93,38,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"      Text="{Binding usPrice, Mode=TwoWay}"/>
                             <TextBox x:Name="Bulk_TB" HorizontalAlignment="Left" Height="23" Margin="93,66,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"      Text="{Binding ItemSize, Mode=TwoWay}"/>
                             <TextBox x:Name="MinST_TB" HorizontalAlignment="Left" Height="23" Margin="93,94,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"     Text="{Binding minST, Mode=TwoWay}"/>
-                           
+
                             <ComboBox x:Name="TL_CB" HorizontalAlignment="Left" Margin="93,122,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="TL_CB_SelectionChanged"/>
                             <ComboBox x:Name="LC_CB" HorizontalAlignment="Left" Margin="93,149,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="LC_CB_SelectionChanged"/>
                         </Grid>

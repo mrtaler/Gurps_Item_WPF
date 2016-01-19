@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 using System.Collections.ObjectModel;
+using System.Globalization;
 
 namespace Item_WPF
 {
@@ -30,7 +31,22 @@ namespace Item_WPF
         ITEM itemLoad { get; set; }
 
         WEAPON weaponLoad { get; set; }
+        public class NameMultiValueConverter : IMultiValueConverter
+        {
+            public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+            {
 
+                ITEM i = values[0] as ITEM;
+                WEAPON w = values[1] as WEAPON;
+
+                return (w.szWeaponName=i.szItemName);
+            }
+
+            public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+            {
+                throw new NotImplementedException();
+            }
+        }
         byte[] by;
         public Weapon_N_R()
         {
@@ -39,6 +55,7 @@ namespace Item_WPF
             // загрузка из контекста редактируемых таблиц
             item_coll = new ObservableCollection<ITEM>(context.ITEMs);
             weapon_coll = new ObservableCollection<WEAPON>(context.WEAPONs);
+
             this.Loaded += new RoutedEventHandler(Page_Loaded);
         }
 
@@ -53,7 +70,8 @@ namespace Item_WPF
                           where p.uiIndex == itemLoad.ubClassIndex
                           select p).First();
             General_Grid.DataContext = itemLoad;
-            this.Title = weaponLoad.szWeaponName;
+            
+            //   this.Title = weaponLoad.szWeaponName;
 
             // вкладка 1
 
@@ -437,22 +455,17 @@ namespace Item_WPF
                 AVSc.rAttachmentmount = Convert.ToInt32(External_comboBox.SelectedValue);
                 context.AvailableAttachSlots.Add(AVSc);
             } //
+            weaponLoad.szWeaponName = itemLoad.szItemName;
             context.SaveChanges();
-            context.Database.Connection.Close();
+
 
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            using (item1Entities context = new item1Entities())
-            {
-                ITEM itemSave = (from z in context.ITEMs
-                                 where z.uiIndex == datachange.ID_sel
-                                 select z).First();
-                itemSave.used = false;
-                itemSave.dt = null;
-                context.SaveChanges();
-            }
+            itemLoad.used = false;
+            itemLoad.dt = null;
+            context.SaveChanges();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

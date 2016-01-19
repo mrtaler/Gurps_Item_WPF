@@ -68,113 +68,113 @@ namespace Item_WPF
         {
             if (dataGridViewAllItems.SelectedItem != null)
             {
-
-                datachange.ID_sel = Convert.ToInt32(dataGridViewAllItems.SelectedValue);
-
-                ITEM itt = (from p in _items
-                            where p.uiIndex == datachange.ID_sel
-                            select p).First();
-                datachange.Class_Cha = (from p in _items
-                                        where p.uiIndex == datachange.ID_sel
-                                        select p.ItemClass.name).First();
-                datachange.ID_change = (from p in _items
-                                        where p.uiIndex == datachange.ID_sel
-                                        select p.ubClassIndex).First(); //передача ИД записи изменяемой таблицы
-
-                if (itt.used == false)// созаем сущьность для сравнения
-                {
-                    if (datachange.Class_Cha == "Gun"
-                     || datachange.Class_Cha == "Knife"
-                     || datachange.Class_Cha == "Throwing Knife"
-                     || datachange.Class_Cha == "Launcher"
-                     || datachange.Class_Cha == "Thrown Weapon"
-                     || datachange.Class_Cha == "Blunt Weapon")
+                using(context = new item1Entities())
                     {
-                        label01.Content = "Selected TABLE IS: WEAPON";
-                        label02.Content = "ch ID main:" + datachange.ID_sel.ToString();
-                        label03.Content = "ch ID target:" + datachange.ID_change.ToString();
+                    datachange.ID_sel = Convert.ToInt32(dataGridViewAllItems.SelectedValue);
+                    
+                    ITEM itt = (from p in context.ITEMs
+                                where p.uiIndex == datachange.ID_sel
+                                select p).First();
 
-                        itt.used = true;
-                        itt.dt = System.DateTime.UtcNow;
-                        context.SaveChanges();
+                    datachange.Class_Cha = itt.ItemClass.name;
+                    datachange.ID_change = itt.ubClassIndex; //передача ИД записи изменяемой таблицы
 
-                        Weapon_N_R WeaponNR = new Weapon_N_R();
-                        WeaponNR.ShowDialog();
-                    }
-                    else if (itt.ItemClass.name == "Attachment")
+                    if (itt.used == false)// созаем сущьность для сравнения
                     {
-                        label01.Content = "Selected TABLE IS:Attacment";
-                        label02.Content = "ch ID main:" + datachange.ID_sel.ToString();
-                        label03.Content = "ch ID target:" + datachange.ID_change.ToString();
+                        if (datachange.Class_Cha == "Gun"
+                         || datachange.Class_Cha == "Knife"
+                         || datachange.Class_Cha == "Throwing Knife"
+                         || datachange.Class_Cha == "Launcher"
+                         || datachange.Class_Cha == "Thrown Weapon"
+                         || datachange.Class_Cha == "Blunt Weapon")
+                        {
+                            label01.Content = "Selected TABLE IS: WEAPON";
+                            label02.Content = "ch ID main:" + datachange.ID_sel.ToString();
+                            label03.Content = "ch ID target:" + datachange.ID_change.ToString();
 
-                        itt.used = true;
-                        itt.dt = System.DateTime.UtcNow;
-                        context.SaveChanges();
-                        Attach_N_R AttachNR = new Attach_N_R();
-                        AttachNR.ShowDialog();
+                            itt.used = true;
+                            itt.dt = System.DateTime.UtcNow;
+                            context.SaveChanges();
+
+                            Weapon_N_R WeaponNR = new Weapon_N_R();
+                            WeaponNR.ShowDialog();
+
+                        }
+                        else if (itt.ItemClass.name == "Attachment")
+                        {
+                            label01.Content = "Selected TABLE IS:Attacment";
+                            label02.Content = "ch ID main:" + datachange.ID_sel.ToString();
+                            label03.Content = "ch ID target:" + datachange.ID_change.ToString();
+
+                            itt.used = true;
+                            itt.dt = System.DateTime.UtcNow;
+                            context.SaveChanges();
+                            Attach_N_R AttachNR = new Attach_N_R();
+                            AttachNR.ShowDialog();
+                        }
                     }
+                    else MessageBox.Show("no");
                 }
-                else MessageBox.Show("no");
-                            }
-                    }
+            }
+        }
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-                if (dataGridViewAllItems.SelectedValue != null)
+            if (dataGridViewAllItems.SelectedValue != null)
+            {
+
+                int ID_sel = Convert.ToInt32(dataGridViewAllItems.SelectedValue);
+                ITEM item = (from p in _items
+                             where p.uiIndex == ID_sel
+                             select p).First();
+                if (item.used == false)
                 {
-
-                    int ID_sel = Convert.ToInt32(dataGridViewAllItems.SelectedValue);
-                    ITEM item = (from p in _items
-                                 where p.uiIndex == ID_sel
-                                 select p).First();
-                    if (item.used == false)
+                    InputBox IB = new InputBox("pass for Del", "Type Password");
+                    IB.ShowDialog();
+                    if (datachange.Pass == "mrtaler")
                     {
-                        InputBox IB = new InputBox("pass for Del", "Type Password");
-                        IB.ShowDialog();
-                        if (datachange.Pass == "mrtaler")
+                        if (item.ItemClass.name == "Gun"
+                             || item.ItemClass.name == "Knife"
+                             || item.ItemClass.name == "Throwing Knife"
+                             || item.ItemClass.name == "Launcher"
+                             || item.ItemClass.name == "Thrown Weapon"
+                             || item.ItemClass.name == "Blunt Weapon")
                         {
-                            if (item.ItemClass.name == "Gun"
-                                 || item.ItemClass.name == "Knife"
-                                 || item.ItemClass.name == "Throwing Knife"
-                                 || item.ItemClass.name == "Launcher"
-                                 || item.ItemClass.name == "Thrown Weapon"
-                                 || item.ItemClass.name == "Blunt Weapon")
-                            {
 
-                                WEAPON weapon = (from p in context.WEAPONs
+                            WEAPON weapon = (from p in context.WEAPONs
+                                             where p.uiIndex == item.ubClassIndex
+                                             select p).First();
+
+                            label01.Content = "Deleted from TABLE: WEAPON where ID: " + weapon.uiIndex;
+                            label02.Content = "ch ID main:" + ID_sel.ToString();
+                            label03.Content = "ch ID target:" + datachange.ID_change.ToString();
+
+                            context.ITEMs.Remove(item);
+                            context.WEAPONs.Remove(weapon);
+                            context.SaveChanges();
+                        }
+
+
+                        else if (item.ItemClass.name == "Attachment")
+                        {
+                            Attachment attach = (from p in context.Attachments
                                                  where p.uiIndex == item.ubClassIndex
                                                  select p).First();
 
-                                label01.Content = "Deleted from TABLE: WEAPON where ID: " + weapon.uiIndex;
-                                label02.Content = "ch ID main:" + ID_sel.ToString();
-                                label03.Content = "ch ID target:" + datachange.ID_change.ToString();
+                            label01.Content = "Deleted from TABLE IS:Attacment where ID" + ID_sel.ToString();
+                            label02.Content = "ch ID main:" + ID_sel.ToString();
+                            label03.Content = "ch ID target:" + datachange.ID_change.ToString();
 
-                                context.ITEMs.Remove(item);
-                                context.WEAPONs.Remove(weapon);
-                                context.SaveChanges();
-                            }
-
-
-                            else if (item.ItemClass.name == "Attachment")
-                            {
-                                Attachment attach = (from p in context.Attachments
-                                                     where p.uiIndex == item.ubClassIndex
-                                                     select p).First();
-
-                                label01.Content = "Deleted from TABLE IS:Attacment where ID" + ID_sel.ToString();
-                                label02.Content = "ch ID main:" + ID_sel.ToString();
-                                label03.Content = "ch ID target:" + datachange.ID_change.ToString();
-
-                                context.ITEMs.Remove(item);
-                                context.Attachments.Remove(attach);
-                                context.SaveChanges();
-                            }
+                            context.ITEMs.Remove(item);
+                            context.Attachments.Remove(attach);
+                            context.SaveChanges();
                         }
-                        else MessageBox.Show("incorrect Pass");
                     }
-                    else MessageBox.Show("This rows is used");
+                    else MessageBox.Show("incorrect Pass");
                 }
-                    }
+                else MessageBox.Show("This rows is used");
+            }
+        }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
@@ -194,6 +194,6 @@ namespace Item_WPF
                 else e.Row.Background = System.Windows.Media.Brushes.White;
             }
         }
-            }
+    }
 }
 
