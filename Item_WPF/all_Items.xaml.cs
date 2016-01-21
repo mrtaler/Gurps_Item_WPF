@@ -59,8 +59,11 @@ namespace Item_WPF
         /// <param name="e"></param>
         private void button4_Click(object sender, RoutedEventArgs e)//sort by class
         {
-            dataGridViewAllItems.ItemsSource = _items;
-            ItemClass_forSort.SelectedIndex = -1;
+            int selclass = Convert.ToInt32(ItemClass_forSort.SelectedValue);
+            context = new item1Entities();
+            _items = new ObservableCollection<ITEM>(context.ITEMs);
+            dataGridViewAllItems.ItemsSource = _items.Where(p => p.usItemClass == selclass);
+            //ItemClass_forSort.SelectedIndex = -1;
             dataGridViewAllItems.Items.Refresh();
         }
 

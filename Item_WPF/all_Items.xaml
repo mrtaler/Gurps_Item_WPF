@@ -11,7 +11,7 @@
         <Button x:Name="button1" Content="Edit" HorizontalAlignment="Left" Margin="90,10,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="button1_Click"/>
         <Button x:Name="button2" Content="Del" HorizontalAlignment="Left" Margin="170,10,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="button2_Click"/>
         <ComboBox x:Name="ItemClass_forSort" HorizontalAlignment="Left" Margin="557,10,0,0" VerticalAlignment="Top" Width="120" IsEditable="True"
-                 	DisplayMemberPath="name"
+            DisplayMemberPath="name"
         	SelectedValuePath="id"
         	SelectionChanged="ItemClass_forSort_SelectionChanged"/>
         <DataGrid x:Name="dataGridViewAllItems" Margin="10,37,10,44" LoadingRow="dataGridViewAllItems_LoadingRow" AutoGenerateColumns="False" SelectedValuePath="uiIndex" CanUserAddRows="False">

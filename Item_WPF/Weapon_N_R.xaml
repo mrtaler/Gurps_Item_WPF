@@ -4,10 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Item_WPF"
-        mc:Ignorable="d"
-   
-    Title="{Binding weaponLoad.szWeaponName}"  Height="485" Width="806" Closing="Window_Closing">
-
+    mc:Ignorable="d"
+    Title="{Binding Path=szWeaponName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Height="485" Width="806" Closing="Window_Closing"      >
+    <!--<Window.Resources>
+        <CollectionViewSource x:Key="TL_coll"/>
+        <CollectionViewSource x:Key="itemLoad"/>
+    </Window.Resources>-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -18,15 +20,9 @@
                     <Label x:Name="label" Content="Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="87"/>
                     <Label x:Name="label1" Content="Long Name" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="label2" Content="                         Description" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.733,0.551" Width="267"/>
-                    <TextBox x:Name="Name_TB"       Height="23" Margin="102,14,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="302" >
-                        <TextBox.Text>
-                            <!--<MultiBinding Converter="{StaticResource NameMultiValueConverter}">
-
-                            </MultiBinding>-->
-                        </TextBox.Text>
-                    </TextBox>
-                    <TextBox x:Name="LongName_TB"   Height="23" Margin="102,45,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="302" Text="{Binding szLongItemName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                    <TextBox x:Name="Description_TB"            Margin="10,101,0,10" TextWrapping="Wrap" HorizontalAlignment="Left" Width="394" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" Text="{Binding szItemDesc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox x:Name="Name_TB"       Height="23" Margin="102,14,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="302"                                     Text="{Binding szItemName,      Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextChanged="Name_TB_TextChanged"/>
+                    <TextBox x:Name="LongName_TB"   Height="23" Margin="102,45,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="302"                                     Text="{Binding szLongItemName,  Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox x:Name="Description_TB"            Margin="10,101,0,10" TextWrapping="Wrap" HorizontalAlignment="Left" Width="394" VerticalScrollBarVisibility="Visible" AcceptsReturn="True"  Text="{Binding szItemDesc,      Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <Image x:Name="Item_image" HorizontalAlignment="Left" Height="248" Margin="409,14,0,0" VerticalAlignment="Top" Width="353"/>
                     <Button x:Name="LoadImage_button" Content="LoadImage" HorizontalAlignment="Left" Margin="409,267,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
                     <Button x:Name="DeleteImage_button" Content="DelImage" HorizontalAlignment="Left" Margin="489,267,0,0" VerticalAlignment="Top" Width="75" Click="DeleteImage_button_Click"/>
@@ -48,15 +44,31 @@
                             <TextBox x:Name="Bulk_TB" HorizontalAlignment="Left" Height="23" Margin="93,66,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"      Text="{Binding ItemSize, Mode=TwoWay}"/>
                             <TextBox x:Name="MinST_TB" HorizontalAlignment="Left" Height="23" Margin="93,94,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"     Text="{Binding minST, Mode=TwoWay}"/>
 
-                            <ComboBox x:Name="TL_CB" HorizontalAlignment="Left" Margin="93,122,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="TL_CB_SelectionChanged"/>
-                            <ComboBox x:Name="LC_CB" HorizontalAlignment="Left" Margin="93,149,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="LC_CB_SelectionChanged"/>
+                            <ComboBox x:Name="TL_CB" HorizontalAlignment="Left" Margin="93,122,0,0" VerticalAlignment="Top" Width="120" 
+                            	SelectedValue="{Binding TL}"
+                                      DisplayMemberPath="name_TL"
+                            	SelectedValuePath="Id_Tl" 
+                                      IsReadOnly="True"/>
+                            <ComboBox x:Name="LC_CB" HorizontalAlignment="Left" Margin="93,149,0,0" VerticalAlignment="Top" Width="120"
+                                      SelectedValue="{Binding LC}"
+                                      DisplayMemberPath="Name_LC"
+                            	    SelectedValuePath="Id_LC" 
+                                      IsReadOnly="True"
+                                      
+                                      />
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name="groupBox" Header="TL" HorizontalAlignment="Left" Margin="275,10,0,0" VerticalAlignment="Top" Height="92" Width="283">
-                        <TextBlock x:Name="TL_textBlock" Margin="10,0,-2,5" TextWrapping="Wrap" Text="TextBlock"/>
+                    <GroupBox x:Name="groupBox" Header="TL" HorizontalAlignment="Left" Margin="275,10,0,0" VerticalAlignment="Top" Height="92" Width="283"
+                              DataContext="{Binding ElementName=TL_CB, Path=SelectedItem, UpdateSourceTrigger=PropertyChanged}">
+                        <TextBlock x:Name="TL_textBlock" Margin="10,0,-2,5" TextWrapping="Wrap" 
+                                   
+                                   Text="{Binding Path=Description, UpdateSourceTrigger=PropertyChanged}"/>
                     </GroupBox>
                     <GroupBox x:Name="groupBox2" Header="LC" HorizontalAlignment="Left" Margin="275,107,0,0" VerticalAlignment="Top" Width="283" Height="211">
-                        <TextBlock x:Name="LC_textBlock" Margin="10,10,2,6" TextWrapping="Wrap" Text="TextBlock"/>
+                        <TextBlock x:Name="LC_textBlock" Margin="10,10,2,6" TextWrapping="Wrap" 
+                                   DataContext="{Binding ElementName=LC_CB, Path=SelectedItem, UpdateSourceTrigger=PropertyChanged}"
+                                   Text="{Binding Path=Description, UpdateSourceTrigger=PropertyChanged}"/>
+                              
                     </GroupBox>
                     <GroupBox x:Name="groupBox3" Header="Item Properties" HorizontalAlignment="Left" Margin="563,10,0,0" VerticalAlignment="Top" Height="308" Width="199">
                         <Grid>

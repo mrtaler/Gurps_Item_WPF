@@ -24,39 +24,29 @@ namespace Item_WPF
     /// </summary>
     public partial class Weapon_N_R : Window
     {
+
         private item1Entities context;
         private ObservableCollection<ITEM> item_coll { get; set; }
         private ObservableCollection<WEAPON> weapon_coll { get; set; }
 
         ITEM itemLoad { get; set; }
-
+        
         WEAPON weaponLoad { get; set; }
-        public class NameMultiValueConverter : IMultiValueConverter
-        {
-            public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-            {
 
-                ITEM i = values[0] as ITEM;
-                WEAPON w = values[1] as WEAPON;
+        //TL itemLoad { get; set; }
+        //LC itemLoad { get; set; }
 
-                return (w.szWeaponName=i.szItemName);
-            }
-
-            public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
-            {
-                throw new NotImplementedException();
-            }
-        }
         byte[] by;
         public Weapon_N_R()
         {
             InitializeComponent();
             context = new item1Entities();
-            // загрузка из контекста редактируемых таблиц
+                 // загрузка из контекста редактируемых таблиц
             item_coll = new ObservableCollection<ITEM>(context.ITEMs);
             weapon_coll = new ObservableCollection<WEAPON>(context.WEAPONs);
 
             this.Loaded += new RoutedEventHandler(Page_Loaded);
+
         }
 
         void Page_Loaded(object sender, RoutedEventArgs e)
@@ -70,20 +60,8 @@ namespace Item_WPF
                           where p.uiIndex == itemLoad.ubClassIndex
                           select p).First();
             General_Grid.DataContext = itemLoad;
-            
-            //   this.Title = weaponLoad.szWeaponName;
 
-            // вкладка 1
-
-            // Name_TB.Text = itemLoad.szItemName;
-            //LongName_TB.Text = itemLoad.szLongItemName;
-            //Description_TB.Text = itemLoad.szItemDesc;
-
-            //Weigth_TB.Text = itemLoad.ubWeight.ToString();
-            //Cost_TB.Text = "$" + itemLoad.usPrice.ToString();
-            //Bulk_TB.Text = itemLoad.ItemSize.ToString();
-            //MinST_TB.Text = itemLoad.minST.ToString();
-
+            Weapon_win.DataContext = weaponLoad;
 
             if (itemLoad.Item_Image != null)
             {
@@ -100,24 +78,10 @@ namespace Item_WPF
                 }
             }
             // вкладк №2.
-            TL_CB.ItemsSource = context.TLs.ToList();
-            TL_CB.DisplayMemberPath = "name_TL";
-            TL_CB.SelectedValuePath = "Id_Tl";
-            TL_CB.SelectedValue = itemLoad.TL;
 
-            TL_textBlock.Text = (from p in context.TLs
-                                 where p.Id_Tl == itemLoad.TL
-                                 select p.Description).First();
-
-            LC_CB.ItemsSource = context.LCs.ToList();
-            LC_CB.DisplayMemberPath = "Name_LC";
-            LC_CB.SelectedValuePath = "Id_LC";
-            LC_CB.SelectedValue = itemLoad.LC;
-
-            LC_textBlock.Text = (from p in context.LCs
-                                 where p.Id_LC == itemLoad.LC
-                                 select p.Description).First();
-
+            TL_CB.ItemsSource= new ObservableCollection<TL>(context.TLs);
+            LC_CB.ItemsSource= new ObservableCollection<LC>(context.LCs);
+       
             HeavyWeapon_ChB.IsChecked = weaponLoad.HeavyWeapon;
             Mount_ChB.IsChecked = weaponLoad.Mount;
             TwoHanded_ChB.IsChecked = itemLoad.TwoHanded;
@@ -284,23 +248,14 @@ namespace Item_WPF
                                  where p.uiIndex == itemSave.ubClassIndex
                                  select p).First();
 
-            //itemSave.szItemName = Name_TB.Text;
-            // weaponSave.szWeaponName = Name_TB.Text;
-            //itemSave.szLongItemName = LongName_TB.Text;
-            //itemSave.szItemDesc = Description_TB.Text;
 
-
-            //itemSave.ubWeight = Convert.ToDecimal(Weigth_TB.Text.Replace(datachange.separatorCh, datachange.separator));
             //string dd = (Cost_TB.Text.Replace("$", "").Replace(datachange.separatorCh, datachange.separator));
             //itemSave.usPrice = Convert.ToDecimal(dd);
 
-            //itemSave.ItemSize = Bulk_TB.Text;
-            //itemSave.minST = Convert.ToInt32(MinST_TB.Text);
+
 
             itemSave.Item_Image = by;
-            itemSave.TL = Convert.ToInt32(TL_CB.SelectedValue);
-            itemSave.LC = Convert.ToInt32(LC_CB.SelectedValue);
-
+         
 
             weaponSave.HeavyWeapon = Convert.ToBoolean(HeavyWeapon_ChB.IsChecked);
             weaponSave.Mount = Convert.ToBoolean(Mount_ChB.IsChecked);
@@ -487,39 +442,7 @@ namespace Item_WPF
             Item_image.Source = null;
             Item_image.UpdateLayout();
         }
-
-        private void TL_CB_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (TL_CB.SelectedValue != null)
-            {
-                int VAl = Convert.ToInt32(TL_CB.SelectedValue);
-                using (item1Entities context = new item1Entities())
-                {
-                    context.Database.Connection.Open();
-                    TL_textBlock.Text = (from p in context.TLs
-                                         where p.Id_Tl == VAl
-                                         select p.Description).First();
-                    context.Database.Connection.Close();
-                }
-            }
-        }
-
-        private void LC_CB_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (LC_CB.SelectedValue != null)
-            {
-                int VAl = Convert.ToInt32(LC_CB.SelectedValue);
-                using (item1Entities context = new item1Entities())
-                {
-                    context.Database.Connection.Open();
-                    LC_textBlock.Text = (from p in context.LCs
-                                         where p.Id_LC == VAl
-                                         select p.Description).First();
-                    context.Database.Connection.Close();
-                }
-            }
-        }
-
+              
         private void ClassOfWeapon_TB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             using (item1Entities context = new item1Entities())
@@ -836,6 +759,11 @@ namespace Item_WPF
                 CAliber_comboBox.DisplayMemberPath = "Caliber_name";
                 CAliber_comboBox.SelectedValue = context.AMMOes.LongCount();
             }
+        }
+
+        private void Name_TB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            weaponLoad.szWeaponName = itemLoad.szItemName;
         }
     }
 }
