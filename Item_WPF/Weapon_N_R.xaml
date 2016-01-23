@@ -68,83 +68,129 @@
                         <TextBlock x:Name="LC_textBlock" Margin="10,10,2,6" TextWrapping="Wrap" 
                                    DataContext="{Binding ElementName=LC_CB, Path=SelectedItem, UpdateSourceTrigger=PropertyChanged}"
                                    Text="{Binding Path=Description, UpdateSourceTrigger=PropertyChanged}"/>
-                              
+
                     </GroupBox>
                     <GroupBox x:Name="groupBox3" Header="Item Properties" HorizontalAlignment="Left" Margin="563,10,0,0" VerticalAlignment="Top" Height="308" Width="199">
-                        <Grid>
-
-                            <CheckBox x:Name="HeavyWeapon_ChB" Content="Heavy weapon" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="Mount_ChB" Content="Mount" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="TwoHanded_ChB" Content="Two Handed" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="HT_ChB" Content="HT" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="UT_ChB" Content="UT" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="NeedBat_ChB" Content="Need BAttery" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="Damageble_ChB" Content="Damageble" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="Repairable_ChB" Content="Repairable" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="WaterDamageble_ChB" Content="Water damageable" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="Metal_ChB" Content="Metal" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="Electronic_ChB" Content="Electronic" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="BulkFold_checkBox" Content="Bulk Fold" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top"/>
+                        <Grid x:Name="itemsGridGeneral">
+                            <CheckBox x:Name="TwoHanded_ChB" Content="Two Handed" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"                                      IsChecked="{Binding Path=TwoHanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <CheckBox x:Name="HT_ChB" Content="HT" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"                                      IsChecked="{Binding Path=HT, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <CheckBox x:Name="UT_ChB" Content="UT" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"                                      IsChecked="{Binding Path=UT, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <CheckBox x:Name="NeedBat_ChB" Content="Need BAttery" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top"                                      IsChecked="{Binding Path=NeedsBatteries, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <CheckBox x:Name="Damageble_ChB" Content="Damageble" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"                                      IsChecked="{Binding Path=Damageable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <CheckBox x:Name="Repairable_ChB" Content="Repairable" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"                                      IsChecked="{Binding Path=Repairable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <CheckBox x:Name="WaterDamageble_ChB" Content="Water damageable" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top"                                      IsChecked="{Binding Path=WaterDamages, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <CheckBox x:Name="Metal_ChB" Content="Metal" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"                                      IsChecked="{Binding Path=Metal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <CheckBox x:Name="Electronic_ChB" Content="Electronic" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"                                      IsChecked="{Binding Path=Electronic, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <GroupBox x:Name="groupBox12" Header="Weapon" HorizontalAlignment="Left" Height="93" Margin="10,190,0,0" VerticalAlignment="Top" Width="167">
+                                <Grid x:Name="WeaponGridGeneral" Margin="0,0,-2,0">
+                                    <CheckBox x:Name="HeavyWeapon_ChB"      Content="Heavy weapon" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"
+                                               IsChecked="{Binding Path=HeavyWeapon, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <CheckBox x:Name="Mount_ChB"            Content="Mount" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"
+                                               IsChecked="{Binding Path=Mount, Mode=TwoWay}"/>
+                                    <CheckBox x:Name="BulkFold_checkBox"    Content="Bulk Fold" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"
+                                               IsChecked="{Binding Path=Bulkfolded, Mode=TwoWay}"/>
+                                </Grid>
+                            </GroupBox>
                         </Grid>
                     </GroupBox>
                 </Grid>
             </TabItem>
             <TabItem x:Name="Weapon_ti" Header="Weapon">
-                <Grid Background="#FFE5E5E5">
+                <Grid x:Name="WeaponMain_grid" Background="#FFE5E5E5">
                     <GroupBox x:Name="groupBox4" Header="Type of Weapon" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="86" Width="195">
-                        <Grid>
+                        <Grid x:Name="TypeOfWeapGrid" >
                             <Label x:Name="label4" Content="Class" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                            <Label x:Name="label5" Content="Type" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Height="26"/>
-                            <ComboBox x:Name="ClassOfWeapon_TB" HorizontalAlignment="Left" Margin="53,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ClassOfWeapon_TB_SelectionChanged"/>
-                            <ComboBox x:Name="TypeOfClassWeap_TB" HorizontalAlignment="Left" Margin="53,37,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="TypeOfClassWeap_TB_SelectionChanged"/>
+                            <ComboBox x:Name="ClassOfWeapon_TB" HorizontalAlignment="Left" Margin="53,10,0,0" VerticalAlignment="Top" Width="120" 
+                                      SelectedValuePath="id"
+                                      DisplayMemberPath="name"
+                                      SelectedValue="{Binding ubWeaponClass, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      SelectionChanged="ClassOfWeapon_TB_SelectionChanged"/>
+                            <Grid x:Name="Grid_type" HorizontalAlignment="Left" Height="32" Margin="0,32,0,0" VerticalAlignment="Top" Width="183">
+                                <Label x:Name="label5" Content="Type" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="26"/>
+                                <ComboBox x:Name="TypeOfClassWeap_TB" 
+                                          HorizontalAlignment="Left" Margin="53,4,0,0" VerticalAlignment="Top" Width="120" 
+                                          SelectedValuePath="id"
+                                          DisplayMemberPath="name"
+                                          ItemsSource="{Binding}"
+                                          SelectedValue="{Binding ubWeaponType, Mode=TwoWay}"
+                                          SelectionChanged="TypeOfClassWeap_TB_SelectionChanged" />
+                            </Grid>
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="groupBox5" Header="Damage" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top" Height="194" Width="195">
-                        <Grid>
+                        <Grid x:Name="DamageWeapon_grid">
                             <Label x:Name="label11" Content="Damage" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="label12" Content="Type of Damage" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="label13" Content="Arm Divizor" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="label14" Content="Follow Up" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="label15" Content="Linked" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top"/>
-                            <TextBox x:Name="Damage_textBox" HorizontalAlignment="Left" Height="23" Margin="98,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="75"/>
-                            <TextBox x:Name="ArmDivizor_textBox" HorizontalAlignment="Left" Height="23" Margin="98,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
-                            <TextBox x:Name="FollowUp_textBox" HorizontalAlignment="Left" Height="23" Margin="98,107,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="75"/>
-                            <ComboBox x:Name="TypeOfDamage_comboBox" HorizontalAlignment="Left" Margin="112,45,0,0" VerticalAlignment="Top" Width="61" KeyDown="TypeOfDamage_comboBox_KeyDown" >
+                            
+                            <TextBox x:Name="Damage_textBox" HorizontalAlignment="Left" Height="23" Margin="98,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="75"
+                                     Text="{Binding Damage, Mode=TwoWay}"                                     />
+                            <TextBox x:Name="ArmDivizor_textBox" HorizontalAlignment="Left" Height="23" Margin="98,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"
+                                     Text="{Binding Arm_Division, Mode=TwoWay}"                                     />
+                            <TextBox x:Name="FollowUp_textBox" HorizontalAlignment="Left" Height="23" Margin="98,106,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="75"
+                                     Text="{Binding Follow_Up, Mode=TwoWay}"                                      />
+                            <TextBox x:Name="Linked_textBox" HorizontalAlignment="Left" Height="23" Margin="98,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"
+                                     Text="{Binding Linked, Mode=TwoWay}"                                      />
+                            <ComboBox x:Name="TypeOfDamage_comboBox" HorizontalAlignment="Left" Margin="112,45,0,0" VerticalAlignment="Top" Width="61" KeyDown="TypeOfDamage_comboBox_KeyDown" 
+                                      SelectedValuePath = "id"
+                                      DisplayMemberPath = "name"
+                                      SelectedValue="{Binding ubTypeOfDamage, Mode=TwoWay}"
+                                      />
 
-                            </ComboBox>
-                            <TextBox x:Name="Linked_textBox" HorizontalAlignment="Left" Height="23" Margin="98,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
+
+
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="groupBox6" Header="Range" HorizontalAlignment="Left" Margin="210,10,0,0" VerticalAlignment="Top" Height="116" Width="181">
-                        <Grid>
+                        <Grid x:Name="range_grid">
                             <Label x:Name="label16" Content="Min Range" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.433,0.077"/>
                             <Label x:Name="label17" Content="Half Range" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="label18" Content="Max Range" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top"/>
-                            <TextBox x:Name="MinRange_textBox" HorizontalAlignment="Left" Height="23" Margin="82,10,0,0" TextWrapping="Wrap" Text="min" VerticalAlignment="Top" Width="77"/>
-                            <TextBox x:Name="HalfRange_textBox" HorizontalAlignment="Left" Height="23" Margin="82,38,0,0" TextWrapping="Wrap" Text="half" VerticalAlignment="Top" Width="77"/>
-                            <TextBox x:Name="MaxRange_textBox" HorizontalAlignment="Left" Height="23" Margin="82,66,0,0" TextWrapping="Wrap" Text="max" VerticalAlignment="Top" Width="77"/>
+                            <TextBox x:Name="MinRange_textBox" HorizontalAlignment="Left" Height="23" Margin="82,10,0,0" TextWrapping="Wrap" 
+                                     Text="{Binding MinRange, Mode=TwoWay}"
+                                     VerticalAlignment="Top" Width="77"/>
+                            <TextBox x:Name="HalfRange_textBox" HorizontalAlignment="Left" Height="23" Margin="82,38,0,0" TextWrapping="Wrap" 
+                                     Text="{Binding Half_Range, Mode=TwoWay}"
+                                     VerticalAlignment="Top" Width="77"/>
+                            <TextBox x:Name="MaxRange_textBox" HorizontalAlignment="Left" Height="23" Margin="82,66,0,0" TextWrapping="Wrap" 
+                                     Text="{Binding FullRange, Mode=TwoWay}"
+                                     VerticalAlignment="Top" Width="77"/>
 
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="groupBox7" Header="Shots" HorizontalAlignment="Left" Margin="210,131,0,0" VerticalAlignment="Top" Height="164" Width="181">
-                        <Grid>
+                        <Grid x:Name="shots_grid">
                             <Label x:Name="label19" Content="ROF" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="SH_label20" Content="X" HorizontalAlignment="Left" Margin="89,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0.5" Visibility="Hidden"/>
-                            <TextBox x:Name="ROF_textBox" HorizontalAlignment="Left" Height="23" Margin="54,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
-                            <TextBox x:Name="SHROF_textBox" HorizontalAlignment="Left" Height="23" Margin="111,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" Visibility="Hidden"/>
-                            <CheckBox x:Name="FullAuto_checkBox" Content="Full Auto" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Checked="FullAuto_checkBox_Checked"/>
-                            <CheckBox x:Name="Add1inChambler_checkbox" Content="1 Add" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="HCROF_checkBox2" Content="HC ROF(#)" HorizontalAlignment="Left" Margin="88,38,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="CutOfShots_checkBox" Content="Cut Of Shots" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Checked="CutOfShots_checkBox_Checked" Unchecked="CutOfShots_checkBox_Unchecked"/>
+                            <TextBox x:Name="ROF_textBox" HorizontalAlignment="Left" Height="23" Margin="54,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"
+                                     Text="{Binding ROF, Mode=TwoWay}" />
+                            <TextBox x:Name="SHROF_textBox" HorizontalAlignment="Left" Height="23" Margin="111,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" Visibility="Hidden"
+                                     Text="{Binding ROF_for_Sh, Mode=TwoWay}"/>
+                            <CheckBox x:Name="FullAuto_checkBox" Content="Full Auto" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Checked="FullAuto_checkBox_Checked"
+                                      IsChecked="{Binding Path=Full_auto, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <CheckBox x:Name="Add1inChambler_checkbox" Content="1 Add" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top"
+                                      IsChecked="{Binding Path=Add_in_Chamber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <CheckBox x:Name="HCROF_checkBox2" Content="HC ROF(#)" HorizontalAlignment="Left" Margin="88,38,0,0" VerticalAlignment="Top"
+                                    />
+                            <CheckBox x:Name="CutOfShots_checkBox" Content="Cut Of Shots" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" 
+                                      IsChecked="{Binding Path=CutOff_shots, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      Checked="CutOfShots_checkBox_Checked" 
+                                      Unchecked="CutOfShots_checkBox_Unchecked"/>
                             <Label x:Name="label20" Content="Cut Of Shots" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
-                            <TextBox x:Name="CutOfShots_textBox" HorizontalAlignment="Left" Height="23" Margin="53,98,-4,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+                            <TextBox x:Name="CutOfShots_textBox" HorizontalAlignment="Left" Height="23" Margin="53,98,-4,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
+                                     Text="{Binding CutOff_shotsCount, Mode=TwoWay}"
+                                     Visibility="Hidden"/>
 
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="groupBox8" Header="Acc" HorizontalAlignment="Left" Margin="396,10,0,0" VerticalAlignment="Top" Height="94" Width="237">
                         <Grid>
-                            <TextBox x:Name="DefAcc_textBox" HorizontalAlignment="Left" Height="23" Margin="95,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                            <TextBox x:Name="Recoil_textBox" HorizontalAlignment="Left" Height="23" Margin="95,38,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox x:Name="DefAcc_textBox" HorizontalAlignment="Left" Height="23" Margin="95,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"
+                                     Text="{Binding DefACC, Mode=TwoWay}" />
+                            <TextBox x:Name="Recoil_textBox" HorizontalAlignment="Left" Height="23" Margin="95,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"
+                                     Text="{Binding Recoil, Mode=TwoWay}" />
                             <Label x:Name="label21" Content="Default ACC" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="label22" Content="Recoil" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top"/>
 
@@ -155,11 +201,16 @@
                             <Label x:Name="label23" Content="Caliber" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="label24" Content="Shots" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
                             <Label x:Name="label25" Content="Reload Time" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
-                            <ComboBox x:Name="CAliber_comboBox" HorizontalAlignment="Left" Margin="73,14,0,0" VerticalAlignment="Top" Width="120" KeyDown="CAliber_comboBox_KeyDown"/>
-                            <TextBox x:Name="Shots_textBox" HorizontalAlignment="Left" Height="23" Margin="73,45,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                            <TextBox x:Name="ReloadTime_textbox" HorizontalAlignment="Left" Height="23" Margin="91,76,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="102"/>
-                            <CheckBox x:Name="SingleReload_checkBox" Content="Single Reload" HorizontalAlignment="Left" Margin="26,119,0,0" VerticalAlignment="Top" />
-
+                            <ComboBox x:Name="CAliber_comboBox" HorizontalAlignment="Left" Margin="73,14,0,0" VerticalAlignment="Top" Width="120" KeyDown="CAliber_comboBox_KeyDown"
+                                      SelectedValuePath = "id"
+                                      DisplayMemberPath = "Caliber_name" 
+                                      SelectedValue="{Binding ubCalibre, Mode=TwoWay}"                                      />
+                            <TextBox x:Name="Shots_textBox" HorizontalAlignment="Left" Height="23" Margin="73,45,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"
+                                     Text="{Binding Shots, Mode=TwoWay}" />                                     
+                            <TextBox x:Name="ReloadTime_textbox" HorizontalAlignment="Left" Height="23" Margin="91,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"                                     
+                                     Text="{Binding Time_For_reload, Mode=TwoWay}" />
+                            <CheckBox x:Name="SingleReload_checkBox" Content="Single Reload" HorizontalAlignment="Left" Margin="26,119,0,0" VerticalAlignment="Top" 
+                                      IsChecked="{Binding Path=single_reload, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </Grid>
                     </GroupBox>
 

@@ -37,6 +37,7 @@ namespace Item_WPF
 
         private void Save_button_Click(object sender, RoutedEventArgs e)
         {
+            context.SaveChanges();
             this.Close();
         }
 
@@ -54,7 +55,7 @@ namespace Item_WPF
             {
                 foreach (AMMO item in e.NewItems)
                 {
-                    item.Caliber_name = "";
+                    item.Caliber_name = "new item";
                     item.alt_caliber_name = "";
                     item.AV_Upgrates = 1;
                     item.Dim_of_bullet_SI = 1;
