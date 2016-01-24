@@ -20,14 +20,6 @@
                 <DataGridTextColumn Header="WPS"        Binding="{Binding WPS, Mode=TwoWay}"/>
                 <DataGridTextColumn Header="CPS"        Binding="{Binding CPS, Mode=TwoWay}"/>
                 <DataGridTextColumn Header="Class_of_Ammo"        Binding="{Binding Class_of_Ammo, Mode=TwoWay}"/>
-
-                <!--<DataGridTemplateColumn Width="30">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Content="X" Click="Button_Click"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>-->
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="Save_button" Content="save" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="75" Click="Save_button_Click"/>

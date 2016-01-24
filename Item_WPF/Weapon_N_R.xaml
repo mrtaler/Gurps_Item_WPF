@@ -240,17 +240,17 @@
                     </GroupBox>
                     <GroupBox x:Name="groupBox11" Header="Attach Mount" HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top" Height="361" Width="328">
                         <Grid>
-                            <ComboBox x:Name="Scope_comboBox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" />
-                            <ComboBox x:Name="Laser_comboBox" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Width="120" />
-                            <ComboBox x:Name="Light_comboBox" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="120" />
-                            <ComboBox x:Name="Bipod_comboBox" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Width="120" />
-                            <ComboBox x:Name="Silenser_comboBox" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top" Width="120"/>
-                            <ComboBox x:Name="Launcher_comboBox" HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top" Width="120"/>
-                            <ComboBox x:Name="Stock_comboBox" HorizontalAlignment="Left" Margin="10,172,0,0" VerticalAlignment="Top" Width="120" />
-                            <ComboBox x:Name="Bayonet_comboBox" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top" Width="120" />
-                            <ComboBox x:Name="Magazine_comboBox" HorizontalAlignment="Left" Margin="10,226,0,0" VerticalAlignment="Top" Width="120"/>
-                            <ComboBox x:Name="Internal_comboBox" HorizontalAlignment="Left" Margin="10,253,0,0" VerticalAlignment="Top" Width="120"/>
-                            <ComboBox x:Name="External_comboBox" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top" Width="120"/>
+                            <ComboBox x:Name="Scope_comboBox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" KeyDown="Scope_comboBox_KeyDown"        Visibility="Hidden" />
+                            <ComboBox x:Name="Laser_comboBox" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Width="120" KeyDown="Laser_comboBox_KeyDown"        Visibility="Hidden" />
+                            <ComboBox x:Name="Light_comboBox" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="120" KeyDown="Light_comboBox_KeyDown"        Visibility="Hidden" />
+                            <ComboBox x:Name="Bipod_comboBox" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Width="120" KeyDown="Bipod_comboBox_KeyDown"        Visibility="Hidden" />
+                            <ComboBox x:Name="Silenser_comboBox" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top" Width="120" KeyDown="Silenser_comboBox_KeyDown" Visibility="Hidden" />
+                            <ComboBox x:Name="Launcher_comboBox" HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top" Width="120" KeyDown="Launcher_comboBox_KeyDown" Visibility="Hidden" />
+                            <ComboBox x:Name="Stock_comboBox" HorizontalAlignment="Left" Margin="10,172,0,0" VerticalAlignment="Top" Width="120" KeyDown="Stock_comboBox_KeyDown"       Visibility="Hidden" />
+                            <ComboBox x:Name="Bayonet_comboBox" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top" Width="120" KeyDown="Bayonet_comboBox_KeyDown"   Visibility="Hidden" />
+                            <ComboBox x:Name="Magazine_comboBox" HorizontalAlignment="Left" Margin="10,226,0,0" VerticalAlignment="Top" Width="120" KeyDown="Magazine_comboBox_KeyDown" Visibility="Hidden" />
+                            <ComboBox x:Name="Internal_comboBox" HorizontalAlignment="Left" Margin="10,253,0,0" VerticalAlignment="Top" Width="120" KeyDown="Internal_comboBox_KeyDown" Visibility="Hidden" />
+                            <ComboBox x:Name="External_comboBox" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top" Width="120" KeyDown="External_comboBox_KeyDown" Visibility="Hidden" />
                             <ComboBox x:Name="comboBox11" HorizontalAlignment="Left" Margin="10,307,0,0" VerticalAlignment="Top" Width="120"/>
 
                         </Grid>

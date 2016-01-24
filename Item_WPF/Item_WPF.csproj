@@ -100,6 +100,9 @@
     <Compile Include="Attach_N_R.xaml.cs">
       <DependentUpon>Attach_N_R.xaml</DependentUpon>
     </Compile>
+    <Compile Include="litForms\Attacment_mount.xaml.cs">
+      <DependentUpon>Attacment_mount.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AvailableAttachSlot.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
@@ -169,12 +172,6 @@
     <Compile Include="LOADBEARINGEQUIPMENT.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="nasAttachmentClass.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="nasLayoutClass.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
     <Compile Include="NewItems.xaml.cs">
       <DependentUpon>NewItems.xaml</DependentUpon>
     </Compile>
@@ -204,6 +201,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Attach_N_R.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="litForms\Attacment_mount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

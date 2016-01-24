@@ -11,653 +11,649 @@ namespace Item_WPF
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class WEAPON : System.ComponentModel.INotifyPropertyChanged
     {
-
-        #region Implement INotifyPropertyChanged
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        #endregion
-
+     
+     #region Implement INotifyPropertyChanged
+     
+     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+     
+     protected virtual void OnPropertyChanged(string propertyName)
+     {
+      if (PropertyChanged != null)
+      {
+       PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+      }
+     }
+     
+     #endregion
+     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public WEAPON()
         {
             this.AvailableAttachSlots = new HashSet<AvailableAttachSlot>();
         }
-
+    
         private int _uiIndex;
-        public int uiIndex
-        {
-            get
-            {
-                return _uiIndex;
-            }
-            set
-            {
-                if (_uiIndex != value)
-                {
-                    _uiIndex = value;
-                    OnPropertyChanged("uiIndex");
-                }
-            }
-        }
-
+     public int uiIndex 
+     { 
+      get
+      {
+       return _uiIndex;
+      } 
+      set
+      {
+       if(_uiIndex != value)
+       {
+        _uiIndex = value;
+        OnPropertyChanged("uiIndex");
+       }
+      }
+     }
+     
         private string _szWeaponName;
-        public string szWeaponName
-        {
-            get
-            {
-                return _szWeaponName;
-            }
-            set
-            {
-                if (_szWeaponName != value)
-                {
-                    _szWeaponName = value;
-                    OnPropertyChanged("szWeaponName");
-                }
-            }
-        }
-
+     public string szWeaponName 
+     { 
+      get
+      {
+       return _szWeaponName;
+      } 
+      set
+      {
+       if(_szWeaponName != value)
+       {
+        _szWeaponName = value;
+        OnPropertyChanged("szWeaponName");
+       }
+      }
+     }
+     
         private int _ubWeaponClass;
-        public int ubWeaponClass
-        {
-            get
-            {
-                return _ubWeaponClass;
-            }
-            set
-            {
-                if (_ubWeaponClass != value)
-                {
-                    _ubWeaponClass = value;
-                    OnPropertyChanged("ubWeaponClass");
-                }
-            }
-        }
-
+     public int ubWeaponClass 
+     { 
+      get
+      {
+       return _ubWeaponClass;
+      } 
+      set
+      {
+       if(_ubWeaponClass != value)
+       {
+        _ubWeaponClass = value;
+        OnPropertyChanged("ubWeaponClass");
+       }
+      }
+     }
+     
         private int _ubWeaponType;
-        public int ubWeaponType
-        {
-            get
-            {
-                return _ubWeaponType;
-            }
-            set
-            {
-                if (_ubWeaponType != value)
-                {
-                    _ubWeaponType = value;
-                    OnPropertyChanged("ubWeaponType");
-                }
-            }
-        }
-
+     public int ubWeaponType 
+     { 
+      get
+      {
+       return _ubWeaponType;
+      } 
+      set
+      {
+       if(_ubWeaponType != value)
+       {
+        _ubWeaponType = value;
+        OnPropertyChanged("ubWeaponType");
+       }
+      }
+     }
+     
         private int _ubCalibre;
-        public int ubCalibre
-        {
-            get
-            {
-                return _ubCalibre;
-            }
-            set
-            {
-                if (_ubCalibre != value)
-                {
-                    _ubCalibre = value;
-                    OnPropertyChanged("ubCalibre");
-                }
-            }
-        }
-
+     public int ubCalibre 
+     { 
+      get
+      {
+       return _ubCalibre;
+      } 
+      set
+      {
+       if(_ubCalibre != value)
+       {
+        _ubCalibre = value;
+        OnPropertyChanged("ubCalibre");
+       }
+      }
+     }
+     
         private string _Damage;
-        public string Damage
-        {
-            get
-            {
-                return _Damage;
-            }
-            set
-            {
-                if (_Damage != value)
-                {
-                    _Damage = value;
-                    OnPropertyChanged("Damage");
-                }
-            }
-        }
-
+     public string Damage 
+     { 
+      get
+      {
+       return _Damage;
+      } 
+      set
+      {
+       if(_Damage != value)
+       {
+        _Damage = value;
+        OnPropertyChanged("Damage");
+       }
+      }
+     }
+     
         private int _ubTypeOfDamage;
-        public int ubTypeOfDamage
-        {
-            get
-            {
-                return _ubTypeOfDamage;
-            }
-            set
-            {
-                if (_ubTypeOfDamage != value)
-                {
-                    _ubTypeOfDamage = value;
-                    OnPropertyChanged("ubTypeOfDamage");
-                }
-            }
-        }
-
+     public int ubTypeOfDamage 
+     { 
+      get
+      {
+       return _ubTypeOfDamage;
+      } 
+      set
+      {
+       if(_ubTypeOfDamage != value)
+       {
+        _ubTypeOfDamage = value;
+        OnPropertyChanged("ubTypeOfDamage");
+       }
+      }
+     }
+     
         private int _DefACC;
-        public int DefACC
-        {
-            get
-            {
-                return _DefACC;
-            }
-            set
-            {
-                if (_DefACC != value)
-                {
-                    _DefACC = value;
-                    OnPropertyChanged("DefACC");
-                }
-            }
-        }
-
+     public int DefACC 
+     { 
+      get
+      {
+       return _DefACC;
+      } 
+      set
+      {
+       if(_DefACC != value)
+       {
+        _DefACC = value;
+        OnPropertyChanged("DefACC");
+       }
+      }
+     }
+     
         private decimal _Half_Range;
-        public decimal Half_Range
-        {
-            get
-            {
-                return _Half_Range;
-            }
-            set
-            {
-                if (_Half_Range != value)
-                {
-                    _Half_Range = value;
-                    OnPropertyChanged("Half_Range");
-                }
-            }
-        }
-
+     public decimal Half_Range 
+     { 
+      get
+      {
+       return _Half_Range;
+      } 
+      set
+      {
+       if(_Half_Range != value)
+       {
+        _Half_Range = value;
+        OnPropertyChanged("Half_Range");
+       }
+      }
+     }
+     
         private decimal _FullRange;
-        public decimal FullRange
-        {
-            get
-            {
-                return _FullRange;
-            }
-            set
-            {
-                if (_FullRange != value)
-                {
-                    _FullRange = value;
-                    OnPropertyChanged("FullRange");
-                }
-            }
-        }
-
+     public decimal FullRange 
+     { 
+      get
+      {
+       return _FullRange;
+      } 
+      set
+      {
+       if(_FullRange != value)
+       {
+        _FullRange = value;
+        OnPropertyChanged("FullRange");
+       }
+      }
+     }
+     
         private decimal _MinRange;
-        public decimal MinRange
-        {
-            get
-            {
-                return _MinRange;
-            }
-            set
-            {
-                if (_MinRange != value)
-                {
-                    _MinRange = value;
-                    OnPropertyChanged("MinRange");
-                }
-            }
-        }
-
+     public decimal MinRange 
+     { 
+      get
+      {
+       return _MinRange;
+      } 
+      set
+      {
+       if(_MinRange != value)
+       {
+        _MinRange = value;
+        OnPropertyChanged("MinRange");
+       }
+      }
+     }
+     
         private decimal _AWeight;
-        public decimal AWeight
-        {
-            get
-            {
-                return _AWeight;
-            }
-            set
-            {
-                if (_AWeight != value)
-                {
-                    _AWeight = value;
-                    OnPropertyChanged("AWeight");
-                }
-            }
-        }
-
+     public decimal AWeight 
+     { 
+      get
+      {
+       return _AWeight;
+      } 
+      set
+      {
+       if(_AWeight != value)
+       {
+        _AWeight = value;
+        OnPropertyChanged("AWeight");
+       }
+      }
+     }
+     
         private decimal _Arm_Division;
-        public decimal Arm_Division
-        {
-            get
-            {
-                return _Arm_Division;
-            }
-            set
-            {
-                if (_Arm_Division != value)
-                {
-                    _Arm_Division = value;
-                    OnPropertyChanged("Arm_Division");
-                }
-            }
-        }
-
+     public decimal Arm_Division 
+     { 
+      get
+      {
+       return _Arm_Division;
+      } 
+      set
+      {
+       if(_Arm_Division != value)
+       {
+        _Arm_Division = value;
+        OnPropertyChanged("Arm_Division");
+       }
+      }
+     }
+     
         private int _ROF;
-        public int ROF
-        {
-            get
-            {
-                return _ROF;
-            }
-            set
-            {
-                if (_ROF != value)
-                {
-                    _ROF = value;
-                    OnPropertyChanged("ROF");
-                }
-            }
-        }
-
+     public int ROF 
+     { 
+      get
+      {
+       return _ROF;
+      } 
+      set
+      {
+       if(_ROF != value)
+       {
+        _ROF = value;
+        OnPropertyChanged("ROF");
+       }
+      }
+     }
+     
         private bool _Full_auto;
-        public bool Full_auto
-        {
-            get
-            {
-                return _Full_auto;
-            }
-            set
-            {
-                if (_Full_auto != value)
-                {
-                    _Full_auto = value;
-                    OnPropertyChanged("Full_auto");
-                }
-            }
-        }
-
+     public bool Full_auto 
+     { 
+      get
+      {
+       return _Full_auto;
+      } 
+      set
+      {
+       if(_Full_auto != value)
+       {
+        _Full_auto = value;
+        OnPropertyChanged("Full_auto");
+       }
+      }
+     }
+     
         private int _ROF_for_Sh;
-        public int ROF_for_Sh
-        {
-            get
-            {
-                return _ROF_for_Sh;
-            }
-            set
-            {
-                if (_ROF_for_Sh != value)
-                {
-                    _ROF_for_Sh = value;
-                    OnPropertyChanged("ROF_for_Sh");
-                }
-            }
-        }
-
+     public int ROF_for_Sh 
+     { 
+      get
+      {
+       return _ROF_for_Sh;
+      } 
+      set
+      {
+       if(_ROF_for_Sh != value)
+       {
+        _ROF_for_Sh = value;
+        OnPropertyChanged("ROF_for_Sh");
+       }
+      }
+     }
+     
         private int _Shots;
-        public int Shots
-        {
-            get
-            {
-                return _Shots;
-            }
-            set
-            {
-                if (_Shots != value)
-                {
-                    _Shots = value;
-                    OnPropertyChanged("Shots");
-                }
-            }
-        }
-
+     public int Shots 
+     { 
+      get
+      {
+       return _Shots;
+      } 
+      set
+      {
+       if(_Shots != value)
+       {
+        _Shots = value;
+        OnPropertyChanged("Shots");
+       }
+      }
+     }
+     
         private int _Time_For_reload;
-        public int Time_For_reload
-        {
-            get
-            {
-                return _Time_For_reload;
-            }
-            set
-            {
-                if (_Time_For_reload != value)
-                {
-                    _Time_For_reload = value;
-                    OnPropertyChanged("Time_For_reload");
-                }
-            }
-        }
-
+     public int Time_For_reload 
+     { 
+      get
+      {
+       return _Time_For_reload;
+      } 
+      set
+      {
+       if(_Time_For_reload != value)
+       {
+        _Time_For_reload = value;
+        OnPropertyChanged("Time_For_reload");
+       }
+      }
+     }
+     
         private bool _single_reload;
-        public bool single_reload
-        {
-            get
-            {
-                return _single_reload;
-            }
-            set
-            {
-                if (_single_reload != value)
-                {
-                    _single_reload = value;
-                    OnPropertyChanged("single_reload");
-                }
-            }
-        }
-
+     public bool single_reload 
+     { 
+      get
+      {
+       return _single_reload;
+      } 
+      set
+      {
+       if(_single_reload != value)
+       {
+        _single_reload = value;
+        OnPropertyChanged("single_reload");
+       }
+      }
+     }
+     
         private bool _Mount;
-        public bool Mount
-        {
-            get
-            {
-                return _Mount;
-            }
-            set
-            {
-                if (_Mount != value)
-                {
-                    _Mount = value;
-                    OnPropertyChanged("Mount");
-                }
-            }
-        }
-
+     public bool Mount 
+     { 
+      get
+      {
+       return _Mount;
+      } 
+      set
+      {
+       if(_Mount != value)
+       {
+        _Mount = value;
+        OnPropertyChanged("Mount");
+       }
+      }
+     }
+     
         private int _Recoil;
-        public int Recoil
-        {
-            get
-            {
-                return _Recoil;
-            }
-            set
-            {
-                if (_Recoil != value)
-                {
-                    _Recoil = value;
-                    OnPropertyChanged("Recoil");
-                }
-            }
-        }
-
+     public int Recoil 
+     { 
+      get
+      {
+       return _Recoil;
+      } 
+      set
+      {
+       if(_Recoil != value)
+       {
+        _Recoil = value;
+        OnPropertyChanged("Recoil");
+       }
+      }
+     }
+     
         private string _Linked;
-        public string Linked
-        {
-            get
-            {
-                return _Linked;
-            }
-            set
-            {
-                if (_Linked != value)
-                {
-                    _Linked = value;
-                    OnPropertyChanged("Linked");
-                }
-            }
-        }
-
+     public string Linked 
+     { 
+      get
+      {
+       return _Linked;
+      } 
+      set
+      {
+       if(_Linked != value)
+       {
+        _Linked = value;
+        OnPropertyChanged("Linked");
+       }
+      }
+     }
+     
         private string _Follow_Up;
-        public string Follow_Up
-        {
-            get
-            {
-                return _Follow_Up;
-            }
-            set
-            {
-                if (_Follow_Up != value)
-                {
-                    _Follow_Up = value;
-                    OnPropertyChanged("Follow_Up");
-                }
-            }
-        }
-
+     public string Follow_Up 
+     { 
+      get
+      {
+       return _Follow_Up;
+      } 
+      set
+      {
+       if(_Follow_Up != value)
+       {
+        _Follow_Up = value;
+        OnPropertyChanged("Follow_Up");
+       }
+      }
+     }
+     
         private bool _HeavyWeapon;
-        public bool HeavyWeapon
-        {
-            get
-            {
-                return _HeavyWeapon;
-            }
-            set
-            {
-                if (_HeavyWeapon != value)
-                {
-                    _HeavyWeapon = value;
-                    OnPropertyChanged("HeavyWeapon");
-                }
-            }
-        }
-
+     public bool HeavyWeapon 
+     { 
+      get
+      {
+       return _HeavyWeapon;
+      } 
+      set
+      {
+       if(_HeavyWeapon != value)
+       {
+        _HeavyWeapon = value;
+        OnPropertyChanged("HeavyWeapon");
+       }
+      }
+     }
+     
         private bool _Add_in_Chamber;
-        public bool Add_in_Chamber
-        {
-            get
-            {
-                return _Add_in_Chamber;
-            }
-            set
-            {
-                if (_Add_in_Chamber != value)
-                {
-                    _Add_in_Chamber = value;
-                    OnPropertyChanged("Add_in_Chamber");
-                }
-            }
-        }
-
+     public bool Add_in_Chamber 
+     { 
+      get
+      {
+       return _Add_in_Chamber;
+      } 
+      set
+      {
+       if(_Add_in_Chamber != value)
+       {
+        _Add_in_Chamber = value;
+        OnPropertyChanged("Add_in_Chamber");
+       }
+      }
+     }
+     
         private bool _CutOff_shots;
-        public bool CutOff_shots
-        {
-            get
-            {
-                return _CutOff_shots;
-            }
-            set
-            {
-                if (_CutOff_shots != value)
-                {
-                    _CutOff_shots = value;
-                    OnPropertyChanged("CutOff_shots");
-                }
-            }
-        }
-
+     public bool CutOff_shots 
+     { 
+      get
+      {
+       return _CutOff_shots;
+      } 
+      set
+      {
+       if(_CutOff_shots != value)
+       {
+        _CutOff_shots = value;
+        OnPropertyChanged("CutOff_shots");
+       }
+      }
+     }
+     
         private int _CutOff_shotsCount;
-        public int CutOff_shotsCount
-        {
-            get
-            {
-                return _CutOff_shotsCount;
-            }
-            set
-            {
-                if (_CutOff_shotsCount != value)
-                {
-                    _CutOff_shotsCount = value;
-                    OnPropertyChanged("CutOff_shotsCount");
-                }
-            }
-        }
-
+     public int CutOff_shotsCount 
+     { 
+      get
+      {
+       return _CutOff_shotsCount;
+      } 
+      set
+      {
+       if(_CutOff_shotsCount != value)
+       {
+        _CutOff_shotsCount = value;
+        OnPropertyChanged("CutOff_shotsCount");
+       }
+      }
+     }
+     
         private bool _GrenadeLauncher;
-        public bool GrenadeLauncher
-        {
-            get
-            {
-                return _GrenadeLauncher;
-            }
-            set
-            {
-                if (_GrenadeLauncher != value)
-                {
-                    _GrenadeLauncher = value;
-                    OnPropertyChanged("GrenadeLauncher");
-                }
-            }
-        }
-
+     public bool GrenadeLauncher 
+     { 
+      get
+      {
+       return _GrenadeLauncher;
+      } 
+      set
+      {
+       if(_GrenadeLauncher != value)
+       {
+        _GrenadeLauncher = value;
+        OnPropertyChanged("GrenadeLauncher");
+       }
+      }
+     }
+     
         private bool _RocketLauncher;
-        public bool RocketLauncher
-        {
-            get
-            {
-                return _RocketLauncher;
-            }
-            set
-            {
-                if (_RocketLauncher != value)
-                {
-                    _RocketLauncher = value;
-                    OnPropertyChanged("RocketLauncher");
-                }
-            }
-        }
-
+     public bool RocketLauncher 
+     { 
+      get
+      {
+       return _RocketLauncher;
+      } 
+      set
+      {
+       if(_RocketLauncher != value)
+       {
+        _RocketLauncher = value;
+        OnPropertyChanged("RocketLauncher");
+       }
+      }
+     }
+     
         private bool _Mortar;
-        public bool Mortar
-        {
-            get
-            {
-                return _Mortar;
-            }
-            set
-            {
-                if (_Mortar != value)
-                {
-                    _Mortar = value;
-                    OnPropertyChanged("Mortar");
-                }
-            }
-        }
-
+     public bool Mortar 
+     { 
+      get
+      {
+       return _Mortar;
+      } 
+      set
+      {
+       if(_Mortar != value)
+       {
+        _Mortar = value;
+        OnPropertyChanged("Mortar");
+       }
+      }
+     }
+     
         private bool _Cannon;
-        public bool Cannon
-        {
-            get
-            {
-                return _Cannon;
-            }
-            set
-            {
-                if (_Cannon != value)
-                {
-                    _Cannon = value;
-                    OnPropertyChanged("Cannon");
-                }
-            }
-        }
-
+     public bool Cannon 
+     { 
+      get
+      {
+       return _Cannon;
+      } 
+      set
+      {
+       if(_Cannon != value)
+       {
+        _Cannon = value;
+        OnPropertyChanged("Cannon");
+       }
+      }
+     }
+     
         private bool _SingleShot_RocketLauncher;
-        public bool SingleShot_RocketLauncher
-        {
-            get
-            {
-                return _SingleShot_RocketLauncher;
-            }
-            set
-            {
-                if (_SingleShot_RocketLauncher != value)
-                {
-                    _SingleShot_RocketLauncher = value;
-                    OnPropertyChanged("SingleShot_RocketLauncher");
-                }
-            }
-        }
-
+     public bool SingleShot_RocketLauncher 
+     { 
+      get
+      {
+       return _SingleShot_RocketLauncher;
+      } 
+      set
+      {
+       if(_SingleShot_RocketLauncher != value)
+       {
+        _SingleShot_RocketLauncher = value;
+        OnPropertyChanged("SingleShot_RocketLauncher");
+       }
+      }
+     }
+     
         private bool _RocketRifle;
-        public bool RocketRifle
-        {
-            get
-            {
-                return _RocketRifle;
-            }
-            set
-            {
-                if (_RocketRifle != value)
-                {
-                    _RocketRifle = value;
-                    OnPropertyChanged("RocketRifle");
-                }
-            }
-        }
-
+     public bool RocketRifle 
+     { 
+      get
+      {
+       return _RocketRifle;
+      } 
+      set
+      {
+       if(_RocketRifle != value)
+       {
+        _RocketRifle = value;
+        OnPropertyChanged("RocketRifle");
+       }
+      }
+     }
+     
         private bool _Bulkfolded;
-        public bool Bulkfolded
-        {
-            get
-            {
-                return _Bulkfolded;
-            }
-            set
-            {
-                if (_Bulkfolded != value)
-                {
-                    _Bulkfolded = value;
-                    OnPropertyChanged("Bulkfolded");
-                }
-            }
-        }
-
-
+     public bool Bulkfolded 
+     { 
+      get
+      {
+       return _Bulkfolded;
+      } 
+      set
+      {
+       if(_Bulkfolded != value)
+       {
+        _Bulkfolded = value;
+        OnPropertyChanged("Bulkfolded");
+       }
+      }
+     }
+     
+    
         private AMMO _AMMO;
-        public virtual AMMO AMMO
-        {
-            get
-            { return _AMMO; }
-            set
-            {
-                if (_AMMO != value)
-                { _AMMO = value; OnPropertyChanged("AMMO"); }
-            }
-        }
+    			public virtual AMMO AMMO
+    					{
+    					get
+    						{ return _AMMO; } 
+    					set
+    					{ if(_AMMO != value)
+    					   {    _AMMO = value;    OnPropertyChanged("AMMO");   }
+    						}
+    					 } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<AvailableAttachSlot> _AvailableAttachSlots;
-        public virtual ICollection<AvailableAttachSlot> AvailableAttachSlots
-        {
-            get
-            { return _AvailableAttachSlots; }
-            set
-            {
-                if (_AvailableAttachSlots != value)
-                { _AvailableAttachSlots = value; OnPropertyChanged("AvailableAttachSlots"); }
-            }
-        }
+    			public virtual ICollection<AvailableAttachSlot> AvailableAttachSlots
+    					{
+    					get
+    						{ return _AvailableAttachSlots; } 
+    					set
+    					{ if(_AvailableAttachSlots != value)
+    					   {    _AvailableAttachSlots = value;    OnPropertyChanged("AvailableAttachSlots");   }
+    						}
+    					 } 
         private TypeOfDamage _TypeOfDamage;
-        public virtual TypeOfDamage TypeOfDamage
-        {
-            get
-            { return _TypeOfDamage; }
-            set
-            {
-                if (_TypeOfDamage != value)
-                { _TypeOfDamage = value; OnPropertyChanged("TypeOfDamage"); }
-            }
-        }
+    			public virtual TypeOfDamage TypeOfDamage
+    					{
+    					get
+    						{ return _TypeOfDamage; } 
+    					set
+    					{ if(_TypeOfDamage != value)
+    					   {    _TypeOfDamage = value;    OnPropertyChanged("TypeOfDamage");   }
+    						}
+    					 } 
         private WeaponType _WeaponType;
-        public virtual WeaponType WeaponType
-        {
-            get
-            { return _WeaponType; }
-            set
-            {
-                if (_WeaponType != value)
-                { _WeaponType = value; OnPropertyChanged("WeaponType"); }
-            }
-        }
+    			public virtual WeaponType WeaponType
+    					{
+    					get
+    						{ return _WeaponType; } 
+    					set
+    					{ if(_WeaponType != value)
+    					   {    _WeaponType = value;    OnPropertyChanged("WeaponType");   }
+    						}
+    					 } 
     }
 }

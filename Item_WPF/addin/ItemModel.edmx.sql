@@ -180,9 +180,7 @@ GO
 IF OBJECT_ID(N'[dbo].[LOADBEARINGEQUIPMENT]', 'U') IS NOT NULL
   DROP TABLE [dbo].[LOADBEARINGEQUIPMENT];
 GO
-IF OBJECT_ID(N'[dbo].[NasLayoutClass]', 'U') IS NOT NULL
-  DROP TABLE [dbo].[nasLayoutClass];
-GO
+
 IF OBJECT_ID(N'[dbo].[sysdiagram]', 'U') IS NOT NULL
   DROP TABLE [dbo].[sysdiagram];
 GO
@@ -201,9 +199,6 @@ GO
 IF OBJECT_ID(N'[dbo].[WeaponType]', 'U') IS NOT NULL
   DROP TABLE [dbo].[WeaponType];
 GO
-IF OBJECT_ID(N'[dbo].[NasAttachmentClass]', 'u') IS NOT NULL
-  DROP TABLE [dbo].[nasAttachmentClass];
-GO
 
 IF OBJECT_ID(N'[dbo].[AttachmentSystem]', 'u') IS NOT NULL
   DROP TABLE [dbo].[AttachmentSystem];
@@ -213,21 +208,13 @@ IF OBJECT_ID(N'[dbo].[Battery]', 'u') IS NOT NULL
   DROP TABLE [dbo].[Battery];
 GO
 
-
-
-
 IF OBJECT_ID(N'dbo.NEW_ITEM', 'P') IS NOT NULL
   EXEC sp_executesql N'DROP PROCEDURE dbo.NEW_ITEM'
 GO
 
-
 IF OBJECT_ID(N'dbo.NEW_ITEM_att', 'P') IS NOT NULL
   EXEC sp_executesql N'DROP PROCEDURE dbo.NEW_ITEM_att'
 GO
-
-
-
-
 
 IF OBJECT_ID(N'[dbo].[CombineWeap]', 'u') IS NOT NULL
   DROP TABLE [dbo].[CombineWeap];
@@ -328,8 +315,7 @@ GO
 CREATE TABLE [dbo].[ATTACHMENTSLOT] (
   [uiSlotIndex] INT IDENTITY (1, 1) NOT NULL,
   [szSlotName] VARCHAR(50) NOT NULL,
-  [nasLayoutClass] INT NOT NULL,
-  [nasAttachmentClass] INT DEFAULT (0) NOT NULL
+  
 );
 GO
 
@@ -515,14 +501,6 @@ CREATE TABLE [dbo].[LOADBEARINGEQUIPMENT] (
 );
 GO
 
--- Creating table 'NasLayoutClass'
-CREATE TABLE [dbo].[nasLayoutClass] (
-  [id] INT IDENTITY (1, 1) NOT NULL,
-  [name] VARCHAR(255) NULL
-);
-GO
-
-
 -- Creating table 'TypeOfDamages'
 CREATE TABLE [dbo].[TypeOfDamage] (
   [id] INT IDENTITY (1, 1) NOT NULL,
@@ -661,34 +639,20 @@ CREATE TABLE [dbo].[Attachment] (
   Bulk_add INT NULL,
   Fix BIT NOT NULL DEFAULT (0),
   BatTimeWork INT NULL,
-
   Tritium BIT NOT NULL DEFAULT (0),
-
-
-  ScopeMagMin INT NULL--
-  ,
-  ScopeMagMax INT NULL--
-  ,
-  AccAddmax INT NULL--
-
-  ,
+  ScopeMagMin INT NULL  ,
+  ScopeMagMax INT NULL  ,
+  AccAddmax INT NULL  ,
   id_Attachmentmount INT NOT NULL DEFAULT 1,
   ImpVisSights BIT NOT NULL DEFAULT (0),
-
   BlockIronSight BIT NOT NULL DEFAULT (0),
-
   Collimator BIT NOT NULL DEFAULT (0),
-
   Reflex BIT NOT NULL DEFAULT (0),
   Targetingprogram BIT NOT NULL DEFAULT (0),
   Laserrangefinder BIT NOT NULL DEFAULT (0),
-  LaserRFrange INT NULL--
-  ,
-  LaserRFAcc INT NULL--
-
-  ,
-  NightVision INT NULL--
-  ,
+  LaserRFrange INT NULL  ,
+  LaserRFAcc INT NULL ,
+  NightVision INT NULL  ,
   NeedIRillumination BIT NOT NULL DEFAULT (0),
   Infravision BIT NOT NULL DEFAULT (0),
   IRFilter BIT NOT NULL DEFAULT (0),
@@ -700,18 +664,11 @@ CREATE TABLE [dbo].[Attachment] (
 );
 GO
 
-CREATE TABLE [nasAttachmentClass] (
-  [id] INT IDENTITY (1, 1) NOT NULL,
-  [name] VARCHAR(70) COLLATE Cyrillic_General_CI_AS NOT NULL
-);--++
-
 
 CREATE TABLE [CombineWeap] (
   [id] INT IDENTITY (1, 1) NOT NULL,
   [IdWeapon] INT NOT NULL,
-
   ScopeSelect INT,
-
   LaserSelect INT,
   LightSelect INT,
   BipodSelect INT,
@@ -731,10 +688,6 @@ CONSTRAINT [PK_CombineWeap] PRIMARY KEY ([id])
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
 -- creating primary KEY on [id] in table nasattclass
-ALTER TABLE nasAttachmentClass
-ADD CONSTRAINT [PK_NasAttachmentClass] PRIMARY KEY ([id]),
-CONSTRAINT [UK_NasAttachmentClass] UNIQUE ([id])
-GO
 
 -- Creating primary key on [id] in table 'AMMOes'
 ALTER TABLE [dbo].[AMMO]
@@ -845,10 +798,6 @@ PRIMARY KEY CLUSTERED ([lbeIndex] ASC);
 GO
 
 -- Creating primary key on [id] in table 'NasLayoutClasses'
-ALTER TABLE [dbo].[nasLayoutClass]
-ADD CONSTRAINT [PK_NasLayoutClass]
-PRIMARY KEY CLUSTERED ([id] ASC);
-GO
 
 -- Creating primary key on [id] in table 'TypeOfDamages'
 ALTER TABLE [dbo].[TypeOfDamage]
@@ -976,30 +925,6 @@ GO
 CREATE INDEX [IX_FK_AVeATTACHMENTSLOT]
 ON [dbo].[AvailableAttachSlot]
 ([rATTACHMENTSLOT]);
-GO
-
--- Creating foreign key on [nasLayoutClass] in table 'ATTACHMENTSLOTs'
-ALTER TABLE [dbo].[ATTACHMENTSLOT]
-ADD CONSTRAINT [FK_nasLayoutClass_slot]
-FOREIGN KEY ([nasLayoutClass])
-REFERENCES [dbo].[nasLayoutClass]
-([id])
-ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
-ALTER TABLE [dbo].[ATTACHMENTSLOT]
-ADD CONSTRAINT [FK_nasAttachmentClass_slot]
-FOREIGN KEY ([nasAttachmentClass])
-REFERENCES [nasAttachmentClass]
-([id])
-ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
-
--- Creating non-clustered index for FOREIGN KEY 'FK_nasLayoutClass_slot'
-CREATE INDEX [IX_FK_nasLayoutClass_slot]
-ON [dbo].[ATTACHMENTSLOT]
-([nasLayoutClass]);
 GO
 
 -- Creating foreign key on [rWeaponId] in table 'AvailableAttachSlots'
@@ -1353,16 +1278,27 @@ INSERT INTO G_AttachClass (name_class)
   ('MAGAZINE MODIFICATIONS AND RELOADING AIDS'),  --6
   ('MISCELLANEOUS ACCESSORIES AND MODIFICATIONS');   --7 
 
-
-
-
-
-
-
 INSERT INTO [ItemClass]
-  VALUES ('Nothing'), ('Gun'), ('Knife'), ('Throwing Knife'), ('Launcher'), ('Thrown Weapon'), ('Blunt Weapon'),
-  ('Grenade'), ('Bomb'), ('Ammo'), ('Armour'), ('Medkit'), ('Kit'), ('Face Item'),
-  ('Load Bearing Equipment'), ('Misc'), ('Money'), ('Attachment'), ('Random Item');
+  VALUES 
+  ('Nothing'), 
+  ('Gun'), 
+  --('Knife'), 
+--  ('Throwing Knife'), 
+--  ('Launcher'), 
+--  ('Thrown Weapon'), 
+-- ('Blunt Weapon'),
+--  ('Grenade'), 
+--  ('Bomb'), 
+--  ('Ammo'), 
+--  ('Armour'), 
+-- ('Medkit'), 
+--  ('Kit'), 
+--  ('Face Item'),
+--  ('Load Bearing Equipment'), 
+--('Misc'), 
+--('Money'), 
+('Attachment'),
+('Random Item');
 
 
 INSERT INTO [AttachmentClass]
@@ -1372,29 +1308,29 @@ INSERT INTO [AttachmentClass]
   ('Helmet'), ('Vest'), ('Pants'), ('Detonator'), ('Battery'), ('Extender'), ('Sling'), ('Remote Detonator'), ('Defuser'),
   ('Detonator + Defuser'), ('Remote Detonator + Defuser'), ('Iron Sight'), ('Feeder'), ('Modular Pouch'), ('Rifle Grenade');
 
-INSERT INTO [nasAttachmentClass]
-  VALUES ('None'), ('Default'), ('Barrel'), ('Laser'), ('Sight'), ('Scope'), ('Stock'), ('Ammo'), ('Internal'),
-  ('External'), ('Underbarrel'), ('Grenade'), ('Rocket'), ('MOLLE Small'), ('MOLLE Medium');
 
-INSERT INTO [nasLayoutClass]
-  VALUES ('None'), ('Weapons'), ('Multi-Shot Launchers'), ('Molle Leg Rigs'), ('Molle Vests'),
-  ('Molle Combat Packs'), ('Molle Backpacks');
+--INSERT INTO [nasAttachmentClass]
+--  VALUES ('None'), ('Default'), ('Barrel'), ('Laser'), ('Sight'), ('Scope'), ('Stock'), ('Ammo'), ('Internal'),
+--  ('External'), ('Underbarrel'), ('Grenade'), ('Rocket'), ('MOLLE Small'), ('MOLLE Medium');
 
-INSERT INTO [ATTACHMENTSLOT] (szSlotName, nasAttachmentClass, nasLayoutClass)
-  VALUES ('Scope Attachments', 1, 2),      --1
-  ('Laser Attachments', 2, 2),      --2
-  ('Light Attachments', 3, 2),      --3
-  ('Bipod Attachments', 4, 2),      --4
-  ('Silenser Attachments', 5, 2),   --5
-  ('Launcher Attachments', 6, 2),   --6
-  ('Stock Attachments', 7, 2),      --7
-  ('Bayonet Attachments', 8, 1),    --8
-  ('Magazine Attachments', 9, 2),   --9
-  ('Internal Attachments', 10, 2),  --10
-  ('External Attachments', 11, 2),  --11
+--INSERT INTO [nasLayoutClass]
+--  VALUES ('None'), ('Weapons'), ('Multi-Shot Launchers'), ('Molle Leg Rigs'), ('Molle Vests'),
+--  ('Molle Combat Packs'), ('Molle Backpacks');
 
-  ('Rifle Grenade', 12, 2),
-  ('Rocket Launcher Slot', 13, 2);
+INSERT INTO [ATTACHMENTSLOT] (szSlotName)
+  VALUES ('Scope Attachments'),      --1
+  ('Laser Attachments'),      --2
+  ('Light Attachments'),      --3
+  ('Bipod Attachments'),      --4
+  ('Silenser Attachments'),   --5
+  ('Launcher Attachments'),   --6
+  ('Stock Attachments'),      --7
+  ('Bayonet Attachments'),    --8
+  ('Magazine Attachments'),   --9
+  ('Internal Attachments'),  --10
+  ('External Attachments'),  --11
+  ('Rifle Grenade'),
+  ('Rocket Launcher Slot');
 
 INSERT INTO G_SubAttachClass (SubAttach_name, AttachClass, SubAttachDescription, ATTACHMENTSLOT1)
   VALUES ('Telescopic Sights', 2, '', 1),
@@ -1684,8 +1620,6 @@ INSERT INTO [WeaponType]
   ('Spear', 7),
   ('Stick', 7),
   ('Dart', 7);
-
-
 
 INSERT INTO [AMMOUPGRATES] ([name], [shortname], [malf], [AR_divX], [ACC_add], [ACC_x], [damage_x], [Dam_Type], [range_x12], [range_x], [ST_x], [WPS_x], [CPS_x], [Hearing], [Ammo_Class], [min_Caliber], [Max_Calider], [DT_Min_Ammo_CAliber], [Condition_DT_Min_ammo_Cal], [hearing_table], [Upgrates], [Follow_Up], [Linked])
   VALUES ('Light Cased (TL5)', 'Lcas', 0, 1.000, 0, 1.000, 1.000, NULL, 1.000, 1.000, 1.000, 0.700, 2.000, 0, 'All', NULL, NULL, NULL, NULL, 0, 'CASED', NULL, NULL),
@@ -1988,7 +1922,7 @@ BEGIN
   SELECT
     @newID = @@identity
   INSERT INTO ITEM (szItemName, ubClassIndex, usItemClass)
-    VALUES (@name, @newID, 18)
+    VALUES (@name, @newID, 3)
 END
 --http://www.cyberguru.ru/dotnet/ado-net/entity-framework-faq.html
 GO

@@ -11,108 +11,105 @@ namespace Item_WPF
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class G_AvAttachClass : System.ComponentModel.INotifyPropertyChanged
     {
-
-        #region Implement INotifyPropertyChanged
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        #endregion
-
+     
+     #region Implement INotifyPropertyChanged
+     
+     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+     
+     protected virtual void OnPropertyChanged(string propertyName)
+     {
+      if (PropertyChanged != null)
+      {
+       PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+      }
+     }
+     
+     #endregion
+     
         private int _id_attach;
-        public int id_attach
-        {
-            get
-            {
-                return _id_attach;
-            }
-            set
-            {
-                if (_id_attach != value)
-                {
-                    _id_attach = value;
-                    OnPropertyChanged("id_attach");
-                }
-            }
-        }
-
+     public int id_attach 
+     { 
+      get
+      {
+       return _id_attach;
+      } 
+      set
+      {
+       if(_id_attach != value)
+       {
+        _id_attach = value;
+        OnPropertyChanged("id_attach");
+       }
+      }
+     }
+     
         private int _id_GSubClass;
-        public int id_GSubClass
-        {
-            get
-            {
-                return _id_GSubClass;
-            }
-            set
-            {
-                if (_id_GSubClass != value)
-                {
-                    _id_GSubClass = value;
-                    OnPropertyChanged("id_GSubClass");
-                }
-            }
-        }
-
+     public int id_GSubClass 
+     { 
+      get
+      {
+       return _id_GSubClass;
+      } 
+      set
+      {
+       if(_id_GSubClass != value)
+       {
+        _id_GSubClass = value;
+        OnPropertyChanged("id_GSubClass");
+       }
+      }
+     }
+     
         private int _id_AttachClass;
-        public int id_AttachClass
-        {
-            get
-            {
-                return _id_AttachClass;
-            }
-            set
-            {
-                if (_id_AttachClass != value)
-                {
-                    _id_AttachClass = value;
-                    OnPropertyChanged("id_AttachClass");
-                }
-            }
-        }
-
-
+     public int id_AttachClass 
+     { 
+      get
+      {
+       return _id_AttachClass;
+      } 
+      set
+      {
+       if(_id_AttachClass != value)
+       {
+        _id_AttachClass = value;
+        OnPropertyChanged("id_AttachClass");
+       }
+      }
+     }
+     
+    
         private Attachment _Attachment;
-        public virtual Attachment Attachment
-        {
-            get
-            { return _Attachment; }
-            set
-            {
-                if (_Attachment != value)
-                { _Attachment = value; OnPropertyChanged("Attachment"); }
-            }
-        }
+    			public virtual Attachment Attachment
+    					{
+    					get
+    						{ return _Attachment; } 
+    					set
+    					{ if(_Attachment != value)
+    					   {    _Attachment = value;    OnPropertyChanged("Attachment");   }
+    						}
+    					 } 
         private G_AttachClass _G_AttachClass;
-        public virtual G_AttachClass G_AttachClass
-        {
-            get
-            { return _G_AttachClass; }
-            set
-            {
-                if (_G_AttachClass != value)
-                { _G_AttachClass = value; OnPropertyChanged("G_AttachClass"); }
-            }
-        }
+    			public virtual G_AttachClass G_AttachClass
+    					{
+    					get
+    						{ return _G_AttachClass; } 
+    					set
+    					{ if(_G_AttachClass != value)
+    					   {    _G_AttachClass = value;    OnPropertyChanged("G_AttachClass");   }
+    						}
+    					 } 
         private G_SubAttachClass _G_SubAttachClass;
-        public virtual G_SubAttachClass G_SubAttachClass
-        {
-            get
-            { return _G_SubAttachClass; }
-            set
-            {
-                if (_G_SubAttachClass != value)
-                { _G_SubAttachClass = value; OnPropertyChanged("G_SubAttachClass"); }
-            }
-        }
+    			public virtual G_SubAttachClass G_SubAttachClass
+    					{
+    					get
+    						{ return _G_SubAttachClass; } 
+    					set
+    					{ if(_G_SubAttachClass != value)
+    					   {    _G_SubAttachClass = value;    OnPropertyChanged("G_SubAttachClass");   }
+    						}
+    					 } 
     }
 }

@@ -11,24 +11,24 @@ namespace Item_WPF
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class ATTACHMENTSLOT : System.ComponentModel.INotifyPropertyChanged
     {
-
-        #region Implement INotifyPropertyChanged
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        #endregion
-
+     
+     #region Implement INotifyPropertyChanged
+     
+     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+     
+     protected virtual void OnPropertyChanged(string propertyName)
+     {
+      if (PropertyChanged != null)
+      {
+       PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+      }
+     }
+     
+     #endregion
+     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ATTACHMENTSLOT()
         {
@@ -36,133 +36,74 @@ namespace Item_WPF
             this.AvailableAttachSlots = new HashSet<AvailableAttachSlot>();
             this.G_SubAttachClass = new HashSet<G_SubAttachClass>();
         }
-
+    
         private int _uiSlotIndex;
-        public int uiSlotIndex
-        {
-            get
-            {
-                return _uiSlotIndex;
-            }
-            set
-            {
-                if (_uiSlotIndex != value)
-                {
-                    _uiSlotIndex = value;
-                    OnPropertyChanged("uiSlotIndex");
-                }
-            }
-        }
-
+     public int uiSlotIndex 
+     { 
+      get
+      {
+       return _uiSlotIndex;
+      } 
+      set
+      {
+       if(_uiSlotIndex != value)
+       {
+        _uiSlotIndex = value;
+        OnPropertyChanged("uiSlotIndex");
+       }
+      }
+     }
+     
         private string _szSlotName;
-        public string szSlotName
-        {
-            get
-            {
-                return _szSlotName;
-            }
-            set
-            {
-                if (_szSlotName != value)
-                {
-                    _szSlotName = value;
-                    OnPropertyChanged("szSlotName");
-                }
-            }
-        }
-
-        private int _nasLayoutClass;
-        public int nasLayoutClass
-        {
-            get
-            {
-                return _nasLayoutClass;
-            }
-            set
-            {
-                if (_nasLayoutClass != value)
-                {
-                    _nasLayoutClass = value;
-                    OnPropertyChanged("nasLayoutClass");
-                }
-            }
-        }
-
-        private int _nasAttachmentClass;
-        public int nasAttachmentClass
-        {
-            get
-            {
-                return _nasAttachmentClass;
-            }
-            set
-            {
-                if (_nasAttachmentClass != value)
-                {
-                    _nasAttachmentClass = value;
-                    OnPropertyChanged("nasAttachmentClass");
-                }
-            }
-        }
-
-
+     public string szSlotName 
+     { 
+      get
+      {
+       return _szSlotName;
+      } 
+      set
+      {
+       if(_szSlotName != value)
+       {
+        _szSlotName = value;
+        OnPropertyChanged("szSlotName");
+       }
+      }
+     }
+     
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<Attachmentmount> _Attachmentmounts;
-        public virtual ICollection<Attachmentmount> Attachmentmounts
-        {
-            get
-            { return _Attachmentmounts; }
-            set
-            {
-                if (_Attachmentmounts != value)
-                { _Attachmentmounts = value; OnPropertyChanged("Attachmentmounts"); }
-            }
-        }
+    			public virtual ICollection<Attachmentmount> Attachmentmounts
+    					{
+    					get
+    						{ return _Attachmentmounts; } 
+    					set
+    					{ if(_Attachmentmounts != value)
+    					   {    _Attachmentmounts = value;    OnPropertyChanged("Attachmentmounts");   }
+    						}
+    					 } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<AvailableAttachSlot> _AvailableAttachSlots;
-        public virtual ICollection<AvailableAttachSlot> AvailableAttachSlots
-        {
-            get
-            { return _AvailableAttachSlots; }
-            set
-            {
-                if (_AvailableAttachSlots != value)
-                { _AvailableAttachSlots = value; OnPropertyChanged("AvailableAttachSlots"); }
-            }
-        }
+    			public virtual ICollection<AvailableAttachSlot> AvailableAttachSlots
+    					{
+    					get
+    						{ return _AvailableAttachSlots; } 
+    					set
+    					{ if(_AvailableAttachSlots != value)
+    					   {    _AvailableAttachSlots = value;    OnPropertyChanged("AvailableAttachSlots");   }
+    						}
+    					 } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<G_SubAttachClass> _G_SubAttachClass;
-        public virtual ICollection<G_SubAttachClass> G_SubAttachClass
-        {
-            get
-            { return _G_SubAttachClass; }
-            set
-            {
-                if (_G_SubAttachClass != value)
-                { _G_SubAttachClass = value; OnPropertyChanged("G_SubAttachClass"); }
-            }
-        }
-        private nasAttachmentClass _nasAttachmentClass1;
-        public virtual nasAttachmentClass nasAttachmentClass1
-        {
-            get
-            { return _nasAttachmentClass1; }
-            set
-            {
-                if (_nasAttachmentClass1 != value)
-                { _nasAttachmentClass1 = value; OnPropertyChanged("nasAttachmentClass1"); }
-            }
-        }
-        private nasLayoutClass _nasLayoutClass1;
-        public virtual nasLayoutClass nasLayoutClass1
-        {
-            get
-            { return _nasLayoutClass1; }
-            set
-            {
-                if (_nasLayoutClass1 != value)
-                { _nasLayoutClass1 = value; OnPropertyChanged("nasLayoutClass1"); }
-            }
-        }
+    			public virtual ICollection<G_SubAttachClass> G_SubAttachClass
+    					{
+    					get
+    						{ return _G_SubAttachClass; } 
+    					set
+    					{ if(_G_SubAttachClass != value)
+    					   {    _G_SubAttachClass = value;    OnPropertyChanged("G_SubAttachClass");   }
+    						}
+    					 } 
     }
 }

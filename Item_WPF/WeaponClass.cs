@@ -11,76 +11,75 @@ namespace Item_WPF
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class WeaponClass : System.ComponentModel.INotifyPropertyChanged
     {
-
-        #region Implement INotifyPropertyChanged
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        #endregion
-
+     
+     #region Implement INotifyPropertyChanged
+     
+     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+     
+     protected virtual void OnPropertyChanged(string propertyName)
+     {
+      if (PropertyChanged != null)
+      {
+       PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+      }
+     }
+     
+     #endregion
+     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public WeaponClass()
         {
             this.WeaponTypes = new HashSet<WeaponType>();
         }
-
+    
         private int _id;
-        public int id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    _id = value;
-                    OnPropertyChanged("id");
-                }
-            }
-        }
-
+     public int id 
+     { 
+      get
+      {
+       return _id;
+      } 
+      set
+      {
+       if(_id != value)
+       {
+        _id = value;
+        OnPropertyChanged("id");
+       }
+      }
+     }
+     
         private string _name;
-        public string name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                if (_name != value)
-                {
-                    _name = value;
-                    OnPropertyChanged("name");
-                }
-            }
-        }
-
-
+     public string name 
+     { 
+      get
+      {
+       return _name;
+      } 
+      set
+      {
+       if(_name != value)
+       {
+        _name = value;
+        OnPropertyChanged("name");
+       }
+      }
+     }
+     
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<WeaponType> _WeaponTypes;
-        public virtual ICollection<WeaponType> WeaponTypes
-        {
-            get
-            { return _WeaponTypes; }
-            set
-            {
-                if (_WeaponTypes != value)
-                { _WeaponTypes = value; OnPropertyChanged("WeaponTypes"); }
-            }
-        }
+    			public virtual ICollection<WeaponType> WeaponTypes
+    					{
+    					get
+    						{ return _WeaponTypes; } 
+    					set
+    					{ if(_WeaponTypes != value)
+    					   {    _WeaponTypes = value;    OnPropertyChanged("WeaponTypes");   }
+    						}
+    					 } 
     }
 }

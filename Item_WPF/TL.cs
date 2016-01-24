@@ -11,110 +11,109 @@ namespace Item_WPF
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class TL : System.ComponentModel.INotifyPropertyChanged
     {
-
-        #region Implement INotifyPropertyChanged
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        #endregion
-
+     
+     #region Implement INotifyPropertyChanged
+     
+     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+     
+     protected virtual void OnPropertyChanged(string propertyName)
+     {
+      if (PropertyChanged != null)
+      {
+       PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+      }
+     }
+     
+     #endregion
+     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TL()
         {
             this.ITEMs = new HashSet<ITEM>();
         }
-
+    
         private int _Id_Tl;
-        public int Id_Tl
-        {
-            get
-            {
-                return _Id_Tl;
-            }
-            set
-            {
-                if (_Id_Tl != value)
-                {
-                    _Id_Tl = value;
-                    OnPropertyChanged("Id_Tl");
-                }
-            }
-        }
-
+     public int Id_Tl 
+     { 
+      get
+      {
+       return _Id_Tl;
+      } 
+      set
+      {
+       if(_Id_Tl != value)
+       {
+        _Id_Tl = value;
+        OnPropertyChanged("Id_Tl");
+       }
+      }
+     }
+     
         private string _name_TL;
-        public string name_TL
-        {
-            get
-            {
-                return _name_TL;
-            }
-            set
-            {
-                if (_name_TL != value)
-                {
-                    _name_TL = value;
-                    OnPropertyChanged("name_TL");
-                }
-            }
-        }
-
+     public string name_TL 
+     { 
+      get
+      {
+       return _name_TL;
+      } 
+      set
+      {
+       if(_name_TL != value)
+       {
+        _name_TL = value;
+        OnPropertyChanged("name_TL");
+       }
+      }
+     }
+     
         private string _Description;
-        public string Description
-        {
-            get
-            {
-                return _Description;
-            }
-            set
-            {
-                if (_Description != value)
-                {
-                    _Description = value;
-                    OnPropertyChanged("Description");
-                }
-            }
-        }
-
+     public string Description 
+     { 
+      get
+      {
+       return _Description;
+      } 
+      set
+      {
+       if(_Description != value)
+       {
+        _Description = value;
+        OnPropertyChanged("Description");
+       }
+      }
+     }
+     
         private Nullable<decimal> _StartMoney;
-        public Nullable<decimal> StartMoney
-        {
-            get
-            {
-                return _StartMoney;
-            }
-            set
-            {
-                if (_StartMoney != value)
-                {
-                    _StartMoney = value;
-                    OnPropertyChanged("StartMoney");
-                }
-            }
-        }
-
-
+     public Nullable<decimal> StartMoney 
+     { 
+      get
+      {
+       return _StartMoney;
+      } 
+      set
+      {
+       if(_StartMoney != value)
+       {
+        _StartMoney = value;
+        OnPropertyChanged("StartMoney");
+       }
+      }
+     }
+     
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<ITEM> _ITEMs;
-        public virtual ICollection<ITEM> ITEMs
-        {
-            get
-            { return _ITEMs; }
-            set
-            {
-                if (_ITEMs != value)
-                { _ITEMs = value; OnPropertyChanged("ITEMs"); }
-            }
-        }
+    			public virtual ICollection<ITEM> ITEMs
+    					{
+    					get
+    						{ return _ITEMs; } 
+    					set
+    					{ if(_ITEMs != value)
+    					   {    _ITEMs = value;    OnPropertyChanged("ITEMs");   }
+    						}
+    					 } 
     }
 }

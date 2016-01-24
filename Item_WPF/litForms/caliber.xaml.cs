@@ -64,7 +64,7 @@ namespace Item_WPF
                     item.CPS = 1;
                     item.Class_of_Ammo = "1";
                     context.AMMOes.Add(item);
-                    
+
                 }
             }
         }

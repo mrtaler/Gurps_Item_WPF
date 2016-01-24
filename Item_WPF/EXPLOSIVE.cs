@@ -11,409 +11,408 @@ namespace Item_WPF
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class EXPLOSIVE : System.ComponentModel.INotifyPropertyChanged
     {
-
-        #region Implement INotifyPropertyChanged
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        #endregion
-
+     
+     #region Implement INotifyPropertyChanged
+     
+     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+     
+     protected virtual void OnPropertyChanged(string propertyName)
+     {
+      if (PropertyChanged != null)
+      {
+       PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+      }
+     }
+     
+     #endregion
+     
         private int _uiIndex;
-        public int uiIndex
-        {
-            get
-            {
-                return _uiIndex;
-            }
-            set
-            {
-                if (_uiIndex != value)
-                {
-                    _uiIndex = value;
-                    OnPropertyChanged("uiIndex");
-                }
-            }
-        }
-
+     public int uiIndex 
+     { 
+      get
+      {
+       return _uiIndex;
+      } 
+      set
+      {
+       if(_uiIndex != value)
+       {
+        _uiIndex = value;
+        OnPropertyChanged("uiIndex");
+       }
+      }
+     }
+     
         private int _ubType;
-        public int ubType
-        {
-            get
-            {
-                return _ubType;
-            }
-            set
-            {
-                if (_ubType != value)
-                {
-                    _ubType = value;
-                    OnPropertyChanged("ubType");
-                }
-            }
-        }
-
+     public int ubType 
+     { 
+      get
+      {
+       return _ubType;
+      } 
+      set
+      {
+       if(_ubType != value)
+       {
+        _ubType = value;
+        OnPropertyChanged("ubType");
+       }
+      }
+     }
+     
         private int _ubDamage;
-        public int ubDamage
-        {
-            get
-            {
-                return _ubDamage;
-            }
-            set
-            {
-                if (_ubDamage != value)
-                {
-                    _ubDamage = value;
-                    OnPropertyChanged("ubDamage");
-                }
-            }
-        }
-
+     public int ubDamage 
+     { 
+      get
+      {
+       return _ubDamage;
+      } 
+      set
+      {
+       if(_ubDamage != value)
+       {
+        _ubDamage = value;
+        OnPropertyChanged("ubDamage");
+       }
+      }
+     }
+     
         private int _ubStunDamage;
-        public int ubStunDamage
-        {
-            get
-            {
-                return _ubStunDamage;
-            }
-            set
-            {
-                if (_ubStunDamage != value)
-                {
-                    _ubStunDamage = value;
-                    OnPropertyChanged("ubStunDamage");
-                }
-            }
-        }
-
+     public int ubStunDamage 
+     { 
+      get
+      {
+       return _ubStunDamage;
+      } 
+      set
+      {
+       if(_ubStunDamage != value)
+       {
+        _ubStunDamage = value;
+        OnPropertyChanged("ubStunDamage");
+       }
+      }
+     }
+     
         private int _ubRadius;
-        public int ubRadius
-        {
-            get
-            {
-                return _ubRadius;
-            }
-            set
-            {
-                if (_ubRadius != value)
-                {
-                    _ubRadius = value;
-                    OnPropertyChanged("ubRadius");
-                }
-            }
-        }
-
+     public int ubRadius 
+     { 
+      get
+      {
+       return _ubRadius;
+      } 
+      set
+      {
+       if(_ubRadius != value)
+       {
+        _ubRadius = value;
+        OnPropertyChanged("ubRadius");
+       }
+      }
+     }
+     
         private int _ubDuration;
-        public int ubDuration
-        {
-            get
-            {
-                return _ubDuration;
-            }
-            set
-            {
-                if (_ubDuration != value)
-                {
-                    _ubDuration = value;
-                    OnPropertyChanged("ubDuration");
-                }
-            }
-        }
-
+     public int ubDuration 
+     { 
+      get
+      {
+       return _ubDuration;
+      } 
+      set
+      {
+       if(_ubDuration != value)
+       {
+        _ubDuration = value;
+        OnPropertyChanged("ubDuration");
+       }
+      }
+     }
+     
         private int _ubStartRadius;
-        public int ubStartRadius
-        {
-            get
-            {
-                return _ubStartRadius;
-            }
-            set
-            {
-                if (_ubStartRadius != value)
-                {
-                    _ubStartRadius = value;
-                    OnPropertyChanged("ubStartRadius");
-                }
-            }
-        }
-
+     public int ubStartRadius 
+     { 
+      get
+      {
+       return _ubStartRadius;
+      } 
+      set
+      {
+       if(_ubStartRadius != value)
+       {
+        _ubStartRadius = value;
+        OnPropertyChanged("ubStartRadius");
+       }
+      }
+     }
+     
         private int _ubMagSize;
-        public int ubMagSize
-        {
-            get
-            {
-                return _ubMagSize;
-            }
-            set
-            {
-                if (_ubMagSize != value)
-                {
-                    _ubMagSize = value;
-                    OnPropertyChanged("ubMagSize");
-                }
-            }
-        }
-
+     public int ubMagSize 
+     { 
+      get
+      {
+       return _ubMagSize;
+      } 
+      set
+      {
+       if(_ubMagSize != value)
+       {
+        _ubMagSize = value;
+        OnPropertyChanged("ubMagSize");
+       }
+      }
+     }
+     
         private int _usNumFragments;
-        public int usNumFragments
-        {
-            get
-            {
-                return _usNumFragments;
-            }
-            set
-            {
-                if (_usNumFragments != value)
-                {
-                    _usNumFragments = value;
-                    OnPropertyChanged("usNumFragments");
-                }
-            }
-        }
-
+     public int usNumFragments 
+     { 
+      get
+      {
+       return _usNumFragments;
+      } 
+      set
+      {
+       if(_usNumFragments != value)
+       {
+        _usNumFragments = value;
+        OnPropertyChanged("usNumFragments");
+       }
+      }
+     }
+     
         private int _ubFragType;
-        public int ubFragType
-        {
-            get
-            {
-                return _ubFragType;
-            }
-            set
-            {
-                if (_ubFragType != value)
-                {
-                    _ubFragType = value;
-                    OnPropertyChanged("ubFragType");
-                }
-            }
-        }
-
+     public int ubFragType 
+     { 
+      get
+      {
+       return _ubFragType;
+      } 
+      set
+      {
+       if(_ubFragType != value)
+       {
+        _ubFragType = value;
+        OnPropertyChanged("ubFragType");
+       }
+      }
+     }
+     
         private int _ubFragDamage;
-        public int ubFragDamage
-        {
-            get
-            {
-                return _ubFragDamage;
-            }
-            set
-            {
-                if (_ubFragDamage != value)
-                {
-                    _ubFragDamage = value;
-                    OnPropertyChanged("ubFragDamage");
-                }
-            }
-        }
-
+     public int ubFragDamage 
+     { 
+      get
+      {
+       return _ubFragDamage;
+      } 
+      set
+      {
+       if(_ubFragDamage != value)
+       {
+        _ubFragDamage = value;
+        OnPropertyChanged("ubFragDamage");
+       }
+      }
+     }
+     
         private int _ubFragRange;
-        public int ubFragRange
-        {
-            get
-            {
-                return _ubFragRange;
-            }
-            set
-            {
-                if (_ubFragRange != value)
-                {
-                    _ubFragRange = value;
-                    OnPropertyChanged("ubFragRange");
-                }
-            }
-        }
-
+     public int ubFragRange 
+     { 
+      get
+      {
+       return _ubFragRange;
+      } 
+      set
+      {
+       if(_ubFragRange != value)
+       {
+        _ubFragRange = value;
+        OnPropertyChanged("ubFragRange");
+       }
+      }
+     }
+     
         private int _ubHorizontalDegree;
-        public int ubHorizontalDegree
-        {
-            get
-            {
-                return _ubHorizontalDegree;
-            }
-            set
-            {
-                if (_ubHorizontalDegree != value)
-                {
-                    _ubHorizontalDegree = value;
-                    OnPropertyChanged("ubHorizontalDegree");
-                }
-            }
-        }
-
+     public int ubHorizontalDegree 
+     { 
+      get
+      {
+       return _ubHorizontalDegree;
+      } 
+      set
+      {
+       if(_ubHorizontalDegree != value)
+       {
+        _ubHorizontalDegree = value;
+        OnPropertyChanged("ubHorizontalDegree");
+       }
+      }
+     }
+     
         private int _ubVerticalDegree;
-        public int ubVerticalDegree
-        {
-            get
-            {
-                return _ubVerticalDegree;
-            }
-            set
-            {
-                if (_ubVerticalDegree != value)
-                {
-                    _ubVerticalDegree = value;
-                    OnPropertyChanged("ubVerticalDegree");
-                }
-            }
-        }
-
+     public int ubVerticalDegree 
+     { 
+      get
+      {
+       return _ubVerticalDegree;
+      } 
+      set
+      {
+       if(_ubVerticalDegree != value)
+       {
+        _ubVerticalDegree = value;
+        OnPropertyChanged("ubVerticalDegree");
+       }
+      }
+     }
+     
         private decimal _bIndoorModifier;
-        public decimal bIndoorModifier
-        {
-            get
-            {
-                return _bIndoorModifier;
-            }
-            set
-            {
-                if (_bIndoorModifier != value)
-                {
-                    _bIndoorModifier = value;
-                    OnPropertyChanged("bIndoorModifier");
-                }
-            }
-        }
-
+     public decimal bIndoorModifier 
+     { 
+      get
+      {
+       return _bIndoorModifier;
+      } 
+      set
+      {
+       if(_bIndoorModifier != value)
+       {
+        _bIndoorModifier = value;
+        OnPropertyChanged("bIndoorModifier");
+       }
+      }
+     }
+     
         private bool _fExplodeOnImpact;
-        public bool fExplodeOnImpact
-        {
-            get
-            {
-                return _fExplodeOnImpact;
-            }
-            set
-            {
-                if (_fExplodeOnImpact != value)
-                {
-                    _fExplodeOnImpact = value;
-                    OnPropertyChanged("fExplodeOnImpact");
-                }
-            }
-        }
-
+     public bool fExplodeOnImpact 
+     { 
+      get
+      {
+       return _fExplodeOnImpact;
+      } 
+      set
+      {
+       if(_fExplodeOnImpact != value)
+       {
+        _fExplodeOnImpact = value;
+        OnPropertyChanged("fExplodeOnImpact");
+       }
+      }
+     }
+     
         private bool _GLGrenade;
-        public bool GLGrenade
-        {
-            get
-            {
-                return _GLGrenade;
-            }
-            set
-            {
-                if (_GLGrenade != value)
-                {
-                    _GLGrenade = value;
-                    OnPropertyChanged("GLGrenade");
-                }
-            }
-        }
-
+     public bool GLGrenade 
+     { 
+      get
+      {
+       return _GLGrenade;
+      } 
+      set
+      {
+       if(_GLGrenade != value)
+       {
+        _GLGrenade = value;
+        OnPropertyChanged("GLGrenade");
+       }
+      }
+     }
+     
         private bool _RLGrenade;
-        public bool RLGrenade
-        {
-            get
-            {
-                return _RLGrenade;
-            }
-            set
-            {
-                if (_RLGrenade != value)
-                {
-                    _RLGrenade = value;
-                    OnPropertyChanged("RLGrenade");
-                }
-            }
-        }
-
+     public bool RLGrenade 
+     { 
+      get
+      {
+       return _RLGrenade;
+      } 
+      set
+      {
+       if(_RLGrenade != value)
+       {
+        _RLGrenade = value;
+        OnPropertyChanged("RLGrenade");
+       }
+      }
+     }
+     
         private bool _Mine;
-        public bool Mine
-        {
-            get
-            {
-                return _Mine;
-            }
-            set
-            {
-                if (_Mine != value)
-                {
-                    _Mine = value;
-                    OnPropertyChanged("Mine");
-                }
-            }
-        }
-
+     public bool Mine 
+     { 
+      get
+      {
+       return _Mine;
+      } 
+      set
+      {
+       if(_Mine != value)
+       {
+        _Mine = value;
+        OnPropertyChanged("Mine");
+       }
+      }
+     }
+     
         private bool _Flare;
-        public bool Flare
-        {
-            get
-            {
-                return _Flare;
-            }
-            set
-            {
-                if (_Flare != value)
-                {
-                    _Flare = value;
-                    OnPropertyChanged("Flare");
-                }
-            }
-        }
-
+     public bool Flare 
+     { 
+      get
+      {
+       return _Flare;
+      } 
+      set
+      {
+       if(_Flare != value)
+       {
+        _Flare = value;
+        OnPropertyChanged("Flare");
+       }
+      }
+     }
+     
         private bool _Directional;
-        public bool Directional
-        {
-            get
-            {
-                return _Directional;
-            }
-            set
-            {
-                if (_Directional != value)
-                {
-                    _Directional = value;
-                    OnPropertyChanged("Directional");
-                }
-            }
-        }
-
+     public bool Directional 
+     { 
+      get
+      {
+       return _Directional;
+      } 
+      set
+      {
+       if(_Directional != value)
+       {
+        _Directional = value;
+        OnPropertyChanged("Directional");
+       }
+      }
+     }
+     
         private bool _ShapedCharge;
-        public bool ShapedCharge
-        {
-            get
-            {
-                return _ShapedCharge;
-            }
-            set
-            {
-                if (_ShapedCharge != value)
-                {
-                    _ShapedCharge = value;
-                    OnPropertyChanged("ShapedCharge");
-                }
-            }
-        }
-
-
+     public bool ShapedCharge 
+     { 
+      get
+      {
+       return _ShapedCharge;
+      } 
+      set
+      {
+       if(_ShapedCharge != value)
+       {
+        _ShapedCharge = value;
+        OnPropertyChanged("ShapedCharge");
+       }
+      }
+     }
+     
+    
         private ExplosionType _ExplosionType;
-        public virtual ExplosionType ExplosionType
-        {
-            get
-            { return _ExplosionType; }
-            set
-            {
-                if (_ExplosionType != value)
-                { _ExplosionType = value; OnPropertyChanged("ExplosionType"); }
-            }
-        }
+    			public virtual ExplosionType ExplosionType
+    					{
+    					get
+    						{ return _ExplosionType; } 
+    					set
+    					{ if(_ExplosionType != value)
+    					   {    _ExplosionType = value;    OnPropertyChanged("ExplosionType");   }
+    						}
+    					 } 
     }
 }

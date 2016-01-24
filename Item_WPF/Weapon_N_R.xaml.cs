@@ -29,7 +29,7 @@ namespace Item_WPF
         private item1Entities context;
         private ObservableCollection<ITEM> item_coll { get; set; }
         private ObservableCollection<WEAPON> weapon_coll { get; set; }
-     
+
 
         ITEM itemLoad { get; set; }
 
@@ -46,11 +46,11 @@ namespace Item_WPF
             // загрузка из контекста редактируемых таблиц
             item_coll = new ObservableCollection<ITEM>(context.ITEMs);
             weapon_coll = new ObservableCollection<WEAPON>(context.WEAPONs);
-          
+
 
             this.Loaded += new RoutedEventHandler(Page_Loaded);
         }
-    
+
         void Page_Loaded(object sender, RoutedEventArgs e)
         {
             itemLoad = (from z in item_coll
@@ -63,7 +63,7 @@ namespace Item_WPF
                           select p).First();
             General_Grid.DataContext = itemLoad;
             Weapon_win.DataContext = weaponLoad;
-                
+
             if (itemLoad.Item_Image != null)
             {
                 // MemoryStream stream = new MemoryStream(item.Item_Image);
@@ -86,7 +86,7 @@ namespace Item_WPF
             itemsGridGeneral.DataContext = itemLoad;
             //Type&Class
 
-            ClassOfWeapon_TB.ItemsSource = new ObservableCollection<WeaponClass>(context.WeaponClasses); 
+            ClassOfWeapon_TB.ItemsSource = new ObservableCollection<WeaponClass>(context.WeaponClasses);
             TypeOfClassWeap_TB.ItemsSource = context.WeaponTypes.Where(p => p.WeaponClass.id == weaponLoad.ubWeaponClass).ToList();
 
             //Weapon
@@ -99,20 +99,20 @@ namespace Item_WPF
             //shots_grid.DataContext = weaponLoad;
 
             //Shots
-            
+
             if (weaponLoad.WeaponType.name == "Shotgun")
             {
                 SHROF_textBox.Visibility = Visibility.Visible;
-                SH_label20.Visibility = Visibility.Visible;                
+                SH_label20.Visibility = Visibility.Visible;
             }
-            
+
             if (Convert.ToBoolean(CutOfShots_checkBox.IsChecked))
             {
                 label20.Visibility = Visibility.Visible;
-                CutOfShots_textBox.Visibility = Visibility.Visible;                
+                CutOfShots_textBox.Visibility = Visibility.Visible;
             }
 
-               
+
             //Reload
 
             CAliber_comboBox.ItemsSource = context.AMMOes.ToList();
@@ -358,15 +358,15 @@ namespace Item_WPF
         }
 
         private void ClassOfWeapon_TB_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {           
+        {
             int ClassWeaponSelected = Convert.ToInt32(ClassOfWeapon_TB.SelectedValue);
-           // TypeOfClassWeap_TB.ItemsSource = weapon_type_coll.Where(p => p.WeaponClass.id == ClassWeaponSelected);
+            // TypeOfClassWeap_TB.ItemsSource = weapon_type_coll.Where(p => p.WeaponClass.id == ClassWeaponSelected);
             if (ClassWeaponSelected != 0)
             {
                 TypeOfClassWeap_TB.ItemsSource = context.WeaponTypes.Where(p => p.WeaponClass.id == ClassWeaponSelected).ToList();
                 TypeOfClassWeap_TB.Items.Refresh();
                 TypeOfClassWeap_TB.SelectedIndex = 0;
-            }           
+            }
         }
 
         private void TypeOfClassWeap_TB_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -636,7 +636,7 @@ namespace Item_WPF
                 ECinST.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
-                    TypeOfDamage_comboBox.ItemsSource = context.TypeOfDamages.ToList();                    
+                    TypeOfDamage_comboBox.ItemsSource = context.TypeOfDamages.ToList();
                 }
 
 
@@ -663,6 +663,216 @@ namespace Item_WPF
         private void Name_TB_TextChanged(object sender, TextChangedEventArgs e)
         {
             weaponLoad.szWeaponName = itemLoad.szItemName;
+        }
+
+        private void Scope_comboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Attacment_mount ATM_s = new Attacment_mount(1);
+                ATM_s.ShowDialog();
+                using (item1Entities context = new item1Entities())
+                {
+                    Scope_comboBox.ItemsSource = (from p in context.Attachmentmounts
+                                                  where p.idAttacClass == 1
+                                                  orderby p.name
+                                                  select p).ToList();
+                    Scope_comboBox.SelectedValuePath = "id";
+                    Scope_comboBox.DisplayMemberPath = "name";
+                    Scope_comboBox.SelectedValue = Scope_comboBox.Items.Count;
+                }
+
+            }
+        }
+
+        private void Laser_comboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Attacment_mount ATM_s = new Attacment_mount(2);
+                ATM_s.ShowDialog();
+                using (item1Entities context = new item1Entities())
+                {
+                    Laser_comboBox.ItemsSource = (from p in context.Attachmentmounts
+                                                  where p.idAttacClass == 2
+                                                  orderby p.name
+                                                  select p).ToList();
+                    Laser_comboBox.SelectedValuePath = "id";
+                    Laser_comboBox.DisplayMemberPath = "name";
+                    Laser_comboBox.SelectedValue = Laser_comboBox.Items.Count;
+                }
+            }
+        }
+
+        private void Light_comboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Attacment_mount ATM_s = new Attacment_mount(3);
+                ATM_s.ShowDialog();
+                using (item1Entities context = new item1Entities())
+                {
+                    Light_comboBox.ItemsSource = (from p in context.Attachmentmounts
+                                                  where p.idAttacClass == 3
+                                                  orderby p.name
+                                                  select p).ToList();
+                    Light_comboBox.SelectedValuePath = "id";
+                    Light_comboBox.DisplayMemberPath = "name";
+                    Light_comboBox.SelectedValue = Light_comboBox.Items.Count;
+                }
+            }
+        }
+
+        private void Bipod_comboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Attacment_mount ATM_s = new Attacment_mount(4);
+                ATM_s.ShowDialog();
+                using (item1Entities context = new item1Entities())
+                {
+                    Bipod_comboBox.ItemsSource = (from p in context.Attachmentmounts
+                                                  where p.idAttacClass == 4
+                                                  orderby p.name
+                                                  select p).ToList();
+                    Bipod_comboBox.SelectedValuePath = "id";
+                    Bipod_comboBox.DisplayMemberPath = "name";
+                    Bipod_comboBox.SelectedValue = Bipod_comboBox.Items.Count;
+                }
+            }
+        }
+
+        private void Silenser_comboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Attacment_mount ATM_s = new Attacment_mount(5);
+                ATM_s.ShowDialog();
+                using (item1Entities context = new item1Entities())
+                {
+                    Silenser_comboBox.ItemsSource = (from p in context.Attachmentmounts
+                                                  where p.idAttacClass == 5
+                                                  orderby p.name
+                                                  select p).ToList();
+                    Silenser_comboBox.SelectedValuePath = "id";
+                    Silenser_comboBox.DisplayMemberPath = "name";
+                    Silenser_comboBox.SelectedValue = Silenser_comboBox.Items.Count;
+                }
+            }
+        }
+
+        private void Launcher_comboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Attacment_mount ATM_s = new Attacment_mount(6);
+                ATM_s.ShowDialog();
+                using (item1Entities context = new item1Entities())
+                {
+                    Launcher_comboBox.ItemsSource = (from p in context.Attachmentmounts
+                                                     where p.idAttacClass == 6
+                                                     orderby p.name
+                                                     select p).ToList();
+                    Launcher_comboBox.SelectedValuePath = "id";
+                    Launcher_comboBox.DisplayMemberPath = "name";
+                    Launcher_comboBox.SelectedValue = Launcher_comboBox.Items.Count;
+                }
+            }
+        }
+
+        private void Stock_comboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Attacment_mount ATM_s = new Attacment_mount(7);
+                ATM_s.ShowDialog();
+                using (item1Entities context = new item1Entities())
+                {
+                    Stock_comboBox.ItemsSource = (from p in context.Attachmentmounts
+                                                     where p.idAttacClass == 7
+                                                     orderby p.name
+                                                     select p).ToList();
+                    Stock_comboBox.SelectedValuePath = "id";
+                    Stock_comboBox.DisplayMemberPath = "name";
+                    Stock_comboBox.SelectedValue = Stock_comboBox.Items.Count;
+                }
+            }
+        }
+
+        private void Bayonet_comboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Attacment_mount ATM_s = new Attacment_mount(8);
+                ATM_s.ShowDialog();
+                using (item1Entities context = new item1Entities())
+                {
+                    Bayonet_comboBox.ItemsSource = (from p in context.Attachmentmounts
+                                                  where p.idAttacClass == 8
+                                                  orderby p.name
+                                                  select p).ToList();
+                    Bayonet_comboBox.SelectedValuePath = "id";
+                    Bayonet_comboBox.DisplayMemberPath = "name";
+                    Bayonet_comboBox.SelectedValue = Bayonet_comboBox.Items.Count;
+                }
+            }
+        }
+
+        private void Magazine_comboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Attacment_mount ATM_s = new Attacment_mount(9);
+                ATM_s.ShowDialog();
+                using (item1Entities context = new item1Entities())
+                {
+                    Magazine_comboBox.ItemsSource = (from p in context.Attachmentmounts
+                                                    where p.idAttacClass == 9
+                                                    orderby p.name
+                                                    select p).ToList();
+                    Magazine_comboBox.SelectedValuePath = "id";
+                    Magazine_comboBox.DisplayMemberPath = "name";
+                    Magazine_comboBox.SelectedValue = Magazine_comboBox.Items.Count;
+                }
+            }
+        }
+
+        private void Internal_comboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Attacment_mount ATM_s = new Attacment_mount(10);
+                ATM_s.ShowDialog();
+                using (item1Entities context = new item1Entities())
+                {
+                    Internal_comboBox.ItemsSource = (from p in context.Attachmentmounts
+                                                     where p.idAttacClass == 10
+                                                     orderby p.name
+                                                     select p).ToList();
+                    Internal_comboBox.SelectedValuePath = "id";
+                    Internal_comboBox.DisplayMemberPath = "name";
+                    Internal_comboBox.SelectedIndex = Internal_comboBox.Items.Count-1;
+                }
+            }
+        }
+
+        private void External_comboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Attacment_mount ATM_s = new Attacment_mount(11);
+                ATM_s.ShowDialog();
+                using (item1Entities context = new item1Entities())
+                {
+                    External_comboBox.ItemsSource = (from p in context.Attachmentmounts
+                                                     where p.idAttacClass == 11
+                                                     orderby p.name
+                                                     select p).ToList();
+                    External_comboBox.SelectedValuePath = "id";
+                    External_comboBox.DisplayMemberPath = "name";
+                    External_comboBox.SelectedIndex = External_comboBox.Items.Count - 1;
+                }
+            }
         }
     }
 }

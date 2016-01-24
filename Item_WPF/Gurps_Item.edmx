@@ -145,8 +145,6 @@
           </Key>
           <Property Name="uiSlotIndex" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="szSlotName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="nasLayoutClass" Type="int" Nullable="false" />
-          <Property Name="nasAttachmentClass" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="AttachmentSystem">
           <Key>
@@ -389,20 +387,6 @@
           <Property Name="lbePocketIndex10" Type="int" Nullable="false" />
           <Property Name="lbePocketIndex11" Type="int" Nullable="false" />
           <Property Name="lbePocketIndex12" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="nasAttachmentClass">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="70" Nullable="false" />
-        </EntityType>
-        <EntityType Name="nasLayoutClass">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="TL">
           <Key>
@@ -742,30 +726,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_nasAttachmentClass_slot">
-          <End Role="nasAttachmentClass" Type="Self.nasAttachmentClass" Multiplicity="1" />
-          <End Role="ATTACHMENTSLOT" Type="Self.ATTACHMENTSLOT" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="nasAttachmentClass">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ATTACHMENTSLOT">
-              <PropertyRef Name="nasAttachmentClass" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_nasLayoutClass_slot">
-          <End Role="nasLayoutClass" Type="Self.nasLayoutClass" Multiplicity="1" />
-          <End Role="ATTACHMENTSLOT" Type="Self.ATTACHMENTSLOT" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="nasLayoutClass">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ATTACHMENTSLOT">
-              <PropertyRef Name="nasLayoutClass" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_rAttachmentClass">
           <End Role="AttachmentClass" Type="Self.AttachmentClass" Multiplicity="1" />
           <End Role="Attachment" Type="Self.Attachment" Multiplicity="*" />
@@ -852,8 +812,6 @@
           <EntitySet Name="LBEClass" EntityType="Self.LBEClass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LC" EntityType="Self.LC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOADBEARINGEQUIPMENT" EntityType="Self.LOADBEARINGEQUIPMENT" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="nasAttachmentClass" EntityType="Self.nasAttachmentClass" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="nasLayoutClass" EntityType="Self.nasLayoutClass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TL" EntityType="Self.TL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypeOfDamage" EntityType="Self.TypeOfDamage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WEAPON" EntityType="Self.WEAPON" Schema="dbo" store:Type="Tables" />
@@ -947,14 +905,6 @@
             <End Role="LBEClass" EntitySet="LBEClass" />
             <End Role="LOADBEARINGEQUIPMENT" EntitySet="LOADBEARINGEQUIPMENT" />
           </AssociationSet>
-          <AssociationSet Name="FK_nasAttachmentClass_slot" Association="Self.FK_nasAttachmentClass_slot">
-            <End Role="nasAttachmentClass" EntitySet="nasAttachmentClass" />
-            <End Role="ATTACHMENTSLOT" EntitySet="ATTACHMENTSLOT" />
-          </AssociationSet>
-          <AssociationSet Name="FK_nasLayoutClass_slot" Association="Self.FK_nasLayoutClass_slot">
-            <End Role="nasLayoutClass" EntitySet="nasLayoutClass" />
-            <End Role="ATTACHMENTSLOT" EntitySet="ATTACHMENTSLOT" />
-          </AssociationSet>
           <AssociationSet Name="FK_rAttachmentClass" Association="Self.FK_rAttachmentClass">
             <End Role="AttachmentClass" EntitySet="AttachmentClass" />
             <End Role="Attachment" EntitySet="Attachment" />
@@ -1002,8 +952,6 @@
           <EntitySet Name="LBEClasses" EntityType="item1Model.LBEClass" />
           <EntitySet Name="LCs" EntityType="item1Model.LC" />
           <EntitySet Name="LOADBEARINGEQUIPMENTs" EntityType="item1Model.LOADBEARINGEQUIPMENT" />
-          <EntitySet Name="nasAttachmentClasses" EntityType="item1Model.nasAttachmentClass" />
-          <EntitySet Name="nasLayoutClasses" EntityType="item1Model.nasLayoutClass" />
           <EntitySet Name="TLs" EntityType="item1Model.TL" />
           <EntitySet Name="TypeOfDamages" EntityType="item1Model.TypeOfDamage" />
           <AssociationSet Name="FK_ARMOUR" Association="item1Model.FK_ARMOUR">
@@ -1045,14 +993,6 @@
           <AssociationSet Name="FK_G_SubAttachClass_ATTACHMENTSLOT1" Association="item1Model.FK_G_SubAttachClass_ATTACHMENTSLOT1">
             <End Role="ATTACHMENTSLOT" EntitySet="ATTACHMENTSLOTs" />
             <End Role="G_SubAttachClass" EntitySet="G_SubAttachClass" />
-          </AssociationSet>
-          <AssociationSet Name="FK_nasAttachmentClass_slot" Association="item1Model.FK_nasAttachmentClass_slot">
-            <End Role="nasAttachmentClass" EntitySet="nasAttachmentClasses" />
-            <End Role="ATTACHMENTSLOT" EntitySet="ATTACHMENTSLOTs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_nasLayoutClass_slot" Association="item1Model.FK_nasLayoutClass_slot">
-            <End Role="nasLayoutClass" EntitySet="nasLayoutClasses" />
-            <End Role="ATTACHMENTSLOT" EntitySet="ATTACHMENTSLOTs" />
           </AssociationSet>
           <AssociationSet Name="FK_ITEM_Clothes" Association="item1Model.FK_ITEM_Clothes">
             <End Role="Cloth" EntitySet="Clothes" />
@@ -1286,13 +1226,9 @@
           </Key>
           <Property Name="uiSlotIndex" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="szSlotName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="nasLayoutClass" Type="Int32" Nullable="false" />
-          <Property Name="nasAttachmentClass" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Attachmentmounts" Relationship="item1Model.FK_Attachmentmount_NasAttachmentClass1" FromRole="ATTACHMENTSLOT" ToRole="Attachmentmount" />
           <NavigationProperty Name="AvailableAttachSlots" Relationship="item1Model.FK_AVeATTACHMENTSLOT" FromRole="ATTACHMENTSLOT" ToRole="AvailableAttachSlot" />
           <NavigationProperty Name="G_SubAttachClass" Relationship="item1Model.FK_G_SubAttachClass_ATTACHMENTSLOT1" FromRole="ATTACHMENTSLOT" ToRole="G_SubAttachClass" />
-          <NavigationProperty Name="nasAttachmentClass1" Relationship="item1Model.FK_nasAttachmentClass_slot" FromRole="ATTACHMENTSLOT" ToRole="nasAttachmentClass" />
-          <NavigationProperty Name="nasLayoutClass1" Relationship="item1Model.FK_nasLayoutClass_slot" FromRole="ATTACHMENTSLOT" ToRole="nasLayoutClass" />
         </EntityType>
         <EntityType Name="AttachmentSystem">
           <Key>
@@ -1546,22 +1482,6 @@
           <Property Name="lbePocketIndex12" Type="Int32" Nullable="false" />
           <NavigationProperty Name="LBEClass1" Relationship="item1Model.FK_LOADBEARINGEQUIPMENT" FromRole="LOADBEARINGEQUIPMENT" ToRole="LBEClass" />
         </EntityType>
-        <EntityType Name="nasAttachmentClass">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ATTACHMENTSLOTs" Relationship="item1Model.FK_nasAttachmentClass_slot" FromRole="nasAttachmentClass" ToRole="ATTACHMENTSLOT" />
-        </EntityType>
-        <EntityType Name="nasLayoutClass">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ATTACHMENTSLOTs" Relationship="item1Model.FK_nasLayoutClass_slot" FromRole="nasLayoutClass" ToRole="ATTACHMENTSLOT" />
-        </EntityType>
         <EntityType Name="TL">
           <Key>
             <PropertyRef Name="Id_Tl" />
@@ -1701,30 +1621,6 @@
             </Principal>
             <Dependent Role="G_SubAttachClass">
               <PropertyRef Name="ATTACHMENTSLOT1" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_nasAttachmentClass_slot">
-          <End Type="item1Model.nasAttachmentClass" Role="nasAttachmentClass" Multiplicity="1" />
-          <End Type="item1Model.ATTACHMENTSLOT" Role="ATTACHMENTSLOT" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="nasAttachmentClass">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ATTACHMENTSLOT">
-              <PropertyRef Name="nasAttachmentClass" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_nasLayoutClass_slot">
-          <End Type="item1Model.nasLayoutClass" Role="nasLayoutClass" Multiplicity="1" />
-          <End Type="item1Model.ATTACHMENTSLOT" Role="ATTACHMENTSLOT" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="nasLayoutClass">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="ATTACHMENTSLOT">
-              <PropertyRef Name="nasLayoutClass" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2149,8 +2045,6 @@
           <EntitySetMapping Name="ATTACHMENTSLOTs">
             <EntityTypeMapping TypeName="item1Model.ATTACHMENTSLOT">
               <MappingFragment StoreEntitySet="ATTACHMENTSLOT">
-                <ScalarProperty Name="nasAttachmentClass" ColumnName="nasAttachmentClass" />
-                <ScalarProperty Name="nasLayoutClass" ColumnName="nasLayoutClass" />
                 <ScalarProperty Name="szSlotName" ColumnName="szSlotName" />
                 <ScalarProperty Name="uiSlotIndex" ColumnName="uiSlotIndex" />
               </MappingFragment>
@@ -2390,22 +2284,6 @@
                 <ScalarProperty Name="lbeCombo" ColumnName="lbeCombo" />
                 <ScalarProperty Name="LBEClass" ColumnName="LBEClass" />
                 <ScalarProperty Name="lbeIndex" ColumnName="lbeIndex" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="nasAttachmentClasses">
-            <EntityTypeMapping TypeName="item1Model.nasAttachmentClass">
-              <MappingFragment StoreEntitySet="nasAttachmentClass">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="nasLayoutClasses">
-            <EntityTypeMapping TypeName="item1Model.nasLayoutClass">
-              <MappingFragment StoreEntitySet="nasLayoutClass">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

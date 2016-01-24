@@ -53,8 +53,6 @@ namespace Item_WPF
         public virtual DbSet<LBEClass> LBEClasses { get; set; }
         public virtual DbSet<LC> LCs { get; set; }
         public virtual DbSet<LOADBEARINGEQUIPMENT> LOADBEARINGEQUIPMENTs { get; set; }
-        public virtual DbSet<nasAttachmentClass> nasAttachmentClasses { get; set; }
-        public virtual DbSet<nasLayoutClass> nasLayoutClasses { get; set; }
         public virtual DbSet<TL> TLs { get; set; }
         public virtual DbSet<TypeOfDamage> TypeOfDamages { get; set; }
         public virtual DbSet<CombineWeap> CombineWeaps { get; set; }
