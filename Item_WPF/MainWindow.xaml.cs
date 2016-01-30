@@ -49,5 +49,11 @@ namespace Item_WPF
         {
             MessageBox.Show(Dice.rollDie(6, 3).ToString());
         }
+
+        private void Char_button_Click(object sender, RoutedEventArgs e)
+        {
+            character cha = new character();
+            cha.Show();
+        }
     }
 }

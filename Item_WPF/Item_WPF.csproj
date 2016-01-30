@@ -100,6 +100,12 @@
     <Compile Include="Attach_N_R.xaml.cs">
       <DependentUpon>Attach_N_R.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Character.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="litForms\character.xaml.cs">
+      <DependentUpon>character.xaml</DependentUpon>
+    </Compile>
     <Compile Include="litForms\Attacment_mount.xaml.cs">
       <DependentUpon>Attacment_mount.xaml</DependentUpon>
     </Compile>
@@ -175,6 +181,9 @@
     <Compile Include="NewItems.xaml.cs">
       <DependentUpon>NewItems.xaml</DependentUpon>
     </Compile>
+    <Compile Include="litForms\new_char.xaml.cs">
+      <DependentUpon>new_char.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Select_Items.xaml.cs">
       <DependentUpon>Select_Items.xaml</DependentUpon>
     </Compile>
@@ -201,6 +210,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Attach_N_R.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="litForms\character.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -247,6 +260,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="NewItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="litForms\new_char.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -8,9 +8,10 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Button x:Name="button" Content="All Items" HorizontalAlignment="Left" Margin="432,289,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button1" Content="Combine" HorizontalAlignment="Left" Margin="432,264,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
+        <Button x:Name="button1" Content="Combine" HorizontalAlignment="Left" Margin="352,289,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
         <Button x:Name="button2" Content="dice" HorizontalAlignment="Left" Margin="432,239,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
         <DataGrid x:Name="dataGrid" Margin="10,10,10,0" VerticalAlignment="Top" Height="205"/>
+        <Button x:Name="Char_button" Content="Character" HorizontalAlignment="Left" Margin="10,289,0,0" VerticalAlignment="Top" Width="75" Click="Char_button_Click"/>
 
     </Grid>
 </Window>

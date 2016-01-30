@@ -15,6 +15,7 @@ IF SCHEMA_ID(N'dbo') IS NULL
 GO
 
 
+
 -- --------------------------------------------------
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
@@ -208,6 +209,10 @@ IF OBJECT_ID(N'[dbo].[Battery]', 'u') IS NOT NULL
   DROP TABLE [dbo].[Battery];
 GO
 
+IF OBJECT_ID(N'[dbo].[Character]', 'u') IS NOT NULL
+  DROP TABLE [dbo].[Character];
+GO
+
 IF OBJECT_ID(N'dbo.NEW_ITEM', 'P') IS NOT NULL
   EXEC sp_executesql N'DROP PROCEDURE dbo.NEW_ITEM'
 GO
@@ -315,7 +320,7 @@ GO
 CREATE TABLE [dbo].[ATTACHMENTSLOT] (
   [uiSlotIndex] INT IDENTITY (1, 1) NOT NULL,
   [szSlotName] VARCHAR(50) NOT NULL,
-  
+
 );
 GO
 
@@ -640,9 +645,9 @@ CREATE TABLE [dbo].[Attachment] (
   Fix BIT NOT NULL DEFAULT (0),
   BatTimeWork INT NULL,
   Tritium BIT NOT NULL DEFAULT (0),
-  ScopeMagMin INT NULL  ,
-  ScopeMagMax INT NULL  ,
-  AccAddmax INT NULL  ,
+  ScopeMagMin INT NULL,
+  ScopeMagMax INT NULL,
+  AccAddmax INT NULL,
   id_Attachmentmount INT NOT NULL DEFAULT 1,
   ImpVisSights BIT NOT NULL DEFAULT (0),
   BlockIronSight BIT NOT NULL DEFAULT (0),
@@ -650,9 +655,9 @@ CREATE TABLE [dbo].[Attachment] (
   Reflex BIT NOT NULL DEFAULT (0),
   Targetingprogram BIT NOT NULL DEFAULT (0),
   Laserrangefinder BIT NOT NULL DEFAULT (0),
-  LaserRFrange INT NULL  ,
-  LaserRFAcc INT NULL ,
-  NightVision INT NULL  ,
+  LaserRFrange INT NULL,
+  LaserRFAcc INT NULL,
+  NightVision INT NULL,
   NeedIRillumination BIT NOT NULL DEFAULT (0),
   Infravision BIT NOT NULL DEFAULT (0),
   IRFilter BIT NOT NULL DEFAULT (0),
@@ -674,14 +679,29 @@ CREATE TABLE [CombineWeap] (
   BipodSelect INT,
   SilenserSelect INT,
   LauncherSelect INT,
-  BayonetSelect INT ,
-  MagazineSelect INT ,
-  InternalSelect INT ,
-  ExternalSelect INT ,
+  BayonetSelect INT,
+  MagazineSelect INT,
+  InternalSelect INT,
+  ExternalSelect INT,
   StockSelect INT,
 
-CONSTRAINT [PK_CombineWeap] PRIMARY KEY ([id])
+  CONSTRAINT [PK_CombineWeap] PRIMARY KEY ([id])
 
+)
+
+
+CREATE TABLE [Character] (
+  [id] INT IDENTITY (1, 1),
+  name NVARCHAR(80),
+  StrengthPoints INT,
+  DexterityPoints INT,
+  IntelligencePoints INT,
+   HealthPoints INT,
+  MaxFPPoints INT,
+  PerceptionPoints INT,
+  WillpowerPoints INT,
+  BasicSpeedPoints FLOAT,
+  BasicMovePoints INT
 )
 
 -- --------------------------------------------------
@@ -1279,26 +1299,25 @@ INSERT INTO G_AttachClass (name_class)
   ('MISCELLANEOUS ACCESSORIES AND MODIFICATIONS');   --7 
 
 INSERT INTO [ItemClass]
-  VALUES 
-  ('Nothing'), 
-  ('Gun'), 
+  VALUES ('Nothing'),
+  ('Gun'),
   --('Knife'), 
---  ('Throwing Knife'), 
---  ('Launcher'), 
---  ('Thrown Weapon'), 
--- ('Blunt Weapon'),
---  ('Grenade'), 
---  ('Bomb'), 
---  ('Ammo'), 
---  ('Armour'), 
--- ('Medkit'), 
---  ('Kit'), 
---  ('Face Item'),
---  ('Load Bearing Equipment'), 
---('Misc'), 
---('Money'), 
-('Attachment'),
-('Random Item');
+  --  ('Throwing Knife'), 
+  --  ('Launcher'), 
+  --  ('Thrown Weapon'), 
+  -- ('Blunt Weapon'),
+  --  ('Grenade'), 
+  --  ('Bomb'), 
+  --  ('Ammo'), 
+  --  ('Armour'), 
+  -- ('Medkit'), 
+  --  ('Kit'), 
+  --  ('Face Item'),
+  --  ('Load Bearing Equipment'), 
+  --('Misc'), 
+  --('Money'), 
+  ('Attachment'),
+  ('Random Item');
 
 
 INSERT INTO [AttachmentClass]

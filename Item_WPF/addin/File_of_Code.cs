@@ -98,11 +98,6 @@ namespace Item_WPF
 
     }
     //
-    public class DiceList
-    {
-        public int diceRoll;
-
-    }
     //public BitmapImage ConvertByteArrayToImage(byte[] array)
     //{
     //    if (array != null)

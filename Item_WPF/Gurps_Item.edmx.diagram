@@ -62,6 +62,7 @@
         <EntityTypeShape EntityType="item1Model.WeaponType" Width="1.5" PointX="7.5" PointY="14.25" />
         <AssociationConnector Association="item1Model.FK_WeaponType" />
         <AssociationConnector Association="item1Model.FK_WeaponType_WeaponClass" />
+        <EntityTypeShape EntityType="item1Model.Character" Width="1.5" PointX="12.375" PointY="16.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -174,6 +174,22 @@
           <Property Name="CPP" Type="money" />
           <Property Name="WPP" Type="decimal" Precision="7" Scale="3" />
         </EntityType>
+        <EntityType Name="Character">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="80" />
+          <Property Name="StrengthPoints" Type="int" />
+          <Property Name="DexterityPoints" Type="int" />
+          <Property Name="IntelligencePoints" Type="int" />
+          <Property Name="HealthPoints" Type="int" />
+          <Property Name="MaxFPPoints" Type="int" />
+          <Property Name="PerceptionPoints" Type="int" />
+          <Property Name="WillpowerPoints" Type="int" />
+          <Property Name="BasicSpeedPoints" Type="float" />
+          <Property Name="BasicMovePoints" Type="int" />
+        </EntityType>
         <EntityType Name="Clothes">
           <Key>
             <PropertyRef Name="id" />
@@ -797,6 +813,7 @@
           <EntitySet Name="AttachmentSystem" EntityType="Self.AttachmentSystem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AvailableAttachSlot" EntityType="Self.AvailableAttachSlot" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Battery" EntityType="Self.Battery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Character" EntityType="Self.Character" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clothes" EntityType="Self.Clothes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CombineWeap" EntityType="Self.CombineWeap" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Drug" EntityType="Self.Drug" Schema="dbo" store:Type="Tables" />
@@ -1073,6 +1090,7 @@
             <End Role="WeaponClass" EntitySet="WeaponClasses" />
             <End Role="WeaponType" EntitySet="WeaponTypes" />
           </AssociationSet>
+          <EntitySet Name="Characters" EntityType="item1Model.Character" />
         </EntityContainer>
         <EntityType Name="AMMO">
           <Key>
@@ -1895,6 +1913,22 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Character">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="StrengthPoints" Type="Int32" />
+          <Property Name="DexterityPoints" Type="Int32" />
+          <Property Name="IntelligencePoints" Type="Int32" />
+          <Property Name="HealthPoints" Type="Int32" />
+          <Property Name="MaxFPPoints" Type="Int32" />
+          <Property Name="PerceptionPoints" Type="Int32" />
+          <Property Name="WillpowerPoints" Type="Int32" />
+          <Property Name="BasicSpeedPoints" Type="Double" />
+          <Property Name="BasicMovePoints" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2380,6 +2414,23 @@
             <EntityTypeMapping TypeName="item1Model.WeaponType">
               <MappingFragment StoreEntitySet="WeaponType">
                 <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Characters">
+            <EntityTypeMapping TypeName="item1Model.Character">
+              <MappingFragment StoreEntitySet="Character">
+                <ScalarProperty Name="BasicMovePoints" ColumnName="BasicMovePoints" />
+                <ScalarProperty Name="BasicSpeedPoints" ColumnName="BasicSpeedPoints" />
+                <ScalarProperty Name="WillpowerPoints" ColumnName="WillpowerPoints" />
+                <ScalarProperty Name="PerceptionPoints" ColumnName="PerceptionPoints" />
+                <ScalarProperty Name="MaxFPPoints" ColumnName="MaxFPPoints" />
+                <ScalarProperty Name="HealthPoints" ColumnName="HealthPoints" />
+                <ScalarProperty Name="IntelligencePoints" ColumnName="IntelligencePoints" />
+                <ScalarProperty Name="DexterityPoints" ColumnName="DexterityPoints" />
+                <ScalarProperty Name="StrengthPoints" ColumnName="StrengthPoints" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
