@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Item_WPF.addin;
+using Item_WPF.MVVM.View;
 
 namespace Item_WPF
 {
@@ -24,7 +26,7 @@ namespace Item_WPF
         {
             InitializeComponent();
 
-            dataGrid.ColumnWidth = DataGridLength.Auto;
+            DataGrid.ColumnWidth = DataGridLength.Auto;
 
             //DataGridTextColumn textColumn = new DataGridTextColumn();
             //textColumn.Header = "dice";
@@ -34,7 +36,7 @@ namespace Item_WPF
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            all_Items allItems = new all_Items();
+            AllItems allItems = new AllItems();
             allItems.Show();
         }
 
@@ -47,13 +49,19 @@ namespace Item_WPF
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(Dice.rollDie(6, 3).ToString());
+            MessageBox.Show(Dice.RollDie(6, 3).ToString());
         }
 
         private void Char_button_Click(object sender, RoutedEventArgs e)
         {
             character cha = new character();
             cha.Show();
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            AmmoView avView =new AmmoView();
+            avView.Show();
         }
     }
 }

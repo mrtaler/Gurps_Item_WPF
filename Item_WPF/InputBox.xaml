@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="InputBox" Height="138.462" Width="300">
     <Grid>
-        <Button x:Name="buttonCancel" Content="Cancel" Margin="101,66,0,0" Click="button_Click" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75"/>
-        <Button x:Name="buttonOK" Content="Ok" Margin="19,66,0,0" Click="buttonOK_Click" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75"/>
-        <Label x:Name="label01" Content="Label" HorizontalAlignment="Left" Margin="19,35,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" Margin="101,38,10,0" TextWrapping="Wrap" Text="TextBox" Height="23" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonCancel" Content="Cancel" Margin="101,66,0,0" Click="button_Click" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75"/>
+        <Button x:Name="ButtonOk" Content="Ok" Margin="19,66,0,0" Click="buttonOK_Click" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75"/>
+        <Label x:Name="Label01" Content="Label" HorizontalAlignment="Left" Margin="19,35,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBox" Margin="101,38,10,0" TextWrapping="Wrap" Text="TextBox" Height="23" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

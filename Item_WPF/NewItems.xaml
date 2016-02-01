@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="NewItems" Height="197.633" Width="372.167">
     <Grid>
-        <Label x:Name="label" Content="Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="Class" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Name_textBox" HorizontalAlignment="Left" Height="23" Margin="90,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="Class_comboBox" HorizontalAlignment="Left" Margin="90,46,0,0" VerticalAlignment="Top" Width="120" Initialized="Class_comboBox_Initialized"/>
-        <Button x:Name="Ok_button" Content="Ok" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" Width="75" Click="Ok_button_Click"/>
-        <Button x:Name="Cancel_button" Content="Cancel" HorizontalAlignment="Left" Margin="104,86,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_button_Click"/>
-        <Label x:Name="label01" Content="Label" HorizontalAlignment="Left" Margin="14,111,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label02" Content="Label" HorizontalAlignment="Left" Margin="14,137,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label" Content="Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label1" Content="Class" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Height="23" Margin="90,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="ClassComboBox" HorizontalAlignment="Left" Margin="90,46,0,0" VerticalAlignment="Top" Width="120" Initialized="Class_comboBox_Initialized"/>
+        <Button x:Name="OkButton" Content="Ok" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" Width="75" Click="Ok_button_Click"/>
+        <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="104,86,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_button_Click"/>
+        <Label x:Name="Label01" Content="Label" HorizontalAlignment="Left" Margin="14,111,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label02" Content="Label" HorizontalAlignment="Left" Margin="14,137,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

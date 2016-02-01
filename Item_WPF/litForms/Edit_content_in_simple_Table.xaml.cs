@@ -20,17 +20,17 @@ namespace Item_WPF
     /// <summary>
     /// Логика взаимодействия для Edit_content_in_simple_Table.xaml
     /// </summary>
-    public partial class Edit_content_in_simple_Table : Window
+    public partial class EditContentInSimpleTable : Window
     {
-        private item1Entities context;
-        public ObservableCollection<TypeOfDamage> TypeOfDamageOK { get; set; }
-        public Edit_content_in_simple_Table()
+        private item1Entities _context;
+        public ObservableCollection<TypeOfDamage> TypeOfDamageOk { get; set; }
+        public EditContentInSimpleTable()
         {
             InitializeComponent();
-            context = new item1Entities();
-            TypeOfDamageOK = new ObservableCollection<TypeOfDamage>(context.TypeOfDamages);
-            TypeOfDamage_dataGrid.ItemsSource = TypeOfDamageOK;
-            TypeOfDamageOK.CollectionChanged += new NotifyCollectionChangedEventHandler(_TypeOfDamageOK_CollectionChanged);
+            _context = new item1Entities();
+            TypeOfDamageOk = new ObservableCollection<TypeOfDamage>(_context.TypeOfDamages);
+            TypeOfDamageDataGrid.ItemsSource = TypeOfDamageOk;
+            TypeOfDamageOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_TypeOfDamageOK_CollectionChanged);
         }
         private void _TypeOfDamageOK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
@@ -38,9 +38,9 @@ namespace Item_WPF
             {
                 foreach (TypeOfDamage item in e.OldItems)
                 {
-                    context.TypeOfDamages.Remove(item);
+                    _context.TypeOfDamages.Remove(item);
                 }
-                context.SaveChanges();
+                _context.SaveChanges();
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
@@ -49,7 +49,7 @@ namespace Item_WPF
                     item.name = "";
                     item.LongName = "";
                     item.mDamage = "";
-                    context.TypeOfDamages.Add(item);
+                    _context.TypeOfDamages.Add(item);
                 }
             }
         }
@@ -61,7 +61,7 @@ namespace Item_WPF
         {
             if (e.EditAction == DataGridEditAction.Commit)
             {
-                context.SaveChanges();
+                _context.SaveChanges();
             }
         }
     }

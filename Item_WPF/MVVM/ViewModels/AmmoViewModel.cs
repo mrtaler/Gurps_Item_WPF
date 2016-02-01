@@ -1,46 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Item_WPF.addin;
+using System.Collections.Specialized;
 
-namespace Item_WPF
+namespace Item_WPF.MVVM.ViewModels
 {
-    /// <summary>
-    /// Логика взаимодействия для caliber.xaml
-    /// </summary>
-    public partial class Caliber : Window
+    public class AmmoViewModel : INotifyPropertyChanged, IDisposable
     {
-        //private MainWindowViewModel _mvvm = new MainWindowViewModel();
+        /// <summary>
+        /// Основной контекст данных
+        /// </summary>
         private item1Entities _context;
+        /// <summary>
+        /// Коллекция патронов .
+        /// </summary>
         public ObservableCollection<AMMO> AmmoOk { get; set; }
-
-        public Caliber()
+        /// <summary>
+        /// Конструктор класса
+        /// </summary>
+        public AmmoViewModel()
         {
-            InitializeComponent();
             _context = new item1Entities();
             AmmoOk = new ObservableCollection<AMMO>(_context.AMMOes);
-            CaliberDataGrid.ItemsSource = AmmoOk;
+            Save = new ActionCommand(SaveChanges) { IsExecutable = true };
             AmmoOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_ammoOK_CollectionChanged);
         }
-
-        private void Save_button_Click(object sender, RoutedEventArgs e)
-        {
-            _context.SaveChanges();
-            this.Close();
-        }
-
         private void _ammoOK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Remove)
@@ -49,7 +34,7 @@ namespace Item_WPF
                 {
                     _context.AMMOes.Remove(item);
                 }
-                _context.SaveChanges();
+                SaveChanges();
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
@@ -64,19 +49,27 @@ namespace Item_WPF
                     item.CPS = 1;
                     item.Class_of_Ammo = "1";
                     _context.AMMOes.Add(item);
-
+                    SaveChanges();
                 }
             }
         }
-        private void Caliber_dataGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
+        private void SaveChanges()
         {
-            if (e.EditAction == DataGridEditAction.Commit)
-            {
-                _context.SaveChanges();
-            }
+            _context.SaveChanges();
+        }
+
+        public ActionCommand Save { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void RaisePropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void Dispose()
+        {
+            _context?.Dispose();
         }
     }
+
 }
-
-
-////  http://stackoverflow.com/questions/1427471/observablecollection-not-noticing-when-item-in-it-changes-even-with-inotifyprop

@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Item_WPF.addin;
 
 namespace Item_WPF
 {
@@ -34,56 +35,56 @@ namespace Item_WPF
 
         private void Ok_button_Click(object sender, RoutedEventArgs e)
         {
-            if (Class_comboBox.Text == "Gun"
-                                || Class_comboBox.Text == "Knife"
-                                || Class_comboBox.Text == "Throwing Knife"
-                                || Class_comboBox.Text == "Launcher"
-                                || Class_comboBox.Text == "Thrown Weapon"
-                                || Class_comboBox.Text == "Blunt Weapon")
+            if (ClassComboBox.Text == "Gun"
+                                || ClassComboBox.Text == "Knife"
+                                || ClassComboBox.Text == "Throwing Knife"
+                                || ClassComboBox.Text == "Launcher"
+                                || ClassComboBox.Text == "Thrown Weapon"
+                                || ClassComboBox.Text == "Blunt Weapon")
             {
 
                
                 using (item1Entities context = new item1Entities())
                 {
                     context.Database.Connection.Open();
-                    string name = Name_textBox.Text.ToString();
-                    string yy = Class_comboBox.Text.ToString();
+                    string name = NameTextBox.Text.ToString();
+                    string yy = ClassComboBox.Text.ToString();
 
                     ObjectParameter returns = new ObjectParameter("returns", typeof(String));
                     
                     context.NEW_ITEM(name, yy, returns);
 
-                    datachange.ID_sel = Convert.ToInt32(returns.Value);
-                    label01.Content = "WEAPON where ID" + datachange.ID_sel;
-                    label02.Content = "ch ID main:";
+                    Datachange.IdSel = Convert.ToInt32(returns.Value);
+                    Label01.Content = "WEAPON where ID" + Datachange.IdSel;
+                    Label02.Content = "ch ID main:";
                     context.Database.Connection.Close();
                 }
-                Weapon_N_R weap = new Weapon_N_R();
+                WeaponNr weap = new WeaponNr();
                 weap.Show();
                 this.Close();
 
             }
 
-            else if (Class_comboBox.Text == "Attachment")
+            else if (ClassComboBox.Text == "Attachment")
             {
                 using (item1Entities context = new item1Entities())
                 {
                     context.Database.Connection.Open();
-                    string name = Name_textBox.Text.ToString();
-                    string yy = Class_comboBox.Text.ToString();
+                    string name = NameTextBox.Text.ToString();
+                    string yy = ClassComboBox.Text.ToString();
 
                     ObjectParameter returns = new ObjectParameter("returns", typeof(String));
 
                     context.NEW_ITEM(name, yy, returns);
 
-                    datachange.ID_sel = Convert.ToInt32(returns.Value);
-                    label01.Content = "Attach where ID" + datachange.ID_sel;
-                    label02.Content = "ch ID main:";
+                    Datachange.IdSel = Convert.ToInt32(returns.Value);
+                    Label01.Content = "Attach where ID" + Datachange.IdSel;
+                    Label02.Content = "ch ID main:";
                     context.Database.Connection.Close();
 
                  
                 }
-                Attach_N_R attach = new Attach_N_R();
+                AttachNR attach = new AttachNR();
                 attach.Show();
                 this.Close();
             }
@@ -93,9 +94,9 @@ namespace Item_WPF
         {
             using (item1Entities context = new item1Entities())
             {
-                Class_comboBox.ItemsSource = context.ItemClasses.ToList();
-                Class_comboBox.DisplayMemberPath = "name";
-                Class_comboBox.SelectedValuePath = "Id";
+                ClassComboBox.ItemsSource = context.ItemClasses.ToList();
+                ClassComboBox.DisplayMemberPath = "name";
+                ClassComboBox.SelectedValuePath = "Id";
             }
         }
     }

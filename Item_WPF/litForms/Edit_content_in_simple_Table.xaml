@@ -1,4 +1,4 @@
-﻿<Window x:Class="Item_WPF.Edit_content_in_simple_Table"
+﻿<Window x:Class="Item_WPF.EditContentInSimpleTable"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Edit_content_in_simple_Table" Height="300" Width="533.803">
     <Grid>
-        <DataGrid x:Name="TypeOfDamage_dataGrid" Margin="10,10,10,53" ItemsSource="{Binding}" AutoGenerateColumns="False" RowEditEnding="TypeOfDamage_dataGrid_RowEditEnding" >
+        <DataGrid x:Name="TypeOfDamageDataGrid" Margin="10,10,10,53" ItemsSource="{Binding}" AutoGenerateColumns="False" RowEditEnding="TypeOfDamage_dataGrid_RowEditEnding" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="id"         Binding="{Binding id, Mode=TwoWay}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Name"       Binding="{Binding name, Mode=TwoWay}"/>
@@ -15,7 +15,7 @@
                 <DataGridTextColumn Header="mDamage"   Binding="{Binding mDamage, Mode=TwoWay}"/>
                          </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="Close_button" Content="Close" HorizontalAlignment="Left" Margin="10,0,0,10" Width="75" Height="20" VerticalAlignment="Bottom" Click="Close_button_Click"/>
+        <Button x:Name="CloseButton" Content="Close" HorizontalAlignment="Left" Margin="10,0,0,10" Width="75" Height="20" VerticalAlignment="Bottom" Click="Close_button_Click"/>
 
     </Grid>
 </Window>

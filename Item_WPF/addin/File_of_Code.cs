@@ -1,34 +1,31 @@
 ﻿using System;
-using System.IO;
-using System.Windows;
-using System.Windows.Media.Imaging;
 
-namespace Item_WPF
+namespace Item_WPF.addin
 {
     /// <summary>
     /// класс для обмена данных между формами
     /// </summary>
-    public class datachange
+    public class Datachange
     {
         /// <summary>
         /// переменная системного десятичного разделителя
         /// </summary>
-        public static char separator = System.Globalization.CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0];
+        public static char Separator = System.Globalization.CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0];
         /// <summary>
         /// переменная для замены десятичного разделителя( можно установить различные с поиоью else if
         /// </summary>
-        public static char separatorCh
+        public static char SeparatorCh
         {
             get {
-                if (separator == '.') return ',';
+                if (Separator == '.') return ',';
                 else return '.';
             }            
         }
 
-        public static int ID_sel;
-        public static int ID_change;
+        public static int IdSel;
+        public static int IdChange;
         public static byte[] ItemImage;
-        public static string Class_Cha;
+        public static string ClassCha;
         public static string Pass;
     }
 
@@ -37,35 +34,35 @@ namespace Item_WPF
     /// </summary>
     public class WeaponCombine
     {
-        public static int Id_WeaponItem;
-        public static int Id_ScopeItem;
-        public static int Id_LaserItem;
-        public static int Id_LightItem;
-        public static int Id_BipodItem;
-        public static int Id_SilenserItem;
-        public static int Id_LauncherItem;
-        public static int Id_StockItem;
-        public static int Id_BayonetItem;
-        public static int Id_MagazineItem;
-        public static int Id_InternalItem;
-        public static int Id_ExternalItem;
+        public static int IdWeaponItem;
+        public static int IdScopeItem;
+        public static int IdLaserItem;
+        public static int IdLightItem;
+        public static int IdBipodItem;
+        public static int IdSilenserItem;
+        public static int IdLauncherItem;
+        public static int IdStockItem;
+        public static int IdBayonetItem;
+        public static int IdMagazineItem;
+        public static int IdInternalItem;
+        public static int IdExternalItem;
         /// <summary>
         /// обнуление комбинатора
         /// </summary>
         public static void WeapCombNull()
         {
-            Id_WeaponItem = 0;
-            Id_ScopeItem = 0;
-            Id_LaserItem = 0;
-            Id_LightItem = 0;
-            Id_BipodItem = 0;
-            Id_SilenserItem = 0;
-            Id_LauncherItem = 0;
-            Id_StockItem = 0;
-            Id_BayonetItem = 0;
-            Id_MagazineItem = 0;
-            Id_InternalItem = 0;
-            Id_ExternalItem = 0;
+            IdWeaponItem = 0;
+            IdScopeItem = 0;
+            IdLaserItem = 0;
+            IdLightItem = 0;
+            IdBipodItem = 0;
+            IdSilenserItem = 0;
+            IdLauncherItem = 0;
+            IdStockItem = 0;
+            IdBayonetItem = 0;
+            IdMagazineItem = 0;
+            IdInternalItem = 0;
+            IdExternalItem = 0;
         }
 
     }
@@ -80,7 +77,7 @@ namespace Item_WPF
         /// <param name="_numDice">количество кубиков</param>
         /// <param name="_dice">число сторон</param>
         /// <returns></returns>
-        public static int rollDie(int _numDice, int _dice)
+        public static int RollDie(int _numDice, int _dice)
         {
             int roll;
             int total = 0;

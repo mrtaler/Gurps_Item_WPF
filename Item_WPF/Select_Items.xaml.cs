@@ -12,27 +12,28 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Item_WPF.addin;
 
 namespace Item_WPF
 {
     /// <summary>
     /// Логика взаимодействия для Select_Items.xaml
     /// </summary>
-    public partial class Select_Items : Window
+    public partial class SelectItems : Window
     {
-        private bool re33 = false;
+        private bool _re33 = false;
         private int _attSlot = 0;
 
-        public Select_Items()
+        public SelectItems()
         {
             InitializeComponent();
         }
-        public Select_Items(int T1, string typeName)
+        public SelectItems(int t1, string typeName)
         {
             InitializeComponent();
             using (item1Entities context = new item1Entities())
             {
-                Items_dataGrid.ItemsSource = (from p in context.ITEMs
+                ItemsDataGrid.ItemsSource = (from p in context.ITEMs
                                               where p.ItemClass.name == typeName
                                               select new
                                               {
@@ -43,19 +44,19 @@ namespace Item_WPF
                                                   p.LC1.Name_LC,
                                                   p.usPrice
                                               }).ToList();// шрузим таблицу итем вместе с подчненной записью
-                Items_dataGrid.SelectedValuePath = "uiIndex";
+                ItemsDataGrid.SelectedValuePath = "uiIndex";
             }
         }
 
-        public Select_Items(int att)
+        public SelectItems(int att)
         {
-            re33 = true;
+            _re33 = true;
             InitializeComponent();
             using (item1Entities context = new item1Entities())
             {
 
                 context.Database.Connection.Open();// открываем соединение с бд
-                Items_dataGrid.ItemsSource = context.CombineWeaps.Select(s => new
+                ItemsDataGrid.ItemsSource = context.CombineWeaps.Select(s => new
                 {
                     s.id,
                     s.IdWeapon,
@@ -72,7 +73,7 @@ namespace Item_WPF
                     s.StockSelect
                 }).ToList(); // gрузим таблицу итем вместе с подчненной записью
 
-                Items_dataGrid.SelectedValuePath = "id";
+                ItemsDataGrid.SelectedValuePath = "id";
                 context.Database.Connection.Close();
             }
 
@@ -83,7 +84,7 @@ namespace Item_WPF
         /// <param name="typeName">тип запускаемого конструктора</param>
         /// <param name="attslot">слот для аттача</param>
         /// <param name="attmount">тип точки крепления аттача</param>
-        public Select_Items(string typeName, int attslot, int attmount)
+        public SelectItems(string typeName, int attslot, int attmount)
         {
             _attSlot = attslot;
             InitializeComponent();
@@ -101,7 +102,7 @@ namespace Item_WPF
                                  select p).First();
                     itemsAtt.Add(qwery);
                 }
-                Items_dataGrid.ItemsSource = (from p in itemsAtt
+                ItemsDataGrid.ItemsSource = (from p in itemsAtt
                                               select new
                                               {
                                                   p.uiIndex,
@@ -111,7 +112,7 @@ namespace Item_WPF
                                                   p.LC1.Name_LC,
                                                   p.usPrice
                                               }).ToList();
-                Items_dataGrid.SelectedValuePath = "uiIndex";
+                ItemsDataGrid.SelectedValuePath = "uiIndex";
                 context.Database.Connection.Close();
             }
         }
@@ -123,36 +124,36 @@ namespace Item_WPF
 
             if (main != null)
             {
-                if (re33)
+                if (_re33)
                 {
                     string s = "selected saved weapon";
-                    main.label.Content = s + " " + Convert.ToInt32(Items_dataGrid.SelectedValue);
+                    main.Label.Content = s + " " + Convert.ToInt32(ItemsDataGrid.SelectedValue);
                 }
                 else
                 {
-                    if (Items_dataGrid.SelectedIndex != -1)
+                    if (ItemsDataGrid.SelectedIndex != -1)
                     {
-                        main.IdItemWeaposn = Convert.ToInt32(Items_dataGrid.SelectedValue);// нходим ИД выделенной строки
+                        main.IdItemWeaposn = Convert.ToInt32(ItemsDataGrid.SelectedValue);// нходим ИД выделенной строки
 
-                        if (Items_dataGrid.SelectedItems.Count == 0) return;
-                        var selectedCell = Items_dataGrid.SelectedCells[2];
+                        if (ItemsDataGrid.SelectedItems.Count == 0) return;
+                        var selectedCell = ItemsDataGrid.SelectedCells[2];
                         var cellContent = selectedCell.Column.GetCellContent(selectedCell.Item);
                         if ((cellContent as TextBlock).Text == "Gun")
-                            WeaponCombine.Id_WeaponItem = Convert.ToInt32(Items_dataGrid.SelectedValue);
+                            WeaponCombine.IdWeaponItem = Convert.ToInt32(ItemsDataGrid.SelectedValue);
                         //if (cellContent is TextBlock) MessageBox.Show((cellContent as TextBlock).Text);
 
                         
-                        else if (_attSlot == 1) WeaponCombine.Id_ScopeItem = Convert.ToInt32(Items_dataGrid.SelectedValue);
-                        else if (_attSlot == 2) WeaponCombine.Id_LaserItem = Convert.ToInt32(Items_dataGrid.SelectedValue);
-                        else if (_attSlot == 3) WeaponCombine.Id_LightItem = Convert.ToInt32(Items_dataGrid.SelectedValue);
-                        else if (_attSlot == 4) WeaponCombine.Id_BipodItem = Convert.ToInt32(Items_dataGrid.SelectedValue);
-                        else if (_attSlot == 5) WeaponCombine.Id_SilenserItem = Convert.ToInt32(Items_dataGrid.SelectedValue);
-                        else if (_attSlot == 6) WeaponCombine.Id_LauncherItem = Convert.ToInt32(Items_dataGrid.SelectedValue);
-                        else if (_attSlot == 7) WeaponCombine.Id_StockItem = Convert.ToInt32(Items_dataGrid.SelectedValue);
-                        else if (_attSlot == 8) WeaponCombine.Id_BayonetItem = Convert.ToInt32(Items_dataGrid.SelectedValue);
-                        else if (_attSlot == 9) WeaponCombine.Id_MagazineItem = Convert.ToInt32(Items_dataGrid.SelectedValue);
-                        else if (_attSlot == 10) WeaponCombine.Id_InternalItem = Convert.ToInt32(Items_dataGrid.SelectedValue);
-                        else if (_attSlot == 11) WeaponCombine.Id_ExternalItem = Convert.ToInt32(Items_dataGrid.SelectedValue);
+                        else if (_attSlot == 1) WeaponCombine.IdScopeItem = Convert.ToInt32(ItemsDataGrid.SelectedValue);
+                        else if (_attSlot == 2) WeaponCombine.IdLaserItem = Convert.ToInt32(ItemsDataGrid.SelectedValue);
+                        else if (_attSlot == 3) WeaponCombine.IdLightItem = Convert.ToInt32(ItemsDataGrid.SelectedValue);
+                        else if (_attSlot == 4) WeaponCombine.IdBipodItem = Convert.ToInt32(ItemsDataGrid.SelectedValue);
+                        else if (_attSlot == 5) WeaponCombine.IdSilenserItem = Convert.ToInt32(ItemsDataGrid.SelectedValue);
+                        else if (_attSlot == 6) WeaponCombine.IdLauncherItem = Convert.ToInt32(ItemsDataGrid.SelectedValue);
+                        else if (_attSlot == 7) WeaponCombine.IdStockItem = Convert.ToInt32(ItemsDataGrid.SelectedValue);
+                        else if (_attSlot == 8) WeaponCombine.IdBayonetItem = Convert.ToInt32(ItemsDataGrid.SelectedValue);
+                        else if (_attSlot == 9) WeaponCombine.IdMagazineItem = Convert.ToInt32(ItemsDataGrid.SelectedValue);
+                        else if (_attSlot == 10) WeaponCombine.IdInternalItem = Convert.ToInt32(ItemsDataGrid.SelectedValue);
+                        else if (_attSlot == 11) WeaponCombine.IdExternalItem = Convert.ToInt32(ItemsDataGrid.SelectedValue);
                         this.Close();
                     }
                     else this.Close();

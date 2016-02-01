@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Item_WPF.addin;
 
 
 namespace Item_WPF
@@ -21,36 +22,36 @@ namespace Item_WPF
     /// <summary>
     /// Логика взаимодействия для all_Items.xaml
     /// </summary>
-    public partial class all_Items : Window
+    public partial class AllItems : Window
     {
-        private item1Entities context;
+        private item1Entities _context;
 
 
-        private ObservableCollection<ITEM> _items { get; set; }
-        private ObservableCollection<ItemClass> _itemsClass { get; set; }
-        public all_Items()
+        private ObservableCollection<ITEM> Items { get; set; }
+        private ObservableCollection<ItemClass> ItemsClass { get; set; }
+        public AllItems()
         {
             InitializeComponent();
-            context = new item1Entities();
-            _items = new ObservableCollection<ITEM>(context.ITEMs);
-            _itemsClass = new ObservableCollection<ItemClass>(context.ItemClasses);
-            ItemClass_forSort.ItemsSource = _itemsClass;
-            dataGridViewAllItems.ItemsSource = _items;
-            _items.CollectionChanged += new NotifyCollectionChangedEventHandler(_items_CollectionChanged);
+            _context = new item1Entities();
+            Items = new ObservableCollection<ITEM>(_context.ITEMs);
+            ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClasses);
+            ItemClassForSort.ItemsSource = ItemsClass;
+            DataGridViewAllItems.ItemsSource = Items;
+            Items.CollectionChanged += new NotifyCollectionChangedEventHandler(_items_CollectionChanged);
 
         }
         private void _items_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            dataGridViewAllItems.Items.Refresh();
+            DataGridViewAllItems.Items.Refresh();
         }
         private void ItemClass_forSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (ItemClass_forSort.SelectedValue != null)
+            if (ItemClassForSort.SelectedValue != null)
             {
-                int selclass = Convert.ToInt32(ItemClass_forSort.SelectedValue);
-                dataGridViewAllItems.ItemsSource = _items.Where(p => p.usItemClass == selclass);
+                int selclass = Convert.ToInt32(ItemClassForSort.SelectedValue);
+                DataGridViewAllItems.ItemsSource = Items.Where(p => p.usItemClass == selclass);
             }
-            else dataGridViewAllItems.ItemsSource = _items;
+            else DataGridViewAllItems.ItemsSource = Items;
         }
         /// <summary>
         /// sort_refresh
@@ -59,61 +60,61 @@ namespace Item_WPF
         /// <param name="e"></param>
         private void button4_Click(object sender, RoutedEventArgs e)//sort by class
         {
-            int selclass = Convert.ToInt32(ItemClass_forSort.SelectedValue);
-            context = new item1Entities();
-            _items = new ObservableCollection<ITEM>(context.ITEMs);
-            dataGridViewAllItems.ItemsSource = _items.Where(p => p.usItemClass == selclass);
+            int selclass = Convert.ToInt32(ItemClassForSort.SelectedValue);
+            _context = new item1Entities();
+            Items = new ObservableCollection<ITEM>(_context.ITEMs);
+            DataGridViewAllItems.ItemsSource = Items.Where(p => p.usItemClass == selclass);
             //ItemClass_forSort.SelectedIndex = -1;
-            dataGridViewAllItems.Items.Refresh();
+            DataGridViewAllItems.Items.Refresh();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            if (dataGridViewAllItems.SelectedItem != null)
+            if (DataGridViewAllItems.SelectedItem != null)
             {
-                using(context = new item1Entities())
+                using(_context = new item1Entities())
                     {
-                    datachange.ID_sel = Convert.ToInt32(dataGridViewAllItems.SelectedValue);
+                    Datachange.IdSel = Convert.ToInt32(DataGridViewAllItems.SelectedValue);
                     
-                    ITEM itt = (from p in context.ITEMs
-                                where p.uiIndex == datachange.ID_sel
+                    ITEM itt = (from p in _context.ITEMs
+                                where p.uiIndex == Datachange.IdSel
                                 select p).First();
 
-                    datachange.Class_Cha = itt.ItemClass.name;
-                    datachange.ID_change = itt.ubClassIndex; //передача ИД записи изменяемой таблицы
+                    Datachange.ClassCha = itt.ItemClass.name;
+                    Datachange.IdChange = itt.ubClassIndex; //передача ИД записи изменяемой таблицы
 
                     if (itt.used == false)// созаем сущьность для сравнения
                     {
-                        if (datachange.Class_Cha == "Gun"
-                         || datachange.Class_Cha == "Knife"
-                         || datachange.Class_Cha == "Throwing Knife"
-                         || datachange.Class_Cha == "Launcher"
-                         || datachange.Class_Cha == "Thrown Weapon"
-                         || datachange.Class_Cha == "Blunt Weapon")
+                        if (Datachange.ClassCha == "Gun"
+                         || Datachange.ClassCha == "Knife"
+                         || Datachange.ClassCha == "Throwing Knife"
+                         || Datachange.ClassCha == "Launcher"
+                         || Datachange.ClassCha == "Thrown Weapon"
+                         || Datachange.ClassCha == "Blunt Weapon")
                         {
-                            label01.Content = "Selected TABLE IS: WEAPON";
-                            label02.Content = "ch ID main:" + datachange.ID_sel.ToString();
-                            label03.Content = "ch ID target:" + datachange.ID_change.ToString();
+                            Label01.Content = "Selected TABLE IS: WEAPON";
+                            Label02.Content = "ch ID main:" + Datachange.IdSel.ToString();
+                            Label03.Content = "ch ID target:" + Datachange.IdChange.ToString();
 
                             itt.used = true;
                             itt.dt = System.DateTime.UtcNow;
-                            context.SaveChanges();
+                            _context.SaveChanges();
 
-                            Weapon_N_R WeaponNR = new Weapon_N_R();
-                            WeaponNR.ShowDialog();
+                            WeaponNr weaponNr = new WeaponNr();
+                            weaponNr.ShowDialog();
 
                         }
                         else if (itt.ItemClass.name == "Attachment")
                         {
-                            label01.Content = "Selected TABLE IS:Attacment";
-                            label02.Content = "ch ID main:" + datachange.ID_sel.ToString();
-                            label03.Content = "ch ID target:" + datachange.ID_change.ToString();
+                            Label01.Content = "Selected TABLE IS:Attacment";
+                            Label02.Content = "ch ID main:" + Datachange.IdSel.ToString();
+                            Label03.Content = "ch ID target:" + Datachange.IdChange.ToString();
 
                             itt.used = true;
                             itt.dt = System.DateTime.UtcNow;
-                            context.SaveChanges();
-                            Attach_N_R AttachNR = new Attach_N_R();
-                            AttachNR.ShowDialog();
+                            _context.SaveChanges();
+                            AttachNR attachNr = new AttachNR();
+                            attachNr.ShowDialog();
                         }
                     }
                     else MessageBox.Show("no");
@@ -123,18 +124,18 @@ namespace Item_WPF
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            if (dataGridViewAllItems.SelectedValue != null)
+            if (DataGridViewAllItems.SelectedValue != null)
             {
 
-                int ID_sel = Convert.ToInt32(dataGridViewAllItems.SelectedValue);
-                ITEM item = (from p in _items
-                             where p.uiIndex == ID_sel
+                int idSel = Convert.ToInt32(DataGridViewAllItems.SelectedValue);
+                ITEM item = (from p in Items
+                             where p.uiIndex == idSel
                              select p).First();
                 if (item.used == false)
                 {
-                    InputBox IB = new InputBox("pass for Del", "Type Password");
-                    IB.ShowDialog();
-                    if (datachange.Pass == "mrtaler")
+                    InputBox ib = new InputBox("pass for Del", "Type Password");
+                    ib.ShowDialog();
+                    if (Datachange.Pass == "mrtaler")
                     {
                         if (item.ItemClass.name == "Gun"
                              || item.ItemClass.name == "Knife"
@@ -144,33 +145,33 @@ namespace Item_WPF
                              || item.ItemClass.name == "Blunt Weapon")
                         {
 
-                            WEAPON weapon = (from p in context.WEAPONs
+                            WEAPON weapon = (from p in _context.WEAPONs
                                              where p.uiIndex == item.ubClassIndex
                                              select p).First();
 
-                            label01.Content = "Deleted from TABLE: WEAPON where ID: " + weapon.uiIndex;
-                            label02.Content = "ch ID main:" + ID_sel.ToString();
-                            label03.Content = "ch ID target:" + datachange.ID_change.ToString();
+                            Label01.Content = "Deleted from TABLE: WEAPON where ID: " + weapon.uiIndex;
+                            Label02.Content = "ch ID main:" + idSel.ToString();
+                            Label03.Content = "ch ID target:" + Datachange.IdChange.ToString();
 
-                            context.ITEMs.Remove(item);
-                            context.WEAPONs.Remove(weapon);
-                            context.SaveChanges();
+                            _context.ITEMs.Remove(item);
+                            _context.WEAPONs.Remove(weapon);
+                            _context.SaveChanges();
                         }
 
 
                         else if (item.ItemClass.name == "Attachment")
                         {
-                            Attachment attach = (from p in context.Attachments
+                            Attachment attach = (from p in _context.Attachments
                                                  where p.uiIndex == item.ubClassIndex
                                                  select p).First();
 
-                            label01.Content = "Deleted from TABLE IS:Attacment where ID" + ID_sel.ToString();
-                            label02.Content = "ch ID main:" + ID_sel.ToString();
-                            label03.Content = "ch ID target:" + datachange.ID_change.ToString();
+                            Label01.Content = "Deleted from TABLE IS:Attacment where ID" + idSel.ToString();
+                            Label02.Content = "ch ID main:" + idSel.ToString();
+                            Label03.Content = "ch ID target:" + Datachange.IdChange.ToString();
 
-                            context.ITEMs.Remove(item);
-                            context.Attachments.Remove(attach);
-                            context.SaveChanges();
+                            _context.ITEMs.Remove(item);
+                            _context.Attachments.Remove(attach);
+                            _context.SaveChanges();
                         }
                     }
                     else MessageBox.Show("incorrect Pass");

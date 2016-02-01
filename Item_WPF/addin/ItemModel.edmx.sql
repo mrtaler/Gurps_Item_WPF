@@ -701,7 +701,8 @@ CREATE TABLE [Character] (
   PerceptionPoints INT,
   WillpowerPoints INT,
   BasicSpeedPoints FLOAT,
-  BasicMovePoints INT
+  BasicMovePoints INT,
+    CONSTRAINT [PK_cha] PRIMARY KEY ([id])
 )
 
 -- --------------------------------------------------

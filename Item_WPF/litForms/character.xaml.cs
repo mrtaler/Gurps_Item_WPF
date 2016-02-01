@@ -22,20 +22,20 @@ namespace Item_WPF
 
 
     {
-        private item1Entities context;
-        private ObservableCollection<Character> Cha_OK { get; set; }
+        private item1Entities _context;
+        private ObservableCollection<Character> ChaOk { get; set; }
         public character()
         {
             InitializeComponent();
 
-            context = new item1Entities();
-            Cha_OK = new ObservableCollection<Character>(context.Characters);
-            dataGrid.ItemsSource = Cha_OK;
+            _context = new item1Entities();
+            ChaOk = new ObservableCollection<Character>(_context.Characters);
+            DataGrid.ItemsSource = ChaOk;
         }
 
         private void New_button_Click(object sender, RoutedEventArgs e)
         {
-            new_char nwc =new new_char();
+            NewChar nwc =new NewChar();
             nwc.Show();
         }
     }

@@ -18,22 +18,22 @@ namespace Item_WPF
     /// Логика взаимодействия для new_char.xaml
     /// </summary>
     /// 
-    public partial class new_char : Window
+    public partial class NewChar : Window
     {
-        private item1Entities context;
-        private Character cha { get; set; }
-        public new_char()
+        private item1Entities _context;
+        private Character Cha { get; set; }
+        public NewChar()
         {
             InitializeComponent();
-            context = new item1Entities();
-            cha = new Character();
-            main1_grid.DataContext = cha;
+            _context = new item1Entities();
+            Cha = new Character();
+            Main1Grid.DataContext = Cha;
         }
 
         private void Save_button_Click(object sender, RoutedEventArgs e)
         {
-            context.Characters.Add(cha);
-            context.SaveChanges();
+            _context.Characters.Add(Cha);
+            _context.SaveChanges();
         }
     }
 }

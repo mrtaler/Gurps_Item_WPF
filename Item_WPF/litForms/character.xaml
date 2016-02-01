@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="character" Height="300" Width="501.672">
     <Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="213" Width="474" AutoGenerateColumns="False">
+        <DataGrid x:Name="DataGrid" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="213" Width="474" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="id"         Binding="{Binding id, Mode=TwoWay}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Name"       Binding="{Binding name, Mode=TwoWay}"/>
@@ -18,8 +18,8 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <Button x:Name="New_button" Content="New" HorizontalAlignment="Left" Margin="10,239,0,0" VerticalAlignment="Top" Width="75" Click="New_button_Click"/>
-        <Button x:Name="select_button" Content="Select" HorizontalAlignment="Left" Margin="90,239,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="NewButton" Content="New" HorizontalAlignment="Left" Margin="10,239,0,0" VerticalAlignment="Top" Width="75" Click="New_button_Click"/>
+        <Button x:Name="SelectButton" Content="Select" HorizontalAlignment="Left" Margin="90,239,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

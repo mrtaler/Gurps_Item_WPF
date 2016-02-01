@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Item_WPF.addin;
 
 namespace Item_WPF
 {
@@ -23,22 +24,22 @@ namespace Item_WPF
         {
             InitializeComponent();
         }
-        public InputBox(string Title, string PromtText)
+        public InputBox(string title, string promtText)
         {
             InitializeComponent();
-            label01.Content = Title;
-            textBox.Text = PromtText;
+            Label01.Content = title;
+            TextBox.Text = promtText;
         }
 
         private void buttonOK_Click(object sender, RoutedEventArgs e)
         {
-            datachange.Pass = textBox.Text;
+            Datachange.Pass = TextBox.Text;
             this.Close();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            datachange.Pass ="ZERO";
+            Datachange.Pass ="ZERO";
             this.Close();
         }
     }

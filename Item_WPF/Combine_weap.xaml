@@ -10,33 +10,33 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Image x:Name="Weapon_image"  HorizontalAlignment="Left" Height="140" Margin="10,41,0,0" VerticalAlignment="Top" Width="400" OpacityMask="#FFFD4545" />
-        <Button x:Name="SelectWeapon_button" Content="Select Weapon" HorizontalAlignment="Left" Margin="696,10,0,0" VerticalAlignment="Top" Width="95" Click="SelectWeapon_button_Click"/>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="Item_dataGrid" Margin="10,337,10,10" >
+        <Image x:Name="WeaponImage"  HorizontalAlignment="Left" Height="140" Margin="10,41,0,0" VerticalAlignment="Top" Width="400" OpacityMask="#FFFD4545" />
+        <Button x:Name="SelectWeaponButton" Content="Select Weapon" HorizontalAlignment="Left" Margin="696,10,0,0" VerticalAlignment="Top" Width="95" Click="SelectWeapon_button_Click"/>
+        <Label x:Name="Label" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="ItemDataGrid" Margin="10,337,10,10" >
             <!--<DataGrid.Columns>
                 <DataGridTextColumn x:Name="Name" 
                     Header="Name" Binding="{Binding Path=itemLoad.szItemName}" IsReadOnly="True" />
             </DataGrid.Columns>-->
         </DataGrid>
-        <Button x:Name="ScopeSelect_button" Content="Select Scope" HorizontalAlignment="Left" Margin="696,35,0,0" VerticalAlignment="Top" Width="95" Click="ScopeSelect_button_Click"/>
-        <Button x:Name="Del_button" Content="Del" HorizontalAlignment="Left" Margin="716,312,0,0" VerticalAlignment="Top" Width="75" Click="Del_button_Click"/>
-        <Button x:Name="LaserSelect_button" Content="Select Laser" HorizontalAlignment="Left" Margin="696,60,0,0" VerticalAlignment="Top" Width="95" Click="LaserSelect_button_Click"/>
-        <Button x:Name="LightSelect_button" Content="Select Ligth" HorizontalAlignment="Left" Margin="696,85,0,0" VerticalAlignment="Top" Width="95" Click="LightSelect_button_Click"/>
-        <Button x:Name="BipodSelect_button" Content="Select Bipod" HorizontalAlignment="Left" Margin="696,110,0,0" VerticalAlignment="Top" Width="95" Click="BipodSelect_button_Click"/>
-        <Button x:Name="SilenserSelect_button" Content="Select Silenser" HorizontalAlignment="Left" Margin="696,135,0,0" VerticalAlignment="Top" Width="95" Click="SilenserSelect_button_Click"/>
-        <Button x:Name="LauncherSelect_button" Content="Select Launcher" HorizontalAlignment="Left" Margin="696,160,0,0" VerticalAlignment="Top" Width="95" Click="LauncherSelect_button_Click" />
-        <Button x:Name="BayonetSelect_button" Content="Bayonet Select" HorizontalAlignment="Left" Margin="696,210,0,0" VerticalAlignment="Top" Width="95" Click="BayonetSelect_button_Click"/>
-        <Button x:Name="MagazineSelect_button" Content="Magazine Select" HorizontalAlignment="Left" Margin="696,235,0,0" VerticalAlignment="Top" Width="95" Click="MagazineSelect_button_Click"/>
-        <Button x:Name="InternalSelect_button" Content="Internal Select" HorizontalAlignment="Left" Margin="696,260,0,0" VerticalAlignment="Top" Width="95"/>
-        <Button x:Name="ExternalSelect_button" Content="External Select" HorizontalAlignment="Left" Margin="696,285,0,0" VerticalAlignment="Top" Width="95"/>
-        <Button x:Name="StockSelect_button" Content="Stock Select" HorizontalAlignment="Left" Margin="696,185,0,0" VerticalAlignment="Top" Width="95" Click="StockSelect_button_Click"/>
+        <Button x:Name="ScopeSelectButton" Content="Select Scope" HorizontalAlignment="Left" Margin="696,35,0,0" VerticalAlignment="Top" Width="95" Click="ScopeSelect_button_Click"/>
+        <Button x:Name="DelButton" Content="Del" HorizontalAlignment="Left" Margin="716,312,0,0" VerticalAlignment="Top" Width="75" Click="Del_button_Click"/>
+        <Button x:Name="LaserSelectButton" Content="Select Laser" HorizontalAlignment="Left" Margin="696,60,0,0" VerticalAlignment="Top" Width="95" Click="LaserSelect_button_Click"/>
+        <Button x:Name="LightSelectButton" Content="Select Ligth" HorizontalAlignment="Left" Margin="696,85,0,0" VerticalAlignment="Top" Width="95" Click="LightSelect_button_Click"/>
+        <Button x:Name="BipodSelectButton" Content="Select Bipod" HorizontalAlignment="Left" Margin="696,110,0,0" VerticalAlignment="Top" Width="95" Click="BipodSelect_button_Click"/>
+        <Button x:Name="SilenserSelectButton" Content="Select Silenser" HorizontalAlignment="Left" Margin="696,135,0,0" VerticalAlignment="Top" Width="95" Click="SilenserSelect_button_Click"/>
+        <Button x:Name="LauncherSelectButton" Content="Select Launcher" HorizontalAlignment="Left" Margin="696,160,0,0" VerticalAlignment="Top" Width="95" Click="LauncherSelect_button_Click" />
+        <Button x:Name="BayonetSelectButton" Content="Bayonet Select" HorizontalAlignment="Left" Margin="696,210,0,0" VerticalAlignment="Top" Width="95" Click="BayonetSelect_button_Click"/>
+        <Button x:Name="MagazineSelectButton" Content="Magazine Select" HorizontalAlignment="Left" Margin="696,235,0,0" VerticalAlignment="Top" Width="95" Click="MagazineSelect_button_Click"/>
+        <Button x:Name="InternalSelectButton" Content="Internal Select" HorizontalAlignment="Left" Margin="696,260,0,0" VerticalAlignment="Top" Width="95"/>
+        <Button x:Name="ExternalSelectButton" Content="External Select" HorizontalAlignment="Left" Margin="696,285,0,0" VerticalAlignment="Top" Width="95"/>
+        <Button x:Name="StockSelectButton" Content="Stock Select" HorizontalAlignment="Left" Margin="696,185,0,0" VerticalAlignment="Top" Width="95" Click="StockSelect_button_Click"/>
         <Image x:Name="ScopeImage" HorizontalAlignment="Left" Height="100" Margin="10,181,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="Saved_button" Content="Saved" HorizontalAlignment="Left" Margin="617,10,0,0" VerticalAlignment="Top" Width="74" Click="Saved_button_Click"/>
-        <Button x:Name="Save_button" Content="Save_Comb" HorizontalAlignment="Left" Margin="617,35,0,0" VerticalAlignment="Top" Width="75" Click="Save_button_Click"/>
-        <Button x:Name="Dice_button" Content="Dice" HorizontalAlignment="Left" Margin="617,60,0,0" VerticalAlignment="Top" Width="75" Click="Dice_button_Click"/>
-        <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Margin="543,117,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" Margin="543,148,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="SavedButton" Content="Saved" HorizontalAlignment="Left" Margin="617,10,0,0" VerticalAlignment="Top" Width="74" Click="Saved_button_Click"/>
+        <Button x:Name="SaveButton" Content="Save_Comb" HorizontalAlignment="Left" Margin="617,35,0,0" VerticalAlignment="Top" Width="75" Click="Save_button_Click"/>
+        <Button x:Name="DiceButton" Content="Dice" HorizontalAlignment="Left" Margin="617,60,0,0" VerticalAlignment="Top" Width="75" Click="Dice_button_Click"/>
+        <Label x:Name="Label1" Content="Label" HorizontalAlignment="Left" Margin="543,117,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label2" Content="Label" HorizontalAlignment="Left" Margin="543,148,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

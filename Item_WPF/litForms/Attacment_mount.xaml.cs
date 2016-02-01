@@ -19,25 +19,25 @@ namespace Item_WPF
     /// <summary>
     /// Логика взаимодействия для Attacment_mount.xaml
     /// </summary>
-    public partial class Attacment_mount : Window
+    public partial class AttacmentMount : Window
     {
-        private item1Entities context;
+        private item1Entities _context;
         private int _slot;
-        private ObservableCollection<Attachmentmount> Avv_att_slot_OK { get; set; }
-        public Attacment_mount()
+        private ObservableCollection<Attachmentmount> AvvAttSlotOk { get; set; }
+        public AttacmentMount()
         { InitializeComponent(); }
-        public Attacment_mount(int slot)
+        public AttacmentMount(int slot)
         {
             _slot = slot;
             InitializeComponent();
-            context = new item1Entities();
-            Avv_att_slot_OK = new ObservableCollection<Attachmentmount>(context.Attachmentmounts.Where(p => p.idAttacClass == _slot));
-            View_dataGrid.ItemsSource = Avv_att_slot_OK;
-            Avv_att_slot_OK.CollectionChanged += new NotifyCollectionChangedEventHandler(_Avv_att_slot_OK_CollectionChanged);
+            _context = new item1Entities();
+            AvvAttSlotOk = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts.Where(p => p.idAttacClass == _slot));
+            ViewDataGrid.ItemsSource = AvvAttSlotOk;
+            AvvAttSlotOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_Avv_att_slot_OK_CollectionChanged);
         }
         private void Save_button_Click(object sender, RoutedEventArgs e)
         {
-            context.SaveChanges();
+            _context.SaveChanges();
             this.Close();
         }
         private void _Avv_att_slot_OK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -46,9 +46,9 @@ namespace Item_WPF
             {
                 foreach (Attachmentmount item in e.OldItems)
                 {
-                    context.Attachmentmounts.Remove(item);
+                    _context.Attachmentmounts.Remove(item);
                 }
-                context.SaveChanges();
+                _context.SaveChanges();
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
@@ -56,7 +56,7 @@ namespace Item_WPF
                 {
                     item.name = "New_slot";
                     item.idAttacClass = _slot;
-                    context.Attachmentmounts.Add(item);
+                    _context.Attachmentmounts.Add(item);
                 }
             }
         }
@@ -64,7 +64,7 @@ namespace Item_WPF
         {
             if (e.EditAction == DataGridEditAction.Commit)
             {
-                context.SaveChanges();
+                _context.SaveChanges();
             }
         }
     }
