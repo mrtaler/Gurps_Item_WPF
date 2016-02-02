@@ -60,7 +60,7 @@ namespace Item_WPF
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-            AmmoView avView =new AmmoView();
+            WeaponEditView avView =new WeaponEditView(43);
             avView.Show();
         }
     }

@@ -106,17 +106,11 @@
     <Compile Include="litForms\character.xaml.cs">
       <DependentUpon>character.xaml</DependentUpon>
     </Compile>
-    <Compile Include="litForms\Attacment_mount.xaml.cs">
-      <DependentUpon>Attacment_mount.xaml</DependentUpon>
-    </Compile>
     <Compile Include="AvailableAttachSlot.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="Battery.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="litForms\caliber.xaml.cs">
-      <DependentUpon>caliber.xaml</DependentUpon>
     </Compile>
     <Compile Include="Cloth.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
@@ -133,9 +127,6 @@
     </Compile>
     <Compile Include="DrugType.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="litForms\Edit_content_in_simple_Table.xaml.cs">
-      <DependentUpon>Edit_content_in_simple_Table.xaml</DependentUpon>
     </Compile>
     <Compile Include="ExplosionType.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
@@ -179,8 +170,24 @@
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="MVVM\ViewModels\AmmoViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\AttacmentMountViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\DamageTypeViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\TestViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\WeaponEditViewModel.cs" />
     <Compile Include="MVVM\View\AmmoView.xaml.cs">
       <DependentUpon>AmmoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\AttacmentMountView.xaml.cs">
+      <DependentUpon>AttacmentMountView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\DamageTypeView.xaml.cs">
+      <DependentUpon>DamageTypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\TestView.xaml.cs">
+      <DependentUpon>TestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\WeaponEditView.xaml.cs">
+      <DependentUpon>WeaponEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="NewItems.xaml.cs">
       <DependentUpon>NewItems.xaml</DependentUpon>
@@ -221,19 +228,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="litForms\Attacment_mount.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="litForms\caliber.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Combine_weap.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="litForms\Edit_content_in_simple_Table.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -264,6 +259,22 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MVVM\View\AmmoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\AttacmentMountView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\DamageTypeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\TestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\WeaponEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

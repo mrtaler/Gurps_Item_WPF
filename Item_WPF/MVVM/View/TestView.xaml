@@ -1,0 +1,16 @@
+﻿<Window x:Class="Item_WPF.MVVM.View.TestView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Item_WPF.MVVM.View"
+        mc:Ignorable="d"
+        Title="TestView" Height="300" Width="300">
+    <Grid>
+        <DataGrid x:Name="dataGrid" Margin="10,10,10,134"
+                  ItemsSource="{Binding AmmoTest}"/>
+        <DataGrid x:Name="dataGrid1" Margin="10,140,10,10"
+                   ItemsSource="{Binding TypeOfDamageTest}"/>
+
+    </Grid>
+</Window>

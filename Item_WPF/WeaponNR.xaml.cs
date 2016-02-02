@@ -18,6 +18,7 @@ using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Collections.Specialized;
 using Item_WPF.addin;
+using Item_WPF.MVVM.View;
 
 namespace Item_WPF
 {
@@ -35,9 +36,6 @@ namespace Item_WPF
         ITEM ItemLoad { get; set; }
 
         WEAPON WeaponLoad { get; set; }
-
-        //TL itemLoad { get; set; }
-        //LC itemLoad { get; set; }
 
         byte[] _by;
         public WeaponNr()
@@ -83,6 +81,7 @@ namespace Item_WPF
 
             TlCb.ItemsSource = new ObservableCollection<TL>(_context.TLs);
             LcCb.ItemsSource = new ObservableCollection<LC>(_context.LCs);
+
             WeaponGridGeneral.DataContext = WeaponLoad;
             ItemsGridGeneral.DataContext = ItemLoad;
             //Type&Class
@@ -333,6 +332,7 @@ namespace Item_WPF
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+
             ItemLoad.used = false;
             ItemLoad.dt = null;
             _context.SaveChanges();
@@ -633,32 +633,29 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                EditContentInSimpleTable eCinSt = new EditContentInSimpleTable();
-                eCinSt.ShowDialog();
+                DamageTypeView damageTypeView = new DamageTypeView();
+                damageTypeView.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
                     TypeOfDamageComboBox.ItemsSource = context.TypeOfDamages.ToList();
                 }
-
-
-                //MessageBox.Show("Текст сообщения", "Заголовок сообщения");
-                //ComboBox c = (sender as ComboBox);
-                //c.Items.Add(c.Text);
+                TypeOfDamageComboBox.SelectedIndex = TypeOfDamageComboBox.Items.Count - 1;
             }
         }
 
         private void CAliber_comboBox_KeyDown(object sender, KeyEventArgs e)
         {
 
-            Caliber calibber = new Caliber();
-            calibber.ShowDialog();
+            AmmoView ammoview = new AmmoView();
+            ammoview.ShowDialog();
             using (item1Entities context = new item1Entities())
             {
                 CAliberComboBox.ItemsSource = context.AMMOes.ToList();
-                CAliberComboBox.SelectedValuePath = "id";
-                CAliberComboBox.DisplayMemberPath = "Caliber_name";
-                CAliberComboBox.SelectedValue = CAliberComboBox.Items.Count;
+                //CAliberComboBox.SelectedValuePath = "id";
+                //CAliberComboBox.DisplayMemberPath = "Caliber_name";
+                
             }
+            CAliberComboBox.SelectedIndex = CAliberComboBox.Items.Count - 1;
         }
 
         private void Name_TB_TextChanged(object sender, TextChangedEventArgs e)
@@ -670,8 +667,8 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMount atmS = new AttacmentMount(1);
-                atmS.ShowDialog();
+                AttacmentMountView atmSview = new AttacmentMountView(1);
+                atmSview.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
                     ScopeComboBox.ItemsSource = (from p in context.Attachmentmounts
@@ -680,7 +677,7 @@ namespace Item_WPF
                                                   select p).ToList();
                     ScopeComboBox.SelectedValuePath = "id";
                     ScopeComboBox.DisplayMemberPath = "name";
-                    ScopeComboBox.SelectedValue = ScopeComboBox.Items.Count;
+                    ScopeComboBox.SelectedIndex = ScopeComboBox.Items.Count-1;
                 }
 
             }
@@ -690,7 +687,7 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMount atmS = new AttacmentMount(2);
+                AttacmentMountView atmS = new AttacmentMountView(2);
                 atmS.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
@@ -700,7 +697,7 @@ namespace Item_WPF
                                                   select p).ToList();
                     LaserComboBox.SelectedValuePath = "id";
                     LaserComboBox.DisplayMemberPath = "name";
-                    LaserComboBox.SelectedValue = LaserComboBox.Items.Count;
+                    LaserComboBox.SelectedIndex = LaserComboBox.Items.Count-1;
                 }
             }
         }
@@ -709,7 +706,7 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMount atmS = new AttacmentMount(3);
+                AttacmentMountView atmS = new AttacmentMountView(3);
                 atmS.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
@@ -719,7 +716,7 @@ namespace Item_WPF
                                                   select p).ToList();
                     LightComboBox.SelectedValuePath = "id";
                     LightComboBox.DisplayMemberPath = "name";
-                    LightComboBox.SelectedValue = LightComboBox.Items.Count;
+                    LightComboBox.SelectedIndex = LightComboBox.Items.Count-1;
                 }
             }
         }
@@ -728,7 +725,7 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMount atmS = new AttacmentMount(4);
+                AttacmentMountView atmS = new AttacmentMountView(4);
                 atmS.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
@@ -738,7 +735,7 @@ namespace Item_WPF
                                                   select p).ToList();
                     BipodComboBox.SelectedValuePath = "id";
                     BipodComboBox.DisplayMemberPath = "name";
-                    BipodComboBox.SelectedValue = BipodComboBox.Items.Count;
+                    BipodComboBox.SelectedIndex = BipodComboBox.Items.Count - 1;
                 }
             }
         }
@@ -747,7 +744,7 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMount atmS = new AttacmentMount(5);
+                AttacmentMountView atmS = new AttacmentMountView(5);
                 atmS.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
@@ -757,7 +754,7 @@ namespace Item_WPF
                                                   select p).ToList();
                     SilenserComboBox.SelectedValuePath = "id";
                     SilenserComboBox.DisplayMemberPath = "name";
-                    SilenserComboBox.SelectedValue = SilenserComboBox.Items.Count;
+                    SilenserComboBox.SelectedIndex = SilenserComboBox.Items.Count - 1;
                 }
             }
         }
@@ -766,7 +763,7 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMount atmS = new AttacmentMount(6);
+                AttacmentMountView atmS = new AttacmentMountView(6);
                 atmS.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
@@ -776,7 +773,7 @@ namespace Item_WPF
                                                      select p).ToList();
                     LauncherComboBox.SelectedValuePath = "id";
                     LauncherComboBox.DisplayMemberPath = "name";
-                    LauncherComboBox.SelectedValue = LauncherComboBox.Items.Count;
+                    LauncherComboBox.SelectedIndex = LauncherComboBox.Items.Count - 1;
                 }
             }
         }
@@ -785,7 +782,7 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMount atmS = new AttacmentMount(7);
+                AttacmentMountView atmS = new AttacmentMountView(7);
                 atmS.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
@@ -795,7 +792,7 @@ namespace Item_WPF
                                                      select p).ToList();
                     StockComboBox.SelectedValuePath = "id";
                     StockComboBox.DisplayMemberPath = "name";
-                    StockComboBox.SelectedValue = StockComboBox.Items.Count;
+                    StockComboBox.SelectedIndex = StockComboBox.Items.Count - 1;
                 }
             }
         }
@@ -804,7 +801,7 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMount atmS = new AttacmentMount(8);
+                AttacmentMountView atmS = new AttacmentMountView(8);
                 atmS.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
@@ -814,7 +811,7 @@ namespace Item_WPF
                                                   select p).ToList();
                     BayonetComboBox.SelectedValuePath = "id";
                     BayonetComboBox.DisplayMemberPath = "name";
-                    BayonetComboBox.SelectedValue = BayonetComboBox.Items.Count;
+                    BayonetComboBox.SelectedIndex = BayonetComboBox.Items.Count - 1;
                 }
             }
         }
@@ -823,7 +820,7 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMount atmS = new AttacmentMount(9);
+                AttacmentMountView atmS = new AttacmentMountView(9);
                 atmS.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
@@ -833,7 +830,7 @@ namespace Item_WPF
                                                     select p).ToList();
                     MagazineComboBox.SelectedValuePath = "id";
                     MagazineComboBox.DisplayMemberPath = "name";
-                    MagazineComboBox.SelectedValue = MagazineComboBox.Items.Count;
+                    MagazineComboBox.SelectedIndex = MagazineComboBox.Items.Count - 1;
                 }
             }
         }
@@ -842,7 +839,7 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMount atmS = new AttacmentMount(10);
+                AttacmentMountView atmS = new AttacmentMountView(10);
                 atmS.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
@@ -861,7 +858,7 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMount atmS = new AttacmentMount(11);
+                AttacmentMountView atmS = new AttacmentMountView(11);
                 atmS.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
