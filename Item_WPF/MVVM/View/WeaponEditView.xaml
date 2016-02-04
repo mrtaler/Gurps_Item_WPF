@@ -1,14 +1,18 @@
 ﻿<Window x:Class="Item_WPF.MVVM.View.WeaponEditView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:addin="clr-namespace:Item_WPF.addin"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:Item_WPF.MVVM.View"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="{Binding WeaponLoad.szWeaponName,
                         Mode=TwoWay}"
         Width="806"
         Height="485"
         mc:Ignorable="d">
+    <!--<Window.Resources>
+        <addin:imageConverter x:Key="ImageConverter" />
+        <addin:DeciminalConverter x:Key="DeciminalConverter" />
+    </Window.Resources>-->
     <Grid>
         <TabControl x:Name="TabControl" Margin="10,10,10,35">
             <TabItem x:Name="MainTi" Header="Main">
@@ -69,9 +73,10 @@
                            Margin="409,14,0,0"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Top"
-                           Source="{Binding ImageBitmapSourse,
+                           Source="{Binding ItemLoad.Item_Image,
                                             Mode=TwoWay,
-                                            UpdateSourceTrigger=PropertyChanged}" />
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            Converter={addin:ImageConverter}}" />
                     <Button x:Name="LoadImageButton"
                             Width="75"
                             Margin="409,267,0,0"
@@ -136,7 +141,8 @@
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
                                      Text="{Binding ItemLoad.ubWeight,
-                                                    Mode=TwoWay}"
+                                                    Mode=TwoWay,
+                                                    Converter={addin:WeigtDeciminalConverter}}"
                                      TextWrapping="Wrap" />
                             <TextBox x:Name="CostTb"
                                      Width="120"
@@ -145,7 +151,8 @@
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
                                      Text="{Binding ItemLoad.usPrice,
-                                                    Mode=TwoWay}"
+                                                    Mode=TwoWay,
+                                                    Converter={addin:CostDeciminalConverter}}"
                                      TextWrapping="Wrap" />
                             <TextBox x:Name="BulkTb"
                                      Width="120"
@@ -194,13 +201,11 @@
                               Margin="275,10,0,0"
                               HorizontalAlignment="Left"
                               VerticalAlignment="Top"
-                              DataContext="{Binding ElementName=TlCb,
-                                                    Path=SelectedItem,
-                                                    UpdateSourceTrigger=PropertyChanged}"
                               Header="TL">
                         <TextBlock x:Name="TlTextBlock"
                                    Margin="10,0,-2,5"
-                                   Text="{Binding Path=Description,
+                                   Text="{Binding ElementName=TlCb,
+                                                  Path=SelectedItem.Description,
                                                   UpdateSourceTrigger=PropertyChanged}"
                                    TextWrapping="Wrap" />
                     </GroupBox>
@@ -213,10 +218,8 @@
                               Header="LC">
                         <TextBlock x:Name="LcTextBlock"
                                    Margin="10,10,2,6"
-                                   DataContext="{Binding ElementName=LcCb,
-                                                         Path=SelectedItem,
-                                                         UpdateSourceTrigger=PropertyChanged}"
-                                   Text="{Binding Path=Description,
+                                   Text="{Binding ElementName=LcCb,
+                                                  Path=SelectedItem.Description,
                                                   UpdateSourceTrigger=PropertyChanged}"
                                    TextWrapping="Wrap" />
 
@@ -234,7 +237,7 @@
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       Content="Two Handed"
-                                      IsChecked="{Binding Path=TwoHanded,
+                                      IsChecked="{Binding Path=ItemLoad.TwoHanded,
                                                           Mode=TwoWay,
                                                           UpdateSourceTrigger=PropertyChanged}" />
                             <CheckBox x:Name="HtChB"
@@ -242,7 +245,7 @@
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       Content="HT"
-                                      IsChecked="{Binding Path=HT,
+                                      IsChecked="{Binding Path=ItemLoad.HT,
                                                           Mode=TwoWay,
                                                           UpdateSourceTrigger=PropertyChanged}" />
                             <CheckBox x:Name="UtChB"
@@ -250,7 +253,7 @@
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       Content="UT"
-                                      IsChecked="{Binding Path=UT,
+                                      IsChecked="{Binding Path=ItemLoad.UT,
                                                           Mode=TwoWay,
                                                           UpdateSourceTrigger=PropertyChanged}" />
                             <CheckBox x:Name="NeedBatChB"
@@ -258,7 +261,7 @@
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       Content="Need BAttery"
-                                      IsChecked="{Binding Path=NeedsBatteries,
+                                      IsChecked="{Binding Path=ItemLoad.NeedsBatteries,
                                                           Mode=TwoWay,
                                                           UpdateSourceTrigger=PropertyChanged}" />
                             <CheckBox x:Name="DamagebleChB"
@@ -266,7 +269,7 @@
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       Content="Damageble"
-                                      IsChecked="{Binding Path=Damageable,
+                                      IsChecked="{Binding Path=ItemLoad.Damageable,
                                                           Mode=TwoWay,
                                                           UpdateSourceTrigger=PropertyChanged}" />
                             <CheckBox x:Name="RepairableChB"
@@ -274,7 +277,7 @@
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       Content="Repairable"
-                                      IsChecked="{Binding Path=Repairable,
+                                      IsChecked="{Binding Path=ItemLoad.Repairable,
                                                           Mode=TwoWay,
                                                           UpdateSourceTrigger=PropertyChanged}" />
                             <CheckBox x:Name="WaterDamagebleChB"
@@ -282,7 +285,7 @@
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       Content="Water damageable"
-                                      IsChecked="{Binding Path=WaterDamages,
+                                      IsChecked="{Binding Path=ItemLoad.WaterDamages,
                                                           Mode=TwoWay,
                                                           UpdateSourceTrigger=PropertyChanged}" />
                             <CheckBox x:Name="MetalChB"
@@ -290,7 +293,7 @@
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       Content="Metal"
-                                      IsChecked="{Binding Path=Metal,
+                                      IsChecked="{Binding Path=ItemLoad.Metal,
                                                           Mode=TwoWay,
                                                           UpdateSourceTrigger=PropertyChanged}" />
                             <CheckBox x:Name="ElectronicChB"
@@ -298,7 +301,7 @@
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       Content="Electronic"
-                                      IsChecked="{Binding Path=Electronic,
+                                      IsChecked="{Binding Path=ItemLoad.Electronic,
                                                           Mode=TwoWay,
                                                           UpdateSourceTrigger=PropertyChanged}" />
                             <GroupBox x:Name="GroupBox12"
@@ -314,7 +317,7 @@
                                               HorizontalAlignment="Left"
                                               VerticalAlignment="Top"
                                               Content="Heavy weapon"
-                                              IsChecked="{Binding Path=HeavyWeapon,
+                                              IsChecked="{Binding Path=WeaponLoad.HeavyWeapon,
                                                                   Mode=TwoWay,
                                                                   UpdateSourceTrigger=PropertyChanged}" />
                                     <CheckBox x:Name="MountChB"
@@ -322,14 +325,14 @@
                                               HorizontalAlignment="Left"
                                               VerticalAlignment="Top"
                                               Content="Mount"
-                                              IsChecked="{Binding Path=Mount,
+                                              IsChecked="{Binding Path=WeaponLoad.Mount,
                                                                   Mode=TwoWay}" />
                                     <CheckBox x:Name="BulkFoldCheckBox"
                                               Margin="10,50,0,0"
                                               HorizontalAlignment="Left"
                                               VerticalAlignment="Top"
                                               Content="Bulk Fold"
-                                              IsChecked="{Binding Path=Bulkfolded,
+                                              IsChecked="{Binding Path=WeaponLoad.Bulkfolded,
                                                                   Mode=TwoWay}" />
                                 </Grid>
                             </GroupBox>
@@ -352,39 +355,38 @@
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Top"
                                    Content="Class" />
+                            <Label x:Name="Label5"
+                                   Height="26"
+                                   Margin="10,33,0,0"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Top"
+                                   Content="Type" />
                             <ComboBox x:Name="ClassOfWeaponTb"
                                       Width="120"
                                       Margin="53,10,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       DisplayMemberPath="name"
-                                      SelectedValue="{Binding ubWeaponClass,
+                                      ItemsSource="{Binding WeaponClasscCollection,
+                                                            Mode=TwoWay,
+                                                            UpdateSourceTrigger=PropertyChanged}"
+                                      SelectedValue="{Binding WeaponLoad.ubWeaponClass,
                                                               Mode=TwoWay,
                                                               UpdateSourceTrigger=PropertyChanged}"
                                       SelectedValuePath="id" />
-                            <Grid x:Name="GridType"
-                                  Width="183"
-                                  Height="32"
-                                  Margin="0,32,0,0"
-                                  HorizontalAlignment="Left"
-                                  VerticalAlignment="Top">
-                                <Label x:Name="Label5"
-                                       Height="26"
-                                       Margin="10,0,0,0"
-                                       HorizontalAlignment="Left"
-                                       VerticalAlignment="Top"
-                                       Content="Type" />
-                                <ComboBox x:Name="TypeOfClassWeapTb"
-                                          Width="120"
-                                          Margin="53,4,0,0"
-                                          HorizontalAlignment="Left"
-                                          VerticalAlignment="Top"
-                                          DisplayMemberPath="name"
-                                          ItemsSource="{Binding}"
-                                          SelectedValue="{Binding ubWeaponType,
-                                                                  Mode=TwoWay}"
-                                          SelectedValuePath="id" />
-                            </Grid>
+                            <ComboBox x:Name="TypeOfClassWeapTb"
+                                      Width="120"
+                                      Margin="53,37,0,0"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Top"
+                                      DisplayMemberPath="name"
+                                      ItemsSource="{Binding WeaponTypescCollection,
+                                                            UpdateSourceTrigger=PropertyChanged}"
+                                      SelectedValue="{Binding WeaponLoad.ubWeaponType,
+                                                              Mode=TwoWay,
+                                                              UpdateSourceTrigger=PropertyChanged}"
+                                      SelectedValuePath="id" />
+
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="GroupBox5"
@@ -716,9 +718,7 @@
             </TabItem>
             <TabItem x:Name="AttachTi" Header="Attach">
                 <Grid Background="#FFE5E5E5">
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
+
                     <GroupBox x:Name="GroupBox10"
                               Width="156"
                               Height="361"
@@ -902,3 +902,4 @@
 
     </Grid>
 </Window>
+

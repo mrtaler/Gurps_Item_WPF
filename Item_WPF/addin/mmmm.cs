@@ -9,6 +9,7 @@ namespace Item_WPF.addin
     {
         private readonly Action _action;
         private bool _isExecutable;
+        private ObservableCollection<WeaponType> observableCollection;
 
         public bool IsExecutable
         {
@@ -28,6 +29,11 @@ namespace Item_WPF.addin
         public ActionCommand(Action action)
         {
             _action = action;
+        }
+
+        public ActionCommand(ObservableCollection<WeaponType> observableCollection)
+        {
+            this.observableCollection = observableCollection;
         }
 
         /// <summary>

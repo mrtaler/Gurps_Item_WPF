@@ -3,6 +3,7 @@ using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -16,44 +17,24 @@ namespace Item_WPF.MVVM.ViewModels
     {
 
         private item1Entities _context;
+        private int sell;
         //public ObservableCollection<ITEM> ItemColl { get; set; }
         //public ObservableCollection<WEAPON> WeaponColl { get; set; }
         public ObservableCollection<TL> TlCollection { get; set; }
         public ObservableCollection<LC> LccCollection { get; set; }
         public ObservableCollection<WeaponClass> WeaponClasscCollection { get; set; }
+
+        private ObservableCollection<WeaponType> _WeaponTypescCollection;
         public ObservableCollection<WeaponType> WeaponTypescCollection { get; set; }
+
+        //{ return ObservableCollection<WeaponType>(
+        //        _context.WeaponTypes.
+        //        Where(p => p.WeaponClass.id == WeaponLoad.ubWeaponClass)); }}
+    
         public ObservableCollection<TypeOfDamage> TypeOfDamagesCollection { get; set; }
         public ObservableCollection<AMMO> AmmoscCollection { get; set; }
-
         public ITEM ItemLoad { get; set; }
         public WEAPON WeaponLoad { get; set; }
-        /// <summary>
-        /// rjcnskm
-        /// </summary>
-        private byte[] _imagebute;
-        public byte[] Imagebute { get { return _imagebute; }
-            set
-            {
-                if (_imagebute != value)
-                {
-                    _imagebute = value;
-                    RaisePropertyChanged("Imagebute");
-                }
-            }
-        }
-        private BitmapImage _ImageBitmapSourse;
-        public BitmapImage ImageBitmapSourse
-        {
-            get { return _ImageBitmapSourse; }
-            set
-            {
-                if (_ImageBitmapSourse != value)
-                {
-                    _ImageBitmapSourse = value;
-                    RaisePropertyChanged("ImageBitmapSourse");
-                }
-            }
-        }
         public WeaponEditViewModel(int itemselect)
         {
             _context = new item1Entities();
@@ -61,48 +42,67 @@ namespace Item_WPF.MVVM.ViewModels
             //   WeaponColl = new ObservableCollection<WEAPON>(_context.WEAPONs);
 
             ItemLoad = (from z in _context.ITEMs
-                where z.uiIndex == itemselect
-                select z).First();
+                        where z.uiIndex == itemselect
+                        select z).First();
 
             WeaponLoad = (from p in _context.WEAPONs
-                where p.uiIndex == ItemLoad.ubClassIndex
-               select p).First();
-            
+                          where p.uiIndex == ItemLoad.ubClassIndex
+                          select p).First();
+
             TlCollection = new ObservableCollection<TL>(_context.TLs);
             LccCollection = new ObservableCollection<LC>(_context.LCs);
 
             WeaponClasscCollection = new ObservableCollection<WeaponClass>(_context.WeaponClasses);
-
-            WeaponTypescCollection =
-                new ObservableCollection<WeaponType>(
-                    _context.WeaponTypes.Where(p => p.WeaponClass.id == WeaponLoad.ubWeaponClass));
-
-            TypeOfDamagesCollection = new ObservableCollection<TypeOfDamage>(_context.TypeOfDamages);
+            WeaponTypescCollection=new       ObservableCollection<WeaponType>(
+                              _context.WeaponTypes.
+                              Where(p => p.WeaponClass.id == WeaponLoad.ubWeaponClass)); 
+                      TypeOfDamagesCollection = new ObservableCollection<TypeOfDamage>(_context.TypeOfDamages);
             AmmoscCollection = new ObservableCollection<AMMO>(_context.AMMOes);
 
-            Save = new ActionCommand(SaveChanges) {IsExecutable = true};
+            WeaponTypescCollection.CollectionChanged += WeaponTypescCollection_CollectionChanged;
+            updateTypeWeapon = new ActionCommand(UpdateTypeWeapons(sell)) { IsExecutable = true };
 
-            LoadImage = new ActionCommand(LoadImageToForm) {IsExecutable = true};
-            DellImage = new ActionCommand(DellImageFromAll) {IsExecutable = true};
+            Save = new ActionCommand(SaveChanges) { IsExecutable = true };
 
-            if (ItemLoad.Item_Image != null)
-            {
-                // MemoryStream stream = new MemoryStream(item.Item_Image);
-                using (var ms = new MemoryStream(ItemLoad.Item_Image, 0, ItemLoad.Item_Image.Length))
-                {
-                    var image = new BitmapImage();
-                    image.BeginInit();
-                    image.CacheOption = BitmapCacheOption.OnLoad;
-                    image.StreamSource = ms;
-                    image.EndInit();
-                    ImageBitmapSourse = image;
-                    Imagebute = ItemLoad.Item_Image;
-                }
-            }
+            LoadImage = new ActionCommand(LoadImageToForm) { IsExecutable = true };
+            DellImage = new ActionCommand(DellImageFromAll) { IsExecutable = true };
         }
+
+        private void WeaponTypescCollection_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+           
+            
+            //if (e.Action == NotifyCollectionChangedAction.Remove)
+            //{
+            //    foreach (TypeOfDamage item in e.OldItems)
+            //    {
+            //        _context.TypeOfDamages.Remove(item);
+            //    }
+            //    SaveChanges();
+            //}
+            //else if (e.Action == NotifyCollectionChangedAction.Add)
+            //{
+            //    foreach (TypeOfDamage item in e.NewItems)
+            //    {
+            //        item.name = "";
+            //        item.LongName = "";
+            //        item.mDamage = "";
+            //        _context.TypeOfDamages.Add(item);
+            //        SaveChanges();
+            //    }
+            //}
+         
+        }
+
         private void SaveChanges()
         {
             _context.SaveChanges();
+        }
+        private ObservableCollection<WeaponType> UpdateTypeWeapons(int sel)
+        {
+            
+           return new ObservableCollection<WeaponType>(
+                        _context.WeaponTypes.Where(p => p.WeaponClass.id == sel));
         }
 
         private void LoadImageToForm()
@@ -113,16 +113,16 @@ namespace Item_WPF.MVVM.ViewModels
             dlg.ShowDialog();
             if (dlg.FileName != "")
             {
-                ImageBitmapSourse = new BitmapImage(new Uri(dlg.FileName));
-                Imagebute = System.IO.File.ReadAllBytes(dlg.FileName);
+                //  ImageBitmapSourse = new BitmapImage(new Uri(dlg.FileName));
+                ItemLoad.Item_Image = System.IO.File.ReadAllBytes(dlg.FileName);
             }
         }
         private void DellImageFromAll()
         {
-            Imagebute = null;
-            ImageBitmapSourse = null;
+            // Imagebute = null;
+            ItemLoad.Item_Image = null;
         }
-
+        public ActionCommand updateTypeWeapon { get; set; }
         public ActionCommand Save { get; set; }
         public ActionCommand LoadImage { get; set; }
         public ActionCommand DellImage { get; set; }
