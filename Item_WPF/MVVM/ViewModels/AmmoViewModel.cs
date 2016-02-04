@@ -51,7 +51,7 @@ namespace Item_WPF.MVVM.ViewModels
                     _context.AMMOes.Add(item);
                     SaveChanges();
                 }
-            }
+            } 
         }
         private void SaveChanges()
         {

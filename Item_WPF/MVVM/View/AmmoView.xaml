@@ -42,8 +42,9 @@
                 Margin="113,365,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Content="Close"
-                Click="Closebutton_OnClick"/>
+                Click="Closebutton_OnClick"
+                Content="Close" />
 
     </Grid>
+
 </Window>

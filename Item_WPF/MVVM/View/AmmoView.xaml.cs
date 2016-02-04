@@ -31,5 +31,10 @@ namespace Item_WPF.MVVM.View
         {
             this.Close();
         }
+
+        private void AmmoView_OnClosed(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
