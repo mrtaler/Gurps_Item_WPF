@@ -60,7 +60,7 @@ namespace Item_WPF.MVVM.ViewModels
             AmmoscCollection = new ObservableCollection<AMMO>(_context.AMMOes);
 
             WeaponTypescCollection.CollectionChanged += WeaponTypescCollection_CollectionChanged;
-            updateTypeWeapon = new ActionCommand(UpdateTypeWeapons(sell)) { IsExecutable = true };
+            //updateTypeWeapon = new ActionCommand(UpdateTypeWeapons(sell)) { IsExecutable = true };
 
             Save = new ActionCommand(SaveChanges) { IsExecutable = true };
 
@@ -98,12 +98,11 @@ namespace Item_WPF.MVVM.ViewModels
         {
             _context.SaveChanges();
         }
-        private ObservableCollection<WeaponType> UpdateTypeWeapons(int sel)
-        {
-            
-           return new ObservableCollection<WeaponType>(
-                        _context.WeaponTypes.Where(p => p.WeaponClass.id == sel));
-        }
+        //private ObservableCollection<WeaponType> UpdateTypeWeapons(int sel)
+        //{
+           //return new ObservableCollection<WeaponType>(
+           //             _context.WeaponTypes.Where(p => p.WeaponClass.id == sel));
+        //}
 
         private void LoadImageToForm()
         {
