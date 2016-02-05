@@ -79,6 +79,30 @@ namespace Item_WPF.addin
         }
     }
 
+    class DatacontextTupeFromClass : IMultiValueConverter
+    {
+        public object Convert(object[] values,
+                              Type targetType,
+                              object parameter,
+                              System.Globalization.CultureInfo culture)
+        {
+            // I added this because I kept getting DependecyProperty.UnsetValue 
+            // Passed in as the program initializes
 
+            ObservableCollection<WeaponType> weaponTypescCollection= (ObservableCollection<WeaponType>)values[0];
+            int findClass = (int)values[1];
+             return new ObservableCollection<WeaponType>(
+                        weaponTypescCollection.
+                            Where(p => p.WeaponClass.id == findClass));
+        }
+
+        public object[] ConvertBack(object value,
+                                    Type[] targetTypes,
+                                    object parameter,
+                                    System.Globalization.CultureInfo culture)
+        {
+            return null;
+        }
+    }
 }
 //http://dev.net.ua/blogs/andriydanilchenko/archive/2011/08/14/binding-and-multibinding-converters.aspx
