@@ -9,7 +9,7 @@ namespace Item_WPF.addin
     {
         private readonly Action _action;
         private bool _isExecutable;
-        private ObservableCollection<WeaponType> observableCollection;
+  //      private ObservableCollection<WeaponType> observableCollection;
 
         public bool IsExecutable
         {
@@ -31,10 +31,10 @@ namespace Item_WPF.addin
             _action = action;
         }
 
-        public ActionCommand(ObservableCollection<WeaponType> observableCollection)
-        {
-            this.observableCollection = observableCollection;
-        }
+        //public ActionCommand(ObservableCollection<WeaponType> observableCollection)
+        //{
+        //    this.observableCollection = observableCollection;
+        //}
 
         /// <summary>
         /// Предикат показывает можно ли запускать команды при заданном аргументе.

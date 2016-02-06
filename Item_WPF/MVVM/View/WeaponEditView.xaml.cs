@@ -30,5 +30,10 @@ namespace Item_WPF.MVVM.View
         {
             this.Close();
         }
+
+        private void ClassOfWeaponTb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TypeOfClassWeapTb.Items.Refresh();
+        }
     }
 }
