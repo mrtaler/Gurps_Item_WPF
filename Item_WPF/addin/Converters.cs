@@ -89,11 +89,11 @@ namespace Item_WPF.addin
             // I added this because I kept getting DependecyProperty.UnsetValue 
             // Passed in as the program initializes
 
-            ObservableCollection<WeaponType> weaponTypescCollection= (ObservableCollection<WeaponType>)values[0];
+            ObservableCollection<WeaponType> weaponTypescCollection = (ObservableCollection<WeaponType>)values[0];
             int findClass = (int)values[1];
-             return new ObservableCollection<WeaponType>(
-                        weaponTypescCollection.
-                            Where(p => p.WeaponClass.id == findClass));
+            return new ObservableCollection<WeaponType>(
+                       weaponTypescCollection.
+                           Where(p => p.WeaponClass.id == findClass));
         }
 
         public object[] ConvertBack(object value,
@@ -102,6 +102,38 @@ namespace Item_WPF.addin
                                     System.Globalization.CultureInfo culture)
         {
             return null;
+        }
+    }
+    class AvailableAttachPointConvert : ConvertorBase<AvailableAttachPointConvert>
+    {
+        public override object Convert(object values,
+                              Type targetType,
+                              object parameter,
+                              System.Globalization.CultureInfo culture)
+        {
+            // I added this because I kept getting DependecyProperty.UnsetValue 
+            // Passed in as the program initializes
+
+            ObservableCollection<AvailableAttachSlot> avSlot = (ObservableCollection<AvailableAttachSlot>)values;
+            int findslotPoint = System.Convert.ToInt32(parameter);
+            int item = (from p in avSlot
+                        where p.rATTACHMENTSLOT == findslotPoint
+                        select p.rAttachmentmount).First();
+            return item;
+        }
+
+        public override object ConvertBack(object value,
+                                    Type targetTypes,
+                                    object parameter,
+                                    System.Globalization.CultureInfo culture)
+        {
+           //var avSlot =value;
+           // if ((bool)avSlot)
+           // {
+           //     return 1;
+           // }
+
+            return value;
         }
     }
 }

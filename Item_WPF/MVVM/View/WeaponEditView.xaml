@@ -3,15 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:addin="clr-namespace:Item_WPF.addin"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      Title="{Binding WeaponLoad.szWeaponName,
+        Title="{Binding WeaponLoad.szWeaponName,
                         Mode=TwoWay}"
         Width="806"
         Height="485"
         mc:Ignorable="d">
     <Window.Resources>
         <addin:DatacontextTupeFromClass x:Key="DatacontextTypeFromClass" />
+    
     </Window.Resources>
     <Grid>
         <TabControl x:Name="TabControl" Margin="10,10,10,35">
@@ -367,35 +367,29 @@
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       DisplayMemberPath="name"
+                                      IsSynchronizedWithCurrentItem="True"
                                       ItemsSource="{Binding WeaponClasscCollection,
                                                             Mode=TwoWay,
                                                             UpdateSourceTrigger=PropertyChanged}"
                                       SelectedValue="{Binding WeaponLoad.ubWeaponClass,
                                                               Mode=TwoWay,
                                                               UpdateSourceTrigger=PropertyChanged}"
-                                      SelectedValuePath="id"
-                                  
-                                      IsSynchronizedWithCurrentItem="True">
-                              
-
-                            </ComboBox>
+                                      SelectedValuePath="id" />
                             <ComboBox x:Name="TypeOfClassWeapTb"
                                       Width="120"
                                       Margin="53,37,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       DisplayMemberPath="name"
-                  
+                                      IsSynchronizedWithCurrentItem="True"
                                       SelectedValue="{Binding WeaponLoad.ubWeaponType,
                                                               Mode=TwoWay,
                                                               UpdateSourceTrigger=PropertyChanged}"
-                                      SelectedValuePath="id" 
-                                      IsSynchronizedWithCurrentItem="True">
+                                      SelectedValuePath="id">
                                 <ComboBox.ItemsSource>
                                     <MultiBinding Converter="{StaticResource DatacontextTypeFromClass}">
-                                        <Binding Path="WeaponTypescCollection"/>
-                                        <Binding ElementName="ClassOfWeaponTb"
-                                            Path="SelectedValue"/>
+                                        <Binding Path="WeaponTypescCollection" />
+                                        <Binding ElementName="ClassOfWeaponTb" Path="SelectedValue" />
                                     </MultiBinding>
                                 </ComboBox.ItemsSource>
                             </ComboBox>
@@ -744,7 +738,12 @@
                                       Margin="10,10,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Content="Scope" />
+                                      Content="Scope">
+                                <CheckBox.IsChecked>
+                                    <Binding Path="avSlot" 
+                                             Converter="{addin:AvailableAttachPointConvert}" ConverterParameter="1"/>
+                                </CheckBox.IsChecked>
+                            </CheckBox>
                             <CheckBox x:Name="LaserCheckBox"
                                       Margin="10,37,0,0"
                                       HorizontalAlignment="Left"
