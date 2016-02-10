@@ -106,20 +106,31 @@ namespace Item_WPF.addin
     }
     class AvailableAttachPointConvert : ConvertorBase<AvailableAttachPointConvert>
     {
+        private ObservableCollection<AvailableAttachSlot> aSlot { get; set; }
+        private int idWeapon { get; set; }
         public override object Convert(object values,
                               Type targetType,
                               object parameter,
                               System.Globalization.CultureInfo culture)
         {
             // I added this because I kept getting DependecyProperty.UnsetValue 
-            // Passed in as the program initializes
+            //// Passed in as the program initializes
 
-            ObservableCollection<AvailableAttachSlot> avSlot = (ObservableCollection<AvailableAttachSlot>)values;
+            aSlot = (ObservableCollection<AvailableAttachSlot>)values;
             int findslotPoint = System.Convert.ToInt32(parameter);
-            int item = (from p in avSlot
-                        where p.rATTACHMENTSLOT == findslotPoint
-                        select p.rAttachmentmount).First();
-            return item;
+            idWeapon =(from p in aSlot
+                       select p.rWeaponId).FirstOrDefault();
+            // var findColl= aSlot.First(p => p.rATTACHMENTSLOT == findslotPoint);
+            AvailableAttachSlot findColl = (from p in aSlot
+                      where p.rATTACHMENTSLOT == findslotPoint
+                      select p).FirstOrDefault();
+
+            if (findColl != null)
+            return true;
+            else
+            {
+                return false;
+            }
         }
 
         public override object ConvertBack(object value,
@@ -127,13 +138,37 @@ namespace Item_WPF.addin
                                     object parameter,
                                     System.Globalization.CultureInfo culture)
         {
-           //var avSlot =value;
-           // if ((bool)avSlot)
-           // {
-           //     return 1;
-           // }
+            if ((bool) value == true && aSlot != null)
+            {
+                aSlot.Add(new AvailableAttachSlot()
+                {
+                    rWeaponId = idWeapon,
+                    rATTACHMENTSLOT = System.Convert.ToInt32(parameter),
+                    rAttachmentmount = 1
+                });
+                return aSlot;
+            }
 
-            return value;
+
+            
+            else if ((bool)value == true && aSlot == null)
+            {
+                aSlot.Add(new AvailableAttachSlot() {
+                    rWeaponId = idWeapon,
+                    rATTACHMENTSLOT = System.Convert.ToInt32(parameter),
+                    rAttachmentmount = 0});
+                return aSlot;
+            }
+            else
+            {
+                AvailableAttachSlot avs = new AvailableAttachSlot();
+                int find = System.Convert.ToInt32(parameter);
+                avs =(from p in aSlot
+                    where p.rATTACHMENTSLOT == find
+                    select p).First();
+                aSlot.Remove(avs);
+                return aSlot;
+            }
         }
     }
 }

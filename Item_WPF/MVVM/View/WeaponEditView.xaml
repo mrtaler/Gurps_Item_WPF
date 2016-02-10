@@ -11,7 +11,7 @@
         mc:Ignorable="d">
     <Window.Resources>
         <addin:DatacontextTupeFromClass x:Key="DatacontextTypeFromClass" />
-    
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     </Window.Resources>
     <Grid>
         <TabControl x:Name="TabControl" Margin="10,10,10,35">
@@ -740,60 +740,121 @@
                                       VerticalAlignment="Top"
                                       Content="Scope">
                                 <CheckBox.IsChecked>
-                                    <Binding Path="avSlot" 
-                                             Converter="{addin:AvailableAttachPointConvert}" ConverterParameter="1"/>
+                                    <Binding Converter="{addin:AvailableAttachPointConvert}"
+                                             ConverterParameter="1"
+                                             Path="avSlot" />
                                 </CheckBox.IsChecked>
                             </CheckBox>
                             <CheckBox x:Name="LaserCheckBox"
                                       Margin="10,37,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Content="Laser" />
+                                      Content="Laser">
+                                <CheckBox.IsChecked>
+                                    <Binding Converter="{addin:AvailableAttachPointConvert}"
+                                             ConverterParameter="2"
+                                             Path="avSlot" />
+                                </CheckBox.IsChecked>
+                            </CheckBox>
                             <CheckBox x:Name="LightCheckBox"
                                       Margin="10,64,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Content="Light" />
+                                      Content="Light">
+                                <CheckBox.IsChecked>
+                                    <Binding Converter="{addin:AvailableAttachPointConvert}"
+                                             ConverterParameter="3"
+                                             Path="avSlot" />
+                                </CheckBox.IsChecked>
+                            </CheckBox>
                             <CheckBox x:Name="BipodCheckBox"
                                       Margin="10,91,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Content="Bipod" />
+                                      Content="Bipod">
+                                <CheckBox.IsChecked>
+                                    <Binding Converter="{addin:AvailableAttachPointConvert}"
+                                             ConverterParameter="4"
+                                             Path="avSlot" />
+                                </CheckBox.IsChecked>
+                            </CheckBox>
                             <CheckBox x:Name="SilenserCheckBox"
                                       Margin="10,118,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Content="Silenser" />
+                                      Content="Silenser">
+                                <CheckBox.IsChecked>
+                                    <Binding Converter="{addin:AvailableAttachPointConvert}"
+                                             ConverterParameter="5"
+                                             Path="avSlot" />
+                                </CheckBox.IsChecked>
+                            </CheckBox>
                             <CheckBox x:Name="LauncherCheckBox"
                                       Margin="10,145,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Content="Launcher" />
+                                      Content="Launcher">
+                                <CheckBox.IsChecked>
+                                    <Binding Converter="{addin:AvailableAttachPointConvert}"
+                                             ConverterParameter="6"
+                                             Path="avSlot" />
+                                </CheckBox.IsChecked>
+                            </CheckBox>
                             <CheckBox x:Name="StockCheckBox"
                                       Margin="10,172,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Content="Stock" />
+                                      Content="Stock">
+                                <CheckBox.IsChecked>
+                                    <Binding Converter="{addin:AvailableAttachPointConvert}"
+                                             ConverterParameter="7"
+                                             Path="avSlot" />
+                                </CheckBox.IsChecked>
+                            </CheckBox>
                             <CheckBox x:Name="BayonetCheckBox"
                                       Margin="10,199,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Content="Bayonet" />
+                                      Content="Bayonet">
+                                <CheckBox.IsChecked>
+                                    <Binding Converter="{addin:AvailableAttachPointConvert}"
+                                             ConverterParameter="8"
+                                             Path="avSlot" />
+                                </CheckBox.IsChecked>
+                            </CheckBox>
                             <CheckBox x:Name="MagazineCheckBox"
                                       Margin="10,226,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Content="Magazine" />
+                                      Content="Magazine">
+                                <CheckBox.IsChecked>
+                                    <Binding Converter="{addin:AvailableAttachPointConvert}"
+                                             ConverterParameter="9"
+                                             Path="avSlot" />
+                                </CheckBox.IsChecked>
+                            </CheckBox>
                             <CheckBox x:Name="InternalCheckBox"
                                       Margin="10,253,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Content="Internal" />
+                                      Content="Internal">
+                                <CheckBox.IsChecked>
+                                    <Binding Converter="{addin:AvailableAttachPointConvert}"
+                                             ConverterParameter="10"
+                                             Path="avSlot" />
+                                </CheckBox.IsChecked>
+                            </CheckBox>
                             <CheckBox x:Name="ExternalCheckBox"
                                       Margin="10,280,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Content="External" />
+                                      Content="External">
+                                <CheckBox.IsChecked>
+                                    <Binding Converter="{addin:AvailableAttachPointConvert}"
+                                             ConverterParameter="11"
+                                             Path="avSlot" />
+                                </CheckBox.IsChecked>
+                            </CheckBox>
 
                             <CheckBox x:Name="CheckBox"
                                       Margin="10,307,0,0"
@@ -816,25 +877,33 @@
                                       Margin="10,10,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Visibility="Hidden" />
+                                      Visibility="{Binding IsChecked,
+                                                           ElementName=ScopeCheckBox,
+                                                           Converter={StaticResource BooleanToVisibilityConverter}}" />
                             <ComboBox x:Name="LaserComboBox"
                                       Width="120"
                                       Margin="10,37,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Visibility="Hidden" />
+                                      Visibility="{Binding IsChecked,
+                                                           ElementName=LaserCheckBox,
+                                                           Converter={StaticResource BooleanToVisibilityConverter}}" />
                             <ComboBox x:Name="LightComboBox"
                                       Width="120"
                                       Margin="10,64,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Visibility="Hidden" />
+                                      Visibility="{Binding IsChecked,
+                                                           ElementName=LightCheckBox,
+                                                           Converter={StaticResource BooleanToVisibilityConverter}}" />
                             <ComboBox x:Name="BipodComboBox"
                                       Width="120"
                                       Margin="10,91,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Visibility="Hidden" />
+                                      Visibility="{Binding IsChecked,
+                                                           ElementName=BipodCheckBox,
+                                                           Converter={StaticResource BooleanToVisibilityConverter}}" />
                             <ComboBox x:Name="SilenserComboBox"
                                       Width="120"
                                       Margin="10,118,0,0"

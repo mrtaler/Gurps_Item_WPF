@@ -20,7 +20,6 @@ namespace Item_WPF.MVVM.ViewModels
         public ObservableCollection<TL> TlCollection { get; set; }
         public ObservableCollection<LC> LccCollection { get; set; }
         public ObservableCollection<WeaponClass> WeaponClasscCollection { get; set; }
-        private ObservableCollection<WeaponType> _weaponTypescCollection;
         public ObservableCollection<WeaponType> WeaponTypescCollection { get; set; }
         public ObservableCollection<TypeOfDamage> TypeOfDamagesCollection { get; set; }
         public ObservableCollection<AMMO> AmmoscCollection { get; set; }
@@ -55,7 +54,8 @@ namespace Item_WPF.MVVM.ViewModels
             LoadImage = new ActionCommand(LoadImageToForm) { IsExecutable = true };
             DellImage = new ActionCommand(DellImageFromAll) { IsExecutable = true };
 
-            
+            avSlot.CollectionChanged += new NotifyCollectionChangedEventHandler(_avSlot_CollectionChanged);
+
         }
 
         private void SaveChanges()
@@ -90,6 +90,27 @@ namespace Item_WPF.MVVM.ViewModels
         public void Dispose()
         {
             _context?.Dispose();
+        }
+
+
+        private void _avSlot_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (e.Action == NotifyCollectionChangedAction.Remove)
+            {
+                foreach (AvailableAttachSlot item in e.OldItems)
+                {
+                    _context.AvailableAttachSlots.Remove(item);
+                }
+                SaveChanges();
+            }
+            else if (e.Action == NotifyCollectionChangedAction.Add)
+            {
+                foreach (AvailableAttachSlot item in e.NewItems)
+                {
+                   _context.AvailableAttachSlots.Add(item);
+                    SaveChanges();
+                }
+            }
         }
     }
 
