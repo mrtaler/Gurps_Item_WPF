@@ -118,15 +118,15 @@ namespace Item_WPF.addin
 
             aSlot = (ObservableCollection<AvailableAttachSlot>)values;
             int findslotPoint = System.Convert.ToInt32(parameter);
-            idWeapon =(from p in aSlot
-                       select p.rWeaponId).FirstOrDefault();
+            idWeapon = (from p in aSlot
+                        select p.rWeaponId).FirstOrDefault();
             // var findColl= aSlot.First(p => p.rATTACHMENTSLOT == findslotPoint);
             AvailableAttachSlot findColl = (from p in aSlot
-                      where p.rATTACHMENTSLOT == findslotPoint
-                      select p).FirstOrDefault();
+                                            where p.rATTACHMENTSLOT == findslotPoint
+                                            select p).FirstOrDefault();
 
             if (findColl != null)
-            return true;
+                return true;
             else
             {
                 return false;
@@ -138,35 +138,101 @@ namespace Item_WPF.addin
                                     object parameter,
                                     System.Globalization.CultureInfo culture)
         {
-            if ((bool) value == true && aSlot != null)
+            ///хуйня, нужно действовать тоньше через поиск
+            int i = 1;
+            int param = System.Convert.ToInt32(parameter);
+            if (param== 1) i = 68;
+            else if (param == 2) i = 41;
+
+            if ((bool)value == true && aSlot != null)
             {
                 aSlot.Add(new AvailableAttachSlot()
                 {
                     rWeaponId = idWeapon,
                     rATTACHMENTSLOT = System.Convert.ToInt32(parameter),
-                    rAttachmentmount = 1
+                    rAttachmentmount = i
                 });
                 return aSlot;
             }
 
 
-            
+
             else if ((bool)value == true && aSlot == null)
             {
-                aSlot.Add(new AvailableAttachSlot() {
+                aSlot.Add(new AvailableAttachSlot()
+                {
                     rWeaponId = idWeapon,
                     rATTACHMENTSLOT = System.Convert.ToInt32(parameter),
-                    rAttachmentmount = 0});
+                    rAttachmentmount = 0
+                });
                 return aSlot;
             }
             else
             {
                 AvailableAttachSlot avs = new AvailableAttachSlot();
                 int find = System.Convert.ToInt32(parameter);
-                avs =(from p in aSlot
-                    where p.rATTACHMENTSLOT == find
-                    select p).First();
+                avs = (from p in aSlot
+                       where p.rATTACHMENTSLOT == find
+                       select p).First();
                 aSlot.Remove(avs);
+                return aSlot;
+            }
+        }
+    }
+
+    class AvailableSlotMountConverter : MultiConvertorBase<AvailableSlotMountConverter>
+    {
+        private ObservableCollection<Attachmentmount> AvAttMount { get; set; }
+        public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            if ((bool)values[1])
+            {
+                AvAttMount = (ObservableCollection<Attachmentmount>)values[0];
+                int findslotPoint = System.Convert.ToInt32(parameter);
+                return new ObservableCollection<Attachmentmount>(AvAttMount.Where(p => p.idAttacClass == findslotPoint));
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public override object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+        {
+            return base.ConvertBack(value, targetTypes, parameter, culture);
+        }
+    }
+
+    class MountToAttachPointConvert : ConvertorBase<MountToAttachPointConvert>
+    {
+        private ObservableCollection<AvailableAttachSlot> aSlot { get; set; }
+        private int idWeapon { get; set; }
+        private AvailableAttachSlot Ase { get; set; }
+        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            aSlot = (ObservableCollection<AvailableAttachSlot>)value;
+            int findslotPoint = System.Convert.ToInt32(parameter);
+            idWeapon = (from p in aSlot
+                        select p.rWeaponId).FirstOrDefault();
+            return (from p in aSlot
+                    where p.rATTACHMENTSLOT == findslotPoint &&
+                    p.rWeaponId == idWeapon
+                    select p.rAttachmentmount).FirstOrDefault();
+
+        }
+
+        public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            int findslotPoint = System.Convert.ToInt32(parameter);
+            int idWeap = (from p in aSlot
+                            select p.rWeaponId).FirstOrDefault();
+            Ase = aSlot.FirstOrDefault(p => p.rWeaponId == idWeap && p.rATTACHMENTSLOT == findslotPoint);
+            if (Ase != null)
+            {
+              return  Ase.rAttachmentmount = (int) value;
+            }
+            else
+            {
                 return aSlot;
             }
         }

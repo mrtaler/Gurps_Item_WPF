@@ -26,6 +26,7 @@ namespace Item_WPF.MVVM.ViewModels
         public ITEM ItemLoad { get; set; }
         public WEAPON WeaponLoad { get; set; }
         public ObservableCollection<AvailableAttachSlot> avSlot { get; set; }
+        public ObservableCollection<Attachmentmount> AttMount { get; set; }
         public WeaponEditViewModel(int itemselect)
         {
             _context = new item1Entities();
@@ -46,8 +47,9 @@ namespace Item_WPF.MVVM.ViewModels
             TypeOfDamagesCollection = new ObservableCollection<TypeOfDamage>(_context.TypeOfDamages);
 
             avSlot=new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlots.Where(p=> p.rWeaponId == WeaponLoad.uiIndex));
+            AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
 
-            AmmoscCollection = new ObservableCollection<AMMO>(_context.AMMOes);
+        AmmoscCollection = new ObservableCollection<AMMO>(_context.AMMOes);
 
 
             Save = new ActionCommand(SaveChanges) { IsExecutable = true };
@@ -101,14 +103,12 @@ namespace Item_WPF.MVVM.ViewModels
                 {
                     _context.AvailableAttachSlots.Remove(item);
                 }
-                SaveChanges();
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
                 foreach (AvailableAttachSlot item in e.NewItems)
                 {
                    _context.AvailableAttachSlots.Add(item);
-                    SaveChanges();
                 }
             }
         }

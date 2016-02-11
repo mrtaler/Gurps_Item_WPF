@@ -879,7 +879,27 @@
                                       VerticalAlignment="Top"
                                       Visibility="{Binding IsChecked,
                                                            ElementName=ScopeCheckBox,
-                                                           Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                                           Converter={StaticResource BooleanToVisibilityConverter}}"
+                                      DisplayMemberPath="name"
+                                      SelectedValuePath="id">
+                                <ComboBox.SelectedValue>
+                                    <Binding Converter="{addin:MountToAttachPointConvert}"
+                                             ConverterParameter="1"
+                                             Path="avSlot"
+                                             Mode="TwoWay"
+                                             UpdateSourceTrigger="PropertyChanged"/>
+                                </ComboBox.SelectedValue>
+
+                                <ComboBox.ItemsSource>
+                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="1">
+                                        <Binding Path="AttMount" />
+                                        <Binding ElementName="ScopeCheckBox" Path="IsChecked" />
+                                    </MultiBinding>
+                                </ComboBox.ItemsSource>
+                                
+                            </ComboBox>
+
+
                             <ComboBox x:Name="LaserComboBox"
                                       Width="120"
                                       Margin="10,37,0,0"
@@ -909,43 +929,57 @@
                                       Margin="10,118,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Visibility="Hidden" />
+                                      Visibility="{Binding IsChecked,
+                                                           ElementName=SilenserCheckBox,
+                                                           Converter={StaticResource BooleanToVisibilityConverter}}" />
                             <ComboBox x:Name="LauncherComboBox"
                                       Width="120"
                                       Margin="10,145,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Visibility="Hidden" />
+                                      Visibility="{Binding IsChecked,
+                                                           ElementName=LauncherCheckBox,
+                                                           Converter={StaticResource BooleanToVisibilityConverter}}" />
                             <ComboBox x:Name="StockComboBox"
                                       Width="120"
                                       Margin="10,172,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Visibility="Hidden" />
+                                      Visibility="{Binding IsChecked,
+                                                           ElementName=StockCheckBox,
+                                                           Converter={StaticResource BooleanToVisibilityConverter}}" />
                             <ComboBox x:Name="BayonetComboBox"
                                       Width="120"
                                       Margin="10,199,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Visibility="Hidden" />
+                                      Visibility="{Binding IsChecked,
+                                                           ElementName=BayonetCheckBox,
+                                                           Converter={StaticResource BooleanToVisibilityConverter}}" />
                             <ComboBox x:Name="MagazineComboBox"
                                       Width="120"
                                       Margin="10,226,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Visibility="Hidden" />
+                                      Visibility="{Binding IsChecked,
+                                                           ElementName=MagazineCheckBox,
+                                                           Converter={StaticResource BooleanToVisibilityConverter}}" />
                             <ComboBox x:Name="InternalComboBox"
                                       Width="120"
                                       Margin="10,253,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Visibility="Hidden" />
+                                      Visibility="{Binding IsChecked,
+                                                           ElementName=InternalCheckBox,
+                                                           Converter={StaticResource BooleanToVisibilityConverter}}" />
                             <ComboBox x:Name="ExternalComboBox"
                                       Width="120"
                                       Margin="10,280,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Visibility="Hidden" />
+                                      Visibility="{Binding IsChecked,
+                                                           ElementName=ExternalCheckBox,
+                                                           Converter={StaticResource BooleanToVisibilityConverter}}" />
                             <ComboBox x:Name="ComboBox11"
                                       Width="120"
                                       Margin="10,307,0,0"
