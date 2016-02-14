@@ -98,23 +98,7 @@ namespace Item_WPF.addin
         }
 
     }
-    //
-    //public BitmapImage ConvertByteArrayToImage(byte[] array)
-    //{
-    //    if (array != null)
-    //    {
-    //        using (var ms = new MemoryStream(array, 0, array.Length))
-    //        {
-    //            var image = new BitmapImage();
-    //            image.BeginInit();
-    //            image.CacheOption = BitmapCacheOption.OnLoad;
-    //            image.StreamSource = ms;
-    //            image.EndInit();
-    //            return image;
-    //        }
-    //    }
-    //    return null;
-    //}
+#region BasicConverter Class
     public abstract class ConvertorBase<T> : MarkupExtension, IValueConverter
     where T : class, new()
     {
@@ -137,19 +121,15 @@ namespace Item_WPF.addin
 
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
-            if (_converter == null)
-                _converter = new T();
-            return _converter;
+            return this;
         }
-
-        private static T _converter = null;
-
-        #endregion
-
-
+      #endregion
+        
         ////https://habrahabr.ru/post/140876/
     }
+    #endregion
 
+#region MyltiValueCinverter Basik
     public abstract class MultiConvertorBase<T> : MarkupExtension, IMultiValueConverter
    where T : class, new()
     {
@@ -167,21 +147,17 @@ namespace Item_WPF.addin
         {
             throw new NotImplementedException();
         }
-
         #region MarkupExtension members
 
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
-            if (_converter == null)
-                _converter = new T();
-            return _converter;
+            return this;
         }
 
-        private static T _converter = null;
-
+      //  private static T _converter = null;
+      
         #endregion
-
-
         ////https://habrahabr.ru/post/140876/
     }
+#endregion
 }

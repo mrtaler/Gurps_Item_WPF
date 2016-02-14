@@ -1,20 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Drawing;
 using System.Globalization;
-using System.Windows.Markup;
 using System.Collections.ObjectModel;
-
 namespace Item_WPF.addin
 {
-
+    #region image converter
     public class ImageConverter : ConvertorBase<ImageConverter>
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -23,7 +15,6 @@ namespace Item_WPF.addin
 
             if (bytes != null)
             {
-                var s = value.GetType();
                 using (System.IO.MemoryStream ms = new System.IO.MemoryStream(bytes, 0, bytes.Length))
                 {
                     BitmapImage image = new BitmapImage();
@@ -44,6 +35,9 @@ namespace Item_WPF.addin
             else return null;
         }
     }
+    #endregion
+    #region deciminal converter
+
     public class WeigtDeciminalConverter : ConvertorBase<WeigtDeciminalConverter>
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -55,10 +49,10 @@ namespace Item_WPF.addin
         {
             string convertValue = (string)value;
             convertValue = convertValue.Replace("lbs", "");
-            char Separator = System.Globalization.CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0];
-            if (Separator == '.')
-                return System.Convert.ToDecimal(convertValue.Replace(',', Separator));
-            else return System.Convert.ToDecimal(convertValue.Replace('.', Separator));
+            char separator = CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0];
+            if (separator == '.')
+                return System.Convert.ToDecimal(convertValue.Replace(',', separator));
+            else return System.Convert.ToDecimal(convertValue.Replace('.', separator));
         }
     }
     public class CostDeciminalConverter : ConvertorBase<CostDeciminalConverter>
@@ -72,19 +66,20 @@ namespace Item_WPF.addin
         {
             string convertValue = (string)value;
             convertValue = convertValue.Replace("$", "");
-            char Separator = System.Globalization.CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0];
-            if (Separator == '.')
-                return System.Convert.ToDecimal(convertValue.Replace(',', Separator));
-            else return System.Convert.ToDecimal(convertValue.Replace('.', Separator));
+            char separator = CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0];
+            if (separator == '.')
+                return System.Convert.ToDecimal(convertValue.Replace(',', separator));
+            else return System.Convert.ToDecimal(convertValue.Replace('.', separator));
         }
     }
-
+    #endregion
+    #region dataContextConverter
     class DatacontextTupeFromClass : IMultiValueConverter
     {
         public object Convert(object[] values,
                               Type targetType,
                               object parameter,
-                              System.Globalization.CultureInfo culture)
+                              CultureInfo culture)
         {
             // I added this because I kept getting DependecyProperty.UnsetValue 
             // Passed in as the program initializes
@@ -99,87 +94,88 @@ namespace Item_WPF.addin
         public object[] ConvertBack(object value,
                                     Type[] targetTypes,
                                     object parameter,
-                                    System.Globalization.CultureInfo culture)
+                                    CultureInfo culture)
         {
             return null;
         }
     }
-    class AvailableAttachPointConvert : ConvertorBase<AvailableAttachPointConvert>
+    #endregion
+    #region Converter int to Visible and check
+    class AvailableAttachPointConvert : MultiConvertorBase<AvailableAttachPointConvert>
     {
-        private ObservableCollection<AvailableAttachSlot> aSlot { get; set; }
-        private int idWeapon { get; set; }
-        public override object Convert(object values,
+
+        public ObservableCollection<AvailableAttachSlot> ASlot { set; private get; }
+        public int? IdWeapon { set; private get; }
+
+        public override object Convert(object[] values,
                               Type targetType,
                               object parameter,
-                              System.Globalization.CultureInfo culture)
+                              CultureInfo culture)
         {
-            // I added this because I kept getting DependecyProperty.UnsetValue 
-            //// Passed in as the program initializes
-
-            aSlot = (ObservableCollection<AvailableAttachSlot>)values;
-            int findslotPoint = System.Convert.ToInt32(parameter);
-            idWeapon = (from p in aSlot
-                        select p.rWeaponId).FirstOrDefault();
-            // var findColl= aSlot.First(p => p.rATTACHMENTSLOT == findslotPoint);
-            AvailableAttachSlot findColl = (from p in aSlot
-                                            where p.rATTACHMENTSLOT == findslotPoint
-                                            select p).FirstOrDefault();
-
-            if (findColl != null)
-                return true;
-            else
+            ASlot = values[0] as ObservableCollection<AvailableAttachSlot>;
+            IdWeapon = values[1] as int?;
+            int Check = 0;
+            if (ASlot.Count != 0)
             {
-                return false;
+                int findslotPoint = System.Convert.ToInt32(parameter);
+                Check = (from p in ASlot
+                         where p.rATTACHMENTSLOT == findslotPoint
+                         select p.rAttachmentmount).FirstOrDefault();
             }
+            if (Check != 0) return true;
+            else return false;
         }
 
-        public override object ConvertBack(object value,
-                                    Type targetTypes,
+        public override object[] ConvertBack(object value,
+                                    Type[] targetTypes,
                                     object parameter,
-                                    System.Globalization.CultureInfo culture)
+                                    CultureInfo culture)
         {
-            ///хуйня, нужно действовать тоньше через поиск
+            //хуйня, нужно действовать тоньше через поиск
+
             int i = 1;
             int param = System.Convert.ToInt32(parameter);
-            if (param== 1) i = 68;
+            if (param == 1) i = 68;
             else if (param == 2) i = 41;
 
-            if ((bool)value == true && aSlot != null)
+            if ((bool)value && ASlot != null)
             {
-                aSlot.Add(new AvailableAttachSlot()
+                ASlot.Add(new AvailableAttachSlot()
                 {
-                    rWeaponId = idWeapon,
+                    rWeaponId = System.Convert.ToInt32(IdWeapon),
                     rATTACHMENTSLOT = System.Convert.ToInt32(parameter),
                     rAttachmentmount = i
                 });
-                return aSlot;
             }
-
-
-
-            else if ((bool)value == true && aSlot == null)
+            else if ((bool)value && ASlot == null)
             {
-                aSlot.Add(new AvailableAttachSlot()
-                {
-                    rWeaponId = idWeapon,
-                    rATTACHMENTSLOT = System.Convert.ToInt32(parameter),
-                    rAttachmentmount = 0
-                });
-                return aSlot;
+                if (ASlot != null)
+                    ASlot.Add(new AvailableAttachSlot()
+                    {
+                        rWeaponId = System.Convert.ToInt32(IdWeapon),
+                        rATTACHMENTSLOT = System.Convert.ToInt32(parameter),
+                        rAttachmentmount = i
+                    });
             }
             else
             {
-                AvailableAttachSlot avs = new AvailableAttachSlot();
                 int find = System.Convert.ToInt32(parameter);
-                avs = (from p in aSlot
-                       where p.rATTACHMENTSLOT == find
-                       select p).First();
-                aSlot.Remove(avs);
-                return aSlot;
+                var avs = (from p in ASlot
+                           where p.rATTACHMENTSLOT == find
+                           select p).First();
+                if (ASlot != null) ASlot.Remove(avs);
             }
+
+            //you know that your first binding is slider 1 value ans second binding is slider 2 value
+            //so create a 2 item object []
+            object[] ret = new object[2];
+            ret[0] = ASlot;
+            ret[1] = IdWeapon;
+            return ret;
         }
     }
-
+    #endregion
+    #region SlotConvert_datacontext
     class AvailableSlotMountConverter : MultiConvertorBase<AvailableSlotMountConverter>
     {
         private ObservableCollection<Attachmentmount> AvAttMount { get; set; }
@@ -191,51 +187,45 @@ namespace Item_WPF.addin
                 int findslotPoint = System.Convert.ToInt32(parameter);
                 return new ObservableCollection<Attachmentmount>(AvAttMount.Where(p => p.idAttacClass == findslotPoint));
             }
-            else
-            {
-                return null;
-            }
-        }
-
-        public override object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
-        {
-            return base.ConvertBack(value, targetTypes, parameter, culture);
+            else return null;
         }
     }
+    #endregion
 
-    class MountToAttachPointConvert : ConvertorBase<MountToAttachPointConvert>
+    class MountToAttachPointConvert : MultiConvertorBase<MountToAttachPointConvert>
     {
-        private ObservableCollection<AvailableAttachSlot> aSlot { get; set; }
-        private int idWeapon { get; set; }
-        private AvailableAttachSlot Ase { get; set; }
-        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public ObservableCollection<AvailableAttachSlot> ASlot { set; private get; }
+        public int? IdWeapon { set; private get; }
+        public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            aSlot = (ObservableCollection<AvailableAttachSlot>)value;
+            ASlot = values[0] as ObservableCollection<AvailableAttachSlot>;
+            IdWeapon = values[1] as int?;
             int findslotPoint = System.Convert.ToInt32(parameter);
-            idWeapon = (from p in aSlot
-                        select p.rWeaponId).FirstOrDefault();
-            return (from p in aSlot
+            return (from p in ASlot
                     where p.rATTACHMENTSLOT == findslotPoint &&
-                    p.rWeaponId == idWeapon
+                    p.rWeaponId == IdWeapon
                     select p.rAttachmentmount).FirstOrDefault();
-
         }
 
-        public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public override object[] ConvertBack(object value, Type[] targetType, object parameter, CultureInfo culture)
         {
             int findslotPoint = System.Convert.ToInt32(parameter);
-            int idWeap = (from p in aSlot
-                            select p.rWeaponId).FirstOrDefault();
-            Ase = aSlot.FirstOrDefault(p => p.rWeaponId == idWeap && p.rATTACHMENTSLOT == findslotPoint);
-            if (Ase != null)
-            {
-              return  Ase.rAttachmentmount = (int) value;
-            }
-            else
-            {
-                return aSlot;
-            }
+                int selVal = System.Convert.ToInt32(value);
+            AvailableAttachSlot Ase = ASlot.FirstOrDefault(p =>
+                p.rWeaponId == IdWeapon
+                && p.rATTACHMENTSLOT == findslotPoint);
+
+
+            if (Ase != null) Ase.rAttachmentmount = selVal;
+
+
+            object[] ret = new object[2];
+            ret[0] = ASlot;
+            ret[1] = IdWeapon;
+            return ret;
         }
     }
 }
 //http://dev.net.ua/blogs/andriydanilchenko/archive/2011/08/14/binding-and-multibinding-converters.aspx
+
+//https://habrahabr.ru/post/141107/

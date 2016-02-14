@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media.Imaging;
 
 namespace Item_WPF.MVVM.ViewModels
@@ -38,7 +39,7 @@ namespace Item_WPF.MVVM.ViewModels
             WeaponLoad = (from p in _context.WEAPONs
                           where p.uiIndex == ItemLoad.ubClassIndex
                           select p).First();
-
+            
             TlCollection = new ObservableCollection<TL>(_context.TLs);
             LccCollection = new ObservableCollection<LC>(_context.LCs);
 
@@ -56,8 +57,10 @@ namespace Item_WPF.MVVM.ViewModels
             LoadImage = new ActionCommand(LoadImageToForm) { IsExecutable = true };
             DellImage = new ActionCommand(DellImageFromAll) { IsExecutable = true };
 
-            avSlot.CollectionChanged += new NotifyCollectionChangedEventHandler(_avSlot_CollectionChanged);
+            Tar = new ActionCommand(TarCommand) { IsExecutable = true };
 
+            avSlot.CollectionChanged += new NotifyCollectionChangedEventHandler(_avSlot_CollectionChanged);
+            
         }
 
         private void SaveChanges()
@@ -76,12 +79,20 @@ namespace Item_WPF.MVVM.ViewModels
                 ItemLoad.Item_Image = System.IO.File.ReadAllBytes(dlg.FileName);
             }
         }
+
+        private void TarCommand()
+        {
+           MessageBox.Show("Test");
+            /*----*/
+        }
+
         private void DellImageFromAll()
         {
             // Imagebute = null;
             ItemLoad.Item_Image = null;
         }
         public ActionCommand Save { get; set; }
+        public ActionCommand Tar { get; set; }
         public ActionCommand LoadImage { get; set; }
         public ActionCommand DellImage { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
@@ -113,7 +124,6 @@ namespace Item_WPF.MVVM.ViewModels
             }
         }
     }
-
 }
 
 
