@@ -419,9 +419,9 @@ namespace Item_WPF
             using (item1Entities context = new item1Entities())
             {
                 ScopeComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                              where p.idAttacClass == 1
-                                              orderby p.name
-                                              select p).ToList();
+                                             where p.idAttacClass == 1
+                                             orderby p.name
+                                             select p).ToList();
                 ScopeComboBox.SelectedValuePath = "id";
                 ScopeComboBox.DisplayMemberPath = "name";
                 ScopeComboBox.Visibility = Visibility.Visible;
@@ -438,9 +438,9 @@ namespace Item_WPF
             using (item1Entities context = new item1Entities())
             {
                 LaserComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                              where p.idAttacClass == 2
-                                              orderby p.name
-                                              select p).ToList();
+                                             where p.idAttacClass == 2
+                                             orderby p.name
+                                             select p).ToList();
                 LaserComboBox.SelectedValuePath = "id";
                 LaserComboBox.DisplayMemberPath = "name";
                 LaserComboBox.Visibility = Visibility.Visible;
@@ -458,9 +458,9 @@ namespace Item_WPF
             using (item1Entities context = new item1Entities())
             {
                 LightComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                              where p.idAttacClass == 3
-                                              orderby p.name
-                                              select p).ToList();
+                                             where p.idAttacClass == 3
+                                             orderby p.name
+                                             select p).ToList();
                 LightComboBox.SelectedValuePath = "id";
                 LightComboBox.DisplayMemberPath = "name";
                 LightComboBox.Visibility = Visibility.Visible;
@@ -477,9 +477,9 @@ namespace Item_WPF
             using (item1Entities context = new item1Entities())
             {
                 BipodComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                              where p.idAttacClass == 4
-                                              orderby p.name
-                                              select p).ToList();
+                                             where p.idAttacClass == 4
+                                             orderby p.name
+                                             select p).ToList();
                 BipodComboBox.SelectedValuePath = "id";
                 BipodComboBox.DisplayMemberPath = "name";
                 BipodComboBox.Visibility = Visibility.Visible;
@@ -496,9 +496,9 @@ namespace Item_WPF
             using (item1Entities context = new item1Entities())
             {
                 SilenserComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                                 where p.idAttacClass == 5
-                                                 orderby p.name
-                                                 select p).ToList();
+                                                where p.idAttacClass == 5
+                                                orderby p.name
+                                                select p).ToList();
                 SilenserComboBox.SelectedValuePath = "id";
                 SilenserComboBox.DisplayMemberPath = "name";
                 SilenserComboBox.Visibility = Visibility.Visible;
@@ -515,9 +515,9 @@ namespace Item_WPF
             using (item1Entities context = new item1Entities())
             {
                 LauncherComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                                 where p.idAttacClass == 6
-                                                 orderby p.name
-                                                 select p).ToList();
+                                                where p.idAttacClass == 6
+                                                orderby p.name
+                                                select p).ToList();
                 LauncherComboBox.SelectedValuePath = "id";
                 LauncherComboBox.DisplayMemberPath = "name";
                 LauncherComboBox.Visibility = Visibility.Visible;
@@ -534,9 +534,9 @@ namespace Item_WPF
             using (item1Entities context = new item1Entities())
             {
                 StockComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                              where p.idAttacClass == 7
-                                              orderby p.name
-                                              select p).ToList();
+                                             where p.idAttacClass == 7
+                                             orderby p.name
+                                             select p).ToList();
                 StockComboBox.SelectedValuePath = "id";
                 StockComboBox.DisplayMemberPath = "name";
                 StockComboBox.Visibility = Visibility.Visible;
@@ -553,9 +553,9 @@ namespace Item_WPF
             using (item1Entities context = new item1Entities())
             {
                 BayonetComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                                where p.idAttacClass == 8
-                                                orderby p.name
-                                                select p).ToList();
+                                               where p.idAttacClass == 8
+                                               orderby p.name
+                                               select p).ToList();
                 BayonetComboBox.SelectedValuePath = "id";
                 BayonetComboBox.DisplayMemberPath = "name";
                 BayonetComboBox.Visibility = Visibility.Visible;
@@ -572,9 +572,9 @@ namespace Item_WPF
             using (item1Entities context = new item1Entities())
             {
                 MagazineComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                                 where p.idAttacClass == 9
-                                                 orderby p.name
-                                                 select p).ToList();
+                                                where p.idAttacClass == 9
+                                                orderby p.name
+                                                select p).ToList();
                 MagazineComboBox.SelectedValuePath = "id";
                 MagazineComboBox.DisplayMemberPath = "name";
                 MagazineComboBox.Visibility = Visibility.Visible;
@@ -591,9 +591,9 @@ namespace Item_WPF
             using (item1Entities context = new item1Entities())
             {
                 InternalComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                                 where p.idAttacClass == 10
-                                                 orderby p.name
-                                                 select p).ToList();
+                                                where p.idAttacClass == 10
+                                                orderby p.name
+                                                select p).ToList();
                 InternalComboBox.SelectedValuePath = "id";
                 InternalComboBox.DisplayMemberPath = "name";
                 InternalComboBox.Visibility = Visibility.Visible;
@@ -610,9 +610,9 @@ namespace Item_WPF
             using (item1Entities context = new item1Entities())
             {
                 ExternalComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                                 where p.idAttacClass == 11
-                                                 orderby p.name
-                                                 select p).ToList();
+                                                where p.idAttacClass == 11
+                                                orderby p.name
+                                                select p).ToList();
                 ExternalComboBox.SelectedValuePath = "id";
                 ExternalComboBox.DisplayMemberPath = "name";
                 ExternalComboBox.Visibility = Visibility.Visible;
@@ -653,7 +653,7 @@ namespace Item_WPF
                 CAliberComboBox.ItemsSource = context.AMMOes.ToList();
                 //CAliberComboBox.SelectedValuePath = "id";
                 //CAliberComboBox.DisplayMemberPath = "Caliber_name";
-                
+
             }
             CAliberComboBox.SelectedIndex = CAliberComboBox.Items.Count - 1;
         }
@@ -667,17 +667,17 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMountView atmSview = new AttacmentMountView(1);
-                atmSview.ShowDialog();
+                //AttacmentMountView atmSview = new AttacmentMountView(1);
+                //atmSview.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
                     ScopeComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                                  where p.idAttacClass == 1
-                                                  orderby p.name
-                                                  select p).ToList();
+                                                 where p.idAttacClass == 1
+                                                 orderby p.name
+                                                 select p).ToList();
                     ScopeComboBox.SelectedValuePath = "id";
                     ScopeComboBox.DisplayMemberPath = "name";
-                    ScopeComboBox.SelectedIndex = ScopeComboBox.Items.Count-1;
+                    ScopeComboBox.SelectedIndex = ScopeComboBox.Items.Count - 1;
                 }
 
             }
@@ -687,17 +687,17 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMountView atmS = new AttacmentMountView(2);
-                atmS.ShowDialog();
+                //AttacmentMountView atmS = new AttacmentMountView(2);
+                //atmS.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
                     LaserComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                                  where p.idAttacClass == 2
-                                                  orderby p.name
-                                                  select p).ToList();
+                                                 where p.idAttacClass == 2
+                                                 orderby p.name
+                                                 select p).ToList();
                     LaserComboBox.SelectedValuePath = "id";
                     LaserComboBox.DisplayMemberPath = "name";
-                    LaserComboBox.SelectedIndex = LaserComboBox.Items.Count-1;
+                    LaserComboBox.SelectedIndex = LaserComboBox.Items.Count - 1;
                 }
             }
         }
@@ -706,17 +706,17 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMountView atmS = new AttacmentMountView(3);
-                atmS.ShowDialog();
+                //AttacmentMountView atmS = new AttacmentMountView(3);
+                //atmS.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
                     LightComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                                  where p.idAttacClass == 3
-                                                  orderby p.name
-                                                  select p).ToList();
+                                                 where p.idAttacClass == 3
+                                                 orderby p.name
+                                                 select p).ToList();
                     LightComboBox.SelectedValuePath = "id";
                     LightComboBox.DisplayMemberPath = "name";
-                    LightComboBox.SelectedIndex = LightComboBox.Items.Count-1;
+                    LightComboBox.SelectedIndex = LightComboBox.Items.Count - 1;
                 }
             }
         }
@@ -725,14 +725,14 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMountView atmS = new AttacmentMountView(4);
-                atmS.ShowDialog();
+                //AttacmentMountView atmS = new AttacmentMountView(4);
+                //atmS.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
                     BipodComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                                  where p.idAttacClass == 4
-                                                  orderby p.name
-                                                  select p).ToList();
+                                                 where p.idAttacClass == 4
+                                                 orderby p.name
+                                                 select p).ToList();
                     BipodComboBox.SelectedValuePath = "id";
                     BipodComboBox.DisplayMemberPath = "name";
                     BipodComboBox.SelectedIndex = BipodComboBox.Items.Count - 1;
@@ -744,14 +744,14 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMountView atmS = new AttacmentMountView(5);
-                atmS.ShowDialog();
+                //AttacmentMountView atmS = new AttacmentMountView(5);
+                //atmS.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
                     SilenserComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                                  where p.idAttacClass == 5
-                                                  orderby p.name
-                                                  select p).ToList();
+                                                    where p.idAttacClass == 5
+                                                    orderby p.name
+                                                    select p).ToList();
                     SilenserComboBox.SelectedValuePath = "id";
                     SilenserComboBox.DisplayMemberPath = "name";
                     SilenserComboBox.SelectedIndex = SilenserComboBox.Items.Count - 1;
@@ -763,14 +763,14 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMountView atmS = new AttacmentMountView(6);
-                atmS.ShowDialog();
+                //AttacmentMountView atmS = new AttacmentMountView(6);
+                //atmS.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
                     LauncherComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                                     where p.idAttacClass == 6
-                                                     orderby p.name
-                                                     select p).ToList();
+                                                    where p.idAttacClass == 6
+                                                    orderby p.name
+                                                    select p).ToList();
                     LauncherComboBox.SelectedValuePath = "id";
                     LauncherComboBox.DisplayMemberPath = "name";
                     LauncherComboBox.SelectedIndex = LauncherComboBox.Items.Count - 1;
@@ -782,14 +782,14 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMountView atmS = new AttacmentMountView(7);
-                atmS.ShowDialog();
+                //AttacmentMountView atmS = new AttacmentMountView(7);
+                //atmS.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
                     StockComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                                     where p.idAttacClass == 7
-                                                     orderby p.name
-                                                     select p).ToList();
+                                                 where p.idAttacClass == 7
+                                                 orderby p.name
+                                                 select p).ToList();
                     StockComboBox.SelectedValuePath = "id";
                     StockComboBox.DisplayMemberPath = "name";
                     StockComboBox.SelectedIndex = StockComboBox.Items.Count - 1;
@@ -801,14 +801,14 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMountView atmS = new AttacmentMountView(8);
-                atmS.ShowDialog();
+                //AttacmentMountView atmS = new AttacmentMountView(8);
+                //atmS.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
                     BayonetComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                                  where p.idAttacClass == 8
-                                                  orderby p.name
-                                                  select p).ToList();
+                                                   where p.idAttacClass == 8
+                                                   orderby p.name
+                                                   select p).ToList();
                     BayonetComboBox.SelectedValuePath = "id";
                     BayonetComboBox.DisplayMemberPath = "name";
                     BayonetComboBox.SelectedIndex = BayonetComboBox.Items.Count - 1;
@@ -820,8 +820,8 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMountView atmS = new AttacmentMountView(9);
-                atmS.ShowDialog();
+                //AttacmentMountView atmS = new AttacmentMountView(9);
+                //atmS.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
                     MagazineComboBox.ItemsSource = (from p in context.Attachmentmounts
@@ -839,17 +839,17 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMountView atmS = new AttacmentMountView(10);
-                atmS.ShowDialog();
+                //AttacmentMountView atmS = new AttacmentMountView(10);
+                //atmS.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
                     InternalComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                                     where p.idAttacClass == 10
-                                                     orderby p.name
-                                                     select p).ToList();
+                                                    where p.idAttacClass == 10
+                                                    orderby p.name
+                                                    select p).ToList();
                     InternalComboBox.SelectedValuePath = "id";
                     InternalComboBox.DisplayMemberPath = "name";
-                    InternalComboBox.SelectedIndex = InternalComboBox.Items.Count-1;
+                    InternalComboBox.SelectedIndex = InternalComboBox.Items.Count - 1;
                 }
             }
         }
@@ -858,14 +858,14 @@ namespace Item_WPF
         {
             if (e.Key == Key.Enter)
             {
-                AttacmentMountView atmS = new AttacmentMountView(11);
-                atmS.ShowDialog();
+                //AttacmentMountView atmS = new AttacmentMountView(11);
+                //atmS.ShowDialog();
                 using (item1Entities context = new item1Entities())
                 {
                     ExternalComboBox.ItemsSource = (from p in context.Attachmentmounts
-                                                     where p.idAttacClass == 11
-                                                     orderby p.name
-                                                     select p).ToList();
+                                                    where p.idAttacClass == 11
+                                                    orderby p.name
+                                                    select p).ToList();
                     ExternalComboBox.SelectedValuePath = "id";
                     ExternalComboBox.DisplayMemberPath = "name";
                     ExternalComboBox.SelectedIndex = ExternalComboBox.Items.Count - 1;

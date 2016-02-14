@@ -696,13 +696,13 @@ CREATE TABLE [Character] (
   StrengthPoints INT,
   DexterityPoints INT,
   IntelligencePoints INT,
-   HealthPoints INT,
+  HealthPoints INT,
   MaxFPPoints INT,
   PerceptionPoints INT,
   WillpowerPoints INT,
   BasicSpeedPoints FLOAT,
   BasicMovePoints INT,
-    CONSTRAINT [PK_cha] PRIMARY KEY ([id])
+  CONSTRAINT [PK_cha] PRIMARY KEY ([id])
 )
 
 -- --------------------------------------------------
@@ -1402,7 +1402,26 @@ INSERT INTO [AttachmentSystem]
   VALUES ('Picatinny Rail Adapter'), ('M16'), ('AK'), ('30mm'), ('35mm');
 
 INSERT INTO [dbo].[Attachmentmount]
-  VALUES ('.300 BLK', 5), ('5,7mm (FN)', 5),
+  VALUES 
+  ('None', 1), --1
+  ('None', 2),--2
+  ('None', 3),--3
+  ('None', 4),--4
+  ('None', 5), --5
+  ('None', 6),--6
+  ('None', 7),--7
+  ('None', 8),--8
+  ('None', 9),--9
+  ('None', 10),--10
+  ('None', 11),--11
+
+
+
+
+
+
+
+  ('.300 BLK', 5), ('5,7mm (FN)', 5),
   ('5,7mm (P90)', 5), ('VZ82', 5),
   ('Std 9mm Para', 5), ('APB', 5),
   ('Bizon 9x18', 5), ('GSh-18', 5),

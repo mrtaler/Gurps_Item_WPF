@@ -1,4 +1,5 @@
 ﻿using Item_WPF.addin;
+using Item_WPF.MVVM.View;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
 namespace Item_WPF.MVVM.ViewModels
@@ -28,6 +30,10 @@ namespace Item_WPF.MVVM.ViewModels
         public WEAPON WeaponLoad { get; set; }
         public ObservableCollection<AvailableAttachSlot> avSlot { get; set; }
         public ObservableCollection<Attachmentmount> AttMount { get; set; }
+
+        #region Constructor
+
+
         public WeaponEditViewModel(int itemselect)
         {
             _context = new item1Entities();
@@ -35,11 +41,10 @@ namespace Item_WPF.MVVM.ViewModels
             ItemLoad = (from z in _context.ITEMs
                         where z.uiIndex == itemselect
                         select z).First();
-
             WeaponLoad = (from p in _context.WEAPONs
                           where p.uiIndex == ItemLoad.ubClassIndex
                           select p).First();
-            
+
             TlCollection = new ObservableCollection<TL>(_context.TLs);
             LccCollection = new ObservableCollection<LC>(_context.LCs);
 
@@ -47,22 +52,33 @@ namespace Item_WPF.MVVM.ViewModels
             WeaponTypescCollection = new ObservableCollection<WeaponType>(_context.WeaponTypes);
             TypeOfDamagesCollection = new ObservableCollection<TypeOfDamage>(_context.TypeOfDamages);
 
-            avSlot=new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlots.Where(p=> p.rWeaponId == WeaponLoad.uiIndex));
+            avSlot = new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlots.Where(p => p.rWeaponId == WeaponLoad.uiIndex));
             AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
 
-        AmmoscCollection = new ObservableCollection<AMMO>(_context.AMMOes);
+            AmmoscCollection = new ObservableCollection<AMMO>(_context.AMMOes);
 
-
+            #region Obcommand
             Save = new ActionCommand(SaveChanges) { IsExecutable = true };
             LoadImage = new ActionCommand(LoadImageToForm) { IsExecutable = true };
             DellImage = new ActionCommand(DellImageFromAll) { IsExecutable = true };
+            AddMountslot = new ActionCommand(AddMountslotCommand) { IsExecutable = true };
+            AddMountslot1=new RelayCommand(AddMountslot1_Execute);
 
-            Tar = new ActionCommand(TarCommand) { IsExecutable = true };
+            #endregion
 
             avSlot.CollectionChanged += new NotifyCollectionChangedEventHandler(_avSlot_CollectionChanged);
-            
+            //AttMount.CollectionChanged += new NotifyCollectionChangedEventHandler(_Avv_att_slot_OK_CollectionChanged);
         }
+        #endregion
+        #region Command
+        public ICommand AddMountslot1 { get; set; }
 
+        private void AddMountslot1_Execute(object parameter)
+        {
+            AttacmentMountView atmS = new AttacmentMountView(Convert.ToInt32(parameter)/*, AttMount*/);
+            atmS.ShowDialog();
+            AttMount.
+        }
         private void SaveChanges()
         {
             _context.SaveChanges();
@@ -79,22 +95,25 @@ namespace Item_WPF.MVVM.ViewModels
                 ItemLoad.Item_Image = System.IO.File.ReadAllBytes(dlg.FileName);
             }
         }
-
-        private void TarCommand()
+        private void AddMountslotCommand(object parameter)
         {
-           MessageBox.Show("Test");
+            //int? ad = parameter as int?;
+            MessageBox.Show("Test" + parameter.ToString());
             /*----*/
         }
-
         private void DellImageFromAll()
         {
             // Imagebute = null;
             ItemLoad.Item_Image = null;
         }
+        #endregion
+
         public ActionCommand Save { get; set; }
-        public ActionCommand Tar { get; set; }
+        public ActionCommand AddMountslot { get; set; }
         public ActionCommand LoadImage { get; set; }
         public ActionCommand DellImage { get; set; }
+
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertyChanged(string propertyName)
         {
@@ -104,8 +123,6 @@ namespace Item_WPF.MVVM.ViewModels
         {
             _context?.Dispose();
         }
-
-
         private void _avSlot_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Remove)
@@ -114,12 +131,34 @@ namespace Item_WPF.MVVM.ViewModels
                 {
                     _context.AvailableAttachSlots.Remove(item);
                 }
+                SaveChanges();
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
                 foreach (AvailableAttachSlot item in e.NewItems)
                 {
-                   _context.AvailableAttachSlots.Add(item);
+                    _context.AvailableAttachSlots.Add(item);
+                }
+            }
+        }
+        private void _Avv_att_slot_OK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (e.Action == NotifyCollectionChangedAction.Remove)
+            {
+                foreach (Attachmentmount item in e.OldItems)
+                {
+                    AttMount.Remove(item);
+                }
+                SaveChanges();
+            }
+            else if (e.Action == NotifyCollectionChangedAction.Add)
+            {
+                foreach (Attachmentmount item in e.NewItems)
+                {
+                    item.name = "New_slot";
+                    item.idAttacClass = item.idAttacClass;
+                    AttMount.Add(item);
+                    SaveChanges();
                 }
             }
         }
@@ -127,3 +166,4 @@ namespace Item_WPF.MVVM.ViewModels
 }
 //Свойство является частью данных ключа объекта, поэтому его нельзя изменить
 
+//http://losev-al.blogspot.com.by/2013/09/view-mvvm.html

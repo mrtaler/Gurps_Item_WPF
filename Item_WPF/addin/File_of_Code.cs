@@ -32,7 +32,6 @@ namespace Item_WPF.addin
         public static string ClassCha;
         public static string Pass;
     }
-
     /// <summary>
     /// класс для фомирования комбинаций оружия
     /// </summary>
@@ -98,7 +97,7 @@ namespace Item_WPF.addin
         }
 
     }
-#region BasicConverter Class
+    #region BasicConverter Class
     public abstract class ConvertorBase<T> : MarkupExtension, IValueConverter
     where T : class, new()
     {
@@ -123,13 +122,12 @@ namespace Item_WPF.addin
         {
             return this;
         }
-      #endregion
-        
+        #endregion
+
         ////https://habrahabr.ru/post/140876/
     }
     #endregion
-
-#region MyltiValueCinverter Basik
+    #region MyltiValueCinverter Basik
     public abstract class MultiConvertorBase<T> : MarkupExtension, IMultiValueConverter
    where T : class, new()
     {
@@ -154,10 +152,10 @@ namespace Item_WPF.addin
             return this;
         }
 
-      //  private static T _converter = null;
-      
+        //  private static T _converter = null;
+
         #endregion
         ////https://habrahabr.ru/post/140876/
     }
-#endregion
+    #endregion
 }

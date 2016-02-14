@@ -67,8 +67,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="addin\ActionCommand.cs" />
     <Compile Include="addin\Converters.cs" />
     <Compile Include="addin\mmmm.cs" />
+    <Compile Include="addin\RelayCommand.cs" />
     <Compile Include="all_Items.xaml.cs">
       <DependentUpon>all_Items.xaml</DependentUpon>
     </Compile>

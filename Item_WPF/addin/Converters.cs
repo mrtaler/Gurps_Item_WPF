@@ -114,15 +114,15 @@ namespace Item_WPF.addin
         {
             ASlot = values[0] as ObservableCollection<AvailableAttachSlot>;
             IdWeapon = values[1] as int?;
-            int Check = 0;
-            if (ASlot.Count != 0)
+            int check = 0;
+            if (ASlot != null && ASlot.Count != 0)
             {
                 int findslotPoint = System.Convert.ToInt32(parameter);
-                Check = (from p in ASlot
+                check = (from p in ASlot
                          where p.rATTACHMENTSLOT == findslotPoint
                          select p.rAttachmentmount).FirstOrDefault();
             }
-            if (Check != 0) return true;
+            if (check != 0) return true;
             else return false;
         }
 
@@ -131,20 +131,13 @@ namespace Item_WPF.addin
                                     object parameter,
                                     CultureInfo culture)
         {
-            //хуйня, нужно действовать тоньше через поиск
-
-            int i = 1;
-            int param = System.Convert.ToInt32(parameter);
-            if (param == 1) i = 68;
-            else if (param == 2) i = 41;
-
             if ((bool)value && ASlot != null)
             {
                 ASlot.Add(new AvailableAttachSlot()
                 {
                     rWeaponId = System.Convert.ToInt32(IdWeapon),
                     rATTACHMENTSLOT = System.Convert.ToInt32(parameter),
-                    rAttachmentmount = i
+                    rAttachmentmount = System.Convert.ToInt32(parameter)
                 });
             }
             else if ((bool)value && ASlot == null)
@@ -154,7 +147,7 @@ namespace Item_WPF.addin
                     {
                         rWeaponId = System.Convert.ToInt32(IdWeapon),
                         rATTACHMENTSLOT = System.Convert.ToInt32(parameter),
-                        rAttachmentmount = i
+                        rAttachmentmount = System.Convert.ToInt32(parameter)
                     });
             }
             else
@@ -165,7 +158,6 @@ namespace Item_WPF.addin
                            select p).First();
                 if (ASlot != null) ASlot.Remove(avs);
             }
-
             //you know that your first binding is slider 1 value ans second binding is slider 2 value
             //so create a 2 item object []
             object[] ret = new object[2];
@@ -178,20 +170,19 @@ namespace Item_WPF.addin
     #region SlotConvert_datacontext
     class AvailableSlotMountConverter : MultiConvertorBase<AvailableSlotMountConverter>
     {
-        private ObservableCollection<Attachmentmount> AvAttMount { get; set; }
         public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             if ((bool)values[1])
             {
-                AvAttMount = (ObservableCollection<Attachmentmount>)values[0];
+                ObservableCollection<Attachmentmount> avAttMount = (ObservableCollection<Attachmentmount>)values[0];
                 int findslotPoint = System.Convert.ToInt32(parameter);
-                return new ObservableCollection<Attachmentmount>(AvAttMount.Where(p => p.idAttacClass == findslotPoint));
+                return new ObservableCollection<Attachmentmount>(avAttMount.Where(p => p.idAttacClass == findslotPoint));
             }
             else return null;
         }
     }
     #endregion
-
+    #region mountAttachPoint convert
     class MountToAttachPointConvert : MultiConvertorBase<MountToAttachPointConvert>
     {
         public ObservableCollection<AvailableAttachSlot> ASlot { set; private get; }
@@ -206,25 +197,26 @@ namespace Item_WPF.addin
                     p.rWeaponId == IdWeapon
                     select p.rAttachmentmount).FirstOrDefault();
         }
-
         public override object[] ConvertBack(object value, Type[] targetType, object parameter, CultureInfo culture)
         {
             int findslotPoint = System.Convert.ToInt32(parameter);
-                int selVal = System.Convert.ToInt32(value);
-            AvailableAttachSlot Ase = ASlot.FirstOrDefault(p =>
+            int selVal = System.Convert.ToInt32(value);
+            AvailableAttachSlot ase = ASlot.FirstOrDefault(p =>
                 p.rWeaponId == IdWeapon
                 && p.rATTACHMENTSLOT == findslotPoint);
-
-
-            if (Ase != null) Ase.rAttachmentmount = selVal;
-
-
+            if (ase != null)
+            {
+                ASlot.Remove(ase);
+                ase.rAttachmentmount = selVal;
+                ASlot.Add(ase);
+            }
             object[] ret = new object[2];
             ret[0] = ASlot;
             ret[1] = IdWeapon;
             return ret;
         }
     }
+    #endregion
 }
 //http://dev.net.ua/blogs/andriydanilchenko/archive/2011/08/14/binding-and-multibinding-converters.aspx
 
