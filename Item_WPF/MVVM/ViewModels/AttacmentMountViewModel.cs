@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Item_WPF.MVVM.ViewModels
 {
@@ -42,11 +43,20 @@ namespace Item_WPF.MVVM.ViewModels
                     _context.Attachmentmounts.Add(item);
                     SaveChanges();
                 }
+                
             }
         }
         private void SaveChanges()
         {
-            _context.SaveChanges();
+            try
+            {
+                _context.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());                
+            }
         }
         public ActionCommand Save { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;

@@ -192,10 +192,12 @@ namespace Item_WPF.addin
             ASlot = values[0] as ObservableCollection<AvailableAttachSlot>;
             IdWeapon = values[1] as int?;
             int findslotPoint = System.Convert.ToInt32(parameter);
-            return (from p in ASlot
-                    where p.rATTACHMENTSLOT == findslotPoint &&
-                    p.rWeaponId == IdWeapon
-                    select p.rAttachmentmount).FirstOrDefault();
+            var qe= (from p in ASlot
+                     where p.rATTACHMENTSLOT == findslotPoint &&
+                     p.rWeaponId == IdWeapon
+                     select p.rAttachmentmount).FirstOrDefault();
+            if (qe!=null) return qe;
+            else return false;
         }
         public override object[] ConvertBack(object value, Type[] targetType, object parameter, CultureInfo culture)
         {

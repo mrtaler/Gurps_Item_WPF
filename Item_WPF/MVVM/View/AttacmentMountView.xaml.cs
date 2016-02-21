@@ -20,15 +20,15 @@ namespace Item_WPF.MVVM.View
     /// </summary>
     public partial class AttacmentMountView : Window
     {
-        public AttacmentMountView(int i)
+        public AttacmentMountView()
         {
             InitializeComponent();
-            DataContext = new AttacmentMountViewModel(i);
         }
 
         private void Canselbutton_OnClick(object sender, RoutedEventArgs e)
         {
           this.Close(); 
         }
+
     }
 }

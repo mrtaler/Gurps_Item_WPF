@@ -31,6 +31,9 @@ namespace Item_WPF.MVVM.ViewModels
         public ObservableCollection<AvailableAttachSlot> avSlot { get; set; }
         public ObservableCollection<Attachmentmount> AttMount { get; set; }
 
+
+        public ICommand AddMountslot1 { get; set; }
+
         #region Constructor
 
 
@@ -54,7 +57,6 @@ namespace Item_WPF.MVVM.ViewModels
 
             avSlot = new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlots.Where(p => p.rWeaponId == WeaponLoad.uiIndex));
             AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
-
             AmmoscCollection = new ObservableCollection<AMMO>(_context.AMMOes);
 
             #region Obcommand
@@ -62,22 +64,33 @@ namespace Item_WPF.MVVM.ViewModels
             LoadImage = new ActionCommand(LoadImageToForm) { IsExecutable = true };
             DellImage = new ActionCommand(DellImageFromAll) { IsExecutable = true };
             AddMountslot = new ActionCommand(AddMountslotCommand) { IsExecutable = true };
-            AddMountslot1=new RelayCommand(AddMountslot1_Execute);
-
+            Refresh = new ActionCommand(Refreshnew) { IsExecutable = true };
+            AddMountslot1 = new RelayCommand(AddMountslot1_Execute);
             #endregion
 
             avSlot.CollectionChanged += new NotifyCollectionChangedEventHandler(_avSlot_CollectionChanged);
-            //AttMount.CollectionChanged += new NotifyCollectionChangedEventHandler(_Avv_att_slot_OK_CollectionChanged);
+            AttMount.CollectionChanged += new NotifyCollectionChangedEventHandler(_Avv_att_slot_OK_CollectionChanged);
         }
         #endregion
         #region Command
-        public ICommand AddMountslot1 { get; set; }
+
+        private void Refreshnew()
+        {
+           //_context = new item1Entities();
+            //AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
+
+        }
 
         private void AddMountslot1_Execute(object parameter)
         {
-            AttacmentMountView atmS = new AttacmentMountView(Convert.ToInt32(parameter)/*, AttMount*/);
+            int param = Convert.ToInt32(parameter);
+            //Combine_weap main = this.Owner as Combine_weap;
+            AttacmentMountView atmS = new AttacmentMountView();
+            atmS.DataContext = new AttacmentMountViewModel(Convert.ToInt32(parameter)); ;
+            //atmS.Owner=this;
             atmS.ShowDialog();
-            AttMount.
+            //_context = new item1Entities();
+            //AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
         }
         private void SaveChanges()
         {
@@ -112,8 +125,7 @@ namespace Item_WPF.MVVM.ViewModels
         public ActionCommand AddMountslot { get; set; }
         public ActionCommand LoadImage { get; set; }
         public ActionCommand DellImage { get; set; }
-
-
+        public ActionCommand Refresh { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertyChanged(string propertyName)
         {
@@ -143,26 +155,27 @@ namespace Item_WPF.MVVM.ViewModels
         }
         private void _Avv_att_slot_OK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            if (e.Action == NotifyCollectionChangedAction.Remove)
-            {
-                foreach (Attachmentmount item in e.OldItems)
-                {
-                    AttMount.Remove(item);
-                }
-                SaveChanges();
-            }
-            else if (e.Action == NotifyCollectionChangedAction.Add)
-            {
-                foreach (Attachmentmount item in e.NewItems)
-                {
-                    item.name = "New_slot";
-                    item.idAttacClass = item.idAttacClass;
-                    AttMount.Add(item);
-                    SaveChanges();
-                }
-            }
+            //if (e.Action == NotifyCollectionChangedAction.Remove)
+            //{
+            //    foreach (AvailableAttachSlot item in e.OldItems)
+            //    {
+            //        _context.AvailableAttachSlots.Remove(item);
+            //    }
+            //    SaveChanges();
+            //}
+            //else if (e.Action == NotifyCollectionChangedAction.Add)
+            //{
+            //    foreach (AvailableAttachSlot item in e.NewItems)
+            //    {
+            //        _context.AvailableAttachSlots.Add(item);
+            //    }
+            //}
         }
     }
+
+
+
+
 }
 //Свойство является частью данных ключа объекта, поэтому его нельзя изменить
 

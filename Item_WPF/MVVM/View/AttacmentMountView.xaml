@@ -7,13 +7,15 @@
         Title="AttacmentMountView"
         Width="300"
         Height="300"
+        Name="AtMV"
         mc:Ignorable="d">
     <Grid>
         <DataGrid x:Name="ViewDataGrid"
                   Margin="10,10,10,35"
                   AutoGenerateColumns="False"
-                  ItemsSource="{Binding Path=AvvAttSlotOk,
+            ItemsSource="{Binding Path=AvvAttSlotOk,
                                         Mode=TwoWay}">
+            <!--ItemsSource="{Binding ElementName=AtMV, Path=DataContext}"-->
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding id,
                                                       Mode=TwoWay}"

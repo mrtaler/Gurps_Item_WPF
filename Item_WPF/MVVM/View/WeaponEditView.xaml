@@ -897,7 +897,9 @@
                                     <MultiBinding Converter="{addin:AvailableSlotMountConverter}"
                                                   ConverterParameter="1"
                                                   UpdateSourceTrigger="PropertyChanged">
-                                        <Binding Path="AttMount" />
+                                        <Binding Mode="TwoWay"
+                                                 Path="AttMount"
+                                                 UpdateSourceTrigger="PropertyChanged" />
                                         <Binding ElementName="ScopeCheckBox" Path="IsChecked" />
                                     </MultiBinding>
                                 </ComboBox.ItemsSource>
@@ -925,7 +927,9 @@
                                     <MultiBinding Converter="{addin:AvailableSlotMountConverter}"
                                                   ConverterParameter="2"
                                                   UpdateSourceTrigger="PropertyChanged">
-                                        <Binding Path="AttMount" />
+                                        <Binding Mode="TwoWay"
+                                                 Path="AttMount"
+                                                 UpdateSourceTrigger="PropertyChanged" />
                                         <Binding ElementName="LaserCheckBox" Path="IsChecked" />
                                     </MultiBinding>
                                 </ComboBox.ItemsSource>
@@ -951,7 +955,9 @@
                                                            Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
                                     <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="3">
-                                        <Binding Path="AttMount" />
+                                        <Binding Mode="TwoWay"
+                                                 Path="AttMount"
+                                                 UpdateSourceTrigger="PropertyChanged" />
                                         <Binding ElementName="LightCheckBox" Path="IsChecked" />
                                     </MultiBinding>
                                 </ComboBox.ItemsSource>
@@ -974,7 +980,9 @@
                                                            Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
                                     <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="4">
-                                        <Binding Path="AttMount" />
+                                        <Binding Mode="TwoWay"
+                                                 Path="AttMount"
+                                                 UpdateSourceTrigger="PropertyChanged" />
                                         <Binding ElementName="BipodCheckBox" Path="IsChecked" />
                                     </MultiBinding>
                                 </ComboBox.ItemsSource>
@@ -1322,6 +1330,7 @@
                 Margin="170,0,0,10"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Bottom"
+                Command="{Binding Refresh}"
                 Content="All_Undo" />
 
     </Grid>
