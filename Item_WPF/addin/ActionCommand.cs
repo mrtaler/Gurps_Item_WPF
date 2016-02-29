@@ -31,7 +31,7 @@ namespace Item_WPF.addin
             _action = action;
         }
 
-        public ActionCommand(Action<object> addMountslotCommand)
+        public ActionCommand(Action action, Action<object> addMountslotCommand)
         {
             this.addMountslotCommand = addMountslotCommand;
         }

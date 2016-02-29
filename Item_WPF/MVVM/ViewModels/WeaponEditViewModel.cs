@@ -29,7 +29,31 @@ namespace Item_WPF.MVVM.ViewModels
         public ITEM ItemLoad { get; set; }
         public WEAPON WeaponLoad { get; set; }
         public ObservableCollection<AvailableAttachSlot> avSlot { get; set; }
-        public ObservableCollection<Attachmentmount> AttMount { get; set; }
+
+
+
+        private ObservableCollection<Attachmentmount> _AttMount;
+        public ObservableCollection<Attachmentmount> AttMount
+        {
+            get
+            {
+                return _AttMount;
+            }
+            set
+            {
+                if (_AttMount != value)
+                {
+                    _AttMount = value;
+                    RaisePropertyChanged("AttMount");
+                }
+            }
+        }
+
+
+
+
+        public ObservableCollection<Attachmentmount> AttMountScope { get; set; }
+
         public ICommand AddMountslot1 { get; set; }
 
 
@@ -41,6 +65,9 @@ namespace Item_WPF.MVVM.ViewModels
             ItemLoad = (from z in _context.ITEMs
                         where z.uiIndex == itemselect
                         select z).First();
+
+            var it = _context.ITEMs.First(p => p.uiIndex == itemselect);
+
             WeaponLoad = (from p in _context.WEAPONs
                           where p.uiIndex == ItemLoad.ubClassIndex
                           select p).First();
@@ -53,6 +80,7 @@ namespace Item_WPF.MVVM.ViewModels
             TypeOfDamagesCollection = new ObservableCollection<TypeOfDamage>(_context.TypeOfDamages);
             avSlot = new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlots.Where(p => p.rWeaponId == WeaponLoad.uiIndex));
             AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
+
             AmmoscCollection = new ObservableCollection<AMMO>(_context.AMMOes);
 
             #region Obcommand
@@ -63,11 +91,12 @@ namespace Item_WPF.MVVM.ViewModels
             Refresh = new ActionCommand(Refreshnew) { IsExecutable = true };
 
             AddMountslot1 = new RelayCommand(AddMountslot1_Execute);
+            //AddMountslot1 = new ActionCommand(AddMountslot1_Execute) { IsExecutable = true };
             #endregion
 
             #region Event
             avSlot.CollectionChanged += new NotifyCollectionChangedEventHandler(_avSlot_CollectionChanged);
-            AttMount.CollectionChanged += new NotifyCollectionChangedEventHandler(_Avv_att_slot_OK_CollectionChanged);
+          //  AttMount.CollectionChanged += new NotifyCollectionChangedEventHandler(_Avv_att_slot_OK_CollectionChanged);
             #endregion
 
         }
@@ -86,11 +115,12 @@ namespace Item_WPF.MVVM.ViewModels
             int param = Convert.ToInt32(parameter);
             //Combine_weap main = this.Owner as Combine_weap;
             AttacmentMountView atmS = new AttacmentMountView();
-            atmS.DataContext = new AttacmentMountViewModel(Convert.ToInt32(parameter), AttMount, _context); ;
-            //atmS.Owner=this;
+            atmS.DataContext = new AttacmentMountViewModel(Convert.ToInt32(parameter)); ;
             atmS.ShowDialog();
-            //_context = new item1Entities();
-            //AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
+            using (item1Entities context = new item1Entities())
+            {
+                AttMount = new ObservableCollection<Attachmentmount>(context.Attachmentmounts);
+            }
         }
         private void SaveChanges()
         {
@@ -141,7 +171,7 @@ namespace Item_WPF.MVVM.ViewModels
                 {
                     _context.AvailableAttachSlots.Remove(item);
                 }
-                SaveChanges();
+          //      SaveChanges();
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
@@ -159,7 +189,7 @@ namespace Item_WPF.MVVM.ViewModels
                 {
                     _context.AvailableAttachSlots.Remove(item);
                 }
-                SaveChanges();
+             //   SaveChanges();
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
