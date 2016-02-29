@@ -13,7 +13,7 @@
         <DataGrid x:Name="ViewDataGrid"
                   Margin="10,10,10,35"
                   AutoGenerateColumns="False"
-            ItemsSource="{Binding Path=AvvAttSlotOk,
+            ItemsSource="{Binding Path=avvAttSlotOk,
                                         Mode=TwoWay}">
             <!--ItemsSource="{Binding ElementName=AtMV, Path=DataContext}"-->
             <DataGrid.Columns>

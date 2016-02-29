@@ -30,13 +30,10 @@ namespace Item_WPF.MVVM.ViewModels
         public WEAPON WeaponLoad { get; set; }
         public ObservableCollection<AvailableAttachSlot> avSlot { get; set; }
         public ObservableCollection<Attachmentmount> AttMount { get; set; }
-
-
         public ICommand AddMountslot1 { get; set; }
 
+
         #region Constructor
-
-
         public WeaponEditViewModel(int itemselect)
         {
             _context = new item1Entities();
@@ -54,7 +51,6 @@ namespace Item_WPF.MVVM.ViewModels
             WeaponClasscCollection = new ObservableCollection<WeaponClass>(_context.WeaponClasses);
             WeaponTypescCollection = new ObservableCollection<WeaponType>(_context.WeaponTypes);
             TypeOfDamagesCollection = new ObservableCollection<TypeOfDamage>(_context.TypeOfDamages);
-
             avSlot = new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlots.Where(p => p.rWeaponId == WeaponLoad.uiIndex));
             AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
             AmmoscCollection = new ObservableCollection<AMMO>(_context.AMMOes);
@@ -63,20 +59,24 @@ namespace Item_WPF.MVVM.ViewModels
             Save = new ActionCommand(SaveChanges) { IsExecutable = true };
             LoadImage = new ActionCommand(LoadImageToForm) { IsExecutable = true };
             DellImage = new ActionCommand(DellImageFromAll) { IsExecutable = true };
-            AddMountslot = new ActionCommand(AddMountslotCommand) { IsExecutable = true };
+
             Refresh = new ActionCommand(Refreshnew) { IsExecutable = true };
+
             AddMountslot1 = new RelayCommand(AddMountslot1_Execute);
             #endregion
 
+            #region Event
             avSlot.CollectionChanged += new NotifyCollectionChangedEventHandler(_avSlot_CollectionChanged);
             AttMount.CollectionChanged += new NotifyCollectionChangedEventHandler(_Avv_att_slot_OK_CollectionChanged);
+            #endregion
+
         }
         #endregion
         #region Command
 
         private void Refreshnew()
         {
-           //_context = new item1Entities();
+            //_context = new item1Entities();
             //AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
 
         }
@@ -86,7 +86,7 @@ namespace Item_WPF.MVVM.ViewModels
             int param = Convert.ToInt32(parameter);
             //Combine_weap main = this.Owner as Combine_weap;
             AttacmentMountView atmS = new AttacmentMountView();
-            atmS.DataContext = new AttacmentMountViewModel(Convert.ToInt32(parameter)); ;
+            atmS.DataContext = new AttacmentMountViewModel(Convert.ToInt32(parameter), AttMount, _context); ;
             //atmS.Owner=this;
             atmS.ShowDialog();
             //_context = new item1Entities();
@@ -108,15 +108,9 @@ namespace Item_WPF.MVVM.ViewModels
                 ItemLoad.Item_Image = System.IO.File.ReadAllBytes(dlg.FileName);
             }
         }
-        private void AddMountslotCommand(object parameter)
-        {
-            //int? ad = parameter as int?;
-            MessageBox.Show("Test" + parameter.ToString());
-            /*----*/
-        }
+
         private void DellImageFromAll()
         {
-            // Imagebute = null;
             ItemLoad.Item_Image = null;
         }
         #endregion
@@ -126,6 +120,10 @@ namespace Item_WPF.MVVM.ViewModels
         public ActionCommand LoadImage { get; set; }
         public ActionCommand DellImage { get; set; }
         public ActionCommand Refresh { get; set; }
+
+
+
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertyChanged(string propertyName)
         {
@@ -155,21 +153,21 @@ namespace Item_WPF.MVVM.ViewModels
         }
         private void _Avv_att_slot_OK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            //if (e.Action == NotifyCollectionChangedAction.Remove)
-            //{
-            //    foreach (AvailableAttachSlot item in e.OldItems)
-            //    {
-            //        _context.AvailableAttachSlots.Remove(item);
-            //    }
-            //    SaveChanges();
-            //}
-            //else if (e.Action == NotifyCollectionChangedAction.Add)
-            //{
-            //    foreach (AvailableAttachSlot item in e.NewItems)
-            //    {
-            //        _context.AvailableAttachSlots.Add(item);
-            //    }
-            //}
+            if (e.Action == NotifyCollectionChangedAction.Remove)
+            {
+                foreach (AvailableAttachSlot item in e.OldItems)
+                {
+                    _context.AvailableAttachSlots.Remove(item);
+                }
+                SaveChanges();
+            }
+            else if (e.Action == NotifyCollectionChangedAction.Add)
+            {
+                foreach (AvailableAttachSlot item in e.NewItems)
+                {
+                    _context.AvailableAttachSlots.Add(item);
+                }
+            }
         }
     }
 
