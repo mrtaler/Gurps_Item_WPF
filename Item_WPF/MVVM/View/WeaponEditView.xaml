@@ -895,7 +895,6 @@
                                                            Converter={StaticResource BooleanToVisibilityConverter}}">
 
                                 <ComboBox.ItemsSource>
-
                                     <MultiBinding Converter="{addin:AvailableSlotMountConverter}"
                                                   ConverterParameter="1"
                                                   UpdateSourceTrigger="PropertyChanged">

@@ -170,13 +170,15 @@ namespace Item_WPF.addin
     #region SlotConvert_datacontext
     class AvailableSlotMountConverter : MultiConvertorBase<AvailableSlotMountConverter>
     {
+     //   public ObservableCollection<Attachmentmount> Ds1Attachmentmounts { set; private get; };
         public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             if ((bool)values[1])
             {
                 ObservableCollection<Attachmentmount> avAttMount = (ObservableCollection<Attachmentmount>)values[0];
                 int findslotPoint = System.Convert.ToInt32(parameter);
-                return new ObservableCollection<Attachmentmount>(avAttMount.Where(p => p.idAttacClass == findslotPoint));
+               // Ds1Attachmentmounts= new ObservableCollection<Attachmentmount>(avAttMount.Where(p => p.idAttacClass == findslotPoint));
+                return avAttMount.Where(p => p.idAttacClass == findslotPoint);
             }
             else return null;
         }

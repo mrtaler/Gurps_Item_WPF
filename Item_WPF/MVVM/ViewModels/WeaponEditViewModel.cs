@@ -32,26 +32,22 @@ namespace Item_WPF.MVVM.ViewModels
 
 
 
-        private ObservableCollection<Attachmentmount> _AttMount;
+        private ObservableCollection<Attachmentmount> _attMount;
         public ObservableCollection<Attachmentmount> AttMount
         {
             get
             {
-                return _AttMount;
+                return _attMount;
             }
             set
             {
-                if (_AttMount != value)
+                if (_attMount != value)
                 {
-                    _AttMount = value;
+                    _attMount = value;
                     RaisePropertyChanged("AttMount");
                 }
             }
         }
-
-
-
-
         public ObservableCollection<Attachmentmount> AttMountScope { get; set; }
 
         public ICommand AddMountslot1 { get; set; }
@@ -117,10 +113,19 @@ namespace Item_WPF.MVVM.ViewModels
             AttacmentMountView atmS = new AttacmentMountView();
             atmS.DataContext = new AttacmentMountViewModel(Convert.ToInt32(parameter)); ;
             atmS.ShowDialog();
-            using (item1Entities context = new item1Entities())
+         
+                AttMount.Clear();
+            using (item1Entities Conn = new item1Entities())
             {
-                AttMount = new ObservableCollection<Attachmentmount>(context.Attachmentmounts);
+                AttMount = new ObservableCollection<Attachmentmount>(Conn.Attachmentmounts);
+
+                //foreach (Attachmentmount VARIABLE in Conn.Attachmentmounts)
+                //{
+                //    AttMount.Add(VARIABLE);
+                //}
             }
+            //= new ObservableCollection<Attachmentmount>(context.Attachmentmounts);
+            
         }
         private void SaveChanges()
         {
@@ -171,7 +176,7 @@ namespace Item_WPF.MVVM.ViewModels
                 {
                     _context.AvailableAttachSlots.Remove(item);
                 }
-          //      SaveChanges();
+                SaveChanges();
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
