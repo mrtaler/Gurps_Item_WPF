@@ -100,17 +100,15 @@ namespace Item_WPF.addin
         }
     }
     #endregion
-    #region Converter int to Visible and check
+    #region Converter int to Visible and check  AvailableAttachPointConvert
     class AvailableAttachPointConvert : MultiConvertorBase<AvailableAttachPointConvert>
     {
-
         public ObservableCollection<AvailableAttachSlot> ASlot { set; private get; }
         public int? IdWeapon { set; private get; }
-
         public override object Convert(object[] values,
-                              Type targetType,
-                              object parameter,
-                              CultureInfo culture)
+                      Type targetType,
+                      object parameter,
+                      CultureInfo culture)
         {
             ASlot = values[0] as ObservableCollection<AvailableAttachSlot>;
             IdWeapon = values[1] as int?;
@@ -131,7 +129,7 @@ namespace Item_WPF.addin
                                     object parameter,
                                     CultureInfo culture)
         {
-            if ((bool)value && ASlot != null)
+            if ((bool)value)
             {
                 ASlot.Add(new AvailableAttachSlot()
                 {
@@ -139,16 +137,6 @@ namespace Item_WPF.addin
                     rATTACHMENTSLOT = System.Convert.ToInt32(parameter),
                     rAttachmentmount = System.Convert.ToInt32(parameter)
                 });
-            }
-            else if ((bool)value && ASlot == null)
-            {
-                if (ASlot != null)
-                    ASlot.Add(new AvailableAttachSlot()
-                    {
-                        rWeaponId = System.Convert.ToInt32(IdWeapon),
-                        rATTACHMENTSLOT = System.Convert.ToInt32(parameter),
-                        rAttachmentmount = System.Convert.ToInt32(parameter)
-                    });
             }
             else
             {
@@ -170,21 +158,20 @@ namespace Item_WPF.addin
     #region SlotConvert_datacontext
     class AvailableSlotMountConverter : MultiConvertorBase<AvailableSlotMountConverter>
     {
-     //   public ObservableCollection<Attachmentmount> Ds1Attachmentmounts { set; private get; };
         public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             if ((bool)values[1])
             {
                 ObservableCollection<Attachmentmount> avAttMount = (ObservableCollection<Attachmentmount>)values[0];
                 int findslotPoint = System.Convert.ToInt32(parameter);
-               // Ds1Attachmentmounts= new ObservableCollection<Attachmentmount>(avAttMount.Where(p => p.idAttacClass == findslotPoint));
                 return avAttMount.Where(p => p.idAttacClass == findslotPoint);
             }
             else return null;
         }
     }
     #endregion
-    #region mountAttachPoint convert
+
+    #region MountToAttachPointConvert
     class MountToAttachPointConvert : MultiConvertorBase<MountToAttachPointConvert>
     {
         public ObservableCollection<AvailableAttachSlot> ASlot { set; private get; }
@@ -194,25 +181,24 @@ namespace Item_WPF.addin
             ASlot = values[0] as ObservableCollection<AvailableAttachSlot>;
             IdWeapon = values[1] as int?;
             int findslotPoint = System.Convert.ToInt32(parameter);
-            var qe= (from p in ASlot
-                     where p.rATTACHMENTSLOT == findslotPoint &&
-                     p.rWeaponId == IdWeapon
-                     select p.rAttachmentmount).FirstOrDefault();
-            if (qe!=null) return qe;
-            else return false;
+            int MountSlot = (from p in ASlot
+                              where p.rATTACHMENTSLOT == findslotPoint
+                      select p.rAttachmentmount).FirstOrDefault();
+            //if (MountSlot != 0)
+                return MountSlot;
+            //else return 0;
         }
         public override object[] ConvertBack(object value, Type[] targetType, object parameter, CultureInfo culture)
         {
             int findslotPoint = System.Convert.ToInt32(parameter);
             int selVal = System.Convert.ToInt32(value);
             AvailableAttachSlot ase = ASlot.FirstOrDefault(p =>
-                p.rWeaponId == IdWeapon
-                && p.rATTACHMENTSLOT == findslotPoint);
+                p.rATTACHMENTSLOT == findslotPoint);
             if (ase != null)
             {
-                ASlot.Remove(ase);
+                //ASlot.Remove(ase);
                 ase.rAttachmentmount = selVal;
-                ASlot.Add(ase);
+                //ASlot.Add(ase);
             }
             object[] ret = new object[2];
             ret[0] = ASlot;

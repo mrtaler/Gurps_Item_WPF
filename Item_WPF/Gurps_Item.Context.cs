@@ -37,7 +37,6 @@ namespace Item_WPF
         public virtual DbSet<Attachmentmount> Attachmentmounts { get; set; }
         public virtual DbSet<ATTACHMENTSLOT> ATTACHMENTSLOTs { get; set; }
         public virtual DbSet<AttachmentSystem> AttachmentSystems { get; set; }
-        public virtual DbSet<AvailableAttachSlot> AvailableAttachSlots { get; set; }
         public virtual DbSet<Battery> Batteries { get; set; }
         public virtual DbSet<Cloth> Clothes { get; set; }
         public virtual DbSet<Drug> Drugs { get; set; }
@@ -60,6 +59,7 @@ namespace Item_WPF
         public virtual DbSet<WeaponClass> WeaponClasses { get; set; }
         public virtual DbSet<WeaponType> WeaponTypes { get; set; }
         public virtual DbSet<Character> Characters { get; set; }
+        public virtual DbSet<AvailableAttachSlot> AvailableAttachSlots { get; set; }
     
         public virtual int NEW_ITEM(string name, string class_ofItem, ObjectParameter returns)
         {

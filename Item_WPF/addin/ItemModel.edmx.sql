@@ -755,7 +755,12 @@ GO
 -- Creating primary key on [rWeaponId], [rATTACHMENTSLOT], [rAttachmentmount] in table 'AvailableAttachSlots'
 ALTER TABLE [dbo].[AvailableAttachSlot]
 ADD CONSTRAINT [PK_AvailableAttachSlot]
-PRIMARY KEY CLUSTERED ([rWeaponId], [rATTACHMENTSLOT], [rAttachmentmount] ASC);
+PRIMARY KEY CLUSTERED ([rWeaponId], [rATTACHMENTSLOT] ASC);
+GO
+
+ALTER TABLE [dbo].[AvailableAttachSlot]
+ADD CONSTRAINT [UK_AvailableAttachSlot]
+  UNIQUE (rWeaponId, rATTACHMENTSLOT,rAttachmentmount);
 GO
 
 -- Creating primary key on [id] in table 'Clothes'

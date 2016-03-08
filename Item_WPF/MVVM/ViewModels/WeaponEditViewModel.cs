@@ -29,9 +29,7 @@ namespace Item_WPF.MVVM.ViewModels
         public ITEM ItemLoad { get; set; }
         public WEAPON WeaponLoad { get; set; }
         public ObservableCollection<AvailableAttachSlot> avSlot { get; set; }
-
-
-
+        
         private ObservableCollection<Attachmentmount> _attMount;
         public ObservableCollection<Attachmentmount> AttMount
         {
@@ -74,6 +72,7 @@ namespace Item_WPF.MVVM.ViewModels
             WeaponClasscCollection = new ObservableCollection<WeaponClass>(_context.WeaponClasses);
             WeaponTypescCollection = new ObservableCollection<WeaponType>(_context.WeaponTypes);
             TypeOfDamagesCollection = new ObservableCollection<TypeOfDamage>(_context.TypeOfDamages);
+
             avSlot = new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlots.Where(p => p.rWeaponId == WeaponLoad.uiIndex));
             AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
 
@@ -92,7 +91,7 @@ namespace Item_WPF.MVVM.ViewModels
 
             #region Event
             avSlot.CollectionChanged += new NotifyCollectionChangedEventHandler(_avSlot_CollectionChanged);
-          //  AttMount.CollectionChanged += new NotifyCollectionChangedEventHandler(_Avv_att_slot_OK_CollectionChanged);
+            //  AttMount.CollectionChanged += new NotifyCollectionChangedEventHandler(_Avv_att_slot_OK_CollectionChanged);
             #endregion
 
         }
@@ -103,7 +102,6 @@ namespace Item_WPF.MVVM.ViewModels
         {
             //_context = new item1Entities();
             //AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
-
         }
 
         private void AddMountslot1_Execute(object parameter)
@@ -113,19 +111,14 @@ namespace Item_WPF.MVVM.ViewModels
             AttacmentMountView atmS = new AttacmentMountView();
             atmS.DataContext = new AttacmentMountViewModel(Convert.ToInt32(parameter)); ;
             atmS.ShowDialog();
-         
-                AttMount.Clear();
-            using (item1Entities Conn = new item1Entities())
-            {
-                AttMount = new ObservableCollection<Attachmentmount>(Conn.Attachmentmounts);
-
-                //foreach (Attachmentmount VARIABLE in Conn.Attachmentmounts)
-                //{
-                //    AttMount.Add(VARIABLE);
-                //}
-            }
-            //= new ObservableCollection<Attachmentmount>(context.Attachmentmounts);
+            //using (item1Entities Conn = new item1Entities())
+            //{
+            AttMount.Clear();
+            AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
             
+            //}
+            //= new ObservableCollection<Attachmentmount>(context.Attachmentmounts);
+
         }
         private void SaveChanges()
         {
@@ -155,10 +148,7 @@ namespace Item_WPF.MVVM.ViewModels
         public ActionCommand LoadImage { get; set; }
         public ActionCommand DellImage { get; set; }
         public ActionCommand Refresh { get; set; }
-
-
-
-
+        
         public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertyChanged(string propertyName)
         {
@@ -176,7 +166,7 @@ namespace Item_WPF.MVVM.ViewModels
                 {
                     _context.AvailableAttachSlots.Remove(item);
                 }
-                SaveChanges();
+              //  SaveChanges();
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
@@ -194,7 +184,7 @@ namespace Item_WPF.MVVM.ViewModels
                 {
                     _context.AvailableAttachSlots.Remove(item);
                 }
-             //   SaveChanges();
+                //   SaveChanges();
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
@@ -205,10 +195,6 @@ namespace Item_WPF.MVVM.ViewModels
             }
         }
     }
-
-
-
-
 }
 //Свойство является частью данных ключа объекта, поэтому его нельзя изменить
 

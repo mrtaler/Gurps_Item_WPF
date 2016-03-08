@@ -157,7 +157,6 @@
           <Key>
             <PropertyRef Name="rWeaponId" />
             <PropertyRef Name="rATTACHMENTSLOT" />
-            <PropertyRef Name="rAttachmentmount" />
           </Key>
           <Property Name="rWeaponId" Type="int" Nullable="false" />
           <Property Name="rATTACHMENTSLOT" Type="int" Nullable="false" />
@@ -953,7 +952,6 @@
           <EntitySet Name="Attachmentmounts" EntityType="item1Model.Attachmentmount" />
           <EntitySet Name="ATTACHMENTSLOTs" EntityType="item1Model.ATTACHMENTSLOT" />
           <EntitySet Name="AttachmentSystems" EntityType="item1Model.AttachmentSystem" />
-          <EntitySet Name="AvailableAttachSlots" EntityType="item1Model.AvailableAttachSlot" />
           <EntitySet Name="Batteries" EntityType="item1Model.Battery" />
           <EntitySet Name="Clothes" EntityType="item1Model.Cloth" />
           <EntitySet Name="Drugs" EntityType="item1Model.Drug" />
@@ -998,14 +996,6 @@
           <AssociationSet Name="FK_Attachmentmount_NasAttachmentClass1" Association="item1Model.FK_Attachmentmount_NasAttachmentClass1">
             <End Role="ATTACHMENTSLOT" EntitySet="ATTACHMENTSLOTs" />
             <End Role="Attachmentmount" EntitySet="Attachmentmounts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AVeAttachmentmount" Association="item1Model.FK_AVeAttachmentmount">
-            <End Role="Attachmentmount" EntitySet="Attachmentmounts" />
-            <End Role="AvailableAttachSlot" EntitySet="AvailableAttachSlots" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AVeATTACHMENTSLOT" Association="item1Model.FK_AVeATTACHMENTSLOT">
-            <End Role="ATTACHMENTSLOT" EntitySet="ATTACHMENTSLOTs" />
-            <End Role="AvailableAttachSlot" EntitySet="AvailableAttachSlots" />
           </AssociationSet>
           <AssociationSet Name="FK_G_SubAttachClass_ATTACHMENTSLOT1" Association="item1Model.FK_G_SubAttachClass_ATTACHMENTSLOT1">
             <End Role="ATTACHMENTSLOT" EntitySet="ATTACHMENTSLOTs" />
@@ -1072,10 +1062,6 @@
             <End Role="AMMO" EntitySet="AMMOes" />
             <End Role="WEAPON" EntitySet="WEAPONs" />
           </AssociationSet>
-          <AssociationSet Name="FK_AVeWeaponId" Association="item1Model.FK_AVeWeaponId">
-            <End Role="WEAPON" EntitySet="WEAPONs" />
-            <End Role="AvailableAttachSlot" EntitySet="AvailableAttachSlots" />
-          </AssociationSet>
           <AssociationSet Name="FK_WEAPON_TypeOfDamage" Association="item1Model.FK_WEAPON_TypeOfDamage">
             <End Role="TypeOfDamage" EntitySet="TypeOfDamages" />
             <End Role="WEAPON" EntitySet="WEAPONs" />
@@ -1091,6 +1077,19 @@
             <End Role="WeaponType" EntitySet="WeaponTypes" />
           </AssociationSet>
           <EntitySet Name="Characters" EntityType="item1Model.Character" />
+          <EntitySet Name="AvailableAttachSlots" EntityType="item1Model.AvailableAttachSlot" />
+          <AssociationSet Name="FK_AVeAttachmentmount" Association="item1Model.FK_AVeAttachmentmount">
+            <End Role="Attachmentmount" EntitySet="Attachmentmounts" />
+            <End Role="AvailableAttachSlot" EntitySet="AvailableAttachSlots" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AVeATTACHMENTSLOT" Association="item1Model.FK_AVeATTACHMENTSLOT">
+            <End Role="ATTACHMENTSLOT" EntitySet="ATTACHMENTSLOTs" />
+            <End Role="AvailableAttachSlot" EntitySet="AvailableAttachSlots" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AVeWeaponId" Association="item1Model.FK_AVeWeaponId">
+            <End Role="WEAPON" EntitySet="WEAPONs" />
+            <End Role="AvailableAttachSlot" EntitySet="AvailableAttachSlots" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="AMMO">
           <Key>
@@ -1245,8 +1244,8 @@
           <Property Name="uiSlotIndex" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="szSlotName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Attachmentmounts" Relationship="item1Model.FK_Attachmentmount_NasAttachmentClass1" FromRole="ATTACHMENTSLOT" ToRole="Attachmentmount" />
-          <NavigationProperty Name="AvailableAttachSlots" Relationship="item1Model.FK_AVeATTACHMENTSLOT" FromRole="ATTACHMENTSLOT" ToRole="AvailableAttachSlot" />
           <NavigationProperty Name="G_SubAttachClass" Relationship="item1Model.FK_G_SubAttachClass_ATTACHMENTSLOT1" FromRole="ATTACHMENTSLOT" ToRole="G_SubAttachClass" />
+          <NavigationProperty Name="AvailableAttachSlots" Relationship="item1Model.FK_AVeATTACHMENTSLOT" FromRole="ATTACHMENTSLOT" ToRole="AvailableAttachSlot" />
         </EntityType>
         <EntityType Name="AttachmentSystem">
           <Key>
@@ -1254,19 +1253,6 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="AvailableAttachSlot">
-          <Key>
-            <PropertyRef Name="rWeaponId" />
-            <PropertyRef Name="rATTACHMENTSLOT" />
-            <PropertyRef Name="rAttachmentmount" />
-          </Key>
-          <Property Name="rWeaponId" Type="Int32" Nullable="false" />
-          <Property Name="rATTACHMENTSLOT" Type="Int32" Nullable="false" />
-          <Property Name="rAttachmentmount" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Attachmentmount" Relationship="item1Model.FK_AVeAttachmentmount" FromRole="AvailableAttachSlot" ToRole="Attachmentmount" />
-          <NavigationProperty Name="ATTACHMENTSLOT" Relationship="item1Model.FK_AVeATTACHMENTSLOT" FromRole="AvailableAttachSlot" ToRole="ATTACHMENTSLOT" />
-          <NavigationProperty Name="WEAPON" Relationship="item1Model.FK_AVeWeaponId" FromRole="AvailableAttachSlot" ToRole="WEAPON" />
         </EntityType>
         <EntityType Name="Battery">
           <Key>
@@ -1606,30 +1592,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_AVeAttachmentmount">
-          <End Type="item1Model.Attachmentmount" Role="Attachmentmount" Multiplicity="1" />
-          <End Type="item1Model.AvailableAttachSlot" Role="AvailableAttachSlot" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Attachmentmount">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="AvailableAttachSlot">
-              <PropertyRef Name="rAttachmentmount" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_AVeATTACHMENTSLOT">
-          <End Type="item1Model.ATTACHMENTSLOT" Role="ATTACHMENTSLOT" Multiplicity="1" />
-          <End Type="item1Model.AvailableAttachSlot" Role="AvailableAttachSlot" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ATTACHMENTSLOT">
-              <PropertyRef Name="uiSlotIndex" />
-            </Principal>
-            <Dependent Role="AvailableAttachSlot">
-              <PropertyRef Name="rATTACHMENTSLOT" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_G_SubAttachClass_ATTACHMENTSLOT1">
           <End Type="item1Model.ATTACHMENTSLOT" Role="ATTACHMENTSLOT" Multiplicity="1" />
           <End Type="item1Model.G_SubAttachClass" Role="G_SubAttachClass" Multiplicity="*" />
@@ -1831,9 +1793,9 @@
           <Property Name="RocketRifle" Type="Boolean" Nullable="false" />
           <Property Name="Bulkfolded" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="AMMO" Relationship="item1Model.FK_Calibre" FromRole="WEAPON" ToRole="AMMO" />
-          <NavigationProperty Name="AvailableAttachSlots" Relationship="item1Model.FK_AVeWeaponId" FromRole="WEAPON" ToRole="AvailableAttachSlot" />
           <NavigationProperty Name="TypeOfDamage" Relationship="item1Model.FK_WEAPON_TypeOfDamage" FromRole="WEAPON" ToRole="TypeOfDamage" />
           <NavigationProperty Name="WeaponType" Relationship="item1Model.FK_WeaponType" FromRole="WEAPON" ToRole="WeaponType" />
+          <NavigationProperty Name="AvailableAttachSlots" Relationship="item1Model.FK_AVeWeaponId" FromRole="WEAPON" ToRole="AvailableAttachSlot" />
         </EntityType>
         <Association Name="FK_Calibre">
           <End Type="item1Model.AMMO" Role="AMMO" Multiplicity="1" />
@@ -1844,18 +1806,6 @@
             </Principal>
             <Dependent Role="WEAPON">
               <PropertyRef Name="ubCalibre" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_AVeWeaponId">
-          <End Type="item1Model.WEAPON" Role="WEAPON" Multiplicity="1" />
-          <End Type="item1Model.AvailableAttachSlot" Role="AvailableAttachSlot" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="WEAPON">
-              <PropertyRef Name="uiIndex" />
-            </Principal>
-            <Dependent Role="AvailableAttachSlot">
-              <PropertyRef Name="rWeaponId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1929,6 +1879,54 @@
           <Property Name="BasicSpeedPoints" Type="Double" />
           <Property Name="BasicMovePoints" Type="Int32" />
         </EntityType>
+        <EntityType Name="AvailableAttachSlot">
+          <Key>
+            <PropertyRef Name="rWeaponId" />
+            <PropertyRef Name="rATTACHMENTSLOT" />
+          </Key>
+          <Property Name="rWeaponId" Type="Int32" Nullable="false" />
+          <Property Name="rATTACHMENTSLOT" Type="Int32" Nullable="false" />
+          <Property Name="rAttachmentmount" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Attachmentmount" Relationship="item1Model.FK_AVeAttachmentmount" FromRole="AvailableAttachSlot" ToRole="Attachmentmount" />
+          <NavigationProperty Name="ATTACHMENTSLOT" Relationship="item1Model.FK_AVeATTACHMENTSLOT" FromRole="AvailableAttachSlot" ToRole="ATTACHMENTSLOT" />
+          <NavigationProperty Name="WEAPON" Relationship="item1Model.FK_AVeWeaponId" FromRole="AvailableAttachSlot" ToRole="WEAPON" />
+        </EntityType>
+        <Association Name="FK_AVeAttachmentmount">
+          <End Type="item1Model.Attachmentmount" Role="Attachmentmount" Multiplicity="1" />
+          <End Type="item1Model.AvailableAttachSlot" Role="AvailableAttachSlot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Attachmentmount">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AvailableAttachSlot">
+              <PropertyRef Name="rAttachmentmount" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AVeATTACHMENTSLOT">
+          <End Type="item1Model.ATTACHMENTSLOT" Role="ATTACHMENTSLOT" Multiplicity="1" />
+          <End Type="item1Model.AvailableAttachSlot" Role="AvailableAttachSlot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ATTACHMENTSLOT">
+              <PropertyRef Name="uiSlotIndex" />
+            </Principal>
+            <Dependent Role="AvailableAttachSlot">
+              <PropertyRef Name="rATTACHMENTSLOT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AVeWeaponId">
+          <End Type="item1Model.WEAPON" Role="WEAPON" Multiplicity="1" />
+          <End Type="item1Model.AvailableAttachSlot" Role="AvailableAttachSlot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WEAPON">
+              <PropertyRef Name="uiIndex" />
+            </Principal>
+            <Dependent Role="AvailableAttachSlot">
+              <PropertyRef Name="rWeaponId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2089,15 +2087,6 @@
               <MappingFragment StoreEntitySet="AttachmentSystem">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="AvailableAttachSlots">
-            <EntityTypeMapping TypeName="item1Model.AvailableAttachSlot">
-              <MappingFragment StoreEntitySet="AvailableAttachSlot">
-                <ScalarProperty Name="rAttachmentmount" ColumnName="rAttachmentmount" />
-                <ScalarProperty Name="rATTACHMENTSLOT" ColumnName="rATTACHMENTSLOT" />
-                <ScalarProperty Name="rWeaponId" ColumnName="rWeaponId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2433,6 +2422,15 @@
                 <ScalarProperty Name="StrengthPoints" ColumnName="StrengthPoints" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AvailableAttachSlots">
+            <EntityTypeMapping TypeName="item1Model.AvailableAttachSlot">
+              <MappingFragment StoreEntitySet="AvailableAttachSlot">
+                <ScalarProperty Name="rAttachmentmount" ColumnName="rAttachmentmount" />
+                <ScalarProperty Name="rATTACHMENTSLOT" ColumnName="rATTACHMENTSLOT" />
+                <ScalarProperty Name="rWeaponId" ColumnName="rWeaponId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

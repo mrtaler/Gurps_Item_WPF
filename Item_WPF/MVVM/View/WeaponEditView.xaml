@@ -740,7 +740,8 @@
                                       VerticalAlignment="Top"
                                       Content="Scope">
                                 <CheckBox.IsChecked>
-                                    <MultiBinding Converter="{addin:AvailableAttachPointConvert}" ConverterParameter="1">
+                                    <MultiBinding Converter="{addin:AvailableAttachPointConvert}" 
+                                                  ConverterParameter="1">
                                         <Binding Path="avSlot" />
                                         <Binding Path="WeaponLoad.uiIndex" />
                                     </MultiBinding>
@@ -893,7 +894,6 @@
                                       Visibility="{Binding IsChecked,
                                                            ElementName=ScopeCheckBox,
                                                            Converter={StaticResource BooleanToVisibilityConverter}}">
-
                                 <ComboBox.ItemsSource>
                                     <MultiBinding Converter="{addin:AvailableSlotMountConverter}"
                                                   ConverterParameter="1"

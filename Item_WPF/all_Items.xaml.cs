@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Item_WPF.addin;
-
+using Item_WPF.MVVM.View;
 
 namespace Item_WPF
 {
@@ -96,12 +96,13 @@ namespace Item_WPF
                             Label02.Content = "ch ID main:" + Datachange.IdSel.ToString();
                             Label03.Content = "ch ID target:" + Datachange.IdChange.ToString();
 
-                            itt.used = true;
+                            //itt.used = true;
                             itt.dt = System.DateTime.UtcNow;
                             _context.SaveChanges();
 
-                            WeaponNr weaponNr = new WeaponNr();
-                            weaponNr.ShowDialog();
+                            WeaponEditView avView = new WeaponEditView(Convert.ToInt32(DataGridViewAllItems.SelectedValue));
+                            avView.ShowDialog();
+
 
                         }
                         else if (itt.ItemClass.name == "Attachment")
