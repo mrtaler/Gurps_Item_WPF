@@ -72,14 +72,14 @@ namespace Item_WPF
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<ARMOUR> _ARMOURs;
-    			public virtual ICollection<ARMOUR> ARMOURs
-    					{
-    					get
-    						{ return _ARMOURs; } 
-    					set
-    					{ if(_ARMOURs != value)
-    					   {    _ARMOURs = value;    OnPropertyChanged("ARMOURs");   }
-    						}
-    					 } 
+                public virtual ICollection<ARMOUR> ARMOURs
+                        {
+                        get
+                            { return _ARMOURs; } 
+                        set
+                        { if(_ARMOURs != value)
+                           {    _ARMOURs = value;    OnPropertyChanged("ARMOURs");   }
+                            }
+                         } 
     }
 }

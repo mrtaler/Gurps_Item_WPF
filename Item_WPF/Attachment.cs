@@ -921,55 +921,55 @@ namespace Item_WPF
      
     
         private Attachmentmount _Attachmentmount1;
-    			public virtual Attachmentmount Attachmentmount1
-    					{
-    					get
-    						{ return _Attachmentmount1; } 
-    					set
-    					{ if(_Attachmentmount1 != value)
-    					   {    _Attachmentmount1 = value;    OnPropertyChanged("Attachmentmount1");   }
-    						}
-    					 } 
+                public virtual Attachmentmount Attachmentmount1
+                        {
+                        get
+                            { return _Attachmentmount1; } 
+                        set
+                        { if(_Attachmentmount1 != value)
+                           {    _Attachmentmount1 = value;    OnPropertyChanged("Attachmentmount1");   }
+                            }
+                         } 
         private G_AttachClass _G_AttachClass1;
-    			public virtual G_AttachClass G_AttachClass1
-    					{
-    					get
-    						{ return _G_AttachClass1; } 
-    					set
-    					{ if(_G_AttachClass1 != value)
-    					   {    _G_AttachClass1 = value;    OnPropertyChanged("G_AttachClass1");   }
-    						}
-    					 } 
+                public virtual G_AttachClass G_AttachClass1
+                        {
+                        get
+                            { return _G_AttachClass1; } 
+                        set
+                        { if(_G_AttachClass1 != value)
+                           {    _G_AttachClass1 = value;    OnPropertyChanged("G_AttachClass1");   }
+                            }
+                         } 
         private G_SubAttachClass _G_SubAttachClass1;
-    			public virtual G_SubAttachClass G_SubAttachClass1
-    					{
-    					get
-    						{ return _G_SubAttachClass1; } 
-    					set
-    					{ if(_G_SubAttachClass1 != value)
-    					   {    _G_SubAttachClass1 = value;    OnPropertyChanged("G_SubAttachClass1");   }
-    						}
-    					 } 
+                public virtual G_SubAttachClass G_SubAttachClass1
+                        {
+                        get
+                            { return _G_SubAttachClass1; } 
+                        set
+                        { if(_G_SubAttachClass1 != value)
+                           {    _G_SubAttachClass1 = value;    OnPropertyChanged("G_SubAttachClass1");   }
+                            }
+                         } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<G_AvAttachClass> _G_AvAttachClass;
-    			public virtual ICollection<G_AvAttachClass> G_AvAttachClass
-    					{
-    					get
-    						{ return _G_AvAttachClass; } 
-    					set
-    					{ if(_G_AvAttachClass != value)
-    					   {    _G_AvAttachClass = value;    OnPropertyChanged("G_AvAttachClass");   }
-    						}
-    					 } 
+                public virtual ICollection<G_AvAttachClass> G_AvAttachClass
+                        {
+                        get
+                            { return _G_AvAttachClass; } 
+                        set
+                        { if(_G_AvAttachClass != value)
+                           {    _G_AvAttachClass = value;    OnPropertyChanged("G_AvAttachClass");   }
+                            }
+                         } 
         private AttachmentClass _AttachmentClass;
-    			public virtual AttachmentClass AttachmentClass
-    					{
-    					get
-    						{ return _AttachmentClass; } 
-    					set
-    					{ if(_AttachmentClass != value)
-    					   {    _AttachmentClass = value;    OnPropertyChanged("AttachmentClass");   }
-    						}
-    					 } 
+                public virtual AttachmentClass AttachmentClass
+                        {
+                        get
+                            { return _AttachmentClass; } 
+                        set
+                        { if(_AttachmentClass != value)
+                           {    _AttachmentClass = value;    OnPropertyChanged("AttachmentClass");   }
+                            }
+                         } 
     }
 }

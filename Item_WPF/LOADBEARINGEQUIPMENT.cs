@@ -337,14 +337,14 @@ namespace Item_WPF
      
     
         private LBEClass _LBEClass1;
-    			public virtual LBEClass LBEClass1
-    					{
-    					get
-    						{ return _LBEClass1; } 
-    					set
-    					{ if(_LBEClass1 != value)
-    					   {    _LBEClass1 = value;    OnPropertyChanged("LBEClass1");   }
-    						}
-    					 } 
+                public virtual LBEClass LBEClass1
+                        {
+                        get
+                            { return _LBEClass1; } 
+                        set
+                        { if(_LBEClass1 != value)
+                           {    _LBEClass1 = value;    OnPropertyChanged("LBEClass1");   }
+                            }
+                         } 
     }
 }

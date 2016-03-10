@@ -613,47 +613,81 @@ namespace Item_WPF
       }
      }
      
+        private bool _HCROF;
+     public bool HCROF 
+     { 
+      get
+      {
+       return _HCROF;
+      } 
+      set
+      {
+       if(_HCROF != value)
+       {
+        _HCROF = value;
+        OnPropertyChanged("HCROF");
+       }
+      }
+     }
+     
+        private int _HCROFValue;
+     public int HCROFValue 
+     { 
+      get
+      {
+       return _HCROFValue;
+      } 
+      set
+      {
+       if(_HCROFValue != value)
+       {
+        _HCROFValue = value;
+        OnPropertyChanged("HCROFValue");
+       }
+      }
+     }
+     
     
         private AMMO _AMMO;
-    			public virtual AMMO AMMO
-    					{
-    					get
-    						{ return _AMMO; } 
-    					set
-    					{ if(_AMMO != value)
-    					   {    _AMMO = value;    OnPropertyChanged("AMMO");   }
-    						}
-    					 } 
+                public virtual AMMO AMMO
+                        {
+                        get
+                            { return _AMMO; } 
+                        set
+                        { if(_AMMO != value)
+                           {    _AMMO = value;    OnPropertyChanged("AMMO");   }
+                            }
+                         } 
         private TypeOfDamage _TypeOfDamage;
-    			public virtual TypeOfDamage TypeOfDamage
-    					{
-    					get
-    						{ return _TypeOfDamage; } 
-    					set
-    					{ if(_TypeOfDamage != value)
-    					   {    _TypeOfDamage = value;    OnPropertyChanged("TypeOfDamage");   }
-    						}
-    					 } 
+                public virtual TypeOfDamage TypeOfDamage
+                        {
+                        get
+                            { return _TypeOfDamage; } 
+                        set
+                        { if(_TypeOfDamage != value)
+                           {    _TypeOfDamage = value;    OnPropertyChanged("TypeOfDamage");   }
+                            }
+                         } 
         private WeaponType _WeaponType;
-    			public virtual WeaponType WeaponType
-    					{
-    					get
-    						{ return _WeaponType; } 
-    					set
-    					{ if(_WeaponType != value)
-    					   {    _WeaponType = value;    OnPropertyChanged("WeaponType");   }
-    						}
-    					 } 
+                public virtual WeaponType WeaponType
+                        {
+                        get
+                            { return _WeaponType; } 
+                        set
+                        { if(_WeaponType != value)
+                           {    _WeaponType = value;    OnPropertyChanged("WeaponType");   }
+                            }
+                         } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<AvailableAttachSlot> _AvailableAttachSlots;
-    			public virtual ICollection<AvailableAttachSlot> AvailableAttachSlots
-    					{
-    					get
-    						{ return _AvailableAttachSlots; } 
-    					set
-    					{ if(_AvailableAttachSlots != value)
-    					   {    _AvailableAttachSlots = value;    OnPropertyChanged("AvailableAttachSlots");   }
-    						}
-    					 } 
+                public virtual ICollection<AvailableAttachSlot> AvailableAttachSlots
+                        {
+                        get
+                            { return _AvailableAttachSlots; } 
+                        set
+                        { if(_AvailableAttachSlots != value)
+                           {    _AvailableAttachSlots = value;    OnPropertyChanged("AvailableAttachSlots");   }
+                            }
+                         } 
     }
 }

@@ -459,6 +459,8 @@
           <Property Name="SingleShot_RocketLauncher" Type="bit" Nullable="false" />
           <Property Name="RocketRifle" Type="bit" Nullable="false" />
           <Property Name="Bulkfolded" Type="bit" Nullable="false" />
+          <Property Name="HCROF" Type="bit" Nullable="false" />
+          <Property Name="HCROFValue" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="WeaponClass">
           <Key>
@@ -1796,6 +1798,8 @@
           <NavigationProperty Name="TypeOfDamage" Relationship="item1Model.FK_WEAPON_TypeOfDamage" FromRole="WEAPON" ToRole="TypeOfDamage" />
           <NavigationProperty Name="WeaponType" Relationship="item1Model.FK_WeaponType" FromRole="WEAPON" ToRole="WeaponType" />
           <NavigationProperty Name="AvailableAttachSlots" Relationship="item1Model.FK_AVeWeaponId" FromRole="WEAPON" ToRole="AvailableAttachSlot" />
+          <Property Name="HCROF" Type="Boolean" Nullable="false" />
+          <Property Name="HCROFValue" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="FK_Calibre">
           <End Type="item1Model.AMMO" Role="AMMO" Multiplicity="1" />
@@ -2354,6 +2358,8 @@
           <EntitySetMapping Name="WEAPONs">
             <EntityTypeMapping TypeName="item1Model.WEAPON">
               <MappingFragment StoreEntitySet="WEAPON">
+                <ScalarProperty Name="HCROFValue" ColumnName="HCROFValue" />
+                <ScalarProperty Name="HCROF" ColumnName="HCROF" />
                 <ScalarProperty Name="Bulkfolded" ColumnName="Bulkfolded" />
                 <ScalarProperty Name="RocketRifle" ColumnName="RocketRifle" />
                 <ScalarProperty Name="SingleShot_RocketLauncher" ColumnName="SingleShot_RocketLauncher" />

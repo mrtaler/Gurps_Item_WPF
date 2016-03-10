@@ -72,14 +72,14 @@ namespace Item_WPF
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<WeaponType> _WeaponTypes;
-    			public virtual ICollection<WeaponType> WeaponTypes
-    					{
-    					get
-    						{ return _WeaponTypes; } 
-    					set
-    					{ if(_WeaponTypes != value)
-    					   {    _WeaponTypes = value;    OnPropertyChanged("WeaponTypes");   }
-    						}
-    					 } 
+                public virtual ICollection<WeaponType> WeaponTypes
+                        {
+                        get
+                            { return _WeaponTypes; } 
+                        set
+                        { if(_WeaponTypes != value)
+                           {    _WeaponTypes = value;    OnPropertyChanged("WeaponTypes");   }
+                            }
+                         } 
     }
 }

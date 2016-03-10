@@ -74,36 +74,36 @@ namespace Item_WPF
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<Attachment> _Attachments;
-    			public virtual ICollection<Attachment> Attachments
-    					{
-    					get
-    						{ return _Attachments; } 
-    					set
-    					{ if(_Attachments != value)
-    					   {    _Attachments = value;    OnPropertyChanged("Attachments");   }
-    						}
-    					 } 
+                public virtual ICollection<Attachment> Attachments
+                        {
+                        get
+                            { return _Attachments; } 
+                        set
+                        { if(_Attachments != value)
+                           {    _Attachments = value;    OnPropertyChanged("Attachments");   }
+                            }
+                         } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<G_AvAttachClass> _G_AvAttachClass;
-    			public virtual ICollection<G_AvAttachClass> G_AvAttachClass
-    					{
-    					get
-    						{ return _G_AvAttachClass; } 
-    					set
-    					{ if(_G_AvAttachClass != value)
-    					   {    _G_AvAttachClass = value;    OnPropertyChanged("G_AvAttachClass");   }
-    						}
-    					 } 
+                public virtual ICollection<G_AvAttachClass> G_AvAttachClass
+                        {
+                        get
+                            { return _G_AvAttachClass; } 
+                        set
+                        { if(_G_AvAttachClass != value)
+                           {    _G_AvAttachClass = value;    OnPropertyChanged("G_AvAttachClass");   }
+                            }
+                         } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<G_SubAttachClass> _G_SubAttachClass;
-    			public virtual ICollection<G_SubAttachClass> G_SubAttachClass
-    					{
-    					get
-    						{ return _G_SubAttachClass; } 
-    					set
-    					{ if(_G_SubAttachClass != value)
-    					   {    _G_SubAttachClass = value;    OnPropertyChanged("G_SubAttachClass");   }
-    						}
-    					 } 
+                public virtual ICollection<G_SubAttachClass> G_SubAttachClass
+                        {
+                        get
+                            { return _G_SubAttachClass; } 
+                        set
+                        { if(_G_SubAttachClass != value)
+                           {    _G_SubAttachClass = value;    OnPropertyChanged("G_SubAttachClass");   }
+                            }
+                         } 
     }
 }

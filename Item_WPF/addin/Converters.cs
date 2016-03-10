@@ -4,6 +4,8 @@ using System.Windows.Data;
 using System.Windows.Media.Imaging;
 using System.Globalization;
 using System.Collections.ObjectModel;
+using System.Windows;
+
 namespace Item_WPF.addin
 {
     #region image converter
@@ -37,18 +39,21 @@ namespace Item_WPF.addin
     }
     #endregion
     #region deciminal converter
-
-    public class WeigtDeciminalConverter : ConvertorBase<WeigtDeciminalConverter>
+    public class DeciminalConverterString : ConvertorBase<DeciminalConverterString>
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return System.Convert.ToString(value, culture) + " lbs";
+            string str = parameter as string;
+            return System.Convert.ToString(value, culture) + str;
         }
 
         public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             string convertValue = (string)value;
-            convertValue = convertValue.Replace("lbs", "");
+            string str = parameter as string;
+            if (str != null) convertValue = convertValue.Replace(str, "");
+
+            convertValue = convertValue.Replace(" ", "");
             char separator = CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0];
             if (separator == '.')
                 return System.Convert.ToDecimal(convertValue.Replace(',', separator));
@@ -182,10 +187,10 @@ namespace Item_WPF.addin
             IdWeapon = values[1] as int?;
             int findslotPoint = System.Convert.ToInt32(parameter);
             int MountSlot = (from p in ASlot
-                              where p.rATTACHMENTSLOT == findslotPoint
-                      select p.rAttachmentmount).FirstOrDefault();
+                             where p.rATTACHMENTSLOT == findslotPoint
+                             select p.rAttachmentmount).FirstOrDefault();
             //if (MountSlot != 0)
-                return MountSlot;
+            return MountSlot;
             //else return 0;
         }
         public override object[] ConvertBack(object value, Type[] targetType, object parameter, CultureInfo culture)
@@ -203,6 +208,59 @@ namespace Item_WPF.addin
             object[] ret = new object[2];
             ret[0] = ASlot;
             ret[1] = IdWeapon;
+            return ret;
+        }
+    }
+    #endregion
+    #region converter 2to text
+    class textBoxtotwoSource : MultiConvertorBase<textBoxtotwoSource>
+    {
+        public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            return values[0] as string;
+        }
+        public override object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+        {
+            string S1 = value as string;
+
+
+            object[] ret = new object[2];
+            ret[0] = S1;
+            ret[1] = S1;
+            return ret;
+        }
+    }
+    #endregion
+
+    #region Convert Shotgun to vis
+    public class Shotguntovis : ConvertorBase<Shotguntovis>
+    {
+        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            WeaponType WT = value as WeaponType;
+            if (WT != null && WT.name == "Shotgun")
+                return Visibility.Visible;
+            else return Visibility.Hidden;
+        }
+    }
+    #endregion
+
+    #region SelfVizToNull notttttttttttttttttttt
+    public class SelfVizToNull : MultiConvertorBase<SelfVizToNull>
+    {
+        private Visibility VisNull { set; get; }
+        public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            VisNull = (Visibility)values[1];
+            if (VisNull == Visibility.Visible)
+                return values[0].ToString();
+            else return "0";
+        }
+        public override object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+        {
+            object[] ret = new object[2];
+            ret[0] = System.Convert.ToInt32(value);
+            ret[1] = Visibility.Visible;
             return ret;
         }
     }

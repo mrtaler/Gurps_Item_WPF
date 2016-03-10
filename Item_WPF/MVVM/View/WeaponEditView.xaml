@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="{Binding WeaponLoad.szWeaponName,
-                        Mode=TwoWay}"
+                        UpdateSourceTrigger=PropertyChanged}"
         Width="806"
         Height="485"
         mc:Ignorable="d">
@@ -43,10 +43,18 @@
                              Margin="102,14,0,0"
                              HorizontalAlignment="Left"
                              VerticalAlignment="Top"
-                             Text="{Binding ItemLoad.szItemName,
-                                            Mode=TwoWay,
-                                            UpdateSourceTrigger=PropertyChanged}"
-                             TextWrapping="Wrap" />
+                             TextWrapping="Wrap">
+                        <TextBox.Text>
+                            <MultiBinding Converter="{addin:textBoxtotwoSource}" UpdateSourceTrigger="PropertyChanged">
+                                <Binding Mode="TwoWay"
+                                         Path="ItemLoad.szItemName"
+                                         UpdateSourceTrigger="PropertyChanged" />
+                                <Binding Mode="TwoWay"
+                                         Path="WeaponLoad.szWeaponName"
+                                         UpdateSourceTrigger="PropertyChanged" />
+                            </MultiBinding>
+                        </TextBox.Text>
+                    </TextBox>
                     <TextBox x:Name="LongNameTb"
                              Width="302"
                              Height="23"
@@ -140,20 +148,28 @@
                                      Margin="93,10,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
-                                     Text="{Binding ItemLoad.ubWeight,
-                                                    Mode=TwoWay,
-                                                    Converter={addin:WeigtDeciminalConverter}}"
-                                     TextWrapping="Wrap" />
+                                     TextWrapping="NoWrap">
+                                <TextBox.Text>
+                                    <Binding Converter="{addin:DeciminalConverterString}"
+                                             ConverterParameter=" lbs"
+                                             Mode="TwoWay"
+                                             Path="ItemLoad.ubWeight" />
+                                </TextBox.Text>
+                            </TextBox>
                             <TextBox x:Name="CostTb"
                                      Width="120"
                                      Height="23"
                                      Margin="93,38,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
-                                     Text="{Binding ItemLoad.usPrice,
-                                                    Mode=TwoWay,
-                                                    Converter={addin:CostDeciminalConverter}}"
-                                     TextWrapping="Wrap" />
+                                     TextWrapping="Wrap">
+                                <TextBox.Text>
+                                    <Binding Converter="{addin:DeciminalConverterString}"
+                                             ConverterParameter=" $"
+                                             Mode="TwoWay"
+                                             Path="ItemLoad.usPrice" />
+                                </TextBox.Text>
+                            </TextBox>
                             <TextBox x:Name="BulkTb"
                                      Width="120"
                                      Height="23"
@@ -436,7 +452,7 @@
                                      Margin="98,10,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
-                                     Text="{Binding Damage,
+                                     Text="{Binding WeaponLoad.Damage,
                                                     Mode=TwoWay}"
                                      TextWrapping="Wrap" />
                             <TextBox x:Name="ArmDivizorTextBox"
@@ -445,16 +461,20 @@
                                      Margin="98,76,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
-                                     Text="{Binding Arm_Division,
-                                                    Mode=TwoWay}"
-                                     TextWrapping="Wrap" />
+                                     TextWrapping="Wrap">
+                                <TextBox.Text>
+                                    <Binding Converter="{addin:DeciminalConverterString}"
+                                             Mode="TwoWay"
+                                             Path="WeaponLoad.Arm_Division" />
+                                </TextBox.Text>
+                            </TextBox>
                             <TextBox x:Name="FollowUpTextBox"
                                      Width="75"
                                      Height="23"
                                      Margin="98,106,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
-                                     Text="{Binding Follow_Up,
+                                     Text="{Binding WeaponLoad.Follow_Up,
                                                     Mode=TwoWay}"
                                      TextWrapping="Wrap" />
                             <TextBox x:Name="LinkedTextBox"
@@ -463,7 +483,7 @@
                                      Margin="98,138,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
-                                     Text="{Binding Linked,
+                                     Text="{Binding WeaponLoad.Linked,
                                                     Mode=TwoWay}"
                                      TextWrapping="Wrap" />
                             <ComboBox x:Name="TypeOfDamageComboBox"
@@ -472,12 +492,10 @@
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       DisplayMemberPath="name"
-                                      SelectedValue="{Binding ubTypeOfDamage,
+                                      ItemsSource="{Binding TypeOfDamagesCollection}"
+                                      SelectedValue="{Binding WeaponLoad.ubTypeOfDamage,
                                                               Mode=TwoWay}"
                                       SelectedValuePath="id" />
-
-
-
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="GroupBox6"
@@ -510,28 +528,39 @@
                                      Margin="82,10,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
-                                     Text="{Binding MinRange,
-                                                    Mode=TwoWay}"
-                                     TextWrapping="Wrap" />
+                                     TextWrapping="Wrap">
+                                <TextBox.Text>
+                                    <Binding Converter="{addin:DeciminalConverterString}"
+                                             Mode="TwoWay"
+                                             Path="WeaponLoad.MinRange" />
+                                </TextBox.Text>
+                            </TextBox>
                             <TextBox x:Name="HalfRangeTextBox"
                                      Width="77"
                                      Height="23"
                                      Margin="82,38,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
-                                     Text="{Binding Half_Range,
-                                                    Mode=TwoWay}"
-                                     TextWrapping="Wrap" />
+                                     TextWrapping="Wrap">
+                                <TextBox.Text>
+                                    <Binding Converter="{addin:DeciminalConverterString}"
+                                             Mode="TwoWay"
+                                             Path="WeaponLoad.Half_Range" />
+                                </TextBox.Text>
+                            </TextBox>
                             <TextBox x:Name="MaxRangeTextBox"
                                      Width="77"
                                      Height="23"
                                      Margin="82,66,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
-                                     Text="{Binding FullRange,
-                                                    Mode=TwoWay}"
-                                     TextWrapping="Wrap" />
-
+                                     TextWrapping="Wrap">
+                                <TextBox.Text>
+                                    <Binding Converter="{addin:DeciminalConverterString}"
+                                             Mode="TwoWay"
+                                             Path="WeaponLoad.FullRange" />
+                                </TextBox.Text>
+                            </TextBox>
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="GroupBox7"
@@ -552,15 +581,20 @@
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Top"
                                    Content="X"
-                                   RenderTransformOrigin="0,0.5"
-                                   Visibility="Hidden" />
+                                   RenderTransformOrigin="0,0.5">
+                                <Label.Visibility>
+                                    <Binding Converter="{addin:Shotguntovis}"
+                                             ElementName="TypeOfClassWeapTb"
+                                             Path="SelectedItem" />
+                                </Label.Visibility>
+                            </Label>
                             <TextBox x:Name="RofTextBox"
                                      Width="30"
                                      Height="23"
                                      Margin="54,10,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
-                                     Text="{Binding ROF,
+                                     Text="{Binding WeaponLoad.ROF,
                                                     Mode=TwoWay}"
                                      TextWrapping="Wrap" />
                             <TextBox x:Name="ShrofTextBox"
@@ -569,16 +603,20 @@
                                      Margin="111,9,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
-                                     Text="{Binding ROF_for_Sh,
-                                                    Mode=TwoWay}"
-                                     TextWrapping="Wrap"
-                                     Visibility="Hidden" />
+                                     Text="{Binding WeaponLoad.ROF_for_Sh}"
+                                     TextWrapping="Wrap">
+                                <TextBox.Visibility>
+                                    <Binding Converter="{addin:Shotguntovis}"
+                                             ElementName="TypeOfClassWeapTb"
+                                             Path="SelectedItem" />
+                                </TextBox.Visibility>
+                            </TextBox>
                             <CheckBox x:Name="FullAutoCheckBox"
                                       Margin="10,38,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       Content="Full Auto"
-                                      IsChecked="{Binding Path=Full_auto,
+                                      IsChecked="{Binding Path=WeaponLoad.Full_auto,
                                                           Mode=TwoWay,
                                                           UpdateSourceTrigger=PropertyChanged}" />
                             <CheckBox x:Name="Add1InChamblerCheckbox"
@@ -586,20 +624,34 @@
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       Content="1 Add"
-                                      IsChecked="{Binding Path=Add_in_Chamber,
+                                      IsChecked="{Binding Path=WeaponLoad.Add_in_Chamber,
                                                           Mode=TwoWay,
                                                           UpdateSourceTrigger=PropertyChanged}" />
                             <CheckBox x:Name="HcrofCheckBox2"
                                       Margin="88,38,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Content="HC ROF(#)" />
+                                      Content="HC ROF(#)"
+                                      IsChecked="{Binding WeaponLoad.HCROF,
+                                                          Mode=TwoWay}" />
+                            <TextBox x:Name="HCROFValue_textBox"
+                                     Width="48"
+                                     Height="23"
+                                     Margin="111,58,0,0"
+                                     HorizontalAlignment="Left"
+                                     VerticalAlignment="Top"
+                                     Text="{Binding WeaponLoad.HCROFValue,
+                                                    Mode=TwoWay}"
+                                     TextWrapping="NoWrap"
+                                     Visibility="{Binding IsChecked,
+                                                          ElementName=HcrofCheckBox2,
+                                                          Converter={StaticResource BooleanToVisibilityConverter}}" />
                             <CheckBox x:Name="CutOfShotsCheckBox"
                                       Margin="10,78,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       Content="Cut Of Shots"
-                                      IsChecked="{Binding Path=CutOff_shots,
+                                      IsChecked="{Binding Path=WeaponLoad.CutOff_shots,
                                                           Mode=TwoWay,
                                                           UpdateSourceTrigger=PropertyChanged}" />
                             <Label x:Name="Label20"
@@ -607,17 +659,22 @@
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Top"
                                    Content="Cut Of Shots"
-                                   Visibility="Hidden" />
+                                   Visibility="{Binding IsChecked,
+                                                        ElementName=CutOfShotsCheckBox,
+                                                        Converter={StaticResource BooleanToVisibilityConverter}}" />
                             <TextBox x:Name="CutOfShotsTextBox"
-                                     Width="120"
+                                     Width="67"
                                      Height="23"
-                                     Margin="53,98,-4,0"
+                                     Margin="92,98,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
-                                     Text="{Binding CutOff_shotsCount,
+                                     Text="{Binding WeaponLoad.CutOff_shotsCount,
                                                     Mode=TwoWay}"
                                      TextWrapping="Wrap"
-                                     Visibility="Hidden" />
+                                     Visibility="{Binding IsChecked,
+                                                          ElementName=CutOfShotsCheckBox,
+                                                          Converter={StaticResource BooleanToVisibilityConverter}}" />
+
 
                         </Grid>
                     </GroupBox>
@@ -635,7 +692,7 @@
                                      Margin="95,10,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
-                                     Text="{Binding DefACC,
+                                     Text="{Binding WeaponLoad.DefACC,
                                                     Mode=TwoWay}"
                                      TextWrapping="Wrap" />
                             <TextBox x:Name="RecoilTextBox"
@@ -644,7 +701,7 @@
                                      Margin="95,38,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
-                                     Text="{Binding Recoil,
+                                     Text="{Binding WeaponLoad.Recoil,
                                                     Mode=TwoWay}"
                                      TextWrapping="Wrap" />
                             <Label x:Name="Label21"
@@ -689,7 +746,8 @@
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       DisplayMemberPath="Caliber_name"
-                                      SelectedValue="{Binding ubCalibre,
+                                      ItemsSource="{Binding AmmoscCollection}"
+                                      SelectedValue="{Binding WeaponLoad.ubCalibre,
                                                               Mode=TwoWay}"
                                       SelectedValuePath="id" />
                             <TextBox x:Name="ShotsTextBox"
@@ -698,7 +756,7 @@
                                      Margin="73,45,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
-                                     Text="{Binding Shots,
+                                     Text="{Binding WeaponLoad.Shots,
                                                     Mode=TwoWay}"
                                      TextWrapping="Wrap" />
                             <TextBox x:Name="ReloadTimeTextbox"
@@ -707,7 +765,7 @@
                                      Margin="91,76,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
-                                     Text="{Binding Time_For_reload,
+                                     Text="{Binding WeaponLoad.Time_For_reload,
                                                     Mode=TwoWay}"
                                      TextWrapping="Wrap" />
                             <CheckBox x:Name="SingleReloadCheckBox"
@@ -715,7 +773,7 @@
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       Content="Single Reload"
-                                      IsChecked="{Binding Path=single_reload,
+                                      IsChecked="{Binding Path=WeaponLoad.single_reload,
                                                           Mode=TwoWay,
                                                           UpdateSourceTrigger=PropertyChanged}" />
                         </Grid>
@@ -740,8 +798,7 @@
                                       VerticalAlignment="Top"
                                       Content="Scope">
                                 <CheckBox.IsChecked>
-                                    <MultiBinding Converter="{addin:AvailableAttachPointConvert}" 
-                                                  ConverterParameter="1">
+                                    <MultiBinding Converter="{addin:AvailableAttachPointConvert}" ConverterParameter="1">
                                         <Binding Path="avSlot" />
                                         <Binding Path="WeaponLoad.uiIndex" />
                                     </MultiBinding>

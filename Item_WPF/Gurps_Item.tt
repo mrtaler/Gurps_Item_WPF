@@ -7,7 +7,7 @@ var textTransform = DynamicTextTransformation.Create(this);
 var code = new CodeGenerationTools(this);
 var ef = new MetadataTools(this);
 var typeMapper = new TypeMapper(code, ef, textTransform.Errors);
-var	fileManager = EntityFrameworkTemplateFileManager.Create(this);
+var fileManager = EntityFrameworkTemplateFileManager.Create(this);
 var itemCollection = new EdmMetadataLoader(textTransform.Host, textTransform.Errors).CreateEdmItemCollection(inputFile);
 var codeStringGenerator = new CodeStringGenerator(code, typeMapper, ef);
 
@@ -329,17 +329,17 @@ public class CodeStringGenerator
         
         var endType = _typeMapper.GetTypeName(navProp.ToEndMember.GetEntityType());
         return string.Format(
-		CultureInfo.InvariantCulture,
-		@"private {1} _{2};
-			{0} {1} {2}
-					{{
-					{3}get
-						{{ return _{2}; }} 
-					{4}set
-					{{ if(_{2} != value)
-					   {{    _{2} = value;    OnPropertyChanged(""{2}"");   }}
-						}}
-					 }} ",
+        CultureInfo.InvariantCulture,
+        @"private {1} _{2};
+            {0} {1} {2}
+                    {{
+                    {3}get
+                        {{ return _{2}; }} 
+                    {4}set
+                    {{ if(_{2} != value)
+                       {{    _{2} = value;    OnPropertyChanged(""{2}"");   }}
+                        }}
+                     }} ",
             AccessibilityAndVirtual(Accessibility.ForProperty(navProp)),
             navProp.ToEndMember.RelationshipMultiplicity == RelationshipMultiplicity.Many ? ("ICollection<" + endType + ">") : endType,
             _code.Escape(navProp),

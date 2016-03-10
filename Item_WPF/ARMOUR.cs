@@ -150,14 +150,14 @@ namespace Item_WPF
      
     
         private ArmourClass _ArmourClass;
-    			public virtual ArmourClass ArmourClass
-    					{
-    					get
-    						{ return _ArmourClass; } 
-    					set
-    					{ if(_ArmourClass != value)
-    					   {    _ArmourClass = value;    OnPropertyChanged("ArmourClass");   }
-    						}
-    					 } 
+                public virtual ArmourClass ArmourClass
+                        {
+                        get
+                            { return _ArmourClass; } 
+                        set
+                        { if(_ArmourClass != value)
+                           {    _ArmourClass = value;    OnPropertyChanged("ArmourClass");   }
+                            }
+                         } 
     }
 }

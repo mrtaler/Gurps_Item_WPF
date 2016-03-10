@@ -72,14 +72,14 @@ namespace Item_WPF
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<EXPLOSIVE> _EXPLOSIVEs;
-    			public virtual ICollection<EXPLOSIVE> EXPLOSIVEs
-    					{
-    					get
-    						{ return _EXPLOSIVEs; } 
-    					set
-    					{ if(_EXPLOSIVEs != value)
-    					   {    _EXPLOSIVEs = value;    OnPropertyChanged("EXPLOSIVEs");   }
-    						}
-    					 } 
+                public virtual ICollection<EXPLOSIVE> EXPLOSIVEs
+                        {
+                        get
+                            { return _EXPLOSIVEs; } 
+                        set
+                        { if(_EXPLOSIVEs != value)
+                           {    _EXPLOSIVEs = value;    OnPropertyChanged("EXPLOSIVEs");   }
+                            }
+                         } 
     }
 }

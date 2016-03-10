@@ -983,64 +983,64 @@ namespace Item_WPF
      
     
         private Cloth _Cloth;
-    			public virtual Cloth Cloth
-    					{
-    					get
-    						{ return _Cloth; } 
-    					set
-    					{ if(_Cloth != value)
-    					   {    _Cloth = value;    OnPropertyChanged("Cloth");   }
-    						}
-    					 } 
+                public virtual Cloth Cloth
+                        {
+                        get
+                            { return _Cloth; } 
+                        set
+                        { if(_Cloth != value)
+                           {    _Cloth = value;    OnPropertyChanged("Cloth");   }
+                            }
+                         } 
         private DrugType _DrugType1;
-    			public virtual DrugType DrugType1
-    					{
-    					get
-    						{ return _DrugType1; } 
-    					set
-    					{ if(_DrugType1 != value)
-    					   {    _DrugType1 = value;    OnPropertyChanged("DrugType1");   }
-    						}
-    					 } 
+                public virtual DrugType DrugType1
+                        {
+                        get
+                            { return _DrugType1; } 
+                        set
+                        { if(_DrugType1 != value)
+                           {    _DrugType1 = value;    OnPropertyChanged("DrugType1");   }
+                            }
+                         } 
         private FOOD _FOOD;
-    			public virtual FOOD FOOD
-    					{
-    					get
-    						{ return _FOOD; } 
-    					set
-    					{ if(_FOOD != value)
-    					   {    _FOOD = value;    OnPropertyChanged("FOOD");   }
-    						}
-    					 } 
+                public virtual FOOD FOOD
+                        {
+                        get
+                            { return _FOOD; } 
+                        set
+                        { if(_FOOD != value)
+                           {    _FOOD = value;    OnPropertyChanged("FOOD");   }
+                            }
+                         } 
         private ItemClass _ItemClass;
-    			public virtual ItemClass ItemClass
-    					{
-    					get
-    						{ return _ItemClass; } 
-    					set
-    					{ if(_ItemClass != value)
-    					   {    _ItemClass = value;    OnPropertyChanged("ItemClass");   }
-    						}
-    					 } 
+                public virtual ItemClass ItemClass
+                        {
+                        get
+                            { return _ItemClass; } 
+                        set
+                        { if(_ItemClass != value)
+                           {    _ItemClass = value;    OnPropertyChanged("ItemClass");   }
+                            }
+                         } 
         private LC _LC1;
-    			public virtual LC LC1
-    					{
-    					get
-    						{ return _LC1; } 
-    					set
-    					{ if(_LC1 != value)
-    					   {    _LC1 = value;    OnPropertyChanged("LC1");   }
-    						}
-    					 } 
+                public virtual LC LC1
+                        {
+                        get
+                            { return _LC1; } 
+                        set
+                        { if(_LC1 != value)
+                           {    _LC1 = value;    OnPropertyChanged("LC1");   }
+                            }
+                         } 
         private TL _TL1;
-    			public virtual TL TL1
-    					{
-    					get
-    						{ return _TL1; } 
-    					set
-    					{ if(_TL1 != value)
-    					   {    _TL1 = value;    OnPropertyChanged("TL1");   }
-    						}
-    					 } 
+                public virtual TL TL1
+                        {
+                        get
+                            { return _TL1; } 
+                        set
+                        { if(_TL1 != value)
+                           {    _TL1 = value;    OnPropertyChanged("TL1");   }
+                            }
+                         } 
     }
 }

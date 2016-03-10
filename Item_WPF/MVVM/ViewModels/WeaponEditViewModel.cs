@@ -29,7 +29,7 @@ namespace Item_WPF.MVVM.ViewModels
         public ITEM ItemLoad { get; set; }
         public WEAPON WeaponLoad { get; set; }
         public ObservableCollection<AvailableAttachSlot> avSlot { get; set; }
-        
+
         private ObservableCollection<Attachmentmount> _attMount;
         public ObservableCollection<Attachmentmount> AttMount
         {
@@ -46,10 +46,6 @@ namespace Item_WPF.MVVM.ViewModels
                 }
             }
         }
-        public ObservableCollection<Attachmentmount> AttMountScope { get; set; }
-
-        public ICommand AddMountslot1 { get; set; }
-
 
         #region Constructor
         public WeaponEditViewModel(int itemselect)
@@ -86,6 +82,8 @@ namespace Item_WPF.MVVM.ViewModels
             Refresh = new ActionCommand(Refreshnew) { IsExecutable = true };
 
             AddMountslot1 = new RelayCommand(AddMountslot1_Execute);
+            CheckThreeCheckBox = new RelayCommand(CheckThreeCheckBox_Execute);
+
             //AddMountslot1 = new ActionCommand(AddMountslot1_Execute) { IsExecutable = true };
             #endregion
 
@@ -104,24 +102,31 @@ namespace Item_WPF.MVVM.ViewModels
             //AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
         }
 
+
+        private void CheckThreeCheckBox_Execute(object parameter)
+        {
+            bool Param = (bool)parameter;
+        }
+
         private void AddMountslot1_Execute(object parameter)
         {
             int param = Convert.ToInt32(parameter);
-            //Combine_weap main = this.Owner as Combine_weap;
             AttacmentMountView atmS = new AttacmentMountView();
             atmS.DataContext = new AttacmentMountViewModel(Convert.ToInt32(parameter)); ;
             atmS.ShowDialog();
-            //using (item1Entities Conn = new item1Entities())
-            //{
-            AttMount.Clear();
             AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
-            
-            //}
-            //= new ObservableCollection<Attachmentmount>(context.Attachmentmounts);
-
         }
         private void SaveChanges()
         {
+            var Nwe = (from p in _context.WeaponTypes
+                       where p.id == WeaponLoad.ubWeaponType
+                       select p.name).First();
+            if (Nwe != "Shotgun")
+                WeaponLoad.ROF_for_Sh = 0;
+            if (!WeaponLoad.CutOff_shots)
+                WeaponLoad.CutOff_shotsCount = 0;
+            if (!WeaponLoad.HCROF)
+                WeaponLoad.HCROFValue = 0;
             _context.SaveChanges();
         }
         private void LoadImageToForm()
@@ -142,13 +147,14 @@ namespace Item_WPF.MVVM.ViewModels
             ItemLoad.Item_Image = null;
         }
         #endregion
-
+        public ICommand CheckThreeCheckBox { get; set; }
+        public ICommand AddMountslot1 { get; set; }
         public ActionCommand Save { get; set; }
         public ActionCommand AddMountslot { get; set; }
         public ActionCommand LoadImage { get; set; }
         public ActionCommand DellImage { get; set; }
         public ActionCommand Refresh { get; set; }
-        
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertyChanged(string propertyName)
         {
@@ -166,7 +172,7 @@ namespace Item_WPF.MVVM.ViewModels
                 {
                     _context.AvailableAttachSlots.Remove(item);
                 }
-              //  SaveChanges();
+                //  SaveChanges();
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {

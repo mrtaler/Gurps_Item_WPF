@@ -82,34 +82,34 @@ namespace Item_WPF
      
     
         private Attachmentmount _Attachmentmount;
-    			public virtual Attachmentmount Attachmentmount
-    					{
-    					get
-    						{ return _Attachmentmount; } 
-    					set
-    					{ if(_Attachmentmount != value)
-    					   {    _Attachmentmount = value;    OnPropertyChanged("Attachmentmount");   }
-    						}
-    					 } 
+                public virtual Attachmentmount Attachmentmount
+                        {
+                        get
+                            { return _Attachmentmount; } 
+                        set
+                        { if(_Attachmentmount != value)
+                           {    _Attachmentmount = value;    OnPropertyChanged("Attachmentmount");   }
+                            }
+                         } 
         private ATTACHMENTSLOT _ATTACHMENTSLOT;
-    			public virtual ATTACHMENTSLOT ATTACHMENTSLOT
-    					{
-    					get
-    						{ return _ATTACHMENTSLOT; } 
-    					set
-    					{ if(_ATTACHMENTSLOT != value)
-    					   {    _ATTACHMENTSLOT = value;    OnPropertyChanged("ATTACHMENTSLOT");   }
-    						}
-    					 } 
+                public virtual ATTACHMENTSLOT ATTACHMENTSLOT
+                        {
+                        get
+                            { return _ATTACHMENTSLOT; } 
+                        set
+                        { if(_ATTACHMENTSLOT != value)
+                           {    _ATTACHMENTSLOT = value;    OnPropertyChanged("ATTACHMENTSLOT");   }
+                            }
+                         } 
         private WEAPON _WEAPON;
-    			public virtual WEAPON WEAPON
-    					{
-    					get
-    						{ return _WEAPON; } 
-    					set
-    					{ if(_WEAPON != value)
-    					   {    _WEAPON = value;    OnPropertyChanged("WEAPON");   }
-    						}
-    					 } 
+                public virtual WEAPON WEAPON
+                        {
+                        get
+                            { return _WEAPON; } 
+                        set
+                        { if(_WEAPON != value)
+                           {    _WEAPON = value;    OnPropertyChanged("WEAPON");   }
+                            }
+                         } 
     }
 }

@@ -72,14 +72,14 @@ namespace Item_WPF
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<LOADBEARINGEQUIPMENT> _LOADBEARINGEQUIPMENTs;
-    			public virtual ICollection<LOADBEARINGEQUIPMENT> LOADBEARINGEQUIPMENTs
-    					{
-    					get
-    						{ return _LOADBEARINGEQUIPMENTs; } 
-    					set
-    					{ if(_LOADBEARINGEQUIPMENTs != value)
-    					   {    _LOADBEARINGEQUIPMENTs = value;    OnPropertyChanged("LOADBEARINGEQUIPMENTs");   }
-    						}
-    					 } 
+                public virtual ICollection<LOADBEARINGEQUIPMENT> LOADBEARINGEQUIPMENTs
+                        {
+                        get
+                            { return _LOADBEARINGEQUIPMENTs; } 
+                        set
+                        { if(_LOADBEARINGEQUIPMENTs != value)
+                           {    _LOADBEARINGEQUIPMENTs = value;    OnPropertyChanged("LOADBEARINGEQUIPMENTs");   }
+                            }
+                         } 
     }
 }

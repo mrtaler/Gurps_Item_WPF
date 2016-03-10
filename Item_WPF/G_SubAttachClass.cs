@@ -124,45 +124,45 @@ namespace Item_WPF
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<Attachment> _Attachments;
-    			public virtual ICollection<Attachment> Attachments
-    					{
-    					get
-    						{ return _Attachments; } 
-    					set
-    					{ if(_Attachments != value)
-    					   {    _Attachments = value;    OnPropertyChanged("Attachments");   }
-    						}
-    					 } 
+                public virtual ICollection<Attachment> Attachments
+                        {
+                        get
+                            { return _Attachments; } 
+                        set
+                        { if(_Attachments != value)
+                           {    _Attachments = value;    OnPropertyChanged("Attachments");   }
+                            }
+                         } 
         private ATTACHMENTSLOT _ATTACHMENTSLOT;
-    			public virtual ATTACHMENTSLOT ATTACHMENTSLOT
-    					{
-    					get
-    						{ return _ATTACHMENTSLOT; } 
-    					set
-    					{ if(_ATTACHMENTSLOT != value)
-    					   {    _ATTACHMENTSLOT = value;    OnPropertyChanged("ATTACHMENTSLOT");   }
-    						}
-    					 } 
+                public virtual ATTACHMENTSLOT ATTACHMENTSLOT
+                        {
+                        get
+                            { return _ATTACHMENTSLOT; } 
+                        set
+                        { if(_ATTACHMENTSLOT != value)
+                           {    _ATTACHMENTSLOT = value;    OnPropertyChanged("ATTACHMENTSLOT");   }
+                            }
+                         } 
         private G_AttachClass _G_AttachClass;
-    			public virtual G_AttachClass G_AttachClass
-    					{
-    					get
-    						{ return _G_AttachClass; } 
-    					set
-    					{ if(_G_AttachClass != value)
-    					   {    _G_AttachClass = value;    OnPropertyChanged("G_AttachClass");   }
-    						}
-    					 } 
+                public virtual G_AttachClass G_AttachClass
+                        {
+                        get
+                            { return _G_AttachClass; } 
+                        set
+                        { if(_G_AttachClass != value)
+                           {    _G_AttachClass = value;    OnPropertyChanged("G_AttachClass");   }
+                            }
+                         } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<G_AvAttachClass> _G_AvAttachClass;
-    			public virtual ICollection<G_AvAttachClass> G_AvAttachClass
-    					{
-    					get
-    						{ return _G_AvAttachClass; } 
-    					set
-    					{ if(_G_AvAttachClass != value)
-    					   {    _G_AvAttachClass = value;    OnPropertyChanged("G_AvAttachClass");   }
-    						}
-    					 } 
+                public virtual ICollection<G_AvAttachClass> G_AvAttachClass
+                        {
+                        get
+                            { return _G_AvAttachClass; } 
+                        set
+                        { if(_G_AvAttachClass != value)
+                           {    _G_AvAttachClass = value;    OnPropertyChanged("G_AvAttachClass");   }
+                            }
+                         } 
     }
 }

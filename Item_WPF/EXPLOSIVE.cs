@@ -405,14 +405,14 @@ namespace Item_WPF
      
     
         private ExplosionType _ExplosionType;
-    			public virtual ExplosionType ExplosionType
-    					{
-    					get
-    						{ return _ExplosionType; } 
-    					set
-    					{ if(_ExplosionType != value)
-    					   {    _ExplosionType = value;    OnPropertyChanged("ExplosionType");   }
-    						}
-    					 } 
+                public virtual ExplosionType ExplosionType
+                        {
+                        get
+                            { return _ExplosionType; } 
+                        set
+                        { if(_ExplosionType != value)
+                           {    _ExplosionType = value;    OnPropertyChanged("ExplosionType");   }
+                            }
+                         } 
     }
 }

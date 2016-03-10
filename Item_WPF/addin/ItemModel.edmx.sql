@@ -517,41 +517,43 @@ GO
 
 -- Creating table 'WEAPONs'
 CREATE TABLE [dbo].[WEAPON] (
-  [uiIndex] INT IDENTITY (1, 1) NOT NULL,
-  [szWeaponName] VARCHAR(80) NOT NULL,
-  [ubWeaponClass] INT DEFAULT (1) NOT NULL,
-  [ubWeaponType] INT DEFAULT (1) NOT NULL,
-  [ubCalibre] INT DEFAULT (1) NOT NULL,
-  [Damage] VARCHAR(50) DEFAULT (1) NOT NULL,
-  [ubTypeOfDamage] INT DEFAULT (1) NOT NULL,
-  [DefACC] INT DEFAULT (1) NOT NULL,
-  [Half_Range] DECIMAL(10, 4) DEFAULT (1) NOT NULL,
-  [FullRange] DECIMAL(10, 4) DEFAULT (1) NOT NULL,
-  [MinRange] DECIMAL(10, 4) DEFAULT (1) NOT NULL,
-  [AWeight] DECIMAL(5, 3) DEFAULT (1) NOT NULL,
-  [Arm_Division] DECIMAL(5, 2) DEFAULT (1) NOT NULL,
-  [ROF] INT DEFAULT (1) NOT NULL,
-  [Full_auto] BIT DEFAULT (1) NOT NULL,
-  [ROF_for_Sh] INT DEFAULT (1) NOT NULL,
-  [Shots] INT DEFAULT (1) NOT NULL,
-  [Time_For_reload] INT DEFAULT (1) NOT NULL,
-  [single_reload] BIT DEFAULT (1) NOT NULL,
-  [Mount] BIT DEFAULT (1) NOT NULL,
-  [Recoil] INT DEFAULT (1) NOT NULL,
-  [Linked] VARCHAR(50) NULL,
-  [Follow_Up] VARCHAR(50) NULL,
-  [HeavyWeapon] BIT DEFAULT (1) NOT NULL,
-  [Add_in_Chamber] BIT DEFAULT (1) NOT NULL,
-  [CutOff_shots] BIT DEFAULT (1) NOT NULL,
-  [CutOff_shotsCount] INT DEFAULT (1) NOT NULL,
-  [GrenadeLauncher] BIT DEFAULT (1) NOT NULL,
-  [RocketLauncher] BIT DEFAULT (1) NOT NULL,
-  [Mortar] BIT DEFAULT (1) NOT NULL,
-  [Cannon] BIT DEFAULT (1) NOT NULL,
-  [SingleShot_RocketLauncher] BIT DEFAULT (1) NOT NULL,
-  [RocketRifle] BIT DEFAULT (1) NOT NULL,
-  [Bulkfolded] BIT DEFAULT (0) NOT NULL
-);
+  [uiIndex]           INT IDENTITY (1, 1) NOT NULL,
+  [szWeaponName]      VARCHAR(80) NOT NULL,
+  [ubWeaponClass]     INT               DEFAULT (1) NOT NULL,
+  [ubWeaponType]      INT               DEFAULT (1) NOT NULL,
+  [ubCalibre]         INT               DEFAULT (1) NOT NULL,
+  [Damage]            VARCHAR(50)       DEFAULT ("d6") NOT NULL,
+  [ubTypeOfDamage]    INT               DEFAULT (1) NOT NULL,
+  [DefACC]            INT               DEFAULT (1) NOT NULL,
+  [Half_Range]        DECIMAL(10, 4)    DEFAULT (1) NOT NULL,
+  [FullRange]         DECIMAL(10, 4)    DEFAULT (1) NOT NULL,
+  [MinRange]          DECIMAL(10, 4)    DEFAULT (1) NOT NULL,
+  [AWeight]           DECIMAL(5, 3)     DEFAULT (1) NOT NULL,
+  [Arm_Division]      DECIMAL(5, 2)     DEFAULT (1) NOT NULL,
+  [ROF]               INT               DEFAULT (1) NOT NULL,
+  [Full_auto]         BIT               DEFAULT (0) NOT NULL,
+  [ROF_for_Sh]        INT               DEFAULT (1) NOT NULL,
+  [Shots]             INT               DEFAULT (1) NOT NULL,
+  [Time_For_reload]   INT               DEFAULT (3) NOT NULL,
+  [single_reload]     BIT               DEFAULT (0) NOT NULL,
+  [Mount]             BIT               DEFAULT (0) NOT NULL,
+  [Recoil]            INT               DEFAULT (1) NOT NULL,
+  [Linked]            VARCHAR(50) NULL,
+  [Follow_Up]         VARCHAR(50) NULL,
+  [HeavyWeapon]       BIT               DEFAULT (0) NOT NULL,
+  [Add_in_Chamber]    BIT               DEFAULT (0) NOT NULL,
+  [CutOff_shots]      BIT               DEFAULT (0) NOT NULL,
+  [CutOff_shotsCount] INT               DEFAULT (0) NOT NULL,
+  [GrenadeLauncher]   BIT               DEFAULT (0) NOT NULL,
+  [RocketLauncher]    BIT               DEFAULT (0) NOT NULL,
+  [Mortar]            BIT               DEFAULT (0) NOT NULL,
+  [Cannon]            BIT               DEFAULT (0) NOT NULL,
+  [SingleShot_RocketLauncher] BIT       DEFAULT (0) NOT NULL,
+  [RocketRifle]       BIT               DEFAULT (0) NOT NULL,
+  [Bulkfolded]        BIT               DEFAULT (0) NOT NULL,
+  [HCROF]             BIT               DEFAULT (0) NOT NULL,
+  [HCROFValue]        INT               DEFAULT (0) NOT NULL
+  );
 GO
 
 -- Creating table 'WeaponClasses'
@@ -758,9 +760,10 @@ ADD CONSTRAINT [PK_AvailableAttachSlot]
 PRIMARY KEY CLUSTERED ([rWeaponId], [rATTACHMENTSLOT] ASC);
 GO
 
+
 ALTER TABLE [dbo].[AvailableAttachSlot]
 ADD CONSTRAINT [UK_AvailableAttachSlot]
-  UNIQUE (rWeaponId, rATTACHMENTSLOT,rAttachmentmount);
+  UNIQUE (rWeaponId, rATTACHMENTSLOT, rAttachmentmount);
 GO
 
 -- Creating primary key on [id] in table 'Clothes'
@@ -1421,27 +1424,36 @@ INSERT INTO [dbo].[Attachmentmount]
   ('None', 11),--11
 
 
-
-
-
-
-
-  ('.300 BLK', 5), ('5,7mm (FN)', 5),
-  ('5,7mm (P90)', 5), ('VZ82', 5),
-  ('Std 9mm Para', 5), ('APB', 5),
-  ('Bizon 9x18', 5), ('GSh-18', 5),
-  ('HK MP5-40', 5), ('Std 45 ACP', 5),
-  ('UMP45', 5), ('AEK919K', 5),
-  ('M24x1,5', 5), ('MAC', 5),
-  ('PBS-7,62x39', 5), ('UZI', 5),
-  ('RM', 5), ('HandMade', 5),
-  ('QM', 5), ('Supressor-5,56', 5),
-  ('L85A2', 5), ('SR25', 5),
-  ('SIG - 7,62', 5), ('Saiga', 5),
-  ('AK', 5), ('Galil', 5),
-  ('M76', 5), ('PBS - 5,45', 5),
+  ('.300 BLK', 5), 
+  ('5,7mm (FN)', 5),
+  ('5,7mm (P90)', 5), 
+  ('VZ82', 5),
+  ('Std 9mm Para', 5), 
+  ('APB', 5),
+  ('Bizon 9x18', 5), 
+  ('GSh-18', 5),
+  ('HK MP5-40', 5), 
+  ('Std 45 ACP', 5),
+  ('UMP45', 5), 
+  ('AEK919K', 5),
+  ('M24x1,5', 5), 
+  ('MAC', 5),
+  ('PBS-7,62x39', 5), 
+  ('UZI', 5),
+  ('RM', 5), 
+  ('QM', 5), 
+  ('Supressor-5,56', 5),
+  ('L85A2', 5), 
+  ('SR25', 5),
+  ('SIG - 7,62', 5), 
+  ('Saiga', 5),
+  ('AK', 5), 
+  ('Galil', 5),
+  ('M76', 5), 
+  ('PBS - 5,45', 5),
   ('Supressor-7,62', 5),
-  ('SV98', 5), ('built-in', 5),
+  ('SV98', 5), 
+  ('built-in', 5),
 
   ('built-in', 4), ('WR', 4),
   ('ัย98', 4), ('SniperBipod', 4),
@@ -1465,14 +1477,24 @@ INSERT INTO [dbo].[Attachmentmount]
   ('M9', 8), ('FAL', 8),
   ('HK', 8), ('throw', 8),
 
-  ('F2000 Light', 3), ('WR', 3),
-  ('HK', 3), ('Barrel Mount', 3),
+  ('F2000 Light', 3), 
+  ('WR', 3),
+  ('HK', 3), 
+  ('Barrel Mount', 3),
 
-  ('AEK919K', 1), ('AK', 1), ('HK G36 Scope', 1), ('Galil', 1),
-  ('M14_Scope', 1), ('Mini14 Scope', 1), ('Scout', 1), ('SIG551_Scope', 1),
-  ('WR', 1), ('HK MP5', 1), ('M16A1-A2', 1), ('built-in', 1),
-
-  ('SA80 Handle', 1), ('m16a3', 1), ('SVD', 1), ('L96A1 optic', 1),
+  ('AK', 1), 
+  ('M16A1-A2', 1),
+  ('m16a3', 1),
+  ('Mini14 Scope', 1), 
+  ('HK G36 Scope', 1), 
+  ('Galil', 1),
+  ('M14_Scope', 1), 
+  ('Scout', 1), 
+  ('SIG551_Scope', 1),
+  ('WR', 1),
+  ('HK MP5', 1),  
+  ('built-in', 1),
+  ('SA80 Handle', 1), ('SVD', 1), ('L96A1 optic', 1),
   ('M24_Scope', 1), ('SIG Sniper Scope', 1), ('L85A2 SCOPE', 1), ('PSG', 1),
   ('HK MSG-90', 1), ('F2000 Scope', 1), ('Zrak', 1), ('Groza scope', 1), ('Mosin_PU', 1),
   ('G11 built-in', 1);

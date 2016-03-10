@@ -74,36 +74,36 @@ namespace Item_WPF
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<Attachmentmount> _Attachmentmounts;
-    			public virtual ICollection<Attachmentmount> Attachmentmounts
-    					{
-    					get
-    						{ return _Attachmentmounts; } 
-    					set
-    					{ if(_Attachmentmounts != value)
-    					   {    _Attachmentmounts = value;    OnPropertyChanged("Attachmentmounts");   }
-    						}
-    					 } 
+                public virtual ICollection<Attachmentmount> Attachmentmounts
+                        {
+                        get
+                            { return _Attachmentmounts; } 
+                        set
+                        { if(_Attachmentmounts != value)
+                           {    _Attachmentmounts = value;    OnPropertyChanged("Attachmentmounts");   }
+                            }
+                         } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<G_SubAttachClass> _G_SubAttachClass;
-    			public virtual ICollection<G_SubAttachClass> G_SubAttachClass
-    					{
-    					get
-    						{ return _G_SubAttachClass; } 
-    					set
-    					{ if(_G_SubAttachClass != value)
-    					   {    _G_SubAttachClass = value;    OnPropertyChanged("G_SubAttachClass");   }
-    						}
-    					 } 
+                public virtual ICollection<G_SubAttachClass> G_SubAttachClass
+                        {
+                        get
+                            { return _G_SubAttachClass; } 
+                        set
+                        { if(_G_SubAttachClass != value)
+                           {    _G_SubAttachClass = value;    OnPropertyChanged("G_SubAttachClass");   }
+                            }
+                         } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<AvailableAttachSlot> _AvailableAttachSlots;
-    			public virtual ICollection<AvailableAttachSlot> AvailableAttachSlots
-    					{
-    					get
-    						{ return _AvailableAttachSlots; } 
-    					set
-    					{ if(_AvailableAttachSlots != value)
-    					   {    _AvailableAttachSlots = value;    OnPropertyChanged("AvailableAttachSlots");   }
-    						}
-    					 } 
+                public virtual ICollection<AvailableAttachSlot> AvailableAttachSlots
+                        {
+                        get
+                            { return _AvailableAttachSlots; } 
+                        set
+                        { if(_AvailableAttachSlots != value)
+                           {    _AvailableAttachSlots = value;    OnPropertyChanged("AvailableAttachSlots");   }
+                            }
+                         } 
     }
 }
