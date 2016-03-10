@@ -209,6 +209,10 @@ IF OBJECT_ID(N'[dbo].[Battery]', 'u') IS NOT NULL
   DROP TABLE [dbo].[Battery];
 GO
 
+IF OBJECT_ID(N'[dbo].[LaserColorEf]', 'u') IS NOT NULL
+ DROP TABLE [dbo].[LaserColorEf];
+GO
+
 IF OBJECT_ID(N'[dbo].[Character]', 'u') IS NOT NULL
   DROP TABLE [dbo].[Character];
 GO
@@ -674,6 +678,13 @@ CREATE TABLE [dbo].[Attachment] (
   laserColorEf      DECIMAL(4, 2) NULL,
   usedBatType       int 
 );
+GO
+
+CREATE TABLE [LaserColorEf] (
+  [id] INT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+  [name] nVARCHAR(10),
+  [LaserColorDayEfect] DECIMAL(4,2)
+  );
 GO
 
 
@@ -1409,6 +1420,12 @@ INSERT INTO G_SubAttachClass (SubAttach_name, AttachClass, SubAttachDescription,
   ('Slide-Lock', 7, '', 11),
   ('Accessory Rails', 7, '', 11),
   ('Drag Bag', 7, '', 11);
+
+INSERT INTO [LaserColorEf] VALUES
+  ('Red',0.33),
+  ('Orange',0.50), 
+  ('Green',2.00), 
+  ('Infrared',1.00);  
 
 
 INSERT INTO [AttachmentSystem]
