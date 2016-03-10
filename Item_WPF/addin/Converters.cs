@@ -79,9 +79,9 @@ namespace Item_WPF.addin
     }
     #endregion
     #region dataContextConverter
-    class DatacontextTupeFromClass : IMultiValueConverter
+    class DatacontextTupeFromClass : MultiConvertorBase<DatacontextTupeFromClass>
     {
-        public object Convert(object[] values,
+        public override object Convert(object[] values,
                               Type targetType,
                               object parameter,
                               CultureInfo culture)
@@ -94,15 +94,7 @@ namespace Item_WPF.addin
             return new ObservableCollection<WeaponType>(
                        weaponTypescCollection.
                            Where(p => p.WeaponClass.id == findClass));
-        }
-
-        public object[] ConvertBack(object value,
-                                    Type[] targetTypes,
-                                    object parameter,
-                                    CultureInfo culture)
-        {
-            return null;
-        }
+        }      
     }
     #endregion
     #region Converter int to Visible and check  AvailableAttachPointConvert
@@ -262,6 +254,63 @@ namespace Item_WPF.addin
             ret[0] = System.Convert.ToInt32(value);
             ret[1] = Visibility.Visible;
             return ret;
+        }
+    }
+    #endregion
+
+
+    #region dataContextConverter
+    class DatacontextAttachClass : MultiConvertorBase<DatacontextAttachClass>
+    {
+        public override object Convert(object[] values,
+                              Type targetType,
+                              object parameter,
+                              CultureInfo culture)
+        {
+            ObservableCollection<G_SubAttachClass> SubAttachClassCollection = (ObservableCollection<G_SubAttachClass>)values[0];
+            int findClass = (int)values[1];
+            return new ObservableCollection<G_SubAttachClass>(
+                SubAttachClassCollection.
+                Where(p => p.AttachClass == findClass));
+        }
+    }
+    #endregion
+    #region AttachSlotText
+    class AttachSlotText : MultiConvertorBase<AttachSlotText>
+    {
+        public override object Convert(object[] values,
+                              Type targetType,
+                              object parameter,
+                              CultureInfo culture)
+        {
+            ObservableCollection<G_SubAttachClass> SubAttachClassCollection = (ObservableCollection<G_SubAttachClass>)values[0];
+            int findClass = (int)values[1];
+
+           string QT = (from p in SubAttachClassCollection
+                  where p.id == findClass
+                  select p.ATTACHMENTSLOT1.szSlotName).First().ToString();
+           return QT;
+        }
+    }
+    #endregion
+    #region MountTypeColl
+    class MountTypeColl : MultiConvertorBase<MountTypeColl>
+    {
+        public override object Convert(object[] values,
+                              Type targetType,
+                              object parameter,
+                              CultureInfo culture)
+        {
+            ObservableCollection<Attachmentmount> MountForColl = (ObservableCollection<Attachmentmount>)values[1];
+            int findClass = (int)values[0];
+            ObservableCollection<G_SubAttachClass> G_SubAttachClass = (ObservableCollection<G_SubAttachClass>)values[2];
+            
+            int attSlot = (from p in G_SubAttachClass
+                           where p.id == findClass
+                           select p.ATTACHMENTSLOT1.uiSlotIndex).First();
+                           
+            return new ObservableCollection<Attachmentmount>(MountForColl.Where(p => p.idAttacClass == attSlot));
+           
         }
     }
     #endregion

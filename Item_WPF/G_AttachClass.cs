@@ -32,9 +32,8 @@ namespace Item_WPF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public G_AttachClass()
         {
-            this.Attachments = new HashSet<Attachment>();
-            this.G_AvAttachClass = new HashSet<G_AvAttachClass>();
             this.G_SubAttachClass = new HashSet<G_SubAttachClass>();
+            this.Attachments = new HashSet<Attachment>();
         }
     
         private int _id;
@@ -73,28 +72,6 @@ namespace Item_WPF
      
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<Attachment> _Attachments;
-                public virtual ICollection<Attachment> Attachments
-                        {
-                        get
-                            { return _Attachments; } 
-                        set
-                        { if(_Attachments != value)
-                           {    _Attachments = value;    OnPropertyChanged("Attachments");   }
-                            }
-                         } 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<G_AvAttachClass> _G_AvAttachClass;
-                public virtual ICollection<G_AvAttachClass> G_AvAttachClass
-                        {
-                        get
-                            { return _G_AvAttachClass; } 
-                        set
-                        { if(_G_AvAttachClass != value)
-                           {    _G_AvAttachClass = value;    OnPropertyChanged("G_AvAttachClass");   }
-                            }
-                         } 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<G_SubAttachClass> _G_SubAttachClass;
                 public virtual ICollection<G_SubAttachClass> G_SubAttachClass
                         {
@@ -103,6 +80,17 @@ namespace Item_WPF
                         set
                         { if(_G_SubAttachClass != value)
                            {    _G_SubAttachClass = value;    OnPropertyChanged("G_SubAttachClass");   }
+                            }
+                         } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<Attachment> _Attachments;
+                public virtual ICollection<Attachment> Attachments
+                        {
+                        get
+                            { return _Attachments; } 
+                        set
+                        { if(_Attachments != value)
+                           {    _Attachments = value;    OnPropertyChanged("Attachments");   }
                             }
                          } 
     }

@@ -25,9 +25,7 @@ namespace Item_WPF
     public partial class AllItems : Window
     {
         private item1Entities _context;
-
-
-        private ObservableCollection<ITEM> Items { get; set; }
+                private ObservableCollection<ITEM> Items { get; set; }
         private ObservableCollection<ItemClass> ItemsClass { get; set; }
         public AllItems()
         {
@@ -111,10 +109,10 @@ namespace Item_WPF
                             Label02.Content = "ch ID main:" + Datachange.IdSel.ToString();
                             Label03.Content = "ch ID target:" + Datachange.IdChange.ToString();
 
-                            itt.used = true;
+                           // itt.used = true;
                             itt.dt = System.DateTime.UtcNow;
                             _context.SaveChanges();
-                            AttachNR attachNr = new AttachNR();
+                            AttacmentEditView attachNr = new AttacmentEditView(Convert.ToInt32(DataGridViewAllItems.SelectedValue));
                             attachNr.ShowDialog();
                         }
                     }

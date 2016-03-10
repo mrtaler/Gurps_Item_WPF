@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Item_WPF.addin;
+using Item_WPF.MVVM.View;
 
 namespace Item_WPF
 {
@@ -59,8 +60,8 @@ namespace Item_WPF
                     Label02.Content = "ch ID main:";
                     context.Database.Connection.Close();
                 }
-                WeaponNr weap = new WeaponNr();
-                weap.Show();
+                //WeaponNr weap = new WeaponNr();
+              //  weap.Show();
                 this.Close();
 
             }
@@ -80,12 +81,10 @@ namespace Item_WPF
                     Datachange.IdSel = Convert.ToInt32(returns.Value);
                     Label01.Content = "Attach where ID" + Datachange.IdSel;
                     Label02.Content = "ch ID main:";
-                    context.Database.Connection.Close();
-
-                 
+                    context.Database.Connection.Close();                 
                 }
-                AttachNR attach = new AttachNR();
-                attach.Show();
+                //  AttacmentEditView attach = new AttacmentEditView();
+                //  attach.Show();
                 this.Close();
             }
         }

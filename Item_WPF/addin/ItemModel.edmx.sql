@@ -407,62 +407,66 @@ GO
 
 -- Creating table 'ITEM'
 CREATE TABLE [dbo].[ITEM] (
-  [uiIndex] INT IDENTITY (1, 1) NOT NULL,
-  [szItemName] VARCHAR(80) NOT NULL DEFAULT (1),
-  [szLongItemName] VARCHAR(80) NULL,
-  [szItemDesc] VARCHAR(MAX) NULL,
-  [usItemClass] INT NOT NULL DEFAULT (1),
-  [ubClassIndex] INT NOT NULL DEFAULT (1),
-  [ubWeight] DECIMAL(7, 3) NOT NULL DEFAULT (1),
-  [ItemSize] VARCHAR(80) NOT NULL DEFAULT (1),
-  [usPrice] MONEY NOT NULL DEFAULT (1),
-  [Damageable] BIT NOT NULL DEFAULT (1),
-  [Repairable] BIT NOT NULL DEFAULT (1),
-  [WaterDamages] BIT NOT NULL DEFAULT (1),
-  [Metal] BIT NOT NULL DEFAULT (1),
-  [TwoHanded] BIT NOT NULL DEFAULT (1),
-  [TL] INT NOT NULL DEFAULT (2),
-  [LC] INT NOT NULL DEFAULT (1),
-  [Electronic] BIT NOT NULL DEFAULT (1),
-  [HT] BIT NOT NULL DEFAULT (1),
-  [UT] BIT NOT NULL DEFAULT (1),
-  [RemoteTrigger] BIT NOT NULL DEFAULT (1),
-  [GasMask] BIT NOT NULL DEFAULT (1),
-  [Alcohol] BIT NOT NULL DEFAULT (1),
-  [Hardware] BIT NOT NULL DEFAULT (1),
-  [Medical] BIT NOT NULL DEFAULT (1),
-  [CamouflageKit] BIT NOT NULL DEFAULT (1),
-  [LocksmithKit] BIT NOT NULL DEFAULT (1),
-  [Toolkit] BIT NOT NULL DEFAULT (1),
-  [FirstAidKit] BIT NOT NULL DEFAULT (1),
-  [MedicalKit] BIT NOT NULL DEFAULT (1),
-  [WireCutters] BIT NOT NULL DEFAULT (1),
-  [Canteen] BIT NOT NULL DEFAULT (1),
-  [GasCan] BIT NOT NULL DEFAULT (1),
-  [Batteries] BIT NOT NULL DEFAULT (1),
-  [SizeBatteries] VARCHAR(4) NULL,
-  [NeedsBatteries] BIT NOT NULL DEFAULT (1),
-  [ContainsLiquid] BIT NOT NULL DEFAULT (1),
-  [MetalDetector] BIT NOT NULL DEFAULT (1),
-  [FingerPrintID] BIT NOT NULL DEFAULT (1),
-  [TripWireActivation] BIT NOT NULL DEFAULT (1),
-  [TripWire] BIT NOT NULL DEFAULT (1),
-  [perehodnik] BIT NULL DEFAULT (1),
-  [FoodType] INT NOT NULL DEFAULT (1),
-  [LockPickModifier] INT NOT NULL DEFAULT (1),
-  [CrowbarModifier] INT NOT NULL DEFAULT (1),
-  [DisarmModifier] INT NOT NULL DEFAULT (1),
-  [RepairModifier] INT NOT NULL DEFAULT (1),
-  [DamageChance] INT NOT NULL DEFAULT (1),
-  [clothestype] INT NOT NULL DEFAULT (1),
-  [DrugType] INT NOT NULL DEFAULT (1),
-  [Item_Image] VARBINARY(MAX) NULL,
-  [minST] INT NOT NULL DEFAULT (1),
-  [Link] NVARCHAR(MAX) NULL,
-  [used] BIT NOT NULL DEFAULT (0),
-  [dt] DATETIME NULL,
-  [Count_of_Bat] INT NOT NULL DEFAULT (1),
-  [Works_on_Bat] VARCHAR(15) NOT NULL DEFAULT (1),
+  [uiIndex]             INT IDENTITY (1, 1) NOT NULL,
+  [szItemName]          VARCHAR(80) NOT NULL DEFAULT (1),
+  [szLongItemName]      VARCHAR(80) NULL,
+  [szItemDesc]          VARCHAR(MAX) NULL,
+  [usItemClass]         INT NOT NULL DEFAULT (1),
+  [ubClassIndex]        INT NOT NULL DEFAULT (1),
+  [ubWeight]            DECIMAL(7, 3) NOT NULL DEFAULT (1),
+  [ItemSize]            VARCHAR(80) NOT NULL DEFAULT (1),
+  [usPrice]             MONEY NOT NULL DEFAULT (1),
+
+  [Damageable]          BIT NOT NULL DEFAULT (1),
+  [Repairable]          BIT NOT NULL DEFAULT (1),
+  [WaterDamages]        BIT NOT NULL DEFAULT (1),
+  [Metal]               BIT NOT NULL DEFAULT (0),
+  [TwoHanded]           BIT NOT NULL DEFAULT (0),
+  [Electronic]          BIT NOT NULL DEFAULT (0),
+  [HT]                  BIT NOT NULL DEFAULT (0),
+  [UT]                  BIT NOT NULL DEFAULT (0),
+  [RemoteTrigger]       BIT NOT NULL DEFAULT (0),
+  [GasMask]             BIT NOT NULL DEFAULT (0),
+  [Alcohol]             BIT NOT NULL DEFAULT (0),
+  [Hardware]            BIT NOT NULL DEFAULT (0),
+  [Medical]             BIT NOT NULL DEFAULT (0),
+  [CamouflageKit]       BIT NOT NULL DEFAULT (0),
+  [LocksmithKit]        BIT NOT NULL DEFAULT (0),
+  [Toolkit]             BIT NOT NULL DEFAULT (0),
+  [FirstAidKit]         BIT NOT NULL DEFAULT (0),
+  [MedicalKit]          BIT NOT NULL DEFAULT (0),
+  [WireCutters]         BIT NOT NULL DEFAULT (0),
+  [Canteen]             BIT NOT NULL DEFAULT (0),
+  [GasCan]              BIT NOT NULL DEFAULT (0),
+  [Batteries]           BIT NOT NULL DEFAULT (0),
+  [NeedsBatteries]      BIT NOT NULL DEFAULT (0),
+  [ContainsLiquid]      BIT NOT NULL DEFAULT (0),
+  [MetalDetector]       BIT NOT NULL DEFAULT (0),
+  [FingerPrintID]       BIT NOT NULL DEFAULT (0),
+  [TripWireActivation]  BIT NOT NULL DEFAULT (0),
+  [TripWire]            BIT NOT NULL DEFAULT (0),
+  [perehodnik]          BIT NULL DEFAULT (1),
+
+
+  [TL]                  INT NOT NULL DEFAULT (2),
+  [LC]                  INT NOT NULL DEFAULT (1),
+  [SizeBatteries]       VARCHAR(4) NULL,
+
+  [FoodType]            INT NOT NULL DEFAULT (1),
+  [LockPickModifier]    INT NOT NULL DEFAULT (1),
+  [CrowbarModifier]     INT NOT NULL DEFAULT (1),
+  [DisarmModifier]      INT NOT NULL DEFAULT (1),
+  [RepairModifier]      INT NOT NULL DEFAULT (1),
+  [DamageChance]        INT NOT NULL DEFAULT (1),
+  [clothestype]         INT NOT NULL DEFAULT (1),
+  [DrugType]            INT NOT NULL DEFAULT (1),
+  [Item_Image]          VARBINARY(MAX) NULL,
+  [minST]               INT NOT NULL DEFAULT (1),
+  [Link]                NVARCHAR(MAX) NULL,
+  [used]                BIT NOT NULL DEFAULT (0),
+  [dt]                  DATETIME NULL,
+  [Count_of_Bat]        INT NOT NULL DEFAULT (1),
+  [Works_on_Bat]        VARCHAR(15) NOT NULL DEFAULT (1),
 
 --  	CONSTRAINT [FK_ITEM_AttachmentSystem1]	FOREIGN KEY	([AttachmentSystem1])	REFERENCES [AttachmentSystem] ([id]),
 --  CONSTRAINT [FK_ITEM_AttachmentSystem2]	FOREIGN KEY	([AttachmentSystem2])	REFERENCES [AttachmentSystem] ([id]),
@@ -610,7 +614,7 @@ CREATE TABLE [dbo].[G_SubAttachClass] (
   [SubAttach_name] VARCHAR(50) NOT NULL,
   [AttachClass] INT NOT NULL,
   [SubAttachDescription] VARCHAR(MAX) NULL,
-  [ATTACHMENTSLOT1] INT NOT NULL
+  [ATTACHMENTSLOT] INT NOT NULL
 );
 GO
 
@@ -661,13 +665,14 @@ CREATE TABLE [dbo].[Attachment] (
   LaserRFAcc INT NULL,
   NightVision INT NULL,
   NeedIRillumination BIT NOT NULL DEFAULT (0),
-  Infravision BIT NOT NULL DEFAULT (0),
-  IRFilter BIT NOT NULL DEFAULT (0),
-  LightRange INT NULL,
-  IRLigRange INT NULL,
-  LaserRange INT NULL,
-  LaserColor VARCHAR(10) NULL,
-  laserColorEf DECIMAL(4, 2) NULL
+  Infravision       BIT NOT NULL DEFAULT (0),
+  IRFilter          BIT NOT NULL DEFAULT (0),
+  LightRange        INT NULL,
+  IRLigRange        INT NULL,
+  LaserRange        INT NULL,
+  LaserColor        VARCHAR(10) NULL,
+  laserColorEf      DECIMAL(4, 2) NULL,
+  usedBatType       int 
 );
 GO
 
@@ -870,10 +875,10 @@ ADD CONSTRAINT [PK_G_AttachClass]
 PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
--- Creating primary key on [id_attach], [id_GSubClass], [id_AttachClass] in table 'G_AvAttachClass'
+-- Creating primary key on [id_attach], [id_GSubClass], in table 'G_AvAttachClass'
 ALTER TABLE [dbo].[G_AvAttachClass]
 ADD CONSTRAINT [PK_G_AvAttachClass]
-PRIMARY KEY CLUSTERED ([id_attach], [id_GSubClass], [id_AttachClass] ASC);
+PRIMARY KEY CLUSTERED ([id_attach], [id_GSubClass]  ASC);
 GO
 
 -- Creating primary key on [id] in table 'G_SubAttachClass'
@@ -1161,13 +1166,13 @@ ON [dbo].[Attachmentmount]
 GO
 
 -- Creating foreign key on [id_AttachClass] in table 'G_AvAttachClass'
-ALTER TABLE [dbo].[G_AvAttachClass]
-ADD CONSTRAINT [FK_G_AvAttachClass_G_AttachClass]
-FOREIGN KEY ([id_AttachClass])
-REFERENCES [dbo].[G_AttachClass]
-([id])
-ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
+--ALTER TABLE [dbo].[G_AvAttachClass]
+--ADD CONSTRAINT [FK_G_AvAttachClass_G_AttachClass]
+--FOREIGN KEY ([id_AttachClass])
+--REFERENCES [dbo].[G_AttachClass]
+--([id])
+--ON DELETE NO ACTION ON UPDATE NO ACTION;
+--GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_G_AvAttachClass_G_AttachClass'
 CREATE INDEX [IX_FK_G_AvAttachClass_G_AttachClass]
@@ -1208,7 +1213,7 @@ GO
 -- Creating foreign key on [ATTACHMENTSLOT1] in table 'G_SubAttachClass'
 ALTER TABLE [dbo].[G_SubAttachClass]
 ADD CONSTRAINT [FK_G_SubAttachClass_ATTACHMENTSLOT1]
-FOREIGN KEY ([ATTACHMENTSLOT1])
+FOREIGN KEY ([ATTACHMENTSLOT])
 REFERENCES [dbo].[ATTACHMENTSLOT]
 ([uiSlotIndex])
 ON DELETE NO ACTION ON UPDATE NO ACTION;
@@ -1217,7 +1222,7 @@ GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_G_SubAttachClass_ATTACHMENTSLOT1'
 CREATE INDEX [IX_FK_G_SubAttachClass_ATTACHMENTSLOT1]
 ON [dbo].[G_SubAttachClass]
-([ATTACHMENTSLOT1]);
+([ATTACHMENTSLOT]);
 GO
 
 -- Creating foreign key on [id_Attachmentmount] in table 'Attachments'
@@ -1360,7 +1365,7 @@ INSERT INTO [ATTACHMENTSLOT] (szSlotName)
   ('Rifle Grenade'),
   ('Rocket Launcher Slot');
 
-INSERT INTO G_SubAttachClass (SubAttach_name, AttachClass, SubAttachDescription, ATTACHMENTSLOT1)
+INSERT INTO G_SubAttachClass (SubAttach_name, AttachClass, SubAttachDescription, ATTACHMENTSLOT)
   VALUES ('Telescopic Sights', 2, '', 1),
   ('Improved-Visibility Sights', 2, '', 1),
   ('Collimating Sight', 2, '', 1),
@@ -1532,92 +1537,42 @@ INSERT INTO [ArmourClass]
 
 
 INSERT INTO [ARMOUR] ([ubArmourClass], [ubProtection], [ubCoverage], [ubDegradePercent])
-  VALUES (1, 20, 75, 25), (1, 22, 75, 20), (1, 24, 75, 15), (1, 25, 70, 15), (1, 27, 70, 11), (1, 29, 70, 8), (1, 29, 85, 13),
-  (1, 31, 85, 10), (1, 33, 85, 7), (2, 23, 65, 15), (2, 25, 65, 11), (2, 27, 65, 8), (2, 27, 90, 13), (2, 29, 90, 10), (2, 31, 90, 7),
-  (1, 14, 65, 5), (1, 23, 75, 20), (1, 25, 75, 15), (1, 27, 75, 10), (1, 27, 75, 15), (1, 29, 75, 11), (1, 31, 75, 8), (3, 50, 50, 15),
-  (4, 3, 99, 5), (4, 5, 99, 5), (4, 6, 99, 5), (4, 20, 99, 5), (1, 2, 95, 25), (1, 20, 85, 20), (1, 22, 95, 18), (1, 24, 95, 15), (4, 7, 99, 5),
-  (4, 8, 99, 5), (1, 1, 99, 25), (1, 1, 99, 25), (1, 28, 70, 15), (1, 30, 70, 11), (1, 32, 70, 8), (1, 1, 99, 25), (2, 23, 90, 25),
-  (1, 25, 85, 25), (1, 25, 85, 25), (1, 1, 99, 25), (1, 5, 99, 25), (1, 1, 99, 25), (1, 1, 99, 25), (1, 1, 99, 25), (1, 1, 99, 25),
-  (1, 5, 99, 25), (1, 1, 99, 25), (1, 26, 65, 20), (2, 26, 75, 15), (1, 28, 90, 15), (1, 1, 99, 25), (1, 14, 65, 5), (1, 27, 70, 15),
-  (2, 27, 95, 13), (1, 29, 85, 13), (1, 45, 99, 8), (2, 45, 99, 5), (1, 50, 99, 5), (1, 1, 80, 5), (2, 1, 95, 5), (1, 1, 95, 5),
-  (1, 26, 70, 20), (2, 26, 80, 15), (1, 28, 75, 15), (1, 29, 70, 11), (2, 29, 95, 10), (1, 31, 85, 10), (1, 50, 99, 6), (2, 50, 99, 4),
-  (1, 55, 99, 4), (1, 28, 65, 15), (2, 28, 75, 11), (1, 30, 90, 11), (1, 28, 70, 15), (2, 28, 80, 11), (1, 30, 75, 11), (1, 31, 70, 8),
-  (2, 31, 95, 7), (1, 33, 85, 7), (1, 55, 99, 5), (2, 55, 99, 3), (1, 60, 99, 3), (1, 30, 65, 10), (2, 30, 75, 8), (1, 32, 90, 8),
-  (1, 30, 70, 10), (2, 30, 80, 8), (1, 32, 75, 8), (3, 35, 50, 10), (2, 14, 25, 20), (1, 15, 65, 15), (1, 20, 85, 12), (2, 18, 85, 12),
-  (1, 25, 75, 13), (1, 28, 75, 13), (1, 28, 80, 13), (2, 23, 70, 13), (2, 26, 85, 13), (1, 25, 70, 13), (1, 28, 70, 13), (1, 28, 75, 13),
-  (1, 29, 85, 11), (1, 29, 85, 11), (2, 23, 65, 13), (2, 26, 80, 13), (2, 27, 90, 11), (2, 27, 95, 11), (1, 25, 70, 13), (1, 28, 70, 13),
-  (1, 28, 75, 13), (1, 29, 85, 11), (1, 29, 85, 11), (2, 23, 65, 13), (2, 26, 80, 13), (2, 27, 90, 11), (2, 27, 95, 11), (1, 28, 75, 13),
-  (1, 31, 75, 13), (1, 31, 80, 13), (1, 32, 90, 11), (1, 32, 90, 11), (2, 26, 70, 13), (2, 29, 85, 13), (2, 30, 95, 11), (2, 30, 98, 11),
-  (1, 17, 65, 10), (1, 22, 85, 8), (2, 20, 85, 8), (1, 27, 75, 9), (1, 30, 75, 9), (1, 30, 80, 9), (2, 25, 70, 9), (2, 28, 85, 9),
-  (1, 27, 70, 9), (1, 30, 70, 9), (1, 30, 75, 9), (1, 31, 85, 8), (1, 31, 85, 8), (2, 25, 65, 9), (2, 28, 80, 9), (2, 29, 90, 8),
-  (2, 29, 95, 8), (1, 27, 70, 9), (1, 30, 70, 9), (1, 30, 75, 9), (1, 31, 85, 8), (1, 31, 85, 8), (2, 25, 65, 9), (2, 28, 80, 9),
-  (2, 29, 90, 8), (2, 29, 95, 8), (1, 30, 75, 9), (1, 33, 75, 9), (1, 33, 80, 9), (1, 34, 90, 8), (1, 34, 90, 8), (2, 28, 70, 9),
-  (2, 31, 85, 9), (2, 32, 95, 8), (2, 32, 98, 8), (1, 19, 65, 5), (1, 24, 85, 5), (2, 22, 85, 5), (1, 29, 75, 6), (1, 32, 75, 6),
-  (1, 32, 80, 6), (2, 27, 70, 6), (2, 30, 85, 6), (1, 29, 70, 6), (1, 32, 70, 6), (1, 32, 75, 6), (1, 33, 85, 5), (1, 33, 85, 5),
-  (2, 27, 65, 6), (2, 30, 80, 6), (2, 31, 90, 5), (2, 31, 95, 5), (1, 29, 70, 6), (1, 32, 70, 6), (1, 32, 75, 6), (1, 33, 85, 5),
-  (1, 33, 85, 5), (2, 27, 65, 6), (2, 30, 80, 6), (2, 31, 90, 5), (2, 31, 95, 5), (1, 32, 75, 6), (1, 35, 75, 6), (1, 35, 80, 6),
-  (1, 36, 90, 5), (1, 36, 90, 5), (2, 30, 70, 6), (2, 33, 85, 6), (2, 34, 95, 5), (2, 34, 98, 5);
-
-
-
+  VALUES 
+  (1, 20, 75, 25), 
+  (1, 22, 75, 20), 
+  (1, 24, 75, 15), 
+  (1, 25, 70, 15);
+  
 INSERT INTO [LBEClass]
   VALUES ('Nothing'), ('Thigh Pack'), ('Vest'), ('Combat Pack'), ('Backpack');
 
 
 INSERT INTO [LOADBEARINGEQUIPMENT]
-  VALUES (1, 0, 0, 0, 0, 16, 16, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0), (2, 0, 0, 0, 0, 16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-  (4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (2, 0, 29, 0, 0, 10, 10, 10, 10, 10, 10, 17, 17, 16, 0, 0, 0), (1, 0, 26, 0, 0, 13, 13, 13, 13, 0, 0, 0, 0, 0, 0, 0, 0),
-  (1, 0, 29, 0, 0, 9, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0), (2, 0, 29, 0, 0, 10, 10, 10, 10, 15, 15, 15, 17, 16, 0, 0, 0),
-  (2, 0, 29, 0, 0, 10, 10, 13, 13, 13, 13, 14, 0, 0, 0, 8, 0), (2, 0, 29, 0, 0, 10, 10, 10, 10, 17, 17, 14, 14, 0, 0, 8, 0),
-  (2, 0, 29, 0, 0, 10, 10, 10, 17, 16, 14, 14, 0, 0, 0, 8, 8), (2, 0, 29, 0, 0, 10, 10, 10, 10, 10, 10, 17, 14, 14, 0, 0, 0),
-  (2, 0, 29, 0, 0, 10, 10, 10, 10, 14, 14, 14, 14, 16, 16, 0, 0), (2, 0, 29, 0, 0, 10, 10, 10, 17, 17, 16, 0, 0, 0, 0, 8, 8),
-  (2, 0, 29, 0, 0, 10, 10, 10, 10, 0, 0, 0, 0, 0, 0, 8, 0), (1, 0, 26, 0, 0, 15, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 29, 0, 0, 15, 15, 15, 11, 0, 0, 0, 0, 0, 0, 0, 0),
-  (1, 0, 29, 0, 0, 12, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0), (4, 1, 34, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4), (4, 0, 34, 0, 0, 17, 17, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4),
-  (4, 0, 34, 0, 0, 17, 17, 17, 17, 10, 10, 10, 10, 4, 4, 0, 0), (3, 1, 30, 0, 0, 18, 0, 0, 0, 5, 5, 5, 0, 0, 0, 0, 0), (3, 0, 29, 0, 0, 17, 18, 0, 0, 5, 5, 5, 0, 0, 0, 0, 0),
-  (3, 0, 30, 0, 0, 17, 17, 17, 17, 5, 5, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 10, 14, 14, 14, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 29, 0, 0, 0, 0, 0, 10, 8, 0, 0, 0, 0, 0, 0, 0),
-  (1, 0, 29, 0, 0, 0, 0, 0, 18, 8, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 0, 14, 14, 14, 8, 0, 0, 0, 0, 0, 0, 0), (1, 0, 29, 0, 0, 0, 9, 0, 9, 8, 0, 0, 0, 0, 0, 0, 0),
-  (1, 0, 26, 0, 0, 9, 14, 9, 14, 0, 0, 0, 0, 0, 0, 0, 0), (2, 0, 29, 0, 0, 17, 17, 16, 16, 16, 16, 18, 0, 0, 0, 0, 0), (2, 0, 29, 0, 0, 10, 10, 10, 17, 16, 15, 15, 15, 11, 0, 0, 0),
-  (1, 0, 22, 0, 0, 19, 56, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0), (2, 0, 29, 0, 0, 16, 17, 17, 18, 18, 0, 0, 0, 0, 0, 22, 22), (1, 0, 26, 0, 0, 21, 21, 20, 0, 8, 0, 0, 0, 0, 0, 0, 0),
-  (1, 0, 29, 0, 0, 21, 21, 20, 18, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 18, 14, 14, 14, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 29, 0, 0, 10, 14, 18, 14, 0, 0, 0, 0, 0, 0, 0, 0),
-  (1, 0, 29, 0, 0, 9, 18, 9, 14, 0, 0, 0, 0, 0, 0, 0, 0), (3, 0, 30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 29, 0, 0, 15, 15, 15, 23, 0, 0, 0, 0, 0, 0, 0, 0),
-  (1, 0, 29, 0, 0, 42, 42, 25, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 29, 0, 0, 12, 12, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 26, 26, 26, 26, 0, 0, 0, 0, 0, 0, 0, 0),
-  (1, 0, 26, 0, 0, 15, 15, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 29, 0, 0, 16, 16, 27, 27, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 29, 0, 0, 16, 16, 28, 28, 0, 0, 0, 0, 0, 0, 0, 0),
-  (1, 0, 26, 0, 0, 42, 42, 42, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 29, 17, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 29, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0),
-  (2, 0, 29, 50, 115, 0, 0, 16, 16, 0, 0, 0, 17, 17, 38, 49, 8), (1, 0, 29, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-  (1, 0, 26, 0, 0, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 35, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-  (1, 0, 26, 0, 0, 46, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-  (1, 0, 26, 0, 0, 52, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-  (1, 0, 26, 0, 0, 42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 12, 14, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-  (1, 0, 26, 22, 15, 0, 0, 0, 0, 37, 0, 0, 0, 0, 0, 0, 0), (2, 0, 29, 100, 4067, 0, 0, 17, 17, 38, 0, 0, 0, 0, 0, 0, 0),
-  (2, 0, 29, 40, 115, 0, 0, 45, 45, 0, 0, 0, 29, 29, 40, 23, 23), (1, 0, 26, 0, 0, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 29, 0, 0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-  (1, 0, 26, 0, 0, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 34, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-  (1, 0, 26, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 0, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0), (1, 0, 29, 27, 30, 38, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-  (1, 0, 26, 0, 0, 0, 0, 0, 0, 23, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 41, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-  (1, 0, 26, 0, 0, 45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 22, 0, 0, 44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (2, 0, 29, 70, 3968, 55, 54, 45, 45, 38, 17, 17, 0, 0, 0, 0, 0),
-  (2, 0, 29, 90, 4064, 45, 45, 45, 38, 38, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 29, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0),
-  (1, 0, 29, 0, 0, 39, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 47, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 29, 0, 0, 48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-  (1, 0, 29, 0, 0, 51, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 29, 37, 31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (4, 2, 32, 0, 0, 44, 34, 11, 0, 0, 34, 11, 0, 53, 31, 0, 0),
-  (2, 0, 29, 12, 96, 42, 42, 16, 16, 0, 0, 0, 0, 0, 0, 0, 0), (2, 0, 32, 50, 483, 0, 0, 16, 41, 40, 0, 0, 0, 0, 45, 49, 49),
-  (2, 0, 26, 60, 3040, 16, 20, 44, 17, 17, 0, 0, 0, 0, 0, 49, 0), (1, 0, 10, 0, 0, 38, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (1, 0, 26, 0, 0, 55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-  (3, 0, 30, 0, 0, 16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), (4, 1, 34, 60, 2099, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 0), (3, 1, 30, 40, 79, 0, 0, 0, 0, 8, 8, 0, 0, 0, 0, 0, 0),
-  (4, 0, 34, 100, 2303, 0, 0, 0, 0, 0, 0, 0, 0, 8, 4, 4, 0), (3, 0, 30, 50, 79, 0, 0, 0, 0, 5, 8, 0, 0, 0, 0, 0, 0);
-
+  VALUES 
+  (1, 0, 0, 0, 0, 16, 16, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0), 
+  (2, 0, 0, 0, 0, 16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), 
+  (3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+  (4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), 
+  (2, 0, 29, 0, 0, 10, 10, 10, 10, 10, 10, 17, 17, 16, 0, 0, 0), 
+  (1, 0, 26, 0, 0, 13, 13, 13, 13, 0, 0, 0, 0, 0, 0, 0, 0);
+  
 
 
 INSERT INTO TypeOfDamage (name, LongName, mDamage)
-  VALUES ('pi+', 'piersing', '0.5'),
-  ('aff', ' ', '1.0'),
-  ('burn', ' ', '1.0'),
-  ('cor', ' ', '1.0'),
-  ('cr', ' ', '1.0'),
-  ('cut', ' ', '1.5'),
-  ('fat', ' ', '1.0'),
-  ('imp', ' ', '2.0'),
-  ('pi-', ' ', '0.5'),
-  ('pi', ' ', '1.0'),
+  VALUES 
+  ('pi+', 'piersing', '0.5'),  
+  ('pi-', ' ' , '0.5'),
+  ('pi', ' '  , '1.0'),
   ('pi++', ' ', '2.0'),
   ('spec', ' ', '1.0'),
-  ('tox', ' ', '1.0');
+  ('tox', ' ' , '1.0'),
+  ('aff', ' ' , '1.0'),
+  ('burn', ' ', '1.0'),
+  ('cor', ' ' , '1.0'),
+  ('cr', ' '  , '1.0'),
+  ('cut', ' ' , '1.5'),
+  ('fat', ' ' , '1.0'),
+  ('imp', ' ' , '2.0');
 
 INSERT INTO LC (Name_LC, ShortDes, Description)
   VALUES ('LC4', 'Открытый', 'Открытый. В большинстве обществ изделие свободно доступно, но в обществах с сильным контролем его доступ или использование могут быть ограничены. Примеры: компьютер; меч;ружьё; мотороллер'),
@@ -1920,10 +1875,13 @@ INSERT INTO [AMMO] ([Caliber_name], [alt_caliber_name], [Dim_of_bullet_SI], [Dim
   ('.44-90 Sharps (11.3x61mmR)', '0', '0', '0', 0.11, 2.8, 'винтовки'),
   ('.338 Lapua Magnum (8.6x70mm)', '0', '0', '0', 0.096, 3.50, 'винтовки');
 
-
-
-
-
+INSERT INTO Battery (name, SmolName, Description, [CPP], WPP)
+  VALUES ('Tiny', 'T', 'A button- or coin-sized battery for watches, mini-flashlights, hearing aids, laser sights, tiny bugs, etc.	', 0.25, 0.02),
+  ('Extra-Small', 'XS', 'A battery used in such portable consumer electronics as audio recorders, CD/MP3 players, digital cameras, and night-vision goggles. Similar to a 9-volt or AA battery', 0.5, 0.1),
+  ('Small', 'S', 'A standard battery for flashlights, portable radios, or cellular phones. Similar to a D-cell or C-cell battery.', 1, 0.33),
+  ('Medium', 'M', 'common power source for lanterns or squad-level radios. More expensive rechargeable models are used in laptops, video cameras, and the like.', 5, 2),
+  ('Large', 'L', 'A lunchbox-sized battery. At TL5, it’s used in telegraph stations. At TL6+, rechargeables are found in small vehicles (such as ATVs, motorcycles, and snowmobiles), base-camp radios, and the like	', 10, 10),
+  ('Very Large', 'VL', 'A toolbox-sized battery found in cars, trucks, golf carts, etc. It can power radios or other heavyduty electronics for extended periods. A bank of these is often used for external power', 20, 50);
 
 INSERT INTO [ExplosionType]
   VALUES ('Normal'), ('Stun'), ('Tear Gas'), ('Mustard Gas'), ('Flare'), ('Noise'), ('Smoke'), ('Creature Gas'),
@@ -2392,13 +2350,6 @@ EXECUTE @RC = dbo.NEW_ITEM @name = 'SVD Dragunov, 7.62x54mmR',
                            @class_ofItem = 'gun',
                            @Returns = @asd OUTPUT
 
-INSERT INTO Battery (name, SmolName, Description, [CPP], WPP)
-  VALUES ('Tiny', 'T', 'A button- or coin-sized battery for watches, mini-flashlights, hearing aids, laser sights, tiny bugs, etc.	', 0.25, 0.02),
-  ('Extra-Small', 'XS', 'A battery used in such portable consumer electronics as audio recorders, CD/MP3 players, digital cameras, and night-vision goggles. Similar to a 9-volt or AA battery', 0.5, 0.1),
-  ('Small', 'S', 'A standard battery for flashlights, portable radios, or cellular phones. Similar to a D-cell or C-cell battery.', 1, 0.33),
-  ('Medium', 'M', 'common power source for lanterns or squad-level radios. More expensive rechargeable models are used in laptops, video cameras, and the like.', 5, 2),
-  ('Large', 'L', 'A lunchbox-sized battery. At TL5, it’s used in telegraph stations. At TL6+, rechargeables are found in small vehicles (such as ATVs, motorcycles, and snowmobiles), base-camp radios, and the like	', 10, 10),
-  ('Very Large', 'VL', 'A toolbox-sized battery found in cars, trucks, golf carts, etc. It can power radios or other heavyduty electronics for extended periods. A bank of these is often used for external power', 20, 50);
 
 
 EXECUTE @RC = dbo.NEW_ITEM_att @name = 'Beamshot 5000S (BM)',

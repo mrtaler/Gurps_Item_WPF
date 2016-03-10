@@ -528,6 +528,23 @@ namespace Item_WPF
       }
      }
      
+        private Nullable<int> _BatTimeWork;
+     public Nullable<int> BatTimeWork 
+     { 
+      get
+      {
+       return _BatTimeWork;
+      } 
+      set
+      {
+       if(_BatTimeWork != value)
+       {
+        _BatTimeWork = value;
+        OnPropertyChanged("BatTimeWork");
+       }
+      }
+     }
+     
         private bool _Tritium;
      public bool Tritium 
      { 
@@ -902,19 +919,19 @@ namespace Item_WPF
       }
      }
      
-        private Nullable<int> _BatTimeWork;
-     public Nullable<int> BatTimeWork 
+        private Nullable<int> _usedBatType;
+     public Nullable<int> usedBatType 
      { 
       get
       {
-       return _BatTimeWork;
+       return _usedBatType;
       } 
       set
       {
-       if(_BatTimeWork != value)
+       if(_usedBatType != value)
        {
-        _BatTimeWork = value;
-        OnPropertyChanged("BatTimeWork");
+        _usedBatType = value;
+        OnPropertyChanged("usedBatType");
        }
       }
      }

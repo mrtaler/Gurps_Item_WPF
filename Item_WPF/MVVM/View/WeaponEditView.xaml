@@ -10,7 +10,6 @@
         Height="485"
         mc:Ignorable="d">
     <Window.Resources>
-        <addin:DatacontextTupeFromClass x:Key="DatacontextTypeFromClass" />
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     </Window.Resources>
     <Grid>
@@ -403,13 +402,12 @@
                                                               UpdateSourceTrigger=PropertyChanged}"
                                       SelectedValuePath="id">
                                 <ComboBox.ItemsSource>
-                                    <MultiBinding Converter="{StaticResource DatacontextTypeFromClass}">
+                                    <MultiBinding Converter="{addin:DatacontextTupeFromClass}">
                                         <Binding Path="WeaponTypescCollection" />
                                         <Binding ElementName="ClassOfWeaponTb" Path="SelectedValue" />
                                     </MultiBinding>
                                 </ComboBox.ItemsSource>
                             </ComboBox>
-
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="GroupBox5"

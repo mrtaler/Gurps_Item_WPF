@@ -32,7 +32,6 @@ namespace Item_WPF
         public virtual DbSet<AMMOUPGRATE> AMMOUPGRATES { get; set; }
         public virtual DbSet<ARMOUR> ARMOURs { get; set; }
         public virtual DbSet<ArmourClass> ArmourClasses { get; set; }
-        public virtual DbSet<Attachment> Attachments { get; set; }
         public virtual DbSet<AttachmentClass> AttachmentClasses { get; set; }
         public virtual DbSet<Attachmentmount> Attachmentmounts { get; set; }
         public virtual DbSet<ATTACHMENTSLOT> ATTACHMENTSLOTs { get; set; }
@@ -45,8 +44,6 @@ namespace Item_WPF
         public virtual DbSet<EXPLOSIVE> EXPLOSIVEs { get; set; }
         public virtual DbSet<FOOD> FOODs { get; set; }
         public virtual DbSet<G_AttachClass> G_AttachClass { get; set; }
-        public virtual DbSet<G_AvAttachClass> G_AvAttachClass { get; set; }
-        public virtual DbSet<G_SubAttachClass> G_SubAttachClass { get; set; }
         public virtual DbSet<ITEM> ITEMs { get; set; }
         public virtual DbSet<ItemClass> ItemClasses { get; set; }
         public virtual DbSet<LBEClass> LBEClasses { get; set; }
@@ -60,6 +57,10 @@ namespace Item_WPF
         public virtual DbSet<WeaponType> WeaponTypes { get; set; }
         public virtual DbSet<Character> Characters { get; set; }
         public virtual DbSet<AvailableAttachSlot> AvailableAttachSlots { get; set; }
+        public virtual DbSet<G_SubAttachClass> G_SubAttachClass { get; set; }
+        public virtual DbSet<G_AvAttachClass> G_AvAttachClass { get; set; }
+        public virtual DbSet<Attachment> Attachments { get; set; }
+        public virtual DbSet<LaserColorEf> LaserColorEfs { get; set; }
     
         public virtual int NEW_ITEM(string name, string class_ofItem, ObjectParameter returns)
         {

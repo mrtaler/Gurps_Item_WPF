@@ -101,10 +101,10 @@
     <Compile Include="AttachmentSystem.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="Attach_N_R.xaml.cs">
-      <DependentUpon>Attach_N_R.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Character.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LaserColorEf.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="litForms\character.xaml.cs">
@@ -174,12 +174,16 @@
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="MVVM\ViewModels\AmmoViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\AttacmentEditViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AttacmentMountViewModel.cs" />
     <Compile Include="MVVM\ViewModels\DamageTypeViewModel.cs" />
     <Compile Include="MVVM\ViewModels\TestViewModel.cs" />
     <Compile Include="MVVM\ViewModels\WeaponEditViewModel.cs" />
     <Compile Include="MVVM\View\AmmoView.xaml.cs">
       <DependentUpon>AmmoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\AttacmentEditView.xaml.cs">
+      <DependentUpon>AttacmentEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\AttacmentMountView.xaml.cs">
       <DependentUpon>AttacmentMountView.xaml</DependentUpon>
@@ -217,14 +221,7 @@
     <Compile Include="WeaponType.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="WeaponNR.xaml.cs">
-      <DependentUpon>WeaponNR.xaml</DependentUpon>
-    </Compile>
     <Page Include="all_Items.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Attach_N_R.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -266,6 +263,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\AttacmentEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\AttacmentMountView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -291,10 +292,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Select_Items.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WeaponNR.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

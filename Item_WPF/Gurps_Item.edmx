@@ -123,6 +123,7 @@
           <Property Name="LaserRange" Type="int" />
           <Property Name="LaserColor" Type="varchar" MaxLength="10" />
           <Property Name="laserColorEf" Type="decimal" Precision="4" Scale="2" />
+          <Property Name="usedBatType" Type="int" />
         </EntityType>
         <EntityType Name="AttachmentClass">
           <Key>
@@ -280,7 +281,6 @@
           <Key>
             <PropertyRef Name="id_attach" />
             <PropertyRef Name="id_GSubClass" />
-            <PropertyRef Name="id_AttachClass" />
           </Key>
           <Property Name="id_attach" Type="int" Nullable="false" />
           <Property Name="id_GSubClass" Type="int" Nullable="false" />
@@ -294,7 +294,7 @@
           <Property Name="SubAttach_name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="AttachClass" Type="int" Nullable="false" />
           <Property Name="SubAttachDescription" Type="varchar(max)" />
-          <Property Name="ATTACHMENTSLOT1" Type="int" Nullable="false" />
+          <Property Name="ATTACHMENTSLOT" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ITEM">
           <Key>
@@ -314,8 +314,6 @@
           <Property Name="WaterDamages" Type="bit" Nullable="false" />
           <Property Name="Metal" Type="bit" Nullable="false" />
           <Property Name="TwoHanded" Type="bit" Nullable="false" />
-          <Property Name="TL" Type="int" Nullable="false" />
-          <Property Name="LC" Type="int" Nullable="false" />
           <Property Name="Electronic" Type="bit" Nullable="false" />
           <Property Name="HT" Type="bit" Nullable="false" />
           <Property Name="UT" Type="bit" Nullable="false" />
@@ -333,7 +331,6 @@
           <Property Name="Canteen" Type="bit" Nullable="false" />
           <Property Name="GasCan" Type="bit" Nullable="false" />
           <Property Name="Batteries" Type="bit" Nullable="false" />
-          <Property Name="SizeBatteries" Type="varchar" MaxLength="4" />
           <Property Name="NeedsBatteries" Type="bit" Nullable="false" />
           <Property Name="ContainsLiquid" Type="bit" Nullable="false" />
           <Property Name="MetalDetector" Type="bit" Nullable="false" />
@@ -341,6 +338,9 @@
           <Property Name="TripWireActivation" Type="bit" Nullable="false" />
           <Property Name="TripWire" Type="bit" Nullable="false" />
           <Property Name="perehodnik" Type="bit" />
+          <Property Name="TL" Type="int" Nullable="false" />
+          <Property Name="LC" Type="int" Nullable="false" />
+          <Property Name="SizeBatteries" Type="varchar" MaxLength="4" />
           <Property Name="FoodType" Type="int" Nullable="false" />
           <Property Name="LockPickModifier" Type="int" Nullable="false" />
           <Property Name="CrowbarModifier" Type="int" Nullable="false" />
@@ -363,6 +363,14 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="70" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LaserColorEf">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="10" />
+          <Property Name="LaserColorDayEfect" Type="decimal" Precision="4" Scale="2" />
         </EntityType>
         <EntityType Name="LBEClass">
           <Key>
@@ -611,18 +619,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_G_AvAttachClass_G_AttachClass">
-          <End Role="G_AttachClass" Type="Self.G_AttachClass" Multiplicity="1" />
-          <End Role="G_AvAttachClass" Type="Self.G_AvAttachClass" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="G_AttachClass">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="G_AvAttachClass">
-              <PropertyRef Name="id_AttachClass" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_G_AvAttachClass_G_SubAttachClass">
           <End Role="G_SubAttachClass" Type="Self.G_SubAttachClass" Multiplicity="1" />
           <End Role="G_AvAttachClass" Type="Self.G_AvAttachClass" Multiplicity="*" />
@@ -643,7 +639,7 @@
               <PropertyRef Name="uiSlotIndex" />
             </Principal>
             <Dependent Role="G_SubAttachClass">
-              <PropertyRef Name="ATTACHMENTSLOT1" />
+              <PropertyRef Name="ATTACHMENTSLOT" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -827,6 +823,7 @@
           <EntitySet Name="G_SubAttachClass" EntityType="Self.G_SubAttachClass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITEM" EntityType="Self.ITEM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ItemClass" EntityType="Self.ItemClass" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LaserColorEf" EntityType="Self.LaserColorEf" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LBEClass" EntityType="Self.LBEClass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LC" EntityType="Self.LC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOADBEARINGEQUIPMENT" EntityType="Self.LOADBEARINGEQUIPMENT" Schema="dbo" store:Type="Tables" />
@@ -877,10 +874,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_G_AvAttachClass_Attachment" Association="Self.FK_G_AvAttachClass_Attachment">
             <End Role="Attachment" EntitySet="Attachment" />
-            <End Role="G_AvAttachClass" EntitySet="G_AvAttachClass" />
-          </AssociationSet>
-          <AssociationSet Name="FK_G_AvAttachClass_G_AttachClass" Association="Self.FK_G_AvAttachClass_G_AttachClass">
-            <End Role="G_AttachClass" EntitySet="G_AttachClass" />
             <End Role="G_AvAttachClass" EntitySet="G_AvAttachClass" />
           </AssociationSet>
           <AssociationSet Name="FK_G_AvAttachClass_G_SubAttachClass" Association="Self.FK_G_AvAttachClass_G_SubAttachClass">
@@ -949,7 +942,6 @@
           <EntitySet Name="AMMOUPGRATES" EntityType="item1Model.AMMOUPGRATE" />
           <EntitySet Name="ARMOURs" EntityType="item1Model.ARMOUR" />
           <EntitySet Name="ArmourClasses" EntityType="item1Model.ArmourClass" />
-          <EntitySet Name="Attachments" EntityType="item1Model.Attachment" />
           <EntitySet Name="AttachmentClasses" EntityType="item1Model.AttachmentClass" />
           <EntitySet Name="Attachmentmounts" EntityType="item1Model.Attachmentmount" />
           <EntitySet Name="ATTACHMENTSLOTs" EntityType="item1Model.ATTACHMENTSLOT" />
@@ -962,8 +954,6 @@
           <EntitySet Name="EXPLOSIVEs" EntityType="item1Model.EXPLOSIVE" />
           <EntitySet Name="FOODs" EntityType="item1Model.FOOD" />
           <EntitySet Name="G_AttachClass" EntityType="item1Model.G_AttachClass" />
-          <EntitySet Name="G_AvAttachClass" EntityType="item1Model.G_AvAttachClass" />
-          <EntitySet Name="G_SubAttachClass" EntityType="item1Model.G_SubAttachClass" />
           <EntitySet Name="ITEMs" EntityType="item1Model.ITEM" />
           <EntitySet Name="ItemClasses" EntityType="item1Model.ItemClass" />
           <EntitySet Name="LBEClasses" EntityType="item1Model.LBEClass" />
@@ -975,33 +965,9 @@
             <End Role="ArmourClass" EntitySet="ArmourClasses" />
             <End Role="ARMOUR" EntitySet="ARMOURs" />
           </AssociationSet>
-          <AssociationSet Name="FK_Attachment_Attachmentmount" Association="item1Model.FK_Attachment_Attachmentmount">
-            <End Role="Attachmentmount" EntitySet="Attachmentmounts" />
-            <End Role="Attachment" EntitySet="Attachments" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Attachment_G_AttachClass" Association="item1Model.FK_Attachment_G_AttachClass">
-            <End Role="G_AttachClass" EntitySet="G_AttachClass" />
-            <End Role="Attachment" EntitySet="Attachments" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Attachment_G_SubAttachClass" Association="item1Model.FK_Attachment_G_SubAttachClass">
-            <End Role="G_SubAttachClass" EntitySet="G_SubAttachClass" />
-            <End Role="Attachment" EntitySet="Attachments" />
-          </AssociationSet>
-          <AssociationSet Name="FK_G_AvAttachClass_Attachment" Association="item1Model.FK_G_AvAttachClass_Attachment">
-            <End Role="Attachment" EntitySet="Attachments" />
-            <End Role="G_AvAttachClass" EntitySet="G_AvAttachClass" />
-          </AssociationSet>
-          <AssociationSet Name="FK_rAttachmentClass" Association="item1Model.FK_rAttachmentClass">
-            <End Role="AttachmentClass" EntitySet="AttachmentClasses" />
-            <End Role="Attachment" EntitySet="Attachments" />
-          </AssociationSet>
           <AssociationSet Name="FK_Attachmentmount_NasAttachmentClass1" Association="item1Model.FK_Attachmentmount_NasAttachmentClass1">
             <End Role="ATTACHMENTSLOT" EntitySet="ATTACHMENTSLOTs" />
             <End Role="Attachmentmount" EntitySet="Attachmentmounts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_G_SubAttachClass_ATTACHMENTSLOT1" Association="item1Model.FK_G_SubAttachClass_ATTACHMENTSLOT1">
-            <End Role="ATTACHMENTSLOT" EntitySet="ATTACHMENTSLOTs" />
-            <End Role="G_SubAttachClass" EntitySet="G_SubAttachClass" />
           </AssociationSet>
           <AssociationSet Name="FK_ITEM_Clothes" Association="item1Model.FK_ITEM_Clothes">
             <End Role="Cloth" EntitySet="Clothes" />
@@ -1018,18 +984,6 @@
           <AssociationSet Name="FK_ITEM_Food" Association="item1Model.FK_ITEM_Food">
             <End Role="FOOD" EntitySet="FOODs" />
             <End Role="ITEM" EntitySet="ITEMs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_G_AvAttachClass_G_AttachClass" Association="item1Model.FK_G_AvAttachClass_G_AttachClass">
-            <End Role="G_AttachClass" EntitySet="G_AttachClass" />
-            <End Role="G_AvAttachClass" EntitySet="G_AvAttachClass" />
-          </AssociationSet>
-          <AssociationSet Name="FK_G_SubAttachClass_G_AttachClass" Association="item1Model.FK_G_SubAttachClass_G_AttachClass">
-            <End Role="G_AttachClass" EntitySet="G_AttachClass" />
-            <End Role="G_SubAttachClass" EntitySet="G_SubAttachClass" />
-          </AssociationSet>
-          <AssociationSet Name="FK_G_AvAttachClass_G_SubAttachClass" Association="item1Model.FK_G_AvAttachClass_G_SubAttachClass">
-            <End Role="G_SubAttachClass" EntitySet="G_SubAttachClass" />
-            <End Role="G_AvAttachClass" EntitySet="G_AvAttachClass" />
           </AssociationSet>
           <AssociationSet Name="FK_Item_ItemClass" Association="item1Model.FK_Item_ItemClass">
             <End Role="ItemClass" EntitySet="ItemClasses" />
@@ -1092,6 +1046,42 @@
             <End Role="WEAPON" EntitySet="WEAPONs" />
             <End Role="AvailableAttachSlot" EntitySet="AvailableAttachSlots" />
           </AssociationSet>
+          <EntitySet Name="G_SubAttachClass" EntityType="item1Model.G_SubAttachClass" />
+          <AssociationSet Name="FK_G_SubAttachClass_ATTACHMENTSLOT1" Association="item1Model.FK_G_SubAttachClass_ATTACHMENTSLOT1">
+            <End Role="ATTACHMENTSLOT" EntitySet="ATTACHMENTSLOTs" />
+            <End Role="G_SubAttachClass" EntitySet="G_SubAttachClass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_SubAttachClass_G_AttachClass" Association="item1Model.FK_G_SubAttachClass_G_AttachClass">
+            <End Role="G_AttachClass" EntitySet="G_AttachClass" />
+            <End Role="G_SubAttachClass" EntitySet="G_SubAttachClass" />
+          </AssociationSet>
+          <EntitySet Name="G_AvAttachClass" EntityType="item1Model.G_AvAttachClass" />
+          <AssociationSet Name="FK_G_AvAttachClass_G_SubAttachClass" Association="item1Model.FK_G_AvAttachClass_G_SubAttachClass">
+            <End Role="G_SubAttachClass" EntitySet="G_SubAttachClass" />
+            <End Role="G_AvAttachClass" EntitySet="G_AvAttachClass" />
+          </AssociationSet>
+          <EntitySet Name="Attachments" EntityType="item1Model.Attachment" />
+          <AssociationSet Name="FK_Attachment_Attachmentmount" Association="item1Model.FK_Attachment_Attachmentmount">
+            <End Role="Attachmentmount" EntitySet="Attachmentmounts" />
+            <End Role="Attachment" EntitySet="Attachments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attachment_G_AttachClass" Association="item1Model.FK_Attachment_G_AttachClass">
+            <End Role="G_AttachClass" EntitySet="G_AttachClass" />
+            <End Role="Attachment" EntitySet="Attachments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attachment_G_SubAttachClass" Association="item1Model.FK_Attachment_G_SubAttachClass">
+            <End Role="G_SubAttachClass" EntitySet="G_SubAttachClass" />
+            <End Role="Attachment" EntitySet="Attachments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_AvAttachClass_Attachment" Association="item1Model.FK_G_AvAttachClass_Attachment">
+            <End Role="Attachment" EntitySet="Attachments" />
+            <End Role="G_AvAttachClass" EntitySet="G_AvAttachClass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_rAttachmentClass" Association="item1Model.FK_rAttachmentClass">
+            <End Role="AttachmentClass" EntitySet="AttachmentClasses" />
+            <End Role="Attachment" EntitySet="Attachments" />
+          </AssociationSet>
+          <EntitySet Name="LaserColorEfs" EntityType="item1Model.LaserColorEf" />
         </EntityContainer>
         <EntityType Name="AMMO">
           <Key>
@@ -1158,68 +1148,6 @@
           <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ARMOURs" Relationship="item1Model.FK_ARMOUR" FromRole="ArmourClass" ToRole="ARMOUR" />
         </EntityType>
-        <EntityType Name="Attachment">
-          <Key>
-            <PropertyRef Name="uiIndex" />
-          </Key>
-          <Property Name="uiIndex" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="szAttName" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
-          <Property Name="rAttachmentClass" Type="Int32" Nullable="false" />
-          <Property Name="Attachmentmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="HiddenAttachment" Type="Boolean" Nullable="false" />
-          <Property Name="NoiseReduction" Type="Int32" />
-          <Property Name="HideMuzzleFlash" Type="Boolean" Nullable="false" />
-          <Property Name="RangeBonus" Type="Int32" />
-          <Property Name="AimBonus" Type="Int32" />
-          <Property Name="MinRangeForAimBonus" Type="Int32" />
-          <Property Name="MagSizeBonus" Type="Int32" />
-          <Property Name="BurstSizeBonus" Type="Int32" />
-          <Property Name="RateOfFireBonus" Type="Int32" />
-          <Property Name="DamageBonus" Type="Int32" />
-          <Property Name="ScopeMagFactor" Type="Decimal" Precision="4" Scale="2" />
-          <Property Name="HearingRangeBonus" Type="Int32" />
-          <Property Name="VisionRangeBonus" Type="Int32" />
-          <Property Name="NightVisionRangeBonus" Type="Int32" />
-          <Property Name="DayVisionRangeBonus" Type="Int32" />
-          <Property Name="CaveVisionRangeBonus" Type="Int32" />
-          <Property Name="BrightLightVisionRangeBonus" Type="Int32" />
-          <Property Name="PercentTunnelVision" Type="Int32" />
-          <Property Name="FlashLightRange" Type="Int32" />
-          <Property Name="RecoilModifier" Type="Int32" />
-          <Property Name="G_SubAttachClass" Type="Int32" Nullable="false" />
-          <Property Name="G_AttachClass" Type="Int32" Nullable="false" />
-          <Property Name="Darkness" Type="Int32" />
-          <Property Name="Bulk_add" Type="Int32" />
-          <Property Name="Fix" Type="Boolean" Nullable="false" />
-          <Property Name="Tritium" Type="Boolean" Nullable="false" />
-          <Property Name="ScopeMagMin" Type="Int32" />
-          <Property Name="ScopeMagMax" Type="Int32" />
-          <Property Name="AccAddmax" Type="Int32" />
-          <Property Name="id_Attachmentmount" Type="Int32" Nullable="false" />
-          <Property Name="ImpVisSights" Type="Boolean" Nullable="false" />
-          <Property Name="BlockIronSight" Type="Boolean" Nullable="false" />
-          <Property Name="Collimator" Type="Boolean" Nullable="false" />
-          <Property Name="Reflex" Type="Boolean" Nullable="false" />
-          <Property Name="Targetingprogram" Type="Boolean" Nullable="false" />
-          <Property Name="Laserrangefinder" Type="Boolean" Nullable="false" />
-          <Property Name="LaserRFrange" Type="Int32" />
-          <Property Name="LaserRFAcc" Type="Int32" />
-          <Property Name="NightVision" Type="Int32" />
-          <Property Name="NeedIRillumination" Type="Boolean" Nullable="false" />
-          <Property Name="Infravision" Type="Boolean" Nullable="false" />
-          <Property Name="IRFilter" Type="Boolean" Nullable="false" />
-          <Property Name="LightRange" Type="Int32" />
-          <Property Name="IRLigRange" Type="Int32" />
-          <Property Name="LaserRange" Type="Int32" />
-          <Property Name="LaserColor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="laserColorEf" Type="Decimal" Precision="4" Scale="2" />
-          <NavigationProperty Name="Attachmentmount1" Relationship="item1Model.FK_Attachment_Attachmentmount" FromRole="Attachment" ToRole="Attachmentmount" />
-          <NavigationProperty Name="G_AttachClass1" Relationship="item1Model.FK_Attachment_G_AttachClass" FromRole="Attachment" ToRole="G_AttachClass" />
-          <NavigationProperty Name="G_SubAttachClass1" Relationship="item1Model.FK_Attachment_G_SubAttachClass" FromRole="Attachment" ToRole="G_SubAttachClass" />
-          <NavigationProperty Name="G_AvAttachClass" Relationship="item1Model.FK_G_AvAttachClass_Attachment" FromRole="Attachment" ToRole="G_AvAttachClass" />
-          <NavigationProperty Name="AttachmentClass" Relationship="item1Model.FK_rAttachmentClass" FromRole="Attachment" ToRole="AttachmentClass" />
-          <Property Name="BatTimeWork" Type="Int32" />
-        </EntityType>
         <EntityType Name="AttachmentClass">
           <Key>
             <PropertyRef Name="id" />
@@ -1235,9 +1163,9 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="idAttacClass" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Attachments" Relationship="item1Model.FK_Attachment_Attachmentmount" FromRole="Attachmentmount" ToRole="Attachment" />
           <NavigationProperty Name="ATTACHMENTSLOT" Relationship="item1Model.FK_Attachmentmount_NasAttachmentClass1" FromRole="Attachmentmount" ToRole="ATTACHMENTSLOT" />
           <NavigationProperty Name="AvailableAttachSlots" Relationship="item1Model.FK_AVeAttachmentmount" FromRole="Attachmentmount" ToRole="AvailableAttachSlot" />
+          <NavigationProperty Name="Attachments" Relationship="item1Model.FK_Attachment_Attachmentmount" FromRole="Attachmentmount" ToRole="Attachment" />
         </EntityType>
         <EntityType Name="ATTACHMENTSLOT">
           <Key>
@@ -1246,8 +1174,8 @@
           <Property Name="uiSlotIndex" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="szSlotName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Attachmentmounts" Relationship="item1Model.FK_Attachmentmount_NasAttachmentClass1" FromRole="ATTACHMENTSLOT" ToRole="Attachmentmount" />
-          <NavigationProperty Name="G_SubAttachClass" Relationship="item1Model.FK_G_SubAttachClass_ATTACHMENTSLOT1" FromRole="ATTACHMENTSLOT" ToRole="G_SubAttachClass" />
           <NavigationProperty Name="AvailableAttachSlots" Relationship="item1Model.FK_AVeATTACHMENTSLOT" FromRole="ATTACHMENTSLOT" ToRole="AvailableAttachSlot" />
+          <NavigationProperty Name="G_SubAttachClass" Relationship="item1Model.FK_G_SubAttachClass_ATTACHMENTSLOT1" FromRole="ATTACHMENTSLOT" ToRole="G_SubAttachClass" />
         </EntityType>
         <EntityType Name="AttachmentSystem">
           <Key>
@@ -1340,36 +1268,8 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name_class" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Attachments" Relationship="item1Model.FK_Attachment_G_AttachClass" FromRole="G_AttachClass" ToRole="Attachment" />
-          <NavigationProperty Name="G_AvAttachClass" Relationship="item1Model.FK_G_AvAttachClass_G_AttachClass" FromRole="G_AttachClass" ToRole="G_AvAttachClass" />
           <NavigationProperty Name="G_SubAttachClass" Relationship="item1Model.FK_G_SubAttachClass_G_AttachClass" FromRole="G_AttachClass" ToRole="G_SubAttachClass" />
-        </EntityType>
-        <EntityType Name="G_AvAttachClass">
-          <Key>
-            <PropertyRef Name="id_attach" />
-            <PropertyRef Name="id_GSubClass" />
-            <PropertyRef Name="id_AttachClass" />
-          </Key>
-          <Property Name="id_attach" Type="Int32" Nullable="false" />
-          <Property Name="id_GSubClass" Type="Int32" Nullable="false" />
-          <Property Name="id_AttachClass" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Attachment" Relationship="item1Model.FK_G_AvAttachClass_Attachment" FromRole="G_AvAttachClass" ToRole="Attachment" />
-          <NavigationProperty Name="G_AttachClass" Relationship="item1Model.FK_G_AvAttachClass_G_AttachClass" FromRole="G_AvAttachClass" ToRole="G_AttachClass" />
-          <NavigationProperty Name="G_SubAttachClass" Relationship="item1Model.FK_G_AvAttachClass_G_SubAttachClass" FromRole="G_AvAttachClass" ToRole="G_SubAttachClass" />
-        </EntityType>
-        <EntityType Name="G_SubAttachClass">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SubAttach_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="AttachClass" Type="Int32" Nullable="false" />
-          <Property Name="SubAttachDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="ATTACHMENTSLOT1" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Attachments" Relationship="item1Model.FK_Attachment_G_SubAttachClass" FromRole="G_SubAttachClass" ToRole="Attachment" />
-          <NavigationProperty Name="ATTACHMENTSLOT" Relationship="item1Model.FK_G_SubAttachClass_ATTACHMENTSLOT1" FromRole="G_SubAttachClass" ToRole="ATTACHMENTSLOT" />
-          <NavigationProperty Name="G_AttachClass" Relationship="item1Model.FK_G_SubAttachClass_G_AttachClass" FromRole="G_SubAttachClass" ToRole="G_AttachClass" />
-          <NavigationProperty Name="G_AvAttachClass" Relationship="item1Model.FK_G_AvAttachClass_G_SubAttachClass" FromRole="G_SubAttachClass" ToRole="G_AvAttachClass" />
+          <NavigationProperty Name="Attachments" Relationship="item1Model.FK_Attachment_G_AttachClass" FromRole="G_AttachClass" ToRole="Attachment" />
         </EntityType>
         <EntityType Name="ITEM">
           <Key>
@@ -1520,68 +1420,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Attachment_Attachmentmount">
-          <End Type="item1Model.Attachmentmount" Role="Attachmentmount" Multiplicity="1" />
-          <End Type="item1Model.Attachment" Role="Attachment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Attachmentmount">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Attachment">
-              <PropertyRef Name="id_Attachmentmount" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Attachment_G_AttachClass">
-          <End Type="item1Model.G_AttachClass" Role="G_AttachClass" Multiplicity="1" />
-          <End Type="item1Model.Attachment" Role="Attachment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="G_AttachClass">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Attachment">
-              <PropertyRef Name="G_AttachClass" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Attachment_G_SubAttachClass">
-          <End Type="item1Model.G_SubAttachClass" Role="G_SubAttachClass" Multiplicity="1" />
-          <End Type="item1Model.Attachment" Role="Attachment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="G_SubAttachClass">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Attachment">
-              <PropertyRef Name="G_SubAttachClass" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_G_AvAttachClass_Attachment">
-          <End Type="item1Model.Attachment" Role="Attachment" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="item1Model.G_AvAttachClass" Role="G_AvAttachClass" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Attachment">
-              <PropertyRef Name="uiIndex" />
-            </Principal>
-            <Dependent Role="G_AvAttachClass">
-              <PropertyRef Name="id_attach" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_rAttachmentClass">
-          <End Type="item1Model.AttachmentClass" Role="AttachmentClass" Multiplicity="1" />
-          <End Type="item1Model.Attachment" Role="Attachment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AttachmentClass">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Attachment">
-              <PropertyRef Name="rAttachmentClass" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Attachmentmount_NasAttachmentClass1">
           <End Type="item1Model.ATTACHMENTSLOT" Role="ATTACHMENTSLOT" Multiplicity="1" />
           <End Type="item1Model.Attachmentmount" Role="Attachmentmount" Multiplicity="*" />
@@ -1591,18 +1429,6 @@
             </Principal>
             <Dependent Role="Attachmentmount">
               <PropertyRef Name="idAttacClass" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_G_SubAttachClass_ATTACHMENTSLOT1">
-          <End Type="item1Model.ATTACHMENTSLOT" Role="ATTACHMENTSLOT" Multiplicity="1" />
-          <End Type="item1Model.G_SubAttachClass" Role="G_SubAttachClass" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ATTACHMENTSLOT">
-              <PropertyRef Name="uiSlotIndex" />
-            </Principal>
-            <Dependent Role="G_SubAttachClass">
-              <PropertyRef Name="ATTACHMENTSLOT1" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1651,42 +1477,6 @@
             </Principal>
             <Dependent Role="ITEM">
               <PropertyRef Name="FoodType" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_G_AvAttachClass_G_AttachClass">
-          <End Type="item1Model.G_AttachClass" Role="G_AttachClass" Multiplicity="1" />
-          <End Type="item1Model.G_AvAttachClass" Role="G_AvAttachClass" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="G_AttachClass">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="G_AvAttachClass">
-              <PropertyRef Name="id_AttachClass" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_G_SubAttachClass_G_AttachClass">
-          <End Type="item1Model.G_AttachClass" Role="G_AttachClass" Multiplicity="1" />
-          <End Type="item1Model.G_SubAttachClass" Role="G_SubAttachClass" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="G_AttachClass">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="G_SubAttachClass">
-              <PropertyRef Name="AttachClass" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_G_AvAttachClass_G_SubAttachClass">
-          <End Type="item1Model.G_SubAttachClass" Role="G_SubAttachClass" Multiplicity="1" />
-          <End Type="item1Model.G_AvAttachClass" Role="G_AvAttachClass" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="G_SubAttachClass">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="G_AvAttachClass">
-              <PropertyRef Name="id_GSubClass" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1931,6 +1721,200 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="G_SubAttachClass">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubAttach_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AttachClass" Type="Int32" Nullable="false" />
+          <Property Name="SubAttachDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ATTACHMENTSLOT" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ATTACHMENTSLOT1" Relationship="item1Model.FK_G_SubAttachClass_ATTACHMENTSLOT1" FromRole="G_SubAttachClass" ToRole="ATTACHMENTSLOT" />
+          <NavigationProperty Name="G_AttachClass" Relationship="item1Model.FK_G_SubAttachClass_G_AttachClass" FromRole="G_SubAttachClass" ToRole="G_AttachClass" />
+          <NavigationProperty Name="G_AvAttachClass" Relationship="item1Model.FK_G_AvAttachClass_G_SubAttachClass" FromRole="G_SubAttachClass" ToRole="G_AvAttachClass" />
+          <NavigationProperty Name="Attachments" Relationship="item1Model.FK_Attachment_G_SubAttachClass" FromRole="G_SubAttachClass" ToRole="Attachment" />
+        </EntityType>
+        <Association Name="FK_G_SubAttachClass_ATTACHMENTSLOT1">
+          <End Type="item1Model.ATTACHMENTSLOT" Role="ATTACHMENTSLOT" Multiplicity="1" />
+          <End Type="item1Model.G_SubAttachClass" Role="G_SubAttachClass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ATTACHMENTSLOT">
+              <PropertyRef Name="uiSlotIndex" />
+            </Principal>
+            <Dependent Role="G_SubAttachClass">
+              <PropertyRef Name="ATTACHMENTSLOT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_SubAttachClass_G_AttachClass">
+          <End Type="item1Model.G_AttachClass" Role="G_AttachClass" Multiplicity="1" />
+          <End Type="item1Model.G_SubAttachClass" Role="G_SubAttachClass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="G_AttachClass">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="G_SubAttachClass">
+              <PropertyRef Name="AttachClass" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="G_AvAttachClass">
+          <Key>
+            <PropertyRef Name="id_attach" />
+            <PropertyRef Name="id_GSubClass" />
+          </Key>
+          <Property Name="id_attach" Type="Int32" Nullable="false" />
+          <Property Name="id_GSubClass" Type="Int32" Nullable="false" />
+          <Property Name="id_AttachClass" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="G_SubAttachClass" Relationship="item1Model.FK_G_AvAttachClass_G_SubAttachClass" FromRole="G_AvAttachClass" ToRole="G_SubAttachClass" />
+          <NavigationProperty Name="Attachment" Relationship="item1Model.FK_G_AvAttachClass_Attachment" FromRole="G_AvAttachClass" ToRole="Attachment" />
+        </EntityType>
+        <Association Name="FK_G_AvAttachClass_G_SubAttachClass">
+          <End Type="item1Model.G_SubAttachClass" Role="G_SubAttachClass" Multiplicity="1" />
+          <End Type="item1Model.G_AvAttachClass" Role="G_AvAttachClass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="G_SubAttachClass">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="G_AvAttachClass">
+              <PropertyRef Name="id_GSubClass" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Attachment">
+          <Key>
+            <PropertyRef Name="uiIndex" />
+          </Key>
+          <Property Name="uiIndex" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="szAttName" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="rAttachmentClass" Type="Int32" Nullable="false" />
+          <Property Name="Attachmentmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HiddenAttachment" Type="Boolean" Nullable="false" />
+          <Property Name="NoiseReduction" Type="Int32" />
+          <Property Name="HideMuzzleFlash" Type="Boolean" Nullable="false" />
+          <Property Name="RangeBonus" Type="Int32" />
+          <Property Name="AimBonus" Type="Int32" />
+          <Property Name="MinRangeForAimBonus" Type="Int32" />
+          <Property Name="MagSizeBonus" Type="Int32" />
+          <Property Name="BurstSizeBonus" Type="Int32" />
+          <Property Name="RateOfFireBonus" Type="Int32" />
+          <Property Name="DamageBonus" Type="Int32" />
+          <Property Name="ScopeMagFactor" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="HearingRangeBonus" Type="Int32" />
+          <Property Name="VisionRangeBonus" Type="Int32" />
+          <Property Name="NightVisionRangeBonus" Type="Int32" />
+          <Property Name="DayVisionRangeBonus" Type="Int32" />
+          <Property Name="CaveVisionRangeBonus" Type="Int32" />
+          <Property Name="BrightLightVisionRangeBonus" Type="Int32" />
+          <Property Name="PercentTunnelVision" Type="Int32" />
+          <Property Name="FlashLightRange" Type="Int32" />
+          <Property Name="RecoilModifier" Type="Int32" />
+          <Property Name="G_SubAttachClass" Type="Int32" Nullable="false" />
+          <Property Name="G_AttachClass" Type="Int32" Nullable="false" />
+          <Property Name="Darkness" Type="Int32" />
+          <Property Name="Bulk_add" Type="Int32" />
+          <Property Name="Fix" Type="Boolean" Nullable="false" />
+          <Property Name="BatTimeWork" Type="Int32" />
+          <Property Name="Tritium" Type="Boolean" Nullable="false" />
+          <Property Name="ScopeMagMin" Type="Int32" />
+          <Property Name="ScopeMagMax" Type="Int32" />
+          <Property Name="AccAddmax" Type="Int32" />
+          <Property Name="id_Attachmentmount" Type="Int32" Nullable="false" />
+          <Property Name="ImpVisSights" Type="Boolean" Nullable="false" />
+          <Property Name="BlockIronSight" Type="Boolean" Nullable="false" />
+          <Property Name="Collimator" Type="Boolean" Nullable="false" />
+          <Property Name="Reflex" Type="Boolean" Nullable="false" />
+          <Property Name="Targetingprogram" Type="Boolean" Nullable="false" />
+          <Property Name="Laserrangefinder" Type="Boolean" Nullable="false" />
+          <Property Name="LaserRFrange" Type="Int32" />
+          <Property Name="LaserRFAcc" Type="Int32" />
+          <Property Name="NightVision" Type="Int32" />
+          <Property Name="NeedIRillumination" Type="Boolean" Nullable="false" />
+          <Property Name="Infravision" Type="Boolean" Nullable="false" />
+          <Property Name="IRFilter" Type="Boolean" Nullable="false" />
+          <Property Name="LightRange" Type="Int32" />
+          <Property Name="IRLigRange" Type="Int32" />
+          <Property Name="LaserRange" Type="Int32" />
+          <Property Name="LaserColor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="laserColorEf" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="usedBatType" Type="Int32" />
+          <NavigationProperty Name="Attachmentmount1" Relationship="item1Model.FK_Attachment_Attachmentmount" FromRole="Attachment" ToRole="Attachmentmount" />
+          <NavigationProperty Name="G_AttachClass1" Relationship="item1Model.FK_Attachment_G_AttachClass" FromRole="Attachment" ToRole="G_AttachClass" />
+          <NavigationProperty Name="G_SubAttachClass1" Relationship="item1Model.FK_Attachment_G_SubAttachClass" FromRole="Attachment" ToRole="G_SubAttachClass" />
+          <NavigationProperty Name="G_AvAttachClass" Relationship="item1Model.FK_G_AvAttachClass_Attachment" FromRole="Attachment" ToRole="G_AvAttachClass" />
+          <NavigationProperty Name="AttachmentClass" Relationship="item1Model.FK_rAttachmentClass" FromRole="Attachment" ToRole="AttachmentClass" />
+        </EntityType>
+        <Association Name="FK_Attachment_Attachmentmount">
+          <End Type="item1Model.Attachmentmount" Role="Attachmentmount" Multiplicity="1" />
+          <End Type="item1Model.Attachment" Role="Attachment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Attachmentmount">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Attachment">
+              <PropertyRef Name="id_Attachmentmount" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attachment_G_AttachClass">
+          <End Type="item1Model.G_AttachClass" Role="G_AttachClass" Multiplicity="1" />
+          <End Type="item1Model.Attachment" Role="Attachment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="G_AttachClass">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Attachment">
+              <PropertyRef Name="G_AttachClass" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attachment_G_SubAttachClass">
+          <End Type="item1Model.G_SubAttachClass" Role="G_SubAttachClass" Multiplicity="1" />
+          <End Type="item1Model.Attachment" Role="Attachment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="G_SubAttachClass">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Attachment">
+              <PropertyRef Name="G_SubAttachClass" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_AvAttachClass_Attachment">
+          <End Type="item1Model.Attachment" Role="Attachment" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.G_AvAttachClass" Role="G_AvAttachClass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Attachment">
+              <PropertyRef Name="uiIndex" />
+            </Principal>
+            <Dependent Role="G_AvAttachClass">
+              <PropertyRef Name="id_attach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_rAttachmentClass">
+          <End Type="item1Model.AttachmentClass" Role="AttachmentClass" Multiplicity="1" />
+          <End Type="item1Model.Attachment" Role="Attachment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AttachmentClass">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Attachment">
+              <PropertyRef Name="rAttachmentClass" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="LaserColorEf">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="LaserColorDayEfect" Type="Decimal" Precision="4" Scale="2" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2000,64 +1984,6 @@
               <MappingFragment StoreEntitySet="ArmourClass">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Attachments">
-            <EntityTypeMapping TypeName="item1Model.Attachment">
-              <MappingFragment StoreEntitySet="Attachment">
-                <ScalarProperty Name="BatTimeWork" ColumnName="BatTimeWork" />
-                <ScalarProperty Name="laserColorEf" ColumnName="laserColorEf" />
-                <ScalarProperty Name="LaserColor" ColumnName="LaserColor" />
-                <ScalarProperty Name="LaserRange" ColumnName="LaserRange" />
-                <ScalarProperty Name="IRLigRange" ColumnName="IRLigRange" />
-                <ScalarProperty Name="LightRange" ColumnName="LightRange" />
-                <ScalarProperty Name="IRFilter" ColumnName="IRFilter" />
-                <ScalarProperty Name="Infravision" ColumnName="Infravision" />
-                <ScalarProperty Name="NeedIRillumination" ColumnName="NeedIRillumination" />
-                <ScalarProperty Name="NightVision" ColumnName="NightVision" />
-                <ScalarProperty Name="LaserRFAcc" ColumnName="LaserRFAcc" />
-                <ScalarProperty Name="LaserRFrange" ColumnName="LaserRFrange" />
-                <ScalarProperty Name="Laserrangefinder" ColumnName="Laserrangefinder" />
-                <ScalarProperty Name="Targetingprogram" ColumnName="Targetingprogram" />
-                <ScalarProperty Name="Reflex" ColumnName="Reflex" />
-                <ScalarProperty Name="Collimator" ColumnName="Collimator" />
-                <ScalarProperty Name="BlockIronSight" ColumnName="BlockIronSight" />
-                <ScalarProperty Name="ImpVisSights" ColumnName="ImpVisSights" />
-                <ScalarProperty Name="id_Attachmentmount" ColumnName="id_Attachmentmount" />
-                <ScalarProperty Name="AccAddmax" ColumnName="AccAddmax" />
-                <ScalarProperty Name="ScopeMagMax" ColumnName="ScopeMagMax" />
-                <ScalarProperty Name="ScopeMagMin" ColumnName="ScopeMagMin" />
-                <ScalarProperty Name="Tritium" ColumnName="Tritium" />
-                <ScalarProperty Name="Fix" ColumnName="Fix" />
-                <ScalarProperty Name="Bulk_add" ColumnName="Bulk_add" />
-                <ScalarProperty Name="Darkness" ColumnName="Darkness" />
-                <ScalarProperty Name="G_AttachClass" ColumnName="G_AttachClass" />
-                <ScalarProperty Name="G_SubAttachClass" ColumnName="G_SubAttachClass" />
-                <ScalarProperty Name="RecoilModifier" ColumnName="RecoilModifier" />
-                <ScalarProperty Name="FlashLightRange" ColumnName="FlashLightRange" />
-                <ScalarProperty Name="PercentTunnelVision" ColumnName="PercentTunnelVision" />
-                <ScalarProperty Name="BrightLightVisionRangeBonus" ColumnName="BrightLightVisionRangeBonus" />
-                <ScalarProperty Name="CaveVisionRangeBonus" ColumnName="CaveVisionRangeBonus" />
-                <ScalarProperty Name="DayVisionRangeBonus" ColumnName="DayVisionRangeBonus" />
-                <ScalarProperty Name="NightVisionRangeBonus" ColumnName="NightVisionRangeBonus" />
-                <ScalarProperty Name="VisionRangeBonus" ColumnName="VisionRangeBonus" />
-                <ScalarProperty Name="HearingRangeBonus" ColumnName="HearingRangeBonus" />
-                <ScalarProperty Name="ScopeMagFactor" ColumnName="ScopeMagFactor" />
-                <ScalarProperty Name="DamageBonus" ColumnName="DamageBonus" />
-                <ScalarProperty Name="RateOfFireBonus" ColumnName="RateOfFireBonus" />
-                <ScalarProperty Name="BurstSizeBonus" ColumnName="BurstSizeBonus" />
-                <ScalarProperty Name="MagSizeBonus" ColumnName="MagSizeBonus" />
-                <ScalarProperty Name="MinRangeForAimBonus" ColumnName="MinRangeForAimBonus" />
-                <ScalarProperty Name="AimBonus" ColumnName="AimBonus" />
-                <ScalarProperty Name="RangeBonus" ColumnName="RangeBonus" />
-                <ScalarProperty Name="HideMuzzleFlash" ColumnName="HideMuzzleFlash" />
-                <ScalarProperty Name="NoiseReduction" ColumnName="NoiseReduction" />
-                <ScalarProperty Name="HiddenAttachment" ColumnName="HiddenAttachment" />
-                <ScalarProperty Name="Attachmentmount" ColumnName="Attachmentmount" />
-                <ScalarProperty Name="rAttachmentClass" ColumnName="rAttachmentClass" />
-                <ScalarProperty Name="szAttName" ColumnName="szAttName" />
-                <ScalarProperty Name="uiIndex" ColumnName="uiIndex" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2178,26 +2104,6 @@
             <EntityTypeMapping TypeName="item1Model.G_AttachClass">
               <MappingFragment StoreEntitySet="G_AttachClass">
                 <ScalarProperty Name="name_class" ColumnName="name_class" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="G_AvAttachClass">
-            <EntityTypeMapping TypeName="item1Model.G_AvAttachClass">
-              <MappingFragment StoreEntitySet="G_AvAttachClass">
-                <ScalarProperty Name="id_AttachClass" ColumnName="id_AttachClass" />
-                <ScalarProperty Name="id_GSubClass" ColumnName="id_GSubClass" />
-                <ScalarProperty Name="id_attach" ColumnName="id_attach" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="G_SubAttachClass">
-            <EntityTypeMapping TypeName="item1Model.G_SubAttachClass">
-              <MappingFragment StoreEntitySet="G_SubAttachClass">
-                <ScalarProperty Name="ATTACHMENTSLOT1" ColumnName="ATTACHMENTSLOT1" />
-                <ScalarProperty Name="SubAttachDescription" ColumnName="SubAttachDescription" />
-                <ScalarProperty Name="AttachClass" ColumnName="AttachClass" />
-                <ScalarProperty Name="SubAttach_name" ColumnName="SubAttach_name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -2437,6 +2343,94 @@
                 <ScalarProperty Name="rAttachmentmount" ColumnName="rAttachmentmount" />
                 <ScalarProperty Name="rATTACHMENTSLOT" ColumnName="rATTACHMENTSLOT" />
                 <ScalarProperty Name="rWeaponId" ColumnName="rWeaponId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="G_SubAttachClass">
+            <EntityTypeMapping TypeName="item1Model.G_SubAttachClass">
+              <MappingFragment StoreEntitySet="G_SubAttachClass">
+                <ScalarProperty Name="ATTACHMENTSLOT" ColumnName="ATTACHMENTSLOT" />
+                <ScalarProperty Name="SubAttachDescription" ColumnName="SubAttachDescription" />
+                <ScalarProperty Name="AttachClass" ColumnName="AttachClass" />
+                <ScalarProperty Name="SubAttach_name" ColumnName="SubAttach_name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="G_AvAttachClass">
+            <EntityTypeMapping TypeName="item1Model.G_AvAttachClass">
+              <MappingFragment StoreEntitySet="G_AvAttachClass">
+                <ScalarProperty Name="id_AttachClass" ColumnName="id_AttachClass" />
+                <ScalarProperty Name="id_GSubClass" ColumnName="id_GSubClass" />
+                <ScalarProperty Name="id_attach" ColumnName="id_attach" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Attachments">
+            <EntityTypeMapping TypeName="item1Model.Attachment">
+              <MappingFragment StoreEntitySet="Attachment">
+                <ScalarProperty Name="usedBatType" ColumnName="usedBatType" />
+                <ScalarProperty Name="laserColorEf" ColumnName="laserColorEf" />
+                <ScalarProperty Name="LaserColor" ColumnName="LaserColor" />
+                <ScalarProperty Name="LaserRange" ColumnName="LaserRange" />
+                <ScalarProperty Name="IRLigRange" ColumnName="IRLigRange" />
+                <ScalarProperty Name="LightRange" ColumnName="LightRange" />
+                <ScalarProperty Name="IRFilter" ColumnName="IRFilter" />
+                <ScalarProperty Name="Infravision" ColumnName="Infravision" />
+                <ScalarProperty Name="NeedIRillumination" ColumnName="NeedIRillumination" />
+                <ScalarProperty Name="NightVision" ColumnName="NightVision" />
+                <ScalarProperty Name="LaserRFAcc" ColumnName="LaserRFAcc" />
+                <ScalarProperty Name="LaserRFrange" ColumnName="LaserRFrange" />
+                <ScalarProperty Name="Laserrangefinder" ColumnName="Laserrangefinder" />
+                <ScalarProperty Name="Targetingprogram" ColumnName="Targetingprogram" />
+                <ScalarProperty Name="Reflex" ColumnName="Reflex" />
+                <ScalarProperty Name="Collimator" ColumnName="Collimator" />
+                <ScalarProperty Name="BlockIronSight" ColumnName="BlockIronSight" />
+                <ScalarProperty Name="ImpVisSights" ColumnName="ImpVisSights" />
+                <ScalarProperty Name="id_Attachmentmount" ColumnName="id_Attachmentmount" />
+                <ScalarProperty Name="AccAddmax" ColumnName="AccAddmax" />
+                <ScalarProperty Name="ScopeMagMax" ColumnName="ScopeMagMax" />
+                <ScalarProperty Name="ScopeMagMin" ColumnName="ScopeMagMin" />
+                <ScalarProperty Name="Tritium" ColumnName="Tritium" />
+                <ScalarProperty Name="BatTimeWork" ColumnName="BatTimeWork" />
+                <ScalarProperty Name="Fix" ColumnName="Fix" />
+                <ScalarProperty Name="Bulk_add" ColumnName="Bulk_add" />
+                <ScalarProperty Name="Darkness" ColumnName="Darkness" />
+                <ScalarProperty Name="G_AttachClass" ColumnName="G_AttachClass" />
+                <ScalarProperty Name="G_SubAttachClass" ColumnName="G_SubAttachClass" />
+                <ScalarProperty Name="RecoilModifier" ColumnName="RecoilModifier" />
+                <ScalarProperty Name="FlashLightRange" ColumnName="FlashLightRange" />
+                <ScalarProperty Name="PercentTunnelVision" ColumnName="PercentTunnelVision" />
+                <ScalarProperty Name="BrightLightVisionRangeBonus" ColumnName="BrightLightVisionRangeBonus" />
+                <ScalarProperty Name="CaveVisionRangeBonus" ColumnName="CaveVisionRangeBonus" />
+                <ScalarProperty Name="DayVisionRangeBonus" ColumnName="DayVisionRangeBonus" />
+                <ScalarProperty Name="NightVisionRangeBonus" ColumnName="NightVisionRangeBonus" />
+                <ScalarProperty Name="VisionRangeBonus" ColumnName="VisionRangeBonus" />
+                <ScalarProperty Name="HearingRangeBonus" ColumnName="HearingRangeBonus" />
+                <ScalarProperty Name="ScopeMagFactor" ColumnName="ScopeMagFactor" />
+                <ScalarProperty Name="DamageBonus" ColumnName="DamageBonus" />
+                <ScalarProperty Name="RateOfFireBonus" ColumnName="RateOfFireBonus" />
+                <ScalarProperty Name="BurstSizeBonus" ColumnName="BurstSizeBonus" />
+                <ScalarProperty Name="MagSizeBonus" ColumnName="MagSizeBonus" />
+                <ScalarProperty Name="MinRangeForAimBonus" ColumnName="MinRangeForAimBonus" />
+                <ScalarProperty Name="AimBonus" ColumnName="AimBonus" />
+                <ScalarProperty Name="RangeBonus" ColumnName="RangeBonus" />
+                <ScalarProperty Name="HideMuzzleFlash" ColumnName="HideMuzzleFlash" />
+                <ScalarProperty Name="NoiseReduction" ColumnName="NoiseReduction" />
+                <ScalarProperty Name="HiddenAttachment" ColumnName="HiddenAttachment" />
+                <ScalarProperty Name="Attachmentmount" ColumnName="Attachmentmount" />
+                <ScalarProperty Name="rAttachmentClass" ColumnName="rAttachmentClass" />
+                <ScalarProperty Name="szAttName" ColumnName="szAttName" />
+                <ScalarProperty Name="uiIndex" ColumnName="uiIndex" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LaserColorEfs">
+            <EntityTypeMapping TypeName="item1Model.LaserColorEf">
+              <MappingFragment StoreEntitySet="LaserColorEf">
+                <ScalarProperty Name="LaserColorDayEfect" ColumnName="LaserColorDayEfect" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

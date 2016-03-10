@@ -32,8 +32,8 @@ namespace Item_WPF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public G_SubAttachClass()
         {
-            this.Attachments = new HashSet<Attachment>();
             this.G_AvAttachClass = new HashSet<G_AvAttachClass>();
+            this.Attachments = new HashSet<Attachment>();
         }
     
         private int _id;
@@ -104,43 +104,32 @@ namespace Item_WPF
       }
      }
      
-        private int _ATTACHMENTSLOT1;
-     public int ATTACHMENTSLOT1 
+        private int _ATTACHMENTSLOT;
+     public int ATTACHMENTSLOT 
      { 
       get
       {
-       return _ATTACHMENTSLOT1;
+       return _ATTACHMENTSLOT;
       } 
       set
       {
-       if(_ATTACHMENTSLOT1 != value)
+       if(_ATTACHMENTSLOT != value)
        {
-        _ATTACHMENTSLOT1 = value;
-        OnPropertyChanged("ATTACHMENTSLOT1");
+        _ATTACHMENTSLOT = value;
+        OnPropertyChanged("ATTACHMENTSLOT");
        }
       }
      }
      
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<Attachment> _Attachments;
-                public virtual ICollection<Attachment> Attachments
+        private ATTACHMENTSLOT _ATTACHMENTSLOT1;
+                public virtual ATTACHMENTSLOT ATTACHMENTSLOT1
                         {
                         get
-                            { return _Attachments; } 
+                            { return _ATTACHMENTSLOT1; } 
                         set
-                        { if(_Attachments != value)
-                           {    _Attachments = value;    OnPropertyChanged("Attachments");   }
-                            }
-                         } 
-        private ATTACHMENTSLOT _ATTACHMENTSLOT;
-                public virtual ATTACHMENTSLOT ATTACHMENTSLOT
-                        {
-                        get
-                            { return _ATTACHMENTSLOT; } 
-                        set
-                        { if(_ATTACHMENTSLOT != value)
-                           {    _ATTACHMENTSLOT = value;    OnPropertyChanged("ATTACHMENTSLOT");   }
+                        { if(_ATTACHMENTSLOT1 != value)
+                           {    _ATTACHMENTSLOT1 = value;    OnPropertyChanged("ATTACHMENTSLOT1");   }
                             }
                          } 
         private G_AttachClass _G_AttachClass;
@@ -162,6 +151,17 @@ namespace Item_WPF
                         set
                         { if(_G_AvAttachClass != value)
                            {    _G_AvAttachClass = value;    OnPropertyChanged("G_AvAttachClass");   }
+                            }
+                         } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<Attachment> _Attachments;
+                public virtual ICollection<Attachment> Attachments
+                        {
+                        get
+                            { return _Attachments; } 
+                        set
+                        { if(_Attachments != value)
+                           {    _Attachments = value;    OnPropertyChanged("Attachments");   }
                             }
                          } 
     }

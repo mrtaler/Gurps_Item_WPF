@@ -50,25 +50,22 @@ namespace Item_WPF
         {
             public ITEM ItemS { get; set; }
             public WEAPON WeaponS { get; set; }
-
             public Attachment ScopeS { get; set; }
-
-            public string Type { get; set; }
             public string Name { get; set; }
             public string Tl { get; set; }
             public string Damage { get; set; }
             public string DefAcc { get; set; }
-
-            public string Rof { get; set; }
             public string Range { get; set; }
             public string Weigth { get; set; }
+            public string Rof { get; set; }
             public string Shots { get; set; }
             public string MinSt { get; set; }
-
             public string Rcl { get; set; }
             public string Cost { get; set; }
             public string Lc { get; set; }
             public string Bulk { get; set; }
+            public string Type { get; set; }
+
             public ItemFromGrid(ITEM itt, WEAPON weap)
             {
                 Name = itt.szItemName;
@@ -139,89 +136,8 @@ namespace Item_WPF
 
             ItemDataGrid.ColumnWidth = DataGridLength.Auto;
 
-            DataGridTextColumn textColumn = new DataGridTextColumn();
-            textColumn.Header = "Name";
-            textColumn.Binding = new Binding("Name");
-            textColumn.IsReadOnly = true;
-            ItemDataGrid.Columns.Add(textColumn);
 
-            DataGridTextColumn textColumn1 = new DataGridTextColumn();
-            textColumn1.Header = "TL";
-            textColumn1.IsReadOnly = true;
-            textColumn1.Binding = new Binding("TL");
-            ItemDataGrid.Columns.Add(textColumn1);
 
-            DataGridTextColumn textColumn2 = new DataGridTextColumn();
-            textColumn2.Header = "Damage";
-            textColumn2.IsReadOnly = true;
-            textColumn2.Binding = new Binding("Damage");
-            ItemDataGrid.Columns.Add(textColumn2);
-
-            DataGridTextColumn textColumn3 = new DataGridTextColumn();
-            textColumn3.Header = "Acc";
-            textColumn3.IsReadOnly = true;
-            textColumn3.Binding = new Binding("DefACC");
-            ItemDataGrid.Columns.Add(textColumn3);
-
-            DataGridTextColumn textColumn4 = new DataGridTextColumn();
-            textColumn4.Header = "Range";
-            textColumn4.IsReadOnly = true;
-            textColumn4.Binding = new Binding("range");
-            ItemDataGrid.Columns.Add(textColumn4);
-
-            DataGridTextColumn textColumn5 = new DataGridTextColumn();
-            textColumn5.Header = "weigth";
-            textColumn5.IsReadOnly = true;
-            textColumn5.Binding = new Binding("weigth");
-            ItemDataGrid.Columns.Add(textColumn5);
-
-            DataGridTextColumn textColumn6 = new DataGridTextColumn();
-            textColumn6.Header = "Rof";
-            textColumn6.IsReadOnly = true;
-            textColumn6.Binding = new Binding("Rof");
-            ItemDataGrid.Columns.Add(textColumn6);
-
-            DataGridTextColumn textColumn7 = new DataGridTextColumn();
-            textColumn7.Header = "Shots";
-            textColumn7.IsReadOnly = true;
-            textColumn7.Binding = new Binding("Shots");
-            ItemDataGrid.Columns.Add(textColumn7);
-
-            DataGridTextColumn textColumn8 = new DataGridTextColumn();
-            textColumn8.Header = "minST";
-            textColumn8.IsReadOnly = true;
-            textColumn8.Binding = new Binding("minST");
-            ItemDataGrid.Columns.Add(textColumn8);
-
-            DataGridTextColumn textColumn9 = new DataGridTextColumn();
-            textColumn9.Header = "rcl";
-            textColumn9.IsReadOnly = true;
-            textColumn9.Binding = new Binding("rcl");
-            ItemDataGrid.Columns.Add(textColumn9);
-
-            DataGridTextColumn textColumn12 = new DataGridTextColumn();
-            textColumn12.Header = "Bulk";
-            textColumn12.IsReadOnly = true;
-            textColumn12.Binding = new Binding("Bulk");
-            ItemDataGrid.Columns.Add(textColumn12);
-
-            DataGridTextColumn textColumn10 = new DataGridTextColumn();
-            textColumn10.Header = "cost";
-            textColumn10.IsReadOnly = true;
-            textColumn10.Binding = new Binding("cost");
-            ItemDataGrid.Columns.Add(textColumn10);
-
-            DataGridTextColumn textColumn11 = new DataGridTextColumn();
-            textColumn11.Header = "LC";
-            textColumn11.IsReadOnly = true;
-            textColumn11.Binding = new Binding("LC");
-            ItemDataGrid.Columns.Add(textColumn11);
-
-            DataGridTextColumn textColumn13 = new DataGridTextColumn();
-            textColumn13.Header = "Type";
-            textColumn13.IsReadOnly = true;
-            textColumn13.Binding = new Binding("Type");
-            ItemDataGrid.Columns.Add(textColumn13);
         }
 
         private void SelectWeapon_button_Click(object sender, RoutedEventArgs e)
@@ -440,13 +356,9 @@ namespace Item_WPF
                     context.Database.Connection.Close();
                     IdItemWeaposn = 0;
                     ItemFromGrid lightEr = new ItemFromGrid(itemLight, attlight, "Light");
-
                     ItemDataGrid.Items.Add(lightEr);
-
-
                 }
             }
-
         }
 
         private void BipodSelect_button_Click(object sender, RoutedEventArgs e)
@@ -688,7 +600,7 @@ namespace Item_WPF
             ss = _damagee.Split('d');
             if (ss.Length == 1) { Label1.Content = ss[0]; Label2.Content = ""; }
             else { Label1.Content = ss[0]; Label2.Content = ss[1]; }
-            Label.Content=(Dice.RollDie(Convert.ToInt32(ss[0]),6)).ToString();
+            Label.Content = (Dice.RollDie(Convert.ToInt32(ss[0]), 6)).ToString();
 
         }
     }
