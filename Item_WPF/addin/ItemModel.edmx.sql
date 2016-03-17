@@ -108,6 +108,30 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_nasAttachmentClass_slot]', 'F') IS NOT NULL
   ALTER TABLE [dbo].[ATTACHMENTSLOT] DROP CONSTRAINT [FK_nasAttachmentClass_slot]
 
+
+------------------
+IF OBJECT_ID(N'[dbo].[FK_WEAPON_ITEM_uiIndex]', 'F') IS NOT NULL
+  ALTER TABLE [dbo].[WEAPON] DROP CONSTRAINT [FK_WEAPON_ITEM_uiIndex];
+GO
+
+IF OBJECT_ID(N'[dbo].[FK_Attachment_ITEM_uiIndex]', 'F') IS NOT NULL
+  ALTER TABLE [dbo].[Attachment] DROP CONSTRAINT [FK_Attachment_ITEM_uiIndex]
+
+
+
+
+IF OBJECT_ID(N'[dbo].[FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex]', 'F') IS NOT NULL
+  ALTER TABLE [dbo].[LOADBEARINGEQUIPMENT] DROP CONSTRAINT [FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex];
+GO
+
+IF OBJECT_ID(N'[dbo].[FK_ARMOUR_ITEM_uiIndex]', 'F') IS NOT NULL
+  ALTER TABLE [dbo].[ARMOUR] DROP CONSTRAINT [FK_ARMOUR_ITEM_uiIndex];
+GO
+
+IF OBJECT_ID(N'[dbo].[FK_EXPLOSIVE_ITEM_uiIndex]', 'F') IS NOT NULL
+  ALTER TABLE [dbo].[EXPLOSIVE] DROP CONSTRAINT [FK_EXPLOSIVE_ITEM_uiIndex];
+GO
+
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
@@ -210,7 +234,7 @@ IF OBJECT_ID(N'[dbo].[Battery]', 'u') IS NOT NULL
 GO
 
 IF OBJECT_ID(N'[dbo].[LaserColorEf]', 'u') IS NOT NULL
- DROP TABLE [dbo].[LaserColorEf];
+  DROP TABLE [dbo].[laserColorEf];
 GO
 
 IF OBJECT_ID(N'[dbo].[Character]', 'u') IS NOT NULL
@@ -278,7 +302,7 @@ GO
 
 -- Creating table 'ARMOUR'
 CREATE TABLE [dbo].[ARMOUR] (
-  [uiIndex] INT IDENTITY (1, 1) NOT NULL,
+  [uiIndex] INT NOT NULL UNIQUE,
   [ubArmourClass] INT NOT NULL,
   [ubProtection] INT NOT NULL,
   [ubCoverage] INT NOT NULL,
@@ -297,7 +321,7 @@ CREATE TABLE [dbo].[ArmourClass] (
 GO
 
 
-CREATE TABLE [AttachmentSystem] (
+CREATE TABLE [dbo].[AttachmentSystem] (
   [id] INT IDENTITY (1, 1) NOT NULL,
   [name] VARCHAR(255) COLLATE Cyrillic_General_CI_AS NULL,
   CONSTRAINT [UK_AttachmentSystem] UNIQUE ([id]),
@@ -366,7 +390,7 @@ GO
 
 -- Creating table 'EXPLOSIVEs'
 CREATE TABLE [dbo].[EXPLOSIVE] (
-  [uiIndex] INT IDENTITY (1, 1) NOT NULL,
+  [uiIndex] INT NOT NULL UNIQUE,
   [ubType] INT NOT NULL,
   [ubDamage] INT NOT NULL,
   [ubStunDamage] INT NOT NULL,
@@ -411,66 +435,66 @@ GO
 
 -- Creating table 'ITEM'
 CREATE TABLE [dbo].[ITEM] (
-  [uiIndex]             INT IDENTITY (1, 1) NOT NULL,
-  [szItemName]          VARCHAR(80) NOT NULL DEFAULT (1),
-  [szLongItemName]      VARCHAR(80) NULL,
-  [szItemDesc]          VARCHAR(MAX) NULL,
-  [usItemClass]         INT NOT NULL DEFAULT (1),
-  [ubClassIndex]        INT NOT NULL DEFAULT (1),
-  [ubWeight]            DECIMAL(7, 3) NOT NULL DEFAULT (1),
-  [ItemSize]            VARCHAR(80) NOT NULL DEFAULT (1),
-  [usPrice]             MONEY NOT NULL DEFAULT (1),
+  [uiIndex] INT IDENTITY (1, 1) NOT NULL,
+  [szItemName] VARCHAR(80) NOT NULL DEFAULT (1),
+  [szLongItemName] VARCHAR(80) NULL,
+  [szItemDesc] VARCHAR(MAX) NULL,
+  [usItemClass] INT NOT NULL DEFAULT (1),
+  [ubClassIndex] INT NOT NULL DEFAULT (1),
+  [ubWeight] DECIMAL(7, 3) NOT NULL DEFAULT (1),
+  [ItemSize] VARCHAR(80) NOT NULL DEFAULT (1),
+  [usPrice] MONEY NOT NULL DEFAULT (1),
 
-  [Damageable]          BIT NOT NULL DEFAULT (1),
-  [Repairable]          BIT NOT NULL DEFAULT (1),
-  [WaterDamages]        BIT NOT NULL DEFAULT (1),
-  [Metal]               BIT NOT NULL DEFAULT (0),
-  [TwoHanded]           BIT NOT NULL DEFAULT (0),
-  [Electronic]          BIT NOT NULL DEFAULT (0),
-  [HT]                  BIT NOT NULL DEFAULT (0),
-  [UT]                  BIT NOT NULL DEFAULT (0),
-  [RemoteTrigger]       BIT NOT NULL DEFAULT (0),
-  [GasMask]             BIT NOT NULL DEFAULT (0),
-  [Alcohol]             BIT NOT NULL DEFAULT (0),
-  [Hardware]            BIT NOT NULL DEFAULT (0),
-  [Medical]             BIT NOT NULL DEFAULT (0),
-  [CamouflageKit]       BIT NOT NULL DEFAULT (0),
-  [LocksmithKit]        BIT NOT NULL DEFAULT (0),
-  [Toolkit]             BIT NOT NULL DEFAULT (0),
-  [FirstAidKit]         BIT NOT NULL DEFAULT (0),
-  [MedicalKit]          BIT NOT NULL DEFAULT (0),
-  [WireCutters]         BIT NOT NULL DEFAULT (0),
-  [Canteen]             BIT NOT NULL DEFAULT (0),
-  [GasCan]              BIT NOT NULL DEFAULT (0),
-  [Batteries]           BIT NOT NULL DEFAULT (0),
-  [NeedsBatteries]      BIT NOT NULL DEFAULT (0),
-  [ContainsLiquid]      BIT NOT NULL DEFAULT (0),
-  [MetalDetector]       BIT NOT NULL DEFAULT (0),
-  [FingerPrintID]       BIT NOT NULL DEFAULT (0),
-  [TripWireActivation]  BIT NOT NULL DEFAULT (0),
-  [TripWire]            BIT NOT NULL DEFAULT (0),
-  [perehodnik]          BIT NULL DEFAULT (1),
+  [Damageable] BIT NOT NULL DEFAULT (1),
+  [Repairable] BIT NOT NULL DEFAULT (1),
+  [WaterDamages] BIT NOT NULL DEFAULT (1),
+  [Metal] BIT NOT NULL DEFAULT (0),
+  [TwoHanded] BIT NOT NULL DEFAULT (0),
+  [Electronic] BIT NOT NULL DEFAULT (0),
+  [HT] BIT NOT NULL DEFAULT (0),
+  [UT] BIT NOT NULL DEFAULT (0),
+  [RemoteTrigger] BIT NOT NULL DEFAULT (0),
+  [GasMask] BIT NOT NULL DEFAULT (0),
+  [Alcohol] BIT NOT NULL DEFAULT (0),
+  [Hardware] BIT NOT NULL DEFAULT (0),
+  [Medical] BIT NOT NULL DEFAULT (0),
+  [CamouflageKit] BIT NOT NULL DEFAULT (0),
+  [LocksmithKit] BIT NOT NULL DEFAULT (0),
+  [Toolkit] BIT NOT NULL DEFAULT (0),
+  [FirstAidKit] BIT NOT NULL DEFAULT (0),
+  [MedicalKit] BIT NOT NULL DEFAULT (0),
+  [WireCutters] BIT NOT NULL DEFAULT (0),
+  [Canteen] BIT NOT NULL DEFAULT (0),
+  [GasCan] BIT NOT NULL DEFAULT (0),
+  [Batteries] BIT NOT NULL DEFAULT (0),
+  [NeedsBatteries] BIT NOT NULL DEFAULT (0),
+  [ContainsLiquid] BIT NOT NULL DEFAULT (0),
+  [MetalDetector] BIT NOT NULL DEFAULT (0),
+  [FingerPrintID] BIT NOT NULL DEFAULT (0),
+  [TripWireActivation] BIT NOT NULL DEFAULT (0),
+  [TripWire] BIT NOT NULL DEFAULT (0),
+  [perehodnik] BIT NULL DEFAULT (1),
 
 
-  [TL]                  INT NOT NULL DEFAULT (2),
-  [LC]                  INT NOT NULL DEFAULT (1),
-  [SizeBatteries]       VARCHAR(4) NULL,
+  [TL] INT NOT NULL DEFAULT (2),
+  [LC] INT NOT NULL DEFAULT (1),
+  [SizeBatteries] VARCHAR(4) NULL,
 
-  [FoodType]            INT NOT NULL DEFAULT (1),
-  [LockPickModifier]    INT NOT NULL DEFAULT (1),
-  [CrowbarModifier]     INT NOT NULL DEFAULT (1),
-  [DisarmModifier]      INT NOT NULL DEFAULT (1),
-  [RepairModifier]      INT NOT NULL DEFAULT (1),
-  [DamageChance]        INT NOT NULL DEFAULT (1),
-  [clothestype]         INT NOT NULL DEFAULT (1),
-  [DrugType]            INT NOT NULL DEFAULT (1),
-  [Item_Image]          VARBINARY(MAX) NULL,
-  [minST]               INT NOT NULL DEFAULT (1),
-  [Link]                NVARCHAR(MAX) NULL,
-  [used]                BIT NOT NULL DEFAULT (0),
-  [dt]                  DATETIME NULL,
-  [Count_of_Bat]        INT NOT NULL DEFAULT (1),
-  [Works_on_Bat]        VARCHAR(15) NOT NULL DEFAULT (1),
+  [FoodType] INT NOT NULL DEFAULT (1),
+  [LockPickModifier] INT NOT NULL DEFAULT (1),
+  [CrowbarModifier] INT NOT NULL DEFAULT (1),
+  [DisarmModifier] INT NOT NULL DEFAULT (1),
+  [RepairModifier] INT NOT NULL DEFAULT (1),
+  [DamageChance] INT NOT NULL DEFAULT (1),
+  [clothestype] INT NOT NULL DEFAULT (1),
+  [DrugType] INT NOT NULL DEFAULT (1),
+  [Item_Image] VARBINARY(MAX) NULL,
+  [minST] INT NOT NULL DEFAULT (1),
+  [Link] NVARCHAR(MAX) NULL,
+  [used] BIT NOT NULL DEFAULT (0),
+  [dt] DATETIME NULL,
+  [Count_of_Bat] INT NOT NULL DEFAULT (1),
+  [Works_on_Bat] VARCHAR(15) NOT NULL DEFAULT (1),
 
 --  	CONSTRAINT [FK_ITEM_AttachmentSystem1]	FOREIGN KEY	([AttachmentSystem1])	REFERENCES [AttachmentSystem] ([id]),
 --  CONSTRAINT [FK_ITEM_AttachmentSystem2]	FOREIGN KEY	([AttachmentSystem2])	REFERENCES [AttachmentSystem] ([id]),
@@ -493,7 +517,7 @@ GO
 
 -- Creating table 'LOADBEARINGEQUIPMENT'
 CREATE TABLE [dbo].[LOADBEARINGEQUIPMENT] (
-  [lbeIndex] INT IDENTITY (1, 1) NOT NULL,
+  [lbeIndex] INT NOT NULL UNIQUE,
   [LBEClass] INT NOT NULL,
   [lbeCombo] INT NOT NULL,
   [lbeFilledSize] INT NOT NULL,
@@ -525,43 +549,43 @@ GO
 
 -- Creating table 'WEAPONs'
 CREATE TABLE [dbo].[WEAPON] (
-  [uiIndex]           INT IDENTITY (1, 1) NOT NULL,
-  [szWeaponName]      VARCHAR(80) NOT NULL,
-  [ubWeaponClass]     INT               DEFAULT (1) NOT NULL,
-  [ubWeaponType]      INT               DEFAULT (1) NOT NULL,
-  [ubCalibre]         INT               DEFAULT (1) NOT NULL,
-  [Damage]            VARCHAR(50)       DEFAULT ("d6") NOT NULL,
-  [ubTypeOfDamage]    INT               DEFAULT (1) NOT NULL,
-  [DefACC]            INT               DEFAULT (1) NOT NULL,
-  [Half_Range]        DECIMAL(10, 4)    DEFAULT (1) NOT NULL,
-  [FullRange]         DECIMAL(10, 4)    DEFAULT (1) NOT NULL,
-  [MinRange]          DECIMAL(10, 4)    DEFAULT (1) NOT NULL,
-  [AWeight]           DECIMAL(5, 3)     DEFAULT (1) NOT NULL,
-  [Arm_Division]      DECIMAL(5, 2)     DEFAULT (1) NOT NULL,
-  [ROF]               INT               DEFAULT (1) NOT NULL,
-  [Full_auto]         BIT               DEFAULT (0) NOT NULL,
-  [ROF_for_Sh]        INT               DEFAULT (1) NOT NULL,
-  [Shots]             INT               DEFAULT (1) NOT NULL,
-  [Time_For_reload]   INT               DEFAULT (3) NOT NULL,
-  [single_reload]     BIT               DEFAULT (0) NOT NULL,
-  [Mount]             BIT               DEFAULT (0) NOT NULL,
-  [Recoil]            INT               DEFAULT (1) NOT NULL,
-  [Linked]            VARCHAR(50) NULL,
-  [Follow_Up]         VARCHAR(50) NULL,
-  [HeavyWeapon]       BIT               DEFAULT (0) NOT NULL,
-  [Add_in_Chamber]    BIT               DEFAULT (0) NOT NULL,
-  [CutOff_shots]      BIT               DEFAULT (0) NOT NULL,
-  [CutOff_shotsCount] INT               DEFAULT (0) NOT NULL,
-  [GrenadeLauncher]   BIT               DEFAULT (0) NOT NULL,
-  [RocketLauncher]    BIT               DEFAULT (0) NOT NULL,
-  [Mortar]            BIT               DEFAULT (0) NOT NULL,
-  [Cannon]            BIT               DEFAULT (0) NOT NULL,
-  [SingleShot_RocketLauncher] BIT       DEFAULT (0) NOT NULL,
-  [RocketRifle]       BIT               DEFAULT (0) NOT NULL,
-  [Bulkfolded]        BIT               DEFAULT (0) NOT NULL,
-  [HCROF]             BIT               DEFAULT (0) NOT NULL,
-  [HCROFValue]        INT               DEFAULT (0) NOT NULL
-  );
+  [uiIndex] INT NOT NULL,
+  [szWeaponName] VARCHAR(80) NOT NULL,
+  [ubWeaponClass] INT DEFAULT (1) NOT NULL,
+  [ubWeaponType] INT DEFAULT (1) NOT NULL,
+  [ubCalibre] INT DEFAULT (1) NOT NULL,
+  [Damage] VARCHAR(50) DEFAULT ("d6") NOT NULL,
+  [ubTypeOfDamage] INT DEFAULT (1) NOT NULL,
+  [DefACC] INT DEFAULT (1) NOT NULL,
+  [Half_Range] DECIMAL(10, 4) DEFAULT (1) NOT NULL,
+  [FullRange] DECIMAL(10, 4) DEFAULT (1) NOT NULL,
+  [MinRange] DECIMAL(10, 4) DEFAULT (1) NOT NULL,
+  [AWeight] DECIMAL(5, 3) DEFAULT (1) NOT NULL,
+  [Arm_Division] DECIMAL(5, 2) DEFAULT (1) NOT NULL,
+  [ROF] INT DEFAULT (1) NOT NULL,
+  [Full_auto] BIT DEFAULT (0) NOT NULL,
+  [ROF_for_Sh] INT DEFAULT (1) NOT NULL,
+  [Shots] INT DEFAULT (1) NOT NULL,
+  [Time_For_reload] INT DEFAULT (3) NOT NULL,
+  [single_reload] BIT DEFAULT (0) NOT NULL,
+  [Mount] BIT DEFAULT (0) NOT NULL,
+  [Recoil] INT DEFAULT (1) NOT NULL,
+  [Linked] VARCHAR(50) NULL,
+  [Follow_Up] VARCHAR(50) NULL,
+  [HeavyWeapon] BIT DEFAULT (0) NOT NULL,
+  [Add_in_Chamber] BIT DEFAULT (0) NOT NULL,
+  [CutOff_shots] BIT DEFAULT (0) NOT NULL,
+  [CutOff_shotsCount] INT DEFAULT (0) NOT NULL,
+  [GrenadeLauncher] BIT DEFAULT (0) NOT NULL,
+  [RocketLauncher] BIT DEFAULT (0) NOT NULL,
+  [Mortar] BIT DEFAULT (0) NOT NULL,
+  [Cannon] BIT DEFAULT (0) NOT NULL,
+  [SingleShot_RocketLauncher] BIT DEFAULT (0) NOT NULL,
+  [RocketRifle] BIT DEFAULT (0) NOT NULL,
+  [Bulkfolded] BIT DEFAULT (0) NOT NULL,
+  [HCROF] BIT DEFAULT (0) NOT NULL,
+  [HCROFValue] INT DEFAULT (0) NOT NULL
+);
 GO
 
 -- Creating table 'WeaponClasses'
@@ -624,7 +648,7 @@ GO
 
 -- Creating table 'Attachments'
 CREATE TABLE [dbo].[Attachment] (
-  uiIndex INT IDENTITY,
+  uiIndex INT NOT NULL,
   szAttName VARCHAR(80) NOT NULL,
   rAttachmentClass INT NOT NULL DEFAULT 1,
   Attachmentmount VARCHAR(50) NULL,
@@ -669,26 +693,26 @@ CREATE TABLE [dbo].[Attachment] (
   LaserRFAcc INT NULL,
   NightVision INT NULL,
   NeedIRillumination BIT NOT NULL DEFAULT (0),
-  Infravision       BIT NOT NULL DEFAULT (0),
-  IRFilter          BIT NOT NULL DEFAULT (0),
-  LightRange        INT NULL,
-  IRLigRange        INT NULL,
-  LaserRange        INT NULL,
-  LaserColor        VARCHAR(10) NULL,
-  laserColorEf      DECIMAL(4, 2) NULL,
-  usedBatType       int 
+  Infravision BIT NOT NULL DEFAULT (0),
+  IRFilter BIT NOT NULL DEFAULT (0),
+  LightRange INT NULL,
+  IRLigRange INT NULL,
+  LaserRange INT NULL,
+  LaserColor VARCHAR(10) NULL,
+  laserColorEf DECIMAL(4, 2) NULL,
+  usedBatType INT
 );
 GO
 
-CREATE TABLE [LaserColorEf] (
+CREATE TABLE [dbo].[laserColorEf] (
   [id] INT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
-  [name] nVARCHAR(10),
-  [LaserColorDayEfect] DECIMAL(4,2)
-  );
+  [name] NVARCHAR(10),
+  [LaserColorDayEfect] DECIMAL(4, 2)
+);
 GO
 
 
-CREATE TABLE [CombineWeap] (
+CREATE TABLE [dbo].[CombineWeap] (
   [id] INT IDENTITY (1, 1) NOT NULL,
   [IdWeapon] INT NOT NULL,
   ScopeSelect INT,
@@ -708,7 +732,7 @@ CREATE TABLE [CombineWeap] (
 )
 
 
-CREATE TABLE [Character] (
+CREATE TABLE [dbo].[Character] (
   [id] INT IDENTITY (1, 1),
   name NVARCHAR(80),
   StrengthPoints INT,
@@ -741,10 +765,10 @@ PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
 -- Creating primary key on [uiIndex] in table 'ARMOURs'
-ALTER TABLE [dbo].[ARMOUR]
-ADD CONSTRAINT [PK_ARMOUR]
-PRIMARY KEY CLUSTERED ([uiIndex] ASC);
-GO
+--ALTER TABLE [dbo].[ARMOUR]
+--ADD CONSTRAINT [PK_ARMOUR]
+--PRIMARY KEY CLUSTERED ([uiIndex] ASC);
+--GO
 
 -- Creating primary key on [id] in table 'ArmourClasses'
 ALTER TABLE [dbo].[ArmourClass]
@@ -773,13 +797,13 @@ GO
 -- Creating primary key on [rWeaponId], [rATTACHMENTSLOT], [rAttachmentmount] in table 'AvailableAttachSlots'
 ALTER TABLE [dbo].[AvailableAttachSlot]
 ADD CONSTRAINT [PK_AvailableAttachSlot]
-PRIMARY KEY CLUSTERED ([rWeaponId], [rATTACHMENTSLOT] ASC);
+PRIMARY KEY CLUSTERED ([rWeaponId], [rAttachmentmount] ASC);
 GO
 
 
 ALTER TABLE [dbo].[AvailableAttachSlot]
 ADD CONSTRAINT [UK_AvailableAttachSlot]
-  UNIQUE (rWeaponId, rATTACHMENTSLOT, rAttachmentmount);
+UNIQUE (rWeaponId, rATTACHMENTSLOT, rAttachmentmount);
 GO
 
 -- Creating primary key on [id] in table 'Clothes'
@@ -806,11 +830,11 @@ ADD CONSTRAINT [PK_ExplosionType]
 PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
--- Creating primary key on [uiIndex] in table 'EXPLOSIVEs'
-ALTER TABLE [dbo].[EXPLOSIVE]
-ADD CONSTRAINT [PK_EXPLOSIVE]
-PRIMARY KEY CLUSTERED ([uiIndex] ASC);
-GO
+---- Creating primary key on [uiIndex] in table 'EXPLOSIVEs'
+--ALTER TABLE [dbo].[EXPLOSIVE]
+--ADD CONSTRAINT [PK_EXPLOSIVE]
+--PRIMARY KEY CLUSTERED ([uiIndex] ASC);
+--GO
 
 -- Creating primary key on [id] in table 'FOODs'
 ALTER TABLE [dbo].[FOOD]
@@ -837,10 +861,10 @@ PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
 -- Creating primary key on [lbeIndex] in table 'LOADBEARINGEQUIPMENTs'
-ALTER TABLE [dbo].[LOADBEARINGEQUIPMENT]
-ADD CONSTRAINT [PK_LOADBEARINGEQUIPMENT]
-PRIMARY KEY CLUSTERED ([lbeIndex] ASC);
-GO
+--ALTER TABLE [dbo].[LOADBEARINGEQUIPMENT]
+--ADD CONSTRAINT [PK_LOADBEARINGEQUIPMENT]
+--PRIMARY KEY CLUSTERED ([lbeIndex] ASC);
+--GO
 
 -- Creating primary key on [id] in table 'NasLayoutClasses'
 
@@ -852,8 +876,8 @@ GO
 
 -- Creating primary key on [uiIndex] in table 'WEAPONs'
 ALTER TABLE [dbo].[WEAPON]
-ADD CONSTRAINT [PK_WEAPON]
-PRIMARY KEY CLUSTERED ([uiIndex] ASC);
+ADD CONSTRAINT [UK_WEAPON]
+UNIQUE ([uiIndex] ASC);
 GO
 
 -- Creating primary key on [id] in table 'WeaponClasses'
@@ -889,7 +913,7 @@ GO
 -- Creating primary key on [id_attach], [id_GSubClass], in table 'G_AvAttachClass'
 ALTER TABLE [dbo].[G_AvAttachClass]
 ADD CONSTRAINT [PK_G_AvAttachClass]
-PRIMARY KEY CLUSTERED ([id_attach], [id_GSubClass]  ASC);
+PRIMARY KEY CLUSTERED ([id_attach], [id_GSubClass] ASC);
 GO
 
 -- Creating primary key on [id] in table 'G_SubAttachClass'
@@ -900,11 +924,11 @@ GO
 
 -- Creating primary key on [uiIndex] in table 'Attachments'
 ALTER TABLE [dbo].[Attachment]
-ADD CONSTRAINT [PK_Attachment]
-PRIMARY KEY CLUSTERED ([uiIndex] ASC);
+ADD CONSTRAINT [UK_Attachment]
+UNIQUE ([uiIndex] ASC);
 GO
 
-ALTER TABLE [dbo].Battery
+ALTER TABLE [dbo].[Battery]
 ADD CONSTRAINT PK_Battery
 PRIMARY KEY CLUSTERED (id ASC);
 GO
@@ -920,6 +944,48 @@ REFERENCES [dbo].[AMMO]
 ([id])
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
+
+ALTER TABLE [dbo].[WEAPON]
+ADD CONSTRAINT [FK_WEAPON_ITEM_uiIndex]
+FOREIGN KEY (uiIndex)
+REFERENCES dbo.ITEM
+(uiIndex)
+ON DELETE CASCADE ON UPDATE CASCADE;
+GO
+
+
+ALTER TABLE dbo.Attachment
+ADD CONSTRAINT [FK_Attachment_ITEM_uiIndex]
+FOREIGN KEY (uiIndex)
+REFERENCES dbo.ITEM
+(uiIndex)
+ON DELETE CASCADE ON UPDATE CASCADE;
+GO
+
+
+-- Создать внешний ключ "FK_ARMOUR_ITEM_uiIndex" для объекта типа таблица "dbo.ARMOUR"
+--
+ALTER TABLE dbo.ARMOUR
+ADD CONSTRAINT FK_ARMOUR_ITEM_uiIndex
+FOREIGN KEY (uiIndex)
+REFERENCES dbo.ITEM (uiIndex)
+ON DELETE CASCADE ON UPDATE CASCADE;
+GO
+
+ALTER TABLE dbo.LOADBEARINGEQUIPMENT
+ADD CONSTRAINT FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex
+FOREIGN KEY (lbeIndex)
+REFERENCES dbo.ITEM (uiIndex)
+ON DELETE CASCADE ON UPDATE CASCADE;
+GO
+
+ALTER TABLE dbo.EXPLOSIVE
+ADD CONSTRAINT FK_EXPLOSIVE_ITEM_uiIndex
+FOREIGN KEY (uiIndex)
+REFERENCES dbo.ITEM (uiIndex)
+ON DELETE CASCADE ON UPDATE CASCADE;
+GO
+
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Calibre'
 CREATE INDEX [IX_FK_Calibre]
@@ -1309,8 +1375,6 @@ GO
 -- Script has ended
 -- --------------------------------------------------
 
-SET QUOTED_IDENTIFIER OFF;
-GO
 USE [Item1];
 GO
 
@@ -1421,19 +1485,18 @@ INSERT INTO G_SubAttachClass (SubAttach_name, AttachClass, SubAttachDescription,
   ('Accessory Rails', 7, '', 11),
   ('Drag Bag', 7, '', 11);
 
-INSERT INTO [LaserColorEf] VALUES
-  ('Red',0.33),
-  ('Orange',0.50), 
-  ('Green',2.00), 
-  ('Infrared',1.00);  
+INSERT INTO [laserColorEf]
+  VALUES ('Red', 0.33),
+  ('Orange', 0.50),
+  ('Green', 2.00),
+  ('Infrared', 1.00);
 
 
 INSERT INTO [AttachmentSystem]
   VALUES ('Picatinny Rail Adapter'), ('M16'), ('AK'), ('30mm'), ('35mm');
 
 INSERT INTO [dbo].[Attachmentmount]
-  VALUES 
-  ('None', 1), --1
+  VALUES ('None', 1), --1
   ('None', 2),--2
   ('None', 3),--3
   ('None', 4),--4
@@ -1446,35 +1509,35 @@ INSERT INTO [dbo].[Attachmentmount]
   ('None', 11),--11
 
 
-  ('.300 BLK', 5), 
+  ('.300 BLK', 5),
   ('5,7mm (FN)', 5),
-  ('5,7mm (P90)', 5), 
+  ('5,7mm (P90)', 5),
   ('VZ82', 5),
-  ('Std 9mm Para', 5), 
+  ('Std 9mm Para', 5),
   ('APB', 5),
-  ('Bizon 9x18', 5), 
+  ('Bizon 9x18', 5),
   ('GSh-18', 5),
-  ('HK MP5-40', 5), 
+  ('HK MP5-40', 5),
   ('Std 45 ACP', 5),
-  ('UMP45', 5), 
+  ('UMP45', 5),
   ('AEK919K', 5),
-  ('M24x1,5', 5), 
+  ('M24x1,5', 5),
   ('MAC', 5),
-  ('PBS-7,62x39', 5), 
+  ('PBS-7,62x39', 5),
   ('UZI', 5),
-  ('RM', 5), 
-  ('QM', 5), 
+  ('RM', 5),
+  ('QM', 5),
   ('Supressor-5,56', 5),
-  ('L85A2', 5), 
+  ('L85A2', 5),
   ('SR25', 5),
-  ('SIG - 7,62', 5), 
+  ('SIG - 7,62', 5),
   ('Saiga', 5),
-  ('AK', 5), 
+  ('AK', 5),
   ('Galil', 5),
-  ('M76', 5), 
+  ('M76', 5),
   ('PBS - 5,45', 5),
   ('Supressor-7,62', 5),
-  ('SV98', 5), 
+  ('SV98', 5),
   ('built-in', 5),
 
   ('built-in', 4), ('WR', 4),
@@ -1499,22 +1562,22 @@ INSERT INTO [dbo].[Attachmentmount]
   ('M9', 8), ('FAL', 8),
   ('HK', 8), ('throw', 8),
 
-  ('F2000 Light', 3), 
+  ('F2000 Light', 3),
   ('WR', 3),
-  ('HK', 3), 
+  ('HK', 3),
   ('Barrel Mount', 3),
 
-  ('AK', 1), 
+  ('AK', 1),
   ('M16A1-A2', 1),
   ('m16a3', 1),
-  ('Mini14 Scope', 1), 
-  ('HK G36 Scope', 1), 
+  ('Mini14 Scope', 1),
+  ('HK G36 Scope', 1),
   ('Galil', 1),
-  ('M14_Scope', 1), 
-  ('Scout', 1), 
+  ('M14_Scope', 1),
+  ('Scout', 1),
   ('SIG551_Scope', 1),
   ('WR', 1),
-  ('HK MP5', 1),  
+  ('HK MP5', 1),
   ('built-in', 1),
   ('SA80 Handle', 1), ('SVD', 1), ('L96A1 optic', 1),
   ('M24_Scope', 1), ('SIG Sniper Scope', 1), ('L85A2 SCOPE', 1), ('PSG', 1),
@@ -1553,43 +1616,40 @@ INSERT INTO [ArmourClass]
   VALUES ('Helmet'), ('Vest'), ('Leggings'), ('Plate'), ('Vehicle'), ('');
 
 
-INSERT INTO [ARMOUR] ([ubArmourClass], [ubProtection], [ubCoverage], [ubDegradePercent])
-  VALUES 
-  (1, 20, 75, 25), 
-  (1, 22, 75, 20), 
-  (1, 24, 75, 15), 
-  (1, 25, 70, 15);
-  
+--INSERT INTO [ARMOUR] (uiIndex, [ubArmourClass], [ubProtection], [ubCoverage], [ubDegradePercent])
+--  VALUES (1, 1, 20, 75, 25),
+--  (2, 1, 22, 75, 20),
+--  (3, 1, 24, 75, 15),
+--  (4, 1, 25, 70, 15);
+
 INSERT INTO [LBEClass]
   VALUES ('Nothing'), ('Thigh Pack'), ('Vest'), ('Combat Pack'), ('Backpack');
 
 
-INSERT INTO [LOADBEARINGEQUIPMENT]
-  VALUES 
-  (1, 0, 0, 0, 0, 16, 16, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0), 
-  (2, 0, 0, 0, 0, 16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), 
-  (3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-  (4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), 
-  (2, 0, 29, 0, 0, 10, 10, 10, 10, 10, 10, 17, 17, 16, 0, 0, 0), 
-  (1, 0, 26, 0, 0, 13, 13, 13, 13, 0, 0, 0, 0, 0, 0, 0, 0);
-  
+--INSERT INTO [LOADBEARINGEQUIPMENT]
+--  VALUES (1, 1, 0, 0, 0, 0, 16, 16, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+--  (2, 2, 0, 0, 0, 0, 16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+--  (3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+--  (4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+--  (5, 2, 0, 29, 0, 0, 10, 10, 10, 10, 10, 10, 17, 17, 16, 0, 0, 0),
+--  (6, 1, 0, 26, 0, 0, 13, 13, 13, 13, 0, 0, 0, 0, 0, 0, 0, 0);
+
 
 
 INSERT INTO TypeOfDamage (name, LongName, mDamage)
-  VALUES 
-  ('pi+', 'piersing', '0.5'),  
-  ('pi-', ' ' , '0.5'),
-  ('pi', ' '  , '1.0'),
+  VALUES ('pi+', 'piersing', '0.5'),
+  ('pi-', ' ', '0.5'),
+  ('pi', ' ', '1.0'),
   ('pi++', ' ', '2.0'),
   ('spec', ' ', '1.0'),
-  ('tox', ' ' , '1.0'),
-  ('aff', ' ' , '1.0'),
+  ('tox', ' ', '1.0'),
+  ('aff', ' ', '1.0'),
   ('burn', ' ', '1.0'),
-  ('cor', ' ' , '1.0'),
-  ('cr', ' '  , '1.0'),
-  ('cut', ' ' , '1.5'),
-  ('fat', ' ' , '1.0'),
-  ('imp', ' ' , '2.0');
+  ('cor', ' ', '1.0'),
+  ('cr', ' ', '1.0'),
+  ('cut', ' ', '1.5'),
+  ('fat', ' ', '1.0'),
+  ('imp', ' ', '2.0');
 
 INSERT INTO LC (Name_LC, ShortDes, Description)
   VALUES ('LC4', 'Открытый', 'Открытый. В большинстве обществ изделие свободно доступно, но в обществах с сильным контролем его доступ или использование могут быть ограничены. Примеры: компьютер; меч;ружьё; мотороллер'),
@@ -1922,29 +1982,31 @@ BEGIN
   -- SET NOCOUNT ON added to prevent extra result sets from
   -- interfering with SELECT statements.
   SET NOCOUNT ON;
-  IF (@class_ofItem = 'gun')
-  BEGIN
-    INSERT INTO Item1.dbo.WEAPON (szWeaponName, ubWeaponClass, ubWeaponType)
-      VALUES (@name, 5, 23)
-  END
 
-  ELSE
-  IF (@class_ofItem = 'Attachment')
-  BEGIN
-    INSERT INTO Item1.dbo.Attachment (szAttName)
-      VALUES (@name)
-  END
   DECLARE @IDClass INT
   SET @IDClass = (SELECT
     ic.id
   FROM ItemClass ic
   WHERE ic.name = @class_ofItem)
 
+  INSERT INTO ITEM (szItemName, usItemClass)
+    VALUES (@name, @IDClass)
   SELECT
     @newID = @@identity
 
-  INSERT INTO ITEM (szItemName, ubClassIndex, usItemClass)
-    VALUES (@name, @newID, @IDClass)
+  IF (@class_ofItem = 'gun')
+  BEGIN
+    INSERT INTO Item1.dbo.WEAPON (uiIndex, szWeaponName, ubWeaponClass, ubWeaponType)
+      VALUES (@newID, @name, 5, 23)
+  END
+
+  ELSE
+  IF (@class_ofItem = 'Attachment')
+  BEGIN
+    INSERT INTO Item1.dbo.Attachment (uiIndex, szAttName)
+      VALUES (@newID, @name)
+  END
+
   SET @Returns = @@identity
 
 END
@@ -1956,14 +2018,14 @@ AS
 BEGIN
   DECLARE @newID INT
 
-  SET NOCOUNT ON;
-  INSERT INTO Item1.dbo.Attachment (szAttName, G_AttachClass, G_SubAttachClass, id_Attachmentmount)
-    VALUES (@name, @G_att_class, @G_sub_att, @id_att_mount)
-
+  INSERT INTO ITEM (szItemName, usItemClass)
+    VALUES (@name, 3)
   SELECT
     @newID = @@identity
-  INSERT INTO ITEM (szItemName, ubClassIndex, usItemClass)
-    VALUES (@name, @newID, 3)
+
+  SET NOCOUNT ON;
+  INSERT INTO Item1.dbo.Attachment (uiIndex , szAttName, G_AttachClass, G_SubAttachClass, id_Attachmentmount)
+    VALUES (@newID,@name, @G_att_class, @G_sub_att, @id_att_mount)
 END
 --http://www.cyberguru.ru/dotnet/ado-net/entity-framework-faq.html
 GO
@@ -1975,8 +2037,6 @@ DECLARE @class_ofItem VARCHAR(80)
 DECLARE @Returns INT
 
 DECLARE @asd INT
-
-
 
 
 EXECUTE @RC = dbo.NEW_ITEM_att @name = 'Silencer CYCLONE-K (.300 BLK)',
