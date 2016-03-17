@@ -958,19 +958,19 @@ ON [dbo].[AvailableAttachSlot]
 GO
 
 -- Creating foreign key on [rATTACHMENTSLOT] in table 'AvailableAttachSlots'
-ALTER TABLE [dbo].[AvailableAttachSlot]
-ADD CONSTRAINT [FK_AVeATTACHMENTSLOT]
-FOREIGN KEY ([rATTACHMENTSLOT])
-REFERENCES [dbo].[ATTACHMENTSLOT]
-([uiSlotIndex])
-ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
+--ALTER TABLE [dbo].[AvailableAttachSlot]
+--ADD CONSTRAINT [FK_AVeATTACHMENTSLOT]
+--FOREIGN KEY ([rATTACHMENTSLOT])
+--REFERENCES [dbo].[ATTACHMENTSLOT]
+--([uiSlotIndex])
+--ON DELETE NO ACTION ON UPDATE NO ACTION;
+--GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_AVeATTACHMENTSLOT'
-CREATE INDEX [IX_FK_AVeATTACHMENTSLOT]
-ON [dbo].[AvailableAttachSlot]
-([rATTACHMENTSLOT]);
-GO
+--CREATE INDEX [IX_FK_AVeATTACHMENTSLOT]
+--ON [dbo].[AvailableAttachSlot]
+--([rATTACHMENTSLOT]);
+--GO
 
 -- Creating foreign key on [rWeaponId] in table 'AvailableAttachSlots'
 ALTER TABLE [dbo].[AvailableAttachSlot]
@@ -1252,13 +1252,13 @@ ON [dbo].[Attachment]
 GO
 
 -- Creating foreign key on [G_AttachClass] in table 'Attachments'
-ALTER TABLE [dbo].[Attachment]
-ADD CONSTRAINT [FK_Attachment_G_AttachClass]
-FOREIGN KEY ([G_AttachClass])
-REFERENCES [dbo].[G_AttachClass]
-([id])
-ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
+--ALTER TABLE [dbo].[Attachment]
+--ADD CONSTRAINT [FK_Attachment_G_AttachClass]
+--FOREIGN KEY ([G_AttachClass])
+--REFERENCES [dbo].[G_AttachClass]
+--([id])
+--ON DELETE NO ACTION ON UPDATE NO ACTION;
+--GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Attachment_G_AttachClass'
 CREATE INDEX [IX_FK_Attachment_G_AttachClass]
@@ -1267,19 +1267,19 @@ ON [dbo].[Attachment]
 GO
 
 -- Creating foreign key on [G_SubAttachClass] in table 'Attachments'
-ALTER TABLE [dbo].[Attachment]
-ADD CONSTRAINT [FK_Attachment_G_SubAttachClass]
-FOREIGN KEY ([G_SubAttachClass])
-REFERENCES [dbo].[G_SubAttachClass]
-([id])
-ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
+--ALTER TABLE [dbo].[Attachment]
+--ADD CONSTRAINT [FK_Attachment_G_SubAttachClass]
+--FOREIGN KEY ([G_SubAttachClass])
+--REFERENCES [dbo].[G_SubAttachClass]
+--([id])
+--ON DELETE NO ACTION ON UPDATE NO ACTION;
+--GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_Attachment_G_SubAttachClass'
-CREATE INDEX [IX_FK_Attachment_G_SubAttachClass]
-ON [dbo].[Attachment]
-([G_SubAttachClass]);
-GO
+---- Creating non-clustered index for FOREIGN KEY 'FK_Attachment_G_SubAttachClass'
+--CREATE INDEX [IX_FK_Attachment_G_SubAttachClass]
+--ON [dbo].[Attachment]
+--([G_SubAttachClass]);
+--GO
 
 -- Creating foreign key on [id_attach] in table 'G_AvAttachClass'
 ALTER TABLE [dbo].[G_AvAttachClass]

@@ -658,6 +658,17 @@ namespace Item_WPF
                            {    _AMMO = value;    OnPropertyChanged("AMMO");   }
                             }
                          } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<AvailableAttachSlot> _AvailableAttachSlots;
+                public virtual ICollection<AvailableAttachSlot> AvailableAttachSlots
+                        {
+                        get
+                            { return _AvailableAttachSlots; } 
+                        set
+                        { if(_AvailableAttachSlots != value)
+                           {    _AvailableAttachSlots = value;    OnPropertyChanged("AvailableAttachSlots");   }
+                            }
+                         } 
         private TypeOfDamage _TypeOfDamage;
                 public virtual TypeOfDamage TypeOfDamage
                         {
@@ -676,17 +687,6 @@ namespace Item_WPF
                         set
                         { if(_WeaponType != value)
                            {    _WeaponType = value;    OnPropertyChanged("WeaponType");   }
-                            }
-                         } 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<AvailableAttachSlot> _AvailableAttachSlots;
-                public virtual ICollection<AvailableAttachSlot> AvailableAttachSlots
-                        {
-                        get
-                            { return _AvailableAttachSlots; } 
-                        set
-                        { if(_AvailableAttachSlots != value)
-                           {    _AvailableAttachSlots = value;    OnPropertyChanged("AvailableAttachSlots");   }
                             }
                          } 
     }

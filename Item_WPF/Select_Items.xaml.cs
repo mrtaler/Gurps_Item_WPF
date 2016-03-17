@@ -92,7 +92,7 @@ namespace Item_WPF
             {
                 context.Database.Connection.Open();// открываем соединение с бд
                 List<Attachment> att = (from p in context.Attachments
-                                        where p.G_SubAttachClass1.ATTACHMENTSLOT == attslot && p.id_Attachmentmount == attmount
+                                        where p.G_SubAttachClass == attslot && p.id_Attachmentmount == attmount
                                         select p).ToList();
                 List<ITEM> itemsAtt = new List<ITEM>();
                 foreach (var itt in att)

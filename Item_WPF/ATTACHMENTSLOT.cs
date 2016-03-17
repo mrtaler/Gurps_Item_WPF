@@ -33,7 +33,6 @@ namespace Item_WPF
         public ATTACHMENTSLOT()
         {
             this.Attachmentmounts = new HashSet<Attachmentmount>();
-            this.AvailableAttachSlots = new HashSet<AvailableAttachSlot>();
             this.G_SubAttachClass = new HashSet<G_SubAttachClass>();
         }
     
@@ -81,17 +80,6 @@ namespace Item_WPF
                         set
                         { if(_Attachmentmounts != value)
                            {    _Attachmentmounts = value;    OnPropertyChanged("Attachmentmounts");   }
-                            }
-                         } 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<AvailableAttachSlot> _AvailableAttachSlots;
-                public virtual ICollection<AvailableAttachSlot> AvailableAttachSlots
-                        {
-                        get
-                            { return _AvailableAttachSlots; } 
-                        set
-                        { if(_AvailableAttachSlots != value)
-                           {    _AvailableAttachSlots = value;    OnPropertyChanged("AvailableAttachSlots");   }
                             }
                          } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

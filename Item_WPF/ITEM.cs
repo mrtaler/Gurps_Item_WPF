@@ -267,40 +267,6 @@ namespace Item_WPF
       }
      }
      
-        private int _TL;
-     public int TL 
-     { 
-      get
-      {
-       return _TL;
-      } 
-      set
-      {
-       if(_TL != value)
-       {
-        _TL = value;
-        OnPropertyChanged("TL");
-       }
-      }
-     }
-     
-        private int _LC;
-     public int LC 
-     { 
-      get
-      {
-       return _LC;
-      } 
-      set
-      {
-       if(_LC != value)
-       {
-        _LC = value;
-        OnPropertyChanged("LC");
-       }
-      }
-     }
-     
         private bool _Electronic;
      public bool Electronic 
      { 
@@ -590,23 +556,6 @@ namespace Item_WPF
       }
      }
      
-        private string _SizeBatteries;
-     public string SizeBatteries 
-     { 
-      get
-      {
-       return _SizeBatteries;
-      } 
-      set
-      {
-       if(_SizeBatteries != value)
-       {
-        _SizeBatteries = value;
-        OnPropertyChanged("SizeBatteries");
-       }
-      }
-     }
-     
         private bool _NeedsBatteries;
      public bool NeedsBatteries 
      { 
@@ -722,6 +671,57 @@ namespace Item_WPF
        {
         _perehodnik = value;
         OnPropertyChanged("perehodnik");
+       }
+      }
+     }
+     
+        private int _TL;
+     public int TL 
+     { 
+      get
+      {
+       return _TL;
+      } 
+      set
+      {
+       if(_TL != value)
+       {
+        _TL = value;
+        OnPropertyChanged("TL");
+       }
+      }
+     }
+     
+        private int _LC;
+     public int LC 
+     { 
+      get
+      {
+       return _LC;
+      } 
+      set
+      {
+       if(_LC != value)
+       {
+        _LC = value;
+        OnPropertyChanged("LC");
+       }
+      }
+     }
+     
+        private string _SizeBatteries;
+     public string SizeBatteries 
+     { 
+      get
+      {
+       return _SizeBatteries;
+      } 
+      set
+      {
+       if(_SizeBatteries != value)
+       {
+        _SizeBatteries = value;
+        OnPropertyChanged("SizeBatteries");
        }
       }
      }
