@@ -314,6 +314,28 @@ namespace Item_WPF.addin
         }
     }
     #endregion
+
+    /*#region Converter for all items
+    public class AllItemsSort : MultiConvertorBase<AllItemsSort>
+    {
+        public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            ObservableCollection<ITEM> ItemsForSort = values[0] as ObservableCollection<ITEM>;
+            int? Class_for_Sort = values[1] as int?;
+            if (Class_for_Sort == null || Class_for_Sort == 1)
+                return ItemsForSort;
+            else return new ObservableCollection<ITEM>(ItemsForSort.Where(p => p.usItemClass == Class_for_Sort));
+        }
+    }
+    #endregion
+     <DataGrid.ItemsSource>
+                <MultiBinding Converter="{addin:AllItemsSort}">
+                    <Binding Path="Items" />
+                    <Binding ElementName="ItemClassForSort" Path="SelectedValue" />
+                </MultiBinding>
+     </DataGrid.ItemsSource> 
+    
+    */
 }
 //http://dev.net.ua/blogs/andriydanilchenko/archive/2011/08/14/binding-and-multibinding-converters.aspx
 

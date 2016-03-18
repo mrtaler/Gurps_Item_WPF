@@ -159,5 +159,15 @@ namespace Item_WPF
                            {    _ArmourClass = value;    OnPropertyChanged("ArmourClass");   }
                             }
                          } 
+        private ITEM _ITEM;
+                public virtual ITEM ITEM
+                        {
+                        get
+                            { return _ITEM; } 
+                        set
+                        { if(_ITEM != value)
+                           {    _ITEM = value;    OnPropertyChanged("ITEM");   }
+                            }
+                         } 
     }
 }

@@ -36,8 +36,10 @@ namespace Item_WPF
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            AllItems allItems = new AllItems();
+            all_ItemsView allItems = new all_ItemsView();
+            //allItems.DataContext=all
             allItems.Show();
+
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

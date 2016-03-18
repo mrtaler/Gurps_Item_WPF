@@ -71,9 +71,6 @@
     <Compile Include="addin\Converters.cs" />
     <Compile Include="addin\mmmm.cs" />
     <Compile Include="addin\RelayCommand.cs" />
-    <Compile Include="all_Items.xaml.cs">
-      <DependentUpon>all_Items.xaml</DependentUpon>
-    </Compile>
     <Compile Include="AMMO.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
@@ -104,7 +101,7 @@
     <Compile Include="Character.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="LaserColorEf.cs">
+    <Compile Include="laserColorEf.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="litForms\character.xaml.cs">
@@ -173,12 +170,16 @@
     <Compile Include="LOADBEARINGEQUIPMENT.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\ViewModels\all_ItemsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AmmoViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AttacmentEditViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AttacmentMountViewModel.cs" />
     <Compile Include="MVVM\ViewModels\DamageTypeViewModel.cs" />
     <Compile Include="MVVM\ViewModels\TestViewModel.cs" />
     <Compile Include="MVVM\ViewModels\WeaponEditViewModel.cs" />
+    <Compile Include="MVVM\View\all_ItemsView.xaml.cs">
+      <DependentUpon>all_ItemsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\AmmoView.xaml.cs">
       <DependentUpon>AmmoView.xaml</DependentUpon>
     </Compile>
@@ -221,10 +222,6 @@
     <Compile Include="WeaponType.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Page Include="all_Items.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="litForms\character.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -259,6 +256,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MVVM\View\all_ItemsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\AmmoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

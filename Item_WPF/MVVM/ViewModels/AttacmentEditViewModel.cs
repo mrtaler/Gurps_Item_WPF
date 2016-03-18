@@ -21,7 +21,7 @@ namespace Item_WPF.MVVM.ViewModels
         public ObservableCollection<G_AttachClass> AttachClassColl { get; set; }
         public ObservableCollection<G_SubAttachClass> SubAttachClassColl { get; set; }
         public ObservableCollection<Battery> BatteryColl { get; set; }
-        public ObservableCollection<LaserColorEf> LaserColorEfColl { get; set; }
+        public ObservableCollection<laserColorEf> LaserColorEfColl { get; set; }
 
         public ObservableCollection<Attachmentmount> AttMount { get; set; }
         public AttacmentEditViewModel(int itemselect)
@@ -36,7 +36,7 @@ namespace Item_WPF.MVVM.ViewModels
             AttachClassColl = new ObservableCollection<G_AttachClass>(_context.G_AttachClass);
             SubAttachClassColl = new ObservableCollection<G_SubAttachClass>(_context.G_SubAttachClass);
 
-            LaserColorEfColl = new ObservableCollection<LaserColorEf>(_context.LaserColorEfs);
+            LaserColorEfColl = new ObservableCollection<laserColorEf>(_context.laserColorEfs);
 
             AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
             BatteryColl = new ObservableCollection<Battery>(_context.Batteries);

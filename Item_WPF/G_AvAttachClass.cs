@@ -81,16 +81,6 @@ namespace Item_WPF
      }
      
     
-        private Attachment _Attachment;
-                public virtual Attachment Attachment
-                        {
-                        get
-                            { return _Attachment; } 
-                        set
-                        { if(_Attachment != value)
-                           {    _Attachment = value;    OnPropertyChanged("Attachment");   }
-                            }
-                         } 
         private G_SubAttachClass _G_SubAttachClass;
                 public virtual G_SubAttachClass G_SubAttachClass
                         {

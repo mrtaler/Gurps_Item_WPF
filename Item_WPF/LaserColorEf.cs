@@ -12,7 +12,7 @@ namespace Item_WPF
     using System;
     using System.Collections.Generic;
     
-    public partial class LaserColorEf : System.ComponentModel.INotifyPropertyChanged
+    public partial class laserColorEf : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged

@@ -28,12 +28,10 @@ namespace Item_WPF
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<WeaponClass> WeaponClasses { get; set; }
+        public virtual DbSet<FOOD> FOODs { get; set; }
         public virtual DbSet<AMMO> AMMOes { get; set; }
         public virtual DbSet<AMMOUPGRATE> AMMOUPGRATES { get; set; }
-        public virtual DbSet<ARMOUR> ARMOURs { get; set; }
         public virtual DbSet<ArmourClass> ArmourClasses { get; set; }
-        public virtual DbSet<Attachment> Attachments { get; set; }
         public virtual DbSet<AttachmentClass> AttachmentClasses { get; set; }
         public virtual DbSet<Attachmentmount> Attachmentmounts { get; set; }
         public virtual DbSet<ATTACHMENTSLOT> ATTACHMENTSLOTs { get; set; }
@@ -46,21 +44,23 @@ namespace Item_WPF
         public virtual DbSet<Drug> Drugs { get; set; }
         public virtual DbSet<DrugType> DrugTypes { get; set; }
         public virtual DbSet<ExplosionType> ExplosionTypes { get; set; }
-        public virtual DbSet<EXPLOSIVE> EXPLOSIVEs { get; set; }
-        public virtual DbSet<FOOD> FOODs { get; set; }
         public virtual DbSet<G_AttachClass> G_AttachClass { get; set; }
         public virtual DbSet<G_AvAttachClass> G_AvAttachClass { get; set; }
         public virtual DbSet<G_SubAttachClass> G_SubAttachClass { get; set; }
         public virtual DbSet<ITEM> ITEMs { get; set; }
         public virtual DbSet<ItemClass> ItemClasses { get; set; }
-        public virtual DbSet<LaserColorEf> LaserColorEfs { get; set; }
+        public virtual DbSet<laserColorEf> laserColorEfs { get; set; }
         public virtual DbSet<LBEClass> LBEClasses { get; set; }
         public virtual DbSet<LC> LCs { get; set; }
-        public virtual DbSet<LOADBEARINGEQUIPMENT> LOADBEARINGEQUIPMENTs { get; set; }
         public virtual DbSet<TL> TLs { get; set; }
         public virtual DbSet<TypeOfDamage> TypeOfDamages { get; set; }
-        public virtual DbSet<WEAPON> WEAPONs { get; set; }
+        public virtual DbSet<WeaponClass> WeaponClasses { get; set; }
         public virtual DbSet<WeaponType> WeaponTypes { get; set; }
+        public virtual DbSet<ARMOUR> ARMOURs { get; set; }
+        public virtual DbSet<Attachment> Attachments { get; set; }
+        public virtual DbSet<EXPLOSIVE> EXPLOSIVEs { get; set; }
+        public virtual DbSet<LOADBEARINGEQUIPMENT> LOADBEARINGEQUIPMENTs { get; set; }
+        public virtual DbSet<WEAPON> WEAPONs { get; set; }
     
         public virtual int NEW_ITEM(string name, string class_ofItem, ObjectParameter returns)
         {

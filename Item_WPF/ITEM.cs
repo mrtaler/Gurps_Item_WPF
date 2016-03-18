@@ -29,6 +29,16 @@ namespace Item_WPF
      
      #endregion
      
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ITEM()
+        {
+            this.ARMOURs = new HashSet<ARMOUR>();
+            this.Attachments = new HashSet<Attachment>();
+            this.EXPLOSIVEs = new HashSet<EXPLOSIVE>();
+            this.LOADBEARINGEQUIPMENTs = new HashSet<LOADBEARINGEQUIPMENT>();
+            this.WEAPONs = new HashSet<WEAPON>();
+        }
+    
         private int _uiIndex;
      public int uiIndex 
      { 
@@ -1012,6 +1022,39 @@ namespace Item_WPF
                            {    _FOOD = value;    OnPropertyChanged("FOOD");   }
                             }
                          } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<ARMOUR> _ARMOURs;
+                public virtual ICollection<ARMOUR> ARMOURs
+                        {
+                        get
+                            { return _ARMOURs; } 
+                        set
+                        { if(_ARMOURs != value)
+                           {    _ARMOURs = value;    OnPropertyChanged("ARMOURs");   }
+                            }
+                         } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<Attachment> _Attachments;
+                public virtual ICollection<Attachment> Attachments
+                        {
+                        get
+                            { return _Attachments; } 
+                        set
+                        { if(_Attachments != value)
+                           {    _Attachments = value;    OnPropertyChanged("Attachments");   }
+                            }
+                         } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<EXPLOSIVE> _EXPLOSIVEs;
+                public virtual ICollection<EXPLOSIVE> EXPLOSIVEs
+                        {
+                        get
+                            { return _EXPLOSIVEs; } 
+                        set
+                        { if(_EXPLOSIVEs != value)
+                           {    _EXPLOSIVEs = value;    OnPropertyChanged("EXPLOSIVEs");   }
+                            }
+                         } 
         private ItemClass _ItemClass;
                 public virtual ItemClass ItemClass
                         {
@@ -1040,6 +1083,28 @@ namespace Item_WPF
                         set
                         { if(_TL1 != value)
                            {    _TL1 = value;    OnPropertyChanged("TL1");   }
+                            }
+                         } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<LOADBEARINGEQUIPMENT> _LOADBEARINGEQUIPMENTs;
+                public virtual ICollection<LOADBEARINGEQUIPMENT> LOADBEARINGEQUIPMENTs
+                        {
+                        get
+                            { return _LOADBEARINGEQUIPMENTs; } 
+                        set
+                        { if(_LOADBEARINGEQUIPMENTs != value)
+                           {    _LOADBEARINGEQUIPMENTs = value;    OnPropertyChanged("LOADBEARINGEQUIPMENTs");   }
+                            }
+                         } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<WEAPON> _WEAPONs;
+                public virtual ICollection<WEAPON> WEAPONs
+                        {
+                        get
+                            { return _WEAPONs; } 
+                        set
+                        { if(_WEAPONs != value)
+                           {    _WEAPONs = value;    OnPropertyChanged("WEAPONs");   }
                             }
                          } 
     }

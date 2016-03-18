@@ -241,6 +241,9 @@ IF OBJECT_ID(N'[dbo].[Character]', 'u') IS NOT NULL
   DROP TABLE [dbo].[Character];
 GO
 
+
+
+
 IF OBJECT_ID(N'dbo.NEW_ITEM', 'P') IS NOT NULL
   EXEC sp_executesql N'DROP PROCEDURE dbo.NEW_ITEM'
 GO
@@ -705,12 +708,11 @@ CREATE TABLE [dbo].[Attachment] (
 GO
 
 CREATE TABLE [dbo].[laserColorEf] (
-  [id] INT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+  [id] INT IDENTITY (1, 1) NOT NULL,
   [name] NVARCHAR(10),
   [LaserColorDayEfect] DECIMAL(4, 2)
 );
 GO
-
 
 CREATE TABLE [dbo].[CombineWeap] (
   [id] INT IDENTITY (1, 1) NOT NULL,
@@ -758,6 +760,10 @@ ADD CONSTRAINT [PK_AMMO]
 PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
+ ALTER TABLE [dbo].[laserColorEf]
+  ADD CONSTRAINT [PK_laserColorEf]
+PRIMARY KEY CLUSTERED ([id] ASC)
+  GO
 -- Creating primary key on [id] in table 'AMMOUPGRATES'
 ALTER TABLE [dbo].[AMMOUPGRATES]
 ADD CONSTRAINT [PK_AMMOUPGRATES]
@@ -1388,7 +1394,7 @@ INSERT INTO G_AttachClass (name_class)
   ('MISCELLANEOUS ACCESSORIES AND MODIFICATIONS');   --7 
 
 INSERT INTO [ItemClass]
-  VALUES ('Nothing'),
+  VALUES ('All'),
   ('Gun'),
   --('Knife'), 
   --  ('Throwing Knife'), 
