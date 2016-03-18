@@ -28,7 +28,6 @@ namespace Item_WPF
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<FOOD> FOODs { get; set; }
         public virtual DbSet<AMMO> AMMOes { get; set; }
         public virtual DbSet<AMMOUPGRATE> AMMOUPGRATES { get; set; }
         public virtual DbSet<ArmourClass> ArmourClasses { get; set; }
@@ -44,6 +43,7 @@ namespace Item_WPF
         public virtual DbSet<Drug> Drugs { get; set; }
         public virtual DbSet<DrugType> DrugTypes { get; set; }
         public virtual DbSet<ExplosionType> ExplosionTypes { get; set; }
+        public virtual DbSet<FOOD> FOODs { get; set; }
         public virtual DbSet<G_AttachClass> G_AttachClass { get; set; }
         public virtual DbSet<G_AvAttachClass> G_AvAttachClass { get; set; }
         public virtual DbSet<G_SubAttachClass> G_SubAttachClass { get; set; }

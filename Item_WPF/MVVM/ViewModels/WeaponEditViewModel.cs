@@ -48,19 +48,18 @@ namespace Item_WPF.MVVM.ViewModels
         }
 
         #region Constructor
-        public WeaponEditViewModel(int itemselect)
+        public WeaponEditViewModel(ITEM itemselect)
         {
             _context = new item1Entities();
 
-            ItemLoad = (from z in _context.ITEMs
-                        where z.uiIndex == itemselect
-                        select z).First();
+            ItemLoad = itemselect;
 
-            var it = _context.ITEMs.First(p => p.uiIndex == itemselect);
+            WeaponLoad = ItemLoad.WEAPONs.First();
+               // _context.WEAPONs.First(p => p.uiIndex == itemselect);
 
-            WeaponLoad = (from p in _context.WEAPONs
-                          where p.uiIndex == ItemLoad.ubClassIndex
-                          select p).First();
+           // WeaponLoad = (from p in _context.WEAPONs
+                       //   where p.uiIndex == ItemLoad.ubClassIndex
+                       //   select p).First();
 
             TlCollection = new ObservableCollection<TL>(_context.TLs);
             LccCollection = new ObservableCollection<LC>(_context.LCs);

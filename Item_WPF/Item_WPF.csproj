@@ -98,19 +98,13 @@
     <Compile Include="AttachmentSystem.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="Character.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="laserColorEf.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="litForms\character.xaml.cs">
-      <DependentUpon>character.xaml</DependentUpon>
-    </Compile>
     <Compile Include="AvailableAttachSlot.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="Battery.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Character.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="Cloth.cs">
@@ -119,10 +113,6 @@
     <Compile Include="CombineWeap.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="Combine_weap.xaml.cs">
-      <DependentUpon>Combine_weap.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="addin\File_of_Code.cs" />
     <Compile Include="Drug.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
@@ -138,11 +128,6 @@
     <Compile Include="FOOD.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="Gurps_Item.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
     <Compile Include="G_AttachClass.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
@@ -152,13 +137,13 @@
     <Compile Include="G_SubAttachClass.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="InputBox.xaml.cs">
-      <DependentUpon>InputBox.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ITEM.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemClass.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="laserColorEf.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="LBEClass.cs">
@@ -166,6 +151,21 @@
     </Compile>
     <Compile Include="LC.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="litForms\character.xaml.cs">
+      <DependentUpon>character.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Combine_weap.xaml.cs">
+      <DependentUpon>Combine_weap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="addin\File_of_Code.cs" />
+    <Compile Include="Gurps_Item.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InputBox.xaml.cs">
+      <DependentUpon>InputBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="LOADBEARINGEQUIPMENT.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>

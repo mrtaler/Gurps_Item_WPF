@@ -36,7 +36,6 @@ namespace Item_WPF
             this.Attachments = new HashSet<Attachment>();
             this.EXPLOSIVEs = new HashSet<EXPLOSIVE>();
             this.LOADBEARINGEQUIPMENTs = new HashSet<LOADBEARINGEQUIPMENT>();
-            this.WEAPONs = new HashSet<WEAPON>();
         }
     
         private int _uiIndex;
@@ -1096,9 +1095,8 @@ namespace Item_WPF
                            {    _LOADBEARINGEQUIPMENTs = value;    OnPropertyChanged("LOADBEARINGEQUIPMENTs");   }
                             }
                          } 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<WEAPON> _WEAPONs;
-                public virtual ICollection<WEAPON> WEAPONs
+        private WEAPON _WEAPONs;
+                public virtual WEAPON WEAPONs
                         {
                         get
                             { return _WEAPONs; } 

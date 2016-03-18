@@ -23,6 +23,7 @@
                 Margin="90,10,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
+                Command="{Binding CSelItem}"
                 Content="Edit" />
         <Button x:Name="Button2"
                 Width="75"

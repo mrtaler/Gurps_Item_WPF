@@ -21,7 +21,7 @@ namespace Item_WPF.MVVM.View
     public partial class WeaponEditView : Window
     {
         private WeaponEditViewModel _weaponEditView;
-        public WeaponEditView(int itSell)
+        public WeaponEditView(ITEM itSell)
         {
             InitializeComponent();
             _weaponEditView = new WeaponEditViewModel(itSell);

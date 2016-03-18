@@ -504,39 +504,6 @@
         <EntityType Name="WEAPON">
           <Key>
             <PropertyRef Name="uiIndex" />
-            <PropertyRef Name="szWeaponName" />
-            <PropertyRef Name="ubWeaponClass" />
-            <PropertyRef Name="ubWeaponType" />
-            <PropertyRef Name="ubCalibre" />
-            <PropertyRef Name="Damage" />
-            <PropertyRef Name="ubTypeOfDamage" />
-            <PropertyRef Name="DefACC" />
-            <PropertyRef Name="Half_Range" />
-            <PropertyRef Name="FullRange" />
-            <PropertyRef Name="MinRange" />
-            <PropertyRef Name="AWeight" />
-            <PropertyRef Name="Arm_Division" />
-            <PropertyRef Name="ROF" />
-            <PropertyRef Name="Full_auto" />
-            <PropertyRef Name="ROF_for_Sh" />
-            <PropertyRef Name="Shots" />
-            <PropertyRef Name="Time_For_reload" />
-            <PropertyRef Name="single_reload" />
-            <PropertyRef Name="Mount" />
-            <PropertyRef Name="Recoil" />
-            <PropertyRef Name="HeavyWeapon" />
-            <PropertyRef Name="Add_in_Chamber" />
-            <PropertyRef Name="CutOff_shots" />
-            <PropertyRef Name="CutOff_shotsCount" />
-            <PropertyRef Name="GrenadeLauncher" />
-            <PropertyRef Name="RocketLauncher" />
-            <PropertyRef Name="Mortar" />
-            <PropertyRef Name="Cannon" />
-            <PropertyRef Name="SingleShot_RocketLauncher" />
-            <PropertyRef Name="RocketRifle" />
-            <PropertyRef Name="Bulkfolded" />
-            <PropertyRef Name="HCROF" />
-            <PropertyRef Name="HCROFValue" />
           </Key>
           <Property Name="uiIndex" Type="int" Nullable="false" />
           <Property Name="szWeaponName" Type="varchar" MaxLength="80" Nullable="false" />
@@ -1219,7 +1186,6 @@
             <Parameter Name="G_sub_att" Mode="In" Type="Int32" />
             <Parameter Name="id_att_mount" Mode="In" Type="Int32" />
           </FunctionImport>
-          <EntitySet Name="FOODs" EntityType="item1Model.FOOD" />
           <EntitySet Name="AMMOes" EntityType="item1Model.AMMO" />
           <EntitySet Name="AMMOUPGRATES" EntityType="item1Model.AMMOUPGRATE" />
           <EntitySet Name="ArmourClasses" EntityType="item1Model.ArmourClass" />
@@ -1235,6 +1201,7 @@
           <EntitySet Name="Drugs" EntityType="item1Model.Drug" />
           <EntitySet Name="DrugTypes" EntityType="item1Model.DrugType" />
           <EntitySet Name="ExplosionTypes" EntityType="item1Model.ExplosionType" />
+          <EntitySet Name="FOODs" EntityType="item1Model.FOOD" />
           <EntitySet Name="G_AttachClass" EntityType="item1Model.G_AttachClass" />
           <EntitySet Name="G_AvAttachClass" EntityType="item1Model.G_AvAttachClass" />
           <EntitySet Name="G_SubAttachClass" EntityType="item1Model.G_SubAttachClass" />
@@ -1353,14 +1320,6 @@
             <End Role="WEAPON" EntitySet="WEAPONs" />
           </AssociationSet>
           </EntityContainer>
-        <EntityType Name="FOOD">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ITEMs" Relationship="item1Model.FK_ITEM_Food" FromRole="FOOD" ToRole="ITEM" />
-        </EntityType>
         <EntityType Name="AMMO">
           <Key>
             <PropertyRef Name="id" />
@@ -1533,6 +1492,14 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="EXPLOSIVEs" Relationship="item1Model.FK_EXPLOSIVE" FromRole="ExplosionType" ToRole="EXPLOSIVE" />
+        </EntityType>
+        <EntityType Name="FOOD">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ITEMs" Relationship="item1Model.FK_ITEM_Food" FromRole="FOOD" ToRole="ITEM" />
         </EntityType>
         <EntityType Name="G_AttachClass">
           <Key>
@@ -1903,39 +1870,6 @@
         <EntityType Name="WEAPON">
           <Key>
             <PropertyRef Name="uiIndex" />
-            <PropertyRef Name="szWeaponName" />
-            <PropertyRef Name="ubWeaponClass" />
-            <PropertyRef Name="ubWeaponType" />
-            <PropertyRef Name="ubCalibre" />
-            <PropertyRef Name="Damage" />
-            <PropertyRef Name="ubTypeOfDamage" />
-            <PropertyRef Name="DefACC" />
-            <PropertyRef Name="Half_Range" />
-            <PropertyRef Name="FullRange" />
-            <PropertyRef Name="MinRange" />
-            <PropertyRef Name="AWeight" />
-            <PropertyRef Name="Arm_Division" />
-            <PropertyRef Name="ROF" />
-            <PropertyRef Name="Full_auto" />
-            <PropertyRef Name="ROF_for_Sh" />
-            <PropertyRef Name="Shots" />
-            <PropertyRef Name="Time_For_reload" />
-            <PropertyRef Name="single_reload" />
-            <PropertyRef Name="Mount" />
-            <PropertyRef Name="Recoil" />
-            <PropertyRef Name="HeavyWeapon" />
-            <PropertyRef Name="Add_in_Chamber" />
-            <PropertyRef Name="CutOff_shots" />
-            <PropertyRef Name="CutOff_shotsCount" />
-            <PropertyRef Name="GrenadeLauncher" />
-            <PropertyRef Name="RocketLauncher" />
-            <PropertyRef Name="Mortar" />
-            <PropertyRef Name="Cannon" />
-            <PropertyRef Name="SingleShot_RocketLauncher" />
-            <PropertyRef Name="RocketRifle" />
-            <PropertyRef Name="Bulkfolded" />
-            <PropertyRef Name="HCROF" />
-            <PropertyRef Name="HCROFValue" />
           </Key>
           <Property Name="uiIndex" Type="Int32" Nullable="false" />
           <Property Name="szWeaponName" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
@@ -2230,7 +2164,7 @@
           <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="item1Model.WEAPON" Role="WEAPON" Multiplicity="*" />
+          <End Type="item1Model.WEAPON" Role="WEAPON" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="ITEM">
               <PropertyRef Name="uiIndex" />
@@ -2296,14 +2230,6 @@
         <EntityContainerMapping StorageEntityContainer="Хранилище item1ModelContainer" CdmEntityContainer="item1Entities">
           <FunctionImportMapping FunctionImportName="NEW_ITEM" FunctionName="Хранилище item1Model.NEW_ITEM" />
           <FunctionImportMapping FunctionImportName="NEW_ITEM_att" FunctionName="Хранилище item1Model.NEW_ITEM_att" />
-          <EntitySetMapping Name="FOODs">
-            <EntityTypeMapping TypeName="item1Model.FOOD">
-              <MappingFragment StoreEntitySet="FOOD">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="AMMOes">
             <EntityTypeMapping TypeName="item1Model.AMMO">
               <MappingFragment StoreEntitySet="AMMO">
@@ -2474,6 +2400,14 @@
           <EntitySetMapping Name="ExplosionTypes">
             <EntityTypeMapping TypeName="item1Model.ExplosionType">
               <MappingFragment StoreEntitySet="ExplosionType">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FOODs">
+            <EntityTypeMapping TypeName="item1Model.FOOD">
+              <MappingFragment StoreEntitySet="FOOD">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
