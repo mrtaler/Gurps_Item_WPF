@@ -29,15 +29,6 @@ namespace Item_WPF
      
      #endregion
      
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ITEM()
-        {
-            this.ARMOURs = new HashSet<ARMOUR>();
-            this.Attachments = new HashSet<Attachment>();
-            this.EXPLOSIVEs = new HashSet<EXPLOSIVE>();
-            this.LOADBEARINGEQUIPMENTs = new HashSet<LOADBEARINGEQUIPMENT>();
-        }
-    
         private int _uiIndex;
      public int uiIndex 
      { 
@@ -991,6 +982,26 @@ namespace Item_WPF
      }
      
     
+        private ARMOUR _ARMOUR;
+                public virtual ARMOUR ARMOUR
+                        {
+                        get
+                            { return _ARMOUR; } 
+                        set
+                        { if(_ARMOUR != value)
+                           {    _ARMOUR = value;    OnPropertyChanged("ARMOUR");   }
+                            }
+                         } 
+        private Attachment _Attachment;
+                public virtual Attachment Attachment
+                        {
+                        get
+                            { return _Attachment; } 
+                        set
+                        { if(_Attachment != value)
+                           {    _Attachment = value;    OnPropertyChanged("Attachment");   }
+                            }
+                         } 
         private Cloth _Cloth;
                 public virtual Cloth Cloth
                         {
@@ -1011,6 +1022,16 @@ namespace Item_WPF
                            {    _DrugType1 = value;    OnPropertyChanged("DrugType1");   }
                             }
                          } 
+        private EXPLOSIVE _EXPLOSIVE;
+                public virtual EXPLOSIVE EXPLOSIVE
+                        {
+                        get
+                            { return _EXPLOSIVE; } 
+                        set
+                        { if(_EXPLOSIVE != value)
+                           {    _EXPLOSIVE = value;    OnPropertyChanged("EXPLOSIVE");   }
+                            }
+                         } 
         private FOOD _FOOD;
                 public virtual FOOD FOOD
                         {
@@ -1019,39 +1040,6 @@ namespace Item_WPF
                         set
                         { if(_FOOD != value)
                            {    _FOOD = value;    OnPropertyChanged("FOOD");   }
-                            }
-                         } 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<ARMOUR> _ARMOURs;
-                public virtual ICollection<ARMOUR> ARMOURs
-                        {
-                        get
-                            { return _ARMOURs; } 
-                        set
-                        { if(_ARMOURs != value)
-                           {    _ARMOURs = value;    OnPropertyChanged("ARMOURs");   }
-                            }
-                         } 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<Attachment> _Attachments;
-                public virtual ICollection<Attachment> Attachments
-                        {
-                        get
-                            { return _Attachments; } 
-                        set
-                        { if(_Attachments != value)
-                           {    _Attachments = value;    OnPropertyChanged("Attachments");   }
-                            }
-                         } 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<EXPLOSIVE> _EXPLOSIVEs;
-                public virtual ICollection<EXPLOSIVE> EXPLOSIVEs
-                        {
-                        get
-                            { return _EXPLOSIVEs; } 
-                        set
-                        { if(_EXPLOSIVEs != value)
-                           {    _EXPLOSIVEs = value;    OnPropertyChanged("EXPLOSIVEs");   }
                             }
                          } 
         private ItemClass _ItemClass;
@@ -1084,25 +1072,24 @@ namespace Item_WPF
                            {    _TL1 = value;    OnPropertyChanged("TL1");   }
                             }
                          } 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<LOADBEARINGEQUIPMENT> _LOADBEARINGEQUIPMENTs;
-                public virtual ICollection<LOADBEARINGEQUIPMENT> LOADBEARINGEQUIPMENTs
+        private LOADBEARINGEQUIPMENT _LOADBEARINGEQUIPMENT;
+                public virtual LOADBEARINGEQUIPMENT LOADBEARINGEQUIPMENT
                         {
                         get
-                            { return _LOADBEARINGEQUIPMENTs; } 
+                            { return _LOADBEARINGEQUIPMENT; } 
                         set
-                        { if(_LOADBEARINGEQUIPMENTs != value)
-                           {    _LOADBEARINGEQUIPMENTs = value;    OnPropertyChanged("LOADBEARINGEQUIPMENTs");   }
+                        { if(_LOADBEARINGEQUIPMENT != value)
+                           {    _LOADBEARINGEQUIPMENT = value;    OnPropertyChanged("LOADBEARINGEQUIPMENT");   }
                             }
                          } 
-        private WEAPON _WEAPONs;
-                public virtual WEAPON WEAPONs
+        private WEAPON _WEAPON;
+                public virtual WEAPON WEAPON
                         {
                         get
-                            { return _WEAPONs; } 
+                            { return _WEAPON; } 
                         set
-                        { if(_WEAPONs != value)
-                           {    _WEAPONs = value;    OnPropertyChanged("WEAPONs");   }
+                        { if(_WEAPON != value)
+                           {    _WEAPON = value;    OnPropertyChanged("WEAPON");   }
                             }
                          } 
     }

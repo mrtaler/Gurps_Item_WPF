@@ -16,6 +16,7 @@
                 Margin="10,10,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
+                Command="{Binding CNewItem}"
                 Content="New" />
         <Button x:Name="NewItem_Button"
                 Width="75"
@@ -31,6 +32,7 @@
                 Margin="170,10,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
+                Command="{Binding CDelItem}"
                 Content="Del" />
         <ComboBox x:Name="ItemClassForSort"
                   Width="120"

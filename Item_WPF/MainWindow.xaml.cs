@@ -25,30 +25,20 @@ namespace Item_WPF
         public MainWindow()
         {
             InitializeComponent();
-
-            DataGrid.ColumnWidth = DataGridLength.Auto;
-
-            //DataGridTextColumn textColumn = new DataGridTextColumn();
-            //textColumn.Header = "dice";
-            //textColumn.IsReadOnly = true;
-            //dataGrid.Columns.Add(textColumn);
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
             all_ItemsView allItems = new all_ItemsView();
-            //allItems.DataContext=all
             allItems.Show();
 
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            Combine_weap combine = new Combine_weap();
+            CombineWeapView combine = new CombineWeapView();
             combine.Show();
-
         }
-
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(Dice.RollDie(6, 3).ToString());
@@ -62,7 +52,8 @@ namespace Item_WPF
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-            AttacmentEditView avView =new AttacmentEditView(1);
+            item1Entities _context = new item1Entities();
+            AttacmentEditView avView =new AttacmentEditView(_context.ITEMs.First(p=>p.uiIndex==1));
             avView.Show();
         }
     }

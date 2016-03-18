@@ -1,146 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Item_WPF.MVVM.Models;
 using Item_WPF.addin;
+using Item_WPF.MVVM.View;
 
-namespace Item_WPF
+namespace Item_WPF.MVVM.ViewModels
 {
-    /// <summary>
-    /// Логика взаимодействия для Combine_weap.xaml
-    /// </summary>
-    public partial class Combine_weap : Window
+
+    class CombineWeapViewModel
     {
-        public int IdItemWeaposn = 0;
-        public int AttachScope;
-        private int _mountScope;
-        private int _mountLaser;
-        private int _mountLight;
-        private int _mountBipod;
-        private int _mountSilenser;
-        private int _mountLauncher;
-        private int _mountStock;
-        private int _mountBayonet;
-        private int _mountMagazine;
-        private int _mountInternal;
-        private int _mountExternal;
 
-        private string _damagee;
-
-        CombineWeap _cw = new CombineWeap();
-
-        //private class Weapon_Item
-        //{
-        //    public ITEM item_s { get; set; }
-        //    public WEAPON weapon_s { get; set; }
-        //}
-
-        private class ItemFromGrid
+        public ItemToGridModel ItemToGrid;
+        public CombineWeapModel CombineWeap;
+        public CombineWeapViewModel()
         {
-            public ITEM ItemS { get; set; }
-            public WEAPON WeaponS { get; set; }
-            public Attachment ScopeS { get; set; }
-            public string Name { get; set; }
-            public string Tl { get; set; }
-            public string Damage { get; set; }
-            public string DefAcc { get; set; }
-            public string Range { get; set; }
-            public string Weigth { get; set; }
-            public string Rof { get; set; }
-            public string Shots { get; set; }
-            public string MinSt { get; set; }
-            public string Rcl { get; set; }
-            public string Cost { get; set; }
-            public string Lc { get; set; }
-            public string Bulk { get; set; }
-            public string Type { get; set; }
-
-            public ItemFromGrid(ITEM itt, WEAPON weap)
-            {
-                Name = itt.szItemName;
-                Tl = itt.TL1.name_TL;
-
-                if (weap.Arm_Division != 1) Damage = weap.Damage + " (" + Convert.ToDouble(weap.Arm_Division) + ") " + weap.TypeOfDamage.name;
-                else Damage = weap.Damage + " " + weap.TypeOfDamage.name;
-
-                DefAcc = weap.DefACC.ToString();
-                Range = Convert.ToDouble(weap.Half_Range) + "/" + Convert.ToDouble(weap.FullRange);
-                Weigth = Convert.ToDouble(itt.ubWeight) + "/" + weap.Shots * Convert.ToDouble(weap.AMMO.WPS);
-                //ROF
-                Rof = weap.ROF.ToString();
-                if (weap.WeaponType.name == "Shotgun") Rof = weap.ROF.ToString() + "x" + weap.ROF_for_Sh.ToString();
-                if (weap.Full_auto) Rof = weap.ROF.ToString() + "!";
-                //if (weaponLoad.h//   HCR ROF
-
-                //Shots
-                Shots = weap.Shots.ToString();
-                if (weap.Add_in_Chamber) Shots = weap.Shots.ToString() + "+1";
-                if (weap.single_reload) Shots = weap.Shots.ToString() + "(" + weap.Time_For_reload + "i)";
-                else Shots = Shots.ToString() + "(" + weap.Time_For_reload + ")";
-                //st
-                MinSt = itt.minST.ToString();
-                if (itt.TwoHanded) MinSt = itt.minST.ToString() + "†";
-                //Bulk
-                Bulk = itt.ItemSize;
-                if (weap.Bulkfolded) Bulk = itt.ItemSize + "*";
-                //RCL%cost%LC
-                Rcl = weap.Recoil.ToString();
-                Cost = "$" + Convert.ToDouble(itt.usPrice) + "/$" + weap.Shots * Convert.ToDouble(weap.AMMO.CPS);
-                Lc = itt.LC1.Name_LC;
-                //Type
-                Type = itt.ItemClass.name;
-            }
-            public ItemFromGrid(ITEM itt, Attachment att, string type)
-            {
-                Name = itt.szItemName;
-                Tl = itt.TL1.name_TL;
-                Type = type;
-
-
-                DefAcc = att.AccAddmax.ToString();
-                Weigth = itt.ubWeight.ToString();
-                //ROF
-                Bulk = itt.ItemSize;
-                Cost = "$" + Convert.ToDouble(itt.usPrice);
-                Lc = itt.LC1.Name_LC;
-
-            }
+           CSelectWeapon = new ActionCommand(SelectWeapon) { IsExecutable = true };
+           // CSelectWeapon = new RelayCommand(SelectWeapon);
         }
-
-        public Combine_weap()
+        #region Command Refrekshnew
+        private void SelectWeapon()
         {
-            InitializeComponent();
-
-            ScopeSelectButton.Visibility = Visibility.Hidden;      //1
-            LaserSelectButton.Visibility = Visibility.Hidden;
-            LightSelectButton.Visibility = Visibility.Hidden;
-            BipodSelectButton.Visibility = Visibility.Hidden;
-            SilenserSelectButton.Visibility = Visibility.Hidden;
-            LauncherSelectButton.Visibility = Visibility.Hidden;
-            StockSelectButton.Visibility = Visibility.Hidden;
-            BayonetSelectButton.Visibility = Visibility.Hidden;
-            MagazineSelectButton.Visibility = Visibility.Hidden;
-            InternalSelectButton.Visibility = Visibility.Hidden;
-            ExternalSelectButton.Visibility = Visibility.Hidden;
-
-            ItemDataGrid.ColumnWidth = DataGridLength.Auto;
-
-
-
+            SelectItemsViewModel _SIVM = new SelectItemsViewModel("Gun");
+            SelectItemsView SIW = new SelectItemsView();
+            SIW.DataContext= _SIVM;
+            SIW.ShowDialog();
+            ItemToGrid = new ItemToGridModel(new ITEM );
         }
+        public ActionCommand CSelectWeapon { get; set; }
+        #endregion
+    }
+}
+/*   
 
-        private void SelectWeapon_button_Click(object sender, RoutedEventArgs e)
+    private void SelectWeapon_button_Click(object sender, RoutedEventArgs e)
         {
             ScopeSelectButton.Visibility = Visibility.Hidden;      //1
             LaserSelectButton.Visibility = Visibility.Hidden;
@@ -604,5 +499,4 @@ namespace Item_WPF
 
         }
     }
-}
-
+*/

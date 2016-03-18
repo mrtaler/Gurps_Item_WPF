@@ -1,25 +1,52 @@
-﻿using System;
+﻿using Item_WPF.MVVM.Models;
+using System;
 using System.Collections.Generic;
-using System.Data;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Item_WPF.addin;
 
-namespace Item_WPF
+namespace Item_WPF.MVVM.ViewModels
 {
-    /// <summary>
-    /// Логика взаимодействия для Select_Items.xaml
-    /// </summary>
-    public partial class SelectItems : Window
+    class SelectItemsViewModel
+    {
+        private item1Entities _context;
+        private string _parametr;
+        public ObservableCollection<ITEM> Items { get; set; }
+        public ItemsForSortModel SelectedItems { get; set; }
+        public ObservableCollection<ItemsForSortModel> IttForSort { get; set; }
+        public SelectItemsViewModel(string Parametr)
+        {
+            _context = new item1Entities();
+            _parametr = Parametr;
+            Items = new ObservableCollection<ITEM>
+                (_context.ITEMs.Where(p => p.ItemClass.name == Parametr));
+
+            IttForSort = new ObservableCollection<ItemsForSortModel>(_context.ITEMs.
+            Where(p => p.ItemClass.name == Parametr).
+            Select(p => new
+            {
+                _uiIndex = p.uiIndex,
+                _szItemName = p.szItemName,
+                _ItemClassname = p.ItemClass.name,
+                _TL1name_TL = p.TL1.name_TL,
+                _LC1Name_LC = p.LC1.Name_LC,
+                _usPrice = p.usPrice
+            })./*AsEnumerable().*/
+            Select(an => new ItemsForSortModel
+            {
+                ID = an._uiIndex,
+                Name = an._szItemName,
+                Class = an._ItemClassname,
+                TL = an._TL1name_TL,
+                LC = an._LC1Name_LC,
+                Price = an._usPrice
+            }));
+        }
+    }
+}
+/*
+public partial class SelectItems : Window
     {
         private bool _re33 = false;
         private int _attSlot = 0;
@@ -33,17 +60,7 @@ namespace Item_WPF
             InitializeComponent();
             using (item1Entities context = new item1Entities())
             {
-                ItemsDataGrid.ItemsSource = (from p in context.ITEMs
-                                              where p.ItemClass.name == typeName
-                                              select new
-                                              {
-                                                  p.uiIndex,
-                                                  p.szItemName,
-                                                  p.ItemClass.name,
-                                                  p.TL1.name_TL,
-                                                  p.LC1.Name_LC,
-                                                  p.usPrice
-                                              }).ToList();// шрузим таблицу итем вместе с подчненной записью
+                ItemsDataGrid.ItemsSource = .ToList();// шрузим таблицу итем вместе с подчненной записью
                 ItemsDataGrid.SelectedValuePath = "uiIndex";
             }
         }
@@ -171,4 +188,4 @@ namespace Item_WPF
             this.Close();
         }
     }
-}
+*/

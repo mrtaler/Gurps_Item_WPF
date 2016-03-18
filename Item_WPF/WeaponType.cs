@@ -87,16 +87,6 @@ namespace Item_WPF
      }
      
     
-        private WeaponClass _WeaponClass;
-                public virtual WeaponClass WeaponClass
-                        {
-                        get
-                            { return _WeaponClass; } 
-                        set
-                        { if(_WeaponClass != value)
-                           {    _WeaponClass = value;    OnPropertyChanged("WeaponClass");   }
-                            }
-                         } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<WEAPON> _WEAPONs;
                 public virtual ICollection<WEAPON> WEAPONs
@@ -106,6 +96,16 @@ namespace Item_WPF
                         set
                         { if(_WEAPONs != value)
                            {    _WEAPONs = value;    OnPropertyChanged("WEAPONs");   }
+                            }
+                         } 
+        private WeaponClass _WeaponClass;
+                public virtual WeaponClass WeaponClass
+                        {
+                        get
+                            { return _WeaponClass; } 
+                        set
+                        { if(_WeaponClass != value)
+                           {    _WeaponClass = value;    OnPropertyChanged("WeaponClass");   }
                             }
                          } 
     }

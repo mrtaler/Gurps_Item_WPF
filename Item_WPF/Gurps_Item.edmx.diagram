@@ -4,66 +4,68 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="520cd847813e4f0ab1ad981dc27ed446" Name="Diagram1" ZoomLevel="85">
-        <EntityTypeShape EntityType="item1Model.FOOD" Width="1.5" PointX="8.75" PointY="19" />
-        <EntityTypeShape EntityType="item1Model.AMMO" Width="1.5" PointX="14.375" PointY="30.75" />
+      <Diagram DiagramId="520cd847813e4f0ab1ad981dc27ed446" Name="Diagram1" ZoomLevel="63">
+        <EntityTypeShape EntityType="item1Model.AMMO" Width="1.5" PointX="6" PointY="34.5" />
         <EntityTypeShape EntityType="item1Model.AMMOUPGRATE" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="item1Model.ArmourClass" Width="1.5" PointX="11.375" PointY="31.75" />
-        <EntityTypeShape EntityType="item1Model.AttachmentClass" Width="1.5" PointX="17.375" PointY="26.125" />
-        <EntityTypeShape EntityType="item1Model.Attachmentmount" Width="1.5" PointX="17.375" PointY="8.25" />
-        <EntityTypeShape EntityType="item1Model.ATTACHMENTSLOT" Width="1.5" PointX="15.125" PointY="8.5" />
+        <EntityTypeShape EntityType="item1Model.ARMOUR" Width="1.5" PointX="5.25" PointY="14.875" />
+        <EntityTypeShape EntityType="item1Model.ArmourClass" Width="1.5" PointX="3" PointY="11.5" />
+        <EntityTypeShape EntityType="item1Model.Attachment" Width="1.5" PointX="11.25" PointY="15.25" />
+        <EntityTypeShape EntityType="item1Model.AttachmentClass" Width="1.5" PointX="9" PointY="14" />
+        <EntityTypeShape EntityType="item1Model.Attachmentmount" Width="1.5" PointX="9" PointY="31.375" />
+        <EntityTypeShape EntityType="item1Model.ATTACHMENTSLOT" Width="1.5" PointX="6.75" PointY="31.5" />
         <EntityTypeShape EntityType="item1Model.AttachmentSystem" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="item1Model.AvailableAttachSlot" Width="1.5" PointX="19.625" PointY="8.5" />
+        <EntityTypeShape EntityType="item1Model.AvailableAttachSlot" Width="1.5" PointX="13.5" PointY="17.25" />
         <EntityTypeShape EntityType="item1Model.Battery" Width="1.5" PointX="2.75" PointY="3.75" />
         <EntityTypeShape EntityType="item1Model.Character" Width="1.5" PointX="4.75" PointY="0.75" />
-        <EntityTypeShape EntityType="item1Model.Cloth" Width="1.5" PointX="9.125" PointY="16" />
-        <EntityTypeShape EntityType="item1Model.CombineWeap" Width="1.5" PointX="4.75" PointY="4.75" />
-        <EntityTypeShape EntityType="item1Model.Drug" Width="1.5" PointX="6.75" PointY="0.75" />
-        <EntityTypeShape EntityType="item1Model.DrugType" Width="1.5" PointX="9.125" PointY="26.375" />
-        <EntityTypeShape EntityType="item1Model.ExplosionType" Width="1.5" PointX="11.375" PointY="28.75" />
-        <EntityTypeShape EntityType="item1Model.G_AttachClass" Width="1.5" PointX="18.125" PointY="5.5" />
-        <EntityTypeShape EntityType="item1Model.G_AvAttachClass" Width="1.5" PointX="22.625" PointY="5.5" />
-        <EntityTypeShape EntityType="item1Model.G_SubAttachClass" Width="1.5" PointX="20.375" PointY="5" />
-        <EntityTypeShape EntityType="item1Model.ItemClass" Width="1.5" PointX="9.125" PointY="21.375" />
-        <EntityTypeShape EntityType="item1Model.laserColorEf" Width="1.5" PointX="6.75" PointY="3.75" />
-        <EntityTypeShape EntityType="item1Model.LBEClass" Width="1.5" PointX="11.375" PointY="10.75" />
-        <EntityTypeShape EntityType="item1Model.LC" Width="1.5" PointX="0.75" PointY="20" />
-        <EntityTypeShape EntityType="item1Model.TL" Width="1.5" PointX="9.125" PointY="23.75" />
-        <EntityTypeShape EntityType="item1Model.TypeOfDamage" Width="1.5" PointX="14.375" PointY="28" />
-        <EntityTypeShape EntityType="item1Model.WeaponClass" Width="1.5" PointX="12.125" PointY="5.5" />
-        <EntityTypeShape EntityType="item1Model.WeaponType" Width="1.5" PointX="14.375" PointY="5.25" />
-        <EntityTypeShape EntityType="item1Model.ARMOUR" Width="1.5" PointX="13.625" PointY="24.125" />
-        <EntityTypeShape EntityType="item1Model.EXPLOSIVE" Width="1.5" PointX="13.625" PointY="17.75" />
-        <EntityTypeShape EntityType="item1Model.LOADBEARINGEQUIPMENT" Width="1.5" PointX="13.625" PointY="12.125" />
+        <EntityTypeShape EntityType="item1Model.Cloth" Width="1.5" PointX="0.75" PointY="28.5" />
+        <EntityTypeShape EntityType="item1Model.CombineWeap" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="item1Model.Drug" Width="1.5" PointX="4.75" PointY="5.75" />
+        <EntityTypeShape EntityType="item1Model.DrugType" Width="1.5" PointX="0.75" PointY="18.125" />
+        <EntityTypeShape EntityType="item1Model.ExplosionType" Width="1.5" PointX="3" PointY="29.5" />
+        <EntityTypeShape EntityType="item1Model.EXPLOSIVE" Width="1.5" PointX="5.25" PointY="18.375" />
+        <EntityTypeShape EntityType="item1Model.FOOD" Width="1.5" PointX="0.75" PointY="23.5" />
+        <EntityTypeShape EntityType="item1Model.G_AttachClass" Width="1.5" PointX="9" PointY="10.5" />
+        <EntityTypeShape EntityType="item1Model.G_AvAttachClass" Width="1.5" PointX="13.5" PointY="20.25" />
+        <EntityTypeShape EntityType="item1Model.G_SubAttachClass" Width="1.5" PointX="11.25" PointY="10" />
+        <EntityTypeShape EntityType="item1Model.ITEM" Width="1.5" PointX="3" PointY="14.25" />
+        <EntityTypeShape EntityType="item1Model.ItemClass" Width="1.5" PointX="0.75" PointY="20.5" />
+        <EntityTypeShape EntityType="item1Model.LaserColorEf" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="item1Model.LBEClass" Width="1.5" PointX="3" PointY="32.5" />
+        <EntityTypeShape EntityType="item1Model.LC" Width="1.5" PointX="0.75" PointY="25.75" />
+        <EntityTypeShape EntityType="item1Model.LOADBEARINGEQUIPMENT" Width="1.5" PointX="5.25" PointY="24.875" />
+        <EntityTypeShape EntityType="item1Model.TL" Width="1.5" PointX="0.75" PointY="15.375" />
+        <EntityTypeShape EntityType="item1Model.TypeOfDamage" Width="1.5" PointX="6" PointY="11.75" />
+        <EntityTypeShape EntityType="item1Model.WEAPON" Width="1.5" PointX="8.25" PointY="16.75" />
+        <EntityTypeShape EntityType="item1Model.WeaponClass" Width="1.5" PointX="3.75" PointY="8.25" />
+        <EntityTypeShape EntityType="item1Model.WeaponType" Width="1.5" PointX="6" PointY="8" />
+        <AssociationConnector Association="item1Model.FK_Calibre" />
         <AssociationConnector Association="item1Model.FK_ARMOUR" />
+        <AssociationConnector Association="item1Model.FK_ARMOUR_ITEM_uiIndex" />
+        <AssociationConnector Association="item1Model.FK_Attachment_Attachmentmount" />
+        <AssociationConnector Association="item1Model.FK_Attachment_ITEM_uiIndex" />
+        <AssociationConnector Association="item1Model.FK_G_AvAttachClass_Attachment" />
+        <AssociationConnector Association="item1Model.FK_rAttachmentClass" />
         <AssociationConnector Association="item1Model.FK_Attachmentmount_NasAttachmentClass1" />
         <AssociationConnector Association="item1Model.FK_AVeAttachmentmount" />
         <AssociationConnector Association="item1Model.FK_G_SubAttachClass_ATTACHMENTSLOT1" />
-        <AssociationConnector Association="item1Model.FK_EXPLOSIVE" />
-        <AssociationConnector Association="item1Model.FK_G_SubAttachClass_G_AttachClass" />
-        <AssociationConnector Association="item1Model.FK_G_AvAttachClass_G_SubAttachClass" />
-        <AssociationConnector Association="item1Model.FK_LOADBEARINGEQUIPMENT" />
-        <AssociationConnector Association="item1Model.FK_WeaponType_WeaponClass" />
-        <EntityTypeShape EntityType="item1Model.ITEM" Width="1.5" PointX="11.375" PointY="14" />
-        <EntityTypeShape EntityType="item1Model.Attachment" Width="1.5" PointX="19.625" PointY="12.25" />
-        <EntityTypeShape EntityType="item1Model.WEAPON" Width="1.5" PointX="16.625" PointY="15.125" />
-        <AssociationConnector Association="item1Model.FK_Calibre" />
-        <AssociationConnector Association="item1Model.FK_rAttachmentClass" />
-        <AssociationConnector Association="item1Model.FK_Attachment_Attachmentmount" />
+        <AssociationConnector Association="item1Model.FK_AVeWeaponId" />
         <AssociationConnector Association="item1Model.FK_ITEM_Clothes" />
         <AssociationConnector Association="item1Model.FK_ITEM_DrugType" />
-        <AssociationConnector Association="item1Model.FK_ITEM_Food" />
-        <AssociationConnector Association="item1Model.FK_ARMOUR_ITEM_uiIndex" />
-        <AssociationConnector Association="item1Model.FK_Attachment_ITEM_uiIndex" />
+        <AssociationConnector Association="item1Model.FK_EXPLOSIVE" />
         <AssociationConnector Association="item1Model.FK_EXPLOSIVE_ITEM_uiIndex" />
+        <AssociationConnector Association="item1Model.FK_ITEM_Food" />
+        <AssociationConnector Association="item1Model.FK_G_SubAttachClass_G_AttachClass" />
+        <AssociationConnector Association="item1Model.FK_G_AvAttachClass_G_SubAttachClass" />
         <AssociationConnector Association="item1Model.FK_Item_ItemClass" />
         <AssociationConnector Association="item1Model.FK_ITEM_LC" />
         <AssociationConnector Association="item1Model.FK_ITEM_TL" />
         <AssociationConnector Association="item1Model.FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex" />
         <AssociationConnector Association="item1Model.FK_WEAPON_ITEM_uiIndex" />
+        <AssociationConnector Association="item1Model.FK_LOADBEARINGEQUIPMENT" />
         <AssociationConnector Association="item1Model.FK_WEAPON_TypeOfDamage" />
         <AssociationConnector Association="item1Model.FK_WeaponType" />
-        </Diagram>
+        <AssociationConnector Association="item1Model.FK_WeaponType_WeaponClass" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

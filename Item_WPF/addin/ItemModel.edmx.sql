@@ -760,10 +760,10 @@ ADD CONSTRAINT [PK_AMMO]
 PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
- ALTER TABLE [dbo].[laserColorEf]
-  ADD CONSTRAINT [PK_laserColorEf]
+ALTER TABLE [dbo].[laserColorEf]
+ADD CONSTRAINT [PK_LaserColorEf]
 PRIMARY KEY CLUSTERED ([id] ASC)
-  GO
+GO
 -- Creating primary key on [id] in table 'AMMOUPGRATES'
 ALTER TABLE [dbo].[AMMOUPGRATES]
 ADD CONSTRAINT [PK_AMMOUPGRATES]
@@ -771,10 +771,10 @@ PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
 -- Creating primary key on [uiIndex] in table 'ARMOURs'
---ALTER TABLE [dbo].[ARMOUR]
---ADD CONSTRAINT [PK_ARMOUR]
---PRIMARY KEY CLUSTERED ([uiIndex] ASC);
---GO
+ALTER TABLE [dbo].[ARMOUR]
+ADD CONSTRAINT [PK_ARMOUR]
+PRIMARY KEY CLUSTERED ([uiIndex] ASC);
+GO
 
 -- Creating primary key on [id] in table 'ArmourClasses'
 ALTER TABLE [dbo].[ArmourClass]
@@ -836,11 +836,11 @@ ADD CONSTRAINT [PK_ExplosionType]
 PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
----- Creating primary key on [uiIndex] in table 'EXPLOSIVEs'
---ALTER TABLE [dbo].[EXPLOSIVE]
---ADD CONSTRAINT [PK_EXPLOSIVE]
---PRIMARY KEY CLUSTERED ([uiIndex] ASC);
---GO
+-- Creating primary key on [uiIndex] in table 'EXPLOSIVEs'
+ALTER TABLE [dbo].[EXPLOSIVE]
+ADD CONSTRAINT [PK_EXPLOSIVE]
+PRIMARY KEY CLUSTERED ([uiIndex] ASC);
+GO
 
 -- Creating primary key on [id] in table 'FOODs'
 ALTER TABLE [dbo].[FOOD]
@@ -867,12 +867,10 @@ PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
 -- Creating primary key on [lbeIndex] in table 'LOADBEARINGEQUIPMENTs'
---ALTER TABLE [dbo].[LOADBEARINGEQUIPMENT]
---ADD CONSTRAINT [PK_LOADBEARINGEQUIPMENT]
---PRIMARY KEY CLUSTERED ([lbeIndex] ASC);
---GO
-
--- Creating primary key on [id] in table 'NasLayoutClasses'
+ALTER TABLE [dbo].[LOADBEARINGEQUIPMENT]
+ADD CONSTRAINT [PK_LOADBEARINGEQUIPMENT]
+PRIMARY KEY CLUSTERED ([lbeIndex] ASC);
+GO
 
 -- Creating primary key on [id] in table 'TypeOfDamages'
 ALTER TABLE [dbo].[TypeOfDamage]
@@ -882,9 +880,10 @@ GO
 
 -- Creating primary key on [uiIndex] in table 'WEAPONs'
 ALTER TABLE [dbo].[WEAPON]
-ADD CONSTRAINT [UK_WEAPON]
-UNIQUE ([uiIndex] ASC);
+ADD CONSTRAINT [PK_WEAPON]
+PRIMARY KEY CLUSTERED ([uiIndex] ASC);
 GO
+
 
 -- Creating primary key on [id] in table 'WeaponClasses'
 ALTER TABLE [dbo].[WeaponClass]
@@ -930,8 +929,8 @@ GO
 
 -- Creating primary key on [uiIndex] in table 'Attachments'
 ALTER TABLE [dbo].[Attachment]
-ADD CONSTRAINT [UK_Attachment]
-UNIQUE ([uiIndex] ASC);
+ADD CONSTRAINT [PK_Attachment]
+PRIMARY KEY CLUSTERED ([uiIndex] ASC);
 GO
 
 ALTER TABLE [dbo].[Battery]
@@ -1984,12 +1983,14 @@ CREATE PROCEDURE dbo.NEW_ITEM (@name VARCHAR(80),
 
 AS
 BEGIN
-  DECLARE @newID INT
+
   -- SET NOCOUNT ON added to prevent extra result sets from
   -- interfering with SELECT statements.
   SET NOCOUNT ON;
 
+  DECLARE @newID INT
   DECLARE @IDClass INT
+  
   SET @IDClass = (SELECT
     ic.id
   FROM ItemClass ic
@@ -2000,20 +2001,20 @@ BEGIN
   SELECT
     @newID = @@identity
 
-  IF (@class_ofItem = 'gun')
+  IF (@class_ofItem = N'Gun')
   BEGIN
     INSERT INTO Item1.dbo.WEAPON (uiIndex, szWeaponName, ubWeaponClass, ubWeaponType)
       VALUES (@newID, @name, 5, 23)
   END
 
   ELSE
-  IF (@class_ofItem = 'Attachment')
+  IF (@class_ofItem = N'Attachment')
   BEGIN
     INSERT INTO Item1.dbo.Attachment (uiIndex, szAttName)
       VALUES (@newID, @name)
   END
 
-  SET @Returns = @@identity
+  SET @Returns = @newID
 
 END
 --http://www.cyberguru.ru/dotnet/ado-net/entity-framework-faq.html
@@ -2030,8 +2031,8 @@ BEGIN
     @newID = @@identity
 
   SET NOCOUNT ON;
-  INSERT INTO Item1.dbo.Attachment (uiIndex , szAttName, G_AttachClass, G_SubAttachClass, id_Attachmentmount)
-    VALUES (@newID,@name, @G_att_class, @G_sub_att, @id_att_mount)
+  INSERT INTO Item1.dbo.Attachment (uiIndex, szAttName, G_AttachClass, G_SubAttachClass, id_Attachmentmount)
+    VALUES (@newID, @name, @G_att_class, @G_sub_att, @id_att_mount)
 END
 --http://www.cyberguru.ru/dotnet/ado-net/entity-framework-faq.html
 GO

@@ -29,6 +29,12 @@ namespace Item_WPF
      
      #endregion
      
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public WEAPON()
+        {
+            this.AvailableAttachSlots = new HashSet<AvailableAttachSlot>();
+        }
+    
         private int _uiIndex;
      public int uiIndex 
      { 
@@ -650,6 +656,17 @@ namespace Item_WPF
                         set
                         { if(_AMMO != value)
                            {    _AMMO = value;    OnPropertyChanged("AMMO");   }
+                            }
+                         } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<AvailableAttachSlot> _AvailableAttachSlots;
+                public virtual ICollection<AvailableAttachSlot> AvailableAttachSlots
+                        {
+                        get
+                            { return _AvailableAttachSlots; } 
+                        set
+                        { if(_AvailableAttachSlots != value)
+                           {    _AvailableAttachSlots = value;    OnPropertyChanged("AvailableAttachSlots");   }
                             }
                          } 
         private ITEM _ITEM;

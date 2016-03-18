@@ -51,16 +51,9 @@ namespace Item_WPF.MVVM.ViewModels
         public WeaponEditViewModel(ITEM itemselect)
         {
             _context = new item1Entities();
-
             ItemLoad = itemselect;
-
-            WeaponLoad = ItemLoad.WEAPONs.First();
-               // _context.WEAPONs.First(p => p.uiIndex == itemselect);
-
-           // WeaponLoad = (from p in _context.WEAPONs
-                       //   where p.uiIndex == ItemLoad.ubClassIndex
-                       //   select p).First();
-
+            WeaponLoad = ItemLoad.WEAPON;
+                       
             TlCollection = new ObservableCollection<TL>(_context.TLs);
             LccCollection = new ObservableCollection<LC>(_context.LCs);
 

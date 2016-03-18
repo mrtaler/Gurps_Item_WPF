@@ -29,6 +29,12 @@ namespace Item_WPF
      
      #endregion
      
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Attachment()
+        {
+            this.G_AvAttachClass = new HashSet<G_AvAttachClass>();
+        }
+    
         private int _uiIndex;
      public int uiIndex 
      { 
@@ -931,16 +937,6 @@ namespace Item_WPF
      }
      
     
-        private AttachmentClass _AttachmentClass;
-                public virtual AttachmentClass AttachmentClass
-                        {
-                        get
-                            { return _AttachmentClass; } 
-                        set
-                        { if(_AttachmentClass != value)
-                           {    _AttachmentClass = value;    OnPropertyChanged("AttachmentClass");   }
-                            }
-                         } 
         private Attachmentmount _Attachmentmount1;
                 public virtual Attachmentmount Attachmentmount1
                         {
@@ -959,6 +955,27 @@ namespace Item_WPF
                         set
                         { if(_ITEM != value)
                            {    _ITEM = value;    OnPropertyChanged("ITEM");   }
+                            }
+                         } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<G_AvAttachClass> _G_AvAttachClass;
+                public virtual ICollection<G_AvAttachClass> G_AvAttachClass
+                        {
+                        get
+                            { return _G_AvAttachClass; } 
+                        set
+                        { if(_G_AvAttachClass != value)
+                           {    _G_AvAttachClass = value;    OnPropertyChanged("G_AvAttachClass");   }
+                            }
+                         } 
+        private AttachmentClass _AttachmentClass;
+                public virtual AttachmentClass AttachmentClass
+                        {
+                        get
+                            { return _AttachmentClass; } 
+                        set
+                        { if(_AttachmentClass != value)
+                           {    _AttachmentClass = value;    OnPropertyChanged("AttachmentClass");   }
                             }
                          } 
     }

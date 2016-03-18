@@ -48,17 +48,9 @@
           <Property Name="Follow_Up" Type="varchar" MaxLength="50" />
           <Property Name="Linked" Type="varchar" MaxLength="50" />
         </EntityType>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "item1.dbo.ARMOUR" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="ARMOUR">
           <Key>
             <PropertyRef Name="uiIndex" />
-            <PropertyRef Name="ubArmourClass" />
-            <PropertyRef Name="ubProtection" />
-            <PropertyRef Name="ubCoverage" />
-            <PropertyRef Name="ubDegradePercent" />
-            <PropertyRef Name="FlakJacket" />
-            <PropertyRef Name="LeatherJacket" />
           </Key>
           <Property Name="uiIndex" Type="int" Nullable="false" />
           <Property Name="ubArmourClass" Type="int" Nullable="false" />
@@ -75,29 +67,9 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "item1.dbo.Attachment" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="Attachment">
           <Key>
             <PropertyRef Name="uiIndex" />
-            <PropertyRef Name="szAttName" />
-            <PropertyRef Name="rAttachmentClass" />
-            <PropertyRef Name="HiddenAttachment" />
-            <PropertyRef Name="HideMuzzleFlash" />
-            <PropertyRef Name="G_SubAttachClass" />
-            <PropertyRef Name="G_AttachClass" />
-            <PropertyRef Name="Fix" />
-            <PropertyRef Name="Tritium" />
-            <PropertyRef Name="id_Attachmentmount" />
-            <PropertyRef Name="ImpVisSights" />
-            <PropertyRef Name="BlockIronSight" />
-            <PropertyRef Name="Collimator" />
-            <PropertyRef Name="Reflex" />
-            <PropertyRef Name="Targetingprogram" />
-            <PropertyRef Name="Laserrangefinder" />
-            <PropertyRef Name="NeedIRillumination" />
-            <PropertyRef Name="Infravision" />
-            <PropertyRef Name="IRFilter" />
           </Key>
           <Property Name="uiIndex" Type="int" Nullable="false" />
           <Property Name="szAttName" Type="varchar" MaxLength="80" Nullable="false" />
@@ -264,32 +236,9 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="25" Nullable="false" />
         </EntityType>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "item1.dbo.EXPLOSIVE" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="EXPLOSIVE">
           <Key>
             <PropertyRef Name="uiIndex" />
-            <PropertyRef Name="ubType" />
-            <PropertyRef Name="ubDamage" />
-            <PropertyRef Name="ubStunDamage" />
-            <PropertyRef Name="ubRadius" />
-            <PropertyRef Name="ubDuration" />
-            <PropertyRef Name="ubStartRadius" />
-            <PropertyRef Name="ubMagSize" />
-            <PropertyRef Name="usNumFragments" />
-            <PropertyRef Name="ubFragType" />
-            <PropertyRef Name="ubFragDamage" />
-            <PropertyRef Name="ubFragRange" />
-            <PropertyRef Name="ubHorizontalDegree" />
-            <PropertyRef Name="ubVerticalDegree" />
-            <PropertyRef Name="bIndoorModifier" />
-            <PropertyRef Name="fExplodeOnImpact" />
-            <PropertyRef Name="GLGrenade" />
-            <PropertyRef Name="RLGrenade" />
-            <PropertyRef Name="Mine" />
-            <PropertyRef Name="Flare" />
-            <PropertyRef Name="Directional" />
-            <PropertyRef Name="ShapedCharge" />
           </Key>
           <Property Name="uiIndex" Type="int" Nullable="false" />
           <Property Name="ubType" Type="int" Nullable="false" />
@@ -415,7 +364,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="70" Nullable="false" />
         </EntityType>
-        <EntityType Name="laserColorEf">
+        <EntityType Name="LaserColorEf">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -439,28 +388,9 @@
           <Property Name="ShortDes" Type="nvarchar" MaxLength="15" />
           <Property Name="Description" Type="nvarchar" MaxLength="300" />
         </EntityType>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "item1.dbo.LOADBEARINGEQUIPMENT" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="LOADBEARINGEQUIPMENT">
           <Key>
             <PropertyRef Name="lbeIndex" />
-            <PropertyRef Name="LBEClass" />
-            <PropertyRef Name="lbeCombo" />
-            <PropertyRef Name="lbeFilledSize" />
-            <PropertyRef Name="lbeAvailableVolume" />
-            <PropertyRef Name="lbePocketsAvailable" />
-            <PropertyRef Name="lbePocketIndex1" />
-            <PropertyRef Name="lbePocketIndex2" />
-            <PropertyRef Name="lbePocketIndex3" />
-            <PropertyRef Name="lbePocketIndex4" />
-            <PropertyRef Name="lbePocketIndex5" />
-            <PropertyRef Name="lbePocketIndex6" />
-            <PropertyRef Name="lbePocketIndex7" />
-            <PropertyRef Name="lbePocketIndex8" />
-            <PropertyRef Name="lbePocketIndex9" />
-            <PropertyRef Name="lbePocketIndex10" />
-            <PropertyRef Name="lbePocketIndex11" />
-            <PropertyRef Name="lbePocketIndex12" />
           </Key>
           <Property Name="lbeIndex" Type="int" Nullable="false" />
           <Property Name="LBEClass" Type="int" Nullable="false" />
@@ -499,8 +429,6 @@
           <Property Name="LongName" Type="varchar" MaxLength="30" />
           <Property Name="mDamage" Type="varchar" MaxLength="5" Nullable="false" />
         </EntityType>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "item1.dbo.WEAPON" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="WEAPON">
           <Key>
             <PropertyRef Name="uiIndex" />
@@ -573,7 +501,7 @@
           <End Role="ITEM" Type="Self.ITEM" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="ARMOUR" Type="Self.ARMOUR" Multiplicity="*" />
+          <End Role="ARMOUR" Type="Self.ARMOUR" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="ITEM">
               <PropertyRef Name="uiIndex" />
@@ -599,7 +527,7 @@
           <End Role="ITEM" Type="Self.ITEM" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Attachment" Type="Self.Attachment" Multiplicity="*" />
+          <End Role="Attachment" Type="Self.Attachment" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="ITEM">
               <PropertyRef Name="uiIndex" />
@@ -633,9 +561,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6035: В связи "FK_AVeWeaponId" имеются столбцы, которые не являются частью ключа таблицы на первичной стороне связи. Связь исключена.
-        <Association Name="FK_AVeWeaponId" />-->
+        <Association Name="FK_AVeWeaponId">
+          <End Role="WEAPON" Type="Self.WEAPON" Multiplicity="1" />
+          <End Role="AvailableAttachSlot" Type="Self.AvailableAttachSlot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WEAPON">
+              <PropertyRef Name="uiIndex" />
+            </Principal>
+            <Dependent Role="AvailableAttachSlot">
+              <PropertyRef Name="rWeaponId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Calibre">
           <End Role="AMMO" Type="Self.AMMO" Multiplicity="1" />
           <End Role="WEAPON" Type="Self.WEAPON" Multiplicity="*" />
@@ -664,7 +601,7 @@
           <End Role="ITEM" Type="Self.ITEM" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="EXPLOSIVE" Type="Self.EXPLOSIVE" Multiplicity="*" />
+          <End Role="EXPLOSIVE" Type="Self.EXPLOSIVE" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="ITEM">
               <PropertyRef Name="uiIndex" />
@@ -674,9 +611,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6035: В связи "FK_G_AvAttachClass_Attachment" имеются столбцы, которые не являются частью ключа таблицы на первичной стороне связи. Связь исключена.
-        <Association Name="FK_G_AvAttachClass_Attachment" />-->
+        <Association Name="FK_G_AvAttachClass_Attachment">
+          <End Role="Attachment" Type="Self.Attachment" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="G_AvAttachClass" Type="Self.G_AvAttachClass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Attachment">
+              <PropertyRef Name="uiIndex" />
+            </Principal>
+            <Dependent Role="G_AvAttachClass">
+              <PropertyRef Name="id_attach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_G_AvAttachClass_G_SubAttachClass">
           <End Role="G_SubAttachClass" Type="Self.G_SubAttachClass" Multiplicity="1" />
           <End Role="G_AvAttachClass" Type="Self.G_AvAttachClass" Multiplicity="*" />
@@ -801,7 +749,7 @@
           <End Role="ITEM" Type="Self.ITEM" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="LOADBEARINGEQUIPMENT" Type="Self.LOADBEARINGEQUIPMENT" Multiplicity="*" />
+          <End Role="LOADBEARINGEQUIPMENT" Type="Self.LOADBEARINGEQUIPMENT" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="ITEM">
               <PropertyRef Name="uiIndex" />
@@ -827,7 +775,7 @@
           <End Role="ITEM" Type="Self.ITEM" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="WEAPON" Type="Self.WEAPON" Multiplicity="*" />
+          <End Role="WEAPON" Type="Self.WEAPON" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="ITEM">
               <PropertyRef Name="uiIndex" />
@@ -887,7 +835,9 @@
         <EntityContainer Name="Хранилище item1ModelContainer">
           <EntitySet Name="AMMO" EntityType="Self.AMMO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AMMOUPGRATES" EntityType="Self.AMMOUPGRATES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ARMOUR" EntityType="Self.ARMOUR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ArmourClass" EntityType="Self.ArmourClass" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Attachment" EntityType="Self.Attachment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AttachmentClass" EntityType="Self.AttachmentClass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Attachmentmount" EntityType="Self.Attachmentmount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ATTACHMENTSLOT" EntityType="Self.ATTACHMENTSLOT" Schema="dbo" store:Type="Tables" />
@@ -900,175 +850,22 @@
           <EntitySet Name="Drug" EntityType="Self.Drug" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DrugType" EntityType="Self.DrugType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ExplosionType" EntityType="Self.ExplosionType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EXPLOSIVE" EntityType="Self.EXPLOSIVE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FOOD" EntityType="Self.FOOD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="G_AttachClass" EntityType="Self.G_AttachClass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="G_AvAttachClass" EntityType="Self.G_AvAttachClass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="G_SubAttachClass" EntityType="Self.G_SubAttachClass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITEM" EntityType="Self.ITEM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ItemClass" EntityType="Self.ItemClass" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="laserColorEf" EntityType="Self.laserColorEf" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LaserColorEf" EntityType="Self.LaserColorEf" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LBEClass" EntityType="Self.LBEClass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LC" EntityType="Self.LC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOADBEARINGEQUIPMENT" EntityType="Self.LOADBEARINGEQUIPMENT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TL" EntityType="Self.TL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypeOfDamage" EntityType="Self.TypeOfDamage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WEAPON" EntityType="Self.WEAPON" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WeaponClass" EntityType="Self.WeaponClass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WeaponType" EntityType="Self.WeaponType" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ARMOUR" EntityType="Self.ARMOUR" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ARMOUR].[uiIndex] AS [uiIndex], 
-    [ARMOUR].[ubArmourClass] AS [ubArmourClass], 
-    [ARMOUR].[ubProtection] AS [ubProtection], 
-    [ARMOUR].[ubCoverage] AS [ubCoverage], 
-    [ARMOUR].[ubDegradePercent] AS [ubDegradePercent], 
-    [ARMOUR].[FlakJacket] AS [FlakJacket], 
-    [ARMOUR].[LeatherJacket] AS [LeatherJacket]
-    FROM [dbo].[ARMOUR] AS [ARMOUR]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Attachment" EntityType="Self.Attachment" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Attachment].[uiIndex] AS [uiIndex], 
-    [Attachment].[szAttName] AS [szAttName], 
-    [Attachment].[rAttachmentClass] AS [rAttachmentClass], 
-    [Attachment].[Attachmentmount] AS [Attachmentmount], 
-    [Attachment].[HiddenAttachment] AS [HiddenAttachment], 
-    [Attachment].[NoiseReduction] AS [NoiseReduction], 
-    [Attachment].[HideMuzzleFlash] AS [HideMuzzleFlash], 
-    [Attachment].[RangeBonus] AS [RangeBonus], 
-    [Attachment].[AimBonus] AS [AimBonus], 
-    [Attachment].[MinRangeForAimBonus] AS [MinRangeForAimBonus], 
-    [Attachment].[MagSizeBonus] AS [MagSizeBonus], 
-    [Attachment].[BurstSizeBonus] AS [BurstSizeBonus], 
-    [Attachment].[RateOfFireBonus] AS [RateOfFireBonus], 
-    [Attachment].[DamageBonus] AS [DamageBonus], 
-    [Attachment].[ScopeMagFactor] AS [ScopeMagFactor], 
-    [Attachment].[HearingRangeBonus] AS [HearingRangeBonus], 
-    [Attachment].[VisionRangeBonus] AS [VisionRangeBonus], 
-    [Attachment].[NightVisionRangeBonus] AS [NightVisionRangeBonus], 
-    [Attachment].[DayVisionRangeBonus] AS [DayVisionRangeBonus], 
-    [Attachment].[CaveVisionRangeBonus] AS [CaveVisionRangeBonus], 
-    [Attachment].[BrightLightVisionRangeBonus] AS [BrightLightVisionRangeBonus], 
-    [Attachment].[PercentTunnelVision] AS [PercentTunnelVision], 
-    [Attachment].[FlashLightRange] AS [FlashLightRange], 
-    [Attachment].[RecoilModifier] AS [RecoilModifier], 
-    [Attachment].[G_SubAttachClass] AS [G_SubAttachClass], 
-    [Attachment].[G_AttachClass] AS [G_AttachClass], 
-    [Attachment].[Darkness] AS [Darkness], 
-    [Attachment].[Bulk_add] AS [Bulk_add], 
-    [Attachment].[Fix] AS [Fix], 
-    [Attachment].[BatTimeWork] AS [BatTimeWork], 
-    [Attachment].[Tritium] AS [Tritium], 
-    [Attachment].[ScopeMagMin] AS [ScopeMagMin], 
-    [Attachment].[ScopeMagMax] AS [ScopeMagMax], 
-    [Attachment].[AccAddmax] AS [AccAddmax], 
-    [Attachment].[id_Attachmentmount] AS [id_Attachmentmount], 
-    [Attachment].[ImpVisSights] AS [ImpVisSights], 
-    [Attachment].[BlockIronSight] AS [BlockIronSight], 
-    [Attachment].[Collimator] AS [Collimator], 
-    [Attachment].[Reflex] AS [Reflex], 
-    [Attachment].[Targetingprogram] AS [Targetingprogram], 
-    [Attachment].[Laserrangefinder] AS [Laserrangefinder], 
-    [Attachment].[LaserRFrange] AS [LaserRFrange], 
-    [Attachment].[LaserRFAcc] AS [LaserRFAcc], 
-    [Attachment].[NightVision] AS [NightVision], 
-    [Attachment].[NeedIRillumination] AS [NeedIRillumination], 
-    [Attachment].[Infravision] AS [Infravision], 
-    [Attachment].[IRFilter] AS [IRFilter], 
-    [Attachment].[LightRange] AS [LightRange], 
-    [Attachment].[IRLigRange] AS [IRLigRange], 
-    [Attachment].[LaserRange] AS [LaserRange], 
-    [Attachment].[LaserColor] AS [LaserColor], 
-    [Attachment].[laserColorEf] AS [laserColorEf], 
-    [Attachment].[usedBatType] AS [usedBatType]
-    FROM [dbo].[Attachment] AS [Attachment]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="EXPLOSIVE" EntityType="Self.EXPLOSIVE" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [EXPLOSIVE].[uiIndex] AS [uiIndex], 
-    [EXPLOSIVE].[ubType] AS [ubType], 
-    [EXPLOSIVE].[ubDamage] AS [ubDamage], 
-    [EXPLOSIVE].[ubStunDamage] AS [ubStunDamage], 
-    [EXPLOSIVE].[ubRadius] AS [ubRadius], 
-    [EXPLOSIVE].[ubDuration] AS [ubDuration], 
-    [EXPLOSIVE].[ubStartRadius] AS [ubStartRadius], 
-    [EXPLOSIVE].[ubMagSize] AS [ubMagSize], 
-    [EXPLOSIVE].[usNumFragments] AS [usNumFragments], 
-    [EXPLOSIVE].[ubFragType] AS [ubFragType], 
-    [EXPLOSIVE].[ubFragDamage] AS [ubFragDamage], 
-    [EXPLOSIVE].[ubFragRange] AS [ubFragRange], 
-    [EXPLOSIVE].[ubHorizontalDegree] AS [ubHorizontalDegree], 
-    [EXPLOSIVE].[ubVerticalDegree] AS [ubVerticalDegree], 
-    [EXPLOSIVE].[bIndoorModifier] AS [bIndoorModifier], 
-    [EXPLOSIVE].[fExplodeOnImpact] AS [fExplodeOnImpact], 
-    [EXPLOSIVE].[GLGrenade] AS [GLGrenade], 
-    [EXPLOSIVE].[RLGrenade] AS [RLGrenade], 
-    [EXPLOSIVE].[Mine] AS [Mine], 
-    [EXPLOSIVE].[Flare] AS [Flare], 
-    [EXPLOSIVE].[Directional] AS [Directional], 
-    [EXPLOSIVE].[ShapedCharge] AS [ShapedCharge]
-    FROM [dbo].[EXPLOSIVE] AS [EXPLOSIVE]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="LOADBEARINGEQUIPMENT" EntityType="Self.LOADBEARINGEQUIPMENT" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [LOADBEARINGEQUIPMENT].[lbeIndex] AS [lbeIndex], 
-    [LOADBEARINGEQUIPMENT].[LBEClass] AS [LBEClass], 
-    [LOADBEARINGEQUIPMENT].[lbeCombo] AS [lbeCombo], 
-    [LOADBEARINGEQUIPMENT].[lbeFilledSize] AS [lbeFilledSize], 
-    [LOADBEARINGEQUIPMENT].[lbeAvailableVolume] AS [lbeAvailableVolume], 
-    [LOADBEARINGEQUIPMENT].[lbePocketsAvailable] AS [lbePocketsAvailable], 
-    [LOADBEARINGEQUIPMENT].[lbePocketIndex1] AS [lbePocketIndex1], 
-    [LOADBEARINGEQUIPMENT].[lbePocketIndex2] AS [lbePocketIndex2], 
-    [LOADBEARINGEQUIPMENT].[lbePocketIndex3] AS [lbePocketIndex3], 
-    [LOADBEARINGEQUIPMENT].[lbePocketIndex4] AS [lbePocketIndex4], 
-    [LOADBEARINGEQUIPMENT].[lbePocketIndex5] AS [lbePocketIndex5], 
-    [LOADBEARINGEQUIPMENT].[lbePocketIndex6] AS [lbePocketIndex6], 
-    [LOADBEARINGEQUIPMENT].[lbePocketIndex7] AS [lbePocketIndex7], 
-    [LOADBEARINGEQUIPMENT].[lbePocketIndex8] AS [lbePocketIndex8], 
-    [LOADBEARINGEQUIPMENT].[lbePocketIndex9] AS [lbePocketIndex9], 
-    [LOADBEARINGEQUIPMENT].[lbePocketIndex10] AS [lbePocketIndex10], 
-    [LOADBEARINGEQUIPMENT].[lbePocketIndex11] AS [lbePocketIndex11], 
-    [LOADBEARINGEQUIPMENT].[lbePocketIndex12] AS [lbePocketIndex12]
-    FROM [dbo].[LOADBEARINGEQUIPMENT] AS [LOADBEARINGEQUIPMENT]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="WEAPON" EntityType="Self.WEAPON" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [WEAPON].[uiIndex] AS [uiIndex], 
-    [WEAPON].[szWeaponName] AS [szWeaponName], 
-    [WEAPON].[ubWeaponClass] AS [ubWeaponClass], 
-    [WEAPON].[ubWeaponType] AS [ubWeaponType], 
-    [WEAPON].[ubCalibre] AS [ubCalibre], 
-    [WEAPON].[Damage] AS [Damage], 
-    [WEAPON].[ubTypeOfDamage] AS [ubTypeOfDamage], 
-    [WEAPON].[DefACC] AS [DefACC], 
-    [WEAPON].[Half_Range] AS [Half_Range], 
-    [WEAPON].[FullRange] AS [FullRange], 
-    [WEAPON].[MinRange] AS [MinRange], 
-    [WEAPON].[AWeight] AS [AWeight], 
-    [WEAPON].[Arm_Division] AS [Arm_Division], 
-    [WEAPON].[ROF] AS [ROF], 
-    [WEAPON].[Full_auto] AS [Full_auto], 
-    [WEAPON].[ROF_for_Sh] AS [ROF_for_Sh], 
-    [WEAPON].[Shots] AS [Shots], 
-    [WEAPON].[Time_For_reload] AS [Time_For_reload], 
-    [WEAPON].[single_reload] AS [single_reload], 
-    [WEAPON].[Mount] AS [Mount], 
-    [WEAPON].[Recoil] AS [Recoil], 
-    [WEAPON].[Linked] AS [Linked], 
-    [WEAPON].[Follow_Up] AS [Follow_Up], 
-    [WEAPON].[HeavyWeapon] AS [HeavyWeapon], 
-    [WEAPON].[Add_in_Chamber] AS [Add_in_Chamber], 
-    [WEAPON].[CutOff_shots] AS [CutOff_shots], 
-    [WEAPON].[CutOff_shotsCount] AS [CutOff_shotsCount], 
-    [WEAPON].[GrenadeLauncher] AS [GrenadeLauncher], 
-    [WEAPON].[RocketLauncher] AS [RocketLauncher], 
-    [WEAPON].[Mortar] AS [Mortar], 
-    [WEAPON].[Cannon] AS [Cannon], 
-    [WEAPON].[SingleShot_RocketLauncher] AS [SingleShot_RocketLauncher], 
-    [WEAPON].[RocketRifle] AS [RocketRifle], 
-    [WEAPON].[Bulkfolded] AS [Bulkfolded], 
-    [WEAPON].[HCROF] AS [HCROF], 
-    [WEAPON].[HCROFValue] AS [HCROFValue]
-    FROM [dbo].[WEAPON] AS [WEAPON]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_ARMOUR" Association="Self.FK_ARMOUR">
             <End Role="ArmourClass" EntitySet="ArmourClass" />
             <End Role="ARMOUR" EntitySet="ARMOUR" />
@@ -1093,6 +890,10 @@
             <End Role="Attachmentmount" EntitySet="Attachmentmount" />
             <End Role="AvailableAttachSlot" EntitySet="AvailableAttachSlot" />
           </AssociationSet>
+          <AssociationSet Name="FK_AVeWeaponId" Association="Self.FK_AVeWeaponId">
+            <End Role="WEAPON" EntitySet="WEAPON" />
+            <End Role="AvailableAttachSlot" EntitySet="AvailableAttachSlot" />
+          </AssociationSet>
           <AssociationSet Name="FK_Calibre" Association="Self.FK_Calibre">
             <End Role="AMMO" EntitySet="AMMO" />
             <End Role="WEAPON" EntitySet="WEAPON" />
@@ -1104,6 +905,10 @@
           <AssociationSet Name="FK_EXPLOSIVE_ITEM_uiIndex" Association="Self.FK_EXPLOSIVE_ITEM_uiIndex">
             <End Role="ITEM" EntitySet="ITEM" />
             <End Role="EXPLOSIVE" EntitySet="EXPLOSIVE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_AvAttachClass_Attachment" Association="Self.FK_G_AvAttachClass_Attachment">
+            <End Role="Attachment" EntitySet="Attachment" />
+            <End Role="G_AvAttachClass" EntitySet="G_AvAttachClass" />
           </AssociationSet>
           <AssociationSet Name="FK_G_AvAttachClass_G_SubAttachClass" Association="Self.FK_G_AvAttachClass_G_SubAttachClass">
             <End Role="G_SubAttachClass" EntitySet="G_SubAttachClass" />
@@ -1175,11 +980,6 @@
     <edmx:ConceptualModels>
       <Schema Namespace="item1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="item1Entities" annotation:LazyLoadingEnabled="true">
-          <FunctionImport Name="NEW_ITEM">
-            <Parameter Name="name" Mode="In" Type="String" />
-            <Parameter Name="class_ofItem" Mode="In" Type="String" />
-            <Parameter Name="Returns" Mode="InOut" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="NEW_ITEM_att">
             <Parameter Name="name" Mode="In" Type="String" />
             <Parameter Name="G_att_class" Mode="In" Type="Int32" />
@@ -1188,7 +988,9 @@
           </FunctionImport>
           <EntitySet Name="AMMOes" EntityType="item1Model.AMMO" />
           <EntitySet Name="AMMOUPGRATES" EntityType="item1Model.AMMOUPGRATE" />
+          <EntitySet Name="ARMOURs" EntityType="item1Model.ARMOUR" />
           <EntitySet Name="ArmourClasses" EntityType="item1Model.ArmourClass" />
+          <EntitySet Name="Attachments" EntityType="item1Model.Attachment" />
           <EntitySet Name="AttachmentClasses" EntityType="item1Model.AttachmentClass" />
           <EntitySet Name="Attachmentmounts" EntityType="item1Model.Attachmentmount" />
           <EntitySet Name="ATTACHMENTSLOTs" EntityType="item1Model.ATTACHMENTSLOT" />
@@ -1201,24 +1003,22 @@
           <EntitySet Name="Drugs" EntityType="item1Model.Drug" />
           <EntitySet Name="DrugTypes" EntityType="item1Model.DrugType" />
           <EntitySet Name="ExplosionTypes" EntityType="item1Model.ExplosionType" />
+          <EntitySet Name="EXPLOSIVEs" EntityType="item1Model.EXPLOSIVE" />
           <EntitySet Name="FOODs" EntityType="item1Model.FOOD" />
           <EntitySet Name="G_AttachClass" EntityType="item1Model.G_AttachClass" />
           <EntitySet Name="G_AvAttachClass" EntityType="item1Model.G_AvAttachClass" />
           <EntitySet Name="G_SubAttachClass" EntityType="item1Model.G_SubAttachClass" />
           <EntitySet Name="ITEMs" EntityType="item1Model.ITEM" />
           <EntitySet Name="ItemClasses" EntityType="item1Model.ItemClass" />
-          <EntitySet Name="laserColorEfs" EntityType="item1Model.laserColorEf" />
+          <EntitySet Name="LaserColorEfs" EntityType="item1Model.LaserColorEf" />
           <EntitySet Name="LBEClasses" EntityType="item1Model.LBEClass" />
           <EntitySet Name="LCs" EntityType="item1Model.LC" />
+          <EntitySet Name="LOADBEARINGEQUIPMENTs" EntityType="item1Model.LOADBEARINGEQUIPMENT" />
           <EntitySet Name="TLs" EntityType="item1Model.TL" />
           <EntitySet Name="TypeOfDamages" EntityType="item1Model.TypeOfDamage" />
+          <EntitySet Name="WEAPONs" EntityType="item1Model.WEAPON" />
           <EntitySet Name="WeaponClasses" EntityType="item1Model.WeaponClass" />
           <EntitySet Name="WeaponTypes" EntityType="item1Model.WeaponType" />
-          <EntitySet Name="ARMOURs" EntityType="item1Model.ARMOUR" />
-          <EntitySet Name="Attachments" EntityType="item1Model.Attachment" />
-          <EntitySet Name="EXPLOSIVEs" EntityType="item1Model.EXPLOSIVE" />
-          <EntitySet Name="LOADBEARINGEQUIPMENTs" EntityType="item1Model.LOADBEARINGEQUIPMENT" />
-          <EntitySet Name="WEAPONs" EntityType="item1Model.WEAPON" />
           <AssociationSet Name="FK_Calibre" Association="item1Model.FK_Calibre">
             <End Role="AMMO" EntitySet="AMMOes" />
             <End Role="WEAPON" EntitySet="WEAPONs" />
@@ -1227,12 +1027,24 @@
             <End Role="ArmourClass" EntitySet="ArmourClasses" />
             <End Role="ARMOUR" EntitySet="ARMOURs" />
           </AssociationSet>
-          <AssociationSet Name="FK_rAttachmentClass" Association="item1Model.FK_rAttachmentClass">
-            <End Role="AttachmentClass" EntitySet="AttachmentClasses" />
-            <End Role="Attachment" EntitySet="Attachments" />
+          <AssociationSet Name="FK_ARMOUR_ITEM_uiIndex" Association="item1Model.FK_ARMOUR_ITEM_uiIndex">
+            <End Role="ITEM" EntitySet="ITEMs" />
+            <End Role="ARMOUR" EntitySet="ARMOURs" />
           </AssociationSet>
           <AssociationSet Name="FK_Attachment_Attachmentmount" Association="item1Model.FK_Attachment_Attachmentmount">
             <End Role="Attachmentmount" EntitySet="Attachmentmounts" />
+            <End Role="Attachment" EntitySet="Attachments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attachment_ITEM_uiIndex" Association="item1Model.FK_Attachment_ITEM_uiIndex">
+            <End Role="ITEM" EntitySet="ITEMs" />
+            <End Role="Attachment" EntitySet="Attachments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_G_AvAttachClass_Attachment" Association="item1Model.FK_G_AvAttachClass_Attachment">
+            <End Role="Attachment" EntitySet="Attachments" />
+            <End Role="G_AvAttachClass" EntitySet="G_AvAttachClass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_rAttachmentClass" Association="item1Model.FK_rAttachmentClass">
+            <End Role="AttachmentClass" EntitySet="AttachmentClasses" />
             <End Role="Attachment" EntitySet="Attachments" />
           </AssociationSet>
           <AssociationSet Name="FK_Attachmentmount_NasAttachmentClass1" Association="item1Model.FK_Attachmentmount_NasAttachmentClass1">
@@ -1247,6 +1059,10 @@
             <End Role="ATTACHMENTSLOT" EntitySet="ATTACHMENTSLOTs" />
             <End Role="G_SubAttachClass" EntitySet="G_SubAttachClass" />
           </AssociationSet>
+          <AssociationSet Name="FK_AVeWeaponId" Association="item1Model.FK_AVeWeaponId">
+            <End Role="WEAPON" EntitySet="WEAPONs" />
+            <End Role="AvailableAttachSlot" EntitySet="AvailableAttachSlots" />
+          </AssociationSet>
           <AssociationSet Name="FK_ITEM_Clothes" Association="item1Model.FK_ITEM_Clothes">
             <End Role="Cloth" EntitySet="Clothes" />
             <End Role="ITEM" EntitySet="ITEMs" />
@@ -1257,6 +1073,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_EXPLOSIVE" Association="item1Model.FK_EXPLOSIVE">
             <End Role="ExplosionType" EntitySet="ExplosionTypes" />
+            <End Role="EXPLOSIVE" EntitySet="EXPLOSIVEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EXPLOSIVE_ITEM_uiIndex" Association="item1Model.FK_EXPLOSIVE_ITEM_uiIndex">
+            <End Role="ITEM" EntitySet="ITEMs" />
             <End Role="EXPLOSIVE" EntitySet="EXPLOSIVEs" />
           </AssociationSet>
           <AssociationSet Name="FK_ITEM_Food" Association="item1Model.FK_ITEM_Food">
@@ -1270,18 +1090,6 @@
           <AssociationSet Name="FK_G_AvAttachClass_G_SubAttachClass" Association="item1Model.FK_G_AvAttachClass_G_SubAttachClass">
             <End Role="G_SubAttachClass" EntitySet="G_SubAttachClass" />
             <End Role="G_AvAttachClass" EntitySet="G_AvAttachClass" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ARMOUR_ITEM_uiIndex" Association="item1Model.FK_ARMOUR_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEMs" />
-            <End Role="ARMOUR" EntitySet="ARMOURs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Attachment_ITEM_uiIndex" Association="item1Model.FK_Attachment_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEMs" />
-            <End Role="Attachment" EntitySet="Attachments" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EXPLOSIVE_ITEM_uiIndex" Association="item1Model.FK_EXPLOSIVE_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEMs" />
-            <End Role="EXPLOSIVE" EntitySet="EXPLOSIVEs" />
           </AssociationSet>
           <AssociationSet Name="FK_Item_ItemClass" Association="item1Model.FK_Item_ItemClass">
             <End Role="ItemClass" EntitySet="ItemClasses" />
@@ -1311,14 +1119,19 @@
             <End Role="TypeOfDamage" EntitySet="TypeOfDamages" />
             <End Role="WEAPON" EntitySet="WEAPONs" />
           </AssociationSet>
-          <AssociationSet Name="FK_WeaponType_WeaponClass" Association="item1Model.FK_WeaponType_WeaponClass">
-            <End Role="WeaponClass" EntitySet="WeaponClasses" />
-            <End Role="WeaponType" EntitySet="WeaponTypes" />
-          </AssociationSet>
           <AssociationSet Name="FK_WeaponType" Association="item1Model.FK_WeaponType">
             <End Role="WeaponType" EntitySet="WeaponTypes" />
             <End Role="WEAPON" EntitySet="WEAPONs" />
           </AssociationSet>
+          <AssociationSet Name="FK_WeaponType_WeaponClass" Association="item1Model.FK_WeaponType_WeaponClass">
+            <End Role="WeaponClass" EntitySet="WeaponClasses" />
+            <End Role="WeaponType" EntitySet="WeaponTypes" />
+          </AssociationSet>
+          <FunctionImport Name="NEW_ITEM">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="class_ofItem" Mode="In" Type="String" />
+            <Parameter Name="Returns" Mode="InOut" Type="Int32" />
+          </FunctionImport>
           </EntityContainer>
         <EntityType Name="AMMO">
           <Key>
@@ -1364,6 +1177,20 @@
           <Property Name="Follow_Up" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Linked" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="ARMOUR">
+          <Key>
+            <PropertyRef Name="uiIndex" />
+          </Key>
+          <Property Name="uiIndex" Type="Int32" Nullable="false" />
+          <Property Name="ubArmourClass" Type="Int32" Nullable="false" />
+          <Property Name="ubProtection" Type="Int32" Nullable="false" />
+          <Property Name="ubCoverage" Type="Int32" Nullable="false" />
+          <Property Name="ubDegradePercent" Type="Int32" Nullable="false" />
+          <Property Name="FlakJacket" Type="Boolean" Nullable="false" />
+          <Property Name="LeatherJacket" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ArmourClass" Relationship="item1Model.FK_ARMOUR" FromRole="ARMOUR" ToRole="ArmourClass" />
+          <NavigationProperty Name="ITEM" Relationship="item1Model.FK_ARMOUR_ITEM_uiIndex" FromRole="ARMOUR" ToRole="ITEM" />
+        </EntityType>
         <EntityType Name="ArmourClass">
           <Key>
             <PropertyRef Name="id" />
@@ -1371,6 +1198,68 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ARMOURs" Relationship="item1Model.FK_ARMOUR" FromRole="ArmourClass" ToRole="ARMOUR" />
+        </EntityType>
+        <EntityType Name="Attachment">
+          <Key>
+            <PropertyRef Name="uiIndex" />
+          </Key>
+          <Property Name="uiIndex" Type="Int32" Nullable="false" />
+          <Property Name="szAttName" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="rAttachmentClass" Type="Int32" Nullable="false" />
+          <Property Name="Attachmentmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HiddenAttachment" Type="Boolean" Nullable="false" />
+          <Property Name="NoiseReduction" Type="Int32" />
+          <Property Name="HideMuzzleFlash" Type="Boolean" Nullable="false" />
+          <Property Name="RangeBonus" Type="Int32" />
+          <Property Name="AimBonus" Type="Int32" />
+          <Property Name="MinRangeForAimBonus" Type="Int32" />
+          <Property Name="MagSizeBonus" Type="Int32" />
+          <Property Name="BurstSizeBonus" Type="Int32" />
+          <Property Name="RateOfFireBonus" Type="Int32" />
+          <Property Name="DamageBonus" Type="Int32" />
+          <Property Name="ScopeMagFactor" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="HearingRangeBonus" Type="Int32" />
+          <Property Name="VisionRangeBonus" Type="Int32" />
+          <Property Name="NightVisionRangeBonus" Type="Int32" />
+          <Property Name="DayVisionRangeBonus" Type="Int32" />
+          <Property Name="CaveVisionRangeBonus" Type="Int32" />
+          <Property Name="BrightLightVisionRangeBonus" Type="Int32" />
+          <Property Name="PercentTunnelVision" Type="Int32" />
+          <Property Name="FlashLightRange" Type="Int32" />
+          <Property Name="RecoilModifier" Type="Int32" />
+          <Property Name="G_SubAttachClass" Type="Int32" Nullable="false" />
+          <Property Name="G_AttachClass" Type="Int32" Nullable="false" />
+          <Property Name="Darkness" Type="Int32" />
+          <Property Name="Bulk_add" Type="Int32" />
+          <Property Name="Fix" Type="Boolean" Nullable="false" />
+          <Property Name="BatTimeWork" Type="Int32" />
+          <Property Name="Tritium" Type="Boolean" Nullable="false" />
+          <Property Name="ScopeMagMin" Type="Int32" />
+          <Property Name="ScopeMagMax" Type="Int32" />
+          <Property Name="AccAddmax" Type="Int32" />
+          <Property Name="id_Attachmentmount" Type="Int32" Nullable="false" />
+          <Property Name="ImpVisSights" Type="Boolean" Nullable="false" />
+          <Property Name="BlockIronSight" Type="Boolean" Nullable="false" />
+          <Property Name="Collimator" Type="Boolean" Nullable="false" />
+          <Property Name="Reflex" Type="Boolean" Nullable="false" />
+          <Property Name="Targetingprogram" Type="Boolean" Nullable="false" />
+          <Property Name="Laserrangefinder" Type="Boolean" Nullable="false" />
+          <Property Name="LaserRFrange" Type="Int32" />
+          <Property Name="LaserRFAcc" Type="Int32" />
+          <Property Name="NightVision" Type="Int32" />
+          <Property Name="NeedIRillumination" Type="Boolean" Nullable="false" />
+          <Property Name="Infravision" Type="Boolean" Nullable="false" />
+          <Property Name="IRFilter" Type="Boolean" Nullable="false" />
+          <Property Name="LightRange" Type="Int32" />
+          <Property Name="IRLigRange" Type="Int32" />
+          <Property Name="LaserRange" Type="Int32" />
+          <Property Name="LaserColor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="laserColorEf" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="usedBatType" Type="Int32" />
+          <NavigationProperty Name="Attachmentmount1" Relationship="item1Model.FK_Attachment_Attachmentmount" FromRole="Attachment" ToRole="Attachmentmount" />
+          <NavigationProperty Name="ITEM" Relationship="item1Model.FK_Attachment_ITEM_uiIndex" FromRole="Attachment" ToRole="ITEM" />
+          <NavigationProperty Name="G_AvAttachClass" Relationship="item1Model.FK_G_AvAttachClass_Attachment" FromRole="Attachment" ToRole="G_AvAttachClass" />
+          <NavigationProperty Name="AttachmentClass" Relationship="item1Model.FK_rAttachmentClass" FromRole="Attachment" ToRole="AttachmentClass" />
         </EntityType>
         <EntityType Name="AttachmentClass">
           <Key>
@@ -1416,6 +1305,7 @@
           <Property Name="rATTACHMENTSLOT" Type="Int32" Nullable="false" />
           <Property Name="rAttachmentmount" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Attachmentmount" Relationship="item1Model.FK_AVeAttachmentmount" FromRole="AvailableAttachSlot" ToRole="Attachmentmount" />
+          <NavigationProperty Name="WEAPON" Relationship="item1Model.FK_AVeWeaponId" FromRole="AvailableAttachSlot" ToRole="WEAPON" />
         </EntityType>
         <EntityType Name="Battery">
           <Key>
@@ -1493,6 +1383,35 @@
           <Property Name="name" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="EXPLOSIVEs" Relationship="item1Model.FK_EXPLOSIVE" FromRole="ExplosionType" ToRole="EXPLOSIVE" />
         </EntityType>
+        <EntityType Name="EXPLOSIVE">
+          <Key>
+            <PropertyRef Name="uiIndex" />
+          </Key>
+          <Property Name="uiIndex" Type="Int32" Nullable="false" />
+          <Property Name="ubType" Type="Int32" Nullable="false" />
+          <Property Name="ubDamage" Type="Int32" Nullable="false" />
+          <Property Name="ubStunDamage" Type="Int32" Nullable="false" />
+          <Property Name="ubRadius" Type="Int32" Nullable="false" />
+          <Property Name="ubDuration" Type="Int32" Nullable="false" />
+          <Property Name="ubStartRadius" Type="Int32" Nullable="false" />
+          <Property Name="ubMagSize" Type="Int32" Nullable="false" />
+          <Property Name="usNumFragments" Type="Int32" Nullable="false" />
+          <Property Name="ubFragType" Type="Int32" Nullable="false" />
+          <Property Name="ubFragDamage" Type="Int32" Nullable="false" />
+          <Property Name="ubFragRange" Type="Int32" Nullable="false" />
+          <Property Name="ubHorizontalDegree" Type="Int32" Nullable="false" />
+          <Property Name="ubVerticalDegree" Type="Int32" Nullable="false" />
+          <Property Name="bIndoorModifier" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="fExplodeOnImpact" Type="Boolean" Nullable="false" />
+          <Property Name="GLGrenade" Type="Boolean" Nullable="false" />
+          <Property Name="RLGrenade" Type="Boolean" Nullable="false" />
+          <Property Name="Mine" Type="Boolean" Nullable="false" />
+          <Property Name="Flare" Type="Boolean" Nullable="false" />
+          <Property Name="Directional" Type="Boolean" Nullable="false" />
+          <Property Name="ShapedCharge" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ExplosionType" Relationship="item1Model.FK_EXPLOSIVE" FromRole="EXPLOSIVE" ToRole="ExplosionType" />
+          <NavigationProperty Name="ITEM" Relationship="item1Model.FK_EXPLOSIVE_ITEM_uiIndex" FromRole="EXPLOSIVE" ToRole="ITEM" />
+        </EntityType>
         <EntityType Name="FOOD">
           <Key>
             <PropertyRef Name="id" />
@@ -1517,6 +1436,7 @@
           <Property Name="id_attach" Type="Int32" Nullable="false" />
           <Property Name="id_GSubClass" Type="Int32" Nullable="false" />
           <Property Name="id_AttachClass" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Attachment" Relationship="item1Model.FK_G_AvAttachClass_Attachment" FromRole="G_AvAttachClass" ToRole="Attachment" />
           <NavigationProperty Name="G_SubAttachClass" Relationship="item1Model.FK_G_AvAttachClass_G_SubAttachClass" FromRole="G_AvAttachClass" ToRole="G_SubAttachClass" />
         </EntityType>
         <EntityType Name="G_SubAttachClass">
@@ -1592,17 +1512,17 @@
           <Property Name="dt" Type="DateTime" Precision="3" />
           <Property Name="Count_of_Bat" Type="Int32" Nullable="false" />
           <Property Name="Works_on_Bat" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ARMOUR" Relationship="item1Model.FK_ARMOUR_ITEM_uiIndex" FromRole="ITEM" ToRole="ARMOUR" />
+          <NavigationProperty Name="Attachment" Relationship="item1Model.FK_Attachment_ITEM_uiIndex" FromRole="ITEM" ToRole="Attachment" />
           <NavigationProperty Name="Cloth" Relationship="item1Model.FK_ITEM_Clothes" FromRole="ITEM" ToRole="Cloth" />
           <NavigationProperty Name="DrugType1" Relationship="item1Model.FK_ITEM_DrugType" FromRole="ITEM" ToRole="DrugType" />
+          <NavigationProperty Name="EXPLOSIVE" Relationship="item1Model.FK_EXPLOSIVE_ITEM_uiIndex" FromRole="ITEM" ToRole="EXPLOSIVE" />
           <NavigationProperty Name="FOOD" Relationship="item1Model.FK_ITEM_Food" FromRole="ITEM" ToRole="FOOD" />
-          <NavigationProperty Name="ARMOURs" Relationship="item1Model.FK_ARMOUR_ITEM_uiIndex" FromRole="ITEM" ToRole="ARMOUR" />
-          <NavigationProperty Name="Attachments" Relationship="item1Model.FK_Attachment_ITEM_uiIndex" FromRole="ITEM" ToRole="Attachment" />
-          <NavigationProperty Name="EXPLOSIVEs" Relationship="item1Model.FK_EXPLOSIVE_ITEM_uiIndex" FromRole="ITEM" ToRole="EXPLOSIVE" />
           <NavigationProperty Name="ItemClass" Relationship="item1Model.FK_Item_ItemClass" FromRole="ITEM" ToRole="ItemClass" />
           <NavigationProperty Name="LC1" Relationship="item1Model.FK_ITEM_LC" FromRole="ITEM" ToRole="LC" />
           <NavigationProperty Name="TL1" Relationship="item1Model.FK_ITEM_TL" FromRole="ITEM" ToRole="TL" />
-          <NavigationProperty Name="LOADBEARINGEQUIPMENTs" Relationship="item1Model.FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex" FromRole="ITEM" ToRole="LOADBEARINGEQUIPMENT" />
-          <NavigationProperty Name="WEAPONs" Relationship="item1Model.FK_WEAPON_ITEM_uiIndex" FromRole="ITEM" ToRole="WEAPON" />
+          <NavigationProperty Name="LOADBEARINGEQUIPMENT" Relationship="item1Model.FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex" FromRole="ITEM" ToRole="LOADBEARINGEQUIPMENT" />
+          <NavigationProperty Name="WEAPON" Relationship="item1Model.FK_WEAPON_ITEM_uiIndex" FromRole="ITEM" ToRole="WEAPON" />
         </EntityType>
         <EntityType Name="ItemClass">
           <Key>
@@ -1612,7 +1532,7 @@
           <Property Name="name" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ITEMs" Relationship="item1Model.FK_Item_ItemClass" FromRole="ItemClass" ToRole="ITEM" />
         </EntityType>
-        <EntityType Name="laserColorEf">
+        <EntityType Name="LaserColorEf">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -1638,213 +1558,9 @@
           <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ITEMs" Relationship="item1Model.FK_ITEM_LC" FromRole="LC" ToRole="ITEM" />
         </EntityType>
-        <EntityType Name="TL">
-          <Key>
-            <PropertyRef Name="Id_Tl" />
-          </Key>
-          <Property Name="Id_Tl" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name_TL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Description" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
-          <Property Name="StartMoney" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="ITEMs" Relationship="item1Model.FK_ITEM_TL" FromRole="TL" ToRole="ITEM" />
-        </EntityType>
-        <EntityType Name="TypeOfDamage">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="LongName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="mDamage" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="WEAPONs" Relationship="item1Model.FK_WEAPON_TypeOfDamage" FromRole="TypeOfDamage" ToRole="WEAPON" />
-        </EntityType>
-        <EntityType Name="WeaponClass">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="WeaponTypes" Relationship="item1Model.FK_WeaponType_WeaponClass" FromRole="WeaponClass" ToRole="WeaponType" />
-        </EntityType>
-        <EntityType Name="WeaponType">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="23" FixedLength="false" Unicode="false" />
-          <Property Name="Class" Type="Int32" />
-          <NavigationProperty Name="WeaponClass" Relationship="item1Model.FK_WeaponType_WeaponClass" FromRole="WeaponType" ToRole="WeaponClass" />
-          <NavigationProperty Name="WEAPONs" Relationship="item1Model.FK_WeaponType" FromRole="WeaponType" ToRole="WEAPON" />
-        </EntityType>
-        <EntityType Name="ARMOUR">
-          <Key>
-            <PropertyRef Name="uiIndex" />
-            <PropertyRef Name="ubArmourClass" />
-            <PropertyRef Name="ubProtection" />
-            <PropertyRef Name="ubCoverage" />
-            <PropertyRef Name="ubDegradePercent" />
-            <PropertyRef Name="FlakJacket" />
-            <PropertyRef Name="LeatherJacket" />
-          </Key>
-          <Property Name="uiIndex" Type="Int32" Nullable="false" />
-          <Property Name="ubArmourClass" Type="Int32" Nullable="false" />
-          <Property Name="ubProtection" Type="Int32" Nullable="false" />
-          <Property Name="ubCoverage" Type="Int32" Nullable="false" />
-          <Property Name="ubDegradePercent" Type="Int32" Nullable="false" />
-          <Property Name="FlakJacket" Type="Boolean" Nullable="false" />
-          <Property Name="LeatherJacket" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="ArmourClass" Relationship="item1Model.FK_ARMOUR" FromRole="ARMOUR" ToRole="ArmourClass" />
-          <NavigationProperty Name="ITEM" Relationship="item1Model.FK_ARMOUR_ITEM_uiIndex" FromRole="ARMOUR" ToRole="ITEM" />
-        </EntityType>
-        <EntityType Name="Attachment">
-          <Key>
-            <PropertyRef Name="uiIndex" />
-            <PropertyRef Name="szAttName" />
-            <PropertyRef Name="rAttachmentClass" />
-            <PropertyRef Name="HiddenAttachment" />
-            <PropertyRef Name="HideMuzzleFlash" />
-            <PropertyRef Name="G_SubAttachClass" />
-            <PropertyRef Name="G_AttachClass" />
-            <PropertyRef Name="Fix" />
-            <PropertyRef Name="Tritium" />
-            <PropertyRef Name="id_Attachmentmount" />
-            <PropertyRef Name="ImpVisSights" />
-            <PropertyRef Name="BlockIronSight" />
-            <PropertyRef Name="Collimator" />
-            <PropertyRef Name="Reflex" />
-            <PropertyRef Name="Targetingprogram" />
-            <PropertyRef Name="Laserrangefinder" />
-            <PropertyRef Name="NeedIRillumination" />
-            <PropertyRef Name="Infravision" />
-            <PropertyRef Name="IRFilter" />
-          </Key>
-          <Property Name="uiIndex" Type="Int32" Nullable="false" />
-          <Property Name="szAttName" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
-          <Property Name="rAttachmentClass" Type="Int32" Nullable="false" />
-          <Property Name="Attachmentmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="HiddenAttachment" Type="Boolean" Nullable="false" />
-          <Property Name="NoiseReduction" Type="Int32" />
-          <Property Name="HideMuzzleFlash" Type="Boolean" Nullable="false" />
-          <Property Name="RangeBonus" Type="Int32" />
-          <Property Name="AimBonus" Type="Int32" />
-          <Property Name="MinRangeForAimBonus" Type="Int32" />
-          <Property Name="MagSizeBonus" Type="Int32" />
-          <Property Name="BurstSizeBonus" Type="Int32" />
-          <Property Name="RateOfFireBonus" Type="Int32" />
-          <Property Name="DamageBonus" Type="Int32" />
-          <Property Name="ScopeMagFactor" Type="Decimal" Precision="4" Scale="2" />
-          <Property Name="HearingRangeBonus" Type="Int32" />
-          <Property Name="VisionRangeBonus" Type="Int32" />
-          <Property Name="NightVisionRangeBonus" Type="Int32" />
-          <Property Name="DayVisionRangeBonus" Type="Int32" />
-          <Property Name="CaveVisionRangeBonus" Type="Int32" />
-          <Property Name="BrightLightVisionRangeBonus" Type="Int32" />
-          <Property Name="PercentTunnelVision" Type="Int32" />
-          <Property Name="FlashLightRange" Type="Int32" />
-          <Property Name="RecoilModifier" Type="Int32" />
-          <Property Name="G_SubAttachClass" Type="Int32" Nullable="false" />
-          <Property Name="G_AttachClass" Type="Int32" Nullable="false" />
-          <Property Name="Darkness" Type="Int32" />
-          <Property Name="Bulk_add" Type="Int32" />
-          <Property Name="Fix" Type="Boolean" Nullable="false" />
-          <Property Name="BatTimeWork" Type="Int32" />
-          <Property Name="Tritium" Type="Boolean" Nullable="false" />
-          <Property Name="ScopeMagMin" Type="Int32" />
-          <Property Name="ScopeMagMax" Type="Int32" />
-          <Property Name="AccAddmax" Type="Int32" />
-          <Property Name="id_Attachmentmount" Type="Int32" Nullable="false" />
-          <Property Name="ImpVisSights" Type="Boolean" Nullable="false" />
-          <Property Name="BlockIronSight" Type="Boolean" Nullable="false" />
-          <Property Name="Collimator" Type="Boolean" Nullable="false" />
-          <Property Name="Reflex" Type="Boolean" Nullable="false" />
-          <Property Name="Targetingprogram" Type="Boolean" Nullable="false" />
-          <Property Name="Laserrangefinder" Type="Boolean" Nullable="false" />
-          <Property Name="LaserRFrange" Type="Int32" />
-          <Property Name="LaserRFAcc" Type="Int32" />
-          <Property Name="NightVision" Type="Int32" />
-          <Property Name="NeedIRillumination" Type="Boolean" Nullable="false" />
-          <Property Name="Infravision" Type="Boolean" Nullable="false" />
-          <Property Name="IRFilter" Type="Boolean" Nullable="false" />
-          <Property Name="LightRange" Type="Int32" />
-          <Property Name="IRLigRange" Type="Int32" />
-          <Property Name="LaserRange" Type="Int32" />
-          <Property Name="LaserColor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="laserColorEf" Type="Decimal" Precision="4" Scale="2" />
-          <Property Name="usedBatType" Type="Int32" />
-          <NavigationProperty Name="AttachmentClass" Relationship="item1Model.FK_rAttachmentClass" FromRole="Attachment" ToRole="AttachmentClass" />
-          <NavigationProperty Name="Attachmentmount1" Relationship="item1Model.FK_Attachment_Attachmentmount" FromRole="Attachment" ToRole="Attachmentmount" />
-          <NavigationProperty Name="ITEM" Relationship="item1Model.FK_Attachment_ITEM_uiIndex" FromRole="Attachment" ToRole="ITEM" />
-        </EntityType>
-        <EntityType Name="EXPLOSIVE">
-          <Key>
-            <PropertyRef Name="uiIndex" />
-            <PropertyRef Name="ubType" />
-            <PropertyRef Name="ubDamage" />
-            <PropertyRef Name="ubStunDamage" />
-            <PropertyRef Name="ubRadius" />
-            <PropertyRef Name="ubDuration" />
-            <PropertyRef Name="ubStartRadius" />
-            <PropertyRef Name="ubMagSize" />
-            <PropertyRef Name="usNumFragments" />
-            <PropertyRef Name="ubFragType" />
-            <PropertyRef Name="ubFragDamage" />
-            <PropertyRef Name="ubFragRange" />
-            <PropertyRef Name="ubHorizontalDegree" />
-            <PropertyRef Name="ubVerticalDegree" />
-            <PropertyRef Name="bIndoorModifier" />
-            <PropertyRef Name="fExplodeOnImpact" />
-            <PropertyRef Name="GLGrenade" />
-            <PropertyRef Name="RLGrenade" />
-            <PropertyRef Name="Mine" />
-            <PropertyRef Name="Flare" />
-            <PropertyRef Name="Directional" />
-            <PropertyRef Name="ShapedCharge" />
-          </Key>
-          <Property Name="uiIndex" Type="Int32" Nullable="false" />
-          <Property Name="ubType" Type="Int32" Nullable="false" />
-          <Property Name="ubDamage" Type="Int32" Nullable="false" />
-          <Property Name="ubStunDamage" Type="Int32" Nullable="false" />
-          <Property Name="ubRadius" Type="Int32" Nullable="false" />
-          <Property Name="ubDuration" Type="Int32" Nullable="false" />
-          <Property Name="ubStartRadius" Type="Int32" Nullable="false" />
-          <Property Name="ubMagSize" Type="Int32" Nullable="false" />
-          <Property Name="usNumFragments" Type="Int32" Nullable="false" />
-          <Property Name="ubFragType" Type="Int32" Nullable="false" />
-          <Property Name="ubFragDamage" Type="Int32" Nullable="false" />
-          <Property Name="ubFragRange" Type="Int32" Nullable="false" />
-          <Property Name="ubHorizontalDegree" Type="Int32" Nullable="false" />
-          <Property Name="ubVerticalDegree" Type="Int32" Nullable="false" />
-          <Property Name="bIndoorModifier" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
-          <Property Name="fExplodeOnImpact" Type="Boolean" Nullable="false" />
-          <Property Name="GLGrenade" Type="Boolean" Nullable="false" />
-          <Property Name="RLGrenade" Type="Boolean" Nullable="false" />
-          <Property Name="Mine" Type="Boolean" Nullable="false" />
-          <Property Name="Flare" Type="Boolean" Nullable="false" />
-          <Property Name="Directional" Type="Boolean" Nullable="false" />
-          <Property Name="ShapedCharge" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="ExplosionType" Relationship="item1Model.FK_EXPLOSIVE" FromRole="EXPLOSIVE" ToRole="ExplosionType" />
-          <NavigationProperty Name="ITEM" Relationship="item1Model.FK_EXPLOSIVE_ITEM_uiIndex" FromRole="EXPLOSIVE" ToRole="ITEM" />
-        </EntityType>
         <EntityType Name="LOADBEARINGEQUIPMENT">
           <Key>
             <PropertyRef Name="lbeIndex" />
-            <PropertyRef Name="LBEClass" />
-            <PropertyRef Name="lbeCombo" />
-            <PropertyRef Name="lbeFilledSize" />
-            <PropertyRef Name="lbeAvailableVolume" />
-            <PropertyRef Name="lbePocketsAvailable" />
-            <PropertyRef Name="lbePocketIndex1" />
-            <PropertyRef Name="lbePocketIndex2" />
-            <PropertyRef Name="lbePocketIndex3" />
-            <PropertyRef Name="lbePocketIndex4" />
-            <PropertyRef Name="lbePocketIndex5" />
-            <PropertyRef Name="lbePocketIndex6" />
-            <PropertyRef Name="lbePocketIndex7" />
-            <PropertyRef Name="lbePocketIndex8" />
-            <PropertyRef Name="lbePocketIndex9" />
-            <PropertyRef Name="lbePocketIndex10" />
-            <PropertyRef Name="lbePocketIndex11" />
-            <PropertyRef Name="lbePocketIndex12" />
           </Key>
           <Property Name="lbeIndex" Type="Int32" Nullable="false" />
           <Property Name="LBEClass" Type="Int32" Nullable="false" />
@@ -1866,6 +1582,26 @@
           <Property Name="lbePocketIndex12" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ITEM" Relationship="item1Model.FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex" FromRole="LOADBEARINGEQUIPMENT" ToRole="ITEM" />
           <NavigationProperty Name="LBEClass1" Relationship="item1Model.FK_LOADBEARINGEQUIPMENT" FromRole="LOADBEARINGEQUIPMENT" ToRole="LBEClass" />
+        </EntityType>
+        <EntityType Name="TL">
+          <Key>
+            <PropertyRef Name="Id_Tl" />
+          </Key>
+          <Property Name="Id_Tl" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_TL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="StartMoney" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="ITEMs" Relationship="item1Model.FK_ITEM_TL" FromRole="TL" ToRole="ITEM" />
+        </EntityType>
+        <EntityType Name="TypeOfDamage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="LongName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="mDamage" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="WEAPONs" Relationship="item1Model.FK_WEAPON_TypeOfDamage" FromRole="TypeOfDamage" ToRole="WEAPON" />
         </EntityType>
         <EntityType Name="WEAPON">
           <Key>
@@ -1908,9 +1644,28 @@
           <Property Name="HCROF" Type="Boolean" Nullable="false" />
           <Property Name="HCROFValue" Type="Int32" Nullable="false" />
           <NavigationProperty Name="AMMO" Relationship="item1Model.FK_Calibre" FromRole="WEAPON" ToRole="AMMO" />
+          <NavigationProperty Name="AvailableAttachSlots" Relationship="item1Model.FK_AVeWeaponId" FromRole="WEAPON" ToRole="AvailableAttachSlot" />
           <NavigationProperty Name="ITEM" Relationship="item1Model.FK_WEAPON_ITEM_uiIndex" FromRole="WEAPON" ToRole="ITEM" />
           <NavigationProperty Name="TypeOfDamage" Relationship="item1Model.FK_WEAPON_TypeOfDamage" FromRole="WEAPON" ToRole="TypeOfDamage" />
           <NavigationProperty Name="WeaponType" Relationship="item1Model.FK_WeaponType" FromRole="WEAPON" ToRole="WeaponType" />
+        </EntityType>
+        <EntityType Name="WeaponClass">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="WeaponTypes" Relationship="item1Model.FK_WeaponType_WeaponClass" FromRole="WeaponClass" ToRole="WeaponType" />
+        </EntityType>
+        <EntityType Name="WeaponType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="23" FixedLength="false" Unicode="false" />
+          <Property Name="Class" Type="Int32" />
+          <NavigationProperty Name="WEAPONs" Relationship="item1Model.FK_WeaponType" FromRole="WeaponType" ToRole="WEAPON" />
+          <NavigationProperty Name="WeaponClass" Relationship="item1Model.FK_WeaponType_WeaponClass" FromRole="WeaponType" ToRole="WeaponClass" />
         </EntityType>
         <Association Name="FK_Calibre">
           <End Type="item1Model.AMMO" Role="AMMO" Multiplicity="1" />
@@ -1936,15 +1691,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_rAttachmentClass">
-          <End Type="item1Model.AttachmentClass" Role="AttachmentClass" Multiplicity="1" />
-          <End Type="item1Model.Attachment" Role="Attachment" Multiplicity="*" />
+        <Association Name="FK_ARMOUR_ITEM_uiIndex">
+          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.ARMOUR" Role="ARMOUR" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="AttachmentClass">
-              <PropertyRef Name="id" />
+            <Principal Role="ITEM">
+              <PropertyRef Name="uiIndex" />
             </Principal>
-            <Dependent Role="Attachment">
-              <PropertyRef Name="rAttachmentClass" />
+            <Dependent Role="ARMOUR">
+              <PropertyRef Name="uiIndex" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1957,6 +1714,46 @@
             </Principal>
             <Dependent Role="Attachment">
               <PropertyRef Name="id_Attachmentmount" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attachment_ITEM_uiIndex">
+          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.Attachment" Role="Attachment" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ITEM">
+              <PropertyRef Name="uiIndex" />
+            </Principal>
+            <Dependent Role="Attachment">
+              <PropertyRef Name="uiIndex" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_G_AvAttachClass_Attachment">
+          <End Type="item1Model.Attachment" Role="Attachment" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.G_AvAttachClass" Role="G_AvAttachClass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Attachment">
+              <PropertyRef Name="uiIndex" />
+            </Principal>
+            <Dependent Role="G_AvAttachClass">
+              <PropertyRef Name="id_attach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_rAttachmentClass">
+          <End Type="item1Model.AttachmentClass" Role="AttachmentClass" Multiplicity="1" />
+          <End Type="item1Model.Attachment" Role="Attachment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AttachmentClass">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Attachment">
+              <PropertyRef Name="rAttachmentClass" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1996,6 +1793,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_AVeWeaponId">
+          <End Type="item1Model.WEAPON" Role="WEAPON" Multiplicity="1" />
+          <End Type="item1Model.AvailableAttachSlot" Role="AvailableAttachSlot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WEAPON">
+              <PropertyRef Name="uiIndex" />
+            </Principal>
+            <Dependent Role="AvailableAttachSlot">
+              <PropertyRef Name="rWeaponId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ITEM_Clothes">
           <End Type="item1Model.Cloth" Role="Cloth" Multiplicity="1" />
           <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="*" />
@@ -2032,6 +1841,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_EXPLOSIVE_ITEM_uiIndex">
+          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.EXPLOSIVE" Role="EXPLOSIVE" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ITEM">
+              <PropertyRef Name="uiIndex" />
+            </Principal>
+            <Dependent Role="EXPLOSIVE">
+              <PropertyRef Name="uiIndex" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ITEM_Food">
           <End Type="item1Model.FOOD" Role="FOOD" Multiplicity="1" />
           <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="*" />
@@ -2065,48 +1888,6 @@
             </Principal>
             <Dependent Role="G_AvAttachClass">
               <PropertyRef Name="id_GSubClass" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ARMOUR_ITEM_uiIndex">
-          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="item1Model.ARMOUR" Role="ARMOUR" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ITEM">
-              <PropertyRef Name="uiIndex" />
-            </Principal>
-            <Dependent Role="ARMOUR">
-              <PropertyRef Name="uiIndex" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Attachment_ITEM_uiIndex">
-          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="item1Model.Attachment" Role="Attachment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ITEM">
-              <PropertyRef Name="uiIndex" />
-            </Principal>
-            <Dependent Role="Attachment">
-              <PropertyRef Name="uiIndex" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_EXPLOSIVE_ITEM_uiIndex">
-          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="item1Model.EXPLOSIVE" Role="EXPLOSIVE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ITEM">
-              <PropertyRef Name="uiIndex" />
-            </Principal>
-            <Dependent Role="EXPLOSIVE">
-              <PropertyRef Name="uiIndex" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2150,7 +1931,7 @@
           <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="item1Model.LOADBEARINGEQUIPMENT" Role="LOADBEARINGEQUIPMENT" Multiplicity="*" />
+          <End Type="item1Model.LOADBEARINGEQUIPMENT" Role="LOADBEARINGEQUIPMENT" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="ITEM">
               <PropertyRef Name="uiIndex" />
@@ -2198,18 +1979,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_WeaponType_WeaponClass">
-          <End Type="item1Model.WeaponClass" Role="WeaponClass" Multiplicity="0..1" />
-          <End Type="item1Model.WeaponType" Role="WeaponType" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="WeaponClass">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="WeaponType">
-              <PropertyRef Name="Class" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_WeaponType">
           <End Type="item1Model.WeaponType" Role="WeaponType" Multiplicity="1" />
           <End Type="item1Model.WEAPON" Role="WEAPON" Multiplicity="*" />
@@ -2222,13 +1991,24 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_WeaponType_WeaponClass">
+          <End Type="item1Model.WeaponClass" Role="WeaponClass" Multiplicity="0..1" />
+          <End Type="item1Model.WeaponType" Role="WeaponType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WeaponClass">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="WeaponType">
+              <PropertyRef Name="Class" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище item1ModelContainer" CdmEntityContainer="item1Entities">
-          <FunctionImportMapping FunctionImportName="NEW_ITEM" FunctionName="Хранилище item1Model.NEW_ITEM" />
           <FunctionImportMapping FunctionImportName="NEW_ITEM_att" FunctionName="Хранилище item1Model.NEW_ITEM_att" />
           <EntitySetMapping Name="AMMOes">
             <EntityTypeMapping TypeName="item1Model.AMMO">
@@ -2275,11 +2055,83 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ARMOURs">
+            <EntityTypeMapping TypeName="item1Model.ARMOUR">
+              <MappingFragment StoreEntitySet="ARMOUR">
+                <ScalarProperty Name="LeatherJacket" ColumnName="LeatherJacket" />
+                <ScalarProperty Name="FlakJacket" ColumnName="FlakJacket" />
+                <ScalarProperty Name="ubDegradePercent" ColumnName="ubDegradePercent" />
+                <ScalarProperty Name="ubCoverage" ColumnName="ubCoverage" />
+                <ScalarProperty Name="ubProtection" ColumnName="ubProtection" />
+                <ScalarProperty Name="ubArmourClass" ColumnName="ubArmourClass" />
+                <ScalarProperty Name="uiIndex" ColumnName="uiIndex" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ArmourClasses">
             <EntityTypeMapping TypeName="item1Model.ArmourClass">
               <MappingFragment StoreEntitySet="ArmourClass">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Attachments">
+            <EntityTypeMapping TypeName="item1Model.Attachment">
+              <MappingFragment StoreEntitySet="Attachment">
+                <ScalarProperty Name="usedBatType" ColumnName="usedBatType" />
+                <ScalarProperty Name="laserColorEf" ColumnName="laserColorEf" />
+                <ScalarProperty Name="LaserColor" ColumnName="LaserColor" />
+                <ScalarProperty Name="LaserRange" ColumnName="LaserRange" />
+                <ScalarProperty Name="IRLigRange" ColumnName="IRLigRange" />
+                <ScalarProperty Name="LightRange" ColumnName="LightRange" />
+                <ScalarProperty Name="IRFilter" ColumnName="IRFilter" />
+                <ScalarProperty Name="Infravision" ColumnName="Infravision" />
+                <ScalarProperty Name="NeedIRillumination" ColumnName="NeedIRillumination" />
+                <ScalarProperty Name="NightVision" ColumnName="NightVision" />
+                <ScalarProperty Name="LaserRFAcc" ColumnName="LaserRFAcc" />
+                <ScalarProperty Name="LaserRFrange" ColumnName="LaserRFrange" />
+                <ScalarProperty Name="Laserrangefinder" ColumnName="Laserrangefinder" />
+                <ScalarProperty Name="Targetingprogram" ColumnName="Targetingprogram" />
+                <ScalarProperty Name="Reflex" ColumnName="Reflex" />
+                <ScalarProperty Name="Collimator" ColumnName="Collimator" />
+                <ScalarProperty Name="BlockIronSight" ColumnName="BlockIronSight" />
+                <ScalarProperty Name="ImpVisSights" ColumnName="ImpVisSights" />
+                <ScalarProperty Name="id_Attachmentmount" ColumnName="id_Attachmentmount" />
+                <ScalarProperty Name="AccAddmax" ColumnName="AccAddmax" />
+                <ScalarProperty Name="ScopeMagMax" ColumnName="ScopeMagMax" />
+                <ScalarProperty Name="ScopeMagMin" ColumnName="ScopeMagMin" />
+                <ScalarProperty Name="Tritium" ColumnName="Tritium" />
+                <ScalarProperty Name="BatTimeWork" ColumnName="BatTimeWork" />
+                <ScalarProperty Name="Fix" ColumnName="Fix" />
+                <ScalarProperty Name="Bulk_add" ColumnName="Bulk_add" />
+                <ScalarProperty Name="Darkness" ColumnName="Darkness" />
+                <ScalarProperty Name="G_AttachClass" ColumnName="G_AttachClass" />
+                <ScalarProperty Name="G_SubAttachClass" ColumnName="G_SubAttachClass" />
+                <ScalarProperty Name="RecoilModifier" ColumnName="RecoilModifier" />
+                <ScalarProperty Name="FlashLightRange" ColumnName="FlashLightRange" />
+                <ScalarProperty Name="PercentTunnelVision" ColumnName="PercentTunnelVision" />
+                <ScalarProperty Name="BrightLightVisionRangeBonus" ColumnName="BrightLightVisionRangeBonus" />
+                <ScalarProperty Name="CaveVisionRangeBonus" ColumnName="CaveVisionRangeBonus" />
+                <ScalarProperty Name="DayVisionRangeBonus" ColumnName="DayVisionRangeBonus" />
+                <ScalarProperty Name="NightVisionRangeBonus" ColumnName="NightVisionRangeBonus" />
+                <ScalarProperty Name="VisionRangeBonus" ColumnName="VisionRangeBonus" />
+                <ScalarProperty Name="HearingRangeBonus" ColumnName="HearingRangeBonus" />
+                <ScalarProperty Name="ScopeMagFactor" ColumnName="ScopeMagFactor" />
+                <ScalarProperty Name="DamageBonus" ColumnName="DamageBonus" />
+                <ScalarProperty Name="RateOfFireBonus" ColumnName="RateOfFireBonus" />
+                <ScalarProperty Name="BurstSizeBonus" ColumnName="BurstSizeBonus" />
+                <ScalarProperty Name="MagSizeBonus" ColumnName="MagSizeBonus" />
+                <ScalarProperty Name="MinRangeForAimBonus" ColumnName="MinRangeForAimBonus" />
+                <ScalarProperty Name="AimBonus" ColumnName="AimBonus" />
+                <ScalarProperty Name="RangeBonus" ColumnName="RangeBonus" />
+                <ScalarProperty Name="HideMuzzleFlash" ColumnName="HideMuzzleFlash" />
+                <ScalarProperty Name="NoiseReduction" ColumnName="NoiseReduction" />
+                <ScalarProperty Name="HiddenAttachment" ColumnName="HiddenAttachment" />
+                <ScalarProperty Name="Attachmentmount" ColumnName="Attachmentmount" />
+                <ScalarProperty Name="rAttachmentClass" ColumnName="rAttachmentClass" />
+                <ScalarProperty Name="szAttName" ColumnName="szAttName" />
+                <ScalarProperty Name="uiIndex" ColumnName="uiIndex" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2405,6 +2257,34 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="EXPLOSIVEs">
+            <EntityTypeMapping TypeName="item1Model.EXPLOSIVE">
+              <MappingFragment StoreEntitySet="EXPLOSIVE">
+                <ScalarProperty Name="ShapedCharge" ColumnName="ShapedCharge" />
+                <ScalarProperty Name="Directional" ColumnName="Directional" />
+                <ScalarProperty Name="Flare" ColumnName="Flare" />
+                <ScalarProperty Name="Mine" ColumnName="Mine" />
+                <ScalarProperty Name="RLGrenade" ColumnName="RLGrenade" />
+                <ScalarProperty Name="GLGrenade" ColumnName="GLGrenade" />
+                <ScalarProperty Name="fExplodeOnImpact" ColumnName="fExplodeOnImpact" />
+                <ScalarProperty Name="bIndoorModifier" ColumnName="bIndoorModifier" />
+                <ScalarProperty Name="ubVerticalDegree" ColumnName="ubVerticalDegree" />
+                <ScalarProperty Name="ubHorizontalDegree" ColumnName="ubHorizontalDegree" />
+                <ScalarProperty Name="ubFragRange" ColumnName="ubFragRange" />
+                <ScalarProperty Name="ubFragDamage" ColumnName="ubFragDamage" />
+                <ScalarProperty Name="ubFragType" ColumnName="ubFragType" />
+                <ScalarProperty Name="usNumFragments" ColumnName="usNumFragments" />
+                <ScalarProperty Name="ubMagSize" ColumnName="ubMagSize" />
+                <ScalarProperty Name="ubStartRadius" ColumnName="ubStartRadius" />
+                <ScalarProperty Name="ubDuration" ColumnName="ubDuration" />
+                <ScalarProperty Name="ubRadius" ColumnName="ubRadius" />
+                <ScalarProperty Name="ubStunDamage" ColumnName="ubStunDamage" />
+                <ScalarProperty Name="ubDamage" ColumnName="ubDamage" />
+                <ScalarProperty Name="ubType" ColumnName="ubType" />
+                <ScalarProperty Name="uiIndex" ColumnName="uiIndex" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="FOODs">
             <EntityTypeMapping TypeName="item1Model.FOOD">
               <MappingFragment StoreEntitySet="FOOD">
@@ -2511,9 +2391,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="laserColorEfs">
-            <EntityTypeMapping TypeName="item1Model.laserColorEf">
-              <MappingFragment StoreEntitySet="laserColorEf">
+          <EntitySetMapping Name="LaserColorEfs">
+            <EntityTypeMapping TypeName="item1Model.LaserColorEf">
+              <MappingFragment StoreEntitySet="LaserColorEf">
                 <ScalarProperty Name="LaserColorDayEfect" ColumnName="LaserColorDayEfect" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
@@ -2538,143 +2418,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TLs">
-            <EntityTypeMapping TypeName="item1Model.TL">
-              <MappingFragment StoreEntitySet="TL">
-                <ScalarProperty Name="StartMoney" ColumnName="StartMoney" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="name_TL" ColumnName="name_TL" />
-                <ScalarProperty Name="Id_Tl" ColumnName="Id_Tl" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TypeOfDamages">
-            <EntityTypeMapping TypeName="item1Model.TypeOfDamage">
-              <MappingFragment StoreEntitySet="TypeOfDamage">
-                <ScalarProperty Name="mDamage" ColumnName="mDamage" />
-                <ScalarProperty Name="LongName" ColumnName="LongName" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="WeaponClasses">
-            <EntityTypeMapping TypeName="item1Model.WeaponClass">
-              <MappingFragment StoreEntitySet="WeaponClass">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="WeaponTypes">
-            <EntityTypeMapping TypeName="item1Model.WeaponType">
-              <MappingFragment StoreEntitySet="WeaponType">
-                <ScalarProperty Name="Class" ColumnName="Class" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ARMOURs">
-            <EntityTypeMapping TypeName="item1Model.ARMOUR">
-              <MappingFragment StoreEntitySet="ARMOUR">
-                <ScalarProperty Name="LeatherJacket" ColumnName="LeatherJacket" />
-                <ScalarProperty Name="FlakJacket" ColumnName="FlakJacket" />
-                <ScalarProperty Name="ubDegradePercent" ColumnName="ubDegradePercent" />
-                <ScalarProperty Name="ubCoverage" ColumnName="ubCoverage" />
-                <ScalarProperty Name="ubProtection" ColumnName="ubProtection" />
-                <ScalarProperty Name="ubArmourClass" ColumnName="ubArmourClass" />
-                <ScalarProperty Name="uiIndex" ColumnName="uiIndex" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Attachments">
-            <EntityTypeMapping TypeName="item1Model.Attachment">
-              <MappingFragment StoreEntitySet="Attachment">
-                <ScalarProperty Name="usedBatType" ColumnName="usedBatType" />
-                <ScalarProperty Name="laserColorEf" ColumnName="laserColorEf" />
-                <ScalarProperty Name="LaserColor" ColumnName="LaserColor" />
-                <ScalarProperty Name="LaserRange" ColumnName="LaserRange" />
-                <ScalarProperty Name="IRLigRange" ColumnName="IRLigRange" />
-                <ScalarProperty Name="LightRange" ColumnName="LightRange" />
-                <ScalarProperty Name="IRFilter" ColumnName="IRFilter" />
-                <ScalarProperty Name="Infravision" ColumnName="Infravision" />
-                <ScalarProperty Name="NeedIRillumination" ColumnName="NeedIRillumination" />
-                <ScalarProperty Name="NightVision" ColumnName="NightVision" />
-                <ScalarProperty Name="LaserRFAcc" ColumnName="LaserRFAcc" />
-                <ScalarProperty Name="LaserRFrange" ColumnName="LaserRFrange" />
-                <ScalarProperty Name="Laserrangefinder" ColumnName="Laserrangefinder" />
-                <ScalarProperty Name="Targetingprogram" ColumnName="Targetingprogram" />
-                <ScalarProperty Name="Reflex" ColumnName="Reflex" />
-                <ScalarProperty Name="Collimator" ColumnName="Collimator" />
-                <ScalarProperty Name="BlockIronSight" ColumnName="BlockIronSight" />
-                <ScalarProperty Name="ImpVisSights" ColumnName="ImpVisSights" />
-                <ScalarProperty Name="id_Attachmentmount" ColumnName="id_Attachmentmount" />
-                <ScalarProperty Name="AccAddmax" ColumnName="AccAddmax" />
-                <ScalarProperty Name="ScopeMagMax" ColumnName="ScopeMagMax" />
-                <ScalarProperty Name="ScopeMagMin" ColumnName="ScopeMagMin" />
-                <ScalarProperty Name="Tritium" ColumnName="Tritium" />
-                <ScalarProperty Name="BatTimeWork" ColumnName="BatTimeWork" />
-                <ScalarProperty Name="Fix" ColumnName="Fix" />
-                <ScalarProperty Name="Bulk_add" ColumnName="Bulk_add" />
-                <ScalarProperty Name="Darkness" ColumnName="Darkness" />
-                <ScalarProperty Name="G_AttachClass" ColumnName="G_AttachClass" />
-                <ScalarProperty Name="G_SubAttachClass" ColumnName="G_SubAttachClass" />
-                <ScalarProperty Name="RecoilModifier" ColumnName="RecoilModifier" />
-                <ScalarProperty Name="FlashLightRange" ColumnName="FlashLightRange" />
-                <ScalarProperty Name="PercentTunnelVision" ColumnName="PercentTunnelVision" />
-                <ScalarProperty Name="BrightLightVisionRangeBonus" ColumnName="BrightLightVisionRangeBonus" />
-                <ScalarProperty Name="CaveVisionRangeBonus" ColumnName="CaveVisionRangeBonus" />
-                <ScalarProperty Name="DayVisionRangeBonus" ColumnName="DayVisionRangeBonus" />
-                <ScalarProperty Name="NightVisionRangeBonus" ColumnName="NightVisionRangeBonus" />
-                <ScalarProperty Name="VisionRangeBonus" ColumnName="VisionRangeBonus" />
-                <ScalarProperty Name="HearingRangeBonus" ColumnName="HearingRangeBonus" />
-                <ScalarProperty Name="ScopeMagFactor" ColumnName="ScopeMagFactor" />
-                <ScalarProperty Name="DamageBonus" ColumnName="DamageBonus" />
-                <ScalarProperty Name="RateOfFireBonus" ColumnName="RateOfFireBonus" />
-                <ScalarProperty Name="BurstSizeBonus" ColumnName="BurstSizeBonus" />
-                <ScalarProperty Name="MagSizeBonus" ColumnName="MagSizeBonus" />
-                <ScalarProperty Name="MinRangeForAimBonus" ColumnName="MinRangeForAimBonus" />
-                <ScalarProperty Name="AimBonus" ColumnName="AimBonus" />
-                <ScalarProperty Name="RangeBonus" ColumnName="RangeBonus" />
-                <ScalarProperty Name="HideMuzzleFlash" ColumnName="HideMuzzleFlash" />
-                <ScalarProperty Name="NoiseReduction" ColumnName="NoiseReduction" />
-                <ScalarProperty Name="HiddenAttachment" ColumnName="HiddenAttachment" />
-                <ScalarProperty Name="Attachmentmount" ColumnName="Attachmentmount" />
-                <ScalarProperty Name="rAttachmentClass" ColumnName="rAttachmentClass" />
-                <ScalarProperty Name="szAttName" ColumnName="szAttName" />
-                <ScalarProperty Name="uiIndex" ColumnName="uiIndex" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="EXPLOSIVEs">
-            <EntityTypeMapping TypeName="item1Model.EXPLOSIVE">
-              <MappingFragment StoreEntitySet="EXPLOSIVE">
-                <ScalarProperty Name="ShapedCharge" ColumnName="ShapedCharge" />
-                <ScalarProperty Name="Directional" ColumnName="Directional" />
-                <ScalarProperty Name="Flare" ColumnName="Flare" />
-                <ScalarProperty Name="Mine" ColumnName="Mine" />
-                <ScalarProperty Name="RLGrenade" ColumnName="RLGrenade" />
-                <ScalarProperty Name="GLGrenade" ColumnName="GLGrenade" />
-                <ScalarProperty Name="fExplodeOnImpact" ColumnName="fExplodeOnImpact" />
-                <ScalarProperty Name="bIndoorModifier" ColumnName="bIndoorModifier" />
-                <ScalarProperty Name="ubVerticalDegree" ColumnName="ubVerticalDegree" />
-                <ScalarProperty Name="ubHorizontalDegree" ColumnName="ubHorizontalDegree" />
-                <ScalarProperty Name="ubFragRange" ColumnName="ubFragRange" />
-                <ScalarProperty Name="ubFragDamage" ColumnName="ubFragDamage" />
-                <ScalarProperty Name="ubFragType" ColumnName="ubFragType" />
-                <ScalarProperty Name="usNumFragments" ColumnName="usNumFragments" />
-                <ScalarProperty Name="ubMagSize" ColumnName="ubMagSize" />
-                <ScalarProperty Name="ubStartRadius" ColumnName="ubStartRadius" />
-                <ScalarProperty Name="ubDuration" ColumnName="ubDuration" />
-                <ScalarProperty Name="ubRadius" ColumnName="ubRadius" />
-                <ScalarProperty Name="ubStunDamage" ColumnName="ubStunDamage" />
-                <ScalarProperty Name="ubDamage" ColumnName="ubDamage" />
-                <ScalarProperty Name="ubType" ColumnName="ubType" />
-                <ScalarProperty Name="uiIndex" ColumnName="uiIndex" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="LOADBEARINGEQUIPMENTs">
             <EntityTypeMapping TypeName="item1Model.LOADBEARINGEQUIPMENT">
               <MappingFragment StoreEntitySet="LOADBEARINGEQUIPMENT">
@@ -2696,6 +2439,26 @@
                 <ScalarProperty Name="lbeCombo" ColumnName="lbeCombo" />
                 <ScalarProperty Name="LBEClass" ColumnName="LBEClass" />
                 <ScalarProperty Name="lbeIndex" ColumnName="lbeIndex" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TLs">
+            <EntityTypeMapping TypeName="item1Model.TL">
+              <MappingFragment StoreEntitySet="TL">
+                <ScalarProperty Name="StartMoney" ColumnName="StartMoney" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="name_TL" ColumnName="name_TL" />
+                <ScalarProperty Name="Id_Tl" ColumnName="Id_Tl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeOfDamages">
+            <EntityTypeMapping TypeName="item1Model.TypeOfDamage">
+              <MappingFragment StoreEntitySet="TypeOfDamage">
+                <ScalarProperty Name="mDamage" ColumnName="mDamage" />
+                <ScalarProperty Name="LongName" ColumnName="LongName" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2741,6 +2504,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="WeaponClasses">
+            <EntityTypeMapping TypeName="item1Model.WeaponClass">
+              <MappingFragment StoreEntitySet="WeaponClass">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WeaponTypes">
+            <EntityTypeMapping TypeName="item1Model.WeaponType">
+              <MappingFragment StoreEntitySet="WeaponType">
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="NEW_ITEM" FunctionName="Хранилище item1Model.NEW_ITEM" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
