@@ -78,6 +78,8 @@ namespace Item_WPF.MVVM.Models
             Cost = "$" + Convert.ToDouble(itt.usPrice);
             Lc = itt.LC1.Name_LC;
         }
+
+
     }
 }
 

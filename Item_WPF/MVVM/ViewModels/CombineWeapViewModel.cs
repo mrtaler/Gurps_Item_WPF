@@ -6,58 +6,337 @@ using System.Threading.Tasks;
 using Item_WPF.MVVM.Models;
 using Item_WPF.addin;
 using Item_WPF.MVVM.View;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {
 
-    class CombineWeapViewModel
+    class CombineWeapViewModel : INotifyPropertyChanged
     {
-
-        public ItemToGridModel ItemToGrid;
-        public CombineWeapModel CombineWeap;
+        private item1Entities _context;
+        private byte[] _Weapon_Item_Image;
+        public byte[] Weapon_Item_Image
+        {
+            get
+            {
+                return _Weapon_Item_Image;
+            }
+            set
+            {
+                if (_Weapon_Item_Image != value)
+                {
+                    _Weapon_Item_Image = value;
+                    RaisePropertyChanged("Weapon_Item_Image");
+                }
+            }
+        }
+        public ItemToGridModel ItemToGrid { get; set; }
+        public ObservableCollection<ItemToGridModel> ItemToGridColl { get; set; }
+        public CombineWeapModel combineweap { get; set; }
+        public ITEM AllItemToGridChangeWin { get; set; }
         public CombineWeapViewModel()
         {
-           CSelectWeapon = new ActionCommand(SelectWeapon) { IsExecutable = true };
-           // CSelectWeapon = new RelayCommand(SelectWeapon);
+            _context = new item1Entities();
+            ItemToGridColl = new ObservableCollection<ItemToGridModel>();
+
+            CSelectWeapon = new ActionCommand(SelectWeapon) { IsExecutable = true };//work
+
+
+            CScopeSelect = new ActionCommand(SelectScope) { IsExecutable = false };
+            CLaserSelect = new ActionCommand(SelectLaser) { IsExecutable = false };
+            CLightSelect = new ActionCommand(SelectLight) { IsExecutable = false };
+            CBipodSelect = new ActionCommand(SelectBipod) { IsExecutable = false };
+            CSilenserSelect = new ActionCommand(SelectSilenser) { IsExecutable = false };
+            CLauncherSelect = new ActionCommand(SelectLauncher) { IsExecutable = false };
+            CStockSelect = new ActionCommand(SelectStock) { IsExecutable = false };
+            CBayonetSelect = new ActionCommand(SelectBayonet) { IsExecutable = false };
+            CMagazineSelect = new ActionCommand(SelectMagazine) { IsExecutable = false };
+            CInternalSelect = new ActionCommand(SelectInternal) { IsExecutable = false };
+            CExternalSelect = new ActionCommand(SelectExternal) { IsExecutable = false };
+
+            // CSelectWeapon = new RelayCommand(SelectWeapon);
         }
-        #region Command Refrekshnew
+        #region Command SelectWeapon
         private void SelectWeapon()
         {
-            SelectItemsViewModel _SIVM = new SelectItemsViewModel("Gun");
+            ItemToGridColl.Clear();
+            SelectItemsViewModel _SIVM = new SelectItemsViewModel("Gun", null);
             SelectItemsView SIW = new SelectItemsView();
-            SIW.DataContext= _SIVM;
+
+            SIW.DataContext = _SIVM;
             SIW.ShowDialog();
-            ItemToGrid = new ItemToGridModel(new ITEM );
+            AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+            Weapon_Item_Image = AllItemToGridChangeWin.Item_Image;
+            combineweap = new CombineWeapModel(AllItemToGridChangeWin);
+            ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin);
+
+            ItemToGridColl.Add(ItemToGrid);
+            _SIVM.Dispose();
+            if (combineweap.IdScopeItem != null)
+                CScopeSelect.IsExecutable = true;
+            if (combineweap.IdLaserItem != null)
+                CLaserSelect.IsExecutable = true;
+            if (combineweap.IdLightItem != null)
+                CLightSelect.IsExecutable = true;
+            if (combineweap.IdBipodItem != null)
+                CBipodSelect.IsExecutable = true;
+            if (combineweap.IdSilenserItem != null)
+                CSilenserSelect.IsExecutable = true;
+            if (combineweap.IdLauncherItem != null)
+                CLauncherSelect.IsExecutable = true;
+            if (combineweap.IdStockItem != null)
+                CStockSelect.IsExecutable = true;
+            if (combineweap.IdBayonetItem != null)
+                CBayonetSelect.IsExecutable = true;
+            if (combineweap.IdMagazineItem != null)
+                CMagazineSelect.IsExecutable = true;
+            if (combineweap.IdInternalItem != null)
+                CInternalSelect.IsExecutable = true;
+            if (combineweap.IdExternalItem != null)
+                CExternalSelect.IsExecutable = true;
+
+
         }
         public ActionCommand CSelectWeapon { get; set; }
         #endregion
+        #region Command SelectScope
+        private void SelectScope()
+        {
+            if (ItemToGridColl.FirstOrDefault(p => p.Type == "Scope") != null)
+                ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Scope"));
+            SelectItemsViewModel _SIVM = new SelectItemsViewModel("Attachment", combineweap.IdScopeItem);
+            SelectItemsView SIW = new SelectItemsView();
+            SIW.DataContext = _SIVM;
+            SIW.ShowDialog();
+            if (_SIVM.SelectedItems.ID != 0)
+            {
+                AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+                ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "Scope");
+                ItemToGridColl.Add(ItemToGrid);
+                _SIVM.Dispose();
+            }
+        }
+        public ActionCommand CScopeSelect { get; set; }
+
+        #endregion
+        #region Command SelectLaser
+        private void SelectLaser()
+        {
+            if (ItemToGridColl.FirstOrDefault(p => p.Type == "Laser") != null)
+                ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Laser"));
+            SelectItemsViewModel _SIVM = new SelectItemsViewModel("Attachment", combineweap.IdLaserItem);
+            SelectItemsView SIW = new SelectItemsView();
+            SIW.DataContext = _SIVM;
+            SIW.ShowDialog();
+            if (_SIVM.SelectedItems.ID != 0)
+            {
+                AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+
+                ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "Laser");
+                ItemToGridColl.Add(ItemToGrid);
+                _SIVM.Dispose();
+            }
+        }
+        public ActionCommand CLaserSelect { get; set; }
+        #endregion
+        #region Command SelectLight
+        private void SelectLight()
+        {
+            if (ItemToGridColl.FirstOrDefault(p => p.Type == "Light") != null)
+                ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Light"));
+            SelectItemsViewModel _SIVM = new SelectItemsViewModel("Attachment", combineweap.IdLightItem);
+            SelectItemsView SIW = new SelectItemsView();
+            SIW.DataContext = _SIVM;
+            SIW.ShowDialog();
+            if (_SIVM.SelectedItems.ID != 0)
+            {
+                AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+
+                ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "Light");
+                ItemToGridColl.Add(ItemToGrid);
+                _SIVM.Dispose();
+            }
+
+        }
+        public ActionCommand CLightSelect { get; set; }
+        #endregion
+        #region Command SelectBipod
+        private void SelectBipod()
+        {
+            if (ItemToGridColl.FirstOrDefault(p => p.Type == "Bipod") != null)
+                ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Bipod"));
+            SelectItemsViewModel _SIVM = new SelectItemsViewModel("Attachment", combineweap.IdBipodItem);
+            SelectItemsView SIW = new SelectItemsView();
+            SIW.DataContext = _SIVM;
+            SIW.ShowDialog();
+            if (_SIVM.SelectedItems.ID != 0)
+            {
+                AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+
+                ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "Bipod");
+                ItemToGridColl.Add(ItemToGrid);
+                _SIVM.Dispose();
+            }
+        }
+        public ActionCommand CBipodSelect { get; set; }
+        #endregion
+        #region Command SelectSilenser
+        private void SelectSilenser()
+        {
+            if (ItemToGridColl.FirstOrDefault(p => p.Type == "Silenser") != null)
+                ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Silenser"));
+            SelectItemsViewModel _SIVM = new SelectItemsViewModel("Attachment", combineweap.IdSilenserItem);
+            SelectItemsView SIW = new SelectItemsView();
+            SIW.DataContext = _SIVM;
+            SIW.ShowDialog();
+            if (_SIVM.SelectedItems.ID != 0)
+            {
+                AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+
+                ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "Silenser");
+                ItemToGridColl.Add(ItemToGrid);
+                _SIVM.Dispose();
+            }
+        }
+        public ActionCommand CSilenserSelect { get; set; }
+        #endregion
+        #region Command SelectLauncher
+        private void SelectLauncher()
+        {
+            if (ItemToGridColl.FirstOrDefault(p => p.Type == "Launcher") != null)
+                ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Launcher"));
+            SelectItemsViewModel _SIVM = new SelectItemsViewModel("Attachment", combineweap.IdLauncherItem);
+            SelectItemsView SIW = new SelectItemsView();
+            SIW.DataContext = _SIVM;
+            SIW.ShowDialog();
+            if (_SIVM.SelectedItems.ID != 0)
+            {
+                AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+
+                ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "Launcher");
+                ItemToGridColl.Add(ItemToGrid);
+                _SIVM.Dispose();
+            }
+        }
+        public ActionCommand CLauncherSelect { get; set; }
+        #endregion
+        #region Command SelectStock
+        private void SelectStock()
+        {
+            if (ItemToGridColl.FirstOrDefault(p => p.Type == "Stock") != null)
+                ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Stock"));
+            SelectItemsViewModel _SIVM = new SelectItemsViewModel("Attachment", combineweap.IdStockItem);
+            SelectItemsView SIW = new SelectItemsView();
+            SIW.DataContext = _SIVM;
+            SIW.ShowDialog();
+            if (_SIVM.SelectedItems.ID != 0)
+            {
+                AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+
+                ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "Stock");
+                ItemToGridColl.Add(ItemToGrid);
+                _SIVM.Dispose();
+            }
+        }
+        public ActionCommand CStockSelect { get; set; }
+        #endregion
+        #region Command SelectBayonet
+        private void SelectBayonet()
+        {
+            if (ItemToGridColl.FirstOrDefault(p => p.Type == "Bayonet") != null)
+                ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Bayonet"));
+            SelectItemsViewModel _SIVM = new SelectItemsViewModel("Attachment", combineweap.IdBayonetItem);
+            SelectItemsView SIW = new SelectItemsView();
+            SIW.DataContext = _SIVM;
+            SIW.ShowDialog();
+            if (_SIVM.SelectedItems.ID != 0)
+            {
+                AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+
+                ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "Bayonet");
+                ItemToGridColl.Add(ItemToGrid);
+                _SIVM.Dispose();
+            }
+        }
+        public ActionCommand CBayonetSelect { get; set; }
+        #endregion
+        #region Command SelectMagazine
+        private void SelectMagazine()
+        {
+            if (ItemToGridColl.FirstOrDefault(p => p.Type == "Magazine") != null)
+                ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Magazine"));
+            SelectItemsViewModel _SIVM = new SelectItemsViewModel("Attachment", combineweap.IdMagazineItem);
+            SelectItemsView SIW = new SelectItemsView();
+            SIW.DataContext = _SIVM;
+            SIW.ShowDialog();
+            if (_SIVM.SelectedItems.ID != 0)
+            {
+                AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+
+                ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "Magazine");
+                ItemToGridColl.Add(ItemToGrid);
+                _SIVM.Dispose();
+            }
+
+        }
+        public ActionCommand CMagazineSelect { get; set; }
+        #endregion
+        #region Command SelectInternal
+        private void SelectInternal()
+        {
+            if (ItemToGridColl.FirstOrDefault(p => p.Type == "Internal") != null)
+                ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Internal"));
+            SelectItemsViewModel _SIVM = new SelectItemsViewModel("Attachment", combineweap.IdInternalItem);
+            SelectItemsView SIW = new SelectItemsView();
+            SIW.DataContext = _SIVM;
+            SIW.ShowDialog();
+            if (_SIVM.SelectedItems.ID != 0)
+            {
+                AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+
+                ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "Internal");
+                ItemToGridColl.Add(ItemToGrid);
+                _SIVM.Dispose();
+            }
+        }
+        public ActionCommand CInternalSelect { get; set; }
+        #endregion
+        #region Command SelectExternal
+        private void SelectExternal()
+        {
+            if (ItemToGridColl.FirstOrDefault(p => p.Type == "External") != null)
+                ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "External"));
+            SelectItemsViewModel _SIVM = new SelectItemsViewModel("Attachment", combineweap.IdExternalItem );
+            SelectItemsView SIW = new SelectItemsView();
+            SIW.DataContext = _SIVM;
+            SIW.ShowDialog();
+            if (_SIVM.SelectedItems.ID != 0)
+            {
+                AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+
+                ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "External");
+                ItemToGridColl.Add(ItemToGrid);
+                _SIVM.Dispose();
+            }
+        }
+        public ActionCommand CExternalSelect { get; set; }
+        #endregion
+
+        #region inter
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void RaisePropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        #endregion
     }
 }
+
 /*   
 
     private void SelectWeapon_button_Click(object sender, RoutedEventArgs e)
         {
-            ScopeSelectButton.Visibility = Visibility.Hidden;      //1
-            LaserSelectButton.Visibility = Visibility.Hidden;
-            LightSelectButton.Visibility = Visibility.Hidden;
-            BipodSelectButton.Visibility = Visibility.Hidden;
-            SilenserSelectButton.Visibility = Visibility.Hidden;
-            LauncherSelectButton.Visibility = Visibility.Hidden;
-            StockSelectButton.Visibility = Visibility.Hidden;
-            BayonetSelectButton.Visibility = Visibility.Hidden;
-            MagazineSelectButton.Visibility = Visibility.Hidden;
-            InternalSelectButton.Visibility = Visibility.Hidden;
-            ExternalSelectButton.Visibility = Visibility.Hidden;
-
-            WeaponCombine.WeapCombNull();
-
-            SelectItems selectItems = new SelectItems(1, "gun");
-
-            selectItems.Owner = this;
-            selectItems.ShowDialog();
-            ItemDataGrid.Items.Clear();
-
-
             if (IdItemWeaposn != 0)
             {
                 using (item1Entities context = new item1Entities())
@@ -100,67 +379,7 @@ namespace Item_WPF.MVVM.ViewModels
 
                     ItemDataGrid.ColumnWidth = DataGridLength.Auto;
 
-                    List<AvailableAttachSlot> avSlot = (from p in context.AvailableAttachSlots
-                                                        where p.rWeaponId == weaponLoad.uiIndex
-                                                        select p).ToList();
-                    foreach (AvailableAttachSlot items in avSlot)
-                    {
-                        if (items.rATTACHMENTSLOT == 1)
-                        {
-                            ScopeSelectButton.Visibility = Visibility.Visible;
-                            _mountScope = items.rAttachmentmount;
-                        }
-                        if (items.rATTACHMENTSLOT == 2)
-                        {
-                            LaserSelectButton.Visibility = Visibility.Visible;
-                            _mountLaser = items.rAttachmentmount;
-                        }
-                        if (items.rATTACHMENTSLOT == 3)
-                        {
-                            LightSelectButton.Visibility = Visibility.Visible;
-                            _mountLight = items.rAttachmentmount;
-                        }
-                        if (items.rATTACHMENTSLOT == 4)
-                        {
-                            _mountBipod = items.rAttachmentmount;
-                            BipodSelectButton.Visibility = Visibility.Visible;
-                        }
-                        if (items.rATTACHMENTSLOT == 5)
-                        {
-                            _mountSilenser = items.rAttachmentmount;
-                            SilenserSelectButton.Visibility = Visibility.Visible;
-                        }
-                        if (items.rATTACHMENTSLOT == 6)
-                        {
-                            _mountLauncher = items.rAttachmentmount;
-                            LauncherSelectButton.Visibility = Visibility.Visible;
-                        }
-                        if (items.rATTACHMENTSLOT == 7)
-                        {
-                            _mountStock = items.rAttachmentmount;
-                            StockSelectButton.Visibility = Visibility.Visible;
-                        }
-                        if (items.rATTACHMENTSLOT == 8)
-                        {
-                            _mountBayonet = items.rAttachmentmount;
-                            BayonetSelectButton.Visibility = Visibility.Visible;
-                        }
-                        if (items.rATTACHMENTSLOT == 9)
-                        {
-                            _mountMagazine = items.rAttachmentmount;
-                            MagazineSelectButton.Visibility = Visibility.Visible;
-                        }
-                        if (items.rATTACHMENTSLOT == 10)
-                        {
-                            _mountInternal = items.rAttachmentmount;
-                            InternalSelectButton.Visibility = Visibility.Visible;
-                        }
-                        if (items.rATTACHMENTSLOT == 11)
-                        {
-                            _mountExternal = items.rAttachmentmount;
-                            ExternalSelectButton.Visibility = Visibility.Visible;
-                        }
-                    }
+                    
                 }
             }
         }

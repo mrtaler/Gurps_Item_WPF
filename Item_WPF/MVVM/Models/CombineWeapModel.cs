@@ -21,8 +21,8 @@ namespace Item_WPF.MVVM.Models
 
         #endregion
         #region IdWeaponItem
-        private int _IdWeaponItem;
-        public int IdWeaponItem
+        private int? _IdWeaponItem;
+        public int? IdWeaponItem
         {
             get
             {
@@ -39,8 +39,8 @@ namespace Item_WPF.MVVM.Models
         }
         #endregion
         #region IdScopeItem
-        private int _IdScopeItem;
-        public int IdScopeItem
+        private int? _IdScopeItem;
+        public int? IdScopeItem
         {
             get
             {
@@ -57,8 +57,8 @@ namespace Item_WPF.MVVM.Models
         }
         #endregion
         #region IdLaserItem
-        private int _IdLaserItem;
-        public int IdLaserItem
+        private int? _IdLaserItem;
+        public int? IdLaserItem
         {
             get
             {
@@ -75,8 +75,8 @@ namespace Item_WPF.MVVM.Models
         }
         #endregion
         #region IdLightItem
-        private int _IdLightItem;
-        public int IdLightItem
+        private int? _IdLightItem;
+        public int? IdLightItem
         {
             get
             {
@@ -93,8 +93,8 @@ namespace Item_WPF.MVVM.Models
         }
         #endregion
         #region IdBipodItem
-        private int _IdBipodItem;
-        public int IdBipodItem
+        private int? _IdBipodItem;
+        public int? IdBipodItem
         {
             get
             {
@@ -111,8 +111,8 @@ namespace Item_WPF.MVVM.Models
         }
         #endregion
         #region IdSilenserItem
-        private int _IdSilenserItem;
-        public int IdSilenserItem
+        private int? _IdSilenserItem;
+        public int? IdSilenserItem
         {
             get
             {
@@ -129,8 +129,8 @@ namespace Item_WPF.MVVM.Models
         }
         #endregion
         #region IdLauncherItem
-        private int _IdLauncherItem;
-        public int IdLauncherItem
+        private int? _IdLauncherItem;
+        public int? IdLauncherItem
         {
             get
             {
@@ -147,8 +147,8 @@ namespace Item_WPF.MVVM.Models
         }
         #endregion
         #region IdStockItem
-        private int _IdStockItem;
-        public int IdStockItem
+        private int? _IdStockItem;
+        public int? IdStockItem
         {
             get
             {
@@ -165,8 +165,8 @@ namespace Item_WPF.MVVM.Models
         }
         #endregion
         #region IdBayonetItem
-        private int _IdBayonetItem;
-        public int IdBayonetItem
+        private int? _IdBayonetItem;
+        public int? IdBayonetItem
         {
             get
             {
@@ -183,8 +183,8 @@ namespace Item_WPF.MVVM.Models
         }
         #endregion
         #region IdMagazineItem
-        private int _IdMagazineItem;
-        public int IdMagazineItem
+        private int? _IdMagazineItem;
+        public int? IdMagazineItem
         {
             get
             {
@@ -201,8 +201,8 @@ namespace Item_WPF.MVVM.Models
         }
         #endregion
         #region IdInternalItem
-        private int _IdInternalItem;
-        public int IdInternalItem
+        private int? _IdInternalItem;
+        public int? IdInternalItem
         {
             get
             {
@@ -219,8 +219,8 @@ namespace Item_WPF.MVVM.Models
         }
         #endregion
         #region IdExternalItem
-        private int _IdExternalItem;
-        public int IdExternalItem
+        private int? _IdExternalItem;
+        public int? IdExternalItem
         {
             get
             {
@@ -240,21 +240,33 @@ namespace Item_WPF.MVVM.Models
         /// <summary>
         /// обнуление комбинатора
         /// </summary>
-        public CombineWeapModel()
+        public CombineWeapModel(ITEM itt)
         {
-            IdWeaponItem = 0;
-            IdScopeItem = 0;
-            IdLaserItem = 0;
-            IdLightItem = 0;
-            IdBipodItem = 0;
-            IdSilenserItem = 0;
-            IdLauncherItem = 0;
-            IdStockItem = 0;
-            IdBayonetItem = 0;
-            IdMagazineItem = 0;
-            IdInternalItem = 0;
-            IdExternalItem = 0;
-        }       
+
+            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 1) != null)
+                IdScopeItem =       itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 1).rAttachmentmount;
+            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 2)!=null)
+            IdLaserItem =        itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 2).rAttachmentmount;
+            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 3) != null)
+                IdLightItem =       itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 3).rAttachmentmount;
+            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 4) != null)
+                IdBipodItem =       itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 4).rAttachmentmount;
+            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 5) != null)
+                IdSilenserItem =    itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 5).rAttachmentmount;
+            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 6) != null)
+                IdLauncherItem =    itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 6).rAttachmentmount;
+            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 7) != null)
+                IdStockItem =       itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 7).rAttachmentmount;
+            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 8) != null)
+                IdBayonetItem =     itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 8).rAttachmentmount;
+            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 9) != null)
+                IdMagazineItem =    itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 9).rAttachmentmount;
+            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 10) != null)
+                IdInternalItem =    itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 10).rAttachmentmount;
+            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 11) != null)
+                IdExternalItem =    itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 11).rAttachmentmount;
+
+        }
     }
 }
 

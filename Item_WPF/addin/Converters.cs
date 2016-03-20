@@ -307,8 +307,7 @@ namespace Item_WPF.addin
             
             int attSlot = (from p in G_SubAttachClass
                            where p.id == findClass
-                           select p.ATTACHMENTSLOT1.uiSlotIndex).First();
-                           
+                           select p.ATTACHMENTSLOT1.uiSlotIndex).First();                           
             return new ObservableCollection<Attachmentmount>(MountForColl.Where(p => p.idAttacClass == attSlot));
            
         }

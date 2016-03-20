@@ -8,40 +8,73 @@ using System.Threading.Tasks;
 
 namespace Item_WPF.MVVM.ViewModels
 {
-    class SelectItemsViewModel
+    class SelectItemsViewModel:IDisposable
     {
         private item1Entities _context;
         private string _parametr;
         public ObservableCollection<ITEM> Items { get; set; }
         public ItemsForSortModel SelectedItems { get; set; }
         public ObservableCollection<ItemsForSortModel> IttForSort { get; set; }
-        public SelectItemsViewModel(string Parametr)
+        public SelectItemsViewModel(string Parametr,int? mount)
         {
-            _context = new item1Entities();
+            SelectedItems = new ItemsForSortModel();
+               _context = new item1Entities();
             _parametr = Parametr;
-            Items = new ObservableCollection<ITEM>
-                (_context.ITEMs.Where(p => p.ItemClass.name == Parametr));
+            #region if (Parametr=="Gun")
+            if (Parametr=="Gun")
+                        {
+                IttForSort = new ObservableCollection<ItemsForSortModel>(_context.ITEMs.
+                Where(p => p.ItemClass.name == Parametr).
+                Select(p => new
+                {
+                    _uiIndex = p.uiIndex,
+                    _szItemName = p.szItemName,
+                    _ItemClassname = p.ItemClass.name,
+                    _TL1name_TL = p.TL1.name_TL,
+                    _LC1Name_LC = p.LC1.Name_LC,
+                    _usPrice = p.usPrice
+                })./*AsEnumerable().*/
+                Select(an => new ItemsForSortModel
+                {
+                    ID = an._uiIndex,
+                    Name = an._szItemName,
+                    Class = an._ItemClassname,
+                    TL = an._TL1name_TL,
+                    LC = an._LC1Name_LC,
+                    Price = an._usPrice
+                }));
+            }
+            #endregion
+            #region else if (Parametr=="Attachment")
+            else if (Parametr == "Attachment")
+            {
+                IttForSort = new ObservableCollection<ItemsForSortModel>(_context.ITEMs.
+                Where(p => p.ItemClass.name == Parametr).Where(p=>p.Attachment.Attachmentmount1.id== mount).
+                Select(p => new
+                {
+                    _uiIndex = p.uiIndex,
+                    _szItemName = p.szItemName,
+                    _ItemClassname = p.ItemClass.name,
+                    _TL1name_TL = p.TL1.name_TL,
+                    _LC1Name_LC = p.LC1.Name_LC,
+                    _usPrice = p.usPrice
+                })./*AsEnumerable().*/
+                Select(an => new ItemsForSortModel
+                {
+                    ID = an._uiIndex,
+                    Name = an._szItemName,
+                    Class = an._ItemClassname,
+                    TL = an._TL1name_TL,
+                    LC = an._LC1Name_LC,
+                    Price = an._usPrice
+                }));
+            }
+            #endregion
+        }
 
-            IttForSort = new ObservableCollection<ItemsForSortModel>(_context.ITEMs.
-            Where(p => p.ItemClass.name == Parametr).
-            Select(p => new
-            {
-                _uiIndex = p.uiIndex,
-                _szItemName = p.szItemName,
-                _ItemClassname = p.ItemClass.name,
-                _TL1name_TL = p.TL1.name_TL,
-                _LC1Name_LC = p.LC1.Name_LC,
-                _usPrice = p.usPrice
-            })./*AsEnumerable().*/
-            Select(an => new ItemsForSortModel
-            {
-                ID = an._uiIndex,
-                Name = an._szItemName,
-                Class = an._ItemClassname,
-                TL = an._TL1name_TL,
-                LC = an._LC1Name_LC,
-                Price = an._usPrice
-            }));
+        public void Dispose()
+        {
+            _context.Dispose();
         }
     }
 }
