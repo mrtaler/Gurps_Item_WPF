@@ -1,0 +1,36 @@
+﻿<Window x:Class="Item_WPF.MVVM.View.InputBoxView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:addin="clr-namespace:Item_WPF.addin"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Item_WPF.MVVM.View"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="{Binding Title_caption}"
+        Width="274"
+        Height="123.333"
+        mc:Ignorable="d">
+    <Grid>
+        <Button x:Name="ButtonOk"
+                Width="75"
+                Height="20"
+                Margin="22,62,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="ButtonOk_Click"
+                Content="Ok" />
+        <Label x:Name="Label01"
+               Height="23"
+               Margin="10,13.136,119.45,0"
+               VerticalAlignment="Top"
+               Content="{Binding Label_caption}" />
+        <TextBox x:Name="TextBox"
+                 Width="104.45"
+                 Height="23"
+                 Margin="0,13.136,10,0"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Top"
+                 Text="{Binding passinput,
+                                Mode=TwoWay}"
+                 TextWrapping="Wrap" />
+    </Grid>
+</Window>
