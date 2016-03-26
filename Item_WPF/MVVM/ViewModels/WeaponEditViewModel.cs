@@ -26,25 +26,8 @@ namespace Item_WPF.MVVM.ViewModels
         public ObservableCollection<WeaponType> WeaponTypescCollection { get; set; }
         public ObservableCollection<TypeOfDamage> TypeOfDamagesCollection { get; set; }
         public ObservableCollection<AMMO> AmmoscCollection { get; set; }
-        public ObservableCollection<WeaponDamage> WeaponDamageColl
-        {
-            get
-            {
-                return _WeaponDamageColl;
-            }
-            set
-            {
-                if (_WeaponDamageColl != value)
-                {
-                    _WeaponDamageColl = value;
-                    RaisePropertyChanged("WeaponDamageColl");
-                }
-            }
-        }
-        private ObservableCollection<WeaponDamage> _WeaponDamageColl;
-
-
-        public ITEM ItemLoad { get; set; }
+        public ObservableCollection<WeaponDamage> WeaponDamageColl { get; set; }
+                public ITEM ItemLoad { get; set; }
         public WEAPON WeaponLoad { get; set; }
         public ObservableCollection<AvailableAttachSlot> avSlot { get; set; }
 
@@ -119,9 +102,9 @@ namespace Item_WPF.MVVM.ViewModels
 
                 WeaponDamageColl.First(p => p.WeaponAttackType.name.Contains("Primary")).idTypeOfDamage2 =null;
 
-                WeaponDamageColl.First(p => p.WeaponAttackType.name.Contains("Primary")).TypeOfDamage1 = null;
+                WeaponDamageColl.First(p => p.WeaponAttackType.name.Contains("Primary")).TypeOfDamage1 = "";
 
-                WeaponDamageColl.First(p => p.WeaponAttackType.name.Contains("Primary")).TypeOfDamage2 = null;            
+                WeaponDamageColl.First(p => p.WeaponAttackType.name.Contains("Primary")).TypeOfDamage2 = "";            
 
             //}
         }
