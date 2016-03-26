@@ -902,19 +902,19 @@ namespace Item_WPF
       }
      }
      
-        private Nullable<decimal> _laserColorEf;
-     public Nullable<decimal> laserColorEf 
+        private Nullable<decimal> _LaserColorEf;
+     public Nullable<decimal> LaserColorEf 
      { 
       get
       {
-       return _laserColorEf;
+       return _LaserColorEf;
       } 
       set
       {
-       if(_laserColorEf != value)
+       if(_LaserColorEf != value)
        {
-        _laserColorEf = value;
-        OnPropertyChanged("laserColorEf");
+        _LaserColorEf = value;
+        OnPropertyChanged("LaserColorEf");
        }
       }
      }
@@ -947,24 +947,14 @@ namespace Item_WPF
                            {    _Attachmentmount1 = value;    OnPropertyChanged("Attachmentmount1");   }
                             }
                          } 
-        private G_AttachClass _G_AttachClass1;
-                public virtual G_AttachClass G_AttachClass1
+        private ITEM _ITEM;
+                public virtual ITEM ITEM
                         {
                         get
-                            { return _G_AttachClass1; } 
+                            { return _ITEM; } 
                         set
-                        { if(_G_AttachClass1 != value)
-                           {    _G_AttachClass1 = value;    OnPropertyChanged("G_AttachClass1");   }
-                            }
-                         } 
-        private G_SubAttachClass _G_SubAttachClass1;
-                public virtual G_SubAttachClass G_SubAttachClass1
-                        {
-                        get
-                            { return _G_SubAttachClass1; } 
-                        set
-                        { if(_G_SubAttachClass1 != value)
-                           {    _G_SubAttachClass1 = value;    OnPropertyChanged("G_SubAttachClass1");   }
+                        { if(_ITEM != value)
+                           {    _ITEM = value;    OnPropertyChanged("ITEM");   }
                             }
                          } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -94,7 +94,7 @@ namespace Item_WPF.addin
             return new ObservableCollection<WeaponType>(
                        weaponTypescCollection.
                            Where(p => p.WeaponClass.id == findClass));
-        }      
+        }
     }
     #endregion
     #region Converter int to Visible and check  AvailableAttachPointConvert
@@ -167,7 +167,6 @@ namespace Item_WPF.addin
         }
     }
     #endregion
-
     #region MountToAttachPointConvert
     class MountToAttachPointConvert : MultiConvertorBase<MountToAttachPointConvert>
     {
@@ -223,7 +222,6 @@ namespace Item_WPF.addin
         }
     }
     #endregion
-
     #region Convert Shotgun to vis
     public class Shotguntovis : ConvertorBase<Shotguntovis>
     {
@@ -236,7 +234,6 @@ namespace Item_WPF.addin
         }
     }
     #endregion
-
     #region SelfVizToNull notttttttttttttttttttt
     public class SelfVizToNull : MultiConvertorBase<SelfVizToNull>
     {
@@ -257,8 +254,6 @@ namespace Item_WPF.addin
         }
     }
     #endregion
-
-
     #region dataContextConverter
     class DatacontextAttachClass : MultiConvertorBase<DatacontextAttachClass>
     {
@@ -286,10 +281,10 @@ namespace Item_WPF.addin
             ObservableCollection<G_SubAttachClass> SubAttachClassCollection = (ObservableCollection<G_SubAttachClass>)values[0];
             int findClass = (int)values[1];
 
-           string QT = (from p in SubAttachClassCollection
-                  where p.id == findClass
-                  select p.ATTACHMENTSLOT1.szSlotName).First().ToString();
-           return QT;
+            string QT = (from p in SubAttachClassCollection
+                         where p.id == findClass
+                         select p.ATTACHMENTSLOT1.szSlotName).First().ToString();
+            return QT;
         }
     }
     #endregion
@@ -304,13 +299,80 @@ namespace Item_WPF.addin
             ObservableCollection<Attachmentmount> MountForColl = (ObservableCollection<Attachmentmount>)values[1];
             int findClass = (int)values[0];
             ObservableCollection<G_SubAttachClass> G_SubAttachClass = (ObservableCollection<G_SubAttachClass>)values[2];
-            
+
             int attSlot = (from p in G_SubAttachClass
                            where p.id == findClass
                            select p.ATTACHMENTSLOT1.uiSlotIndex).First();
-                           
             return new ObservableCollection<Attachmentmount>(MountForColl.Where(p => p.idAttacClass == attSlot));
-           
+
+        }
+    }
+    #endregion
+    /*#region Converter for all items
+    public class AllItemsSort : MultiConvertorBase<AllItemsSort>
+    {
+        public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            ObservableCollection<ITEM> ItemsForSort = values[0] as ObservableCollection<ITEM>;
+            int? Class_for_Sort = values[1] as int?;
+            if (Class_for_Sort == null || Class_for_Sort == 1)
+                return ItemsForSort;
+            else return new ObservableCollection<ITEM>(ItemsForSort.Where(p => p.usItemClass == Class_for_Sort));
+        }
+    }
+    #endregion
+     <DataGrid.ItemsSource>
+                <MultiBinding Converter="{addin:AllItemsSort}">
+                    <Binding Path="Items" />
+                    <Binding ElementName="ItemClassForSort" Path="SelectedValue" />
+                </MultiBinding>
+     </DataGrid.ItemsSource> 
+    
+    */
+    #region Converter for Weapondamage
+    public class Weapondamage : ConvertorBase<Weapondamage>
+    {
+        public ObservableCollection<WeaponDamage> weaponDamCollConvert { set; private get; }
+        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            weaponDamCollConvert = value as ObservableCollection<WeaponDamage>;
+            if ((parameter as string) == "Damage")
+                return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).Damage;
+            else if ((parameter as string) == "AD")
+            {
+                if (weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).ArmorDivision == 1)
+                    return "";
+                else return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).ArmorDivision;
+            }
+            else if ((parameter as string) == "ToD")
+                return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).idTypeOfDamage1;
+            else if ((parameter as string) == "ToD2")
+                return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).idTypeOfDamage2;
+            else if ((parameter as string) == "TD1")
+                return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).TypeOfDamage1;
+            else if ((parameter as string) == "TD2")
+                return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).TypeOfDamage2;
+            else return null;
+        }
+        public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if ((parameter as string) == "Damage")
+                weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).Damage = value as string;
+            else if ((parameter as string) == "AD")
+            {
+                if (CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0] == '.')
+                    weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).ArmorDivision = System.Convert.ToDecimal((value as string).Replace(',', CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0]));
+                else weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).ArmorDivision = System.Convert.ToDecimal((value as string).Replace('.', CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0]));
+            }
+            else if ((parameter as string) == "ToD")
+                weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).idTypeOfDamage1 = System.Convert.ToInt32(value);
+            else if ((parameter as string) == "ToD2")
+                weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).idTypeOfDamage2 = System.Convert.ToInt32(value);
+            else if ((parameter as string) == "TD1")
+                weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).TypeOfDamage1 = value as string;
+            else if ((parameter as string) == "TD2")
+                weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).TypeOfDamage2 = value as string;
+            return weaponDamCollConvert;
         }
     }
     #endregion

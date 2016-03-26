@@ -32,7 +32,8 @@ namespace Item_WPF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TypeOfDamage()
         {
-            this.WEAPONs = new HashSet<WEAPON>();
+            this.WeaponDamages = new HashSet<WeaponDamage>();
+            this.WeaponDamages1 = new HashSet<WeaponDamage>();
         }
     
         private int _id;
@@ -105,14 +106,25 @@ namespace Item_WPF
      
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<WEAPON> _WEAPONs;
-                public virtual ICollection<WEAPON> WEAPONs
+        private ICollection<WeaponDamage> _WeaponDamages;
+                public virtual ICollection<WeaponDamage> WeaponDamages
                         {
                         get
-                            { return _WEAPONs; } 
+                            { return _WeaponDamages; } 
                         set
-                        { if(_WEAPONs != value)
-                           {    _WEAPONs = value;    OnPropertyChanged("WEAPONs");   }
+                        { if(_WeaponDamages != value)
+                           {    _WeaponDamages = value;    OnPropertyChanged("WeaponDamages");   }
+                            }
+                         } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<WeaponDamage> _WeaponDamages1;
+                public virtual ICollection<WeaponDamage> WeaponDamages1
+                        {
+                        get
+                            { return _WeaponDamages1; } 
+                        set
+                        { if(_WeaponDamages1 != value)
+                           {    _WeaponDamages1 = value;    OnPropertyChanged("WeaponDamages1");   }
                             }
                          } 
     }

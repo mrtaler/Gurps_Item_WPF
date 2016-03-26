@@ -16,25 +16,21 @@ using System.Windows.Shapes;
 namespace Item_WPF.MVVM.View
 {
     /// <summary>
-    /// Логика взаимодействия для AttacmentEditView.xaml
+    /// Логика взаимодействия для NewItemsView.xaml
     /// </summary>
-    public partial class AttacmentEditView : Window
+    public partial class NewItemsView : Window
     {
-        private AttacmentEditViewModel _AttacmentEditViewModel;
-        public AttacmentEditView(ITEM itSell)
+        private NewItemsViewModel _newItemsViewModel;
+        public NewItemsView()
         {
+            _newItemsViewModel = new NewItemsViewModel();
+            DataContext = _newItemsViewModel;
             InitializeComponent();
-            _AttacmentEditViewModel = new AttacmentEditViewModel(itSell);
-            DataContext = _AttacmentEditViewModel;
-        }
-        protected override void OnClosed(EventArgs e)
-        {
-            _AttacmentEditViewModel.Dispose();
-            base.OnClosed(e);
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
+            _newItemsViewModel.Dispose();
             this.Close();
         }
     }

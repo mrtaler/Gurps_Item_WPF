@@ -26,6 +26,24 @@ namespace Item_WPF.MVVM.ViewModels
         public ObservableCollection<WeaponType> WeaponTypescCollection { get; set; }
         public ObservableCollection<TypeOfDamage> TypeOfDamagesCollection { get; set; }
         public ObservableCollection<AMMO> AmmoscCollection { get; set; }
+        public ObservableCollection<WeaponDamage> WeaponDamageColl
+        {
+            get
+            {
+                return _WeaponDamageColl;
+            }
+            set
+            {
+                if (_WeaponDamageColl != value)
+                {
+                    _WeaponDamageColl = value;
+                    RaisePropertyChanged("WeaponDamageColl");
+                }
+            }
+        }
+        private ObservableCollection<WeaponDamage> _WeaponDamageColl;
+
+
         public ITEM ItemLoad { get; set; }
         public WEAPON WeaponLoad { get; set; }
         public ObservableCollection<AvailableAttachSlot> avSlot { get; set; }
@@ -48,20 +66,12 @@ namespace Item_WPF.MVVM.ViewModels
         }
 
         #region Constructor
-        public WeaponEditViewModel(int itemselect)
+        public WeaponEditViewModel(ITEM itemselect)
         {
             _context = new item1Entities();
-
-            ItemLoad = (from z in _context.ITEMs
-                        where z.uiIndex == itemselect
-                        select z).First();
-
-            var it = _context.ITEMs.First(p => p.uiIndex == itemselect);
-
-            WeaponLoad = (from p in _context.WEAPONs
-                          where p.uiIndex == ItemLoad.ubClassIndex
-                          select p).First();
-
+            ItemLoad = itemselect;
+            WeaponLoad = ItemLoad.WEAPON;
+                       
             TlCollection = new ObservableCollection<TL>(_context.TLs);
             LccCollection = new ObservableCollection<LC>(_context.LCs);
 
@@ -69,6 +79,9 @@ namespace Item_WPF.MVVM.ViewModels
             WeaponTypescCollection = new ObservableCollection<WeaponType>(_context.WeaponTypes);
             TypeOfDamagesCollection = new ObservableCollection<TypeOfDamage>(_context.TypeOfDamages);
 
+            WeaponDamageColl = new ObservableCollection<WeaponDamage>(_context.WeaponDamages.Where((p => p.idWeapon == WeaponLoad.uiIndex)));       
+
+            
             avSlot = new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlots.Where(p => p.rWeaponId == WeaponLoad.uiIndex));
             AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
 
@@ -79,7 +92,7 @@ namespace Item_WPF.MVVM.ViewModels
             LoadImage = new ActionCommand(LoadImageToForm) { IsExecutable = true };
             DellImage = new ActionCommand(DellImageFromAll) { IsExecutable = true };
 
-            Refresh = new ActionCommand(Refreshnew) { IsExecutable = true };
+            CExtendDamage = new RelayCommand(ExtendDamage);
 
             AddMountslot1 = new RelayCommand(AddMountslot1_Execute);
             CheckThreeCheckBox = new RelayCommand(CheckThreeCheckBox_Execute);
@@ -96,10 +109,21 @@ namespace Item_WPF.MVVM.ViewModels
         #endregion
         #region Command
 
-        private void Refreshnew()
+        private void ExtendDamage(object param)
         {
-            //_context = new item1Entities();
-            //AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
+            
+            //if (!(Convert.ToBoolean(param)))
+            //{
+              
+             //   WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).idTypeOfDamage1 = "";
+
+                WeaponDamageColl.First(p => p.WeaponAttackType.name.Contains("Primary")).idTypeOfDamage2 =null;
+
+                WeaponDamageColl.First(p => p.WeaponAttackType.name.Contains("Primary")).TypeOfDamage1 = null;
+
+                WeaponDamageColl.First(p => p.WeaponAttackType.name.Contains("Primary")).TypeOfDamage2 = null;            
+
+            //}
         }
 
 
@@ -150,10 +174,11 @@ namespace Item_WPF.MVVM.ViewModels
         public ICommand CheckThreeCheckBox { get; set; }
         public ICommand AddMountslot1 { get; set; }
         public ActionCommand Save { get; set; }
+
         public ActionCommand AddMountslot { get; set; }
         public ActionCommand LoadImage { get; set; }
         public ActionCommand DellImage { get; set; }
-        public ActionCommand Refresh { get; set; }
+        public ICommand CExtendDamage { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertyChanged(string propertyName)

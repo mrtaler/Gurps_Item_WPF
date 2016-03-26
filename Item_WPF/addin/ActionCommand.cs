@@ -7,7 +7,7 @@ namespace Item_WPF.addin
     {
         private readonly Action _action;
         private bool _isExecutable;
-        private Action<object> addMountslotCommand;
+        private Action<object> param;
 
         //      private ObservableCollection<WeaponType> observableCollection;
 
@@ -31,9 +31,9 @@ namespace Item_WPF.addin
             _action = action;
         }
 
-        public ActionCommand(Action action, Action<object> addMountslotCommand)
+        public ActionCommand(Action<object> param)
         {
-            this.addMountslotCommand = addMountslotCommand;
+            this.param = param;
         }
 
         /// <summary>

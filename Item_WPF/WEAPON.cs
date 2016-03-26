@@ -33,6 +33,7 @@ namespace Item_WPF
         public WEAPON()
         {
             this.AvailableAttachSlots = new HashSet<AvailableAttachSlot>();
+            this.WeaponDamages = new HashSet<WeaponDamage>();
         }
     
         private int _uiIndex;
@@ -120,40 +121,6 @@ namespace Item_WPF
       }
      }
      
-        private string _Damage;
-     public string Damage 
-     { 
-      get
-      {
-       return _Damage;
-      } 
-      set
-      {
-       if(_Damage != value)
-       {
-        _Damage = value;
-        OnPropertyChanged("Damage");
-       }
-      }
-     }
-     
-        private int _ubTypeOfDamage;
-     public int ubTypeOfDamage 
-     { 
-      get
-      {
-       return _ubTypeOfDamage;
-      } 
-      set
-      {
-       if(_ubTypeOfDamage != value)
-       {
-        _ubTypeOfDamage = value;
-        OnPropertyChanged("ubTypeOfDamage");
-       }
-      }
-     }
-     
         private int _DefACC;
      public int DefACC 
      { 
@@ -235,23 +202,6 @@ namespace Item_WPF
        {
         _AWeight = value;
         OnPropertyChanged("AWeight");
-       }
-      }
-     }
-     
-        private decimal _Arm_Division;
-     public decimal Arm_Division 
-     { 
-      get
-      {
-       return _Arm_Division;
-      } 
-      set
-      {
-       if(_Arm_Division != value)
-       {
-        _Arm_Division = value;
-        OnPropertyChanged("Arm_Division");
        }
       }
      }
@@ -388,40 +338,6 @@ namespace Item_WPF
        {
         _Recoil = value;
         OnPropertyChanged("Recoil");
-       }
-      }
-     }
-     
-        private string _Linked;
-     public string Linked 
-     { 
-      get
-      {
-       return _Linked;
-      } 
-      set
-      {
-       if(_Linked != value)
-       {
-        _Linked = value;
-        OnPropertyChanged("Linked");
-       }
-      }
-     }
-     
-        private string _Follow_Up;
-     public string Follow_Up 
-     { 
-      get
-      {
-       return _Follow_Up;
-      } 
-      set
-      {
-       if(_Follow_Up != value)
-       {
-        _Follow_Up = value;
-        OnPropertyChanged("Follow_Up");
        }
       }
      }
@@ -658,14 +574,36 @@ namespace Item_WPF
                            {    _AMMO = value;    OnPropertyChanged("AMMO");   }
                             }
                          } 
-        private TypeOfDamage _TypeOfDamage;
-                public virtual TypeOfDamage TypeOfDamage
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<AvailableAttachSlot> _AvailableAttachSlots;
+                public virtual ICollection<AvailableAttachSlot> AvailableAttachSlots
                         {
                         get
-                            { return _TypeOfDamage; } 
+                            { return _AvailableAttachSlots; } 
                         set
-                        { if(_TypeOfDamage != value)
-                           {    _TypeOfDamage = value;    OnPropertyChanged("TypeOfDamage");   }
+                        { if(_AvailableAttachSlots != value)
+                           {    _AvailableAttachSlots = value;    OnPropertyChanged("AvailableAttachSlots");   }
+                            }
+                         } 
+        private ITEM _ITEM;
+                public virtual ITEM ITEM
+                        {
+                        get
+                            { return _ITEM; } 
+                        set
+                        { if(_ITEM != value)
+                           {    _ITEM = value;    OnPropertyChanged("ITEM");   }
+                            }
+                         } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<WeaponDamage> _WeaponDamages;
+                public virtual ICollection<WeaponDamage> WeaponDamages
+                        {
+                        get
+                            { return _WeaponDamages; } 
+                        set
+                        { if(_WeaponDamages != value)
+                           {    _WeaponDamages = value;    OnPropertyChanged("WeaponDamages");   }
                             }
                          } 
         private WeaponType _WeaponType;
@@ -676,17 +614,6 @@ namespace Item_WPF
                         set
                         { if(_WeaponType != value)
                            {    _WeaponType = value;    OnPropertyChanged("WeaponType");   }
-                            }
-                         } 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<AvailableAttachSlot> _AvailableAttachSlots;
-                public virtual ICollection<AvailableAttachSlot> AvailableAttachSlots
-                        {
-                        get
-                            { return _AvailableAttachSlots; } 
-                        set
-                        { if(_AvailableAttachSlots != value)
-                           {    _AvailableAttachSlots = value;    OnPropertyChanged("AvailableAttachSlots");   }
                             }
                          } 
     }

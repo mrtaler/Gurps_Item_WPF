@@ -35,40 +35,7 @@ namespace Item_WPF.addin
     /// <summary>
     /// класс для фомирования комбинаций оружия
     /// </summary>
-    public class WeaponCombine
-    {
-        public static int IdWeaponItem;
-        public static int IdScopeItem;
-        public static int IdLaserItem;
-        public static int IdLightItem;
-        public static int IdBipodItem;
-        public static int IdSilenserItem;
-        public static int IdLauncherItem;
-        public static int IdStockItem;
-        public static int IdBayonetItem;
-        public static int IdMagazineItem;
-        public static int IdInternalItem;
-        public static int IdExternalItem;
-        /// <summary>
-        /// обнуление комбинатора
-        /// </summary>
-        public static void WeapCombNull()
-        {
-            IdWeaponItem = 0;
-            IdScopeItem = 0;
-            IdLaserItem = 0;
-            IdLightItem = 0;
-            IdBipodItem = 0;
-            IdSilenserItem = 0;
-            IdLauncherItem = 0;
-            IdStockItem = 0;
-            IdBayonetItem = 0;
-            IdMagazineItem = 0;
-            IdInternalItem = 0;
-            IdExternalItem = 0;
-        }
-
-    }
+   
     ///<summary>
     ///класс бросатель кубиков
     ///</summary>

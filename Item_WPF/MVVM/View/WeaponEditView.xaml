@@ -412,11 +412,11 @@
                     </GroupBox>
                     <GroupBox x:Name="GroupBox5"
                               Width="195"
-                              Height="194"
+                              Height="270"
                               Margin="10,101,0,0"
                               HorizontalAlignment="Left"
                               VerticalAlignment="Top"
-                              Header="Damage">
+                              Header="WeaponPrimaryDamage">
                         <Grid x:Name="DamageWeaponGrid">
                             <Label x:Name="Label11"
                                    Margin="10,10,0,0"
@@ -424,25 +424,15 @@
                                    VerticalAlignment="Top"
                                    Content="Damage" />
                             <Label x:Name="Label12"
-                                   Margin="10,41,0,0"
+                                   Margin="10,36,0,0"
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Top"
                                    Content="Type of Damage" />
                             <Label x:Name="Label13"
-                                   Margin="10,72,0,0"
+                                   Margin="10,64,0,0"
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Top"
                                    Content="Arm Divizor" />
-                            <Label x:Name="Label14"
-                                   Margin="10,103,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Follow Up" />
-                            <Label x:Name="Label15"
-                                   Margin="10,134,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Linked" />
 
                             <TextBox x:Name="DamageTextBox"
                                      Width="75"
@@ -450,50 +440,130 @@
                                      Margin="98,10,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
-                                     Text="{Binding WeaponLoad.Damage,
-                                                    Mode=TwoWay}"
-                                     TextWrapping="Wrap" />
+                                     TextWrapping="Wrap">
+
+                                <TextBox.Text>
+                                    <Binding Converter="{addin:Weapondamage}"
+                                             ConverterParameter="Damage"
+                                             Mode="TwoWay"
+                                             Path="WeaponDamageColl"                                             
+                                             UpdateSourceTrigger="PropertyChanged" />
+                                </TextBox.Text>
+                            </TextBox>
                             <TextBox x:Name="ArmDivizorTextBox"
                                      Width="75"
                                      Height="23"
-                                     Margin="98,76,0,0"
+                                     Margin="98,67,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
                                      TextWrapping="Wrap">
                                 <TextBox.Text>
-                                    <Binding Converter="{addin:DeciminalConverterString}"
+
+                                    <Binding Converter="{addin:Weapondamage}"
+                                             ConverterParameter="AD"
                                              Mode="TwoWay"
-                                             Path="WeaponLoad.Arm_Division" />
+                                             Path="WeaponDamageColl"
+                                             UpdateSourceTrigger="PropertyChanged" />
                                 </TextBox.Text>
                             </TextBox>
-                            <TextBox x:Name="FollowUpTextBox"
-                                     Width="75"
-                                     Height="23"
-                                     Margin="98,106,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     Text="{Binding WeaponLoad.Follow_Up,
-                                                    Mode=TwoWay}"
-                                     TextWrapping="Wrap" />
-                            <TextBox x:Name="LinkedTextBox"
-                                     Width="75"
-                                     Height="23"
-                                     Margin="98,138,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     Text="{Binding WeaponLoad.Linked,
-                                                    Mode=TwoWay}"
-                                     TextWrapping="Wrap" />
                             <ComboBox x:Name="TypeOfDamageComboBox"
                                       Width="61"
-                                      Margin="112,45,0,0"
+                                      Margin="112,38,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       DisplayMemberPath="name"
                                       ItemsSource="{Binding TypeOfDamagesCollection}"
-                                      SelectedValue="{Binding WeaponLoad.ubTypeOfDamage,
-                                                              Mode=TwoWay}"
-                                      SelectedValuePath="id" />
+                                      SelectedValuePath="id">
+                                <ComboBox.SelectedValue>
+                                    <Binding Converter="{addin:Weapondamage}"
+                                             ConverterParameter="ToD"
+                                             Mode="TwoWay"
+                                             Path="WeaponDamageColl"
+                                             UpdateSourceTrigger="PropertyChanged" />
+                                </ComboBox.SelectedValue>
+                            </ComboBox>
+                            <CheckBox x:Name="LinkedcheckBox"
+                                      Margin="98,118,0,0"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Top"
+                                      Content="Linked" />
+                            <CheckBox x:Name="FollowUpcheckBox"
+                                      Margin="98,98,0,0"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Top"
+                                      Content="FollowUp" />
+                            <CheckBox x:Name="ExcheckBox"
+                                      Margin="10,98,0,0"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Top"
+                                      Command="{Binding CExtendDamage, UpdateSourceTrigger=PropertyChanged}"
+                                      CommandParameter="{Binding ElementName=ExcheckBox,
+                                                                 Path=IsChecked}"
+                                      Content="Ext Dam" />
+                            <GroupBox x:Name="groupBox"
+                                      Width="163"
+                                      Height="105"
+                                      Margin="10,133,0,0"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Top"
+                                      Header="ExDam">
+                                <!--
+                                    Visibility="{Binding ElementName=ExcheckBox,
+                                    Path=IsChecked,
+                                    Converter={StaticResource BooleanToVisibilityConverter}}">
+                                -->
+                                <Grid Width="153"
+                                      Height="87"
+                                      Margin="0,0,0,0"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Top">
+                                    <TextBox x:Name="TD1textBox"
+                                             Width="83"
+                                             Height="23"
+                                             Margin="60,0,0,0"
+                                             HorizontalAlignment="Left"
+                                             VerticalAlignment="Top"
+                                             TextWrapping="Wrap">
+                                        <TextBox.Text>
+                                            <Binding Converter="{addin:Weapondamage}"
+                                                     ConverterParameter="TD1"
+                                                     Mode="TwoWay"
+                                                     Path="WeaponDamageColl"
+                                                     UpdateSourceTrigger="PropertyChanged" />
+                                        </TextBox.Text>
+                                    </TextBox>
+                                    <TextBox x:Name="textBox1"
+                                             Width="83"
+                                             Height="23"
+                                             Margin="60,55,0,0"
+                                             HorizontalAlignment="Left"
+                                             VerticalAlignment="Top"
+                                             TextWrapping="Wrap">
+                                        <TextBox.Text>
+                                            <Binding Converter="{addin:Weapondamage}"
+                                                     ConverterParameter="TD2"
+                                                     Mode="TwoWay"
+                                                     Path="WeaponDamageColl" />
+                                        </TextBox.Text>
+                                    </TextBox>
+                                    <ComboBox x:Name="comboBox"
+                                              Width="83"
+                                              Margin="60,28,0,0"
+                                              HorizontalAlignment="Left"
+                                              VerticalAlignment="Top"
+                                              DisplayMemberPath="name"
+                                              ItemsSource="{Binding TypeOfDamagesCollection}"
+                                              SelectedValuePath="id">
+                                        <ComboBox.SelectedValue>
+                                            <Binding Converter="{addin:Weapondamage}"
+                                                     ConverterParameter="ToD2"
+                                                     Mode="TwoWay"
+                                                     Path="WeaponDamageColl"
+                                                     UpdateSourceTrigger="PropertyChanged" />
+                                        </ComboBox.SelectedValue>
+                                    </ComboBox>
+                                </Grid>
+                            </GroupBox>
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="GroupBox6"

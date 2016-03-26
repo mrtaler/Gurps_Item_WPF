@@ -91,16 +91,6 @@ namespace Item_WPF
                            {    _Attachmentmount = value;    OnPropertyChanged("Attachmentmount");   }
                             }
                          } 
-        private ATTACHMENTSLOT _ATTACHMENTSLOT;
-                public virtual ATTACHMENTSLOT ATTACHMENTSLOT
-                        {
-                        get
-                            { return _ATTACHMENTSLOT; } 
-                        set
-                        { if(_ATTACHMENTSLOT != value)
-                           {    _ATTACHMENTSLOT = value;    OnPropertyChanged("ATTACHMENTSLOT");   }
-                            }
-                         } 
         private WEAPON _WEAPON;
                 public virtual WEAPON WEAPON
                         {

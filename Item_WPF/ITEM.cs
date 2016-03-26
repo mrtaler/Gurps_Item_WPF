@@ -267,40 +267,6 @@ namespace Item_WPF
       }
      }
      
-        private int _TL;
-     public int TL 
-     { 
-      get
-      {
-       return _TL;
-      } 
-      set
-      {
-       if(_TL != value)
-       {
-        _TL = value;
-        OnPropertyChanged("TL");
-       }
-      }
-     }
-     
-        private int _LC;
-     public int LC 
-     { 
-      get
-      {
-       return _LC;
-      } 
-      set
-      {
-       if(_LC != value)
-       {
-        _LC = value;
-        OnPropertyChanged("LC");
-       }
-      }
-     }
-     
         private bool _Electronic;
      public bool Electronic 
      { 
@@ -590,23 +556,6 @@ namespace Item_WPF
       }
      }
      
-        private string _SizeBatteries;
-     public string SizeBatteries 
-     { 
-      get
-      {
-       return _SizeBatteries;
-      } 
-      set
-      {
-       if(_SizeBatteries != value)
-       {
-        _SizeBatteries = value;
-        OnPropertyChanged("SizeBatteries");
-       }
-      }
-     }
-     
         private bool _NeedsBatteries;
      public bool NeedsBatteries 
      { 
@@ -722,6 +671,57 @@ namespace Item_WPF
        {
         _perehodnik = value;
         OnPropertyChanged("perehodnik");
+       }
+      }
+     }
+     
+        private int _TL;
+     public int TL 
+     { 
+      get
+      {
+       return _TL;
+      } 
+      set
+      {
+       if(_TL != value)
+       {
+        _TL = value;
+        OnPropertyChanged("TL");
+       }
+      }
+     }
+     
+        private int _LC;
+     public int LC 
+     { 
+      get
+      {
+       return _LC;
+      } 
+      set
+      {
+       if(_LC != value)
+       {
+        _LC = value;
+        OnPropertyChanged("LC");
+       }
+      }
+     }
+     
+        private string _SizeBatteries;
+     public string SizeBatteries 
+     { 
+      get
+      {
+       return _SizeBatteries;
+      } 
+      set
+      {
+       if(_SizeBatteries != value)
+       {
+        _SizeBatteries = value;
+        OnPropertyChanged("SizeBatteries");
        }
       }
      }
@@ -982,6 +982,26 @@ namespace Item_WPF
      }
      
     
+        private ARMOUR _ARMOUR;
+                public virtual ARMOUR ARMOUR
+                        {
+                        get
+                            { return _ARMOUR; } 
+                        set
+                        { if(_ARMOUR != value)
+                           {    _ARMOUR = value;    OnPropertyChanged("ARMOUR");   }
+                            }
+                         } 
+        private Attachment _Attachment;
+                public virtual Attachment Attachment
+                        {
+                        get
+                            { return _Attachment; } 
+                        set
+                        { if(_Attachment != value)
+                           {    _Attachment = value;    OnPropertyChanged("Attachment");   }
+                            }
+                         } 
         private Cloth _Cloth;
                 public virtual Cloth Cloth
                         {
@@ -1000,6 +1020,16 @@ namespace Item_WPF
                         set
                         { if(_DrugType1 != value)
                            {    _DrugType1 = value;    OnPropertyChanged("DrugType1");   }
+                            }
+                         } 
+        private EXPLOSIVE _EXPLOSIVE;
+                public virtual EXPLOSIVE EXPLOSIVE
+                        {
+                        get
+                            { return _EXPLOSIVE; } 
+                        set
+                        { if(_EXPLOSIVE != value)
+                           {    _EXPLOSIVE = value;    OnPropertyChanged("EXPLOSIVE");   }
                             }
                          } 
         private FOOD _FOOD;
@@ -1040,6 +1070,26 @@ namespace Item_WPF
                         set
                         { if(_TL1 != value)
                            {    _TL1 = value;    OnPropertyChanged("TL1");   }
+                            }
+                         } 
+        private LOADBEARINGEQUIPMENT _LOADBEARINGEQUIPMENT;
+                public virtual LOADBEARINGEQUIPMENT LOADBEARINGEQUIPMENT
+                        {
+                        get
+                            { return _LOADBEARINGEQUIPMENT; } 
+                        set
+                        { if(_LOADBEARINGEQUIPMENT != value)
+                           {    _LOADBEARINGEQUIPMENT = value;    OnPropertyChanged("LOADBEARINGEQUIPMENT");   }
+                            }
+                         } 
+        private WEAPON _WEAPON;
+                public virtual WEAPON WEAPON
+                        {
+                        get
+                            { return _WEAPON; } 
+                        set
+                        { if(_WEAPON != value)
+                           {    _WEAPON = value;    OnPropertyChanged("WEAPON");   }
                             }
                          } 
     }

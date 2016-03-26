@@ -33,7 +33,6 @@ namespace Item_WPF
         public G_AttachClass()
         {
             this.G_SubAttachClass = new HashSet<G_SubAttachClass>();
-            this.Attachments = new HashSet<Attachment>();
         }
     
         private int _id;
@@ -80,17 +79,6 @@ namespace Item_WPF
                         set
                         { if(_G_SubAttachClass != value)
                            {    _G_SubAttachClass = value;    OnPropertyChanged("G_SubAttachClass");   }
-                            }
-                         } 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<Attachment> _Attachments;
-                public virtual ICollection<Attachment> Attachments
-                        {
-                        get
-                            { return _Attachments; } 
-                        set
-                        { if(_Attachments != value)
-                           {    _Attachments = value;    OnPropertyChanged("Attachments");   }
                             }
                          } 
     }
