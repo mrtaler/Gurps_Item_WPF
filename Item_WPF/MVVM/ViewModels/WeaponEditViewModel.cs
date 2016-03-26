@@ -91,24 +91,25 @@ namespace Item_WPF.MVVM.ViewModels
         }
         #endregion
         #region Command
-
+        #region Command ExtendDamage
+        public ICommand CExtendDamage { get; set; }
         private void ExtendDamage(object param)
         {
-            
+
             //if (!(Convert.ToBoolean(param)))
             //{
-              
-             //   WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).idTypeOfDamage1 = "";
 
-                WeaponDamageColl.First(p => p.WeaponAttackType.name.Contains("Primary")).idTypeOfDamage2 =null;
+            //   WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).idTypeOfDamage1 = "";
 
-                WeaponDamageColl.First(p => p.WeaponAttackType.name.Contains("Primary")).TypeOfDamage1 = "";
+            WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.name=="Primary").idTypeOfDamage2 =null;
 
-                WeaponDamageColl.First(p => p.WeaponAttackType.name.Contains("Primary")).TypeOfDamage2 = "";            
+            WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.name=="Primary").TypeOfDamage1 = null;
+
+            WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.name=="Primary").TypeOfDamage2 = null;            
 
             //}
         }
-
+        #endregion
 
         private void CheckThreeCheckBox_Execute(object parameter)
         {
@@ -161,7 +162,7 @@ namespace Item_WPF.MVVM.ViewModels
         public ActionCommand AddMountslot { get; set; }
         public ActionCommand LoadImage { get; set; }
         public ActionCommand DellImage { get; set; }
-        public ICommand CExtendDamage { get; set; }
+        
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertyChanged(string propertyName)

@@ -496,7 +496,7 @@
                                       Margin="10,98,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Command="{Binding CExtendDamage, UpdateSourceTrigger=PropertyChanged}"
+                                      Command="{Binding CExtendDamage}"
                                       CommandParameter="{Binding ElementName=ExcheckBox,
                                                                  Path=IsChecked}"
                                       Content="Ext Dam" />
