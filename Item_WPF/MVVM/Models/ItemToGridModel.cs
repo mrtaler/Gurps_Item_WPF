@@ -11,6 +11,7 @@ namespace Item_WPF.MVVM.Models
         public ITEM ItemS { get; set; }
         public string Name { get; set; }
         public string Tl { get; set; }
+        private WeaponDamage DamagePrim { get; set; }
         public string Damage { get; set; }
         public string DefAcc { get; set; }
         public string Range { get; set; }
@@ -31,9 +32,10 @@ namespace Item_WPF.MVVM.Models
                 
                 Name = itt.szItemName;
                 Tl = itt.TL1.name_TL;
+                DamagePrim = itt.WEAPON.WeaponDamages.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary"));
 
-                if (itt.WEAPON.Arm_Division != 1) Damage = itt.WEAPON.Damage + " (" + Convert.ToDouble(itt.WEAPON.Arm_Division) + ") " + itt.WEAPON.TypeOfDamage.name;
-                else Damage = itt.WEAPON.Damage + " " + itt.WEAPON.TypeOfDamage.name;
+                if (DamagePrim.ArmorDivision != 1) Damage = DamagePrim.Damage + " (" + Convert.ToDouble(DamagePrim.ArmorDivision) + ") " + DamagePrim.TypeOfDamage.name;
+                else Damage = DamagePrim.Damage + " " + DamagePrim.TypeOfDamage.name;
 
                 DefAcc = itt.WEAPON.DefACC.ToString();
                 Range = Convert.ToDouble(itt.WEAPON.Half_Range) + "/" + Convert.ToDouble(itt.WEAPON.FullRange);

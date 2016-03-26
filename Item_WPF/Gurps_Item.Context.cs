@@ -59,7 +59,9 @@ namespace Item_WPF
         public virtual DbSet<TL> TLs { get; set; }
         public virtual DbSet<TypeOfDamage> TypeOfDamages { get; set; }
         public virtual DbSet<WEAPON> WEAPONs { get; set; }
+        public virtual DbSet<WeaponAttackType> WeaponAttackTypes { get; set; }
         public virtual DbSet<WeaponClass> WeaponClasses { get; set; }
+        public virtual DbSet<WeaponDamage> WeaponDamages { get; set; }
         public virtual DbSet<WeaponType> WeaponTypes { get; set; }
     
         public virtual int NEW_ITEM_att(string name, Nullable<int> g_att_class, Nullable<int> g_sub_att, Nullable<int> id_att_mount)
@@ -83,7 +85,7 @@ namespace Item_WPF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NEW_ITEM_att", nameParameter, g_att_classParameter, g_sub_attParameter, id_att_mountParameter);
         }
     
-        public virtual int NEW_ITEM(string name, string class_ofItem, ObjectParameter Returns)
+        public virtual int NEW_ITEM(string name, string class_ofItem, ObjectParameter returns)
         {
             var nameParameter = name != null ?
                 new ObjectParameter("name", name) :
@@ -93,7 +95,7 @@ namespace Item_WPF
                 new ObjectParameter("class_ofItem", class_ofItem) :
                 new ObjectParameter("class_ofItem", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NEW_ITEM", nameParameter, class_ofItemParameter, Returns);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NEW_ITEM", nameParameter, class_ofItemParameter, returns);
         }
     }
 }

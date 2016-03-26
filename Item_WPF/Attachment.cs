@@ -902,19 +902,19 @@ namespace Item_WPF
       }
      }
      
-        private Nullable<decimal> _laserColorEf;
-     public Nullable<decimal> laserColorEf 
+        private Nullable<decimal> _LaserColorEf;
+     public Nullable<decimal> LaserColorEf 
      { 
       get
       {
-       return _laserColorEf;
+       return _LaserColorEf;
       } 
       set
       {
-       if(_laserColorEf != value)
+       if(_LaserColorEf != value)
        {
-        _laserColorEf = value;
-        OnPropertyChanged("laserColorEf");
+        _LaserColorEf = value;
+        OnPropertyChanged("LaserColorEf");
        }
       }
      }
