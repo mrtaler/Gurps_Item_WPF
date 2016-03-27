@@ -376,6 +376,163 @@ namespace Item_WPF.addin
         }
     }
     #endregion
+
+    #region converter  fo FollowUp
+    public class FollowUpLinkedOnOffConverter : ConvertorBase<FollowUpLinkedOnOffConverter>
+    {
+        public ObservableCollection<WeaponDamage> weaponDamCollConvert { set; private get; }
+        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            weaponDamCollConvert = value as ObservableCollection<WeaponDamage>;
+            if ((parameter as string) == "Follow-up" && weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType==2) != null)
+            {
+                return true;
+            }
+            else if ((parameter as string) == "Linked" && weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3) != null)
+            {
+                return true;
+            }
+
+            else return false;
+        }
+        public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+
+            if ((parameter as string) == "Follow-up")
+            {
+                if (System.Convert.ToBoolean(value))
+                {
+                    WeaponDamage FollowupDamage = new WeaponDamage()
+                    {
+                        idWeapon = weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).idWeapon,
+                        idWeaponAttackType = 2
+                    };
+                    weaponDamCollConvert.Add(FollowupDamage);
+                }
+                else if (!System.Convert.ToBoolean(value))
+                {
+                    weaponDamCollConvert.Remove(weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType ==2));
+                }
+            }
+            else if ((parameter as string) == "Linked")
+            {
+                if (System.Convert.ToBoolean(value))
+                {
+                    WeaponAttackType wat = new WeaponAttackType();
+                    WeaponDamage LinkedDamage = new WeaponDamage()
+                    {
+                        idWeapon = weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).idWeapon,
+                        idWeaponAttackType = 3
+                    };
+                    weaponDamCollConvert.Add(LinkedDamage);
+                }
+                else if (!System.Convert.ToBoolean(value))
+                {
+                    weaponDamCollConvert.Remove(weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType==3));
+                }
+            }
+            return weaponDamCollConvert;
+        }
+
+    }
+
+    #endregion
+
+
+    #region Converter for FollowUpdamage
+    public class FollowUpdamage : ConvertorBase<FollowUpdamage>
+    {
+        public ObservableCollection<WeaponDamage> weaponDamCollConvert { set; private get; }
+        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            weaponDamCollConvert = value as ObservableCollection<WeaponDamage>;
+            if ((parameter as string) == "Damage")
+                return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType==2).Damage;
+            else if ((parameter as string) == "AD")
+            {
+                if (weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).ArmorDivision == 1)
+                    return "";
+                else return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).ArmorDivision;
+            }
+            else if ((parameter as string) == "ToD")
+                return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).idTypeOfDamage1;
+            else if ((parameter as string) == "ToD2")
+                return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).idTypeOfDamage2;
+            else if ((parameter as string) == "TD1")
+                return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).TypeOfDamage1;
+            else if ((parameter as string) == "TD2")
+                return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).TypeOfDamage2;
+            else return null;
+        }
+        public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if ((parameter as string) == "Damage")
+                weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).Damage = value as string;
+            else if ((parameter as string) == "AD")
+            {
+                if (CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0] == '.')
+                    weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).ArmorDivision = System.Convert.ToDecimal((value as string).Replace(',', CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0]));
+                else weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).ArmorDivision = System.Convert.ToDecimal((value as string).Replace('.', CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0]));
+            }
+            else if ((parameter as string) == "ToD")
+                weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).idTypeOfDamage1 = System.Convert.ToInt32(value);
+            else if ((parameter as string) == "ToD2")
+                weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).idTypeOfDamage2 = System.Convert.ToInt32(value);
+            else if ((parameter as string) == "TD1")
+                weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).TypeOfDamage1 = value as string;
+            else if ((parameter as string) == "TD2")
+                weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).TypeOfDamage2 = value as string;
+            return weaponDamCollConvert;
+        }
+    }
+    #endregion
+    #region Converter for Linkedamage
+    public class Linkedamage : ConvertorBase<Linkedamage>
+    {
+        public ObservableCollection<WeaponDamage> weaponDamCollConvert { set; private get; }
+        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            weaponDamCollConvert = value as ObservableCollection<WeaponDamage>;
+            if ((parameter as string) == "Damage")
+                return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).Damage;
+            else if ((parameter as string) == "AD")
+            {
+                if (weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).ArmorDivision == 1)
+                    return "";
+                else return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).ArmorDivision;
+            }
+            else if ((parameter as string) == "ToD")
+                return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).idTypeOfDamage1;
+            else if ((parameter as string) == "ToD2")
+                return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).idTypeOfDamage2;
+            else if ((parameter as string) == "TD1")
+                return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).TypeOfDamage1;
+            else if ((parameter as string) == "TD2")
+                return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).TypeOfDamage2;
+            else return null;
+        }
+        public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if ((parameter as string) == "Damage")
+                weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).Damage = value as string;
+            else if ((parameter as string) == "AD")
+            {
+                if (CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0] == '.')
+                    weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).ArmorDivision = System.Convert.ToDecimal((value as string).Replace(',', CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0]));
+                else weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).ArmorDivision = System.Convert.ToDecimal((value as string).Replace('.', CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0]));
+            }
+            else if ((parameter as string) == "ToD")
+                weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).idTypeOfDamage1 = System.Convert.ToInt32(value);
+            else if ((parameter as string) == "ToD2")
+                weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).idTypeOfDamage2 = System.Convert.ToInt32(value);
+            else if ((parameter as string) == "TD1")
+                weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).TypeOfDamage1 = value as string;
+            else if ((parameter as string) == "TD2")
+                weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).TypeOfDamage2 = value as string;
+            return weaponDamCollConvert;
+        }
+    }
+    #endregion
 }
 //http://dev.net.ua/blogs/andriydanilchenko/archive/2011/08/14/binding-and-multibinding-converters.aspx
 

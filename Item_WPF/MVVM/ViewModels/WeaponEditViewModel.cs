@@ -62,9 +62,10 @@ namespace Item_WPF.MVVM.ViewModels
             WeaponTypescCollection = new ObservableCollection<WeaponType>(_context.WeaponTypes);
             TypeOfDamagesCollection = new ObservableCollection<TypeOfDamage>(_context.TypeOfDamages);
 
-            WeaponDamageColl = new ObservableCollection<WeaponDamage>(_context.WeaponDamages.Where((p => p.idWeapon == WeaponLoad.uiIndex)));       
 
-            
+            WeaponDamageColl = new ObservableCollection<WeaponDamage>(_context.WeaponDamages.Where((p => p.idWeapon == WeaponLoad.uiIndex)));       
+           // WeaponDamageColl = new ObservableCollection<WeaponDamage>(WeaponLoad.WeaponDamages.Where((p => p.idWeapon == WeaponLoad.uiIndex)));
+
             avSlot = new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlots.Where(p => p.rWeaponId == WeaponLoad.uiIndex));
             AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
 
@@ -85,6 +86,7 @@ namespace Item_WPF.MVVM.ViewModels
 
             #region Event
             avSlot.CollectionChanged += new NotifyCollectionChangedEventHandler(_avSlot_CollectionChanged);
+            WeaponDamageColl.CollectionChanged += new NotifyCollectionChangedEventHandler(_WeaponDamageColl_CollectionChanged);
             //  AttMount.CollectionChanged += new NotifyCollectionChangedEventHandler(_Avv_att_slot_OK_CollectionChanged);
             #endregion
 
@@ -173,6 +175,25 @@ namespace Item_WPF.MVVM.ViewModels
         {
             _context?.Dispose();
         }
+
+        private void _WeaponDamageColl_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (e.Action == NotifyCollectionChangedAction.Remove)
+            {
+                foreach (WeaponDamage item in e.OldItems)
+                {
+                    _context.WeaponDamages.Remove(item);
+                }
+                //  SaveChanges();
+            }
+            else if (e.Action == NotifyCollectionChangedAction.Add)
+            {
+                foreach (WeaponDamage item in e.NewItems)
+                {
+                    _context.WeaponDamages.Add(item);
+                }
+            }
+        }
         private void _avSlot_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Remove)
@@ -191,24 +212,24 @@ namespace Item_WPF.MVVM.ViewModels
                 }
             }
         }
-        private void _Avv_att_slot_OK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (e.Action == NotifyCollectionChangedAction.Remove)
-            {
-                foreach (AvailableAttachSlot item in e.OldItems)
-                {
-                    _context.AvailableAttachSlots.Remove(item);
-                }
-                //   SaveChanges();
-            }
-            else if (e.Action == NotifyCollectionChangedAction.Add)
-            {
-                foreach (AvailableAttachSlot item in e.NewItems)
-                {
-                    _context.AvailableAttachSlots.Add(item);
-                }
-            }
-        }
+        //private void _Avv_att_slot_OK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        //{
+        //    if (e.Action == NotifyCollectionChangedAction.Remove)
+        //    {
+        //        foreach (AvailableAttachSlot item in e.OldItems)
+        //        {
+        //            _context.AvailableAttachSlots.Remove(item);
+        //        }
+        //        //   SaveChanges();
+        //    }
+        //    else if (e.Action == NotifyCollectionChangedAction.Add)
+        //    {
+        //        foreach (AvailableAttachSlot item in e.NewItems)
+        //        {
+        //            _context.AvailableAttachSlots.Add(item);
+        //        }
+        //    }
+        //}
     }
 }
 //Свойство является частью данных ключа объекта, поэтому его нельзя изменить
