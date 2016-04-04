@@ -502,9 +502,6 @@
                                     <Binding Converter="{addin:FollowUpLinkedOnOffConverter}"
                                              ConverterParameter="Follow-up"
                                              Path="WeaponDamageColl" />
-
-
-
                                 </CheckBox.IsChecked>
                             </CheckBox>
                             <CheckBox x:Name="ExcheckBox"
@@ -872,10 +869,14 @@
                     <GroupBox x:Name="groupBox1"
                               Width="117"
                               Height="191"
-                              Margin="210,131,0,0"
+                              Margin="210,126,0,0"
                               HorizontalAlignment="Left"
                               VerticalAlignment="Top"
-                              Header="Linked">
+                              Header="Linked"
+                              Visibility="{Binding ElementName=LinkedcheckBox,
+                                                   Path=IsChecked,
+                                                   Converter={StaticResource BooleanToVisibilityConverter}}">
+
                         <Grid Margin="0,0,-2,-2">
                             <TextBox x:Name="textBox"
                                      Width="58"
@@ -922,7 +923,18 @@
                                       Height="21"
                                       Margin="48,60,0,0"
                                       HorizontalAlignment="Left"
-                                      VerticalAlignment="Top" />
+                                      VerticalAlignment="Top"
+                                      DisplayMemberPath="name"
+                                      ItemsSource="{Binding TypeOfDamagesCollection}"
+                                      SelectedValuePath="id">
+                                <ComboBox.SelectedValue>
+                                    <Binding Converter="{addin:Linkedamage}"
+                                             ConverterParameter="ToD"
+                                             Mode="TwoWay"
+                                             Path="WeaponDamageColl"
+                                             UpdateSourceTrigger="PropertyChanged" />
+                                </ComboBox.SelectedValue>
+                            </ComboBox>
                             <Label x:Name="label1"
                                    Margin="0,55,0,0"
                                    HorizontalAlignment="Left"
@@ -939,8 +951,7 @@
                                     <Binding Converter="{addin:Linkedamage}"
                                              ConverterParameter="TD1"
                                              Mode="TwoWay"
-                                             Path="WeaponDamageColl"
-                                             UpdateSourceTrigger="Explicit" />
+                                             Path="WeaponDamageColl" />
                                 </TextBox.Text>
                             </TextBox>
                             <TextBox x:Name="textBox4"
@@ -949,13 +960,30 @@
                                      Margin="48,141,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
-                                     Text="TextBox"
-                                     TextWrapping="Wrap" />
+                                     TextWrapping="Wrap">
+                                <TextBox.Text>
+                                    <Binding Converter="{addin:Linkedamage}"
+                                             ConverterParameter="TD2"
+                                             Mode="TwoWay"
+                                             Path="WeaponDamageColl" />
+                                </TextBox.Text>
+                            </TextBox>
                             <ComboBox x:Name="comboBox2"
                                       Width="50"
                                       Margin="48,114,0,0"
                                       HorizontalAlignment="Left"
-                                      VerticalAlignment="Top" />
+                                      VerticalAlignment="Top"
+                                      DisplayMemberPath="name"
+                                      ItemsSource="{Binding TypeOfDamagesCollection}"
+                                      SelectedValuePath="id">
+                                <ComboBox.SelectedValue>
+                                    <Binding Converter="{addin:Linkedamage}"
+                                             ConverterParameter="ToD2"
+                                             Mode="TwoWay"
+                                             Path="WeaponDamageColl"
+                                             UpdateSourceTrigger="PropertyChanged" />
+                                </ComboBox.SelectedValue>
+                            </ComboBox>
                             <Label x:Name="label2"
                                    Margin="0,83,0,0"
                                    HorizontalAlignment="Left"
@@ -979,7 +1007,10 @@
                               Margin="332,179,0,0"
                               HorizontalAlignment="Left"
                               VerticalAlignment="Top"
-                              Header="Follow-up">
+                              Header="Follow-up"
+                              Visibility="{Binding ElementName=FollowUpcheckBox,
+                                                   Path=IsChecked,
+                                                   Converter={StaticResource BooleanToVisibilityConverter}}">
                         <Grid Margin="0,0,-2,-2">
                             <TextBox x:Name="textBox5"
                                      Width="58"

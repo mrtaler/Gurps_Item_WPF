@@ -336,6 +336,7 @@ namespace Item_WPF.addin
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             weaponDamCollConvert = value as ObservableCollection<WeaponDamage>;
+
             if ((parameter as string) == "Damage")
                 return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).Damage;
             else if ((parameter as string) == "AD")
@@ -392,7 +393,6 @@ namespace Item_WPF.addin
             {
                 return true;
             }
-
             else return false;
         }
         public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -446,21 +446,26 @@ namespace Item_WPF.addin
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             weaponDamCollConvert = value as ObservableCollection<WeaponDamage>;
-            if ((parameter as string) == "Damage")
-                return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType==2).Damage;
-            else if ((parameter as string) == "AD")
+            bool FollowUpdamageVar = false;
+            if (weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2) != null)
+                FollowUpdamageVar = true;
+            if ((parameter as string) == "Damage"&& FollowUpdamageVar)
+            {               
+                    return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).Damage;                                  
+            }
+            else if ((parameter as string) == "AD" && FollowUpdamageVar)
             {
                 if (weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).ArmorDivision == 1)
                     return "";
                 else return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).ArmorDivision;
             }
-            else if ((parameter as string) == "ToD")
+            else if ((parameter as string) == "ToD" && FollowUpdamageVar)
                 return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).idTypeOfDamage1;
-            else if ((parameter as string) == "ToD2")
+            else if ((parameter as string) == "ToD2" && FollowUpdamageVar)
                 return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).idTypeOfDamage2;
-            else if ((parameter as string) == "TD1")
+            else if ((parameter as string) == "TD1" && FollowUpdamageVar)
                 return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).TypeOfDamage1;
-            else if ((parameter as string) == "TD2")
+            else if ((parameter as string) == "TD2" && FollowUpdamageVar)
                 return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).TypeOfDamage2;
             else return null;
         }
@@ -493,21 +498,24 @@ namespace Item_WPF.addin
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             weaponDamCollConvert = value as ObservableCollection<WeaponDamage>;
-            if ((parameter as string) == "Damage")
+            bool LinkedDamageVar=false;
+            if (weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3) != null)
+                LinkedDamageVar = true;
+            if ((parameter as string) == "Damage"&& LinkedDamageVar)
                 return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).Damage;
-            else if ((parameter as string) == "AD")
+            else if ((parameter as string) == "AD" && LinkedDamageVar)
             {
                 if (weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).ArmorDivision == 1)
                     return "";
                 else return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).ArmorDivision;
             }
-            else if ((parameter as string) == "ToD")
+            else if ((parameter as string) == "ToD" && LinkedDamageVar)
                 return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).idTypeOfDamage1;
-            else if ((parameter as string) == "ToD2")
+            else if ((parameter as string) == "ToD2" && LinkedDamageVar)
                 return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).idTypeOfDamage2;
-            else if ((parameter as string) == "TD1")
+            else if ((parameter as string) == "TD1" && LinkedDamageVar)
                 return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).TypeOfDamage1;
-            else if ((parameter as string) == "TD2")
+            else if ((parameter as string) == "TD2" && LinkedDamageVar)
                 return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).TypeOfDamage2;
             else return null;
         }
