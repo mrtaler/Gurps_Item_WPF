@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Item_WPF.MVVM.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,13 @@ namespace Item_WPF.MVVM.View
     {
         public AboutWindowView()
         {
+            DataContext = new AboutViewModel();
             InitializeComponent();
+        }
+
+        private void CloseButtonClick(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

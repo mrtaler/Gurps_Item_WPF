@@ -22,7 +22,7 @@ namespace Item_WPF.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Item_WPF.Properties {
         ///   Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Item_WPF.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Item_WPF.Properties {
         ///   обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на About.
         /// </summary>
-        internal static string AboutWindow {
+        public static string AboutWindow {
             get {
                 return ResourceManager.GetString("AboutWindow", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Close.
         /// </summary>
-        internal static string AboutWindowClose {
+        public static string AboutWindowClose {
             get {
                 return ResourceManager.GetString("AboutWindowClose", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Advantages/disadvantages:.
         /// </summary>
-        internal static string CharacterSheetAdvantages {
+        public static string CharacterSheetAdvantages {
             get {
                 return ResourceManager.GetString("CharacterSheetAdvantages", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Basic Lift:.
         /// </summary>
-        internal static string CharacterSheetBasicLift {
+        public static string CharacterSheetBasicLift {
             get {
                 return ResourceManager.GetString("CharacterSheetBasicLift", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Basic Move:.
         /// </summary>
-        internal static string CharacterSheetBasicMove {
+        public static string CharacterSheetBasicMove {
             get {
                 return ResourceManager.GetString("CharacterSheetBasicMove", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Basic Speed:.
         /// </summary>
-        internal static string CharacterSheetBasicSpeed {
+        public static string CharacterSheetBasicSpeed {
             get {
                 return ResourceManager.GetString("CharacterSheetBasicSpeed", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Dexterity:.
         /// </summary>
-        internal static string CharacterSheetDexterity {
+        public static string CharacterSheetDexterity {
             get {
                 return ResourceManager.GetString("CharacterSheetDexterity", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Dodge:.
         /// </summary>
-        internal static string CharacterSheetDodge {
+        public static string CharacterSheetDodge {
             get {
                 return ResourceManager.GetString("CharacterSheetDodge", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Encumbrance:.
         /// </summary>
-        internal static string CharacterSheetEncumbrance {
+        public static string CharacterSheetEncumbrance {
             get {
                 return ResourceManager.GetString("CharacterSheetEncumbrance", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Health:.
         /// </summary>
-        internal static string CharacterSheetHealth {
+        public static string CharacterSheetHealth {
             get {
                 return ResourceManager.GetString("CharacterSheetHealth", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Intelligence:.
         /// </summary>
-        internal static string CharacterSheetIntelligence {
+        public static string CharacterSheetIntelligence {
             get {
                 return ResourceManager.GetString("CharacterSheetIntelligence", resourceCulture);
             }
@@ -162,7 +162,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Inventory:.
         /// </summary>
-        internal static string CharacterSheetInventory {
+        public static string CharacterSheetInventory {
             get {
                 return ResourceManager.GetString("CharacterSheetInventory", resourceCulture);
             }
@@ -171,7 +171,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Max FP:.
         /// </summary>
-        internal static string CharacterSheetMaxFP {
+        public static string CharacterSheetMaxFP {
             get {
                 return ResourceManager.GetString("CharacterSheetMaxFP", resourceCulture);
             }
@@ -180,7 +180,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Max HP:.
         /// </summary>
-        internal static string CharacterSheetMaxHP {
+        public static string CharacterSheetMaxHP {
             get {
                 return ResourceManager.GetString("CharacterSheetMaxHP", resourceCulture);
             }
@@ -189,7 +189,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Move:.
         /// </summary>
-        internal static string CharacterSheetMove {
+        public static string CharacterSheetMove {
             get {
                 return ResourceManager.GetString("CharacterSheetMove", resourceCulture);
             }
@@ -198,7 +198,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на No picture.
         /// </summary>
-        internal static string CharacterSheetNoPicture {
+        public static string CharacterSheetNoPicture {
             get {
                 return ResourceManager.GetString("CharacterSheetNoPicture", resourceCulture);
             }
@@ -207,7 +207,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Perception:.
         /// </summary>
-        internal static string CharacterSheetPerception {
+        public static string CharacterSheetPerception {
             get {
                 return ResourceManager.GetString("CharacterSheetPerception", resourceCulture);
             }
@@ -216,7 +216,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Skills:.
         /// </summary>
-        internal static string CharacterSheetSkills {
+        public static string CharacterSheetSkills {
             get {
                 return ResourceManager.GetString("CharacterSheetSkills", resourceCulture);
             }
@@ -225,7 +225,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Strength:.
         /// </summary>
-        internal static string CharacterSheetStrength {
+        public static string CharacterSheetStrength {
             get {
                 return ResourceManager.GetString("CharacterSheetStrength", resourceCulture);
             }
@@ -234,7 +234,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Swing damage:.
         /// </summary>
-        internal static string CharacterSheetSwingDamage {
+        public static string CharacterSheetSwingDamage {
             get {
                 return ResourceManager.GetString("CharacterSheetSwingDamage", resourceCulture);
             }
@@ -243,7 +243,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Thrust damage:.
         /// </summary>
-        internal static string CharacterSheetThrustDamage {
+        public static string CharacterSheetThrustDamage {
             get {
                 return ResourceManager.GetString("CharacterSheetThrustDamage", resourceCulture);
             }
@@ -252,7 +252,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Character points:.
         /// </summary>
-        internal static string CharacterSheetTotalPoints {
+        public static string CharacterSheetTotalPoints {
             get {
                 return ResourceManager.GetString("CharacterSheetTotalPoints", resourceCulture);
             }
@@ -261,7 +261,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Willpower:.
         /// </summary>
-        internal static string CharacterSheetWillpower {
+        public static string CharacterSheetWillpower {
             get {
                 return ResourceManager.GetString("CharacterSheetWillpower", resourceCulture);
             }
@@ -270,7 +270,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Failed to load file..
         /// </summary>
-        internal static string DialogLoadFailed {
+        public static string DialogLoadFailed {
             get {
                 return ResourceManager.GetString("DialogLoadFailed", resourceCulture);
             }
@@ -279,7 +279,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Description:.
         /// </summary>
-        internal static string EditAdvantageDescription {
+        public static string EditAdvantageDescription {
             get {
                 return ResourceManager.GetString("EditAdvantageDescription", resourceCulture);
             }
@@ -288,7 +288,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Name:.
         /// </summary>
-        internal static string EditAdvantageName {
+        public static string EditAdvantageName {
             get {
                 return ResourceManager.GetString("EditAdvantageName", resourceCulture);
             }
@@ -297,7 +297,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Points:.
         /// </summary>
-        internal static string EditAdvantagePoints {
+        public static string EditAdvantagePoints {
             get {
                 return ResourceManager.GetString("EditAdvantagePoints", resourceCulture);
             }
@@ -306,7 +306,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Edit advantage/disadvantage.
         /// </summary>
-        internal static string EditAdvantageWindow {
+        public static string EditAdvantageWindow {
             get {
                 return ResourceManager.GetString("EditAdvantageWindow", resourceCulture);
             }
@@ -315,7 +315,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Cancel.
         /// </summary>
-        internal static string EditAdvantageWindowCancel {
+        public static string EditAdvantageWindowCancel {
             get {
                 return ResourceManager.GetString("EditAdvantageWindowCancel", resourceCulture);
             }
@@ -324,7 +324,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на OK.
         /// </summary>
-        internal static string EditAdvantageWindowOk {
+        public static string EditAdvantageWindowOk {
             get {
                 return ResourceManager.GetString("EditAdvantageWindowOk", resourceCulture);
             }
@@ -333,7 +333,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Description:.
         /// </summary>
-        internal static string EditItemDescription {
+        public static string EditItemDescription {
             get {
                 return ResourceManager.GetString("EditItemDescription", resourceCulture);
             }
@@ -342,7 +342,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Name:.
         /// </summary>
-        internal static string EditItemName {
+        public static string EditItemName {
             get {
                 return ResourceManager.GetString("EditItemName", resourceCulture);
             }
@@ -351,7 +351,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Value:.
         /// </summary>
-        internal static string EditItemValue {
+        public static string EditItemValue {
             get {
                 return ResourceManager.GetString("EditItemValue", resourceCulture);
             }
@@ -360,7 +360,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Weight:.
         /// </summary>
-        internal static string EditItemWeight {
+        public static string EditItemWeight {
             get {
                 return ResourceManager.GetString("EditItemWeight", resourceCulture);
             }
@@ -369,7 +369,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Edit item.
         /// </summary>
-        internal static string EditItemWindow {
+        public static string EditItemWindow {
             get {
                 return ResourceManager.GetString("EditItemWindow", resourceCulture);
             }
@@ -378,7 +378,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Cancel.
         /// </summary>
-        internal static string EditItemWindowCancel {
+        public static string EditItemWindowCancel {
             get {
                 return ResourceManager.GetString("EditItemWindowCancel", resourceCulture);
             }
@@ -387,7 +387,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на OK.
         /// </summary>
-        internal static string EditItemWindowOk {
+        public static string EditItemWindowOk {
             get {
                 return ResourceManager.GetString("EditItemWindowOk", resourceCulture);
             }
@@ -396,7 +396,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Description:.
         /// </summary>
-        internal static string EditSkillDescription {
+        public static string EditSkillDescription {
             get {
                 return ResourceManager.GetString("EditSkillDescription", resourceCulture);
             }
@@ -405,7 +405,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Difficulty:.
         /// </summary>
-        internal static string EditSkillDifficulty {
+        public static string EditSkillDifficulty {
             get {
                 return ResourceManager.GetString("EditSkillDifficulty", resourceCulture);
             }
@@ -414,7 +414,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Name:.
         /// </summary>
-        internal static string EditSkillName {
+        public static string EditSkillName {
             get {
                 return ResourceManager.GetString("EditSkillName", resourceCulture);
             }
@@ -423,7 +423,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Relative level:.
         /// </summary>
-        internal static string EditSkillRelativeLevel {
+        public static string EditSkillRelativeLevel {
             get {
                 return ResourceManager.GetString("EditSkillRelativeLevel", resourceCulture);
             }
@@ -432,7 +432,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Statistic:.
         /// </summary>
-        internal static string EditSkillStat {
+        public static string EditSkillStat {
             get {
                 return ResourceManager.GetString("EditSkillStat", resourceCulture);
             }
@@ -441,7 +441,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Edit skill.
         /// </summary>
-        internal static string EditSkillWindow {
+        public static string EditSkillWindow {
             get {
                 return ResourceManager.GetString("EditSkillWindow", resourceCulture);
             }
@@ -450,7 +450,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Cancel.
         /// </summary>
-        internal static string EditSkillWindowCancel {
+        public static string EditSkillWindowCancel {
             get {
                 return ResourceManager.GetString("EditSkillWindowCancel", resourceCulture);
             }
@@ -459,7 +459,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на OK.
         /// </summary>
-        internal static string EditSkillWindowOk {
+        public static string EditSkillWindowOk {
             get {
                 return ResourceManager.GetString("EditSkillWindowOk", resourceCulture);
             }
@@ -468,7 +468,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Extra-heavy encumbrance.
         /// </summary>
-        internal static string EncumbranceExtraHeavy {
+        public static string EncumbranceExtraHeavy {
             get {
                 return ResourceManager.GetString("EncumbranceExtraHeavy", resourceCulture);
             }
@@ -477,7 +477,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Heavy encumbrance.
         /// </summary>
-        internal static string EncumbranceHeavy {
+        public static string EncumbranceHeavy {
             get {
                 return ResourceManager.GetString("EncumbranceHeavy", resourceCulture);
             }
@@ -486,7 +486,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Light encumbrance.
         /// </summary>
-        internal static string EncumbranceLight {
+        public static string EncumbranceLight {
             get {
                 return ResourceManager.GetString("EncumbranceLight", resourceCulture);
             }
@@ -495,7 +495,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Medium encumbrance.
         /// </summary>
-        internal static string EncumbranceMedium {
+        public static string EncumbranceMedium {
             get {
                 return ResourceManager.GetString("EncumbranceMedium", resourceCulture);
             }
@@ -504,7 +504,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на No encumbrance.
         /// </summary>
-        internal static string EncumbranceNo {
+        public static string EncumbranceNo {
             get {
                 return ResourceManager.GetString("EncumbranceNo", resourceCulture);
             }
@@ -513,7 +513,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Add advantage/disadvantage.
         /// </summary>
-        internal static string MenuAddAdvantage {
+        public static string MenuAddAdvantage {
             get {
                 return ResourceManager.GetString("MenuAddAdvantage", resourceCulture);
             }
@@ -522,7 +522,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Add item.
         /// </summary>
-        internal static string MenuAddItem {
+        public static string MenuAddItem {
             get {
                 return ResourceManager.GetString("MenuAddItem", resourceCulture);
             }
@@ -531,7 +531,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Add skill.
         /// </summary>
-        internal static string MenuAddSkill {
+        public static string MenuAddSkill {
             get {
                 return ResourceManager.GetString("MenuAddSkill", resourceCulture);
             }
@@ -540,7 +540,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Edit.
         /// </summary>
-        internal static string MenuEdit {
+        public static string MenuEdit {
             get {
                 return ResourceManager.GetString("MenuEdit", resourceCulture);
             }
@@ -549,7 +549,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Edit primary stats.
         /// </summary>
-        internal static string MenuEditPrimaryStats {
+        public static string MenuEditPrimaryStats {
             get {
                 return ResourceManager.GetString("MenuEditPrimaryStats", resourceCulture);
             }
@@ -558,7 +558,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Edit secondary stats.
         /// </summary>
-        internal static string MenuEditSecondaryStats {
+        public static string MenuEditSecondaryStats {
             get {
                 return ResourceManager.GetString("MenuEditSecondaryStats", resourceCulture);
             }
@@ -567,7 +567,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Help.
         /// </summary>
-        internal static string MenuHelp {
+        public static string MenuHelp {
             get {
                 return ResourceManager.GetString("MenuHelp", resourceCulture);
             }
@@ -576,7 +576,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Edit primary stats.
         /// </summary>
-        internal static string PrimaryStatsWindow {
+        public static string PrimaryStatsWindow {
             get {
                 return ResourceManager.GetString("PrimaryStatsWindow", resourceCulture);
             }
@@ -585,7 +585,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Cancel.
         /// </summary>
-        internal static string PrimaryStatsWindowCancel {
+        public static string PrimaryStatsWindowCancel {
             get {
                 return ResourceManager.GetString("PrimaryStatsWindowCancel", resourceCulture);
             }
@@ -594,7 +594,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на OK.
         /// </summary>
-        internal static string PrimaryStatsWindowOk {
+        public static string PrimaryStatsWindowOk {
             get {
                 return ResourceManager.GetString("PrimaryStatsWindowOk", resourceCulture);
             }
@@ -603,7 +603,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на About.
         /// </summary>
-        internal static string RibbonAppMenuItemAbout {
+        public static string RibbonAppMenuItemAbout {
             get {
                 return ResourceManager.GetString("RibbonAppMenuItemAbout", resourceCulture);
             }
@@ -612,7 +612,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на New.
         /// </summary>
-        internal static string RibbonAppMenuItemNew {
+        public static string RibbonAppMenuItemNew {
             get {
                 return ResourceManager.GetString("RibbonAppMenuItemNew", resourceCulture);
             }
@@ -621,7 +621,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Open.
         /// </summary>
-        internal static string RibbonAppMenuItemOpen {
+        public static string RibbonAppMenuItemOpen {
             get {
                 return ResourceManager.GetString("RibbonAppMenuItemOpen", resourceCulture);
             }
@@ -630,7 +630,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Quit.
         /// </summary>
-        internal static string RibbonAppMenuItemQuit {
+        public static string RibbonAppMenuItemQuit {
             get {
                 return ResourceManager.GetString("RibbonAppMenuItemQuit", resourceCulture);
             }
@@ -639,7 +639,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Save as.
         /// </summary>
-        internal static string RibbonAppMenuItemSaveAs {
+        public static string RibbonAppMenuItemSaveAs {
             get {
                 return ResourceManager.GetString("RibbonAppMenuItemSaveAs", resourceCulture);
             }
@@ -648,7 +648,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Advantages/disadvantages.
         /// </summary>
-        internal static string RibbonGroupAdvantages {
+        public static string RibbonGroupAdvantages {
             get {
                 return ResourceManager.GetString("RibbonGroupAdvantages", resourceCulture);
             }
@@ -657,7 +657,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Inventory.
         /// </summary>
-        internal static string RibbonGroupInventory {
+        public static string RibbonGroupInventory {
             get {
                 return ResourceManager.GetString("RibbonGroupInventory", resourceCulture);
             }
@@ -666,7 +666,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Skills.
         /// </summary>
-        internal static string RibbonGroupSkills {
+        public static string RibbonGroupSkills {
             get {
                 return ResourceManager.GetString("RibbonGroupSkills", resourceCulture);
             }
@@ -675,7 +675,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Statistics.
         /// </summary>
-        internal static string RibbonGroupStats {
+        public static string RibbonGroupStats {
             get {
                 return ResourceManager.GetString("RibbonGroupStats", resourceCulture);
             }
@@ -684,7 +684,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Character sheet.
         /// </summary>
-        internal static string RibbonTabCharacterSheet {
+        public static string RibbonTabCharacterSheet {
             get {
                 return ResourceManager.GetString("RibbonTabCharacterSheet", resourceCulture);
             }
@@ -693,7 +693,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Edit secondary stats.
         /// </summary>
-        internal static string SecondaryStatsWindow {
+        public static string SecondaryStatsWindow {
             get {
                 return ResourceManager.GetString("SecondaryStatsWindow", resourceCulture);
             }
@@ -702,7 +702,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Cancel.
         /// </summary>
-        internal static string SecondaryStatsWindowCancel {
+        public static string SecondaryStatsWindowCancel {
             get {
                 return ResourceManager.GetString("SecondaryStatsWindowCancel", resourceCulture);
             }
@@ -711,7 +711,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на OK.
         /// </summary>
-        internal static string SecondaryStatsWindowOk {
+        public static string SecondaryStatsWindowOk {
             get {
                 return ResourceManager.GetString("SecondaryStatsWindowOk", resourceCulture);
             }
@@ -720,7 +720,7 @@ namespace Item_WPF.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на (unnamed character).
         /// </summary>
-        internal static string UnnamedCharacter {
+        public static string UnnamedCharacter {
             get {
                 return ResourceManager.GetString("UnnamedCharacter", resourceCulture);
             }

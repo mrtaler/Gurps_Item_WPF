@@ -2,11 +2,18 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Item_WPF.MVVM.View"
-        mc:Ignorable="d"
-        Title="AboutWindowView" Height="300" Width="300">
-    <Grid>
-        
-    </Grid>
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:Item_WPF.Properties"
+        Title="{x:Static p:Resources.AboutWindow}"
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterOwner"
+        mc:Ignorable="d">
+    <StackPanel>
+        <TextBlock Margin="8" Text="{Binding Path=Copyright}" />
+        <TextBlock Margin="8">GURPS is registered trademark of Steve Jackson Games Incorporated.</TextBlock>
+        <Button Margin="8"
+                Click="CloseButtonClick"
+                Content="{x:Static p:Resources.AboutWindowClose}" />
+    </StackPanel>
 </Window>

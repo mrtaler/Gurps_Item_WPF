@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 using Item_WPF.addin;
+using Item_WPF.Properties;
 
 namespace Item_WPF.MVVM.ViewModels
 {

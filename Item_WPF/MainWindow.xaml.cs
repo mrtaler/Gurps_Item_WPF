@@ -22,9 +22,12 @@ namespace Item_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
+
             InitializeComponent();
+            
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -55,6 +58,14 @@ namespace Item_WPF
             item1Entities _context = new item1Entities();
             AttacmentEditView avView =new AttacmentEditView(_context.ITEMs.First(p=>p.uiIndex==1));
             avView.Show();
+        }
+
+
+        private void button_Click_1(object sender, RoutedEventArgs e)
+        {
+            AboutWindowView window = new AboutWindowView();
+            window.Owner = Owner;
+            window.ShowDialog();
         }
     }
 }
