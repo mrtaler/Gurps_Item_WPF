@@ -104,7 +104,7 @@
     <Compile Include="Battery.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="Character.cs">
+    <Compile Include="CharacterDB.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="Cloth.cs">
@@ -164,20 +164,35 @@
     <Compile Include="LOADBEARINGEQUIPMENT.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\Models\Advantage.cs" />
+    <Compile Include="MVVM\Models\AttackOption.cs" />
+    <Compile Include="MVVM\Models\Character.cs" />
     <Compile Include="MVVM\Models\CombineWeapModel.cs" />
+    <Compile Include="MVVM\Models\DiceString.cs" />
+    <Compile Include="MVVM\Models\Item.cs" />
     <Compile Include="MVVM\Models\ItemsForSortModel.cs" />
     <Compile Include="MVVM\Models\ItemToGridModel.cs" />
+    <Compile Include="MVVM\Models\Skill.cs" />
+    <Compile Include="MVVM\ViewModels\AboutViewModel.cs" />
     <Compile Include="MVVM\ViewModels\all_ItemsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AmmoViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AttacmentEditViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AttacmentMountViewModel.cs" />
     <Compile Include="MVVM\ViewModels\CombineWeapViewModel.cs" />
     <Compile Include="MVVM\ViewModels\DamageTypeViewModel.cs" />
+    <Compile Include="addin\DelegateCommand.cs" />
+    <Compile Include="MVVM\ViewModels\EditPrimaryStatsViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\EditSecondaryStatsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\InputBoxViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\MainViewModel.cs" />
     <Compile Include="MVVM\ViewModels\NewItemsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\SelectItemsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\TestViewModel.cs" />
+    <Compile Include="addin\ViewModelBase.cs" />
     <Compile Include="MVVM\ViewModels\WeaponEditViewModel.cs" />
+    <Compile Include="MVVM\View\AboutWindowView.xaml.cs">
+      <DependentUpon>AboutWindowView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\all_ItemsView.xaml.cs">
       <DependentUpon>all_ItemsView.xaml</DependentUpon>
     </Compile>
@@ -195,6 +210,21 @@
     </Compile>
     <Compile Include="MVVM\View\DamageTypeView.xaml.cs">
       <DependentUpon>DamageTypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\EditAdvantageWindowView.xaml.cs">
+      <DependentUpon>EditAdvantageWindowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\EditItemWindowView.xaml.cs">
+      <DependentUpon>EditItemWindowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\EditPrimaryStatsWindowView.xaml.cs">
+      <DependentUpon>EditPrimaryStatsWindowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\EditSecondaryStatsWindowView.xaml.cs">
+      <DependentUpon>EditSecondaryStatsWindowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\EditSkillWindowView.xaml.cs">
+      <DependentUpon>EditSkillWindowView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\InputBoxView.xaml.cs">
       <DependentUpon>InputBoxView.xaml</DependentUpon>
@@ -261,6 +291,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MVVM\View\AboutWindowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\all_ItemsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -282,6 +316,26 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\DamageTypeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\EditAdvantageWindowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\EditItemWindowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\EditPrimaryStatsWindowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\EditSecondaryStatsWindowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\EditSkillWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

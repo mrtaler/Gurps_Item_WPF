@@ -21,18 +21,18 @@ namespace Item_WPF
     public partial class NewChar : Window
     {
         private item1Entities _context;
-        private Character Cha { get; set; }
+        private CharacterDB Cha { get; set; }
         public NewChar()
         {
             InitializeComponent();
             _context = new item1Entities();
-            Cha = new Character();
+            Cha = new CharacterDB();
             Main1Grid.DataContext = Cha;
         }
 
         private void Save_button_Click(object sender, RoutedEventArgs e)
         {
-            _context.Characters.Add(Cha);
+            _context.CharacterDBs.Add(Cha);
             _context.SaveChanges();
         }
     }

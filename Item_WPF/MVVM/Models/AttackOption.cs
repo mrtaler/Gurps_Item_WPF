@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace GurpsCharacterEditor.Models
+namespace Item_WPF.MVVM.Models
 {
     // This enum represent what kind of attack can be done with a particular
     // weapon.

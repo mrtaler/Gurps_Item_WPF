@@ -1,13 +1,13 @@
 ﻿using System.Diagnostics;
 
-namespace GurpsCharacterEditor.Models
+namespace Item_WPF.MVVM.Models
 {
-    public class Dice
+    public class DiceString
     {
         public int Count { get; private set; }
         public int Modifier { get; private set; }
 
-        public Dice(int count, int modifier = 0)
+        public DiceString(int count, int modifier = 0)
         {
             Debug.Assert(count > 0);
 

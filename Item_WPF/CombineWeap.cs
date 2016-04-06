@@ -46,19 +46,19 @@ namespace Item_WPF
       }
      }
      
-        private int _IdWeapon;
-     public int IdWeapon 
+        private int _idWeapon;
+     public int idWeapon 
      { 
       get
       {
-       return _IdWeapon;
+       return _idWeapon;
       } 
       set
       {
-       if(_IdWeapon != value)
+       if(_idWeapon != value)
        {
-        _IdWeapon = value;
-        OnPropertyChanged("IdWeapon");
+        _idWeapon = value;
+        OnPropertyChanged("idWeapon");
        }
       }
      }

@@ -3,12 +3,13 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
 using System.Xml.Serialization;
-using GurpsCharacterEditor.Models;
-using GurpsCharacterEditor.Properties;
-using GurpsCharacterEditor.Views;
+using Item_WPF.addin;
+using Item_WPF.MVVM.Models;
+using Item_WPF.Properties;
+using Item_WPF.MVVM.View;
 using Microsoft.Win32;
 
-namespace GurpsCharacterEditor.ViewModels
+namespace Item_WPF.MVVM.ViewModels
 {
     class MainViewModel : ViewModelBase
     {
@@ -171,14 +172,14 @@ namespace GurpsCharacterEditor.ViewModels
                 return Character.Dodge;
             }
         }
-        public Dice ThrustDamage
+        public DiceString ThrustDamage
         {
             get
             {
                 return Character.ThrustDamage;
             }
         }
-        public Dice SwingDamage
+        public DiceString SwingDamage
         {
             get
             {
@@ -271,14 +272,14 @@ namespace GurpsCharacterEditor.ViewModels
 
         public void ShowAboutWindow(object parameter)
         {
-            AboutWindow window = new AboutWindow();
+            AboutWindowView window = new AboutWindowView();
             window.Owner = Owner;
             window.ShowDialog();
         }
 
         public void AddItem(object parameter)
         {
-            EditItemWindow window = new EditItemWindow();
+            EditItemWindowView window = new EditItemWindowView();
             window.Owner = Owner;
             window.DataContext = new Item();
 
@@ -293,7 +294,7 @@ namespace GurpsCharacterEditor.ViewModels
 
         public void AddAdvantage(object parameter)
         {
-            EditAdvantageWindow window = new EditAdvantageWindow();
+            EditAdvantageWindowView window = new EditAdvantageWindowView();
             window.Owner = Owner;
             window.DataContext = new Advantage();
 
@@ -308,7 +309,7 @@ namespace GurpsCharacterEditor.ViewModels
 
         public void AddSkill(object parameter)
         {
-            EditSkillWindow window = new EditSkillWindow();
+            EditSkillWindowView window = new EditSkillWindowView();
             window.Owner = Owner;
             window.DataContext = new Skill();
 
@@ -323,7 +324,7 @@ namespace GurpsCharacterEditor.ViewModels
 
         public void EditPrimaryStats(object parameter)
         {
-            EditPrimaryStatsWindow window = new EditPrimaryStatsWindow();
+            EditPrimaryStatsWindowView window = new EditPrimaryStatsWindowView();
             window.Owner = Owner;
             window.DataContext = new EditPrimaryStatsViewModel(Character);
 
@@ -344,7 +345,7 @@ namespace GurpsCharacterEditor.ViewModels
 
         public void EditSecondaryStats(object parameter)
         {
-            EditSecondaryStatsWindow window = new EditSecondaryStatsWindow();
+            EditSecondaryStatsWindowView window = new EditSecondaryStatsWindowView();
             window.Owner = Owner;
             window.DataContext = new EditSecondaryStatsViewModel(Character);
 

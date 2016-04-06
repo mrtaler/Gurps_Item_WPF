@@ -39,7 +39,7 @@ namespace Item_WPF
         public virtual DbSet<AttachmentSystem> AttachmentSystems { get; set; }
         public virtual DbSet<AvailableAttachSlot> AvailableAttachSlots { get; set; }
         public virtual DbSet<Battery> Batteries { get; set; }
-        public virtual DbSet<Character> Characters { get; set; }
+        public virtual DbSet<CharacterDB> CharacterDBs { get; set; }
         public virtual DbSet<Cloth> Clothes { get; set; }
         public virtual DbSet<CombineWeap> CombineWeaps { get; set; }
         public virtual DbSet<Drug> Drugs { get; set; }
@@ -96,6 +96,87 @@ namespace Item_WPF
                 new ObjectParameter("class_ofItem", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NEW_ITEM", nameParameter, class_ofItemParameter, returns);
+        }
+    
+        public virtual int NEW_ITEMWeap(string name, string class_ofItem, Nullable<int> weight, Nullable<int> sT, string bulk, Nullable<decimal> cost, string lcin, string tLin, string desc, Nullable<int> rOF, Nullable<int> recoill, Nullable<int> defACCc, Nullable<int> half_Rangee, Nullable<int> fullRangee, string damagee, Nullable<int> shotss, Nullable<bool> addinChamber, Nullable<int> timeForreload, Nullable<bool> singlereload, ObjectParameter returns)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var class_ofItemParameter = class_ofItem != null ?
+                new ObjectParameter("class_ofItem", class_ofItem) :
+                new ObjectParameter("class_ofItem", typeof(string));
+    
+            var weightParameter = weight.HasValue ?
+                new ObjectParameter("Weight", weight) :
+                new ObjectParameter("Weight", typeof(int));
+    
+            var sTParameter = sT.HasValue ?
+                new ObjectParameter("ST", sT) :
+                new ObjectParameter("ST", typeof(int));
+    
+            var bulkParameter = bulk != null ?
+                new ObjectParameter("Bulk", bulk) :
+                new ObjectParameter("Bulk", typeof(string));
+    
+            var costParameter = cost.HasValue ?
+                new ObjectParameter("Cost", cost) :
+                new ObjectParameter("Cost", typeof(decimal));
+    
+            var lcinParameter = lcin != null ?
+                new ObjectParameter("Lcin", lcin) :
+                new ObjectParameter("Lcin", typeof(string));
+    
+            var tLinParameter = tLin != null ?
+                new ObjectParameter("TLin", tLin) :
+                new ObjectParameter("TLin", typeof(string));
+    
+            var descParameter = desc != null ?
+                new ObjectParameter("Desc", desc) :
+                new ObjectParameter("Desc", typeof(string));
+    
+            var rOFParameter = rOF.HasValue ?
+                new ObjectParameter("ROF", rOF) :
+                new ObjectParameter("ROF", typeof(int));
+    
+            var recoillParameter = recoill.HasValue ?
+                new ObjectParameter("Recoill", recoill) :
+                new ObjectParameter("Recoill", typeof(int));
+    
+            var defACCcParameter = defACCc.HasValue ?
+                new ObjectParameter("DefACCc", defACCc) :
+                new ObjectParameter("DefACCc", typeof(int));
+    
+            var half_RangeeParameter = half_Rangee.HasValue ?
+                new ObjectParameter("Half_Rangee", half_Rangee) :
+                new ObjectParameter("Half_Rangee", typeof(int));
+    
+            var fullRangeeParameter = fullRangee.HasValue ?
+                new ObjectParameter("FullRangee", fullRangee) :
+                new ObjectParameter("FullRangee", typeof(int));
+    
+            var damageeParameter = damagee != null ?
+                new ObjectParameter("Damagee", damagee) :
+                new ObjectParameter("Damagee", typeof(string));
+    
+            var shotssParameter = shotss.HasValue ?
+                new ObjectParameter("Shotss", shotss) :
+                new ObjectParameter("Shotss", typeof(int));
+    
+            var addinChamberParameter = addinChamber.HasValue ?
+                new ObjectParameter("AddinChamber", addinChamber) :
+                new ObjectParameter("AddinChamber", typeof(bool));
+    
+            var timeForreloadParameter = timeForreload.HasValue ?
+                new ObjectParameter("TimeForreload", timeForreload) :
+                new ObjectParameter("TimeForreload", typeof(int));
+    
+            var singlereloadParameter = singlereload.HasValue ?
+                new ObjectParameter("singlereload", singlereload) :
+                new ObjectParameter("singlereload", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NEW_ITEMWeap", nameParameter, class_ofItemParameter, weightParameter, sTParameter, bulkParameter, costParameter, lcinParameter, tLinParameter, descParameter, rOFParameter, recoillParameter, defACCcParameter, half_RangeeParameter, fullRangeeParameter, damageeParameter, shotssParameter, addinChamberParameter, timeForreloadParameter, singlereloadParameter, returns);
         }
     }
 }

@@ -174,7 +174,7 @@
           <Property Name="CPP" Type="money" />
           <Property Name="WPP" Type="decimal" Precision="7" Scale="3" />
         </EntityType>
-        <EntityType Name="Character">
+        <EntityType Name="CharacterDB">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -202,7 +202,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdWeapon" Type="int" Nullable="false" />
+          <Property Name="idWeapon" Type="int" Nullable="false" />
           <Property Name="ScopeSelect" Type="int" />
           <Property Name="LaserSelect" Type="int" />
           <Property Name="LightSelect" Type="int" />
@@ -888,6 +888,28 @@
           <Parameter Name="G_sub_att" Type="int" Mode="In" />
           <Parameter Name="id_att_mount" Type="int" Mode="In" />
         </Function>
+        <Function Name="NEW_ITEMWeap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="class_ofItem" Type="varchar" Mode="In" />
+          <Parameter Name="Weight" Type="int" Mode="In" />
+          <Parameter Name="ST" Type="int" Mode="In" />
+          <Parameter Name="Bulk" Type="varchar" Mode="In" />
+          <Parameter Name="Cost" Type="money" Mode="In" />
+          <Parameter Name="Lcin" Type="varchar" Mode="In" />
+          <Parameter Name="TLin" Type="varchar" Mode="In" />
+          <Parameter Name="Desc" Type="varchar(max)" Mode="In" />
+          <Parameter Name="ROF" Type="int" Mode="In" />
+          <Parameter Name="Recoill" Type="int" Mode="In" />
+          <Parameter Name="DefACCc" Type="int" Mode="In" />
+          <Parameter Name="Half_Rangee" Type="int" Mode="In" />
+          <Parameter Name="FullRangee" Type="int" Mode="In" />
+          <Parameter Name="Damagee" Type="varchar" Mode="In" />
+          <Parameter Name="Shotss" Type="int" Mode="In" />
+          <Parameter Name="AddinChamber" Type="bit" Mode="In" />
+          <Parameter Name="TimeForreload" Type="int" Mode="In" />
+          <Parameter Name="singlereload" Type="bit" Mode="In" />
+          <Parameter Name="Returns" Type="int" Mode="InOut" />
+        </Function>
         <EntityContainer Name="Хранилище item1ModelContainer">
           <EntitySet Name="AMMO" EntityType="Self.AMMO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AMMOUPGRATES" EntityType="Self.AMMOUPGRATES" Schema="dbo" store:Type="Tables" />
@@ -900,7 +922,7 @@
           <EntitySet Name="AttachmentSystem" EntityType="Self.AttachmentSystem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AvailableAttachSlot" EntityType="Self.AvailableAttachSlot" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Battery" EntityType="Self.Battery" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Character" EntityType="Self.Character" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterDB" EntityType="Self.CharacterDB" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clothes" EntityType="Self.Clothes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CombineWeap" EntityType="Self.CombineWeap" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Drug" EntityType="Self.Drug" Schema="dbo" store:Type="Tables" />
@@ -1072,7 +1094,7 @@
           <EntitySet Name="AttachmentSystems" EntityType="item1Model.AttachmentSystem" />
           <EntitySet Name="AvailableAttachSlots" EntityType="item1Model.AvailableAttachSlot" />
           <EntitySet Name="Batteries" EntityType="item1Model.Battery" />
-          <EntitySet Name="Characters" EntityType="item1Model.Character" />
+          <EntitySet Name="CharacterDBs" EntityType="item1Model.CharacterDB" />
           <EntitySet Name="Clothes" EntityType="item1Model.Cloth" />
           <EntitySet Name="CombineWeaps" EntityType="item1Model.CombineWeap" />
           <EntitySet Name="Drugs" EntityType="item1Model.Drug" />
@@ -1216,6 +1238,28 @@
             <End Role="WeaponClass" EntitySet="WeaponClasses" />
             <End Role="WeaponType" EntitySet="WeaponTypes" />
           </AssociationSet>
+          <FunctionImport Name="NEW_ITEMWeap">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="class_ofItem" Mode="In" Type="String" />
+            <Parameter Name="Weight" Mode="In" Type="Int32" />
+            <Parameter Name="ST" Mode="In" Type="Int32" />
+            <Parameter Name="Bulk" Mode="In" Type="String" />
+            <Parameter Name="Cost" Mode="In" Type="Decimal" />
+            <Parameter Name="Lcin" Mode="In" Type="String" />
+            <Parameter Name="TLin" Mode="In" Type="String" />
+            <Parameter Name="Desc" Mode="In" Type="String" />
+            <Parameter Name="ROF" Mode="In" Type="Int32" />
+            <Parameter Name="Recoill" Mode="In" Type="Int32" />
+            <Parameter Name="DefACCc" Mode="In" Type="Int32" />
+            <Parameter Name="Half_Rangee" Mode="In" Type="Int32" />
+            <Parameter Name="FullRangee" Mode="In" Type="Int32" />
+            <Parameter Name="Damagee" Mode="In" Type="String" />
+            <Parameter Name="Shotss" Mode="In" Type="Int32" />
+            <Parameter Name="AddinChamber" Mode="In" Type="Boolean" />
+            <Parameter Name="TimeForreload" Mode="In" Type="Int32" />
+            <Parameter Name="singlereload" Mode="In" Type="Boolean" />
+            <Parameter Name="Returns" Mode="InOut" Type="Int32" />
+          </FunctionImport>
           </EntityContainer>
         <EntityType Name="AMMO">
           <Key>
@@ -1402,7 +1446,7 @@
           <Property Name="CPP" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="WPP" Type="Decimal" Precision="7" Scale="3" />
         </EntityType>
-        <EntityType Name="Character">
+        <EntityType Name="CharacterDB">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -1431,7 +1475,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdWeapon" Type="Int32" Nullable="false" />
+          <Property Name="idWeapon" Type="Int32" Nullable="false" />
           <Property Name="ScopeSelect" Type="Int32" />
           <Property Name="LaserSelect" Type="Int32" />
           <Property Name="LightSelect" Type="Int32" />
@@ -2336,9 +2380,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Characters">
-            <EntityTypeMapping TypeName="item1Model.Character">
-              <MappingFragment StoreEntitySet="Character">
+          <EntitySetMapping Name="CharacterDBs">
+            <EntityTypeMapping TypeName="item1Model.CharacterDB">
+              <MappingFragment StoreEntitySet="CharacterDB">
                 <ScalarProperty Name="BasicMovePoints" ColumnName="BasicMovePoints" />
                 <ScalarProperty Name="BasicSpeedPoints" ColumnName="BasicSpeedPoints" />
                 <ScalarProperty Name="WillpowerPoints" ColumnName="WillpowerPoints" />
@@ -2375,7 +2419,7 @@
                 <ScalarProperty Name="LightSelect" ColumnName="LightSelect" />
                 <ScalarProperty Name="LaserSelect" ColumnName="LaserSelect" />
                 <ScalarProperty Name="ScopeSelect" ColumnName="ScopeSelect" />
-                <ScalarProperty Name="IdWeapon" ColumnName="IdWeapon" />
+                <ScalarProperty Name="idWeapon" ColumnName="idWeapon" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -2688,6 +2732,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="NEW_ITEMWeap" FunctionName="Хранилище item1Model.NEW_ITEMWeap" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

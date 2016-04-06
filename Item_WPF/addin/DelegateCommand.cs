@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Windows.Input;
 
-namespace GurpsCharacterEditor.ViewModels
+namespace Item_WPF.addin
 {
     // This class implements the ICommand interface using delegates
     class DelegateCommand : ICommand

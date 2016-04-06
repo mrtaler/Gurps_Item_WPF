@@ -1,4 +1,4 @@
-﻿namespace GurpsCharacterEditor.Models
+﻿namespace Item_WPF.MVVM.Models
 {
     public class Advantage
     {

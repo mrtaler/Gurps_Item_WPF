@@ -1,6 +1,7 @@
-﻿using GurpsCharacterEditor.Models;
+﻿using Item_WPF.addin;
+using Item_WPF.MVVM.Models;
 
-namespace GurpsCharacterEditor.ViewModels
+namespace Item_WPF.MVVM.ViewModels
 {
     class EditSecondaryStatsViewModel : ViewModelBase
     {

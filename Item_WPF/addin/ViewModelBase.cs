@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace GurpsCharacterEditor.ViewModels
+namespace Item_WPF.addin
 {
     // Base class for the viewmodels, which implements the INotifyPropertyChanged interface.
     class ViewModelBase : INotifyPropertyChanged

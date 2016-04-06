@@ -248,8 +248,8 @@ IF OBJECT_ID(N'[dbo].[LaserColorEf]', 'u') IS NOT NULL
   DROP TABLE [dbo].[LaserColorEf];
 GO
 
-IF OBJECT_ID(N'[dbo].[Character]', 'u') IS NOT NULL
-  DROP TABLE [dbo].[Character];
+IF OBJECT_ID(N'[dbo].[CharacterDB]', 'u') IS NOT NULL
+  DROP TABLE [dbo].[CharacterDB];
 GO
 IF OBJECT_ID(N'[dbo].[WeaponDamage]', 'u') IS NOT NULL
   DROP TABLE [dbo].[WeaponDamage];
@@ -771,7 +771,7 @@ CREATE TABLE [dbo].[CombineWeap] (
   CONSTRAINT [PK_CombineWeap] PRIMARY KEY ([id])
 
 )
-CREATE TABLE [dbo].[Character] (
+CREATE TABLE [dbo].[CharacterDB] (
   [id] INT IDENTITY (1, 1),
   name NVARCHAR(80),
   StrengthPoints INT,

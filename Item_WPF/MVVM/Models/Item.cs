@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace GurpsCharacterEditor.Models
+namespace Item_WPF.MVVM.Models
 {
     // This item represents an inventory item, which can be carried by a
     // character.

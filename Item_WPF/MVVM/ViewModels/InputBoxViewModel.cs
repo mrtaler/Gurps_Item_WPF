@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Item_WPF.addin;
+using Item_WPF.MVVM.Models;
+
 namespace Item_WPF.MVVM.ViewModels
 {
     class InputBoxViewModel : INotifyPropertyChanged, IDisposable

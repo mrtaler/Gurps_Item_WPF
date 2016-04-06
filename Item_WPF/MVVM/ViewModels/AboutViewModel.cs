@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Reflection;
+using Item_WPF.addin;
 
-namespace GurpsCharacterEditor.ViewModels
+namespace Item_WPF.MVVM.ViewModels
 {
     class AboutViewModel : ViewModelBase
     {

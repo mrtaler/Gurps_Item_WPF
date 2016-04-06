@@ -23,13 +23,13 @@ namespace Item_WPF
 
     {
         private item1Entities _context;
-        private ObservableCollection<Character> ChaOk { get; set; }
+        private ObservableCollection<CharacterDB> ChaOk { get; set; }
         public character()
         {
             InitializeComponent();
 
             _context = new item1Entities();
-            ChaOk = new ObservableCollection<Character>(_context.Characters);
+            ChaOk = new ObservableCollection<CharacterDB>(_context.CharacterDBs);
             DataGrid.ItemsSource = ChaOk;
         }
 

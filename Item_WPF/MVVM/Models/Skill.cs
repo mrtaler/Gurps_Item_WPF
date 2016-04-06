@@ -1,4 +1,4 @@
-﻿namespace GurpsCharacterEditor.Models
+﻿namespace Item_WPF.MVVM.Models
 {
     // This enum is used to denote the difficulty of a skill.
     public enum SkillDifficulty { Easy, Average, Hard, VeryHard };
