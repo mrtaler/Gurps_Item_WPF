@@ -11,7 +11,7 @@ using Microsoft.Win32;
 
 namespace Item_WPF.MVVM.ViewModels
 {
-    class MainViewModel : ViewModelBase
+    class MainCharacterViewModel : ViewModelBase
     {
         protected Window Owner;
 
@@ -26,13 +26,13 @@ namespace Item_WPF.MVVM.ViewModels
         public DelegateCommand NewCommand { get; private set; }
         public DelegateCommand OpenCommand { get; private set; }
         public DelegateCommand SaveAsCommand { get; private set; }
-
-        public MainViewModel(Window owner)
+        public DelegateCommand OwnerCloseCommand { get; private set; }
+        public MainCharacterViewModel(Window owner)
             : this(owner, new Character())
         {
         }
 
-        public MainViewModel(Window owner, Character character)
+        public MainCharacterViewModel(Window owner, Character character)
         {
             Owner = owner;
             Character = character;
@@ -47,6 +47,7 @@ namespace Item_WPF.MVVM.ViewModels
             NewCommand = new DelegateCommand(New);
             OpenCommand = new DelegateCommand(Open);
             SaveAsCommand = new DelegateCommand(SaveAs);
+            OwnerCloseCommand = new DelegateCommand(OwnerClose);
 
             // Setup property dependencies
             PropertyDependencyMap.Add("Strength", new[] { "MaxHP", "BasicLift", "ThrustDamage", "SwingDamage" });
@@ -417,6 +418,10 @@ namespace Item_WPF.MVVM.ViewModels
                 serializer.Serialize(stream, Character);
                 stream.Close();
             }
+        }
+        public void OwnerClose(object parameter)
+        {
+            Owner.Close();
         }
     }
 }

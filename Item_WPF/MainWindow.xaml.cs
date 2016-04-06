@@ -63,8 +63,7 @@ namespace Item_WPF
 
         private void button_Click_1(object sender, RoutedEventArgs e)
         {
-            AboutWindowView window = new AboutWindowView();
-            window.Owner = Owner;
+            MainCharacterView              window = new MainCharacterView();
             window.ShowDialog();
         }
     }
