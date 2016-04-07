@@ -14,7 +14,7 @@ namespace Item_WPF.MVVM.ViewModels
     class all_ItemsViewModel : INotifyPropertyChanged, IDisposable
     {
         private item1Entities _context;
-         public string pass{ get; set; }
+        public string pass { get; set; }
         public ObservableCollection<ItemClass> ItemsClass { get; set; }
         #region  public ObservableCollection<ITEM> Items
         private ObservableCollection<ITEM> _Items;
@@ -83,6 +83,24 @@ namespace Item_WPF.MVVM.ViewModels
             CDelItem = new ActionCommand(DelItem) { IsExecutable = true };
             CNewItem = new ActionCommand(NewItem) { IsExecutable = true };
         }
+
+        public all_ItemsViewModel(object param)
+        {
+            _context = new item1Entities();
+            string Param = param as string;      
+            Items = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.ItemClass.name.Contains(Param)));
+            ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClasses);
+
+            Refresh = new ActionCommand(Refreshnew) { IsExecutable = true };
+            CSelItem = new ActionCommand(CSelectedItem) { IsExecutable = true };
+            Save = new ActionCommand(SaveChanges) { IsExecutable = true };
+            CDelItem = new ActionCommand(DelItem) { IsExecutable = true };
+            CNewItem = new ActionCommand(NewItem) { IsExecutable = true };
+        }
+
+
+
+
         #region Command Refrekshnew
         private void Refreshnew()
         {
@@ -151,9 +169,9 @@ namespace Item_WPF.MVVM.ViewModels
                 _context.SaveChanges();
             }
             else MessageBox.Show("This rows is used");
-            }
+        }
         //}
-        
+
 
         public ActionCommand CDelItem { get; set; }
         #endregion

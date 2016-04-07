@@ -610,6 +610,15 @@ namespace Item_WPF.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на DropDice.
+        /// </summary>
+        public static string RibbonAppMenuItemDropDice {
+            get {
+                return ResourceManager.GetString("RibbonAppMenuItemDropDice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на New.
         /// </summary>
         public static string RibbonAppMenuItemNew {
@@ -646,6 +655,42 @@ namespace Item_WPF.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на All Items.
+        /// </summary>
+        public static string RibbonButtonAllItems {
+            get {
+                return ResourceManager.GetString("RibbonButtonAllItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Attachment.
+        /// </summary>
+        public static string RibbonButtonAttachmentItems {
+            get {
+                return ResourceManager.GetString("RibbonButtonAttachmentItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на New Char.
+        /// </summary>
+        public static string RibbonButtonShowCharacter {
+            get {
+                return ResourceManager.GetString("RibbonButtonShowCharacter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Weapon.
+        /// </summary>
+        public static string RibbonButtonWeaponItems {
+            get {
+                return ResourceManager.GetString("RibbonButtonWeaponItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Advantages/disadvantages.
         /// </summary>
         public static string RibbonGroupAdvantages {
@@ -660,6 +705,15 @@ namespace Item_WPF.Properties {
         public static string RibbonGroupInventory {
             get {
                 return ResourceManager.GetString("RibbonGroupInventory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Items.
+        /// </summary>
+        public static string RibbonGroupItems {
+            get {
+                return ResourceManager.GetString("RibbonGroupItems", resourceCulture);
             }
         }
         
@@ -682,11 +736,29 @@ namespace Item_WPF.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Character.
+        /// </summary>
+        public static string RibbonSubTabCharacter {
+            get {
+                return ResourceManager.GetString("RibbonSubTabCharacter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Character sheet.
         /// </summary>
         public static string RibbonTabCharacterSheet {
             get {
                 return ResourceManager.GetString("RibbonTabCharacterSheet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Genegal.
+        /// </summary>
+        public static string RibbonTabGeneral {
+            get {
+                return ResourceManager.GetString("RibbonTabGeneral", resourceCulture);
             }
         }
         

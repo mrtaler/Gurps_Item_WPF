@@ -27,5 +27,11 @@ namespace Item_WPF.MVVM.View
             DataContext = _allItemsViewModel;
             InitializeComponent();
         }
+        public all_ItemsView(object parametr)
+        {
+            _allItemsViewModel = new all_ItemsViewModel(parametr);
+            DataContext = _allItemsViewModel;
+            InitializeComponent();
+        }
     }
 }

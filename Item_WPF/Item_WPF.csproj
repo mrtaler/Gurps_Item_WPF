@@ -196,6 +196,7 @@
     <Compile Include="MVVM\ViewModels\EditSecondaryStatsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\InputBoxViewModel.cs" />
     <Compile Include="MVVM\ViewModels\MainCharacterViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\MainWindowStartViewModel.cs" />
     <Compile Include="MVVM\ViewModels\NewItemsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\SelectItemsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\TestViewModel.cs" />
@@ -243,6 +244,9 @@
     <Compile Include="MVVM\View\MainCharacterView.xaml.cs">
       <DependentUpon>MainCharacterView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\View\MainWindowStartView.xaml.cs">
+      <DependentUpon>MainWindowStartView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\NewItemsView.xaml.cs">
       <DependentUpon>NewItemsView.xaml</DependentUpon>
     </Compile>
@@ -257,6 +261,11 @@
     </Compile>
     <Compile Include="litForms\new_char.xaml.cs">
       <DependentUpon>new_char.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.ru-RU.Designer.cs">
+      <DependentUpon>Resources.ru-RU.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="TL.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
@@ -361,6 +370,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\MainWindowStartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\NewItemsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -396,6 +409,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Properties\Resources.ru-RU.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ru-RU.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
