@@ -7,11 +7,11 @@ using System.Collections.Specialized;
 
 namespace Item_WPF.MVVM.ViewModels
 {
-    class AmmoViewModel : ViewModelBase, IDisposable
+    public class AmmoViewModel : ViewModelBase, IDisposable
     {    
         private item1Entities _context;
              public ObservableCollection<AMMO> AmmoOk { get; set; }
-             public AmmoViewModel()
+          public   AmmoViewModel()
         {
             _context = new item1Entities();
             AmmoOk = new ObservableCollection<AMMO>(_context.AMMOes);

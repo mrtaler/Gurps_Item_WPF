@@ -20,7 +20,7 @@ namespace Item_WPF.MVVM.View
     /// </summary>
     public partial class AmmoView : Window
     {
-        private AmmoViewModel AVM { get; set; }
+        public AmmoViewModel AVM { get; set; }
         public AmmoView()
         {
             AVM = new AmmoViewModel();
@@ -32,7 +32,8 @@ namespace Item_WPF.MVVM.View
         private void Closebutton_OnClick(object sender, RoutedEventArgs e)
         {
             AVM.Dispose();
-            this.Close();
+            DialogResult = true;
+                this.Close();
         }
 
         //private void AmmoView_OnClosed(object sender, EventArgs e)

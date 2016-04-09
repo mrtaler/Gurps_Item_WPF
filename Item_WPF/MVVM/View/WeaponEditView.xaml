@@ -13,7 +13,8 @@
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     </Window.Resources>
     <Grid>
-        <TabControl x:Name="TabControl" Margin="10,10,10,35">
+
+        <TabControl x:Name="TabControl" Margin="0,25,0,35">
             <TabItem x:Name="MainTi" Header="Main">
                 <Grid x:Name="MainGrid"
                       Margin="0,0,0,8"
@@ -196,7 +197,9 @@
                                       DisplayMemberPath="name_TL"
                                       IsReadOnly="True"
                                       ItemsSource="{Binding TlCollection}"
-                                      SelectedValue="{Binding ItemLoad.TL, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      SelectedValue="{Binding ItemLoad.TL,
+                                                              Mode=TwoWay,
+                                                              UpdateSourceTrigger=PropertyChanged}"
                                       SelectedValuePath="Id_Tl" />
                             <ComboBox x:Name="LcCb"
                                       Width="120"
@@ -207,7 +210,8 @@
                                       IsReadOnly="True"
                                       ItemsSource="{Binding LccCollection}"
                                       SelectedValue="{Binding ItemLoad.LC,
-                                                              Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                              Mode=TwoWay,
+                                                              UpdateSourceTrigger=PropertyChanged}"
                                       SelectedValuePath="Id_LC" />
                         </Grid>
                     </GroupBox>
@@ -512,19 +516,19 @@
                                       Command="{Binding CExtendDamage}"
                                       CommandParameter="{Binding ElementName=ExcheckBox,
                                                                  Path=IsChecked}"
-                                      Content="Ext Dam" />
+                                      Content="Ext Dam"
+                                      IsChecked="True" />
                             <GroupBox x:Name="groupBox"
                                       Width="163"
                                       Height="105"
                                       Margin="10,133,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Header="ExDam">
-                                <!--
-                                    Visibility="{Binding ElementName=ExcheckBox,
-                                    Path=IsChecked,
-                                    Converter={StaticResource BooleanToVisibilityConverter}}">
-                                -->
+                                      Header="ExDam"
+                                      Visibility="{Binding ElementName=ExcheckBox,
+                                                           Path=IsChecked,
+                                                           Converter={StaticResource BooleanToVisibilityConverter}}">
+
                                 <Grid Width="153"
                                       Height="87"
                                       Margin="0,0,0,0"
@@ -645,9 +649,9 @@
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="GroupBox7"
-                              Width="181"
+                              Width="201"
                               Height="164"
-                              Margin="396,10,0,0"
+                              Margin="454,126,0,0"
                               HorizontalAlignment="Left"
                               VerticalAlignment="Top"
                               Header="Shots">
@@ -768,9 +772,9 @@
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="GroupBox8"
-                              Width="172"
-                              Height="94"
-                              Margin="590,10,0,0"
+                              Width="201"
+                              Height="116"
+                              Margin="581,10,0,0"
                               HorizontalAlignment="Left"
                               VerticalAlignment="Top"
                               Header="Acc">
@@ -807,58 +811,59 @@
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="GroupBox9"
-                              Width="237"
-                              Height="186"
-                              Margin="525,179,0,0"
+                              Width="180"
+                              Height="116"
+                              Margin="396,10,0,0"
                               HorizontalAlignment="Left"
                               VerticalAlignment="Top"
                               Header="Reload">
                         <Grid>
                             <Label x:Name="Label23"
-                                   Margin="10,10,0,0"
+                                   Margin="10,0,0,0"
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Top"
                                    Content="Caliber" />
                             <Label x:Name="Label24"
-                                   Margin="10,41,0,0"
+                                   Margin="10,24,0,0"
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Top"
                                    Content="Shots" />
                             <Label x:Name="Label25"
-                                   Margin="10,72,0,0"
+                                   Margin="10,52,0,0"
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Top"
                                    Content="Reload Time" />
                             <ComboBox x:Name="CAliberComboBox"
-                                      Width="120"
-                                      Margin="73,14,0,0"
+                                      Width="88"
+                                      Margin="73,0,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       DisplayMemberPath="Caliber_name"
                                       ItemsSource="{Binding AmmoscCollection}"
+                                      SelectedIndex="{Binding selInd}"
                                       SelectedValue="{Binding WeaponLoad.ubCalibre,
                                                               Mode=TwoWay}"
                                       SelectedValuePath="id" />
                             <TextBox x:Name="ShotsTextBox"
-                                     Width="120"
+                                     Width="88"
                                      Height="23"
-                                     Margin="73,45,0,0"
+                                     Margin="73,27,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
                                      Text="{Binding WeaponLoad.Shots,
                                                     Mode=TwoWay}"
                                      TextWrapping="Wrap" />
                             <TextBox x:Name="ReloadTimeTextbox"
-                                     Width="102"
+                                     Width="70"
                                      Height="23"
-                                     Margin="91,76,0,0"
+                                     Margin="91,55,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
                                      Text="{Binding WeaponLoad.Time_For_reload,
                                                     Mode=TwoWay}"
                                      TextWrapping="Wrap" />
                             <CheckBox x:Name="SingleReloadCheckBox"
-                                      Margin="26,119,0,0"
+                                      Margin="10,78,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       Content="Single Reload"
@@ -877,6 +882,7 @@
                               Visibility="{Binding ElementName=LinkedcheckBox,
                                                    Path=IsChecked,
                                                    Converter={StaticResource BooleanToVisibilityConverter}}">
+
 
                         <Grid Margin="0,0,-2,-2">
                             <TextBox x:Name="textBox"
@@ -1005,13 +1011,14 @@
                     <GroupBox x:Name="groupBox1_Copy"
                               Width="117"
                               Height="191"
-                              Margin="332,179,0,0"
+                              Margin="332,126,0,0"
                               HorizontalAlignment="Left"
                               VerticalAlignment="Top"
                               Header="Follow-up"
                               Visibility="{Binding ElementName=FollowUpcheckBox,
                                                    Path=IsChecked,
                                                    Converter={StaticResource BooleanToVisibilityConverter}}">
+
                         <Grid Margin="0,0,-2,-2">
                             <TextBox x:Name="textBox5"
                                      Width="58"
@@ -1740,7 +1747,7 @@
                 Margin="90,0,0,10"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Bottom"
-                Click="CloseButton_Click"
+                Command="{Binding CloseWindowC}"
                 Content="Close" />
         <Button x:Name="UndoAllButton"
                 Width="75"
@@ -1750,6 +1757,28 @@
                 VerticalAlignment="Bottom"
                 Command="{Binding Refresh}"
                 Content="All_Undo" />
+        <Menu x:Name="menu"
+              Width="788"
+              Height="20"
+              HorizontalAlignment="Left"
+              VerticalAlignment="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="New Project" />
+                <MenuItem Header="Open Project">
+                    <MenuItem Header="WinForms" />
+                    <MenuItem Header="WPF" />
+                </MenuItem>
+                <Separator />
+                <MenuItem Command="{Binding CloseWindowC}" Header="Quit" />
+            </MenuItem>
+            <MenuItem Header="Edit" />
+            <MenuItem Header="LitleForm">
+                <MenuItem Command="{Binding CalliberWindowC}" Header="Caliber" />
+            </MenuItem>
+        </Menu>
+
+
+
 
     </Grid>
 </Window>

@@ -24,7 +24,7 @@ namespace Item_WPF.MVVM.View
         public WeaponEditView(ITEM itSell)
         {
             InitializeComponent();
-            _weaponEditView = new WeaponEditViewModel(itSell);
+            _weaponEditView = new WeaponEditViewModel(this,itSell);
             DataContext = _weaponEditView;
         }
         protected override void OnClosed(EventArgs e)

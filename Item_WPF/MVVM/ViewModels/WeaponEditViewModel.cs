@@ -16,16 +16,33 @@ using System.Windows.Media.Imaging;
 
 namespace Item_WPF.MVVM.ViewModels
 {
-    class WeaponEditViewModel : INotifyPropertyChanged, IDisposable
+    class WeaponEditViewModel : ViewModelBase, IDisposable
     {
-        public ITEM _itemselect { get; set; }
+        protected Window Owner;
         private item1Entities _context;
+        public int selInd { get; set; }
         public ObservableCollection<TL> TlCollection { get; set; }
         public ObservableCollection<LC> LccCollection { get; set; }
         public ObservableCollection<WeaponClass> WeaponClasscCollection { get; set; }
         public ObservableCollection<WeaponType> WeaponTypescCollection { get; set; }
         public ObservableCollection<TypeOfDamage> TypeOfDamagesCollection { get; set; }
-        public ObservableCollection<AMMO> AmmoscCollection { get; set; }
+        private ObservableCollection<AMMO> _AmmoscCollection;
+        public ObservableCollection<AMMO> AmmoscCollection
+        {
+            get
+            {
+                return _AmmoscCollection;
+                //return new ObservableCollection<AMMO>(_context.AMMOes);
+            }
+            set 
+            {
+                if (_AmmoscCollection != value)
+                {
+                    _AmmoscCollection = value;
+                    NotifyPropertyChanged("AmmoscCollection");
+                }
+            }
+        }
         public ObservableCollection<WeaponDamage> WeaponDamageColl { get; set; }
         private ITEM _ItemLoad;
         public ITEM ItemLoad
@@ -39,7 +56,7 @@ namespace Item_WPF.MVVM.ViewModels
                 if (_ItemLoad != value)
                 {
                     _ItemLoad = value;
-                    RaisePropertyChanged("ItemLoad");
+                    NotifyPropertyChanged("ItemLoad");
                 }
             }
         }
@@ -58,18 +75,20 @@ namespace Item_WPF.MVVM.ViewModels
                 if (_attMount != value)
                 {
                     _attMount = value;
-                    RaisePropertyChanged("AttMount");
+                    NotifyPropertyChanged("AttMount");
                 }
             }
         }
 
         #region Constructor
-        public WeaponEditViewModel(ITEM itemselect)
+        public WeaponEditViewModel(Window owner, ITEM itemselect)
         {
+            Owner = owner;
             _context = new item1Entities();
-            _itemselect = itemselect;
             ItemLoad = _context.ITEMs.Find(itemselect.uiIndex);
             WeaponLoad = ItemLoad.WEAPON;
+
+            AmmoscCollection = new ObservableCollection<AMMO>(_context.AMMOes);
 
             TlCollection = new ObservableCollection<TL>(_context.TLs);
             LccCollection = new ObservableCollection<LC>(_context.LCs);
@@ -78,28 +97,25 @@ namespace Item_WPF.MVVM.ViewModels
             WeaponTypescCollection = new ObservableCollection<WeaponType>(_context.WeaponTypes);
             TypeOfDamagesCollection = new ObservableCollection<TypeOfDamage>(_context.TypeOfDamages);
 
-
             WeaponDamageColl = new ObservableCollection<WeaponDamage>(_context.WeaponDamages.Where((p => p.idWeapon == WeaponLoad.uiIndex)));
-            // WeaponDamageColl = new ObservableCollection<WeaponDamage>(WeaponLoad.WeaponDamages.Where((p => p.idWeapon == WeaponLoad.uiIndex)));
 
             avSlot = new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlots.Where(p => p.rWeaponId == WeaponLoad.uiIndex));
             AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
 
-            AmmoscCollection = new ObservableCollection<AMMO>(_context.AMMOes);
 
-            #region Obcommand
-            Save = new ActionCommand(SaveChanges) { IsExecutable = true };
-            LoadImage = new ActionCommand(LoadImageToForm) { IsExecutable = true };
-            DellImage = new ActionCommand(DellImageFromAll) { IsExecutable = true };
+            #region Load Command
+            Save = new DelegateCommand(SaveChanges); // соххранение контекста
+            LoadImage = new DelegateCommand(LoadImageToForm); //загрузка картинки
+            DellImage = new DelegateCommand(DellImageFromAll); //удаление картинки
+            CExtendDamage = new DelegateCommand(ExtendDamage);
+            AddMountslot1 = new DelegateCommand(AddMountslot1_Execute);
+            CheckThreeCheckBox = new DelegateCommand(CheckThreeCheckBox_Execute); //
+            CloseWindowC = new DelegateCommand(CloseWindow); //Закрытие окна
 
-            CExtendDamage = new RelayCommand(ExtendDamage);
-
-            AddMountslot1 = new RelayCommand(AddMountslot1_Execute);
-            CheckThreeCheckBox = new RelayCommand(CheckThreeCheckBox_Execute);
+            CalliberWindowC = new DelegateCommand(CalliberWindow); //Caliber
 
             //AddMountslot1 = new ActionCommand(AddMountslot1_Execute) { IsExecutable = true };
             #endregion
-
             #region Event
             avSlot.CollectionChanged += new NotifyCollectionChangedEventHandler(_avSlot_CollectionChanged);
             WeaponDamageColl.CollectionChanged += new NotifyCollectionChangedEventHandler(_WeaponDamageColl_CollectionChanged);
@@ -109,9 +125,36 @@ namespace Item_WPF.MVVM.ViewModels
         }
         #endregion
         #region Command
+        #region Command CalliberWindow
+        public DelegateCommand CalliberWindowC { get; set; }
+        private void CalliberWindow(object parameter)
+        { 
+            AmmoView AmmoViewWindow = new AmmoView();
+            AmmoViewWindow.Owner = Owner;
+            bool? result = AmmoViewWindow.ShowDialog();
+
+            if (result.HasValue && (result == true))
+            {
+                AmmoscCollection = AmmoViewWindow.AVM.AmmoOk;
+                //NotifyPropertyChanged("WeaponLoad.ubCalibre");
+            }
+
+        }
+        #endregion
+
+        #region Command CloseWindow
+        public DelegateCommand CloseWindowC { get; set; }
+        private void CloseWindow(object parameter)
+        {
+
+            Dispose();
+            Owner.DialogResult = true;
+            Owner.Close();
+        }
+        #endregion
         #region Command ExtendDamage
-        public ICommand CExtendDamage { get; set; }
-        private void ExtendDamage(object param)
+        public DelegateCommand CExtendDamage { get; set; }
+        private void ExtendDamage(object parameter)
         {
 
             //if (!(Convert.ToBoolean(param)))
@@ -128,12 +171,15 @@ namespace Item_WPF.MVVM.ViewModels
             //}
         }
         #endregion
-
+        #region Command CheckThreeCheckBox
+        public DelegateCommand CheckThreeCheckBox { get; set; }
         private void CheckThreeCheckBox_Execute(object parameter)
         {
             bool Param = (bool)parameter;
         }
-
+        #endregion
+        #region Command AddMountslot1
+        public DelegateCommand AddMountslot1 { get; set; }
         private void AddMountslot1_Execute(object parameter)
         {
             int param = Convert.ToInt32(parameter);
@@ -142,7 +188,10 @@ namespace Item_WPF.MVVM.ViewModels
             atmS.ShowDialog();
             AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
         }
-        private void SaveChanges()
+        #endregion
+        #region Command SaveChanges
+        public DelegateCommand Save { get; set; }
+        private void SaveChanges(object parameter)
         {
             var Nwe = (from p in _context.WeaponTypes
                        where p.id == WeaponLoad.ubWeaponType
@@ -153,10 +202,12 @@ namespace Item_WPF.MVVM.ViewModels
                 WeaponLoad.CutOff_shotsCount = 0;
             if (!WeaponLoad.HCROF)
                 WeaponLoad.HCROFValue = 0;
-            _context.SaveChanges();           
-          //  _itemselect= ItemLoad;
+            _context.SaveChanges();
         }
-        private void LoadImageToForm()
+        #endregion
+        #region Command LoadImage
+        public DelegateCommand LoadImage { get; set; }
+        private void LoadImageToForm(object parameter)
         {
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.InitialDirectory = "C:\\Users\\Derdan\\Dropbox\\Weapon";
@@ -168,26 +219,17 @@ namespace Item_WPF.MVVM.ViewModels
                 ItemLoad.Item_Image = System.IO.File.ReadAllBytes(dlg.FileName);
             }
         }
-
-        private void DellImageFromAll()
+        #endregion
+        #region Command DellImageFromAll
+        public DelegateCommand DellImage { get; set; }
+        private void DellImageFromAll(object parameter)
         {
             ItemLoad.Item_Image = null;
         }
         #endregion
-        public ICommand CheckThreeCheckBox { get; set; }
-        public ICommand AddMountslot1 { get; set; }
-        public ActionCommand Save { get; set; }
-
-        public ActionCommand AddMountslot { get; set; }
-        public ActionCommand LoadImage { get; set; }
-        public ActionCommand DellImage { get; set; }
+        #endregion
 
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void RaisePropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
         public void Dispose()
         {
             _context?.Dispose();
