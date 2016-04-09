@@ -321,6 +321,9 @@
   <data name="RibbonButtonAttachmentItems" xml:space="preserve">
     <value>Attachment</value>
   </data>
+  <data name="RibbonButtonCombineWeapon" xml:space="preserve">
+    <value>CombineWeapon</value>
+  </data>
   <data name="RibbonButtonShowCharacter" xml:space="preserve">
     <value>New Char</value>
   </data>
@@ -329,6 +332,9 @@
   </data>
   <data name="RibbonGroupAdvantages" xml:space="preserve">
     <value>Advantages/disadvantages</value>
+  </data>
+  <data name="RibbonGroupCombineWeapon" xml:space="preserve">
+    <value>Combine</value>
   </data>
   <data name="RibbonGroupInventory" xml:space="preserve">
     <value>Inventory</value>

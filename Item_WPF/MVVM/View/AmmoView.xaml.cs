@@ -20,21 +20,24 @@ namespace Item_WPF.MVVM.View
     /// </summary>
     public partial class AmmoView : Window
     {
+        private AmmoViewModel AVM { get; set; }
         public AmmoView()
         {
-            
+            AVM = new AmmoViewModel();
+            DataContext = AVM;
             InitializeComponent();
-            DataContext = new AmmoViewModel();
+
         }
 
         private void Closebutton_OnClick(object sender, RoutedEventArgs e)
         {
+            AVM.Dispose();
             this.Close();
         }
 
-        private void AmmoView_OnClosed(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        //private void AmmoView_OnClosed(object sender, EventArgs e)
+        //{
+        //    AVM.Dispose();
+        //}
     }
 }

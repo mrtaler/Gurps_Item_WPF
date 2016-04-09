@@ -11,26 +11,20 @@ using System.Windows;
 
 namespace Item_WPF.MVVM.ViewModels
 {
-    class all_ItemsViewModel : INotifyPropertyChanged, IDisposable
+    class all_ItemsViewModel : ViewModelBase, IDisposable
     {
+        protected Window Owner;
         private item1Entities _context;
         public string pass { get; set; }
         public ObservableCollection<ItemClass> ItemsClass { get; set; }
         #region  public ObservableCollection<ITEM> Items
-        private ObservableCollection<ITEM> _Items;
         public ObservableCollection<ITEM> Items
         {
             get
             {
-                return _Items;
-            }
-            set
-            {
-                if (_Items != value)
-                {
-                    _Items = value;
-                    RaisePropertyChanged("Items");
-                }
+                if (SelectedItClassforSort == 1 || SelectedItClassforSort == 0 || SelectedItClassforSort == null)
+                    return new ObservableCollection<ITEM>(_context.ITEMs);
+                else return new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.usItemClass == SelectedItClassforSort));
             }
         }
         #endregion
@@ -47,7 +41,7 @@ namespace Item_WPF.MVVM.ViewModels
                 if (_SelectedItClassforSort != value)
                 {
                     _SelectedItClassforSort = value;
-                    RaisePropertyChanged("SelectedItClassforSort");
+                    NotifyPropertyChanged("SelectedItClassforSort");
                 }
             }
         }
@@ -65,16 +59,18 @@ namespace Item_WPF.MVVM.ViewModels
                 if (_SelectedItemForWork != value)
                 {
                     _SelectedItemForWork = value;
-                    RaisePropertyChanged("SelectedItemForWork");
+                    NotifyPropertyChanged("SelectedItemForWork");
                 }
             }
         }
         #endregion
 
-        public all_ItemsViewModel()
+        public all_ItemsViewModel(Window owner, object param)
         {
+            Owner = owner;
             _context = new item1Entities();
-            SelectedItClassforSort = 1;
+            string Param = param as string;
+            SelectedItClassforSort = _context.ItemClasses.FirstOrDefault(p => p.name.Contains(Param)).id;
             ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClasses);
 
             Refresh = new ActionCommand(Refreshnew) { IsExecutable = true };
@@ -82,31 +78,15 @@ namespace Item_WPF.MVVM.ViewModels
             Save = new ActionCommand(SaveChanges) { IsExecutable = true };
             CDelItem = new ActionCommand(DelItem) { IsExecutable = true };
             CNewItem = new ActionCommand(NewItem) { IsExecutable = true };
+            PropertyDependencyMap.Add("SelectedItClassforSort", new[] { "Items" });
         }
-
-        public all_ItemsViewModel(object param)
-        {
-            _context = new item1Entities();
-            string Param = param as string;      
-            Items = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.ItemClass.name.Contains(Param)));
-            ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClasses);
-
-            Refresh = new ActionCommand(Refreshnew) { IsExecutable = true };
-            CSelItem = new ActionCommand(CSelectedItem) { IsExecutable = true };
-            Save = new ActionCommand(SaveChanges) { IsExecutable = true };
-            CDelItem = new ActionCommand(DelItem) { IsExecutable = true };
-            CNewItem = new ActionCommand(NewItem) { IsExecutable = true };
-        }
-
-
-
 
         #region Command Refrekshnew
         private void Refreshnew()
         {
             _context?.Dispose();
             _context = new item1Entities();
-            Items = new ObservableCollection<ITEM>(_context.ITEMs);
+            //  Items = new ObservableCollection<ITEM>(_context.ITEMs);
             SelectedItClassforSort = 1;
             //else Items = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.usItemClass == SelectedItClassforSort));
         }
@@ -119,23 +99,33 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 // if (SelectedItemForWork.used == false)// созаем сущьность для сравнения
                 //  {
-                if (SelectedItemForWork.ItemClass.name == "Gun"
-                        || SelectedItemForWork.ItemClass.name == "Knife"
-                        || SelectedItemForWork.ItemClass.name == "Throwing Knife"
-                        || SelectedItemForWork.ItemClass.name == "Launcher"
-                        || SelectedItemForWork.ItemClass.name == "Thrown Weapon"
-                        || SelectedItemForWork.ItemClass.name == "Blunt Weapon")
+
+                if (SelectedItemForWork.usItemClass == _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Gun")).id
+                       || SelectedItemForWork.usItemClass == _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Knife")).id
+                       || SelectedItemForWork.usItemClass == _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Throwing Knife")).id
+                       || SelectedItemForWork.usItemClass == _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Launcher")).id
+                       || SelectedItemForWork.usItemClass == _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Thrown Weapon")).id
+                       || SelectedItemForWork.usItemClass == _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Blunt Weapon")).id)
                 {
                     SelectedItemForWork.used = true;
                     SelectedItemForWork.dt = System.DateTime.UtcNow;
                     SaveChanges();
 
                     WeaponEditView avView = new WeaponEditView(SelectedItemForWork);
-                    avView.ShowDialog();
+                    avView.Owner = Owner;
+                    bool? result = avView.ShowDialog();
+   
+                    if (result.HasValue && (result == true))
+                    {
+                        _context?.Dispose();
+                        _context = new item1Entities();
+                        NotifyPropertyChanged("SelectedItClassforSort");
+
+                    }
                 }
-                else if (SelectedItemForWork.ItemClass.name == "Attachment")
+                else if (SelectedItemForWork.usItemClass == _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Attachment")).id)
                 {
-                    // itt.used = true;
+                    SelectedItemForWork.used = true;
                     SelectedItemForWork.dt = System.DateTime.UtcNow;
                     SaveChanges();
 
@@ -170,8 +160,6 @@ namespace Item_WPF.MVVM.ViewModels
             }
             else MessageBox.Show("This rows is used");
         }
-        //}
-
 
         public ActionCommand CDelItem { get; set; }
         #endregion
@@ -191,22 +179,7 @@ namespace Item_WPF.MVVM.ViewModels
         public ActionCommand CNewItem { get; set; }
         #endregion
 
-        #region intrfeis
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void RaisePropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            if (propertyName == "SelectedItClassforSort")
-            {
-                //   _context?.Dispose();
-                //   _context = new item1Entities();
-                if (SelectedItClassforSort == 1 || SelectedItClassforSort == 0 || SelectedItClassforSort == null)
-                {
-                    Items = new ObservableCollection<ITEM>(_context.ITEMs);
-                }
-                else Items = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.usItemClass == SelectedItClassforSort));
-            }
-        }
+        #region intrfeis       
         public void Dispose()
         {
             _context?.Dispose();
@@ -215,19 +188,6 @@ namespace Item_WPF.MVVM.ViewModels
     }
 }
 /*
-
-     
-
-      
-
-
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            NewItems newitem = new NewItems();
-            newitem.ShowDialog();
-        }
-
         private void dataGridViewAllItems_LoadingRow(object sender, DataGridRowEventArgs e)
         {
             bool ew2;

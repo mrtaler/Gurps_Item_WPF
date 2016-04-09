@@ -12,7 +12,7 @@
         <ribbon:Ribbon Margin="0,0,0,380">
             <ribbon:Ribbon.ApplicationMenu>
                 <ribbon:RibbonApplicationMenu>
-                    <ribbon:RibbonApplicationMenuItem Command="{Binding DropDiceCommand}" Header="{x:Static p:Resources.RibbonAppMenuItemDropDice}" />
+                    <ribbon:RibbonApplicationMenuItem Command="{Binding AboutCommand}" Header="{x:Static p:Resources.AboutWindow}" />
                     <ribbon:RibbonApplicationMenuItem Command="{Binding OwnerCloseCommand}" Header="{x:Static p:Resources.RibbonAppMenuItemQuit}" />
                 </ribbon:RibbonApplicationMenu>
             </ribbon:Ribbon.ApplicationMenu>
@@ -21,7 +21,9 @@
                     <ribbon:RibbonButton Command="{Binding ShowCharacterCommand}" Label="{x:Static p:Resources.RibbonButtonShowCharacter}" />
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="{x:Static p:Resources.RibbonGroupItems}">
-                    <ribbon:RibbonButton Command="{Binding ShowAllItemsCommand}" Label="{x:Static p:Resources.RibbonButtonAllItems}" />
+                    <ribbon:RibbonButton Command="{Binding ShowAllItemsCommand}"
+                                         CommandParameter="All"
+                                         Label="{x:Static p:Resources.RibbonButtonAllItems}" />
                     <ribbon:RibbonButton Command="{Binding ShowAllItemsCommand}"
                                          CommandParameter="Gun"
                                          Label="{x:Static p:Resources.RibbonButtonWeaponItems}" />
@@ -29,13 +31,12 @@
                                          CommandParameter="Att"
                                          Label="{x:Static p:Resources.RibbonButtonAttachmentItems}" />
                 </ribbon:RibbonGroup>
-                <ribbon:RibbonGroup Header="123_3333">
-                    <ribbon:RibbonButton Label="3_3" />
-                </ribbon:RibbonGroup>
-                <ribbon:RibbonGroup Header="123_4444">
-                    <ribbon:RibbonButton Label="4_4" />
+                <ribbon:RibbonGroup Header="{x:Static p:Resources.RibbonGroupCombineWeapon}">
+                    <ribbon:RibbonButton Command="{Binding ShowCombineCommand}" Label="{x:Static p:Resources.RibbonButtonCombineWeapon}" />
+                    <ribbon:RibbonButton Command="{Binding DropDiceCommand}" Label="{x:Static p:Resources.RibbonAppMenuItemDropDice}" />
                 </ribbon:RibbonGroup>
             </ribbon:RibbonTab>
+
             <ribbon:RibbonTab Height="80" Header="124">
                 <ribbon:RibbonGroup Header="124_1111">
                     <ribbon:RibbonButton Label="1_1" />

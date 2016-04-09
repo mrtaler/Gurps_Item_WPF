@@ -6,9 +6,14 @@
         xmlns:local="clr-namespace:Item_WPF.MVVM.View"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="all_ItemsView"
-        Width="799.688"
+        Width="571.696"
         Height="353.438"
         mc:Ignorable="d">
+    <Window.Resources>
+        <Style TargetType="{x:Type DataGridRow}">
+            <Setter Property="Background" Value="{Binding ItemClass.name, Converter={addin:gridrowcolrConverter}}" />
+        </Style>
+    </Window.Resources>
     <Grid>
         <Button x:Name="Button"
                 Width="75"
@@ -36,7 +41,7 @@
                 Content="Del" />
         <ComboBox x:Name="ItemClassForSort"
                   Width="120"
-                  Margin="557,10,0,0"
+                  Margin="343,10,0,0"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
                   DisplayMemberPath="name"
@@ -52,42 +57,55 @@
                   SelectedItem="{Binding SelectedItemForWork}"
                   SelectedValuePath="uiIndex">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding uiIndex,
+                <DataGridTextColumn Width="20"
+                                    Binding="{Binding uiIndex,
                                                       Mode=OneWay}"
                                     Header="id"
                                     IsReadOnly="True" />
-                <DataGridTextColumn Binding="{Binding szItemName,
+                <DataGridTextColumn Width="*"
+                                    Binding="{Binding szItemName,
                                                       Mode=OneWay}"
                                     Header="Name"
                                     IsReadOnly="True" />
-                <DataGridTextColumn Binding="{Binding ItemClass.name,
+                <DataGridTextColumn Width="70"
+                                    Binding="{Binding ItemClass.name,
                                                       Mode=OneWay}"
                                     Header="Class"
                                     IsReadOnly="True" />
-                <DataGridTextColumn Binding="{Binding TL1.name_TL,
+                <DataGridTextColumn Width="30"
+                                    Binding="{Binding TL1.name_TL,
                                                       Mode=OneWay}"
                                     Header="TL"
                                     IsReadOnly="True" />
-                <DataGridTextColumn Binding="{Binding LC1.Name_LC,
+                <DataGridTextColumn Width="30"
+                                    Binding="{Binding LC1.Name_LC,
                                                       Mode=OneWay}"
                                     Header="LC"
                                     IsReadOnly="True" />
-                <DataGridTextColumn Binding="{Binding usPrice,
+                <DataGridTextColumn Width="100"
+                                    Binding="{Binding usPrice,
                                                       Mode=OneWay}"
                                     Header="Cost"
                                     IsReadOnly="True" />
+                <DataGridTextColumn Width="100"
+                                    Binding="{Binding ubWeight,
+                                                      Mode=OneWay}"
+                                    Header="Weight"
+                                    IsReadOnly="True" />
+
+
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="UpdateContext_Button"
                 Width="86"
                 Height="22"
-                Margin="683,10,0,0"
+                Margin="468,10,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Command="{Binding Refresh}"
                 Content="Sort_refresh" />
         <Label x:Name="Label01"
-               Width="200"
+               Width="335"
                Height="26"
                Margin="10,0,0,10"
                HorizontalAlignment="Left"
@@ -96,7 +114,7 @@
         <Label x:Name="Label02"
                Width="204"
                Height="26"
-               Margin="215,0,0,10"
+               Margin="350,0,0,10"
                HorizontalAlignment="Left"
                VerticalAlignment="Bottom"
                Content="Label" />

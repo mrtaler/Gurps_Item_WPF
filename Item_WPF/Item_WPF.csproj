@@ -292,10 +292,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -309,10 +305,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Page Include="MVVM\View\AboutWindowView.xaml">
       <SubType>Designer</SubType>
@@ -422,6 +414,7 @@
       <LastGenOutput>Gurps_Item.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="addin\ItemModelDiagram.dbd" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Gurps_Item.edmx.diagram">
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
     </None>

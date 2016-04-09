@@ -673,6 +673,15 @@ namespace Item_WPF.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на CombineWeapon.
+        /// </summary>
+        public static string RibbonButtonCombineWeapon {
+            get {
+                return ResourceManager.GetString("RibbonButtonCombineWeapon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на New Char.
         /// </summary>
         public static string RibbonButtonShowCharacter {
@@ -696,6 +705,15 @@ namespace Item_WPF.Properties {
         public static string RibbonGroupAdvantages {
             get {
                 return ResourceManager.GetString("RibbonGroupAdvantages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Combine.
+        /// </summary>
+        public static string RibbonGroupCombineWeapon {
+            get {
+                return ResourceManager.GetString("RibbonGroupCombineWeapon", resourceCulture);
             }
         }
         

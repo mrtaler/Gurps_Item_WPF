@@ -4,7 +4,7 @@ using System.ComponentModel;
 namespace Item_WPF.addin
 {
     // Base class for the viewmodels, which implements the INotifyPropertyChanged interface.
-    class ViewModelBase : INotifyPropertyChanged
+    internal class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

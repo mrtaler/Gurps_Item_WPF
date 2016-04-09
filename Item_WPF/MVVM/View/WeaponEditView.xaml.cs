@@ -35,6 +35,7 @@ namespace Item_WPF.MVVM.View
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             _weaponEditView.Dispose();
+            DialogResult = true;
             this.Close();
         }
 

@@ -18,7 +18,7 @@ namespace Item_WPF.MVVM.ViewModels
 {
     class WeaponEditViewModel : INotifyPropertyChanged, IDisposable
     {
-
+        public ITEM _itemselect { get; set; }
         private item1Entities _context;
         public ObservableCollection<TL> TlCollection { get; set; }
         public ObservableCollection<LC> LccCollection { get; set; }
@@ -27,7 +27,22 @@ namespace Item_WPF.MVVM.ViewModels
         public ObservableCollection<TypeOfDamage> TypeOfDamagesCollection { get; set; }
         public ObservableCollection<AMMO> AmmoscCollection { get; set; }
         public ObservableCollection<WeaponDamage> WeaponDamageColl { get; set; }
-                public ITEM ItemLoad { get; set; }
+        private ITEM _ItemLoad;
+        public ITEM ItemLoad
+        {
+            get
+            {
+                return _ItemLoad;
+            }
+            set
+            {
+                if (_ItemLoad != value)
+                {
+                    _ItemLoad = value;
+                    RaisePropertyChanged("ItemLoad");
+                }
+            }
+        }
         public WEAPON WeaponLoad { get; set; }
         public ObservableCollection<AvailableAttachSlot> avSlot { get; set; }
 
@@ -52,9 +67,10 @@ namespace Item_WPF.MVVM.ViewModels
         public WeaponEditViewModel(ITEM itemselect)
         {
             _context = new item1Entities();
-            ItemLoad = itemselect;
+            _itemselect = itemselect;
+            ItemLoad = _context.ITEMs.Find(itemselect.uiIndex);
             WeaponLoad = ItemLoad.WEAPON;
-                       
+
             TlCollection = new ObservableCollection<TL>(_context.TLs);
             LccCollection = new ObservableCollection<LC>(_context.LCs);
 
@@ -63,8 +79,8 @@ namespace Item_WPF.MVVM.ViewModels
             TypeOfDamagesCollection = new ObservableCollection<TypeOfDamage>(_context.TypeOfDamages);
 
 
-            WeaponDamageColl = new ObservableCollection<WeaponDamage>(_context.WeaponDamages.Where((p => p.idWeapon == WeaponLoad.uiIndex)));       
-           // WeaponDamageColl = new ObservableCollection<WeaponDamage>(WeaponLoad.WeaponDamages.Where((p => p.idWeapon == WeaponLoad.uiIndex)));
+            WeaponDamageColl = new ObservableCollection<WeaponDamage>(_context.WeaponDamages.Where((p => p.idWeapon == WeaponLoad.uiIndex)));
+            // WeaponDamageColl = new ObservableCollection<WeaponDamage>(WeaponLoad.WeaponDamages.Where((p => p.idWeapon == WeaponLoad.uiIndex)));
 
             avSlot = new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlots.Where(p => p.rWeaponId == WeaponLoad.uiIndex));
             AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
@@ -103,11 +119,11 @@ namespace Item_WPF.MVVM.ViewModels
 
             //   WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).idTypeOfDamage1 = "";
 
-            WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.name=="Primary").idTypeOfDamage2 =null;
+            WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.name == "Primary").idTypeOfDamage2 = null;
 
-            WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.name=="Primary").TypeOfDamage1 = null;
+            WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.name == "Primary").TypeOfDamage1 = null;
 
-            WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.name=="Primary").TypeOfDamage2 = null;            
+            WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.name == "Primary").TypeOfDamage2 = null;
 
             //}
         }
@@ -137,7 +153,8 @@ namespace Item_WPF.MVVM.ViewModels
                 WeaponLoad.CutOff_shotsCount = 0;
             if (!WeaponLoad.HCROF)
                 WeaponLoad.HCROFValue = 0;
-            _context.SaveChanges();
+            _context.SaveChanges();           
+          //  _itemselect= ItemLoad;
         }
         private void LoadImageToForm()
         {
@@ -164,7 +181,7 @@ namespace Item_WPF.MVVM.ViewModels
         public ActionCommand AddMountslot { get; set; }
         public ActionCommand LoadImage { get; set; }
         public ActionCommand DellImage { get; set; }
-        
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertyChanged(string propertyName)

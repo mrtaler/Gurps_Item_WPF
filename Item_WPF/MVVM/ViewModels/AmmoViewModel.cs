@@ -1,25 +1,17 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using Item_WPF.addin;
+using Item_WPF.MVVM.View;
+using System.ComponentModel;
 using System.Collections.Specialized;
 
 namespace Item_WPF.MVVM.ViewModels
 {
-    public class AmmoViewModel : INotifyPropertyChanged, IDisposable
-    {
-        /// <summary>
-        /// Основной контекст данных
-        /// </summary>
+    class AmmoViewModel : ViewModelBase, IDisposable
+    {    
         private item1Entities _context;
-        /// <summary>
-        /// Коллекция патронов .
-        /// </summary>
-        public ObservableCollection<AMMO> AmmoOk { get; set; }
-        /// <summary>
-        /// Конструктор класса
-        /// </summary>
-        public AmmoViewModel()
+             public ObservableCollection<AMMO> AmmoOk { get; set; }
+             public AmmoViewModel()
         {
             _context = new item1Entities();
             AmmoOk = new ObservableCollection<AMMO>(_context.AMMOes);
@@ -60,11 +52,8 @@ namespace Item_WPF.MVVM.ViewModels
 
         public ActionCommand Save { get; set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void RaisePropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+      //      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        
 
         public void Dispose()
         {

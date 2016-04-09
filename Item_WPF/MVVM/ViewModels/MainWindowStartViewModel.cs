@@ -16,7 +16,6 @@ namespace Item_WPF.MVVM.ViewModels
 
         protected RibbonWindow Owner;
 
-
         public DelegateCommand AboutCommand { get; private set; }
         public DelegateCommand DropDiceCommand { get; private set; }
         public DelegateCommand ShowAllItemsCommand { get; private set; }
@@ -30,45 +29,34 @@ namespace Item_WPF.MVVM.ViewModels
 
             // Create commands
             AboutCommand = new DelegateCommand(ShowAboutWindow);
-            DropDiceCommand = new DelegateCommand(DropDice);
-            ShowAllItemsCommand = new DelegateCommand(ShowAllItems);
-            ShowCombineCommand = new DelegateCommand(ShowCombine);
-            ShowCharacterCommand = new DelegateCommand(ShowCharacter);
-            OwnerCloseCommand = new DelegateCommand(OwnerClose);
+            DropDiceCommand = new DelegateCommand(DropDice);//+
+            ShowAllItemsCommand = new DelegateCommand(ShowAllItems);//+
+            ShowCombineCommand = new DelegateCommand(ShowCombine);//+
+            ShowCharacterCommand = new DelegateCommand(ShowCharacter);//+
+            OwnerCloseCommand = new DelegateCommand(OwnerClose);//+
         }
-
         public void ShowAboutWindow(object parameter)
         {
             AboutWindowView window = new AboutWindowView();
             window.Owner = Owner;
             window.ShowDialog();
         }
-
         public void ShowCharacter(object parameter)
         {
             MainCharacterView window = new MainCharacterView();
             window.ShowDialog();
         }
-
-
         public void DropDice(object parameter)
         {
             MessageBox.Show(Dice.RollDie(6, 3).ToString());
         }
 
         public void ShowAllItems(object parameter)
-        {   
-            if (parameter == null)
-            {
-                all_ItemsView allItems = new all_ItemsView();
-                allItems.Show();
-            }
-            else {
+        {
+       
                 all_ItemsView allItems = new all_ItemsView(parameter);
                 allItems.Show();
-            }
-
-
+            
         }
         public void OwnerClose(object parameter)
         {
@@ -76,10 +64,10 @@ namespace Item_WPF.MVVM.ViewModels
         }
         public void ShowCombine(object parameter)
         {
-            
-                CombineWeapView combine = new CombineWeapView();
-                combine.Show();
-   
+
+            CombineWeapView combine = new CombineWeapView();
+            combine.Show();
+
 
         }
     }

@@ -196,7 +196,7 @@
                                       DisplayMemberPath="name_TL"
                                       IsReadOnly="True"
                                       ItemsSource="{Binding TlCollection}"
-                                      SelectedValue="{Binding ItemLoad.TL}"
+                                      SelectedValue="{Binding ItemLoad.TL, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       SelectedValuePath="Id_Tl" />
                             <ComboBox x:Name="LcCb"
                                       Width="120"
@@ -206,7 +206,8 @@
                                       DisplayMemberPath="Name_LC"
                                       IsReadOnly="True"
                                       ItemsSource="{Binding LccCollection}"
-                                      SelectedValue="{Binding ItemLoad.LC}"
+                                      SelectedValue="{Binding ItemLoad.LC,
+                                                              Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       SelectedValuePath="Id_LC" />
                         </Grid>
                     </GroupBox>

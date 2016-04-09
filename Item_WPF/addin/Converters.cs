@@ -5,6 +5,7 @@ using System.Windows.Media.Imaging;
 using System.Globalization;
 using System.Collections.ObjectModel;
 using System.Windows;
+using System.Windows.Media;
 
 namespace Item_WPF.addin
 {
@@ -539,6 +540,18 @@ namespace Item_WPF.addin
                 weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).TypeOfDamage2 = value as string;
             return weaponDamCollConvert;
         }
+    }
+    #endregion
+    #region gridrowcolr
+    class gridrowcolrConverter : ConvertorBase<gridrowcolrConverter>
+    {
+        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            // Все проверки для краткости выкинул
+            return (string)value == "Gun" ?
+                new SolidColorBrush(Colors.LightGreen)
+                : new SolidColorBrush(Colors.White);
+        }      
     }
     #endregion
 }
