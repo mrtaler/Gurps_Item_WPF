@@ -75,7 +75,7 @@ namespace Item_WPF.MVVM.ViewModels
                 if (_attMount != value)
                 {
                     _attMount = value;
-                  //  NotifyPropertyChanged("AttMount");
+                    NotifyPropertyChanged("AttMount");
                 }
             }
         }
@@ -189,11 +189,8 @@ namespace Item_WPF.MVVM.ViewModels
             
             if (result.HasValue && (result == true))
             {         
-                  AttMount = AddMountslotWindow._AttacWiew.avvAttSlotOk;
-                //NotifyPropertyChanged("WeaponLoad.ubCalibre");
-            }
-
-        //    AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
+                  AttMount = AddMountslotWindow._AttacWiew.avvAttSlotOk;                
+            }       
         }
         #endregion
         #region Command SaveChanges
