@@ -156,9 +156,9 @@
         </EntityType>
         <EntityType Name="AvailableAttachSlot">
           <Key>
-            <PropertyRef Name="rWeaponId" />
-            <PropertyRef Name="rAttachmentmount" />
+            <PropertyRef Name="id" />
           </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="rWeaponId" Type="int" Nullable="false" />
           <Property Name="rATTACHMENTSLOT" Type="int" Nullable="false" />
           <Property Name="rAttachmentmount" Type="int" Nullable="false" />
@@ -1083,6 +1083,28 @@
             <Parameter Name="class_ofItem" Mode="In" Type="String" />
             <Parameter Name="Returns" Mode="InOut" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="NEW_ITEMWeap">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="class_ofItem" Mode="In" Type="String" />
+            <Parameter Name="Weight" Mode="In" Type="Int32" />
+            <Parameter Name="ST" Mode="In" Type="Int32" />
+            <Parameter Name="Bulk" Mode="In" Type="String" />
+            <Parameter Name="Cost" Mode="In" Type="Decimal" />
+            <Parameter Name="Lcin" Mode="In" Type="String" />
+            <Parameter Name="TLin" Mode="In" Type="String" />
+            <Parameter Name="Desc" Mode="In" Type="String" />
+            <Parameter Name="ROF" Mode="In" Type="Int32" />
+            <Parameter Name="Recoill" Mode="In" Type="Int32" />
+            <Parameter Name="DefACCc" Mode="In" Type="Int32" />
+            <Parameter Name="Half_Rangee" Mode="In" Type="Int32" />
+            <Parameter Name="FullRangee" Mode="In" Type="Int32" />
+            <Parameter Name="Damagee" Mode="In" Type="String" />
+            <Parameter Name="Shotss" Mode="In" Type="Int32" />
+            <Parameter Name="AddinChamber" Mode="In" Type="Boolean" />
+            <Parameter Name="TimeForreload" Mode="In" Type="Int32" />
+            <Parameter Name="singlereload" Mode="In" Type="Boolean" />
+            <Parameter Name="Returns" Mode="InOut" Type="Int32" />
+          </FunctionImport>
           <EntitySet Name="AMMOes" EntityType="item1Model.AMMO" />
           <EntitySet Name="AMMOUPGRATES" EntityType="item1Model.AMMOUPGRATE" />
           <EntitySet Name="ARMOURs" EntityType="item1Model.ARMOUR" />
@@ -1238,28 +1260,6 @@
             <End Role="WeaponClass" EntitySet="WeaponClasses" />
             <End Role="WeaponType" EntitySet="WeaponTypes" />
           </AssociationSet>
-          <FunctionImport Name="NEW_ITEMWeap">
-            <Parameter Name="name" Mode="In" Type="String" />
-            <Parameter Name="class_ofItem" Mode="In" Type="String" />
-            <Parameter Name="Weight" Mode="In" Type="Int32" />
-            <Parameter Name="ST" Mode="In" Type="Int32" />
-            <Parameter Name="Bulk" Mode="In" Type="String" />
-            <Parameter Name="Cost" Mode="In" Type="Decimal" />
-            <Parameter Name="Lcin" Mode="In" Type="String" />
-            <Parameter Name="TLin" Mode="In" Type="String" />
-            <Parameter Name="Desc" Mode="In" Type="String" />
-            <Parameter Name="ROF" Mode="In" Type="Int32" />
-            <Parameter Name="Recoill" Mode="In" Type="Int32" />
-            <Parameter Name="DefACCc" Mode="In" Type="Int32" />
-            <Parameter Name="Half_Rangee" Mode="In" Type="Int32" />
-            <Parameter Name="FullRangee" Mode="In" Type="Int32" />
-            <Parameter Name="Damagee" Mode="In" Type="String" />
-            <Parameter Name="Shotss" Mode="In" Type="Int32" />
-            <Parameter Name="AddinChamber" Mode="In" Type="Boolean" />
-            <Parameter Name="TimeForreload" Mode="In" Type="Int32" />
-            <Parameter Name="singlereload" Mode="In" Type="Boolean" />
-            <Parameter Name="Returns" Mode="InOut" Type="Int32" />
-          </FunctionImport>
           </EntityContainer>
         <EntityType Name="AMMO">
           <Key>
@@ -1426,9 +1426,9 @@
         </EntityType>
         <EntityType Name="AvailableAttachSlot">
           <Key>
-            <PropertyRef Name="rWeaponId" />
-            <PropertyRef Name="rAttachmentmount" />
+            <PropertyRef Name="id" />
           </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="rWeaponId" Type="Int32" Nullable="false" />
           <Property Name="rATTACHMENTSLOT" Type="Int32" Nullable="false" />
           <Property Name="rAttachmentmount" Type="Int32" Nullable="false" />
@@ -2201,6 +2201,7 @@
         <EntityContainerMapping StorageEntityContainer="Хранилище item1ModelContainer" CdmEntityContainer="item1Entities">
           <FunctionImportMapping FunctionImportName="NEW_ITEM_att" FunctionName="Хранилище item1Model.NEW_ITEM_att" />
           <FunctionImportMapping FunctionImportName="NEW_ITEM" FunctionName="Хранилище item1Model.NEW_ITEM" />
+          <FunctionImportMapping FunctionImportName="NEW_ITEMWeap" FunctionName="Хранилище item1Model.NEW_ITEMWeap" />
           <EntitySetMapping Name="AMMOes">
             <EntityTypeMapping TypeName="item1Model.AMMO">
               <MappingFragment StoreEntitySet="AMMO">
@@ -2365,6 +2366,7 @@
                 <ScalarProperty Name="rAttachmentmount" ColumnName="rAttachmentmount" />
                 <ScalarProperty Name="rATTACHMENTSLOT" ColumnName="rATTACHMENTSLOT" />
                 <ScalarProperty Name="rWeaponId" ColumnName="rWeaponId" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2732,7 +2734,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="NEW_ITEMWeap" FunctionName="Хранилище item1Model.NEW_ITEMWeap" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

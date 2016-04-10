@@ -5,40 +5,6 @@ using System.Windows.Markup;
 
 namespace Item_WPF.addin
 {
-    /// <summary>
-    /// класс для обмена данных между формами
-    /// </summary>
-    public class Datachange
-    {
-        /// <summary>
-        /// переменная системного десятичного разделителя
-        /// </summary>
-        public static char Separator = System.Globalization.CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0];
-        /// <summary>
-        /// переменная для замены десятичного разделителя( можно установить различные с поиоью else if
-        /// </summary>
-        public static char SeparatorCh
-        {
-            get
-            {
-                if (Separator == '.') return ',';
-                else return '.';
-            }
-        }
-
-        public static int IdSel;
-        public static int IdChange;
-        public static byte[] ItemImage;
-        public static string ClassCha;
-        public static string Pass;
-    }
-    /// <summary>
-    /// класс для фомирования комбинаций оружия
-    /// </summary>
-   
-    ///<summary>
-    ///класс бросатель кубиков
-    ///</summary>
     public class Dice
     {
         /// <summary>
@@ -90,7 +56,6 @@ namespace Item_WPF.addin
             return this;
         }
         #endregion
-
         ////https://habrahabr.ru/post/140876/
     }
     #endregion

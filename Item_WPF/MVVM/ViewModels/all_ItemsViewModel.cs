@@ -73,16 +73,16 @@ namespace Item_WPF.MVVM.ViewModels
             SelectedItClassforSort = _context.ItemClasses.FirstOrDefault(p => p.name.Contains(Param)).id;
             ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClasses);
 
-            Refresh = new ActionCommand(Refreshnew) { IsExecutable = true };
-            CSelItem = new ActionCommand(CSelectedItem) { IsExecutable = true };
-            Save = new ActionCommand(SaveChanges) { IsExecutable = true };
-            CDelItem = new ActionCommand(DelItem) { IsExecutable = true };
-            CNewItem = new ActionCommand(NewItem) { IsExecutable = true };
+            Refresh = new DelegateCommand(Refreshnew) ;
+            CSelItem = new DelegateCommand(CSelectedItem);
+            Save = new DelegateCommand(SaveChanges) ;
+            CDelItem = new DelegateCommand(DelItem);
+            CNewItem = new DelegateCommand(NewItem);
             PropertyDependencyMap.Add("SelectedItClassforSort", new[] { "Items" });
         }
 
         #region Command Refrekshnew
-        private void Refreshnew()
+        private void Refreshnew(object parame)
         {
             _context?.Dispose();
             _context = new item1Entities();
@@ -90,26 +90,22 @@ namespace Item_WPF.MVVM.ViewModels
             SelectedItClassforSort = 1;
             //else Items = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.usItemClass == SelectedItClassforSort));
         }
-        public ActionCommand Refresh { get; set; }
+        public DelegateCommand Refresh { get; set; }
         #endregion
         #region Command CSelectedItem
-        private void CSelectedItem()
+        private void CSelectedItem(object parameter)
         {
             if (SelectedItemForWork != null)
             {
                 // if (SelectedItemForWork.used == false)// созаем сущьность для сравнения
                 //  {
-
-                if (SelectedItemForWork.usItemClass == _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Gun")).id
-                       || SelectedItemForWork.usItemClass == _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Knife")).id
-                       || SelectedItemForWork.usItemClass == _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Throwing Knife")).id
-                       || SelectedItemForWork.usItemClass == _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Launcher")).id
-                       || SelectedItemForWork.usItemClass == _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Thrown Weapon")).id
-                       || SelectedItemForWork.usItemClass == _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Blunt Weapon")).id)
+                int att = _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Att")).id;
+                int gun = _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Gun")).id;
+                if (SelectedItemForWork.usItemClass == gun)
                 {
                     SelectedItemForWork.used = true;
                     SelectedItemForWork.dt = System.DateTime.UtcNow;
-                    SaveChanges();
+                    SaveChanges(1);
 
                     WeaponEditView avView = new WeaponEditView(SelectedItemForWork);
                     avView.Owner = Owner;
@@ -123,11 +119,11 @@ namespace Item_WPF.MVVM.ViewModels
 
                     }
                 }
-                else if (SelectedItemForWork.usItemClass == _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Attachment")).id)
+                else if (SelectedItemForWork.usItemClass ==att)
                 {
                     SelectedItemForWork.used = true;
                     SelectedItemForWork.dt = System.DateTime.UtcNow;
-                    SaveChanges();
+                    SaveChanges(1);
 
                     AttacmentEditView attachNr = new AttacmentEditView(SelectedItemForWork);
                     attachNr.ShowDialog();
@@ -137,10 +133,10 @@ namespace Item_WPF.MVVM.ViewModels
             }
         }
 
-        public ActionCommand CSelItem { get; set; }
+        public DelegateCommand CSelItem { get; set; }
         #endregion
         #region Command DelItem
-        private void DelItem()
+        private void DelItem(object parameter)
         {
             //    if (item.used == false)
             //    {
@@ -161,22 +157,22 @@ namespace Item_WPF.MVVM.ViewModels
             else MessageBox.Show("This rows is used");
         }
 
-        public ActionCommand CDelItem { get; set; }
+        public DelegateCommand CDelItem { get; set; }
         #endregion
         #region Command Save
-        private void SaveChanges()
+        private void SaveChanges(object parameter)
         {
             _context.SaveChanges();
         }
-        public ActionCommand Save { get; set; }
+        public DelegateCommand Save { get; set; }
         #endregion
         #region Command NewItem
-        private void NewItem()
+        private void NewItem(object parameter)
         {
             NewItemsView _newItemView = new NewItemsView();
             _newItemView.ShowDialog();
         }
-        public ActionCommand CNewItem { get; set; }
+        public DelegateCommand CNewItem { get; set; }
         #endregion
 
         #region intrfeis       

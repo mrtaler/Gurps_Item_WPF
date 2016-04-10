@@ -78,9 +78,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="addin\ActionCommand.cs" />
     <Compile Include="addin\Converters.cs" />
-    <Compile Include="addin\mmmm.cs" />
     <Compile Include="addin\RelayCommand.cs" />
     <Compile Include="AMMO.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
@@ -189,9 +187,9 @@
     <Compile Include="MVVM\ViewModels\AmmoViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AttacmentEditViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AttacmentMountViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\CanExecuteEventArgs.cs" />
     <Compile Include="MVVM\ViewModels\CombineWeapViewModel.cs" />
     <Compile Include="MVVM\ViewModels\DamageTypeViewModel.cs" />
-    <Compile Include="addin\DelegateCommand.cs" />
     <Compile Include="MVVM\ViewModels\EditPrimaryStatsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\EditSecondaryStatsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\InputBoxViewModel.cs" />
@@ -261,6 +259,11 @@
     </Compile>
     <Compile Include="litForms\new_char.xaml.cs">
       <DependentUpon>new_char.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.ru-RU.Designer.cs">
       <DependentUpon>Resources.ru-RU.resx</DependentUpon>
@@ -390,11 +393,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

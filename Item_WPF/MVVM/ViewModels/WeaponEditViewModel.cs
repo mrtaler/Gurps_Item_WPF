@@ -75,7 +75,7 @@ namespace Item_WPF.MVVM.ViewModels
                 if (_attMount != value)
                 {
                     _attMount = value;
-                    NotifyPropertyChanged("AttMount");
+                  //  NotifyPropertyChanged("AttMount");
                 }
             }
         }
@@ -182,11 +182,18 @@ namespace Item_WPF.MVVM.ViewModels
         public DelegateCommand AddMountslot1 { get; set; }
         private void AddMountslot1_Execute(object parameter)
         {
-            int param = Convert.ToInt32(parameter);
-            AttacmentMountView atmS = new AttacmentMountView();
-            atmS.DataContext = new AttacmentMountViewModel(Convert.ToInt32(parameter)); ;
-            atmS.ShowDialog();
-            AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
+            AttacmentMountView AddMountslotWindow = new AttacmentMountView(parameter);
+            AddMountslotWindow.Owner = Owner;
+             
+            bool? result = AddMountslotWindow.ShowDialog();
+            
+            if (result.HasValue && (result == true))
+            {         
+                  AttMount = AddMountslotWindow._AttacWiew.avvAttSlotOk;
+                //NotifyPropertyChanged("WeaponLoad.ubCalibre");
+            }
+
+        //    AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
         }
         #endregion
         #region Command SaveChanges

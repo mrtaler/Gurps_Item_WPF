@@ -106,7 +106,7 @@
                 Margin="696,35,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Command="{Binding CScopeSelect}"
+                Command="{Binding CScopeSelect}" 
                 Content="Select Scope" />
         <Button x:Name="DelButton"
                 Width="75"

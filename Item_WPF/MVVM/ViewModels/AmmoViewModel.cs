@@ -15,7 +15,7 @@ namespace Item_WPF.MVVM.ViewModels
         {
             _context = new item1Entities();
             AmmoOk = new ObservableCollection<AMMO>(_context.AMMOes);
-            Save = new ActionCommand(SaveChanges) { IsExecutable = true };
+            Save = new DelegateCommand(SaveChanges) ;
             AmmoOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_ammoOK_CollectionChanged);
         }
         private void _ammoOK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -26,7 +26,7 @@ namespace Item_WPF.MVVM.ViewModels
                 {
                     _context.AMMOes.Remove(item);
                 }
-                SaveChanges();
+                SaveChanges(1);
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
@@ -41,16 +41,16 @@ namespace Item_WPF.MVVM.ViewModels
                     item.CPS = 1;
                     item.Class_of_Ammo = "1";
                     _context.AMMOes.Add(item);
-                    SaveChanges();
+                    SaveChanges(1);
                 }
             } 
         }
-        private void SaveChanges()
+        private void SaveChanges(object parameter)
         {
             _context.SaveChanges();
         }
 
-        public ActionCommand Save { get; set; }
+        public DelegateCommand Save { get; set; }
 
       //      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         
