@@ -27,7 +27,8 @@ namespace Item_WPF.MVVM.ViewModels
         public AttacmentEditViewModel(ITEM itemselect)
         {
             _context = new item1Entities();
-            ItemLoad = itemselect;
+            ItemLoad = _context.ITEMs.Find(itemselect.uiIndex);
+                       
             AttachLoad = ItemLoad.Attachment;
 
             TlCollection = new ObservableCollection<TL>(_context.TLs);
@@ -42,18 +43,18 @@ namespace Item_WPF.MVVM.ViewModels
             BatteryColl = new ObservableCollection<Battery>(_context.Batteries);
 
             #region Commands
-            Save = new ActionCommand(SaveChanges) { IsExecutable = true };
-            LoadImage = new ActionCommand(LoadImageToForm) { IsExecutable = true };
-            DellImage = new ActionCommand(DellImageFromAll) { IsExecutable = true };
+            Save = new DelegateCommand(SaveChanges);
+            LoadImage = new DelegateCommand(LoadImageToForm) ;
+            DellImage = new DelegateCommand(DellImageFromAll);
             #endregion
         }
 
         #region Description Command
-        private void SaveChanges()
+        private void SaveChanges(object parameter)
         {
             _context.SaveChanges();
         }
-        private void LoadImageToForm()
+        private void LoadImageToForm(object parameter)
         {
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.InitialDirectory = "C:\\Users\\Derdan\\Dropbox\\Weapon";
@@ -64,16 +65,16 @@ namespace Item_WPF.MVVM.ViewModels
                 ItemLoad.Item_Image = System.IO.File.ReadAllBytes(dlg.FileName);
             }
         }
-        private void DellImageFromAll()
+        private void DellImageFromAll(object parameter)
         {
             ItemLoad.Item_Image = null;
         }
         #endregion
 
         #region Declaration Command
-        public ActionCommand Save { get; set; }
-        public ActionCommand LoadImage { get; set; }
-        public ActionCommand DellImage { get; set; }
+        public DelegateCommand Save { get; set; }
+        public DelegateCommand LoadImage { get; set; }
+        public DelegateCommand DellImage { get; set; }
         #endregion
 
         #region Реализация интерфейса

@@ -244,27 +244,27 @@ namespace Item_WPF.MVVM.Models
         {
 
             if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 1) != null)
-                IdScopeItem =       itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 1).rAttachmentmount;
-            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 2)!=null)
-            IdLaserItem =        itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 2).rAttachmentmount;
+                IdScopeItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 1).rAttachmentmount;
+            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 2) != null)
+                IdLaserItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 2).rAttachmentmount;
             if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 3) != null)
-                IdLightItem =       itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 3).rAttachmentmount;
+                IdLightItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 3).rAttachmentmount;
             if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 4) != null)
-                IdBipodItem =       itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 4).rAttachmentmount;
+                IdBipodItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 4).rAttachmentmount;
             if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 5) != null)
-                IdSilenserItem =    itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 5).rAttachmentmount;
+                IdSilenserItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 5).rAttachmentmount;
             if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 6) != null)
-                IdLauncherItem =    itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 6).rAttachmentmount;
+                IdLauncherItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 6).rAttachmentmount;
             if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 7) != null)
-                IdStockItem =       itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 7).rAttachmentmount;
+                IdStockItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 7).rAttachmentmount;
             if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 8) != null)
-                IdBayonetItem =     itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 8).rAttachmentmount;
+                IdBayonetItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 8).rAttachmentmount;
             if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 9) != null)
-                IdMagazineItem =    itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 9).rAttachmentmount;
+                IdMagazineItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 9).rAttachmentmount;
             if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 10) != null)
-                IdInternalItem =    itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 10).rAttachmentmount;
+                IdInternalItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 10).rAttachmentmount;
             if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 11) != null)
-                IdExternalItem =    itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 11).rAttachmentmount;
+                IdExternalItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 11).rAttachmentmount;
 
         }
     }

@@ -5,12 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Item_WPF.MVVM.View"
         mc:Ignorable="d"
-        Title="TestView" Height="300" Width="300">
+        Title="TestView" Height="532.822" Width="384.663">
     <Grid>
-        <DataGrid x:Name="dataGrid" Margin="10,10,10,134"
+        <DataGrid x:Name="dataGrid" Margin="10,10,10,415"
                   ItemsSource="{Binding AmmoTest}"/>
-        <DataGrid x:Name="dataGrid1" Margin="10,140,10,10"
-                   ItemsSource="{Binding TypeOfDamageTest}"/>
+        <DataGrid x:Name="dataGrid1" Margin="10,92,10,352"
+                   ItemsSource="{Binding TypeOfDamageTest}" RenderTransformOrigin="0.5,0.5"/>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="100" Margin="76,155,0,0" VerticalAlignment="Top" Width="270">
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="48" Margin="76,260,0,0" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Window>

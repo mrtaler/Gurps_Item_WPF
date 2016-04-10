@@ -40,11 +40,12 @@ namespace Item_WPF.MVVM.ViewModels
             _context = new item1Entities();
             ItemToGridColl = new ObservableCollection<ItemToGridModel>();
 
-            CSelectWeapon = new ActionCommand(SelectWeapon) { IsExecutable = true };//work
+            CSelectWeapon = new DelegateCommand(SelectWeapon);//work
 
 
             CScopeSelect = new ActionCommand(SelectScope) { IsExecutable = false };
-            CLaserSelect = new ActionCommand(SelectLaser) { IsExecutable = false };
+            
+             CLaserSelect = new ActionCommand(SelectLaser) ;
             CLightSelect = new ActionCommand(SelectLight) { IsExecutable = false };
             CBipodSelect = new ActionCommand(SelectBipod) { IsExecutable = false };
             CSilenserSelect = new ActionCommand(SelectSilenser) { IsExecutable = false };
@@ -55,10 +56,10 @@ namespace Item_WPF.MVVM.ViewModels
             CInternalSelect = new ActionCommand(SelectInternal) { IsExecutable = false };
             CExternalSelect = new ActionCommand(SelectExternal) { IsExecutable = false };
 
-            // CSelectWeapon = new RelayCommand(SelectWeapon);
-        }
+            
+        }       
         #region Command SelectWeapon
-        private void SelectWeapon()
+        private void SelectWeapon(object parameter)
         {
             ItemToGridColl.Clear();
             SelectItemsViewModel _SIVM = new SelectItemsViewModel("Gun", null);
@@ -73,32 +74,36 @@ namespace Item_WPF.MVVM.ViewModels
 
             ItemToGridColl.Add(ItemToGrid);
             _SIVM.Dispose();
+
             if (combineweap.IdScopeItem != null)
                 CScopeSelect.IsExecutable = true;
+            //
+            //{
+            //    CScopeSelect.CanExecute(CExecute(true));
+            //}
+
             if (combineweap.IdLaserItem != null)
-                CLaserSelect.IsExecutable = true;
+                CLaserSelect.CanExecute(true);
             if (combineweap.IdLightItem != null)
-                CLightSelect.IsExecutable = true;
+                CLightSelect.CanExecute(true);
             if (combineweap.IdBipodItem != null)
-                CBipodSelect.IsExecutable = true;
+                CBipodSelect.CanExecute(true);
             if (combineweap.IdSilenserItem != null)
-                CSilenserSelect.IsExecutable = true;
+                CSilenserSelect.CanExecute(true);
             if (combineweap.IdLauncherItem != null)
-                CLauncherSelect.IsExecutable = true;
+                CLauncherSelect.CanExecute(true);
             if (combineweap.IdStockItem != null)
-                CStockSelect.IsExecutable = true;
+                CStockSelect.CanExecute(true);
             if (combineweap.IdBayonetItem != null)
-                CBayonetSelect.IsExecutable = true;
+                CBayonetSelect.CanExecute(true);
             if (combineweap.IdMagazineItem != null)
-                CMagazineSelect.IsExecutable = true;
+                CMagazineSelect.CanExecute(true);
             if (combineweap.IdInternalItem != null)
-                CInternalSelect.IsExecutable = true;
+                CInternalSelect.CanExecute(true);
             if (combineweap.IdExternalItem != null)
-                CExternalSelect.IsExecutable = true;
-
-
+                CExternalSelect.CanExecute(true);
         }
-        public ActionCommand CSelectWeapon { get; set; }
+        public DelegateCommand CSelectWeapon { get; set; }
         #endregion
         #region Command SelectScope
         private void SelectScope()
@@ -118,6 +123,8 @@ namespace Item_WPF.MVVM.ViewModels
             }
         }
         public ActionCommand CScopeSelect { get; set; }
+
+        //public DelegateCommand CScopeSelect { get; set; }
 
         #endregion
         #region Command SelectLaser
@@ -307,7 +314,7 @@ namespace Item_WPF.MVVM.ViewModels
         {
             if (ItemToGridColl.FirstOrDefault(p => p.Type == "External") != null)
                 ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "External"));
-            SelectItemsViewModel _SIVM = new SelectItemsViewModel("Attachment", combineweap.IdExternalItem );
+            SelectItemsViewModel _SIVM = new SelectItemsViewModel("Attachment", combineweap.IdExternalItem);
             SelectItemsView SIW = new SelectItemsView();
             SIW.DataContext = _SIVM;
             SIW.ShowDialog();

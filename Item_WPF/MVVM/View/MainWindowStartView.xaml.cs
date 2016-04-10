@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using Microsoft.Windows.Controls.Ribbon;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -16,19 +17,14 @@ using System.Windows.Shapes;
 namespace Item_WPF.MVVM.View
 {
     /// <summary>
-    /// Логика взаимодействия для AboutWindowView.xaml
+    /// Логика взаимодействия для MainWindowStartView.xaml
     /// </summary>
-    public partial class AboutWindowView : Window
+    public partial class MainWindowStartView : RibbonWindow
     {
-        public AboutWindowView()
+        public MainWindowStartView()
         {
-            DataContext = new AboutViewModel();
+            DataContext = new MainWindowStartViewModel(this);
             InitializeComponent();
-        }
-
-        private void CloseButtonClick(object sender, RoutedEventArgs e)
-        {
-            Close();
         }
     }
 }

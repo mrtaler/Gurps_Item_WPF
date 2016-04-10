@@ -24,7 +24,7 @@ namespace Item_WPF.MVVM.View
         public WeaponEditView(ITEM itSell)
         {
             InitializeComponent();
-            _weaponEditView = new WeaponEditViewModel(itSell);
+            _weaponEditView = new WeaponEditViewModel(this,itSell);
             DataContext = _weaponEditView;
         }
         protected override void OnClosed(EventArgs e)
@@ -35,6 +35,7 @@ namespace Item_WPF.MVVM.View
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             _weaponEditView.Dispose();
+            DialogResult = true;
             this.Close();
         }
 

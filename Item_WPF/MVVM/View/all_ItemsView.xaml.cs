@@ -20,10 +20,10 @@ namespace Item_WPF.MVVM.View
     /// </summary>
     public partial class all_ItemsView : Window
     {
-        private all_ItemsViewModel _allItemsViewModel;
-        public all_ItemsView()
+        private all_ItemsViewModel _allItemsViewModel;       
+        public all_ItemsView(object parametr)
         {
-            _allItemsViewModel = new all_ItemsViewModel();
+            _allItemsViewModel = new all_ItemsViewModel(this,parametr);
             DataContext = _allItemsViewModel;
             InitializeComponent();
         }

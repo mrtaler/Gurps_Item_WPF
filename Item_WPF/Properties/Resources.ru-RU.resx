@@ -301,7 +301,7 @@
     <value>About</value>
   </data>
   <data name="RibbonAppMenuItemDropDice" xml:space="preserve">
-    <value>DropDice</value>
+    <value>Бросить кубик</value>
   </data>
   <data name="RibbonAppMenuItemNew" xml:space="preserve">
     <value>New</value>
@@ -310,37 +310,37 @@
     <value>Open</value>
   </data>
   <data name="RibbonAppMenuItemQuit" xml:space="preserve">
-    <value>Quit</value>
+    <value>Выход</value>
   </data>
   <data name="RibbonAppMenuItemSaveAs" xml:space="preserve">
     <value>Save as</value>
   </data>
   <data name="RibbonButtonAllItems" xml:space="preserve">
-    <value>All Items</value>
+    <value>Все предметы</value>
   </data>
   <data name="RibbonButtonAttachmentItems" xml:space="preserve">
-    <value>Attachment</value>
+    <value>Атачи</value>
   </data>
   <data name="RibbonButtonCombineWeapon" xml:space="preserve">
-    <value>CombineWeapon</value>
+    <value>Комбинирование оружия</value>
   </data>
   <data name="RibbonButtonShowCharacter" xml:space="preserve">
-    <value>New Char</value>
+    <value>Новые персонажи</value>
   </data>
   <data name="RibbonButtonWeaponItems" xml:space="preserve">
-    <value>Weapon</value>
+    <value>Оружие</value>
   </data>
   <data name="RibbonGroupAdvantages" xml:space="preserve">
     <value>Advantages/disadvantages</value>
   </data>
   <data name="RibbonGroupCombineWeapon" xml:space="preserve">
-    <value>Combine</value>
+    <value>Комбинирование</value>
   </data>
   <data name="RibbonGroupInventory" xml:space="preserve">
     <value>Inventory</value>
   </data>
   <data name="RibbonGroupItems" xml:space="preserve">
-    <value>Items</value>
+    <value>Предметы</value>
   </data>
   <data name="RibbonGroupSkills" xml:space="preserve">
     <value>Skills</value>
@@ -349,13 +349,13 @@
     <value>Statistics</value>
   </data>
   <data name="RibbonSubTabCharacter" xml:space="preserve">
-    <value>Character</value>
+    <value>Персонаж</value>
   </data>
   <data name="RibbonTabCharacterSheet" xml:space="preserve">
     <value>Character sheet</value>
   </data>
   <data name="RibbonTabGeneral" xml:space="preserve">
-    <value>Genegal</value>
+    <value>Главная</value>
   </data>
   <data name="SecondaryStatsWindow" xml:space="preserve">
     <value>Edit secondary stats</value>

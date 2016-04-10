@@ -29,6 +29,23 @@ namespace Item_WPF
      
      #endregion
      
+        private int _id;
+     public int id 
+     { 
+      get
+      {
+       return _id;
+      } 
+      set
+      {
+       if(_id != value)
+       {
+        _id = value;
+        OnPropertyChanged("id");
+       }
+      }
+     }
+     
         private int _rWeaponId;
      public int rWeaponId 
      { 

@@ -43,12 +43,23 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Windows.Shell, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Windows.Shell.3.0.1.0\lib\net40\Microsoft.Windows.Shell.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\RibbonControlsLibrary.4.0.0\lib\net40\RibbonControlsLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Controls.Ribbon">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -67,9 +78,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="addin\ActionCommand.cs" />
     <Compile Include="addin\Converters.cs" />
-    <Compile Include="addin\mmmm.cs" />
     <Compile Include="addin\RelayCommand.cs" />
     <Compile Include="AMMO.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
@@ -178,13 +187,14 @@
     <Compile Include="MVVM\ViewModels\AmmoViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AttacmentEditViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AttacmentMountViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\CanExecuteEventArgs.cs" />
     <Compile Include="MVVM\ViewModels\CombineWeapViewModel.cs" />
     <Compile Include="MVVM\ViewModels\DamageTypeViewModel.cs" />
-    <Compile Include="addin\DelegateCommand.cs" />
     <Compile Include="MVVM\ViewModels\EditPrimaryStatsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\EditSecondaryStatsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\InputBoxViewModel.cs" />
-    <Compile Include="MVVM\ViewModels\MainViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\MainCharacterViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\MainWindowStartViewModel.cs" />
     <Compile Include="MVVM\ViewModels\NewItemsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\SelectItemsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\TestViewModel.cs" />
@@ -229,6 +239,12 @@
     <Compile Include="MVVM\View\InputBoxView.xaml.cs">
       <DependentUpon>InputBoxView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\View\MainCharacterView.xaml.cs">
+      <DependentUpon>MainCharacterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\MainWindowStartView.xaml.cs">
+      <DependentUpon>MainWindowStartView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\NewItemsView.xaml.cs">
       <DependentUpon>NewItemsView.xaml</DependentUpon>
     </Compile>
@@ -243,6 +259,16 @@
     </Compile>
     <Compile Include="litForms\new_char.xaml.cs">
       <DependentUpon>new_char.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.ru-RU.Designer.cs">
+      <DependentUpon>Resources.ru-RU.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="TL.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
@@ -269,10 +295,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -286,10 +308,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Page Include="MVVM\View\AboutWindowView.xaml">
       <SubType>Designer</SubType>
@@ -343,6 +361,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\MainCharacterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\MainWindowStartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\NewItemsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -368,18 +394,17 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Properties\Resources.ru-RU.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ru-RU.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EntityDeploy Include="Gurps_Item.edmx">
@@ -387,6 +412,7 @@
       <LastGenOutput>Gurps_Item.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="addin\ItemModelDiagram.dbd" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Gurps_Item.edmx.diagram">
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
     </None>

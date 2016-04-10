@@ -18,7 +18,7 @@ namespace Item_WPF.MVVM.ViewModels
         {
             _context = new item1Entities();
             TypeOfDamageOk = new ObservableCollection<TypeOfDamage>(_context.TypeOfDamages);
-            Save = new ActionCommand(SaveChanges) { IsExecutable = true };
+            Save = new DelegateCommand(SaveChanges);
             TypeOfDamageOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_TypeOfDamageOK_CollectionChanged);
         }
         private void _TypeOfDamageOK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -29,7 +29,7 @@ namespace Item_WPF.MVVM.ViewModels
                 {
                     _context.TypeOfDamages.Remove(item);
                 }
-                SaveChanges();
+                SaveChanges(1);
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
@@ -39,15 +39,15 @@ namespace Item_WPF.MVVM.ViewModels
                     item.LongName = "";
                     item.mDamage = "";
                     _context.TypeOfDamages.Add(item);
-                    SaveChanges();
+                    SaveChanges(1);
                 }
             }
         }
-        private void SaveChanges()
+        private void SaveChanges(object parameter)
         {
             _context.SaveChanges();
         }
-        public ActionCommand Save { get; set; }
+        public DelegateCommand Save { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertyChanged(string propertyName)
         {

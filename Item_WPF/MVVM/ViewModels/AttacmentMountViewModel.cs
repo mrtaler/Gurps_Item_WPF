@@ -11,26 +11,29 @@ using System.Windows;
 
 namespace Item_WPF.MVVM.ViewModels
 {
-    class AttacmentMountViewModel : INotifyPropertyChanged, IDisposable
+    public class AttacmentMountViewModel : ViewModelBase, IDisposable
     {
         private item1Entities _context;
-        private int _slot;
+        private string _slot;
         public ObservableCollection<Attachmentmount> avvAttSlotOk { get; set; }
-        public AttacmentMountViewModel(int slot)
+        public ObservableCollection<Attachmentmount> avvAttSlotOkForWork { get; set; }
+        public AttacmentMountViewModel(string slot)
         {
             _slot = slot;
             _context = new item1Entities();
-            avvAttSlotOk = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts.Where(p => p.idAttacClass == _slot));
-            Save = new ActionCommand(SaveChanges) { IsExecutable = true };
-            avvAttSlotOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_Avv_att_slot_OK_CollectionChanged);
+            avvAttSlotOk = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
+            avvAttSlotOkForWork = new ObservableCollection<Attachmentmount>(avvAttSlotOk.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains(_slot)));
+            Save = new DelegateCommand(SaveChanges);
+            avvAttSlotOkForWork.CollectionChanged += new NotifyCollectionChangedEventHandler(_Avv_att_slot_OK_CollectionChanged);
         }
 
-        public AttacmentMountViewModel(int slot, ObservableCollection<Attachmentmount> AvvAttSlotOk, item1Entities context)
+        public AttacmentMountViewModel(string slot, ObservableCollection<Attachmentmount> AvvAttSlotOk, item1Entities context)
         {
             _slot = slot;
             _context = context;
-            avvAttSlotOk = new ObservableCollection<Attachmentmount>(AvvAttSlotOk.Where(p => p.idAttacClass == _slot));
-        //    avvAttSlotOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_Avv_att_slot_OK_CollectionChanged_with_context);
+            avvAttSlotOk = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
+            avvAttSlotOkForWork = new ObservableCollection<Attachmentmount>(avvAttSlotOk.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains(_slot)));
+            //    avvAttSlotOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_Avv_att_slot_OK_CollectionChanged_with_context);
         }
         private void _Avv_att_slot_OK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
@@ -39,17 +42,19 @@ namespace Item_WPF.MVVM.ViewModels
                 foreach (Attachmentmount item in e.OldItems)
                 {
                     _context.Attachmentmounts.Remove(item);
+                    avvAttSlotOk.Remove(item);
                 }
-                SaveChanges();
+                SaveChanges(1);
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
                 foreach (Attachmentmount item in e.NewItems)
                 {
                     item.name = "New_slot";
-                    item.idAttacClass = _slot;
+                    item.idAttacClass = (_context.ATTACHMENTSLOTs.First(p => p.szSlotName.Contains(_slot)).uiSlotIndex); ;
+                    avvAttSlotOk.Add(item);
                     _context.Attachmentmounts.Add(item);
-                    SaveChanges();
+                    SaveChanges(1);
                 }
 
             }
@@ -62,20 +67,20 @@ namespace Item_WPF.MVVM.ViewModels
                 {
                     _context.Attachmentmounts.Remove(item);
                 }
-                SaveChanges();
+                SaveChanges(1);
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
                 foreach (Attachmentmount item in e.NewItems)
                 {
                     item.name = "New_slot";
-                    item.idAttacClass = _slot;
+                    item.idAttacClass = (_context.ATTACHMENTSLOTs.First(p => p.szSlotName.Contains(_slot)).uiSlotIndex); 
                     _context.Attachmentmounts.Add(item);
-                    SaveChanges();
+                    SaveChanges(1);
                 }
             }
         }
-        private void SaveChanges()
+        private void SaveChanges(object parameter)
         {
             try
             {
@@ -87,12 +92,8 @@ namespace Item_WPF.MVVM.ViewModels
                 MessageBox.Show(ex.ToString());
             }
         }
-        public ActionCommand Save { get; set; }
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void RaisePropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        public DelegateCommand Save { get; set; }  
+      
         public void Dispose()
         {
             _context?.Dispose();

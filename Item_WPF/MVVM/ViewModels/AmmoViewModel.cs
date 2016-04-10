@@ -1,29 +1,21 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using Item_WPF.addin;
+using Item_WPF.MVVM.View;
+using System.ComponentModel;
 using System.Collections.Specialized;
 
 namespace Item_WPF.MVVM.ViewModels
 {
-    public class AmmoViewModel : INotifyPropertyChanged, IDisposable
-    {
-        /// <summary>
-        /// Основной контекст данных
-        /// </summary>
+    public class AmmoViewModel : ViewModelBase, IDisposable
+    {    
         private item1Entities _context;
-        /// <summary>
-        /// Коллекция патронов .
-        /// </summary>
-        public ObservableCollection<AMMO> AmmoOk { get; set; }
-        /// <summary>
-        /// Конструктор класса
-        /// </summary>
-        public AmmoViewModel()
+             public ObservableCollection<AMMO> AmmoOk { get; set; }
+          public   AmmoViewModel()
         {
             _context = new item1Entities();
             AmmoOk = new ObservableCollection<AMMO>(_context.AMMOes);
-            Save = new ActionCommand(SaveChanges) { IsExecutable = true };
+            Save = new DelegateCommand(SaveChanges) ;
             AmmoOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_ammoOK_CollectionChanged);
         }
         private void _ammoOK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -34,7 +26,7 @@ namespace Item_WPF.MVVM.ViewModels
                 {
                     _context.AMMOes.Remove(item);
                 }
-                SaveChanges();
+                SaveChanges(1);
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
@@ -49,22 +41,19 @@ namespace Item_WPF.MVVM.ViewModels
                     item.CPS = 1;
                     item.Class_of_Ammo = "1";
                     _context.AMMOes.Add(item);
-                    SaveChanges();
+                    SaveChanges(1);
                 }
             } 
         }
-        private void SaveChanges()
+        private void SaveChanges(object parameter)
         {
             _context.SaveChanges();
         }
 
-        public ActionCommand Save { get; set; }
+        public DelegateCommand Save { get; set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void RaisePropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+      //      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        
 
         public void Dispose()
         {

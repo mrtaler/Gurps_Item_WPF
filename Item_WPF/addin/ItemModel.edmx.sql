@@ -379,6 +379,7 @@ GO
 
 -- Creating table 'AvailableAttachSlot'
 CREATE TABLE [dbo].[AvailableAttachSlot] (
+   [id] INT IDENTITY,
   [rWeaponId] INT NOT NULL,
   [rATTACHMENTSLOT] INT NOT NULL,
   [rAttachmentmount] INT NOT NULL
@@ -856,9 +857,10 @@ PRIMARY KEY CLUSTERED ([uiSlotIndex] ASC);
 GO
 
 -- Creating primary key on [rWeaponId], [rATTACHMENTSLOT], [rAttachmentmount] in table 'AvailableAttachSlots'
+
 ALTER TABLE [dbo].[AvailableAttachSlot]
 ADD CONSTRAINT [PK_AvailableAttachSlot]
-PRIMARY KEY CLUSTERED ([rWeaponId], [rAttachmentmount] ASC);
+PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
 
