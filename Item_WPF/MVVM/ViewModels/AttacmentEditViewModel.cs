@@ -27,7 +27,8 @@ namespace Item_WPF.MVVM.ViewModels
         public AttacmentEditViewModel(ITEM itemselect)
         {
             _context = new item1Entities();
-            ItemLoad = itemselect;
+            ItemLoad = _context.ITEMs.Find(itemselect.uiIndex);
+                       
             AttachLoad = ItemLoad.Attachment;
 
             TlCollection = new ObservableCollection<TL>(_context.TLs);

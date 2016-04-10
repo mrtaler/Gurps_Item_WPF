@@ -44,28 +44,20 @@ namespace Item_WPF.MVVM.ViewModels
 
 
             CScopeSelect = new ActionCommand(SelectScope) { IsExecutable = false };
-            //     CScopeSelect.CanExecute(CExecute(true));
-            // CLaserSelect = new DelegateCommand(SelectLaser) ;
-            //CLightSelect = new DelegateCommand(SelectLight) { IsExecutable = false };
-            //CBipodSelect = new DelegateCommand(SelectBipod) { IsExecutable = false };
-            //CSilenserSelect = new DelegateCommand(SelectSilenser) { IsExecutable = false };
-            //CLauncherSelect = new DelegateCommand(SelectLauncher) { IsExecutable = false };
-            //CStockSelect = new DelegateCommand(SelectStock) { IsExecutable = false };
-            //CBayonetSelect = new DelegateCommand(SelectBayonet) { IsExecutable = false };
-            //CMagazineSelect = new DelegateCommand(SelectMagazine) { IsExecutable = false };
-            //CInternalSelect = new DelegateCommand(SelectInternal) { IsExecutable = false };
-            //CExternalSelect = new DelegateCommand(SelectExternal) { IsExecutable = false };
+            
+             CLaserSelect = new ActionCommand(SelectLaser) ;
+            CLightSelect = new ActionCommand(SelectLight) { IsExecutable = false };
+            CBipodSelect = new ActionCommand(SelectBipod) { IsExecutable = false };
+            CSilenserSelect = new ActionCommand(SelectSilenser) { IsExecutable = false };
+            CLauncherSelect = new ActionCommand(SelectLauncher) { IsExecutable = false };
+            CStockSelect = new ActionCommand(SelectStock) { IsExecutable = false };
+            CBayonetSelect = new ActionCommand(SelectBayonet) { IsExecutable = false };
+            CMagazineSelect = new ActionCommand(SelectMagazine) { IsExecutable = false };
+            CInternalSelect = new ActionCommand(SelectInternal) { IsExecutable = false };
+            CExternalSelect = new ActionCommand(SelectExternal) { IsExecutable = false };
 
-            // CSelectWeapon = new RelayCommand(SelectWeapon);
-        }
-        bool canCScopeSelectreturn
-        {
-            get
-            {
-                if (combineweap != null) return (combineweap.IdLaserItem != null);
-                else return false;
-            }
-        }
+            
+        }       
         #region Command SelectWeapon
         private void SelectWeapon(object parameter)
         {
@@ -114,7 +106,7 @@ namespace Item_WPF.MVVM.ViewModels
         public DelegateCommand CSelectWeapon { get; set; }
         #endregion
         #region Command SelectScope
-        private void SelectScope(/*object parameter*/)
+        private void SelectScope()
         {
             if (ItemToGridColl.FirstOrDefault(p => p.Type == "Scope") != null)
                 ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Scope"));
@@ -130,16 +122,13 @@ namespace Item_WPF.MVVM.ViewModels
                 _SIVM.Dispose();
             }
         }
-
-
-
         public ActionCommand CScopeSelect { get; set; }
 
         //public DelegateCommand CScopeSelect { get; set; }
 
         #endregion
         #region Command SelectLaser
-        private void SelectLaser(object parameter)
+        private void SelectLaser()
         {
             if (ItemToGridColl.FirstOrDefault(p => p.Type == "Laser") != null)
                 ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Laser"));
@@ -156,10 +145,10 @@ namespace Item_WPF.MVVM.ViewModels
                 _SIVM.Dispose();
             }
         }
-        public DelegateCommand CLaserSelect { get; set; }
+        public ActionCommand CLaserSelect { get; set; }
         #endregion
         #region Command SelectLight
-        private void SelectLight(object parameter)
+        private void SelectLight()
         {
             if (ItemToGridColl.FirstOrDefault(p => p.Type == "Light") != null)
                 ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Light"));
@@ -177,10 +166,10 @@ namespace Item_WPF.MVVM.ViewModels
             }
 
         }
-        public DelegateCommand CLightSelect { get; set; }
+        public ActionCommand CLightSelect { get; set; }
         #endregion
         #region Command SelectBipod
-        private void SelectBipod(object parameter)
+        private void SelectBipod()
         {
             if (ItemToGridColl.FirstOrDefault(p => p.Type == "Bipod") != null)
                 ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Bipod"));
@@ -197,10 +186,10 @@ namespace Item_WPF.MVVM.ViewModels
                 _SIVM.Dispose();
             }
         }
-        public DelegateCommand CBipodSelect { get; set; }
+        public ActionCommand CBipodSelect { get; set; }
         #endregion
         #region Command SelectSilenser
-        private void SelectSilenser(object parameter)
+        private void SelectSilenser()
         {
             if (ItemToGridColl.FirstOrDefault(p => p.Type == "Silenser") != null)
                 ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Silenser"));
@@ -217,10 +206,10 @@ namespace Item_WPF.MVVM.ViewModels
                 _SIVM.Dispose();
             }
         }
-        public DelegateCommand CSilenserSelect { get; set; }
+        public ActionCommand CSilenserSelect { get; set; }
         #endregion
         #region Command SelectLauncher
-        private void SelectLauncher(object parameter)
+        private void SelectLauncher()
         {
             if (ItemToGridColl.FirstOrDefault(p => p.Type == "Launcher") != null)
                 ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Launcher"));
@@ -237,10 +226,10 @@ namespace Item_WPF.MVVM.ViewModels
                 _SIVM.Dispose();
             }
         }
-        public DelegateCommand CLauncherSelect { get; set; }
+        public ActionCommand CLauncherSelect { get; set; }
         #endregion
         #region Command SelectStock
-        private void SelectStock(object parameter)
+        private void SelectStock()
         {
             if (ItemToGridColl.FirstOrDefault(p => p.Type == "Stock") != null)
                 ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Stock"));
@@ -257,10 +246,10 @@ namespace Item_WPF.MVVM.ViewModels
                 _SIVM.Dispose();
             }
         }
-        public DelegateCommand CStockSelect { get; set; }
+        public ActionCommand CStockSelect { get; set; }
         #endregion
         #region Command SelectBayonet
-        private void SelectBayonet(object parameter)
+        private void SelectBayonet()
         {
             if (ItemToGridColl.FirstOrDefault(p => p.Type == "Bayonet") != null)
                 ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Bayonet"));
@@ -277,10 +266,10 @@ namespace Item_WPF.MVVM.ViewModels
                 _SIVM.Dispose();
             }
         }
-        public DelegateCommand CBayonetSelect { get; set; }
+        public ActionCommand CBayonetSelect { get; set; }
         #endregion
         #region Command SelectMagazine
-        private void SelectMagazine(object parameter)
+        private void SelectMagazine()
         {
             if (ItemToGridColl.FirstOrDefault(p => p.Type == "Magazine") != null)
                 ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Magazine"));
@@ -298,10 +287,10 @@ namespace Item_WPF.MVVM.ViewModels
             }
 
         }
-        public DelegateCommand CMagazineSelect { get; set; }
+        public ActionCommand CMagazineSelect { get; set; }
         #endregion
         #region Command SelectInternal
-        private void SelectInternal(object parameter)
+        private void SelectInternal()
         {
             if (ItemToGridColl.FirstOrDefault(p => p.Type == "Internal") != null)
                 ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Internal"));
@@ -318,10 +307,10 @@ namespace Item_WPF.MVVM.ViewModels
                 _SIVM.Dispose();
             }
         }
-        public DelegateCommand CInternalSelect { get; set; }
+        public ActionCommand CInternalSelect { get; set; }
         #endregion
         #region Command SelectExternal
-        private void SelectExternal(object parameter)
+        private void SelectExternal()
         {
             if (ItemToGridColl.FirstOrDefault(p => p.Type == "External") != null)
                 ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "External"));
@@ -338,7 +327,7 @@ namespace Item_WPF.MVVM.ViewModels
                 _SIVM.Dispose();
             }
         }
-        public DelegateCommand CExternalSelect { get; set; }
+        public ActionCommand CExternalSelect { get; set; }
         #endregion
 
         #region inter
