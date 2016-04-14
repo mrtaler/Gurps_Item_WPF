@@ -4,7 +4,9 @@ using System.Windows.Data;
 using System.Windows.Markup;
 
 namespace Item_WPF.addin
-{
+{/// <summary>
+/// 4
+/// </summary>
     public class Dice
     {
         /// <summary>
