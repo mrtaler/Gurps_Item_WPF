@@ -1,14 +1,14 @@
-﻿<Window x:Class="Item_WPF.MVVM.View.WeaponEditView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:addin="clr-namespace:Item_WPF.addin"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        Title="{Binding WeaponLoad.szWeaponName,
-                        UpdateSourceTrigger=PropertyChanged}"
-        Width="806"
-        Height="485"
-        mc:Ignorable="d">
+﻿<Window
+    x:Class="Item_WPF.MVVM.View.WeaponEditView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:addin="clr-namespace:Item_WPF.addin"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{Binding WeaponLoad.szWeaponName, UpdateSourceTrigger=PropertyChanged}"
+    Width="806"
+    Height="485"
+    mc:Ignorable="d">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     </Window.Resources>
@@ -16,344 +16,350 @@
 
         <TabControl x:Name="TabControl" Margin="0,25,0,35">
             <TabItem x:Name="MainTi" Header="Main">
-                <Grid x:Name="MainGrid"
-                      Margin="0,0,0,8"
-                      Background="#FFE5E5E5">
-                    <Label x:Name="Label"
-                           Width="87"
-                           Margin="10,10,0,0"
-                           HorizontalAlignment="Left"
-                           VerticalAlignment="Top"
-                           Content="Name" />
-                    <Label x:Name="Label1"
-                           Margin="10,41,0,0"
-                           HorizontalAlignment="Left"
-                           VerticalAlignment="Top"
-                           Content="Long Name" />
-                    <Label x:Name="Label2"
-                           Width="267"
-                           Margin="10,72,0,0"
-                           HorizontalAlignment="Left"
-                           VerticalAlignment="Top"
-                           Content="                         Description"
-                           RenderTransformOrigin="1.733,0.551" />
-                    <TextBox x:Name="NameTb"
-                             Width="302"
-                             Height="23"
-                             Margin="102,14,0,0"
-                             HorizontalAlignment="Left"
-                             VerticalAlignment="Top"
-                             TextWrapping="Wrap">
+                <Grid
+                    x:Name="MainGrid"
+                    Margin="0,0,0,8"
+                    Background="#FFE5E5E5">
+                    <Label
+                        x:Name="Label"
+                        Width="87"
+                        Margin="10,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Name" />
+                    <Label
+                        x:Name="Label1"
+                        Margin="10,41,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Long Name" />
+                    <Label
+                        x:Name="Label2"
+                        Width="267"
+                        Margin="10,72,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="                         Description"
+                        RenderTransformOrigin="1.733,0.551" />
+                    <TextBox
+                        x:Name="NameTb"
+                        Width="302"
+                        Height="23"
+                        Margin="102,14,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        TextWrapping="Wrap">
                         <TextBox.Text>
                             <MultiBinding Converter="{addin:textBoxtotwoSource}" UpdateSourceTrigger="PropertyChanged">
-                                <Binding Mode="TwoWay"
-                                         Path="ItemLoad.szItemName"
-                                         UpdateSourceTrigger="PropertyChanged" />
-                                <Binding Mode="TwoWay"
-                                         Path="WeaponLoad.szWeaponName"
-                                         UpdateSourceTrigger="PropertyChanged" />
+                                <Binding
+                                    Mode="TwoWay"
+                                    Path="ItemLoad.szItemName"
+                                    UpdateSourceTrigger="PropertyChanged" />
+                                <Binding
+                                    Mode="TwoWay"
+                                    Path="WeaponLoad.szWeaponName"
+                                    UpdateSourceTrigger="PropertyChanged" />
                             </MultiBinding>
                         </TextBox.Text>
                     </TextBox>
-                    <TextBox x:Name="LongNameTb"
-                             Width="302"
-                             Height="23"
-                             Margin="102,45,0,0"
-                             HorizontalAlignment="Left"
-                             VerticalAlignment="Top"
-                             Text="{Binding ItemLoad.szLongItemName,
-                                            Mode=TwoWay,
-                                            UpdateSourceTrigger=PropertyChanged}"
-                             TextWrapping="Wrap" />
-                    <TextBox x:Name="DescriptionTb"
-                             Width="394"
-                             Margin="10,101,0,10"
-                             HorizontalAlignment="Left"
-                             AcceptsReturn="True"
-                             Text="{Binding ItemLoad.szItemDesc,
-                                            Mode=TwoWay,
-                                            UpdateSourceTrigger=PropertyChanged}"
-                             TextWrapping="Wrap"
-                             VerticalScrollBarVisibility="Visible" />
-                    <Image x:Name="ItemImage"
-                           Width="353"
-                           Height="248"
-                           Margin="409,14,0,0"
-                           HorizontalAlignment="Left"
-                           VerticalAlignment="Top"
-                           Source="{Binding ItemLoad.Item_Image,
-                                            Mode=TwoWay,
-                                            UpdateSourceTrigger=PropertyChanged,
-                                            Converter={addin:ImageConverter}}" />
-                    <Button x:Name="LoadImageButton"
-                            Width="75"
-                            Margin="409,267,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            Command="{Binding LoadImage}"
-                            Content="LoadImage" />
-                    <Button x:Name="DeleteImageButton"
-                            Width="75"
-                            Margin="489,267,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            Command="{Binding DellImage}"
-                            Content="DelImage" />
+                    <TextBox
+                        x:Name="LongNameTb"
+                        Width="302"
+                        Height="23"
+                        Margin="102,45,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Text="{Binding ItemLoad.szLongItemName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="DescriptionTb"
+                        Width="394"
+                        Margin="10,101,0,10"
+                        HorizontalAlignment="Left"
+                        AcceptsReturn="True"
+                        Text="{Binding ItemLoad.szItemDesc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Visible" />
+                    <Image
+                        x:Name="ItemImage"
+                        Width="353"
+                        Height="248"
+                        Margin="409,14,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Source="{Binding ItemLoad.Item_Image, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={addin:ImageConverter}}" />
+                    <Button
+                        x:Name="LoadImageButton"
+                        Width="75"
+                        Margin="409,267,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Command="{Binding LoadImage}"
+                        Content="LoadImage" />
+                    <Button
+                        x:Name="DeleteImageButton"
+                        Width="75"
+                        Margin="489,267,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Command="{Binding DellImage}"
+                        Content="DelImage" />
                 </Grid>
             </TabItem>
             <TabItem x:Name="GeneralTi" Header="General">
                 <Grid Background="#FFE5E5E5">
-                    <GroupBox x:Name="GroupBox1"
-                              Width="260"
-                              Height="308"
-                              Margin="10,10,0,0"
-                              HorizontalAlignment="Left"
-                              VerticalAlignment="Top"
-                              Header="General">
+                    <GroupBox
+                        x:Name="GroupBox1"
+                        Width="260"
+                        Height="308"
+                        Margin="10,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Header="General">
                         <Grid x:Name="GeneralGrid">
-                            <Label x:Name="Label3"
-                                   Margin="10,10,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Weigth" />
-                            <Label x:Name="Label6"
-                                   Margin="10,38,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Cost" />
-                            <Label x:Name="Label7"
-                                   Margin="10,66,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Bulk" />
-                            <Label x:Name="Label8"
-                                   Margin="10,94,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="MinST" />
-                            <Label x:Name="Label9"
-                                   Margin="10,122,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="TL" />
-                            <Label x:Name="Label10"
-                                   Margin="10,149,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="LC" />
+                            <Label
+                                x:Name="Label3"
+                                Margin="10,10,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Weigth" />
+                            <Label
+                                x:Name="Label6"
+                                Margin="10,38,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Cost" />
+                            <Label
+                                x:Name="Label7"
+                                Margin="10,66,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Bulk" />
+                            <Label
+                                x:Name="Label8"
+                                Margin="10,94,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="MinST" />
+                            <Label
+                                x:Name="Label9"
+                                Margin="10,122,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="TL" />
+                            <Label
+                                x:Name="Label10"
+                                Margin="10,149,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="LC" />
 
-                            <TextBox x:Name="WeigthTb"
-                                     Width="120"
-                                     Height="23"
-                                     Margin="93,10,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     TextWrapping="NoWrap">
+                            <TextBox
+                                x:Name="WeigthTb"
+                                Width="120"
+                                Height="23"
+                                Margin="93,10,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="NoWrap">
                                 <TextBox.Text>
-                                    <Binding Converter="{addin:DeciminalConverterString}"
-                                             ConverterParameter=" lbs"
-                                             Mode="TwoWay"
-                                             Path="ItemLoad.ubWeight" />
+                                    <Binding
+                                        Converter="{addin:DeciminalConverterString}"
+                                        ConverterParameter=" lbs"
+                                        Mode="TwoWay"
+                                        Path="ItemLoad.ubWeight" />
                                 </TextBox.Text>
                             </TextBox>
-                            <TextBox x:Name="CostTb"
-                                     Width="120"
-                                     Height="23"
-                                     Margin="93,38,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     TextWrapping="Wrap">
+                            <TextBox
+                                x:Name="CostTb"
+                                Width="120"
+                                Height="23"
+                                Margin="93,38,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap">
                                 <TextBox.Text>
-                                    <Binding Converter="{addin:DeciminalConverterString}"
-                                             ConverterParameter=" $"
-                                             Mode="TwoWay"
-                                             Path="ItemLoad.usPrice" />
+                                    <Binding
+                                        Converter="{addin:DeciminalConverterString}"
+                                        ConverterParameter=" $"
+                                        Mode="TwoWay"
+                                        Path="ItemLoad.usPrice" />
                                 </TextBox.Text>
                             </TextBox>
-                            <TextBox x:Name="BulkTb"
-                                     Width="120"
-                                     Height="23"
-                                     Margin="93,66,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     Text="{Binding ItemLoad.ItemSize,
-                                                    Mode=TwoWay}"
-                                     TextWrapping="Wrap" />
-                            <TextBox x:Name="MinStTb"
-                                     Width="120"
-                                     Height="23"
-                                     Margin="93,94,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     Text="{Binding ItemLoad.minST,
-                                                    Mode=TwoWay}"
-                                     TextWrapping="Wrap" />
+                            <TextBox
+                                x:Name="BulkTb"
+                                Width="120"
+                                Height="23"
+                                Margin="93,66,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Text="{Binding ItemLoad.ItemSize, Mode=TwoWay}"
+                                TextWrapping="Wrap" />
+                            <TextBox
+                                x:Name="MinStTb"
+                                Width="120"
+                                Height="23"
+                                Margin="93,94,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Text="{Binding ItemLoad.minST, Mode=TwoWay}"
+                                TextWrapping="Wrap" />
 
-                            <ComboBox x:Name="TlCb"
-                                      Width="120"
-                                      Margin="93,122,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="name_TL"
-                                      IsReadOnly="True"
-                                      ItemsSource="{Binding TlCollection}"
-                                      SelectedValue="{Binding ItemLoad.TL,
-                                                              Mode=TwoWay,
-                                                              UpdateSourceTrigger=PropertyChanged}"
-                                      SelectedValuePath="Id_Tl" />
-                            <ComboBox x:Name="LcCb"
-                                      Width="120"
-                                      Margin="93,149,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="Name_LC"
-                                      IsReadOnly="True"
-                                      ItemsSource="{Binding LccCollection}"
-                                      SelectedValue="{Binding ItemLoad.LC,
-                                                              Mode=TwoWay,
-                                                              UpdateSourceTrigger=PropertyChanged}"
-                                      SelectedValuePath="Id_LC" />
+                            <ComboBox
+                                x:Name="TlCb"
+                                Width="120"
+                                Margin="93,122,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="name_TL"
+                                IsReadOnly="True"
+                                ItemsSource="{Binding TlCollection}"
+                                SelectedValue="{Binding ItemLoad.TL, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                SelectedValuePath="Id_Tl" />
+                            <ComboBox
+                                x:Name="LcCb"
+                                Width="120"
+                                Margin="93,149,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="Name_LC"
+                                IsReadOnly="True"
+                                ItemsSource="{Binding LccCollection}"
+                                SelectedValue="{Binding ItemLoad.LC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                SelectedValuePath="Id_LC" />
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name="GroupBox"
-                              Width="283"
-                              Height="92"
-                              Margin="275,10,0,0"
-                              HorizontalAlignment="Left"
-                              VerticalAlignment="Top"
-                              Header="TL">
-                        <TextBlock x:Name="TlTextBlock"
-                                   Margin="10,0,-2,5"
-                                   Text="{Binding ElementName=TlCb,
-                                                  Path=SelectedItem.Description,
-                                                  UpdateSourceTrigger=PropertyChanged}"
-                                   TextWrapping="Wrap" />
+                    <GroupBox
+                        x:Name="GroupBox"
+                        Width="283"
+                        Height="92"
+                        Margin="275,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Header="TL">
+                        <TextBlock
+                            x:Name="TlTextBlock"
+                            Margin="10,0,-2,5"
+                            Text="{Binding ElementName=TlCb, Path=SelectedItem.Description, UpdateSourceTrigger=PropertyChanged}"
+                            TextWrapping="Wrap" />
                     </GroupBox>
-                    <GroupBox x:Name="GroupBox2"
-                              Width="283"
-                              Height="211"
-                              Margin="275,107,0,0"
-                              HorizontalAlignment="Left"
-                              VerticalAlignment="Top"
-                              Header="LC">
-                        <TextBlock x:Name="LcTextBlock"
-                                   Margin="10,10,2,6"
-                                   Text="{Binding ElementName=LcCb,
-                                                  Path=SelectedItem.Description,
-                                                  UpdateSourceTrigger=PropertyChanged}"
-                                   TextWrapping="Wrap" />
+                    <GroupBox
+                        x:Name="GroupBox2"
+                        Width="283"
+                        Height="211"
+                        Margin="275,107,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Header="LC">
+                        <TextBlock
+                            x:Name="LcTextBlock"
+                            Margin="10,10,2,6"
+                            Text="{Binding ElementName=LcCb, Path=SelectedItem.Description, UpdateSourceTrigger=PropertyChanged}"
+                            TextWrapping="Wrap" />
 
                     </GroupBox>
-                    <GroupBox x:Name="GroupBox3"
-                              Width="199"
-                              Height="308"
-                              Margin="563,10,0,0"
-                              HorizontalAlignment="Left"
-                              VerticalAlignment="Top"
-                              Header="Item Properties">
+                    <GroupBox
+                        x:Name="GroupBox3"
+                        Width="199"
+                        Height="308"
+                        Margin="563,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Header="Item Properties">
                         <Grid x:Name="ItemsGridGeneral">
-                            <CheckBox x:Name="TwoHandedChB"
-                                      Margin="10,10,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Two Handed"
-                                      IsChecked="{Binding Path=ItemLoad.TwoHanded,
-                                                          Mode=TwoWay,
-                                                          UpdateSourceTrigger=PropertyChanged}" />
-                            <CheckBox x:Name="HtChB"
-                                      Margin="10,30,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="HT"
-                                      IsChecked="{Binding Path=ItemLoad.HT,
-                                                          Mode=TwoWay,
-                                                          UpdateSourceTrigger=PropertyChanged}" />
-                            <CheckBox x:Name="UtChB"
-                                      Margin="10,50,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="UT"
-                                      IsChecked="{Binding Path=ItemLoad.UT,
-                                                          Mode=TwoWay,
-                                                          UpdateSourceTrigger=PropertyChanged}" />
-                            <CheckBox x:Name="NeedBatChB"
-                                      Margin="10,170,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Need BAttery"
-                                      IsChecked="{Binding Path=ItemLoad.NeedsBatteries,
-                                                          Mode=TwoWay,
-                                                          UpdateSourceTrigger=PropertyChanged}" />
-                            <CheckBox x:Name="DamagebleChB"
-                                      Margin="10,70,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Damageble"
-                                      IsChecked="{Binding Path=ItemLoad.Damageable,
-                                                          Mode=TwoWay,
-                                                          UpdateSourceTrigger=PropertyChanged}" />
-                            <CheckBox x:Name="RepairableChB"
-                                      Margin="10,90,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Repairable"
-                                      IsChecked="{Binding Path=ItemLoad.Repairable,
-                                                          Mode=TwoWay,
-                                                          UpdateSourceTrigger=PropertyChanged}" />
-                            <CheckBox x:Name="WaterDamagebleChB"
-                                      Margin="10,110,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Water damageable"
-                                      IsChecked="{Binding Path=ItemLoad.WaterDamages,
-                                                          Mode=TwoWay,
-                                                          UpdateSourceTrigger=PropertyChanged}" />
-                            <CheckBox x:Name="MetalChB"
-                                      Margin="10,130,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Metal"
-                                      IsChecked="{Binding Path=ItemLoad.Metal,
-                                                          Mode=TwoWay,
-                                                          UpdateSourceTrigger=PropertyChanged}" />
-                            <CheckBox x:Name="ElectronicChB"
-                                      Margin="10,150,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Electronic"
-                                      IsChecked="{Binding Path=ItemLoad.Electronic,
-                                                          Mode=TwoWay,
-                                                          UpdateSourceTrigger=PropertyChanged}" />
-                            <GroupBox x:Name="GroupBox12"
-                                      Width="167"
-                                      Height="93"
-                                      Margin="10,190,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Header="Weapon">
+                            <CheckBox
+                                x:Name="TwoHandedChB"
+                                Margin="10,10,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Two Handed"
+                                IsChecked="{Binding Path=ItemLoad.TwoHanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox
+                                x:Name="HtChB"
+                                Margin="10,30,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="HT"
+                                IsChecked="{Binding Path=ItemLoad.HT, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox
+                                x:Name="UtChB"
+                                Margin="10,50,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="UT"
+                                IsChecked="{Binding Path=ItemLoad.UT, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox
+                                x:Name="NeedBatChB"
+                                Margin="10,170,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Need BAttery"
+                                IsChecked="{Binding Path=ItemLoad.NeedsBatteries, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox
+                                x:Name="DamagebleChB"
+                                Margin="10,70,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Damageble"
+                                IsChecked="{Binding Path=ItemLoad.Damageable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox
+                                x:Name="RepairableChB"
+                                Margin="10,90,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Repairable"
+                                IsChecked="{Binding Path=ItemLoad.Repairable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox
+                                x:Name="WaterDamagebleChB"
+                                Margin="10,110,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Water damageable"
+                                IsChecked="{Binding Path=ItemLoad.WaterDamages, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox
+                                x:Name="MetalChB"
+                                Margin="10,130,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Metal"
+                                IsChecked="{Binding Path=ItemLoad.Metal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox
+                                x:Name="ElectronicChB"
+                                Margin="10,150,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Electronic"
+                                IsChecked="{Binding Path=ItemLoad.Electronic, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <GroupBox
+                                x:Name="GroupBox12"
+                                Width="167"
+                                Height="93"
+                                Margin="10,190,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Header="Weapon">
                                 <Grid x:Name="WeaponGridGeneral" Margin="0,0,-2,0">
-                                    <CheckBox x:Name="HeavyWeaponChB"
-                                              Margin="10,10,0,0"
-                                              HorizontalAlignment="Left"
-                                              VerticalAlignment="Top"
-                                              Content="Heavy weapon"
-                                              IsChecked="{Binding Path=WeaponLoad.HeavyWeapon,
-                                                                  Mode=TwoWay,
-                                                                  UpdateSourceTrigger=PropertyChanged}" />
-                                    <CheckBox x:Name="MountChB"
-                                              Margin="10,30,0,0"
-                                              HorizontalAlignment="Left"
-                                              VerticalAlignment="Top"
-                                              Content="Mount"
-                                              IsChecked="{Binding Path=WeaponLoad.Mount,
-                                                                  Mode=TwoWay}" />
-                                    <CheckBox x:Name="BulkFoldCheckBox"
-                                              Margin="10,50,0,0"
-                                              HorizontalAlignment="Left"
-                                              VerticalAlignment="Top"
-                                              Content="Bulk Fold"
-                                              IsChecked="{Binding Path=WeaponLoad.Bulkfolded,
-                                                                  Mode=TwoWay}" />
+                                    <CheckBox
+                                        x:Name="HeavyWeaponChB"
+                                        Margin="10,10,0,0"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top"
+                                        Content="Heavy weapon"
+                                        IsChecked="{Binding Path=WeaponLoad.HeavyWeapon, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                    <CheckBox
+                                        x:Name="MountChB"
+                                        Margin="10,30,0,0"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top"
+                                        Content="Mount"
+                                        IsChecked="{Binding Path=WeaponLoad.Mount, Mode=TwoWay}" />
+                                    <CheckBox
+                                        x:Name="BulkFoldCheckBox"
+                                        Margin="10,50,0,0"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top"
+                                        Content="Bulk Fold"
+                                        IsChecked="{Binding Path=WeaponLoad.Bulkfolded, Mode=TwoWay}" />
                                 </Grid>
                             </GroupBox>
                         </Grid>
@@ -362,50 +368,49 @@
             </TabItem>
             <TabItem x:Name="WeaponTi" Header="Weapon">
                 <Grid x:Name="WeaponMainGrid" Background="#FFE5E5E5">
-                    <GroupBox x:Name="GroupBox4"
-                              Width="195"
-                              Height="86"
-                              Margin="10,10,0,0"
-                              HorizontalAlignment="Left"
-                              VerticalAlignment="Top"
-                              Header="Type of Weapon">
+                    <GroupBox
+                        x:Name="GroupBox4"
+                        Width="195"
+                        Height="86"
+                        Margin="10,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Header="Type of Weapon">
                         <Grid x:Name="TypeOfWeapGrid">
-                            <Label x:Name="Label4"
-                                   Margin="10,10,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Class" />
-                            <Label x:Name="Label5"
-                                   Height="26"
-                                   Margin="10,33,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Type" />
-                            <ComboBox x:Name="ClassOfWeaponTb"
-                                      Width="120"
-                                      Margin="53,10,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="name"
-                                      IsSynchronizedWithCurrentItem="True"
-                                      ItemsSource="{Binding WeaponClasscCollection,
-                                                            Mode=TwoWay,
-                                                            UpdateSourceTrigger=PropertyChanged}"
-                                      SelectedValue="{Binding WeaponLoad.ubWeaponClass,
-                                                              Mode=TwoWay,
-                                                              UpdateSourceTrigger=PropertyChanged}"
-                                      SelectedValuePath="id" />
-                            <ComboBox x:Name="TypeOfClassWeapTb"
-                                      Width="120"
-                                      Margin="53,37,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="name"
-                                      IsSynchronizedWithCurrentItem="True"
-                                      SelectedValue="{Binding WeaponLoad.ubWeaponType,
-                                                              Mode=TwoWay,
-                                                              UpdateSourceTrigger=PropertyChanged}"
-                                      SelectedValuePath="id">
+                            <Label
+                                x:Name="Label4"
+                                Margin="10,10,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Class" />
+                            <Label
+                                x:Name="Label5"
+                                Height="26"
+                                Margin="10,33,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Type" />
+                            <ComboBox
+                                x:Name="ClassOfWeaponTb"
+                                Width="120"
+                                Margin="53,10,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="name"
+                                IsSynchronizedWithCurrentItem="True"
+                                ItemsSource="{Binding WeaponClasscCollection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                SelectedValue="{Binding WeaponLoad.ubWeaponClass, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                SelectedValuePath="id" />
+                            <ComboBox
+                                x:Name="TypeOfClassWeapTb"
+                                Width="120"
+                                Margin="53,37,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="name"
+                                IsSynchronizedWithCurrentItem="True"
+                                SelectedValue="{Binding WeaponLoad.ubWeaponType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                SelectedValuePath="id">
                                 <ComboBox.ItemsSource>
                                     <MultiBinding Converter="{addin:DatacontextTupeFromClass}">
                                         <Binding Path="WeaponTypescCollection" />
@@ -415,353 +420,385 @@
                             </ComboBox>
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name="GroupBox5"
-                              Width="195"
-                              Height="270"
-                              Margin="10,101,0,0"
-                              HorizontalAlignment="Left"
-                              VerticalAlignment="Top"
-                              Header="WeaponPrimaryDamage">
+                    <GroupBox
+                        x:Name="GroupBox5"
+                        Width="195"
+                        Height="270"
+                        Margin="10,101,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Header="WeaponPrimaryDamage">
                         <Grid x:Name="DamageWeaponGrid">
-                            <Label x:Name="Label11"
-                                   Margin="10,10,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Damage" />
-                            <Label x:Name="Label12"
-                                   Margin="10,36,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Type of Damage" />
-                            <Label x:Name="Label13"
-                                   Margin="10,64,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Arm Divizor" />
+                            <Label
+                                x:Name="Label11"
+                                Margin="10,10,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Damage" />
+                            <Label
+                                x:Name="Label12"
+                                Margin="10,36,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Type of Damage" />
+                            <Label
+                                x:Name="Label13"
+                                Margin="10,64,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Arm Divizor" />
 
-                            <TextBox x:Name="DamageTextBox"
-                                     Width="75"
-                                     Height="23"
-                                     Margin="98,10,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     TextWrapping="Wrap">
+                            <TextBox
+                                x:Name="DamageTextBox"
+                                Width="75"
+                                Height="23"
+                                Margin="98,10,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap">
 
                                 <TextBox.Text>
-                                    <Binding Converter="{addin:Weapondamage}"
-                                             ConverterParameter="Damage"
-                                             Mode="TwoWay"
-                                             Path="WeaponDamageColl"
-                                             UpdateSourceTrigger="PropertyChanged" />
+                                    <Binding
+                                        Converter="{addin:Weapondamage}"
+                                        ConverterParameter="Damage"
+                                        Mode="TwoWay"
+                                        Path="WeaponDamageColl"
+                                        UpdateSourceTrigger="PropertyChanged" />
                                 </TextBox.Text>
                             </TextBox>
-                            <TextBox x:Name="ArmDivizorTextBox"
-                                     Width="75"
-                                     Height="23"
-                                     Margin="98,67,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     TextWrapping="Wrap">
+                            <TextBox
+                                x:Name="ArmDivizorTextBox"
+                                Width="75"
+                                Height="23"
+                                Margin="98,67,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap">
                                 <TextBox.Text>
 
-                                    <Binding Converter="{addin:Weapondamage}"
-                                             ConverterParameter="AD"
-                                             Mode="TwoWay"
-                                             Path="WeaponDamageColl"
-                                             UpdateSourceTrigger="PropertyChanged" />
+                                    <Binding
+                                        Converter="{addin:Weapondamage}"
+                                        ConverterParameter="AD"
+                                        Mode="TwoWay"
+                                        Path="WeaponDamageColl"
+                                        UpdateSourceTrigger="PropertyChanged" />
                                 </TextBox.Text>
                             </TextBox>
-                            <ComboBox x:Name="TypeOfDamageComboBox"
-                                      Width="61"
-                                      Margin="112,38,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="name"
-                                      ItemsSource="{Binding TypeOfDamagesCollection}"
-                                      SelectedValuePath="id">
+                            <ComboBox
+                                x:Name="TypeOfDamageComboBox"
+                                Width="61"
+                                Margin="112,38,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="name"
+                                ItemsSource="{Binding TypeOfDamagesCollection}"
+                                SelectedValuePath="id">
                                 <ComboBox.SelectedValue>
-                                    <Binding Converter="{addin:Weapondamage}"
-                                             ConverterParameter="ToD"
-                                             Mode="TwoWay"
-                                             Path="WeaponDamageColl"
-                                             UpdateSourceTrigger="PropertyChanged" />
+                                    <Binding
+                                        Converter="{addin:Weapondamage}"
+                                        ConverterParameter="ToD"
+                                        Mode="TwoWay"
+                                        Path="WeaponDamageColl"
+                                        UpdateSourceTrigger="PropertyChanged" />
                                 </ComboBox.SelectedValue>
                             </ComboBox>
-                            <CheckBox x:Name="LinkedcheckBox"
-                                      Margin="98,118,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Linked">
+                            <CheckBox
+                                x:Name="LinkedcheckBox"
+                                Margin="98,118,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Linked">
                                 <CheckBox.IsChecked>
-                                    <Binding Converter="{addin:FollowUpLinkedOnOffConverter}"
-                                             ConverterParameter="Linked"
-                                             Path="WeaponDamageColl" />
+                                    <Binding
+                                        Converter="{addin:FollowUpLinkedOnOffConverter}"
+                                        ConverterParameter="Linked"
+                                        Path="WeaponDamageColl" />
                                 </CheckBox.IsChecked>
                             </CheckBox>
-                            <CheckBox x:Name="FollowUpcheckBox"
-                                      Margin="98,98,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="FollowUp">
+                            <CheckBox
+                                x:Name="FollowUpcheckBox"
+                                Margin="98,98,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="FollowUp">
                                 <CheckBox.IsChecked>
-                                    <Binding Converter="{addin:FollowUpLinkedOnOffConverter}"
-                                             ConverterParameter="Follow-up"
-                                             Path="WeaponDamageColl" />
+                                    <Binding
+                                        Converter="{addin:FollowUpLinkedOnOffConverter}"
+                                        ConverterParameter="Follow-up"
+                                        Path="WeaponDamageColl" />
                                 </CheckBox.IsChecked>
                             </CheckBox>
-                            <CheckBox x:Name="ExcheckBox"
-                                      Margin="10,98,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Command="{Binding CExtendDamage}"
-                                      CommandParameter="{Binding ElementName=ExcheckBox,
-                                                                 Path=IsChecked}"
-                                      Content="Ext Dam"
-                                      IsChecked="True" />
-                            <GroupBox x:Name="groupBox"
-                                      Width="163"
-                                      Height="105"
-                                      Margin="10,133,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Header="ExDam"
-                                      Visibility="{Binding ElementName=ExcheckBox,
-                                                           Path=IsChecked,
-                                                           Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <CheckBox
+                                x:Name="ExcheckBox"
+                                Margin="10,98,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Command="{Binding CExtendDamage}"
+                                CommandParameter="{Binding ElementName=ExcheckBox, Path=IsChecked}"
+                                Content="Ext Dam"
+                                IsChecked="True" />
+                            <GroupBox
+                                x:Name="groupBox"
+                                Width="163"
+                                Height="105"
+                                Margin="10,133,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Header="ExDam"
+                                Visibility="{Binding ElementName=ExcheckBox, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}">
 
-                                <Grid Width="153"
-                                      Height="87"
-                                      Margin="0,0,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top">
-                                    <TextBox x:Name="TD1textBox"
-                                             Width="83"
-                                             Height="23"
-                                             Margin="60,0,0,0"
-                                             HorizontalAlignment="Left"
-                                             VerticalAlignment="Top"
-                                             TextWrapping="Wrap">
+                                <Grid
+                                    Width="153"
+                                    Height="87"
+                                    Margin="0,0,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top">
+                                    <TextBox
+                                        x:Name="TD1textBox"
+                                        Width="83"
+                                        Height="23"
+                                        Margin="60,0,0,0"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top"
+                                        TextWrapping="Wrap">
                                         <TextBox.Text>
-                                            <Binding Converter="{addin:Weapondamage}"
-                                                     ConverterParameter="TD1"
-                                                     Mode="TwoWay"
-                                                     Path="WeaponDamageColl"
-                                                     UpdateSourceTrigger="PropertyChanged" />
+                                            <Binding
+                                                Converter="{addin:Weapondamage}"
+                                                ConverterParameter="TD1"
+                                                Mode="TwoWay"
+                                                Path="WeaponDamageColl"
+                                                UpdateSourceTrigger="PropertyChanged" />
                                         </TextBox.Text>
                                     </TextBox>
-                                    <TextBox x:Name="textBox1"
-                                             Width="83"
-                                             Height="23"
-                                             Margin="60,55,0,0"
-                                             HorizontalAlignment="Left"
-                                             VerticalAlignment="Top"
-                                             TextWrapping="Wrap">
+                                    <TextBox
+                                        x:Name="textBox1"
+                                        Width="83"
+                                        Height="23"
+                                        Margin="60,55,0,0"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top"
+                                        TextWrapping="Wrap">
                                         <TextBox.Text>
-                                            <Binding Converter="{addin:Weapondamage}"
-                                                     ConverterParameter="TD2"
-                                                     Mode="TwoWay"
-                                                     Path="WeaponDamageColl" />
+                                            <Binding
+                                                Converter="{addin:Weapondamage}"
+                                                ConverterParameter="TD2"
+                                                Mode="TwoWay"
+                                                Path="WeaponDamageColl" />
                                         </TextBox.Text>
                                     </TextBox>
-                                    <ComboBox x:Name="comboBox"
-                                              Width="83"
-                                              Margin="60,28,0,0"
-                                              HorizontalAlignment="Left"
-                                              VerticalAlignment="Top"
-                                              DisplayMemberPath="name"
-                                              ItemsSource="{Binding TypeOfDamagesCollection}"
-                                              SelectedValuePath="id">
+                                    <ComboBox
+                                        x:Name="comboBox"
+                                        Width="83"
+                                        Margin="60,28,0,0"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top"
+                                        DisplayMemberPath="name"
+                                        ItemsSource="{Binding TypeOfDamagesCollection}"
+                                        SelectedValuePath="id">
                                         <ComboBox.SelectedValue>
-                                            <Binding Converter="{addin:Weapondamage}"
-                                                     ConverterParameter="ToD2"
-                                                     Mode="TwoWay"
-                                                     Path="WeaponDamageColl"
-                                                     UpdateSourceTrigger="PropertyChanged" />
+                                            <Binding
+                                                Converter="{addin:Weapondamage}"
+                                                ConverterParameter="ToD2"
+                                                Mode="TwoWay"
+                                                Path="WeaponDamageColl"
+                                                UpdateSourceTrigger="PropertyChanged" />
                                         </ComboBox.SelectedValue>
                                     </ComboBox>
                                 </Grid>
                             </GroupBox>
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name="GroupBox6"
-                              Width="181"
-                              Height="116"
-                              Margin="210,10,0,0"
-                              HorizontalAlignment="Left"
-                              VerticalAlignment="Top"
-                              Header="Range">
+                    <GroupBox
+                        x:Name="GroupBox6"
+                        Width="181"
+                        Height="116"
+                        Margin="210,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Header="Range">
                         <Grid x:Name="RangeGrid">
-                            <Label x:Name="Label16"
-                                   Margin="10,6,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Min Range"
-                                   RenderTransformOrigin="0.433,0.077" />
-                            <Label x:Name="Label17"
-                                   Margin="10,34,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Half Range" />
-                            <Label x:Name="Label18"
-                                   Margin="10,62,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Max Range" />
-                            <TextBox x:Name="MinRangeTextBox"
-                                     Width="77"
-                                     Height="23"
-                                     Margin="82,10,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     TextWrapping="Wrap">
+                            <Label
+                                x:Name="Label16"
+                                Margin="10,6,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Min Range"
+                                RenderTransformOrigin="0.433,0.077" />
+                            <Label
+                                x:Name="Label17"
+                                Margin="10,34,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Half Range" />
+                            <Label
+                                x:Name="Label18"
+                                Margin="10,62,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Max Range" />
+                            <TextBox
+                                x:Name="MinRangeTextBox"
+                                Width="77"
+                                Height="23"
+                                Margin="82,10,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap">
                                 <TextBox.Text>
-                                    <Binding Converter="{addin:DeciminalConverterString}"
-                                             Mode="TwoWay"
-                                             Path="WeaponLoad.MinRange" />
+                                    <Binding
+                                        Converter="{addin:DeciminalConverterString}"
+                                        Mode="TwoWay"
+                                        Path="WeaponLoad.MinRange" />
                                 </TextBox.Text>
                             </TextBox>
-                            <TextBox x:Name="HalfRangeTextBox"
-                                     Width="77"
-                                     Height="23"
-                                     Margin="82,38,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     TextWrapping="Wrap">
+                            <TextBox
+                                x:Name="HalfRangeTextBox"
+                                Width="77"
+                                Height="23"
+                                Margin="82,38,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap">
                                 <TextBox.Text>
-                                    <Binding Converter="{addin:DeciminalConverterString}"
-                                             Mode="TwoWay"
-                                             Path="WeaponLoad.Half_Range" />
+                                    <Binding
+                                        Converter="{addin:DeciminalConverterString}"
+                                        Mode="TwoWay"
+                                        Path="WeaponLoad.Half_Range" />
                                 </TextBox.Text>
                             </TextBox>
-                            <TextBox x:Name="MaxRangeTextBox"
-                                     Width="77"
-                                     Height="23"
-                                     Margin="82,66,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     TextWrapping="Wrap">
+                            <TextBox
+                                x:Name="MaxRangeTextBox"
+                                Width="77"
+                                Height="23"
+                                Margin="82,66,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap">
                                 <TextBox.Text>
-                                    <Binding Converter="{addin:DeciminalConverterString}"
-                                             Mode="TwoWay"
-                                             Path="WeaponLoad.FullRange" />
+                                    <Binding
+                                        Converter="{addin:DeciminalConverterString}"
+                                        Mode="TwoWay"
+                                        Path="WeaponLoad.FullRange" />
                                 </TextBox.Text>
                             </TextBox>
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name="GroupBox7"
-                              Width="201"
-                              Height="164"
-                              Margin="454,126,0,0"
-                              HorizontalAlignment="Left"
-                              VerticalAlignment="Top"
-                              Header="Shots">
+                    <GroupBox
+                        x:Name="GroupBox7"
+                        Width="201"
+                        Height="164"
+                        Margin="454,126,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Header="Shots">
                         <Grid x:Name="ShotsGrid">
-                            <Label x:Name="Label19"
-                                   Margin="10,6,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="ROF" />
-                            <Label x:Name="ShLabel20"
-                                   Margin="89,6,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="X"
-                                   RenderTransformOrigin="0,0.5">
+                            <Label
+                                x:Name="Label19"
+                                Margin="10,6,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="ROF" />
+                            <Label
+                                x:Name="ShLabel20"
+                                Margin="89,6,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="X"
+                                RenderTransformOrigin="0,0.5">
                                 <!--<Label.Visibility>
                                     <Binding Converter="{addin:Shotguntovis}"
                                              ElementName="TypeOfClassWeapTb"
                                              Path="SelectedItem" />
                                 </Label.Visibility>-->
                             </Label>
-                            <TextBox x:Name="RofTextBox"
-                                     Width="30"
-                                     Height="23"
-                                     Margin="54,10,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     Text="{Binding WeaponLoad.ROF,
-                                                    Mode=TwoWay}"
-                                     TextWrapping="Wrap" />
-                            <TextBox x:Name="ShrofTextBox"
-                                     Width="30"
-                                     Height="23"
-                                     Margin="111,9,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     Text="{Binding WeaponLoad.ROF_for_Sh}"
-                                     TextWrapping="Wrap">
+                            <TextBox
+                                x:Name="RofTextBox"
+                                Width="30"
+                                Height="23"
+                                Margin="54,10,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Text="{Binding WeaponLoad.ROF, Mode=TwoWay}"
+                                TextWrapping="Wrap" />
+                            <TextBox
+                                x:Name="ShrofTextBox"
+                                Width="30"
+                                Height="23"
+                                Margin="111,9,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Text="{Binding WeaponLoad.ROF_for_Sh}"
+                                TextWrapping="Wrap">
                                 <!--<TextBox.Visibility>
                                     <Binding Converter="{addin:Shotguntovis}"
                                              ElementName="TypeOfClassWeapTb"
                                              Path="SelectedItem" />
                                 </TextBox.Visibility>-->
                             </TextBox>
-                            <CheckBox x:Name="FullAutoCheckBox"
-                                      Margin="10,38,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Full Auto"
-                                      IsChecked="{Binding Path=WeaponLoad.Full_auto,
-                                                          Mode=TwoWay,
-                                                          UpdateSourceTrigger=PropertyChanged}" />
-                            <CheckBox x:Name="Add1InChamblerCheckbox"
-                                      Margin="10,58,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="1 Add"
-                                      IsChecked="{Binding Path=WeaponLoad.Add_in_Chamber,
-                                                          Mode=TwoWay,
-                                                          UpdateSourceTrigger=PropertyChanged}" />
-                            <CheckBox x:Name="HcrofCheckBox2"
-                                      Margin="88,38,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="HC ROF(#)"
-                                      IsChecked="{Binding WeaponLoad.HCROF,
-                                                          Mode=TwoWay}" />
-                            <TextBox x:Name="HCROFValue_textBox"
-                                     Width="48"
-                                     Height="23"
-                                     Margin="111,58,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     Text="{Binding WeaponLoad.HCROFValue,
-                                                    Mode=TwoWay}"
-                                     TextWrapping="NoWrap">
+                            <CheckBox
+                                x:Name="FullAutoCheckBox"
+                                Margin="10,38,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Full Auto"
+                                IsChecked="{Binding Path=WeaponLoad.Full_auto, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox
+                                x:Name="Add1InChamblerCheckbox"
+                                Margin="10,58,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="1 Add"
+                                IsChecked="{Binding Path=WeaponLoad.Add_in_Chamber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <CheckBox
+                                x:Name="HcrofCheckBox2"
+                                Margin="88,38,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="HC ROF(#)"
+                                IsChecked="{Binding WeaponLoad.HCROF, Mode=TwoWay}" />
+                            <TextBox
+                                x:Name="HCROFValue_textBox"
+                                Width="48"
+                                Height="23"
+                                Margin="111,58,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Text="{Binding WeaponLoad.HCROFValue, Mode=TwoWay}"
+                                TextWrapping="NoWrap">
                                 <!--
                                     Visibility="{Binding IsChecked,
                                     ElementName=HcrofCheckBox2,
                                     Converter={StaticResource BooleanToVisibilityConverter}}"
                                 -->
                             </TextBox>
-                            <CheckBox x:Name="CutOfShotsCheckBox"
-                                      Margin="10,78,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Cut Of Shots"
-                                      IsChecked="{Binding Path=WeaponLoad.CutOff_shots,
-                                                          Mode=TwoWay,
-                                                          UpdateSourceTrigger=PropertyChanged}" />
-                            <Label x:Name="Label20"
-                                   Margin="10,95,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Cut Of Shots">
+                            <CheckBox
+                                x:Name="CutOfShotsCheckBox"
+                                Margin="10,78,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Cut Of Shots"
+                                IsChecked="{Binding Path=WeaponLoad.CutOff_shots, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <Label
+                                x:Name="Label20"
+                                Margin="10,95,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Cut Of Shots">
                                 <!--
                                     Visibility="{Binding IsChecked,
                                     ElementName=CutOfShotsCheckBox,
                                     Converter={StaticResource BooleanToVisibilityConverter}}"
                                 -->
                             </Label>
-                            <TextBox x:Name="CutOfShotsTextBox"
-                                     Width="67"
-                                     Height="23"
-                                     Margin="92,98,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     Text="{Binding WeaponLoad.CutOff_shotsCount,
-                                                    Mode=TwoWay}"
-                                     TextWrapping="Wrap" />
+                            <TextBox
+                                x:Name="CutOfShotsTextBox"
+                                Width="67"
+                                Height="23"
+                                Margin="92,98,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Text="{Binding WeaponLoad.CutOff_shotsCount, Mode=TwoWay}"
+                                TextWrapping="Wrap" />
                             <!--
                                 Visibility="{Binding IsChecked,
                                 ElementName=CutOfShotsCheckBox,
@@ -771,378 +808,418 @@
 
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name="GroupBox8"
-                              Width="201"
-                              Height="116"
-                              Margin="581,10,0,0"
-                              HorizontalAlignment="Left"
-                              VerticalAlignment="Top"
-                              Header="Acc">
+                    <GroupBox
+                        x:Name="GroupBox8"
+                        Width="201"
+                        Height="116"
+                        Margin="581,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Header="Acc">
                         <Grid>
-                            <TextBox x:Name="DefAccTextBox"
-                                     Width="57"
-                                     Height="23"
-                                     Margin="95,10,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     Text="{Binding WeaponLoad.DefACC,
-                                                    Mode=TwoWay}"
-                                     TextWrapping="Wrap" />
-                            <TextBox x:Name="RecoilTextBox"
-                                     Width="57"
-                                     Height="23"
-                                     Margin="95,38,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     Text="{Binding WeaponLoad.Recoil,
-                                                    Mode=TwoWay}"
-                                     TextWrapping="Wrap" />
-                            <Label x:Name="Label21"
-                                   Margin="10,6,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Default ACC" />
-                            <Label x:Name="Label22"
-                                   Margin="10,34,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Recoil" />
+                            <TextBox
+                                x:Name="DefAccTextBox"
+                                Width="57"
+                                Height="23"
+                                Margin="95,10,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Text="{Binding WeaponLoad.DefACC, Mode=TwoWay}"
+                                TextWrapping="Wrap" />
+                            <TextBox
+                                x:Name="RecoilTextBox"
+                                Width="57"
+                                Height="23"
+                                Margin="95,38,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Text="{Binding WeaponLoad.Recoil, Mode=TwoWay}"
+                                TextWrapping="Wrap" />
+                            <Label
+                                x:Name="Label21"
+                                Margin="10,6,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Default ACC" />
+                            <Label
+                                x:Name="Label22"
+                                Margin="10,34,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Recoil" />
 
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name="GroupBox9"
-                              Width="180"
-                              Height="116"
-                              Margin="396,10,0,0"
-                              HorizontalAlignment="Left"
-                              VerticalAlignment="Top"
-                              Header="Reload">
+                    <GroupBox
+                        x:Name="GroupBox9"
+                        Width="180"
+                        Height="116"
+                        Margin="396,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Header="Reload">
                         <Grid>
-                            <Label x:Name="Label23"
-                                   Margin="10,0,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Caliber" />
-                            <Label x:Name="Label24"
-                                   Margin="10,24,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Shots" />
-                            <Label x:Name="Label25"
-                                   Margin="10,52,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Reload Time" />
-                            <ComboBox x:Name="CAliberComboBox"
-                                      Width="88"
-                                      Margin="73,0,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="Caliber_name"
-                                      ItemsSource="{Binding AmmoscCollection}"
-                                      SelectedIndex="{Binding selInd}"
-                                      SelectedValue="{Binding WeaponLoad.ubCalibre,
-                                                              Mode=TwoWay}"
-                                      SelectedValuePath="id" />
-                            <TextBox x:Name="ShotsTextBox"
-                                     Width="88"
-                                     Height="23"
-                                     Margin="73,27,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     Text="{Binding WeaponLoad.Shots,
-                                                    Mode=TwoWay}"
-                                     TextWrapping="Wrap" />
-                            <TextBox x:Name="ReloadTimeTextbox"
-                                     Width="70"
-                                     Height="23"
-                                     Margin="91,55,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     Text="{Binding WeaponLoad.Time_For_reload,
-                                                    Mode=TwoWay}"
-                                     TextWrapping="Wrap" />
-                            <CheckBox x:Name="SingleReloadCheckBox"
-                                      Margin="10,78,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Single Reload"
-                                      IsChecked="{Binding Path=WeaponLoad.single_reload,
-                                                          Mode=TwoWay,
-                                                          UpdateSourceTrigger=PropertyChanged}" />
+                            <Label
+                                x:Name="Label23"
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Caliber" />
+                            <Label
+                                x:Name="Label24"
+                                Margin="10,24,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Shots" />
+                            <Label
+                                x:Name="Label25"
+                                Margin="10,52,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Reload Time" />
+                            <ComboBox
+                                x:Name="CAliberComboBox"
+                                Width="88"
+                                Margin="73,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="Caliber_name"
+                                ItemsSource="{Binding AmmoscCollection}"
+                                SelectedIndex="{Binding selInd}"
+                                SelectedValue="{Binding WeaponLoad.ubCalibre, Mode=TwoWay}"
+                                SelectedValuePath="id" />
+                            <TextBox
+                                x:Name="ShotsTextBox"
+                                Width="88"
+                                Height="23"
+                                Margin="73,27,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Text="{Binding WeaponLoad.Shots, Mode=TwoWay}"
+                                TextWrapping="Wrap" />
+                            <TextBox
+                                x:Name="ReloadTimeTextbox"
+                                Width="70"
+                                Height="23"
+                                Margin="91,55,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Text="{Binding WeaponLoad.Time_For_reload, Mode=TwoWay}"
+                                TextWrapping="Wrap" />
+                            <CheckBox
+                                x:Name="SingleReloadCheckBox"
+                                Margin="10,78,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Single Reload"
+                                IsChecked="{Binding Path=WeaponLoad.single_reload, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name="groupBox1"
-                              Width="117"
-                              Height="191"
-                              Margin="210,126,0,0"
-                              HorizontalAlignment="Left"
-                              VerticalAlignment="Top"
-                              Header="Linked"
-                              Visibility="{Binding ElementName=LinkedcheckBox,
-                                                   Path=IsChecked,
-                                                   Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <GroupBox
+                        x:Name="groupBox1"
+                        Width="117"
+                        Height="191"
+                        Margin="210,126,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Header="Linked"
+                        Visibility="{Binding ElementName=LinkedcheckBox, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}">
 
 
                         <Grid Margin="0,0,-2,-2">
-                            <TextBox x:Name="textBox"
-                                     Width="58"
-                                     Height="23"
-                                     Margin="40,4,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     TextWrapping="Wrap">
+                            <TextBox
+                                x:Name="textBox"
+                                Width="58"
+                                Height="23"
+                                Margin="40,4,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap">
                                 <TextBox.Text>
-                                    <Binding Converter="{addin:Linkedamage}"
-                                             ConverterParameter="Damage"
-                                             Mode="TwoWay"
-                                             Path="WeaponDamageColl"
-                                             UpdateSourceTrigger="PropertyChanged" />
+                                    <Binding
+                                        Converter="{addin:Linkedamage}"
+                                        ConverterParameter="Damage"
+                                        Mode="TwoWay"
+                                        Path="WeaponDamageColl"
+                                        UpdateSourceTrigger="PropertyChanged" />
                                 </TextBox.Text>
                             </TextBox>
-                            <Label x:Name="label"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Dam" />
-                            <Label x:Name="labe1l"
-                                   Width="26"
-                                   Margin="0,28,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="AD" />
-                            <TextBox x:Name="textBox2"
-                                     Width="39"
-                                     Height="23"
-                                     Margin="59,32,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     TextWrapping="Wrap">
+                            <Label
+                                x:Name="label"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Dam" />
+                            <Label
+                                x:Name="labe1l"
+                                Width="26"
+                                Margin="0,28,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="AD" />
+                            <TextBox
+                                x:Name="textBox2"
+                                Width="39"
+                                Height="23"
+                                Margin="59,32,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap">
                                 <TextBox.Text>
-                                    <Binding Converter="{addin:Linkedamage}"
-                                             ConverterParameter="AD"
-                                             Mode="TwoWay"
-                                             Path="WeaponDamageColl"
-                                             UpdateSourceTrigger="PropertyChanged" />
+                                    <Binding
+                                        Converter="{addin:Linkedamage}"
+                                        ConverterParameter="AD"
+                                        Mode="TwoWay"
+                                        Path="WeaponDamageColl"
+                                        UpdateSourceTrigger="PropertyChanged" />
                                 </TextBox.Text>
                             </TextBox>
-                            <ComboBox x:Name="comboBox1"
-                                      Width="50"
-                                      Height="21"
-                                      Margin="48,60,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="name"
-                                      ItemsSource="{Binding TypeOfDamagesCollection}"
-                                      SelectedValuePath="id">
+                            <ComboBox
+                                x:Name="comboBox1"
+                                Width="50"
+                                Height="21"
+                                Margin="48,60,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="name"
+                                ItemsSource="{Binding TypeOfDamagesCollection}"
+                                SelectedValuePath="id">
                                 <ComboBox.SelectedValue>
-                                    <Binding Converter="{addin:Linkedamage}"
-                                             ConverterParameter="ToD"
-                                             Mode="TwoWay"
-                                             Path="WeaponDamageColl"
-                                             UpdateSourceTrigger="PropertyChanged" />
+                                    <Binding
+                                        Converter="{addin:Linkedamage}"
+                                        ConverterParameter="ToD"
+                                        Mode="TwoWay"
+                                        Path="WeaponDamageColl"
+                                        UpdateSourceTrigger="PropertyChanged" />
                                 </ComboBox.SelectedValue>
                             </ComboBox>
-                            <Label x:Name="label1"
-                                   Margin="0,55,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Dt1" />
-                            <TextBox x:Name="textBox3"
-                                     Width="50"
-                                     Height="23"
-                                     Margin="48,86,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     TextWrapping="Wrap">
+                            <Label
+                                x:Name="label1"
+                                Margin="0,55,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Dt1" />
+                            <TextBox
+                                x:Name="textBox3"
+                                Width="50"
+                                Height="23"
+                                Margin="48,86,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap">
                                 <TextBox.Text>
-                                    <Binding Converter="{addin:Linkedamage}"
-                                             ConverterParameter="TD1"
-                                             Mode="TwoWay"
-                                             Path="WeaponDamageColl" />
+                                    <Binding
+                                        Converter="{addin:Linkedamage}"
+                                        ConverterParameter="TD1"
+                                        Mode="TwoWay"
+                                        Path="WeaponDamageColl" />
                                 </TextBox.Text>
                             </TextBox>
-                            <TextBox x:Name="textBox4"
-                                     Width="50"
-                                     Height="23"
-                                     Margin="48,141,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     TextWrapping="Wrap">
+                            <TextBox
+                                x:Name="textBox4"
+                                Width="50"
+                                Height="23"
+                                Margin="48,141,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap">
                                 <TextBox.Text>
-                                    <Binding Converter="{addin:Linkedamage}"
-                                             ConverterParameter="TD2"
-                                             Mode="TwoWay"
-                                             Path="WeaponDamageColl" />
+                                    <Binding
+                                        Converter="{addin:Linkedamage}"
+                                        ConverterParameter="TD2"
+                                        Mode="TwoWay"
+                                        Path="WeaponDamageColl" />
                                 </TextBox.Text>
                             </TextBox>
-                            <ComboBox x:Name="comboBox2"
-                                      Width="50"
-                                      Margin="48,114,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="name"
-                                      ItemsSource="{Binding TypeOfDamagesCollection}"
-                                      SelectedValuePath="id">
+                            <ComboBox
+                                x:Name="comboBox2"
+                                Width="50"
+                                Margin="48,114,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="name"
+                                ItemsSource="{Binding TypeOfDamagesCollection}"
+                                SelectedValuePath="id">
                                 <ComboBox.SelectedValue>
-                                    <Binding Converter="{addin:Linkedamage}"
-                                             ConverterParameter="ToD2"
-                                             Mode="TwoWay"
-                                             Path="WeaponDamageColl"
-                                             UpdateSourceTrigger="PropertyChanged" />
+                                    <Binding
+                                        Converter="{addin:Linkedamage}"
+                                        ConverterParameter="ToD2"
+                                        Mode="TwoWay"
+                                        Path="WeaponDamageColl"
+                                        UpdateSourceTrigger="PropertyChanged" />
                                 </ComboBox.SelectedValue>
                             </ComboBox>
-                            <Label x:Name="label2"
-                                   Margin="0,83,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Dpr" />
-                            <Label x:Name="label3"
-                                   Margin="0,110,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Dt2" />
-                            <Label x:Name="label4"
-                                   Margin="0,138,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Dpr2" />
+                            <Label
+                                x:Name="label2"
+                                Margin="0,83,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Dpr" />
+                            <Label
+                                x:Name="label3"
+                                Margin="0,110,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Dt2" />
+                            <Label
+                                x:Name="label4"
+                                Margin="0,138,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Dpr2" />
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name="groupBox1_Copy"
-                              Width="117"
-                              Height="191"
-                              Margin="332,126,0,0"
-                              HorizontalAlignment="Left"
-                              VerticalAlignment="Top"
-                              Header="Follow-up"
-                              Visibility="{Binding ElementName=FollowUpcheckBox,
-                                                   Path=IsChecked,
-                                                   Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <GroupBox
+                        x:Name="groupBox1_Copy"
+                        Width="117"
+                        Height="191"
+                        Margin="332,126,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Header="Follow-up"
+                        Visibility="{Binding ElementName=FollowUpcheckBox, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}">
 
                         <Grid Margin="0,0,-2,-2">
-                            <TextBox x:Name="textBox5"
-                                     Width="58"
-                                     Height="23"
-                                     Margin="40,4,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     TextWrapping="Wrap">
+                            <TextBox
+                                x:Name="textBox5"
+                                Width="58"
+                                Height="23"
+                                Margin="40,4,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap">
                                 <TextBox.Text>
-                                    <Binding Converter="{addin:FollowUpdamage}"
-                                             ConverterParameter="Damage"
-                                             Mode="TwoWay"
-                                             Path="WeaponDamageColl"
-                                             UpdateSourceTrigger="PropertyChanged" />
+                                    <Binding
+                                        Converter="{addin:FollowUpdamage}"
+                                        ConverterParameter="Damage"
+                                        Mode="TwoWay"
+                                        Path="WeaponDamageColl"
+                                        UpdateSourceTrigger="PropertyChanged" />
                                 </TextBox.Text>
                             </TextBox>
-                            <Label x:Name="label5"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Dam" />
-                            <Label x:Name="labe1l1"
-                                   Width="26"
-                                   Margin="0,28,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="AD" />
-                            <TextBox x:Name="textBox6"
-                                     Width="39"
-                                     Height="23"
-                                     Margin="59,32,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     TextWrapping="Wrap">
+                            <Label
+                                x:Name="label5"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Dam" />
+                            <Label
+                                x:Name="labe1l1"
+                                Width="26"
+                                Margin="0,28,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="AD" />
+                            <TextBox
+                                x:Name="textBox6"
+                                Width="39"
+                                Height="23"
+                                Margin="59,32,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap">
                                 <TextBox.Text>
 
-                                    <Binding Converter="{addin:FollowUpdamage}"
-                                             ConverterParameter="AD"
-                                             Mode="TwoWay"
-                                             Path="WeaponDamageColl"
-                                             UpdateSourceTrigger="PropertyChanged" />
+                                    <Binding
+                                        Converter="{addin:FollowUpdamage}"
+                                        ConverterParameter="AD"
+                                        Mode="TwoWay"
+                                        Path="WeaponDamageColl"
+                                        UpdateSourceTrigger="PropertyChanged" />
                                 </TextBox.Text>
                             </TextBox>
-                            <ComboBox x:Name="comboBox3"
-                                      Width="50"
-                                      Height="21"
-                                      Margin="48,60,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="name"
-                                      ItemsSource="{Binding TypeOfDamagesCollection}"
-                                      SelectedValuePath="id">
+                            <ComboBox
+                                x:Name="comboBox3"
+                                Width="50"
+                                Height="21"
+                                Margin="48,60,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="name"
+                                ItemsSource="{Binding TypeOfDamagesCollection}"
+                                SelectedValuePath="id">
                                 <ComboBox.SelectedValue>
-                                    <Binding Converter="{addin:FollowUpdamage}"
-                                             ConverterParameter="ToD"
-                                             Mode="TwoWay"
-                                             Path="WeaponDamageColl"
-                                             UpdateSourceTrigger="PropertyChanged" />
+                                    <Binding
+                                        Converter="{addin:FollowUpdamage}"
+                                        ConverterParameter="ToD"
+                                        Mode="TwoWay"
+                                        Path="WeaponDamageColl"
+                                        UpdateSourceTrigger="PropertyChanged" />
                                 </ComboBox.SelectedValue>
                             </ComboBox>
-                            <Label x:Name="label6"
-                                   Margin="0,55,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Dt1" />
-                            <TextBox x:Name="textBox7"
-                                     Width="50"
-                                     Height="23"
-                                     Margin="48,86,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     TextWrapping="Wrap">
+                            <Label
+                                x:Name="label6"
+                                Margin="0,55,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Dt1" />
+                            <TextBox
+                                x:Name="textBox7"
+                                Width="50"
+                                Height="23"
+                                Margin="48,86,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap">
                                 <TextBox.Text>
-                                    <Binding Converter="{addin:FollowUpdamage}"
-                                             ConverterParameter="TD1"
-                                             Mode="TwoWay"
-                                             Path="WeaponDamageColl"
-                                             UpdateSourceTrigger="PropertyChanged" />
+                                    <Binding
+                                        Converter="{addin:FollowUpdamage}"
+                                        ConverterParameter="TD1"
+                                        Mode="TwoWay"
+                                        Path="WeaponDamageColl"
+                                        UpdateSourceTrigger="PropertyChanged" />
                                 </TextBox.Text>
                             </TextBox>
-                            <TextBox x:Name="textBox8"
-                                     Width="50"
-                                     Height="23"
-                                     Margin="48,141,0,0"
-                                     HorizontalAlignment="Left"
-                                     VerticalAlignment="Top"
-                                     TextWrapping="Wrap">
+                            <TextBox
+                                x:Name="textBox8"
+                                Width="50"
+                                Height="23"
+                                Margin="48,141,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap">
                                 <TextBox.Text>
-                                    <Binding Converter="{addin:FollowUpdamage}"
-                                             ConverterParameter="TD2"
-                                             Mode="TwoWay"
-                                             Path="WeaponDamageColl" />
+                                    <Binding
+                                        Converter="{addin:FollowUpdamage}"
+                                        ConverterParameter="TD2"
+                                        Mode="TwoWay"
+                                        Path="WeaponDamageColl" />
                                 </TextBox.Text>
                             </TextBox>
-                            <ComboBox x:Name="comboBox4"
-                                      Width="50"
-                                      Margin="48,114,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="name"
-                                      ItemsSource="{Binding TypeOfDamagesCollection}"
-                                      SelectedValuePath="id">
+                            <ComboBox
+                                x:Name="comboBox4"
+                                Width="50"
+                                Margin="48,114,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="name"
+                                ItemsSource="{Binding TypeOfDamagesCollection}"
+                                SelectedValuePath="id">
                                 <ComboBox.SelectedValue>
-                                    <Binding Converter="{addin:FollowUpdamage}"
-                                             ConverterParameter="ToD2"
-                                             Mode="TwoWay"
-                                             Path="WeaponDamageColl"
-                                             UpdateSourceTrigger="PropertyChanged" />
+                                    <Binding
+                                        Converter="{addin:FollowUpdamage}"
+                                        ConverterParameter="ToD2"
+                                        Mode="TwoWay"
+                                        Path="WeaponDamageColl"
+                                        UpdateSourceTrigger="PropertyChanged" />
                                 </ComboBox.SelectedValue>
                             </ComboBox>
-                            <Label x:Name="label7"
-                                   Margin="0,83,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Dpr" />
-                            <Label x:Name="label8"
-                                   Margin="0,110,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Dt2" />
-                            <Label x:Name="label9"
-                                   Margin="0,138,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Content="Dpr2" />
+                            <Label
+                                x:Name="label7"
+                                Margin="0,83,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Dpr" />
+                            <Label
+                                x:Name="label8"
+                                Margin="0,110,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Dt2" />
+                            <Label
+                                x:Name="label9"
+                                Margin="0,138,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Dpr2" />
                         </Grid>
                     </GroupBox>
 
@@ -1151,19 +1228,21 @@
             <TabItem x:Name="AttachTi" Header="Attach">
                 <Grid Background="#FFE5E5E5">
 
-                    <GroupBox x:Name="GroupBox10"
-                              Width="156"
-                              Height="361"
-                              Margin="10,10,0,0"
-                              HorizontalAlignment="Left"
-                              VerticalAlignment="Top"
-                              Header="Available  Attach Point">
+                    <GroupBox
+                        x:Name="GroupBox10"
+                        Width="156"
+                        Height="361"
+                        Margin="10,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Header="Available  Attach Point">
                         <Grid>
-                            <CheckBox x:Name="ScopeCheckBox"
-                                      Margin="10,10,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Scope">
+                            <CheckBox
+                                x:Name="ScopeCheckBox"
+                                Margin="10,10,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Scope">
                                 <CheckBox.IsChecked>
                                     <MultiBinding Converter="{addin:AvailableAttachPointConvert}" ConverterParameter="1">
                                         <Binding Path="avSlot" />
@@ -1171,11 +1250,12 @@
                                     </MultiBinding>
                                 </CheckBox.IsChecked>
                             </CheckBox>
-                            <CheckBox x:Name="LaserCheckBox"
-                                      Margin="10,37,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Laser">
+                            <CheckBox
+                                x:Name="LaserCheckBox"
+                                Margin="10,37,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Laser">
                                 <CheckBox.IsChecked>
                                     <MultiBinding Converter="{addin:AvailableAttachPointConvert}" ConverterParameter="2">
                                         <Binding Path="avSlot" />
@@ -1183,11 +1263,12 @@
                                     </MultiBinding>
                                 </CheckBox.IsChecked>
                             </CheckBox>
-                            <CheckBox x:Name="LightCheckBox"
-                                      Margin="10,64,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Light">
+                            <CheckBox
+                                x:Name="LightCheckBox"
+                                Margin="10,64,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Light">
                                 <CheckBox.IsChecked>
                                     <MultiBinding Converter="{addin:AvailableAttachPointConvert}" ConverterParameter="3">
                                         <Binding Path="avSlot" />
@@ -1195,11 +1276,12 @@
                                     </MultiBinding>
                                 </CheckBox.IsChecked>
                             </CheckBox>
-                            <CheckBox x:Name="BipodCheckBox"
-                                      Margin="10,91,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Bipod">
+                            <CheckBox
+                                x:Name="BipodCheckBox"
+                                Margin="10,91,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Bipod">
                                 <CheckBox.IsChecked>
                                     <MultiBinding Converter="{addin:AvailableAttachPointConvert}" ConverterParameter="4">
                                         <Binding Path="avSlot" />
@@ -1207,11 +1289,12 @@
                                     </MultiBinding>
                                 </CheckBox.IsChecked>
                             </CheckBox>
-                            <CheckBox x:Name="SilenserCheckBox"
-                                      Margin="10,118,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Silenser">
+                            <CheckBox
+                                x:Name="SilenserCheckBox"
+                                Margin="10,118,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Silenser">
                                 <CheckBox.IsChecked>
                                     <MultiBinding Converter="{addin:AvailableAttachPointConvert}" ConverterParameter="5">
                                         <Binding Path="avSlot" />
@@ -1219,11 +1302,12 @@
                                     </MultiBinding>
                                 </CheckBox.IsChecked>
                             </CheckBox>
-                            <CheckBox x:Name="LauncherCheckBox"
-                                      Margin="10,145,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Launcher">
+                            <CheckBox
+                                x:Name="LauncherCheckBox"
+                                Margin="10,145,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Launcher">
                                 <CheckBox.IsChecked>
                                     <MultiBinding Converter="{addin:AvailableAttachPointConvert}" ConverterParameter="6">
                                         <Binding Path="avSlot" />
@@ -1231,11 +1315,12 @@
                                     </MultiBinding>
                                 </CheckBox.IsChecked>
                             </CheckBox>
-                            <CheckBox x:Name="StockCheckBox"
-                                      Margin="10,172,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Stock">
+                            <CheckBox
+                                x:Name="StockCheckBox"
+                                Margin="10,172,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Stock">
                                 <CheckBox.IsChecked>
                                     <MultiBinding Converter="{addin:AvailableAttachPointConvert}" ConverterParameter="7">
                                         <Binding Path="avSlot" />
@@ -1243,11 +1328,12 @@
                                     </MultiBinding>
                                 </CheckBox.IsChecked>
                             </CheckBox>
-                            <CheckBox x:Name="BayonetCheckBox"
-                                      Margin="10,199,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Bayonet">
+                            <CheckBox
+                                x:Name="BayonetCheckBox"
+                                Margin="10,199,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Bayonet">
                                 <CheckBox.IsChecked>
                                     <MultiBinding Converter="{addin:AvailableAttachPointConvert}" ConverterParameter="8">
                                         <Binding Path="avSlot" />
@@ -1255,11 +1341,12 @@
                                     </MultiBinding>
                                 </CheckBox.IsChecked>
                             </CheckBox>
-                            <CheckBox x:Name="MagazineCheckBox"
-                                      Margin="10,226,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Magazine">
+                            <CheckBox
+                                x:Name="MagazineCheckBox"
+                                Margin="10,226,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Magazine">
                                 <CheckBox.IsChecked>
                                     <MultiBinding Converter="{addin:AvailableAttachPointConvert}" ConverterParameter="9">
                                         <Binding Path="avSlot" />
@@ -1267,11 +1354,12 @@
                                     </MultiBinding>
                                 </CheckBox.IsChecked>
                             </CheckBox>
-                            <CheckBox x:Name="InternalCheckBox"
-                                      Margin="10,253,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="Internal">
+                            <CheckBox
+                                x:Name="InternalCheckBox"
+                                Margin="10,253,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Internal">
                                 <CheckBox.IsChecked>
                                     <MultiBinding Converter="{addin:AvailableAttachPointConvert}" ConverterParameter="10">
                                         <Binding Path="avSlot" />
@@ -1279,11 +1367,12 @@
                                     </MultiBinding>
                                 </CheckBox.IsChecked>
                             </CheckBox>
-                            <CheckBox x:Name="ExternalCheckBox"
-                                      Margin="10,280,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="External">
+                            <CheckBox
+                                x:Name="ExternalCheckBox"
+                                Margin="10,280,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="External">
                                 <CheckBox.IsChecked>
                                     <MultiBinding Converter="{addin:AvailableAttachPointConvert}" ConverterParameter="11">
                                         <Binding Path="avSlot" />
@@ -1291,98 +1380,104 @@
                                     </MultiBinding>
                                 </CheckBox.IsChecked>
                             </CheckBox>
-                            <CheckBox x:Name="CheckBox"
-                                      Margin="10,307,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      Content="CheckBox" />
+                            <CheckBox
+                                x:Name="CheckBox"
+                                Margin="10,307,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="CheckBox" />
 
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name="GroupBox11"
-                              Width="328"
-                              Height="361"
-                              Margin="200,10,0,0"
-                              HorizontalAlignment="Left"
-                              VerticalAlignment="Top"
-                              Header="Attach Mount">
+                    <GroupBox
+                        x:Name="GroupBox11"
+                        Width="328"
+                        Height="361"
+                        Margin="200,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Header="Attach Mount">
                         <Grid>
 
-                            <ComboBox x:Name="ScopeComboBox"
-                                      Width="150"
-                                      Margin="10,10,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="name"
-                                      SelectedValuePath="id"
-                                      Visibility="{Binding IsChecked,
-                                                           ElementName=ScopeCheckBox,
-                                                           Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <ComboBox
+                                x:Name="ScopeComboBox"
+                                Width="150"
+                                Margin="10,10,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="name"
+                                SelectedValuePath="id"
+                                Visibility="{Binding IsChecked, ElementName=ScopeCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
-                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}"
-                                                  ConverterParameter="1"
-                                                  UpdateSourceTrigger="PropertyChanged">
-                                        <Binding Mode="TwoWay"
-                                                 Path="AttMount"
-                                                 UpdateSourceTrigger="PropertyChanged" />
+                                    <MultiBinding
+                                        Converter="{addin:AvailableSlotMountConverter}"
+                                        ConverterParameter="1"
+                                        UpdateSourceTrigger="PropertyChanged">
+                                        <Binding
+                                            Mode="TwoWay"
+                                            Path="AttMount"
+                                            UpdateSourceTrigger="PropertyChanged" />
                                         <Binding ElementName="ScopeCheckBox" Path="IsChecked" />
                                     </MultiBinding>
                                 </ComboBox.ItemsSource>
                                 <ComboBox.SelectedValue>
-                                    <MultiBinding Converter="{addin:MountToAttachPointConvert}"
-                                                  ConverterParameter="1"
-                                                  Mode="TwoWay"
-                                                  UpdateSourceTrigger="PropertyChanged">
+                                    <MultiBinding
+                                        Converter="{addin:MountToAttachPointConvert}"
+                                        ConverterParameter="1"
+                                        Mode="TwoWay"
+                                        UpdateSourceTrigger="PropertyChanged">
                                         <Binding Path="avSlot" />
                                         <Binding Path="WeaponLoad.uiIndex" />
                                     </MultiBinding>
                                 </ComboBox.SelectedValue>
                             </ComboBox>
-                            <ComboBox x:Name="LaserComboBox"
-                                      Width="150"
-                                      Margin="10,37,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="name"
-                                      SelectedValuePath="id"
-                                      Visibility="{Binding IsChecked,
-                                                           ElementName=LaserCheckBox,
-                                                           Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <ComboBox
+                                x:Name="LaserComboBox"
+                                Width="150"
+                                Margin="10,37,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="name"
+                                SelectedValuePath="id"
+                                Visibility="{Binding IsChecked, ElementName=LaserCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
-                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}"
-                                                  ConverterParameter="2"
-                                                  UpdateSourceTrigger="PropertyChanged">
-                                        <Binding Mode="TwoWay"
-                                                 Path="AttMount"
-                                                 UpdateSourceTrigger="PropertyChanged" />
+                                    <MultiBinding
+                                        Converter="{addin:AvailableSlotMountConverter}"
+                                        ConverterParameter="2"
+                                        UpdateSourceTrigger="PropertyChanged">
+                                        <Binding
+                                            Mode="TwoWay"
+                                            Path="AttMount"
+                                            UpdateSourceTrigger="PropertyChanged" />
                                         <Binding ElementName="LaserCheckBox" Path="IsChecked" />
                                     </MultiBinding>
                                 </ComboBox.ItemsSource>
                                 <ComboBox.SelectedValue>
-                                    <MultiBinding Converter="{addin:MountToAttachPointConvert}"
-                                                  ConverterParameter="2"
-                                                  Mode="TwoWay"
-                                                  UpdateSourceTrigger="PropertyChanged">
+                                    <MultiBinding
+                                        Converter="{addin:MountToAttachPointConvert}"
+                                        ConverterParameter="2"
+                                        Mode="TwoWay"
+                                        UpdateSourceTrigger="PropertyChanged">
                                         <Binding Path="avSlot" />
                                         <Binding Path="WeaponLoad.uiIndex" />
                                     </MultiBinding>
                                 </ComboBox.SelectedValue>
                             </ComboBox>
-                            <ComboBox x:Name="LightComboBox"
-                                      Width="150"
-                                      Margin="10,64,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="name"
-                                      SelectedValuePath="id"
-                                      Visibility="{Binding IsChecked,
-                                                           ElementName=LightCheckBox,
-                                                           Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <ComboBox
+                                x:Name="LightComboBox"
+                                Width="150"
+                                Margin="10,64,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="name"
+                                SelectedValuePath="id"
+                                Visibility="{Binding IsChecked, ElementName=LightCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
                                     <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="3">
-                                        <Binding Mode="TwoWay"
-                                                 Path="AttMount"
-                                                 UpdateSourceTrigger="PropertyChanged" />
+                                        <Binding
+                                            Mode="TwoWay"
+                                            Path="AttMount"
+                                            UpdateSourceTrigger="PropertyChanged" />
                                         <Binding ElementName="LightCheckBox" Path="IsChecked" />
                                     </MultiBinding>
                                 </ComboBox.ItemsSource>
@@ -1393,21 +1488,21 @@
                                     </MultiBinding>
                                 </ComboBox.SelectedValue>
                             </ComboBox>
-                            <ComboBox x:Name="BipodComboBox"
-                                      Width="150"
-                                      Margin="10,91,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="name"
-                                      SelectedValuePath="id"
-                                      Visibility="{Binding IsChecked,
-                                                           ElementName=BipodCheckBox,
-                                                           Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <ComboBox
+                                x:Name="BipodComboBox"
+                                Width="150"
+                                Margin="10,91,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="name"
+                                SelectedValuePath="id"
+                                Visibility="{Binding IsChecked, ElementName=BipodCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
                                     <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="4">
-                                        <Binding Mode="TwoWay"
-                                                 Path="AttMount"
-                                                 UpdateSourceTrigger="PropertyChanged" />
+                                        <Binding
+                                            Mode="TwoWay"
+                                            Path="AttMount"
+                                            UpdateSourceTrigger="PropertyChanged" />
                                         <Binding ElementName="BipodCheckBox" Path="IsChecked" />
                                     </MultiBinding>
                                 </ComboBox.ItemsSource>
@@ -1418,16 +1513,15 @@
                                     </MultiBinding>
                                 </ComboBox.SelectedValue>
                             </ComboBox>
-                            <ComboBox x:Name="SilenserComboBox"
-                                      Width="150"
-                                      Margin="10,118,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="name"
-                                      SelectedValuePath="id"
-                                      Visibility="{Binding IsChecked,
-                                                           ElementName=SilenserCheckBox,
-                                                           Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <ComboBox
+                                x:Name="SilenserComboBox"
+                                Width="150"
+                                Margin="10,118,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="name"
+                                SelectedValuePath="id"
+                                Visibility="{Binding IsChecked, ElementName=SilenserCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
                                     <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="5">
                                         <Binding Path="AttMount" />
@@ -1441,16 +1535,15 @@
                                     </MultiBinding>
                                 </ComboBox.SelectedValue>
                             </ComboBox>
-                            <ComboBox x:Name="LauncherComboBox"
-                                      Width="150"
-                                      Margin="10,145,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="name"
-                                      SelectedValuePath="id"
-                                      Visibility="{Binding IsChecked,
-                                                           Converter={StaticResource BooleanToVisibilityConverter},
-                                                           ElementName=LauncherCheckBox}">
+                            <ComboBox
+                                x:Name="LauncherComboBox"
+                                Width="150"
+                                Margin="10,145,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="name"
+                                SelectedValuePath="id"
+                                Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=LauncherCheckBox}">
                                 <ComboBox.ItemsSource>
                                     <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="6">
                                         <Binding Path="AttMount" />
@@ -1464,16 +1557,15 @@
                                     </MultiBinding>
                                 </ComboBox.SelectedValue>
                             </ComboBox>
-                            <ComboBox x:Name="StockComboBox"
-                                      Width="150"
-                                      Margin="10,172,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="name"
-                                      SelectedValuePath="id"
-                                      Visibility="{Binding IsChecked,
-                                                           ElementName=StockCheckBox,
-                                                           Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <ComboBox
+                                x:Name="StockComboBox"
+                                Width="150"
+                                Margin="10,172,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="name"
+                                SelectedValuePath="id"
+                                Visibility="{Binding IsChecked, ElementName=StockCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
                                     <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="7">
                                         <Binding Path="AttMount" />
@@ -1487,16 +1579,15 @@
                                     </MultiBinding>
                                 </ComboBox.SelectedValue>
                             </ComboBox>
-                            <ComboBox x:Name="BayonetComboBox"
-                                      Width="150"
-                                      Margin="10,199,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="name"
-                                      SelectedValuePath="id"
-                                      Visibility="{Binding IsChecked,
-                                                           ElementName=BayonetCheckBox,
-                                                           Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <ComboBox
+                                x:Name="BayonetComboBox"
+                                Width="150"
+                                Margin="10,199,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="name"
+                                SelectedValuePath="id"
+                                Visibility="{Binding IsChecked, ElementName=BayonetCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
                                     <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="8">
                                         <Binding Path="AttMount" />
@@ -1510,16 +1601,15 @@
                                     </MultiBinding>
                                 </ComboBox.SelectedValue>
                             </ComboBox>
-                            <ComboBox x:Name="MagazineComboBox"
-                                      Width="150"
-                                      Margin="10,226,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="name"
-                                      SelectedValuePath="id"
-                                      Visibility="{Binding IsChecked,
-                                                           ElementName=MagazineCheckBox,
-                                                           Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <ComboBox
+                                x:Name="MagazineComboBox"
+                                Width="150"
+                                Margin="10,226,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="name"
+                                SelectedValuePath="id"
+                                Visibility="{Binding IsChecked, ElementName=MagazineCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
                                     <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="9">
                                         <Binding Path="AttMount" />
@@ -1533,16 +1623,15 @@
                                     </MultiBinding>
                                 </ComboBox.SelectedValue>
                             </ComboBox>
-                            <ComboBox x:Name="InternalComboBox"
-                                      Width="150"
-                                      Margin="10,253,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="name"
-                                      SelectedValuePath="id"
-                                      Visibility="{Binding IsChecked,
-                                                           ElementName=InternalCheckBox,
-                                                           Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <ComboBox
+                                x:Name="InternalComboBox"
+                                Width="150"
+                                Margin="10,253,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="name"
+                                SelectedValuePath="id"
+                                Visibility="{Binding IsChecked, ElementName=InternalCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
                                     <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="10">
                                         <Binding Path="AttMount" />
@@ -1556,16 +1645,15 @@
                                     </MultiBinding>
                                 </ComboBox.SelectedValue>
                             </ComboBox>
-                            <ComboBox x:Name="ExternalComboBox"
-                                      Width="150"
-                                      Margin="10,280,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top"
-                                      DisplayMemberPath="name"
-                                      SelectedValuePath="id"
-                                      Visibility="{Binding IsChecked,
-                                                           ElementName=ExternalCheckBox,
-                                                           Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <ComboBox
+                                x:Name="ExternalComboBox"
+                                Width="150"
+                                Margin="10,280,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DisplayMemberPath="name"
+                                SelectedValuePath="id"
+                                Visibility="{Binding IsChecked, ElementName=ExternalCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
                                     <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="11">
                                         <Binding Path="AttMount" />
@@ -1579,45 +1667,50 @@
                                     </MultiBinding>
                                 </ComboBox.SelectedValue>
                             </ComboBox>
-                            <ComboBox x:Name="ComboBox11"
-                                      Width="150"
-                                      Margin="10,307,0,0"
-                                      HorizontalAlignment="Left"
-                                      VerticalAlignment="Top" />
+                            <ComboBox
+                                x:Name="ComboBox11"
+                                Width="150"
+                                Margin="10,307,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top" />
                         </Grid>
                     </GroupBox>
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button x:Name="SaveButton"
-                Width="75"
-                Height="20"
-                Margin="10,0,0,10"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Bottom"
-                Command="{Binding Save}"
-                Content="Save" />
-        <Button x:Name="CloseButton"
-                Width="75"
-                Height="20"
-                Margin="90,0,0,10"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Bottom"
-                Command="{Binding CloseWindowC}"
-                Content="Close" />
-        <Button x:Name="UndoAllButton"
-                Width="75"
-                Height="20"
-                Margin="170,0,0,10"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Bottom"
-                Command="{Binding Refresh}"
-                Content="All_Undo" />
-        <Menu x:Name="menu"
-              Width="788"
-              Height="20"
-              HorizontalAlignment="Left"
-              VerticalAlignment="Top">
+        <Button
+            x:Name="SaveButton"
+            Width="75"
+            Height="20"
+            Margin="10,0,0,10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Command="{Binding Save}"
+            Content="Save" />
+        <Button
+            x:Name="CloseButton"
+            Width="75"
+            Height="20"
+            Margin="90,0,0,10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Command="{Binding CloseWindowC}"
+            Content="Close" />
+        <Button
+            x:Name="UndoAllButton"
+            Width="75"
+            Height="20"
+            Margin="170,0,0,10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Command="{Binding Refresh}"
+            Content="All_Undo" />
+        <Menu
+            x:Name="menu"
+            Width="788"
+            Height="20"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top">
             <MenuItem Header="File">
                 <MenuItem Header="New Project" />
                 <MenuItem Header="Open Project">
@@ -1631,39 +1724,50 @@
             <MenuItem Header="LitleForm">
                 <MenuItem Command="{Binding CalliberWindowC}" Header="Caliber" />
                 <MenuItem Header="AttachMount">
-                    <MenuItem Command="{Binding AddMountslot1}"
-                              CommandParameter="Scope"
-                              Header="Scope" />
-                    <MenuItem Command="{Binding AddMountslot1}"
-                              CommandParameter="Laser"
-                              Header="Laser" />
-                    <MenuItem Command="{Binding AddMountslot1}"
-                              CommandParameter="Light"
-                              Header="Light" />
-                    <MenuItem Command="{Binding AddMountslot1}"
-                              CommandParameter="Bipod"
-                              Header="Bipod" />
-                    <MenuItem Command="{Binding AddMountslot1}"
-                              CommandParameter="Silenser"
-                              Header="Silenser" />
-                    <MenuItem Command="{Binding AddMountslot1}"
-                              CommandParameter="Launcher"
-                              Header="Launcher" />
-                    <MenuItem Command="{Binding AddMountslot1}"
-                              CommandParameter="Stock"
-                              Header="Stock" />
-                    <MenuItem Command="{Binding AddMountslot1}"
-                              CommandParameter="Bayonet"
-                              Header="Bayonet" />
-                    <MenuItem Command="{Binding AddMountslot1}"
-                              CommandParameter="Magazine"
-                              Header="Magazine" />
-                    <MenuItem Command="{Binding AddMountslot1}"
-                              CommandParameter="Internal"
-                              Header="Internal" />
-                    <MenuItem Command="{Binding AddMountslot1}"
-                              CommandParameter="External"
-                              Header="External" />
+                    <MenuItem
+                        Command="{Binding AddMountslot1}"
+                        CommandParameter="Scope"
+                        Header="Scope" />
+                    <MenuItem
+                        Command="{Binding AddMountslot1}"
+                        CommandParameter="Laser"
+                        Header="Laser" />
+                    <MenuItem
+                        Command="{Binding AddMountslot1}"
+                        CommandParameter="Light"
+                        Header="Light" />
+                    <MenuItem
+                        Command="{Binding AddMountslot1}"
+                        CommandParameter="Bipod"
+                        Header="Bipod" />
+                    <MenuItem
+                        Command="{Binding AddMountslot1}"
+                        CommandParameter="Silenser"
+                        Header="Silenser" />
+                    <MenuItem
+                        Command="{Binding AddMountslot1}"
+                        CommandParameter="Launcher"
+                        Header="Launcher" />
+                    <MenuItem
+                        Command="{Binding AddMountslot1}"
+                        CommandParameter="Stock"
+                        Header="Stock" />
+                    <MenuItem
+                        Command="{Binding AddMountslot1}"
+                        CommandParameter="Bayonet"
+                        Header="Bayonet" />
+                    <MenuItem
+                        Command="{Binding AddMountslot1}"
+                        CommandParameter="Magazine"
+                        Header="Magazine" />
+                    <MenuItem
+                        Command="{Binding AddMountslot1}"
+                        CommandParameter="Internal"
+                        Header="Internal" />
+                    <MenuItem
+                        Command="{Binding AddMountslot1}"
+                        CommandParameter="External"
+                        Header="External" />
 
 
                 </MenuItem>
