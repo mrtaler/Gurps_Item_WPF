@@ -45,7 +45,7 @@ namespace Item_WPF.MVVM.ViewModels
 
             CScopeSelect = new ActionCommand(SelectScope) { IsExecutable = false };
             
-             CLaserSelect = new ActionCommand(SelectLaser) ;
+            CLaserSelect = new ActionCommand(SelectLaser) { IsExecutable = false };
             CLightSelect = new ActionCommand(SelectLight) { IsExecutable = false };
             CBipodSelect = new ActionCommand(SelectBipod) { IsExecutable = false };
             CSilenserSelect = new ActionCommand(SelectSilenser) { IsExecutable = false };
@@ -77,31 +77,26 @@ namespace Item_WPF.MVVM.ViewModels
 
             if (combineweap.IdScopeItem != null)
                 CScopeSelect.IsExecutable = true;
-            //
-            //{
-            //    CScopeSelect.CanExecute(CExecute(true));
-            //}
-
             if (combineweap.IdLaserItem != null)
-                CLaserSelect.CanExecute(true);
+                CLaserSelect.IsExecutable = true;
             if (combineweap.IdLightItem != null)
-                CLightSelect.CanExecute(true);
+                CLightSelect.IsExecutable = true;
             if (combineweap.IdBipodItem != null)
-                CBipodSelect.CanExecute(true);
+                CBipodSelect.IsExecutable = true;
             if (combineweap.IdSilenserItem != null)
-                CSilenserSelect.CanExecute(true);
+                CSilenserSelect.IsExecutable = true;
             if (combineweap.IdLauncherItem != null)
-                CLauncherSelect.CanExecute(true);
+                CLauncherSelect.IsExecutable = true;
             if (combineweap.IdStockItem != null)
-                CStockSelect.CanExecute(true);
+                CStockSelect.IsExecutable = true;
             if (combineweap.IdBayonetItem != null)
-                CBayonetSelect.CanExecute(true);
+                CBayonetSelect.IsExecutable = true;
             if (combineweap.IdMagazineItem != null)
-                CMagazineSelect.CanExecute(true);
+                CMagazineSelect.IsExecutable = true;
             if (combineweap.IdInternalItem != null)
-                CInternalSelect.CanExecute(true);
+                CInternalSelect.IsExecutable = true;
             if (combineweap.IdExternalItem != null)
-                CExternalSelect.CanExecute(true);
+                CExternalSelect.IsExecutable = true;
         }
         public DelegateCommand CSelectWeapon { get; set; }
         #endregion
