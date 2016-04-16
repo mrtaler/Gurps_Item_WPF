@@ -88,9 +88,7 @@ namespace Item_WPF.MVVM.Models
                 Rof = itt.WEAPON.ROF.ToString();
                 if (itt.WEAPON.WeaponType.name == "Shotgun") Rof = itt.WEAPON.ROF.ToString() + "x" + itt.WEAPON.ROF_for_Sh.ToString();
                 if (itt.WEAPON.Full_auto) Rof = itt.WEAPON.ROF.ToString() + "!";
-                //if (weaponLoad.h//   HCR ROF
-
-                //Shots
+                
                 Shots = itt.WEAPON.Shots.ToString();
                 if (itt.WEAPON.Add_in_Chamber) Shots = itt.WEAPON.Shots.ToString() + "+1";
                 if (itt.WEAPON.single_reload) Shots = itt.WEAPON.Shots.ToString() + "(" + itt.WEAPON.Time_For_reload + "i)";
