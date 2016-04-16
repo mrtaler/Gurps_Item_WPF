@@ -366,43 +366,43 @@ GO
 -- Creating table 'AMMOes'
 CREATE TABLE [dbo].[AMMO] (
   [id] INT IDENTITY (1, 1) NOT NULL,
-  [Caliber_name] VARCHAR(255) NOT NULL,
-  [alt_caliber_name] VARCHAR(255) NULL,
+  [Caliber_name] NVARCHAR(255) NOT NULL,
+  [alt_caliber_name] NVARCHAR(255) NULL,
   [Dim_of_bullet_SI] DECIMAL(7, 3) NOT NULL,
   [Dim_of_bullet_US] DECIMAL(7, 3) NOT NULL,
   [AV_Upgrates] INT NULL,
   [WPS] DECIMAL(7, 4) NULL,
   [CPS] DECIMAL(19, 4) NULL,
-  [Class_of_Ammo] VARCHAR(50) NOT NULL
+  [Class_of_Ammo] NVARCHAR(50) NOT NULL
 );
 GO
 
 -- Creating table 'AMMOUPGRATES'
 CREATE TABLE [dbo].[AMMOUPGRATES] (
   [id] INT IDENTITY (1, 1) NOT NULL,
-  [name] VARCHAR(150) NOT NULL,
-  [shortname] VARCHAR(20) NOT NULL,
+  [name] NVARCHAR(150) NOT NULL,
+  [shortname] NVARCHAR(20) NOT NULL,
   [malf] INT NOT NULL,
   [AR_divX] DECIMAL(4, 2) NOT NULL,
   [ACC_add] INT NOT NULL,
   [ACC_x] DECIMAL(4, 2) NOT NULL,
   [damage_x] DECIMAL(4, 2) NOT NULL,
-  [Dam_Type] VARCHAR(5) NULL,
+  [Dam_Type] NVARCHAR(5) NULL,
   [range_x12] DECIMAL(4, 2) NOT NULL,
   [range_x] DECIMAL(4, 2) NOT NULL,
   [ST_x] DECIMAL(4, 2) NOT NULL,
   [WPS_x] DECIMAL(4, 2) NOT NULL,
   [CPS_x] DECIMAL(4, 2) NOT NULL,
   [Hearing] INT NOT NULL,
-  [Ammo_Class] VARCHAR(15) NULL,
+  [Ammo_Class] NVARCHAR(15) NULL,
   [min_Caliber] DECIMAL(4, 2) NULL,
   [Max_Calider] DECIMAL(4, 2) NULL,
   [DT_Min_Ammo_CAliber] DECIMAL(4, 2) NULL,
-  [Condition_DT_Min_ammo_Cal] VARCHAR(3) NULL,
+  [Condition_DT_Min_ammo_Cal] NVARCHAR(3) NULL,
   [hearing_table] INT NOT NULL,
-  [Upgrates] VARCHAR(150) NOT NULL,
-  [Follow_Up] VARCHAR(50) NULL,
-  [Linked] VARCHAR(50) NULL
+  [Upgrates] NVARCHAR(150) NOT NULL,
+  [Follow_Up] NVARCHAR(50) NULL,
+  [Linked] NVARCHAR(50) NULL
 );
 GO
 
@@ -422,14 +422,14 @@ GO
 -- Creating table 'ArmourClass'
 CREATE TABLE [dbo].[ArmourClass] (
   [id] INT IDENTITY (1, 1) NOT NULL,
-  [name] VARCHAR(50) NOT NULL
+  [name] NVARCHAR(50) NOT NULL
 );
 GO
 
 
 CREATE TABLE [dbo].[AttachmentSystem] (
   [id] INT IDENTITY (1, 1) NOT NULL,
-  [name] VARCHAR(255) COLLATE Cyrillic_General_CI_AS NULL,
+  [name] NVARCHAR(255) COLLATE Cyrillic_General_CI_AS NULL,
   CONSTRAINT [UK_AttachmentSystem] UNIQUE ([id]),
   CONSTRAINT [PK_AttachmentSystem] PRIMARY KEY ([id])
 );
@@ -438,14 +438,14 @@ CREATE TABLE [dbo].[AttachmentSystem] (
 -- Creating table 'AttachmentClass'
 CREATE TABLE [dbo].[AttachmentClass] (
   [id] INT IDENTITY (1, 1) NOT NULL,
-  [name] VARCHAR(70) NOT NULL
+  [name] NVARCHAR(70) NOT NULL
 );
 GO
 
 -- Creating table 'Attachmentmounts'
 CREATE TABLE [dbo].[Attachmentmount] (
   [id] INT IDENTITY (1, 1) NOT NULL,
-  [name] VARCHAR(50) NULL,
+  [name] NVARCHAR(50) NULL,
   [idAttacClass] INT DEFAULT (1) NOT NULL
 );
 GO
@@ -453,7 +453,7 @@ GO
 -- Creating table 'ATTACHMENTSLOT'
 CREATE TABLE [dbo].[ATTACHMENTSLOT] (
   [uiSlotIndex] INT IDENTITY (1, 1) NOT NULL,
-  [szSlotName] VARCHAR(50) NOT NULL,
+  [szSlotName] NVARCHAR(50) NOT NULL,
 
 );
 GO
@@ -470,28 +470,28 @@ GO
 -- Creating table 'Clothes'
 CREATE TABLE [dbo].[Clothes] (
   [id] INT IDENTITY (1, 1) NOT NULL,
-  [name] VARCHAR(255) NULL
+  [name] NVARCHAR(255) NULL
 );
 GO
 
 -- Creating table 'Drug'
 CREATE TABLE [dbo].[Drug] (
   [id] INT IDENTITY (1, 1) NOT NULL,
-  [name] VARCHAR(255) NULL
+  [name] NVARCHAR(255) NULL
 );
 GO
 
 -- Creating table 'DrugTypes'
 CREATE TABLE [dbo].[DrugType] (
   [id] INT IDENTITY (1, 1) NOT NULL,
-  [name] VARCHAR(80) NULL
+  [name] NVARCHAR(80) NULL
 );
 GO
 
 -- Creating table 'ExplosionTypes'
 CREATE TABLE [dbo].[ExplosionType] (
   [id] INT IDENTITY (1, 1) NOT NULL,
-  [name] VARCHAR(25) NOT NULL
+  [name] NVARCHAR(25) NOT NULL
 );
 GO
 
@@ -525,15 +525,15 @@ GO
 -- Creating table 'FOOD'
 CREATE TABLE [dbo].[FOOD] (
   [id] INT IDENTITY (1, 1) NOT NULL,
-  [name] VARCHAR(50) NULL
+  [name] NVARCHAR(50) NULL
 );
 GO
 
 CREATE TABLE [dbo].[Battery] (
   [id] INT IDENTITY (1, 1) NOT NULL,
-  [name] VARCHAR(50) NOT NULL,
-  [SmolName] VARCHAR(50) NULL,
-  [Description] VARCHAR(500) NULL,
+  [name] NVARCHAR(50) NOT NULL,
+  [SmolName] NVARCHAR(50) NULL,
+  [Description] NVARCHAR(500) NULL,
   [CPP] MONEY NULL,
   [WPP] DECIMAL(7, 3) NULL
 );
@@ -543,13 +543,13 @@ GO
 -- Creating table 'ITEM'
 CREATE TABLE [dbo].[ITEM] (
   [uiIndex] INT IDENTITY (1, 1) NOT NULL,
-  [szItemName] VARCHAR(80) NOT NULL DEFAULT (1),
-  [szLongItemName] VARCHAR(80) NULL,
-  [szItemDesc] VARCHAR(MAX) NULL,
+  [szItemName] NVARCHAR(80) NOT NULL DEFAULT (1),
+  [szLongItemName] NVARCHAR(80) NULL,
+  [szItemDesc] NVARCHAR(MAX) NULL,
   [usItemClass] INT NOT NULL DEFAULT (1),
   [ubClassIndex] INT NOT NULL DEFAULT (1),
   [ubWeight] DECIMAL(7, 3) NOT NULL DEFAULT (1),
-  [ItemSize] VARCHAR(80) NOT NULL DEFAULT (1),
+  [ItemSize] NVARCHAR(80) NOT NULL DEFAULT (1),
   [usPrice] MONEY NOT NULL DEFAULT (1),
 
   [Damageable] BIT NOT NULL DEFAULT (1),
@@ -580,12 +580,11 @@ CREATE TABLE [dbo].[ITEM] (
   [FingerPrintID] BIT NOT NULL DEFAULT (0),
   [TripWireActivation] BIT NOT NULL DEFAULT (0),
   [TripWire] BIT NOT NULL DEFAULT (0),
-  [perehodnik] BIT NULL DEFAULT (1),
-
+  [Mount] BIT DEFAULT (0) NOT NULL,
 
   [TL] INT NOT NULL DEFAULT (2),
   [LC] INT NOT NULL DEFAULT (1),
-  [SizeBatteries] VARCHAR(4) NULL,
+  [SizeBatteries] NVARCHAR(4) NULL,
 
   [FoodType] INT NOT NULL DEFAULT (1),
   [LockPickModifier] INT NOT NULL DEFAULT (1),
@@ -601,7 +600,7 @@ CREATE TABLE [dbo].[ITEM] (
   [used] BIT NOT NULL DEFAULT (0),
   [dt] DATETIME NULL,
   [Count_of_Bat] INT NOT NULL DEFAULT (1),
-  [Works_on_Bat] VARCHAR(15) NOT NULL DEFAULT (1),
+  [Works_on_Bat] NVARCHAR(15) NOT NULL DEFAULT (1),
 
 --  	CONSTRAINT [FK_ITEM_AttachmentSystem1]	FOREIGN KEY	([AttachmentSystem1])	REFERENCES [AttachmentSystem] ([id]),
 --  CONSTRAINT [FK_ITEM_AttachmentSystem2]	FOREIGN KEY	([AttachmentSystem2])	REFERENCES [AttachmentSystem] ([id]),
@@ -611,14 +610,14 @@ GO
 -- Creating table 'ItemClass'
 CREATE TABLE [dbo].[ItemClass] (
   [id] INT IDENTITY (1, 1) NOT NULL,
-  [name] VARCHAR(70) NOT NULL
+  [name] NVARCHAR(70) NOT NULL
 );
 GO
 
 -- Creating table 'LBEClass'
 CREATE TABLE [dbo].[LBEClass] (
   [id] INT IDENTITY (1, 1) NOT NULL,
-  [name] VARCHAR(50) NOT NULL
+  [name] NVARCHAR(50) NOT NULL
 );
 GO
 
@@ -648,38 +647,34 @@ GO
 -- Creating table 'TypeOfDamages'
 CREATE TABLE [dbo].[TypeOfDamage] (
   [id] INT IDENTITY (1, 1) NOT NULL,
-  [name] VARCHAR(5) NOT NULL,
-  [LongName] VARCHAR(30) NULL,
-  [mDamage] VARCHAR(5) NOT NULL
+  [name] NVARCHAR(5) NOT NULL,
+  [LongName] NVARCHAR(30) NULL,
+  [mDamage] NVARCHAR(5) NOT NULL
 );
 GO
 
 -- Creating table 'WEAPONs'
 CREATE TABLE [dbo].[WEAPON] (
   [uiIndex] INT NOT NULL,
-  [szWeaponName] VARCHAR(80) NOT NULL,
+  [szWeaponName] NVARCHAR(80) NOT NULL,
   [ubWeaponClass] INT DEFAULT (1) NOT NULL,
   [ubWeaponType] INT DEFAULT (1) NOT NULL,
   [ubCalibre] INT DEFAULT (1) NOT NULL,
-  --[Damage] VARCHAR(50) DEFAULT ("d6") NOT NULL,
-  --[Damage] INT NULL UNIQUE,
-  --[ubTypeOfDamage] INT DEFAULT (1) NOT NULL,
+
   [DefACC] INT DEFAULT (1) NOT NULL,
   [Half_Range] DECIMAL(10, 4) DEFAULT (1) NOT NULL,
   [FullRange] DECIMAL(10, 4) DEFAULT (1) NOT NULL,
-  [MinRange] DECIMAL(10, 4) DEFAULT (1) NOT NULL,
+  [MinRange] BIT DEFAULT (0) NOT NULL,
   [AWeight] DECIMAL(5, 3) DEFAULT (1) NOT NULL,
-  --[Arm_Division] DECIMAL(5, 2) DEFAULT (1) NOT NULL,
+  
   [ROF] INT DEFAULT (1) NOT NULL,
   [Full_auto] BIT DEFAULT (0) NOT NULL,
   [ROF_for_Sh] INT DEFAULT (1) NOT NULL,
   [Shots] INT DEFAULT (1) NOT NULL,
   [Time_For_reload] INT DEFAULT (3) NOT NULL,
   [single_reload] BIT DEFAULT (0) NOT NULL,
-  [Mount] BIT DEFAULT (0) NOT NULL,
-  [Recoil] INT DEFAULT (1) NOT NULL,
-  --[Linked] VARCHAR(50) NULL,
-  --[Follow_Up] VARCHAR(50) NULL,
+  
+  [Recoil] INT DEFAULT (1) NOT NULL, 
   [HeavyWeapon] BIT DEFAULT (0) NOT NULL,
   [Add_in_Chamber] BIT DEFAULT (0) NOT NULL,
   [CutOff_shots] BIT DEFAULT (0) NOT NULL,
@@ -700,34 +695,34 @@ CREATE TABLE dbo.WeaponDamage (
   id INT IDENTITY,
   idWeapon INT NOT NULL,
   idWeaponAttackType INT NOT NULL,
-  Damage VARCHAR(50) NULL,
+  Damage NVARCHAR(50) NULL,
   ArmorDivision DECIMAL(5, 2) DEFAULT (1) NOT NULL,
   idTypeOfDamage1 INT NULL,
   idTypeOfDamage2 INT NULL,
-  TypeOfDamage1 VARCHAR(50) NULL,
-  TypeOfDamage2 VARCHAR(50) NULL,
-  Descrip VARCHAR(50) NULL
+  TypeOfDamage1 NVARCHAR(50) NULL,
+  TypeOfDamage2 NVARCHAR(50) NULL,
+  Descrip NVARCHAR(50) NULL
 );
 GO
 
 CREATE TABLE dbo.[WeaponAttackType] (
   id INT IDENTITY,
-  name VARCHAR(20),
-  descr VARCHAR(150)
+  name NVARCHAR(20),
+  descr NVARCHAR(150)
 );
 GO
 
 -- Creating table 'WeaponClasses'
 CREATE TABLE [dbo].[WeaponClass] (
   [id] INT IDENTITY (1, 1) NOT NULL,
-  [name] VARCHAR(16) NOT NULL
+  [name] NVARCHAR(16) NOT NULL
 );
 GO
 
 -- Creating table 'WeaponTypes'
 CREATE TABLE [dbo].[WeaponType] (
   [id] INT IDENTITY (1, 1) NOT NULL,
-  [name] VARCHAR(23) NOT NULL,
+  [name] NVARCHAR(23) NOT NULL,
   [Class] INT NULL
 );
 GO
@@ -744,7 +739,7 @@ GO
 -- Creating table 'TLs'
 CREATE TABLE [dbo].[TL] (
   [Id_Tl] INT IDENTITY (1, 1) NOT NULL,
-  [name_TL] VARCHAR(50) NULL,
+  [name_TL] NVARCHAR(50) NULL,
   [Description] NVARCHAR(60) NULL,
   [StartMoney] DECIMAL(19, 4) NULL
 );
@@ -753,7 +748,7 @@ GO
 -- Creating table 'G_AttachClass'
 CREATE TABLE [dbo].[G_AttachClass] (
   [id] INT IDENTITY (1, 1) NOT NULL,
-  [name_class] VARCHAR(50) NULL
+  [name_class] NVARCHAR(50) NULL
 );
 GO
 -- Creating table 'G_AvAttachClass'
@@ -766,18 +761,18 @@ GO
 -- Creating table 'G_SubAttachClass'
 CREATE TABLE [dbo].[G_SubAttachClass] (
   [id] INT IDENTITY (1, 1) NOT NULL,
-  [SubAttach_name] VARCHAR(50) NOT NULL,
+  [SubAttach_name] NVARCHAR(50) NOT NULL,
   [AttachClass] INT NOT NULL,
-  [SubAttachDescription] VARCHAR(MAX) NULL,
+  [SubAttachDescription] NVARCHAR(MAX) NULL,
   [ATTACHMENTSLOT] INT NOT NULL
 );
 GO
 -- Creating table 'Attachments'
 CREATE TABLE [dbo].[Attachment] (
   uiIndex INT NOT NULL,
-  szAttName VARCHAR(80) NOT NULL,
+  szAttName NVARCHAR(80) NOT NULL,
   rAttachmentClass INT NOT NULL DEFAULT 1,
-  Attachmentmount VARCHAR(50) NULL,
+  Attachmentmount NVARCHAR(50) NULL,
   HiddenAttachment BIT NOT NULL DEFAULT (0),
   NoiseReduction INT NULL,
   HideMuzzleFlash BIT NOT NULL DEFAULT (0),
@@ -824,7 +819,7 @@ CREATE TABLE [dbo].[Attachment] (
   LightRange INT NULL,
   IRLigRange INT NULL,
   LaserRange INT NULL,
-  LaserColor VARCHAR(10) NULL,
+  LaserColor NVARCHAR(10) NULL,
   LaserColorEf DECIMAL(4, 2) NULL,
   usedBatType INT
 );
@@ -1551,21 +1546,23 @@ USE [Item1];
 GO
 
 INSERT INTO WeaponAttackType (name, descr)
-  VALUES ('Primary', 'ee'), ('Follow-up', 'ee'), ('Linked', 'ee');
+  VALUES (N'Primary', N'ee'), (N'Follow-up', N'ee'), (N'Linked', N'ee');
 
 
 INSERT INTO G_AttachClass (name_class)
-  VALUES ('Def'),
-  ('SIGHTS AND AIMING AIDS'), --2
-  ('SOUND SUPPRESSORS'),      --3
-  ('STOCKS, TRIPODS, AND BIPODS'),  --4
-  ('HOLSTERS, SCABBARDS, AND SLINGS'),  --5
-  ('MAGAZINE MODIFICATIONS AND RELOADING AIDS'),  --6
-  ('MISCELLANEOUS ACCESSORIES AND MODIFICATIONS');   --7 
+  VALUES 
+  (N'Def'),
+  (N'SIGHTS AND AIMING AIDS'), --2
+  (N'SOUND SUPPRESSORS'),      --3
+  (N'STOCKS, TRIPODS, AND BIPODS'),  --4
+  (N'HOLSTERS, SCABBARDS, AND SLINGS'),  --5
+  (N'MAGAZINE MODIFICATIONS AND RELOADING AIDS'),  --6
+  (N'MISCELLANEOUS ACCESSORIES AND MODIFICATIONS');   --7 
 
 INSERT INTO [ItemClass]
-  VALUES ('All'),
-  ('Gun'),
+  VALUES
+  (N'All'),
+  (N'Gun'),
   --('Knife'), 
   --  ('Throwing Knife'), 
   --  ('Launcher'), 
@@ -1581,13 +1578,16 @@ INSERT INTO [ItemClass]
   --  ('Load Bearing Equipment'), 
   --('Misc'), 
   --('Money'), 
-  ('Attachment'),
-  ('Random Item');
+  (N'Attachment'),
+  (N'Random Item');
 
 
 INSERT INTO [AttachmentClass]
-  VALUES ('Default'), ('Bipod'), ('Suppressor'), ('Laser'), ('Sight'), ('Laser + Sight'), ('Scope'), ('Laser + Scope'),
-  ('Sight + Scope'), ('Laser + Sight + Scope'), ('Stock'), ('Magwell'), ('Internal'), ('External'), ('Underbarrel'),
+  VALUES 
+  ('Default'), ('Bipod'), ('Suppressor'), ('Laser'), ('Sight'), ('Laser + Sight'), ('Scope'), ('Laser + Scope'),
+  ('Sight + Scope'),
+  ('Laser + Sight + Scope'),
+  ('Stock'), ('Magwell'), ('Internal'), ('External'), ('Underbarrel'),
   ('Bipod + Underbarrel'), ('Grenade'), ('Rocket'), ('Foregrip'), ('Bipod + Foregrip'), ('Foregrip + Underbarrel'),
   ('Helmet'), ('Vest'), ('Pants'), ('Detonator'), ('Battery'), ('Extender'), ('Sling'), ('Remote Detonator'), ('Defuser'),
   ('Detonator + Defuser'), ('Remote Detonator + Defuser'), ('Iron Sight'), ('Feeder'), ('Modular Pouch'), ('Rifle Grenade');
@@ -1602,70 +1602,73 @@ INSERT INTO [AttachmentClass]
 --  ('Molle Combat Packs'), ('Molle Backpacks');
 
 INSERT INTO [ATTACHMENTSLOT] (szSlotName)
-  VALUES ('Scope Attachments'),      --1
-  ('Laser Attachments'),      --2
-  ('Light Attachments'),      --3
-  ('Bipod Attachments'),      --4
-  ('Silenser Attachments'),   --5
-  ('Launcher Attachments'),   --6
-  ('Stock Attachments'),      --7
-  ('Bayonet Attachments'),    --8
-  ('Magazine Attachments'),   --9
-  ('Internal Attachments'),  --10
-  ('External Attachments'),  --11
-  ('Rifle Grenade'),
-  ('Rocket Launcher Slot');
+  VALUES 
+  (N'Scope Attachments'),      --1
+  (N'Laser Attachments'),      --2
+  (N'Light Attachments'),      --3
+  (N'Bipod Attachments'),      --4
+  (N'Silenser Attachments'),   --5
+  (N'Launcher Attachments'),   --6
+  (N'Stock Attachments'),      --7
+  (N'Bayonet Attachments'),    --8
+  (N'Magazine Attachments'),   --9
+  (N'Internal Attachments'),  --10
+  (N'External Attachments'),  --11
+  (N'Rifle Grenade'),
+  (N'Rocket Launcher Slot');
 
 INSERT INTO G_SubAttachClass (SubAttach_name, AttachClass, SubAttachDescription, ATTACHMENTSLOT)
-  VALUES ('Telescopic Sights', 2, '', 1),
-  ('Improved-Visibility Sights', 2, '', 1),
-  ('Collimating Sight', 2, '', 1),
-  ('Reflex Sight', 2, '', 1),
-  ('Night Sights', 2, '', 1),
-  ('Tactical Lights', 2, '', 3),
-  ('Targeting Lasers', 2, '', 2),
-  ('Computer Sights', 2, '', 1),
-  ('Thermal-Imaging Sights', 2, '', 1),
+  VALUES 
+  (N'Telescopic Sights', 2, '', 1),
+  (N'Improved-Visibility Sights', 2, '', 1),
+  (N'Collimating Sight', 2, '', 1),
+  (N'Reflex Sight', 2, '', 1),
+  (N'Night Sights', 2, '', 1),
+  (N'Tactical Lights', 2, '', 3),
+  (N'Targeting Lasers', 2, '', 2),
+  (N'Computer Sights', 2, '', 1),
+  (N'Thermal-Imaging Sights', 2, '', 1),
 
-  ('Baffle Suppressors', 3, '', 5),
-  ('Wiper Suppressors', 3, '', 5),
+  (N'Baffle Suppressors', 3, '', 5),
+  (N'Wiper Suppressors', 3, '', 5),
 
-  ('Pistol Stocks', 4, '', 7),
-  ('Shooting Sticks', 4, '', 7),
-  ('Tripods and Other Mounts', 4, '', 4),
-  ('Bipods', 4, '', 4),
-  ('Folding Stock', 4, '', 7),
+  (N'Pistol Stocks', 4, '', 7),
+  (N'Shooting Sticks', 4, '', 7),
+  (N'Tripods and Other Mounts', 4, '', 4),
+  (N'Bipods', 4, '', 4),
+  (N'Folding Stock', 4, '', 7),
 
-  ('Belt Holster (TL5)', 5, '', 11),
-  ('Lanyard (TL5)', 5, '', 11),
-  ('Military Holster (TL5)', 5, '', 11),
-  ('Rifle Sling (TL5)', 5, '', 11),
-  ('Scabbard (TL5)', 5, '', 11),
-  ('Shoulder Holster (TL5)', 5, '', 11),
-  ('Sleeve Holster (TL6)', 5, '', 11),
-  ('Fast-Draw Rig (TL7)', 5, '', 11),
-  ('Patrol Sling (TL7)', 5, '', 11),
-  ('Undercover Holster (TL7)', 5, '', 11),
-  ('Retention Holster (TL8)', 5, '', 11),
+  (N'Belt Holster (TL5)', 5, '', 11),
+  (N'Lanyard (TL5)', 5, '', 11),
+  (N'Military Holster (TL5)', 5, '', 11),
+  (N'Rifle Sling (TL5)', 5, '', 11),
+  (N'Scabbard (TL5)', 5, '', 11),
+  (N'Shoulder Holster (TL5)', 5, '', 11),
+  (N'Sleeve Holster (TL6)', 5, '', 11),
+  (N'Fast-Draw Rig (TL7)', 5, '', 11),
+  (N'Patrol Sling (TL7)', 5, '', 11),
+  (N'Undercover Holster (TL7)', 5, '', 11),
+  (N'Retention Holster (TL8)', 5, '', 11),
 
-  ('Extended Magazines', 6, '', 9),
-  ('Drum magazines', 6, '', 9),
-  ('High-density magazines', 6, '', 9),
-  ('Speedloaders', 6, '', 9),
-  ('Clamped Magazines', 6, '', 9),
+  (N'Extended Magazines', 6, '', 9),
+  (N'Drum magazines', 6, '', 9),
+  (N'High-density magazines', 6, '', 9),
+  (N'Speedloaders', 6, '', 9),
+  (N'Clamped Magazines', 6, '', 9),
 
-  ('Gun-Cleaning Kit', 7, '', 11),
-  ('Gun Case', 7, '', 11),
-  ('Brass Catchers', 7, '', 11),
-  ('Slide-Lock', 7, '', 11),
-  ('Accessory Rails', 7, '', 11),
-  ('Drag Bag', 7, '', 11);
+  (N'Gun-Cleaning Kit', 7, '', 11),
+  (N'Gun Case', 7, '', 11),
+  (N'Brass Catchers', 7, '', 11),
+  (N'Slide-Lock', 7, '', 11),
+  (N'Accessory Rails', 7, '', 11),
+  (N'Drag Bag', 7, '', 11);
 
 INSERT INTO [LaserColorEf]
-  VALUES ('Red', 0.33),
-  ('Orange', 0.50),
-  ('Green', 2.00),
-  ('Infrared', 1.00);
+  VALUES 
+  (N'Red', 0.33),
+  (N'Orange', 0.50),
+  (N'Green', 2.00),
+  (N'Infrared', 1.00);
 
 
 INSERT INTO [AttachmentSystem]
@@ -1829,26 +1832,28 @@ INSERT INTO TypeOfDamage (name, LongName, mDamage)
   ('ex', ' ', '1.0');
 
 INSERT INTO LC (Name_LC, ShortDes, Description)
-  VALUES ('LC4', 'Открытый', 'Открытый. В большинстве обществ изделие свободно доступно, но в обществах с сильным контролем его доступ или использование могут быть ограничены. Примеры: компьютер; меч;ружьё; мотороллер'),
-  ('LC3', 'Лицензируемый', 'Лицензируемый. В большинстве обществ изделие нуждается в государственной регистрации. Регистрация может включать в себя плату или освидетельствование и быть запрещенной для преступников, несовершеннолет них и т.д. Примеры: автомобиль; пистолет; охотничья винтовка'),
-  ('LC2', 'Ограниченный', 'Ограниченный. В большинстве обществ только представители военных, полицейских, или разведывательных служб могут владеть таким изделием, хотя некоторым гражданам с лицензией могут разрешить его получаение в частную собственность. Примеры: штурмовая винтовка, бронеавтомобиль.'),
-  ('LC1', 'Военный', 'Военный. В большинстве обществ изделие доступно только вооруженным силам или секретным разведслужбам. Примеры: противотанковое оружие; боевая техника.'),
-  ('LC0', 'Запрещенный', 'Запрещенный. Изделие ограничено вооруженными силами отдельных государств, которые очень постараются не допустить к нему частных лиц и страны «третьего мира». Примеры: ядерное и биологическое оружие.');
+  VALUES 
+  ('LC4', N'Открытый',      N'Открытый. В большинстве обществ изделие свободно доступно, но в обществах с сильным контролем его доступ или использование могут быть ограничены. Примеры: компьютер; меч;ружьё; мотороллер'),
+  ('LC3', N'Лицензируемый', N'Лицензируемый. В большинстве обществ изделие нуждается в государственной регистрации. Регистрация может включать в себя плату или освидетельствование и быть запрещенной для преступников, несовершеннолет них и т.д. Примеры: автомобиль; пистолет; охотничья винтовка'),
+  ('LC2', N'Ограниченный',  N'Ограниченный. В большинстве обществ только представители военных, полицейских, или разведывательных служб могут владеть таким изделием, хотя некоторым гражданам с лицензией могут разрешить его получаение в частную собственность. Примеры: штурмовая винтовка, бронеавтомобиль.'),
+  ('LC1', N'Военный',       N'Военный. В большинстве обществ изделие доступно только вооруженным силам или секретным разведслужбам. Примеры: противотанковое оружие; боевая техника.'),
+  ('LC0', N'Запрещенный',   N'Запрещенный. Изделие ограничено вооруженными силами отдельных государств, которые очень постараются не допустить к нему частных лиц и страны «третьего мира». Примеры: ядерное и биологическое оружие.');
 
 INSERT INTO TL (name_TL, Description, StartMoney)
-  VALUES ('TL0', 'Каменный век (доисторический период и далее). $250', 250),
-  ('TL1', 'Бронзовый век (3500 лет до н.э. и позже). $500', 500),
-  ('TL2', 'Железный век (1200 лет до н.э. и позже). $750', 750),
-  ('TL3', 'Средневековье (600 г. н.э. и позже). $1.000', 1000),
-  ('TL4', 'Эпоха парусов (1450 г. и позже). $2.000', 2000),
-  ('TL5', 'Промышленный переворот (1730 г. и позже). $5.000', 5000),
-  ('TL6', 'Эпоха механики (1880 г. и позже). $10.000', 10000),
-  ('TL7', 'Атомная эпоха (1940 г. и позже). $15.000', 15000),
-  ('TL8', 'Цифровая эпоха (1980 г. и позже). $20.000', 20000),
-  ('TL9', 'Эпоха микротехники (2025 г. и позже?). $30.000', 30000),
-  ('TL10', 'Эпоха роботизации (2070 г. и позже?) $50.000', 50000),
-  ('TL11', 'Эпоха экзотических материалов. $75.000', 75000),
-  ('TL12', 'Все что пожелает Мастер $100.000', 100000);
+  VALUES 
+  ('TL0',  N'Каменный век (доисторический период и далее). $250', 250),
+  ('TL1',  N'Бронзовый век (3500 лет до н.э. и позже). $500', 500),
+  ('TL2',  N'Железный век (1200 лет до н.э. и позже). $750', 750),
+  ('TL3',  N'Средневековье (600 г. н.э. и позже). $1.000', 1000),
+  ('TL4',  N'Эпоха парусов (1450 г. и позже). $2.000', 2000),
+  ('TL5',  N'Промышленный переворот (1730 г. и позже). $5.000', 5000),
+  ('TL6',  N'Эпоха механики (1880 г. и позже). $10.000', 10000),
+  ('TL7',  N'Атомная эпоха (1940 г. и позже). $15.000', 15000),
+  ('TL8',  N'Цифровая эпоха (1980 г. и позже). $20.000', 20000),
+  ('TL9',  N'Эпоха микротехники (2025 г. и позже?). $30.000', 30000),
+  ('TL10', N'Эпоха роботизации (2070 г. и позже?) $50.000', 50000),
+  ('TL11', N'Эпоха экзотических материалов. $75.000', 75000),
+  ('TL12', N'Все что пожелает Мастер $100.000', 100000);
 
 
 INSERT INTO [WeaponClass]
@@ -2149,8 +2154,8 @@ INSERT INTO [ExplosionType]
 USE [Item1];
 GO
 
-CREATE PROCEDURE dbo.NEW_ITEM (@name VARCHAR(80),
-@class_ofItem VARCHAR(80),
+CREATE PROCEDURE dbo.NEW_ITEM (@name NVARCHAR(80),
+@class_ofItem NVARCHAR(80),
 @Returns INT OUTPUT)
 
 AS
@@ -2201,7 +2206,7 @@ END
 --http://www.cyberguru.ru/dotnet/ado-net/entity-framework-faq.html
 GO
 
-CREATE PROCEDURE dbo.NEW_ITEM_att @name VARCHAR(80), @G_att_class INT, @G_sub_att INT, @id_att_mount INT
+CREATE PROCEDURE dbo.NEW_ITEM_att @name NVARCHAR(80), @G_att_class INT, @G_sub_att INT, @id_att_mount INT
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -2219,27 +2224,27 @@ END
 --http://www.cyberguru.ru/dotnet/ado-net/entity-framework-faq.html
 GO
 
-CREATE PROCEDURE dbo.NEW_ITEMWeap (@name VARCHAR(80),
-@class_ofItem VARCHAR(80),
+CREATE PROCEDURE dbo.NEW_ITEMWeap (@name NVARCHAR(80),
+@class_ofItem NVARCHAR(80),
 @Weight INT,
 @ST INT,
-@Bulk VARCHAR(80),
+@Bulk NVARCHAR(80),
 @Cost MONEY,
-@Lcin VARCHAR(10),
-@TLin VARCHAR(10),
-@Desc VARCHAR(MAX),
+@Lcin NVARCHAR(10),
+@TLin NVARCHAR(10),
+@Desc NVARCHAR(MAX),
 @ROF INT,
 @Recoill INT,
 @DefACCc INT,
 @Half_Rangee INT,
 @FullRangee INT,
-@Damagee VARCHAR(50),
---@TypeOfDamage VARCHAR(50),
+@Damagee NVARCHAR(50),
+--@TypeOfDamage NVARCHAR(50),
 @Shotss INT,
 @AddinChamber BIT,
 @TimeForreload INT,
 @singlereload BIT,
---@ubCalibre VARCHAR(MAX),
+--@ubCalibre NVARCHAR(MAX),
 @Returns INT OUTPUT)
 
 AS
@@ -2299,8 +2304,8 @@ GO
 --
 --
 DECLARE @RC INT
-DECLARE @name VARCHAR(80)
-DECLARE @class_ofItem VARCHAR(80)
+DECLARE @name NVARCHAR(80)
+DECLARE @class_ofItem NVARCHAR(80)
 
 DECLARE @Returns INT
 

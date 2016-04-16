@@ -50,7 +50,6 @@ namespace Item_WPF
         public virtual DbSet<G_AttachClass> G_AttachClass { get; set; }
         public virtual DbSet<G_AvAttachClass> G_AvAttachClass { get; set; }
         public virtual DbSet<G_SubAttachClass> G_SubAttachClass { get; set; }
-        public virtual DbSet<ITEM> ITEMs { get; set; }
         public virtual DbSet<ItemClass> ItemClasses { get; set; }
         public virtual DbSet<LaserColorEf> LaserColorEfs { get; set; }
         public virtual DbSet<LBEClass> LBEClasses { get; set; }
@@ -58,11 +57,12 @@ namespace Item_WPF
         public virtual DbSet<LOADBEARINGEQUIPMENT> LOADBEARINGEQUIPMENTs { get; set; }
         public virtual DbSet<TL> TLs { get; set; }
         public virtual DbSet<TypeOfDamage> TypeOfDamages { get; set; }
-        public virtual DbSet<WEAPON> WEAPONs { get; set; }
         public virtual DbSet<WeaponAttackType> WeaponAttackTypes { get; set; }
         public virtual DbSet<WeaponClass> WeaponClasses { get; set; }
         public virtual DbSet<WeaponDamage> WeaponDamages { get; set; }
         public virtual DbSet<WeaponType> WeaponTypes { get; set; }
+        public virtual DbSet<ITEM> ITEMs { get; set; }
+        public virtual DbSet<WEAPON> WEAPONs { get; set; }
     
         public virtual int NEW_ITEM_att(string name, Nullable<int> g_att_class, Nullable<int> g_sub_att, Nullable<int> id_att_mount)
         {

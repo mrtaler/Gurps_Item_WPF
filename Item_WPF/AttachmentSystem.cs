@@ -30,38 +30,36 @@ namespace Item_WPF
      #endregion
      
         private int _id;
-     public int id 
-     { 
-      get
-      {
-       return _id;
-      } 
-      set
-      {
-       if(_id != value)
-       {
-        _id = value;
-        OnPropertyChanged("id");
-       }
-      }
-     }
-     
+    	public int id 
+    	{ 
+    		get
+    		{
+    			return _id;
+    		} 
+    		set
+    		{
+    			if (_id != value)
+    			{
+    				_id = value;
+    				OnPropertyChanged("id");
+    			}
+    		}
+    	}
         private string _name;
-     public string name 
-     { 
-      get
-      {
-       return _name;
-      } 
-      set
-      {
-       if(_name != value)
-       {
-        _name = value;
-        OnPropertyChanged("name");
-       }
-      }
-     }
-     
+    	public string name 
+    	{ 
+    		get
+    		{
+    			return _name;
+    		} 
+    		set
+    		{
+    			if (_name != value)
+    			{
+    				_name = value;
+    				OnPropertyChanged("name");
+    			}
+    		}
+    	}
     }
 }
