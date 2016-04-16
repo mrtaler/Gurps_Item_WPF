@@ -36,121 +36,113 @@ namespace Item_WPF
         }
     
         private int _id;
-     public int id 
-     { 
-      get
-      {
-       return _id;
-      } 
-      set
-      {
-       if(_id != value)
-       {
-        _id = value;
-        OnPropertyChanged("id");
-       }
-      }
-     }
-     
+    	public int id 
+    	{ 
+    		get
+    		{
+    			return _id;
+    		} 
+    		set
+    		{
+    			if (_id != value)
+    			{
+    				_id = value;
+    				OnPropertyChanged("id");
+    			}
+    		}
+    	}
         private string _SubAttach_name;
-     public string SubAttach_name 
-     { 
-      get
-      {
-       return _SubAttach_name;
-      } 
-      set
-      {
-       if(_SubAttach_name != value)
-       {
-        _SubAttach_name = value;
-        OnPropertyChanged("SubAttach_name");
-       }
-      }
-     }
-     
+    	public string SubAttach_name 
+    	{ 
+    		get
+    		{
+    			return _SubAttach_name;
+    		} 
+    		set
+    		{
+    			if (_SubAttach_name != value)
+    			{
+    				_SubAttach_name = value;
+    				OnPropertyChanged("SubAttach_name");
+    			}
+    		}
+    	}
         private int _AttachClass;
-     public int AttachClass 
-     { 
-      get
-      {
-       return _AttachClass;
-      } 
-      set
-      {
-       if(_AttachClass != value)
-       {
-        _AttachClass = value;
-        OnPropertyChanged("AttachClass");
-       }
-      }
-     }
-     
+    	public int AttachClass 
+    	{ 
+    		get
+    		{
+    			return _AttachClass;
+    		} 
+    		set
+    		{
+    			if (_AttachClass != value)
+    			{
+    				_AttachClass = value;
+    				OnPropertyChanged("AttachClass");
+    			}
+    		}
+    	}
         private string _SubAttachDescription;
-     public string SubAttachDescription 
-     { 
-      get
-      {
-       return _SubAttachDescription;
-      } 
-      set
-      {
-       if(_SubAttachDescription != value)
-       {
-        _SubAttachDescription = value;
-        OnPropertyChanged("SubAttachDescription");
-       }
-      }
-     }
-     
+    	public string SubAttachDescription 
+    	{ 
+    		get
+    		{
+    			return _SubAttachDescription;
+    		} 
+    		set
+    		{
+    			if (_SubAttachDescription != value)
+    			{
+    				_SubAttachDescription = value;
+    				OnPropertyChanged("SubAttachDescription");
+    			}
+    		}
+    	}
         private int _ATTACHMENTSLOT;
-     public int ATTACHMENTSLOT 
-     { 
-      get
-      {
-       return _ATTACHMENTSLOT;
-      } 
-      set
-      {
-       if(_ATTACHMENTSLOT != value)
-       {
-        _ATTACHMENTSLOT = value;
-        OnPropertyChanged("ATTACHMENTSLOT");
-       }
-      }
-     }
-     
+    	public int ATTACHMENTSLOT 
+    	{ 
+    		get
+    		{
+    			return _ATTACHMENTSLOT;
+    		} 
+    		set
+    		{
+    			if (_ATTACHMENTSLOT != value)
+    			{
+    				_ATTACHMENTSLOT = value;
+    				OnPropertyChanged("ATTACHMENTSLOT");
+    			}
+    		}
+    	}
     
         private ATTACHMENTSLOT _ATTACHMENTSLOT1;
-                public virtual ATTACHMENTSLOT ATTACHMENTSLOT1
-                        {
-                        get
-                            { return _ATTACHMENTSLOT1; } 
-                        set
-                        { if(_ATTACHMENTSLOT1 != value)
-                           {    _ATTACHMENTSLOT1 = value;    OnPropertyChanged("ATTACHMENTSLOT1");   }
-                            }
-                         } 
+            public virtual ATTACHMENTSLOT ATTACHMENTSLOT1
+            {
+                get { return _ATTACHMENTSLOT1; }
+                set
+                { if(_ATTACHMENTSLOT1 != value)
+                    {    _ATTACHMENTSLOT1 = value;    OnPropertyChanged("ATTACHMENTSLOT1");   }
+                }
+            } 
         private G_AttachClass _G_AttachClass;
-                public virtual G_AttachClass G_AttachClass
-                        {
-                        get
-                            { return _G_AttachClass; } 
-                        set
-                        { if(_G_AttachClass != value)
-                           {    _G_AttachClass = value;    OnPropertyChanged("G_AttachClass");   }
-                            }
-                         } 
+            public virtual G_AttachClass G_AttachClass
+            {
+                get { return _G_AttachClass; }
+                set
+                { if(_G_AttachClass != value)
+                    {    _G_AttachClass = value;    OnPropertyChanged("G_AttachClass");   }
+                }
+            } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<G_AvAttachClass> _G_AvAttachClass;
-                public virtual ICollection<G_AvAttachClass> G_AvAttachClass
-                        {
-                        get
-                            { return _G_AvAttachClass; } 
-                        set
-                        { if(_G_AvAttachClass != value)
-                           {    _G_AvAttachClass = value;    OnPropertyChanged("G_AvAttachClass");   }
-                            }
-                         } 
+            public virtual ICollection<G_AvAttachClass> G_AvAttachClass
+            {
+                get { return _G_AvAttachClass; }
+                set
+                { if(_G_AvAttachClass != value)
+                    {    _G_AvAttachClass = value;    OnPropertyChanged("G_AvAttachClass");   }
+                }
+            } 
     }
 }

@@ -479,8 +479,7 @@
                                         Converter="{addin:Weapondamage}"
                                         ConverterParameter="AD"
                                         Mode="TwoWay"
-                                        Path="WeaponDamageColl"
-                                       />
+                                        Path="WeaponDamageColl" />
                                 </TextBox.Text>
                             </TextBox>
                             <ComboBox
@@ -506,14 +505,14 @@
                                 Margin="98,118,0,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
-             Content="Linked">
+                                Content="Linked">
                                 <CheckBox.IsChecked>
                                     <Binding
                                         Converter="{addin:FollowUpLinkedOnOffConverter}"
                                         ConverterParameter="Linked"
                                         Path="WeaponDamageColl" />
                                 </CheckBox.IsChecked>
-                            
+
                             </CheckBox>
                             <CheckBox
                                 x:Name="FollowUpcheckBox"
@@ -526,8 +525,7 @@
                                     <Binding
                                         Converter="{addin:FollowUpLinkedOnOffConverter}"
                                         ConverterParameter="Follow-up"
-                                        Path="WeaponDamageColl"
-                                        />
+                                        Path="WeaponDamageColl" />
                                 </CheckBox.IsChecked>
                             </CheckBox>
                             <CheckBox
@@ -613,51 +611,28 @@
                     <GroupBox
                         x:Name="GroupBox6"
                         Width="181"
-                        Height="116"
+                        Height="86"
                         Margin="210,10,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         Header="Range">
                         <Grid x:Name="RangeGrid">
                             <Label
-                                x:Name="Label16"
-                                Margin="10,6,0,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                Content="Min Range"
-                                RenderTransformOrigin="0.433,0.077" />
-                            <Label
                                 x:Name="Label17"
-                                Margin="10,34,0,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
-                                Content="Half Range" />
+                                Content="1/2Range" Width="63" />
                             <Label
                                 x:Name="Label18"
-                                Margin="10,62,0,0"
+                                Margin="10,31,0,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
-                                Content="Max Range" />
-                            <TextBox
-                                x:Name="MinRangeTextBox"
-                                Width="77"
-                                Height="23"
-                                Margin="82,10,0,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                TextWrapping="Wrap">
-                                <TextBox.Text>
-                                    <Binding
-                                        Converter="{addin:DeciminalConverterString}"
-                                        Mode="TwoWay"
-                                        Path="WeaponLoad.MinRange" />
-                                </TextBox.Text>
-                            </TextBox>
+                                Content="Max Range"/>
                             <TextBox
                                 x:Name="HalfRangeTextBox"
-                                Width="77"
+                                Width="51"
                                 Height="23"
-                                Margin="82,38,0,0"
+                                Margin="63,3,0,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
                                 TextWrapping="Wrap">
@@ -670,9 +645,9 @@
                             </TextBox>
                             <TextBox
                                 x:Name="MaxRangeTextBox"
-                                Width="77"
+                                Width="62"
                                 Height="23"
-                                Margin="82,66,0,0"
+                                Margin="84,34,0,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
                                 TextWrapping="Wrap">
@@ -683,6 +658,8 @@
                                         Path="WeaponLoad.FullRange" />
                                 </TextBox.Text>
                             </TextBox>
+                            <CheckBox x:Name="checkBox" Content="min" HorizontalAlignment="Left" Margin="119,6,0,0" VerticalAlignment="Top"
+                                      IsChecked="{Binding  WeaponLoad.MinRange, Mode=TwoWay}"/>
                         </Grid>
                     </GroupBox>
                     <GroupBox
@@ -707,11 +684,12 @@
                                 VerticalAlignment="Top"
                                 Content="X"
                                 RenderTransformOrigin="0,0.5">
-                                <!--<Label.Visibility>
-                                    <Binding Converter="{addin:Shotguntovis}"
-                                             ElementName="TypeOfClassWeapTb"
-                                             Path="SelectedItem" />
-                                </Label.Visibility>-->
+                                <Label.Visibility>
+                                    <Binding
+                                        Converter="{addin:Shotguntovis}"
+                                        ElementName="TypeOfClassWeapTb"
+                                        Path="SelectedItem" />
+                                </Label.Visibility>
                             </Label>
                             <TextBox
                                 x:Name="RofTextBox"
@@ -731,11 +709,12 @@
                                 VerticalAlignment="Top"
                                 Text="{Binding WeaponLoad.ROF_for_Sh}"
                                 TextWrapping="Wrap">
-                                <!--<TextBox.Visibility>
-                                    <Binding Converter="{addin:Shotguntovis}"
-                                             ElementName="TypeOfClassWeapTb"
-                                             Path="SelectedItem" />
-                                </TextBox.Visibility>-->
+                                <TextBox.Visibility>
+                                    <Binding
+                                        Converter="{addin:Shotguntovis}"
+                                        ElementName="TypeOfClassWeapTb"
+                                        Path="SelectedItem" />
+                                </TextBox.Visibility>
                             </TextBox>
                             <CheckBox
                                 x:Name="FullAutoCheckBox"
@@ -766,13 +745,8 @@
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
                                 Text="{Binding WeaponLoad.HCROFValue, Mode=TwoWay}"
-                                TextWrapping="NoWrap">
-                                <!--
-                                    Visibility="{Binding IsChecked,
-                                    ElementName=HcrofCheckBox2,
-                                    Converter={StaticResource BooleanToVisibilityConverter}}"
-                                -->
-                            </TextBox>
+                                TextWrapping="NoWrap"
+                                Visibility="{Binding IsChecked, ElementName=HcrofCheckBox2, Converter={StaticResource BooleanToVisibilityConverter}}" />
                             <CheckBox
                                 x:Name="CutOfShotsCheckBox"
                                 Margin="10,78,0,0"
@@ -785,12 +759,12 @@
                                 Margin="10,95,0,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
-                                Content="Cut Of Shots">
-                                <!--
+                                Content="Cut Of Shots"
+                                
                                     Visibility="{Binding IsChecked,
                                     ElementName=CutOfShotsCheckBox,
-                                    Converter={StaticResource BooleanToVisibilityConverter}}"
-                                -->
+                                    Converter={StaticResource BooleanToVisibilityConverter}}">
+
                             </Label>
                             <TextBox
                                 x:Name="CutOfShotsTextBox"
@@ -800,12 +774,11 @@
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
                                 Text="{Binding WeaponLoad.CutOff_shotsCount, Mode=TwoWay}"
-                                TextWrapping="Wrap" />
-                            <!--
+                                TextWrapping="Wrap" 
                                 Visibility="{Binding IsChecked,
                                 ElementName=CutOfShotsCheckBox,
                                 Converter={StaticResource BooleanToVisibilityConverter}}" />
-                            -->
+
 
 
                         </Grid>
@@ -971,7 +944,7 @@
                                         Converter="{addin:Linkedamage}"
                                         ConverterParameter="AD"
                                         Mode="TwoWay"
-                                        Path="WeaponDamageColl"   />
+                                        Path="WeaponDamageColl" />
                                 </TextBox.Text>
                             </TextBox>
                             <ComboBox
@@ -1123,7 +1096,7 @@
                                         Converter="{addin:FollowUpdamage}"
                                         ConverterParameter="AD"
                                         Mode="TwoWay"
-                                        Path="WeaponDamageColl"/>
+                                        Path="WeaponDamageColl" />
                                 </TextBox.Text>
                             </TextBox>
                             <ComboBox
@@ -1410,12 +1383,11 @@
                                 Visibility="{Binding IsChecked, ElementName=ScopeCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
                                     <MultiBinding
-                                        Converter="{addin:AvailableSlotMountConverter}"
-                                        ConverterParameter="1"
+                                        Converter="{addin:AvailableSlotMountConverter}"                                        
                                         UpdateSourceTrigger="PropertyChanged">
                                         <Binding
                                             Mode="TwoWay"
-                                            Path="AttMount"
+                                            Path="ScopeComboBox"
                                             UpdateSourceTrigger="PropertyChanged" />
                                         <Binding ElementName="ScopeCheckBox" Path="IsChecked" />
                                     </MultiBinding>
@@ -1442,12 +1414,11 @@
                                 Visibility="{Binding IsChecked, ElementName=LaserCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
                                     <MultiBinding
-                                        Converter="{addin:AvailableSlotMountConverter}"
-                                        ConverterParameter="2"
+                                        Converter="{addin:AvailableSlotMountConverter}"                                      
                                         UpdateSourceTrigger="PropertyChanged">
                                         <Binding
                                             Mode="TwoWay"
-                                            Path="AttMount"
+                                            Path="LaserComboBox"
                                             UpdateSourceTrigger="PropertyChanged" />
                                         <Binding ElementName="LaserCheckBox" Path="IsChecked" />
                                     </MultiBinding>
@@ -1473,10 +1444,10 @@
                                 SelectedValuePath="id"
                                 Visibility="{Binding IsChecked, ElementName=LightCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
-                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="3">
+                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}">
                                         <Binding
                                             Mode="TwoWay"
-                                            Path="AttMount"
+                                            Path="LightComboBox"
                                             UpdateSourceTrigger="PropertyChanged" />
                                         <Binding ElementName="LightCheckBox" Path="IsChecked" />
                                     </MultiBinding>
@@ -1498,10 +1469,10 @@
                                 SelectedValuePath="id"
                                 Visibility="{Binding IsChecked, ElementName=BipodCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
-                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="4">
+                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}" >
                                         <Binding
                                             Mode="TwoWay"
-                                            Path="AttMount"
+                                            Path="BipodComboBox"
                                             UpdateSourceTrigger="PropertyChanged" />
                                         <Binding ElementName="BipodCheckBox" Path="IsChecked" />
                                     </MultiBinding>
@@ -1523,8 +1494,8 @@
                                 SelectedValuePath="id"
                                 Visibility="{Binding IsChecked, ElementName=SilenserCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
-                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="5">
-                                        <Binding Path="AttMount" />
+                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}">
+                                        <Binding Path="SilenserComboBox" />
                                         <Binding ElementName="SilenserCheckBox" Path="IsChecked" />
                                     </MultiBinding>
                                 </ComboBox.ItemsSource>
@@ -1545,8 +1516,8 @@
                                 SelectedValuePath="id"
                                 Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=LauncherCheckBox}">
                                 <ComboBox.ItemsSource>
-                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="6">
-                                        <Binding Path="AttMount" />
+                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}" >
+                                        <Binding Path="LauncherComboBox" />
                                         <Binding ElementName="LauncherCheckBox" Path="IsChecked" />
                                     </MultiBinding>
                                 </ComboBox.ItemsSource>
@@ -1567,8 +1538,8 @@
                                 SelectedValuePath="id"
                                 Visibility="{Binding IsChecked, ElementName=StockCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
-                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="7">
-                                        <Binding Path="AttMount" />
+                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}" >
+                                        <Binding Path="StockComboBox" />
                                         <Binding ElementName="StockCheckBox" Path="IsChecked" />
                                     </MultiBinding>
                                 </ComboBox.ItemsSource>
@@ -1589,8 +1560,8 @@
                                 SelectedValuePath="id"
                                 Visibility="{Binding IsChecked, ElementName=BayonetCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
-                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="8">
-                                        <Binding Path="AttMount" />
+                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}" >
+                                        <Binding Path="BayonetComboBox" />
                                         <Binding ElementName="BayonetCheckBox" Path="IsChecked" />
                                     </MultiBinding>
                                 </ComboBox.ItemsSource>
@@ -1611,8 +1582,8 @@
                                 SelectedValuePath="id"
                                 Visibility="{Binding IsChecked, ElementName=MagazineCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
-                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="9">
-                                        <Binding Path="AttMount" />
+                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}" >
+                                        <Binding Path="MagazineComboBox" />
                                         <Binding ElementName="MagazineCheckBox" Path="IsChecked" />
                                     </MultiBinding>
                                 </ComboBox.ItemsSource>
@@ -1633,8 +1604,8 @@
                                 SelectedValuePath="id"
                                 Visibility="{Binding IsChecked, ElementName=InternalCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
-                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="10">
-                                        <Binding Path="AttMount" />
+                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}">
+                                        <Binding Path="InternalComboBox" />
                                         <Binding ElementName="InternalCheckBox" Path="IsChecked" />
                                     </MultiBinding>
                                 </ComboBox.ItemsSource>
@@ -1655,9 +1626,9 @@
                                 SelectedValuePath="id"
                                 Visibility="{Binding IsChecked, ElementName=ExternalCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ComboBox.ItemsSource>
-                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}" ConverterParameter="11">
-                                        <Binding Path="AttMount" />
-                                        <Binding ElementName="ExternalCheckBox" Path="IsChecked" />
+                                    <MultiBinding Converter="{addin:AvailableSlotMountConverter}">
+                                        <Binding Path="ExternalComboBox" />
+                                        <Binding ElementName="ExternalCheckBox" Path="IsChecked"/>
                                     </MultiBinding>
                                 </ComboBox.ItemsSource>
                                 <ComboBox.SelectedValue>

@@ -161,8 +161,7 @@ namespace Item_WPF.addin
             if ((bool)values[1])
             {
                 ObservableCollection<Attachmentmount> avAttMount = (ObservableCollection<Attachmentmount>)values[0];
-                int findslotPoint = System.Convert.ToInt32(parameter);
-                return avAttMount.Where(p => p.idAttacClass == findslotPoint);
+                return avAttMount;
             }
             else return null;
         }
