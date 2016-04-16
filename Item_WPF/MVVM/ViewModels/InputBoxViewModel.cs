@@ -10,7 +10,7 @@ using Item_WPF.MVVM.Models;
 
 namespace Item_WPF.MVVM.ViewModels
 {
-    class InputBoxViewModel : INotifyPropertyChanged, IDisposable
+    class InputBoxViewModel : INotifyPropertyChanged
     {
         private string _passinput;
         public string passinput
@@ -44,11 +44,7 @@ namespace Item_WPF.MVVM.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        public void Dispose()
-        {
-            Dispose();
-        }
-        #endregion   
+           #endregion   
        
     }
 }

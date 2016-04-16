@@ -12,6 +12,8 @@ namespace Item_WPF.MVVM.Models
         public string Name { get; set; }
         public string Tl { get; set; }
         private WeaponDamage DamagePrim { get; set; }
+        private WeaponDamage DamageLinked { get; set; }
+        private WeaponDamage DamageFollowUp { get; set; }
         public string Damage { get; set; }
         public string DefAcc { get; set; }
         public string Range { get; set; }
@@ -29,20 +31,56 @@ namespace Item_WPF.MVVM.Models
         {
             if (itt.ItemClass.name == "Gun")
             {
-                
+
                 Name = itt.szItemName;
                 Tl = itt.TL1.name_TL;
                 DamagePrim = itt.WEAPON.WeaponDamages.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary"));
-                if (DamagePrim.idTypeOfDamage1 != null)
+                DamageLinked = itt.WEAPON.WeaponDamages.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Linke"));
+                DamageFollowUp = itt.WEAPON.WeaponDamages.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Follow"));
+                if (DamagePrim!=null)
                 {
+                    if (DamagePrim.idTypeOfDamage1 != null)
+                    {
+                        if (DamagePrim.ArmorDivision != 1) Damage = DamagePrim.Damage + " (" + Convert.ToDouble(DamagePrim.ArmorDivision) + ") " + DamagePrim.TypeOfDamage.name;
+                        else Damage = DamagePrim.Damage + " " + DamagePrim.TypeOfDamage.name;
+                    }
+                    else
+                    {
+                        if (DamagePrim.ArmorDivision != 1) Damage = DamagePrim.Damage + " (" + Convert.ToDouble(DamagePrim.ArmorDivision) + ")";
+                        else Damage = DamagePrim.Damage;
+                    }
+                    
+                }
 
-                    if (DamagePrim.ArmorDivision != 1) Damage = DamagePrim.Damage + " (" + Convert.ToDouble(DamagePrim.ArmorDivision) + ") " + DamagePrim.TypeOfDamage.name;
-                    else Damage = DamagePrim.Damage + " " + DamagePrim.TypeOfDamage.name;
+                if (DamageLinked != null)
+                {
+                    Name += "\r\n" + "    -- Linked";
+                    if (DamageLinked.idTypeOfDamage1 != null)
+                    {
+                        if (DamageLinked.ArmorDivision != 1) Damage += "\r\n" + DamageLinked.Damage + " (" + Convert.ToDouble(DamageLinked.ArmorDivision) + ") " + DamageLinked.TypeOfDamage.name;
+                        else Damage += "\r\n" + DamageLinked.Damage + " " + DamageLinked.TypeOfDamage.name;
+                    }
+                    else
+                    {
+                        if (DamageLinked.ArmorDivision != 1) Damage += "\r\n" + DamageLinked.Damage + " (" + Convert.ToDouble(DamageLinked.ArmorDivision) + ")";
+                        else Damage += "\r\n" + DamageLinked.Damage;
+                    }
                 }
-                else {
-                    if (DamagePrim.ArmorDivision != 1) Damage = DamagePrim.Damage + " (" + Convert.ToDouble(DamagePrim.ArmorDivision) + ")";
-                    else Damage = DamagePrim.Damage ;
+                if (DamageFollowUp != null)
+                {
+                    Name += "\r\n" + "    -- Follow-Up";
+                    if (DamageFollowUp.idTypeOfDamage1 != null)
+                    {
+                        if (DamageFollowUp.ArmorDivision != 1) Damage += "\r\n" + DamageFollowUp.Damage + " (" + Convert.ToDouble(DamageFollowUp.ArmorDivision) + ") " + DamageFollowUp.TypeOfDamage.name;
+                        else Damage += "\r\n" + DamageFollowUp.Damage + " " + DamageFollowUp.TypeOfDamage.name;
+                    }
+                    else
+                    {
+                        if (DamageFollowUp.ArmorDivision != 1) Damage += "\r\n" + DamageFollowUp.Damage + " (" + Convert.ToDouble(DamageFollowUp.ArmorDivision) + ")";
+                        else Damage += "\r\n" + DamageFollowUp.Damage;
+                    }
                 }
+
                 DefAcc = itt.WEAPON.DefACC.ToString();
                 Range = Convert.ToDouble(itt.WEAPON.Half_Range) + "/" + Convert.ToDouble(itt.WEAPON.FullRange);
                 Weigth = Convert.ToDouble(itt.ubWeight) + "/" + itt.WEAPON.Shots * Convert.ToDouble(itt.WEAPON.AMMO.WPS);
