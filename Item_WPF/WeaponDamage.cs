@@ -109,7 +109,7 @@ namespace Item_WPF
        if(_ArmorDivision != value)
        {
         _ArmorDivision = value;
-        OnPropertyChanged("ArmorDivision");
+            OnPropertyChanged("ArmorDivision");
        }
       }
      }

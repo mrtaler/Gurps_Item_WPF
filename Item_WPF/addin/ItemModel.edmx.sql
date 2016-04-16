@@ -21,14 +21,14 @@ IF DB_ID('Item1') IS NULL
   CREATE DATABASE Item1
   ON PRIMARY (
   NAME = N'Item1',
-  FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.TALER_SQL\MSSQL\DATA\Item1.mdf',
+  FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.TALERSQL\MSSQL\DATA\Item1.mdf',
   SIZE = 5120 KB,
   MAXSIZE = UNLIMITED,
   FILEGROWTH = 1024 KB
   )
   LOG ON (
   NAME = N'Item1_log',
-  FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.TALER_SQL\MSSQL\DATA\Item1_log.ldf',
+  FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.TALERSQL\MSSQL\DATA\Item1_log.ldf',
   SIZE = 1024 KB,
   MAXSIZE = UNLIMITED,
   FILEGROWTH = 10 %

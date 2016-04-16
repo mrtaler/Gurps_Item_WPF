@@ -344,7 +344,7 @@ namespace Item_WPF.addin
             {
                 if (weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).ArmorDivision == 1)
                     return "";
-                else return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).ArmorDivision;
+                else return System.Convert.ToString(weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).ArmorDivision,culture);
             }
             else if ((parameter as string) == "ToD")
                 return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).idTypeOfDamage1;
@@ -362,9 +362,11 @@ namespace Item_WPF.addin
                 weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).Damage = value as string;
             else if ((parameter as string) == "AD")
             {
-                if (CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0] == '.')
-                    weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).ArmorDivision = System.Convert.ToDecimal((value as string).Replace(',', CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0]));
-                else weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).ArmorDivision = System.Convert.ToDecimal((value as string).Replace('.', CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0]));
+                char AY = CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0];
+            
+                if (AY == '.')
+                    weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).ArmorDivision = System.Convert.ToDecimal((value as string).Replace(',', AY));
+                else weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).ArmorDivision = System.Convert.ToDecimal((value as string).Replace('.', AY));
             }
             else if ((parameter as string) == "ToD")
                 weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).idTypeOfDamage1 = System.Convert.ToInt32(value);

@@ -475,13 +475,12 @@
                                 VerticalAlignment="Top"
                                 TextWrapping="Wrap">
                                 <TextBox.Text>
-
                                     <Binding
                                         Converter="{addin:Weapondamage}"
                                         ConverterParameter="AD"
                                         Mode="TwoWay"
                                         Path="WeaponDamageColl"
-                                        UpdateSourceTrigger="PropertyChanged" />
+                                       />
                                 </TextBox.Text>
                             </TextBox>
                             <ComboBox
@@ -507,13 +506,14 @@
                                 Margin="98,118,0,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
-                                Content="Linked">
+             Content="Linked">
                                 <CheckBox.IsChecked>
                                     <Binding
                                         Converter="{addin:FollowUpLinkedOnOffConverter}"
                                         ConverterParameter="Linked"
                                         Path="WeaponDamageColl" />
                                 </CheckBox.IsChecked>
+                            
                             </CheckBox>
                             <CheckBox
                                 x:Name="FollowUpcheckBox"
@@ -521,11 +521,13 @@
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
                                 Content="FollowUp">
+
                                 <CheckBox.IsChecked>
                                     <Binding
                                         Converter="{addin:FollowUpLinkedOnOffConverter}"
                                         ConverterParameter="Follow-up"
-                                        Path="WeaponDamageColl" />
+                                        Path="WeaponDamageColl"
+                                        />
                                 </CheckBox.IsChecked>
                             </CheckBox>
                             <CheckBox
@@ -969,8 +971,7 @@
                                         Converter="{addin:Linkedamage}"
                                         ConverterParameter="AD"
                                         Mode="TwoWay"
-                                        Path="WeaponDamageColl"
-                                        UpdateSourceTrigger="PropertyChanged" />
+                                        Path="WeaponDamageColl"   />
                                 </TextBox.Text>
                             </TextBox>
                             <ComboBox
@@ -1122,8 +1123,7 @@
                                         Converter="{addin:FollowUpdamage}"
                                         ConverterParameter="AD"
                                         Mode="TwoWay"
-                                        Path="WeaponDamageColl"
-                                        UpdateSourceTrigger="PropertyChanged" />
+                                        Path="WeaponDamageColl"/>
                                 </TextBox.Text>
                             </TextBox>
                             <ComboBox
