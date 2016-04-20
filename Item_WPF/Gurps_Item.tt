@@ -300,23 +300,22 @@ public class CodeStringGenerator
     {
         return string.Format(
             CultureInfo.InvariantCulture,
-            @"private {1} _{2};
- {0} {1} {2} 
- {{ 
-  {3}get
-  {{
-   return _{2};
-  }} 
-  {4}set
-  {{
-   if(_{2} != value)
-   {{
-    _{2} = value;
-    OnPropertyChanged(""{2}"");
-   }}
-  }}
- }}
- ",
+		@"private {1} _{2};
+	{0} {1} {2} 
+	{{ 
+		{3}get
+		{{
+			return _{2};
+		}} 
+		{4}set
+		{{
+			if (_{2} != value)
+			{{
+				_{2} = value;
+				OnPropertyChanged(""{2}"");
+			}}
+		}}
+	}}",
             Accessibility.ForProperty(edmProperty),
             _typeMapper.GetTypeName(edmProperty.TypeUsage),
             _code.Escape(edmProperty),
@@ -331,15 +330,14 @@ public class CodeStringGenerator
         return string.Format(
         CultureInfo.InvariantCulture,
         @"private {1} _{2};
-            {0} {1} {2}
-                    {{
-                    {3}get
-                        {{ return _{2}; }} 
-                    {4}set
-                    {{ if(_{2} != value)
-                       {{    _{2} = value;    OnPropertyChanged(""{2}"");   }}
-                        }}
-                     }} ",
+        {0} {1} {2}
+        {{
+            {3}get {{ return _{2}; }}
+            {4}set
+            {{ if(_{2} != value)
+                {{    _{2} = value;    OnPropertyChanged(""{2}"");   }}
+            }}
+        }} ",
             AccessibilityAndVirtual(Accessibility.ForProperty(navProp)),
             navProp.ToEndMember.RelationshipMultiplicity == RelationshipMultiplicity.Many ? ("ICollection<" + endType + ">") : endType,
             _code.Escape(navProp),

@@ -36,84 +36,79 @@ namespace Item_WPF
         }
     
         private int _Id_LC;
-     public int Id_LC 
-     { 
-      get
-      {
-       return _Id_LC;
-      } 
-      set
-      {
-       if(_Id_LC != value)
-       {
-        _Id_LC = value;
-        OnPropertyChanged("Id_LC");
-       }
-      }
-     }
-     
+    	public int Id_LC 
+    	{ 
+    		get
+    		{
+    			return _Id_LC;
+    		} 
+    		set
+    		{
+    			if (_Id_LC != value)
+    			{
+    				_Id_LC = value;
+    				OnPropertyChanged("Id_LC");
+    			}
+    		}
+    	}
         private string _Name_LC;
-     public string Name_LC 
-     { 
-      get
-      {
-       return _Name_LC;
-      } 
-      set
-      {
-       if(_Name_LC != value)
-       {
-        _Name_LC = value;
-        OnPropertyChanged("Name_LC");
-       }
-      }
-     }
-     
+    	public string Name_LC 
+    	{ 
+    		get
+    		{
+    			return _Name_LC;
+    		} 
+    		set
+    		{
+    			if (_Name_LC != value)
+    			{
+    				_Name_LC = value;
+    				OnPropertyChanged("Name_LC");
+    			}
+    		}
+    	}
         private string _ShortDes;
-     public string ShortDes 
-     { 
-      get
-      {
-       return _ShortDes;
-      } 
-      set
-      {
-       if(_ShortDes != value)
-       {
-        _ShortDes = value;
-        OnPropertyChanged("ShortDes");
-       }
-      }
-     }
-     
+    	public string ShortDes 
+    	{ 
+    		get
+    		{
+    			return _ShortDes;
+    		} 
+    		set
+    		{
+    			if (_ShortDes != value)
+    			{
+    				_ShortDes = value;
+    				OnPropertyChanged("ShortDes");
+    			}
+    		}
+    	}
         private string _Description;
-     public string Description 
-     { 
-      get
-      {
-       return _Description;
-      } 
-      set
-      {
-       if(_Description != value)
-       {
-        _Description = value;
-        OnPropertyChanged("Description");
-       }
-      }
-     }
-     
+    	public string Description 
+    	{ 
+    		get
+    		{
+    			return _Description;
+    		} 
+    		set
+    		{
+    			if (_Description != value)
+    			{
+    				_Description = value;
+    				OnPropertyChanged("Description");
+    			}
+    		}
+    	}
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<ITEM> _ITEMs;
-                public virtual ICollection<ITEM> ITEMs
-                        {
-                        get
-                            { return _ITEMs; } 
-                        set
-                        { if(_ITEMs != value)
-                           {    _ITEMs = value;    OnPropertyChanged("ITEMs");   }
-                            }
-                         } 
+            public virtual ICollection<ITEM> ITEMs
+            {
+                get { return _ITEMs; }
+                set
+                { if(_ITEMs != value)
+                    {    _ITEMs = value;    OnPropertyChanged("ITEMs");   }
+                }
+            } 
     }
 }

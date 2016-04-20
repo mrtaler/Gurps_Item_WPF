@@ -36,50 +36,47 @@ namespace Item_WPF
         }
     
         private int _id;
-     public int id 
-     { 
-      get
-      {
-       return _id;
-      } 
-      set
-      {
-       if(_id != value)
-       {
-        _id = value;
-        OnPropertyChanged("id");
-       }
-      }
-     }
-     
+    	public int id 
+    	{ 
+    		get
+    		{
+    			return _id;
+    		} 
+    		set
+    		{
+    			if (_id != value)
+    			{
+    				_id = value;
+    				OnPropertyChanged("id");
+    			}
+    		}
+    	}
         private string _name_class;
-     public string name_class 
-     { 
-      get
-      {
-       return _name_class;
-      } 
-      set
-      {
-       if(_name_class != value)
-       {
-        _name_class = value;
-        OnPropertyChanged("name_class");
-       }
-      }
-     }
-     
+    	public string name_class 
+    	{ 
+    		get
+    		{
+    			return _name_class;
+    		} 
+    		set
+    		{
+    			if (_name_class != value)
+    			{
+    				_name_class = value;
+    				OnPropertyChanged("name_class");
+    			}
+    		}
+    	}
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<G_SubAttachClass> _G_SubAttachClass;
-                public virtual ICollection<G_SubAttachClass> G_SubAttachClass
-                        {
-                        get
-                            { return _G_SubAttachClass; } 
-                        set
-                        { if(_G_SubAttachClass != value)
-                           {    _G_SubAttachClass = value;    OnPropertyChanged("G_SubAttachClass");   }
-                            }
-                         } 
+            public virtual ICollection<G_SubAttachClass> G_SubAttachClass
+            {
+                get { return _G_SubAttachClass; }
+                set
+                { if(_G_SubAttachClass != value)
+                    {    _G_SubAttachClass = value;    OnPropertyChanged("G_SubAttachClass");   }
+                }
+            } 
     }
 }

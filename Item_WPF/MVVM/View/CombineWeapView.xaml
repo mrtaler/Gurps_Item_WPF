@@ -30,6 +30,7 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Command="{Binding CSelectWeapon}"
+                CommandParameter="Gun"
                 Content="Select Weapon" />
         <Label x:Name="Label"
                Margin="10,10,0,0"

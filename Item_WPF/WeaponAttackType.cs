@@ -36,67 +36,63 @@ namespace Item_WPF
         }
     
         private int _id;
-     public int id 
-     { 
-      get
-      {
-       return _id;
-      } 
-      set
-      {
-       if(_id != value)
-       {
-        _id = value;
-        OnPropertyChanged("id");
-       }
-      }
-     }
-     
+    	public int id 
+    	{ 
+    		get
+    		{
+    			return _id;
+    		} 
+    		set
+    		{
+    			if (_id != value)
+    			{
+    				_id = value;
+    				OnPropertyChanged("id");
+    			}
+    		}
+    	}
         private string _name;
-     public string name 
-     { 
-      get
-      {
-       return _name;
-      } 
-      set
-      {
-       if(_name != value)
-       {
-        _name = value;
-        OnPropertyChanged("name");
-       }
-      }
-     }
-     
+    	public string name 
+    	{ 
+    		get
+    		{
+    			return _name;
+    		} 
+    		set
+    		{
+    			if (_name != value)
+    			{
+    				_name = value;
+    				OnPropertyChanged("name");
+    			}
+    		}
+    	}
         private string _descr;
-     public string descr 
-     { 
-      get
-      {
-       return _descr;
-      } 
-      set
-      {
-       if(_descr != value)
-       {
-        _descr = value;
-        OnPropertyChanged("descr");
-       }
-      }
-     }
-     
+    	public string descr 
+    	{ 
+    		get
+    		{
+    			return _descr;
+    		} 
+    		set
+    		{
+    			if (_descr != value)
+    			{
+    				_descr = value;
+    				OnPropertyChanged("descr");
+    			}
+    		}
+    	}
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<WeaponDamage> _WeaponDamages;
-                public virtual ICollection<WeaponDamage> WeaponDamages
-                        {
-                        get
-                            { return _WeaponDamages; } 
-                        set
-                        { if(_WeaponDamages != value)
-                           {    _WeaponDamages = value;    OnPropertyChanged("WeaponDamages");   }
-                            }
-                         } 
+            public virtual ICollection<WeaponDamage> WeaponDamages
+            {
+                get { return _WeaponDamages; }
+                set
+                { if(_WeaponDamages != value)
+                    {    _WeaponDamages = value;    OnPropertyChanged("WeaponDamages");   }
+                }
+            } 
     }
 }

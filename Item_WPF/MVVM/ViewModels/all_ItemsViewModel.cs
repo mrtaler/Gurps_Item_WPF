@@ -145,8 +145,7 @@ namespace Item_WPF.MVVM.ViewModels
             InputBoxViewModel ib_datacontext = new InputBoxViewModel("Password for Del entity", "Type Password", "");
             ib.DataContext = ib_datacontext;
             ib.ShowDialog();
-            pass = ib_datacontext.passinput;
-            ib_datacontext.Dispose();
+            pass = ib_datacontext.passinput;            
             if (pass == "123")
             {
                 MessageBox.Show("Correct Pass");

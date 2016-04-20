@@ -30,191 +30,180 @@ namespace Item_WPF
      #endregion
      
         private int _id;
-     public int id 
-     { 
-      get
-      {
-       return _id;
-      } 
-      set
-      {
-       if(_id != value)
-       {
-        _id = value;
-        OnPropertyChanged("id");
-       }
-      }
-     }
-     
+    	public int id 
+    	{ 
+    		get
+    		{
+    			return _id;
+    		} 
+    		set
+    		{
+    			if (_id != value)
+    			{
+    				_id = value;
+    				OnPropertyChanged("id");
+    			}
+    		}
+    	}
         private string _name;
-     public string name 
-     { 
-      get
-      {
-       return _name;
-      } 
-      set
-      {
-       if(_name != value)
-       {
-        _name = value;
-        OnPropertyChanged("name");
-       }
-      }
-     }
-     
+    	public string name 
+    	{ 
+    		get
+    		{
+    			return _name;
+    		} 
+    		set
+    		{
+    			if (_name != value)
+    			{
+    				_name = value;
+    				OnPropertyChanged("name");
+    			}
+    		}
+    	}
         private Nullable<int> _StrengthPoints;
-     public Nullable<int> StrengthPoints 
-     { 
-      get
-      {
-       return _StrengthPoints;
-      } 
-      set
-      {
-       if(_StrengthPoints != value)
-       {
-        _StrengthPoints = value;
-        OnPropertyChanged("StrengthPoints");
-       }
-      }
-     }
-     
+    	public Nullable<int> StrengthPoints 
+    	{ 
+    		get
+    		{
+    			return _StrengthPoints;
+    		} 
+    		set
+    		{
+    			if (_StrengthPoints != value)
+    			{
+    				_StrengthPoints = value;
+    				OnPropertyChanged("StrengthPoints");
+    			}
+    		}
+    	}
         private Nullable<int> _DexterityPoints;
-     public Nullable<int> DexterityPoints 
-     { 
-      get
-      {
-       return _DexterityPoints;
-      } 
-      set
-      {
-       if(_DexterityPoints != value)
-       {
-        _DexterityPoints = value;
-        OnPropertyChanged("DexterityPoints");
-       }
-      }
-     }
-     
+    	public Nullable<int> DexterityPoints 
+    	{ 
+    		get
+    		{
+    			return _DexterityPoints;
+    		} 
+    		set
+    		{
+    			if (_DexterityPoints != value)
+    			{
+    				_DexterityPoints = value;
+    				OnPropertyChanged("DexterityPoints");
+    			}
+    		}
+    	}
         private Nullable<int> _IntelligencePoints;
-     public Nullable<int> IntelligencePoints 
-     { 
-      get
-      {
-       return _IntelligencePoints;
-      } 
-      set
-      {
-       if(_IntelligencePoints != value)
-       {
-        _IntelligencePoints = value;
-        OnPropertyChanged("IntelligencePoints");
-       }
-      }
-     }
-     
+    	public Nullable<int> IntelligencePoints 
+    	{ 
+    		get
+    		{
+    			return _IntelligencePoints;
+    		} 
+    		set
+    		{
+    			if (_IntelligencePoints != value)
+    			{
+    				_IntelligencePoints = value;
+    				OnPropertyChanged("IntelligencePoints");
+    			}
+    		}
+    	}
         private Nullable<int> _HealthPoints;
-     public Nullable<int> HealthPoints 
-     { 
-      get
-      {
-       return _HealthPoints;
-      } 
-      set
-      {
-       if(_HealthPoints != value)
-       {
-        _HealthPoints = value;
-        OnPropertyChanged("HealthPoints");
-       }
-      }
-     }
-     
+    	public Nullable<int> HealthPoints 
+    	{ 
+    		get
+    		{
+    			return _HealthPoints;
+    		} 
+    		set
+    		{
+    			if (_HealthPoints != value)
+    			{
+    				_HealthPoints = value;
+    				OnPropertyChanged("HealthPoints");
+    			}
+    		}
+    	}
         private Nullable<int> _MaxFPPoints;
-     public Nullable<int> MaxFPPoints 
-     { 
-      get
-      {
-       return _MaxFPPoints;
-      } 
-      set
-      {
-       if(_MaxFPPoints != value)
-       {
-        _MaxFPPoints = value;
-        OnPropertyChanged("MaxFPPoints");
-       }
-      }
-     }
-     
+    	public Nullable<int> MaxFPPoints 
+    	{ 
+    		get
+    		{
+    			return _MaxFPPoints;
+    		} 
+    		set
+    		{
+    			if (_MaxFPPoints != value)
+    			{
+    				_MaxFPPoints = value;
+    				OnPropertyChanged("MaxFPPoints");
+    			}
+    		}
+    	}
         private Nullable<int> _PerceptionPoints;
-     public Nullable<int> PerceptionPoints 
-     { 
-      get
-      {
-       return _PerceptionPoints;
-      } 
-      set
-      {
-       if(_PerceptionPoints != value)
-       {
-        _PerceptionPoints = value;
-        OnPropertyChanged("PerceptionPoints");
-       }
-      }
-     }
-     
+    	public Nullable<int> PerceptionPoints 
+    	{ 
+    		get
+    		{
+    			return _PerceptionPoints;
+    		} 
+    		set
+    		{
+    			if (_PerceptionPoints != value)
+    			{
+    				_PerceptionPoints = value;
+    				OnPropertyChanged("PerceptionPoints");
+    			}
+    		}
+    	}
         private Nullable<int> _WillpowerPoints;
-     public Nullable<int> WillpowerPoints 
-     { 
-      get
-      {
-       return _WillpowerPoints;
-      } 
-      set
-      {
-       if(_WillpowerPoints != value)
-       {
-        _WillpowerPoints = value;
-        OnPropertyChanged("WillpowerPoints");
-       }
-      }
-     }
-     
+    	public Nullable<int> WillpowerPoints 
+    	{ 
+    		get
+    		{
+    			return _WillpowerPoints;
+    		} 
+    		set
+    		{
+    			if (_WillpowerPoints != value)
+    			{
+    				_WillpowerPoints = value;
+    				OnPropertyChanged("WillpowerPoints");
+    			}
+    		}
+    	}
         private Nullable<double> _BasicSpeedPoints;
-     public Nullable<double> BasicSpeedPoints 
-     { 
-      get
-      {
-       return _BasicSpeedPoints;
-      } 
-      set
-      {
-       if(_BasicSpeedPoints != value)
-       {
-        _BasicSpeedPoints = value;
-        OnPropertyChanged("BasicSpeedPoints");
-       }
-      }
-     }
-     
+    	public Nullable<double> BasicSpeedPoints 
+    	{ 
+    		get
+    		{
+    			return _BasicSpeedPoints;
+    		} 
+    		set
+    		{
+    			if (_BasicSpeedPoints != value)
+    			{
+    				_BasicSpeedPoints = value;
+    				OnPropertyChanged("BasicSpeedPoints");
+    			}
+    		}
+    	}
         private Nullable<int> _BasicMovePoints;
-     public Nullable<int> BasicMovePoints 
-     { 
-      get
-      {
-       return _BasicMovePoints;
-      } 
-      set
-      {
-       if(_BasicMovePoints != value)
-       {
-        _BasicMovePoints = value;
-        OnPropertyChanged("BasicMovePoints");
-       }
-      }
-     }
-     
+    	public Nullable<int> BasicMovePoints 
+    	{ 
+    		get
+    		{
+    			return _BasicMovePoints;
+    		} 
+    		set
+    		{
+    			if (_BasicMovePoints != value)
+    			{
+    				_BasicMovePoints = value;
+    				OnPropertyChanged("BasicMovePoints");
+    			}
+    		}
+    	}
     }
 }

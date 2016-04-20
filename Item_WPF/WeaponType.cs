@@ -36,77 +36,72 @@ namespace Item_WPF
         }
     
         private int _id;
-     public int id 
-     { 
-      get
-      {
-       return _id;
-      } 
-      set
-      {
-       if(_id != value)
-       {
-        _id = value;
-        OnPropertyChanged("id");
-       }
-      }
-     }
-     
+    	public int id 
+    	{ 
+    		get
+    		{
+    			return _id;
+    		} 
+    		set
+    		{
+    			if (_id != value)
+    			{
+    				_id = value;
+    				OnPropertyChanged("id");
+    			}
+    		}
+    	}
         private string _name;
-     public string name 
-     { 
-      get
-      {
-       return _name;
-      } 
-      set
-      {
-       if(_name != value)
-       {
-        _name = value;
-        OnPropertyChanged("name");
-       }
-      }
-     }
-     
+    	public string name 
+    	{ 
+    		get
+    		{
+    			return _name;
+    		} 
+    		set
+    		{
+    			if (_name != value)
+    			{
+    				_name = value;
+    				OnPropertyChanged("name");
+    			}
+    		}
+    	}
         private Nullable<int> _Class;
-     public Nullable<int> Class 
-     { 
-      get
-      {
-       return _Class;
-      } 
-      set
-      {
-       if(_Class != value)
-       {
-        _Class = value;
-        OnPropertyChanged("Class");
-       }
-      }
-     }
-     
+    	public Nullable<int> Class 
+    	{ 
+    		get
+    		{
+    			return _Class;
+    		} 
+    		set
+    		{
+    			if (_Class != value)
+    			{
+    				_Class = value;
+    				OnPropertyChanged("Class");
+    			}
+    		}
+    	}
     
+        private WeaponClass _WeaponClass;
+            public virtual WeaponClass WeaponClass
+            {
+                get { return _WeaponClass; }
+                set
+                { if(_WeaponClass != value)
+                    {    _WeaponClass = value;    OnPropertyChanged("WeaponClass");   }
+                }
+            } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<WEAPON> _WEAPONs;
-                public virtual ICollection<WEAPON> WEAPONs
-                        {
-                        get
-                            { return _WEAPONs; } 
-                        set
-                        { if(_WEAPONs != value)
-                           {    _WEAPONs = value;    OnPropertyChanged("WEAPONs");   }
-                            }
-                         } 
-        private WeaponClass _WeaponClass;
-                public virtual WeaponClass WeaponClass
-                        {
-                        get
-                            { return _WeaponClass; } 
-                        set
-                        { if(_WeaponClass != value)
-                           {    _WeaponClass = value;    OnPropertyChanged("WeaponClass");   }
-                            }
-                         } 
+            public virtual ICollection<WEAPON> WEAPONs
+            {
+                get { return _WEAPONs; }
+                set
+                { if(_WEAPONs != value)
+                    {    _WEAPONs = value;    OnPropertyChanged("WEAPONs");   }
+                }
+            } 
     }
 }

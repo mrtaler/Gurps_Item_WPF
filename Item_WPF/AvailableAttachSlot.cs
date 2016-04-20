@@ -30,93 +30,87 @@ namespace Item_WPF
      #endregion
      
         private int _id;
-     public int id 
-     { 
-      get
-      {
-       return _id;
-      } 
-      set
-      {
-       if(_id != value)
-       {
-        _id = value;
-        OnPropertyChanged("id");
-       }
-      }
-     }
-     
+    	public int id 
+    	{ 
+    		get
+    		{
+    			return _id;
+    		} 
+    		set
+    		{
+    			if (_id != value)
+    			{
+    				_id = value;
+    				OnPropertyChanged("id");
+    			}
+    		}
+    	}
         private int _rWeaponId;
-     public int rWeaponId 
-     { 
-      get
-      {
-       return _rWeaponId;
-      } 
-      set
-      {
-       if(_rWeaponId != value)
-       {
-        _rWeaponId = value;
-        OnPropertyChanged("rWeaponId");
-       }
-      }
-     }
-     
+    	public int rWeaponId 
+    	{ 
+    		get
+    		{
+    			return _rWeaponId;
+    		} 
+    		set
+    		{
+    			if (_rWeaponId != value)
+    			{
+    				_rWeaponId = value;
+    				OnPropertyChanged("rWeaponId");
+    			}
+    		}
+    	}
         private int _rATTACHMENTSLOT;
-     public int rATTACHMENTSLOT 
-     { 
-      get
-      {
-       return _rATTACHMENTSLOT;
-      } 
-      set
-      {
-       if(_rATTACHMENTSLOT != value)
-       {
-        _rATTACHMENTSLOT = value;
-        OnPropertyChanged("rATTACHMENTSLOT");
-       }
-      }
-     }
-     
+    	public int rATTACHMENTSLOT 
+    	{ 
+    		get
+    		{
+    			return _rATTACHMENTSLOT;
+    		} 
+    		set
+    		{
+    			if (_rATTACHMENTSLOT != value)
+    			{
+    				_rATTACHMENTSLOT = value;
+    				OnPropertyChanged("rATTACHMENTSLOT");
+    			}
+    		}
+    	}
         private int _rAttachmentmount;
-     public int rAttachmentmount 
-     { 
-      get
-      {
-       return _rAttachmentmount;
-      } 
-      set
-      {
-       if(_rAttachmentmount != value)
-       {
-        _rAttachmentmount = value;
-        OnPropertyChanged("rAttachmentmount");
-       }
-      }
-     }
-     
+    	public int rAttachmentmount 
+    	{ 
+    		get
+    		{
+    			return _rAttachmentmount;
+    		} 
+    		set
+    		{
+    			if (_rAttachmentmount != value)
+    			{
+    				_rAttachmentmount = value;
+    				OnPropertyChanged("rAttachmentmount");
+    			}
+    		}
+    	}
     
         private Attachmentmount _Attachmentmount;
-                public virtual Attachmentmount Attachmentmount
-                        {
-                        get
-                            { return _Attachmentmount; } 
-                        set
-                        { if(_Attachmentmount != value)
-                           {    _Attachmentmount = value;    OnPropertyChanged("Attachmentmount");   }
-                            }
-                         } 
+            public virtual Attachmentmount Attachmentmount
+            {
+                get { return _Attachmentmount; }
+                set
+                { if(_Attachmentmount != value)
+                    {    _Attachmentmount = value;    OnPropertyChanged("Attachmentmount");   }
+                }
+            } 
         private WEAPON _WEAPON;
-                public virtual WEAPON WEAPON
-                        {
-                        get
-                            { return _WEAPON; } 
-                        set
-                        { if(_WEAPON != value)
-                           {    _WEAPON = value;    OnPropertyChanged("WEAPON");   }
-                            }
-                         } 
+            public virtual WEAPON WEAPON
+            {
+                get { return _WEAPON; }
+                set
+                { if(_WEAPON != value)
+                    {    _WEAPON = value;    OnPropertyChanged("WEAPON");   }
+                }
+            } 
     }
 }
