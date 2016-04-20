@@ -10,43 +10,43 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Caliber_name" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="alt_caliber_name" Type="varchar" MaxLength="255" />
+          <Property Name="Caliber_name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="alt_caliber_name" Type="nvarchar" MaxLength="255" />
           <Property Name="Dim_of_bullet_SI" Type="decimal" Precision="7" Scale="3" Nullable="false" />
           <Property Name="Dim_of_bullet_US" Type="decimal" Precision="7" Scale="3" Nullable="false" />
           <Property Name="AV_Upgrates" Type="int" />
           <Property Name="WPS" Type="decimal" Precision="7" Scale="4" />
           <Property Name="CPS" Type="decimal" Precision="19" Scale="4" />
-          <Property Name="Class_of_Ammo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Class_of_Ammo" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="AMMOUPGRATES">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="150" Nullable="false" />
-          <Property Name="shortname" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="shortname" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="malf" Type="int" Nullable="false" />
           <Property Name="AR_divX" Type="decimal" Precision="4" Scale="2" Nullable="false" />
           <Property Name="ACC_add" Type="int" Nullable="false" />
           <Property Name="ACC_x" Type="decimal" Precision="4" Scale="2" Nullable="false" />
           <Property Name="damage_x" Type="decimal" Precision="4" Scale="2" Nullable="false" />
-          <Property Name="Dam_Type" Type="varchar" MaxLength="5" />
+          <Property Name="Dam_Type" Type="nvarchar" MaxLength="5" />
           <Property Name="range_x12" Type="decimal" Precision="4" Scale="2" Nullable="false" />
           <Property Name="range_x" Type="decimal" Precision="4" Scale="2" Nullable="false" />
           <Property Name="ST_x" Type="decimal" Precision="4" Scale="2" Nullable="false" />
           <Property Name="WPS_x" Type="decimal" Precision="4" Scale="2" Nullable="false" />
           <Property Name="CPS_x" Type="decimal" Precision="4" Scale="2" Nullable="false" />
           <Property Name="Hearing" Type="int" Nullable="false" />
-          <Property Name="Ammo_Class" Type="varchar" MaxLength="15" />
+          <Property Name="Ammo_Class" Type="nvarchar" MaxLength="15" />
           <Property Name="min_Caliber" Type="decimal" Precision="4" Scale="2" />
           <Property Name="Max_Calider" Type="decimal" Precision="4" Scale="2" />
           <Property Name="DT_Min_Ammo_CAliber" Type="decimal" Precision="4" Scale="2" />
-          <Property Name="Condition_DT_Min_ammo_Cal" Type="varchar" MaxLength="3" />
+          <Property Name="Condition_DT_Min_ammo_Cal" Type="nvarchar" MaxLength="3" />
           <Property Name="hearing_table" Type="int" Nullable="false" />
-          <Property Name="Upgrates" Type="varchar" MaxLength="150" Nullable="false" />
-          <Property Name="Follow_Up" Type="varchar" MaxLength="50" />
-          <Property Name="Linked" Type="varchar" MaxLength="50" />
+          <Property Name="Upgrates" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Follow_Up" Type="nvarchar" MaxLength="50" />
+          <Property Name="Linked" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="ARMOUR">
           <Key>
@@ -65,16 +65,16 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Attachment">
           <Key>
             <PropertyRef Name="uiIndex" />
           </Key>
           <Property Name="uiIndex" Type="int" Nullable="false" />
-          <Property Name="szAttName" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="szAttName" Type="nvarchar" MaxLength="80" Nullable="false" />
           <Property Name="rAttachmentClass" Type="int" Nullable="false" />
-          <Property Name="Attachmentmount" Type="varchar" MaxLength="50" />
+          <Property Name="Attachmentmount" Type="nvarchar" MaxLength="50" />
           <Property Name="HiddenAttachment" Type="bit" Nullable="false" />
           <Property Name="NoiseReduction" Type="int" />
           <Property Name="HideMuzzleFlash" Type="bit" Nullable="false" />
@@ -121,7 +121,7 @@
           <Property Name="LightRange" Type="int" />
           <Property Name="IRLigRange" Type="int" />
           <Property Name="LaserRange" Type="int" />
-          <Property Name="LaserColor" Type="varchar" MaxLength="10" />
+          <Property Name="LaserColor" Type="nvarchar" MaxLength="10" />
           <Property Name="LaserColorEf" Type="decimal" Precision="4" Scale="2" />
           <Property Name="usedBatType" Type="int" />
         </EntityType>
@@ -130,14 +130,14 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="70" Nullable="false" />
         </EntityType>
         <EntityType Name="Attachmentmount">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
           <Property Name="idAttacClass" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ATTACHMENTSLOT">
@@ -145,14 +145,14 @@
             <PropertyRef Name="uiSlotIndex" />
           </Key>
           <Property Name="uiSlotIndex" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="szSlotName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="szSlotName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="AttachmentSystem">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="AvailableAttachSlot">
           <Key>
@@ -168,9 +168,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="SmolName" Type="varchar" MaxLength="50" />
-          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SmolName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
           <Property Name="CPP" Type="money" />
           <Property Name="WPP" Type="decimal" Precision="7" Scale="3" />
         </EntityType>
@@ -195,7 +195,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="CombineWeap">
           <Key>
@@ -220,21 +220,21 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="DrugType">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="80" />
+          <Property Name="name" Type="nvarchar" MaxLength="80" />
         </EntityType>
         <EntityType Name="ExplosionType">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="25" Nullable="false" />
         </EntityType>
         <EntityType Name="EXPLOSIVE">
           <Key>
@@ -268,14 +268,14 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="G_AttachClass">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name_class" Type="varchar" MaxLength="50" />
+          <Property Name="name_class" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="G_AvAttachClass">
           <Key>
@@ -291,9 +291,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="SubAttach_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SubAttach_name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="AttachClass" Type="int" Nullable="false" />
-          <Property Name="SubAttachDescription" Type="varchar(max)" />
+          <Property Name="SubAttachDescription" Type="nvarchar(max)" />
           <Property Name="ATTACHMENTSLOT" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ITEM">
@@ -301,13 +301,13 @@
             <PropertyRef Name="uiIndex" />
           </Key>
           <Property Name="uiIndex" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="szItemName" Type="varchar" MaxLength="80" Nullable="false" />
-          <Property Name="szLongItemName" Type="varchar" MaxLength="80" />
-          <Property Name="szItemDesc" Type="varchar(max)" />
+          <Property Name="szItemName" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="szLongItemName" Type="nvarchar" MaxLength="80" />
+          <Property Name="szItemDesc" Type="nvarchar(max)" />
           <Property Name="usItemClass" Type="int" Nullable="false" />
           <Property Name="ubClassIndex" Type="int" Nullable="false" />
           <Property Name="ubWeight" Type="decimal" Precision="7" Scale="3" Nullable="false" />
-          <Property Name="ItemSize" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="ItemSize" Type="nvarchar" MaxLength="80" Nullable="false" />
           <Property Name="usPrice" Type="money" Nullable="false" />
           <Property Name="Damageable" Type="bit" Nullable="false" />
           <Property Name="Repairable" Type="bit" Nullable="false" />
@@ -337,10 +337,10 @@
           <Property Name="FingerPrintID" Type="bit" Nullable="false" />
           <Property Name="TripWireActivation" Type="bit" Nullable="false" />
           <Property Name="TripWire" Type="bit" Nullable="false" />
-          <Property Name="perehodnik" Type="bit" />
+          <Property Name="Mount" Type="bit" Nullable="false" />
           <Property Name="TL" Type="int" Nullable="false" />
           <Property Name="LC" Type="int" Nullable="false" />
-          <Property Name="SizeBatteries" Type="varchar" MaxLength="4" />
+          <Property Name="SizeBatteries" Type="nvarchar" MaxLength="4" />
           <Property Name="FoodType" Type="int" Nullable="false" />
           <Property Name="LockPickModifier" Type="int" Nullable="false" />
           <Property Name="CrowbarModifier" Type="int" Nullable="false" />
@@ -355,14 +355,14 @@
           <Property Name="used" Type="bit" Nullable="false" />
           <Property Name="dt" Type="datetime" />
           <Property Name="Count_of_Bat" Type="int" Nullable="false" />
-          <Property Name="Works_on_Bat" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Works_on_Bat" Type="nvarchar" MaxLength="15" Nullable="false" />
         </EntityType>
         <EntityType Name="ItemClass">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="70" Nullable="false" />
         </EntityType>
         <EntityType Name="LaserColorEf">
           <Key>
@@ -377,7 +377,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="LC">
           <Key>
@@ -416,7 +416,7 @@
             <PropertyRef Name="Id_Tl" />
           </Key>
           <Property Name="Id_Tl" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name_TL" Type="varchar" MaxLength="50" />
+          <Property Name="name_TL" Type="nvarchar" MaxLength="50" />
           <Property Name="Description" Type="nvarchar" MaxLength="60" />
           <Property Name="StartMoney" Type="decimal" Precision="19" Scale="4" />
         </EntityType>
@@ -425,23 +425,23 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="5" Nullable="false" />
-          <Property Name="LongName" Type="varchar" MaxLength="30" />
-          <Property Name="mDamage" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="LongName" Type="nvarchar" MaxLength="30" />
+          <Property Name="mDamage" Type="nvarchar" MaxLength="5" Nullable="false" />
         </EntityType>
         <EntityType Name="WEAPON">
           <Key>
             <PropertyRef Name="uiIndex" />
           </Key>
           <Property Name="uiIndex" Type="int" Nullable="false" />
-          <Property Name="szWeaponName" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="szWeaponName" Type="nvarchar" MaxLength="80" Nullable="false" />
           <Property Name="ubWeaponClass" Type="int" Nullable="false" />
           <Property Name="ubWeaponType" Type="int" Nullable="false" />
           <Property Name="ubCalibre" Type="int" Nullable="false" />
           <Property Name="DefACC" Type="int" Nullable="false" />
           <Property Name="Half_Range" Type="decimal" Precision="10" Scale="4" Nullable="false" />
           <Property Name="FullRange" Type="decimal" Precision="10" Scale="4" Nullable="false" />
-          <Property Name="MinRange" Type="decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="MinRange" Type="bit" Nullable="false" />
           <Property Name="AWeight" Type="decimal" Precision="5" Scale="3" Nullable="false" />
           <Property Name="ROF" Type="int" Nullable="false" />
           <Property Name="Full_auto" Type="bit" Nullable="false" />
@@ -449,7 +449,6 @@
           <Property Name="Shots" Type="int" Nullable="false" />
           <Property Name="Time_For_reload" Type="int" Nullable="false" />
           <Property Name="single_reload" Type="bit" Nullable="false" />
-          <Property Name="Mount" Type="bit" Nullable="false" />
           <Property Name="Recoil" Type="int" Nullable="false" />
           <Property Name="HeavyWeapon" Type="bit" Nullable="false" />
           <Property Name="Add_in_Chamber" Type="bit" Nullable="false" />
@@ -470,15 +469,15 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="20" />
-          <Property Name="descr" Type="varchar" MaxLength="150" />
+          <Property Name="name" Type="nvarchar" MaxLength="20" />
+          <Property Name="descr" Type="nvarchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="WeaponClass">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="16" Nullable="false" />
         </EntityType>
         <EntityType Name="WeaponDamage">
           <Key>
@@ -487,20 +486,20 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idWeapon" Type="int" Nullable="false" />
           <Property Name="idWeaponAttackType" Type="int" Nullable="false" />
-          <Property Name="Damage" Type="varchar" MaxLength="50" />
+          <Property Name="Damage" Type="nvarchar" MaxLength="50" />
           <Property Name="ArmorDivision" Type="decimal" Precision="5" Scale="2" Nullable="false" />
           <Property Name="idTypeOfDamage1" Type="int" />
           <Property Name="idTypeOfDamage2" Type="int" />
-          <Property Name="TypeOfDamage1" Type="varchar" MaxLength="50" />
-          <Property Name="TypeOfDamage2" Type="varchar" MaxLength="50" />
-          <Property Name="Descrip" Type="varchar" MaxLength="50" />
+          <Property Name="TypeOfDamage1" Type="nvarchar" MaxLength="50" />
+          <Property Name="TypeOfDamage2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Descrip" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="WeaponType">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="23" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="23" Nullable="false" />
           <Property Name="Class" Type="int" />
         </EntityType>
         <Association Name="FK_ARMOUR">
@@ -878,32 +877,32 @@
           </ReferentialConstraint>
         </Association>
         <Function Name="NEW_ITEM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="name" Type="varchar" Mode="In" />
-          <Parameter Name="class_ofItem" Type="varchar" Mode="In" />
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="class_ofItem" Type="nvarchar" Mode="In" />
           <Parameter Name="Returns" Type="int" Mode="InOut" />
         </Function>
         <Function Name="NEW_ITEM_att" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
           <Parameter Name="G_att_class" Type="int" Mode="In" />
           <Parameter Name="G_sub_att" Type="int" Mode="In" />
           <Parameter Name="id_att_mount" Type="int" Mode="In" />
         </Function>
         <Function Name="NEW_ITEMWeap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="name" Type="varchar" Mode="In" />
-          <Parameter Name="class_ofItem" Type="varchar" Mode="In" />
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="class_ofItem" Type="nvarchar" Mode="In" />
           <Parameter Name="Weight" Type="int" Mode="In" />
           <Parameter Name="ST" Type="int" Mode="In" />
-          <Parameter Name="Bulk" Type="varchar" Mode="In" />
+          <Parameter Name="Bulk" Type="nvarchar" Mode="In" />
           <Parameter Name="Cost" Type="money" Mode="In" />
-          <Parameter Name="Lcin" Type="varchar" Mode="In" />
-          <Parameter Name="TLin" Type="varchar" Mode="In" />
-          <Parameter Name="Desc" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Lcin" Type="nvarchar" Mode="In" />
+          <Parameter Name="TLin" Type="nvarchar" Mode="In" />
+          <Parameter Name="Desc" Type="nvarchar(max)" Mode="In" />
           <Parameter Name="ROF" Type="int" Mode="In" />
           <Parameter Name="Recoill" Type="int" Mode="In" />
           <Parameter Name="DefACCc" Type="int" Mode="In" />
           <Parameter Name="Half_Rangee" Type="int" Mode="In" />
           <Parameter Name="FullRangee" Type="int" Mode="In" />
-          <Parameter Name="Damagee" Type="varchar" Mode="In" />
+          <Parameter Name="Damagee" Type="nvarchar" Mode="In" />
           <Parameter Name="Shotss" Type="int" Mode="In" />
           <Parameter Name="AddinChamber" Type="bit" Mode="In" />
           <Parameter Name="TimeForreload" Type="int" Mode="In" />
@@ -1266,14 +1265,14 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Caliber_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="alt_caliber_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Caliber_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="alt_caliber_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Dim_of_bullet_SI" Type="Decimal" Nullable="false" Precision="7" Scale="3" />
           <Property Name="Dim_of_bullet_US" Type="Decimal" Nullable="false" Precision="7" Scale="3" />
           <Property Name="AV_Upgrates" Type="Int32" />
           <Property Name="WPS" Type="Decimal" Precision="7" Scale="4" />
           <Property Name="CPS" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="Class_of_Ammo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Class_of_Ammo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="WEAPONs" Relationship="item1Model.FK_Calibre" FromRole="AMMO" ToRole="WEAPON" />
         </EntityType>
         <EntityType Name="AMMOUPGRATE">
@@ -1281,29 +1280,29 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="shortname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="shortname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="malf" Type="Int32" Nullable="false" />
           <Property Name="AR_divX" Type="Decimal" Nullable="false" Precision="4" Scale="2" />
           <Property Name="ACC_add" Type="Int32" Nullable="false" />
           <Property Name="ACC_x" Type="Decimal" Nullable="false" Precision="4" Scale="2" />
           <Property Name="damage_x" Type="Decimal" Nullable="false" Precision="4" Scale="2" />
-          <Property Name="Dam_Type" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Dam_Type" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
           <Property Name="range_x12" Type="Decimal" Nullable="false" Precision="4" Scale="2" />
           <Property Name="range_x" Type="Decimal" Nullable="false" Precision="4" Scale="2" />
           <Property Name="ST_x" Type="Decimal" Nullable="false" Precision="4" Scale="2" />
           <Property Name="WPS_x" Type="Decimal" Nullable="false" Precision="4" Scale="2" />
           <Property Name="CPS_x" Type="Decimal" Nullable="false" Precision="4" Scale="2" />
           <Property Name="Hearing" Type="Int32" Nullable="false" />
-          <Property Name="Ammo_Class" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Ammo_Class" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="min_Caliber" Type="Decimal" Precision="4" Scale="2" />
           <Property Name="Max_Calider" Type="Decimal" Precision="4" Scale="2" />
           <Property Name="DT_Min_Ammo_CAliber" Type="Decimal" Precision="4" Scale="2" />
-          <Property Name="Condition_DT_Min_ammo_Cal" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Condition_DT_Min_ammo_Cal" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
           <Property Name="hearing_table" Type="Int32" Nullable="false" />
-          <Property Name="Upgrates" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="Follow_Up" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Linked" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Upgrates" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Follow_Up" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Linked" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ARMOUR">
           <Key>
@@ -1324,7 +1323,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ARMOURs" Relationship="item1Model.FK_ARMOUR" FromRole="ArmourClass" ToRole="ARMOUR" />
         </EntityType>
         <EntityType Name="Attachment">
@@ -1332,9 +1331,9 @@
             <PropertyRef Name="uiIndex" />
           </Key>
           <Property Name="uiIndex" Type="Int32" Nullable="false" />
-          <Property Name="szAttName" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="szAttName" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
           <Property Name="rAttachmentClass" Type="Int32" Nullable="false" />
-          <Property Name="Attachmentmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Attachmentmount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="HiddenAttachment" Type="Boolean" Nullable="false" />
           <Property Name="NoiseReduction" Type="Int32" />
           <Property Name="HideMuzzleFlash" Type="Boolean" Nullable="false" />
@@ -1381,7 +1380,7 @@
           <Property Name="LightRange" Type="Int32" />
           <Property Name="IRLigRange" Type="Int32" />
           <Property Name="LaserRange" Type="Int32" />
-          <Property Name="LaserColor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LaserColor" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="LaserColorEf" Type="Decimal" Precision="4" Scale="2" />
           <Property Name="usedBatType" Type="Int32" />
           <NavigationProperty Name="Attachmentmount1" Relationship="item1Model.FK_Attachment_Attachmentmount" FromRole="Attachment" ToRole="Attachmentmount" />
@@ -1394,7 +1393,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Attachments" Relationship="item1Model.FK_rAttachmentClass" FromRole="AttachmentClass" ToRole="Attachment" />
         </EntityType>
         <EntityType Name="Attachmentmount">
@@ -1402,7 +1401,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="idAttacClass" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Attachments" Relationship="item1Model.FK_Attachment_Attachmentmount" FromRole="Attachmentmount" ToRole="Attachment" />
           <NavigationProperty Name="ATTACHMENTSLOT" Relationship="item1Model.FK_Attachmentmount_NasAttachmentClass1" FromRole="Attachmentmount" ToRole="ATTACHMENTSLOT" />
@@ -1413,7 +1412,7 @@
             <PropertyRef Name="uiSlotIndex" />
           </Key>
           <Property Name="uiSlotIndex" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="szSlotName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="szSlotName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Attachmentmounts" Relationship="item1Model.FK_Attachmentmount_NasAttachmentClass1" FromRole="ATTACHMENTSLOT" ToRole="Attachmentmount" />
           <NavigationProperty Name="G_SubAttachClass" Relationship="item1Model.FK_G_SubAttachClass_ATTACHMENTSLOT1" FromRole="ATTACHMENTSLOT" ToRole="G_SubAttachClass" />
         </EntityType>
@@ -1422,7 +1421,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="AvailableAttachSlot">
           <Key>
@@ -1440,9 +1439,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="SmolName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SmolName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="CPP" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="WPP" Type="Decimal" Precision="7" Scale="3" />
         </EntityType>
@@ -1467,7 +1466,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ITEMs" Relationship="item1Model.FK_ITEM_Clothes" FromRole="Cloth" ToRole="ITEM" />
         </EntityType>
         <EntityType Name="CombineWeap">
@@ -1493,14 +1492,14 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="DrugType">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ITEMs" Relationship="item1Model.FK_ITEM_DrugType" FromRole="DrugType" ToRole="ITEM" />
         </EntityType>
         <EntityType Name="ExplosionType">
@@ -1508,7 +1507,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="EXPLOSIVEs" Relationship="item1Model.FK_EXPLOSIVE" FromRole="ExplosionType" ToRole="EXPLOSIVE" />
         </EntityType>
         <EntityType Name="EXPLOSIVE">
@@ -1545,7 +1544,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ITEMs" Relationship="item1Model.FK_ITEM_Food" FromRole="FOOD" ToRole="ITEM" />
         </EntityType>
         <EntityType Name="G_AttachClass">
@@ -1553,7 +1552,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name_class" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name_class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="G_SubAttachClass" Relationship="item1Model.FK_G_SubAttachClass_G_AttachClass" FromRole="G_AttachClass" ToRole="G_SubAttachClass" />
         </EntityType>
         <EntityType Name="G_AvAttachClass">
@@ -1572,9 +1571,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SubAttach_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SubAttach_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="AttachClass" Type="Int32" Nullable="false" />
-          <Property Name="SubAttachDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SubAttachDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ATTACHMENTSLOT" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ATTACHMENTSLOT1" Relationship="item1Model.FK_G_SubAttachClass_ATTACHMENTSLOT1" FromRole="G_SubAttachClass" ToRole="ATTACHMENTSLOT" />
           <NavigationProperty Name="G_AttachClass" Relationship="item1Model.FK_G_SubAttachClass_G_AttachClass" FromRole="G_SubAttachClass" ToRole="G_AttachClass" />
@@ -1585,13 +1584,13 @@
             <PropertyRef Name="uiIndex" />
           </Key>
           <Property Name="uiIndex" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="szItemName" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
-          <Property Name="szLongItemName" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
-          <Property Name="szItemDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="szItemName" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="szLongItemName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="szItemDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="usItemClass" Type="Int32" Nullable="false" />
           <Property Name="ubClassIndex" Type="Int32" Nullable="false" />
           <Property Name="ubWeight" Type="Decimal" Nullable="false" Precision="7" Scale="3" />
-          <Property Name="ItemSize" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="ItemSize" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
           <Property Name="usPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
           <Property Name="Damageable" Type="Boolean" Nullable="false" />
           <Property Name="Repairable" Type="Boolean" Nullable="false" />
@@ -1621,10 +1620,10 @@
           <Property Name="FingerPrintID" Type="Boolean" Nullable="false" />
           <Property Name="TripWireActivation" Type="Boolean" Nullable="false" />
           <Property Name="TripWire" Type="Boolean" Nullable="false" />
-          <Property Name="perehodnik" Type="Boolean" />
+          <Property Name="Mount" Type="Boolean" Nullable="false" />
           <Property Name="TL" Type="Int32" Nullable="false" />
           <Property Name="LC" Type="Int32" Nullable="false" />
-          <Property Name="SizeBatteries" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="SizeBatteries" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
           <Property Name="FoodType" Type="Int32" Nullable="false" />
           <Property Name="LockPickModifier" Type="Int32" Nullable="false" />
           <Property Name="CrowbarModifier" Type="Int32" Nullable="false" />
@@ -1639,7 +1638,7 @@
           <Property Name="used" Type="Boolean" Nullable="false" />
           <Property Name="dt" Type="DateTime" Precision="3" />
           <Property Name="Count_of_Bat" Type="Int32" Nullable="false" />
-          <Property Name="Works_on_Bat" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Works_on_Bat" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ARMOUR" Relationship="item1Model.FK_ARMOUR_ITEM_uiIndex" FromRole="ITEM" ToRole="ARMOUR" />
           <NavigationProperty Name="Attachment" Relationship="item1Model.FK_Attachment_ITEM_uiIndex" FromRole="ITEM" ToRole="Attachment" />
           <NavigationProperty Name="Cloth" Relationship="item1Model.FK_ITEM_Clothes" FromRole="ITEM" ToRole="Cloth" />
@@ -1657,7 +1656,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ITEMs" Relationship="item1Model.FK_Item_ItemClass" FromRole="ItemClass" ToRole="ITEM" />
         </EntityType>
         <EntityType Name="LaserColorEf">
@@ -1673,7 +1672,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="LOADBEARINGEQUIPMENTs" Relationship="item1Model.FK_LOADBEARINGEQUIPMENT" FromRole="LBEClass" ToRole="LOADBEARINGEQUIPMENT" />
         </EntityType>
         <EntityType Name="LC">
@@ -1716,7 +1715,7 @@
             <PropertyRef Name="Id_Tl" />
           </Key>
           <Property Name="Id_Tl" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name_TL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name_TL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
           <Property Name="StartMoney" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="ITEMs" Relationship="item1Model.FK_ITEM_TL" FromRole="TL" ToRole="ITEM" />
@@ -1726,9 +1725,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="LongName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="mDamage" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="LongName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="mDamage" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="WeaponDamages" Relationship="item1Model.FK_WeaponDamage_TypeOfDamage_id1" FromRole="TypeOfDamage" ToRole="WeaponDamage" />
           <NavigationProperty Name="WeaponDamages1" Relationship="item1Model.FK_WeaponDamage_TypeOfDamage_id2" FromRole="TypeOfDamage" ToRole="WeaponDamage" />
         </EntityType>
@@ -1737,14 +1736,14 @@
             <PropertyRef Name="uiIndex" />
           </Key>
           <Property Name="uiIndex" Type="Int32" Nullable="false" />
-          <Property Name="szWeaponName" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="szWeaponName" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
           <Property Name="ubWeaponClass" Type="Int32" Nullable="false" />
           <Property Name="ubWeaponType" Type="Int32" Nullable="false" />
           <Property Name="ubCalibre" Type="Int32" Nullable="false" />
           <Property Name="DefACC" Type="Int32" Nullable="false" />
           <Property Name="Half_Range" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
           <Property Name="FullRange" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
-          <Property Name="MinRange" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+          <Property Name="MinRange" Type="Boolean" Nullable="false" />
           <Property Name="AWeight" Type="Decimal" Nullable="false" Precision="5" Scale="3" />
           <Property Name="ROF" Type="Int32" Nullable="false" />
           <Property Name="Full_auto" Type="Boolean" Nullable="false" />
@@ -1752,7 +1751,6 @@
           <Property Name="Shots" Type="Int32" Nullable="false" />
           <Property Name="Time_For_reload" Type="Int32" Nullable="false" />
           <Property Name="single_reload" Type="Boolean" Nullable="false" />
-          <Property Name="Mount" Type="Boolean" Nullable="false" />
           <Property Name="Recoil" Type="Int32" Nullable="false" />
           <Property Name="HeavyWeapon" Type="Boolean" Nullable="false" />
           <Property Name="Add_in_Chamber" Type="Boolean" Nullable="false" />
@@ -1778,8 +1776,8 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="descr" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="descr" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="WeaponDamages" Relationship="item1Model.FK_WeaponDamage_WeaponAttackType_id" FromRole="WeaponAttackType" ToRole="WeaponDamage" />
         </EntityType>
         <EntityType Name="WeaponClass">
@@ -1787,7 +1785,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="WeaponTypes" Relationship="item1Model.FK_WeaponType_WeaponClass" FromRole="WeaponClass" ToRole="WeaponType" />
         </EntityType>
         <EntityType Name="WeaponDamage">
@@ -1797,13 +1795,13 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idWeapon" Type="Int32" Nullable="false" />
           <Property Name="idWeaponAttackType" Type="Int32" Nullable="false" />
-          <Property Name="Damage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Damage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ArmorDivision" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
           <Property Name="idTypeOfDamage1" Type="Int32" />
           <Property Name="idTypeOfDamage2" Type="Int32" />
-          <Property Name="TypeOfDamage1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TypeOfDamage2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Descrip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TypeOfDamage1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TypeOfDamage2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Descrip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="TypeOfDamage" Relationship="item1Model.FK_WeaponDamage_TypeOfDamage_id1" FromRole="WeaponDamage" ToRole="TypeOfDamage" />
           <NavigationProperty Name="TypeOfDamage3" Relationship="item1Model.FK_WeaponDamage_TypeOfDamage_id2" FromRole="WeaponDamage" ToRole="TypeOfDamage" />
           <NavigationProperty Name="WEAPON" Relationship="item1Model.FK_WeaponDamage_WEAPON_uiIndex" FromRole="WeaponDamage" ToRole="WEAPON" />
@@ -1814,7 +1812,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="23" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="23" FixedLength="false" Unicode="true" />
           <Property Name="Class" Type="Int32" />
           <NavigationProperty Name="WEAPONs" Relationship="item1Model.FK_WeaponType" FromRole="WeaponType" ToRole="WEAPON" />
           <NavigationProperty Name="WeaponClass" Relationship="item1Model.FK_WeaponType_WeaponClass" FromRole="WeaponType" ToRole="WeaponClass" />
@@ -2535,7 +2533,7 @@
                 <ScalarProperty Name="SizeBatteries" ColumnName="SizeBatteries" />
                 <ScalarProperty Name="LC" ColumnName="LC" />
                 <ScalarProperty Name="TL" ColumnName="TL" />
-                <ScalarProperty Name="perehodnik" ColumnName="perehodnik" />
+                <ScalarProperty Name="Mount" ColumnName="Mount" />
                 <ScalarProperty Name="TripWire" ColumnName="TripWire" />
                 <ScalarProperty Name="TripWireActivation" ColumnName="TripWireActivation" />
                 <ScalarProperty Name="FingerPrintID" ColumnName="FingerPrintID" />
@@ -2672,7 +2670,6 @@
                 <ScalarProperty Name="Add_in_Chamber" ColumnName="Add_in_Chamber" />
                 <ScalarProperty Name="HeavyWeapon" ColumnName="HeavyWeapon" />
                 <ScalarProperty Name="Recoil" ColumnName="Recoil" />
-                <ScalarProperty Name="Mount" ColumnName="Mount" />
                 <ScalarProperty Name="single_reload" ColumnName="single_reload" />
                 <ScalarProperty Name="Time_For_reload" ColumnName="Time_For_reload" />
                 <ScalarProperty Name="Shots" ColumnName="Shots" />

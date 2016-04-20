@@ -658,19 +658,19 @@ namespace Item_WPF
       }
      }
      
-        private Nullable<bool> _perehodnik;
-     public Nullable<bool> perehodnik 
+        private bool _Mount;
+     public bool Mount 
      { 
       get
       {
-       return _perehodnik;
+       return _Mount;
       } 
       set
       {
-       if(_perehodnik != value)
+       if(_Mount != value)
        {
-        _perehodnik = value;
-        OnPropertyChanged("perehodnik");
+        _Mount = value;
+        OnPropertyChanged("Mount");
        }
       }
      }

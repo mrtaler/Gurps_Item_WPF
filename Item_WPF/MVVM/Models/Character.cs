@@ -288,8 +288,8 @@ namespace Item_WPF.MVVM.Models
         }
 
         // Inventory of the character.
-        private ObservableCollection<Item> inventory = new ObservableCollection<Item>();
-        public ObservableCollection<Item> Inventory
+        private ObservableCollection<ITEM> inventory = new ObservableCollection<ITEM>();
+        public ObservableCollection<ITEM> Inventory
         {
             get
             {
@@ -301,8 +301,8 @@ namespace Item_WPF.MVVM.Models
             get
             {
                 int w = 0;
-                foreach (Item item in Inventory)
-                    w += item.Weight;
+                foreach (ITEM item in Inventory)
+                    w += System.Convert.ToInt32(item.ubWeight);
                 return w;
             }
         }
