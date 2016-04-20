@@ -162,7 +162,7 @@ namespace Item_WPF.MVVM.Models
                 }
                 if (str <= 100)
                 {
-                    switch((str - 40) / 5)
+                    switch ((str - 40) / 5)
                     {
                         case 0: return new DiceString(4, 1);
                         case 1: return new DiceString(5, 0);
@@ -195,7 +195,7 @@ namespace Item_WPF.MVVM.Models
                         case 1:
                         case 2:
                             return new DiceString(1, -5);
-                        case 3: 
+                        case 3:
                         case 4:
                             return new DiceString(1, -4);
                         case 5:
@@ -210,35 +210,35 @@ namespace Item_WPF.MVVM.Models
                             return new DiceString(1, 0);
                         case 11:
                             return new DiceString(1, 1);
-                        case 12: 
+                        case 12:
                             return new DiceString(1, 2);
-                        case 13: 
+                        case 13:
                             return new DiceString(2, -1);
-                        case 14: 
+                        case 14:
                             return new DiceString(2, 0);
-                        case 15: 
+                        case 15:
                             return new DiceString(2, 1);
-                        case 16: 
+                        case 16:
                             return new DiceString(2, 2);
-                        case 17: 
+                        case 17:
                             return new DiceString(3, -1);
-                        case 18: 
+                        case 18:
                             return new DiceString(3, 0);
                         case 19:
                             return new DiceString(3, 1);
-                        case 20: 
+                        case 20:
                             return new DiceString(3, 2);
-                        case 21: 
+                        case 21:
                             return new DiceString(4, -1);
                         case 22:
                             return new DiceString(4, 0);
                         case 23:
                             return new DiceString(4, 1);
-                        case 24: 
+                        case 24:
                             return new DiceString(4, 2);
-                        case 25: 
+                        case 25:
                             return new DiceString(5, -1);
-                        case 26: 
+                        case 26:
                             return new DiceString(5, 0);
                         case 27:
                         case 28:
@@ -288,8 +288,8 @@ namespace Item_WPF.MVVM.Models
         }
 
         // Inventory of the character.
-        private ObservableCollection<Item> inventory = new ObservableCollection<Item>();
-        public ObservableCollection<Item> Inventory
+        private ObservableCollection<ITEM> inventory = new ObservableCollection<ITEM>();
+        public ObservableCollection<ITEM> Inventory
         {
             get
             {
@@ -301,8 +301,8 @@ namespace Item_WPF.MVVM.Models
             get
             {
                 int w = 0;
-                foreach (Item item in Inventory)
-                    w += item.Weight;
+                foreach (ITEM item in Inventory)
+                    w += System.Convert.ToInt32(item.ubWeight);
                 return w;
             }
         }

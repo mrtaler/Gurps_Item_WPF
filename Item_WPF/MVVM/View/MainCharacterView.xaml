@@ -143,14 +143,14 @@
                                         </Grid.ColumnDefinitions>
                                         <Grid.ToolTip>
                                             <StackPanel>
-                                                <TextBlock FontWeight="Bold" Text="{Binding Path=Name}" />
+                                                <TextBlock FontWeight="Bold" Text="{Binding Path=szItemName}" />
                                                 <TextBlock Text="{Binding Path=Description}" />
                                             </StackPanel>
                                         </Grid.ToolTip>
                                         <TextBlock Grid.Column="0"
                                                    Margin="0 0 4 0"
-                                                   Text="{Binding Path=Name}" />
-                                        <TextBlock Grid.Column="1" Text="{Binding Path=Weight}" />
+                                                   Text="{Binding Path=szItemName}" />
+                                        <TextBlock Grid.Column="1" Text="{Binding Path=ubWeight}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
