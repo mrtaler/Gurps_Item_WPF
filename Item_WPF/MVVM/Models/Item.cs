@@ -12,7 +12,8 @@ namespace Item_WPF.MVVM.Models
         public string Description { get; set; }
         public int Value { get; set; }
         public int Weight { get; set; }
-               
+
+        public List<AttackOption> AttackOptions { get; set; }
 
         public Item()
         {
