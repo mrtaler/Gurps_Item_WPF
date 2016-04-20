@@ -172,8 +172,8 @@ namespace Item_WPF
       }
      }
      
-        private decimal _MinRange;
-     public decimal MinRange 
+        private bool _MinRange;
+     public bool MinRange 
      { 
       get
       {
@@ -304,23 +304,6 @@ namespace Item_WPF
        {
         _single_reload = value;
         OnPropertyChanged("single_reload");
-       }
-      }
-     }
-     
-        private bool _Mount;
-     public bool Mount 
-     { 
-      get
-      {
-       return _Mount;
-      } 
-      set
-      {
-       if(_Mount != value)
-       {
-        _Mount = value;
-        OnPropertyChanged("Mount");
        }
       }
      }
