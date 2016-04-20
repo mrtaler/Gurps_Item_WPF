@@ -149,6 +149,41 @@ namespace Item_WPF
     		}
     	}
         private decimal _FullRange;
+<<<<<<< HEAD
+     public decimal FullRange 
+     { 
+      get
+      {
+       return _FullRange;
+      } 
+      set
+      {
+       if(_FullRange != value)
+       {
+        _FullRange = value;
+        OnPropertyChanged("FullRange");
+       }
+      }
+     }
+     
+        private bool _MinRange;
+     public bool MinRange 
+     { 
+      get
+      {
+       return _MinRange;
+      } 
+      set
+      {
+       if(_MinRange != value)
+       {
+        _MinRange = value;
+        OnPropertyChanged("MinRange");
+       }
+      }
+     }
+     
+=======
     	public decimal FullRange 
     	{ 
     		get
@@ -180,6 +215,7 @@ namespace Item_WPF
     			}
     		}
     	}
+>>>>>>> refs/remotes/origin/master
         private decimal _AWeight;
     	public decimal AWeight 
     	{ 
@@ -277,6 +313,24 @@ namespace Item_WPF
     		}
     	}
         private bool _single_reload;
+<<<<<<< HEAD
+     public bool single_reload 
+     { 
+      get
+      {
+       return _single_reload;
+      } 
+      set
+      {
+       if(_single_reload != value)
+       {
+        _single_reload = value;
+        OnPropertyChanged("single_reload");
+       }
+      }
+     }
+     
+=======
     	public bool single_reload 
     	{ 
     		get
@@ -292,6 +346,7 @@ namespace Item_WPF
     			}
     		}
     	}
+>>>>>>> refs/remotes/origin/master
         private int _Recoil;
     	public int Recoil 
     	{ 

@@ -1579,6 +1579,81 @@
           <NavigationProperty Name="G_AttachClass" Relationship="item1Model.FK_G_SubAttachClass_G_AttachClass" FromRole="G_SubAttachClass" ToRole="G_AttachClass" />
           <NavigationProperty Name="G_AvAttachClass" Relationship="item1Model.FK_G_AvAttachClass_G_SubAttachClass" FromRole="G_SubAttachClass" ToRole="G_AvAttachClass" />
         </EntityType>
+<<<<<<< HEAD
+        <EntityType Name="ITEM">
+          <Key>
+            <PropertyRef Name="uiIndex" />
+          </Key>
+          <Property Name="uiIndex" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="szItemName" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="szLongItemName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="szItemDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="usItemClass" Type="Int32" Nullable="false" />
+          <Property Name="ubClassIndex" Type="Int32" Nullable="false" />
+          <Property Name="ubWeight" Type="Decimal" Nullable="false" Precision="7" Scale="3" />
+          <Property Name="ItemSize" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="usPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Damageable" Type="Boolean" Nullable="false" />
+          <Property Name="Repairable" Type="Boolean" Nullable="false" />
+          <Property Name="WaterDamages" Type="Boolean" Nullable="false" />
+          <Property Name="Metal" Type="Boolean" Nullable="false" />
+          <Property Name="TwoHanded" Type="Boolean" Nullable="false" />
+          <Property Name="Electronic" Type="Boolean" Nullable="false" />
+          <Property Name="HT" Type="Boolean" Nullable="false" />
+          <Property Name="UT" Type="Boolean" Nullable="false" />
+          <Property Name="RemoteTrigger" Type="Boolean" Nullable="false" />
+          <Property Name="GasMask" Type="Boolean" Nullable="false" />
+          <Property Name="Alcohol" Type="Boolean" Nullable="false" />
+          <Property Name="Hardware" Type="Boolean" Nullable="false" />
+          <Property Name="Medical" Type="Boolean" Nullable="false" />
+          <Property Name="CamouflageKit" Type="Boolean" Nullable="false" />
+          <Property Name="LocksmithKit" Type="Boolean" Nullable="false" />
+          <Property Name="Toolkit" Type="Boolean" Nullable="false" />
+          <Property Name="FirstAidKit" Type="Boolean" Nullable="false" />
+          <Property Name="MedicalKit" Type="Boolean" Nullable="false" />
+          <Property Name="WireCutters" Type="Boolean" Nullable="false" />
+          <Property Name="Canteen" Type="Boolean" Nullable="false" />
+          <Property Name="GasCan" Type="Boolean" Nullable="false" />
+          <Property Name="Batteries" Type="Boolean" Nullable="false" />
+          <Property Name="NeedsBatteries" Type="Boolean" Nullable="false" />
+          <Property Name="ContainsLiquid" Type="Boolean" Nullable="false" />
+          <Property Name="MetalDetector" Type="Boolean" Nullable="false" />
+          <Property Name="FingerPrintID" Type="Boolean" Nullable="false" />
+          <Property Name="TripWireActivation" Type="Boolean" Nullable="false" />
+          <Property Name="TripWire" Type="Boolean" Nullable="false" />
+          <Property Name="Mount" Type="Boolean" Nullable="false" />
+          <Property Name="TL" Type="Int32" Nullable="false" />
+          <Property Name="LC" Type="Int32" Nullable="false" />
+          <Property Name="SizeBatteries" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="FoodType" Type="Int32" Nullable="false" />
+          <Property Name="LockPickModifier" Type="Int32" Nullable="false" />
+          <Property Name="CrowbarModifier" Type="Int32" Nullable="false" />
+          <Property Name="DisarmModifier" Type="Int32" Nullable="false" />
+          <Property Name="RepairModifier" Type="Int32" Nullable="false" />
+          <Property Name="DamageChance" Type="Int32" Nullable="false" />
+          <Property Name="clothestype" Type="Int32" Nullable="false" />
+          <Property Name="DrugType" Type="Int32" Nullable="false" />
+          <Property Name="Item_Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="minST" Type="Int32" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="used" Type="Boolean" Nullable="false" />
+          <Property Name="dt" Type="DateTime" Precision="3" />
+          <Property Name="Count_of_Bat" Type="Int32" Nullable="false" />
+          <Property Name="Works_on_Bat" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ARMOUR" Relationship="item1Model.FK_ARMOUR_ITEM_uiIndex" FromRole="ITEM" ToRole="ARMOUR" />
+          <NavigationProperty Name="Attachment" Relationship="item1Model.FK_Attachment_ITEM_uiIndex" FromRole="ITEM" ToRole="Attachment" />
+          <NavigationProperty Name="Cloth" Relationship="item1Model.FK_ITEM_Clothes" FromRole="ITEM" ToRole="Cloth" />
+          <NavigationProperty Name="DrugType1" Relationship="item1Model.FK_ITEM_DrugType" FromRole="ITEM" ToRole="DrugType" />
+          <NavigationProperty Name="EXPLOSIVE" Relationship="item1Model.FK_EXPLOSIVE_ITEM_uiIndex" FromRole="ITEM" ToRole="EXPLOSIVE" />
+          <NavigationProperty Name="FOOD" Relationship="item1Model.FK_ITEM_Food" FromRole="ITEM" ToRole="FOOD" />
+          <NavigationProperty Name="ItemClass" Relationship="item1Model.FK_Item_ItemClass" FromRole="ITEM" ToRole="ItemClass" />
+          <NavigationProperty Name="LC1" Relationship="item1Model.FK_ITEM_LC" FromRole="ITEM" ToRole="LC" />
+          <NavigationProperty Name="TL1" Relationship="item1Model.FK_ITEM_TL" FromRole="ITEM" ToRole="TL" />
+          <NavigationProperty Name="LOADBEARINGEQUIPMENT" Relationship="item1Model.FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex" FromRole="ITEM" ToRole="LOADBEARINGEQUIPMENT" />
+          <NavigationProperty Name="WEAPON" Relationship="item1Model.FK_WEAPON_ITEM_uiIndex" FromRole="ITEM" ToRole="WEAPON" />
+        </EntityType>
+=======
+>>>>>>> refs/remotes/origin/master
         <EntityType Name="ItemClass">
           <Key>
             <PropertyRef Name="id" />
@@ -1659,6 +1734,49 @@
           <NavigationProperty Name="WeaponDamages" Relationship="item1Model.FK_WeaponDamage_TypeOfDamage_id1" FromRole="TypeOfDamage" ToRole="WeaponDamage" />
           <NavigationProperty Name="WeaponDamages1" Relationship="item1Model.FK_WeaponDamage_TypeOfDamage_id2" FromRole="TypeOfDamage" ToRole="WeaponDamage" />
         </EntityType>
+<<<<<<< HEAD
+        <EntityType Name="WEAPON">
+          <Key>
+            <PropertyRef Name="uiIndex" />
+          </Key>
+          <Property Name="uiIndex" Type="Int32" Nullable="false" />
+          <Property Name="szWeaponName" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="ubWeaponClass" Type="Int32" Nullable="false" />
+          <Property Name="ubWeaponType" Type="Int32" Nullable="false" />
+          <Property Name="ubCalibre" Type="Int32" Nullable="false" />
+          <Property Name="DefACC" Type="Int32" Nullable="false" />
+          <Property Name="Half_Range" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+          <Property Name="FullRange" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+          <Property Name="MinRange" Type="Boolean" Nullable="false" />
+          <Property Name="AWeight" Type="Decimal" Nullable="false" Precision="5" Scale="3" />
+          <Property Name="ROF" Type="Int32" Nullable="false" />
+          <Property Name="Full_auto" Type="Boolean" Nullable="false" />
+          <Property Name="ROF_for_Sh" Type="Int32" Nullable="false" />
+          <Property Name="Shots" Type="Int32" Nullable="false" />
+          <Property Name="Time_For_reload" Type="Int32" Nullable="false" />
+          <Property Name="single_reload" Type="Boolean" Nullable="false" />
+          <Property Name="Recoil" Type="Int32" Nullable="false" />
+          <Property Name="HeavyWeapon" Type="Boolean" Nullable="false" />
+          <Property Name="Add_in_Chamber" Type="Boolean" Nullable="false" />
+          <Property Name="CutOff_shots" Type="Boolean" Nullable="false" />
+          <Property Name="CutOff_shotsCount" Type="Int32" Nullable="false" />
+          <Property Name="GrenadeLauncher" Type="Boolean" Nullable="false" />
+          <Property Name="RocketLauncher" Type="Boolean" Nullable="false" />
+          <Property Name="Mortar" Type="Boolean" Nullable="false" />
+          <Property Name="Cannon" Type="Boolean" Nullable="false" />
+          <Property Name="SingleShot_RocketLauncher" Type="Boolean" Nullable="false" />
+          <Property Name="RocketRifle" Type="Boolean" Nullable="false" />
+          <Property Name="Bulkfolded" Type="Boolean" Nullable="false" />
+          <Property Name="HCROF" Type="Boolean" Nullable="false" />
+          <Property Name="HCROFValue" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AMMO" Relationship="item1Model.FK_Calibre" FromRole="WEAPON" ToRole="AMMO" />
+          <NavigationProperty Name="AvailableAttachSlots" Relationship="item1Model.FK_AVeWeaponId" FromRole="WEAPON" ToRole="AvailableAttachSlot" />
+          <NavigationProperty Name="ITEM" Relationship="item1Model.FK_WEAPON_ITEM_uiIndex" FromRole="WEAPON" ToRole="ITEM" />
+          <NavigationProperty Name="WeaponDamages" Relationship="item1Model.FK_WeaponDamage_WEAPON_uiIndex" FromRole="WEAPON" ToRole="WeaponDamage" />
+          <NavigationProperty Name="WeaponType" Relationship="item1Model.FK_WeaponType" FromRole="WEAPON" ToRole="WeaponType" />
+        </EntityType>
+=======
+>>>>>>> refs/remotes/origin/master
         <EntityType Name="WeaponAttackType">
           <Key>
             <PropertyRef Name="id" />
@@ -2512,6 +2630,71 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< HEAD
+          <EntitySetMapping Name="ITEMs">
+            <EntityTypeMapping TypeName="item1Model.ITEM">
+              <MappingFragment StoreEntitySet="ITEM">
+                <ScalarProperty Name="Works_on_Bat" ColumnName="Works_on_Bat" />
+                <ScalarProperty Name="Count_of_Bat" ColumnName="Count_of_Bat" />
+                <ScalarProperty Name="dt" ColumnName="dt" />
+                <ScalarProperty Name="used" ColumnName="used" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="minST" ColumnName="minST" />
+                <ScalarProperty Name="Item_Image" ColumnName="Item_Image" />
+                <ScalarProperty Name="DrugType" ColumnName="DrugType" />
+                <ScalarProperty Name="clothestype" ColumnName="clothestype" />
+                <ScalarProperty Name="DamageChance" ColumnName="DamageChance" />
+                <ScalarProperty Name="RepairModifier" ColumnName="RepairModifier" />
+                <ScalarProperty Name="DisarmModifier" ColumnName="DisarmModifier" />
+                <ScalarProperty Name="CrowbarModifier" ColumnName="CrowbarModifier" />
+                <ScalarProperty Name="LockPickModifier" ColumnName="LockPickModifier" />
+                <ScalarProperty Name="FoodType" ColumnName="FoodType" />
+                <ScalarProperty Name="SizeBatteries" ColumnName="SizeBatteries" />
+                <ScalarProperty Name="LC" ColumnName="LC" />
+                <ScalarProperty Name="TL" ColumnName="TL" />
+                <ScalarProperty Name="Mount" ColumnName="Mount" />
+                <ScalarProperty Name="TripWire" ColumnName="TripWire" />
+                <ScalarProperty Name="TripWireActivation" ColumnName="TripWireActivation" />
+                <ScalarProperty Name="FingerPrintID" ColumnName="FingerPrintID" />
+                <ScalarProperty Name="MetalDetector" ColumnName="MetalDetector" />
+                <ScalarProperty Name="ContainsLiquid" ColumnName="ContainsLiquid" />
+                <ScalarProperty Name="NeedsBatteries" ColumnName="NeedsBatteries" />
+                <ScalarProperty Name="Batteries" ColumnName="Batteries" />
+                <ScalarProperty Name="GasCan" ColumnName="GasCan" />
+                <ScalarProperty Name="Canteen" ColumnName="Canteen" />
+                <ScalarProperty Name="WireCutters" ColumnName="WireCutters" />
+                <ScalarProperty Name="MedicalKit" ColumnName="MedicalKit" />
+                <ScalarProperty Name="FirstAidKit" ColumnName="FirstAidKit" />
+                <ScalarProperty Name="Toolkit" ColumnName="Toolkit" />
+                <ScalarProperty Name="LocksmithKit" ColumnName="LocksmithKit" />
+                <ScalarProperty Name="CamouflageKit" ColumnName="CamouflageKit" />
+                <ScalarProperty Name="Medical" ColumnName="Medical" />
+                <ScalarProperty Name="Hardware" ColumnName="Hardware" />
+                <ScalarProperty Name="Alcohol" ColumnName="Alcohol" />
+                <ScalarProperty Name="GasMask" ColumnName="GasMask" />
+                <ScalarProperty Name="RemoteTrigger" ColumnName="RemoteTrigger" />
+                <ScalarProperty Name="UT" ColumnName="UT" />
+                <ScalarProperty Name="HT" ColumnName="HT" />
+                <ScalarProperty Name="Electronic" ColumnName="Electronic" />
+                <ScalarProperty Name="TwoHanded" ColumnName="TwoHanded" />
+                <ScalarProperty Name="Metal" ColumnName="Metal" />
+                <ScalarProperty Name="WaterDamages" ColumnName="WaterDamages" />
+                <ScalarProperty Name="Repairable" ColumnName="Repairable" />
+                <ScalarProperty Name="Damageable" ColumnName="Damageable" />
+                <ScalarProperty Name="usPrice" ColumnName="usPrice" />
+                <ScalarProperty Name="ItemSize" ColumnName="ItemSize" />
+                <ScalarProperty Name="ubWeight" ColumnName="ubWeight" />
+                <ScalarProperty Name="ubClassIndex" ColumnName="ubClassIndex" />
+                <ScalarProperty Name="usItemClass" ColumnName="usItemClass" />
+                <ScalarProperty Name="szItemDesc" ColumnName="szItemDesc" />
+                <ScalarProperty Name="szLongItemName" ColumnName="szLongItemName" />
+                <ScalarProperty Name="szItemName" ColumnName="szItemName" />
+                <ScalarProperty Name="uiIndex" ColumnName="uiIndex" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+=======
+>>>>>>> refs/remotes/origin/master
           <EntitySetMapping Name="ItemClasses">
             <EntityTypeMapping TypeName="item1Model.ItemClass">
               <MappingFragment StoreEntitySet="ItemClass">
@@ -2591,6 +2774,45 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< HEAD
+          <EntitySetMapping Name="WEAPONs">
+            <EntityTypeMapping TypeName="item1Model.WEAPON">
+              <MappingFragment StoreEntitySet="WEAPON">
+                <ScalarProperty Name="HCROFValue" ColumnName="HCROFValue" />
+                <ScalarProperty Name="HCROF" ColumnName="HCROF" />
+                <ScalarProperty Name="Bulkfolded" ColumnName="Bulkfolded" />
+                <ScalarProperty Name="RocketRifle" ColumnName="RocketRifle" />
+                <ScalarProperty Name="SingleShot_RocketLauncher" ColumnName="SingleShot_RocketLauncher" />
+                <ScalarProperty Name="Cannon" ColumnName="Cannon" />
+                <ScalarProperty Name="Mortar" ColumnName="Mortar" />
+                <ScalarProperty Name="RocketLauncher" ColumnName="RocketLauncher" />
+                <ScalarProperty Name="GrenadeLauncher" ColumnName="GrenadeLauncher" />
+                <ScalarProperty Name="CutOff_shotsCount" ColumnName="CutOff_shotsCount" />
+                <ScalarProperty Name="CutOff_shots" ColumnName="CutOff_shots" />
+                <ScalarProperty Name="Add_in_Chamber" ColumnName="Add_in_Chamber" />
+                <ScalarProperty Name="HeavyWeapon" ColumnName="HeavyWeapon" />
+                <ScalarProperty Name="Recoil" ColumnName="Recoil" />
+                <ScalarProperty Name="single_reload" ColumnName="single_reload" />
+                <ScalarProperty Name="Time_For_reload" ColumnName="Time_For_reload" />
+                <ScalarProperty Name="Shots" ColumnName="Shots" />
+                <ScalarProperty Name="ROF_for_Sh" ColumnName="ROF_for_Sh" />
+                <ScalarProperty Name="Full_auto" ColumnName="Full_auto" />
+                <ScalarProperty Name="ROF" ColumnName="ROF" />
+                <ScalarProperty Name="AWeight" ColumnName="AWeight" />
+                <ScalarProperty Name="MinRange" ColumnName="MinRange" />
+                <ScalarProperty Name="FullRange" ColumnName="FullRange" />
+                <ScalarProperty Name="Half_Range" ColumnName="Half_Range" />
+                <ScalarProperty Name="DefACC" ColumnName="DefACC" />
+                <ScalarProperty Name="ubCalibre" ColumnName="ubCalibre" />
+                <ScalarProperty Name="ubWeaponType" ColumnName="ubWeaponType" />
+                <ScalarProperty Name="ubWeaponClass" ColumnName="ubWeaponClass" />
+                <ScalarProperty Name="szWeaponName" ColumnName="szWeaponName" />
+                <ScalarProperty Name="uiIndex" ColumnName="uiIndex" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+=======
+>>>>>>> refs/remotes/origin/master
           <EntitySetMapping Name="WeaponAttackTypes">
             <EntityTypeMapping TypeName="item1Model.WeaponAttackType">
               <MappingFragment StoreEntitySet="WeaponAttackType">
