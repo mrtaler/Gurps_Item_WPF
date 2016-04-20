@@ -404,7 +404,7 @@ namespace Item_WPF.MVVM.ViewModels
 
         public void SaveAs(object parameter)
         {
-            SaveFileDialog dialog = new SaveFileDialog();
+            SaveFileDialog dialog = new SaveFileDialog(); ;
             dialog.DefaultExt = ".gurps";
             dialog.OverwritePrompt = true;
             dialog.CheckPathExists = true;
