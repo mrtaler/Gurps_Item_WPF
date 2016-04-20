@@ -606,41 +606,6 @@ namespace Item_WPF
     		}
     	}
         private bool _TripWire;
-<<<<<<< HEAD
-     public bool TripWire 
-     { 
-      get
-      {
-       return _TripWire;
-      } 
-      set
-      {
-       if(_TripWire != value)
-       {
-        _TripWire = value;
-        OnPropertyChanged("TripWire");
-       }
-      }
-     }
-     
-        private bool _Mount;
-     public bool Mount 
-     { 
-      get
-      {
-       return _Mount;
-      } 
-      set
-      {
-       if(_Mount != value)
-       {
-        _Mount = value;
-        OnPropertyChanged("Mount");
-       }
-      }
-     }
-     
-=======
     	public bool TripWire 
     	{ 
     		get
@@ -672,7 +637,6 @@ namespace Item_WPF
     			}
     		}
     	}
->>>>>>> refs/remotes/origin/master
         private int _TL;
     	public int TL 
     	{ 

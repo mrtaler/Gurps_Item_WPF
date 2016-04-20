@@ -187,8 +187,8 @@ namespace Item_WPF.MVVM.ViewModels
                 return Character.SwingDamage;
             }
         }
-        
-        public ObservableCollection<ITEM> Inventory
+
+        public ObservableCollection<Item> Inventory
         {
             get
             {
@@ -280,14 +280,14 @@ namespace Item_WPF.MVVM.ViewModels
 
         public void AddItem(object parameter)
         {
-            all_ItemsView window = new all_ItemsView("all");
+            EditItemWindowView window = new EditItemWindowView();
             window.Owner = Owner;
-            //window.DataContext = new ITEM();
+            window.DataContext = new Item();
 
             bool? result = window.ShowDialog();
             if (result.HasValue && (result == true))
             {
-                Character.Inventory.Add((ITEM)window._allItemsViewModel.SelectedItemForWork);
+                Character.Inventory.Add((Item)window.DataContext);
 
                 NotifyPropertyChanged("Inventory");
             }
