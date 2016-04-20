@@ -20,18 +20,12 @@ namespace Item_WPF.MVVM.View
     /// </summary>
     public partial class all_ItemsView : Window
     {
-        public all_ItemsViewModel _allItemsViewModel;       
+        private all_ItemsViewModel _allItemsViewModel;       
         public all_ItemsView(object parametr)
         {
             _allItemsViewModel = new all_ItemsViewModel(this,parametr);
             DataContext = _allItemsViewModel;
             InitializeComponent();
-        }
-
-        private void Close_Click(object sender, RoutedEventArgs e)
-        {
-            DialogResult = true;
-            this.Close();
         }
     }
 }

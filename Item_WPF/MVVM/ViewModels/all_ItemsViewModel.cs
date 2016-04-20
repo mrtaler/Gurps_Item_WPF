@@ -11,7 +11,7 @@ using System.Windows;
 
 namespace Item_WPF.MVVM.ViewModels
 {
-    public class all_ItemsViewModel : ViewModelBase, IDisposable
+    class all_ItemsViewModel : ViewModelBase, IDisposable
     {
         protected Window Owner;
         private item1Entities _context;
