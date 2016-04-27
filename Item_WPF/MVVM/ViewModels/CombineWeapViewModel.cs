@@ -43,8 +43,8 @@ namespace Item_WPF.MVVM.ViewModels
             CSelectWeapon = new DelegateCommand(SelectWeapon);//work
 
 
-            CScopeSelect = new ActionCommand(SelectScope) { IsExecutable = false };
-            
+            CScopeSelect = new ViewModelCommand(SelectScope,false);
+
             CLaserSelect = new ActionCommand(SelectLaser) { IsExecutable = false };
             CLightSelect = new ActionCommand(SelectLight) { IsExecutable = false };
             CBipodSelect = new ActionCommand(SelectBipod) { IsExecutable = false };
@@ -101,7 +101,7 @@ namespace Item_WPF.MVVM.ViewModels
         public DelegateCommand CSelectWeapon { get; set; }
         #endregion
         #region Command SelectScope
-        private void SelectScope()
+        private void SelectScope(object parameter)
         {
             if (ItemToGridColl.FirstOrDefault(p => p.Type == "Scope") != null)
                 ItemToGridColl.Remove(ItemToGridColl.First(p => p.Type == "Scope"));
@@ -117,7 +117,7 @@ namespace Item_WPF.MVVM.ViewModels
                 _SIVM.Dispose();
             }
         }
-        public ActionCommand CScopeSelect { get; set; }
+        public ViewModelCommand CScopeSelect { get; set; }
 
         //public DelegateCommand CScopeSelect { get; set; }
 

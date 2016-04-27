@@ -112,7 +112,7 @@
         <Button x:Name="DelButton"
                 Width="75"
                 Margin="716,312,0,0"
-                HorizontalAlignment="Left"
+                                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Content="Del" />
         <Button x:Name="LaserSelectButton"

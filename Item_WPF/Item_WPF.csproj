@@ -75,6 +75,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="addin\Converters.cs" />
+    <Compile Include="addin\ViewModelCommand.cs" />
     <Compile Include="addin\RelayCommand.cs" />
     <Compile Include="AMMO.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
