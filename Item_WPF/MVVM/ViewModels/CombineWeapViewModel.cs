@@ -45,18 +45,18 @@ namespace Item_WPF.MVVM.ViewModels
 
             CScopeSelect = new ViewModelCommand(SelectScope,false);
 
-            CLaserSelect = new ActionCommand(SelectLaser) { IsExecutable = false };
-            CLightSelect = new ActionCommand(SelectLight) { IsExecutable = false };
-            CBipodSelect = new ActionCommand(SelectBipod) { IsExecutable = false };
-            CSilenserSelect = new ActionCommand(SelectSilenser) { IsExecutable = false };
-            CLauncherSelect = new ActionCommand(SelectLauncher) { IsExecutable = false };
-            CStockSelect = new ActionCommand(SelectStock) { IsExecutable = false };
-            CBayonetSelect = new ActionCommand(SelectBayonet) { IsExecutable = false };
-            CMagazineSelect = new ActionCommand(SelectMagazine) { IsExecutable = false };
-            CInternalSelect = new ActionCommand(SelectInternal) { IsExecutable = false };
-            CExternalSelect = new ActionCommand(SelectExternal) { IsExecutable = false };
+            CLaserSelect = new ViewModelCommand(SelectLaser, false);
+            CLightSelect = new ViewModelCommand(SelectLight, false);
+            CBipodSelect = new ViewModelCommand(SelectBipod, false);
+            CSilenserSelect = new ViewModelCommand(SelectSilenser, false);
+            CLauncherSelect = new ViewModelCommand(SelectLauncher, false);
+            CStockSelect = new ViewModelCommand(SelectStock, false);
+            CBayonetSelect = new ViewModelCommand(SelectBayonet, false);
+            CMagazineSelect = new ViewModelCommand(SelectMagazine, false);
+            CInternalSelect = new ViewModelCommand(SelectInternal, false);
+            CExternalSelect = new ViewModelCommand(SelectExternal, false);
 
-            
+
         }       
         #region Command SelectWeapon
         private void SelectWeapon(object parameter)
@@ -76,27 +76,27 @@ namespace Item_WPF.MVVM.ViewModels
             _SIVM.Dispose();
 
             if (combineweap.IdScopeItem != null)
-                CScopeSelect.IsExecutable = true;
+                CScopeSelect.CanExecute = true;
             if (combineweap.IdLaserItem != null)
-                CLaserSelect.IsExecutable = true;
+                CLaserSelect.CanExecute = true;
             if (combineweap.IdLightItem != null)
-                CLightSelect.IsExecutable = true;
+                CLightSelect.CanExecute = true;
             if (combineweap.IdBipodItem != null)
-                CBipodSelect.IsExecutable = true;
+                CBipodSelect.CanExecute = true;
             if (combineweap.IdSilenserItem != null)
-                CSilenserSelect.IsExecutable = true;
+                CSilenserSelect.CanExecute = true;
             if (combineweap.IdLauncherItem != null)
-                CLauncherSelect.IsExecutable = true;
+                CLauncherSelect.CanExecute = true;
             if (combineweap.IdStockItem != null)
-                CStockSelect.IsExecutable = true;
+                CStockSelect.CanExecute = true;
             if (combineweap.IdBayonetItem != null)
-                CBayonetSelect.IsExecutable = true;
+                CBayonetSelect.CanExecute = true;
             if (combineweap.IdMagazineItem != null)
-                CMagazineSelect.IsExecutable = true;
+                CMagazineSelect.CanExecute = true;
             if (combineweap.IdInternalItem != null)
-                CInternalSelect.IsExecutable = true;
+                CInternalSelect.CanExecute = true;
             if (combineweap.IdExternalItem != null)
-                CExternalSelect.IsExecutable = true;
+                CExternalSelect.CanExecute = true;
         }
         public DelegateCommand CSelectWeapon { get; set; }
         #endregion
@@ -140,7 +140,7 @@ namespace Item_WPF.MVVM.ViewModels
                 _SIVM.Dispose();
             }
         }
-        public ActionCommand CLaserSelect { get; set; }
+        public ViewModelCommand CLaserSelect { get; set; }
         #endregion
         #region Command SelectLight
         private void SelectLight()
@@ -161,7 +161,7 @@ namespace Item_WPF.MVVM.ViewModels
             }
 
         }
-        public ActionCommand CLightSelect { get; set; }
+        public ViewModelCommand CLightSelect { get; set; }
         #endregion
         #region Command SelectBipod
         private void SelectBipod()
@@ -181,7 +181,7 @@ namespace Item_WPF.MVVM.ViewModels
                 _SIVM.Dispose();
             }
         }
-        public ActionCommand CBipodSelect { get; set; }
+        public ViewModelCommand CBipodSelect { get; set; }
         #endregion
         #region Command SelectSilenser
         private void SelectSilenser()
@@ -201,7 +201,7 @@ namespace Item_WPF.MVVM.ViewModels
                 _SIVM.Dispose();
             }
         }
-        public ActionCommand CSilenserSelect { get; set; }
+        public ViewModelCommand CSilenserSelect { get; set; }
         #endregion
         #region Command SelectLauncher
         private void SelectLauncher()
@@ -221,7 +221,7 @@ namespace Item_WPF.MVVM.ViewModels
                 _SIVM.Dispose();
             }
         }
-        public ActionCommand CLauncherSelect { get; set; }
+        public ViewModelCommand CLauncherSelect { get; set; }
         #endregion
         #region Command SelectStock
         private void SelectStock()
@@ -241,7 +241,7 @@ namespace Item_WPF.MVVM.ViewModels
                 _SIVM.Dispose();
             }
         }
-        public ActionCommand CStockSelect { get; set; }
+        public ViewModelCommand CStockSelect { get; set; }
         #endregion
         #region Command SelectBayonet
         private void SelectBayonet()
@@ -261,7 +261,7 @@ namespace Item_WPF.MVVM.ViewModels
                 _SIVM.Dispose();
             }
         }
-        public ActionCommand CBayonetSelect { get; set; }
+        public ViewModelCommand CBayonetSelect { get; set; }
         #endregion
         #region Command SelectMagazine
         private void SelectMagazine()
@@ -282,7 +282,7 @@ namespace Item_WPF.MVVM.ViewModels
             }
 
         }
-        public ActionCommand CMagazineSelect { get; set; }
+        public ViewModelCommand CMagazineSelect { get; set; }
         #endregion
         #region Command SelectInternal
         private void SelectInternal()
@@ -302,7 +302,7 @@ namespace Item_WPF.MVVM.ViewModels
                 _SIVM.Dispose();
             }
         }
-        public ActionCommand CInternalSelect { get; set; }
+        public ViewModelCommand CInternalSelect { get; set; }
         #endregion
         #region Command SelectExternal
         private void SelectExternal()
@@ -322,7 +322,7 @@ namespace Item_WPF.MVVM.ViewModels
                 _SIVM.Dispose();
             }
         }
-        public ActionCommand CExternalSelect { get; set; }
+        public ViewModelCommand CExternalSelect { get; set; }
         #endregion
 
         #region inter
