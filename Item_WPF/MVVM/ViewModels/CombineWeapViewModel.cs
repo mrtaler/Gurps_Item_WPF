@@ -43,7 +43,7 @@ namespace Item_WPF.MVVM.ViewModels
             CSelectWeapon = new DelegateCommand(SelectWeapon);//work
 
 
-            CScopeSelect = new ViewModelCommand(SelectScope,false);
+            CScopeSelect = new ViewModelCommand(SelectScope, false);
 
             CLaserSelect = new ViewModelCommand(SelectLaser, false);
             CLightSelect = new ViewModelCommand(SelectLight, false);
@@ -57,7 +57,7 @@ namespace Item_WPF.MVVM.ViewModels
             CExternalSelect = new ViewModelCommand(SelectExternal, false);
 
 
-        }       
+        }
         #region Command SelectWeapon
         private void SelectWeapon(object parameter)
         {
@@ -67,7 +67,8 @@ namespace Item_WPF.MVVM.ViewModels
 
             SIW.DataContext = _SIVM;
             SIW.ShowDialog();
-            AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+            AllItemToGridChangeWin = _SIVM.Items.FirstOrDefault(p => p.uiIndex == _SIVM.SelectedItems.ID);
+            //AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
             Weapon_Item_Image = AllItemToGridChangeWin.Item_Image;
             combineweap = new CombineWeapModel(AllItemToGridChangeWin);
             ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin);

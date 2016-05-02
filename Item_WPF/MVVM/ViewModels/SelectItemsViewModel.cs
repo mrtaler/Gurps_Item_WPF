@@ -8,21 +8,23 @@ using System.Threading.Tasks;
 
 namespace Item_WPF.MVVM.ViewModels
 {
-    class SelectItemsViewModel:IDisposable
+    class SelectItemsViewModel : IDisposable
     {
         private item1Entities _context;
         private string _parametr;
         public ObservableCollection<ITEM> Items { get; set; }
         public ItemsForSortModel SelectedItems { get; set; }
         public ObservableCollection<ItemsForSortModel> IttForSort { get; set; }
-        public SelectItemsViewModel(string Parametr,int? mount)
+        public SelectItemsViewModel(string Parametr, int? mount)
         {
             SelectedItems = new ItemsForSortModel();
-               _context = new item1Entities();
+            _context = new item1Entities();
+            Items = new ObservableCollection<ITEM>(_context.ITEMs);
+
             _parametr = Parametr;
             #region if (Parametr=="Gun")
-            if (Parametr=="Gun")
-                        {
+            if (Parametr == "Gun")
+            {
                 IttForSort = new ObservableCollection<ItemsForSortModel>(_context.ITEMs.
                 Where(p => p.ItemClass.name == Parametr).
                 Select(p => new
@@ -49,7 +51,7 @@ namespace Item_WPF.MVVM.ViewModels
             else if (Parametr == "Attachment")
             {
                 IttForSort = new ObservableCollection<ItemsForSortModel>(_context.ITEMs.
-                Where(p => p.ItemClass.name == Parametr).Where(p=>p.Attachment.Attachmentmount1.id== mount).
+                Where(p => p.ItemClass.name == Parametr).Where(p => p.Attachment.Attachmentmount1.id == mount).
                 Select(p => new
                 {
                     _uiIndex = p.uiIndex,
