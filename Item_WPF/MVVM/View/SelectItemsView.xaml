@@ -1,45 +1,49 @@
-﻿<Window x:Class="Item_WPF.MVVM.View.SelectItemsView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:Item_WPF.MVVM.View"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:Com="clr-namespace:Item_WPF.addin"
-        Title="Select_Items"
-        Width="522.295"
-        Height="300"
-        mc:Ignorable="d">
+﻿<Window    x:Class="Item_WPF.MVVM.View.SelectItemsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Com="clr-namespace:Item_WPF.addin"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Item_WPF.MVVM.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Select_Items"
+    Width="522.295"
+    Height="300"
+    mc:Ignorable="d">
     <Window.InputBindings>
-        <KeyBinding Command="{Binding CSelectItemClose}" Gesture="ESC"/>
+        <KeyBinding Command="{Binding CSelectItemClose}" Gesture="ESC" />
     </Window.InputBindings>
-        <Grid>
-        <DataGrid x:Name="ItemsDataGrid" IsReadOnly="True"
-                  Margin="10,10,10,41"
-                  ItemsSource="{Binding IttForSort}"
-                  SelectedItem="{Binding SelectedItems}"
-                  SelectedValuePath="ID" />
-        <Button x:Name="SelectButton"
-                Width="75"
-                Height="20"
-                Margin="10,0,0,16"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Bottom"
-                Content="Select"
-                Command="{Binding CSelectItem}"/>
-        <Button x:Name="Button1"
-                Width="75"
-                Margin="90,0,0,16"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Bottom"
-                Content="Cancel" Command="{Binding CSelectItemClose}" >            
-</Button>
-                
-                
-        <Label x:Name="Label1"
-               Margin="187,233,0,0"
-               HorizontalAlignment="Left"
-               VerticalAlignment="Top"
-               Content="{Binding SelectedItems.Name}" />
+    <Grid>
+        <DataGrid
+            x:Name="ItemsDataGrid"
+            Margin="10,10,10,41"
+            IsReadOnly="True"
+            ItemsSource="{Binding IttForSort}"
+            SelectedItem="{Binding SelectedItems}"
+            SelectedValuePath="ID" />
+        <Button
+            x:Name="SelectButton"
+            Width="75"
+            Height="20"
+            Margin="10,0,0,16"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Command="{Binding CSelectItem}"
+            Content="Select" />
+        <Button
+            x:Name="Button1"
+            Width="75"
+            Margin="90,0,0,16"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Command="{Binding CSelectItemClose}"
+            Content="Cancel" />
+
+        <Label
+            x:Name="Label1"
+            Margin="187,233,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="{Binding SelectedItems.Name}" />
 
     </Grid>
 </Window>

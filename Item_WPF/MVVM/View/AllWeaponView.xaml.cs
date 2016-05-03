@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Item_WPF.MVVM.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,19 +12,19 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Item_WPF.MVVM.ViewModels;
 
 namespace Item_WPF.MVVM.View
 {
     /// <summary>
-    /// Логика взаимодействия для TestView.xaml
+    /// Логика взаимодействия для AllWeaponView.xaml
     /// </summary>
-    public partial class TestView : Window
+    public partial class AllWeaponView : Window
     {
-        public TestView()
+        public AllWeaponView()
         {
+            AllWeaponViewModel allweaponviewmodel = new AllWeaponViewModel();
+            this.DataContext = allweaponviewmodel;
             InitializeComponent();
-            DataContext=new TestViewModel();
         }
     }
 }

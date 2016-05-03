@@ -180,6 +180,7 @@
     <Compile Include="MVVM\Models\ItemToGridModel.cs" />
     <Compile Include="MVVM\Models\Skill.cs" />
     <Compile Include="MVVM\ViewModels\AboutViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\AllWeaponViewModel.cs" />
     <Compile Include="MVVM\ViewModels\all_ItemsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AmmoViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AttacmentEditViewModel.cs" />
@@ -199,6 +200,9 @@
     <Compile Include="MVVM\ViewModels\WeaponEditViewModel.cs" />
     <Compile Include="MVVM\View\AboutWindowView.xaml.cs">
       <DependentUpon>AboutWindowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\AllWeaponView.xaml.cs">
+      <DependentUpon>AllWeaponView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\all_ItemsView.xaml.cs">
       <DependentUpon>all_ItemsView.xaml</DependentUpon>
@@ -247,9 +251,6 @@
     </Compile>
     <Compile Include="MVVM\View\SelectItemsView.xaml.cs">
       <DependentUpon>SelectItemsView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MVVM\View\TestView.xaml.cs">
-      <DependentUpon>TestView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\WeaponEditView.xaml.cs">
       <DependentUpon>WeaponEditView.xaml</DependentUpon>
@@ -307,6 +308,10 @@
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
     </Compile>
     <Page Include="MVVM\View\AboutWindowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\AllWeaponView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -371,10 +376,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\SelectItemsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MVVM\View\TestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Item_WPF.MVVM.Models
 {
-    class ItemToGridModel
+    public class ItemToGridModel
     {
         public ITEM ItemS { get; set; }
         public string Name { get; set; }

@@ -53,10 +53,10 @@ namespace Item_WPF.MVVM.ViewModels
 
         public void ShowAllItems(object parameter)
         {
-       
-                all_ItemsView allItems = new all_ItemsView(parameter);
-                allItems.Show();
-            
+            if ((parameter as string) == "Gun") { AllWeaponView allItems = new AllWeaponView(); allItems.Show(); }
+
+            else { all_ItemsView allItems = new all_ItemsView(parameter); allItems.Show(); }
+           
         }
         public void OwnerClose(object parameter)
         {
