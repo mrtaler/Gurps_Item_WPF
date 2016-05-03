@@ -1,22 +1,28 @@
-﻿using Item_WPF.MVVM.Models;
+﻿using Item_WPF.addin;
+using Item_WPF.MVVM.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Item_WPF.MVVM.ViewModels
 {
     class SelectItemsViewModel : IDisposable
     {
         private item1Entities _context;
+        private Window _win;
         private string _parametr;
         public ObservableCollection<ITEM> Items { get; set; }
         public ItemsForSortModel SelectedItems { get; set; }
         public ObservableCollection<ItemsForSortModel> IttForSort { get; set; }
-        public SelectItemsViewModel(string Parametr, int? mount)
+        public SelectItemsViewModel(string Parametr, int? mount, Window win)
         {
+            _win = win;
+            CSelectItem = new ViewModelCommand(SelectItem, true);
+            CSelectItemClose = new ViewModelCommand(SelectItemClose, true);
             SelectedItems = new ItemsForSortModel();
             _context = new item1Entities();
             Items = new ObservableCollection<ITEM>(_context.ITEMs);
@@ -78,6 +84,27 @@ namespace Item_WPF.MVVM.ViewModels
         {
             _context.Dispose();
         }
+        #region CSelectItem
+        private void SelectItem(object parameter)
+        {
+            _win.Close();
+        }
+        public ViewModelCommand CSelectItem { get; set; }
+
+        #endregion
+        #region CSelectItemClose
+
+        private void SelectItemClose(object parameter)
+        {
+            SelectedItems = null;
+            _win.Close();
+            Dispose();
+        }
+
+        public ViewModelCommand CSelectItemClose { get; set; }
+
+
+        #endregion
     }
 }
 /*

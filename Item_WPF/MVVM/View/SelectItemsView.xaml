@@ -4,12 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Item_WPF.MVVM.View"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Com="clr-namespace:Item_WPF.addin"
         Title="Select_Items"
         Width="522.295"
         Height="300"
         mc:Ignorable="d">
-    <Grid>
-        <DataGrid x:Name="ItemsDataGrid"
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding CSelectItemClose}" Gesture="ESC"/>
+    </Window.InputBindings>
+        <Grid>
+        <DataGrid x:Name="ItemsDataGrid" IsReadOnly="True"
                   Margin="10,10,10,41"
                   ItemsSource="{Binding IttForSort}"
                   SelectedItem="{Binding SelectedItems}"
@@ -20,13 +24,17 @@
                 Margin="10,0,0,16"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Bottom"
-                Content="Select" />
+                Content="Select"
+                Command="{Binding CSelectItem}"/>
         <Button x:Name="Button1"
                 Width="75"
                 Margin="90,0,0,16"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Bottom"
-                Content="Cancel" />
+                Content="Cancel" Command="{Binding CSelectItemClose}" >            
+</Button>
+                
+                
         <Label x:Name="Label1"
                Margin="187,233,0,0"
                HorizontalAlignment="Left"
