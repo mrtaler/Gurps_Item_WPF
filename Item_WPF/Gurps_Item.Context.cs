@@ -64,7 +64,7 @@ namespace Item_WPF
         public virtual DbSet<ITEM> ITEMs { get; set; }
         public virtual DbSet<WEAPON> WEAPONs { get; set; }
     
-        public virtual int NEW_ITEM_att(string name, Nullable<int> g_att_class, Nullable<int> g_sub_att, Nullable<int> id_att_mount)
+        public virtual int NEW_ITEM_att(string name, Nullable<int> g_att_class, Nullable<int> g_sub_att, string id_att_mount)
         {
             var nameParameter = name != null ?
                 new ObjectParameter("name", name) :
@@ -78,9 +78,9 @@ namespace Item_WPF
                 new ObjectParameter("G_sub_att", g_sub_att) :
                 new ObjectParameter("G_sub_att", typeof(int));
     
-            var id_att_mountParameter = id_att_mount.HasValue ?
+            var id_att_mountParameter = id_att_mount != null ?
                 new ObjectParameter("id_att_mount", id_att_mount) :
-                new ObjectParameter("id_att_mount", typeof(int));
+                new ObjectParameter("id_att_mount", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NEW_ITEM_att", nameParameter, g_att_classParameter, g_sub_attParameter, id_att_mountParameter);
         }
@@ -98,7 +98,7 @@ namespace Item_WPF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NEW_ITEM", nameParameter, class_ofItemParameter, returns);
         }
     
-        public virtual int NEW_ITEMWeap(string name, string class_ofItem, Nullable<int> weight, Nullable<int> sT, string bulk, Nullable<decimal> cost, string lcin, string tLin, string desc, Nullable<int> rOF, Nullable<int> recoill, Nullable<int> defACCc, Nullable<int> half_Rangee, Nullable<int> fullRangee, string damagee, Nullable<int> shotss, Nullable<bool> addinChamber, Nullable<int> timeForreload, Nullable<bool> singlereload, ObjectParameter returns)
+        public virtual int NEW_ITEMWeap(string name, string class_ofItem, Nullable<int> weight, Nullable<int> sT, string bulk, Nullable<decimal> cost, string lcin, string tLin, string desc, Nullable<bool> twoHanded, string weaponClass, string weaponType, Nullable<bool> full_auto, Nullable<int> aCCAddin, Nullable<int> rOF_for_Sh, Nullable<int> rOF, Nullable<int> recoill, Nullable<int> defACCc, Nullable<int> half_Rangee, Nullable<int> fullRangee, string damagee, Nullable<int> shotss, Nullable<bool> addinChamber, Nullable<int> timeForreload, Nullable<bool> singlereload, string damage, Nullable<decimal> armorDivision, string typeOfDamage1, string typeOfDamage2, string typeOfDam1, string typeOfDam2, ObjectParameter returns)
         {
             var nameParameter = name != null ?
                 new ObjectParameter("name", name) :
@@ -135,6 +135,30 @@ namespace Item_WPF
             var descParameter = desc != null ?
                 new ObjectParameter("Desc", desc) :
                 new ObjectParameter("Desc", typeof(string));
+    
+            var twoHandedParameter = twoHanded.HasValue ?
+                new ObjectParameter("TwoHanded", twoHanded) :
+                new ObjectParameter("TwoHanded", typeof(bool));
+    
+            var weaponClassParameter = weaponClass != null ?
+                new ObjectParameter("WeaponClass", weaponClass) :
+                new ObjectParameter("WeaponClass", typeof(string));
+    
+            var weaponTypeParameter = weaponType != null ?
+                new ObjectParameter("WeaponType", weaponType) :
+                new ObjectParameter("WeaponType", typeof(string));
+    
+            var full_autoParameter = full_auto.HasValue ?
+                new ObjectParameter("Full_auto", full_auto) :
+                new ObjectParameter("Full_auto", typeof(bool));
+    
+            var aCCAddinParameter = aCCAddin.HasValue ?
+                new ObjectParameter("ACCAddin", aCCAddin) :
+                new ObjectParameter("ACCAddin", typeof(int));
+    
+            var rOF_for_ShParameter = rOF_for_Sh.HasValue ?
+                new ObjectParameter("ROF_for_Sh", rOF_for_Sh) :
+                new ObjectParameter("ROF_for_Sh", typeof(int));
     
             var rOFParameter = rOF.HasValue ?
                 new ObjectParameter("ROF", rOF) :
@@ -176,7 +200,31 @@ namespace Item_WPF
                 new ObjectParameter("singlereload", singlereload) :
                 new ObjectParameter("singlereload", typeof(bool));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NEW_ITEMWeap", nameParameter, class_ofItemParameter, weightParameter, sTParameter, bulkParameter, costParameter, lcinParameter, tLinParameter, descParameter, rOFParameter, recoillParameter, defACCcParameter, half_RangeeParameter, fullRangeeParameter, damageeParameter, shotssParameter, addinChamberParameter, timeForreloadParameter, singlereloadParameter, returns);
+            var damageParameter = damage != null ?
+                new ObjectParameter("Damage", damage) :
+                new ObjectParameter("Damage", typeof(string));
+    
+            var armorDivisionParameter = armorDivision.HasValue ?
+                new ObjectParameter("ArmorDivision", armorDivision) :
+                new ObjectParameter("ArmorDivision", typeof(decimal));
+    
+            var typeOfDamage1Parameter = typeOfDamage1 != null ?
+                new ObjectParameter("TypeOfDamage1", typeOfDamage1) :
+                new ObjectParameter("TypeOfDamage1", typeof(string));
+    
+            var typeOfDamage2Parameter = typeOfDamage2 != null ?
+                new ObjectParameter("TypeOfDamage2", typeOfDamage2) :
+                new ObjectParameter("TypeOfDamage2", typeof(string));
+    
+            var typeOfDam1Parameter = typeOfDam1 != null ?
+                new ObjectParameter("TypeOfDam1", typeOfDam1) :
+                new ObjectParameter("TypeOfDam1", typeof(string));
+    
+            var typeOfDam2Parameter = typeOfDam2 != null ?
+                new ObjectParameter("TypeOfDam2", typeOfDam2) :
+                new ObjectParameter("TypeOfDam2", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NEW_ITEMWeap", nameParameter, class_ofItemParameter, weightParameter, sTParameter, bulkParameter, costParameter, lcinParameter, tLinParameter, descParameter, twoHandedParameter, weaponClassParameter, weaponTypeParameter, full_autoParameter, aCCAddinParameter, rOF_for_ShParameter, rOFParameter, recoillParameter, defACCcParameter, half_RangeeParameter, fullRangeeParameter, damageeParameter, shotssParameter, addinChamberParameter, timeForreloadParameter, singlereloadParameter, damageParameter, armorDivisionParameter, typeOfDamage1Parameter, typeOfDamage2Parameter, typeOfDam1Parameter, typeOfDam2Parameter, returns);
         }
     }
 }

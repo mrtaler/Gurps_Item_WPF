@@ -228,8 +228,8 @@ namespace Item_WPF
     			}
     		}
     	}
-        private int _ROF_for_Sh;
-    	public int ROF_for_Sh 
+        private Nullable<int> _ROF_for_Sh;
+    	public Nullable<int> ROF_for_Sh 
     	{ 
     		get
     		{
@@ -513,6 +513,22 @@ namespace Item_WPF
     			{
     				_HCROFValue = value;
     				OnPropertyChanged("HCROFValue");
+    			}
+    		}
+    	}
+        private Nullable<int> _ACCAddin;
+    	public Nullable<int> ACCAddin 
+    	{ 
+    		get
+    		{
+    			return _ACCAddin;
+    		} 
+    		set
+    		{
+    			if (_ACCAddin != value)
+    			{
+    				_ACCAddin = value;
+    				OnPropertyChanged("ACCAddin");
     			}
     		}
     	}

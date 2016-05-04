@@ -409,7 +409,10 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Gurps_Item.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="addin\id" />
     <None Include="addin\ItemModelDiagram.dbd" />
+    <None Include="addin\Диаграмма1.dbd" />
+    <None Include="addin\Копия Fall_weap.xlsx" />
     <None Include="ClassDiagram1.cd" />
     <None Include="Gurps_Item.edmx.diagram">
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
@@ -427,7 +430,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="addin\InsertStoreP.sql" />
     <Content Include="addin\ItemModel.edmx.sql" />
+    <Content Include="addin\SQL.sql" />
     <Content Include="Gurps_Item.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Gurps_Item.edmx</DependentUpon>

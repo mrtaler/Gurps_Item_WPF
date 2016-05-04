@@ -61,8 +61,8 @@ namespace Item_WPF
     			}
     		}
     	}
-        private int _id_AttachClass;
-    	public int id_AttachClass 
+        private Nullable<int> _id_AttachClass;
+    	public Nullable<int> id_AttachClass 
     	{ 
     		get
     		{

@@ -284,7 +284,7 @@
           </Key>
           <Property Name="id_attach" Type="int" Nullable="false" />
           <Property Name="id_GSubClass" Type="int" Nullable="false" />
-          <Property Name="id_AttachClass" Type="int" Nullable="false" />
+          <Property Name="id_AttachClass" Type="int" />
         </EntityType>
         <EntityType Name="G_SubAttachClass">
           <Key>
@@ -439,13 +439,14 @@
           <Property Name="ubWeaponType" Type="int" Nullable="false" />
           <Property Name="ubCalibre" Type="int" Nullable="false" />
           <Property Name="DefACC" Type="int" Nullable="false" />
+          <Property Name="ACCAddin" Type="int" />
           <Property Name="Half_Range" Type="decimal" Precision="10" Scale="4" Nullable="false" />
           <Property Name="FullRange" Type="decimal" Precision="10" Scale="4" Nullable="false" />
           <Property Name="MinRange" Type="bit" Nullable="false" />
           <Property Name="AWeight" Type="decimal" Precision="5" Scale="3" Nullable="false" />
           <Property Name="ROF" Type="int" Nullable="false" />
           <Property Name="Full_auto" Type="bit" Nullable="false" />
-          <Property Name="ROF_for_Sh" Type="int" Nullable="false" />
+          <Property Name="ROF_for_Sh" Type="int" />
           <Property Name="Shots" Type="int" Nullable="false" />
           <Property Name="Time_For_reload" Type="int" Nullable="false" />
           <Property Name="single_reload" Type="bit" Nullable="false" />
@@ -885,7 +886,7 @@
           <Parameter Name="name" Type="nvarchar" Mode="In" />
           <Parameter Name="G_att_class" Type="int" Mode="In" />
           <Parameter Name="G_sub_att" Type="int" Mode="In" />
-          <Parameter Name="id_att_mount" Type="int" Mode="In" />
+          <Parameter Name="id_att_mount" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="NEW_ITEMWeap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="name" Type="nvarchar" Mode="In" />
@@ -897,6 +898,12 @@
           <Parameter Name="Lcin" Type="nvarchar" Mode="In" />
           <Parameter Name="TLin" Type="nvarchar" Mode="In" />
           <Parameter Name="Desc" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="TwoHanded" Type="bit" Mode="In" />
+          <Parameter Name="WeaponClass" Type="nvarchar" Mode="In" />
+          <Parameter Name="WeaponType" Type="nvarchar" Mode="In" />
+          <Parameter Name="Full_auto" Type="bit" Mode="In" />
+          <Parameter Name="ACCAddin" Type="int" Mode="In" />
+          <Parameter Name="ROF_for_Sh" Type="int" Mode="In" />
           <Parameter Name="ROF" Type="int" Mode="In" />
           <Parameter Name="Recoill" Type="int" Mode="In" />
           <Parameter Name="DefACCc" Type="int" Mode="In" />
@@ -907,6 +914,12 @@
           <Parameter Name="AddinChamber" Type="bit" Mode="In" />
           <Parameter Name="TimeForreload" Type="int" Mode="In" />
           <Parameter Name="singlereload" Type="bit" Mode="In" />
+          <Parameter Name="Damage" Type="nvarchar" Mode="In" />
+          <Parameter Name="ArmorDivision" Type="decimal" Mode="In" />
+          <Parameter Name="TypeOfDamage1" Type="nvarchar" Mode="In" />
+          <Parameter Name="TypeOfDamage2" Type="nvarchar" Mode="In" />
+          <Parameter Name="TypeOfDam1" Type="nvarchar" Mode="In" />
+          <Parameter Name="TypeOfDam2" Type="nvarchar" Mode="In" />
           <Parameter Name="Returns" Type="int" Mode="InOut" />
         </Function>
         <EntityContainer Name="Хранилище item1ModelContainer">
@@ -1075,7 +1088,7 @@
             <Parameter Name="name" Mode="In" Type="String" />
             <Parameter Name="G_att_class" Mode="In" Type="Int32" />
             <Parameter Name="G_sub_att" Mode="In" Type="Int32" />
-            <Parameter Name="id_att_mount" Mode="In" Type="Int32" />
+            <Parameter Name="id_att_mount" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="NEW_ITEM">
             <Parameter Name="name" Mode="In" Type="String" />
@@ -1092,6 +1105,12 @@
             <Parameter Name="Lcin" Mode="In" Type="String" />
             <Parameter Name="TLin" Mode="In" Type="String" />
             <Parameter Name="Desc" Mode="In" Type="String" />
+            <Parameter Name="TwoHanded" Mode="In" Type="Boolean" />
+            <Parameter Name="WeaponClass" Mode="In" Type="String" />
+            <Parameter Name="WeaponType" Mode="In" Type="String" />
+            <Parameter Name="Full_auto" Mode="In" Type="Boolean" />
+            <Parameter Name="ACCAddin" Mode="In" Type="Int32" />
+            <Parameter Name="ROF_for_Sh" Mode="In" Type="Int32" />
             <Parameter Name="ROF" Mode="In" Type="Int32" />
             <Parameter Name="Recoill" Mode="In" Type="Int32" />
             <Parameter Name="DefACCc" Mode="In" Type="Int32" />
@@ -1102,6 +1121,12 @@
             <Parameter Name="AddinChamber" Mode="In" Type="Boolean" />
             <Parameter Name="TimeForreload" Mode="In" Type="Int32" />
             <Parameter Name="singlereload" Mode="In" Type="Boolean" />
+            <Parameter Name="Damage" Mode="In" Type="String" />
+            <Parameter Name="ArmorDivision" Mode="In" Type="Decimal" />
+            <Parameter Name="TypeOfDamage1" Mode="In" Type="String" />
+            <Parameter Name="TypeOfDamage2" Mode="In" Type="String" />
+            <Parameter Name="TypeOfDam1" Mode="In" Type="String" />
+            <Parameter Name="TypeOfDam2" Mode="In" Type="String" />
             <Parameter Name="Returns" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <EntitySet Name="AMMOes" EntityType="item1Model.AMMO" />
@@ -1562,7 +1587,7 @@
           </Key>
           <Property Name="id_attach" Type="Int32" Nullable="false" />
           <Property Name="id_GSubClass" Type="Int32" Nullable="false" />
-          <Property Name="id_AttachClass" Type="Int32" Nullable="false" />
+          <Property Name="id_AttachClass" Type="Int32" />
           <NavigationProperty Name="Attachment" Relationship="item1Model.FK_G_AvAttachClass_Attachment" FromRole="G_AvAttachClass" ToRole="Attachment" />
           <NavigationProperty Name="G_SubAttachClass" Relationship="item1Model.FK_G_AvAttachClass_G_SubAttachClass" FromRole="G_AvAttachClass" ToRole="G_SubAttachClass" />
         </EntityType>
@@ -1975,7 +2000,7 @@
           <Property Name="AWeight" Type="Decimal" Nullable="false" Precision="5" Scale="3" />
           <Property Name="ROF" Type="Int32" Nullable="false" />
           <Property Name="Full_auto" Type="Boolean" Nullable="false" />
-          <Property Name="ROF_for_Sh" Type="Int32" Nullable="false" />
+          <Property Name="ROF_for_Sh" Type="Int32" />
           <Property Name="Shots" Type="Int32" Nullable="false" />
           <Property Name="Time_For_reload" Type="Int32" Nullable="false" />
           <Property Name="single_reload" Type="Boolean" Nullable="false" />
@@ -1998,6 +2023,7 @@
           <NavigationProperty Name="ITEM" Relationship="item1Model.FK_WEAPON_ITEM_uiIndex" FromRole="WEAPON" ToRole="ITEM" />
           <NavigationProperty Name="WeaponDamages" Relationship="item1Model.FK_WeaponDamage_WEAPON_uiIndex" FromRole="WEAPON" ToRole="WeaponDamage" />
           <NavigationProperty Name="WeaponType" Relationship="item1Model.FK_WeaponType" FromRole="WEAPON" ToRole="WeaponType" />
+          <Property Name="ACCAddin" Type="Int32" />
         </EntityType>
         <Association Name="FK_Calibre">
           <End Type="item1Model.AMMO" Role="AMMO" Multiplicity="1" />
@@ -2698,6 +2724,7 @@
           <EntitySetMapping Name="WEAPONs">
             <EntityTypeMapping TypeName="item1Model.WEAPON">
               <MappingFragment StoreEntitySet="WEAPON">
+                <ScalarProperty Name="ACCAddin" ColumnName="ACCAddin" />
                 <ScalarProperty Name="HCROFValue" ColumnName="HCROFValue" />
                 <ScalarProperty Name="HCROF" ColumnName="HCROF" />
                 <ScalarProperty Name="Bulkfolded" ColumnName="Bulkfolded" />
