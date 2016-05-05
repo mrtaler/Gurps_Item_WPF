@@ -350,9 +350,9 @@ namespace Item_WPF.addin
             else if ((parameter as string) == "ToD2")
                 return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).idTypeOfDamage2;
             else if ((parameter as string) == "TD1")
-                return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).TypeOfDamage1;
+                return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).TypeOfDamage1text;
             else if ((parameter as string) == "TD2")
-                return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).TypeOfDamage2;
+                return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).TypeOfDamage2text;
             else return null;
         }
         public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -372,9 +372,9 @@ namespace Item_WPF.addin
             else if ((parameter as string) == "ToD2")
                 weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).idTypeOfDamage2 = System.Convert.ToInt32(value);
             else if ((parameter as string) == "TD1")
-                weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).TypeOfDamage1 = value as string;
+                weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).TypeOfDamage1text = value as string;
             else if ((parameter as string) == "TD2")
-                weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).TypeOfDamage2 = value as string;
+                weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).TypeOfDamage2text = value as string;
             return weaponDamCollConvert;
         }
     }
@@ -466,9 +466,9 @@ namespace Item_WPF.addin
             else if ((parameter as string) == "ToD2" && FollowUpdamageVar)
                 return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).idTypeOfDamage2;
             else if ((parameter as string) == "TD1" && FollowUpdamageVar)
-                return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).TypeOfDamage1;
+                return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).TypeOfDamage1text;
             else if ((parameter as string) == "TD2" && FollowUpdamageVar)
-                return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).TypeOfDamage2;
+                return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).TypeOfDamage2text;
             else return null;
         }
         public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -486,9 +486,9 @@ namespace Item_WPF.addin
             else if ((parameter as string) == "ToD2")
                 weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).idTypeOfDamage2 = System.Convert.ToInt32(value);
             else if ((parameter as string) == "TD1")
-                weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).TypeOfDamage1 = value as string;
+                weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).TypeOfDamage1text = value as string;
             else if ((parameter as string) == "TD2")
-                weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).TypeOfDamage2 = value as string;
+                weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).TypeOfDamage2text = value as string;
             return weaponDamCollConvert;
         }
     }
@@ -516,9 +516,9 @@ namespace Item_WPF.addin
             else if ((parameter as string) == "ToD2" && LinkedDamageVar)
                 return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).idTypeOfDamage2;
             else if ((parameter as string) == "TD1" && LinkedDamageVar)
-                return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).TypeOfDamage1;
+                return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).TypeOfDamage1text;
             else if ((parameter as string) == "TD2" && LinkedDamageVar)
-                return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).TypeOfDamage2;
+                return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).TypeOfDamage2text;
             else return null;
         }
         public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -536,9 +536,9 @@ namespace Item_WPF.addin
             else if ((parameter as string) == "ToD2")
                 weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).idTypeOfDamage2 = System.Convert.ToInt32(value);
             else if ((parameter as string) == "TD1")
-                weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).TypeOfDamage1 = value as string;
+                weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).TypeOfDamage1text = value as string;
             else if ((parameter as string) == "TD2")
-                weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).TypeOfDamage2 = value as string;
+                weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).TypeOfDamage2text = value as string;
             return weaponDamCollConvert;
         }
     }

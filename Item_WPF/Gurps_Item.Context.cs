@@ -50,6 +50,7 @@ namespace Item_WPF
         public virtual DbSet<G_AttachClass> G_AttachClass { get; set; }
         public virtual DbSet<G_AvAttachClass> G_AvAttachClass { get; set; }
         public virtual DbSet<G_SubAttachClass> G_SubAttachClass { get; set; }
+        public virtual DbSet<ITEM> ITEMs { get; set; }
         public virtual DbSet<ItemClass> ItemClasses { get; set; }
         public virtual DbSet<LaserColorEf> LaserColorEfs { get; set; }
         public virtual DbSet<LBEClass> LBEClasses { get; set; }
@@ -57,12 +58,11 @@ namespace Item_WPF
         public virtual DbSet<LOADBEARINGEQUIPMENT> LOADBEARINGEQUIPMENTs { get; set; }
         public virtual DbSet<TL> TLs { get; set; }
         public virtual DbSet<TypeOfDamage> TypeOfDamages { get; set; }
+        public virtual DbSet<WEAPON> WEAPONs { get; set; }
         public virtual DbSet<WeaponAttackType> WeaponAttackTypes { get; set; }
         public virtual DbSet<WeaponClass> WeaponClasses { get; set; }
         public virtual DbSet<WeaponDamage> WeaponDamages { get; set; }
         public virtual DbSet<WeaponType> WeaponTypes { get; set; }
-        public virtual DbSet<ITEM> ITEMs { get; set; }
-        public virtual DbSet<WEAPON> WEAPONs { get; set; }
     
         public virtual int NEW_ITEM_att(string name, Nullable<int> g_att_class, Nullable<int> g_sub_att, string id_att_mount)
         {
@@ -98,7 +98,7 @@ namespace Item_WPF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NEW_ITEM", nameParameter, class_ofItemParameter, returns);
         }
     
-        public virtual int NEW_ITEMWeap(string name, string class_ofItem, Nullable<int> weight, Nullable<int> sT, string bulk, Nullable<decimal> cost, string lcin, string tLin, string desc, Nullable<bool> twoHanded, string weaponClass, string weaponType, Nullable<bool> full_auto, Nullable<int> aCCAddin, Nullable<int> rOF_for_Sh, Nullable<int> rOF, Nullable<int> recoill, Nullable<int> defACCc, Nullable<int> half_Rangee, Nullable<int> fullRangee, string damagee, Nullable<int> shotss, Nullable<bool> addinChamber, Nullable<int> timeForreload, Nullable<bool> singlereload, string damage, Nullable<decimal> armorDivision, string typeOfDamage1, string typeOfDamage2, string typeOfDam1, string typeOfDam2, ObjectParameter returns)
+        public virtual int NEW_ITEMWeap(string name, string class_ofItem, Nullable<decimal> weight, Nullable<int> sT, string bulk, Nullable<decimal> cost, string lcin, string tLin, string desc, Nullable<bool> twoHanded, string weaponClass, string weaponType, Nullable<bool> full_auto, Nullable<int> aCCAddin, Nullable<int> rOF_for_Sh, Nullable<int> rOF, Nullable<int> recoill, Nullable<int> defACCc, Nullable<int> half_Rangee, Nullable<int> fullRangee, string damagee, Nullable<int> shotss, Nullable<bool> addinChamber, Nullable<int> timeForreload, Nullable<bool> singlereload, string damage, Nullable<decimal> armorDivision, string typeOfDamage1, string typeOfDamage2, string typeOfDam1, string typeOfDam2, ObjectParameter returns)
         {
             var nameParameter = name != null ?
                 new ObjectParameter("name", name) :
@@ -110,7 +110,7 @@ namespace Item_WPF
     
             var weightParameter = weight.HasValue ?
                 new ObjectParameter("Weight", weight) :
-                new ObjectParameter("Weight", typeof(int));
+                new ObjectParameter("Weight", typeof(decimal));
     
             var sTParameter = sT.HasValue ?
                 new ObjectParameter("ST", sT) :

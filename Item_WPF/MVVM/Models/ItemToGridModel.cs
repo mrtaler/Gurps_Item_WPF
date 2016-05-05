@@ -39,7 +39,13 @@ namespace Item_WPF.MVVM.Models
                 DamageFollowUp = itt.WEAPON.WeaponDamages.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Follow"));
                 if (DamagePrim!=null)
                 {
-                    if (DamagePrim.idTypeOfDamage1 != null)
+                    if (DamagePrim.idTypeOfDamage1 != null && DamagePrim.idTypeOfDamage2 != null)
+                    {
+
+                        if (DamagePrim.ArmorDivision != 1) Damage = DamagePrim.Damage + " (" + Convert.ToDouble(DamagePrim.ArmorDivision) + ") " + DamagePrim.TypeOfDamage.name+" "+ DamagePrim.TypeOfDamage1text+ " "+ DamagePrim.TypeOfDamage1.name+" " + DamagePrim.TypeOfDamage2text;
+                        else Damage = DamagePrim.Damage + " " + DamagePrim.TypeOfDamage.name + " " + DamagePrim.TypeOfDamage1.name;
+                    }
+                    else if (DamagePrim.idTypeOfDamage1 != null && DamagePrim.idTypeOfDamage2 == null)
                     {
                         if (DamagePrim.ArmorDivision != 1) Damage = DamagePrim.Damage + " (" + Convert.ToDouble(DamagePrim.ArmorDivision) + ") " + DamagePrim.TypeOfDamage.name;
                         else Damage = DamagePrim.Damage + " " + DamagePrim.TypeOfDamage.name;

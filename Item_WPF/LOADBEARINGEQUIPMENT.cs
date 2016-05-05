@@ -318,15 +318,6 @@ namespace Item_WPF
     		}
     	}
     
-        private LBEClass _LBEClass1;
-            public virtual LBEClass LBEClass1
-            {
-                get { return _LBEClass1; }
-                set
-                { if(_LBEClass1 != value)
-                    {    _LBEClass1 = value;    OnPropertyChanged("LBEClass1");   }
-                }
-            } 
         private ITEM _ITEM;
             public virtual ITEM ITEM
             {
@@ -334,6 +325,15 @@ namespace Item_WPF
                 set
                 { if(_ITEM != value)
                     {    _ITEM = value;    OnPropertyChanged("ITEM");   }
+                }
+            } 
+        private LBEClass _LBEClass1;
+            public virtual LBEClass LBEClass1
+            {
+                get { return _LBEClass1; }
+                set
+                { if(_LBEClass1 != value)
+                    {    _LBEClass1 = value;    OnPropertyChanged("LBEClass1");   }
                 }
             } 
     }

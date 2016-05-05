@@ -132,6 +132,22 @@ namespace Item_WPF
     			}
     		}
     	}
+        private Nullable<int> _ACCAddin;
+    	public Nullable<int> ACCAddin 
+    	{ 
+    		get
+    		{
+    			return _ACCAddin;
+    		} 
+    		set
+    		{
+    			if (_ACCAddin != value)
+    			{
+    				_ACCAddin = value;
+    				OnPropertyChanged("ACCAddin");
+    			}
+    		}
+    	}
         private decimal _Half_Range;
     	public decimal Half_Range 
     	{ 
@@ -513,22 +529,6 @@ namespace Item_WPF
     			{
     				_HCROFValue = value;
     				OnPropertyChanged("HCROFValue");
-    			}
-    		}
-    	}
-        private Nullable<int> _ACCAddin;
-    	public Nullable<int> ACCAddin 
-    	{ 
-    		get
-    		{
-    			return _ACCAddin;
-    		} 
-    		set
-    		{
-    			if (_ACCAddin != value)
-    			{
-    				_ACCAddin = value;
-    				OnPropertyChanged("ACCAddin");
     			}
     		}
     	}

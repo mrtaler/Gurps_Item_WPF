@@ -141,35 +141,35 @@ namespace Item_WPF
     			}
     		}
     	}
-        private string _TypeOfDamage1;
-    	public string TypeOfDamage1 
+        private string _TypeOfDamage1text;
+    	public string TypeOfDamage1text 
     	{ 
     		get
     		{
-    			return _TypeOfDamage1;
+    			return _TypeOfDamage1text;
     		} 
     		set
     		{
-    			if (_TypeOfDamage1 != value)
+    			if (_TypeOfDamage1text != value)
     			{
-    				_TypeOfDamage1 = value;
-    				OnPropertyChanged("TypeOfDamage1");
+    				_TypeOfDamage1text = value;
+    				OnPropertyChanged("TypeOfDamage1text");
     			}
     		}
     	}
-        private string _TypeOfDamage2;
-    	public string TypeOfDamage2 
+        private string _TypeOfDamage2text;
+    	public string TypeOfDamage2text 
     	{ 
     		get
     		{
-    			return _TypeOfDamage2;
+    			return _TypeOfDamage2text;
     		} 
     		set
     		{
-    			if (_TypeOfDamage2 != value)
+    			if (_TypeOfDamage2text != value)
     			{
-    				_TypeOfDamage2 = value;
-    				OnPropertyChanged("TypeOfDamage2");
+    				_TypeOfDamage2text = value;
+    				OnPropertyChanged("TypeOfDamage2text");
     			}
     		}
     	}
@@ -199,22 +199,13 @@ namespace Item_WPF
                     {    _TypeOfDamage = value;    OnPropertyChanged("TypeOfDamage");   }
                 }
             } 
-        private TypeOfDamage _TypeOfDamage3;
-            public virtual TypeOfDamage TypeOfDamage3
+        private TypeOfDamage _TypeOfDamage1;
+            public virtual TypeOfDamage TypeOfDamage1
             {
-                get { return _TypeOfDamage3; }
+                get { return _TypeOfDamage1; }
                 set
-                { if(_TypeOfDamage3 != value)
-                    {    _TypeOfDamage3 = value;    OnPropertyChanged("TypeOfDamage3");   }
-                }
-            } 
-        private WeaponAttackType _WeaponAttackType;
-            public virtual WeaponAttackType WeaponAttackType
-            {
-                get { return _WeaponAttackType; }
-                set
-                { if(_WeaponAttackType != value)
-                    {    _WeaponAttackType = value;    OnPropertyChanged("WeaponAttackType");   }
+                { if(_TypeOfDamage1 != value)
+                    {    _TypeOfDamage1 = value;    OnPropertyChanged("TypeOfDamage1");   }
                 }
             } 
         private WEAPON _WEAPON;
@@ -224,6 +215,15 @@ namespace Item_WPF
                 set
                 { if(_WEAPON != value)
                     {    _WEAPON = value;    OnPropertyChanged("WEAPON");   }
+                }
+            } 
+        private WeaponAttackType _WeaponAttackType;
+            public virtual WeaponAttackType WeaponAttackType
+            {
+                get { return _WeaponAttackType; }
+                set
+                { if(_WeaponAttackType != value)
+                    {    _WeaponAttackType = value;    OnPropertyChanged("WeaponAttackType");   }
                 }
             } 
     }

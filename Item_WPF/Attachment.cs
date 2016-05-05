@@ -893,6 +893,15 @@ namespace Item_WPF
                     {    _Attachmentmount1 = value;    OnPropertyChanged("Attachmentmount1");   }
                 }
             } 
+        private ITEM _ITEM;
+            public virtual ITEM ITEM
+            {
+                get { return _ITEM; }
+                set
+                { if(_ITEM != value)
+                    {    _ITEM = value;    OnPropertyChanged("ITEM");   }
+                }
+            } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<G_AvAttachClass> _G_AvAttachClass;
             public virtual ICollection<G_AvAttachClass> G_AvAttachClass
@@ -910,15 +919,6 @@ namespace Item_WPF
                 set
                 { if(_AttachmentClass != value)
                     {    _AttachmentClass = value;    OnPropertyChanged("AttachmentClass");   }
-                }
-            } 
-        private ITEM _ITEM;
-            public virtual ITEM ITEM
-            {
-                get { return _ITEM; }
-                set
-                { if(_ITEM != value)
-                    {    _ITEM = value;    OnPropertyChanged("ITEM");   }
                 }
             } 
     }
