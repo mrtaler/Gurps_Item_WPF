@@ -173,6 +173,22 @@ namespace Item_WPF
     			}
     		}
     	}
+        private Nullable<int> _ubCalibre;
+    	public Nullable<int> ubCalibre 
+    	{ 
+    		get
+    		{
+    			return _ubCalibre;
+    		} 
+    		set
+    		{
+    			if (_ubCalibre != value)
+    			{
+    				_ubCalibre = value;
+    				OnPropertyChanged("ubCalibre");
+    			}
+    		}
+    	}
         private bool _Damageable;
     	public bool Damageable 
     	{ 
@@ -942,6 +958,15 @@ namespace Item_WPF
                 set
                 { if(_Attachment != value)
                     {    _Attachment = value;    OnPropertyChanged("Attachment");   }
+                }
+            } 
+        private Caliber _Caliber;
+            public virtual Caliber Caliber
+            {
+                get { return _Caliber; }
+                set
+                { if(_Caliber != value)
+                    {    _Caliber = value;    OnPropertyChanged("Caliber");   }
                 }
             } 
         private Cloth _Cloth;

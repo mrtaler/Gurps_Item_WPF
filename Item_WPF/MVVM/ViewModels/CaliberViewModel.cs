@@ -7,43 +7,37 @@ using System.Collections.Specialized;
 
 namespace Item_WPF.MVVM.ViewModels
 {
-    public class AmmoViewModel : ViewModelBase, IDisposable
-    {    
+    public class CaliberViewModel : ViewModelBase, IDisposable
+    {
         private item1Entities _context;
-             public ObservableCollection<AMMO> AmmoOk { get; set; }
-          public   AmmoViewModel()
+        public ObservableCollection<Caliber> CaliberOk { get; set; }
+        public CaliberViewModel()
         {
             _context = new item1Entities();
-            AmmoOk = new ObservableCollection<AMMO>(_context.AMMOes);
-            Save = new DelegateCommand(SaveChanges) ;
-            AmmoOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_ammoOK_CollectionChanged);
+            CaliberOk = new ObservableCollection<Caliber>(_context.Calibers);
+            Save = new DelegateCommand(SaveChanges);
+            CaliberOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_ammoOK_CollectionChanged);
         }
         private void _ammoOK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Remove)
             {
-                foreach (AMMO item in e.OldItems)
+                foreach (Caliber item in e.OldItems)
                 {
-                    _context.AMMOes.Remove(item);
+                    _context.Calibers.Remove(item);
                 }
                 SaveChanges(1);
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
-                foreach (AMMO item in e.NewItems)
+                foreach (Caliber item in e.NewItems)
                 {
                     item.Caliber_name = "new item";
-                    item.alt_caliber_name = "";
-                    item.AV_Upgrates = 1;
-                    item.Dim_of_bullet_SI = 1;
-                    item.Dim_of_bullet_US = 1;
-                    item.WPS = 1;
-                    item.CPS = 1;
-                    item.Class_of_Ammo = "1";
-                    _context.AMMOes.Add(item);
+                    item.Class_of_Caliber = "1";
+                    _context.Calibers.Add(item);
                     SaveChanges(1);
                 }
-            } 
+            }
         }
         private void SaveChanges(object parameter)
         {
@@ -52,8 +46,8 @@ namespace Item_WPF.MVVM.ViewModels
 
         public DelegateCommand Save { get; set; }
 
-      //      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        
+        //      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
 
         public void Dispose()
         {

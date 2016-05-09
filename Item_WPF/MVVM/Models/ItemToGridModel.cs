@@ -89,7 +89,7 @@ namespace Item_WPF.MVVM.Models
 
                 DefAcc = itt.WEAPON.DefACC.ToString();
                 Range = Convert.ToDouble(itt.WEAPON.Half_Range) + "/" + Convert.ToDouble(itt.WEAPON.FullRange);
-                Weigth = Convert.ToDouble(itt.ubWeight) + "/" + itt.WEAPON.Shots * Convert.ToDouble(itt.WEAPON.AMMO.WPS);
+                Weigth = Convert.ToDouble(itt.ubWeight) + "/";// + itt.WEAPON.Shots * Convert.ToDouble(itt.AMMO.WPS);
                 //ROF
                 Rof = itt.WEAPON.ROF.ToString();
                 if (itt.WEAPON.WeaponType.name == "Shotgun") Rof = itt.WEAPON.ROF.ToString() + "x" + itt.WEAPON.ROF_for_Sh.ToString();
@@ -107,7 +107,7 @@ namespace Item_WPF.MVVM.Models
                 if (itt.WEAPON.Bulkfolded) Bulk = itt.ItemSize + "*";
                 //RCL%cost%LC
                 Rcl = itt.WEAPON.Recoil.ToString();
-                Cost = "$" + Convert.ToDouble(itt.usPrice) + "/$" + itt.WEAPON.Shots * Convert.ToDouble(itt.WEAPON.AMMO.CPS);
+                Cost = "$" + Convert.ToDouble(itt.usPrice) + "/$" + itt.WEAPON.Shots;// * Convert.ToDouble(itt.WEAPON.AMMO.CPS);
                 Lc = itt.LC1.Name_LC;
                 //Type
                 Type = itt.ItemClass.name;

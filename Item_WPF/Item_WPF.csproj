@@ -77,9 +77,6 @@
     <Compile Include="addin\Converters.cs" />
     <Compile Include="addin\ViewModelCommand.cs" />
     <Compile Include="addin\RelayCommand.cs" />
-    <Compile Include="AMMO.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
     <Compile Include="AMMOUPGRATE.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
@@ -108,6 +105,9 @@
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="Battery.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Caliber.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="CharacterDB.cs">
@@ -182,7 +182,7 @@
     <Compile Include="MVVM\ViewModels\AboutViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AllWeaponViewModel.cs" />
     <Compile Include="MVVM\ViewModels\all_ItemsViewModel.cs" />
-    <Compile Include="MVVM\ViewModels\AmmoViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\CaliberViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AttacmentEditViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AttacmentMountViewModel.cs" />
     <Compile Include="MVVM\ViewModels\CanExecuteEventArgs.cs" />
@@ -195,7 +195,6 @@
     <Compile Include="MVVM\ViewModels\MainWindowStartViewModel.cs" />
     <Compile Include="MVVM\ViewModels\NewItemsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\SelectItemsViewModel.cs" />
-    <Compile Include="MVVM\ViewModels\TestViewModel.cs" />
     <Compile Include="addin\ViewModelBase.cs" />
     <Compile Include="MVVM\ViewModels\WeaponEditViewModel.cs" />
     <Compile Include="MVVM\View\AboutWindowView.xaml.cs">
@@ -207,8 +206,8 @@
     <Compile Include="MVVM\View\all_ItemsView.xaml.cs">
       <DependentUpon>all_ItemsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\AmmoView.xaml.cs">
-      <DependentUpon>AmmoView.xaml</DependentUpon>
+    <Compile Include="MVVM\View\CaliberView.xaml.cs">
+      <DependentUpon>CaliberView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\AttacmentEditView.xaml.cs">
       <DependentUpon>AttacmentEditView.xaml</DependentUpon>
@@ -319,7 +318,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\AmmoView.xaml">
+    <Page Include="MVVM\View\CaliberView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

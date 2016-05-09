@@ -18,12 +18,12 @@ namespace Item_WPF.MVVM.View
     /// <summary>
     /// Логика взаимодействия для AmmoView.xaml
     /// </summary>
-    public partial class AmmoView : Window
+    public partial class CaliberView : Window
     {
-        public AmmoViewModel AVM { get; set; }
-        public AmmoView()
+        public CaliberViewModel AVM { get; set; }
+        public CaliberView()
         {
-            AVM = new AmmoViewModel();
+            AVM = new CaliberViewModel();
             DataContext = AVM;
             InitializeComponent();
 
