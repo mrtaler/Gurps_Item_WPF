@@ -59,7 +59,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2267 px</X>
+              <X>2270 px</X>
               <Y>40 px</Y>
             </Location>
             <Size>
@@ -82,7 +82,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>736 px</X>
+              <X>740 px</X>
               <Y>1873 px</Y>
             </Location>
             <Size>
@@ -105,7 +105,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>975 px</X>
+              <X>979 px</X>
               <Y>1908 px</Y>
             </Location>
             <Size>
@@ -197,7 +197,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>633 px</X>
+              <X>636 px</X>
               <Y>223 px</Y>
             </Location>
             <Size>
@@ -220,7 +220,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>691 px</X>
+              <X>694 px</X>
               <Y>40 px</Y>
             </Location>
             <Size>
@@ -312,7 +312,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1304 px</X>
+              <X>1307 px</X>
               <Y>649 px</Y>
             </Location>
             <Size>
@@ -404,7 +404,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1302 px</X>
+              <X>1305 px</X>
               <Y>1261 px</Y>
             </Location>
             <Size>
@@ -496,7 +496,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2747 px</X>
+              <X>2750 px</X>
               <Y>570 px</Y>
             </Location>
             <Size>
@@ -519,7 +519,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1584 px</X>
+              <X>1588 px</X>
               <Y>640 px</Y>
             </Location>
             <Size>
@@ -588,7 +588,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>51.5 px</X>
+                  <X>52 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -611,7 +611,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2267 px</X>
+              <X>2270 px</X>
               <Y>570 px</Y>
             </Location>
             <Size>
@@ -635,11 +635,11 @@
             </CustomProperties>
             <Location>
               <X>40 px</X>
-              <Y>2291 px</Y>
+              <Y>2282 px</Y>
             </Location>
             <Size>
-              <Width>203 px</Width>
-              <Height>127 px</Height>
+              <Width>207 px</Width>
+              <Height>144 px</Height>
             </Size>
             <DbOid>
               <Path>Item1.dbo.Caliber</Path>
@@ -657,7 +657,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2797 px</X>
+              <X>2800 px</X>
               <Y>40 px</Y>
             </Location>
             <Size>
@@ -680,7 +680,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>420 px</X>
+              <X>424 px</X>
               <Y>2936 px</Y>
             </Location>
             <Size>
@@ -703,7 +703,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2597 px</X>
+              <X>2600 px</X>
               <Y>40 px</Y>
             </Location>
             <Size>
@@ -726,7 +726,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2967 px</X>
+              <X>2970 px</X>
               <Y>570 px</Y>
             </Location>
             <Size>
@@ -749,7 +749,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>676 px</X>
+              <X>680 px</X>
               <Y>2854 px</Y>
             </Location>
             <Size>
@@ -772,7 +772,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>306 px</X>
+              <X>310 px</X>
               <Y>1140 px</Y>
             </Location>
             <Size>
@@ -795,7 +795,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>274 px</X>
+              <X>278 px</X>
               <Y>1323 px</Y>
             </Location>
             <Size>
@@ -887,7 +887,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>736 px</X>
+              <X>740 px</X>
               <Y>2671 px</Y>
             </Location>
             <Size>
@@ -910,7 +910,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1021 px</X>
+              <X>1024 px</X>
               <Y>1060 px</Y>
             </Location>
             <Size>
@@ -933,7 +933,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>689 px</X>
+              <X>693 px</X>
               <Y>1260 px</Y>
             </Location>
             <Size>
@@ -975,7 +975,7 @@
               </Port>
               <Port>
                 <Location>
-                  <X>140 px</X>
+                  <X>141 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
@@ -1025,7 +1025,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>973 px</X>
+              <X>977 px</X>
               <Y>1244 px</Y>
             </Location>
             <Size>
@@ -1094,7 +1094,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-30 px</X>
+                  <X>-29.5 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -1124,7 +1124,7 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>135 px</X>
+                  <X>134 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
@@ -1255,7 +1255,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>362 px</X>
+              <X>366 px</X>
               <Y>1832 px</Y>
             </Location>
             <Size>
@@ -1286,7 +1286,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>522.5 px</Y>
+                  <Y>522 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -1298,7 +1298,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>63.5 px</Y>
+                  <Y>72 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -1643,7 +1643,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>261.25 px</Y>
+                  <Y>65.3125 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -1655,16 +1655,16 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>703.25 px</X>
+                <X>706.25 px</X>
                 <Y>1220 px</Y>
               </PointD>
               <PointD>
-                <X>636 px</X>
+                <X>640 px</X>
                 <Y>1220 px</Y>
               </PointD>
               <PointD>
-                <X>636 px</X>
-                <Y>2093.25 px</Y>
+                <X>640 px</X>
+                <Y>1897.3125 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
@@ -1683,8 +1683,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>67.25 px</X>
-                  <Y>-456.625 px</Y>
+                  <X>66.25 px</X>
+                  <Y>-358.65625 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -1775,7 +1775,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>933 px</X>
+              <X>937 px</X>
               <Y>2550 px</Y>
             </Location>
             <Size>
@@ -1867,7 +1867,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2487 px</X>
+              <X>2490 px</X>
               <Y>570 px</Y>
             </Location>
             <Size>
@@ -1890,8 +1890,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1920 px</X>
-              <Y>2320 px</Y>
+              <X>1664 px</X>
+              <Y>2468 px</Y>
             </Location>
             <Size>
               <Width>138 px</Width>
@@ -1913,7 +1913,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1131 px</X>
+              <X>1135 px</X>
               <Y>2418 px</Y>
             </Location>
             <Size>
@@ -2005,8 +2005,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1420 px</X>
-              <Y>2300 px</Y>
+              <X>1366 px</X>
+              <Y>2338 px</Y>
             </Location>
             <Size>
               <Width>238 px</Width>
@@ -2036,7 +2036,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>82 px</Y>
+                  <Y>192 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -2074,7 +2074,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-131 px</X>
+                  <X>-30 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -2117,7 +2117,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>563.5 px</Y>
+                  <Y>601.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -2127,6 +2127,24 @@
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>1346 px</X>
+                <Y>2433.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>1346 px</X>
+                <Y>2405.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>640 px</X>
+                <Y>2405.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>640 px</X>
+                <Y>2433.5 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>Item1.dbo.LOADBEARINGEQUIPMENT.FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex</Path>
@@ -2143,8 +2161,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>402 px</X>
-                  <Y>0 px</Y>
+                  <X>373 px</X>
+                  <Y>28 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -2166,7 +2184,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>736 px</X>
+              <X>739 px</X>
               <Y>2128 px</Y>
             </Location>
             <Size>
@@ -2235,7 +2253,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-60 px</X>
+                  <X>-59.5 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -2258,7 +2276,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1254 px</X>
+              <X>1258 px</X>
               <Y>1524 px</Y>
             </Location>
             <Size>
@@ -2281,19 +2299,19 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1542 px</X>
+              <X>1546 px</X>
               <Y>1171 px</Y>
             </Location>
             <Size>
               <Width>272 px</Width>
-              <Height>586 px</Height>
+              <Height>1081 px</Height>
             </Size>
             <DbOid>
               <Path>Item1.dbo.WEAPON</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <ConstraintsCollapsed>False</ConstraintsCollapsed>
               <IndexesCollapsed>True</IndexesCollapsed>
               <TriggersCollapsed>True</TriggersCollapsed>
             </Compartments>
@@ -2312,7 +2330,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>293 px</Y>
+                  <Y>976 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -2323,11 +2341,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>190.5 px</X>
-                  <Y>0 px</Y>
+                  <X>0 px</X>
+                  <Y>315 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>145</OID>
                   <PortType>FloatAnchor</PortType>
@@ -2336,8 +2354,20 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>552.5 px</X>
-                <Y>1464 px</Y>
+                <X>1526 px</X>
+                <Y>2147 px</Y>
+              </PointD>
+              <PointD>
+                <X>1526 px</X>
+                <Y>2119 px</Y>
+              </PointD>
+              <PointD>
+                <X>640 px</X>
+                <Y>2119 px</Y>
+              </PointD>
+              <PointD>
+                <X>640 px</X>
+                <Y>2147 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
@@ -2356,8 +2386,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>494.75 px</X>
-                  <Y>0 px</Y>
+                  <X>463 px</X>
+                  <Y>28 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -2448,7 +2478,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1214 px</X>
+              <X>1218 px</X>
               <Y>2152 px</Y>
             </Location>
             <Size>
@@ -2471,7 +2501,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2074 px</X>
+              <X>2077 px</X>
               <Y>1403 px</Y>
             </Location>
             <Size>
@@ -2494,7 +2524,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1191 px</X>
+              <X>1195 px</X>
               <Y>1846 px</Y>
             </Location>
             <Size>
@@ -2674,23 +2704,17 @@
               </Port>
               <Port>
                 <Location>
-                  <X>136 px</X>
-                  <Y>0 px</Y>
+                  <X>0 px</X>
+                  <Y>798 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>168</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>1678 px</X>
-                <Y>1969 px</Y>
-              </PointD>
-            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>Item1.dbo.WeaponDamage.FK_WeaponDamage_WEAPON_uiIndex</Path>
@@ -2707,7 +2731,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-127.5 px</X>
+                  <X>-59.5 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -2799,7 +2823,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1874 px</X>
+              <X>1878 px</X>
               <Y>1401 px</Y>
             </Location>
             <Size>
@@ -2868,7 +2892,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-30 px</X>
+                  <X>-29.5 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -2954,13 +2978,36 @@
               <Y>2 px</Y>
             </CommentOffset>
           </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>186</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1940 px</X>
+              <Y>70 px</Y>
+            </Location>
+            <Size>
+              <Width>213 px</Width>
+              <Height>225 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.AMMO</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
         </Children>
         <ViewPort>
           <ScaleMode>Free</ScaleMode>
-          <Scale>0.5</Scale>
+          <Scale>0.68</Scale>
           <Location>
-            <X>-142 px</X>
-            <Y>930 px</Y>
+            <X>1792.64703996763 px</X>
+            <Y>-83.8235281274806 px</Y>
           </Location>
         </ViewPort>
       </Model>

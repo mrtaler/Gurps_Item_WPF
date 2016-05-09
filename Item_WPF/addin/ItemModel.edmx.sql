@@ -224,9 +224,17 @@ IF OBJECT_ID(N'[dbo].[FK_WeaponDamage_TypeOfDamage_id2]', 'F') IS NOT NULL
   ALTER TABLE [dbo].[WeaponDamage] DROP CONSTRAINT [FK_WeaponDamage_TypeOfDamage_id2];
 GO
 
+IF OBJECT_ID(N'[dbo].[FK_AMMO_ITEM_uiIndex]', 'F') IS NOT NULL
+  ALTER TABLE [dbo].[AMMO] DROP CONSTRAINT [FK_AMMO_ITEM_uiIndex]
+
+  
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
+
+IF OBJECT_ID(N'[dbo].[AMMO]', 'U') IS NOT NULL
+  DROP TABLE [dbo].[AMMO];
+GO
 
 IF OBJECT_ID(N'[dbo].[Caliber]', 'U') IS NOT NULL
   DROP TABLE [dbo].[Caliber];
@@ -362,17 +370,24 @@ GO
 -- --------------------------------------------------
 -- Creating all tables
 -- --------------------------------------------------
-
 -- Creating table 'AMMOes'
+CREATE TABLE [dbo].[AMMO] (
+  [id] INT NOT NULL,
+  [Caliber_name] NVARCHAR(255) NOT NULL,
+  [alt_caliber_name] NVARCHAR(255) NULL,
+  [Dim_of_bullet_SI] DECIMAL(7, 3) NOT NULL,
+  [Dim_of_bullet_US] DECIMAL(7, 3) NOT NULL,
+  [AV_Upgrates] INT NULL,
+  [WPS] DECIMAL(7, 4) NULL,
+  [CPS] DECIMAL(19, 4) NULL,
+  [Class_of_Ammo] NVARCHAR(50) NOT NULL
+);
+GO
+-- Creating table '[Caliber]'
 CREATE TABLE [dbo].[Caliber] (
   [id] INT IDENTITY (1, 1) NOT NULL,
   [Caliber_name] NVARCHAR(255) NOT NULL,
- -- [alt_caliber_name] NVARCHAR(255) NULL,
- -- [Dim_of_bullet_SI] DECIMAL(7, 3) NOT NULL,
- -- [Dim_of_bullet_US] DECIMAL(7, 3) NOT NULL,
- -- [AV_Upgrates] INT NULL,
- -- [WPS] DECIMAL(7, 4) NULL,
- -- [CPS] DECIMAL(19, 4) NULL,
+  [alt_caliber_name] NVARCHAR(255) NULL, 
   [Class_of_Caliber] NVARCHAR(50) NOT NULL
 );
 GO
@@ -876,7 +891,10 @@ ADD CONSTRAINT [PK_Caliber]
 PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
-
+--ALTER TABLE [dbo].[AMMO]
+--ADD CONSTRAINT [UK_AMMO]
+--UNIQUE ([id] ASC);
+--GO
 
 ALTER TABLE [dbo].[WeaponAttackType]
 ADD CONSTRAINT [PK_WeaponAttackType]
@@ -1075,6 +1093,18 @@ GO
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
+--
+ALTER TABLE [dbo].[AMMO]
+ADD CONSTRAINT [FK_AMMO_ITEM_uiIndex]
+FOREIGN KEY (id)
+REFERENCES dbo.ITEM
+(uiIndex)
+ON DELETE CASCADE ON UPDATE CASCADE;
+GO
+--ALTER TABLE dbo.ITEM
+--  ADD CONSTRAINT FK_ITEM_AMMO_id 
+--  FOREIGN KEY (uiIndex) REFERENCES dbo.AMMO (id) ON DELETE CASCADE ON UPDATE CASCADE
+--GO
 
 -- Creating foreign key on [ubCalibre] in table 'WEAPONs'
 ALTER TABLE [dbo].[ITEM]
