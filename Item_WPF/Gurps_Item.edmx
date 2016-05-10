@@ -1171,6 +1171,11 @@
             <Parameter Name="TypeOfDam2" Mode="In" Type="String" />
             <Parameter Name="Returns" Mode="InOut" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="NEW_ITEM_Ammo">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="weigth" Mode="In" Type="Decimal" />
+            <Parameter Name="price" Mode="In" Type="Decimal" />
+          </FunctionImport>
           <EntitySet Name="AMMOUPGRATES" EntityType="item1Model.AMMOUPGRATE" />
           <EntitySet Name="ARMOURs" EntityType="item1Model.ARMOUR" />
           <EntitySet Name="ArmourClasses" EntityType="item1Model.ArmourClass" />
@@ -1331,11 +1336,6 @@
             <End Role="WeaponClass" EntitySet="WeaponClasses" />
             <End Role="WeaponType" EntitySet="WeaponTypes" />
           </AssociationSet>
-          <FunctionImport Name="NEW_ITEM_Ammo">
-            <Parameter Name="name" Mode="In" Type="String" />
-            <Parameter Name="weigth" Mode="In" Type="Decimal" />
-            <Parameter Name="price" Mode="In" Type="Decimal" />
-          </FunctionImport>
           </EntityContainer>
         <EntityType Name="AMMOUPGRATE">
           <Key>
@@ -2302,6 +2302,7 @@
           <FunctionImportMapping FunctionImportName="NEW_ITEM_att" FunctionName="Хранилище item1Model.NEW_ITEM_att" />
           <FunctionImportMapping FunctionImportName="NEW_ITEM" FunctionName="Хранилище item1Model.NEW_ITEM" />
           <FunctionImportMapping FunctionImportName="NEW_ITEMWeap" FunctionName="Хранилище item1Model.NEW_ITEMWeap" />
+          <FunctionImportMapping FunctionImportName="NEW_ITEM_Ammo" FunctionName="Хранилище item1Model.NEW_ITEM_Ammo" />
           <EntitySetMapping Name="AMMOUPGRATES">
             <EntityTypeMapping TypeName="item1Model.AMMOUPGRATE">
               <MappingFragment StoreEntitySet="AMMOUPGRATES">
@@ -2840,7 +2841,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="NEW_ITEM_Ammo" FunctionName="Хранилище item1Model.NEW_ITEM_Ammo" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

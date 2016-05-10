@@ -192,11 +192,11 @@
                HorizontalAlignment="Left"
                VerticalAlignment="Top" />
         <Button x:Name="SavedButton"
-                Width="74"
+                Width="74" Command="{Binding CAmmoSelect}"
                 Margin="0,10,110,0"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
-                Content="Saved" />
+                Content="AmmoSel" />
         <Button x:Name="SaveButton"
                 Width="75"
                 Margin="0,35,109,0"

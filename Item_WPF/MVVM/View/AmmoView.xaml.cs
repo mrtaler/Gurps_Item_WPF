@@ -31,14 +31,14 @@ namespace Item_WPF.MVVM.View
 
         private void Closebutton_OnClick(object sender, RoutedEventArgs e)
         {
-            //AmmoVM.Dispose();
-            //DialogResult = true;
-            //    this.Close();
+            AmmoVM.Dispose();
+            DialogResult = true;
+                this.Close();
         }
 
-        //private void AmmoView_OnClosed(object sender, EventArgs e)
-        //{
-        //    AVM.Dispose();
-        //}
+        private void AmmoView_OnClosed(object sender, EventArgs e)
+        {
+            AmmoVM.Dispose();
+        }
     }
 }

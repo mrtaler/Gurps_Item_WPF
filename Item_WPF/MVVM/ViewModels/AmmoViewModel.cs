@@ -12,35 +12,45 @@ namespace Item_WPF.MVVM.ViewModels
     public class AmmoViewModel: ViewModelBase
     {
         private item1Entities _context;
-        public ObservableCollection<Caliber> CaliberOk { get; set; }
+        public ObservableCollection<Caliber> caliber { get; set; }
         public ObservableCollection<ITEM> AmmoOk { get; set; }
         public AmmoViewModel()
         {
             _context = new item1Entities();
-            CaliberOk = new ObservableCollection<Caliber>(_context.Calibers);
+           
             Save = new DelegateCommand(SaveChanges);
-            CaliberOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_ammoOK_CollectionChanged);
+            caliber = new ObservableCollection<Caliber>(_context.Calibers);
             AmmoOk = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.ItemClass.name.Contains("ammo")));
-
+            AmmoOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_ammoOK_CollectionChanged);
+           
+        }
+        public AmmoViewModel(object parametr)
+        {
+            _context = new item1Entities();
+            int? param = (parametr as int?);    
+            Save = new DelegateCommand(SaveChanges);
+            caliber = new ObservableCollection<Caliber>(_context.Calibers);
+            AmmoOk = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.ItemClass.name.Contains("ammo")).Where(p=>p.ubCalibre==param));
+            AmmoOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_ammoOK_CollectionChanged);
 
         }
         private void _ammoOK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Remove)
             {
-                foreach (Caliber item in e.OldItems)
+                foreach (ITEM item in e.OldItems)
                 {
-                    _context.Calibers.Remove(item);
+                    _context.ITEMs.Remove(item);
                 }
                 SaveChanges(1);
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
-                foreach (Caliber item in e.NewItems)
+                foreach (ITEM item in e.NewItems)
                 {
-                    item.Caliber_name = "new item";
-                    item.Class_of_Caliber = "1";
-                    _context.Calibers.Add(item);
+                    item.szItemName = "new Ammo";
+                    item.usItemClass = _context.ItemClasses.First(p => p.name.Contains("Ammo")).id;
+                    _context.ITEMs.Add(item);
                     SaveChanges(1);
                 }
             }

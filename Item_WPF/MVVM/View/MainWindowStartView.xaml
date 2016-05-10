@@ -39,7 +39,6 @@
                     <ribbon:RibbonButton Command="{Binding DropDiceCommand}" Label="{x:Static p:Resources.RibbonAppMenuItemDropDice}" />
                 </ribbon:RibbonGroup>
             </ribbon:RibbonTab>
-
             <ribbon:RibbonTab Height="80" Header="124">
                 <ribbon:RibbonGroup Header="124_1111">
                     <ribbon:RibbonButton Label="1_1" />

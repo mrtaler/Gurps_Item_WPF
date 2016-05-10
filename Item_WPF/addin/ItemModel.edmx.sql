@@ -2155,6 +2155,8 @@ DECLARE @newID INT
     VALUES (@name, @Class,@weigth,@price,@Call)
   SELECT
     @newID = @@identity
+    INSERT INTO AMMO (id, Caliber_name, alt_caliber_name, Dim_of_bullet_SI, Dim_of_bullet_US)
+  VALUES (@newID, @name, N'', 0, 0);
 
 
 END

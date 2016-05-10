@@ -237,6 +237,25 @@ namespace Item_WPF.MVVM.Models
         }
 
         #endregion
+        #region idCalibre
+        private int? _idCalibre;
+        public int? idCalibre
+        {
+            get
+            {
+                return _idCalibre;
+            }
+            set
+            {
+                if (_idCalibre != value)
+                {
+                    _idCalibre = value;
+                    OnPropertyChanged("idCalibre");
+                }
+            }
+        }
+
+        #endregion
         /// <summary>
         /// обнуление комбинатора
         /// </summary>
@@ -265,7 +284,8 @@ namespace Item_WPF.MVVM.Models
                 IdInternalItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 10).rAttachmentmount;
             if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 11) != null)
                 IdExternalItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 11).rAttachmentmount;
-
+            if (itt.ubCalibre!=null)
+                idCalibre = itt.ubCalibre;
         }
     }
 }
