@@ -21,6 +21,7 @@ namespace Item_WPF.MVVM.ViewModels
         public DelegateCommand ShowAllItemsCommand { get; private set; }
         public DelegateCommand ShowCombineCommand { get; private set; }
         public DelegateCommand ShowCharacterCommand { get; private set; }
+        public DelegateCommand ShowAmmoCommand { get; private set; }
         public DelegateCommand OwnerCloseCommand { get; private set; }
 
         public MainWindowStartViewModel(RibbonWindow owner)
@@ -34,6 +35,7 @@ namespace Item_WPF.MVVM.ViewModels
             ShowCombineCommand = new DelegateCommand(ShowCombine);//+
             ShowCharacterCommand = new DelegateCommand(ShowCharacter);//+
             OwnerCloseCommand = new DelegateCommand(OwnerClose);//+
+            ShowAmmoCommand = new DelegateCommand(ShowAmmo);
         }
         public void ShowAboutWindow(object parameter)
         {
@@ -41,6 +43,13 @@ namespace Item_WPF.MVVM.ViewModels
             window.Owner = Owner;
             window.ShowDialog();
         }
+        public void ShowAmmo(object parameter)
+        {
+            AmmoView window = new AmmoView();
+            window.Owner = Owner;
+            window.ShowDialog();
+        }
+        
         public void ShowCharacter(object parameter)
         {
             MainCharacterView window = new MainCharacterView();

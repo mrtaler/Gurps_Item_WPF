@@ -29,6 +29,12 @@ namespace Item_WPF
      
      #endregion
      
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ITEM()
+        {
+            this.AMMOes = new HashSet<AMMO>();
+        }
+    
         private int _uiIndex;
     	public int uiIndex 
     	{ 
@@ -1003,6 +1009,16 @@ namespace Item_WPF
                 set
                 { if(_FOOD != value)
                     {    _FOOD = value;    OnPropertyChanged("FOOD");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<AMMO> _AMMOes;
+            public virtual ICollection<AMMO> AMMOes
+            {
+                get { return _AMMOes; }
+                set
+                { if(_AMMOes != value)
+                    {    _AMMOes = value;    OnPropertyChanged("AMMOes");   }
                 }
             } 
         private ItemClass _ItemClass;

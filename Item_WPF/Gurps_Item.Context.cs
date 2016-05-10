@@ -63,6 +63,7 @@ namespace Item_WPF
         public virtual DbSet<WeaponClass> WeaponClasses { get; set; }
         public virtual DbSet<WeaponDamage> WeaponDamages { get; set; }
         public virtual DbSet<WeaponType> WeaponTypes { get; set; }
+        public virtual DbSet<AMMO> AMMOes { get; set; }
     
         public virtual int NEW_ITEM_att(string name, Nullable<int> g_att_class, Nullable<int> g_sub_att, string id_att_mount)
         {
@@ -225,6 +226,23 @@ namespace Item_WPF
                 new ObjectParameter("TypeOfDam2", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NEW_ITEMWeap", nameParameter, class_ofItemParameter, weightParameter, sTParameter, bulkParameter, costParameter, lcinParameter, tLinParameter, descParameter, twoHandedParameter, weaponClassParameter, weaponTypeParameter, full_autoParameter, aCCAddinParameter, rOF_for_ShParameter, rOFParameter, recoillParameter, defACCcParameter, half_RangeeParameter, fullRangeeParameter, damageeParameter, shotssParameter, addinChamberParameter, timeForreloadParameter, singlereloadParameter, damageParameter, armorDivisionParameter, typeOfDamage1Parameter, typeOfDamage2Parameter, typeOfDam1Parameter, typeOfDam2Parameter, returns);
+        }
+    
+        public virtual int NEW_ITEM_Ammo(string name, Nullable<decimal> weigth, Nullable<decimal> price)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var weigthParameter = weigth.HasValue ?
+                new ObjectParameter("weigth", weigth) :
+                new ObjectParameter("weigth", typeof(decimal));
+    
+            var priceParameter = price.HasValue ?
+                new ObjectParameter("price", price) :
+                new ObjectParameter("price", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NEW_ITEM_Ammo", nameParameter, weigthParameter, priceParameter);
         }
     }
 }

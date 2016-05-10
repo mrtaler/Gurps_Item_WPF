@@ -12,7 +12,7 @@ namespace Item_WPF
     using System;
     using System.Collections.Generic;
     
-    public partial class Caliber : System.ComponentModel.INotifyPropertyChanged
+    public partial class AMMO : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -29,12 +29,6 @@ namespace Item_WPF
      
      #endregion
      
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Caliber()
-        {
-            this.ITEMs = new HashSet<ITEM>();
-        }
-    
         private int _id;
     	public int id 
     	{ 
@@ -83,31 +77,46 @@ namespace Item_WPF
     			}
     		}
     	}
-        private string _Class_of_Caliber;
-    	public string Class_of_Caliber 
+        private decimal _Dim_of_bullet_SI;
+    	public decimal Dim_of_bullet_SI 
     	{ 
     		get
     		{
-    			return _Class_of_Caliber;
+    			return _Dim_of_bullet_SI;
     		} 
     		set
     		{
-    			if (_Class_of_Caliber != value)
+    			if (_Dim_of_bullet_SI != value)
     			{
-    				_Class_of_Caliber = value;
-    				OnPropertyChanged("Class_of_Caliber");
+    				_Dim_of_bullet_SI = value;
+    				OnPropertyChanged("Dim_of_bullet_SI");
+    			}
+    		}
+    	}
+        private decimal _Dim_of_bullet_US;
+    	public decimal Dim_of_bullet_US 
+    	{ 
+    		get
+    		{
+    			return _Dim_of_bullet_US;
+    		} 
+    		set
+    		{
+    			if (_Dim_of_bullet_US != value)
+    			{
+    				_Dim_of_bullet_US = value;
+    				OnPropertyChanged("Dim_of_bullet_US");
     			}
     		}
     	}
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<ITEM> _ITEMs;
-            public virtual ICollection<ITEM> ITEMs
+        private ITEM _ITEM;
+            public virtual ITEM ITEM
             {
-                get { return _ITEMs; }
+                get { return _ITEM; }
                 set
-                { if(_ITEMs != value)
-                    {    _ITEMs = value;    OnPropertyChanged("ITEMs");   }
+                { if(_ITEM != value)
+                    {    _ITEM = value;    OnPropertyChanged("ITEM");   }
                 }
             } 
     }

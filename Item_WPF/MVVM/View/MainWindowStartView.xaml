@@ -30,6 +30,9 @@
                     <ribbon:RibbonButton Command="{Binding ShowAllItemsCommand}"
                                          CommandParameter="Att"
                                          Label="{x:Static p:Resources.RibbonButtonAttachmentItems}" />
+                    <ribbon:RibbonButton Command="{Binding ShowAmmoCommand}"
+                                        
+                                         Label="ShowAmmoCommand" /> 
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="{x:Static p:Resources.RibbonGroupCombineWeapon}">
                     <ribbon:RibbonButton Command="{Binding ShowCombineCommand}" Label="{x:Static p:Resources.RibbonButtonCombineWeapon}" />
