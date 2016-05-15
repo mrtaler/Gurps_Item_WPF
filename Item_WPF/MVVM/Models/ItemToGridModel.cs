@@ -86,8 +86,9 @@ namespace Item_WPF.MVVM.Models
                         else Damage += "\r\n" + DamageFollowUp.Damage;
                     }
                 }
-
-                DefAcc = itt.WEAPON.DefACC.ToString();
+                if (itt.WEAPON.ACCAddin!=null)
+                    DefAcc = itt.WEAPON.DefACC.ToString()+"+"+ itt.WEAPON.ACCAddin.ToString();
+                else DefAcc = itt.WEAPON.DefACC.ToString();
                 Range = Convert.ToDouble(itt.WEAPON.Half_Range) + "/" + Convert.ToDouble(itt.WEAPON.FullRange);
                 Weigth = Convert.ToDouble(itt.ubWeight) + "/";// + itt.WEAPON.Shots * Convert.ToDouble(itt.AMMO.WPS);
                 //ROF
