@@ -83,6 +83,9 @@
     <Compile Include="AMMOUPGRATE.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="AnyBoxNameType.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
     <Compile Include="ARMOUR.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
@@ -108,6 +111,9 @@
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="Battery.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BoxItem.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="Caliber.cs">
@@ -186,6 +192,7 @@
     <Compile Include="MVVM\ViewModels\AllWeaponViewModel.cs" />
     <Compile Include="MVVM\ViewModels\all_ItemsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AmmoViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\BoxItemViewModel.cs" />
     <Compile Include="MVVM\ViewModels\CaliberViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AttacmentEditViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AttacmentMountViewModel.cs" />
@@ -197,6 +204,7 @@
     <Compile Include="MVVM\ViewModels\InputBoxViewModel.cs" />
     <Compile Include="MVVM\ViewModels\MainCharacterViewModel.cs" />
     <Compile Include="MVVM\ViewModels\MainWindowStartViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\NewBoxViewModel.cs" />
     <Compile Include="MVVM\ViewModels\NewItemsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\SelectItemsViewModel.cs" />
     <Compile Include="addin\ViewModelBase.cs" />
@@ -212,6 +220,9 @@
     </Compile>
     <Compile Include="MVVM\View\AmmoView.xaml.cs">
       <DependentUpon>AmmoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\BoxItemView.xaml.cs">
+      <DependentUpon>BoxItemView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\CaliberView.xaml.cs">
       <DependentUpon>CaliberView.xaml</DependentUpon>
@@ -252,6 +263,9 @@
     <Compile Include="MVVM\View\MainWindowStartView.xaml.cs">
       <DependentUpon>MainWindowStartView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\View\NewBoxView.xaml.cs">
+      <DependentUpon>NewBoxView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\NewItemsView.xaml.cs">
       <DependentUpon>NewItemsView.xaml</DependentUpon>
     </Compile>
@@ -278,6 +292,9 @@
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="TypeOfDamage.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Type_of_Box.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="WEAPON.cs">
@@ -329,6 +346,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="MVVM\View\BoxItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\CaliberView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -378,6 +399,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\MainWindowStartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\NewBoxView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

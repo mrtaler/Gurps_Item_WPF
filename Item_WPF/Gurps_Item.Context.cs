@@ -29,6 +29,7 @@ namespace Item_WPF
         }
     
         public virtual DbSet<AMMOUPGRATE> AMMOUPGRATES { get; set; }
+        public virtual DbSet<AnyBoxNameType> AnyBoxNameTypes { get; set; }
         public virtual DbSet<ARMOUR> ARMOURs { get; set; }
         public virtual DbSet<ArmourClass> ArmourClasses { get; set; }
         public virtual DbSet<Attachment> Attachments { get; set; }
@@ -38,6 +39,7 @@ namespace Item_WPF
         public virtual DbSet<AttachmentSystem> AttachmentSystems { get; set; }
         public virtual DbSet<AvailableAttachSlot> AvailableAttachSlots { get; set; }
         public virtual DbSet<Battery> Batteries { get; set; }
+        public virtual DbSet<BoxItem> BoxItems { get; set; }
         public virtual DbSet<Caliber> Calibers { get; set; }
         public virtual DbSet<CharacterDB> CharacterDBs { get; set; }
         public virtual DbSet<Cloth> Clothes { get; set; }
@@ -57,6 +59,7 @@ namespace Item_WPF
         public virtual DbSet<LC> LCs { get; set; }
         public virtual DbSet<LOADBEARINGEQUIPMENT> LOADBEARINGEQUIPMENTs { get; set; }
         public virtual DbSet<TL> TLs { get; set; }
+        public virtual DbSet<Type_of_Box> Type_of_Box { get; set; }
         public virtual DbSet<TypeOfDamage> TypeOfDamages { get; set; }
         public virtual DbSet<WEAPON> WEAPONs { get; set; }
         public virtual DbSet<WeaponAttackType> WeaponAttackTypes { get; set; }

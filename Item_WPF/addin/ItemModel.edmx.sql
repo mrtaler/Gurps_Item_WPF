@@ -185,6 +185,10 @@ IF OBJECT_ID(N'[dbo].[FK_WeaponType_WeaponClass]', 'F') IS NOT NULL
   ALTER TABLE [dbo].[WeaponType] DROP CONSTRAINT [FK_WeaponType_WeaponClass];
 GO
 
+IF OBJECT_ID(N'[dbo].[FK_AnyBoxNameType_Type_of_Box_id]', 'F') IS NOT NULL
+  ALTER TABLE [dbo].[AnyBoxNameType] DROP CONSTRAINT [FK_AnyBoxNameType_Type_of_Box_id];
+GO
+
 IF OBJECT_ID(N'[dbo].[FK_nasAttachmentClass_slot]', 'F') IS NOT NULL
   ALTER TABLE [dbo].[ATTACHMENTSLOT] DROP CONSTRAINT [FK_nasAttachmentClass_slot]
 
@@ -226,8 +230,18 @@ GO
 
 IF OBJECT_ID(N'[dbo].[FK_AMMO_ITEM_uiIndex]', 'F') IS NOT NULL
   ALTER TABLE [dbo].[AMMO] DROP CONSTRAINT [FK_AMMO_ITEM_uiIndex]
+GO
+IF OBJECT_ID(N'[dbo].[FK_AnyBoxNameType_AnyBoxNameType_id]', 'F') IS NOT NULL
+  ALTER TABLE [dbo].[AnyBoxNameType] DROP CONSTRAINT [FK_AnyBoxNameType_AnyBoxNameType_id]
+go
+IF OBJECT_ID(N'[dbo].[FK_BoxItem_AnyBoxNameType_id]', 'F') IS NOT NULL
+  ALTER TABLE [dbo].[BoxItem] DROP CONSTRAINT [FK_BoxItem_AnyBoxNameType_id]
+go
+IF OBJECT_ID(N'[dbo].[FK_BoxItem_ITEM_uiIndex]', 'F') IS NOT NULL
+  ALTER TABLE [dbo].[BoxItem] DROP CONSTRAINT [FK_BoxItem_ITEM_uiIndex]
+go  
 
-  
+
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
@@ -347,7 +361,16 @@ GO
 IF OBJECT_ID(N'[dbo].[WeaponAttackType]', 'u') IS NOT NULL
   DROP TABLE [dbo].[WeaponAttackType];
 GO
+IF OBJECT_ID(N'[dbo].[BoxItem]', 'u') IS NOT NULL
+  DROP TABLE [dbo].[BoxItem];
+GO
 
+
+
+
+IF OBJECT_ID(N'[dbo].[Type_of_Box]', 'u') IS NOT NULL
+  DROP TABLE [dbo].[Type_of_Box];
+GO
 
 IF OBJECT_ID(N'dbo.NEW_ITEM', 'P') IS NOT NULL
   EXEC sp_executesql N'DROP PROCEDURE dbo.NEW_ITEM'
@@ -356,6 +379,8 @@ GO
 IF OBJECT_ID(N'dbo.NEW_ITEM_att', 'P') IS NOT NULL
   EXEC sp_executesql N'DROP PROCEDURE dbo.NEW_ITEM_att'
 GO
+
+
 
 IF OBJECT_ID(N'[dbo].[CombineWeap]', 'u') IS NOT NULL
   DROP TABLE [dbo].[CombineWeap];
@@ -367,7 +392,9 @@ IF OBJECT_ID(N'dbo.NEW_ITEM_Ammo', 'P') IS NOT NULL
   EXEC sp_executesql N'DROP PROCEDURE dbo.NEW_ITEM_Ammo'
 GO
 
-
+IF OBJECT_ID(N'[dbo].[AnyBoxNameType]', 'u') IS NOT NULL
+  DROP TABLE [dbo].[AnyBoxNameType];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -380,6 +407,34 @@ CREATE TABLE [dbo].[AMMO] (
 
 );
 GO
+
+CREATE TABLE dbo.BoxItem (
+  [id] INT IDENTITY,
+  [BoxName] INT NOT NULL,
+  [Items] INT NOT NULL,
+  [CountItems] INT NOT NULL DEFAULT 0,
+  CONSTRAINT PK_BoxItem PRIMARY KEY CLUSTERED (id)
+)
+GO
+CREATE TABLE dbo.Type_of_Box (
+  id INT IDENTITY,
+  nameOfType VARCHAR(50) NULL,
+  CONSTRAINT PK_Type_of_Box PRIMARY KEY CLUSTERED (id)
+)
+GO
+
+CREATE TABLE dbo.AnyBoxNameType (
+  id INT IDENTITY,
+  nameOfBox VARCHAR(50) NULL,
+  TypeOfBox INT NOT NULL,
+    [ParentBoxName] INT NULL,
+  CONSTRAINT PK_AnyBoxNameType PRIMARY KEY CLUSTERED (id)
+)
+GO
+
+
+
+
 -- Creating table '[Caliber]'
 CREATE TABLE [dbo].[Caliber] (
   [id] INT IDENTITY (1, 1) NOT NULL,
@@ -1131,7 +1186,9 @@ REFERENCES dbo.ITEM
 ON DELETE CASCADE ON UPDATE CASCADE;
 GO
 
-
+ALTER TABLE dbo.BoxItem
+  ADD CONSTRAINT FK_BoxItem_AnyBoxNameType_id FOREIGN KEY (BoxName) REFERENCES dbo.AnyBoxNameType (id)
+GO
 
 --
 ALTER TABLE dbo.ARMOUR
@@ -1214,6 +1271,11 @@ FOREIGN KEY ([rWeaponId])
 REFERENCES [dbo].[WEAPON]
 ([uiIndex])
 ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+
+ALTER TABLE dbo.BoxItem
+  ADD CONSTRAINT FK_BoxItem_ITEM_uiIndex FOREIGN KEY (Items) REFERENCES dbo.ITEM (uiIndex)
 GO
 
 -- Creating foreign key on [clothestype] in table 'ITEMs'
@@ -1345,6 +1407,9 @@ REFERENCES [dbo].[WeaponType]
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
+ALTER TABLE dbo.AnyBoxNameType
+  ADD CONSTRAINT FK_AnyBoxNameType_AnyBoxNameType_id FOREIGN KEY (ParentBoxName) REFERENCES dbo.AnyBoxNameType (id)
+GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_WeaponType'
 CREATE INDEX [IX_FK_WeaponType]
 ON [dbo].[WEAPON]
@@ -1479,6 +1544,11 @@ REFERENCES [dbo].[Attachmentmount]
 ([id])
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
+
+ALTER TABLE dbo.AnyBoxNameType
+  ADD CONSTRAINT FK_AnyBoxNameType_Type_of_Box_id FOREIGN KEY (TypeOfBox) REFERENCES dbo.Type_of_Box (id)
+GO
+
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Attachment_Attachmentmount'
 CREATE INDEX [IX_FK_Attachment_Attachmentmount]
@@ -1755,7 +1825,8 @@ INSERT INTO [DrugType]
   (N'Barrage'), (N'Vision'), (N'Tunnel Vision'), (N'Occulin'), (N'Cure'),
   (N'Cure+Regen+Dmg Resist+Agl+Dex+Wis+Per+Psycho+Nerv+Claus+Heat Int+Fear Ins+Forget');
 
-
+INSERT INTO [Type_of_Box] (nameOfType)
+  VALUES ('Type1'),('Type2'),('Type3');   
 
 INSERT INTO [Drug]
   VALUES (N'None');
@@ -1937,7 +2008,178 @@ INSERT INTO [Caliber] ([Caliber_name],[Class_of_Caliber],Dim_of_bullet_SI, Dim_o
 (N'.303 British (7.7x56mmR)',N'винтовки',7.7,.303),
 (N'.30-30 Winchester (7.62x51mmR)',N'винтовки',7.62,.3030),
 (N'.30-40 Krag (7.62x59mmR)',N'винтовки',7.62,.3040),
-(N'.308 Winchester (7.62x51mm NATO)',N'винтовки',7.62,.308);
+(N'.308 Winchester (7.62x51mm NATO)',N'винтовки',7.62,.308),
+(N'.31 Caplock (Allen)',N'пистолет',0,.31),
+(N'.32 Long Rifle (7.92x24mmR)',N'винтовки',7.92,.32),
+(N'.338 Lapua Magnum (8.6x70mm)',N'винтовки',8.6,.338),
+(N'.35 Remington (8.9x49mm)',N'винтовки',8.9,.35),
+(N'.357 Magnum (9x33mmR)',N'пистолет',9,.357),
+(N'.357 SIG (9x22mm)',N'пистолет',9,.357),
+(N'.36 Caplock (M1851 Navy)',N'пистолет',9,.36),
+(N'.375 H&H Magnum (9.35x72mmB)',N'винтовки',9.35,.375),
+(N'.38 ACP (9x23mmSR)',N'пистолет',9,.38),
+(N'.38 Long Colt (9x26mmR)',N'пистолет',9,.38),
+(N'.38 S&W (9x20mmR)',N'пистолет',9,.38),
+(N'.38 Special (9x29mmR)',N'пистолет',9,.38),
+(N'.38 Super Auto (9x23mmSR)',N'пистолет',9,.38),
+(N'.38 Volcanic',N'винтовки',9,.38),
+(N'.380 ACP (9x17mm)',N'пистолет',9,.380),
+(N'.38-40 Winchester (10x33mmR)',N'винтовки',10,.3840),
+(N'.40 S&W (10x21mm)',N'пистолет',10,.40),
+(N'.41 Long Colt (10x29mmR)',N'пистолет',10,.41),
+(N'.41 Short Remington (10x12mmR)',N'пистолет',10,.41),
+(N'.42 Caplock (LeMat)',N'пистолет',0,.42),
+(N'.44 Colt (11.25x28mmR)',N'пистолет',11.25,.44),
+(N'.44 Magnum (10.9x33mmR)',N'пистолет',10.9,.44),
+(N'.442 Caplock (Adams)',N'пистолет',11.2,.442),
+(N'.442 RIC (11.2x17mmR)',N'пистолет',11.2,.442),
+(N'.444 Marlin (10.9x57mmR)',N'винтовки',10.9,.444),
+(N'.44-40 Winchester (10.8x33mmR)',N'винтовки',10.8,.4440),
+(N'.44-90 Remington Special (11.2x62mmR)',N'винтовки',11.2,.4490),
+(N'.44-90 Sharps (11.3x61mmR)',N'винтовки',11.3,.4490),
+(N'.45 ACP (11.43x23mm)',N'пистолет',11.43,.45),
+(N'.45 Flintlock (Kentucky)',N'винтовки',11.43,.45),
+(N'.45 Flintlock (Wogdon)',N'пистолет',11.43,.45),
+(N'.45 GAP (11.43x19mm)',N'пистолет',11.43,.45),
+(N'.45 Long Colt (11.43x33mmR)',N'пистолет',11.43,.45),
+(N'.45 S&W (11.43x28mmR)',N'пистолет',11.43,.45),
+(N'.450 Adams (12.05x17mmR)',N'пистолет',12.05,.450),
+(N'.450 Gardner-Gatling (11.43x63mmR)',N'винтовки',11.43,.450),
+(N'.450 Martini-Henry (11.43x59mmR)',N'винтовки',11.43,.450),
+(N'.45-110 Sharps (11.43x73mmR)',N'винтовки',11.43,.45110),
+(N'.454 Casull (11.43x35mmR)',N'пистолет',11.43,.454),
+(N'.455 Webley (11.5x19mmR)',N'пистолет',11.5,.455),
+(N'.45-55 Springfield (11.43x53mmR)',N'винтовки',11.43,.4555),
+(N'.45-70 Springfield (11.43x53mmR)',N'винтовки',11.43,.4570),
+(N'.45-75 Winchester (11.43x48mmR)',N'винтовки',11.43,.4575),
+(N'.458 Winchester Magnum (11.63x64mmB)',N'винтовки',11.63,.458),
+(N'.460 Weatherby Magnum (11.63x74mmB)',N'винтовки',11.63,.460),
+(N'.470 Nitro Express (12x83mmR)',N'винтовки',12,.470),
+(N'.476 Enfield (12.05x22mmR)',N'пистолет',12.05,.470),
+(N'.50 Action Express (12.7x33mm)',N'пистолет',12.7,.50),
+(N'.50 Flintlock (Collier)',N'пистолет',12.7,.50),
+(N'.50 Flintlock (North West)',N'винтовки',12.7,.50),
+(N'.50-140 Sharps (12.9x83mmR)',N'винтовки',12.9,.50140),
+(N'.50-70 Government (13x44mmR)',N'винтовки',13,.5070),
+(N'.50-90 Sharps (12.9x64mmR)',N'винтовки',12.9,.5090),
+(N'.50-95 Winchester Express (12.7x49mmR)',N'винтовки',12.7,.5095),
+(N'.50BMG (12.7x99mm)',N'винтовки',12.7,.50),
+(N'.54 Caplock (Elgin Cutlass)',N'пистолет',0,.54),
+(N'.54 Flintlock (Hall M1819)',N'винтовки',0,.54),
+(N'.56 Flintlock (Tower Sea Service)',N'пистолет',0,.56),
+(N'.56-50 Spencer (13x29mmR)',N'винтовки',13,.5650),
+(N'.56-56 Spencer (14x22mmR)',N'винтовки',14,.5656),
+(N'.577 Caplock (Enfield)',N'винтовки',14.6,.577),
+(N'.577 Snider (14.6x51mmR)',N'винтовки',14.6,.577),
+(N'.58 Berdan (15x44mmR)',N'винтовки',15,.58),
+(N'.600 Nitro Express (15.2x76mmR)',N'винтовки',15.2,.600),
+(N'.625 Flintlock (Baker)',N'винтовки',15.9,.62),
+(N'.68 FN',N'винтовки',0,0.68),
+(N'.68 Paintball',N'пистолет',0,.68),
+(N'.700 Nitro Express (17.8x89mmR)',N'винтовки',17.8,.700),
+(N'.75 Flintlock (Brown Bess)',N'винтовки',0,.75),
+(N'.75 Flintlock (Rigby)',N'пистолет',0,.75),
+(N'1" Flare (25.4x107mmR)',N'Гранатомёты',25.4,1),
+(N'1" Gatling (25.5x97mmR)',N'Автоматические Пушки',25.5,1),
+(N'1.5" Caplock (Greener)',N'Автоматические Пушки',0,1.5),
+(N'10.75x58mmR Berdan',N'винтовки',12.75,10.75),
+(N'10.75x68mm Mauser',N'винтовки',10.75,10.75),
+(N'105x371mmR',N'Автоматические Пушки',105,0),
+(N'106x607mmR',N'Автоматические Пушки',106,0),
+(N'10-gauge 2.875" (19.7x73mmR)',N'дробовики',19.7,2.875),
+(N'10x25mm Auto',N'пистолет',10,0),
+(N'11.15x58mmR (.43 Spanish Remington)',N'винтовки',10.15,.43),
+(N'11.4x50mmR (.43 Egyptian Remington)',N'винтовки',11.4,.43),
+(N'11.75mm Girandoni',N'винтовки',11.75,0),
+(N'11-gauge Flintlock',N'дробовики',11,0),
+(N'11mm Syringe',N'винтовки',11,0),
+(N'12.7x108mm',N'винтовки',12.7,0),
+(N'12.7x77mm',N'винтовки',12.7,0),
+(N'120mm',N'миномёты',120,0),
+(N'125x408mmR',N'Автоматические Пушки',125,0),
+(N'12-gauge 2.5" (18.5x63mmR)',N'дробовики',18.5,0),
+(N'12-gauge 2.75" (18.5x70mmR)',N'дробовики',18.5,0),
+(N'12-gauge 2.75" (18.5x70mmR)',N'дробовики',18.5,0),
+(N'12-gauge 3" (18.5x76mmR)',N'дробовики',18.5,0),
+(N'12-pounder Cannonlock',N'Автоматические Пушки',12,0),
+(N'12x16mm Lefaucheux',N'пистолет',12,0),
+(N'13x36mm Gyrojet',N'пистолет',13,0),
+(N'13x92mmSR Mauser',N'винтовки',13,0),
+(N'14.5х114 мм (М41/44)',N'винтовки',14.5,0),
+(N'15.43x54mm Dreyse',N'винтовки',15.43,0),
+(N'16-gauge 2.75" (16.8x70mmR)',N'дробовики',16.8,0),
+(N'16-gauge Flintlock',N'дробовики',16,0),
+(N'17.1mm Flintlock (AN IX)',N'пистолет',17.1,0),
+(N'17.5mm Flintlock (Mle 1777)',N'винтовки',17.5,0),
+(N'2"2.25',N'миномёты',0,2),
+(N'2.5" Caplock (Screw-Gun)',N'Автоматические Пушки',63.5,2.5),
+(N'20-gauge 2.5" (15.6x63mmR)',N'дробовики',15.6,0),
+(N'20-gauge 2.75" (15.6x70mmR)',N'дробовики',15.6,0),
+(N'20-gauge Caplock',N'дробовики',15.6,0),
+(N'20x102mm',N'Автоматические Пушки',20,0),
+(N'20x110mmRB Oerlikon',N'Автоматические Пушки',20,0),
+(N'20x138mmB Solothurn',N'Автоматические Пушки',20,0),
+(N'20x28mm',N'Гранатомёты',20,0),
+(N'20x82mm Mauser',N'Автоматические Пушки',20,0),
+(N'25x137mm Oerlikon',N'Автоматические Пушки',25,0),
+(N'25x59mmB',N'Гранатомёты',25,0),
+(N'26.5x103mmR',N'Гранатомёты',26,0),
+(N'3"10',N'миномёты',0,0),
+(N'30x28mmB',N'Гранатомёты',30,0),
+(N'32-gauge 2.75" (12.5x70mmR)',N'дробовики',12.5,0),
+(N'37x122mmR',N'Гранатомёты',37,0),
+(N'37x249mmR',N'Автоматические Пушки',37,0),
+(N'37x94mmR Hotchkiss',N'Автоматические Пушки',37,0),
+(N'4.6x30mm Royal Ordnance',N'пистолет',4.6,0),
+(N'4.73x33mm Dynamit-Nobel',N'винтовки',4.73,0),
+(N'40mm VOG-25',N'Гранатомёты',40,0),
+(N'40x53mmSR',N'Гранатомёты',40,0),
+(N'5.45x39mm',N'винтовки',5.45,0),
+(N'5.66x39mm',N'винтовки',5.66,0),
+(N'5.6x57mmB',N'винтовки',5.6,0),
+(N'5.7x26mm Usel',N'винтовки',5.7,0),
+(N'5.7x28mm Fabrique Nationale',N'пистолет',5.7,0),
+(N'5.8x42mm',N'винтовки',5.8,0),
+(N'52mm',N'миномёты',52,0),
+(N'57x305mmR',N'противотанковые пушки',57,0),
+(N'6.5x55mm Mauser',N'винтовки',6.5,0),
+(N'60mm',N'миномёты',60,0),
+(N'6x60mm Lee (.236 Navy)',N'винтовки',6,0),
+(N'7.5x54mm MAS',N'винтовки',7.5,0),
+(N'7.62x25mm Tokarev',N'пистолет',7.62,0),
+(N'7.62x39mm',N'винтовки',7.62,0),
+(N'7.62x39mmR Nagant',N'пистолет',7.62,0),
+(N'7.62x42mm',N'пистолет',7.62,0),
+(N'7.62x54mmR Mosin',N'винтовки',7.62,0),
+(N'7.63x25mm Mauser',N'пистолет',7.63,0),
+(N'7.65x21mm Parabellum',N'пистолет',7.65,0),
+(N'7.65x53mm Mauser',N'винтовки',7.65,0),
+(N'7.7x58mm Arisaka',N'винтовки',7.7,0),
+(N'7.7x58mmSR Arisaka',N'винтовки',7.7,0),
+(N'7.92x33mm Kurz',N'винтовки',7.92,0),
+(N'7.92x57mm Mauser',N'винтовки',7.92,0),
+(N'75x350mmR',N'Автоматические Пушки',75,0),
+(N'75x495mmR',N'Автоматические Пушки',75,0),
+(N'76.2x539mmR (3")',N'Автоматические Пушки',76.2,0),
+(N'7x57mm Mauser',N'винтовки',7,0),
+(N'7x64mmB Remington Magnum',N'винтовки',7,0),
+(N'81mm',N'миномёты',81,0),
+(N'82mm',N'миномёты',82,0),
+(N'84x250mmR',N'противотанковые пушки',84,0),
+(N'8-bore (21.2x70mmR)',N'винтовки',21.2,0),
+(N'8x21mm Nambu',N'пистолет',8.0,0),
+(N'8x50mmR Lebel',N'винтовки',8,0),
+(N'8x50mmR Mannlicher',N'винтовки',8,0),
+(N'8x58mmR Krag',N'винтовки',8,0),
+(N'8x60mm Mauser',N'винтовки',8,0),
+(N'8x63mm Bofors',N'винтовки',8,0),
+(N'9.3x74mmR',N'винтовки',9.3,0),
+(N'9x18mm Makarov',N'пистолет',9,0),
+(N'9x19mm Parabellum',N'пистолет',9,0),
+(N'9x21mm Gyurza',N'пистолет',9,0),
+(N'9x23mm Bergmann-Bayard',N'пистолет',9,0),
+(N'9x25mm Mauser',N'пистолет',9,0),
+(N'9x39mm',N'винтовки',9,0);
 
 
 INSERT INTO Battery (name, SmolName, Description, [CPP], WPP)
@@ -3518,7 +3760,7 @@ DECLARE @price MONEY
 
 EXECUTE @RC = dbo.NEW_ITEM_Ammo @name=N'.175 BB',@weigth=0.0008, @price=0.003
 EXECUTE @RC = dbo.NEW_ITEM_Ammo @name=N'.22 Long Rifle (5.7x16mmR)',@weigth=0.0077, @price=0.1
-EXECUTE @RC = dbo.NEW_ITEM_Ammo @name=N'.220 Swift (5.56x56mmR)',@weigth=0.033, @price=1
+EXECUTE @RC = dbo.NEW_ITEM_Ammo @name=N'.220 Swift (5.56x56mmSR)',@weigth=0.033, @price=1
 EXECUTE @RC = dbo.NEW_ITEM_Ammo @name=N'.223 Remington  (5.56x45mm NATO)',@weigth=0.026, @price=0.5
 EXECUTE @RC = dbo.NEW_ITEM_Ammo @name=N'.25 ACP (6.35x16mmSR Browning)',@weigth=0.012, @price=0.1
 EXECUTE @RC = dbo.NEW_ITEM_Ammo @name=N'.28 Caplock (Colt Number 1)',@weigth=0.006, @price=0.1

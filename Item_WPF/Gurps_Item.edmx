@@ -11,14 +11,10 @@
           <Key>
             <PropertyRef Name="id" />
             <PropertyRef Name="Caliber_name" />
-            <PropertyRef Name="Dim_of_bullet_SI" />
-            <PropertyRef Name="Dim_of_bullet_US" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="Caliber_name" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="alt_caliber_name" Type="nvarchar" MaxLength="255" />
-          <Property Name="Dim_of_bullet_SI" Type="decimal" Precision="7" Scale="3" Nullable="false" />
-          <Property Name="Dim_of_bullet_US" Type="decimal" Precision="7" Scale="3" Nullable="false" />
         </EntityType>
         <EntityType Name="AMMOUPGRATES">
           <Key>
@@ -48,6 +44,15 @@
           <Property Name="Upgrates" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="Follow_Up" Type="nvarchar" MaxLength="50" />
           <Property Name="Linked" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AnyBoxNameType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameOfBox" Type="varchar" MaxLength="50" />
+          <Property Name="TypeOfBox" Type="int" Nullable="false" />
+          <Property Name="ParentBoxName" Type="int" />
         </EntityType>
         <EntityType Name="ARMOUR">
           <Key>
@@ -175,6 +180,15 @@
           <Property Name="CPP" Type="money" />
           <Property Name="WPP" Type="decimal" Precision="7" Scale="3" />
         </EntityType>
+        <EntityType Name="BoxItem">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BoxName" Type="int" Nullable="false" />
+          <Property Name="Items" Type="int" Nullable="false" />
+          <Property Name="CountItems" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Caliber">
           <Key>
             <PropertyRef Name="id" />
@@ -183,6 +197,8 @@
           <Property Name="Caliber_name" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="alt_caliber_name" Type="nvarchar" MaxLength="255" />
           <Property Name="Class_of_Caliber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Dim_of_bullet_SI" Type="decimal" Precision="8" Scale="4" />
+          <Property Name="Dim_of_bullet_US" Type="decimal" Precision="8" Scale="4" />
         </EntityType>
         <EntityType Name="CharacterDB">
           <Key>
@@ -431,6 +447,13 @@
           <Property Name="Description" Type="nvarchar" MaxLength="60" />
           <Property Name="StartMoney" Type="decimal" Precision="19" Scale="4" />
         </EntityType>
+        <EntityType Name="Type_of_Box">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameOfType" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="TypeOfDamage">
           <Key>
             <PropertyRef Name="id" />
@@ -527,6 +550,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_AnyBoxNameType_AnyBoxNameType_id">
+          <End Role="AnyBoxNameType" Type="Self.AnyBoxNameType" Multiplicity="0..1" />
+          <End Role="AnyBoxNameType1" Type="Self.AnyBoxNameType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AnyBoxNameType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AnyBoxNameType1">
+              <PropertyRef Name="ParentBoxName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AnyBoxNameType_Type_of_Box_id">
+          <End Role="Type_of_Box" Type="Self.Type_of_Box" Multiplicity="1" />
+          <End Role="AnyBoxNameType" Type="Self.AnyBoxNameType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_of_Box">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AnyBoxNameType">
+              <PropertyRef Name="TypeOfBox" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ARMOUR">
           <End Role="ArmourClass" Type="Self.ArmourClass" Multiplicity="1" />
           <End Role="ARMOUR" Type="Self.ARMOUR" Multiplicity="*" />
@@ -612,6 +659,30 @@
             </Principal>
             <Dependent Role="AvailableAttachSlot">
               <PropertyRef Name="rWeaponId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BoxItem_AnyBoxNameType_id">
+          <End Role="AnyBoxNameType" Type="Self.AnyBoxNameType" Multiplicity="1" />
+          <End Role="BoxItem" Type="Self.BoxItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AnyBoxNameType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="BoxItem">
+              <PropertyRef Name="BoxName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BoxItem_ITEM_uiIndex">
+          <End Role="ITEM" Type="Self.ITEM" Multiplicity="1" />
+          <End Role="BoxItem" Type="Self.BoxItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ITEM">
+              <PropertyRef Name="uiIndex" />
+            </Principal>
+            <Dependent Role="BoxItem">
+              <PropertyRef Name="Items" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -953,6 +1024,7 @@
         </Function>
         <EntityContainer Name="Хранилище item1ModelContainer">
           <EntitySet Name="AMMOUPGRATES" EntityType="Self.AMMOUPGRATES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AnyBoxNameType" EntityType="Self.AnyBoxNameType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ARMOUR" EntityType="Self.ARMOUR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ArmourClass" EntityType="Self.ArmourClass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Attachment" EntityType="Self.Attachment" Schema="dbo" store:Type="Tables" />
@@ -962,6 +1034,7 @@
           <EntitySet Name="AttachmentSystem" EntityType="Self.AttachmentSystem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AvailableAttachSlot" EntityType="Self.AvailableAttachSlot" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Battery" EntityType="Self.Battery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BoxItem" EntityType="Self.BoxItem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Caliber" EntityType="Self.Caliber" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CharacterDB" EntityType="Self.CharacterDB" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clothes" EntityType="Self.Clothes" Schema="dbo" store:Type="Tables" />
@@ -981,6 +1054,7 @@
           <EntitySet Name="LC" EntityType="Self.LC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOADBEARINGEQUIPMENT" EntityType="Self.LOADBEARINGEQUIPMENT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TL" EntityType="Self.TL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Type_of_Box" EntityType="Self.Type_of_Box" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypeOfDamage" EntityType="Self.TypeOfDamage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WEAPON" EntityType="Self.WEAPON" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WeaponAttackType" EntityType="Self.WeaponAttackType" Schema="dbo" store:Type="Tables" />
@@ -991,14 +1065,20 @@
             <DefiningQuery>SELECT 
     [AMMO].[id] AS [id], 
     [AMMO].[Caliber_name] AS [Caliber_name], 
-    [AMMO].[alt_caliber_name] AS [alt_caliber_name], 
-    [AMMO].[Dim_of_bullet_SI] AS [Dim_of_bullet_SI], 
-    [AMMO].[Dim_of_bullet_US] AS [Dim_of_bullet_US]
+    [AMMO].[alt_caliber_name] AS [alt_caliber_name]
     FROM [dbo].[AMMO] AS [AMMO]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_AMMO_ITEM_uiIndex" Association="Self.FK_AMMO_ITEM_uiIndex">
             <End Role="ITEM" EntitySet="ITEM" />
             <End Role="AMMO" EntitySet="AMMO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AnyBoxNameType_AnyBoxNameType_id" Association="Self.FK_AnyBoxNameType_AnyBoxNameType_id">
+            <End Role="AnyBoxNameType" EntitySet="AnyBoxNameType" />
+            <End Role="AnyBoxNameType1" EntitySet="AnyBoxNameType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AnyBoxNameType_Type_of_Box_id" Association="Self.FK_AnyBoxNameType_Type_of_Box_id">
+            <End Role="Type_of_Box" EntitySet="Type_of_Box" />
+            <End Role="AnyBoxNameType" EntitySet="AnyBoxNameType" />
           </AssociationSet>
           <AssociationSet Name="FK_ARMOUR" Association="Self.FK_ARMOUR">
             <End Role="ArmourClass" EntitySet="ArmourClass" />
@@ -1027,6 +1107,14 @@
           <AssociationSet Name="FK_AVeWeaponId" Association="Self.FK_AVeWeaponId">
             <End Role="WEAPON" EntitySet="WEAPON" />
             <End Role="AvailableAttachSlot" EntitySet="AvailableAttachSlot" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BoxItem_AnyBoxNameType_id" Association="Self.FK_BoxItem_AnyBoxNameType_id">
+            <End Role="AnyBoxNameType" EntitySet="AnyBoxNameType" />
+            <End Role="BoxItem" EntitySet="BoxItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BoxItem_ITEM_uiIndex" Association="Self.FK_BoxItem_ITEM_uiIndex">
+            <End Role="ITEM" EntitySet="ITEM" />
+            <End Role="BoxItem" EntitySet="BoxItem" />
           </AssociationSet>
           <AssociationSet Name="FK_Calibre" Association="Self.FK_Calibre">
             <End Role="Caliber" EntitySet="Caliber" />
@@ -1177,6 +1265,7 @@
             <Parameter Name="price" Mode="In" Type="Decimal" />
           </FunctionImport>
           <EntitySet Name="AMMOUPGRATES" EntityType="item1Model.AMMOUPGRATE" />
+          <EntitySet Name="AnyBoxNameTypes" EntityType="item1Model.AnyBoxNameType" />
           <EntitySet Name="ARMOURs" EntityType="item1Model.ARMOUR" />
           <EntitySet Name="ArmourClasses" EntityType="item1Model.ArmourClass" />
           <EntitySet Name="Attachments" EntityType="item1Model.Attachment" />
@@ -1186,6 +1275,7 @@
           <EntitySet Name="AttachmentSystems" EntityType="item1Model.AttachmentSystem" />
           <EntitySet Name="AvailableAttachSlots" EntityType="item1Model.AvailableAttachSlot" />
           <EntitySet Name="Batteries" EntityType="item1Model.Battery" />
+          <EntitySet Name="BoxItems" EntityType="item1Model.BoxItem" />
           <EntitySet Name="Calibers" EntityType="item1Model.Caliber" />
           <EntitySet Name="CharacterDBs" EntityType="item1Model.CharacterDB" />
           <EntitySet Name="Clothes" EntityType="item1Model.Cloth" />
@@ -1205,6 +1295,7 @@
           <EntitySet Name="LCs" EntityType="item1Model.LC" />
           <EntitySet Name="LOADBEARINGEQUIPMENTs" EntityType="item1Model.LOADBEARINGEQUIPMENT" />
           <EntitySet Name="TLs" EntityType="item1Model.TL" />
+          <EntitySet Name="Type_of_Box" EntityType="item1Model.Type_of_Box" />
           <EntitySet Name="TypeOfDamages" EntityType="item1Model.TypeOfDamage" />
           <EntitySet Name="WEAPONs" EntityType="item1Model.WEAPON" />
           <EntitySet Name="WeaponAttackTypes" EntityType="item1Model.WeaponAttackType" />
@@ -1212,6 +1303,18 @@
           <EntitySet Name="WeaponDamages" EntityType="item1Model.WeaponDamage" />
           <EntitySet Name="WeaponTypes" EntityType="item1Model.WeaponType" />
           <EntitySet Name="AMMOes" EntityType="item1Model.AMMO" />
+          <AssociationSet Name="FK_AnyBoxNameType_AnyBoxNameType_id" Association="item1Model.FK_AnyBoxNameType_AnyBoxNameType_id">
+            <End Role="AnyBoxNameType" EntitySet="AnyBoxNameTypes" />
+            <End Role="AnyBoxNameType1" EntitySet="AnyBoxNameTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AnyBoxNameType_Type_of_Box_id" Association="item1Model.FK_AnyBoxNameType_Type_of_Box_id">
+            <End Role="Type_of_Box" EntitySet="Type_of_Box" />
+            <End Role="AnyBoxNameType" EntitySet="AnyBoxNameTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BoxItem_AnyBoxNameType_id" Association="item1Model.FK_BoxItem_AnyBoxNameType_id">
+            <End Role="AnyBoxNameType" EntitySet="AnyBoxNameTypes" />
+            <End Role="BoxItem" EntitySet="BoxItems" />
+          </AssociationSet>
           <AssociationSet Name="FK_ARMOUR" Association="item1Model.FK_ARMOUR">
             <End Role="ArmourClass" EntitySet="ArmourClasses" />
             <End Role="ARMOUR" EntitySet="ARMOURs" />
@@ -1251,6 +1354,10 @@
           <AssociationSet Name="FK_AVeWeaponId" Association="item1Model.FK_AVeWeaponId">
             <End Role="WEAPON" EntitySet="WEAPONs" />
             <End Role="AvailableAttachSlot" EntitySet="AvailableAttachSlots" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BoxItem_ITEM_uiIndex" Association="item1Model.FK_BoxItem_ITEM_uiIndex">
+            <End Role="ITEM" EntitySet="ITEMs" />
+            <End Role="BoxItem" EntitySet="BoxItems" />
           </AssociationSet>
           <AssociationSet Name="FK_Calibre" Association="item1Model.FK_Calibre">
             <End Role="Caliber" EntitySet="Calibers" />
@@ -1365,6 +1472,19 @@
           <Property Name="Upgrates" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Follow_Up" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Linked" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AnyBoxNameType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameOfBox" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TypeOfBox" Type="Int32" Nullable="false" />
+          <Property Name="ParentBoxName" Type="Int32" />
+          <NavigationProperty Name="AnyBoxNameType1" Relationship="item1Model.FK_AnyBoxNameType_AnyBoxNameType_id" FromRole="AnyBoxNameType" ToRole="AnyBoxNameType1" />
+          <NavigationProperty Name="AnyBoxNameType2" Relationship="item1Model.FK_AnyBoxNameType_AnyBoxNameType_id" FromRole="AnyBoxNameType1" ToRole="AnyBoxNameType" />
+          <NavigationProperty Name="Type_of_Box" Relationship="item1Model.FK_AnyBoxNameType_Type_of_Box_id" FromRole="AnyBoxNameType" ToRole="Type_of_Box" />
+          <NavigationProperty Name="BoxItems" Relationship="item1Model.FK_BoxItem_AnyBoxNameType_id" FromRole="AnyBoxNameType" ToRole="BoxItem" />
         </EntityType>
         <EntityType Name="ARMOUR">
           <Key>
@@ -1507,6 +1627,17 @@
           <Property Name="CPP" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="WPP" Type="Decimal" Precision="7" Scale="3" />
         </EntityType>
+        <EntityType Name="BoxItem">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BoxName" Type="Int32" Nullable="false" />
+          <Property Name="Items" Type="Int32" Nullable="false" />
+          <Property Name="CountItems" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AnyBoxNameType" Relationship="item1Model.FK_BoxItem_AnyBoxNameType_id" FromRole="BoxItem" ToRole="AnyBoxNameType" />
+          <NavigationProperty Name="ITEM" Relationship="item1Model.FK_BoxItem_ITEM_uiIndex" FromRole="BoxItem" ToRole="ITEM" />
+        </EntityType>
         <EntityType Name="Caliber">
           <Key>
             <PropertyRef Name="id" />
@@ -1515,6 +1646,8 @@
           <Property Name="Caliber_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="alt_caliber_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Class_of_Caliber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Dim_of_bullet_SI" Type="Decimal" Precision="8" Scale="4" />
+          <Property Name="Dim_of_bullet_US" Type="Decimal" Precision="8" Scale="4" />
           <NavigationProperty Name="ITEMs" Relationship="item1Model.FK_Calibre" FromRole="Caliber" ToRole="ITEM" />
         </EntityType>
         <EntityType Name="CharacterDB">
@@ -1714,6 +1847,7 @@
           <Property Name="Works_on_Bat" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ARMOUR" Relationship="item1Model.FK_ARMOUR_ITEM_uiIndex" FromRole="ITEM" ToRole="ARMOUR" />
           <NavigationProperty Name="Attachment" Relationship="item1Model.FK_Attachment_ITEM_uiIndex" FromRole="ITEM" ToRole="Attachment" />
+          <NavigationProperty Name="BoxItems" Relationship="item1Model.FK_BoxItem_ITEM_uiIndex" FromRole="ITEM" ToRole="BoxItem" />
           <NavigationProperty Name="Caliber" Relationship="item1Model.FK_Calibre" FromRole="ITEM" ToRole="Caliber" />
           <NavigationProperty Name="Cloth" Relationship="item1Model.FK_ITEM_Clothes" FromRole="ITEM" ToRole="Cloth" />
           <NavigationProperty Name="DrugType1" Relationship="item1Model.FK_ITEM_DrugType" FromRole="ITEM" ToRole="DrugType" />
@@ -1794,6 +1928,14 @@
           <Property Name="Description" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
           <Property Name="StartMoney" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="ITEMs" Relationship="item1Model.FK_ITEM_TL" FromRole="TL" ToRole="ITEM" />
+        </EntityType>
+        <EntityType Name="Type_of_Box">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameOfType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AnyBoxNameTypes" Relationship="item1Model.FK_AnyBoxNameType_Type_of_Box_id" FromRole="Type_of_Box" ToRole="AnyBoxNameType" />
         </EntityType>
         <EntityType Name="TypeOfDamage">
           <Key>
@@ -1895,16 +2037,48 @@
           <Key>
             <PropertyRef Name="id" />
             <PropertyRef Name="Caliber_name" />
-            <PropertyRef Name="Dim_of_bullet_SI" />
-            <PropertyRef Name="Dim_of_bullet_US" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="Caliber_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="alt_caliber_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Dim_of_bullet_SI" Type="Decimal" Nullable="false" Precision="7" Scale="3" />
-          <Property Name="Dim_of_bullet_US" Type="Decimal" Nullable="false" Precision="7" Scale="3" />
           <NavigationProperty Name="ITEM" Relationship="item1Model.FK_AMMO_ITEM_uiIndex" FromRole="AMMO" ToRole="ITEM" />
         </EntityType>
+        <Association Name="FK_AnyBoxNameType_AnyBoxNameType_id">
+          <End Type="item1Model.AnyBoxNameType" Role="AnyBoxNameType" Multiplicity="0..1" />
+          <End Type="item1Model.AnyBoxNameType" Role="AnyBoxNameType1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AnyBoxNameType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AnyBoxNameType1">
+              <PropertyRef Name="ParentBoxName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AnyBoxNameType_Type_of_Box_id">
+          <End Type="item1Model.Type_of_Box" Role="Type_of_Box" Multiplicity="1" />
+          <End Type="item1Model.AnyBoxNameType" Role="AnyBoxNameType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_of_Box">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AnyBoxNameType">
+              <PropertyRef Name="TypeOfBox" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BoxItem_AnyBoxNameType_id">
+          <End Type="item1Model.AnyBoxNameType" Role="AnyBoxNameType" Multiplicity="1" />
+          <End Type="item1Model.BoxItem" Role="BoxItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AnyBoxNameType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="BoxItem">
+              <PropertyRef Name="BoxName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ARMOUR">
           <End Type="item1Model.ArmourClass" Role="ArmourClass" Multiplicity="1" />
           <End Type="item1Model.ARMOUR" Role="ARMOUR" Multiplicity="*" />
@@ -2028,6 +2202,18 @@
             </Principal>
             <Dependent Role="AvailableAttachSlot">
               <PropertyRef Name="rWeaponId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BoxItem_ITEM_uiIndex">
+          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1" />
+          <End Type="item1Model.BoxItem" Role="BoxItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ITEM">
+              <PropertyRef Name="uiIndex" />
+            </Principal>
+            <Dependent Role="BoxItem">
+              <PropertyRef Name="Items" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2333,6 +2519,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="AnyBoxNameTypes">
+            <EntityTypeMapping TypeName="item1Model.AnyBoxNameType">
+              <MappingFragment StoreEntitySet="AnyBoxNameType">
+                <ScalarProperty Name="ParentBoxName" ColumnName="ParentBoxName" />
+                <ScalarProperty Name="TypeOfBox" ColumnName="TypeOfBox" />
+                <ScalarProperty Name="nameOfBox" ColumnName="nameOfBox" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ARMOURs">
             <EntityTypeMapping TypeName="item1Model.ARMOUR">
               <MappingFragment StoreEntitySet="ARMOUR">
@@ -2468,9 +2664,21 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="BoxItems">
+            <EntityTypeMapping TypeName="item1Model.BoxItem">
+              <MappingFragment StoreEntitySet="BoxItem">
+                <ScalarProperty Name="CountItems" ColumnName="CountItems" />
+                <ScalarProperty Name="Items" ColumnName="Items" />
+                <ScalarProperty Name="BoxName" ColumnName="BoxName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Calibers">
             <EntityTypeMapping TypeName="item1Model.Caliber">
               <MappingFragment StoreEntitySet="Caliber">
+                <ScalarProperty Name="Dim_of_bullet_US" ColumnName="Dim_of_bullet_US" />
+                <ScalarProperty Name="Dim_of_bullet_SI" ColumnName="Dim_of_bullet_SI" />
                 <ScalarProperty Name="Class_of_Caliber" ColumnName="Class_of_Caliber" />
                 <ScalarProperty Name="alt_caliber_name" ColumnName="alt_caliber_name" />
                 <ScalarProperty Name="Caliber_name" ColumnName="Caliber_name" />
@@ -2742,6 +2950,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Type_of_Box">
+            <EntityTypeMapping TypeName="item1Model.Type_of_Box">
+              <MappingFragment StoreEntitySet="Type_of_Box">
+                <ScalarProperty Name="nameOfType" ColumnName="nameOfType" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TypeOfDamages">
             <EntityTypeMapping TypeName="item1Model.TypeOfDamage">
               <MappingFragment StoreEntitySet="TypeOfDamage">
@@ -2833,8 +3049,6 @@
           <EntitySetMapping Name="AMMOes">
             <EntityTypeMapping TypeName="item1Model.AMMO">
               <MappingFragment StoreEntitySet="AMMO">
-                <ScalarProperty Name="Dim_of_bullet_US" ColumnName="Dim_of_bullet_US" />
-                <ScalarProperty Name="Dim_of_bullet_SI" ColumnName="Dim_of_bullet_SI" />
                 <ScalarProperty Name="alt_caliber_name" ColumnName="alt_caliber_name" />
                 <ScalarProperty Name="Caliber_name" ColumnName="Caliber_name" />
                 <ScalarProperty Name="id" ColumnName="id" />

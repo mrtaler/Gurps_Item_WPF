@@ -99,6 +99,38 @@ namespace Item_WPF
     			}
     		}
     	}
+        private Nullable<decimal> _Dim_of_bullet_SI;
+    	public Nullable<decimal> Dim_of_bullet_SI 
+    	{ 
+    		get
+    		{
+    			return _Dim_of_bullet_SI;
+    		} 
+    		set
+    		{
+    			if (_Dim_of_bullet_SI != value)
+    			{
+    				_Dim_of_bullet_SI = value;
+    				OnPropertyChanged("Dim_of_bullet_SI");
+    			}
+    		}
+    	}
+        private Nullable<decimal> _Dim_of_bullet_US;
+    	public Nullable<decimal> Dim_of_bullet_US 
+    	{ 
+    		get
+    		{
+    			return _Dim_of_bullet_US;
+    		} 
+    		set
+    		{
+    			if (_Dim_of_bullet_US != value)
+    			{
+    				_Dim_of_bullet_US = value;
+    				OnPropertyChanged("Dim_of_bullet_US");
+    			}
+    		}
+    	}
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<ITEM> _ITEMs;

@@ -43,7 +43,6 @@ namespace Item_WPF.MVVM.ViewModels
         {
             _context.SaveChanges();
         }
-
         public DelegateCommand Save { get; set; }
 
         //      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

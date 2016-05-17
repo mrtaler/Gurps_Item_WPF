@@ -32,6 +32,7 @@ namespace Item_WPF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ITEM()
         {
+            this.BoxItems = new HashSet<BoxItem>();
             this.AMMOes = new HashSet<AMMO>();
         }
     
@@ -964,6 +965,16 @@ namespace Item_WPF
                 set
                 { if(_Attachment != value)
                     {    _Attachment = value;    OnPropertyChanged("Attachment");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<BoxItem> _BoxItems;
+            public virtual ICollection<BoxItem> BoxItems
+            {
+                get { return _BoxItems; }
+                set
+                { if(_BoxItems != value)
+                    {    _BoxItems = value;    OnPropertyChanged("BoxItems");   }
                 }
             } 
         private Caliber _Caliber;
