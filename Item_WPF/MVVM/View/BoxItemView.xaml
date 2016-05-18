@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:Item_WPF.MVVM.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="BoxItemView"
-    Width="481.319"
+    Width="659.5"
     Height="300"
     mc:Ignorable="d">
     <Grid>
@@ -23,7 +23,7 @@
         <Button
             x:Name="button"
             Height="25"
-            Margin="171,7,25,0"
+            Margin="252,7,25,0"
             VerticalAlignment="Top"
             Command="{Binding AddCommand}"
             Content="Add"
@@ -32,9 +32,9 @@
             x:Name="button1"
             Grid.Column="1"
             Height="25"
-            Margin="10,7,159,0"
+            Margin="10,7,0,0"
             VerticalAlignment="Top"
-            Content="Rem" />
+            Content="Rem" HorizontalAlignment="Left" Width="68" />
         <ComboBox
             x:Name="comboBox"
             Width="111"
@@ -63,7 +63,7 @@
                                     IsReadOnly="True" />
 
                 <DataGridTextColumn  Binding="{Binding CountItems,
-                                                      Mode=TwoWay}"
+                                                      Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                                     Header="Count"
                                     IsReadOnly="False" />
             </DataGrid.Columns>
@@ -77,6 +77,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="{Binding bx.nameOfBox}" />
+        <Button x:Name="button2" Content="save" Command="{Binding Save}" HorizontalAlignment="Left" Height="25" Margin="172,7,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

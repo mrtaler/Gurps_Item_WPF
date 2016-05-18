@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,13 +56,15 @@ namespace Item_WPF.MVVM.ViewModels
 
             //BoxItem bv = new BoxItem();
             //bv.CountItems;
-
+            boxItem.CollectionChanged+= new NotifyCollectionChangedEventHandler(boxItem_CollectionChanged);
             AddCommand = new ViewModelCommand(Add, true);
+            RemCommand = new ViewModelCommand(Rem, true);
+            Save = new DelegateCommand(SaveChanges);
 
             PropertyDependencyMap.Add("SelectedItClassforSort", new[] { "ItemsFromDB" });
         }
         #region Command
-        #region Command Add
+        #region Command public ViewModelCommand AddCommand { get; set; }
         private void Add(object parameter)
         {
             BoxItemforWork = null;
@@ -80,8 +83,38 @@ namespace Item_WPF.MVVM.ViewModels
         }
         public ViewModelCommand AddCommand { get; set; }
         #endregion
+        #region public ViewModelCommand RemCommand { get; set; }
+        private void Rem(object parameter)
+        {
 
+        }
+
+        public ViewModelCommand RemCommand { get; set; }
         #endregion
 
+        #endregion
+        private void boxItem_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (e.Action == NotifyCollectionChangedAction.Remove)
+            {
+                foreach (BoxItem item in e.OldItems)
+                {
+                    _context.BoxItems.Remove(item);
+                }
+                //  SaveChanges();
+            }
+            else if (e.Action == NotifyCollectionChangedAction.Add)
+            {
+                foreach (BoxItem item in e.NewItems)
+                {
+                    _context.BoxItems.Add(item);
+                }
+            }
+        }
+        private void SaveChanges(object parameter)
+        {
+            _context.SaveChanges();
+        }
+        public DelegateCommand Save { get; set; }
     }
 }
