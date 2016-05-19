@@ -86,6 +86,13 @@ namespace Item_WPF.MVVM.ViewModels
         #region public ViewModelCommand RemCommand { get; set; }
         private void Rem(object parameter)
         {
+            if (BoxItemforWork.CountItems > 1)
+            {
+                BoxItemforWork.CountItems -= 1;
+            }
+            else {
+                boxItem.Remove(BoxItemforWork);
+            }
 
         }
 
