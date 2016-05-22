@@ -6,6 +6,9 @@ using System.Globalization;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Media;
+using System.Collections.Generic;
+
+using System.Text;
 
 namespace Item_WPF.addin
 {
@@ -555,6 +558,25 @@ namespace Item_WPF.addin
         }      
     }
     #endregion
+    //#region conv trre
+    //public sealed class CategoryValueConverter : ConvertorBase<CategoryValueConverter>
+    //{
+    //    public override object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+    //    {
+    //        if (value is AnyBoxNameType)
+    //        {
+    //            AnyBoxNameType x = (AnyBoxNameType)value;
+    //            return (x)..Where(n => n.ParentBoxName == x.id);
+    //        }
+    //        else
+    //        {
+    //            return null;
+    //        }
+    //    }      
+    //}
+    //#endregion
+
+
 }
 //http://dev.net.ua/blogs/andriydanilchenko/archive/2011/08/14/binding-and-multibinding-converters.aspx
 

@@ -196,7 +196,6 @@
     <Compile Include="MVVM\ViewModels\CaliberViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AttacmentEditViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AttacmentMountViewModel.cs" />
-    <Compile Include="MVVM\ViewModels\CanExecuteEventArgs.cs" />
     <Compile Include="MVVM\ViewModels\CombineWeapViewModel.cs" />
     <Compile Include="MVVM\ViewModels\DamageTypeViewModel.cs" />
     <Compile Include="MVVM\ViewModels\EditPrimaryStatsViewModel.cs" />

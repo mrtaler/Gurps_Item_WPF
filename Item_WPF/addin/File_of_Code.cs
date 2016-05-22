@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Markup;
@@ -92,5 +93,13 @@ namespace Item_WPF.addin
         ////https://habrahabr.ru/post/140876/
     }
     #endregion
-   
+   public class AnyBoxNameType_mem: AnyBoxNameType
+    {
+        public AnyBoxNameType_mem()
+        {
+            this.Members = new ObservableCollection<AnyBoxNameType>();
+        }
+        public ObservableCollection<AnyBoxNameType> Members { get; set; }
+
+    }
 }

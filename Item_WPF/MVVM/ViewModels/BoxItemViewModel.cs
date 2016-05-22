@@ -1,17 +1,20 @@
 ﻿using Item_WPF.addin;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Item_WPF.MVVM.ViewModels
 {
     public class BoxItemViewModel : ViewModelBase
     {
         private item1Entities _context;
+        public ObservableCollection<AnyBoxNameType_mem> anyBoxNameType { get; set; }
         public ObservableCollection<ItemClass> ItemsClass { get; set; }
         public AnyBoxNameType bx { get; set; }
         public BoxItem BoxItemforWork { get; set; }
@@ -48,15 +51,39 @@ namespace Item_WPF.MVVM.ViewModels
         #endregion
         public BoxItemViewModel(object parameter)
         {
+
+
+
+          
+
+
+
             int Boxindex = Convert.ToInt32(parameter);
             _context = new item1Entities();
-            bx = _context.AnyBoxNameTypes.First(p => p.id == Boxindex);
+            anyBoxNameType = new ObservableCollection<AnyBoxNameType_mem>();
+          
+            foreach (var item in _context.AnyBoxNameTypes.Where(p=>p.ParentBoxName==null))
+            {
+                AnyBoxNameType_mem anbMem = new AnyBoxNameType_mem();                
+                foreach (var items in _context.AnyBoxNameTypes.Where(p => p.ParentBoxName == item.id))
+                {
+                    anbMem.Members.Add(items);
+                }
+
+                anyBoxNameType.Add(anbMem);
+
+             
+            }
+                    
+
+
+
             boxItem = new ObservableCollection<BoxItem>(_context.BoxItems.Where(p => p.BoxName == Boxindex));
             ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClasses);
 
             //BoxItem bv = new BoxItem();
             //bv.CountItems;
-            boxItem.CollectionChanged+= new NotifyCollectionChangedEventHandler(boxItem_CollectionChanged);
+            boxItem.CollectionChanged += new NotifyCollectionChangedEventHandler(boxItem_CollectionChanged);
             AddCommand = new ViewModelCommand(Add, true);
             RemCommand = new ViewModelCommand(Rem, true);
             Save = new DelegateCommand(SaveChanges);
@@ -71,29 +98,30 @@ namespace Item_WPF.MVVM.ViewModels
             BoxItemforWork = (from p in boxItem
                               where p.ITEM == itemtobox
                               select p).FirstOrDefault();
-            if (BoxItemforWork == null)
+            if (itemtobox != null)
             {
-                boxItem.Add(new BoxItem { ITEM = itemtobox, BoxName = bx.id, CountItems = 1 });
-                NotifyPropertyChanged("boxItem");
+                if (BoxItemforWork == null)
+                {
+                    boxItem.Add(new BoxItem { ITEM = itemtobox, BoxName = bx.id, CountItems = 1 });
+                    NotifyPropertyChanged("boxItem");
+                }
+                else
+                {
+                    BoxItemforWork.CountItems += 1;
+                }
             }
-            else
-            {
-                BoxItemforWork.CountItems+=1;
-            }
+            BoxItemforWork = null;
         }
         public ViewModelCommand AddCommand { get; set; }
         #endregion
         #region public ViewModelCommand RemCommand { get; set; }
         private void Rem(object parameter)
         {
-            if (BoxItemforWork.CountItems > 1)
+            if (BoxItemforWork != null)
             {
-                BoxItemforWork.CountItems -= 1;
+                if (BoxItemforWork.CountItems > 1) BoxItemforWork.CountItems -= 1;
+                else boxItem.Remove(BoxItemforWork);
             }
-            else {
-                boxItem.Remove(BoxItemforWork);
-            }
-
         }
 
         public ViewModelCommand RemCommand { get; set; }
@@ -123,5 +151,8 @@ namespace Item_WPF.MVVM.ViewModels
             _context.SaveChanges();
         }
         public DelegateCommand Save { get; set; }
+
+
+       
     }
 }

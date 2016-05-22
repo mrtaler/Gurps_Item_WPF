@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <ListBox
             x:Name="listBox"
-            Margin="10,37,25,10"
+            Margin="10,37,79,10"
             DisplayMemberPath="szItemName"
             ItemsSource="{Binding ItemsFromDB}"
             SelectedItem="{Binding itemtobox}" />
@@ -31,11 +31,13 @@
         <Button
             x:Name="button1"
             Grid.Column="1"
-            Command="{Binding RemCommand}"
+            Width="68"
             Height="25"
             Margin="10,7,0,0"
+            HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Rem" HorizontalAlignment="Left" Width="68" />
+            Command="{Binding RemCommand}"
+            Content="Rem" />
         <ComboBox
             x:Name="comboBox"
             Width="111"
@@ -49,37 +51,68 @@
         <DataGrid
             x:Name="dataGrid"
             Grid.Column="1"
-            Margin="10,37,10,10"
-            ItemsSource="{Binding boxItem}" 
-            SelectedItem="{Binding BoxItemforWork}"
-            AutoGenerateColumns="False">
+            Margin="83,37,10,10"
+            AutoGenerateColumns="False"
+            ItemsSource="{Binding boxItem}"
+            SelectedItem="{Binding BoxItemforWork}">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="20"
-                                    Binding="{Binding uiIndex,
-                                                      Mode=OneWay}"
-                                    Header="id"
-                                    IsReadOnly="True" />
-                <DataGridTextColumn  Binding="{Binding ITEM.szItemName,
-                                                      Mode=OneWay}"
-                                    Header="name"
-                                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    Width="20"
+                    Binding="{Binding uiIndex, Mode=OneWay}"
+                    Header="id"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    Binding="{Binding ITEM.szItemName, Mode=OneWay}"
+                    Header="name"
+                    IsReadOnly="True" />
 
-                <DataGridTextColumn  Binding="{Binding CountItems,
-                                                      Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                                    Header="Count"
-                                    IsReadOnly="False" />
+                <DataGridTextColumn
+                    Binding="{Binding CountItems, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Header="Count"
+                    IsReadOnly="False" />
             </DataGrid.Columns>
         </DataGrid>
-        <Label
-            x:Name="label"
+
+        <Button
+            x:Name="button2"
+            Width="75"
+            Height="25"
+            Margin="172,7,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Command="{Binding Save}"
+            Content="save" />
+        <ComboBox
+            x:Name="comboBox1"
             Grid.Column="1"
-            Width="144"
+            Width="120"
             Height="25"
             Margin="83,7,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="{Binding bx.nameOfBox}" />
-        <Button x:Name="button2" Content="save" Command="{Binding Save}" HorizontalAlignment="Left" Height="25" Margin="172,7,0,0" VerticalAlignment="Top" Width="75"/>
+            DisplayMemberPath="nameOfBox"
+            ItemsSource="{Binding anyBoxNameType}"
+            SelectedItem="{Binding bx}"
+            SelectedValuePath="id" />
+        <TreeView
+            x:Name="treeView"
+            Grid.ColumnSpan="2"
+            Width="152"
+            Height="222"
+            Margin="0,37,248,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top" 
+           ItemsSource="{Binding Path=anyBoxNameType}" >
+            <TreeView.ItemTemplate >
+                <HierarchicalDataTemplate ItemsSource="{Binding Members}">
+                    <TextBlock Text="{Binding Path=nameOfBox}"/>            
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+
+
+
+
 
     </Grid>
 </Window>
