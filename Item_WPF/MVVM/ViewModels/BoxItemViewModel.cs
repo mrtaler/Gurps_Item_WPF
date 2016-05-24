@@ -14,9 +14,26 @@ namespace Item_WPF.MVVM.ViewModels
     public class BoxItemViewModel : ViewModelBase
     {
         private item1Entities _context;
-        public ObservableCollection<AnyBoxNameType_mem> anyBoxNameType { get; set; }
+        public ObservableCollection<AnyBoxNameType> anyBoxNameType111 { get; set; }
         public ObservableCollection<ItemClass> ItemsClass { get; set; }
-        public AnyBoxNameType bx { get; set; }
+        public
+        private AnyBoxNameType _bx
+        { get; set; }
+        public AnyBoxNameType bx
+        {
+            get
+            {
+                return _bx;
+            }
+            set
+            {
+                if (_bx != value)
+                {
+                    _bx = value;
+                    NotifyPropertyChanged("bx");
+                };
+            }
+        }
         public BoxItem BoxItemforWork { get; set; }
         public ITEM itemtobox { get; set; }
         public ObservableCollection<BoxItem> boxItem { get; set; }
@@ -48,41 +65,56 @@ namespace Item_WPF.MVVM.ViewModels
                 }
             }
         }
+
+
         #endregion
-        public BoxItemViewModel(object parameter)
+
+        bool _isSelected;
+
+        public bool IsSelected
+
         {
 
+            get { return _isSelected; }
 
+            set
+            {
+                _isSelected = value;
+                NotifyPropertyChanged("IsSelected");
+            }
 
-          
+        }
 
+        private AnyBoxNameType _SelectedBoxNameId;
+        public AnyBoxNameType SelectedBoxNameId
+        {
+            get
+            {
+                return _SelectedBoxNameId;
+            }          
+        }
+        
+        
 
+  14:            return TopLevelItems
 
+  15:                       .Traverse(item => item.Children)
+
+  16:                       .FirstOrDefault(m => m.IsSelected);
+
+  17:        }
+
+  18:    }
+public BoxItemViewModel(object parameter)
+        {
             int Boxindex = Convert.ToInt32(parameter);
             _context = new item1Entities();
-            anyBoxNameType = new ObservableCollection<AnyBoxNameType_mem>();
-          
-            foreach (var item in _context.AnyBoxNameTypes.Where(p=>p.ParentBoxName==null))
-            {
-                AnyBoxNameType_mem anbMem = new AnyBoxNameType_mem();                
-                foreach (var items in _context.AnyBoxNameTypes.Where(p => p.ParentBoxName == item.id))
-                {
-                    anbMem.Members.Add(items);
-                }
-
-                anyBoxNameType.Add(anbMem);
-
-             
-            }
-                    
-
-
+            anyBoxNameType111 = new ObservableCollection<AnyBoxNameType>(_context.AnyBoxNameTypes.Where(p => p.ParentBoxName == null));
 
             boxItem = new ObservableCollection<BoxItem>(_context.BoxItems.Where(p => p.BoxName == Boxindex));
             ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClasses);
 
-            //BoxItem bv = new BoxItem();
-            //bv.CountItems;
+
             boxItem.CollectionChanged += new NotifyCollectionChangedEventHandler(boxItem_CollectionChanged);
             AddCommand = new ViewModelCommand(Add, true);
             RemCommand = new ViewModelCommand(Rem, true);
@@ -153,6 +185,6 @@ namespace Item_WPF.MVVM.ViewModels
         public DelegateCommand Save { get; set; }
 
 
-       
+
     }
 }
