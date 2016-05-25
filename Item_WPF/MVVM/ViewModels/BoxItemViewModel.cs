@@ -16,9 +16,7 @@ namespace Item_WPF.MVVM.ViewModels
         private item1Entities _context;
         public ObservableCollection<AnyBoxNameType> anyBoxNameType111 { get; set; }
         public ObservableCollection<ItemClass> ItemsClass { get; set; }
-        public
-        private AnyBoxNameType _bx
-        { get; set; }
+        private AnyBoxNameType _bx;
         public AnyBoxNameType bx
         {
             get
@@ -65,60 +63,39 @@ namespace Item_WPF.MVVM.ViewModels
                 }
             }
         }
-
-
         #endregion
-
-        bool _isSelected;
-
-        public bool IsSelected
-
+        private int _Test;
+        public int Test
         {
-
-            get { return _isSelected; }
-
+            get { return _Test; }
             set
             {
-                _isSelected = value;
-                NotifyPropertyChanged("IsSelected");
+                if (_Test != value)
+                {
+                    _Test = value;
+                    NotifyPropertyChanged("Test");
+                    NotifyPropertyChanged("boxItem");
+                }
             }
-
         }
-
-        private AnyBoxNameType _SelectedBoxNameId;
-        public AnyBoxNameType SelectedBoxNameId
-        {
-            get
-            {
-                return _SelectedBoxNameId;
-            }          
-        }
-        
-        
-
-  14:            return TopLevelItems
-
-  15:                       .Traverse(item => item.Children)
-
-  16:                       .FirstOrDefault(m => m.IsSelected);
-
-  17:        }
-
-  18:    }
-public BoxItemViewModel(object parameter)
+        public BoxItemViewModel(object parameter)
         {
             int Boxindex = Convert.ToInt32(parameter);
             _context = new item1Entities();
             anyBoxNameType111 = new ObservableCollection<AnyBoxNameType>(_context.AnyBoxNameTypes.Where(p => p.ParentBoxName == null));
 
-            boxItem = new ObservableCollection<BoxItem>(_context.BoxItems.Where(p => p.BoxName == Boxindex));
+            boxItem = new ObservableCollection<BoxItem>(_context.BoxItems);
             ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClasses);
 
 
             boxItem.CollectionChanged += new NotifyCollectionChangedEventHandler(boxItem_CollectionChanged);
+            anyBoxNameType111.CollectionChanged += new NotifyCollectionChangedEventHandler(anyBoxNameType111_CollectionChanged);
+
             AddCommand = new ViewModelCommand(Add, true);
             RemCommand = new ViewModelCommand(Rem, true);
             Save = new DelegateCommand(SaveChanges);
+            AddNewMainBoxCommand = new ViewModelCommand(AddNewMainBox, true);
+            AddNewSubMainBoxCommand = new ViewModelCommand(AddNewSubMainBox, true);
 
             PropertyDependencyMap.Add("SelectedItClassforSort", new[] { "ItemsFromDB" });
         }
@@ -126,15 +103,15 @@ public BoxItemViewModel(object parameter)
         #region Command public ViewModelCommand AddCommand { get; set; }
         private void Add(object parameter)
         {
+            int param = Convert.ToInt32(parameter);
             BoxItemforWork = null;
-            BoxItemforWork = (from p in boxItem
-                              where p.ITEM == itemtobox
-                              select p).FirstOrDefault();
+            BoxItemforWork = boxItem.Where(p => p.BoxName == param).FirstOrDefault(p => p.ITEM == itemtobox);
+
             if (itemtobox != null)
             {
                 if (BoxItemforWork == null)
                 {
-                    boxItem.Add(new BoxItem { ITEM = itemtobox, BoxName = bx.id, CountItems = 1 });
+                    boxItem.Add(new BoxItem { ITEM = itemtobox, BoxName = param, CountItems = 1 });
                     NotifyPropertyChanged("boxItem");
                 }
                 else
@@ -158,7 +135,6 @@ public BoxItemViewModel(object parameter)
 
         public ViewModelCommand RemCommand { get; set; }
         #endregion
-
         #endregion
         private void boxItem_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
@@ -174,7 +150,7 @@ public BoxItemViewModel(object parameter)
             {
                 foreach (BoxItem item in e.NewItems)
                 {
-                    _context.BoxItems.Add(item);
+                    _context.BoxItems.Add(/*new BoxItem { ITEM = itemtobox, BoxName = Test, CountItems = 1 }*/item);
                 }
             }
         }
@@ -184,6 +160,57 @@ public BoxItemViewModel(object parameter)
         }
         public DelegateCommand Save { get; set; }
 
+
+        private void anyBoxNameType111_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (e.Action == NotifyCollectionChangedAction.Remove)
+            {
+                foreach (AnyBoxNameType item in e.OldItems)
+                {
+                    _context.AnyBoxNameTypes.Remove(item);
+                }
+                //  SaveChanges();
+            }
+            else if (e.Action == NotifyCollectionChangedAction.Add)
+            {
+                foreach (AnyBoxNameType item in e.NewItems)
+                {
+                    _context.AnyBoxNameTypes.Add(item);
+                }
+            }
+        }
+        #region public ViewModelCommand AddNewBoxCommand { get; set; }
+        private void AddNewMainBox(object parameter)
+        {
+            anyBoxNameType111.Add(new AnyBoxNameType { nameOfBox = "newBox", TypeOfBox = 1 });
+            SaveChanges(1);
+
+            NotifyPropertyChanged("anyBoxNameType111");
+        }
+
+        public ViewModelCommand AddNewMainBoxCommand { get; set; }
+        #endregion
+
+        #region public ViewModelCommand AddNewSubMainBoxCommand { get; set; }
+        private void AddNewSubMainBox(object parameter)
+        {
+            int param = Convert.ToInt32(parameter);
+
+            anyBoxNameType111.Add
+                (
+                new AnyBoxNameType
+                {
+                    nameOfBox = "newSubBox",
+                    TypeOfBox = 1,
+                    AnyBoxNameType2 = anyBoxNameType111.FirstOrDefault(p => p.id == param)
+                }
+                );
+            SaveChanges(1);
+            NotifyPropertyChanged("anyBoxNameType111");
+        }
+
+        public ViewModelCommand AddNewSubMainBoxCommand { get; set; }
+        #endregion
 
 
     }

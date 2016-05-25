@@ -576,7 +576,17 @@ namespace Item_WPF.addin
     //}
     //#endregion
 
-
+    #region AnyboxNameConvertFrom treview notttttttttttttttttttt
+    public class AnyboxNameConvertFromtreview : MultiConvertorBase<AnyboxNameConvertFromtreview>
+    {        
+        public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            int IDBOXNAME =System.Convert.ToInt32(values[1]);
+            ObservableCollection<BoxItem> BoxItemForIDboxname = values[0] as ObservableCollection<BoxItem>;
+            return BoxItemForIDboxname.Where(p => p.BoxName == IDBOXNAME);
+        }
+    }
+    #endregion
 }
 //http://dev.net.ua/blogs/andriydanilchenko/archive/2011/08/14/binding-and-multibinding-converters.aspx
 
