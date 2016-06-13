@@ -578,13 +578,14 @@ namespace Item_WPF.addin
 
     #region AnyboxNameConvertFrom treview notttttttttttttttttttt
     public class AnyboxNameConvertFromtreview : MultiConvertorBase<AnyboxNameConvertFromtreview>
-    {        
+    {
+      public ObservableCollection<BoxItem> BoxItemForIDboxname { get; set; }
         public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             int IDBOXNAME =System.Convert.ToInt32(values[1]);
-            ObservableCollection<BoxItem> BoxItemForIDboxname = values[0] as ObservableCollection<BoxItem>;
+            BoxItemForIDboxname = values[0] as ObservableCollection<BoxItem>;
             return BoxItemForIDboxname.Where(p => p.BoxName == IDBOXNAME);
-        }
+        }     
     }
     #endregion
 }

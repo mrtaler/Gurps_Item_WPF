@@ -563,7 +563,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_AnyBoxNameType_Type_of_Box_id">
-          <End Role="Type_of_Box" Type="Self.Type_of_Box" Multiplicity="1" />
+          <End Role="Type_of_Box" Type="Self.Type_of_Box" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="AnyBoxNameType" Type="Self.AnyBoxNameType" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Type_of_Box">
@@ -663,7 +665,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BoxItem_AnyBoxNameType_id">
-          <End Role="AnyBoxNameType" Type="Self.AnyBoxNameType" Multiplicity="1" />
+          <End Role="AnyBoxNameType" Type="Self.AnyBoxNameType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="BoxItem" Type="Self.BoxItem" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AnyBoxNameType">
@@ -2056,7 +2060,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_AnyBoxNameType_Type_of_Box_id">
-          <End Type="item1Model.Type_of_Box" Role="Type_of_Box" Multiplicity="1" />
+          <End Type="item1Model.Type_of_Box" Role="Type_of_Box" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="item1Model.AnyBoxNameType" Role="AnyBoxNameType" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Type_of_Box">
@@ -2068,7 +2074,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BoxItem_AnyBoxNameType_id">
-          <End Type="item1Model.AnyBoxNameType" Role="AnyBoxNameType" Multiplicity="1" />
+          <End Type="item1Model.AnyBoxNameType" Role="AnyBoxNameType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="item1Model.BoxItem" Role="BoxItem" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AnyBoxNameType">
