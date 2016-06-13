@@ -241,12 +241,32 @@ namespace Item_WPF.MVVM.ViewModels
         {
             int param = Convert.ToInt32(parameter);
             bx = _context.AnyBoxNameTypes.First(p => p.id == param);
-            anyBoxNameTypeAll.Remove(bx);
-            SaveChanges(1);
+            anyBoxNameTypeAll.Remove(bx);          
             NotifyPropertyChanged("anyBoxNameType111");
         }
 
         public ViewModelCommand DellCommand { get; set; }
         #endregion
-    }
+        /*
+        public int TotalWeight
+        {
+            get
+            {
+                int w = 0;
+                foreach (ITEM item in Inventory)
+                    w += System.Convert.ToInt32(item.ubWeight);
+                return w;
+            }
+        }
+        public int TotalCost
+        {
+            get
+            {
+                int w = 0;
+                foreach (ITEM item in Inventory)
+                    w += System.Convert.ToInt32(item.ubWeight);
+                return w;
+            }
+        }*/
+    }   
 }

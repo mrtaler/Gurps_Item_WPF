@@ -28,8 +28,7 @@
                 VerticalAlignment="Top"
                 Command="{Binding AddCommand}"
                 CommandParameter="{Binding SelectedValue,
-                                           ElementName=treeView,
-                                           UpdateSourceTrigger=PropertyChanged}"
+                                           ElementName=treeView}"
                 Content="Add Item To Box"
                 RenderTransformOrigin="0.521,0.432" />
         <Button x:Name="button1"
@@ -51,7 +50,6 @@
                   ItemsSource="{Binding ItemsClass}"
                   SelectedValue="{Binding SelectedItClassforSort}"
                   SelectedValuePath="id" />
-
         <Button x:Name="button2"
                 Width="75"
                 Height="25"
@@ -83,9 +81,7 @@
                  VerticalAlignment="Top"
                  TextWrapping="Wrap">
             <TextBox.Text>
-                <Binding ElementName="treeView"
-                         Path="SelectedItem.nameOfBox"
-                         UpdateSourceTrigger="PropertyChanged" />
+                <Binding ElementName="treeView" Path="SelectedItem.nameOfBox" />
             </TextBox.Text>
         </TextBox>
         <Button x:Name="button3"
@@ -106,36 +102,30 @@
                 VerticalAlignment="Bottom"
                 Command="{Binding AddNewSubMainBoxCommand}"
                 CommandParameter="{Binding SelectedValue,
-                                           ElementName=treeView,
-                                           UpdateSourceTrigger=PropertyChanged}"
+                                           ElementName=treeView}"
                 Content="Add Sub Main" />
         <Button x:Name="button5"
                 Grid.ColumnSpan="2"
-                Width="96"
+                Width="90"
                 Height="25"
                 Margin="322,0,0,10"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Bottom"
                 Command="{Binding DellCommand}"
                 CommandParameter="{Binding SelectedValue,
-                                           ElementName=treeView,
-                                           UpdateSourceTrigger=PropertyChanged}"
+                                           ElementName=treeView}"
                 Content="Del Tree" />
         <DataGrid x:Name="dataGrid"
                   Grid.Column="1"
-                  Margin="83,67,10,33"
+                  Margin="83,67,10,40"
                   AutoGenerateColumns="False"
                   SelectedItem="{Binding BoxItemforWork,
                                          UpdateSourceTrigger=PropertyChanged,
                                          Mode=TwoWay}">
             <DataGrid.ItemsSource>
                 <MultiBinding Converter="{addin:AnyboxNameConvertFromtreview}" UpdateSourceTrigger="PropertyChanged">
-                    <Binding Mode="TwoWay"
-                             Path="boxItem"
-                             UpdateSourceTrigger="PropertyChanged" />
-                    <Binding ElementName="treeView"
-                             Path="SelectedValue"
-                             UpdateSourceTrigger="PropertyChanged" />
+                    <Binding Path="boxItem" UpdateSourceTrigger="PropertyChanged" />
+                    <Binding ElementName="treeView" Path="SelectedValue" />
                 </MultiBinding>
             </DataGrid.ItemsSource>
             <DataGrid.Columns>
@@ -168,10 +158,29 @@
                          UpdateSourceTrigger="PropertyChanged" />
             </TextBox.Text>
         </TextBox>
-
-
-
-
-
+        <TextBox x:Name="textBox2"
+                 Grid.Column="1"
+                 Width="147"
+                 Height="23"
+                 Margin="83,371,0,0"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 TextWrapping="Wrap"
+                 IsReadOnly="True">
+            <TextBox.Text>
+                <MultiBinding Converter="{addin:WeigthInBoxconverter}">
+                    <Binding Path="boxItem" />
+                    <Binding ElementName="treeView" Path="SelectedValue" Mode="OneWay" />
+                </MultiBinding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="textBox3"
+                 Grid.Column="1"
+                 Width="152"
+                 Height="23"
+                 Margin="235,371,0,0"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 TextWrapping="Wrap" />
     </Grid>
 </Window>
