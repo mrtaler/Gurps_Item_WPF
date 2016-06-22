@@ -100,22 +100,6 @@ namespace Item_WPF
     			}
     		}
     	}
-        private int _ubCalibre;
-    	public int ubCalibre 
-    	{ 
-    		get
-    		{
-    			return _ubCalibre;
-    		} 
-    		set
-    		{
-    			if (_ubCalibre != value)
-    			{
-    				_ubCalibre = value;
-    				OnPropertyChanged("ubCalibre");
-    			}
-    		}
-    	}
         private int _DefACC;
     	public int DefACC 
     	{ 
@@ -533,15 +517,6 @@ namespace Item_WPF
     		}
     	}
     
-        private AMMO _AMMO;
-            public virtual AMMO AMMO
-            {
-                get { return _AMMO; }
-                set
-                { if(_AMMO != value)
-                    {    _AMMO = value;    OnPropertyChanged("AMMO");   }
-                }
-            } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<AvailableAttachSlot> _AvailableAttachSlots;
             public virtual ICollection<AvailableAttachSlot> AvailableAttachSlots

@@ -29,6 +29,13 @@ namespace Item_WPF
      
      #endregion
      
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ITEM()
+        {
+            this.BoxItems = new HashSet<BoxItem>();
+            this.AMMOes = new HashSet<AMMO>();
+        }
+    
         private int _uiIndex;
     	public int uiIndex 
     	{ 
@@ -170,6 +177,22 @@ namespace Item_WPF
     			{
     				_usPrice = value;
     				OnPropertyChanged("usPrice");
+    			}
+    		}
+    	}
+        private Nullable<int> _ubCalibre;
+    	public Nullable<int> ubCalibre 
+    	{ 
+    		get
+    		{
+    			return _ubCalibre;
+    		} 
+    		set
+    		{
+    			if (_ubCalibre != value)
+    			{
+    				_ubCalibre = value;
+    				OnPropertyChanged("ubCalibre");
     			}
     		}
     	}
@@ -944,6 +967,25 @@ namespace Item_WPF
                     {    _Attachment = value;    OnPropertyChanged("Attachment");   }
                 }
             } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<BoxItem> _BoxItems;
+            public virtual ICollection<BoxItem> BoxItems
+            {
+                get { return _BoxItems; }
+                set
+                { if(_BoxItems != value)
+                    {    _BoxItems = value;    OnPropertyChanged("BoxItems");   }
+                }
+            } 
+        private Caliber _Caliber;
+            public virtual Caliber Caliber
+            {
+                get { return _Caliber; }
+                set
+                { if(_Caliber != value)
+                    {    _Caliber = value;    OnPropertyChanged("Caliber");   }
+                }
+            } 
         private Cloth _Cloth;
             public virtual Cloth Cloth
             {
@@ -978,6 +1020,16 @@ namespace Item_WPF
                 set
                 { if(_FOOD != value)
                     {    _FOOD = value;    OnPropertyChanged("FOOD");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<AMMO> _AMMOes;
+            public virtual ICollection<AMMO> AMMOes
+            {
+                get { return _AMMOes; }
+                set
+                { if(_AMMOes != value)
+                    {    _AMMOes = value;    OnPropertyChanged("AMMOes");   }
                 }
             } 
         private ItemClass _ItemClass;

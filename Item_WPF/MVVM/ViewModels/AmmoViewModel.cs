@@ -1,49 +1,59 @@
-﻿using System;
+﻿using Item_WPF.addin;
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using Item_WPF.addin;
-using Item_WPF.MVVM.View;
-using System.ComponentModel;
 using System.Collections.Specialized;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Item_WPF.MVVM.ViewModels
 {
-    public class AmmoViewModel : ViewModelBase, IDisposable
-    {    
+    public class AmmoViewModel: ViewModelBase
+    {
         private item1Entities _context;
-             public ObservableCollection<AMMO> AmmoOk { get; set; }
-          public   AmmoViewModel()
+        public ObservableCollection<Caliber> caliber { get; set; }
+        public ObservableCollection<ITEM> AmmoOk { get; set; }
+        public AmmoViewModel()
         {
             _context = new item1Entities();
-            AmmoOk = new ObservableCollection<AMMO>(_context.AMMOes);
-            Save = new DelegateCommand(SaveChanges) ;
+           
+            Save = new DelegateCommand(SaveChanges);
+            caliber = new ObservableCollection<Caliber>(_context.Calibers);
+            AmmoOk = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.ItemClass.name.Contains("ammo")));
             AmmoOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_ammoOK_CollectionChanged);
+           
+        }
+        public AmmoViewModel(object parametr)
+        {
+            _context = new item1Entities();
+            int? param = (parametr as int?);    
+            Save = new DelegateCommand(SaveChanges);
+            caliber = new ObservableCollection<Caliber>(_context.Calibers);
+            AmmoOk = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.ItemClass.name.Contains("ammo")).Where(p=>p.ubCalibre==param));
+            AmmoOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_ammoOK_CollectionChanged);
+
         }
         private void _ammoOK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Remove)
             {
-                foreach (AMMO item in e.OldItems)
+                foreach (ITEM item in e.OldItems)
                 {
-                    _context.AMMOes.Remove(item);
+                    _context.ITEMs.Remove(item);
                 }
                 SaveChanges(1);
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
-                foreach (AMMO item in e.NewItems)
+                foreach (ITEM item in e.NewItems)
                 {
-                    item.Caliber_name = "new item";
-                    item.alt_caliber_name = "";
-                    item.AV_Upgrates = 1;
-                    item.Dim_of_bullet_SI = 1;
-                    item.Dim_of_bullet_US = 1;
-                    item.WPS = 1;
-                    item.CPS = 1;
-                    item.Class_of_Ammo = "1";
-                    _context.AMMOes.Add(item);
+                    item.szItemName = "new Ammo";
+                    item.usItemClass = _context.ItemClasses.First(p => p.name.Contains("Ammo")).id;
+                    _context.ITEMs.Add(item);
                     SaveChanges(1);
                 }
-            } 
+            }
         }
         private void SaveChanges(object parameter)
         {
@@ -52,13 +62,12 @@ namespace Item_WPF.MVVM.ViewModels
 
         public DelegateCommand Save { get; set; }
 
-      //      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        
+        //      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
 
         public void Dispose()
         {
             _context?.Dispose();
         }
     }
-
 }

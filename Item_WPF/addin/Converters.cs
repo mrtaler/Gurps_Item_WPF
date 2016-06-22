@@ -6,6 +6,9 @@ using System.Globalization;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Media;
+using System.Collections.Generic;
+
+using System.Text;
 
 namespace Item_WPF.addin
 {
@@ -343,7 +346,7 @@ namespace Item_WPF.addin
             {
                 if (weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).ArmorDivision == 1)
                     return "";
-                else return System.Convert.ToString(weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).ArmorDivision,culture);
+                else return System.Convert.ToString(weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).ArmorDivision, culture);
             }
             else if ((parameter as string) == "ToD")
                 return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).idTypeOfDamage1;
@@ -362,7 +365,7 @@ namespace Item_WPF.addin
             else if ((parameter as string) == "AD")
             {
                 char AY = CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0];
-            
+
                 if (AY == '.')
                     weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).ArmorDivision = System.Convert.ToDecimal((value as string).Replace(',', AY));
                 else weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).ArmorDivision = System.Convert.ToDecimal((value as string).Replace('.', AY));
@@ -387,7 +390,7 @@ namespace Item_WPF.addin
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             weaponDamCollConvert = value as ObservableCollection<WeaponDamage>;
-            if ((parameter as string) == "Follow-up" && weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType==2) != null)
+            if ((parameter as string) == "Follow-up" && weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2) != null)
             {
                 return true;
             }
@@ -413,7 +416,7 @@ namespace Item_WPF.addin
                 }
                 else if (!System.Convert.ToBoolean(value))
                 {
-                    weaponDamCollConvert.Remove(weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType ==2));
+                    weaponDamCollConvert.Remove(weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2));
                 }
             }
             else if ((parameter as string) == "Linked")
@@ -430,7 +433,7 @@ namespace Item_WPF.addin
                 }
                 else if (!System.Convert.ToBoolean(value))
                 {
-                    weaponDamCollConvert.Remove(weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType==3));
+                    weaponDamCollConvert.Remove(weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3));
                 }
             }
             return weaponDamCollConvert;
@@ -451,9 +454,9 @@ namespace Item_WPF.addin
             bool FollowUpdamageVar = false;
             if (weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2) != null)
                 FollowUpdamageVar = true;
-            if ((parameter as string) == "Damage"&& FollowUpdamageVar)
-            {               
-                    return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).Damage;                                  
+            if ((parameter as string) == "Damage" && FollowUpdamageVar)
+            {
+                return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 2).Damage;
             }
             else if ((parameter as string) == "AD" && FollowUpdamageVar)
             {
@@ -500,10 +503,10 @@ namespace Item_WPF.addin
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             weaponDamCollConvert = value as ObservableCollection<WeaponDamage>;
-            bool LinkedDamageVar=false;
+            bool LinkedDamageVar = false;
             if (weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3) != null)
                 LinkedDamageVar = true;
-            if ((parameter as string) == "Damage"&& LinkedDamageVar)
+            if ((parameter as string) == "Damage" && LinkedDamageVar)
                 return weaponDamCollConvert.FirstOrDefault(p => p.idWeaponAttackType == 3).Damage;
             else if ((parameter as string) == "AD" && LinkedDamageVar)
             {
@@ -552,7 +555,65 @@ namespace Item_WPF.addin
             return (string)value == "Gun" ?
                 new SolidColorBrush(Colors.LightGreen)
                 : new SolidColorBrush(Colors.White);
-        }      
+        }
+    }
+    #endregion
+    //#region conv trre
+    //public sealed class CategoryValueConverter : ConvertorBase<CategoryValueConverter>
+    //{
+    //    public override object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+    //    {
+    //        if (value is AnyBoxNameType)
+    //        {
+    //            AnyBoxNameType x = (AnyBoxNameType)value;
+    //            return (x)..Where(n => n.ParentBoxName == x.id);
+    //        }
+    //        else
+    //        {
+    //            return null;
+    //        }
+    //    }      
+    //}
+    //#endregion
+
+    #region AnyboxNameConvertFrom treview notttttttttttttttttttt
+    public class AnyboxNameConvertFromtreview : MultiConvertorBase<AnyboxNameConvertFromtreview>
+    {
+        public ObservableCollection<BoxItem> BoxItemForIDboxname { get; set; }
+        public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            //int IDBOXNAME = System.Convert.ToInt32(values[1]);
+            BoxItemForIDboxname = values[0] as ObservableCollection<BoxItem>;
+            return BoxItemForIDboxname;//.Where(p => p.AnyBoxNameType.IsSelected == true);
+        }
+    }
+    #endregion
+    #region WeigthInBox converter
+    public class WeigthInBoxconverter : MultiConvertorBase<WeigthInBoxconverter>
+    {
+        public override object Convert(object[] values,
+                                  Type targetType,
+                                  object parameter,
+                                  CultureInfo culture)
+        {
+            int IDBOXNAME = System.Convert.ToInt32(values[1]);
+          
+                  
+
+            ObservableCollection<BoxItem> BoxItemForIDboxname = (values[0] as ObservableCollection<BoxItem>);
+            decimal w = 0;
+            decimal c = 0;
+            foreach (var item in BoxItemForIDboxname.Where(p => p.BoxName == IDBOXNAME))
+            {
+                w += item.ITEM.ubWeight * item.CountItems;
+                c += item.ITEM.usPrice * item.CountItems;
+            }
+            if ((parameter as string)=="w")            
+                return w.ToString();
+            else return c.ToString();
+
+
+        }
     }
     #endregion
 }

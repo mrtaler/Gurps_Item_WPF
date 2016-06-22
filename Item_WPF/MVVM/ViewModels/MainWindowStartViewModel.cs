@@ -21,8 +21,10 @@ namespace Item_WPF.MVVM.ViewModels
         public DelegateCommand ShowAllItemsCommand { get; private set; }
         public DelegateCommand ShowCombineCommand { get; private set; }
         public DelegateCommand ShowCharacterCommand { get; private set; }
+        public DelegateCommand ShowAmmoCommand { get; private set; }
         public DelegateCommand OwnerCloseCommand { get; private set; }
-
+        public DelegateCommand NewBoxCommand { get; private set; }
+        public DelegateCommand ListBoxCommand { get; private set; }
         public MainWindowStartViewModel(RibbonWindow owner)
         {
             Owner = owner;
@@ -34,6 +36,9 @@ namespace Item_WPF.MVVM.ViewModels
             ShowCombineCommand = new DelegateCommand(ShowCombine);//+
             ShowCharacterCommand = new DelegateCommand(ShowCharacter);//+
             OwnerCloseCommand = new DelegateCommand(OwnerClose);//+
+            ShowAmmoCommand = new DelegateCommand(ShowAmmo);
+            NewBoxCommand = new DelegateCommand(NewBox);
+           ListBoxCommand = new DelegateCommand(ListBox);
         }
         public void ShowAboutWindow(object parameter)
         {
@@ -41,6 +46,13 @@ namespace Item_WPF.MVVM.ViewModels
             window.Owner = Owner;
             window.ShowDialog();
         }
+        public void ShowAmmo(object parameter)
+        {
+            AmmoView window = new AmmoView();
+            window.Owner = Owner;
+            window.ShowDialog();
+        }
+        
         public void ShowCharacter(object parameter)
         {
             MainCharacterView window = new MainCharacterView();
@@ -64,11 +76,19 @@ namespace Item_WPF.MVVM.ViewModels
         }
         public void ShowCombine(object parameter)
         {
-
             CombineWeapView combine = new CombineWeapView();
             combine.Show();
-
-
         }
+        public void NewBox(object parameter)
+        {
+            NewBoxView newbox = new NewBoxView();
+            newbox.Show();           
+        }
+        public void ListBox(object parameter)
+        {
+            BoxItemView boxitem = new BoxItemView(parameter);
+            boxitem.Show();
+        }
+        
     }
 }

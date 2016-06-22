@@ -859,9 +859,9 @@
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
                                 DisplayMemberPath="Caliber_name"
-                                ItemsSource="{Binding AmmoscCollection}"
+                                ItemsSource="{Binding CalibersCollection}"
                                 SelectedIndex="{Binding selInd}"
-                                SelectedValue="{Binding WeaponLoad.ubCalibre, Mode=TwoWay}"
+                                SelectedValue="{Binding ItemLoad.ubCalibre, Mode=TwoWay}"
                                 SelectedValuePath="id" />
                             <TextBox
                                 x:Name="ShotsTextBox"

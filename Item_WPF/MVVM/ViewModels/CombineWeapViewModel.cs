@@ -56,8 +56,18 @@ namespace Item_WPF.MVVM.ViewModels
             CInternalSelect = new ViewModelCommand(SelectInternal, false);
             CExternalSelect = new ViewModelCommand(SelectExternal, false);
 
-
+            CAmmoSelect = new ViewModelCommand(AmmoSelect, false);
         }
+        #region Command AmmoSelect
+        private void AmmoSelect(object parameter)
+        {
+            AmmoView AmmoviewWinn = new AmmoView();
+            AmmoViewModel AmmoviewMod = new AmmoViewModel(combineweap.idCalibre);
+            AmmoviewWinn.DataContext = AmmoviewMod;
+            AmmoviewWinn.ShowDialog();
+        }
+        public ViewModelCommand CAmmoSelect { get; set; }
+        #endregion
         #region Command SelectWeapon
         private void SelectWeapon(object parameter)
         {
@@ -103,6 +113,7 @@ namespace Item_WPF.MVVM.ViewModels
                     CInternalSelect.CanExecute = true;
                 if (combineweap.IdExternalItem != null)
                     CExternalSelect.CanExecute = true;
+                CAmmoSelect.CanExecute = true;
             }
         }
         public DelegateCommand CSelectWeapon { get; set; }

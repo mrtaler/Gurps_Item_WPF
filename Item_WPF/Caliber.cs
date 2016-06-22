@@ -12,7 +12,7 @@ namespace Item_WPF
     using System;
     using System.Collections.Generic;
     
-    public partial class AMMO : System.ComponentModel.INotifyPropertyChanged
+    public partial class Caliber : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -29,6 +29,12 @@ namespace Item_WPF
      
      #endregion
      
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Caliber()
+        {
+            this.ITEMs = new HashSet<ITEM>();
+        }
+    
         private int _id;
     	public int id 
     	{ 
@@ -77,14 +83,63 @@ namespace Item_WPF
     			}
     		}
     	}
+        private string _Class_of_Caliber;
+    	public string Class_of_Caliber 
+    	{ 
+    		get
+    		{
+    			return _Class_of_Caliber;
+    		} 
+    		set
+    		{
+    			if (_Class_of_Caliber != value)
+    			{
+    				_Class_of_Caliber = value;
+    				OnPropertyChanged("Class_of_Caliber");
+    			}
+    		}
+    	}
+        private Nullable<decimal> _Dim_of_bullet_SI;
+    	public Nullable<decimal> Dim_of_bullet_SI 
+    	{ 
+    		get
+    		{
+    			return _Dim_of_bullet_SI;
+    		} 
+    		set
+    		{
+    			if (_Dim_of_bullet_SI != value)
+    			{
+    				_Dim_of_bullet_SI = value;
+    				OnPropertyChanged("Dim_of_bullet_SI");
+    			}
+    		}
+    	}
+        private Nullable<decimal> _Dim_of_bullet_US;
+    	public Nullable<decimal> Dim_of_bullet_US 
+    	{ 
+    		get
+    		{
+    			return _Dim_of_bullet_US;
+    		} 
+    		set
+    		{
+    			if (_Dim_of_bullet_US != value)
+    			{
+    				_Dim_of_bullet_US = value;
+    				OnPropertyChanged("Dim_of_bullet_US");
+    			}
+    		}
+    	}
     
-        private ITEM _ITEM;
-            public virtual ITEM ITEM
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<ITEM> _ITEMs;
+            public virtual ICollection<ITEM> ITEMs
             {
-                get { return _ITEM; }
+                get { return _ITEMs; }
                 set
-                { if(_ITEM != value)
-                    {    _ITEM = value;    OnPropertyChanged("ITEM");   }
+                { if(_ITEMs != value)
+                    {    _ITEMs = value;    OnPropertyChanged("ITEMs");   }
                 }
             } 
     }

@@ -18,27 +18,27 @@ namespace Item_WPF.MVVM.View
     /// <summary>
     /// Логика взаимодействия для AmmoView.xaml
     /// </summary>
-    public partial class AmmoView : Window
+    public partial class CaliberView : Window
     {
-        public AmmoViewModel AmmoVM { get; set; }
-        public AmmoView()
+        public CaliberViewModel AVM { get; set; }
+        public CaliberView()
         {
-            AmmoVM = new AmmoViewModel();
-            DataContext = AmmoVM;
+            AVM = new CaliberViewModel();
+            DataContext = AVM;
             InitializeComponent();
 
         }
 
         private void Closebutton_OnClick(object sender, RoutedEventArgs e)
         {
-            AmmoVM.Dispose();
+            AVM.Dispose();
             DialogResult = true;
                 this.Close();
         }
 
-        private void AmmoView_OnClosed(object sender, EventArgs e)
-        {
-            AmmoVM.Dispose();
-        }
+        //private void AmmoView_OnClosed(object sender, EventArgs e)
+        //{
+        //    AVM.Dispose();
+        //}
     }
 }

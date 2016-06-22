@@ -27,7 +27,7 @@ namespace Item_WPF.MVVM.ViewModels
         public ObservableCollection<WeaponType> WeaponTypescCollection { get; set; }
         public ObservableCollection<TypeOfDamage> TypeOfDamagesCollection { get; set; }
         //private ObservableCollection<AMMO> _AmmoscCollection;
-        public ObservableCollection<AMMO> AmmoscCollection { get; set; }
+        public ObservableCollection<Caliber> CalibersCollection { get; set; }
         public ObservableCollection<Attachmentmount> ScopeComboBox { get; set; }
         public ObservableCollection<Attachmentmount> LaserComboBox { get; set; }
         public ObservableCollection<Attachmentmount> LightComboBox { get; set; }
@@ -85,7 +85,7 @@ namespace Item_WPF.MVVM.ViewModels
             ItemLoad = _context.ITEMs.Find(itemselect.uiIndex);
             WeaponLoad = ItemLoad.WEAPON;
 
-            AmmoscCollection = new ObservableCollection<AMMO>(_context.AMMOes);
+            CalibersCollection = new ObservableCollection<Caliber>(_context.Calibers);
 
             TlCollection = new ObservableCollection<TL>(_context.TLs);
             LccCollection = new ObservableCollection<LC>(_context.LCs);
@@ -138,15 +138,15 @@ namespace Item_WPF.MVVM.ViewModels
         public DelegateCommand CalliberWindowC { get; set; }
         private void CalliberWindow(object parameter)
         {
-            AmmoView AmmoViewWindow = new AmmoView();
+            CaliberView AmmoViewWindow = new CaliberView();
             AmmoViewWindow.Owner = Owner;
             bool? result = AmmoViewWindow.ShowDialog();
 
             if (result.HasValue && (result == true))
             {
-                AmmoscCollection = AmmoViewWindow.AVM.AmmoOk;
+                CalibersCollection = AmmoViewWindow.AVM.CaliberOk;
                 //NotifyPropertyChanged("ubCalibre");
-                NotifyPropertyChanged("AmmoscCollection");
+                NotifyPropertyChanged("CalibersCollection");
             }
 
         }
@@ -192,9 +192,6 @@ namespace Item_WPF.MVVM.ViewModels
         public DelegateCommand AddMountslot1 { get; set; }
         private void AddMountslot1_Execute(object parameter)
         {
-
-
-
             AttacmentMountView AddMountslotWindow = new AttacmentMountView(parameter);
             AddMountslotWindow.Owner = Owner;
 

@@ -12,7 +12,7 @@ namespace Item_WPF
     using System;
     using System.Collections.Generic;
     
-    public partial class AMMO : System.ComponentModel.INotifyPropertyChanged
+    public partial class BoxItem : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -45,39 +45,64 @@ namespace Item_WPF
     			}
     		}
     	}
-        private string _Caliber_name;
-    	public string Caliber_name 
+        private int _BoxName;
+    	public int BoxName 
     	{ 
     		get
     		{
-    			return _Caliber_name;
+    			return _BoxName;
     		} 
     		set
     		{
-    			if (_Caliber_name != value)
+    			if (_BoxName != value)
     			{
-    				_Caliber_name = value;
-    				OnPropertyChanged("Caliber_name");
+    				_BoxName = value;
+    				OnPropertyChanged("BoxName");
     			}
     		}
     	}
-        private string _alt_caliber_name;
-    	public string alt_caliber_name 
+        private int _Items;
+    	public int Items 
     	{ 
     		get
     		{
-    			return _alt_caliber_name;
+    			return _Items;
     		} 
     		set
     		{
-    			if (_alt_caliber_name != value)
+    			if (_Items != value)
     			{
-    				_alt_caliber_name = value;
-    				OnPropertyChanged("alt_caliber_name");
+    				_Items = value;
+    				OnPropertyChanged("Items");
+    			}
+    		}
+    	}
+        private int _CountItems;
+    	public int CountItems 
+    	{ 
+    		get
+    		{
+    			return _CountItems;
+    		} 
+    		set
+    		{
+    			if (_CountItems != value)
+    			{
+    				_CountItems = value;
+    				OnPropertyChanged("CountItems");
     			}
     		}
     	}
     
+        private AnyBoxNameType _AnyBoxNameType;
+            public virtual AnyBoxNameType AnyBoxNameType
+            {
+                get { return _AnyBoxNameType; }
+                set
+                { if(_AnyBoxNameType != value)
+                    {    _AnyBoxNameType = value;    OnPropertyChanged("AnyBoxNameType");   }
+                }
+            } 
         private ITEM _ITEM;
             public virtual ITEM ITEM
             {

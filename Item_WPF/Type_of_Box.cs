@@ -12,7 +12,7 @@ namespace Item_WPF
     using System;
     using System.Collections.Generic;
     
-    public partial class AMMO : System.ComponentModel.INotifyPropertyChanged
+    public partial class Type_of_Box : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -29,6 +29,12 @@ namespace Item_WPF
      
      #endregion
      
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Type_of_Box()
+        {
+            this.AnyBoxNameTypes = new HashSet<AnyBoxNameType>();
+        }
+    
         private int _id;
     	public int id 
     	{ 
@@ -45,46 +51,31 @@ namespace Item_WPF
     			}
     		}
     	}
-        private string _Caliber_name;
-    	public string Caliber_name 
+        private string _nameOfType;
+    	public string nameOfType 
     	{ 
     		get
     		{
-    			return _Caliber_name;
+    			return _nameOfType;
     		} 
     		set
     		{
-    			if (_Caliber_name != value)
+    			if (_nameOfType != value)
     			{
-    				_Caliber_name = value;
-    				OnPropertyChanged("Caliber_name");
-    			}
-    		}
-    	}
-        private string _alt_caliber_name;
-    	public string alt_caliber_name 
-    	{ 
-    		get
-    		{
-    			return _alt_caliber_name;
-    		} 
-    		set
-    		{
-    			if (_alt_caliber_name != value)
-    			{
-    				_alt_caliber_name = value;
-    				OnPropertyChanged("alt_caliber_name");
+    				_nameOfType = value;
+    				OnPropertyChanged("nameOfType");
     			}
     		}
     	}
     
-        private ITEM _ITEM;
-            public virtual ITEM ITEM
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<AnyBoxNameType> _AnyBoxNameTypes;
+            public virtual ICollection<AnyBoxNameType> AnyBoxNameTypes
             {
-                get { return _ITEM; }
+                get { return _AnyBoxNameTypes; }
                 set
-                { if(_ITEM != value)
-                    {    _ITEM = value;    OnPropertyChanged("ITEM");   }
+                { if(_AnyBoxNameTypes != value)
+                    {    _AnyBoxNameTypes = value;    OnPropertyChanged("AnyBoxNameTypes");   }
                 }
             } 
     }
