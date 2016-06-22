@@ -28,7 +28,7 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Command="{Binding AddCommand}"
-                CommandParameter="{Binding SelectedValue,
+                CommandParameter="{Binding Path=SelectedValue,
                                            ElementName=treeView}"
                 Content="Add Item To Box"
                 RenderTransformOrigin="0.521,0.432" />
@@ -76,6 +76,12 @@
                     <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
                 </Style>
             </TreeView.ItemContainerStyle>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectedItemChanged">
+                    <i:InvokeCommandAction Command="{Binding SelectedItemChangedCommand}" CommandParameter="{Binding ElementName=treeView, Path=SelectedValue}" />
+                    <!--  CommandParameter="{Binding ElementName=treeView, Path=SelectedItem}"  -->
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
         </TreeView>
         <TextBox x:Name="textBox1"
                  Grid.ColumnSpan="2"
@@ -124,22 +130,34 @@
                   Grid.Column="1"
                   Margin="83,67,10,40"
                   AutoGenerateColumns="False"
+                  ItemsSource="{Binding Path=boxItem}"
                   SelectedItem="{Binding BoxItemforWork,
                                          UpdateSourceTrigger=PropertyChanged,
                                          Mode=TwoWay}">
-            <DataGrid.ItemsSource>
+
+            <!--<DataGrid.ItemsSource>
                 <MultiBinding Converter="{addin:AnyboxNameConvertFromtreview}" UpdateSourceTrigger="PropertyChanged">
                     <Binding Path="boxItem" UpdateSourceTrigger="PropertyChanged" />
-                    <Binding Path=""/>
-                    <!--<Binding ElementName="treeView" Path="" />-->
+                    <Binding ElementName="treeView"
+                             Path="IsSelected"
+                             UpdateSourceTrigger="PropertyChanged" />
+            -->
+            <!--<Binding ElementName="treeView" Path="" />-->
+            <!--
                 </MultiBinding>
-            </DataGrid.ItemsSource>
+            </DataGrid.ItemsSource>-->
             <DataGrid.Columns>
                 <DataGridTextColumn Width="20"
                                     Binding="{Binding id}"
                                     Header="id" />
-                <DataGridTextColumn Binding="{Binding ITEM.szItemName}" Header="name" />
-                <DataGridTextColumn Binding="{Binding CountItems, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Header="Count" />
+                <DataGridTextColumn Binding="{Binding ITEM.szItemName}"
+                                    Header="name"
+                                    IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding CountItems,
+                                                      Mode=TwoWay,
+                                                      UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Count"
+                                    IsReadOnly="False" />
             </DataGrid.Columns>
         </DataGrid>
         <Label x:Name="label"

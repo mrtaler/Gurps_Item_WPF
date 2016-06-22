@@ -582,9 +582,9 @@ namespace Item_WPF.addin
         public ObservableCollection<BoxItem> BoxItemForIDboxname { get; set; }
         public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            int IDBOXNAME = System.Convert.ToInt32(values[1]);
+            //int IDBOXNAME = System.Convert.ToInt32(values[1]);
             BoxItemForIDboxname = values[0] as ObservableCollection<BoxItem>;
-            return BoxItemForIDboxname.Where(p => p.BoxName == IDBOXNAME);
+            return BoxItemForIDboxname;//.Where(p => p.AnyBoxNameType.IsSelected == true);
         }
     }
     #endregion

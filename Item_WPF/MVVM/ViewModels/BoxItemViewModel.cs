@@ -97,15 +97,21 @@ namespace Item_WPF.MVVM.ViewModels
             _context = new item1Entities();
             anyBoxNameType111 = new ObservableCollection<AnyBoxNameType>(_context.AnyBoxNameTypes.Where(p => p.ParentBoxName == null));
             anyBoxNameTypeAll = new ObservableCollection<AnyBoxNameType>(_context.AnyBoxNameTypes);
-            boxItem = new ObservableCollection<BoxItem>(_context.BoxItems);
+           boxItem = new ObservableCollection<BoxItem>();
             ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClasses);
             BoxItemforWork = null;
-            boxItem.CollectionChanged += new NotifyCollectionChangedEventHandler(boxItem_CollectionChanged);
+
             anyBoxNameType111.CollectionChanged += new NotifyCollectionChangedEventHandler(anyBoxNameType111_CollectionChanged);
             anyBoxNameTypeAll.CollectionChanged += new NotifyCollectionChangedEventHandler(anyBoxNameTypeAll_CollectionChanged);
             AddCommand = new ViewModelCommand(Add, true);
             RemCommand = new ViewModelCommand(Rem, true);
             DellCommand = new ViewModelCommand(Dell, true);
+
+
+            SelectedItemChangedCommand=new ViewModelCommand(SelectedItemChanged, true);
+
+
+
             Save = new DelegateCommand(SaveChanges);
             AddNewMainBoxCommand = new ViewModelCommand(AddNewMainBox, true);
             AddNewSubMainBoxCommand = new ViewModelCommand(AddNewSubMainBox, true);
@@ -115,6 +121,34 @@ namespace Item_WPF.MVVM.ViewModels
 
         }
         #region Command
+        #region Command public ViewModelCommand SelectedItemChangedCommand { get; set; }
+        private void SelectedItemChanged(object parameter)
+        {
+            int vx = System.Convert.ToInt32(parameter);
+            // AnyBoxNameType vx = (parameter as AnyBoxNameType);
+            
+       
+                boxItem = new ObservableCollection<BoxItem>(_context.BoxItems.Where(p => p.BoxName == vx));
+            boxItem.CollectionChanged += new NotifyCollectionChangedEventHandler(boxItem_CollectionChanged);
+            //  boxItem = new ObservableCollection<BoxItem>(_context.BoxItems.Where(p => p.BoxName == vx));
+
+            //boxItem = new ObservableCollection<BoxItem>(boxItem.Where(p => p.AnyBoxNameType == vx));
+            NotifyPropertyChanged("boxItem");
+
+        }
+        //private ViewModelCommand _SelectedItemChangedCommand;
+        public ViewModelCommand SelectedItemChangedCommand { get; set; }
+        //{
+        //    get
+        //    {
+        //        if (_SelectedItemChangedCommand == null)
+        //            _SelectedItemChangedCommand = new ViewModelCommand(args => SelectedItemChanged(args),true);
+        //        return _SelectedItemChangedCommand;
+        //    }
+        //}
+        #endregion
+
+
         #region Command public ViewModelCommand AddCommand { get; set; }
         private void Add(object parameter)
         {
