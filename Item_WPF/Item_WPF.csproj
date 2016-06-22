@@ -56,6 +56,7 @@
     <Reference Include="System.Windows.Controls.Ribbon">
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -180,7 +181,9 @@
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="MVVM\Models\Advantage.cs" />
+    <Compile Include="MVVM\Models\AnyBoxNameType.cs" />
     <Compile Include="MVVM\Models\AttackOption.cs" />
+    <Compile Include="MVVM\Models\BoxItem.cs" />
     <Compile Include="MVVM\Models\Character.cs" />
     <Compile Include="MVVM\Models\CombineWeapModel.cs" />
     <Compile Include="MVVM\Models\DiceString.cs" />

@@ -33,7 +33,19 @@ namespace Item_WPF.MVVM.ViewModels
                 };
             }
         }
-        public BoxItem BoxItemforWork { get; set; }
+        private BoxItem _BoxItemforWork;
+        public BoxItem BoxItemforWork
+        {
+            get { return _BoxItemforWork; }
+            set
+            {
+                if (_BoxItemforWork != value)
+                {
+                    _BoxItemforWork = value;                   
+                    NotifyPropertyChanged("boxItem");
+                }
+            }
+        }
         public ITEM itemtobox { get; set; }
         public ObservableCollection<BoxItem> boxItem { get; set; }
         #region public ObservableCollection<ITEM> ItemsFromDB
@@ -87,7 +99,7 @@ namespace Item_WPF.MVVM.ViewModels
             anyBoxNameTypeAll = new ObservableCollection<AnyBoxNameType>(_context.AnyBoxNameTypes);
             boxItem = new ObservableCollection<BoxItem>(_context.BoxItems);
             ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClasses);
-
+            BoxItemforWork = null;
             boxItem.CollectionChanged += new NotifyCollectionChangedEventHandler(boxItem_CollectionChanged);
             anyBoxNameType111.CollectionChanged += new NotifyCollectionChangedEventHandler(anyBoxNameType111_CollectionChanged);
             anyBoxNameTypeAll.CollectionChanged += new NotifyCollectionChangedEventHandler(anyBoxNameTypeAll_CollectionChanged);
@@ -98,7 +110,8 @@ namespace Item_WPF.MVVM.ViewModels
             AddNewMainBoxCommand = new ViewModelCommand(AddNewMainBox, true);
             AddNewSubMainBoxCommand = new ViewModelCommand(AddNewSubMainBox, true);
             PropertyDependencyMap.Add("SelectedItClassforSort", new[] { "ItemsFromDB" });
-
+            
+            
 
         }
         #region Command
@@ -118,6 +131,7 @@ namespace Item_WPF.MVVM.ViewModels
                 else
                 {
                     BoxItemforWork.CountItems += 1;
+                    NotifyPropertyChanged("boxItem");
                 }
             }
             BoxItemforWork = null;
@@ -246,27 +260,7 @@ namespace Item_WPF.MVVM.ViewModels
         }
 
         public ViewModelCommand DellCommand { get; set; }
-        #endregion
-        /*
-        public int TotalWeight
-        {
-            get
-            {
-                int w = 0;
-                foreach (ITEM item in Inventory)
-                    w += System.Convert.ToInt32(item.ubWeight);
-                return w;
-            }
-        }
-        public int TotalCost
-        {
-            get
-            {
-                int w = 0;
-                foreach (ITEM item in Inventory)
-                    w += System.Convert.ToInt32(item.ubWeight);
-                return w;
-            }
-        }*/
+        #endregion       
+       
     }   
 }
