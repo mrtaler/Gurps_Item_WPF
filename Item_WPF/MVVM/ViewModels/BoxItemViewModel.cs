@@ -130,23 +130,11 @@ namespace Item_WPF.MVVM.ViewModels
        
                 boxItem = new ObservableCollection<BoxItem>(_context.BoxItems.Where(p => p.BoxName == vx));
             boxItem.CollectionChanged += new NotifyCollectionChangedEventHandler(boxItem_CollectionChanged);
-            //  boxItem = new ObservableCollection<BoxItem>(_context.BoxItems.Where(p => p.BoxName == vx));
-
-            //boxItem = new ObservableCollection<BoxItem>(boxItem.Where(p => p.AnyBoxNameType == vx));
             NotifyPropertyChanged("boxItem");
-
         }
         //private ViewModelCommand _SelectedItemChangedCommand;
         public ViewModelCommand SelectedItemChangedCommand { get; set; }
-        //{
-        //    get
-        //    {
-        //        if (_SelectedItemChangedCommand == null)
-        //            _SelectedItemChangedCommand = new ViewModelCommand(args => SelectedItemChanged(args),true);
-        //        return _SelectedItemChangedCommand;
-        //    }
-        //}
-        #endregion
+         #endregion
 
 
         #region Command public ViewModelCommand AddCommand { get; set; }

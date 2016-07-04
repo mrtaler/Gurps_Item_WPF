@@ -25,6 +25,9 @@ namespace Item_WPF.MVVM.ViewModels
         public DelegateCommand OwnerCloseCommand { get; private set; }
         public DelegateCommand NewBoxCommand { get; private set; }
         public DelegateCommand ListBoxCommand { get; private set; }
+        public DelegateCommand BoxChangeCommand { get; private set; }
+
+
         public MainWindowStartViewModel(RibbonWindow owner)
         {
             Owner = owner;
@@ -38,7 +41,8 @@ namespace Item_WPF.MVVM.ViewModels
             OwnerCloseCommand = new DelegateCommand(OwnerClose);//+
             ShowAmmoCommand = new DelegateCommand(ShowAmmo);
             NewBoxCommand = new DelegateCommand(NewBox);
-           ListBoxCommand = new DelegateCommand(ListBox);
+            ListBoxCommand = new DelegateCommand(ListBox);
+            BoxChangeCommand = new DelegateCommand(BoxChange);
         }
         public void ShowAboutWindow(object parameter)
         {
@@ -52,7 +56,7 @@ namespace Item_WPF.MVVM.ViewModels
             window.Owner = Owner;
             window.ShowDialog();
         }
-        
+
         public void ShowCharacter(object parameter)
         {
             MainCharacterView window = new MainCharacterView();
@@ -68,7 +72,7 @@ namespace Item_WPF.MVVM.ViewModels
             if ((parameter as string) == "Gun") { AllWeaponView allItems = new AllWeaponView(); allItems.Show(); }
 
             else { all_ItemsView allItems = new all_ItemsView(parameter); allItems.Show(); }
-           
+
         }
         public void OwnerClose(object parameter)
         {
@@ -82,13 +86,18 @@ namespace Item_WPF.MVVM.ViewModels
         public void NewBox(object parameter)
         {
             NewBoxView newbox = new NewBoxView();
-            newbox.Show();           
+            newbox.Show();
         }
         public void ListBox(object parameter)
         {
             BoxItemView boxitem = new BoxItemView(parameter);
             boxitem.Show();
         }
-        
+
+        private void BoxChange(object parameter)
+        {
+            BoxItemChangeView box_change = new BoxItemChangeView(parameter);
+            box_change.Show();
+        }
     }
 }
