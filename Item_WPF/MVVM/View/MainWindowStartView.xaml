@@ -30,21 +30,22 @@
                     <ribbon:RibbonButton Command="{Binding ShowAllItemsCommand}"
                                          CommandParameter="Att"
                                          Label="{x:Static p:Resources.RibbonButtonAttachmentItems}" />
-                    <ribbon:RibbonButton Command="{Binding ShowAmmoCommand}"
-                                        
-                                         Label="ShowAmmoCommand" /> 
+                    <ribbon:RibbonButton Command="{Binding ShowAmmoCommand}" Label="ShowAmmoCommand" />
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="{x:Static p:Resources.RibbonGroupCombineWeapon}">
                     <ribbon:RibbonButton Command="{Binding ShowCombineCommand}" Label="{x:Static p:Resources.RibbonButtonCombineWeapon}" />
                     <ribbon:RibbonButton Command="{Binding DropDiceCommand}" Label="{x:Static p:Resources.RibbonAppMenuItemDropDice}" />
                 </ribbon:RibbonGroup>
-                
+
                 <ribbon:RibbonGroup Header="{x:Static p:Resources.RibbonGroupCombineWeapon}">
                     <ribbon:RibbonButton Command="{Binding NewBoxCommand}" Label="NewBox" />
-                    <ribbon:RibbonButton Command="{Binding ListBoxCommand}" CommandParameter="1" Label="ListBox" />
-                    
+                    <ribbon:RibbonButton Command="{Binding ListBoxCommand}"
+                                         CommandParameter="1"
+                                         Label="ListBox" />
+                    <ribbon:RibbonButton Command="{Binding BoxChangeCommand}"
+                                         CommandParameter="1"
+                                         Label="BoxChange" />
                 </ribbon:RibbonGroup>
-                
             </ribbon:RibbonTab>
             <ribbon:RibbonTab Height="80" Header="124">
                 <ribbon:RibbonGroup Header="124_1111">
