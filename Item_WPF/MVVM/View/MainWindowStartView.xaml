@@ -1,13 +1,11 @@
 ﻿<ribbon:RibbonWindow x:Class="Item_WPF.MVVM.View.MainWindowStartView"
                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                      xmlns:local="clr-namespace:Item_WPF.MVVM.View"
                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                      xmlns:p="clr-namespace:Item_WPF.Properties"
                      xmlns:ribbon="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
-                     Title="MainWindowStartView"
-                     mc:Ignorable="d">
+                     Title="MainWindowStartView">
     <DockPanel>
         <ribbon:Ribbon Margin="0,0,0,380">
             <ribbon:Ribbon.ApplicationMenu>
@@ -49,8 +47,12 @@
             </ribbon:RibbonTab>
             <ribbon:RibbonTab Height="80" Header="124">
                 <ribbon:RibbonGroup Header="124_1111">
-                    <ribbon:RibbonButton Label="1_1" />
-                    <ribbon:RibbonButton Label="1_2" />
+                    <ribbon:RibbonButton Command="{Binding NewNameCommand}"
+                                         CommandParameter="male"
+                                         Label="male" />
+                    <ribbon:RibbonButton Command="{Binding NewNameCommand}"
+                                         CommandParameter="female"
+                                         Label="female" />
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="124_222">
                     <ribbon:RibbonButton Label="2_2" />

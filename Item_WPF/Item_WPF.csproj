@@ -958,9 +958,18 @@
     <Content Include="GCS\src\com\trollworks\gcs\character\HitPointsPanel.java" />
     <Content Include="GCS\src\com\trollworks\gcs\character\IdentityPanel.java" />
     <Content Include="GCS\src\com\trollworks\gcs\character\LiftPanel.java" />
-    <Resource Include="GCS\src\com\trollworks\gcs\character\names\USCensus1990FemaleFirstNames.txt" />
-    <Resource Include="GCS\src\com\trollworks\gcs\character\names\USCensus1990LastNames.txt" />
-    <Resource Include="GCS\src\com\trollworks\gcs\character\names\USCensus1990MaleFirstNames.txt" />
+    <Resource Include="GCS\src\com\trollworks\gcs\character\names\USCensus1990FemaleFirstNames.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CustomToolNamespace>com.trollworks.gcs.character.names</CustomToolNamespace>
+    </Resource>
+    <Resource Include="GCS\src\com\trollworks\gcs\character\names\USCensus1990LastNames.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CustomToolNamespace>com.trollworks.gcs.character.names</CustomToolNamespace>
+    </Resource>
+    <Resource Include="GCS\src\com\trollworks\gcs\character\names\USCensus1990MaleFirstNames.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CustomToolNamespace>com.trollworks.gcs.character.names</CustomToolNamespace>
+    </Resource>
     <Content Include="GCS\src\com\trollworks\gcs\character\NotesPanel.java" />
     <Content Include="GCS\src\com\trollworks\gcs\character\OutlineInfo.java" />
     <Content Include="GCS\src\com\trollworks\gcs\character\Page.java" />

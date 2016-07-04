@@ -1,4 +1,5 @@
-﻿using Item_WPF.addin;
+﻿using com.trollworks.gcs.character.names;
+using Item_WPF.addin;
 using Item_WPF.MVVM.View;
 using Microsoft.Windows.Controls.Ribbon;
 using System;
@@ -26,7 +27,7 @@ namespace Item_WPF.MVVM.ViewModels
         public DelegateCommand NewBoxCommand { get; private set; }
         public DelegateCommand ListBoxCommand { get; private set; }
         public DelegateCommand BoxChangeCommand { get; private set; }
-
+        public DelegateCommand NewNameCommand { get; private set; }
 
         public MainWindowStartViewModel(RibbonWindow owner)
         {
@@ -43,7 +44,9 @@ namespace Item_WPF.MVVM.ViewModels
             NewBoxCommand = new DelegateCommand(NewBox);
             ListBoxCommand = new DelegateCommand(ListBox);
             BoxChangeCommand = new DelegateCommand(BoxChange);
-        }
+                 NewNameCommand = new DelegateCommand(randomname);
+            
+    }
         public void ShowAboutWindow(object parameter)
         {
             AboutWindowView window = new AboutWindowView();
@@ -99,5 +102,16 @@ namespace Item_WPF.MVVM.ViewModels
             BoxItemChangeView box_change = new BoxItemChangeView(parameter);
             box_change.Show();
         }
+        private void randomname(object parameter)
+        {
+            if (parameter.ToString()=="male")
+            {
+                MessageBox.Show(USCensusNames.INSTANCE.getFullName(true));
+            }
+            else
+            MessageBox.Show(USCensusNames.INSTANCE.getFullName(false));
+        }
+
+        
     }
 }
