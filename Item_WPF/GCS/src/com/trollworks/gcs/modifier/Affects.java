@@ -19,36 +19,36 @@ public enum Affects {
 	/** Affects the total cost. */
 	TOTAL {
 		@Override
-		public string toString() {
+		public String toString() {
 			return TOTAL_TITLE;
 		}
 
 		@Override
-		public string getShortTitle() {
+		public String getShortTitle() {
 			return TOTAL_SHORT;
 		}
 	},
 	/** Affects only the base cost, not the leveled cost. */
 	BASE_ONLY {
 		@Override
-		public string toString() {
+		public String toString() {
 			return BASE_ONLY_TITLE;
 		}
 
 		@Override
-		public string getShortTitle() {
+		public String getShortTitle() {
 			return BASE_ONLY_SHORT;
 		}
 	},
 	/** Affects only the leveled cost, not the base cost. */
 	LEVELS_ONLY {
 		@Override
-		public string toString() {
+		public String toString() {
 			return LEVELS_ONLY_TITLE;
 		}
 
 		@Override
-		public string getShortTitle() {
+		public String getShortTitle() {
 			return LEVELS_ONLY_SHORT;
 		}
 	};
@@ -87,5 +87,5 @@ public enum Affects {
 	}
 
 	/** @return The short version of the title. */
-	public abstract string getShortTitle();
+	public abstract String getShortTitle();
 }
