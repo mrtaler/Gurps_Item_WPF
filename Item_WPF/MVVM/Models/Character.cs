@@ -1,31 +1,19 @@
-﻿using System;
+﻿using Item_WPF.MVVM.Models;
+using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 
-namespace Item_WPF.MVVM.Models
+namespace Item_WPF
 {
     // This class represents a GURPS character.
-    public class Character
+    public partial class CharacterDB
     {
-        public string Name { get; set; }
-
         // The Points properties contains the number of points to be
         // added/subtracted from the base value of the stat, thus acting
         // as a modifier.
         //
         // For example the base value of Strength is 10. If StrengthPoints
         // is 3, then the effective Strength is 13.
-        public int StrengthPoints { get; set; }
-        public int DexterityPoints { get; set; }
-        public int IntelligencePoints { get; set; }
-        public int HealthPoints { get; set; }
-        public int MaxHPPoints { get; set; }
-        public int MaxFPPoints { get; set; }
-        public int PerceptionPoints { get; set; }
-        public int WillpowerPoints { get; set; }
-        public float BasicSpeedPoints { get; set; }
-        public int BasicMovePoints { get; set; }
-
         // These read-only properties returns the effective value of the stats.
         public int Strength
         {
@@ -389,13 +377,13 @@ namespace Item_WPF.MVVM.Models
             }
         }
 
-        public Character()
+        public CharacterDB()
         {
         }
 
-        public Character Copy()
+        public CharacterDB Copy()
         {
-            return (Character)this.MemberwiseClone();
+            return (CharacterDB)this.MemberwiseClone();
         }
 
         public override string ToString()

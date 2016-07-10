@@ -205,16 +205,17 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar" MaxLength="80" />
-          <Property Name="StrengthPoints" Type="int" />
-          <Property Name="DexterityPoints" Type="int" />
-          <Property Name="IntelligencePoints" Type="int" />
-          <Property Name="HealthPoints" Type="int" />
-          <Property Name="MaxFPPoints" Type="int" />
-          <Property Name="PerceptionPoints" Type="int" />
-          <Property Name="WillpowerPoints" Type="int" />
-          <Property Name="BasicSpeedPoints" Type="float" />
-          <Property Name="BasicMovePoints" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="80" />
+          <Property Name="StrengthPoints" Type="int" Nullable="false" />
+          <Property Name="DexterityPoints" Type="int" Nullable="false" />
+          <Property Name="IntelligencePoints" Type="int" Nullable="false" />
+          <Property Name="HealthPoints" Type="int" Nullable="false" />
+          <Property Name="MaxHPPoints" Type="int" Nullable="false" />
+          <Property Name="MaxFPPoints" Type="int" Nullable="false" />
+          <Property Name="PerceptionPoints" Type="int" Nullable="false" />
+          <Property Name="WillpowerPoints" Type="int" Nullable="false" />
+          <Property Name="BasicSpeedPoints" Type="real" Nullable="false" />
+          <Property Name="BasicMovePoints" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Clothes">
           <Key>
@@ -1659,16 +1660,17 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-          <Property Name="StrengthPoints" Type="Int32" />
-          <Property Name="DexterityPoints" Type="Int32" />
-          <Property Name="IntelligencePoints" Type="Int32" />
-          <Property Name="HealthPoints" Type="Int32" />
-          <Property Name="MaxFPPoints" Type="Int32" />
-          <Property Name="PerceptionPoints" Type="Int32" />
-          <Property Name="WillpowerPoints" Type="Int32" />
-          <Property Name="BasicSpeedPoints" Type="Double" />
-          <Property Name="BasicMovePoints" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="StrengthPoints" Type="Int32" Nullable="false" />
+          <Property Name="DexterityPoints" Type="Int32" Nullable="false" />
+          <Property Name="IntelligencePoints" Type="Int32" Nullable="false" />
+          <Property Name="HealthPoints" Type="Int32" Nullable="false" />
+          <Property Name="MaxHPPoints" Type="Int32" Nullable="false" />
+          <Property Name="MaxFPPoints" Type="Int32" Nullable="false" />
+          <Property Name="PerceptionPoints" Type="Int32" Nullable="false" />
+          <Property Name="WillpowerPoints" Type="Int32" Nullable="false" />
+          <Property Name="BasicSpeedPoints" Type="Single" Nullable="false" />
+          <Property Name="BasicMovePoints" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Cloth">
           <Key>
@@ -2702,11 +2704,12 @@
                 <ScalarProperty Name="WillpowerPoints" ColumnName="WillpowerPoints" />
                 <ScalarProperty Name="PerceptionPoints" ColumnName="PerceptionPoints" />
                 <ScalarProperty Name="MaxFPPoints" ColumnName="MaxFPPoints" />
+                <ScalarProperty Name="MaxHPPoints" ColumnName="MaxHPPoints" />
                 <ScalarProperty Name="HealthPoints" ColumnName="HealthPoints" />
                 <ScalarProperty Name="IntelligencePoints" ColumnName="IntelligencePoints" />
                 <ScalarProperty Name="DexterityPoints" ColumnName="DexterityPoints" />
                 <ScalarProperty Name="StrengthPoints" ColumnName="StrengthPoints" />
-                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
