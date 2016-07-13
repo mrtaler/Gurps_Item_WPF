@@ -45,24 +45,24 @@ namespace Item_WPF
     			}
     		}
     	}
-        private string _name;
-    	public string name 
+        private string _Name;
+    	public string Name 
     	{ 
     		get
     		{
-    			return _name;
+    			return _Name;
     		} 
     		set
     		{
-    			if (_name != value)
+    			if (_Name != value)
     			{
-    				_name = value;
-    				OnPropertyChanged("name");
+    				_Name = value;
+    				OnPropertyChanged("Name");
     			}
     		}
     	}
-        private Nullable<int> _StrengthPoints;
-    	public Nullable<int> StrengthPoints 
+        private int _StrengthPoints;
+    	public int StrengthPoints 
     	{ 
     		get
     		{
@@ -77,8 +77,8 @@ namespace Item_WPF
     			}
     		}
     	}
-        private Nullable<int> _DexterityPoints;
-    	public Nullable<int> DexterityPoints 
+        private int _DexterityPoints;
+    	public int DexterityPoints 
     	{ 
     		get
     		{
@@ -93,8 +93,8 @@ namespace Item_WPF
     			}
     		}
     	}
-        private Nullable<int> _IntelligencePoints;
-    	public Nullable<int> IntelligencePoints 
+        private int _IntelligencePoints;
+    	public int IntelligencePoints 
     	{ 
     		get
     		{
@@ -109,8 +109,8 @@ namespace Item_WPF
     			}
     		}
     	}
-        private Nullable<int> _HealthPoints;
-    	public Nullable<int> HealthPoints 
+        private int _HealthPoints;
+    	public int HealthPoints 
     	{ 
     		get
     		{
@@ -125,8 +125,24 @@ namespace Item_WPF
     			}
     		}
     	}
-        private Nullable<int> _MaxFPPoints;
-    	public Nullable<int> MaxFPPoints 
+        private int _MaxHPPoints;
+    	public int MaxHPPoints 
+    	{ 
+    		get
+    		{
+    			return _MaxHPPoints;
+    		} 
+    		set
+    		{
+    			if (_MaxHPPoints != value)
+    			{
+    				_MaxHPPoints = value;
+    				OnPropertyChanged("MaxHPPoints");
+    			}
+    		}
+    	}
+        private int _MaxFPPoints;
+    	public int MaxFPPoints 
     	{ 
     		get
     		{
@@ -141,8 +157,8 @@ namespace Item_WPF
     			}
     		}
     	}
-        private Nullable<int> _PerceptionPoints;
-    	public Nullable<int> PerceptionPoints 
+        private int _PerceptionPoints;
+    	public int PerceptionPoints 
     	{ 
     		get
     		{
@@ -157,8 +173,8 @@ namespace Item_WPF
     			}
     		}
     	}
-        private Nullable<int> _WillpowerPoints;
-    	public Nullable<int> WillpowerPoints 
+        private int _WillpowerPoints;
+    	public int WillpowerPoints 
     	{ 
     		get
     		{
@@ -173,8 +189,8 @@ namespace Item_WPF
     			}
     		}
     	}
-        private Nullable<double> _BasicSpeedPoints;
-    	public Nullable<double> BasicSpeedPoints 
+        private float _BasicSpeedPoints;
+    	public float BasicSpeedPoints 
     	{ 
     		get
     		{
@@ -189,8 +205,8 @@ namespace Item_WPF
     			}
     		}
     	}
-        private Nullable<int> _BasicMovePoints;
-    	public Nullable<int> BasicMovePoints 
+        private int _BasicMovePoints;
+    	public int BasicMovePoints 
     	{ 
     		get
     		{
