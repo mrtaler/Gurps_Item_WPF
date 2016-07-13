@@ -96,7 +96,7 @@ namespace Item_WPF.MVVM.ViewModels
 
             WeaponDamageColl = new ObservableCollection<WeaponDamage>(_context.WeaponDamages.Where((p => p.idWeapon == WeaponLoad.uiIndex)));
 
-            avSlot = new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlots.Where(p => p.rWeaponId == WeaponLoad.uiIndex));
+            avSlot = new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlots.Where(p => p.rItemId == WeaponLoad.uiIndex));
             AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
 
             ScopeComboBox = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Scope")));

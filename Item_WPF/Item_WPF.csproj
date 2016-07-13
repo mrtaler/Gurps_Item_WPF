@@ -454,6 +454,7 @@
       <LastGenOutput>Gurps_Item.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="addin\id" />
+    <None Include="addin\Item1.backup" />
     <None Include="addin\ItemModelDiagram.dbd" />
     <None Include="addin\Диаграмма1.dbd" />
     <None Include="addin\Копия Fall_weap.xlsx" />
@@ -475,6 +476,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="addin\InsertStoreP.sql" />
+    <Content Include="addin\Item1 20160713 2232.sql" />
     <Content Include="addin\ItemModel.edmx.sql" />
     <Content Include="addin\SQL.sql" />
     <Content Include="Gurps_Item.Context.tt">

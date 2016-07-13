@@ -32,6 +32,7 @@ namespace Item_WPF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ITEM()
         {
+            this.AvailableAttachSlots = new HashSet<AvailableAttachSlot>();
             this.BoxItems = new HashSet<BoxItem>();
             this.AMMOes = new HashSet<AMMO>();
         }
@@ -965,6 +966,16 @@ namespace Item_WPF
                 set
                 { if(_Attachment != value)
                     {    _Attachment = value;    OnPropertyChanged("Attachment");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<AvailableAttachSlot> _AvailableAttachSlots;
+            public virtual ICollection<AvailableAttachSlot> AvailableAttachSlots
+            {
+                get { return _AvailableAttachSlots; }
+                set
+                { if(_AvailableAttachSlots != value)
+                    {    _AvailableAttachSlots = value;    OnPropertyChanged("AvailableAttachSlots");   }
                 }
             } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

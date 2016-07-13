@@ -165,7 +165,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="rWeaponId" Type="int" Nullable="false" />
+          <Property Name="rItemId" Type="int" Nullable="false" />
           <Property Name="rATTACHMENTSLOT" Type="int" Nullable="false" />
           <Property Name="rAttachmentmount" Type="int" Nullable="false" />
         </EntityType>
@@ -205,16 +205,17 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar" MaxLength="80" />
-          <Property Name="StrengthPoints" Type="int" />
-          <Property Name="DexterityPoints" Type="int" />
-          <Property Name="IntelligencePoints" Type="int" />
-          <Property Name="HealthPoints" Type="int" />
-          <Property Name="MaxFPPoints" Type="int" />
-          <Property Name="PerceptionPoints" Type="int" />
-          <Property Name="WillpowerPoints" Type="int" />
-          <Property Name="BasicSpeedPoints" Type="float" />
-          <Property Name="BasicMovePoints" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="80" />
+          <Property Name="StrengthPoints" Type="int" Nullable="false" />
+          <Property Name="DexterityPoints" Type="int" Nullable="false" />
+          <Property Name="IntelligencePoints" Type="int" Nullable="false" />
+          <Property Name="HealthPoints" Type="int" Nullable="false" />
+          <Property Name="MaxHPPoints" Type="int" Nullable="false" />
+          <Property Name="MaxFPPoints" Type="int" Nullable="false" />
+          <Property Name="PerceptionPoints" Type="int" Nullable="false" />
+          <Property Name="WillpowerPoints" Type="int" Nullable="false" />
+          <Property Name="BasicSpeedPoints" Type="real" Nullable="false" />
+          <Property Name="BasicMovePoints" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Clothes">
           <Key>
@@ -640,6 +641,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_AvailableAttachSlot_ITEM_uiIndex">
+          <End Role="ITEM" Type="Self.ITEM" Multiplicity="1" />
+          <End Role="AvailableAttachSlot" Type="Self.AvailableAttachSlot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ITEM">
+              <PropertyRef Name="uiIndex" />
+            </Principal>
+            <Dependent Role="AvailableAttachSlot">
+              <PropertyRef Name="rItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_AVeAttachmentmount">
           <End Role="Attachmentmount" Type="Self.Attachmentmount" Multiplicity="1" />
           <End Role="AvailableAttachSlot" Type="Self.AvailableAttachSlot" Multiplicity="*" />
@@ -649,18 +662,6 @@
             </Principal>
             <Dependent Role="AvailableAttachSlot">
               <PropertyRef Name="rAttachmentmount" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_AVeWeaponId">
-          <End Role="WEAPON" Type="Self.WEAPON" Multiplicity="1" />
-          <End Role="AvailableAttachSlot" Type="Self.AvailableAttachSlot" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="WEAPON">
-              <PropertyRef Name="uiIndex" />
-            </Principal>
-            <Dependent Role="AvailableAttachSlot">
-              <PropertyRef Name="rWeaponId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1104,12 +1105,12 @@
             <End Role="ATTACHMENTSLOT" EntitySet="ATTACHMENTSLOT" />
             <End Role="Attachmentmount" EntitySet="Attachmentmount" />
           </AssociationSet>
-          <AssociationSet Name="FK_AVeAttachmentmount" Association="Self.FK_AVeAttachmentmount">
-            <End Role="Attachmentmount" EntitySet="Attachmentmount" />
+          <AssociationSet Name="FK_AvailableAttachSlot_ITEM_uiIndex" Association="Self.FK_AvailableAttachSlot_ITEM_uiIndex">
+            <End Role="ITEM" EntitySet="ITEM" />
             <End Role="AvailableAttachSlot" EntitySet="AvailableAttachSlot" />
           </AssociationSet>
-          <AssociationSet Name="FK_AVeWeaponId" Association="Self.FK_AVeWeaponId">
-            <End Role="WEAPON" EntitySet="WEAPON" />
+          <AssociationSet Name="FK_AVeAttachmentmount" Association="Self.FK_AVeAttachmentmount">
+            <End Role="Attachmentmount" EntitySet="Attachmentmount" />
             <End Role="AvailableAttachSlot" EntitySet="AvailableAttachSlot" />
           </AssociationSet>
           <AssociationSet Name="FK_BoxItem_AnyBoxNameType_id" Association="Self.FK_BoxItem_AnyBoxNameType_id">
@@ -1355,8 +1356,8 @@
             <End Role="ATTACHMENTSLOT" EntitySet="ATTACHMENTSLOTs" />
             <End Role="G_SubAttachClass" EntitySet="G_SubAttachClass" />
           </AssociationSet>
-          <AssociationSet Name="FK_AVeWeaponId" Association="item1Model.FK_AVeWeaponId">
-            <End Role="WEAPON" EntitySet="WEAPONs" />
+          <AssociationSet Name="FK_AvailableAttachSlot_ITEM_uiIndex" Association="item1Model.FK_AvailableAttachSlot_ITEM_uiIndex">
+            <End Role="ITEM" EntitySet="ITEMs" />
             <End Role="AvailableAttachSlot" EntitySet="AvailableAttachSlots" />
           </AssociationSet>
           <AssociationSet Name="FK_BoxItem_ITEM_uiIndex" Association="item1Model.FK_BoxItem_ITEM_uiIndex">
@@ -1614,11 +1615,11 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="rWeaponId" Type="Int32" Nullable="false" />
+          <Property Name="rItemId" Type="Int32" Nullable="false" />
           <Property Name="rATTACHMENTSLOT" Type="Int32" Nullable="false" />
           <Property Name="rAttachmentmount" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Attachmentmount" Relationship="item1Model.FK_AVeAttachmentmount" FromRole="AvailableAttachSlot" ToRole="Attachmentmount" />
-          <NavigationProperty Name="WEAPON" Relationship="item1Model.FK_AVeWeaponId" FromRole="AvailableAttachSlot" ToRole="WEAPON" />
+          <NavigationProperty Name="ITEM" Relationship="item1Model.FK_AvailableAttachSlot_ITEM_uiIndex" FromRole="AvailableAttachSlot" ToRole="ITEM" />
         </EntityType>
         <EntityType Name="Battery">
           <Key>
@@ -1659,16 +1660,17 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-          <Property Name="StrengthPoints" Type="Int32" />
-          <Property Name="DexterityPoints" Type="Int32" />
-          <Property Name="IntelligencePoints" Type="Int32" />
-          <Property Name="HealthPoints" Type="Int32" />
-          <Property Name="MaxFPPoints" Type="Int32" />
-          <Property Name="PerceptionPoints" Type="Int32" />
-          <Property Name="WillpowerPoints" Type="Int32" />
-          <Property Name="BasicSpeedPoints" Type="Double" />
-          <Property Name="BasicMovePoints" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="StrengthPoints" Type="Int32" Nullable="false" />
+          <Property Name="DexterityPoints" Type="Int32" Nullable="false" />
+          <Property Name="IntelligencePoints" Type="Int32" Nullable="false" />
+          <Property Name="HealthPoints" Type="Int32" Nullable="false" />
+          <Property Name="MaxHPPoints" Type="Int32" Nullable="false" />
+          <Property Name="MaxFPPoints" Type="Int32" Nullable="false" />
+          <Property Name="PerceptionPoints" Type="Int32" Nullable="false" />
+          <Property Name="WillpowerPoints" Type="Int32" Nullable="false" />
+          <Property Name="BasicSpeedPoints" Type="Single" Nullable="false" />
+          <Property Name="BasicMovePoints" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Cloth">
           <Key>
@@ -1851,6 +1853,7 @@
           <Property Name="Works_on_Bat" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ARMOUR" Relationship="item1Model.FK_ARMOUR_ITEM_uiIndex" FromRole="ITEM" ToRole="ARMOUR" />
           <NavigationProperty Name="Attachment" Relationship="item1Model.FK_Attachment_ITEM_uiIndex" FromRole="ITEM" ToRole="Attachment" />
+          <NavigationProperty Name="AvailableAttachSlots" Relationship="item1Model.FK_AvailableAttachSlot_ITEM_uiIndex" FromRole="ITEM" ToRole="AvailableAttachSlot" />
           <NavigationProperty Name="BoxItems" Relationship="item1Model.FK_BoxItem_ITEM_uiIndex" FromRole="ITEM" ToRole="BoxItem" />
           <NavigationProperty Name="Caliber" Relationship="item1Model.FK_Calibre" FromRole="ITEM" ToRole="Caliber" />
           <NavigationProperty Name="Cloth" Relationship="item1Model.FK_ITEM_Clothes" FromRole="ITEM" ToRole="Cloth" />
@@ -1986,7 +1989,6 @@
           <Property Name="Bulkfolded" Type="Boolean" Nullable="false" />
           <Property Name="HCROF" Type="Boolean" Nullable="false" />
           <Property Name="HCROFValue" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="AvailableAttachSlots" Relationship="item1Model.FK_AVeWeaponId" FromRole="WEAPON" ToRole="AvailableAttachSlot" />
           <NavigationProperty Name="ITEM" Relationship="item1Model.FK_WEAPON_ITEM_uiIndex" FromRole="WEAPON" ToRole="ITEM" />
           <NavigationProperty Name="WeaponDamages" Relationship="item1Model.FK_WeaponDamage_WEAPON_uiIndex" FromRole="WEAPON" ToRole="WeaponDamage" />
           <NavigationProperty Name="WeaponType" Relationship="item1Model.FK_WeaponType" FromRole="WEAPON" ToRole="WeaponType" />
@@ -2201,15 +2203,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_AVeWeaponId">
-          <End Type="item1Model.WEAPON" Role="WEAPON" Multiplicity="1" />
+        <Association Name="FK_AvailableAttachSlot_ITEM_uiIndex">
+          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1" />
           <End Type="item1Model.AvailableAttachSlot" Role="AvailableAttachSlot" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="WEAPON">
+            <Principal Role="ITEM">
               <PropertyRef Name="uiIndex" />
             </Principal>
             <Dependent Role="AvailableAttachSlot">
-              <PropertyRef Name="rWeaponId" />
+              <PropertyRef Name="rItemId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2655,7 +2657,7 @@
               <MappingFragment StoreEntitySet="AvailableAttachSlot">
                 <ScalarProperty Name="rAttachmentmount" ColumnName="rAttachmentmount" />
                 <ScalarProperty Name="rATTACHMENTSLOT" ColumnName="rATTACHMENTSLOT" />
-                <ScalarProperty Name="rWeaponId" ColumnName="rWeaponId" />
+                <ScalarProperty Name="rItemId" ColumnName="rItemId" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -2702,11 +2704,12 @@
                 <ScalarProperty Name="WillpowerPoints" ColumnName="WillpowerPoints" />
                 <ScalarProperty Name="PerceptionPoints" ColumnName="PerceptionPoints" />
                 <ScalarProperty Name="MaxFPPoints" ColumnName="MaxFPPoints" />
+                <ScalarProperty Name="MaxHPPoints" ColumnName="MaxHPPoints" />
                 <ScalarProperty Name="HealthPoints" ColumnName="HealthPoints" />
                 <ScalarProperty Name="IntelligencePoints" ColumnName="IntelligencePoints" />
                 <ScalarProperty Name="DexterityPoints" ColumnName="DexterityPoints" />
                 <ScalarProperty Name="StrengthPoints" ColumnName="StrengthPoints" />
-                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
