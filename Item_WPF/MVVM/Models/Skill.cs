@@ -62,7 +62,7 @@
         }
 
         // The effective skill level.
-        public int? Level(Character character)
+        public int? Level(CharacterDB character)
         {
             // If skill is not learned
             if (RelativeLevel == null)

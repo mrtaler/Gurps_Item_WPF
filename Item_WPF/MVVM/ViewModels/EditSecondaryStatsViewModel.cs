@@ -5,13 +5,13 @@ namespace Item_WPF.MVVM.ViewModels
 {
     class EditSecondaryStatsViewModel : ViewModelBase
     {
-        public Character Character { get; set; }
+        public CharacterDB Character { get; set; }
 
-        public EditSecondaryStatsViewModel() : this(new Character())
+        public EditSecondaryStatsViewModel() : this(new CharacterDB())
         {
         }
 
-        public EditSecondaryStatsViewModel(Character character)
+        public EditSecondaryStatsViewModel(CharacterDB character)
         {
             Character = character;
         }

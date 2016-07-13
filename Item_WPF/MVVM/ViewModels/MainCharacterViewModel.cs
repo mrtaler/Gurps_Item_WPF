@@ -14,8 +14,8 @@ namespace Item_WPF.MVVM.ViewModels
     class MainCharacterViewModel : ViewModelBase
     {
         protected Window Owner;
-
-        public Character Character { get; set; }
+        private item1Entities _context;
+        public CharacterDB Character { get; set; }
 
         public DelegateCommand AboutCommand { get; private set; }
         public DelegateCommand EditPrimaryStatsCommand { get; private set; }
@@ -25,14 +25,16 @@ namespace Item_WPF.MVVM.ViewModels
         public DelegateCommand AddSkillCommand { get; private set; }
         public DelegateCommand NewCommand { get; private set; }
         public DelegateCommand OpenCommand { get; private set; }
+
+        public DelegateCommand OpenDBCommand { get; private set; }
         public DelegateCommand SaveAsCommand { get; private set; }
         public DelegateCommand OwnerCloseCommand { get; private set; }
         public MainCharacterViewModel(Window owner)
-            : this(owner, new Character())
+            : this(owner, new CharacterDB())
         {
         }
 
-        public MainCharacterViewModel(Window owner, Character character)
+        public MainCharacterViewModel(Window owner, CharacterDB character)
         {
             Owner = owner;
             Character = character;
@@ -46,6 +48,7 @@ namespace Item_WPF.MVVM.ViewModels
             AddSkillCommand = new DelegateCommand(AddSkill);
             NewCommand = new DelegateCommand(New);
             OpenCommand = new DelegateCommand(Open);
+            OpenDBCommand=new DelegateCommand(OpenDB);
             SaveAsCommand = new DelegateCommand(SaveAs);
             OwnerCloseCommand = new DelegateCommand(OwnerClose);
 
@@ -329,7 +332,7 @@ namespace Item_WPF.MVVM.ViewModels
             window.Owner = Owner;
             window.DataContext = new EditPrimaryStatsViewModel(Character);
 
-            Character copy = (Character)Character.Copy();
+            CharacterDB copy = (CharacterDB)Character.Copy();
             bool? result = window.ShowDialog();
             if (result.HasValue && (result == true))
             {
@@ -350,7 +353,7 @@ namespace Item_WPF.MVVM.ViewModels
             window.Owner = Owner;
             window.DataContext = new EditSecondaryStatsViewModel(Character);
 
-            Character copy = (Character)Character.Copy();
+            CharacterDB copy = (CharacterDB)Character.Copy();
             bool? result = window.ShowDialog();
             if (result.HasValue && (result == true))
             {
@@ -369,12 +372,17 @@ namespace Item_WPF.MVVM.ViewModels
 
         public void New(object parameter)
         {
-            Character = new Character();
+            Character = new CharacterDB();
 
             // Notify all properties changed
             NotifyPropertyChanged(string.Empty);
         }
+        public void OpenDB(object parameter)
+        {
+            AllCharfromDBView dialog = new AllCharfromDBView();
+            dialog.DataContext = _context.CharacterDBs;
 
+        }
         public void Open(object parameter)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -389,7 +397,7 @@ namespace Item_WPF.MVVM.ViewModels
                 XmlSerializer serializer = new XmlSerializer(Character.GetType());
                 try
                 {
-                    Character = (Character)serializer.Deserialize(stream);
+                    Character = (CharacterDB)serializer.Deserialize(stream);
                 }
                 catch (InvalidOperationException)
                 {

@@ -1,6 +1,7 @@
 ﻿<ribbon:RibbonWindow x:Class="Item_WPF.MVVM.View.MainCharacterView"
                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                      xmlns:p="clr-namespace:Item_WPF.Properties"
                      xmlns:ribbon="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
                      Title="{Binding Path=Title}"
@@ -17,6 +18,7 @@
                 <ribbon:RibbonApplicationMenu>
                     <ribbon:RibbonApplicationMenuItem Command="{Binding NewCommand}" Header="{x:Static p:Resources.RibbonAppMenuItemNew}" />
                     <ribbon:RibbonApplicationMenuItem Command="{Binding OpenCommand}" Header="{x:Static p:Resources.RibbonAppMenuItemOpen}" />
+                    <ribbon:RibbonApplicationMenuItem Command="{Binding OpenDBCommand}" Header="Open From DB" />
                     <ribbon:RibbonApplicationMenuItem Command="{Binding SaveAsCommand}" Header="{x:Static p:Resources.RibbonAppMenuItemSaveAs}" />
                     <ribbon:RibbonApplicationMenuItem Command="{Binding AboutCommand}" Header="{x:Static p:Resources.RibbonAppMenuItemAbout}" />
                     <ribbon:RibbonApplicationMenuItem Click="QuitClick" Header="{x:Static p:Resources.RibbonAppMenuItemQuit}" />

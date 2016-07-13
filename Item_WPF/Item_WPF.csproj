@@ -14,6 +14,21 @@
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -151,6 +166,30 @@
     <Compile Include="FOOD.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="GCS\src\com\trollworks\gcs\advantage\Advantage.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\advantage\AdvantageColumn.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\advantage\AdvantageContainerType.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\advantage\AdvantageEditor.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\advantage\AdvantageList.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\advantage\AdvantageOutline.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\advantage\AdvantagesDockable.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\advantage\SelfControlRoll.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\advantage\SelfControlRollAdjustments.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\app\GCSImages.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\names\Namer.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\names\Names.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\names\USCensusNames.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\ColumnUtils.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\ListHeaderCell.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\ListOutline.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\ListRow.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\ListTextCell.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\MultiCell.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\MultipleRowUndo.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\RowEditor.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\RowItemRenderer.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\RowPostProcessor.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\RowUndo.cs" />
     <Compile Include="G_AttachClass.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
@@ -202,6 +241,7 @@
     <Compile Include="MVVM\ViewModels\AllWeaponViewModel.cs" />
     <Compile Include="MVVM\ViewModels\all_ItemsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AmmoViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\BoxItemChangeViewModel.cs" />
     <Compile Include="MVVM\ViewModels\BoxItemViewModel.cs" />
     <Compile Include="MVVM\ViewModels\CaliberViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AttacmentEditViewModel.cs" />
@@ -221,6 +261,9 @@
     <Compile Include="MVVM\View\AboutWindowView.xaml.cs">
       <DependentUpon>AboutWindowView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\View\AllCharfromDBView.xaml.cs">
+      <DependentUpon>AllCharfromDBView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\AllWeaponView.xaml.cs">
       <DependentUpon>AllWeaponView.xaml</DependentUpon>
     </Compile>
@@ -229,6 +272,9 @@
     </Compile>
     <Compile Include="MVVM\View\AmmoView.xaml.cs">
       <DependentUpon>AmmoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\BoxItemChangeView.xaml.cs">
+      <DependentUpon>BoxItemChangeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\BoxItemView.xaml.cs">
       <DependentUpon>BoxItemView.xaml</DependentUpon>
@@ -343,6 +389,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\AllCharfromDBView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\AllWeaponView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -354,6 +404,10 @@
     <Page Include="MVVM\View\AmmoView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\View\BoxItemChangeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\BoxItemView.xaml">
       <SubType>Designer</SubType>
@@ -459,6 +513,396 @@
     <None Include="addin\Диаграмма1.dbd" />
     <None Include="addin\Копия Fall_weap.xlsx" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="GCS\Library\Advantages\Action.adq" />
+    <None Include="GCS\Library\Advantages\Banestorm.adq" />
+    <None Include="GCS\Library\Advantages\Basic Set.adq" />
+    <None Include="GCS\Library\Advantages\Dungeon Fantasy.adq" />
+    <None Include="GCS\Library\Advantages\Engine Heart.adq" />
+    <None Include="GCS\Library\Advantages\Fantasy.adq" />
+    <None Include="GCS\Library\Advantages\High Tech.adq" />
+    <None Include="GCS\Library\Advantages\Horror.adq" />
+    <None Include="GCS\Library\Advantages\Magic - Plant Spells.adq" />
+    <None Include="GCS\Library\Advantages\Martial Arts.adq" />
+    <None Include="GCS\Library\Advantages\Monster Hunters.adq" />
+    <None Include="GCS\Library\Advantages\Mysteries.adq" />
+    <None Include="GCS\Library\Advantages\Power Ups.adq" />
+    <None Include="GCS\Library\Advantages\Powers.adq" />
+    <None Include="GCS\Library\Advantages\Psionics.adq" />
+    <None Include="GCS\Library\Advantages\Reign of Steel Will to Live.adq" />
+    <None Include="GCS\Library\Advantages\Supers.adq" />
+    <None Include="GCS\Library\Advantages\Ultra Tech.adq" />
+    <None Include="GCS\Library\Advantages\Vorkosigan Saga.adq" />
+    <None Include="GCS\Library\Campaigns\Jim O%27Neil\Jim%27s Advantages.adq" />
+    <None Include="GCS\Library\Campaigns\Jim O%27Neil\Jim%27s Equipment.eqp" />
+    <None Include="GCS\Library\Campaigns\Jim O%27Neil\Jim%27s Skills.skl" />
+    <None Include="GCS\Library\Campaigns\Jim O%27Neil\Jim%27s Spells.spl" />
+    <None Include="GCS\Library\Campaigns\Jim O%27Neil\Yellow Goblin Magic.spl" />
+    <None Include="GCS\Library\Characters\Basic Set\Dai Blackthorn.gcs" />
+    <None Include="GCS\Library\Characters\Basic Set\Iotha.gcs" />
+    <None Include="GCS\Library\Characters\Basic Set\Louis d%27Antares.gcs" />
+    <None Include="GCS\Library\Characters\Contributed\Rudolf Vautour.gcs" />
+    <None Include="GCS\Library\Classes\Action\Furious Fists\Big Guy.gct" />
+    <None Include="GCS\Library\Classes\Action\Furious Fists\Fast Guy.gct" />
+    <None Include="GCS\Library\Classes\Action\Furious Fists\Ninja.gct" />
+    <None Include="GCS\Library\Classes\Action\Furious Fists\Traceur.gct" />
+    <None Include="GCS\Library\Classes\Action\Furious Fists\Weapon Master.gct" />
+    <None Include="GCS\Library\Classes\Action\Heroes\Assassin.gct" />
+    <None Include="GCS\Library\Classes\Action\Heroes\Cleaner.gct" />
+    <None Include="GCS\Library\Classes\Action\Heroes\Demolition Man.gct" />
+    <None Include="GCS\Library\Classes\Action\Heroes\Face Man.gct" />
+    <None Include="GCS\Library\Classes\Action\Heroes\Hacker.gct" />
+    <None Include="GCS\Library\Classes\Action\Heroes\Infiltrator.gct" />
+    <None Include="GCS\Library\Classes\Action\Heroes\Investigator.gct" />
+    <None Include="GCS\Library\Classes\Action\Heroes\Medic.gct" />
+    <None Include="GCS\Library\Classes\Action\Heroes\Shooter.gct" />
+    <None Include="GCS\Library\Classes\Action\Heroes\Wheel Man.gct" />
+    <None Include="GCS\Library\Classes\Action\Heroes\Wire Rat.gct" />
+    <None Include="GCS\Library\Classes\Dungeon Fantasy\Barbarian.gct" />
+    <None Include="GCS\Library\Classes\Dungeon Fantasy\Bard.gct" />
+    <None Include="GCS\Library\Classes\Dungeon Fantasy\Cleric.gct" />
+    <None Include="GCS\Library\Classes\Dungeon Fantasy\Druid.gct" />
+    <None Include="GCS\Library\Classes\Dungeon Fantasy\Holy Warrior.gct" />
+    <None Include="GCS\Library\Classes\Dungeon Fantasy\Knight.gct" />
+    <None Include="GCS\Library\Classes\Dungeon Fantasy\Martial Artist.gct" />
+    <None Include="GCS\Library\Classes\Dungeon Fantasy\Scout.gct" />
+    <None Include="GCS\Library\Classes\Dungeon Fantasy\Swashbuckler.gct" />
+    <None Include="GCS\Library\Classes\Dungeon Fantasy\Thief.gct" />
+    <None Include="GCS\Library\Classes\Dungeon Fantasy\Wizard.gct" />
+    <None Include="GCS\Library\Classes\Historical Folks\Actor.gct" />
+    <None Include="GCS\Library\Classes\Historical Folks\Alchemist.gct" />
+    <None Include="GCS\Library\Classes\Historical Folks\Animal Handler.gct" />
+    <None Include="GCS\Library\Classes\Historical Folks\Vendor.gct" />
+    <None Include="GCS\Library\Classes\Historical Folks\Woodcutter.gct" />
+    <None Include="GCS\Library\Classes\Historical Folks\Writer.gct" />
+    <None Include="GCS\Library\Classes\Kromm\Action Hero.gct" />
+    <None Include="GCS\Library\Classes\Kromm\Adventurer.gct" />
+    <None Include="GCS\Library\Classes\Kromm\Everyman.gct" />
+    <None Include="GCS\Library\Classes\Life Path System\German School System.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Champions\Commando.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Champions\Crusader.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Champions\Experiment.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Champions\Inhuman Demon.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Champions\Inhuman Demonspawn.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Champions\Inhuman Dhampir.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Champions\Inhuman Lycanthrope.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Champions\Inhuman Outcast Angel.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Champions\Inhuman Vampire.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Champions\Inhuman Were-eagle.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Champions\Inhuman Werebear.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Champions\Inhuman Weretiger.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Champions\Inhuman Werewolf.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Champions\Inhuman.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Champions\Psi.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Motivational Lenses\Accidental Hero.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Motivational Lenses\Avenger Atoner.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Motivational Lenses\Chosen One.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Motivational Lenses\Clergy.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Motivational Lenses\Criminal.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Motivational Lenses\Hired Gun.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Motivational Lenses\Operative.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Motivational Lenses\Philanthropist.gct" />
+    <None Include="GCS\Library\Classes\Monster Hunters\Motivational Lenses\Soldier.gct" />
+    <None Include="GCS\Library\Classes\Mysteries\Defense Attorney.gct" />
+    <None Include="GCS\Library\Classes\Mysteries\Fire Marshal.gct" />
+    <None Include="GCS\Library\Classes\Mysteries\Genius Detective.gct" />
+    <None Include="GCS\Library\Classes\Mysteries\Hard-Boiled Detective.gct" />
+    <None Include="GCS\Library\Classes\Mysteries\Investigating Mage.gct" />
+    <None Include="GCS\Library\Classes\Mysteries\Medical Examiner.gct" />
+    <None Include="GCS\Library\Classes\Mysteries\Police Detective.gct" />
+    <None Include="GCS\Library\Classes\Mysteries\Private Psi.gct" />
+    <None Include="GCS\Library\Classes\Mysteries\Specialist.gct" />
+    <None Include="GCS\Library\Classes\Mysteries\That Darn Kid.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Androids\Aniroid Ranger.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Androids\New Delphi Spaceborn.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Cyborgs\XCU-01 Cyberbeast.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Cyborgs\XCU-02 Patriot.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Cyborgs\XCU-03 Eagle.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Cyborgs\XCU-04 Orca.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Black Zoner.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Botlicker.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Bush Doctor.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Collector.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Deejay.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Experimental Cyborg.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\FBI Agent.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Guerilla Fighter.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Hermit or Rustic.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Info-Commando.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Junkrat.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Londoner.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Marauder.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Mechrider.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Nomad.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Postman.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Preacher or Missionary.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\SAS Soldier.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Slave Laborer.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Spacer.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Survivalist.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Underground Member.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Washington Chrome.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\Washingtonian.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Humans\WASP Trooper.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Other\Blue Steel.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Other\Petbot.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Other\TOU-02 Arachne.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Other\TOU-03 Martian.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Other\XOU-01 Pantera.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\RAU-04 Hovercat.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\RAU-05 Redjack.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\RAU-06 Lilith.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\RAU-07 Redjack.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\RAU-08 Lilith.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\RNU-01 Spybot.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\RNU-02 Vermin.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\RNU-03 Changeling.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\SAU-02 Overseer.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\SAU-03 Centurion.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\TAU-04 Bossbot.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\TAU-06 Inquisitor.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\TNU-01 Loader.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\TNU-02 Mechanic.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\TNU-03 Duct Creeper.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\TNU-05 Eater.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\VAU-03 Morag.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\VNU-01 Robotruck.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\VNU-02 Wraith.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\XAU-02 Vanguard.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\XAU-03 Juggernaut.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\XAU-04 Vulture.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\XAU-06 Hoplite.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\XAU-07 Bishonen.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\XAU-08 Tarantula.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\XNU-01 Rover.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\XNU-05 Myrmidon.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\XNU-09 Stalker.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\XNU-10 Scorpion.gct" />
+    <None Include="GCS\Library\Classes\Reign of Steel Will to Live\Robots\Zone Tokyo Superbot.gct" />
+    <None Include="GCS\Library\Classes\Vorkosigan Saga\Dendarii Mercenary.gct" />
+    <None Include="GCS\Library\Equipment\Action.eqp" />
+    <None Include="GCS\Library\Equipment\Basic Set.eqp" />
+    <None Include="GCS\Library\Equipment\Contributed.eqp" />
+    <None Include="GCS\Library\Equipment\Dungeon Fantasy.eqp" />
+    <None Include="GCS\Library\Equipment\High Tech.eqp" />
+    <None Include="GCS\Library\Equipment\Inifinite Worlds.eqp" />
+    <None Include="GCS\Library\Equipment\Low Tech - JBB.eqp" />
+    <None Include="GCS\Library\Equipment\Low Tech Instant Armor.eqp" />
+    <None Include="GCS\Library\Equipment\Low Tech.eqp" />
+    <None Include="GCS\Library\Equipment\Magic.eqp" />
+    <None Include="GCS\Library\Equipment\Monster Hunters.eqp" />
+    <None Include="GCS\Library\Equipment\Mysteries.eqp" />
+    <None Include="GCS\Library\Equipment\Pyramid Magazine.eqp" />
+    <None Include="GCS\Library\Equipment\Ultra Tech.eqp" />
+    <None Include="GCS\Library\Equipment\Vorkosigan Saga.eqp" />
+    <None Include="GCS\Library\Meta-Traits\Basic Set\Artificial Intelligence.gct" />
+    <None Include="GCS\Library\Meta-Traits\Basic Set\Astral Entity.gct" />
+    <None Include="GCS\Library\Meta-Traits\Basic Set\Automaton.gct" />
+    <None Include="GCS\Library\Meta-Traits\Basic Set\Body of Air.gct" />
+    <None Include="GCS\Library\Meta-Traits\Basic Set\Body of Earth.gct" />
+    <None Include="GCS\Library\Meta-Traits\Basic Set\Body of Fire.gct" />
+    <None Include="GCS\Library\Meta-Traits\Basic Set\Body of Ice.gct" />
+    <None Include="GCS\Library\Meta-Traits\Basic Set\Body of Stone.gct" />
+    <None Include="GCS\Library\Meta-Traits\Basic Set\Body of Water.gct" />
+    <None Include="GCS\Library\Meta-Traits\Basic Set\Domestic Animal.gct" />
+    <None Include="GCS\Library\Meta-Traits\Basic Set\Ground Vehicle.gct" />
+    <None Include="GCS\Library\Meta-Traits\Basic Set\Ichthyoid.gct" />
+    <None Include="GCS\Library\Meta-Traits\Basic Set\Machine.gct" />
+    <None Include="GCS\Library\Meta-Traits\Basic Set\Quadruped.gct" />
+    <None Include="GCS\Library\Meta-Traits\Basic Set\Spirit.gct" />
+    <None Include="GCS\Library\Meta-Traits\Basic Set\Vermiform.gct" />
+    <None Include="GCS\Library\Meta-Traits\Basic Set\Wild Animal.gct" />
+    <None Include="GCS\Library\Meta-Traits\Fantasy\Intact Undead.gct" />
+    <None Include="GCS\Library\Meta-Traits\Fantasy\Rotting Undead.gct" />
+    <None Include="GCS\Library\Meta-Traits\Fantasy\Skeletal Undead.gct" />
+    <None Include="GCS\Library\Meta-Traits\Fantasy\Unmanifested Spirit.gct" />
+    <None Include="GCS\Library\Meta-Traits\Gulliver\00-Miniscule.gct" />
+    <None Include="GCS\Library\Meta-Traits\Gulliver\01-Minute.gct" />
+    <None Include="GCS\Library\Meta-Traits\Gulliver\02-Diminutive.gct" />
+    <None Include="GCS\Library\Meta-Traits\Gulliver\03-Tiny.gct" />
+    <None Include="GCS\Library\Meta-Traits\Gulliver\04-Mini.gct" />
+    <None Include="GCS\Library\Meta-Traits\Gulliver\05-Small.gct" />
+    <None Include="GCS\Library\Meta-Traits\Gulliver\06-Large.gct" />
+    <None Include="GCS\Library\Meta-Traits\Gulliver\07-Huge.gct" />
+    <None Include="GCS\Library\Meta-Traits\Gulliver\08-Enormous.gct" />
+    <None Include="GCS\Library\Meta-Traits\Gulliver\09-Gigantic.gct" />
+    <None Include="GCS\Library\Meta-Traits\Gulliver\10-Colossal.gct" />
+    <None Include="GCS\Library\Meta-Traits\Gulliver\11-Titanic.gct" />
+    <None Include="GCS\Library\Meta-Traits\Horror\Corporeal Undead\Intact Undead.gct" />
+    <None Include="GCS\Library\Meta-Traits\Horror\Corporeal Undead\Mummified Undead.gct" />
+    <None Include="GCS\Library\Meta-Traits\Horror\Corporeal Undead\Rotting Undead.gct" />
+    <None Include="GCS\Library\Meta-Traits\Horror\Corporeal Undead\Skeletal Undead.gct" />
+    <None Include="GCS\Library\Meta-Traits\Horror\Spirit\Haunt.gct" />
+    <None Include="GCS\Library\Meta-Traits\Horror\Spirit\Outsider.gct" />
+    <None Include="GCS\Library\Meta-Traits\Horror\Spirit\Specter.gct" />
+    <None Include="GCS\Library\Meta-Traits\Horror\Spirit\Threshold Entity.gct" />
+    <None Include="GCS\Library\Meta-Traits\Reign of Steel Will to Live\Autonomous Unit.gct" />
+    <None Include="GCS\Library\Meta-Traits\Reign of Steel Will to Live\Cyborg Unit.gct" />
+    <None Include="GCS\Library\Meta-Traits\Reign of Steel Will to Live\Nonvolitional Unit.gct" />
+    <None Include="GCS\Library\Monsters\Basic Set\Boar - Large.gcs" />
+    <None Include="GCS\Library\Monsters\Basic Set\Boar - Small.gcs" />
+    <None Include="GCS\Library\Monsters\Basic Set\Horse - Draft.gcs" />
+    <None Include="GCS\Library\Monsters\Basic Set\Horse - Saddle.gcs" />
+    <None Include="GCS\Library\Monsters\Basic Set\Red Deer.gcs" />
+    <None Include="GCS\Library\Monsters\Basic Set\Timber Wolf.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\Acid Spider.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\as-Sharak\as-Sharak - Agni %28Fire%29.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\as-Sharak\as-Sharak - Akasha %28Spirit%29.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\as-Sharak\as-Sharak - Jala %28Water%29.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\as-Sharak\as-Sharak - Prithvi %28Earth%29.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\as-Sharak\as-Sharak - Vayu %28Wind%29.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\Batchala.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\Crushroom.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\Dire Wolf, Alpha.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\Dire Wolf.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\Doomchild.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\Erupting Slime.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\Flaming Skull.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\Flesh-Eating Ape.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\Frost Snake.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\Giant Rat.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\Golem-Armor Swordsman.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\Horde Zombie.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\Mindwarper.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\Peshkali.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\Siege Beast.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\Stone Golem.gcs" />
+    <None Include="GCS\Library\Monsters\Dungeon Fantasy\Toxifier.gcs" />
+    <None Include="GCS\Library\Monsters\Magic\Clay Golem.gcs" />
+    <None Include="GCS\Library\Monsters\Magic\Small Air Elemental.gcs" />
+    <None Include="GCS\Library\Monsters\Magic\Small Fire Elemental.gcs" />
+    <None Include="GCS\Library\Races\Banestorm\Dwarf.gct" />
+    <None Include="GCS\Library\Races\Banestorm\Elf.gct" />
+    <None Include="GCS\Library\Races\Banestorm\Giant.gct" />
+    <None Include="GCS\Library\Races\Banestorm\Gnome.gct" />
+    <None Include="GCS\Library\Races\Banestorm\Goblin.gct" />
+    <None Include="GCS\Library\Races\Banestorm\Half-Orc.gct" />
+    <None Include="GCS\Library\Races\Banestorm\Halfling.gct" />
+    <None Include="GCS\Library\Races\Banestorm\Hobgoblin.gct" />
+    <None Include="GCS\Library\Races\Banestorm\Insect Man.gct" />
+    <None Include="GCS\Library\Races\Banestorm\Insect Warrior.gct" />
+    <None Include="GCS\Library\Races\Banestorm\Kobold.gct" />
+    <None Include="GCS\Library\Races\Banestorm\Lizard Man.gct" />
+    <None Include="GCS\Library\Races\Banestorm\Minotaur.gct" />
+    <None Include="GCS\Library\Races\Banestorm\Ogre.gct" />
+    <None Include="GCS\Library\Races\Banestorm\Orc.gct" />
+    <None Include="GCS\Library\Races\Banestorm\Troll.gct" />
+    <None Include="GCS\Library\Races\Banestorm\Vampire.gct" />
+    <None Include="GCS\Library\Races\Basic Set\Dragon.gct" />
+    <None Include="GCS\Library\Races\Basic Set\Dwarf.gct" />
+    <None Include="GCS\Library\Races\Basic Set\Elf.gct" />
+    <None Include="GCS\Library\Races\Basic Set\Felinoid.gct" />
+    <None Include="GCS\Library\Races\Basic Set\Vampire.gct" />
+    <None Include="GCS\Library\Races\Dragons\Adolescent Western Dragon.gct" />
+    <None Include="GCS\Library\Races\Dragons\Adult Western Dragon.gct" />
+    <None Include="GCS\Library\Races\Dragons\Hatchling Western Dragon.gct" />
+    <None Include="GCS\Library\Races\Dragons\Monstrous Western Dragon.gct" />
+    <None Include="GCS\Library\Races\Dragons\Old Adult Western Dragon.gct" />
+    <None Include="GCS\Library\Races\Dragons\Young Adult Western Dragon.gct" />
+    <None Include="GCS\Library\Races\Dragons\Young Western Dragon.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Cat-Folk.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Coleopteran.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Corpse Eater.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Dark One.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Dragon-Blooded.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Dwarf.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Elves\Basic Elf.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Elves\Half-Elf.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Elves\High Elf.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Elves\Mountain Elf.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Elves\Sea Elf.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Elves\Shadow Elf.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Elves\Winged Elf.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Elves\Wood Elf.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Faerie Folk\Faun.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Faerie Folk\Leprechaun.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Faerie Folk\Nymph.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Faerie Folk\Pixie.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Gargoyle.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Gnome.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Goblin-Kin\Goblin.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Goblin-Kin\Half-Orc.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Goblin-Kin\Hobgoblin.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Goblin-Kin\Orc.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Half-Ogre.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Half-Spirits\Celestial.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Half-Spirits\Elder-Spawn.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Half-Spirits\Infernal.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Half-Spirits\Infused, Air.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Half-Spirits\Infused, Earth.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Half-Spirits\Infused, Fire.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Half-Spirits\Infused, Water.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Halfling.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Lizard Man.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Minotaur.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Ogre.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Troll.gct" />
+    <None Include="GCS\Library\Races\Dungeon Fantasy\Wildman.gct" />
+    <None Include="GCS\Library\Races\Fantasy\Centaur.gct" />
+    <None Include="GCS\Library\Races\Fantasy\Djinni.gct" />
+    <None Include="GCS\Library\Races\Fantasy\Halfling.gct" />
+    <None Include="GCS\Library\Races\Fantasy\Orc.gct" />
+    <None Include="GCS\Library\Races\Magic\Demon.gct" />
+    <None Include="GCS\Library\Races\Magic\Skull-Spirit.gct" />
+    <None Include="GCS\Library\Races\Magic\Zombie.gct" />
+    <None Include="GCS\Library\Races\Myth\Thrall.gct" />
+    <None Include="GCS\Library\Races\Ultra Tech\Android.gct" />
+    <None Include="GCS\Library\Races\Ultra Tech\Bush Robot.gct" />
+    <None Include="GCS\Library\Races\Ultra Tech\Combat Android.gct" />
+    <None Include="GCS\Library\Races\Ultra Tech\Computer Implant.gct" />
+    <None Include="GCS\Library\Races\Ultra Tech\Housebot.gct" />
+    <None Include="GCS\Library\Races\Ultra Tech\Medical Bush Robot.gct" />
+    <None Include="GCS\Library\Races\Ultra Tech\Nanomorph.gct" />
+    <None Include="GCS\Library\Races\Ultra Tech\Nursebot.gct" />
+    <None Include="GCS\Library\Races\Ultra Tech\Petbot.gct" />
+    <None Include="GCS\Library\Races\Ultra Tech\Robobug.gct" />
+    <None Include="GCS\Library\Races\Ultra Tech\Scout Robot.gct" />
+    <None Include="GCS\Library\Races\Ultra Tech\Techbot.gct" />
+    <None Include="GCS\Library\Races\Ultra Tech\Warbot.gct" />
+    <None Include="GCS\Library\Races\Vorkosigan Saga\Cetagandan Ba.gct" />
+    <None Include="GCS\Library\Races\Vorkosigan Saga\Cetagandan Ghem.gct" />
+    <None Include="GCS\Library\Races\Vorkosigan Saga\Cetagandan Haut.gct" />
+    <None Include="GCS\Library\Races\Vorkosigan Saga\Quaddie.gct" />
+    <None Include="GCS\Library\Skills\Action.skl" />
+    <None Include="GCS\Library\Skills\Basic Set.skl" />
+    <None Include="GCS\Library\Skills\Dragons.skl" />
+    <None Include="GCS\Library\Skills\Fantasy.skl" />
+    <None Include="GCS\Library\Skills\High Tech.skl" />
+    <None Include="GCS\Library\Skills\Magic.skl" />
+    <None Include="GCS\Library\Skills\Martial Arts.skl" />
+    <None Include="GCS\Library\Skills\Monster Hunters.skl" />
+    <None Include="GCS\Library\Skills\Mysteries.skl" />
+    <None Include="GCS\Library\Skills\Power Ups.skl" />
+    <None Include="GCS\Library\Skills\Psionics.skl" />
+    <None Include="GCS\Library\Skills\Reign of Steel Will to Live.skl" />
+    <None Include="GCS\Library\Skills\Supers.skl" />
+    <None Include="GCS\Library\Skills\Vorkosigan Saga.skl" />
+    <None Include="GCS\Library\Spells\Bio-Tech.spl" />
+    <None Include="GCS\Library\Spells\Dungeon Fantasy.spl" />
+    <None Include="GCS\Library\Spells\Magic - Plant Spells.spl" />
+    <None Include="GCS\Library\Spells\Magic.spl" />
+    <None Include="GCS\Library\Vehicles\Generic Car %28Five Passengers Top Speed 115 mph%29.gct" />
+    <None Include="GCS\src\com\trollworks\gcs\app\images\Thumbs.db" />
+    <None Include="GCS\xsd\advantage_list.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GCS\xsd\character.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GCS\xsd\common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GCS\xsd\equipment_list.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GCS\xsd\skill_list.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GCS\xsd\spell_list.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GCS\xsd\template.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Gurps_Item.edmx.diagram">
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
     </None>
@@ -479,6 +923,254 @@
     <Content Include="addin\Item1 20160713 2232.sql" />
     <Content Include="addin\ItemModel.edmx.sql" />
     <Content Include="addin\SQL.sql" />
+    <Content Include="GCS\Library\Output Templates\template.html" />
+    <Content Include="GCS\src\com\trollworks\gcs\app\AboutPanel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\app\GCS.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\app\GCSApp.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\app\GCSFileProxyCreator.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\app\GCSFonts.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\app\GCSInfoPlistCreator.java" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\about.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\ActualSize%402x.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\ActualSize.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\adq_1024.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\app_1024.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\default_portrait.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\document_1024.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\document_16.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\document_32.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\document_48.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\document_64.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\eqp_1024.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\exotic_type%402x.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\exotic_type.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\gcs_1024.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\gct_1024.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\mental_type%402x.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\mental_type.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\PageDown%402x.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\PageDown.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\PageUp%402x.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\PageUp.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\pdf_1024.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\physical_type%402x.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\physical_type.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\skl_1024.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\social_type%402x.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\social_type.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\spl_1024.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\supernatural_type%402x.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\supernatural_type.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\ZoomIn%402x.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\ZoomIn.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\ZoomOut%402x.png" />
+    <Resource Include="GCS\src\com\trollworks\gcs\app\images\ZoomOut.png" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\Armor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\AttributesPanel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\CharacterFieldUndo.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\CharacterSheet.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\CharacterSheetLayout.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\DescriptionPanel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\DescriptionRandomizer.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\DoubleOutlinePanel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\DropPanel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\Encumbrance.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\EncumbrancePanel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\GURPSCharacter.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\HashedWeapon.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\HitLocationPanel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\HitPointsPanel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\IdentityPanel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\LiftPanel.java" />
+    <Resource Include="GCS\src\com\trollworks\gcs\character\names\USCensus1990FemaleFirstNames.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CustomToolNamespace>com.trollworks.gcs.character.names</CustomToolNamespace>
+    </Resource>
+    <Resource Include="GCS\src\com\trollworks\gcs\character\names\USCensus1990LastNames.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CustomToolNamespace>com.trollworks.gcs.character.names</CustomToolNamespace>
+    </Resource>
+    <Resource Include="GCS\src\com\trollworks\gcs\character\names\USCensus1990MaleFirstNames.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CustomToolNamespace>com.trollworks.gcs.character.names</CustomToolNamespace>
+    </Resource>
+    <Content Include="GCS\src\com\trollworks\gcs\character\NotesPanel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\OutlineInfo.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\Page.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\PageAssembler.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\PageField.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\PageHeader.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\PageLabel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\PageOwner.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\PlayerInfoPanel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\PointsPanel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\PortraitPanel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\PrerequisitesThread.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\Profile.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\SheetDockable.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\SingleOutlinePanel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\TextEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\character\WeaponOutline.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\common\CommonDockable.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\common\DataFile.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\common\EditorPanel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\common\GurpsCalculatorExportable.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\common\HasSourceReference.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\common\ListCollectionListener.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\common\ListCollectionThread.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\common\ListFile.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\common\LoadState.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\common\TemporaryFile.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\common\Workspace.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\criteria\DoubleCriteria.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\criteria\IntegerCriteria.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\criteria\NumericCompareType.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\criteria\NumericCriteria.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\criteria\StringCompareType.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\criteria\StringCriteria.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\criteria\WeightCriteria.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\equipment\Equipment.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\equipment\EquipmentColumn.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\equipment\EquipmentDockable.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\equipment\EquipmentEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\equipment\EquipmentList.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\equipment\EquipmentOutline.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\equipment\EquipmentState.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\AttributeBonus.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\AttributeBonusEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\AttributeBonusLimitation.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\Bonus.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\BonusAttributeType.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\CostReduction.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\CostReductionEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\DRBonus.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\DRBonusEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\Feature.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\FeatureEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\FeaturesPanel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\HitLocation.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\LeveledAmount.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\NoFeature.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\SkillBonus.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\SkillBonusEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\SpellBonus.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\SpellBonusEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\WeaponBonus.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\feature\WeaponBonusEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\library\LibraryDirectoryRow.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\library\LibraryDockable.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\library\LibraryExplorerDockable.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\library\LibraryExplorerRow.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\library\LibraryExplorerRowRenderer.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\library\LibraryFile.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\library\LibraryFileRow.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\edit\AddNaturalKickCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\edit\AddNaturalKickWithBootsCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\edit\AddNaturalPunchCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\edit\DecrementCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\edit\DuplicateCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\edit\EditMenuProvider.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\edit\Incrementable.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\edit\IncrementCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\edit\RandomizeDescriptionCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\edit\RandomizeNameCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\edit\RotateEquipmentStateCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\edit\SwapDefaultsCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\file\ExportToGurpsCalculatorCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\file\FileMenuProvider.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\file\NewAdvantagesLibraryCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\file\NewCharacterSheetCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\file\NewCharacterTemplateCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\file\NewEquipmentLibraryCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\file\NewSkillsLibraryCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\file\NewSpellsLibraryCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\HelpMenuProvider.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\item\ApplyTemplateCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\item\CopyToSheetCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\item\CopyToTemplateCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\item\ItemMenuProvider.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\item\NewAdvantageCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\item\NewEquipmentCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\item\NewSkillCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\item\NewSpellCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\item\OpenEditorCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\menu\item\OpenPageReferenceCommand.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\modifier\Affects.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\modifier\CostType.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\modifier\Modifier.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\modifier\ModifierColumnID.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\modifier\ModifierEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\modifier\ModifierEnabler.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\modifier\ModifierList.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\modifier\ModifierListEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\pdfview\PdfDockable.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\pdfview\PdfPanel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\pdfview\PdfRef.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\pdfview\PdfRenderer.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\preferences\PortraitPreferencePanel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\preferences\ReferenceLookupPreferences.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\preferences\SheetPreferences.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\prereq\AdvantagePrereq.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\prereq\AdvantagePrereqEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\prereq\AndOrLabel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\prereq\AttributePrereq.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\prereq\AttributePrereqEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\prereq\ContainedWeightPrereq.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\prereq\ContainedWeightPrereqEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\prereq\HasPrereq.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\prereq\ListPrereqEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\prereq\NameLevelPrereq.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\prereq\Prereq.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\prereq\PrereqEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\prereq\PrereqList.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\prereq\PrereqsPanel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\prereq\SkillPrereq.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\prereq\SkillPrereqEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\prereq\SpellPrereq.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\prereq\SpellPrereqEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\services\HttpMethodType.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\services\NotImplementedException.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\services\WebServiceClient.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\skill\Defaults.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\skill\OrLabel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\skill\Skill.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\skill\SkillAttribute.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\skill\SkillColumn.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\skill\SkillDefault.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\skill\SkillDefaultEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\skill\SkillDefaultType.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\skill\SkillDifficulty.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\skill\SkillEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\skill\SkillLevel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\skill\SkillList.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\skill\SkillOutline.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\skill\SkillsDockable.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\skill\Technique.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\skill\TechniqueEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\spell\Spell.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\spell\SpellClassCell.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\spell\SpellColumn.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\spell\SpellEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\spell\SpellList.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\spell\SpellManaCostCell.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\spell\SpellOutline.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\spell\SpellsDockable.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\spell\SpellTimeCell.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\template\Template.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\template\TemplateDockable.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\template\TemplateOutlinePanel.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\template\TemplateSheet.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\weapon\MeleeWeaponEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\weapon\MeleeWeaponStats.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\weapon\OldWeapon.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\weapon\RangedWeaponEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\weapon\RangedWeaponStats.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\weapon\WeaponColumn.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\weapon\WeaponDescriptionCell.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\weapon\WeaponDisplayRow.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\weapon\WeaponEditor.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\weapon\WeaponOutline.java" />
+    <Content Include="GCS\src\com\trollworks\gcs\weapon\WeaponStats.java" />
     <Content Include="Gurps_Item.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
@@ -493,7 +1185,18 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

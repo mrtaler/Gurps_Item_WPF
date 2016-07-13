@@ -438,12 +438,8 @@ namespace Item_WPF.addin
             }
             return weaponDamCollConvert;
         }
-
     }
-
     #endregion
-
-
     #region Converter for FollowUpdamage
     public class FollowUpdamage : ConvertorBase<FollowUpdamage>
     {
@@ -557,25 +553,7 @@ namespace Item_WPF.addin
                 : new SolidColorBrush(Colors.White);
         }
     }
-    #endregion
-    //#region conv trre
-    //public sealed class CategoryValueConverter : ConvertorBase<CategoryValueConverter>
-    //{
-    //    public override object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-    //    {
-    //        if (value is AnyBoxNameType)
-    //        {
-    //            AnyBoxNameType x = (AnyBoxNameType)value;
-    //            return (x)..Where(n => n.ParentBoxName == x.id);
-    //        }
-    //        else
-    //        {
-    //            return null;
-    //        }
-    //    }      
-    //}
-    //#endregion
-
+    #endregion    
     #region AnyboxNameConvertFrom treview notttttttttttttttttttt
     public class AnyboxNameConvertFromtreview : MultiConvertorBase<AnyboxNameConvertFromtreview>
     {
@@ -597,22 +575,15 @@ namespace Item_WPF.addin
                                   CultureInfo culture)
         {
             int IDBOXNAME = System.Convert.ToInt32(values[1]);
-          
-                  
-
             ObservableCollection<BoxItem> BoxItemForIDboxname = (values[0] as ObservableCollection<BoxItem>);
             decimal w = 0;
-            decimal c = 0;
             foreach (var item in BoxItemForIDboxname.Where(p => p.BoxName == IDBOXNAME))
             {
-                w += item.ITEM.ubWeight * item.CountItems;
-                c += item.ITEM.usPrice * item.CountItems;
+                if ((parameter as string) == "w")
+                    w += item.ITEM.ubWeight * item.CountItems;
+                else w += item.ITEM.usPrice * item.CountItems;
             }
-            if ((parameter as string)=="w")            
-                return w.ToString();
-            else return c.ToString();
-
-
+            return w.ToString();
         }
     }
     #endregion
