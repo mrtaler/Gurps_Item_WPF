@@ -33,7 +33,7 @@ public class ContainedWeightPrereq extends HasPrereq {
 	@Localize(locale = "de", value = "{0}{1} eine Zuladung die {2}")
 	@Localize(locale = "ru", value = "{0}{1} имеет вес равный {2}\n")
 	@Localize(locale = "es", value = "{0}{1} contiene un peso de {2}\n")
-	private static String CONTAINED_WEIGHT;
+	private static string CONTAINED_WEIGHT;
 
 	static {
 		Localization.initialize();
@@ -95,7 +95,7 @@ public class ContainedWeightPrereq extends HasPrereq {
 	}
 
 	@Override
-	public String getXMLTag() {
+	public string getXMLTag() {
 		return TAG_ROOT;
 	}
 
@@ -120,7 +120,7 @@ public class ContainedWeightPrereq extends HasPrereq {
 	}
 
 	@Override
-	public bool satisfied(GURPSCharacter character, ListRow exclude, StringBuilder builder, String prefix) {
+	public bool satisfied(GURPSCharacter character, ListRow exclude, StringBuilder builder, string prefix) {
 		bool satisfied = false;
 		if (exclude instanceof Equipment) {
 			Equipment equipment = (Equipment) exclude;

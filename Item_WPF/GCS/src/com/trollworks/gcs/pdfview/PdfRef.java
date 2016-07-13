@@ -105,7 +105,7 @@ public class PdfRef implements Comparable<PdfRef> {
 	}
 
 	/** @return The id. */
-	public String getId() {
+	public string getId() {
 		return mId;
 	}
 

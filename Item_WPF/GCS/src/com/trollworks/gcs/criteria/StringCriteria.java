@@ -29,7 +29,7 @@ public class StringCriteria {
 	 * @param type The type of comparison.
 	 * @param qualifier The qualifier to match against.
 	 */
-	public StringCriteria(StringCompareType type, String qualifier) {
+	public StringCriteria(StringCompareType type, string qualifier) {
 		setType(type);
 		setQualifier(qualifier);
 	}
@@ -75,7 +75,7 @@ public class StringCriteria {
 	 * @param out The XML writer to use.
 	 * @param tag The tag to use.
 	 */
-	public void save(XMLWriter out, String tag) {
+	public void save(XMLWriter out, string tag) {
 		out.simpleTagWithAttribute(tag, mQualifier, ATTRIBUTE_COMPARE, Enums.toId(mType));
 	}
 
@@ -90,7 +90,7 @@ public class StringCriteria {
 	}
 
 	/** @return The qualifier to match against. */
-	public String getQualifier() {
+	public string getQualifier() {
 		return mQualifier;
 	}
 
@@ -108,7 +108,7 @@ public class StringCriteria {
 	}
 
 	@Override
-	public String toString() {
+	public string toString() {
 		return mType.describe(mQualifier);
 	}
 }

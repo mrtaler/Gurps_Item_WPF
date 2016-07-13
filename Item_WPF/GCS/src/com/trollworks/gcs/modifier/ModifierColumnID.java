@@ -29,12 +29,12 @@ public enum ModifierColumnID {
 	/** The enabled/disabled column. */
 	ENABLED {
 		@Override
-		public String toString() {
+		public string toString() {
 			return ENABLED_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return ENABLED_TOOLTIP;
 		}
 
@@ -47,19 +47,19 @@ public enum ModifierColumnID {
 		}
 
 		@Override
-		public String getDataAsText(Modifier modifier) {
+		public string getDataAsText(Modifier modifier) {
 			return modifier.isEnabled() ? ENABLED_COLUMN : ""; //$NON-NLS-1$
 		}
 	},
 	/** The advantage name/description. */
 	DESCRIPTION {
 		@Override
-		public String toString() {
+		public string toString() {
 			return DESCRIPTION_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return DESCRIPTION_TOOLTIP;
 		}
 
@@ -69,7 +69,7 @@ public enum ModifierColumnID {
 		}
 
 		@Override
-		public String getDataAsText(Modifier modifier) {
+		public string getDataAsText(Modifier modifier) {
 			StringBuilder builder = new StringBuilder();
 			String notes = modifier.getNotes();
 
@@ -85,12 +85,12 @@ public enum ModifierColumnID {
 	/** The total cost modifier. */
 	COST_MODIFIER_TOTAL {
 		@Override
-		public String toString() {
+		public string toString() {
 			return COST_MODIFIER_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return COST_MODIFIER_TOOLTIP;
 		}
 
@@ -103,7 +103,7 @@ public enum ModifierColumnID {
 		}
 
 		@Override
-		public String getDataAsText(Modifier modifier) {
+		public string getDataAsText(Modifier modifier) {
 			return modifier.getCostDescription();
 		}
 	},
@@ -111,12 +111,12 @@ public enum ModifierColumnID {
 	/** The page reference. */
 	REFERENCE {
 		@Override
-		public String toString() {
+		public string toString() {
 			return REFERENCE_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return REFERENCE_TOOLTIP;
 		}
 
@@ -129,7 +129,7 @@ public enum ModifierColumnID {
 		}
 
 		@Override
-		public String getDataAsText(Modifier modifier) {
+		public string getDataAsText(Modifier modifier) {
 			return modifier.getReference();
 		}
 	};
@@ -193,10 +193,10 @@ public enum ModifierColumnID {
 	 * @param modifier The {@link Modifier} to get the data from.
 	 * @return Text representing the data for this column.
 	 */
-	public abstract String getDataAsText(Modifier modifier);
+	public abstract string getDataAsText(Modifier modifier);
 
 	/** @return The tooltip for the column. */
-	public abstract String getToolTip();
+	public abstract string getToolTip();
 
 	/**
 	 * @param forEditor Whether this is for an editor or not.

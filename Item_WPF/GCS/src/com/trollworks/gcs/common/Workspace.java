@@ -37,7 +37,7 @@ using java.util.ArrayList;
 /** The workspace, where all files can be viewed and edited. */
 public class Workspace extends AppWindow implements SignificantFrame, JumpToSearchTarget {
 	@Localize("GURPS Workspace")
-	private static String TITLE;
+	private static string TITLE;
 
 	static {
 		Localization.initialize();
@@ -82,7 +82,7 @@ public class Workspace extends AppWindow implements SignificantFrame, JumpToSear
 	}
 
 	@Override
-	public String getWindowPrefsPrefix() {
+	public string getWindowPrefsPrefix() {
 		return "workspace."; //$NON-NLS-1$
 	}
 

@@ -9,7 +9,7 @@
 // * by the Mozilla Public License, version 2.0.
 // */
 
-//package com.trollworks.gcs.widgets.outline;
+
 
 //using com.trollworks.gcs.common.DataFile;
 //using com.trollworks.gcs.common.LoadState;
@@ -33,111 +33,137 @@
 //namespace com.trollworks.gcs.widgets.outline
 //{
 //    /** An undo for the entire row, with the exception of its children. */
-//    public class RowUndo extends AbstractUndoableEdit {
-//	@Localize("{0} Changes")
-//	@Localize(locale = "de", value = "{0} Änderungen")
-//	@Localize(locale = "ru", value = "{0} изменений")
-//	@Localize(locale = "es", value = "{0} Cambios")
-//	private static String UNDO_FORMAT;
+//    public class RowUndo : AbstractUndoableEdit
+//    {
+//        @Localize("{0} Changes")
 
-//	static {
+//    @Localize(locale = "de", value = "{0} Änderungen")
+
+//    @Localize(locale = "ru", value = "{0} изменений")
+
+//    @Localize(locale = "es", value = "{0} Cambios")
+
+//    private static String UNDO_FORMAT;
+
+//        static {
 //		Localization.initialize();
 //	}
 
-//	private DataFile	mDataFile;
-//	private ListRow		mRow;
-//	private String		mName;
-//	private byte[]		mBefore;
-//	private byte[]		mAfter;
+//    private DataFile mDataFile;
+//    private ListRow mRow;
+//    private String mName;
+//    private byte[] mBefore;
+//    private byte[] mAfter;
 
-//	/**
-//	 * Creates a new {@link RowUndo}.
-//	 *
-//	 * @param row The row being undone.
-//	 */
-//	public RowUndo(ListRow row) {
-//		super();
-//		mRow = row;
-//		mDataFile = mRow.getDataFile();
-//		mName = MessageFormat.format(UNDO_FORMAT, mRow.getLocalizedName());
-//		mBefore = serialize(mRow);
-//	}
+//    /**
+//     * Creates a new {@link RowUndo}.
+//     *
+//     * @param row The row being undone.
+//     */
+//    public RowUndo(ListRow row)
+//    {
+//        super();
+//        mRow = row;
+//        mDataFile = mRow.getDataFile();
+//        mName = MessageFormat.format(UNDO_FORMAT, mRow.getLocalizedName());
+//        mBefore = serialize(mRow);
+//    }
 
-//	/**
-//	 * Call to finish capturing the undo state.
-//	 *
-//	 * @return <code>true</code> if there is a difference between the before and after state.
-//	 */
-//	public bool finish() {
-//		mAfter = serialize(mRow);
-//		if (mBefore.length != mAfter.length) {
-//			return true;
-//		}
-//		for (int i = 0; i < mBefore.length; i++) {
-//			if (mBefore[i] != mAfter[i]) {
-//				return true;
-//			}
-//		}
-//		return false;
-//	}
+//    /**
+//     * Call to finish capturing the undo state.
+//     *
+//     * @return <code>true</code> if there is a difference between the before and after state.
+//     */
+//    public bool finish()
+//    {
+//        mAfter = serialize(mRow);
+//        if (mBefore.length != mAfter.length)
+//        {
+//            return true;
+//        }
+//        for (int i = 0; i < mBefore.length; i++)
+//        {
+//            if (mBefore[i] != mAfter[i])
+//            {
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
 
-//	private static byte[] serialize(ListRow row) {
-//		try {
-//			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//			GZIPOutputStream gos = new GZIPOutputStream(baos);
-//			try (XMLWriter writer = new XMLWriter(gos)) {
-//				row.save(writer, true);
-//			}
-//			return baos.toByteArray();
-//		} catch (Exception exception) {
-//			exception.printStackTrace(System.err);
-//		}
-//		return new byte[0];
-//	}
+//    private static byte[] serialize(ListRow row)
+//    {
+//        try
+//        {
+//            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+//            GZIPOutputStream gos = new GZIPOutputStream(baos);
+//            try (XMLWriter writer = new XMLWriter(gos)) {
+//                row.save(writer, true);
+//            }
+//            return baos.toByteArray();
+//            }
+//            catch (Exception exception)
+//            {
+//                exception.printStackTrace(System.err);
+//            }
+//            return new byte[0];
+//        }
 
-//	private void deserialize(byte[] buffer) {
-//		try (XMLReader reader = new XMLReader(new InputStreamReader(new GZIPInputStream(new ByteArrayInputStream(buffer))))) {
-//			XMLNodeType type = reader.next();
-//			LoadState state = new LoadState();
-//			state.mForUndo = true;
-//			while (type != XMLNodeType.END_DOCUMENT) {
-//				if (type == XMLNodeType.START_TAG) {
-//					mRow.load(reader, state);
-//					type = reader.getType();
-//				} else {
-//					type = reader.next();
-//				}
-//			}
-//		} catch (Exception exception) {
-//			exception.printStackTrace(System.err);
-//		}
-//	}
 
-//	@Override
-//	public void undo() throws CannotUndoException {
-//		super.undo();
-//		deserialize(mBefore);
-//	}
+//    private void deserialize(byte[] buffer)
+//    {
+//        try (XMLReader reader = new XMLReader(new InputStreamReader(new GZIPInputStream(new ByteArrayInputStream(buffer))))) {
+//            XMLNodeType type = reader.next();
+//            LoadState state = new LoadState();
+//            state.mForUndo = true;
+//            while (type != XMLNodeType.END_DOCUMENT)
+//            {
+//                if (type == XMLNodeType.START_TAG)
+//                {
+//                    mRow.load(reader, state);
+//                    type = reader.getType();
+//                }
+//                else
+//                {
+//                    type = reader.next();
+//                }
+//            }
+//        } catch (Exception exception)
+//        {
+//            exception.printStackTrace(System.err);
+//        }
+//    }
 
-//	@Override
-//	public void redo() throws CannotRedoException {
-//		super.redo();
-//		deserialize(mAfter);
-//	}
+//    @Override
+//    public void undo() throws CannotUndoException
+//    {
+//        super.undo();
+//        deserialize(mBefore);
+//    }
 
-//	/** @return The {@link DataFile} this undo works on. */
-//	public DataFile getDataFile() {
-//		return mDataFile;
-//	}
+//    @Override
+//    public void redo() throws CannotRedoException
+//    {
+//        super.redo();
+//        deserialize(mAfter);
+//    }
 
-//	/** @return The row this undo works on. */
-//	public ListRow getRow() {
-//		return mRow;
-//	}
+//    /** @return The {@link DataFile} this undo works on. */
+//    public DataFile getDataFile()
+//    {
+//        return mDataFile;
+//    }
 
-//	@Override
-//	public String getPresentationName() {
-//		return mName;
-//	}
+//    /** @return The row this undo works on. */
+//    public ListRow getRow()
+//    {
+//        return mRow;
+//    }
+
+//    @Override
+//    public String getPresentationName()
+//    {
+//        return mName;
+//    }
 //}
 //}

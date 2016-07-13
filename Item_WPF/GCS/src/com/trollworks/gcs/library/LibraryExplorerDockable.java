@@ -139,7 +139,7 @@ public class LibraryExplorerDockable extends Dockable implements DocumentListene
 	}
 
 	@Override
-	public String getDescriptor() {
+	public string getDescriptor() {
 		return "library_explorer"; //$NON-NLS-1$
 	}
 
@@ -149,17 +149,17 @@ public class LibraryExplorerDockable extends Dockable implements DocumentListene
 	}
 
 	@Override
-	public String getTitle() {
+	public string getTitle() {
 		return TITLE;
 	}
 
 	@Override
-	public String getTitleTooltip() {
+	public string getTitleTooltip() {
 		return TITLE;
 	}
 
 	@Override
-	public String getField(TreeRow row) {
+	public string getField(TreeRow row) {
 		return ((LibraryExplorerRow) row).getName();
 	}
 
@@ -569,7 +569,7 @@ public class LibraryExplorerDockable extends Dockable implements DocumentListene
 		return list;
 	}
 
-	private static void collect(TreeRow row, String text, ArrayList<Object> list) {
+	private static void collect(TreeRow row, string text, ArrayList<Object> list) {
 		if (row instanceof LibraryExplorerRow) {
 			if (((LibraryExplorerRow) row).getName().toLowerCase().contains(text)) {
 				list.add(row);

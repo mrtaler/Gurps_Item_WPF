@@ -33,7 +33,7 @@ public class LibraryFileRow extends TreeRow implements LibraryExplorerRow {
 	}
 
 	@Override
-	public String getSelectionKey() {
+	public string getSelectionKey() {
 		return mPath.toString();
 	}
 
@@ -43,7 +43,7 @@ public class LibraryFileRow extends TreeRow implements LibraryExplorerRow {
 	}
 
 	@Override
-	public String getName() {
+	public string getName() {
 		return PathUtils.getLeafName(mPath.getFileName(), false);
 	}
 }

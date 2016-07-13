@@ -215,7 +215,7 @@ public class TemplateSheet extends JPanel implements Scrollable, BatchNotifierTa
 	}
 
 	@Override
-	public void handleNotification(Object producer, String type, Object data) {
+	public void handleNotification(Object producer, string type, Object data) {
 		if (type.startsWith(Advantage.PREFIX)) {
 			OutlineSyncer.add(mAdvantageOutline);
 		} else if (type.startsWith(Skill.PREFIX)) {

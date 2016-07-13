@@ -20,7 +20,7 @@ public enum SkillAttribute {
 	/** The strength attribute. */
 	ST {
 		@Override
-		public String toString() {
+		public string toString() {
 			return ST_TITLE;
 		}
 
@@ -32,7 +32,7 @@ public enum SkillAttribute {
 	/** The dexterity attribute. */
 	DX {
 		@Override
-		public String toString() {
+		public string toString() {
 			return DX_TITLE;
 		}
 
@@ -44,7 +44,7 @@ public enum SkillAttribute {
 	/** The health attribute. */
 	HT {
 		@Override
-		public String toString() {
+		public string toString() {
 			return HT_TITLE;
 		}
 
@@ -56,7 +56,7 @@ public enum SkillAttribute {
 	/** The intelligence attribute. */
 	IQ {
 		@Override
-		public String toString() {
+		public string toString() {
 			return IQ_TITLE;
 		}
 
@@ -68,7 +68,7 @@ public enum SkillAttribute {
 	/** The will attribute. */
 	Will {
 		@Override
-		public String toString() {
+		public string toString() {
 			return WILL_TITLE;
 		}
 
@@ -80,7 +80,7 @@ public enum SkillAttribute {
 	/** The perception attribute. */
 	Per {
 		@Override
-		public String toString() {
+		public string toString() {
 			return PER_TITLE;
 		}
 

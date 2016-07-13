@@ -29,13 +29,13 @@ public class ItemMenuProvider implements MenuProvider {
 	@Localize(locale = "de", value = "Element")
 	@Localize(locale = "ru", value = "Элемент")
 	@Localize(locale = "es", value = "Elemento")
-	private static String ITEM;
+	private static string ITEM;
 
 	static {
 		Localization.initialize();
 	}
 
-	public static const String NAME = "Item"; //$NON-NLS-1$
+	public static const string NAME = "Item"; //$NON-NLS-1$
 
 	@Override
 	public Set<Command> getModifiableCommands() {

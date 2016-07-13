@@ -78,12 +78,12 @@ public class AttributeBonus extends Bonus {
 	}
 
 	@Override
-	public String getXMLTag() {
+	public string getXMLTag() {
 		return TAG_ROOT;
 	}
 
 	@Override
-	public String getKey() {
+	public string getKey() {
 		StringBuffer buffer = new StringBuffer();
 
 		buffer.append(GURPSCharacter.ATTRIBUTES_PREFIX);

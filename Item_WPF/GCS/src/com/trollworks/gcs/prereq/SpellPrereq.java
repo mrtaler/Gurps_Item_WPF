@@ -157,7 +157,7 @@ public class SpellPrereq extends HasPrereq {
 	}
 
 	@Override
-	public String getXMLTag() {
+	public string getXMLTag() {
 		return TAG_ROOT;
 	}
 
@@ -187,7 +187,7 @@ public class SpellPrereq extends HasPrereq {
 	}
 
 	/** @return The type of comparison to make. */
-	public String getType() {
+	public string getType() {
 		return mType;
 	}
 
@@ -222,7 +222,7 @@ public class SpellPrereq extends HasPrereq {
 	}
 
 	@Override
-	public bool satisfied(GURPSCharacter character, ListRow exclude, StringBuilder builder, String prefix) {
+	public bool satisfied(GURPSCharacter character, ListRow exclude, StringBuilder builder, string prefix) {
 		HashSet<String> colleges = new HashSet<>();
 		String techLevel = null;
 		int count = 0;

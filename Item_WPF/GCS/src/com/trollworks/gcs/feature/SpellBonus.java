@@ -88,12 +88,12 @@ public class SpellBonus extends Bonus {
 	}
 
 	@Override
-	public String getXMLTag() {
+	public string getXMLTag() {
 		return TAG_ROOT;
 	}
 
 	@Override
-	public String getKey() {
+	public string getKey() {
 		StringBuffer buffer = new StringBuffer();
 
 		if (mAllColleges) {
@@ -166,7 +166,7 @@ public class SpellBonus extends Bonus {
 	 * @return The match type. One of {@link #TAG_COLLEGE_NAME}, {@link #TAG_POWER_SOURCE_NAME}, or
 	 *         {@link #TAG_SPELL_NAME}.
 	 */
-	public String getMatchType() {
+	public string getMatchType() {
 		return mMatchType;
 	}
 

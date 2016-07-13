@@ -93,7 +93,7 @@ public class ListPrereqEditor extends PrereqEditor {
 		super(row, prereq, depth);
 	}
 
-	private static String mapWhenTLToString(IntegerCriteria criteria) {
+	private static string mapWhenTLToString(IntegerCriteria criteria) {
 		if (PrereqList.isWhenTLEnabled(criteria)) {
 			switch (criteria.getType()) {
 				case IS:

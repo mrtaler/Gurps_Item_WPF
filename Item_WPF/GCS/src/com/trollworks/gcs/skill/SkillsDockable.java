@@ -22,7 +22,7 @@ public class SkillsDockable extends LibraryDockable {
 	@Localize(locale = "de", value = "Unbenannte Fertigkeiten-Liste")
 	@Localize(locale = "ru", value = "Безымянный список умений")
 	@Localize(locale = "es", value = "Habilidades sin título")
-	private static String UNTITLED;
+	private static string UNTITLED;
 
 	static {
 		Localization.initialize();
@@ -39,7 +39,7 @@ public class SkillsDockable extends LibraryDockable {
 	}
 
 	@Override
-	protected String getUntitledBaseName() {
+	protected string getUntitledBaseName() {
 		return UNTITLED;
 	}
 

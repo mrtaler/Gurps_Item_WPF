@@ -89,7 +89,7 @@ public class LeveledAmount {
 	 * @param out The XML writer to use.
 	 * @param tag The tag to use.
 	 */
-	public void save(XMLWriter out, String tag) {
+	public void save(XMLWriter out, string tag) {
 		if (isPerLevel()) {
 			if (mInteger) {
 				out.simpleTagWithAttribute(tag, getIntegerAmount(), ATTRIBUTE_PER_LEVEL, mPerLevel);
@@ -149,7 +149,7 @@ public class LeveledAmount {
 	}
 
 	/** @return The amount, as a {@link String}. */
-	public String getAmountAsString() {
+	public string getAmountAsString() {
 		if (mInteger) {
 			return Numbers.formatWithForcedSign(getIntegerAmount());
 		}

@@ -22,7 +22,7 @@ public enum SkillDefaultType {
 	/** The type for ST-based defaults. */
 	ST {
 		@Override
-		public String toString() {
+		public string toString() {
 			return ST_TITLE;
 		}
 
@@ -34,7 +34,7 @@ public enum SkillDefaultType {
 	/** The type for DX-based defaults. */
 	DX {
 		@Override
-		public String toString() {
+		public string toString() {
 			return DX_TITLE;
 		}
 
@@ -46,7 +46,7 @@ public enum SkillDefaultType {
 	/** The type for IQ-based defaults. */
 	IQ {
 		@Override
-		public String toString() {
+		public string toString() {
 			return IQ_TITLE;
 		}
 
@@ -58,7 +58,7 @@ public enum SkillDefaultType {
 	/** The type for HT-based defaults. */
 	HT {
 		@Override
-		public String toString() {
+		public string toString() {
 			return HT_TITLE;
 		}
 
@@ -70,7 +70,7 @@ public enum SkillDefaultType {
 	/** The type for Will-based defaults. */
 	Will {
 		@Override
-		public String toString() {
+		public string toString() {
 			return WILL_TITLE;
 		}
 
@@ -82,7 +82,7 @@ public enum SkillDefaultType {
 	/** The type for Perception-based defaults. */
 	Per {
 		@Override
-		public String toString() {
+		public string toString() {
 			return PER_TITLE;
 		}
 
@@ -94,7 +94,7 @@ public enum SkillDefaultType {
 	/** The type for Skill-based defaults. */
 	Skill {
 		@Override
-		public String toString() {
+		public string toString() {
 			return SKILL_NAMED;
 		}
 
@@ -132,7 +132,7 @@ public enum SkillDefaultType {
 	/** The type for Parry-based defaults. */
 	Parry {
 		@Override
-		public String toString() {
+		public string toString() {
 			return PARRY_SKILL_NAMED;
 		}
 
@@ -170,7 +170,7 @@ public enum SkillDefaultType {
 	/** The type for Block-based defaults. */
 	Block {
 		@Override
-		public String toString() {
+		public string toString() {
 			return BLOCK_SKILL_NAMED;
 		}
 

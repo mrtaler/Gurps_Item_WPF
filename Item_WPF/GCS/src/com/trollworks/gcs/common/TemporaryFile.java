@@ -17,7 +17,7 @@ using java.io.IOException;
 
 /** Used to create a file for temporary use. The file will be deleted when closed */
 public class TemporaryFile extends File implements Closeable {
-	public TemporaryFile(String prefix, String extension) throws IOException {
+	public TemporaryFile(String prefix, string extension) throws IOException {
 		super(File.createTempFile(prefix, extension).getAbsolutePath());
 	}
 

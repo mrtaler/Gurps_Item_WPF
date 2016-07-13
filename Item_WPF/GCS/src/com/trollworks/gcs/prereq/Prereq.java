@@ -45,7 +45,7 @@ public abstract class Prereq {
 	}
 
 	/** @return The XML tag representing this prereq. */
-	public abstract String getXMLTag();
+	public abstract string getXMLTag();
 
 	/**
 	 * Saves the prerequisite.
@@ -62,7 +62,7 @@ public abstract class Prereq {
 	 * @param prefix The prefix to add to each line appended to the builder.
 	 * @return Whether or not this prerequisite is satisfied by the specified character.
 	 */
-	public abstract bool satisfied(GURPSCharacter character, ListRow exclude, StringBuilder builder, String prefix);
+	public abstract bool satisfied(GURPSCharacter character, ListRow exclude, StringBuilder builder, string prefix);
 
 	/**
 	 * Creates a deep clone of the prerequisite.

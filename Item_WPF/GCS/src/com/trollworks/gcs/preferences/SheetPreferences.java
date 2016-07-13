@@ -358,20 +358,20 @@ public class SheetPreferences extends PreferencePanel implements ActionListener,
 	}
 
 	/** @return The HTML template to use when exporting to HTML. */
-	public static String getHTMLTemplate() {
+	public static string getHTMLTemplate() {
 		return isHTMLTemplateOverridden() ? getHTMLTemplateOverride() : getDefaultHTMLTemplate();
 	}
 
-	private static String getHTMLTemplateOverride() {
+	private static string getHTMLTemplateOverride() {
 		return Preferences.getInstance().getStringValue(MODULE, HTML_TEMPLATE_OVERRIDE_KEY);
 	}
 
 	/** @return The default HTML template to use when exporting to HTML. */
-	public static String getDefaultHTMLTemplate() {
+	public static string getDefaultHTMLTemplate() {
 		return App.getHomePath().resolve("Library").resolve("Output Templates").resolve("template.html").toString(); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 	}
 
-	public static String getGurpsCalculatorKey() {
+	public static string getGurpsCalculatorKey() {
 		return Preferences.getInstance().getStringValue(MODULE, GURPS_CALCULATOR_KEY_KEY);
 	}
 
@@ -481,7 +481,7 @@ public class SheetPreferences extends PreferencePanel implements ActionListener,
 		column.apply(this);
 	}
 
-	private JButton createButton(String title, String tooltip) {
+	private JButton createButton(String title, string tooltip) {
 		JButton button = new JButton(title);
 		button.setOpaque(false);
 		button.setToolTipText(tooltip);
@@ -490,7 +490,7 @@ public class SheetPreferences extends PreferencePanel implements ActionListener,
 		return button;
 	}
 
-	private FlexComponent createFlexLabel(String title, String tooltip) {
+	private FlexComponent createFlexLabel(String title, string tooltip) {
 		return new FlexComponent(createLabel(title, tooltip), Alignment.RIGHT_BOTTOM, Alignment.CENTER);
 	}
 
@@ -514,7 +514,7 @@ public class SheetPreferences extends PreferencePanel implements ActionListener,
 		return field;
 	}
 
-	private JButton createHyperlinkButton(String linkText, String tooltip) {
+	private JButton createHyperlinkButton(String linkText, string tooltip) {
 		JButton button = new JButton(String.format("<HTML><FONT color=\"#000099\"><U>%s</U></FONT>", linkText)); //$NON-NLS-1$
 		button.setFocusPainted(false);
 		button.setMargin(new Insets(0, 0, 0, 0));
@@ -573,7 +573,7 @@ public class SheetPreferences extends PreferencePanel implements ActionListener,
 		return combo;
 	}
 
-	private JTextField createTextField(String tooltip, String value) {
+	private JTextField createTextField(String tooltip, string value) {
 		JTextField field = new JTextField(value);
 		field.setToolTipText(tooltip);
 		field.getDocument().addDocumentListener(this);

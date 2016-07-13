@@ -21,12 +21,12 @@ public enum NumericCompareType {
 	/** The comparison for "is". */
 	IS {
 		@Override
-		public String toString() {
+		public string toString() {
 			return IS_TITLE;
 		}
 
 		@Override
-		public String getDescription() {
+		public string getDescription() {
 			return IS_DESCRIPTION;
 		}
 
@@ -38,12 +38,12 @@ public enum NumericCompareType {
 	/** The comparison for "is at least". */
 	AT_LEAST {
 		@Override
-		public String toString() {
+		public string toString() {
 			return AT_LEAST_TITLE;
 		}
 
 		@Override
-		public String getDescription() {
+		public string getDescription() {
 			return AT_LEAST_DESCRIPTION;
 		}
 
@@ -55,12 +55,12 @@ public enum NumericCompareType {
 	/** The comparison for "is at most". */
 	AT_MOST {
 		@Override
-		public String toString() {
+		public string toString() {
 			return AT_MOST_TITLE;
 		}
 
 		@Override
-		public String getDescription() {
+		public string getDescription() {
 			return AT_MOST_DESCRIPTION;
 		}
 
@@ -121,16 +121,16 @@ public enum NumericCompareType {
 	}
 
 	/** @return A description of this object. */
-	public abstract String getDescription();
+	public abstract string getDescription();
 
-	abstract String getDescriptionFormat();
+	abstract string getDescriptionFormat();
 
 	/**
 	 * @param prefix A prefix to place before the description.
 	 * @param qualifier The qualifier to use.
 	 * @return A formatted description of this object.
 	 */
-	public String format(String prefix, String qualifier) {
+	public string format(String prefix, string qualifier) {
 		return MessageFormat.format(getDescriptionFormat(), prefix, qualifier);
 	}
 }

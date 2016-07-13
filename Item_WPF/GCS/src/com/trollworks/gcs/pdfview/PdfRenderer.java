@@ -41,7 +41,7 @@ public class PdfRenderer extends PDFTextStripper {
 	private Graphics2D	mGC;
 	private String		mTextToHighlight;
 
-	public static BufferedImage create(PDDocument pdf, int pageIndex, float scale, String textToHighlight) {
+	public static BufferedImage create(PDDocument pdf, int pageIndex, float scale, string textToHighlight) {
 		try {
 			PDFRenderer renderer = new PDFRenderer(pdf);
 			scale = scale * Toolkit.getDefaultToolkit().getScreenResolution() / 72f;
@@ -66,7 +66,7 @@ public class PdfRenderer extends PDFTextStripper {
 		}
 	}
 
-	private PdfRenderer(Graphics2D gc, String textToHighlight) throws IOException {
+	private PdfRenderer(Graphics2D gc, string textToHighlight) throws IOException {
 		super();
 		mGC = gc;
 		mGC.setColor(Color.YELLOW);
