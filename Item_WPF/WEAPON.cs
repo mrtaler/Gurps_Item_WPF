@@ -32,7 +32,6 @@ namespace Item_WPF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public WEAPON()
         {
-            this.AvailableAttachSlots = new HashSet<AvailableAttachSlot>();
             this.WeaponDamages = new HashSet<WeaponDamage>();
         }
     
@@ -517,16 +516,6 @@ namespace Item_WPF
     		}
     	}
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<AvailableAttachSlot> _AvailableAttachSlots;
-            public virtual ICollection<AvailableAttachSlot> AvailableAttachSlots
-            {
-                get { return _AvailableAttachSlots; }
-                set
-                { if(_AvailableAttachSlots != value)
-                    {    _AvailableAttachSlots = value;    OnPropertyChanged("AvailableAttachSlots");   }
-                }
-            } 
         private ITEM _ITEM;
             public virtual ITEM ITEM
             {

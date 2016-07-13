@@ -262,28 +262,28 @@ namespace Item_WPF.MVVM.Models
         public CombineWeapModel(ITEM itt)
         {
 
-            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 1) != null)
-                IdScopeItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 1).rAttachmentmount;
-            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 2) != null)
-                IdLaserItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 2).rAttachmentmount;
-            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 3) != null)
-                IdLightItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 3).rAttachmentmount;
-            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 4) != null)
-                IdBipodItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 4).rAttachmentmount;
-            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 5) != null)
-                IdSilenserItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 5).rAttachmentmount;
-            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 6) != null)
-                IdLauncherItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 6).rAttachmentmount;
-            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 7) != null)
-                IdStockItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 7).rAttachmentmount;
-            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 8) != null)
-                IdBayonetItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 8).rAttachmentmount;
-            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 9) != null)
-                IdMagazineItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 9).rAttachmentmount;
-            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 10) != null)
-                IdInternalItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 10).rAttachmentmount;
-            if (itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 11) != null)
-                IdExternalItem = itt.WEAPON.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 11).rAttachmentmount;
+            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 1) != null)
+                IdScopeItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 1).rAttachmentmount;
+            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 2) != null)
+                IdLaserItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 2).rAttachmentmount;
+            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 3) != null)
+                IdLightItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 3).rAttachmentmount;
+            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 4) != null)
+                IdBipodItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 4).rAttachmentmount;
+            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 5) != null)
+                IdSilenserItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 5).rAttachmentmount;
+            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 6) != null)
+                IdLauncherItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 6).rAttachmentmount;
+            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 7) != null)
+                IdStockItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 7).rAttachmentmount;
+            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 8) != null)
+                IdBayonetItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 8).rAttachmentmount;
+            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 9) != null)
+                IdMagazineItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 9).rAttachmentmount;
+            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 10) != null)
+                IdInternalItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 10).rAttachmentmount;
+            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 11) != null)
+                IdExternalItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 11).rAttachmentmount;
             if (itt.ubCalibre!=null)
                 idCalibre = itt.ubCalibre;
         }

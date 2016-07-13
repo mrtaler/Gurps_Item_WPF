@@ -134,7 +134,7 @@ namespace Item_WPF.addin
             {
                 ASlot.Add(new AvailableAttachSlot()
                 {
-                    rWeaponId = System.Convert.ToInt32(IdWeapon),
+                    rItemId = System.Convert.ToInt32(IdWeapon),
                     rATTACHMENTSLOT = System.Convert.ToInt32(parameter),
                     rAttachmentmount = System.Convert.ToInt32(parameter)
                 });

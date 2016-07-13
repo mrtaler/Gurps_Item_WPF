@@ -45,19 +45,19 @@ namespace Item_WPF
     			}
     		}
     	}
-        private int _rWeaponId;
-    	public int rWeaponId 
+        private int _rItemId;
+    	public int rItemId 
     	{ 
     		get
     		{
-    			return _rWeaponId;
+    			return _rItemId;
     		} 
     		set
     		{
-    			if (_rWeaponId != value)
+    			if (_rItemId != value)
     			{
-    				_rWeaponId = value;
-    				OnPropertyChanged("rWeaponId");
+    				_rItemId = value;
+    				OnPropertyChanged("rItemId");
     			}
     		}
     	}
@@ -103,13 +103,13 @@ namespace Item_WPF
                     {    _Attachmentmount = value;    OnPropertyChanged("Attachmentmount");   }
                 }
             } 
-        private WEAPON _WEAPON;
-            public virtual WEAPON WEAPON
+        private ITEM _ITEM;
+            public virtual ITEM ITEM
             {
-                get { return _WEAPON; }
+                get { return _ITEM; }
                 set
-                { if(_WEAPON != value)
-                    {    _WEAPON = value;    OnPropertyChanged("WEAPON");   }
+                { if(_ITEM != value)
+                    {    _ITEM = value;    OnPropertyChanged("ITEM");   }
                 }
             } 
     }
