@@ -1040,18 +1040,18 @@ GO
 IF OBJECT_ID(N'dbo.CharacterDB', 'U') IS NULL
   CREATE TABLE dbo.CharacterDB (
     id INT IDENTITY,
-    name NVARCHAR(80) NULL,
-    StrengthPoints INT NOT NULL,
-    DexterityPoints INT NOT NULL,
-    IntelligencePoints INT NOT NULL,
+    Name  NVARCHAR(80) NULL,
+    StrengthPoints  INT NOT NULL,
+    DexterityPoints  INT NOT NULL,
+    IntelligencePoints  INT NOT NULL,
     HealthPoints INT NOT NULL,
-    MaxHPPoints INT NOT NULL,
-    MaxFPPoints INT NOT NULL,
-    PerceptionPoints INT NOT NULL,
-    WillpowerPoints INT NOT NULL,
-    BasicSpeedPoints REAL NOT NULL,
-    BasicMovePoints INT NOT NULL,
-    CONSTRAINT PK_cha PRIMARY KEY CLUSTERED (id)
+    MaxHPPoints  INT NOT NULL,
+    MaxFPPoints  INT NOT NULL,
+    PerceptionPoints  INT NOT NULL,
+    WillpowerPoints  INT NOT NULL,
+    BasicSpeedPoints  REAL NOT NULL,
+    BasicMovePoints  INT NOT NULL,
+    CONSTRAINT PK_CharacterDB PRIMARY KEY CLUSTERED (id)
   )
 GO
 

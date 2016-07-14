@@ -603,18 +603,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Attachment_Attachmentmount">
-          <End Role="Attachmentmount" Type="Self.Attachmentmount" Multiplicity="1" />
-          <End Role="Attachment" Type="Self.Attachment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Attachmentmount">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Attachment">
-              <PropertyRef Name="id_Attachmentmount" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Attachment_ITEM_uiIndex">
           <End Role="ITEM" Type="Self.ITEM" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -1092,10 +1080,6 @@
           <AssociationSet Name="FK_ARMOUR_ITEM_uiIndex" Association="Self.FK_ARMOUR_ITEM_uiIndex">
             <End Role="ITEM" EntitySet="ITEM" />
             <End Role="ARMOUR" EntitySet="ARMOUR" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Attachment_Attachmentmount" Association="Self.FK_Attachment_Attachmentmount">
-            <End Role="Attachmentmount" EntitySet="Attachmentmount" />
-            <End Role="Attachment" EntitySet="Attachment" />
           </AssociationSet>
           <AssociationSet Name="FK_Attachment_ITEM_uiIndex" Association="Self.FK_Attachment_ITEM_uiIndex">
             <End Role="ITEM" EntitySet="ITEM" />

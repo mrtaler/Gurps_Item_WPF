@@ -587,6 +587,47 @@ namespace Item_WPF.addin
         }
     }
     #endregion
+    #region MountToAttachPointConvert
+    class MountAttachmentPointConvert : MultiConvertorBase<MountAttachmentPointConvert>
+    {
+        public ObservableCollection<AvailableAttachSlot> ASlot { set; private get; }
+        public int? IdItem { set; private get; }
+        public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            ASlot = values[0] as ObservableCollection<AvailableAttachSlot>;
+            IdItem = values[1] as int?;
+            int findslotPoint = System.Convert.ToInt32(parameter);
+            if (ASlot.FirstOrDefault(p => p.rItemId == IdItem) != null)
+            {
+                return ASlot.FirstOrDefault(p => p.rItemId == IdItem && p.rATTACHMENTSLOT == findslotPoint).rAttachmentmount;
+            }
+            else return 1;      
+                //(from p in ASlot
+                            // where p.rATTACHMENTSLOT == findslotPoint
+                            // select p.rAttachmentmount).FirstOrDefault();
+            //if (MountSlot != 0)
+           
+            //else return 0;
+        }
+        public override object[] ConvertBack(object value, Type[] targetType, object parameter, CultureInfo culture)
+        {
+            int findslotPoint = System.Convert.ToInt32(parameter);
+            int selVal = System.Convert.ToInt32(value);
+            AvailableAttachSlot ase = ASlot.FirstOrDefault(p =>
+            p.rItemId == IdItem && p.rATTACHMENTSLOT == findslotPoint);
+            if (ase != null)
+            {
+                //ASlot.Remove(ase);
+                ase.rAttachmentmount = selVal;
+                //ASlot.Add(ase);
+            }
+            object[] ret = new object[2];
+            ret[0] = ASlot;
+            ret[1] = IdItem;
+            return ret;
+        }
+    }
+    #endregion
 }
 //http://dev.net.ua/blogs/andriydanilchenko/archive/2011/08/14/binding-and-multibinding-converters.aspx
 

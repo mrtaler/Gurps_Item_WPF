@@ -17,6 +17,8 @@
   <DatabaseObjects>
     <DatabaseObjectType ObjectType="Table" />
     <DatabaseObjectType ObjectType="Procedure" />
+    <DatabaseObjectType ObjectType="Programmability" />
+    <DatabaseObjectType ObjectType="DdlTrigger" />
   </DatabaseObjects>
   <Options>
     <PropertyValue Name="ScriptCreateDatabase">false</PropertyValue>

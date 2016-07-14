@@ -113,15 +113,14 @@ namespace Item_WPF.MVVM.ViewModels
 
 
             #region Load Command
-            Save = new DelegateCommand(SaveChanges); // соххранение контекста
-            LoadImage = new DelegateCommand(LoadImageToForm); //загрузка картинки
-            DellImage = new DelegateCommand(DellImageFromAll); //удаление картинки
-            CExtendDamage = new DelegateCommand(ExtendDamage);
-            AddMountslot1 = new DelegateCommand(AddMountslot1_Execute);
-            CheckThreeCheckBox = new DelegateCommand(CheckThreeCheckBox_Execute); //
-            CloseWindowC = new DelegateCommand(CloseWindow); //Закрытие окна
-
-            CalliberWindowC = new DelegateCommand(CalliberWindow); //Caliber
+            Save =                  new DelegateCommand(SaveChanges);       // сохранение контекста
+            LoadImage =             new DelegateCommand(LoadImageToForm);   //загрузка картинки
+            DellImage =             new DelegateCommand(DellImageFromAll);  //удаление картинки
+            CExtendDamage =         new DelegateCommand(ExtendDamage);
+            AddMountslot1 =         new DelegateCommand(AddMountslot1_Execute);
+            CheckThreeCheckBox =    new DelegateCommand(CheckThreeCheckBox_Execute); //
+            CloseWindowC =          new DelegateCommand(CloseWindow);       //Закрытие окна
+            CalliberWindowC =       new DelegateCommand(CalliberWindow);    //Caliber
 
             //AddMountslot1 = new ActionCommand(AddMountslot1_Execute) { IsExecutable = true };
             #endregion

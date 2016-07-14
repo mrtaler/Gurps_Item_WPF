@@ -374,8 +374,17 @@
                                       VerticalAlignment="Top"
                                       DisplayMemberPath="name"
                                       IsSynchronizedWithCurrentItem="True"
-                                      SelectedValue="{Binding AttachLoad.id_Attachmentmount}"
                                       SelectedValuePath="id">
+                                <!--  SelectedValue="{Binding AttachLoad.id_Attachmentmount}"  -->
+                                <ComboBox.SelectedValue>
+                                    <MultiBinding Converter="{addin:MountAttachmentPointConvert}"
+                                                  ConverterParameter="31958"
+                                                  UpdateSourceTrigger="PropertyChanged">
+                                        <Binding Path="AttachSlot" />
+                                        <Binding Path="ItemLoad.uiIndex" />
+                                    </MultiBinding>
+                                </ComboBox.SelectedValue>
+
                                 <ComboBox.ItemsSource>
                                     <MultiBinding Converter="{addin:MountTypeColl}">
                                         <Binding Path="AttachLoad.G_SubAttachClass" />
