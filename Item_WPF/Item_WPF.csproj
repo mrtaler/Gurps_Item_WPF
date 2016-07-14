@@ -919,6 +919,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="addin\DBGen.sql" />
     <Content Include="addin\InsertStoreP.sql" />
     <Content Include="addin\Item1 20160713 2232.sql" />
     <Content Include="addin\ItemModel.edmx.sql" />
