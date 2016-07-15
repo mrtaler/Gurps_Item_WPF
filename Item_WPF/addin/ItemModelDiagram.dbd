@@ -321,7 +321,7 @@
             </Location>
             <Size>
               <Width>281 px</Width>
-              <Height>977 px</Height>
+              <Height>960 px</Height>
             </Size>
             <DbOid>
               <Path>Item1.dbo.Attachment</Path>
@@ -574,15 +574,15 @@
             </Location>
             <Size>
               <Width>189 px</Width>
-              <Height>144 px</Height>
+              <Height>267 px</Height>
             </Size>
             <DbOid>
               <Path>Item1.dbo.AvailableAttachSlot</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
+              <ConstraintsCollapsed>False</ConstraintsCollapsed>
+              <IndexesCollapsed>False</IndexesCollapsed>
               <TriggersCollapsed>True</TriggersCollapsed>
             </Compartments>
           </Model>
@@ -600,7 +600,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>72 px</Y>
+                  <Y>133.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -625,7 +625,7 @@
             <BendPoints>
               <PointD>
                 <X>188.5 px</X>
-                <Y>-138 px</Y>
+                <Y>-76.5 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
@@ -1484,7 +1484,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-2.2002496280038E-05 px</X>
+                  <X>-2.20024960526644E-05 px</X>
                   <Y>-372 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -1890,7 +1890,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>775.25 px</Y>
+                  <Y>762.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -1902,7 +1902,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>605.25 px</Y>
+                  <Y>592.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -2004,7 +2004,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>0 px</X>
-                  <Y>-268.625 px</Y>
+                  <Y>-207.125 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -3375,10 +3375,10 @@
         </Children>
         <ViewPort>
           <ScaleMode>Free</ScaleMode>
-          <Scale>0.56</Scale>
+          <Scale>0.64</Scale>
           <Location>
-            <X>-1462.49998270158 px</X>
-            <Y>-403.571424599509 px</Y>
+            <X>-934.375006810297 px</X>
+            <Y>-378.124999650754 px</Y>
           </Location>
         </ViewPort>
       </Model>

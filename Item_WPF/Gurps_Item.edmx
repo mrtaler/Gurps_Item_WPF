@@ -111,7 +111,6 @@
           <Property Name="ScopeMagMin" Type="int" />
           <Property Name="ScopeMagMax" Type="int" />
           <Property Name="AccAddmax" Type="int" />
-          <Property Name="id_Attachmentmount" Type="int" Nullable="false" />
           <Property Name="ImpVisSights" Type="bit" Nullable="false" />
           <Property Name="BlockIronSight" Type="bit" Nullable="false" />
           <Property Name="Collimator" Type="bit" Nullable="false" />
@@ -1312,10 +1311,6 @@
             <End Role="ITEM" EntitySet="ITEMs" />
             <End Role="ARMOUR" EntitySet="ARMOURs" />
           </AssociationSet>
-          <AssociationSet Name="FK_Attachment_Attachmentmount" Association="item1Model.FK_Attachment_Attachmentmount">
-            <End Role="Attachmentmount" EntitySet="Attachmentmounts" />
-            <End Role="Attachment" EntitySet="Attachments" />
-          </AssociationSet>
           <AssociationSet Name="FK_Attachment_ITEM_uiIndex" Association="item1Model.FK_Attachment_ITEM_uiIndex">
             <End Role="ITEM" EntitySet="ITEMs" />
             <End Role="Attachment" EntitySet="Attachments" />
@@ -1535,7 +1530,6 @@
           <Property Name="ScopeMagMin" Type="Int32" />
           <Property Name="ScopeMagMax" Type="Int32" />
           <Property Name="AccAddmax" Type="Int32" />
-          <Property Name="id_Attachmentmount" Type="Int32" Nullable="false" />
           <Property Name="ImpVisSights" Type="Boolean" Nullable="false" />
           <Property Name="BlockIronSight" Type="Boolean" Nullable="false" />
           <Property Name="Collimator" Type="Boolean" Nullable="false" />
@@ -1554,7 +1548,6 @@
           <Property Name="LaserColor" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="LaserColorEf" Type="Decimal" Precision="4" Scale="2" />
           <Property Name="usedBatType" Type="Int32" />
-          <NavigationProperty Name="Attachmentmount1" Relationship="item1Model.FK_Attachment_Attachmentmount" FromRole="Attachment" ToRole="Attachmentmount" />
           <NavigationProperty Name="ITEM" Relationship="item1Model.FK_Attachment_ITEM_uiIndex" FromRole="Attachment" ToRole="ITEM" />
           <NavigationProperty Name="G_AvAttachClass" Relationship="item1Model.FK_G_AvAttachClass_Attachment" FromRole="Attachment" ToRole="G_AvAttachClass" />
           <NavigationProperty Name="AttachmentClass" Relationship="item1Model.FK_rAttachmentClass" FromRole="Attachment" ToRole="AttachmentClass" />
@@ -1574,7 +1567,6 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="idAttacClass" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Attachments" Relationship="item1Model.FK_Attachment_Attachmentmount" FromRole="Attachmentmount" ToRole="Attachment" />
           <NavigationProperty Name="ATTACHMENTSLOT" Relationship="item1Model.FK_Attachmentmount_NasAttachmentClass1" FromRole="Attachmentmount" ToRole="ATTACHMENTSLOT" />
           <NavigationProperty Name="AvailableAttachSlots" Relationship="item1Model.FK_AVeAttachmentmount" FromRole="Attachmentmount" ToRole="AvailableAttachSlot" />
         </EntityType>
@@ -2099,18 +2091,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Attachment_Attachmentmount">
-          <End Type="item1Model.Attachmentmount" Role="Attachmentmount" Multiplicity="1" />
-          <End Type="item1Model.Attachment" Role="Attachment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Attachmentmount">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Attachment">
-              <PropertyRef Name="id_Attachmentmount" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Attachment_ITEM_uiIndex">
           <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -2565,7 +2545,6 @@
                 <ScalarProperty Name="Collimator" ColumnName="Collimator" />
                 <ScalarProperty Name="BlockIronSight" ColumnName="BlockIronSight" />
                 <ScalarProperty Name="ImpVisSights" ColumnName="ImpVisSights" />
-                <ScalarProperty Name="id_Attachmentmount" ColumnName="id_Attachmentmount" />
                 <ScalarProperty Name="AccAddmax" ColumnName="AccAddmax" />
                 <ScalarProperty Name="ScopeMagMax" ColumnName="ScopeMagMax" />
                 <ScalarProperty Name="ScopeMagMin" ColumnName="ScopeMagMin" />

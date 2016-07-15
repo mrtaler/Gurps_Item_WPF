@@ -579,22 +579,6 @@ namespace Item_WPF
     			}
     		}
     	}
-        private int _id_Attachmentmount;
-    	public int id_Attachmentmount 
-    	{ 
-    		get
-    		{
-    			return _id_Attachmentmount;
-    		} 
-    		set
-    		{
-    			if (_id_Attachmentmount != value)
-    			{
-    				_id_Attachmentmount = value;
-    				OnPropertyChanged("id_Attachmentmount");
-    			}
-    		}
-    	}
         private bool _ImpVisSights;
     	public bool ImpVisSights 
     	{ 
@@ -884,15 +868,6 @@ namespace Item_WPF
     		}
     	}
     
-        private Attachmentmount _Attachmentmount1;
-            public virtual Attachmentmount Attachmentmount1
-            {
-                get { return _Attachmentmount1; }
-                set
-                { if(_Attachmentmount1 != value)
-                    {    _Attachmentmount1 = value;    OnPropertyChanged("Attachmentmount1");   }
-                }
-            } 
         private ITEM _ITEM;
             public virtual ITEM ITEM
             {

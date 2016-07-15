@@ -56,8 +56,19 @@ namespace Item_WPF.MVVM.ViewModels
             #region else if (Parametr=="Attachment")
             else if (Parametr == "Attachment")
             {
-                IttForSort = new ObservableCollection<ItemsForSortModel>(_context.ITEMs.
-                Where(p => p.ItemClass.name == Parametr).Where(p => p.Attachment.Attachmentmount1.id == mount).
+
+                ObservableCollection<ITEM> ITTFORSelect = new ObservableCollection<ITEM>(_context.ITEMs
+                    .Where(p => p.ItemClass.name == Parametr));
+                var q = (from p in _context.AvailableAttachSlots
+                         where p.rAttachmentmount == mount && p.rATTACHMENTSLOT == 31958
+                         select p.ITEM).ToList();
+
+                IttForSort = new ObservableCollection<ItemsForSortModel>(//_context.AvailableAttachSlots.
+                q.
+
+
+                Where(p => p.ItemClass.name== Parametr).
+                //Select(P => P.ITEM).
                 Select(p => new
                 {
                     _uiIndex = p.uiIndex,
@@ -66,7 +77,8 @@ namespace Item_WPF.MVVM.ViewModels
                     _TL1name_TL = p.TL1.name_TL,
                     _LC1Name_LC = p.LC1.Name_LC,
                     _usPrice = p.usPrice
-                })./*AsEnumerable().*/
+                }).
+                /*AsEnumerable().*/
                 Select(an => new ItemsForSortModel
                 {
                     ID = an._uiIndex,

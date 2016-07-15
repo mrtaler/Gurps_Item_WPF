@@ -32,7 +32,6 @@ namespace Item_WPF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Attachmentmount()
         {
-            this.Attachments = new HashSet<Attachment>();
             this.AvailableAttachSlots = new HashSet<AvailableAttachSlot>();
         }
     
@@ -85,16 +84,6 @@ namespace Item_WPF
     		}
     	}
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<Attachment> _Attachments;
-            public virtual ICollection<Attachment> Attachments
-            {
-                get { return _Attachments; }
-                set
-                { if(_Attachments != value)
-                    {    _Attachments = value;    OnPropertyChanged("Attachments");   }
-                }
-            } 
         private ATTACHMENTSLOT _ATTACHMENTSLOT;
             public virtual ATTACHMENTSLOT ATTACHMENTSLOT
             {
