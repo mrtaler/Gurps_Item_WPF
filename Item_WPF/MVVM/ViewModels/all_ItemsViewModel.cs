@@ -70,7 +70,7 @@ namespace Item_WPF.MVVM.ViewModels
             Owner = owner;
             _context = new item1Entities();
             string Param = param as string;
-            SelectedItClassforSort = _context.ItemClasses.FirstOrDefault(p => p.name.Contains(Param)).id;
+            //SelectedItClassforSort = _context.ItemClasses.FirstOrDefault(p => p.name.Contains(Param)).id;
             ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClasses);
 
             Refresh = new DelegateCommand(Refreshnew) ;
@@ -100,8 +100,8 @@ namespace Item_WPF.MVVM.ViewModels
                 // if (SelectedItemForWork.used == false)// созаем сущьность для сравнения
                 //  {
                 int att = _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Att")).id;
-                int gun = _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Gun")).id;
-                if (SelectedItemForWork.usItemClass == gun)
+                int gun = _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Weapon")).id;
+                if (SelectedItemForWork.ItemSubClass.ItemClass.id == gun)
                 {
                     SelectedItemForWork.used = true;
                     SelectedItemForWork.dt = System.DateTime.UtcNow;

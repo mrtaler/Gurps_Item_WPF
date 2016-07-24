@@ -32,7 +32,7 @@ namespace Item_WPF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ItemClass()
         {
-            this.ITEMs = new HashSet<ITEM>();
+            this.ItemSubClasses = new HashSet<ItemSubClass>();
         }
     
         private int _id;
@@ -69,13 +69,13 @@ namespace Item_WPF
     	}
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<ITEM> _ITEMs;
-            public virtual ICollection<ITEM> ITEMs
+        private ICollection<ItemSubClass> _ItemSubClasses;
+            public virtual ICollection<ItemSubClass> ItemSubClasses
             {
-                get { return _ITEMs; }
+                get { return _ItemSubClasses; }
                 set
-                { if(_ITEMs != value)
-                    {    _ITEMs = value;    OnPropertyChanged("ITEMs");   }
+                { if(_ItemSubClasses != value)
+                    {    _ItemSubClasses = value;    OnPropertyChanged("ItemSubClasses");   }
                 }
             } 
     }

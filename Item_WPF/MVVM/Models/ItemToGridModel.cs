@@ -29,7 +29,7 @@ namespace Item_WPF.MVVM.Models
 
         public ItemToGridModel(ITEM itt)
         {
-            if (itt.ItemClass.name == "Gun")
+            if (itt.ItemSubClass.ItemClass.name == "Weapon")
             {
 
                 Name = itt.szItemName;
@@ -93,7 +93,7 @@ namespace Item_WPF.MVVM.Models
                 Weigth = Convert.ToDouble(itt.ubWeight) + "/";// + itt.WEAPON.Shots * Convert.ToDouble(itt.AMMO.WPS);
                 //ROF
                 Rof = itt.WEAPON.ROF.ToString();
-                if (itt.WEAPON.WeaponType.name == "Shotgun") Rof = itt.WEAPON.ROF.ToString() + "x" + itt.WEAPON.ROF_for_Sh.ToString();
+                if (itt.ItemSubClass.NameSub == "Shotgun") Rof = itt.WEAPON.ROF.ToString() + "x" + itt.WEAPON.ROF_for_Sh.ToString();
                 if (itt.WEAPON.Full_auto) Rof = itt.WEAPON.ROF.ToString() + "!";
                 
                 Shots = itt.WEAPON.Shots.ToString();
@@ -111,7 +111,7 @@ namespace Item_WPF.MVVM.Models
                 Cost = "$" + Convert.ToDouble(itt.usPrice) + "/$" + itt.WEAPON.Shots;// * Convert.ToDouble(itt.WEAPON.AMMO.CPS);
                 Lc = itt.LC1.Name_LC;
                 //Type
-                Type = itt.ItemClass.name;
+                Type = itt.ItemSubClass.NameSub;
             }
         }
 

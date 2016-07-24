@@ -67,38 +67,6 @@ namespace Item_WPF
     			}
     		}
     	}
-        private int _ubWeaponClass;
-    	public int ubWeaponClass 
-    	{ 
-    		get
-    		{
-    			return _ubWeaponClass;
-    		} 
-    		set
-    		{
-    			if (_ubWeaponClass != value)
-    			{
-    				_ubWeaponClass = value;
-    				OnPropertyChanged("ubWeaponClass");
-    			}
-    		}
-    	}
-        private int _ubWeaponType;
-    	public int ubWeaponType 
-    	{ 
-    		get
-    		{
-    			return _ubWeaponType;
-    		} 
-    		set
-    		{
-    			if (_ubWeaponType != value)
-    			{
-    				_ubWeaponType = value;
-    				OnPropertyChanged("ubWeaponType");
-    			}
-    		}
-    	}
         private int _DefACC;
     	public int DefACC 
     	{ 
@@ -533,15 +501,6 @@ namespace Item_WPF
                 set
                 { if(_WeaponDamages != value)
                     {    _WeaponDamages = value;    OnPropertyChanged("WeaponDamages");   }
-                }
-            } 
-        private WeaponType _WeaponType;
-            public virtual WeaponType WeaponType
-            {
-                get { return _WeaponType; }
-                set
-                { if(_WeaponType != value)
-                    {    _WeaponType = value;    OnPropertyChanged("WeaponType");   }
                 }
             } 
     }

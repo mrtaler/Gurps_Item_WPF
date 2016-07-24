@@ -34,19 +34,19 @@ namespace Item_WPF.MVVM.ViewModels
             ITEM _newItem = _context.ITEMs.First(p => p.uiIndex == _idRetuns);
             _newItem.dt = System.DateTime.UtcNow;
             // _newItem.used = true;
-            if (_newItem.ItemClass.name == "Gun"
-                                || _newItem.ItemClass.name == "Knife"
-                                || _newItem.ItemClass.name == "Throwing Knife"
-                                || _newItem.ItemClass.name == "Launcher"
-                                || _newItem.ItemClass.name == "Thrown Weapon"
-                                || _newItem.ItemClass.name == "Blunt Weapon")
+            if (_newItem.ItemSubClass.ItemClass.name == "Weapon"
+                                || _newItem.ItemSubClass.ItemClass.name == "Knife"
+                                || _newItem.ItemSubClass.ItemClass.name == "Throwing Knife"
+                                || _newItem.ItemSubClass.ItemClass.name == "Launcher"
+                                || _newItem.ItemSubClass.ItemClass.name == "Thrown Weapon"
+                                || _newItem.ItemSubClass.ItemClass.name == "Blunt Weapon")
             {
 
                 WeaponEditView WeapView = new WeaponEditView(_newItem);
                 WeapView.ShowDialog();
             }
 
-            else if (_newItem.ItemClass.name == "Attachment")
+            else if (_newItem.ItemSubClass.ItemClass.name == "Attachment")
             {
                 AttacmentEditView attachNr = new AttacmentEditView(_newItem);
                 attachNr.ShowDialog();

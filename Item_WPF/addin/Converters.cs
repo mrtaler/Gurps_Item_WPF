@@ -93,11 +93,13 @@ namespace Item_WPF.addin
             // I added this because I kept getting DependecyProperty.UnsetValue 
             // Passed in as the program initializes
 
-            ObservableCollection<WeaponType> weaponTypescCollection = (ObservableCollection<WeaponType>)values[0];
+            ObservableCollection<ItemSubClass> weaponTypescCollection = (ObservableCollection<ItemSubClass>)values[0];
             int findClass = (int)values[1];
-            return new ObservableCollection<WeaponType>(
+            ObservableCollection < ItemSubClass > ret= new ObservableCollection<ItemSubClass>(
                        weaponTypescCollection.
-                           Where(p => p.WeaponClass.id == findClass));
+                           Where(p => p.idGurpsSubClass == findClass));
+
+            return ret; 
         }
     }
     #endregion
@@ -230,8 +232,8 @@ namespace Item_WPF.addin
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            WeaponType WT = value as WeaponType;
-            if (WT != null && WT.name == "Shotgun")
+            ItemSubClass WT = value as ItemSubClass;
+            if (WT != null && WT.NameSub == "Shotgun")
                 return Visibility.Visible;
             else return Visibility.Hidden;
         }
@@ -548,7 +550,7 @@ namespace Item_WPF.addin
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             // Все проверки для краткости выкинул
-            return (string)value == "Gun" ?
+            return (string)value == "Weapon" ?
                 new SolidColorBrush(Colors.LightGreen)
                 : new SolidColorBrush(Colors.White);
         }

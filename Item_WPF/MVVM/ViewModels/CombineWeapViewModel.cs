@@ -75,7 +75,7 @@ namespace Item_WPF.MVVM.ViewModels
             Weapon_Item_Image = null;
 
             SelectItemsView SIWvindow = new SelectItemsView();
-            SelectItemsViewModel _SIVM = new SelectItemsViewModel("Gun", null, SIWvindow);
+            SelectItemsViewModel _SIVM = new SelectItemsViewModel("Weapon", null, SIWvindow);
 
             SIWvindow.DataContext = _SIVM;
             SIWvindow.ShowDialog();

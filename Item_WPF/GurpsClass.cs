@@ -12,7 +12,7 @@ namespace Item_WPF
     using System;
     using System.Collections.Generic;
     
-    public partial class WeaponClass : System.ComponentModel.INotifyPropertyChanged
+    public partial class GurpsClass : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -30,9 +30,9 @@ namespace Item_WPF
      #endregion
      
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public WeaponClass()
+        public GurpsClass()
         {
-            this.WeaponTypes = new HashSet<WeaponType>();
+            this.ItemSubClasses = new HashSet<ItemSubClass>();
         }
     
         private int _id;
@@ -69,13 +69,13 @@ namespace Item_WPF
     	}
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<WeaponType> _WeaponTypes;
-            public virtual ICollection<WeaponType> WeaponTypes
+        private ICollection<ItemSubClass> _ItemSubClasses;
+            public virtual ICollection<ItemSubClass> ItemSubClasses
             {
-                get { return _WeaponTypes; }
+                get { return _ItemSubClasses; }
                 set
-                { if(_WeaponTypes != value)
-                    {    _WeaponTypes = value;    OnPropertyChanged("WeaponTypes");   }
+                { if(_ItemSubClasses != value)
+                    {    _ItemSubClasses = value;    OnPropertyChanged("ItemSubClasses");   }
                 }
             } 
     }

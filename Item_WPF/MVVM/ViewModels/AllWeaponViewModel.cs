@@ -18,7 +18,7 @@ namespace Item_WPF.MVVM.ViewModels
         {
             _context = new item1Entities();
             ItemToGridColl = new ObservableCollection<ItemToGridModel>();
-            Itt = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.ItemClass.name == "Gun"));
+            Itt = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.ItemSubClass.ItemClass.name == "Weapon"));
             foreach (var item in Itt )
 
             {

@@ -30,7 +30,7 @@
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
                 Command="{Binding CSelectWeapon}"
-                CommandParameter="Gun"
+                CommandParameter="Weapon"
                 Content="Select Weapon" />
         <Label x:Name="Label"
                Margin="10,10,0,0"
@@ -107,12 +107,12 @@
                 Margin="0,35,10,0"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
-                Command="{Binding CScopeSelect}" 
+                Command="{Binding CScopeSelect}"
                 Content="Select Scope" />
         <Button x:Name="DelButton"
                 Width="75"
                 Margin="0,312,10,0"
-                                 HorizontalAlignment="Right"
+                HorizontalAlignment="Right"
                 VerticalAlignment="Top"
                 Content="Del" />
         <Button x:Name="LaserSelectButton"
@@ -192,10 +192,11 @@
                HorizontalAlignment="Left"
                VerticalAlignment="Top" />
         <Button x:Name="SavedButton"
-                Width="74" Command="{Binding CAmmoSelect}"
+                Width="74"
                 Margin="0,10,110,0"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
+                Command="{Binding CAmmoSelect}"
                 Content="AmmoSel" />
         <Button x:Name="SaveButton"
                 Width="75"

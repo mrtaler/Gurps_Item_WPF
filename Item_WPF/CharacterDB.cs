@@ -45,18 +45,18 @@ namespace Item_WPF
     			}
     		}
     	}
-        private string _Name;
+        private string _name;
     	public string Name 
     	{ 
     		get
     		{
-    			return _Name;
+    			return _name;
     		} 
     		set
     		{
-    			if (_Name != value)
+    			if (_name != value)
     			{
-    				_Name = value;
+    				_name = value;
     				OnPropertyChanged("Name");
     			}
     		}

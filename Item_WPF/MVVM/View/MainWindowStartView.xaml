@@ -23,7 +23,7 @@
                                          CommandParameter="All"
                                          Label="{x:Static p:Resources.RibbonButtonAllItems}" />
                     <ribbon:RibbonButton Command="{Binding ShowAllItemsCommand}"
-                                         CommandParameter="Gun"
+                                         CommandParameter="Weapon"
                                          Label="{x:Static p:Resources.RibbonButtonWeaponItems}" />
                     <ribbon:RibbonButton Command="{Binding ShowAllItemsCommand}"
                                          CommandParameter="Att"

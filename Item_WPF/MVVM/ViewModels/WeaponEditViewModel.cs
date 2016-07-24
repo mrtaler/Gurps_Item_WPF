@@ -23,8 +23,21 @@ namespace Item_WPF.MVVM.ViewModels
         public int selInd { get; set; }
         public ObservableCollection<TL> TlCollection { get; set; }
         public ObservableCollection<LC> LccCollection { get; set; }
-        public ObservableCollection<WeaponClass> WeaponClasscCollection { get; set; }
-        public ObservableCollection<WeaponType> WeaponTypescCollection { get; set; }
+        public ObservableCollection<GurpsClass> WeaponClasscCollection
+        {
+            get
+            {
+                return new ObservableCollection<GurpsClass>(_context.GurpsClasses);
+            }
+        }
+        public int WeaponClassReed { get; set; }
+        public ObservableCollection<ItemSubClass> WeaponTypescCollection
+        {
+            get
+            {
+                return new ObservableCollection<ItemSubClass>(_context.ItemSubClasses);
+            }
+        }
         public ObservableCollection<TypeOfDamage> TypeOfDamagesCollection { get; set; }
         //private ObservableCollection<AMMO> _AmmoscCollection;
         public ObservableCollection<Caliber> CalibersCollection { get; set; }
@@ -85,13 +98,15 @@ namespace Item_WPF.MVVM.ViewModels
             ItemLoad = _context.ITEMs.Find(itemselect.uiIndex);
             WeaponLoad = ItemLoad.WEAPON;
 
+           
+
             CalibersCollection = new ObservableCollection<Caliber>(_context.Calibers);
 
             TlCollection = new ObservableCollection<TL>(_context.TLs);
             LccCollection = new ObservableCollection<LC>(_context.LCs);
 
-            WeaponClasscCollection = new ObservableCollection<WeaponClass>(_context.WeaponClasses);
-            WeaponTypescCollection = new ObservableCollection<WeaponType>(_context.WeaponTypes);
+            WeaponClassReed = ItemLoad.ItemSubClass.GurpsClass.id;
+
             TypeOfDamagesCollection = new ObservableCollection<TypeOfDamage>(_context.TypeOfDamages);
 
             WeaponDamageColl = new ObservableCollection<WeaponDamage>(_context.WeaponDamages.Where((p => p.idWeapon == WeaponLoad.uiIndex)));
@@ -262,9 +277,9 @@ namespace Item_WPF.MVVM.ViewModels
         public DelegateCommand Save { get; set; }
         private void SaveChanges(object parameter)
         {
-            var Nwe = (from p in _context.WeaponTypes
-                       where p.id == WeaponLoad.ubWeaponType
-                       select p.name).First();
+            var Nwe = (from p in _context.ItemSubClasses
+                       where p.id == ItemLoad.usItemClass
+                       select p.NameSub).First();
             if (Nwe != "Shotgun")
                 WeaponLoad.ROF_for_Sh = 0;
             if (!WeaponLoad.CutOff_shots)

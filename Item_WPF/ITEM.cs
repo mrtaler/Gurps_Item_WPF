@@ -34,7 +34,6 @@ namespace Item_WPF
         {
             this.AvailableAttachSlots = new HashSet<AvailableAttachSlot>();
             this.BoxItems = new HashSet<BoxItem>();
-            this.AMMOes = new HashSet<AMMO>();
         }
     
         private int _uiIndex;
@@ -1006,13 +1005,13 @@ namespace Item_WPF
                     {    _Cloth = value;    OnPropertyChanged("Cloth");   }
                 }
             } 
-        private DrugType _DrugType1;
-            public virtual DrugType DrugType1
+        private Drug _Drug;
+            public virtual Drug Drug
             {
-                get { return _DrugType1; }
+                get { return _Drug; }
                 set
-                { if(_DrugType1 != value)
-                    {    _DrugType1 = value;    OnPropertyChanged("DrugType1");   }
+                { if(_Drug != value)
+                    {    _Drug = value;    OnPropertyChanged("Drug");   }
                 }
             } 
         private EXPLOSIVE _EXPLOSIVE;
@@ -1033,23 +1032,13 @@ namespace Item_WPF
                     {    _FOOD = value;    OnPropertyChanged("FOOD");   }
                 }
             } 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<AMMO> _AMMOes;
-            public virtual ICollection<AMMO> AMMOes
+        private ItemSubClass _ItemSubClass;
+            public virtual ItemSubClass ItemSubClass
             {
-                get { return _AMMOes; }
+                get { return _ItemSubClass; }
                 set
-                { if(_AMMOes != value)
-                    {    _AMMOes = value;    OnPropertyChanged("AMMOes");   }
-                }
-            } 
-        private ItemClass _ItemClass;
-            public virtual ItemClass ItemClass
-            {
-                get { return _ItemClass; }
-                set
-                { if(_ItemClass != value)
-                    {    _ItemClass = value;    OnPropertyChanged("ItemClass");   }
+                { if(_ItemSubClass != value)
+                    {    _ItemSubClass = value;    OnPropertyChanged("ItemSubClass");   }
                 }
             } 
         private LC _LC1;

@@ -61,5 +61,31 @@ namespace Item_WPF
     			}
     		}
     	}
+        private Nullable<int> _IdDrugType;
+    	public Nullable<int> IdDrugType 
+    	{ 
+    		get
+    		{
+    			return _IdDrugType;
+    		} 
+    		set
+    		{
+    			if (_IdDrugType != value)
+    			{
+    				_IdDrugType = value;
+    				OnPropertyChanged("IdDrugType");
+    			}
+    		}
+    	}
+    
+        private ITEM _ITEM;
+            public virtual ITEM ITEM
+            {
+                get { return _ITEM; }
+                set
+                { if(_ITEM != value)
+                    {    _ITEM = value;    OnPropertyChanged("ITEM");   }
+                }
+            } 
     }
 }

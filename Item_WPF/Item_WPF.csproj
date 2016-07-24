@@ -100,9 +100,6 @@
     <Compile Include="addin\Converters.cs" />
     <Compile Include="addin\ViewModelCommand.cs" />
     <Compile Include="addin\RelayCommand.cs" />
-    <Compile Include="AMMO.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
     <Compile Include="AMMOUPGRATE.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
@@ -112,22 +109,13 @@
     <Compile Include="ARMOUR.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="ArmourClass.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
     <Compile Include="Attachment.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AttachmentClass.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="Attachmentmount.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ATTACHMENTSLOT.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AttachmentSystem.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="AvailableAttachSlot.cs">
@@ -152,12 +140,6 @@
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="Drug.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DrugType.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ExplosionType.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="EXPLOSIVE.cs">
@@ -190,6 +172,9 @@
     <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\RowItemRenderer.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\RowPostProcessor.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\RowUndo.cs" />
+    <Compile Include="GurpsClass.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
     <Compile Include="G_AttachClass.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
@@ -205,10 +190,10 @@
     <Compile Include="ItemClass.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="LaserColorEf.cs">
+    <Compile Include="ItemSubClass.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="LBEClass.cs">
+    <Compile Include="LaserColorEf.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="LC.cs">
@@ -358,13 +343,7 @@
     <Compile Include="WeaponAttackType.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="WeaponClass.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
     <Compile Include="WeaponDamage.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="WeaponType.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Page Include="litForms\character.xaml">
@@ -508,7 +487,6 @@
       <LastGenOutput>Gurps_Item.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="addin\id" />
-    <None Include="addin\Item1.backup" />
     <None Include="addin\ItemModelDiagram.dbd" />
     <None Include="addin\Диаграмма1.dbd" />
     <None Include="addin\Копия Fall_weap.xlsx" />
@@ -921,7 +899,7 @@
   <ItemGroup>
     <Content Include="addin\DBGen.sql" />
     <Content Include="addin\InsertStoreP.sql" />
-    <Content Include="addin\Item1 20160714 2151.sql" />
+    <Content Include="addin\Item1.sql" />
     <Content Include="addin\ItemModel.edmx.sql" />
     <Content Include="addin\SQL.sql" />
     <Content Include="GCS\Library\Output Templates\template.html" />
