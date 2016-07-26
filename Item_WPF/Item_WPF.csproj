@@ -98,6 +98,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="addin\Converters.cs" />
+    <Compile Include="addin\Converters\CostDeciminalConverter.cs" />
+    <Compile Include="addin\Converters\DeciminalConverterString.cs" />
+    <Compile Include="addin\Converters\ImageConverter.cs" />
     <Compile Include="addin\ViewModelCommand.cs" />
     <Compile Include="addin\RelayCommand.cs" />
     <Compile Include="AMMOUPGRATE.cs">
@@ -182,6 +185,9 @@
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="G_SubAttachClass.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryOfChar.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ITEM.cs">
@@ -487,7 +493,7 @@
       <LastGenOutput>Gurps_Item.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="addin\id" />
-    <None Include="addin\ItemModelDiagram.dbd" />
+    <None Include="addin\oldDB\ItemModelDiagram.dbd" />
     <None Include="addin\Диаграмма1.dbd" />
     <None Include="addin\Копия Fall_weap.xlsx" />
     <None Include="ClassDiagram1.cd" />
@@ -897,11 +903,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="addin\DBGen.sql" />
-    <Content Include="addin\InsertStoreP.sql" />
-    <Content Include="addin\Item1.sql" />
-    <Content Include="addin\ItemModel.edmx.sql" />
-    <Content Include="addin\SQL.sql" />
+    <Content Include="addin\02_DatabaseInitData.sql" />
+    <Content Include="addin\oldDB\InsertStoreP.sql" />
+    <Content Include="addin\01_DatabaseInitStructure.sql" />
+    <Content Include="addin\oldDB\ItemModel.edmx.sql" />
+    <Content Include="addin\oldDB\SQL.sql" />
     <Content Include="GCS\Library\Output Templates\template.html" />
     <Compile Include="GCS\src\com\trollworks\gcs\app\AboutPanel.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\app\GCS.cs" />
@@ -1176,6 +1182,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

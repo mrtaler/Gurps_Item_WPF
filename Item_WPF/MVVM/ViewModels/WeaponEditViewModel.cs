@@ -98,9 +98,9 @@ namespace Item_WPF.MVVM.ViewModels
             ItemLoad = _context.ITEMs.Find(itemselect.uiIndex);
             WeaponLoad = ItemLoad.WEAPON;
 
-           
+            
 
-            CalibersCollection = new ObservableCollection<Caliber>(_context.Calibers);
+             CalibersCollection = new ObservableCollection<Caliber>(_context.Calibers);
 
             TlCollection = new ObservableCollection<TL>(_context.TLs);
             LccCollection = new ObservableCollection<LC>(_context.LCs);

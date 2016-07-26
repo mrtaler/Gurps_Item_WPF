@@ -5,6 +5,32 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Хранилище item1Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CharacterDB">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="80" />
+          <Property Name="StrengthPoints" Type="int" Nullable="false" />
+          <Property Name="DexterityPoints" Type="int" Nullable="false" />
+          <Property Name="IntelligencePoints" Type="int" Nullable="false" />
+          <Property Name="HealthPoints" Type="int" Nullable="false" />
+          <Property Name="MaxHPPoints" Type="int" Nullable="false" />
+          <Property Name="MaxFPPoints" Type="int" Nullable="false" />
+          <Property Name="PerceptionPoints" Type="int" Nullable="false" />
+          <Property Name="WillpowerPoints" Type="int" Nullable="false" />
+          <Property Name="BasicSpeedPoints" Type="real" Nullable="false" />
+          <Property Name="BasicMovePoints" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InventoryOfChar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="IdCharacter" Type="int" Nullable="false" />
+          <Property Name="IdItem" Type="int" Nullable="false" />
+          <Property Name="Count" Type="bigint" Nullable="false" />
+        </EntityType>
         <EntityType Name="AMMOUPGRATES">
           <Key>
             <PropertyRef Name="id" />
@@ -167,23 +193,6 @@
           <Property Name="Class_of_Caliber" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Dim_of_bullet_SI" Type="decimal" Precision="8" Scale="4" />
           <Property Name="Dim_of_bullet_US" Type="decimal" Precision="8" Scale="4" />
-        </EntityType>
-        <EntityType Name="CharacterDB">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar" MaxLength="80" />
-          <Property Name="StrengthPoints" Type="int" Nullable="false" />
-          <Property Name="DexterityPoints" Type="int" Nullable="false" />
-          <Property Name="IntelligencePoints" Type="int" Nullable="false" />
-          <Property Name="HealthPoints" Type="int" Nullable="false" />
-          <Property Name="MaxHPPoints" Type="int" Nullable="false" />
-          <Property Name="MaxFPPoints" Type="int" Nullable="false" />
-          <Property Name="PerceptionPoints" Type="int" Nullable="false" />
-          <Property Name="WillpowerPoints" Type="int" Nullable="false" />
-          <Property Name="BasicSpeedPoints" Type="real" Nullable="false" />
-          <Property Name="BasicMovePoints" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Clothes">
           <Key>
@@ -701,6 +710,34 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_InventoryOfChar_CharacterDB_id">
+          <End Role="CharacterDB" Type="Self.CharacterDB" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="InventoryOfChar" Type="Self.InventoryOfChar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterDB">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="InventoryOfChar">
+              <PropertyRef Name="IdCharacter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InventoryOfChar_ITEM_uiIndex">
+          <End Role="ITEM" Type="Self.ITEM" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="InventoryOfChar" Type="Self.InventoryOfChar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ITEM">
+              <PropertyRef Name="uiIndex" />
+            </Principal>
+            <Dependent Role="InventoryOfChar">
+              <PropertyRef Name="IdItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ITEM_Clothes">
           <End Role="Clothes" Type="Self.Clothes" Multiplicity="1" />
           <End Role="ITEM" Type="Self.ITEM" Multiplicity="*" />
@@ -915,6 +952,8 @@
           <Parameter Name="Returns" Type="int" Mode="InOut" />
         </Function>
         <EntityContainer Name="Хранилище item1ModelContainer">
+          <EntitySet Name="CharacterDB" EntityType="Self.CharacterDB" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="InventoryOfChar" EntityType="Self.InventoryOfChar" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="AMMOUPGRATES" EntityType="Self.AMMOUPGRATES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AnyBoxNameType" EntityType="Self.AnyBoxNameType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ARMOUR" EntityType="Self.ARMOUR" Schema="dbo" store:Type="Tables" />
@@ -925,7 +964,6 @@
           <EntitySet Name="Battery" EntityType="Self.Battery" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BoxItem" EntityType="Self.BoxItem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Caliber" EntityType="Self.Caliber" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CharacterDB" EntityType="Self.CharacterDB" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clothes" EntityType="Self.Clothes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CombineWeap" EntityType="Self.CombineWeap" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Drug" EntityType="Self.Drug" Schema="dbo" store:Type="Tables" />
@@ -1014,6 +1052,14 @@
           <AssociationSet Name="FK_G_SubAttachClass_G_AttachClass" Association="Self.FK_G_SubAttachClass_G_AttachClass">
             <End Role="G_AttachClass" EntitySet="G_AttachClass" />
             <End Role="G_SubAttachClass" EntitySet="G_SubAttachClass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InventoryOfChar_CharacterDB_id" Association="Self.FK_InventoryOfChar_CharacterDB_id">
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+            <End Role="InventoryOfChar" EntitySet="InventoryOfChar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InventoryOfChar_ITEM_uiIndex" Association="Self.FK_InventoryOfChar_ITEM_uiIndex">
+            <End Role="ITEM" EntitySet="ITEM" />
+            <End Role="InventoryOfChar" EntitySet="InventoryOfChar" />
           </AssociationSet>
           <AssociationSet Name="FK_ITEM_Clothes" Association="Self.FK_ITEM_Clothes">
             <End Role="Clothes" EntitySet="Clothes" />
@@ -1124,6 +1170,8 @@
             <Parameter Name="price" Mode="In" Type="Decimal" />
             <Parameter Name="sClass" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="CharacterDBs" EntityType="item1Model.CharacterDB" />
+          <EntitySet Name="InventoryOfChars" EntityType="item1Model.InventoryOfChar" />
           <EntitySet Name="AMMOUPGRATES" EntityType="item1Model.AMMOUPGRATE" />
           <EntitySet Name="AnyBoxNameTypes" EntityType="item1Model.AnyBoxNameType" />
           <EntitySet Name="ARMOURs" EntityType="item1Model.ARMOUR" />
@@ -1134,7 +1182,6 @@
           <EntitySet Name="Batteries" EntityType="item1Model.Battery" />
           <EntitySet Name="BoxItems" EntityType="item1Model.BoxItem" />
           <EntitySet Name="Calibers" EntityType="item1Model.Caliber" />
-          <EntitySet Name="CharacterDBs" EntityType="item1Model.CharacterDB" />
           <EntitySet Name="Clothes" EntityType="item1Model.Cloth" />
           <EntitySet Name="CombineWeaps" EntityType="item1Model.CombineWeap" />
           <EntitySet Name="Drugs" EntityType="item1Model.Drug" />
@@ -1156,6 +1203,14 @@
           <EntitySet Name="WEAPONs" EntityType="item1Model.WEAPON" />
           <EntitySet Name="WeaponAttackTypes" EntityType="item1Model.WeaponAttackType" />
           <EntitySet Name="WeaponDamages" EntityType="item1Model.WeaponDamage" />
+          <AssociationSet Name="FK_InventoryOfChar_CharacterDB_id" Association="item1Model.FK_InventoryOfChar_CharacterDB_id">
+            <End Role="CharacterDB" EntitySet="CharacterDBs" />
+            <End Role="InventoryOfChar" EntitySet="InventoryOfChars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InventoryOfChar_ITEM_uiIndex" Association="item1Model.FK_InventoryOfChar_ITEM_uiIndex">
+            <End Role="ITEM" EntitySet="ITEMs" />
+            <End Role="InventoryOfChar" EntitySet="InventoryOfChars" />
+          </AssociationSet>
           <AssociationSet Name="FK_AnyBoxNameType_AnyBoxNameType_id" Association="item1Model.FK_AnyBoxNameType_AnyBoxNameType_id">
             <End Role="AnyBoxNameType" EntitySet="AnyBoxNameTypes" />
             <End Role="AnyBoxNameType1" EntitySet="AnyBoxNameTypes" />
@@ -1277,6 +1332,35 @@
             <End Role="WeaponDamage" EntitySet="WeaponDamages" />
           </AssociationSet>
           </EntityContainer>
+        <EntityType Name="CharacterDB">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="StrengthPoints" Type="Int32" Nullable="false" />
+          <Property Name="DexterityPoints" Type="Int32" Nullable="false" />
+          <Property Name="IntelligencePoints" Type="Int32" Nullable="false" />
+          <Property Name="HealthPoints" Type="Int32" Nullable="false" />
+          <Property Name="MaxHPPoints" Type="Int32" Nullable="false" />
+          <Property Name="MaxFPPoints" Type="Int32" Nullable="false" />
+          <Property Name="PerceptionPoints" Type="Int32" Nullable="false" />
+          <Property Name="WillpowerPoints" Type="Int32" Nullable="false" />
+          <Property Name="BasicSpeedPoints" Type="Single" Nullable="false" />
+          <Property Name="BasicMovePoints" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="InventoryOfChars" Relationship="item1Model.FK_InventoryOfChar_CharacterDB_id" FromRole="CharacterDB" ToRole="InventoryOfChar" />
+        </EntityType>
+        <EntityType Name="InventoryOfChar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="IdCharacter" Type="Int32" Nullable="false" />
+          <Property Name="IdItem" Type="Int32" Nullable="false" />
+          <Property Name="Count" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="CharacterDB" Relationship="item1Model.FK_InventoryOfChar_CharacterDB_id" FromRole="InventoryOfChar" ToRole="CharacterDB" />
+          <NavigationProperty Name="ITEM" Relationship="item1Model.FK_InventoryOfChar_ITEM_uiIndex" FromRole="InventoryOfChar" ToRole="ITEM" />
+        </EntityType>
         <EntityType Name="AMMOUPGRATE">
           <Key>
             <PropertyRef Name="id" />
@@ -1458,23 +1542,6 @@
           <Property Name="Dim_of_bullet_US" Type="Decimal" Precision="8" Scale="4" />
           <NavigationProperty Name="ITEMs" Relationship="item1Model.FK_Calibre" FromRole="Caliber" ToRole="ITEM" />
         </EntityType>
-        <EntityType Name="CharacterDB">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-          <Property Name="StrengthPoints" Type="Int32" Nullable="false" />
-          <Property Name="DexterityPoints" Type="Int32" Nullable="false" />
-          <Property Name="IntelligencePoints" Type="Int32" Nullable="false" />
-          <Property Name="HealthPoints" Type="Int32" Nullable="false" />
-          <Property Name="MaxHPPoints" Type="Int32" Nullable="false" />
-          <Property Name="MaxFPPoints" Type="Int32" Nullable="false" />
-          <Property Name="PerceptionPoints" Type="Int32" Nullable="false" />
-          <Property Name="WillpowerPoints" Type="Int32" Nullable="false" />
-          <Property Name="BasicSpeedPoints" Type="Single" Nullable="false" />
-          <Property Name="BasicMovePoints" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityType Name="Cloth">
           <Key>
             <PropertyRef Name="id" />
@@ -1647,6 +1714,7 @@
           <Property Name="dt" Type="DateTime" Precision="3" />
           <Property Name="Count_of_Bat" Type="Int32" Nullable="false" />
           <Property Name="Works_on_Bat" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="InventoryOfChars" Relationship="item1Model.FK_InventoryOfChar_ITEM_uiIndex" FromRole="ITEM" ToRole="InventoryOfChar" />
           <NavigationProperty Name="ARMOUR" Relationship="item1Model.FK_ARMOUR_ITEM_uiIndex" FromRole="ITEM" ToRole="ARMOUR" />
           <NavigationProperty Name="Attachment" Relationship="item1Model.FK_Attachment_ITEM_uiIndex" FromRole="ITEM" ToRole="Attachment" />
           <NavigationProperty Name="AvailableAttachSlots" Relationship="item1Model.FK_AvailableAttachSlot_ITEM_uiIndex" FromRole="ITEM" ToRole="AvailableAttachSlot" />
@@ -1817,6 +1885,34 @@
           <NavigationProperty Name="WEAPON" Relationship="item1Model.FK_WeaponDamage_WEAPON_uiIndex" FromRole="WeaponDamage" ToRole="WEAPON" />
           <NavigationProperty Name="WeaponAttackType" Relationship="item1Model.FK_WeaponDamage_WeaponAttackType_id" FromRole="WeaponDamage" ToRole="WeaponAttackType" />
         </EntityType>
+        <Association Name="FK_InventoryOfChar_CharacterDB_id">
+          <End Type="item1Model.CharacterDB" Role="CharacterDB" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.InventoryOfChar" Role="InventoryOfChar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterDB">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="InventoryOfChar">
+              <PropertyRef Name="IdCharacter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InventoryOfChar_ITEM_uiIndex">
+          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.InventoryOfChar" Role="InventoryOfChar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ITEM">
+              <PropertyRef Name="uiIndex" />
+            </Principal>
+            <Dependent Role="InventoryOfChar">
+              <PropertyRef Name="IdItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_AnyBoxNameType_AnyBoxNameType_id">
           <End Type="item1Model.AnyBoxNameType" Role="AnyBoxNameType" Multiplicity="0..1" />
           <End Type="item1Model.AnyBoxNameType" Role="AnyBoxNameType1" Multiplicity="*" />
@@ -2205,6 +2301,34 @@
           <FunctionImportMapping FunctionImportName="NEW_ITEM" FunctionName="Хранилище item1Model.NEW_ITEM" />
           <FunctionImportMapping FunctionImportName="NEW_ITEMWeap" FunctionName="Хранилище item1Model.NEW_ITEMWeap" />
           <FunctionImportMapping FunctionImportName="NEW_ITEM_Ammo" FunctionName="Хранилище item1Model.NEW_ITEM_Ammo" />
+          <EntitySetMapping Name="CharacterDBs">
+            <EntityTypeMapping TypeName="item1Model.CharacterDB">
+              <MappingFragment StoreEntitySet="CharacterDB">
+                <ScalarProperty Name="BasicMovePoints" ColumnName="BasicMovePoints" />
+                <ScalarProperty Name="BasicSpeedPoints" ColumnName="BasicSpeedPoints" />
+                <ScalarProperty Name="WillpowerPoints" ColumnName="WillpowerPoints" />
+                <ScalarProperty Name="PerceptionPoints" ColumnName="PerceptionPoints" />
+                <ScalarProperty Name="MaxFPPoints" ColumnName="MaxFPPoints" />
+                <ScalarProperty Name="MaxHPPoints" ColumnName="MaxHPPoints" />
+                <ScalarProperty Name="HealthPoints" ColumnName="HealthPoints" />
+                <ScalarProperty Name="IntelligencePoints" ColumnName="IntelligencePoints" />
+                <ScalarProperty Name="DexterityPoints" ColumnName="DexterityPoints" />
+                <ScalarProperty Name="StrengthPoints" ColumnName="StrengthPoints" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InventoryOfChars">
+            <EntityTypeMapping TypeName="item1Model.InventoryOfChar">
+              <MappingFragment StoreEntitySet="InventoryOfChar">
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="IdItem" ColumnName="IdItem" />
+                <ScalarProperty Name="IdCharacter" ColumnName="IdCharacter" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="AMMOUPGRATES">
             <EntityTypeMapping TypeName="item1Model.AMMOUPGRATE">
               <MappingFragment StoreEntitySet="AMMOUPGRATES">
@@ -2374,24 +2498,6 @@
                 <ScalarProperty Name="Class_of_Caliber" ColumnName="Class_of_Caliber" />
                 <ScalarProperty Name="alt_caliber_name" ColumnName="alt_caliber_name" />
                 <ScalarProperty Name="Caliber_name" ColumnName="Caliber_name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CharacterDBs">
-            <EntityTypeMapping TypeName="item1Model.CharacterDB">
-              <MappingFragment StoreEntitySet="CharacterDB">
-                <ScalarProperty Name="BasicMovePoints" ColumnName="BasicMovePoints" />
-                <ScalarProperty Name="BasicSpeedPoints" ColumnName="BasicSpeedPoints" />
-                <ScalarProperty Name="WillpowerPoints" ColumnName="WillpowerPoints" />
-                <ScalarProperty Name="PerceptionPoints" ColumnName="PerceptionPoints" />
-                <ScalarProperty Name="MaxFPPoints" ColumnName="MaxFPPoints" />
-                <ScalarProperty Name="MaxHPPoints" ColumnName="MaxHPPoints" />
-                <ScalarProperty Name="HealthPoints" ColumnName="HealthPoints" />
-                <ScalarProperty Name="IntelligencePoints" ColumnName="IntelligencePoints" />
-                <ScalarProperty Name="DexterityPoints" ColumnName="DexterityPoints" />
-                <ScalarProperty Name="StrengthPoints" ColumnName="StrengthPoints" />
-                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

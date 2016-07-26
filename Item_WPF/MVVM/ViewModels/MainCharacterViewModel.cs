@@ -79,7 +79,7 @@ namespace Item_WPF.MVVM.ViewModels
         {
             get
             {
-                string name = Character.Name;
+                string name = Character.name;
                 if (string.IsNullOrEmpty(name))
                     name = Properties.Resources.UnnamedCharacter;
                 return name;

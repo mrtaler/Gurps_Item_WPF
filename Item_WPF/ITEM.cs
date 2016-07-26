@@ -32,6 +32,7 @@ namespace Item_WPF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ITEM()
         {
+            this.InventoryOfChars = new HashSet<InventoryOfChar>();
             this.AvailableAttachSlots = new HashSet<AvailableAttachSlot>();
             this.BoxItems = new HashSet<BoxItem>();
         }
@@ -949,6 +950,16 @@ namespace Item_WPF
     		}
     	}
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<InventoryOfChar> _InventoryOfChars;
+            public virtual ICollection<InventoryOfChar> InventoryOfChars
+            {
+                get { return _InventoryOfChars; }
+                set
+                { if(_InventoryOfChars != value)
+                    {    _InventoryOfChars = value;    OnPropertyChanged("InventoryOfChars");   }
+                }
+            } 
         private ARMOUR _ARMOUR;
             public virtual ARMOUR ARMOUR
             {

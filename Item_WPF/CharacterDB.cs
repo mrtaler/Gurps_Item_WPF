@@ -29,6 +29,12 @@ namespace Item_WPF
      
      #endregion
      
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public CharacterDB()
+        {
+            this.InventoryOfChars = new HashSet<InventoryOfChar>();
+        }
+    
         private int _id;
     	public int id 
     	{ 
@@ -46,7 +52,7 @@ namespace Item_WPF
     		}
     	}
         private string _name;
-    	public string Name 
+    	public string name 
     	{ 
     		get
     		{
@@ -57,7 +63,7 @@ namespace Item_WPF
     			if (_name != value)
     			{
     				_name = value;
-    				OnPropertyChanged("Name");
+    				OnPropertyChanged("name");
     			}
     		}
     	}
@@ -221,5 +227,16 @@ namespace Item_WPF
     			}
     		}
     	}
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<InventoryOfChar> _InventoryOfChars;
+            public virtual ICollection<InventoryOfChar> InventoryOfChars
+            {
+                get { return _InventoryOfChars; }
+                set
+                { if(_InventoryOfChars != value)
+                    {    _InventoryOfChars = value;    OnPropertyChanged("InventoryOfChars");   }
+                }
+            } 
     }
 }

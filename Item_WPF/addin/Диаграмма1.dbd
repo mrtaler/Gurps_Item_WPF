@@ -5,9 +5,9 @@
   <SchemaVersion>1.2</SchemaVersion>
   <DatabaseProvider>aa8afe9c-7d62-4564-b477-c12e62e0f440</DatabaseProvider>
   <Connection>
-    <Name>TALER_WST\TALER_SQL</Name>
+    <Name>Item1.gurpssqlserver.database.windows.net,1433</Name>
     <Category>00000000-0000-0000-0000-000000000000</Category>
-    <ConnectionString>Data Source=TALER_WST\TALER_SQL;Integrated Security=True</ConnectionString>
+    <ConnectionString>Data Source=gurpssqlserver.database.windows.net,1433;Initial Catalog=Item1;Integrated Security=False;User ID=mrtaler</ConnectionString>
   </Connection>
   <Settings>
     <DbDiagramOptions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -52,15 +52,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1710 px</X>
-              <Y>2020 px</Y>
+              <X>40 px</X>
+              <Y>230 px</Y>
             </Location>
             <Size>
-              <Width>206 px</Width>
-              <Height>229 px</Height>
+              <Width>211 px</Width>
+              <Height>280 px</Height>
             </Size>
             <DbOid>
-              <Path>item1.dbo.AMMO</Path>
+              <Path>Item1.CharDB.CharacterDB</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -75,176 +75,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2238 px</X>
-              <Y>40 px</Y>
-            </Location>
-            <Size>
-              <Width>280 px</Width>
-              <Height>484 px</Height>
-            </Size>
-            <DbOid>
-              <Path>item1.dbo.AMMOUPGRATES</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>3</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>-750 px</X>
-              <Y>1450 px</Y>
-            </Location>
-            <Size>
-              <Width>319 px</Width>
-              <Height>278 px</Height>
-            </Size>
-            <DbOid>
-              <Path>item1.dbo.ARMOUR</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>False</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>4</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>-1100 px</X>
-              <Y>1580 px</Y>
-            </Location>
-            <Size>
-              <Width>138 px</Width>
-              <Height>124 px</Height>
-            </Size>
-            <DbOid>
-              <Path>item1.dbo.ArmourClass</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
-          <Model xsi:type="RelationLinkModel">
-            <CustomProperties>
-              <OID>5</OID>
-              <Comment>6</Comment>
-              <OutModel>3</OutModel>
-              <InModel>4</InModel>
-              <OutPort>7</OutPort>
-              <InPort>8</InPort>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port>
-                <Location>
-                  <X>0 px</X>
-                  <Y>223 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
-                <CustomProperties>
-                  <OID>7</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>0 px</X>
-                  <Y>93 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>8</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-            </PortAnchors>
-            <IsManuallyRouted>false</IsManuallyRouted>
-            <DbOid>
-              <Path>item1.dbo.ARMOUR.FK_ARMOUR</Path>
-              <TypeName>ForeignKey</TypeName>
-            </DbOid>
-          </Model>
-          <Model xsi:type="RelationCommentModel">
-            <CustomProperties>
-              <OID>6</OID>
-              <HolderModel>5</HolderModel>
-              <Port>9</Port>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port xsi:type="LinkPort">
-                <Location>
-                  <X>106 px</X>
-                  <Y>0 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Left</Align>
-                <CustomProperties>
-                  <OID>9</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-                <LinkPortAnchor>OutPoint</LinkPortAnchor>
-              </Port>
-            </PortAnchors>
-            <CommentOffset>
-              <X>22 px</X>
-              <Y>2 px</Y>
-            </CommentOffset>
-          </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>10</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>566 px</X>
-              <Y>223 px</Y>
-            </Location>
-            <Size>
-              <Width>274 px</Width>
-              <Height>973 px</Height>
-            </Size>
-            <DbOid>
-              <Path>item1.dbo.Attachment</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>11</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>620 px</X>
+              <X>40 px</X>
               <Y>40 px</Y>
             </Location>
             <Size>
               <Width>167 px</Width>
-              <Height>124 px</Height>
+              <Height>144 px</Height>
             </Size>
             <DbOid>
-              <Path>item1.dbo.AttachmentClass</Path>
+              <Path>Item1.CharDB.InventoryOfChar</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -255,63 +94,63 @@
           </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>12</OID>
-              <Comment>13</Comment>
-              <OutModel>10</OutModel>
-              <InModel>11</InModel>
-              <OutPort>14</OutPort>
-              <InPort>15</InPort>
+              <OID>3</OID>
+              <Comment>4</Comment>
+              <OutModel>2</OutModel>
+              <InModel>1</InModel>
+              <OutPort>5</OutPort>
+              <InPort>6</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>137.4 px</X>
-                  <Y>-0.0999999999999091 px</Y>
+                  <X>83.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Align>Bottom</Align>
                 <CustomProperties>
-                  <OID>14</OID>
+                  <OID>5</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
               <Port>
                 <Location>
-                  <X>83.4000000000001 px</X>
-                  <Y>124 px</Y>
+                  <X>83.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Align>Top</Align>
                 <CustomProperties>
-                  <OID>15</OID>
+                  <OID>6</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>item1.dbo.Attachment.FK_rAttachmentClass</Path>
+              <Path>Item1.CharDB.InventoryOfChar.FK_InventoryOfChar_CharacterDB_id</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>13</OID>
-              <HolderModel>12</HolderModel>
-              <Port>16</Port>
+              <OID>4</OID>
+              <HolderModel>3</HolderModel>
+              <Port>7</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-2.44140624090505E-05 px</X>
-                  <Y>29.5 px</Y>
+                  <X>0 px</X>
+                  <Y>-23 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Top</Align>
+                <Align>Bottom</Align>
                 <CustomProperties>
-                  <OID>16</OID>
+                  <OID>7</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -321,6 +160,177 @@
               <X>22 px</X>
               <Y>2 px</Y>
             </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>8</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2032 px</X>
+              <Y>-6 px</Y>
+            </Location>
+            <Size>
+              <Width>286 px</Width>
+              <Height>484 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.AMMOUPGRATES</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>9</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>250 px</X>
+              <Y>40 px</Y>
+            </Location>
+            <Size>
+              <Width>193 px</Width>
+              <Height>144 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.AnyBoxNameType</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>10</OID>
+              <Comment>11</Comment>
+              <OutModel>9</OutModel>
+              <InModel>9</InModel>
+              <OutPort>12</OutPort>
+              <InPort>13</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>72 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>12</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>108 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>13</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>231 px</X>
+                <Y>112 px</Y>
+              </PointD>
+              <PointD>
+                <X>231 px</X>
+                <Y>148 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.dbo.AnyBoxNameType.FK_AnyBoxNameType_AnyBoxNameType_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>11</OID>
+              <HolderModel>10</HolderModel>
+              <Port>14</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>19 px</X>
+                  <Y>-18 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>14</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>15</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>820 px</X>
+              <Y>910 px</Y>
+            </Location>
+            <Size>
+              <Width>179 px</Width>
+              <Height>195 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.ARMOUR</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>16</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>490 px</X>
+              <Y>40 px</Y>
+            </Location>
+            <Size>
+              <Width>281 px</Width>
+              <Height>977 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.Attachment</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
           </Model>
           <Model xsi:type="TableModel">
             <CustomProperties>
@@ -328,15 +338,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1221 px</X>
-              <Y>769 px</Y>
+              <X>820 px</X>
+              <Y>40 px</Y>
             </Location>
             <Size>
               <Width>177 px</Width>
               <Height>127 px</Height>
             </Size>
             <DbOid>
-              <Path>item1.dbo.Attachmentmount</Path>
+              <Path>Item1.dbo.Attachmentmount</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -349,7 +359,7 @@
             <CustomProperties>
               <OID>18</OID>
               <Comment>19</Comment>
-              <OutModel>10</OutModel>
+              <OutModel>16</OutModel>
               <InModel>17</InModel>
               <OutPort>20</OutPort>
               <InPort>21</InPort>
@@ -358,8 +368,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>273.8 px</X>
-                  <Y>486.6 px</Y>
+                  <X>0 px</X>
+                  <Y>63.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -370,26 +380,20 @@
               </Port>
               <Port>
                 <Location>
-                  <X>18.7 px</X>
-                  <Y>-0.499999999999886 px</Y>
+                  <X>0 px</X>
+                  <Y>63.5 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>21</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>1239.7 px</X>
-                <Y>709.6 px</Y>
-              </PointD>
-            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>item1.dbo.Attachment.FK_Attachment_Attachmentmount</Path>
+              <Path>Item1.dbo.Attachment.FK_Attachment_Attachmentmount</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -403,8 +407,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-199.849975585938 px</X>
-                  <Y>2.44140626364242E-05 px</Y>
+                  <X>-24.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
@@ -426,15 +430,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1220 px</X>
-              <Y>1255 px</Y>
+              <X>820 px</X>
+              <Y>210 px</Y>
             </Location>
             <Size>
               <Width>181 px</Width>
               <Height>124 px</Height>
             </Size>
             <DbOid>
-              <Path>item1.dbo.ATTACHMENTSLOT</Path>
+              <Path>Item1.dbo.ATTACHMENTSLOT</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -456,8 +460,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>90 px</X>
-                  <Y>126.6 px</Y>
+                  <X>88.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -468,8 +472,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>91 px</X>
-                  <Y>0.200000000000045 px</Y>
+                  <X>88.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -481,7 +485,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>item1.dbo.Attachmentmount.FK_Attachmentmount_NasAttachmentClass1</Path>
+              <Path>Item1.dbo.Attachmentmount.FK_Attachmentmount_NasAttachmentClass1</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -496,7 +500,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>0 px</X>
-                  <Y>-179.5 px</Y>
+                  <Y>-21.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -518,38 +522,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2408 px</X>
-              <Y>570 px</Y>
-            </Location>
-            <Size>
-              <Width>182 px</Width>
-              <Height>124 px</Height>
-            </Size>
-            <DbOid>
-              <Path>item1.dbo.AttachmentSystem</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>30</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>1620 px</X>
-              <Y>1130 px</Y>
+              <X>820 px</X>
+              <Y>380 px</Y>
             </Location>
             <Size>
               <Width>189 px</Width>
-              <Height>127 px</Height>
+              <Height>144 px</Height>
             </Size>
             <DbOid>
-              <Path>item1.dbo.AvailableAttachSlot</Path>
+              <Path>Item1.dbo.AvailableAttachSlot</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -560,73 +541,81 @@
           </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>31</OID>
-              <Comment>32</Comment>
-              <OutModel>30</OutModel>
+              <OID>30</OID>
+              <Comment>31</Comment>
+              <OutModel>29</OutModel>
               <InModel>17</InModel>
-              <OutPort>33</OutPort>
-              <InPort>34</InPort>
+              <OutPort>32</OutPort>
+              <InPort>33</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>-0.299999999999955 px</X>
-                  <Y>61.5000000000001 px</Y>
+                  <X>132.75 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
                 <CustomProperties>
-                  <OID>33</OID>
+                  <OID>32</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
               <Port>
                 <Location>
-                  <X>176.8 px</X>
-                  <Y>61.5000000000001 px</Y>
+                  <X>132.75 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
                 <CustomProperties>
-                  <OID>34</OID>
+                  <OID>33</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>1600 px</X>
-                <Y>1191.5 px</Y>
+                <X>952.75 px</X>
+                <Y>360 px</Y>
               </PointD>
               <PointD>
-                <X>1600 px</X>
-                <Y>830.5 px</Y>
+                <X>1008.75 px</X>
+                <Y>360 px</Y>
+              </PointD>
+              <PointD>
+                <X>1008.75 px</X>
+                <Y>187 px</Y>
+              </PointD>
+              <PointD>
+                <X>952.75 px</X>
+                <Y>187 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>item1.dbo.AvailableAttachSlot.FK_AVeAttachmentmount</Path>
+              <Path>Item1.dbo.AvailableAttachSlot.FK_AVeAttachmentmount</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>32</OID>
-              <HolderModel>31</HolderModel>
-              <Port>35</Port>
+              <OID>31</OID>
+              <HolderModel>30</HolderModel>
+              <Port>34</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>20 px</X>
-                  <Y>180.5 px</Y>
+                  <X>-56 px</X>
+                  <Y>106.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Left</Align>
+                <Align>Top</Align>
                 <CustomProperties>
-                  <OID>35</OID>
+                  <OID>34</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -639,19 +628,42 @@
           </Model>
           <Model xsi:type="TableModel">
             <CustomProperties>
+              <OID>35</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2562 px</X>
+              <Y>-6 px</Y>
+            </Location>
+            <Size>
+              <Width>172 px</Width>
+              <Height>178 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.Battery</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
               <OID>36</OID>
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1970 px</X>
+              <X>300 px</X>
               <Y>230 px</Y>
             </Location>
             <Size>
-              <Width>165 px</Width>
-              <Height>178 px</Height>
+              <Width>137 px</Width>
+              <Height>144 px</Height>
             </Size>
             <DbOid>
-              <Path>item1.dbo.Battery</Path>
+              <Path>Item1.dbo.BoxItem</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -660,120 +672,74 @@
               <TriggersCollapsed>True</TriggersCollapsed>
             </Compartments>
           </Model>
-          <Model xsi:type="TableModel">
+          <Model xsi:type="RelationLinkModel">
             <CustomProperties>
               <OID>37</OID>
+              <Comment>38</Comment>
+              <OutModel>36</OutModel>
+              <InModel>9</InModel>
+              <OutPort>39</OutPort>
+              <InPort>40</InPort>
               <Parent>0</Parent>
             </CustomProperties>
-            <Location>
-              <X>2758 px</X>
-              <Y>40 px</Y>
-            </Location>
-            <Size>
-              <Width>211 px</Width>
-              <Height>263 px</Height>
-            </Size>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>68.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>39</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>118.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>40</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>item1.dbo.Character</Path>
-              <TypeName>Table</TypeName>
+              <Path>Item1.dbo.BoxItem.FK_BoxItem_AnyBoxNameType_id</Path>
+              <TypeName>ForeignKey</TypeName>
             </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
           </Model>
-          <Model xsi:type="TableModel">
+          <Model xsi:type="RelationCommentModel">
             <CustomProperties>
               <OID>38</OID>
+              <HolderModel>37</HolderModel>
+              <Port>41</Port>
               <Parent>0</Parent>
             </CustomProperties>
-            <Location>
-              <X>-30 px</X>
-              <Y>1920 px</Y>
-            </Location>
-            <Size>
-              <Width>130 px</Width>
-              <Height>124 px</Height>
-            </Size>
-            <DbOid>
-              <Path>item1.dbo.Clothes</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>39</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>2558 px</X>
-              <Y>40 px</Y>
-            </Location>
-            <Size>
-              <Width>160 px</Width>
-              <Height>297 px</Height>
-            </Size>
-            <DbOid>
-              <Path>item1.dbo.CombineWeap</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>40</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>-340 px</X>
-              <Y>2230 px</Y>
-            </Location>
-            <Size>
-              <Width>130 px</Width>
-              <Height>124 px</Height>
-            </Size>
-            <DbOid>
-              <Path>item1.dbo.Drug</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>41</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>-60 px</X>
-              <Y>2230 px</Y>
-            </Location>
-            <Size>
-              <Width>130 px</Width>
-              <Height>124 px</Height>
-            </Size>
-            <DbOid>
-              <Path>item1.dbo.DrugType</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>0 px</X>
+                  <Y>23 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>41</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
           </Model>
           <Model xsi:type="TableModel">
             <CustomProperties>
@@ -781,15 +747,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-540 px</X>
-              <Y>1210 px</Y>
+              <X>40 px</X>
+              <Y>930 px</Y>
             </Location>
             <Size>
-              <Width>151 px</Width>
-              <Height>124 px</Height>
+              <Width>213 px</Width>
+              <Height>178 px</Height>
             </Size>
             <DbOid>
-              <Path>item1.dbo.ExplosionType</Path>
+              <Path>Item1.dbo.Caliber</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -804,15 +770,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-160 px</X>
-              <Y>1130 px</Y>
+              <X>820 px</X>
+              <Y>570 px</Y>
             </Location>
             <Size>
-              <Width>217 px</Width>
-              <Height>446 px</Height>
+              <Width>138 px</Width>
+              <Height>124 px</Height>
             </Size>
             <DbOid>
-              <Path>item1.dbo.EXPLOSIVE</Path>
+              <Path>Item1.dbo.Clothes</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -821,84 +787,120 @@
               <TriggersCollapsed>True</TriggersCollapsed>
             </Compartments>
           </Model>
-          <Model xsi:type="RelationLinkModel">
+          <Model xsi:type="TableModel">
             <CustomProperties>
               <OID>44</OID>
-              <Comment>45</Comment>
-              <OutModel>43</OutModel>
-              <InModel>42</InModel>
-              <OutPort>46</OutPort>
-              <InPort>47</InPort>
               <Parent>0</Parent>
             </CustomProperties>
-            <PortAnchors>
-              <Port>
-                <Location>
-                  <X>0 px</X>
-                  <Y>148 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
-                <CustomProperties>
-                  <OID>46</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>0 px</X>
-                  <Y>62 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>47</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-            </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>-180 px</X>
-                <Y>1278 px</Y>
-              </PointD>
-              <PointD>
-                <X>-180 px</X>
-                <Y>1272 px</Y>
-              </PointD>
-            </BendPoints>
-            <IsManuallyRouted>false</IsManuallyRouted>
+            <Location>
+              <X>2362 px</X>
+              <Y>-6 px</Y>
+            </Location>
+            <Size>
+              <Width>160 px</Width>
+              <Height>297 px</Height>
+            </Size>
             <DbOid>
-              <Path>item1.dbo.EXPLOSIVE.FK_EXPLOSIVE</Path>
-              <TypeName>ForeignKey</TypeName>
+              <Path>Item1.dbo.CombineWeap</Path>
+              <TypeName>Table</TypeName>
             </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
           </Model>
-          <Model xsi:type="RelationCommentModel">
+          <Model xsi:type="TableModel">
             <CustomProperties>
               <OID>45</OID>
-              <HolderModel>44</HolderModel>
-              <Port>48</Port>
               <Parent>0</Parent>
             </CustomProperties>
-            <PortAnchors>
-              <Port xsi:type="LinkPort">
-                <Location>
-                  <X>124.5 px</X>
-                  <Y>6 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Left</Align>
-                <CustomProperties>
-                  <OID>48</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-                <LinkPortAnchor>OutPoint</LinkPortAnchor>
-              </Port>
-            </PortAnchors>
-            <CommentOffset>
-              <X>22 px</X>
-              <Y>2 px</Y>
-            </CommentOffset>
+            <Location>
+              <X>300 px</X>
+              <Y>1060 px</Y>
+            </Location>
+            <Size>
+              <Width>176 px</Width>
+              <Height>127 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.Drug</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>46</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>40 px</X>
+              <Y>1230 px</Y>
+            </Location>
+            <Size>
+              <Width>217 px</Width>
+              <Height>450 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.EXPLOSIVE</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>47</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>820 px</X>
+              <Y>740 px</Y>
+            </Location>
+            <Size>
+              <Width>138 px</Width>
+              <Height>124 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.FOOD</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>48</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>250 px</X>
+              <Y>550 px</Y>
+            </Location>
+            <Size>
+              <Width>174 px</Width>
+              <Height>124 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.G_AttachClass</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
           </Model>
           <Model xsi:type="TableModel">
             <CustomProperties>
@@ -906,61 +908,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-40 px</X>
-              <Y>2080 px</Y>
-            </Location>
-            <Size>
-              <Width>130 px</Width>
-              <Height>124 px</Height>
-            </Size>
-            <DbOid>
-              <Path>item1.dbo.FOOD</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>50</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>947 px</X>
-              <Y>1054 px</Y>
-            </Location>
-            <Size>
-              <Width>167 px</Width>
-              <Height>124 px</Height>
-            </Size>
-            <DbOid>
-              <Path>item1.dbo.G_AttachClass</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>51</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>619 px</X>
-              <Y>1255 px</Y>
+              <X>40 px</X>
+              <Y>550 px</Y>
             </Location>
             <Size>
               <Width>168 px</Width>
               <Height>127 px</Height>
             </Size>
             <DbOid>
-              <Path>item1.dbo.G_AvAttachClass</Path>
+              <Path>Item1.dbo.G_AvAttachClass</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -971,395 +927,466 @@
           </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>52</OID>
-              <Comment>53</Comment>
-              <OutModel>51</OutModel>
-              <InModel>10</InModel>
-              <OutPort>54</OutPort>
-              <InPort>55</InPort>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port>
-                <Location>
-                  <X>84.4000000000001 px</X>
-                  <Y>0.200000000000045 px</Y>
-                </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
-                <CustomProperties>
-                  <OID>54</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>137.4 px</X>
-                  <Y>973.3 px</Y>
-                </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
-                <CustomProperties>
-                  <OID>55</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-            </PortAnchors>
-            <IsManuallyRouted>false</IsManuallyRouted>
-            <DbOid>
-              <Path>item1.dbo.G_AvAttachClass.FK_G_AvAttachClass_Attachment</Path>
-              <TypeName>ForeignKey</TypeName>
-            </DbOid>
-          </Model>
-          <Model xsi:type="RelationCommentModel">
-            <CustomProperties>
-              <OID>53</OID>
-              <HolderModel>52</HolderModel>
-              <Port>56</Port>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port xsi:type="LinkPort">
-                <Location>
-                  <X>-2.44140624090505E-05 px</X>
-                  <Y>29.5 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Top</Align>
-                <CustomProperties>
-                  <OID>56</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-                <LinkPortAnchor>OutPoint</LinkPortAnchor>
-              </Port>
-            </PortAnchors>
-            <CommentOffset>
-              <X>22 px</X>
-              <Y>2 px</Y>
-            </CommentOffset>
-          </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>57</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>899 px</X>
-              <Y>1237 px</Y>
-            </Location>
-            <Size>
-              <Width>262 px</Width>
-              <Height>161 px</Height>
-            </Size>
-            <DbOid>
-              <Path>item1.dbo.G_SubAttachClass</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
-          <Model xsi:type="RelationLinkModel">
-            <CustomProperties>
-              <OID>58</OID>
-              <Comment>59</Comment>
-              <OutModel>57</OutModel>
-              <InModel>23</InModel>
-              <OutPort>60</OutPort>
-              <InPort>61</InPort>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port>
-                <Location>
-                  <X>263.2 px</X>
-                  <Y>80.2 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>60</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>1.10000000000014 px</X>
-                  <Y>62.2 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
-                <CustomProperties>
-                  <OID>61</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-            </PortAnchors>
-            <IsManuallyRouted>false</IsManuallyRouted>
-            <DbOid>
-              <Path>item1.dbo.G_SubAttachClass.FK_G_SubAttachClass_ATTACHMENTSLOT1</Path>
-              <TypeName>ForeignKey</TypeName>
-            </DbOid>
-          </Model>
-          <Model xsi:type="RelationCommentModel">
-            <CustomProperties>
-              <OID>59</OID>
-              <HolderModel>58</HolderModel>
-              <Port>62</Port>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port xsi:type="LinkPort">
-                <Location>
-                  <X>-29.5 px</X>
-                  <Y>4.88281250454747E-05 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>62</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-                <LinkPortAnchor>OutPoint</LinkPortAnchor>
-              </Port>
-            </PortAnchors>
-            <CommentOffset>
-              <X>22 px</X>
-              <Y>2 px</Y>
-            </CommentOffset>
-          </Model>
-          <Model xsi:type="RelationLinkModel">
-            <CustomProperties>
-              <OID>63</OID>
-              <Comment>64</Comment>
-              <OutModel>57</OutModel>
-              <InModel>50</InModel>
-              <OutPort>65</OutPort>
-              <InPort>66</InPort>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port>
-                <Location>
-                  <X>129.9 px</X>
-                  <Y>-0.399999999999864 px</Y>
-                </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
-                <CustomProperties>
-                  <OID>65</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>81.9000000000001 px</X>
-                  <Y>123.7 px</Y>
-                </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
-                <CustomProperties>
-                  <OID>66</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-            </PortAnchors>
-            <IsManuallyRouted>false</IsManuallyRouted>
-            <DbOid>
-              <Path>item1.dbo.G_SubAttachClass.FK_G_SubAttachClass_G_AttachClass</Path>
-              <TypeName>ForeignKey</TypeName>
-            </DbOid>
-          </Model>
-          <Model xsi:type="RelationCommentModel">
-            <CustomProperties>
-              <OID>64</OID>
-              <HolderModel>63</HolderModel>
-              <Port>67</Port>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port xsi:type="LinkPort">
-                <Location>
-                  <X>-2.44140624090505E-05 px</X>
-                  <Y>29.5 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Top</Align>
-                <CustomProperties>
-                  <OID>67</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-                <LinkPortAnchor>OutPoint</LinkPortAnchor>
-              </Port>
-            </PortAnchors>
-            <CommentOffset>
-              <X>22 px</X>
-              <Y>2 px</Y>
-            </CommentOffset>
-          </Model>
-          <Model xsi:type="RelationLinkModel">
-            <CustomProperties>
-              <OID>68</OID>
-              <Comment>69</Comment>
-              <OutModel>51</OutModel>
-              <InModel>57</InModel>
-              <OutPort>70</OutPort>
-              <InPort>71</InPort>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port>
-                <Location>
-                  <X>168.1 px</X>
-                  <Y>62.2 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>70</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>-0.299999999999955 px</X>
-                  <Y>80.2 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
-                <CustomProperties>
-                  <OID>71</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-            </PortAnchors>
-            <IsManuallyRouted>false</IsManuallyRouted>
-            <DbOid>
-              <Path>item1.dbo.G_AvAttachClass.FK_G_AvAttachClass_G_SubAttachClass</Path>
-              <TypeName>ForeignKey</TypeName>
-            </DbOid>
-          </Model>
-          <Model xsi:type="RelationCommentModel">
-            <CustomProperties>
-              <OID>69</OID>
-              <HolderModel>68</HolderModel>
-              <Port>72</Port>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port xsi:type="LinkPort">
-                <Location>
-                  <X>-56 px</X>
-                  <Y>4.88281250454747E-05 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>72</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-                <LinkPortAnchor>OutPoint</LinkPortAnchor>
-              </Port>
-            </PortAnchors>
-            <CommentOffset>
-              <X>22 px</X>
-              <Y>2 px</Y>
-            </CommentOffset>
-          </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>73</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>288 px</X>
-              <Y>1468 px</Y>
-            </Location>
-            <Size>
-              <Width>254 px</Width>
-              <Height>1028 px</Height>
-            </Size>
-            <DbOid>
-              <Path>item1.dbo.ITEM</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
-          <Model xsi:type="RelationLinkModel">
-            <CustomProperties>
-              <OID>74</OID>
-              <Comment>75</Comment>
-              <OutModel>73</OutModel>
-              <InModel>38</InModel>
-              <OutPort>76</OutPort>
-              <InPort>77</InPort>
+              <OID>50</OID>
+              <Comment>51</Comment>
+              <OutModel>49</OutModel>
+              <InModel>16</InModel>
+              <OutPort>52</OutPort>
+              <InPort>53</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>512.6 px</Y>
+                  <Y>63.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>52</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>573.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
+                <CustomProperties>
+                  <OID>53</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>228 px</X>
+                <Y>613.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>228 px</X>
+                <Y>683.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>470 px</X>
+                <Y>683.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>470 px</X>
+                <Y>613.5 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.dbo.G_AvAttachClass.FK_G_AvAttachClass_Attachment</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>51</OID>
+              <HolderModel>50</HolderModel>
+              <Port>54</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-141 px</X>
+                  <Y>-70 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>54</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>55</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>40 px</X>
+              <Y>720 px</Y>
+            </Location>
+            <Size>
+              <Width>269 px</Width>
+              <Height>161 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.G_SubAttachClass</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>56</OID>
+              <Comment>57</Comment>
+              <OutModel>55</OutModel>
+              <InModel>23</InModel>
+              <OutPort>58</OutPort>
+              <InPort>59</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>80.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>58</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>90.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>59</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>329 px</X>
+                <Y>800.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>329 px</X>
+                <Y>1024.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>801 px</X>
+                <Y>1024.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>801 px</X>
+                <Y>354 px</Y>
+              </PointD>
+              <PointD>
+                <X>910.5 px</X>
+                <Y>354 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.dbo.G_SubAttachClass.FK_G_SubAttachClass_ATTACHMENTSLOT1</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>57</OID>
+              <HolderModel>56</HolderModel>
+              <Port>60</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-492 px</X>
+                  <Y>111.25 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>60</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>61</OID>
+              <Comment>62</Comment>
+              <OutModel>55</OutModel>
+              <InModel>48</InModel>
+              <OutPort>63</OutPort>
+              <InPort>64</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>239.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>63</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>29.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>64</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.dbo.G_SubAttachClass.FK_G_SubAttachClass_G_AttachClass</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>62</OID>
+              <HolderModel>61</HolderModel>
+              <Port>65</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>0 px</X>
+                  <Y>23 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>65</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>66</OID>
+              <Comment>67</Comment>
+              <OutModel>49</OutModel>
+              <InModel>55</InModel>
+              <OutPort>68</OutPort>
+              <InPort>69</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>84 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>68</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>84 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>69</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.dbo.G_AvAttachClass.FK_G_AvAttachClass_G_SubAttachClass</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>67</OID>
+              <HolderModel>66</HolderModel>
+              <Port>70</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>0 px</X>
+                  <Y>-21.5 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>70</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>71</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1530 px</X>
+              <Y>250 px</Y>
+            </Location>
+            <Size>
+              <Width>138 px</Width>
+              <Height>124 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.GurpsClass</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>72</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1050 px</X>
+              <Y>40 px</Y>
+            </Location>
+            <Size>
+              <Width>254 px</Width>
+              <Height>1045 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.ITEM</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>73</OID>
+              <Comment>74</Comment>
+              <OutModel>72</OutModel>
+              <InModel>42</InModel>
+              <OutPort>75</OutPort>
+              <InPort>76</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>967.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>75</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>77.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>76</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
-              <Port>
-                <Location>
-                  <X>130.2 px</X>
-                  <Y>61.6000000000001 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>77</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>283 px</X>
-                <Y>1980.59997558594 px</Y>
+                <X>1030 px</X>
+                <Y>1007.5 px</Y>
               </PointD>
               <PointD>
-                <X>283 px</X>
-                <Y>1981.59997558594 px</Y>
+                <X>1030 px</X>
+                <Y>1203 px</Y>
+              </PointD>
+              <PointD>
+                <X>273 px</X>
+                <Y>1203 px</Y>
+              </PointD>
+              <PointD>
+                <X>273 px</X>
+                <Y>1007.5 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>item1.dbo.ITEM.FK_ITEM_Clothes</Path>
+              <Path>Item1.dbo.ITEM.FK_Calibre</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>75</OID>
-              <HolderModel>74</HolderModel>
-              <Port>78</Port>
+              <OID>74</OID>
+              <HolderModel>73</HolderModel>
+              <Port>77</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>96.5 px</X>
-                  <Y>-0.999975585937364 px</Y>
+                  <X>398.5 px</X>
+                  <Y>-195.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
                 <CustomProperties>
-                  <OID>78</OID>
+                  <OID>77</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -1372,63 +1399,63 @@
           </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>79</OID>
-              <Comment>80</Comment>
-              <OutModel>73</OutModel>
-              <InModel>41</InModel>
-              <OutPort>81</OutPort>
-              <InPort>82</InPort>
+              <OID>78</OID>
+              <Comment>79</Comment>
+              <OutModel>72</OutModel>
+              <InModel>43</InModel>
+              <OutPort>80</OutPort>
+              <InPort>81</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>824 px</Y>
+                  <Y>592 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
+                <CustomProperties>
+                  <OID>80</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>62 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>81</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
-              <Port>
-                <Location>
-                  <X>0 px</X>
-                  <Y>62 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>82</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>item1.dbo.ITEM.FK_ITEM_DrugType</Path>
+              <Path>Item1.dbo.ITEM.FK_ITEM_Clothes</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>80</OID>
-              <HolderModel>79</HolderModel>
-              <Port>83</Port>
+              <OID>79</OID>
+              <HolderModel>78</HolderModel>
+              <Port>82</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>109 px</X>
+                  <X>46 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
                 <CustomProperties>
-                  <OID>83</OID>
+                  <OID>82</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -1441,63 +1468,63 @@
           </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>84</OID>
-              <Comment>85</Comment>
-              <OutModel>73</OutModel>
-              <InModel>49</InModel>
-              <OutPort>86</OutPort>
-              <InPort>87</InPort>
+              <OID>83</OID>
+              <Comment>84</Comment>
+              <OutModel>72</OutModel>
+              <InModel>47</InModel>
+              <OutPort>85</OutPort>
+              <InPort>86</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>674 px</Y>
+                  <Y>762 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
+                <CustomProperties>
+                  <OID>85</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>62 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>86</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
-              <Port>
-                <Location>
-                  <X>0 px</X>
-                  <Y>62 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>87</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>item1.dbo.ITEM.FK_ITEM_Food</Path>
+              <Path>Item1.dbo.ITEM.FK_ITEM_Food</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>85</OID>
-              <HolderModel>84</HolderModel>
-              <Port>88</Port>
+              <OID>84</OID>
+              <HolderModel>83</HolderModel>
+              <Port>87</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>99 px</X>
+                  <X>46 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
                 <CustomProperties>
-                  <OID>88</OID>
+                  <OID>87</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -1508,98 +1535,83 @@
               <Y>2 px</Y>
             </CommentOffset>
           </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>89</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>790 px</X>
-              <Y>2330 px</Y>
-            </Location>
-            <Size>
-              <Width>130 px</Width>
-              <Height>124 px</Height>
-            </Size>
-            <DbOid>
-              <Path>item1.dbo.ItemClass</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>90</OID>
-              <Comment>91</Comment>
-              <OutModel>73</OutModel>
-              <InModel>89</InModel>
-              <OutPort>92</OutPort>
-              <InPort>93</InPort>
+              <OID>88</OID>
+              <Comment>89</Comment>
+              <OutModel>2</OutModel>
+              <InModel>72</InModel>
+              <OutPort>90</OutPort>
+              <InPort>91</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>834 px</Y>
+                  <Y>72 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
                 <CustomProperties>
-                  <OID>92</OID>
+                  <OID>90</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>62 px</Y>
+                  <Y>72 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
                 <CustomProperties>
-                  <OID>93</OID>
+                  <OID>91</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>562 px</X>
-                <Y>2302 px</Y>
+                <X>227 px</X>
+                <Y>112 px</Y>
               </PointD>
               <PointD>
-                <X>562 px</X>
-                <Y>2392 px</Y>
+                <X>227 px</X>
+                <Y>28 px</Y>
+              </PointD>
+              <PointD>
+                <X>1030 px</X>
+                <Y>28 px</Y>
+              </PointD>
+              <PointD>
+                <X>1030 px</X>
+                <Y>112 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>item1.dbo.ITEM.FK_Item_ItemClass</Path>
+              <Path>Item1.CharDB.InventoryOfChar.FK_InventoryOfChar_ITEM_uiIndex</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>91</OID>
-              <HolderModel>90</HolderModel>
-              <Port>94</Port>
+              <OID>89</OID>
+              <HolderModel>88</HolderModel>
+              <Port>92</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-134 px</X>
-                  <Y>-90 px</Y>
+                  <X>-421.5 px</X>
+                  <Y>84 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
                 <CustomProperties>
-                  <OID>94</OID>
+                  <OID>92</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -1610,121 +1622,152 @@
               <Y>2 px</Y>
             </CommentOffset>
           </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>95</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>-550 px</X>
-              <Y>1790 px</Y>
-            </Location>
-            <Size>
-              <Width>130 px</Width>
-              <Height>124 px</Height>
-            </Size>
-            <DbOid>
-              <Path>item1.dbo.LBEClass</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>96</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>750 px</X>
-              <Y>2130 px</Y>
-            </Location>
-            <Size>
-              <Width>172 px</Width>
-              <Height>144 px</Height>
-            </Size>
-            <DbOid>
-              <Path>item1.dbo.LC</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>97</OID>
-              <Comment>98</Comment>
-              <OutModel>73</OutModel>
-              <InModel>96</InModel>
-              <OutPort>99</OutPort>
-              <InPort>100</InPort>
+              <OID>93</OID>
+              <Comment>94</Comment>
+              <OutModel>15</OutModel>
+              <InModel>72</InModel>
+              <OutPort>95</OutPort>
+              <InPort>96</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>254.2 px</X>
-                  <Y>729.6 px</Y>
+                  <X>0 px</X>
+                  <Y>131.25 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
                 <CustomProperties>
-                  <OID>99</OID>
+                  <OID>95</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
               <Port>
                 <Location>
-                  <X>1.10000000000002 px</X>
-                  <Y>71.6000000000004 px</Y>
+                  <X>0 px</X>
+                  <Y>1001.25 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
+                <CustomProperties>
+                  <OID>96</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.dbo.ARMOUR.FK_ARMOUR_ITEM_uiIndex</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>94</OID>
+              <HolderModel>93</HolderModel>
+              <Port>97</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-25.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>97</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>98</OID>
+              <Comment>99</Comment>
+              <OutModel>16</OutModel>
+              <InModel>72</InModel>
+              <OutPort>100</OutPort>
+              <InPort>101</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>488.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>100</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>488.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>101</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>562 px</X>
-                <Y>2197.60009765625 px</Y>
+                <X>791 px</X>
+                <Y>528.5 px</Y>
               </PointD>
               <PointD>
-                <X>562 px</X>
-                <Y>2201.60009765625 px</Y>
+                <X>791 px</X>
+                <Y>542.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>1030 px</X>
+                <Y>542.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>1030 px</X>
+                <Y>528.5 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>item1.dbo.ITEM.FK_ITEM_LC</Path>
+              <Path>Item1.dbo.Attachment.FK_Attachment_ITEM_uiIndex</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>98</OID>
-              <HolderModel>97</HolderModel>
-              <Port>101</Port>
+              <OID>99</OID>
+              <HolderModel>98</HolderModel>
+              <Port>102</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-114 px</X>
-                  <Y>-4.00009765624964 px</Y>
+                  <X>-139.5 px</X>
+                  <Y>-14 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
                 <CustomProperties>
-                  <OID>101</OID>
+                  <OID>102</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -1735,35 +1778,12 @@
               <Y>2 px</Y>
             </CommentOffset>
           </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>102</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>-320 px</X>
-              <Y>1710 px</Y>
-            </Location>
-            <Size>
-              <Width>238 px</Width>
-              <Height>378 px</Height>
-            </Size>
-            <DbOid>
-              <Path>item1.dbo.LOADBEARINGEQUIPMENT</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
               <OID>103</OID>
               <Comment>104</Comment>
-              <OutModel>102</OutModel>
-              <InModel>95</InModel>
+              <OutModel>29</OutModel>
+              <InModel>72</InModel>
               <OutPort>105</OutPort>
               <InPort>106</InPort>
               <Parent>0</Parent>
@@ -1772,10 +1792,10 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>142 px</Y>
+                  <Y>72 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>105</OID>
                   <PortType>FloatAnchor</PortType>
@@ -1784,10 +1804,10 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>62 px</Y>
+                  <Y>412 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>106</OID>
                   <PortType>FloatAnchor</PortType>
@@ -1796,7 +1816,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>item1.dbo.LOADBEARINGEQUIPMENT.FK_LOADBEARINGEQUIPMENT</Path>
+              <Path>Item1.dbo.AvailableAttachSlot.FK_AvailableAttachSlot_ITEM_uiIndex</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -1810,11 +1830,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>50 px</X>
+                  <X>-20.5 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Left</Align>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>107</OID>
                   <PortType>FixedAnchor</PortType>
@@ -1827,88 +1847,83 @@
               <Y>2 px</Y>
             </CommentOffset>
           </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>108</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>660 px</X>
-              <Y>1853 px</Y>
-            </Location>
-            <Size>
-              <Width>173 px</Width>
-              <Height>144 px</Height>
-            </Size>
-            <DbOid>
-              <Path>item1.dbo.TL</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>109</OID>
-              <Comment>110</Comment>
-              <OutModel>73</OutModel>
-              <InModel>108</InModel>
-              <OutPort>111</OutPort>
-              <InPort>112</InPort>
+              <OID>108</OID>
+              <Comment>109</Comment>
+              <OutModel>36</OutModel>
+              <InModel>72</InModel>
+              <OutPort>110</OutPort>
+              <InPort>111</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>254.2 px</X>
-                  <Y>444.4 px</Y>
+                  <X>0 px</X>
+                  <Y>72 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
+                <CustomProperties>
+                  <OID>110</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>262 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>111</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
-              <Port>
-                <Location>
-                  <X>0 px</X>
-                  <Y>59.4000000000001 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
-                <CustomProperties>
-                  <OID>112</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>473.5 px</X>
+                <Y>302 px</Y>
+              </PointD>
+              <PointD>
+                <X>473.5 px</X>
+                <Y>22 px</Y>
+              </PointD>
+              <PointD>
+                <X>1012.5 px</X>
+                <Y>22 px</Y>
+              </PointD>
+              <PointD>
+                <X>1012.5 px</X>
+                <Y>302 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>item1.dbo.ITEM.FK_ITEM_TL</Path>
+              <Path>Item1.dbo.BoxItem.FK_BoxItem_ITEM_uiIndex</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>110</OID>
-              <HolderModel>109</HolderModel>
-              <Port>113</Port>
+              <OID>109</OID>
+              <HolderModel>108</HolderModel>
+              <Port>112</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-59 px</X>
-                  <Y>-2.44140624090505E-05 px</Y>
+                  <X>-306 px</X>
+                  <Y>280 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
                 <CustomProperties>
-                  <OID>113</OID>
+                  <OID>112</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -1919,275 +1934,158 @@
               <Y>2 px</Y>
             </CommentOffset>
           </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>114</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>1720 px</X>
-              <Y>1750 px</Y>
-            </Location>
-            <Size>
-              <Width>161 px</Width>
-              <Height>144 px</Height>
-            </Size>
-            <DbOid>
-              <Path>item1.dbo.TypeOfDamage</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>115</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>1150 px</X>
-              <Y>1490 px</Y>
-            </Location>
-            <Size>
-              <Width>265 px</Width>
-              <Height>684 px</Height>
-            </Size>
-            <DbOid>
-              <Path>item1.dbo.WEAPON</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>116</OID>
-              <Comment>117</Comment>
-              <OutModel>115</OutModel>
-              <InModel>1</InModel>
-              <OutPort>118</OutPort>
-              <InPort>119</InPort>
+              <OID>113</OID>
+              <Comment>114</Comment>
+              <OutModel>45</OutModel>
+              <InModel>72</InModel>
+              <OutPort>115</OutPort>
+              <InPort>116</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>614 px</Y>
+                  <Y>12.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
                 <CustomProperties>
-                  <OID>118</OID>
+                  <OID>115</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>70 px</Y>
+                  <Y>1032.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
                 <CustomProperties>
-                  <OID>119</OID>
+                  <OID>116</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>1665 px</X>
-                <Y>2104 px</Y>
+                <X>496 px</X>
+                <Y>1072.5 px</Y>
               </PointD>
               <PointD>
-                <X>1665 px</X>
-                <Y>2090 px</Y>
+                <X>496 px</X>
+                <Y>1198.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>1012.5 px</X>
+                <Y>1198.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>1012.5 px</X>
+                <Y>1072.5 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>item1.dbo.WEAPON.FK_Calibre</Path>
+              <Path>Item1.dbo.Drug.FK_Drug_ITEM_uiIndex</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>117</OID>
-              <HolderModel>116</HolderModel>
-              <Port>120</Port>
+              <OID>114</OID>
+              <HolderModel>113</HolderModel>
+              <Port>117</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-125 px</X>
-                  <Y>0 px</Y>
+                  <X>-278.25 px</X>
+                  <Y>-126 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>117</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>118</OID>
+              <Comment>119</Comment>
+              <OutModel>46</OutModel>
+              <InModel>72</InModel>
+              <OutPort>120</OutPort>
+              <InPort>121</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>225 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
                 <CustomProperties>
                   <OID>120</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-                <LinkPortAnchor>OutPoint</LinkPortAnchor>
-              </Port>
-            </PortAnchors>
-            <CommentOffset>
-              <X>22 px</X>
-              <Y>2 px</Y>
-            </CommentOffset>
-          </Model>
-          <Model xsi:type="RelationLinkModel">
-            <CustomProperties>
-              <OID>121</OID>
-              <Comment>122</Comment>
-              <OutModel>115</OutModel>
-              <InModel>114</InModel>
-              <OutPort>123</OutPort>
-              <InPort>124</InPort>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port>
-                <Location>
-                  <X>264.2 px</X>
-                  <Y>340.9 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>123</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
               <Port>
                 <Location>
-                  <X>0.0999999999999091 px</X>
-                  <Y>71.9000000000001 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
-                <CustomProperties>
-                  <OID>124</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-            </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>1665 px</X>
-                <Y>1830.9 px</Y>
-              </PointD>
-              <PointD>
-                <X>1665 px</X>
-                <Y>1821.9 px</Y>
-              </PointD>
-            </BendPoints>
-            <IsManuallyRouted>false</IsManuallyRouted>
-            <DbOid>
-              <Path>item1.dbo.WEAPON.FK_WEAPON_TypeOfDamage</Path>
-              <TypeName>ForeignKey</TypeName>
-            </DbOid>
-          </Model>
-          <Model xsi:type="RelationCommentModel">
-            <CustomProperties>
-              <OID>122</OID>
-              <HolderModel>121</HolderModel>
-              <Port>125</Port>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port xsi:type="LinkPort">
-                <Location>
-                  <X>-125 px</X>
-                  <Y>-2.44140624090505E-05 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>125</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-                <LinkPortAnchor>OutPoint</LinkPortAnchor>
-              </Port>
-            </PortAnchors>
-            <CommentOffset>
-              <X>22 px</X>
-              <Y>2 px</Y>
-            </CommentOffset>
-          </Model>
-          <Model xsi:type="RelationLinkModel">
-            <CustomProperties>
-              <OID>126</OID>
-              <Comment>127</Comment>
-              <OutModel>30</OutModel>
-              <InModel>115</InModel>
-              <OutPort>128</OutPort>
-              <InPort>129</InPort>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port>
-                <Location>
-                  <X>47.25 px</X>
+                  <X>127 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
                 <CustomProperties>
-                  <OID>128</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>0 px</X>
-                  <Y>171 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>129</OID>
+                  <OID>121</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>1667.25 px</X>
-                <Y>1661 px</Y>
+                <X>1177 px</X>
+                <Y>1455 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>item1.dbo.AvailableAttachSlot.FK_AVeWeaponId</Path>
+              <Path>Item1.dbo.EXPLOSIVE.FK_EXPLOSIVE_ITEM_uiIndex</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>127</OID>
-              <HolderModel>126</HolderModel>
-              <Port>130</Port>
+              <OID>119</OID>
+              <HolderModel>118</HolderModel>
+              <Port>122</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>0 px</X>
-                  <Y>-202 px</Y>
+                  <X>-460 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Bottom</Align>
+                <Align>Right</Align>
                 <CustomProperties>
-                  <OID>130</OID>
+                  <OID>122</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -2200,19 +2098,19 @@
           </Model>
           <Model xsi:type="TableModel">
             <CustomProperties>
-              <OID>131</OID>
+              <OID>123</OID>
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2140 px</X>
-              <Y>1590 px</Y>
+              <X>1350 px</X>
+              <Y>250 px</Y>
             </Location>
             <Size>
-              <Width>143 px</Width>
+              <Width>138 px</Width>
               <Height>124 px</Height>
             </Size>
             <DbOid>
-              <Path>item1.dbo.WeaponClass</Path>
+              <Path>Item1.dbo.ItemClass</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -2223,19 +2121,19 @@
           </Model>
           <Model xsi:type="TableModel">
             <CustomProperties>
-              <OID>132</OID>
+              <OID>124</OID>
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1810 px</X>
-              <Y>1580 px</Y>
+              <X>1350 px</X>
+              <Y>40 px</Y>
             </Location>
             <Size>
-              <Width>140 px</Width>
-              <Height>127 px</Height>
+              <Width>204 px</Width>
+              <Height>161 px</Height>
             </Size>
             <DbOid>
-              <Path>item1.dbo.WeaponType</Path>
+              <Path>Item1.dbo.ItemSubClass</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -2246,24 +2144,277 @@
           </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>133</OID>
-              <Comment>134</Comment>
-              <OutModel>132</OutModel>
-              <InModel>131</InModel>
-              <OutPort>135</OutPort>
-              <InPort>136</InPort>
+              <OID>125</OID>
+              <Comment>126</Comment>
+              <OutModel>124</OutModel>
+              <InModel>123</InModel>
+              <OutPort>127</OutPort>
+              <InPort>128</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>69 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>127</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>69 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>128</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.dbo.ItemSubClass.FK_ItemSubClass_ItemClass_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>126</OID>
+              <HolderModel>125</HolderModel>
+              <Port>129</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>0 px</X>
+                  <Y>-24.5 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>129</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>130</OID>
+              <Comment>131</Comment>
+              <OutModel>124</OutModel>
+              <InModel>71</InModel>
+              <OutPort>132</OutPort>
+              <InPort>133</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>192 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>132</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>12 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>133</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.dbo.ItemSubClass.FK_ItemSubClass_WeaponClass_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>131</OID>
+              <HolderModel>130</HolderModel>
+              <Port>134</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>0 px</X>
+                  <Y>-24.5 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>134</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>135</OID>
+              <Comment>136</Comment>
+              <OutModel>72</OutModel>
+              <InModel>124</InModel>
+              <OutPort>137</OutPort>
+              <InPort>138</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>52 px</Y>
+                  <Y>80.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
                 <CustomProperties>
-                  <OID>135</OID>
+                  <OID>137</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>80.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>138</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.dbo.ITEM.FK_ITEM_ItemSubClass_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>136</OID>
+              <HolderModel>135</HolderModel>
+              <Port>139</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-23 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>139</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>140</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2772 px</X>
+              <Y>-6 px</Y>
+            </Location>
+            <Size>
+              <Width>221 px</Width>
+              <Height>127 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.LaserColorEf</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>141</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1350 px</X>
+              <Y>420 px</Y>
+            </Location>
+            <Size>
+              <Width>172 px</Width>
+              <Height>144 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.LC</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>142</OID>
+              <Comment>143</Comment>
+              <OutModel>72</OutModel>
+              <InModel>141</InModel>
+              <OutPort>144</OutPort>
+              <InPort>145</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>452 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>144</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
@@ -2275,160 +2426,29 @@
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
                 <CustomProperties>
-                  <OID>136</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-            </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>2010 px</X>
-                <Y>1632 px</Y>
-              </PointD>
-              <PointD>
-                <X>2010 px</X>
-                <Y>1662 px</Y>
-              </PointD>
-            </BendPoints>
-            <IsManuallyRouted>false</IsManuallyRouted>
-            <DbOid>
-              <Path>item1.dbo.WeaponType.FK_WeaponType_WeaponClass</Path>
-              <TypeName>ForeignKey</TypeName>
-            </DbOid>
-          </Model>
-          <Model xsi:type="RelationCommentModel">
-            <CustomProperties>
-              <OID>134</OID>
-              <HolderModel>133</HolderModel>
-              <Port>137</Port>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port xsi:type="LinkPort">
-                <Location>
-                  <X>-125 px</X>
-                  <Y>-30 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>137</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-                <LinkPortAnchor>OutPoint</LinkPortAnchor>
-              </Port>
-            </PortAnchors>
-            <CommentOffset>
-              <X>22 px</X>
-              <Y>2 px</Y>
-            </CommentOffset>
-          </Model>
-          <Model xsi:type="RelationLinkModel">
-            <CustomProperties>
-              <OID>138</OID>
-              <Comment>139</Comment>
-              <OutModel>115</OutModel>
-              <InModel>132</InModel>
-              <OutPort>140</OutPort>
-              <InPort>141</InPort>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port>
-                <Location>
-                  <X>250.000051351696 px</X>
-                  <Y>279.230834125769 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>140</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>0 px</X>
-                  <Y>88.5 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
-                <CustomProperties>
-                  <OID>141</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-            </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>1700 px</X>
-                <Y>1769.23083412577 px</Y>
-              </PointD>
-              <PointD>
-                <X>1700 px</X>
-                <Y>1668.5 px</Y>
-              </PointD>
-            </BendPoints>
-            <IsManuallyRouted>true</IsManuallyRouted>
-            <DbOid>
-              <Path>item1.dbo.WEAPON.FK_WeaponType</Path>
-              <TypeName>ForeignKey</TypeName>
-            </DbOid>
-          </Model>
-          <Model xsi:type="RelationCommentModel">
-            <CustomProperties>
-              <OID>139</OID>
-              <HolderModel>138</HolderModel>
-              <Port>142</Port>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port xsi:type="LinkPort">
-                <Location>
-                  <X>-142.5 px</X>
-                  <Y>-8.35168066259939E-07 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>142</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-                <LinkPortAnchor>OutPoint</LinkPortAnchor>
-              </Port>
-            </PortAnchors>
-            <CommentOffset>
-              <X>22 px</X>
-              <Y>2 px</Y>
-            </CommentOffset>
-          </Model>
-          <Model xsi:type="RelationLinkModel">
-            <CustomProperties>
-              <OID>143</OID>
-              <Comment>144</Comment>
-              <OutModel>115</OutModel>
-              <InModel>73</InModel>
-              <OutPort>145</OutPort>
-              <InPort>146</InPort>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port>
-                <Location>
-                  <X>0.700000000000045 px</X>
-                  <Y>520.7 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
-                <CustomProperties>
                   <OID>145</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
-              <Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.dbo.ITEM.FK_ITEM_LC</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>143</OID>
+              <HolderModel>142</HolderModel>
+              <Port>146</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
                 <Location>
-                  <X>227.384634288811 px</X>
-                  <Y>245.461601310936 px</Y>
+                  <X>-23 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
@@ -2436,51 +2456,6 @@
                   <OID>146</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
-              </Port>
-            </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>1012.775 px</X>
-                <Y>2010.7 px</Y>
-              </PointD>
-              <PointD>
-                <X>1012.775 px</X>
-                <Y>1750 px</Y>
-              </PointD>
-              <PointD>
-                <X>601.1 px</X>
-                <Y>1750 px</Y>
-              </PointD>
-              <PointD>
-                <X>601.1 px</X>
-                <Y>1713.46160131094 px</Y>
-              </PointD>
-            </BendPoints>
-            <IsManuallyRouted>true</IsManuallyRouted>
-            <DbOid>
-              <Path>item1.dbo.WEAPON.FK_WEAPON_ITEM_uiIndex</Path>
-              <TypeName>ForeignKey</TypeName>
-            </DbOid>
-          </Model>
-          <Model xsi:type="RelationCommentModel">
-            <CustomProperties>
-              <OID>144</OID>
-              <HolderModel>143</HolderModel>
-              <Port>147</Port>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port xsi:type="LinkPort">
-                <Location>
-                  <X>343.0625 px</X>
-                  <Y>260.7 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Left</Align>
-                <CustomProperties>
-                  <OID>147</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
               </Port>
             </PortAnchors>
@@ -2489,12 +2464,35 @@
               <Y>2 px</Y>
             </CommentOffset>
           </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>147</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1350 px</X>
+              <Y>610 px</Y>
+            </Location>
+            <Size>
+              <Width>238 px</Width>
+              <Height>382 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.LOADBEARINGEQUIPMENT</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
               <OID>148</OID>
               <Comment>149</Comment>
-              <OutModel>10</OutModel>
-              <InModel>73</InModel>
+              <OutModel>147</OutModel>
+              <InModel>72</InModel>
               <OutPort>150</OutPort>
               <InPort>151</InPort>
               <Parent>0</Parent>
@@ -2502,8 +2500,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>1 px</X>
-                  <Y>486.6 px</Y>
+                  <X>0 px</X>
+                  <Y>191 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -2514,26 +2512,20 @@
               </Port>
               <Port>
                 <Location>
-                  <X>220.1 px</X>
-                  <Y>1.10000000000014 px</Y>
+                  <X>0 px</X>
+                  <Y>761 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>151</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>508.1 px</X>
-                <Y>709.6 px</Y>
-              </PointD>
-            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>item1.dbo.Attachment.FK_Attachment_ITEM_uiIndex</Path>
+              <Path>Item1.dbo.LOADBEARINGEQUIPMENT.FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -2547,8 +2539,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>57.8999938964844 px</X>
-                  <Y>-379.200048828125 px</Y>
+                  <X>23 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -2564,65 +2556,88 @@
               <Y>2 px</Y>
             </CommentOffset>
           </Model>
-          <Model xsi:type="RelationLinkModel">
+          <Model xsi:type="TableModel">
             <CustomProperties>
               <OID>153</OID>
-              <Comment>154</Comment>
-              <OutModel>3</OutModel>
-              <InModel>73</InModel>
-              <OutPort>155</OutPort>
-              <InPort>156</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1350 px</X>
+              <Y>1040 px</Y>
+            </Location>
+            <Size>
+              <Width>173 px</Width>
+              <Height>144 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.TL</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>154</OID>
+              <Comment>155</Comment>
+              <OutModel>72</OutModel>
+              <InModel>153</InModel>
+              <OutPort>156</OutPort>
+              <InPort>157</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>148 px</Y>
+                  <Y>1022.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
-                <CustomProperties>
-                  <OID>155</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>0 px</X>
-                  <Y>130 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
                 <CustomProperties>
                   <OID>156</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
-            </PortAnchors>
-            <IsManuallyRouted>false</IsManuallyRouted>
-            <DbOid>
-              <Path>item1.dbo.ARMOUR.FK_ARMOUR_ITEM_uiIndex</Path>
-              <TypeName>ForeignKey</TypeName>
-            </DbOid>
-          </Model>
-          <Model xsi:type="RelationCommentModel">
-            <CustomProperties>
-              <OID>154</OID>
-              <HolderModel>153</HolderModel>
-              <Port>157</Port>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port xsi:type="LinkPort">
+              <Port>
                 <Location>
-                  <X>-359.5 px</X>
-                  <Y>0 px</Y>
+                  <X>0 px</X>
+                  <Y>22.5 px</Y>
                 </Location>
-                <Anchors>None</Anchors>
-                <Align>Right</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>157</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.dbo.ITEM.FK_ITEM_TL</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>155</OID>
+              <HolderModel>154</HolderModel>
+              <Port>158</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-23 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>158</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -2633,65 +2648,358 @@
               <Y>2 px</Y>
             </CommentOffset>
           </Model>
-          <Model xsi:type="RelationLinkModel">
-            <CustomProperties>
-              <OID>158</OID>
-              <Comment>159</Comment>
-              <OutModel>43</OutModel>
-              <InModel>73</InModel>
-              <OutPort>160</OutPort>
-              <InPort>161</InPort>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port>
-                <Location>
-                  <X>0 px</X>
-                  <Y>392 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>160</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>0 px</X>
-                  <Y>54 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
-                <CustomProperties>
-                  <OID>161</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-            </PortAnchors>
-            <IsManuallyRouted>false</IsManuallyRouted>
-            <DbOid>
-              <Path>item1.dbo.EXPLOSIVE.FK_EXPLOSIVE_ITEM_uiIndex</Path>
-              <TypeName>ForeignKey</TypeName>
-            </DbOid>
-          </Model>
-          <Model xsi:type="RelationCommentModel">
+          <Model xsi:type="TableModel">
             <CustomProperties>
               <OID>159</OID>
-              <HolderModel>158</HolderModel>
-              <Port>162</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>520 px</X>
+              <Y>1060 px</Y>
+            </Location>
+            <Size>
+              <Width>174 px</Width>
+              <Height>124 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.Type_of_Box</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>160</OID>
+              <Comment>161</Comment>
+              <OutModel>9</OutModel>
+              <InModel>159</InModel>
+              <OutPort>162</OutPort>
+              <InPort>163</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>144.75 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>162</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>62 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>163</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>394.75 px</X>
+                <Y>204 px</Y>
+              </PointD>
+              <PointD>
+                <X>456 px</X>
+                <Y>204 px</Y>
+              </PointD>
+              <PointD>
+                <X>456 px</X>
+                <Y>1041 px</Y>
+              </PointD>
+              <PointD>
+                <X>500 px</X>
+                <Y>1041 px</Y>
+              </PointD>
+              <PointD>
+                <X>500 px</X>
+                <Y>1122 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.dbo.AnyBoxNameType.FK_AnyBoxNameType_Type_of_Box_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>161</OID>
+              <HolderModel>160</HolderModel>
+              <Port>164</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-115.5 px</X>
-                  <Y>0 px</Y>
+                  <X>-61.25 px</X>
+                  <Y>-438.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>164</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>165</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1630 px</X>
+              <Y>930 px</Y>
+            </Location>
+            <Size>
+              <Width>169 px</Width>
+              <Height>144 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.TypeOfDamage</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>166</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1710 px</X>
+              <Y>40 px</Y>
+            </Location>
+            <Size>
+              <Width>272 px</Width>
+              <Height>552 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.WEAPON</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>167</OID>
+              <Comment>168</Comment>
+              <OutModel>166</OutModel>
+              <InModel>72</InModel>
+              <OutPort>169</OutPort>
+              <InPort>170</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>276 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>169</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>276 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
                 <CustomProperties>
-                  <OID>162</OID>
+                  <OID>170</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>1690 px</X>
+                <Y>316 px</Y>
+              </PointD>
+              <PointD>
+                <X>1690 px</X>
+                <Y>386 px</Y>
+              </PointD>
+              <PointD>
+                <X>1324 px</X>
+                <Y>386 px</Y>
+              </PointD>
+              <PointD>
+                <X>1324 px</X>
+                <Y>316 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.dbo.WEAPON.FK_WEAPON_ITEM_uiIndex</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>168</OID>
+              <HolderModel>167</HolderModel>
+              <Port>171</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>203 px</X>
+                  <Y>-70 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>171</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>172</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1570 px</X>
+              <Y>1120 px</Y>
+            </Location>
+            <Size>
+              <Width>185 px</Width>
+              <Height>127 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.WeaponAttackType</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>173</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1630 px</X>
+              <Y>640 px</Y>
+            </Location>
+            <Size>
+              <Width>232 px</Width>
+              <Height>246 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.dbo.WeaponDamage</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>174</OID>
+              <Comment>175</Comment>
+              <OutModel>173</OutModel>
+              <InModel>165</InModel>
+              <OutPort>176</OutPort>
+              <InPort>177</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>84.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>176</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>84.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>177</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.dbo.WeaponDamage.FK_WeaponDamage_TypeOfDamage_id1</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>175</OID>
+              <HolderModel>174</HolderModel>
+              <Port>178</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>0 px</X>
+                  <Y>-22 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>178</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -2704,63 +3012,219 @@
           </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>163</OID>
-              <Comment>164</Comment>
-              <OutModel>102</OutModel>
-              <InModel>73</InModel>
-              <OutPort>165</OutPort>
-              <InPort>166</InPort>
+              <OID>179</OID>
+              <Comment>180</Comment>
+              <OutModel>173</OutModel>
+              <InModel>165</InModel>
+              <OutPort>181</OutPort>
+              <InPort>182</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>94.5 px</Y>
+                  <X>126.75 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
                 <CustomProperties>
-                  <OID>165</OID>
+                  <OID>181</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>336.5 px</Y>
+                  <X>126.75 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
                 <CustomProperties>
-                  <OID>166</OID>
+                  <OID>182</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>item1.dbo.LOADBEARINGEQUIPMENT.FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex</Path>
+              <Path>Item1.dbo.WeaponDamage.FK_WeaponDamage_TypeOfDamage_id2</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>164</OID>
-              <HolderModel>163</HolderModel>
-              <Port>167</Port>
+              <OID>180</OID>
+              <HolderModel>179</HolderModel>
+              <Port>183</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-185 px</X>
-                  <Y>0 px</Y>
+                  <X>0 px</X>
+                  <Y>-22 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Right</Align>
+                <Align>Bottom</Align>
                 <CustomProperties>
-                  <OID>167</OID>
+                  <OID>183</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>184</OID>
+              <Comment>185</Comment>
+              <OutModel>173</OutModel>
+              <InModel>166</InModel>
+              <OutPort>186</OutPort>
+              <InPort>187</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>156 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>186</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>76 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>187</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.dbo.WeaponDamage.FK_WeaponDamage_WEAPON_uiIndex</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>185</OID>
+              <HolderModel>184</HolderModel>
+              <Port>188</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>0 px</X>
+                  <Y>24 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>188</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>189</OID>
+              <Comment>190</Comment>
+              <OutModel>173</OutModel>
+              <InModel>172</InModel>
+              <OutPort>191</OutPort>
+              <InPort>192</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>62.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>191</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>122.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>192</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>1692.5 px</X>
+                <Y>906 px</Y>
+              </PointD>
+              <PointD>
+                <X>1622.5 px</X>
+                <Y>906 px</Y>
+              </PointD>
+              <PointD>
+                <X>1622.5 px</X>
+                <Y>1100 px</Y>
+              </PointD>
+              <PointD>
+                <X>1692.5 px</X>
+                <Y>1100 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.dbo.WeaponDamage.FK_WeaponDamage_WeaponAttackType_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>190</OID>
+              <HolderModel>189</HolderModel>
+              <Port>193</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>70 px</X>
+                  <Y>-117 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>193</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -2774,10 +3238,10 @@
         </Children>
         <ViewPort>
           <ScaleMode>Free</ScaleMode>
-          <Scale>0.6</Scale>
+          <Scale>0.229518145</Scale>
           <Location>
-            <X>-889.999964634579 px</X>
-            <Y>1621.66660265128 px</Y>
+            <X>-95.8529475368946 px</X>
+            <Y>-505.406707249065 px</Y>
           </Location>
         </ViewPort>
       </Model>

@@ -377,9 +377,9 @@ namespace Item_WPF
             }
         }
 
-        public CharacterDB()
-        {
-        }
+        //public CharacterDB()
+        //{
+        //}
 
         public CharacterDB Copy()
         {
@@ -388,7 +388,8 @@ namespace Item_WPF
 
         public override string ToString()
         {
-            return Name;
+            // return Name;
+            return name;
         }
     }
 }
