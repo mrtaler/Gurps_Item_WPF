@@ -352,7 +352,7 @@ namespace Item_WPF
                 int points = 0;
                 foreach (Advantage advantage in Advantages)
                 {
-                    points += advantage.Points;
+               //     points += advantage.Points;
                 }
                 return points;
             }
@@ -364,7 +364,7 @@ namespace Item_WPF
                 int points = 0;
                 foreach (Skill skill in Skills)
                 {
-                    points += skill.Points;
+            //        points += skill.Points;
                 }
                 return points;
             }

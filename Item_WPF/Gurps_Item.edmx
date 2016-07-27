@@ -5,6 +5,50 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Хранилище item1Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Advantage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="idCategory" Type="int" />
+          <Property Name="Cost" Type="int" />
+          <Property Name="idType" Type="int" />
+          <Property Name="Referense" Type="nvarchar" MaxLength="50" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="500" />
+          <Property Name="ParentAdv" Type="int" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Item1.CharDB.AdvantageMods" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="AdvantageMods">
+          <Key>
+            <PropertyRef Name="idAdvantage" />
+          </Key>
+          <Property Name="idAdvantage" Type="int" Nullable="false" />
+          <Property Name="NameMods" Type="nvarchar" MaxLength="50" />
+          <Property Name="CostType" Type="nvarchar" MaxLength="50" />
+          <Property Name="CostAmount" Type="int" />
+          <Property Name="affects" Type="nvarchar" MaxLength="50" />
+          <Property Name="Referense" Type="nvarchar" MaxLength="50" />
+          <Property Name="notes" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Attribute">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Item1.CharDB.AttributeBonus" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="AttributeBonus">
+          <Key>
+            <PropertyRef Name="idAdvantage" />
+          </Key>
+          <Property Name="idAdvantage" Type="int" Nullable="false" />
+          <Property Name="idAttribute" Type="int" />
+          <Property Name="amount" Type="int" />
+        </EntityType>
         <EntityType Name="CharacterDB">
           <Key>
             <PropertyRef Name="id" />
@@ -22,6 +66,63 @@
           <Property Name="BasicSpeedPoints" Type="real" Nullable="false" />
           <Property Name="BasicMovePoints" Type="int" Nullable="false" />
         </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Item1.CharDB.DefaultSkill" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="DefaultSkill">
+          <Key>
+            <PropertyRef Name="idSkillIn" />
+            <PropertyRef Name="idSkillOut" />
+          </Key>
+          <Property Name="idSkillIn" Type="int" Nullable="false" />
+          <Property Name="idSkillOut" Type="int" Nullable="false" />
+          <Property Name="Modifier" Type="int" />
+        </EntityType>
+        <EntityType Name="Difficulty">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="cost" Type="nvarchar" MaxLength="50" />
+          <Property Name="baseDiff" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GurpsAdvCategory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameOfCategory" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GurpsSkill">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameSkill" Type="nvarchar" MaxLength="50" />
+          <Property Name="idDifficulty" Type="int" />
+          <Property Name="Points" Type="int" />
+          <Property Name="Reference" Type="nvarchar" MaxLength="50" />
+          <Property Name="idSpecialization" Type="int" />
+          <Property Name="TypeSpecialization" Type="bit" />
+          <Property Name="DefaultModifier" Type="int" />
+        </EntityType>
+        <EntityType Name="GurpsSkillCategory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NamelCategory" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Item1.CharDB.GurpsSkillCategory88" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="GurpsSkillCategory88">
+          <Key>
+            <PropertyRef Name="idSkill" />
+            <PropertyRef Name="idSkillCategory" />
+          </Key>
+          <Property Name="idSkill" Type="int" Nullable="false" />
+          <Property Name="idSkillCategory" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="InventoryOfChar">
           <Key>
             <PropertyRef Name="id" />
@@ -30,6 +131,72 @@
           <Property Name="IdCharacter" Type="int" Nullable="false" />
           <Property Name="IdItem" Type="int" Nullable="false" />
           <Property Name="Count" Type="bigint" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Item1.CharDB.NeedSkill" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="NeedSkill">
+          <Key>
+            <PropertyRef Name="idSkillIn" />
+            <PropertyRef Name="idSkillOut" />
+          </Key>
+          <Property Name="idSkillIn" Type="int" Nullable="false" />
+          <Property Name="idSkillOut" Type="int" Nullable="false" />
+          <Property Name="Needed" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Skill">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameSkill" Type="nvarchar" MaxLength="50" />
+          <Property Name="NameSpec" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Item1.CharDB.SkillBonus" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="SkillBonus">
+          <Key>
+            <PropertyRef Name="idAdvantage" />
+            <PropertyRef Name="idSkill" />
+          </Key>
+          <Property Name="idAdvantage" Type="int" Nullable="false" />
+          <Property Name="idSkill" Type="int" Nullable="false" />
+          <Property Name="amount" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SkillDifficulty">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idDefaultstat" Type="int" />
+          <Property Name="idDifficulty" Type="int" />
+          <Property Name="De" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Item1.CharDB.TabooAdv" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="TabooAdv">
+          <Key>
+            <PropertyRef Name="idInAdv" />
+            <PropertyRef Name="idOutAdv" />
+          </Key>
+          <Property Name="idInAdv" Type="int" Nullable="false" />
+          <Property Name="idOutAdv" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeAdv">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Item1.CharDB.TypeAdvSumm" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="TypeAdvSumm">
+          <Key>
+            <PropertyRef Name="IdAdv" />
+            <PropertyRef Name="idType" />
+          </Key>
+          <Property Name="IdAdv" Type="int" Nullable="false" />
+          <Property Name="idType" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="AMMOUPGRATES">
           <Key>
@@ -494,6 +661,72 @@
           <Property Name="TypeOfDamage2text" Type="nvarchar" MaxLength="50" />
           <Property Name="Descrip" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <Association Name="FK_Advantage_Advantage_id">
+          <End Role="Advantage" Type="Self.Advantage" Multiplicity="0..1" />
+          <End Role="Advantage1" Type="Self.Advantage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Advantage">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Advantage1">
+              <PropertyRef Name="ParentAdv" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Advantage_GurpsAdvCategory_id">
+          <End Role="GurpsAdvCategory" Type="Self.GurpsAdvCategory" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Advantage" Type="Self.Advantage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsAdvCategory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Advantage">
+              <PropertyRef Name="idCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdvantageMods_Advantage_id">
+          <End Role="Advantage" Type="Self.Advantage" Multiplicity="1" />
+          <End Role="AdvantageMods" Type="Self.AdvantageMods" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Advantage">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AdvantageMods">
+              <PropertyRef Name="idAdvantage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdvBonus_Advantage_id">
+          <End Role="Advantage" Type="Self.Advantage" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AttributeBonus" Type="Self.AttributeBonus" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Advantage">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AttributeBonus">
+              <PropertyRef Name="idAdvantage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdvBonus_AttributeBonus_id">
+          <End Role="Attribute" Type="Self.Attribute" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AttributeBonus" Type="Self.AttributeBonus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Attribute">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AttributeBonus">
+              <PropertyRef Name="idAttribute" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_AnyBoxNameType_AnyBoxNameType_id">
           <End Role="AnyBoxNameType" Type="Self.AnyBoxNameType" Multiplicity="0..1" />
           <End Role="AnyBoxNameType1" Type="Self.AnyBoxNameType" Multiplicity="*" />
@@ -634,6 +867,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_DefaultSkill_GurpsSkill_id_in">
+          <End Role="GurpsSkill" Type="Self.GurpsSkill" Multiplicity="1" />
+          <End Role="DefaultSkill" Type="Self.DefaultSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsSkill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="DefaultSkill">
+              <PropertyRef Name="idSkillIn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DefaultSkill_GurpsSkill_id_out">
+          <End Role="GurpsSkill" Type="Self.GurpsSkill" Multiplicity="1" />
+          <End Role="DefaultSkill" Type="Self.DefaultSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsSkill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="DefaultSkill">
+              <PropertyRef Name="idSkillOut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Drug_ITEM_uiIndex">
           <End Role="ITEM" Type="Self.ITEM" Multiplicity="1" />
           <End Role="Drug" Type="Self.Drug" Multiplicity="0..1" />
@@ -707,6 +964,54 @@
             </Principal>
             <Dependent Role="G_SubAttachClass">
               <PropertyRef Name="AttachClass" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GurpsSkill_GurpsSkill_id">
+          <End Role="GurpsSkill" Type="Self.GurpsSkill" Multiplicity="0..1" />
+          <End Role="GurpsSkill1" Type="Self.GurpsSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsSkill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GurpsSkill1">
+              <PropertyRef Name="idSpecialization" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GurpsSkill_SkillDifficulty_id">
+          <End Role="SkillDifficulty" Type="Self.SkillDifficulty" Multiplicity="0..1" />
+          <End Role="GurpsSkill" Type="Self.GurpsSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SkillDifficulty">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GurpsSkill">
+              <PropertyRef Name="idDifficulty" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GurpsSkillCategory88_GurpsSkill_id">
+          <End Role="GurpsSkill" Type="Self.GurpsSkill" Multiplicity="1" />
+          <End Role="GurpsSkillCategory88" Type="Self.GurpsSkillCategory88" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsSkill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GurpsSkillCategory88">
+              <PropertyRef Name="idSkill" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GurpsSkillCategory88_GurpsSkillCategory_id">
+          <End Role="GurpsSkillCategory" Type="Self.GurpsSkillCategory" Multiplicity="1" />
+          <End Role="GurpsSkillCategory88" Type="Self.GurpsSkillCategory88" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsSkillCategory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GurpsSkillCategory88">
+              <PropertyRef Name="idSkillCategory" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -836,6 +1141,134 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_NeedSkill_GurpsSkill_id_in">
+          <End Role="GurpsSkill" Type="Self.GurpsSkill" Multiplicity="1" />
+          <End Role="NeedSkill" Type="Self.NeedSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsSkill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NeedSkill">
+              <PropertyRef Name="idSkillIn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NeedSkill_GurpsSkill_id_out">
+          <End Role="GurpsSkill" Type="Self.GurpsSkill" Multiplicity="1" />
+          <End Role="NeedSkill" Type="Self.NeedSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsSkill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NeedSkill">
+              <PropertyRef Name="idSkillOut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SkillBonus_Advantage_id">
+          <End Role="Advantage" Type="Self.Advantage" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SkillBonus" Type="Self.SkillBonus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Advantage">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SkillBonus">
+              <PropertyRef Name="idAdvantage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SkillBonus_Skill_Id">
+          <End Role="Skill" Type="Self.Skill" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SkillBonus" Type="Self.SkillBonus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Skill">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SkillBonus">
+              <PropertyRef Name="idSkill" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SKILLTYPES_Attribute_id">
+          <End Role="Attribute" Type="Self.Attribute" Multiplicity="0..1" />
+          <End Role="SkillDifficulty" Type="Self.SkillDifficulty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Attribute">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SkillDifficulty">
+              <PropertyRef Name="idDefaultstat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SKILLTYPES_Difficulty_id">
+          <End Role="Difficulty" Type="Self.Difficulty" Multiplicity="0..1" />
+          <End Role="SkillDifficulty" Type="Self.SkillDifficulty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Difficulty">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SkillDifficulty">
+              <PropertyRef Name="idDifficulty" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabooAdv_Advantage_id">
+          <End Role="Advantage" Type="Self.Advantage" Multiplicity="1" />
+          <End Role="TabooAdv" Type="Self.TabooAdv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Advantage">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabooAdv">
+              <PropertyRef Name="idInAdv" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabooAdv_Advantage_id1">
+          <End Role="Advantage" Type="Self.Advantage" Multiplicity="1" />
+          <End Role="TabooAdv" Type="Self.TabooAdv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Advantage">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabooAdv">
+              <PropertyRef Name="idOutAdv" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeAdvSumm_Advantage_id">
+          <End Role="Advantage" Type="Self.Advantage" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TypeAdvSumm" Type="Self.TypeAdvSumm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Advantage">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TypeAdvSumm">
+              <PropertyRef Name="IdAdv" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TypeAdvSumm_TypeAdv_id">
+          <End Role="TypeAdv" Type="Self.TypeAdv" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TypeAdvSumm" Type="Self.TypeAdvSumm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeAdv">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TypeAdvSumm">
+              <PropertyRef Name="idType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_WEAPON_ITEM_uiIndex">
           <End Role="ITEM" Type="Self.ITEM" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -952,8 +1385,17 @@
           <Parameter Name="Returns" Type="int" Mode="InOut" />
         </Function>
         <EntityContainer Name="Хранилище item1ModelContainer">
+          <EntitySet Name="Advantage" EntityType="Self.Advantage" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="Attribute" EntityType="Self.Attribute" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="CharacterDB" EntityType="Self.CharacterDB" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="Difficulty" EntityType="Self.Difficulty" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="GurpsAdvCategory" EntityType="Self.GurpsAdvCategory" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="GurpsSkill" EntityType="Self.GurpsSkill" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="GurpsSkillCategory" EntityType="Self.GurpsSkillCategory" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="InventoryOfChar" EntityType="Self.InventoryOfChar" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="Skill" EntityType="Self.Skill" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="SkillDifficulty" EntityType="Self.SkillDifficulty" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="TypeAdv" EntityType="Self.TypeAdv" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="AMMOUPGRATES" EntityType="Self.AMMOUPGRATES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AnyBoxNameType" EntityType="Self.AnyBoxNameType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ARMOUR" EntityType="Self.ARMOUR" Schema="dbo" store:Type="Tables" />
@@ -985,6 +1427,83 @@
           <EntitySet Name="WEAPON" EntityType="Self.WEAPON" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WeaponAttackType" EntityType="Self.WeaponAttackType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WeaponDamage" EntityType="Self.WeaponDamage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdvantageMods" EntityType="Self.AdvantageMods" store:Type="Tables" store:Schema="CharDB">
+            <DefiningQuery>SELECT 
+    [AdvantageMods].[idAdvantage] AS [idAdvantage], 
+    [AdvantageMods].[NameMods] AS [NameMods], 
+    [AdvantageMods].[CostType] AS [CostType], 
+    [AdvantageMods].[CostAmount] AS [CostAmount], 
+    [AdvantageMods].[affects] AS [affects], 
+    [AdvantageMods].[Referense] AS [Referense], 
+    [AdvantageMods].[notes] AS [notes]
+    FROM [CharDB].[AdvantageMods] AS [AdvantageMods]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="AttributeBonus" EntityType="Self.AttributeBonus" store:Type="Tables" store:Schema="CharDB">
+            <DefiningQuery>SELECT 
+    [AttributeBonus].[idAdvantage] AS [idAdvantage], 
+    [AttributeBonus].[idAttribute] AS [idAttribute], 
+    [AttributeBonus].[amount] AS [amount]
+    FROM [CharDB].[AttributeBonus] AS [AttributeBonus]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DefaultSkill" EntityType="Self.DefaultSkill" store:Type="Tables" store:Schema="CharDB">
+            <DefiningQuery>SELECT 
+    [DefaultSkill].[idSkillIn] AS [idSkillIn], 
+    [DefaultSkill].[idSkillOut] AS [idSkillOut], 
+    [DefaultSkill].[Modifier] AS [Modifier]
+    FROM [CharDB].[DefaultSkill] AS [DefaultSkill]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="GurpsSkillCategory88" EntityType="Self.GurpsSkillCategory88" store:Type="Tables" store:Schema="CharDB">
+            <DefiningQuery>SELECT 
+    [GurpsSkillCategory88].[idSkill] AS [idSkill], 
+    [GurpsSkillCategory88].[idSkillCategory] AS [idSkillCategory]
+    FROM [CharDB].[GurpsSkillCategory88] AS [GurpsSkillCategory88]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="NeedSkill" EntityType="Self.NeedSkill" store:Type="Tables" store:Schema="CharDB">
+            <DefiningQuery>SELECT 
+    [NeedSkill].[idSkillIn] AS [idSkillIn], 
+    [NeedSkill].[idSkillOut] AS [idSkillOut], 
+    [NeedSkill].[Needed] AS [Needed]
+    FROM [CharDB].[NeedSkill] AS [NeedSkill]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SkillBonus" EntityType="Self.SkillBonus" store:Type="Tables" store:Schema="CharDB">
+            <DefiningQuery>SELECT 
+    [SkillBonus].[idAdvantage] AS [idAdvantage], 
+    [SkillBonus].[idSkill] AS [idSkill], 
+    [SkillBonus].[amount] AS [amount]
+    FROM [CharDB].[SkillBonus] AS [SkillBonus]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TabooAdv" EntityType="Self.TabooAdv" store:Type="Tables" store:Schema="CharDB">
+            <DefiningQuery>SELECT 
+    [TabooAdv].[idInAdv] AS [idInAdv], 
+    [TabooAdv].[idOutAdv] AS [idOutAdv]
+    FROM [CharDB].[TabooAdv] AS [TabooAdv]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TypeAdvSumm" EntityType="Self.TypeAdvSumm" store:Type="Tables" store:Schema="CharDB">
+            <DefiningQuery>SELECT 
+    [TypeAdvSumm].[IdAdv] AS [IdAdv], 
+    [TypeAdvSumm].[idType] AS [idType]
+    FROM [CharDB].[TypeAdvSumm] AS [TypeAdvSumm]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Advantage_Advantage_id" Association="Self.FK_Advantage_Advantage_id">
+            <End Role="Advantage" EntitySet="Advantage" />
+            <End Role="Advantage1" EntitySet="Advantage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Advantage_GurpsAdvCategory_id" Association="Self.FK_Advantage_GurpsAdvCategory_id">
+            <End Role="GurpsAdvCategory" EntitySet="GurpsAdvCategory" />
+            <End Role="Advantage" EntitySet="Advantage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdvantageMods_Advantage_id" Association="Self.FK_AdvantageMods_Advantage_id">
+            <End Role="Advantage" EntitySet="Advantage" />
+            <End Role="AdvantageMods" EntitySet="AdvantageMods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdvBonus_Advantage_id" Association="Self.FK_AdvBonus_Advantage_id">
+            <End Role="Advantage" EntitySet="Advantage" />
+            <End Role="AttributeBonus" EntitySet="AttributeBonus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdvBonus_AttributeBonus_id" Association="Self.FK_AdvBonus_AttributeBonus_id">
+            <End Role="Attribute" EntitySet="Attribute" />
+            <End Role="AttributeBonus" EntitySet="AttributeBonus" />
+          </AssociationSet>
           <AssociationSet Name="FK_AnyBoxNameType_AnyBoxNameType_id" Association="Self.FK_AnyBoxNameType_AnyBoxNameType_id">
             <End Role="AnyBoxNameType" EntitySet="AnyBoxNameType" />
             <End Role="AnyBoxNameType1" EntitySet="AnyBoxNameType" />
@@ -1029,6 +1548,14 @@
             <End Role="Caliber" EntitySet="Caliber" />
             <End Role="ITEM" EntitySet="ITEM" />
           </AssociationSet>
+          <AssociationSet Name="FK_DefaultSkill_GurpsSkill_id_in" Association="Self.FK_DefaultSkill_GurpsSkill_id_in">
+            <End Role="GurpsSkill" EntitySet="GurpsSkill" />
+            <End Role="DefaultSkill" EntitySet="DefaultSkill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DefaultSkill_GurpsSkill_id_out" Association="Self.FK_DefaultSkill_GurpsSkill_id_out">
+            <End Role="GurpsSkill" EntitySet="GurpsSkill" />
+            <End Role="DefaultSkill" EntitySet="DefaultSkill" />
+          </AssociationSet>
           <AssociationSet Name="FK_Drug_ITEM_uiIndex" Association="Self.FK_Drug_ITEM_uiIndex">
             <End Role="ITEM" EntitySet="ITEM" />
             <End Role="Drug" EntitySet="Drug" />
@@ -1052,6 +1579,22 @@
           <AssociationSet Name="FK_G_SubAttachClass_G_AttachClass" Association="Self.FK_G_SubAttachClass_G_AttachClass">
             <End Role="G_AttachClass" EntitySet="G_AttachClass" />
             <End Role="G_SubAttachClass" EntitySet="G_SubAttachClass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GurpsSkill_GurpsSkill_id" Association="Self.FK_GurpsSkill_GurpsSkill_id">
+            <End Role="GurpsSkill" EntitySet="GurpsSkill" />
+            <End Role="GurpsSkill1" EntitySet="GurpsSkill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GurpsSkill_SkillDifficulty_id" Association="Self.FK_GurpsSkill_SkillDifficulty_id">
+            <End Role="SkillDifficulty" EntitySet="SkillDifficulty" />
+            <End Role="GurpsSkill" EntitySet="GurpsSkill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GurpsSkillCategory88_GurpsSkill_id" Association="Self.FK_GurpsSkillCategory88_GurpsSkill_id">
+            <End Role="GurpsSkill" EntitySet="GurpsSkill" />
+            <End Role="GurpsSkillCategory88" EntitySet="GurpsSkillCategory88" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GurpsSkillCategory88_GurpsSkillCategory_id" Association="Self.FK_GurpsSkillCategory88_GurpsSkillCategory_id">
+            <End Role="GurpsSkillCategory" EntitySet="GurpsSkillCategory" />
+            <End Role="GurpsSkillCategory88" EntitySet="GurpsSkillCategory88" />
           </AssociationSet>
           <AssociationSet Name="FK_InventoryOfChar_CharacterDB_id" Association="Self.FK_InventoryOfChar_CharacterDB_id">
             <End Role="CharacterDB" EntitySet="CharacterDB" />
@@ -1092,6 +1635,46 @@
           <AssociationSet Name="FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex" Association="Self.FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex">
             <End Role="ITEM" EntitySet="ITEM" />
             <End Role="LOADBEARINGEQUIPMENT" EntitySet="LOADBEARINGEQUIPMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NeedSkill_GurpsSkill_id_in" Association="Self.FK_NeedSkill_GurpsSkill_id_in">
+            <End Role="GurpsSkill" EntitySet="GurpsSkill" />
+            <End Role="NeedSkill" EntitySet="NeedSkill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NeedSkill_GurpsSkill_id_out" Association="Self.FK_NeedSkill_GurpsSkill_id_out">
+            <End Role="GurpsSkill" EntitySet="GurpsSkill" />
+            <End Role="NeedSkill" EntitySet="NeedSkill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SkillBonus_Advantage_id" Association="Self.FK_SkillBonus_Advantage_id">
+            <End Role="Advantage" EntitySet="Advantage" />
+            <End Role="SkillBonus" EntitySet="SkillBonus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SkillBonus_Skill_Id" Association="Self.FK_SkillBonus_Skill_Id">
+            <End Role="Skill" EntitySet="Skill" />
+            <End Role="SkillBonus" EntitySet="SkillBonus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SKILLTYPES_Attribute_id" Association="Self.FK_SKILLTYPES_Attribute_id">
+            <End Role="Attribute" EntitySet="Attribute" />
+            <End Role="SkillDifficulty" EntitySet="SkillDifficulty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SKILLTYPES_Difficulty_id" Association="Self.FK_SKILLTYPES_Difficulty_id">
+            <End Role="Difficulty" EntitySet="Difficulty" />
+            <End Role="SkillDifficulty" EntitySet="SkillDifficulty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabooAdv_Advantage_id" Association="Self.FK_TabooAdv_Advantage_id">
+            <End Role="Advantage" EntitySet="Advantage" />
+            <End Role="TabooAdv" EntitySet="TabooAdv" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabooAdv_Advantage_id1" Association="Self.FK_TabooAdv_Advantage_id1">
+            <End Role="Advantage" EntitySet="Advantage" />
+            <End Role="TabooAdv" EntitySet="TabooAdv" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeAdvSumm_Advantage_id" Association="Self.FK_TypeAdvSumm_Advantage_id">
+            <End Role="Advantage" EntitySet="Advantage" />
+            <End Role="TypeAdvSumm" EntitySet="TypeAdvSumm" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TypeAdvSumm_TypeAdv_id" Association="Self.FK_TypeAdvSumm_TypeAdv_id">
+            <End Role="TypeAdv" EntitySet="TypeAdv" />
+            <End Role="TypeAdvSumm" EntitySet="TypeAdvSumm" />
           </AssociationSet>
           <AssociationSet Name="FK_WEAPON_ITEM_uiIndex" Association="Self.FK_WEAPON_ITEM_uiIndex">
             <End Role="ITEM" EntitySet="ITEM" />
@@ -1170,8 +1753,17 @@
             <Parameter Name="price" Mode="In" Type="Decimal" />
             <Parameter Name="sClass" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="Advantages" EntityType="item1Model.Advantage" />
+          <EntitySet Name="Attributes" EntityType="item1Model.Attribute" />
           <EntitySet Name="CharacterDBs" EntityType="item1Model.CharacterDB" />
+          <EntitySet Name="Difficulties" EntityType="item1Model.Difficulty" />
+          <EntitySet Name="GurpsAdvCategories" EntityType="item1Model.GurpsAdvCategory" />
+          <EntitySet Name="GurpsSkills" EntityType="item1Model.GurpsSkill" />
+          <EntitySet Name="GurpsSkillCategories" EntityType="item1Model.GurpsSkillCategory" />
           <EntitySet Name="InventoryOfChars" EntityType="item1Model.InventoryOfChar" />
+          <EntitySet Name="Skills" EntityType="item1Model.Skill" />
+          <EntitySet Name="SkillDifficulties" EntityType="item1Model.SkillDifficulty" />
+          <EntitySet Name="TypeAdvs" EntityType="item1Model.TypeAdv" />
           <EntitySet Name="AMMOUPGRATES" EntityType="item1Model.AMMOUPGRATE" />
           <EntitySet Name="AnyBoxNameTypes" EntityType="item1Model.AnyBoxNameType" />
           <EntitySet Name="ARMOURs" EntityType="item1Model.ARMOUR" />
@@ -1203,13 +1795,78 @@
           <EntitySet Name="WEAPONs" EntityType="item1Model.WEAPON" />
           <EntitySet Name="WeaponAttackTypes" EntityType="item1Model.WeaponAttackType" />
           <EntitySet Name="WeaponDamages" EntityType="item1Model.WeaponDamage" />
+          <EntitySet Name="AdvantageMods" EntityType="item1Model.AdvantageMod" />
+          <EntitySet Name="AttributeBonus" EntityType="item1Model.AttributeBonu" />
+          <EntitySet Name="DefaultSkills" EntityType="item1Model.DefaultSkill" />
+          <EntitySet Name="NeedSkills" EntityType="item1Model.NeedSkill" />
+          <EntitySet Name="SkillBonus" EntityType="item1Model.SkillBonu" />
+          <AssociationSet Name="FK_Advantage_Advantage_id" Association="item1Model.FK_Advantage_Advantage_id">
+            <End Role="Advantage" EntitySet="Advantages" />
+            <End Role="Advantage1" EntitySet="Advantages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Advantage_GurpsAdvCategory_id" Association="item1Model.FK_Advantage_GurpsAdvCategory_id">
+            <End Role="GurpsAdvCategory" EntitySet="GurpsAdvCategories" />
+            <End Role="Advantage" EntitySet="Advantages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdvantageMods_Advantage_id" Association="item1Model.FK_AdvantageMods_Advantage_id">
+            <End Role="Advantage" EntitySet="Advantages" />
+            <End Role="AdvantageMod" EntitySet="AdvantageMods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdvBonus_Advantage_id" Association="item1Model.FK_AdvBonus_Advantage_id">
+            <End Role="Advantage" EntitySet="Advantages" />
+            <End Role="AttributeBonu" EntitySet="AttributeBonus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SkillBonus_Advantage_id" Association="item1Model.FK_SkillBonus_Advantage_id">
+            <End Role="Advantage" EntitySet="Advantages" />
+            <End Role="SkillBonu" EntitySet="SkillBonus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdvBonus_AttributeBonus_id" Association="item1Model.FK_AdvBonus_AttributeBonus_id">
+            <End Role="Attribute" EntitySet="Attributes" />
+            <End Role="AttributeBonu" EntitySet="AttributeBonus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SKILLTYPES_Attribute_id" Association="item1Model.FK_SKILLTYPES_Attribute_id">
+            <End Role="Attribute" EntitySet="Attributes" />
+            <End Role="SkillDifficulty" EntitySet="SkillDifficulties" />
+          </AssociationSet>
           <AssociationSet Name="FK_InventoryOfChar_CharacterDB_id" Association="item1Model.FK_InventoryOfChar_CharacterDB_id">
             <End Role="CharacterDB" EntitySet="CharacterDBs" />
             <End Role="InventoryOfChar" EntitySet="InventoryOfChars" />
           </AssociationSet>
+          <AssociationSet Name="FK_SKILLTYPES_Difficulty_id" Association="item1Model.FK_SKILLTYPES_Difficulty_id">
+            <End Role="Difficulty" EntitySet="Difficulties" />
+            <End Role="SkillDifficulty" EntitySet="SkillDifficulties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DefaultSkill_GurpsSkill_id_in" Association="item1Model.FK_DefaultSkill_GurpsSkill_id_in">
+            <End Role="GurpsSkill" EntitySet="GurpsSkills" />
+            <End Role="DefaultSkill" EntitySet="DefaultSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DefaultSkill_GurpsSkill_id_out" Association="item1Model.FK_DefaultSkill_GurpsSkill_id_out">
+            <End Role="GurpsSkill" EntitySet="GurpsSkills" />
+            <End Role="DefaultSkill" EntitySet="DefaultSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GurpsSkill_GurpsSkill_id" Association="item1Model.FK_GurpsSkill_GurpsSkill_id">
+            <End Role="GurpsSkill" EntitySet="GurpsSkills" />
+            <End Role="GurpsSkill1" EntitySet="GurpsSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GurpsSkill_SkillDifficulty_id" Association="item1Model.FK_GurpsSkill_SkillDifficulty_id">
+            <End Role="SkillDifficulty" EntitySet="SkillDifficulties" />
+            <End Role="GurpsSkill" EntitySet="GurpsSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NeedSkill_GurpsSkill_id_in" Association="item1Model.FK_NeedSkill_GurpsSkill_id_in">
+            <End Role="GurpsSkill" EntitySet="GurpsSkills" />
+            <End Role="NeedSkill" EntitySet="NeedSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NeedSkill_GurpsSkill_id_out" Association="item1Model.FK_NeedSkill_GurpsSkill_id_out">
+            <End Role="GurpsSkill" EntitySet="GurpsSkills" />
+            <End Role="NeedSkill" EntitySet="NeedSkills" />
+          </AssociationSet>
           <AssociationSet Name="FK_InventoryOfChar_ITEM_uiIndex" Association="item1Model.FK_InventoryOfChar_ITEM_uiIndex">
             <End Role="ITEM" EntitySet="ITEMs" />
             <End Role="InventoryOfChar" EntitySet="InventoryOfChars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SkillBonus_Skill_Id" Association="item1Model.FK_SkillBonus_Skill_Id">
+            <End Role="Skill" EntitySet="Skills" />
+            <End Role="SkillBonu" EntitySet="SkillBonus" />
           </AssociationSet>
           <AssociationSet Name="FK_AnyBoxNameType_AnyBoxNameType_id" Association="item1Model.FK_AnyBoxNameType_AnyBoxNameType_id">
             <End Role="AnyBoxNameType" EntitySet="AnyBoxNameTypes" />
@@ -1331,7 +1988,50 @@
             <End Role="WeaponAttackType" EntitySet="WeaponAttackTypes" />
             <End Role="WeaponDamage" EntitySet="WeaponDamages" />
           </AssociationSet>
+          <AssociationSet Name="GurpsSkillCategory88" Association="item1Model.GurpsSkillCategory88">
+            <End Role="GurpsSkill" EntitySet="GurpsSkills" />
+            <End Role="GurpsSkillCategory" EntitySet="GurpsSkillCategories" />
+          </AssociationSet>
+          <AssociationSet Name="TabooAdv" Association="item1Model.TabooAdv">
+            <End Role="Advantage" EntitySet="Advantages" />
+            <End Role="Advantage1" EntitySet="Advantages" />
+          </AssociationSet>
+          <AssociationSet Name="TypeAdvSumm" Association="item1Model.TypeAdvSumm">
+            <End Role="Advantage" EntitySet="Advantages" />
+            <End Role="TypeAdv" EntitySet="TypeAdvs" />
+          </AssociationSet>
           </EntityContainer>
+        <EntityType Name="Advantage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idCategory" Type="Int32" />
+          <Property Name="Cost" Type="Int32" />
+          <Property Name="idType" Type="Int32" />
+          <Property Name="Referense" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ParentAdv" Type="Int32" />
+          <NavigationProperty Name="Advantage1" Relationship="item1Model.FK_Advantage_Advantage_id" FromRole="Advantage" ToRole="Advantage1" />
+          <NavigationProperty Name="Advantage2" Relationship="item1Model.FK_Advantage_Advantage_id" FromRole="Advantage1" ToRole="Advantage" />
+          <NavigationProperty Name="GurpsAdvCategory" Relationship="item1Model.FK_Advantage_GurpsAdvCategory_id" FromRole="Advantage" ToRole="GurpsAdvCategory" />
+          <NavigationProperty Name="AdvantageMod" Relationship="item1Model.FK_AdvantageMods_Advantage_id" FromRole="Advantage" ToRole="AdvantageMod" />
+          <NavigationProperty Name="AttributeBonu" Relationship="item1Model.FK_AdvBonus_Advantage_id" FromRole="Advantage" ToRole="AttributeBonu" />
+          <NavigationProperty Name="SkillBonus" Relationship="item1Model.FK_SkillBonus_Advantage_id" FromRole="Advantage" ToRole="SkillBonu" />
+          <NavigationProperty Name="Advantage11" Relationship="item1Model.TabooAdv" FromRole="Advantage" ToRole="Advantage1" />
+          <NavigationProperty Name="Advantages" Relationship="item1Model.TabooAdv" FromRole="Advantage1" ToRole="Advantage" />
+          <NavigationProperty Name="TypeAdvs" Relationship="item1Model.TypeAdvSumm" FromRole="Advantage" ToRole="TypeAdv" />
+        </EntityType>
+        <EntityType Name="Attribute">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AttributeBonus" Relationship="item1Model.FK_AdvBonus_AttributeBonus_id" FromRole="Attribute" ToRole="AttributeBonu" />
+          <NavigationProperty Name="SkillDifficulties" Relationship="item1Model.FK_SKILLTYPES_Attribute_id" FromRole="Attribute" ToRole="SkillDifficulty" />
+        </EntityType>
         <EntityType Name="CharacterDB">
           <Key>
             <PropertyRef Name="id" />
@@ -1350,6 +2050,53 @@
           <Property Name="BasicMovePoints" Type="Int32" Nullable="false" />
           <NavigationProperty Name="InventoryOfChars" Relationship="item1Model.FK_InventoryOfChar_CharacterDB_id" FromRole="CharacterDB" ToRole="InventoryOfChar" />
         </EntityType>
+        <EntityType Name="Difficulty">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="baseDiff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SkillDifficulties" Relationship="item1Model.FK_SKILLTYPES_Difficulty_id" FromRole="Difficulty" ToRole="SkillDifficulty" />
+        </EntityType>
+        <EntityType Name="GurpsAdvCategory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameOfCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Advantages" Relationship="item1Model.FK_Advantage_GurpsAdvCategory_id" FromRole="GurpsAdvCategory" ToRole="Advantage" />
+        </EntityType>
+        <EntityType Name="GurpsSkill">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameSkill" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idDifficulty" Type="Int32" />
+          <Property Name="Points" Type="Int32" />
+          <Property Name="Reference" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idSpecialization" Type="Int32" />
+          <Property Name="TypeSpecialization" Type="Boolean" />
+          <Property Name="DefaultModifier" Type="Int32" />
+          <NavigationProperty Name="DefaultSkills" Relationship="item1Model.FK_DefaultSkill_GurpsSkill_id_in" FromRole="GurpsSkill" ToRole="DefaultSkill" />
+          <NavigationProperty Name="DefaultSkills1" Relationship="item1Model.FK_DefaultSkill_GurpsSkill_id_out" FromRole="GurpsSkill" ToRole="DefaultSkill" />
+          <NavigationProperty Name="GurpsSkill1" Relationship="item1Model.FK_GurpsSkill_GurpsSkill_id" FromRole="GurpsSkill" ToRole="GurpsSkill1" />
+          <NavigationProperty Name="GurpsSkill2" Relationship="item1Model.FK_GurpsSkill_GurpsSkill_id" FromRole="GurpsSkill1" ToRole="GurpsSkill" />
+          <NavigationProperty Name="SkillDifficulty" Relationship="item1Model.FK_GurpsSkill_SkillDifficulty_id" FromRole="GurpsSkill" ToRole="SkillDifficulty" />
+          <NavigationProperty Name="NeedSkills" Relationship="item1Model.FK_NeedSkill_GurpsSkill_id_in" FromRole="GurpsSkill" ToRole="NeedSkill" />
+          <NavigationProperty Name="NeedSkills1" Relationship="item1Model.FK_NeedSkill_GurpsSkill_id_out" FromRole="GurpsSkill" ToRole="NeedSkill" />
+          <NavigationProperty Name="GurpsSkillCategories" Relationship="item1Model.GurpsSkillCategory88" FromRole="GurpsSkill" ToRole="GurpsSkillCategory" />
+        </EntityType>
+        <EntityType Name="GurpsSkillCategory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NamelCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GurpsSkills" Relationship="item1Model.GurpsSkillCategory88" FromRole="GurpsSkillCategory" ToRole="GurpsSkill" />
+        </EntityType>
         <EntityType Name="InventoryOfChar">
           <Key>
             <PropertyRef Name="id" />
@@ -1360,6 +2107,35 @@
           <Property Name="Count" Type="Int64" Nullable="false" />
           <NavigationProperty Name="CharacterDB" Relationship="item1Model.FK_InventoryOfChar_CharacterDB_id" FromRole="InventoryOfChar" ToRole="CharacterDB" />
           <NavigationProperty Name="ITEM" Relationship="item1Model.FK_InventoryOfChar_ITEM_uiIndex" FromRole="InventoryOfChar" ToRole="ITEM" />
+        </EntityType>
+        <EntityType Name="Skill">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameSkill" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameSpec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SkillBonus" Relationship="item1Model.FK_SkillBonus_Skill_Id" FromRole="Skill" ToRole="SkillBonu" />
+        </EntityType>
+        <EntityType Name="SkillDifficulty">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idDefaultstat" Type="Int32" />
+          <Property Name="idDifficulty" Type="Int32" />
+          <Property Name="De" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Attribute" Relationship="item1Model.FK_SKILLTYPES_Attribute_id" FromRole="SkillDifficulty" ToRole="Attribute" />
+          <NavigationProperty Name="Difficulty" Relationship="item1Model.FK_SKILLTYPES_Difficulty_id" FromRole="SkillDifficulty" ToRole="Difficulty" />
+          <NavigationProperty Name="GurpsSkills" Relationship="item1Model.FK_GurpsSkill_SkillDifficulty_id" FromRole="SkillDifficulty" ToRole="GurpsSkill" />
+        </EntityType>
+        <EntityType Name="TypeAdv">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Advantages" Relationship="item1Model.TypeAdvSumm" FromRole="TypeAdv" ToRole="Advantage" />
         </EntityType>
         <EntityType Name="AMMOUPGRATE">
           <Key>
@@ -1885,6 +2661,154 @@
           <NavigationProperty Name="WEAPON" Relationship="item1Model.FK_WeaponDamage_WEAPON_uiIndex" FromRole="WeaponDamage" ToRole="WEAPON" />
           <NavigationProperty Name="WeaponAttackType" Relationship="item1Model.FK_WeaponDamage_WeaponAttackType_id" FromRole="WeaponDamage" ToRole="WeaponAttackType" />
         </EntityType>
+        <EntityType Name="AdvantageMod">
+          <Key>
+            <PropertyRef Name="idAdvantage" />
+          </Key>
+          <Property Name="idAdvantage" Type="Int32" Nullable="false" />
+          <Property Name="NameMods" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CostType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CostAmount" Type="Int32" />
+          <Property Name="affects" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Referense" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="notes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Advantage" Relationship="item1Model.FK_AdvantageMods_Advantage_id" FromRole="AdvantageMod" ToRole="Advantage" />
+        </EntityType>
+        <EntityType Name="AttributeBonu">
+          <Key>
+            <PropertyRef Name="idAdvantage" />
+          </Key>
+          <Property Name="idAdvantage" Type="Int32" Nullable="false" />
+          <Property Name="idAttribute" Type="Int32" />
+          <Property Name="amount" Type="Int32" />
+          <NavigationProperty Name="Advantage" Relationship="item1Model.FK_AdvBonus_Advantage_id" FromRole="AttributeBonu" ToRole="Advantage" />
+          <NavigationProperty Name="Attribute" Relationship="item1Model.FK_AdvBonus_AttributeBonus_id" FromRole="AttributeBonu" ToRole="Attribute" />
+        </EntityType>
+        <EntityType Name="DefaultSkill">
+          <Key>
+            <PropertyRef Name="idSkillIn" />
+            <PropertyRef Name="idSkillOut" />
+          </Key>
+          <Property Name="idSkillIn" Type="Int32" Nullable="false" />
+          <Property Name="idSkillOut" Type="Int32" Nullable="false" />
+          <Property Name="Modifier" Type="Int32" />
+          <NavigationProperty Name="GurpsSkill" Relationship="item1Model.FK_DefaultSkill_GurpsSkill_id_in" FromRole="DefaultSkill" ToRole="GurpsSkill" />
+          <NavigationProperty Name="GurpsSkill1" Relationship="item1Model.FK_DefaultSkill_GurpsSkill_id_out" FromRole="DefaultSkill" ToRole="GurpsSkill" />
+        </EntityType>
+        <EntityType Name="NeedSkill">
+          <Key>
+            <PropertyRef Name="idSkillIn" />
+            <PropertyRef Name="idSkillOut" />
+          </Key>
+          <Property Name="idSkillIn" Type="Int32" Nullable="false" />
+          <Property Name="idSkillOut" Type="Int32" Nullable="false" />
+          <Property Name="Needed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GurpsSkill" Relationship="item1Model.FK_NeedSkill_GurpsSkill_id_in" FromRole="NeedSkill" ToRole="GurpsSkill" />
+          <NavigationProperty Name="GurpsSkill1" Relationship="item1Model.FK_NeedSkill_GurpsSkill_id_out" FromRole="NeedSkill" ToRole="GurpsSkill" />
+        </EntityType>
+        <EntityType Name="SkillBonu">
+          <Key>
+            <PropertyRef Name="idAdvantage" />
+            <PropertyRef Name="idSkill" />
+          </Key>
+          <Property Name="idAdvantage" Type="Int32" Nullable="false" />
+          <Property Name="idSkill" Type="Int32" Nullable="false" />
+          <Property Name="amount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Advantage" Relationship="item1Model.FK_SkillBonus_Advantage_id" FromRole="SkillBonu" ToRole="Advantage" />
+          <NavigationProperty Name="Skill" Relationship="item1Model.FK_SkillBonus_Skill_Id" FromRole="SkillBonu" ToRole="Skill" />
+        </EntityType>
+        <Association Name="FK_Advantage_Advantage_id">
+          <End Type="item1Model.Advantage" Role="Advantage" Multiplicity="0..1" />
+          <End Type="item1Model.Advantage" Role="Advantage1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Advantage">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Advantage1">
+              <PropertyRef Name="ParentAdv" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Advantage_GurpsAdvCategory_id">
+          <End Type="item1Model.GurpsAdvCategory" Role="GurpsAdvCategory" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.Advantage" Role="Advantage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsAdvCategory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Advantage">
+              <PropertyRef Name="idCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdvantageMods_Advantage_id">
+          <End Type="item1Model.Advantage" Role="Advantage" Multiplicity="1" />
+          <End Type="item1Model.AdvantageMod" Role="AdvantageMod" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Advantage">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AdvantageMod">
+              <PropertyRef Name="idAdvantage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdvBonus_Advantage_id">
+          <End Type="item1Model.Advantage" Role="Advantage" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.AttributeBonu" Role="AttributeBonu" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Advantage">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AttributeBonu">
+              <PropertyRef Name="idAdvantage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SkillBonus_Advantage_id">
+          <End Type="item1Model.Advantage" Role="Advantage" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.SkillBonu" Role="SkillBonu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Advantage">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SkillBonu">
+              <PropertyRef Name="idAdvantage" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdvBonus_AttributeBonus_id">
+          <End Type="item1Model.Attribute" Role="Attribute" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.AttributeBonu" Role="AttributeBonu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Attribute">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AttributeBonu">
+              <PropertyRef Name="idAttribute" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SKILLTYPES_Attribute_id">
+          <End Type="item1Model.Attribute" Role="Attribute" Multiplicity="0..1" />
+          <End Type="item1Model.SkillDifficulty" Role="SkillDifficulty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Attribute">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SkillDifficulty">
+              <PropertyRef Name="idDefaultstat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_InventoryOfChar_CharacterDB_id">
           <End Type="item1Model.CharacterDB" Role="CharacterDB" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -1899,6 +2823,90 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_SKILLTYPES_Difficulty_id">
+          <End Type="item1Model.Difficulty" Role="Difficulty" Multiplicity="0..1" />
+          <End Type="item1Model.SkillDifficulty" Role="SkillDifficulty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Difficulty">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SkillDifficulty">
+              <PropertyRef Name="idDifficulty" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DefaultSkill_GurpsSkill_id_in">
+          <End Type="item1Model.GurpsSkill" Role="GurpsSkill" Multiplicity="1" />
+          <End Type="item1Model.DefaultSkill" Role="DefaultSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsSkill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="DefaultSkill">
+              <PropertyRef Name="idSkillIn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DefaultSkill_GurpsSkill_id_out">
+          <End Type="item1Model.GurpsSkill" Role="GurpsSkill" Multiplicity="1" />
+          <End Type="item1Model.DefaultSkill" Role="DefaultSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsSkill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="DefaultSkill">
+              <PropertyRef Name="idSkillOut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GurpsSkill_GurpsSkill_id">
+          <End Type="item1Model.GurpsSkill" Role="GurpsSkill" Multiplicity="0..1" />
+          <End Type="item1Model.GurpsSkill" Role="GurpsSkill1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsSkill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GurpsSkill1">
+              <PropertyRef Name="idSpecialization" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GurpsSkill_SkillDifficulty_id">
+          <End Type="item1Model.SkillDifficulty" Role="SkillDifficulty" Multiplicity="0..1" />
+          <End Type="item1Model.GurpsSkill" Role="GurpsSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SkillDifficulty">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GurpsSkill">
+              <PropertyRef Name="idDifficulty" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NeedSkill_GurpsSkill_id_in">
+          <End Type="item1Model.GurpsSkill" Role="GurpsSkill" Multiplicity="1" />
+          <End Type="item1Model.NeedSkill" Role="NeedSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsSkill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NeedSkill">
+              <PropertyRef Name="idSkillIn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NeedSkill_GurpsSkill_id_out">
+          <End Type="item1Model.GurpsSkill" Role="GurpsSkill" Multiplicity="1" />
+          <End Type="item1Model.NeedSkill" Role="NeedSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsSkill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="NeedSkill">
+              <PropertyRef Name="idSkillOut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_InventoryOfChar_ITEM_uiIndex">
           <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -1910,6 +2918,20 @@
             </Principal>
             <Dependent Role="InventoryOfChar">
               <PropertyRef Name="IdItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SkillBonus_Skill_Id">
+          <End Type="item1Model.Skill" Role="Skill" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.SkillBonu" Role="SkillBonu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Skill">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SkillBonu">
+              <PropertyRef Name="idSkill" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2291,6 +3313,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="GurpsSkillCategory88">
+          <End Type="item1Model.GurpsSkill" Role="GurpsSkill" Multiplicity="*" />
+          <End Type="item1Model.GurpsSkillCategory" Role="GurpsSkillCategory" Multiplicity="*" />
+        </Association>
+        <Association Name="TabooAdv">
+          <End Type="item1Model.Advantage" Role="Advantage" Multiplicity="*" />
+          <End Type="item1Model.Advantage" Role="Advantage1" Multiplicity="*" />
+        </Association>
+        <Association Name="TypeAdvSumm">
+          <End Type="item1Model.Advantage" Role="Advantage" Multiplicity="*" />
+          <End Type="item1Model.TypeAdv" Role="TypeAdv" Multiplicity="*" />
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2301,6 +3335,28 @@
           <FunctionImportMapping FunctionImportName="NEW_ITEM" FunctionName="Хранилище item1Model.NEW_ITEM" />
           <FunctionImportMapping FunctionImportName="NEW_ITEMWeap" FunctionName="Хранилище item1Model.NEW_ITEMWeap" />
           <FunctionImportMapping FunctionImportName="NEW_ITEM_Ammo" FunctionName="Хранилище item1Model.NEW_ITEM_Ammo" />
+          <EntitySetMapping Name="Advantages">
+            <EntityTypeMapping TypeName="item1Model.Advantage">
+              <MappingFragment StoreEntitySet="Advantage">
+                <ScalarProperty Name="ParentAdv" ColumnName="ParentAdv" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Referense" ColumnName="Referense" />
+                <ScalarProperty Name="idType" ColumnName="idType" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="idCategory" ColumnName="idCategory" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Attributes">
+            <EntityTypeMapping TypeName="item1Model.Attribute">
+              <MappingFragment StoreEntitySet="Attribute">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="CharacterDBs">
             <EntityTypeMapping TypeName="item1Model.CharacterDB">
               <MappingFragment StoreEntitySet="CharacterDB">
@@ -2319,12 +3375,79 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Difficulties">
+            <EntityTypeMapping TypeName="item1Model.Difficulty">
+              <MappingFragment StoreEntitySet="Difficulty">
+                <ScalarProperty Name="baseDiff" ColumnName="baseDiff" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GurpsAdvCategories">
+            <EntityTypeMapping TypeName="item1Model.GurpsAdvCategory">
+              <MappingFragment StoreEntitySet="GurpsAdvCategory">
+                <ScalarProperty Name="NameOfCategory" ColumnName="NameOfCategory" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GurpsSkills">
+            <EntityTypeMapping TypeName="item1Model.GurpsSkill">
+              <MappingFragment StoreEntitySet="GurpsSkill">
+                <ScalarProperty Name="DefaultModifier" ColumnName="DefaultModifier" />
+                <ScalarProperty Name="TypeSpecialization" ColumnName="TypeSpecialization" />
+                <ScalarProperty Name="idSpecialization" ColumnName="idSpecialization" />
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+                <ScalarProperty Name="Points" ColumnName="Points" />
+                <ScalarProperty Name="idDifficulty" ColumnName="idDifficulty" />
+                <ScalarProperty Name="NameSkill" ColumnName="NameSkill" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GurpsSkillCategories">
+            <EntityTypeMapping TypeName="item1Model.GurpsSkillCategory">
+              <MappingFragment StoreEntitySet="GurpsSkillCategory">
+                <ScalarProperty Name="NamelCategory" ColumnName="NamelCategory" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="InventoryOfChars">
             <EntityTypeMapping TypeName="item1Model.InventoryOfChar">
               <MappingFragment StoreEntitySet="InventoryOfChar">
                 <ScalarProperty Name="Count" ColumnName="Count" />
                 <ScalarProperty Name="IdItem" ColumnName="IdItem" />
                 <ScalarProperty Name="IdCharacter" ColumnName="IdCharacter" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Skills">
+            <EntityTypeMapping TypeName="item1Model.Skill">
+              <MappingFragment StoreEntitySet="Skill">
+                <ScalarProperty Name="NameSpec" ColumnName="NameSpec" />
+                <ScalarProperty Name="NameSkill" ColumnName="NameSkill" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SkillDifficulties">
+            <EntityTypeMapping TypeName="item1Model.SkillDifficulty">
+              <MappingFragment StoreEntitySet="SkillDifficulty">
+                <ScalarProperty Name="De" ColumnName="De" />
+                <ScalarProperty Name="idDifficulty" ColumnName="idDifficulty" />
+                <ScalarProperty Name="idDefaultstat" ColumnName="idDefaultstat" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeAdvs">
+            <EntityTypeMapping TypeName="item1Model.TypeAdv">
+              <MappingFragment StoreEntitySet="TypeAdv">
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -2822,6 +3945,79 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="AdvantageMods">
+            <EntityTypeMapping TypeName="item1Model.AdvantageMod">
+              <MappingFragment StoreEntitySet="AdvantageMods">
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="Referense" ColumnName="Referense" />
+                <ScalarProperty Name="affects" ColumnName="affects" />
+                <ScalarProperty Name="CostAmount" ColumnName="CostAmount" />
+                <ScalarProperty Name="CostType" ColumnName="CostType" />
+                <ScalarProperty Name="NameMods" ColumnName="NameMods" />
+                <ScalarProperty Name="idAdvantage" ColumnName="idAdvantage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AttributeBonus">
+            <EntityTypeMapping TypeName="item1Model.AttributeBonu">
+              <MappingFragment StoreEntitySet="AttributeBonus">
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="idAttribute" ColumnName="idAttribute" />
+                <ScalarProperty Name="idAdvantage" ColumnName="idAdvantage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DefaultSkills">
+            <EntityTypeMapping TypeName="item1Model.DefaultSkill">
+              <MappingFragment StoreEntitySet="DefaultSkill">
+                <ScalarProperty Name="Modifier" ColumnName="Modifier" />
+                <ScalarProperty Name="idSkillOut" ColumnName="idSkillOut" />
+                <ScalarProperty Name="idSkillIn" ColumnName="idSkillIn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NeedSkills">
+            <EntityTypeMapping TypeName="item1Model.NeedSkill">
+              <MappingFragment StoreEntitySet="NeedSkill">
+                <ScalarProperty Name="Needed" ColumnName="Needed" />
+                <ScalarProperty Name="idSkillOut" ColumnName="idSkillOut" />
+                <ScalarProperty Name="idSkillIn" ColumnName="idSkillIn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SkillBonus">
+            <EntityTypeMapping TypeName="item1Model.SkillBonu">
+              <MappingFragment StoreEntitySet="SkillBonus">
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="idSkill" ColumnName="idSkill" />
+                <ScalarProperty Name="idAdvantage" ColumnName="idAdvantage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="GurpsSkillCategory88" TypeName="item1Model.GurpsSkillCategory88" StoreEntitySet="GurpsSkillCategory88">
+            <EndProperty Name="GurpsSkillCategory">
+              <ScalarProperty Name="id" ColumnName="idSkillCategory" />
+            </EndProperty>
+            <EndProperty Name="GurpsSkill">
+              <ScalarProperty Name="id" ColumnName="idSkill" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="TabooAdv" TypeName="item1Model.TabooAdv" StoreEntitySet="TabooAdv">
+            <EndProperty Name="Advantage1">
+              <ScalarProperty Name="id" ColumnName="idOutAdv" />
+            </EndProperty>
+            <EndProperty Name="Advantage">
+              <ScalarProperty Name="id" ColumnName="idInAdv" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="TypeAdvSumm" TypeName="item1Model.TypeAdvSumm" StoreEntitySet="TypeAdvSumm">
+            <EndProperty Name="TypeAdv">
+              <ScalarProperty Name="id" ColumnName="idType" />
+            </EndProperty>
+            <EndProperty Name="Advantage">
+              <ScalarProperty Name="id" ColumnName="IdAdv" />
+            </EndProperty>
+          </AssociationSetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -2837,7 +4033,7 @@
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
       </DesignerInfoPropertySet>

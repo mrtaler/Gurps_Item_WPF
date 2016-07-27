@@ -1,5 +1,6 @@
 ﻿using com.trollworks.gcs.character.names;
 using Item_WPF.addin;
+using Item_WPF.MVVM.GurpsSkill;
 using Item_WPF.MVVM.View;
 using Microsoft.Windows.Controls.Ribbon;
 using System;
@@ -28,8 +29,8 @@ namespace Item_WPF.MVVM.ViewModels
         public DelegateCommand ListBoxCommand { get; private set; }
         public DelegateCommand BoxChangeCommand { get; private set; }
         public DelegateCommand NewNameCommand { get; private set; }
-
-        public MainWindowStartViewModel(RibbonWindow owner)
+        public DelegateCommand AllGurpsSkillViewLaunchCommand { get; private set; }
+    public MainWindowStartViewModel(RibbonWindow owner)
         {
             Owner = owner;
 
@@ -45,8 +46,8 @@ namespace Item_WPF.MVVM.ViewModels
             ListBoxCommand = new DelegateCommand(ListBox);
             BoxChangeCommand = new DelegateCommand(BoxChange);
                  NewNameCommand = new DelegateCommand(randomname);
-            
-    }
+            AllGurpsSkillViewLaunchCommand = new DelegateCommand(AllGurpsSkillViewLaunch);
+        }
         public void ShowAboutWindow(object parameter)
         {
             AboutWindowView window = new AboutWindowView();
@@ -111,7 +112,13 @@ namespace Item_WPF.MVVM.ViewModels
             else
             MessageBox.Show(USCensusNames.INSTANCE.getFullName(false));
         }
+        private void AllGurpsSkillViewLaunch(object parameter)
+        {
+            AllGurpsSkillView allgurpsSkillView = new AllGurpsSkillView();
+            allgurpsSkillView.Show();
+        }
 
         
+
     }
 }

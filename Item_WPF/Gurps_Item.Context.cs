@@ -28,8 +28,17 @@ namespace Item_WPF
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Advantage> Advantages { get; set; }
+        public virtual DbSet<Attribute> Attributes { get; set; }
         public virtual DbSet<CharacterDB> CharacterDBs { get; set; }
+        public virtual DbSet<Difficulty> Difficulties { get; set; }
+        public virtual DbSet<GurpsAdvCategory> GurpsAdvCategories { get; set; }
+        public virtual DbSet<GurpsSkill> GurpsSkills { get; set; }
+        public virtual DbSet<GurpsSkillCategory> GurpsSkillCategories { get; set; }
         public virtual DbSet<InventoryOfChar> InventoryOfChars { get; set; }
+        public virtual DbSet<Skill> Skills { get; set; }
+        public virtual DbSet<SkillDifficulty> SkillDifficulties { get; set; }
+        public virtual DbSet<TypeAdv> TypeAdvs { get; set; }
         public virtual DbSet<AMMOUPGRATE> AMMOUPGRATES { get; set; }
         public virtual DbSet<AnyBoxNameType> AnyBoxNameTypes { get; set; }
         public virtual DbSet<ARMOUR> ARMOURs { get; set; }
@@ -61,6 +70,11 @@ namespace Item_WPF
         public virtual DbSet<WEAPON> WEAPONs { get; set; }
         public virtual DbSet<WeaponAttackType> WeaponAttackTypes { get; set; }
         public virtual DbSet<WeaponDamage> WeaponDamages { get; set; }
+        public virtual DbSet<AdvantageMod> AdvantageMods { get; set; }
+        public virtual DbSet<AttributeBonu> AttributeBonus { get; set; }
+        public virtual DbSet<DefaultSkill> DefaultSkills { get; set; }
+        public virtual DbSet<NeedSkill> NeedSkills { get; set; }
+        public virtual DbSet<SkillBonu> SkillBonus { get; set; }
     
         public virtual int NEW_ITEM_att(string name, Nullable<int> g_att_class, Nullable<int> g_sub_att, string id_att_mount)
         {

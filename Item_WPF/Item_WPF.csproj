@@ -103,6 +103,12 @@
     <Compile Include="addin\Converters\ImageConverter.cs" />
     <Compile Include="addin\ViewModelCommand.cs" />
     <Compile Include="addin\RelayCommand.cs" />
+    <Compile Include="Advantage.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdvantageMod.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
     <Compile Include="AMMOUPGRATE.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
@@ -119,6 +125,12 @@
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ATTACHMENTSLOT.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Attribute.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeBonu.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="AvailableAttachSlot.cs">
@@ -140,6 +152,12 @@
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="CombineWeap.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultSkill.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Difficulty.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="Drug.cs">
@@ -175,7 +193,16 @@
     <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\RowItemRenderer.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\RowPostProcessor.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\RowUndo.cs" />
+    <Compile Include="GurpsAdvCategory.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
     <Compile Include="GurpsClass.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GurpsSkill.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GurpsSkillCategory.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="G_AttachClass.cs">
@@ -217,6 +244,15 @@
     <Compile Include="LOADBEARINGEQUIPMENT.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\GurpsSkill\AllGurpsSkillView.xaml.cs">
+      <DependentUpon>AllGurpsSkillView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\GurpsSkill\AllGurpsSkillViewModel.cs" />
+    <Compile Include="MVVM\GurpsSkill\GurpsSkillModel.cs" />
+    <Compile Include="MVVM\GurpsSkill\GurpsSkillView.xaml.cs">
+      <DependentUpon>GurpsSkillView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\GurpsSkill\GurpsSkillViewModel.cs" />
     <Compile Include="MVVM\Models\Advantage.cs" />
     <Compile Include="MVVM\Models\AnyBoxNameType.cs" />
     <Compile Include="MVVM\Models\AttackOption.cs" />
@@ -324,6 +360,9 @@
     <Compile Include="litForms\new_char.xaml.cs">
       <DependentUpon>new_char.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NeedSkill.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -334,7 +373,19 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Skill.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SkillBonu.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SkillDifficulty.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
     <Compile Include="TL.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TypeAdv.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="TypeOfDamage.cs">
@@ -370,6 +421,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
     </Compile>
+    <Page Include="MVVM\GurpsSkill\AllGurpsSkillView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\GurpsSkill\GurpsSkillView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\AboutWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
