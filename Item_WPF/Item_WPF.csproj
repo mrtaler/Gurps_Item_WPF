@@ -963,6 +963,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="addin\02_DatabaseInitData.sql" />
+    <Content Include="addin\Al\hgf.sql" />
+    <Content Include="addin\Al\qq.sql" />
+    <Content Include="addin\Al\Skill.sql" />
+    <Content Include="addin\Al\sql1.sql" />
+    <Content Include="addin\Al\sqlADV.sql" />
+    <Content Include="addin\Al\SQlinv.sql" />
     <Content Include="addin\oldDB\InsertStoreP.sql" />
     <Content Include="addin\01_DatabaseInitStructure.sql" />
     <Content Include="addin\oldDB\ItemModel.edmx.sql" />
