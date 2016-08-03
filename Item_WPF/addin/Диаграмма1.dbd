@@ -2066,8 +2066,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1970 px</X>
-              <Y>-370 px</Y>
+              <X>2870 px</X>
+              <Y>-680 px</Y>
             </Location>
             <Size>
               <Width>286 px</Width>
@@ -5211,8 +5211,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>4142 px</X>
-              <Y>744 px</Y>
+              <X>3150 px</X>
+              <Y>1140 px</Y>
             </Location>
             <Size>
               <Width>186 px</Width>
@@ -5234,8 +5234,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2392 px</X>
-              <Y>1064 px</Y>
+              <X>3000 px</X>
+              <Y>1300 px</Y>
             </Location>
             <Size>
               <Width>247 px</Width>
@@ -5441,8 +5441,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2862 px</X>
-              <Y>524 px</Y>
+              <X>2860 px</X>
+              <Y>360 px</Y>
             </Location>
             <Size>
               <Width>178 px</Width>
@@ -5556,8 +5556,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2922 px</X>
-              <Y>-6 px</Y>
+              <X>2140 px</X>
+              <Y>-70 px</Y>
             </Location>
             <Size>
               <Width>293 px</Width>
@@ -5602,8 +5602,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2090 px</X>
-              <Y>1270 px</Y>
+              <X>2100 px</X>
+              <Y>350 px</Y>
             </Location>
             <Size>
               <Width>165 px</Width>
@@ -5737,10 +5737,10 @@
         </Children>
         <ViewPort>
           <ScaleMode>Free</ScaleMode>
-          <Scale>0.85</Scale>
+          <Scale>0.56</Scale>
           <Location>
-            <X>2052.94108862036 px</X>
-            <Y>814.11762756295 px</Y>
+            <X>1516.07144436696 px</X>
+            <Y>-426.785718926666 px</Y>
           </Location>
         </ViewPort>
       </Model>
