@@ -91,6 +91,10 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="XsdToObject, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XsdToObject.1.0.0.2\lib\net45\XsdToObject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -193,6 +197,13 @@
     <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\RowItemRenderer.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\RowPostProcessor.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\RowUndo.cs" />
+    <Compile Include="GCS\xsd\advantage_list.Designer.cs" />
+    <Compile Include="GCS\xsd\character.Designer.cs" />
+    <Compile Include="GCS\xsd\common.Designer.cs" />
+    <Compile Include="GCS\xsd\equipment_list.Designer.cs" />
+    <Compile Include="GCS\xsd\skill_list.Designer.cs" />
+    <Compile Include="GCS\xsd\spell_list.Designer.cs" />
+    <Compile Include="GCS\xsd\template.Designer.cs" />
     <Compile Include="GurpsAdvCategory.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>

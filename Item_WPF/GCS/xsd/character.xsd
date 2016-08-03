@@ -27,9 +27,9 @@
 				<xs:element name="perception" type="xs:unsignedShort" />
 				<xs:element name="speed" type="xs:decimal" />
 				<xs:element name="move" type="xs:unsignedShort" />
-				<xs:element name="include_punch" type="xs:bool" />
-				<xs:element name="include_kick" type="xs:bool" />
-				<xs:element name="include_kick_with_boots" type="xs:bool" />
+				<xs:element name="include_punch" type="xs:boolean" />
+				<xs:element name="include_kick" type="xs:boolean" />
+				<xs:element name="include_kick_with_boots" type="xs:boolean" />
 			</xs:choice>
 			<xs:attribute name="unique_id" type="xs:string" use="required" />
 			<xs:attribute name="version" type="xs:unsignedShort" use="required" />
