@@ -1654,8 +1654,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>940 px</X>
-              <Y>170 px</Y>
+              <X>1010 px</X>
+              <Y>130 px</Y>
             </Location>
             <Size>
               <Width>139 px</Width>
@@ -1777,7 +1777,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>17 px</Y>
+                  <Y>53.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -1788,17 +1788,23 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>107 px</Y>
+                  <X>69.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>112</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>1079.5 px</X>
+                <Y>313.5 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>Item1.CharDB.TypeAdvSumm.FK_TypeAdvSumm_TypeAdv_id</Path>
@@ -1815,7 +1821,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-58 px</X>
+                  <X>-127.75 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -7370,10 +7376,10 @@
         </Children>
         <ViewPort>
           <ScaleMode>Free</ScaleMode>
-          <Scale>0.9</Scale>
+          <Scale>0.68</Scale>
           <Location>
-            <X>398.888899255683 px</X>
-            <Y>467.777801030948 px</Y>
+            <X>-823.529384992939 px</X>
+            <Y>-336.764682915796 px</Y>
           </Location>
         </ViewPort>
       </Model>

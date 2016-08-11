@@ -12,7 +12,7 @@ namespace Item_WPF
     using System;
     using System.Collections.Generic;
     
-    public partial class DefaultSkill : System.ComponentModel.INotifyPropertyChanged
+    public partial class amount : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -29,87 +29,78 @@ namespace Item_WPF
      
      #endregion
      
-        private int _idSkillIn;
-    	public int idSkillIn 
+        private string _PrimaryKey;
+    	public string PrimaryKey 
     	{ 
     		get
     		{
-    			return _idSkillIn;
+    			return _PrimaryKey;
     		} 
     		set
     		{
-    			if (_idSkillIn != value)
+    			if (_PrimaryKey != value)
     			{
-    				_idSkillIn = value;
-    				OnPropertyChanged("idSkillIn");
+    				_PrimaryKey = value;
+    				OnPropertyChanged("PrimaryKey");
     			}
     		}
     	}
-        private Nullable<int> _idSkillOut;
-    	public Nullable<int> idSkillOut 
+        private string _per_level;
+    	public string per_level 
     	{ 
     		get
     		{
-    			return _idSkillOut;
+    			return _per_level;
     		} 
     		set
     		{
-    			if (_idSkillOut != value)
+    			if (_per_level != value)
     			{
-    				_idSkillOut = value;
-    				OnPropertyChanged("idSkillOut");
+    				_per_level = value;
+    				OnPropertyChanged("per_level");
     			}
     		}
     	}
-        private Nullable<int> _Modifier;
-    	public Nullable<int> Modifier 
+        private string _Text;
+    	public string Text 
     	{ 
     		get
     		{
-    			return _Modifier;
+    			return _Text;
     		} 
     		set
     		{
-    			if (_Modifier != value)
+    			if (_Text != value)
     			{
-    				_Modifier = value;
-    				OnPropertyChanged("Modifier");
+    				_Text = value;
+    				OnPropertyChanged("Text");
     			}
     		}
     	}
-        private string _type;
-    	public string type 
+        private string _FK_weapon_bonus;
+    	public string FK_weapon_bonus 
     	{ 
     		get
     		{
-    			return _type;
+    			return _FK_weapon_bonus;
     		} 
     		set
     		{
-    			if (_type != value)
+    			if (_FK_weapon_bonus != value)
     			{
-    				_type = value;
-    				OnPropertyChanged("type");
+    				_FK_weapon_bonus = value;
+    				OnPropertyChanged("FK_weapon_bonus");
     			}
     		}
     	}
     
-        private GurpsSkill _GurpsSkill;
-            public virtual GurpsSkill GurpsSkill
+        private weapon_bonus _weapon_bonus;
+            public virtual weapon_bonus weapon_bonus
             {
-                get { return _GurpsSkill; }
+                get { return _weapon_bonus; }
                 set
-                { if(_GurpsSkill != value)
-                    {    _GurpsSkill = value;    OnPropertyChanged("GurpsSkill");   }
-                }
-            } 
-        private GurpsSkill _GurpsSkill1;
-            public virtual GurpsSkill GurpsSkill1
-            {
-                get { return _GurpsSkill1; }
-                set
-                { if(_GurpsSkill1 != value)
-                    {    _GurpsSkill1 = value;    OnPropertyChanged("GurpsSkill1");   }
+                { if(_weapon_bonus != value)
+                    {    _weapon_bonus = value;    OnPropertyChanged("weapon_bonus");   }
                 }
             } 
     }

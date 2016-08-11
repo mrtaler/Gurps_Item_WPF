@@ -12,7 +12,7 @@ namespace Item_WPF
     using System;
     using System.Collections.Generic;
     
-    public partial class DefaultSkill : System.ComponentModel.INotifyPropertyChanged
+    public partial class when_tl : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -29,87 +29,78 @@ namespace Item_WPF
      
      #endregion
      
-        private int _idSkillIn;
-    	public int idSkillIn 
+        private string _PrimaryKey;
+    	public string PrimaryKey 
     	{ 
     		get
     		{
-    			return _idSkillIn;
+    			return _PrimaryKey;
     		} 
     		set
     		{
-    			if (_idSkillIn != value)
+    			if (_PrimaryKey != value)
     			{
-    				_idSkillIn = value;
-    				OnPropertyChanged("idSkillIn");
+    				_PrimaryKey = value;
+    				OnPropertyChanged("PrimaryKey");
     			}
     		}
     	}
-        private Nullable<int> _idSkillOut;
-    	public Nullable<int> idSkillOut 
+        private string _compare;
+    	public string compare 
     	{ 
     		get
     		{
-    			return _idSkillOut;
+    			return _compare;
     		} 
     		set
     		{
-    			if (_idSkillOut != value)
+    			if (_compare != value)
     			{
-    				_idSkillOut = value;
-    				OnPropertyChanged("idSkillOut");
+    				_compare = value;
+    				OnPropertyChanged("compare");
     			}
     		}
     	}
-        private Nullable<int> _Modifier;
-    	public Nullable<int> Modifier 
+        private string _Text;
+    	public string Text 
     	{ 
     		get
     		{
-    			return _Modifier;
+    			return _Text;
     		} 
     		set
     		{
-    			if (_Modifier != value)
+    			if (_Text != value)
     			{
-    				_Modifier = value;
-    				OnPropertyChanged("Modifier");
+    				_Text = value;
+    				OnPropertyChanged("Text");
     			}
     		}
     	}
-        private string _type;
-    	public string type 
+        private string _FK_prereq_list;
+    	public string FK_prereq_list 
     	{ 
     		get
     		{
-    			return _type;
+    			return _FK_prereq_list;
     		} 
     		set
     		{
-    			if (_type != value)
+    			if (_FK_prereq_list != value)
     			{
-    				_type = value;
-    				OnPropertyChanged("type");
+    				_FK_prereq_list = value;
+    				OnPropertyChanged("FK_prereq_list");
     			}
     		}
     	}
     
-        private GurpsSkill _GurpsSkill;
-            public virtual GurpsSkill GurpsSkill
+        private prereq_list1 _prereq_list1;
+            public virtual prereq_list1 prereq_list1
             {
-                get { return _GurpsSkill; }
+                get { return _prereq_list1; }
                 set
-                { if(_GurpsSkill != value)
-                    {    _GurpsSkill = value;    OnPropertyChanged("GurpsSkill");   }
-                }
-            } 
-        private GurpsSkill _GurpsSkill1;
-            public virtual GurpsSkill GurpsSkill1
-            {
-                get { return _GurpsSkill1; }
-                set
-                { if(_GurpsSkill1 != value)
-                    {    _GurpsSkill1 = value;    OnPropertyChanged("GurpsSkill1");   }
+                { if(_prereq_list1 != value)
+                    {    _prereq_list1 = value;    OnPropertyChanged("prereq_list1");   }
                 }
             } 
     }

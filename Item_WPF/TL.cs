@@ -32,6 +32,7 @@ namespace Item_WPF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TL()
         {
+            this.GurpsSkills = new HashSet<GurpsSkill>();
             this.ITEMs = new HashSet<ITEM>();
         }
     
@@ -100,6 +101,16 @@ namespace Item_WPF
     		}
     	}
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<GurpsSkill> _GurpsSkills;
+            public virtual ICollection<GurpsSkill> GurpsSkills
+            {
+                get { return _GurpsSkills; }
+                set
+                { if(_GurpsSkills != value)
+                    {    _GurpsSkills = value;    OnPropertyChanged("GurpsSkills");   }
+                }
+            } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<ITEM> _ITEMs;
             public virtual ICollection<ITEM> ITEMs

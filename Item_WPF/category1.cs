@@ -12,7 +12,7 @@ namespace Item_WPF
     using System;
     using System.Collections.Generic;
     
-    public partial class NeedSkill : System.ComponentModel.INotifyPropertyChanged
+    public partial class category1 : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -29,71 +29,62 @@ namespace Item_WPF
      
      #endregion
      
-        private int _idSkillIn;
-    	public int idSkillIn 
+        private string _PrimaryKey;
+    	public string PrimaryKey 
     	{ 
     		get
     		{
-    			return _idSkillIn;
+    			return _PrimaryKey;
     		} 
     		set
     		{
-    			if (_idSkillIn != value)
+    			if (_PrimaryKey != value)
     			{
-    				_idSkillIn = value;
-    				OnPropertyChanged("idSkillIn");
+    				_PrimaryKey = value;
+    				OnPropertyChanged("PrimaryKey");
     			}
     		}
     	}
-        private Nullable<int> _idSkillOut;
-    	public Nullable<int> idSkillOut 
+        private string _category;
+    	public string category 
     	{ 
     		get
     		{
-    			return _idSkillOut;
+    			return _category;
     		} 
     		set
     		{
-    			if (_idSkillOut != value)
+    			if (_category != value)
     			{
-    				_idSkillOut = value;
-    				OnPropertyChanged("idSkillOut");
+    				_category = value;
+    				OnPropertyChanged("category");
     			}
     		}
     	}
-        private string _Needed;
-    	public string Needed 
+        private string _FK_categories;
+    	public string FK_categories 
     	{ 
     		get
     		{
-    			return _Needed;
+    			return _FK_categories;
     		} 
     		set
     		{
-    			if (_Needed != value)
+    			if (_FK_categories != value)
     			{
-    				_Needed = value;
-    				OnPropertyChanged("Needed");
+    				_FK_categories = value;
+    				OnPropertyChanged("FK_categories");
     			}
     		}
     	}
     
-        private GurpsSkill _GurpsSkill;
-            public virtual GurpsSkill GurpsSkill
+        private categories1 _categories1;
+            public virtual categories1 categories1
             {
-                get { return _GurpsSkill; }
+                get { return _categories1; }
                 set
-                { if(_GurpsSkill != value)
-                    {    _GurpsSkill = value;    OnPropertyChanged("GurpsSkill");   }
-                }
-            } 
-        private GurpsSkill _GurpsSkill1;
-            public virtual GurpsSkill GurpsSkill1
-            {
-                get { return _GurpsSkill1; }
-                set
-                { if(_GurpsSkill1 != value)
-                    {    _GurpsSkill1 = value;    OnPropertyChanged("GurpsSkill1");   }
+                { if(_categories1 != value)
+                    {    _categories1 = value;    OnPropertyChanged("categories1");   }
                 }
             } 
     }

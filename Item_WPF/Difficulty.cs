@@ -32,7 +32,7 @@ namespace Item_WPF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Difficulty()
         {
-            this.SkillDifficulties = new HashSet<SkillDifficulty>();
+            this.GurpsSkills = new HashSet<GurpsSkill>();
         }
     
         private int _id;
@@ -83,31 +83,31 @@ namespace Item_WPF
     			}
     		}
     	}
-        private string _baseDiff;
-    	public string baseDiff 
+        private string _@base;
+    	public string @base 
     	{ 
     		get
     		{
-    			return _baseDiff;
+    			return _@base;
     		} 
     		set
     		{
-    			if (_baseDiff != value)
+    			if (_@base != value)
     			{
-    				_baseDiff = value;
-    				OnPropertyChanged("baseDiff");
+    				_@base = value;
+    				OnPropertyChanged("@base");
     			}
     		}
     	}
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<SkillDifficulty> _SkillDifficulties;
-            public virtual ICollection<SkillDifficulty> SkillDifficulties
+        private ICollection<GurpsSkill> _GurpsSkills;
+            public virtual ICollection<GurpsSkill> GurpsSkills
             {
-                get { return _SkillDifficulties; }
+                get { return _GurpsSkills; }
                 set
-                { if(_SkillDifficulties != value)
-                    {    _SkillDifficulties = value;    OnPropertyChanged("SkillDifficulties");   }
+                { if(_GurpsSkills != value)
+                    {    _GurpsSkills = value;    OnPropertyChanged("GurpsSkills");   }
                 }
             } 
     }

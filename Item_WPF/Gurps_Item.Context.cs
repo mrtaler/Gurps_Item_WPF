@@ -37,7 +37,6 @@ namespace Item_WPF
         public virtual DbSet<GurpsSkillCategory> GurpsSkillCategories { get; set; }
         public virtual DbSet<InventoryOfChar> InventoryOfChars { get; set; }
         public virtual DbSet<Skill> Skills { get; set; }
-        public virtual DbSet<SkillDifficulty> SkillDifficulties { get; set; }
         public virtual DbSet<TypeAdv> TypeAdvs { get; set; }
         public virtual DbSet<AMMOUPGRATE> AMMOUPGRATES { get; set; }
         public virtual DbSet<AnyBoxNameType> AnyBoxNameTypes { get; set; }
@@ -70,6 +69,24 @@ namespace Item_WPF
         public virtual DbSet<WEAPON> WEAPONs { get; set; }
         public virtual DbSet<WeaponAttackType> WeaponAttackTypes { get; set; }
         public virtual DbSet<WeaponDamage> WeaponDamages { get; set; }
+        public virtual DbSet<advantage_prereq> advantage_prereq { get; set; }
+        public virtual DbSet<amount> amounts { get; set; }
+        public virtual DbSet<attribute_prereq> attribute_prereq { get; set; }
+        public virtual DbSet<categories1> categories1 { get; set; }
+        public virtual DbSet<category1> category1 { get; set; }
+        public virtual DbSet<default1> default1 { get; set; }
+        public virtual DbSet<level> levels { get; set; }
+        public virtual DbSet<name1> name1 { get; set; }
+        public virtual DbSet<note> notes { get; set; }
+        public virtual DbSet<prereq_list1> prereq_list1 { get; set; }
+        public virtual DbSet<skill1> skill1 { get; set; }
+        public virtual DbSet<skill_container> skill_container { get; set; }
+        public virtual DbSet<skill_list> skill_list { get; set; }
+        public virtual DbSet<skill_prereq> skill_prereq { get; set; }
+        public virtual DbSet<specialization1> specialization1 { get; set; }
+        public virtual DbSet<technique> techniques { get; set; }
+        public virtual DbSet<weapon_bonus> weapon_bonus { get; set; }
+        public virtual DbSet<when_tl> when_tl { get; set; }
         public virtual DbSet<AdvantageMod> AdvantageMods { get; set; }
         public virtual DbSet<AttributeBonu> AttributeBonus { get; set; }
         public virtual DbSet<DefaultSkill> DefaultSkills { get; set; }

@@ -33,6 +33,10 @@ namespace Item_WPF
         public Advantage()
         {
             this.Advantage1 = new HashSet<Advantage>();
+            this.SkillBonus = new HashSet<SkillBonu>();
+            this.Advantage11 = new HashSet<Advantage>();
+            this.Advantages = new HashSet<Advantage>();
+            this.TypeAdvs = new HashSet<TypeAdv>();
         }
     
         private int _id;
@@ -192,6 +196,15 @@ namespace Item_WPF
                     {    _GurpsAdvCategory = value;    OnPropertyChanged("GurpsAdvCategory");   }
                 }
             } 
+        private AdvantageMod _AdvantageMod;
+            public virtual AdvantageMod AdvantageMod
+            {
+                get { return _AdvantageMod; }
+                set
+                { if(_AdvantageMod != value)
+                    {    _AdvantageMod = value;    OnPropertyChanged("AdvantageMod");   }
+                }
+            } 
         private AttributeBonu _AttributeBonu;
             public virtual AttributeBonu AttributeBonu
             {
@@ -199,6 +212,46 @@ namespace Item_WPF
                 set
                 { if(_AttributeBonu != value)
                     {    _AttributeBonu = value;    OnPropertyChanged("AttributeBonu");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<SkillBonu> _SkillBonus;
+            public virtual ICollection<SkillBonu> SkillBonus
+            {
+                get { return _SkillBonus; }
+                set
+                { if(_SkillBonus != value)
+                    {    _SkillBonus = value;    OnPropertyChanged("SkillBonus");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<Advantage> _Advantage11;
+            public virtual ICollection<Advantage> Advantage11
+            {
+                get { return _Advantage11; }
+                set
+                { if(_Advantage11 != value)
+                    {    _Advantage11 = value;    OnPropertyChanged("Advantage11");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<Advantage> _Advantages;
+            public virtual ICollection<Advantage> Advantages
+            {
+                get { return _Advantages; }
+                set
+                { if(_Advantages != value)
+                    {    _Advantages = value;    OnPropertyChanged("Advantages");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<TypeAdv> _TypeAdvs;
+            public virtual ICollection<TypeAdv> TypeAdvs
+            {
+                get { return _TypeAdvs; }
+                set
+                { if(_TypeAdvs != value)
+                    {    _TypeAdvs = value;    OnPropertyChanged("TypeAdvs");   }
                 }
             } 
     }

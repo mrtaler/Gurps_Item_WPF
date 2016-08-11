@@ -12,7 +12,7 @@ namespace Item_WPF
     using System;
     using System.Collections.Generic;
     
-    public partial class SkillDifficulty : System.ComponentModel.INotifyPropertyChanged
+    public partial class categories1 : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -30,102 +30,102 @@ namespace Item_WPF
      #endregion
      
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SkillDifficulty()
+        public categories1()
         {
-            this.GurpsSkills = new HashSet<GurpsSkill>();
+            this.category1 = new HashSet<category1>();
         }
     
-        private int _id;
-    	public int id 
+        private string _PrimaryKey;
+    	public string PrimaryKey 
     	{ 
     		get
     		{
-    			return _id;
+    			return _PrimaryKey;
     		} 
     		set
     		{
-    			if (_id != value)
+    			if (_PrimaryKey != value)
     			{
-    				_id = value;
-    				OnPropertyChanged("id");
+    				_PrimaryKey = value;
+    				OnPropertyChanged("PrimaryKey");
     			}
     		}
     	}
-        private Nullable<int> _idDefaultstat;
-    	public Nullable<int> idDefaultstat 
+        private string _category;
+    	public string category 
     	{ 
     		get
     		{
-    			return _idDefaultstat;
+    			return _category;
     		} 
     		set
     		{
-    			if (_idDefaultstat != value)
+    			if (_category != value)
     			{
-    				_idDefaultstat = value;
-    				OnPropertyChanged("idDefaultstat");
+    				_category = value;
+    				OnPropertyChanged("category");
     			}
     		}
     	}
-        private Nullable<int> _idDifficulty;
-    	public Nullable<int> idDifficulty 
+        private string _FK_skill;
+    	public string FK_skill 
     	{ 
     		get
     		{
-    			return _idDifficulty;
+    			return _FK_skill;
     		} 
     		set
     		{
-    			if (_idDifficulty != value)
+    			if (_FK_skill != value)
     			{
-    				_idDifficulty = value;
-    				OnPropertyChanged("idDifficulty");
+    				_FK_skill = value;
+    				OnPropertyChanged("FK_skill");
     			}
     		}
     	}
-        private string _De;
-    	public string De 
+        private string _FK_technique;
+    	public string FK_technique 
     	{ 
     		get
     		{
-    			return _De;
+    			return _FK_technique;
     		} 
     		set
     		{
-    			if (_De != value)
+    			if (_FK_technique != value)
     			{
-    				_De = value;
-    				OnPropertyChanged("De");
+    				_FK_technique = value;
+    				OnPropertyChanged("FK_technique");
     			}
     		}
     	}
     
-        private Attribute _Attribute;
-            public virtual Attribute Attribute
+        private skill1 _skill1;
+            public virtual skill1 skill1
             {
-                get { return _Attribute; }
+                get { return _skill1; }
                 set
-                { if(_Attribute != value)
-                    {    _Attribute = value;    OnPropertyChanged("Attribute");   }
+                { if(_skill1 != value)
+                    {    _skill1 = value;    OnPropertyChanged("skill1");   }
                 }
             } 
-        private Difficulty _Difficulty;
-            public virtual Difficulty Difficulty
+        private technique _technique;
+            public virtual technique technique
             {
-                get { return _Difficulty; }
+                get { return _technique; }
                 set
-                { if(_Difficulty != value)
-                    {    _Difficulty = value;    OnPropertyChanged("Difficulty");   }
+                { if(_technique != value)
+                    {    _technique = value;    OnPropertyChanged("technique");   }
                 }
             } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<GurpsSkill> _GurpsSkills;
-            public virtual ICollection<GurpsSkill> GurpsSkills
+        private ICollection<category1> _category1;
+            public virtual ICollection<category1> category1
             {
-                get { return _GurpsSkills; }
+                get { return _category1; }
                 set
-                { if(_GurpsSkills != value)
-                    {    _GurpsSkills = value;    OnPropertyChanged("GurpsSkills");   }
+                { if(_category1 != value)
+                    {    _category1 = value;    OnPropertyChanged("category1");   }
                 }
             } 
     }
