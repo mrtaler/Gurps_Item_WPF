@@ -57,10 +57,12 @@
                 <ribbon:RibbonGroup Header="124_222">
                     <ribbon:RibbonButton Command="{Binding AllGurpsSkillViewLaunchCommand}"
                                          CommandParameter="0"
-                                         Label="AllGurpsSkill"/>
+                                         Label="AllGurpsSkill" />
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="124_3333">
-                    <ribbon:RibbonButton Label="3_3" />
+                    <ribbon:RibbonButton Command="{Binding SerializeCommand}"
+                                         CommandParameter="0"
+                                         Label="SerializeCommand" />
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="124_4444">
                     <ribbon:RibbonButton Label="4_4" />

@@ -31,7 +31,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -275,6 +275,14 @@
     <Compile Include="MVVM\Models\ItemsForSortModel.cs" />
     <Compile Include="MVVM\Models\ItemToGridModel.cs" />
     <Compile Include="MVVM\Models\Skill.cs" />
+    <Compile Include="MVVM\Serialize\Model\Category.cs" />
+    <Compile Include="MVVM\Serialize\Model\Default.cs" />
+    <Compile Include="MVVM\Serialize\Model\Program.cs" />
+    <Compile Include="MVVM\Serialize\SerializeView.xaml.cs">
+      <DependentUpon>SerializeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\Serialize\SerializeViewModel.cs" />
+    <Compile Include="MVVM\Serialize\Model\SkillSerializeible.cs" />
     <Compile Include="MVVM\ViewModels\AboutViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AllWeaponViewModel.cs" />
     <Compile Include="MVVM\ViewModels\all_ItemsViewModel.cs" />
@@ -437,6 +445,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\GurpsSkill\GurpsSkillView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\Serialize\SerializeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

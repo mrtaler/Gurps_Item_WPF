@@ -5,6 +5,8 @@
 -- Версия сервера: 10.00.5538
 -- Версия клиента: 
 --
+USE Item1
+go
 
 SET NOCOUNT ON;
 DECLARE @SQL NVARCHAR(MAX)=N'';
