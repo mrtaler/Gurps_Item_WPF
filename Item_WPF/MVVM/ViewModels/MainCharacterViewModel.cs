@@ -8,6 +8,7 @@ using Item_WPF.MVVM.Models;
 using Item_WPF.Properties;
 using Item_WPF.MVVM.View;
 using Microsoft.Win32;
+using Item_WPF.ItemEntityModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {
@@ -30,11 +31,11 @@ namespace Item_WPF.MVVM.ViewModels
         public DelegateCommand SaveAsCommand { get; private set; }
         public DelegateCommand OwnerCloseCommand { get; private set; }
         public MainCharacterViewModel(Window owner)
-            : this(owner, new CharacterDB())
+            : this(owner, new ItemEntityModel.CharacterDB())
         {
         }
 
-        public MainCharacterViewModel(Window owner, CharacterDB character)
+        public MainCharacterViewModel(Window owner, ItemEntityModel.CharacterDB character)
         {
             Owner = owner;
             Character = character;
@@ -332,7 +333,7 @@ namespace Item_WPF.MVVM.ViewModels
             window.Owner = Owner;
             window.DataContext = new EditPrimaryStatsViewModel(Character);
 
-            CharacterDB copy = (CharacterDB)Character.Copy();
+            ItemEntityModel.CharacterDB copy = (CharacterDB)Character.Copy();
             bool? result = window.ShowDialog();
             if (result.HasValue && (result == true))
             {
@@ -353,7 +354,7 @@ namespace Item_WPF.MVVM.ViewModels
             window.Owner = Owner;
             window.DataContext = new EditSecondaryStatsViewModel(Character);
 
-            CharacterDB copy = (CharacterDB)Character.Copy();
+            ItemEntityModel.CharacterDB copy = (CharacterDB)Character.Copy();
             bool? result = window.ShowDialog();
             if (result.HasValue && (result == true))
             {

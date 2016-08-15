@@ -1,4 +1,5 @@
 ﻿using Item_WPF.addin;
+using Item_WPF.ItemEntityModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,12 +12,12 @@ namespace Item_WPF.MVVM.GurpsSkill
     public class AllGurpsSkillViewModel : ViewModelBase
     {
         private item1Entities _context;
-        public ObservableCollection<Item_WPF.GurpsSkill> AllGurpsSkillforTree
+        public ObservableCollection<ItemEntityModel.GurpsSkill> AllGurpsSkillforTree
         {
-            get { return new ObservableCollection<Item_WPF.GurpsSkill>(_context.GurpsSkills.Where(p => p.idSpecialization == null)); }
+            get { return new ObservableCollection<ItemEntityModel.GurpsSkill>(_context.GurpsSkills.Where(p => p.idSpecialization == null)); }
         }
         public ViewModelCommand SelectedItemChangedCommand { get; set; }
-        public Item_WPF.GurpsSkill SelectedGurps { get; set; }
+        public ItemEntityModel.GurpsSkill SelectedGurps { get; set; }
         public GurpsSkillModel SelectedGurpsForWork { get; private set; }
 
 
@@ -25,11 +26,11 @@ namespace Item_WPF.MVVM.GurpsSkill
             _context = new item1Entities();
             SelectedItemChangedCommand = new ViewModelCommand(SelectedItemChanged, true);
             SelectedGurpsForWork = new GurpsSkillModel();
-            SelectedGurps = new Item_WPF.GurpsSkill();
+            SelectedGurps = new ItemEntityModel.GurpsSkill();
         }
         private void SelectedItemChanged(object parameter)
         {
-            Item_WPF.GurpsSkill SelectGurpsSkill = (parameter as Item_WPF.GurpsSkill);
+            ItemEntityModel.GurpsSkill SelectGurpsSkill = (parameter as ItemEntityModel.GurpsSkill);
             int vx = SelectGurpsSkill.id;
             //int vx = System.Convert.ToInt32(parameter);
 
@@ -43,14 +44,14 @@ namespace Item_WPF.MVVM.GurpsSkill
             else
             if (_context.GurpsSkills.Find(vx).idSpecialization != null)
             {
-                SelectedGurpsForWork.NameSkill = "name: " +
-                    _context.GurpsSkills.Find(_context.GurpsSkills.Find(vx).idSpecialization).NameSkill
-                    + "/"
-                    + _context.GurpsSkills.Find(vx).NameSkill;
-                SelectedGurpsForWork.SkillDifficulty =
-                    _context.GurpsSkills.Find(_context.GurpsSkills.Find(vx).idSpecialization).SkillDifficulty.Attribute.Name
-                    + "/" +
-                    _context.GurpsSkills.Find(_context.GurpsSkills.Find(vx).idSpecialization).SkillDifficulty.Difficulty.Name;
+                //SelectedGurpsForWork.NameSkill = "name: " +
+                //    _context.GurpsSkills.Find(_context.GurpsSkills.Find(vx).idSpecialization).NameSkill
+                //    + "/"
+                //    + _context.GurpsSkills.Find(vx).NameSkill;
+                //SelectedGurpsForWork.SkillDifficulty =
+                //    _context.GurpsSkills.Find(_context.GurpsSkills.Find(vx).idSpecialization).SkillDifficulty.Attribute.Name
+                //    + "/" +
+                //    _context.GurpsSkills.Find(_context.GurpsSkills.Find(vx).idSpecialization).SkillDifficulty.Difficulty.Name;
             }
             NotifyPropertyChanged("SelectedGurpsForWork");
 

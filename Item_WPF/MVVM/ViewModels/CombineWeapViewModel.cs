@@ -8,6 +8,7 @@ using Item_WPF.addin;
 using Item_WPF.MVVM.View;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using Item_WPF.ItemEntityModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {

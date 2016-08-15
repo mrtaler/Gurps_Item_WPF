@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Item_WPF.MVVM.ViewModels;
+using Item_WPF.ItemEntityModel;
 
 namespace Item_WPF.MVVM.View
 {

@@ -4,6 +4,7 @@ using Item_WPF.MVVM.GurpsSkill;
 using Item_WPF.MVVM.Serialize;
 using Item_WPF.MVVM.View;
 using Microsoft.Windows.Controls.Ribbon;
+using Item_WPF.ItemEntityModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;

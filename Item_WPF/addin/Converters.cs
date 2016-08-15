@@ -9,6 +9,7 @@ using System.Windows.Media;
 using System.Collections.Generic;
 
 using System.Text;
+using Item_WPF.ItemEntityModel;
 
 namespace Item_WPF.addin
 {

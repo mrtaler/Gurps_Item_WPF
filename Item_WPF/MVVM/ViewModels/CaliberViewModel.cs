@@ -4,6 +4,7 @@ using Item_WPF.addin;
 using Item_WPF.MVVM.View;
 using System.ComponentModel;
 using System.Collections.Specialized;
+using Item_WPF.ItemEntityModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {

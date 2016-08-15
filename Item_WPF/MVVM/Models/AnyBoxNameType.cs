@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace Item_WPF
+namespace Item_WPF.ItemEntityModel
 //namespace Item_WPF.MVVM.Models
 {
     public partial class AnyBoxNameType// : System.ComponentModel.INotifyPropertyChanged
@@ -20,7 +20,7 @@ namespace Item_WPF
         //    }
         //}
 
-        //#endregion
+        ////#endregion
         private bool _isSelected = false;
 
         public bool IsSelected
@@ -34,7 +34,7 @@ namespace Item_WPF
                 if (value != _isSelected)
                 {
                     _isSelected = value;
-                    OnPropertyChanged("IsSelected");
+                  //  OnPropertyChanged("IsSelected");
                 }
             }
         }

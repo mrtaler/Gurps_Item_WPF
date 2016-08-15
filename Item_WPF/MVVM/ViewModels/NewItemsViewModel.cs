@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data.Entity.Core.Objects;
 using System.Linq;
+using Item_WPF.ItemEntityModel;
 using System.Text;
 using System.Threading.Tasks;
 

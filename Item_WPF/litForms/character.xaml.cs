@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Item_WPF.ItemEntityModel;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -23,13 +24,13 @@ namespace Item_WPF
 
     {
         private item1Entities _context;
-        private ObservableCollection<CharacterDB> ChaOk { get; set; }
+        private ObservableCollection<ItemEntityModel.CharacterDB> ChaOk { get; set; }
         public character()
         {
             InitializeComponent();
 
             _context = new item1Entities();
-            ChaOk = new ObservableCollection<CharacterDB>(_context.CharacterDBs);
+            ChaOk = new ObservableCollection<ItemEntityModel.CharacterDB>(_context.CharacterDBs);
             DataGrid.ItemsSource = ChaOk;
         }
 

@@ -1,4 +1,5 @@
 ﻿using Item_WPF.addin;
+using Item_WPF.ItemEntityModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

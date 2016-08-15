@@ -1,9 +1,11 @@
-﻿using Item_WPF.MVVM.Models;
+﻿using Item_WPF.ItemEntityModel;
+using Item_WPF.MVVM.Models;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 
-namespace Item_WPF
+namespace Item_WPF.ItemEntityModel
+
 {
     // This class represents a GURPS character.
     public partial class CharacterDB
