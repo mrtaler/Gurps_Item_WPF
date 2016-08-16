@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Item_WPF.MVVM.GurpsSkill
+namespace Item_WPF.MVVM.GurpsSkill_m
 {
     public class AllGurpsSkillViewModel : ViewModelBase
     {

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Devart (www.devart.com), export template file-->
+<!-- Modifying this generated file will probably render it invalid -->
+<ExportTemplate FormatVersion="1">
+  <LastSuccessfullDate>0001-01-01T00:00:00</LastSuccessfullDate>
+  <Provider>00000000-0000-0000-0000-000000000000</Provider>
+  <ConnectionName>Item1.gurpssqlserver.database.windows.net,1433</ConnectionName>
+  <ConnectionString>Data Source=gurpssqlserver.database.windows.net,1433;Initial Catalog=Item1;Integrated Security=False;User ID=mrtaler</ConnectionString>
+  <Database>Item1</Database>
+  <OutputDirectory>C:\Users\Elena\Documents\Devart\dbForge Studio for SQL Server\Export</OutputDirectory>
+  <BaseFileName>Item1</BaseFileName>
+  <Mode>All</Mode>
+  <AppendTimestamp>True</AppendTimestamp>
+  <MaxDays>0</MaxDays>
+  <MaxFilesCount>0</MaxFilesCount>
+  <Compression />
+  <DatabaseObjects />
+  <Options>
+    <PropertyValue Name="ScriptCreateDatabase">false</PropertyValue>
+    <PropertyValue Name="SelectWithNoFromClauseComment">true</PropertyValue>
+    <PropertyValue Name="ScriptUseDatabase">true</PropertyValue>
+    <PropertyValue Name="CheckObjectExistence">false</PropertyValue>
+    <PropertyValue Name="UseSubSchemaNamePrefix">true</PropertyValue>
+    <PropertyValue Name="ScriptCollations">false</PropertyValue>
+    <PropertyValue Name="ScriptAuthorization">false</PropertyValue>
+    <PropertyValue Name="ScriptExtendedProperties">true</PropertyValue>
+    <PropertyValue Name="ScriptStatistics">false</PropertyValue>
+    <PropertyValue Name="ScriptLogins">false</PropertyValue>
+    <PropertyValue Name="ScriptPermissions">false</PropertyValue>
+    <PropertyValue Name="ScriptDefaultConstraints">true</PropertyValue>
+    <PropertyValue Name="ScriptCheckConstraints">true</PropertyValue>
+    <PropertyValue Name="ScriptChangeTracking">false</PropertyValue>
+    <PropertyValue Name="ScriptDataCompression">false</PropertyValue>
+    <PropertyValue Name="ScriptDMLTriggers">false</PropertyValue>
+    <PropertyValue Name="ScriptForeignKeys">true</PropertyValue>
+    <PropertyValue Name="ScriptFullTextSearch">false</PropertyValue>
+    <PropertyValue Name="ScriptIndexes">true</PropertyValue>
+    <PropertyValue Name="ScriptPrimaryKeys">true</PropertyValue>
+    <PropertyValue Name="ScriptUniqueKeys">true</PropertyValue>
+    <PropertyValue Name="GenerateComments">true</PropertyValue>
+    <PropertyValue Name="LogFileName" xml:space="preserve">C:\Users\Elena\Documents\Devart\dbForge Studio for SQL Server\Export\ScriptGeneration.log</PropertyValue>
+    <PropertyValue Name="WriteLog">false</PropertyValue>
+    <PropertyValue Name="ErrorHandlingMode">2</PropertyValue>
+  </Options>
+</ExportTemplate>

@@ -1,6 +1,6 @@
 ﻿using com.trollworks.gcs.character.names;
 using Item_WPF.addin;
-using Item_WPF.MVVM.GurpsSkill;
+using Item_WPF.MVVM.GurpsSkill_m;
 using Item_WPF.MVVM.Serialize;
 using Item_WPF.MVVM.View;
 using Microsoft.Windows.Controls.Ribbon;

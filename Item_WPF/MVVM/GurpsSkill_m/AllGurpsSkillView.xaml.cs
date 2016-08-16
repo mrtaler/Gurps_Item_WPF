@@ -12,16 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Item_WPF.MVVM.GurpsSkill
+namespace Item_WPF.MVVM.GurpsSkill_m
 {
     /// <summary>
-    /// Логика взаимодействия для GurpsSkillView.xaml
+    /// Логика взаимодействия для AllGurpsSkillView.xaml
     /// </summary>
-    public partial class GurpsSkillView : Window
+    public partial class AllGurpsSkillView : Window
     {
-        public GurpsSkillView()
+        public AllGurpsSkillView()
         {
             InitializeComponent();
+            DataContext = new AllGurpsSkillViewModel();
         }
     }
 }

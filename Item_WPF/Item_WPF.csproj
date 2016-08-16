@@ -63,6 +63,9 @@
       <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="microsoft.windows.shell">
+      <HintPath>..\packages\Microsoft.Windows.Shell.3.0.1.0\lib\net40\microsoft.windows.shell.dll</HintPath>
+    </Reference>
     <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\RibbonControlsLibrary.4.0.0\lib\net40\RibbonControlsLibrary.dll</HintPath>
       <Private>True</Private>
@@ -280,15 +283,15 @@
     <Compile Include="ItemEntityModel\LOADBEARINGEQUIPMENT.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\GurpsSkill\AllGurpsSkillView.xaml.cs">
+    <Compile Include="MVVM\GurpsSkill_m\AllGurpsSkillView.xaml.cs">
       <DependentUpon>AllGurpsSkillView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\GurpsSkill\AllGurpsSkillViewModel.cs" />
-    <Compile Include="MVVM\GurpsSkill\GurpsSkillModel.cs" />
-    <Compile Include="MVVM\GurpsSkill\GurpsSkillView.xaml.cs">
+    <Compile Include="MVVM\GurpsSkill_m\AllGurpsSkillViewModel.cs" />
+    <Compile Include="MVVM\GurpsSkill_m\GurpsSkillModel.cs" />
+    <Compile Include="MVVM\GurpsSkill_m\GurpsSkillView.xaml.cs">
       <DependentUpon>GurpsSkillView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\GurpsSkill\GurpsSkillViewModel.cs" />
+    <Compile Include="MVVM\GurpsSkill_m\GurpsSkillViewModel.cs" />
     <Compile Include="MVVM\Models\Advantage.cs" />
     <Compile Include="MVVM\Models\AnyBoxNameType.cs" />
     <Compile Include="MVVM\Models\AttackOption.cs" />
@@ -492,11 +495,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
     </Compile>
-    <Page Include="MVVM\GurpsSkill\AllGurpsSkillView.xaml">
+    <Page Include="MVVM\GurpsSkill_m\AllGurpsSkillView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\GurpsSkill\GurpsSkillView.xaml">
+    <Page Include="MVVM\GurpsSkill_m\GurpsSkillView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

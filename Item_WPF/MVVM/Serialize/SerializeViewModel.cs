@@ -56,8 +56,9 @@ namespace Item_WPF.MVVM.Serialize
         {
             int InsertInToGurpsSkillCategory = 0;
             ObservableCollection<GurpsSkillCategory> GSCColl = new ObservableCollection<GurpsSkillCategory>(_context.GurpsSkillCategories);
-            //SkillSerializeible sklsrib = new SkillSerializeible(XMLSkillPatch, @"C:\Users\Derdan\Dropbox\_Wor\skill.txt");
-            Category CAt = new Category(XMLSkillPatch, @"C:\Users\Derdan\Dropbox\_Wor\Category.txt");
+           
+            //   Category CAt = new Category(XMLSkillPatch, @"C:\Users\Derdan\Dropbox\_Wor\Category.txt");
+            Category CAt = new Category(XMLSkillPatch, @"d:\Category.txt");
             foreach (var item in CAt.ResultOrder)
             {
                 if (_context.GurpsSkillCategories.Where(p => p.NamelCategory.Contains(item)) == null)
@@ -71,7 +72,8 @@ namespace Item_WPF.MVVM.Serialize
                 }
             }
             _context.SaveChanges();
-
+            // SkillSerializeible sklsrib = new SkillSerializeible(XMLSkillPatch, @"C:\Users\Derdan\Dropbox\_Wor\skill.txt");
+            SkillSerializeible sklsrib = new SkillSerializeible(XMLSkillPatch, @"d:\skill.txt");
 
             MessageBox.Show(InsertInToGurpsSkillCategory.ToString());
 
