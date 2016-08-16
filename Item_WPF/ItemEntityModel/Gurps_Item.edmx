@@ -117,8 +117,6 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NamelCategory" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "Item1.CharDB.GurpsSkillCategory88" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="GurpsSkillCategory88">
           <Key>
             <PropertyRef Name="idSkill" />
@@ -2039,6 +2037,7 @@
           <EntitySet Name="GurpsAdvCategory" EntityType="Self.GurpsAdvCategory" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="GurpsSkill" EntityType="Self.GurpsSkill" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="GurpsSkillCategory" EntityType="Self.GurpsSkillCategory" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="GurpsSkillCategory88" EntityType="Self.GurpsSkillCategory88" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="InventoryOfChar" EntityType="Self.InventoryOfChar" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="Skill" EntityType="Self.Skill" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="TypeAdv" EntityType="Self.TypeAdv" Schema="CharDB" store:Type="Tables" />
@@ -2116,12 +2115,6 @@
     [DefaultSkill].[Modifier] AS [Modifier], 
     [DefaultSkill].[type] AS [type]
     FROM [CharDB].[DefaultSkill] AS [DefaultSkill]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="GurpsSkillCategory88" EntityType="Self.GurpsSkillCategory88" store:Type="Tables" store:Schema="CharDB">
-            <DefiningQuery>SELECT 
-    [GurpsSkillCategory88].[idSkill] AS [idSkill], 
-    [GurpsSkillCategory88].[idSkillCategory] AS [idSkillCategory]
-    FROM [CharDB].[GurpsSkillCategory88] AS [GurpsSkillCategory88]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="NeedSkill" EntityType="Self.NeedSkill" store:Type="Tables" store:Schema="CharDB">
             <DefiningQuery>SELECT 

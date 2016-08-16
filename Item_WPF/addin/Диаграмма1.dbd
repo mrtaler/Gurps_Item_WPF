@@ -880,7 +880,7 @@
             </Location>
             <Size>
               <Width>201 px</Width>
-              <Height>107 px</Height>
+              <Height>124 px</Height>
             </Size>
             <DbOid>
               <Path>Item1.CharDB.GurpsSkillCategory88</Path>
@@ -989,7 +989,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>53.5 px</Y>
+                  <Y>62 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -1014,7 +1014,7 @@
             <BendPoints>
               <PointD>
                 <X>1708.5 px</X>
-                <Y>1083.5 px</Y>
+                <Y>1092 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
@@ -7378,8 +7378,8 @@
           <ScaleMode>Free</ScaleMode>
           <Scale>0.68</Scale>
           <Location>
-            <X>-823.529384992939 px</X>
-            <Y>-336.764682915796 px</Y>
+            <X>564.705851794733 px</X>
+            <Y>182.352950712389 px</Y>
           </Location>
         </ViewPort>
       </Model>

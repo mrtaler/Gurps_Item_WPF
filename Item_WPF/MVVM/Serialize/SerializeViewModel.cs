@@ -1,15 +1,19 @@
 ﻿using Item_WPF.addin;
+using Item_WPF.ItemEntityModel;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Item_WPF.MVVM.Serialize
 {
     public class SerializeViewModel : ViewModelBase
     {
+      private  ItemEntityModel.item1Entities _context;
         #region Commands
         public ViewModelCommand LoadFileCommand { get; set; }
         public ViewModelCommand SerializeSkillCommand { get; set; }
@@ -18,7 +22,7 @@ namespace Item_WPF.MVVM.Serialize
         public string XMLSkillPatch { get; set; }
         public SerializeViewModel()
         {
-            
+            _context = new ItemEntityModel.item1Entities();
             LoadFileCommand = new ViewModelCommand(LoadFile, true);
             SerializeSkillCommand = new ViewModelCommand(SerializeSkill,false);
         }
@@ -50,7 +54,27 @@ namespace Item_WPF.MVVM.Serialize
         }
         private void SerializeSkill(object parameter)
         {
-            SkillSerializeible sklsrib = new SkillSerializeible(XMLSkillPatch, @"C:\Users\Derdan\Dropbox\_Wor\skill.txt");
+            int InsertInToGurpsSkillCategory = 0;
+            ObservableCollection<GurpsSkillCategory> GSCColl = new ObservableCollection<GurpsSkillCategory>(_context.GurpsSkillCategories);
+            //SkillSerializeible sklsrib = new SkillSerializeible(XMLSkillPatch, @"C:\Users\Derdan\Dropbox\_Wor\skill.txt");
+            Category CAt = new Category(XMLSkillPatch, @"C:\Users\Derdan\Dropbox\_Wor\Category.txt");
+            foreach (var item in CAt.ResultOrder)
+            {
+                if (_context.GurpsSkillCategories.Where(p => p.NamelCategory.Contains(item)) == null)
+                {
+                    GurpsSkillCategory Gm = new GurpsSkillCategory();
+
+                    Gm.NamelCategory = item;
+                    GSCColl.Add(Gm);
+                    _context.GurpsSkillCategories.Add(Gm);
+                    InsertInToGurpsSkillCategory += 1;
+                }
+            }
+            _context.SaveChanges();
+
+
+            MessageBox.Show(InsertInToGurpsSkillCategory.ToString());
+
         }
         #endregion
     }
