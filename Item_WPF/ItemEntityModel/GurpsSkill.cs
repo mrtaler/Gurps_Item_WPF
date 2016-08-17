@@ -33,8 +33,8 @@ namespace Item_WPF.ItemEntityModel
         public GurpsSkill()
         {
             this.DefaultSkills = new HashSet<DefaultSkill>();
-            this.GurpsSkill1 = new HashSet<GurpsSkill>();
             this.NeedSkills = new HashSet<NeedSkill>();
+            this.GurpsSkill1 = new HashSet<GurpsSkill>();
             this.GurpsSkillCategories = new HashSet<GurpsSkillCategory>();
         }
     
@@ -230,6 +230,22 @@ namespace Item_WPF.ItemEntityModel
     			}
     		}
     	}
+        private string _Specialization;
+    	public string Specialization 
+    	{ 
+    		get
+    		{
+    			return _Specialization;
+    		} 
+    		set
+    		{
+    			if (_Specialization != value)
+    			{
+    				_Specialization = value;
+    				OnPropertyChanged("Specialization");
+    			}
+    		}
+    	}
     
         private Difficulty _Difficulty;
             public virtual Difficulty Difficulty
@@ -259,25 +275,6 @@ namespace Item_WPF.ItemEntityModel
                     {    _DefaultSkills = value;    OnPropertyChanged("DefaultSkills");   }
                 }
             } 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<GurpsSkill> _GurpsSkill1;
-            public virtual ICollection<GurpsSkill> GurpsSkill1
-            {
-                get { return _GurpsSkill1; }
-                set
-                { if(_GurpsSkill1 != value)
-                    {    _GurpsSkill1 = value;    OnPropertyChanged("GurpsSkill1");   }
-                }
-            } 
-        private GurpsSkill _GurpsSkill2;
-            public virtual GurpsSkill GurpsSkill2
-            {
-                get { return _GurpsSkill2; }
-                set
-                { if(_GurpsSkill2 != value)
-                    {    _GurpsSkill2 = value;    OnPropertyChanged("GurpsSkill2");   }
-                }
-            } 
         private TL _TL;
             public virtual TL TL
             {
@@ -304,6 +301,25 @@ namespace Item_WPF.ItemEntityModel
                 set
                 { if(_NeedSkills != value)
                     {    _NeedSkills = value;    OnPropertyChanged("NeedSkills");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<GurpsSkill> _GurpsSkill1;
+            public virtual ICollection<GurpsSkill> GurpsSkill1
+            {
+                get { return _GurpsSkill1; }
+                set
+                { if(_GurpsSkill1 != value)
+                    {    _GurpsSkill1 = value;    OnPropertyChanged("GurpsSkill1");   }
+                }
+            } 
+        private GurpsSkill _GurpsSkill2;
+            public virtual GurpsSkill GurpsSkill2
+            {
+                get { return _GurpsSkill2; }
+                set
+                { if(_GurpsSkill2 != value)
+                    {    _GurpsSkill2 = value;    OnPropertyChanged("GurpsSkill2");   }
                 }
             } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

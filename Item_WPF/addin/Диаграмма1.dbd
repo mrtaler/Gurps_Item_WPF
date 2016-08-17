@@ -617,7 +617,7 @@
             </Location>
             <Size>
               <Width>215 px</Width>
-              <Height>280 px</Height>
+              <Height>297 px</Height>
             </Size>
             <DbOid>
               <Path>Item1.CharDB.GurpsSkill</Path>
@@ -642,8 +642,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>210 px</Y>
+                  <X>Undefined</X>
+                  <Y>148.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -654,8 +654,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>140 px</Y>
+                  <X>Undefined</X>
+                  <Y>222.75 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -667,17 +667,17 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>821 px</X>
-                <Y>790 px</Y>
+                <X>770 px</X>
+                <Y>728.5 px</Y>
               </PointD>
               <PointD>
-                <X>821 px</X>
-                <Y>720 px</Y>
+                <X>770 px</X>
+                <Y>802.75 px</Y>
               </PointD>
             </BendPoints>
-            <IsManuallyRouted>false</IsManuallyRouted>
+            <IsManuallyRouted>true</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.GurpsSkill.FK_GurpsSkill_GurpsSkill_id</Path>
+              <Path>Item1.CharDB.GurpsSkill.FK_Spec_GurpsSkill_GurpsSkill_id</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -691,8 +691,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>19 px</X>
-                  <Y>35 px</Y>
+                  <X>70 px</X>
+                  <Y>-37.125 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -1248,7 +1248,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>26.75 px</Y>
+                  <Y>80.25 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -1260,7 +1260,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>76.75 px</Y>
+                  <Y>130.25 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -7288,7 +7288,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>0 px</X>
-                  <Y>-55 px</Y>
+                  <Y>-46.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -7318,7 +7318,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>245 px</Y>
+                  <Y>253.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -7330,7 +7330,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>35 px</Y>
+                  <Y>43.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -7376,10 +7376,10 @@
         </Children>
         <ViewPort>
           <ScaleMode>Free</ScaleMode>
-          <Scale>0.68</Scale>
+          <Scale>0.59</Scale>
           <Location>
-            <X>564.705851794733 px</X>
-            <Y>182.352950712389 px</Y>
+            <X>110.169513423224 px</X>
+            <Y>335.593235360519 px</Y>
           </Location>
         </ViewPort>
       </Model>

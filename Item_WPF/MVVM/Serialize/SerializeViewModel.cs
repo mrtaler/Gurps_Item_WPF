@@ -61,7 +61,8 @@ namespace Item_WPF.MVVM.Serialize
             Category CAt = new Category(XMLSkillPatch, @"d:\Category.txt");
             foreach (var item in CAt.ResultOrder)
             {
-                if (_context.GurpsSkillCategories.Where(p => p.NamelCategory.Contains(item)) == null)
+                var qe = _context.GurpsSkillCategories.FirstOrDefault(p => p.NamelCategory.Contains(item));
+                if (qe==null)
                 {
                     GurpsSkillCategory Gm = new GurpsSkillCategory();
 
@@ -72,10 +73,12 @@ namespace Item_WPF.MVVM.Serialize
                 }
             }
             _context.SaveChanges();
+            MessageBox.Show(InsertInToGurpsSkillCategory.ToString());
+            
             // SkillSerializeible sklsrib = new SkillSerializeible(XMLSkillPatch, @"C:\Users\Derdan\Dropbox\_Wor\skill.txt");
             SkillSerializeible sklsrib = new SkillSerializeible(XMLSkillPatch, @"d:\skill.txt");
 
-            MessageBox.Show(InsertInToGurpsSkillCategory.ToString());
+            
 
         }
         #endregion

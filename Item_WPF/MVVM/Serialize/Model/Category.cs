@@ -11,12 +11,9 @@ namespace Item_WPF.MVVM.Serialize
 {
     public class Category
     {
-        //public ObservableCollection<Pars> ParQwe = new ObservableCollection<Pars>();
-        public ObservableCollection<XElement> CollectionCategiry = new ObservableCollection<XElement>();
-        public ObservableCollection<string> OutstringCollection = new ObservableCollection<string>();
-        public ObservableCollection<string> ResultOrder;
-        public ObservableCollection<string> outSting = new ObservableCollection<string>();
-        /// <summary>
+       public ObservableCollection<string> CollectionCategiry = new ObservableCollection<string>();
+       public ObservableCollection<string> ResultOrder;
+       /// <summary>
         /// Получение в файл категорий
         /// </summary>
         /// <param name="xdoc">извлёчённый документ</param>
@@ -24,28 +21,14 @@ namespace Item_WPF.MVVM.Serialize
         public Category(string xmlString, string writePath)
         {
             XDocument xdoc = XDocument.Load(xmlString);
-            foreach (XElement skillElement in xdoc.Element("skill_list").Elements("skill").Elements("categories"))
+            foreach (XElement skillElement in xdoc.Element("skill_list").Elements("skill").Elements("categories").Elements("category"))
             {
-                XElement cat = skillElement.Element("category");
+                string cat = skillElement != null ? skillElement.Value.ToString() : "0";
                 CollectionCategiry.Add(cat);
             }
-            var articleList = (from item in CollectionCategiry
-                               select new
-                               {
-                                   name = item.Value.ToString() != null ? item.Value.ToString() : "0"
-                               });
-            foreach (var article in articleList)
-            {
-                OutstringCollection.Add(article.name.ToString());
-
-            }
-
-            ObservableCollection<string> result = new ObservableCollection<string>(OutstringCollection.Distinct());
-            ResultOrder = new ObservableCollection<string>(result.OrderBy(i => i));
-            WriteToFile(writePath, ResultOrder);
-            //  Console.ReadKey();
+            ResultOrder = new ObservableCollection<string>(CollectionCategiry.Distinct().OrderBy(i => i));
         }
-        public void ToSqlFromCollString()
+        public void ToSqlFromCollString(ObservableCollection<string> outSting)
         {
             foreach (var item in ResultOrder)
             {

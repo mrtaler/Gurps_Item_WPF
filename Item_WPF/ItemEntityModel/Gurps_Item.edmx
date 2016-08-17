@@ -109,6 +109,7 @@
           <Property Name="tech_level" Type="int" />
           <Property Name="encumbrance_penalty_multiplier" Type="nvarchar" MaxLength="50" />
           <Property Name="notes" Type="nvarchar" MaxLength="500" />
+          <Property Name="Specialization" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="GurpsSkillCategory">
           <Key>
@@ -1394,18 +1395,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_GurpsSkill_GurpsSkill_id">
-          <End Role="GurpsSkill" Type="Self.GurpsSkill" Multiplicity="0..1" />
-          <End Role="GurpsSkill1" Type="Self.GurpsSkill" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="GurpsSkill">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="GurpsSkill1">
-              <PropertyRef Name="idSpecialization" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_GurpsSkill_TL_Id_Tl">
           <End Role="TL" Type="Self.TL" Multiplicity="0..1" />
           <End Role="GurpsSkill" Type="Self.GurpsSkill" Multiplicity="*" />
@@ -1419,7 +1408,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_GurpsSkillCategory88_GurpsSkill_id">
-          <End Role="GurpsSkill" Type="Self.GurpsSkill" Multiplicity="1" />
+          <End Role="GurpsSkill" Type="Self.GurpsSkill" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GurpsSkillCategory88" Type="Self.GurpsSkillCategory88" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GurpsSkill">
@@ -1799,6 +1790,18 @@
             </Principal>
             <Dependent Role="SkillBonus">
               <PropertyRef Name="idSkill" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Spec_GurpsSkill_GurpsSkill_id">
+          <End Role="GurpsSkill" Type="Self.GurpsSkill" Multiplicity="0..1" />
+          <End Role="GurpsSkill1" Type="Self.GurpsSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsSkill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GurpsSkill1">
+              <PropertyRef Name="idSpecialization" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2274,10 +2277,6 @@
             <End Role="Difficulty" EntitySet="Difficulty" />
             <End Role="GurpsSkill" EntitySet="GurpsSkill" />
           </AssociationSet>
-          <AssociationSet Name="FK_GurpsSkill_GurpsSkill_id" Association="Self.FK_GurpsSkill_GurpsSkill_id">
-            <End Role="GurpsSkill" EntitySet="GurpsSkill" />
-            <End Role="GurpsSkill1" EntitySet="GurpsSkill" />
-          </AssociationSet>
           <AssociationSet Name="FK_GurpsSkill_TL_Id_Tl" Association="Self.FK_GurpsSkill_TL_Id_Tl">
             <End Role="TL" EntitySet="TL" />
             <End Role="GurpsSkill" EntitySet="GurpsSkill" />
@@ -2405,6 +2404,10 @@
           <AssociationSet Name="FK_SkillBonus_Skill_Id" Association="Self.FK_SkillBonus_Skill_Id">
             <End Role="Skill" EntitySet="Skill" />
             <End Role="SkillBonus" EntitySet="SkillBonus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Spec_GurpsSkill_GurpsSkill_id" Association="Self.FK_Spec_GurpsSkill_GurpsSkill_id">
+            <End Role="GurpsSkill" EntitySet="GurpsSkill" />
+            <End Role="GurpsSkill1" EntitySet="GurpsSkill" />
           </AssociationSet>
           <AssociationSet Name="FK_specialization_skill_prereq_PrimaryKey" Association="Self.FK_specialization_skill_prereq_PrimaryKey">
             <End Role="skill_prereq" EntitySet="skill_prereq" />
@@ -2623,10 +2626,6 @@
             <End Role="GurpsSkill" EntitySet="GurpsSkills" />
             <End Role="DefaultSkill" EntitySet="DefaultSkills" />
           </AssociationSet>
-          <AssociationSet Name="FK_GurpsSkill_GurpsSkill_id" Association="item1Model.FK_GurpsSkill_GurpsSkill_id">
-            <End Role="GurpsSkill" EntitySet="GurpsSkills" />
-            <End Role="GurpsSkill1" EntitySet="GurpsSkills" />
-          </AssociationSet>
           <AssociationSet Name="FK_GurpsSkill_TL_Id_Tl" Association="item1Model.FK_GurpsSkill_TL_Id_Tl">
             <End Role="TL" EntitySet="TLs" />
             <End Role="GurpsSkill" EntitySet="GurpsSkills" />
@@ -2638,6 +2637,10 @@
           <AssociationSet Name="FK_NeedSkill_GurpsSkill_id_out" Association="item1Model.FK_NeedSkill_GurpsSkill_id_out">
             <End Role="GurpsSkill" EntitySet="GurpsSkills" />
             <End Role="NeedSkill" EntitySet="NeedSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Spec_GurpsSkill_GurpsSkill_id" Association="item1Model.FK_Spec_GurpsSkill_GurpsSkill_id">
+            <End Role="GurpsSkill" EntitySet="GurpsSkills" />
+            <End Role="GurpsSkill1" EntitySet="GurpsSkills" />
           </AssociationSet>
           <AssociationSet Name="FK_InventoryOfChar_ITEM_uiIndex" Association="item1Model.FK_InventoryOfChar_ITEM_uiIndex">
             <End Role="ITEM" EntitySet="ITEMs" />
@@ -2974,14 +2977,15 @@
           <Property Name="tech_level" Type="Int32" />
           <Property Name="encumbrance_penalty_multiplier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="notes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Specialization" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Difficulty" Relationship="item1Model.FK_GurpsSkill_Difficulty_id" FromRole="GurpsSkill" ToRole="Difficulty" />
           <NavigationProperty Name="DefaultSkill" Relationship="item1Model.FK_DefaultSkill_GurpsSkill_id_in" FromRole="GurpsSkill" ToRole="DefaultSkill" />
           <NavigationProperty Name="DefaultSkills" Relationship="item1Model.FK_DefaultSkill_GurpsSkill_id_out" FromRole="GurpsSkill" ToRole="DefaultSkill" />
-          <NavigationProperty Name="GurpsSkill1" Relationship="item1Model.FK_GurpsSkill_GurpsSkill_id" FromRole="GurpsSkill" ToRole="GurpsSkill1" />
-          <NavigationProperty Name="GurpsSkill2" Relationship="item1Model.FK_GurpsSkill_GurpsSkill_id" FromRole="GurpsSkill1" ToRole="GurpsSkill" />
           <NavigationProperty Name="TL" Relationship="item1Model.FK_GurpsSkill_TL_Id_Tl" FromRole="GurpsSkill" ToRole="TL" />
           <NavigationProperty Name="NeedSkill" Relationship="item1Model.FK_NeedSkill_GurpsSkill_id_in" FromRole="GurpsSkill" ToRole="NeedSkill" />
           <NavigationProperty Name="NeedSkills" Relationship="item1Model.FK_NeedSkill_GurpsSkill_id_out" FromRole="GurpsSkill" ToRole="NeedSkill" />
+          <NavigationProperty Name="GurpsSkill1" Relationship="item1Model.FK_Spec_GurpsSkill_GurpsSkill_id" FromRole="GurpsSkill" ToRole="GurpsSkill1" />
+          <NavigationProperty Name="GurpsSkill2" Relationship="item1Model.FK_Spec_GurpsSkill_GurpsSkill_id" FromRole="GurpsSkill1" ToRole="GurpsSkill" />
           <NavigationProperty Name="GurpsSkillCategories" Relationship="item1Model.GurpsSkillCategory88" FromRole="GurpsSkill" ToRole="GurpsSkillCategory" />
         </EntityType>
         <EntityType Name="GurpsSkillCategory">
@@ -3964,18 +3968,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_GurpsSkill_GurpsSkill_id">
-          <End Type="item1Model.GurpsSkill" Role="GurpsSkill" Multiplicity="0..1" />
-          <End Type="item1Model.GurpsSkill" Role="GurpsSkill1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="GurpsSkill">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="GurpsSkill1">
-              <PropertyRef Name="idSpecialization" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_GurpsSkill_TL_Id_Tl">
           <End Type="item1Model.TL" Role="TL" Multiplicity="0..1" />
           <End Type="item1Model.GurpsSkill" Role="GurpsSkill" Multiplicity="*" />
@@ -4011,6 +4003,18 @@
             </Principal>
             <Dependent Role="NeedSkill">
               <PropertyRef Name="idSkillOut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Spec_GurpsSkill_GurpsSkill_id">
+          <End Type="item1Model.GurpsSkill" Role="GurpsSkill" Multiplicity="0..1" />
+          <End Type="item1Model.GurpsSkill" Role="GurpsSkill1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsSkill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GurpsSkill1">
+              <PropertyRef Name="idSpecialization" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -4841,6 +4845,7 @@
           <EntitySetMapping Name="GurpsSkills">
             <EntityTypeMapping TypeName="item1Model.GurpsSkill">
               <MappingFragment StoreEntitySet="GurpsSkill">
+                <ScalarProperty Name="Specialization" ColumnName="Specialization" />
                 <ScalarProperty Name="notes" ColumnName="notes" />
                 <ScalarProperty Name="encumbrance_penalty_multiplier" ColumnName="encumbrance_penalty_multiplier" />
                 <ScalarProperty Name="tech_level" ColumnName="tech_level" />

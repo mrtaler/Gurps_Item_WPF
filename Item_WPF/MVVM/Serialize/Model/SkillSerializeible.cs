@@ -12,12 +12,16 @@ namespace Item_WPF.MVVM.Serialize
     {
         private ItemEntityModel.item1Entities _context;
         public ObservableCollection<ItemEntityModel.GurpsSkill> CollectionSkill = new ObservableCollection<ItemEntityModel.GurpsSkill>();
+
+        public ObservableCollection<ItemEntityModel.GurpsSkill> CollectionSkillDuplicates;
+
         public ObservableCollection<string> OutstringCollection = new ObservableCollection<string>();
         public ObservableCollection<string> ResultOrder;
 
         public SkillSerializeible(string xmlString, string writePath)
         {
             _context = new ItemEntityModel.item1Entities();
+            CollectionSkillDuplicates = new ObservableCollection<ItemEntityModel.GurpsSkill>(_context.GurpsSkills);
             XDocument xdoc = XDocument.Load(xmlString);
             foreach (XElement skillElement in xdoc.Element("skill_list").Elements("skill"))
             {
@@ -30,21 +34,34 @@ namespace Item_WPF.MVVM.Serialize
                 // gsk.tech_level =                        skillElement.Element("tech_level").Value                !=  ""  ? Convert.ToInt32(  skillElement.Element("tech_level").Value) : 1;
                 gsk.encumbrance_penalty_multiplier = skillElement.Element("encumbrance_penalty_multiplier") != null ? skillElement.Element("encumbrance_penalty_multiplier").Value.ToString() : null;
                 gsk.notes = skillElement.Element("notes") != null ? skillElement.Element("notes").Value.ToString() : null;
-
-                //     gsk.idDifficulty skillElement.Value              != null ? skillElement.Value.ToString() : null;
-                // gsk.idSpecialization = skillElement.Value != null ? skillElement.Value.ToString() : null;
-                // gsk.TypeSpecialization = skillElement.Value != null ? skillElement.Value.ToString() : null;
-                //  gsk.DefaultModifier = skillElement.Value != null ? skillElement.Value.ToString() : null;
-                //XElement cat = skillElement.Element("name");
-              
-                //if (!_context.GurpsSkills.Contains(gsk))
-                //{
-                    _context.GurpsSkills.Add(gsk);
-                //}
-
+                gsk.Specialization = skillElement.Element("specialization") != null ? skillElement.Element("specialization").Value.ToString() : null;
+                foreach (var item in skillElement.Elements("categories").Elements("category"))
+                {
+                    var qery = item.Value.ToString();
+                    gsk.GurpsSkillCategories.
+                        Add(_context.GurpsSkillCategories.
+                        First(p => p.NamelCategory.Contains(qery)));
+                }
                 CollectionSkill.Add(gsk);
             }
+            foreach (var item in CollectionSkill)
+            {
+                if (_context.GurpsSkills.FirstOrDefault(p=>p.NameSkill==item.NameSkill&&p.Specialization==item.Specialization) ==null)
+                {
+                    _context.GurpsSkills.Add(item);
+                }
+            }
+
+
+
+
             _context.SaveChanges();
+            //IEnumerable<ItemEntityModel.GurpsSkill> duplicates =
+            //    CollectionSkill.Intersect(_context.GurpsSkills, new SkillComparer());
+            //foreach (var product in duplicates)
+            //    CollectionSkillDuplicates.Add(product);
+ 
+         //  _context.SaveChanges();
             //var SkillList = (from item in CollectionCategiry
             //                   select new
             //                   {
@@ -55,10 +72,9 @@ namespace Item_WPF.MVVM.Serialize
             //    OutstringCollection.Add(skill.name.ToString());
             //}
 
-            ObservableCollection<string> result = new ObservableCollection<string>(OutstringCollection.Distinct());
-            ResultOrder = new ObservableCollection<string>(result.OrderBy(i => i));
+         
 
-            WriteToFile(writePath, ResultOrder);
+           // WriteToFile(writePath, ResultOrder);
         }
         public void ToSqlFromCollString(ObservableCollection<DefaultSkill> ResultOrder, ObservableCollection<string> outSting)
         {
@@ -80,6 +96,36 @@ namespace Item_WPF.MVVM.Serialize
                     sw.WriteLine(article);
                 }
             }
+        }
+    }
+    public class SkillComparer : IEqualityComparer<ItemEntityModel.GurpsSkill>
+    {
+        public bool Equals(ItemEntityModel.GurpsSkill x, ItemEntityModel.GurpsSkill y)
+        {
+
+            //Check whether the compared objects reference the same data.
+            if (Object.ReferenceEquals(x, y)) return true;
+
+            //Check whether any of the compared objects is null.
+            if (Object.ReferenceEquals(x, null) || Object.ReferenceEquals(y, null))
+                return false;
+
+            //Check whether the products' properties are equal.
+            return x.NameSkill == y.NameSkill && x.Specialization == y.Specialization;
+        }
+        public int GetHashCode(ItemEntityModel.GurpsSkill product)
+        {
+            //Check whether the object is null
+            if (Object.ReferenceEquals(product, null)) return 0;
+
+            //Get hash code for the Name field if it is not null.
+            int hashProductName = product.NameSkill == null         ? 0 : product.NameSkill.GetHashCode();
+
+            //Get hash code for the Code field.
+            int hashProductCode = product.Specialization == null    ? 0 : product.Specialization.GetHashCode();
+
+            //Calculate the hash code for the product.
+            return hashProductName ^ hashProductCode;
         }
     }
 }
