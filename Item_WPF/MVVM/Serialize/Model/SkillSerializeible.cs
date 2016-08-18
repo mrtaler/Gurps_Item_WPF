@@ -5,76 +5,218 @@ using System.Text;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Xml.Linq;
+using Item_WPF.ItemEntityModel;
+using Item_WPF.MVVM.Serialize.Model;
+using System.Windows;
 
 namespace Item_WPF.MVVM.Serialize
 {
     public class SkillSerializeible
     {
-        private ItemEntityModel.item1Entities _context;
-        public ObservableCollection<ItemEntityModel.GurpsSkill> CollectionSkill = new ObservableCollection<ItemEntityModel.GurpsSkill>();
+        private item1Entities _context;
+        public ObservableCollection<ItemEntityModel.GurpsSkill> CollectionCategiry = new ObservableCollection<ItemEntityModel.GurpsSkill>();
+        public ObservableCollection<SkillXMLModel> OutstringCollection = new ObservableCollection<SkillXMLModel>();
+        public ObservableCollection<GurpsSkillCategory> gurpsSkillCategories = new ObservableCollection<GurpsSkillCategory>();
 
-        public ObservableCollection<ItemEntityModel.GurpsSkill> CollectionSkillDuplicates;
-
-        public ObservableCollection<string> OutstringCollection = new ObservableCollection<string>();
-        public ObservableCollection<string> ResultOrder;
 
         public SkillSerializeible(string xmlString, string writePath)
         {
-            _context = new ItemEntityModel.item1Entities();
-            CollectionSkillDuplicates = new ObservableCollection<ItemEntityModel.GurpsSkill>(_context.GurpsSkills);
+            _context = new item1Entities();
+            
+            int contextAdded = 1;
             XDocument xdoc = XDocument.Load(xmlString);
+
             foreach (XElement skillElement in xdoc.Element("skill_list").Elements("skill"))
             {
-                ItemEntityModel.GurpsSkill gsk = new ItemEntityModel.GurpsSkill();
-                var tl22 = skillElement.Element("tech_level");
-                gsk.NameSkill = skillElement.Element("name") != null ? skillElement.Element("name").Value.ToString() : "0";
-                gsk.Points = skillElement.Element("points") != null ? Convert.ToInt32(skillElement.Element("points").Value) : 0;
-                gsk.Reference = skillElement.Element("reference") != null ? skillElement.Element("reference").Value.ToString() : null;
-                gsk.version = skillElement.Attribute("version") != null ? skillElement.Attribute("version").Value.ToString() : null;
-                // gsk.tech_level =                        skillElement.Element("tech_level").Value                !=  ""  ? Convert.ToInt32(  skillElement.Element("tech_level").Value) : 1;
-                gsk.encumbrance_penalty_multiplier = skillElement.Element("encumbrance_penalty_multiplier") != null ? skillElement.Element("encumbrance_penalty_multiplier").Value.ToString() : null;
-                gsk.notes = skillElement.Element("notes") != null ? skillElement.Element("notes").Value.ToString() : null;
-                gsk.Specialization = skillElement.Element("specialization") != null ? skillElement.Element("specialization").Value.ToString() : null;
-                foreach (var item in skillElement.Elements("categories").Elements("category"))
-                {
-                    var qery = item.Value.ToString();
-                    gsk.GurpsSkillCategories.
-                        Add(_context.GurpsSkillCategories.
-                        First(p => p.NamelCategory.Contains(qery)));
-                }
-                CollectionSkill.Add(gsk);
+                SkillXMLModel qwerty = new SkillXMLModel();
+                qwerty.numPP = contextAdded;
+                qwerty.NameSkill = skillElement.Element("name");
+                qwerty.Specialization = skillElement.Element("specialization");
+                qwerty.tech_level = skillElement.Element("tech_level");
+                qwerty.difficulty = skillElement.Element("difficulty");
+                qwerty.Points = skillElement.Element("points");
+                qwerty.Reference = skillElement.Element("reference");
+                qwerty.version = skillElement.Attribute("version");
+                qwerty.encumbrance_penalty_multiplier = skillElement.Element("encumbrance_penalty_multiplier");
+                qwerty.notes = skillElement.Element("notes");
+                qwerty.Default = new ObservableCollection<XElement>(skillElement.Elements("default"));
+                qwerty.categories = new ObservableCollection<XElement>(skillElement.Elements("categories").Elements("category"));
+                qwerty.prereq_list = new ObservableCollection<XElement>(skillElement.Elements("prereq_list"));
+                qwerty.attribute_bonus = new ObservableCollection<XElement>(skillElement.Elements("attribute_bonus"));
+                qwerty.weapon_bonus = new ObservableCollection<XElement>(skillElement.Elements("weapon_bonus"));
+                OutstringCollection.Add(qwerty);
+                contextAdded += 1;
             }
-            foreach (var item in CollectionSkill)
+            OutstringCollection.OrderBy(p => p.numPP);
+
+
+            MessageBox.Show("file contains {0} skill entities", contextAdded.ToString());
+
+
+            contextAdded = 0;
+            foreach (SkillXMLModel item in OutstringCollection)
             {
-                if (_context.GurpsSkills.FirstOrDefault(p=>p.NameSkill==item.NameSkill&&p.Specialization==item.Specialization) ==null)
+                ObservableCollection<GurpsSkill> qery1;
+                string SelectNameFromContext = item.NameSkill.Value.ToString();
+               // if (_context.GurpsSkills.Where(p => p.NameSkill == SelectNameFromContext) != null)
+               // {
+                    qery1 = new ObservableCollection<GurpsSkill>
+                    (_context.GurpsSkills
+                        .Where(p => p.NameSkill
+                            == SelectNameFromContext));
+               // }
+               // else qery1 = null;
+               
+                string SelectSpecFromQ1 = item.Specialization != null ? item.Specialization.Value.ToString() : null;
+                ObservableCollection<GurpsSkill> qery2 = new ObservableCollection<GurpsSkill>
+                    (qery1.Where(p => p.Specialization == SelectSpecFromQ1));
+                GurpsSkill qery3 = qery2.FirstOrDefault(p => p.version == item.version.Value.ToString());
+                if (qery3 == null)
                 {
-                    _context.GurpsSkills.Add(item);
+                    GurpsSkill GurpsSkillcat = new GurpsSkill();
+
+
+
+                    GurpsSkillcat.NameSkill = item.NameSkill != null ? item.NameSkill.Value.ToString() : null;
+                    GurpsSkillcat.Specialization = item.Specialization != null ? item.Specialization.Value.ToString() : null;
+
+                    GurpsSkillcat.idtech_level = item.tech_level != null && item.tech_level.Value.ToString() != "" ? Convert.ToInt32(item.tech_level.Value) : 1;
+                    GurpsSkillcat.Difficulty = item.difficulty != null ? item.difficulty.Value.ToString() : null;
+                    GurpsSkillcat.Points = item.Points != null ? Convert.ToInt32(item.Points.Value) : 0;
+                    GurpsSkillcat.Reference = item.Reference != null ? item.Reference.Value.ToString() : null;
+                    GurpsSkillcat.version = item.version != null ? item.version.Value.ToString() : null;
+                    GurpsSkillcat.notes = item.notes != null ? item.notes.Value.ToString() : null;
+                    GurpsSkillcat.encumbrance_penalty_multiplier = item.encumbrance_penalty_multiplier != null ? item.encumbrance_penalty_multiplier.Value.ToString() : null;
+
+                    if (GurpsSkillcat.idtech_level == 1)
+                    {
+                        GurpsSkillcat.idtech_level = null;
+                    }
+                    foreach (var itemCategory in item.categories)
+                    {
+                        var qery = itemCategory.Value.ToString();
+                        GurpsSkillcat.GurpsSkillCategories.
+                            Add(_context.GurpsSkillCategories.
+                            First(p => p.NamelCategory.Contains(qery)));
+                    }
+                    _context.GurpsSkills.Add(GurpsSkillcat);
+                    contextAdded += 1;
                 }
             }
-
-
-
-
+            MessageBox.Show(" {0} skill entities added in MS SQL", contextAdded.ToString());
             _context.SaveChanges();
-            //IEnumerable<ItemEntityModel.GurpsSkill> duplicates =
-            //    CollectionSkill.Intersect(_context.GurpsSkills, new SkillComparer());
-            //foreach (var product in duplicates)
-            //    CollectionSkillDuplicates.Add(product);
- 
-         //  _context.SaveChanges();
-            //var SkillList = (from item in CollectionCategiry
-            //                   select new
-            //                   {
-            //                       name = item.Value.ToString() != null ? item.Value.ToString() : "0"
-            //                   });
-            //foreach (var skill in SkillList)
-            //{
-            //    OutstringCollection.Add(skill.name.ToString());
+
+            MessageBox.Show("Context Saved");
+            //    GurpsSkill GurpsSkillcat = new GurpsSkill();
+
+            //    //IEnumerable<Object> xmlList = (from item in items.Descendants("skill")
+            //    //            //               select new
+            //    //            //               {
+            //    //            //                   name =           items.Descendants("name").SingleOrDefault(),
+            //    //            //                   specialization = items.Descendants("specialization").SingleOrDefault(),
+            //    //            //                   tech_level =     items.Descendants("tech_level").SingleOrDefault(),
+            //    //            //                   difficulty =     items.Descendants("difficulty").SingleOrDefault(),
+            //    //            //                   points =         items.Descendants("points").SingleOrDefault(),
+            //    //            //                   reference =      items.Descendants("reference").SingleOrDefault()
+            //    //            //               }).ToList();
+            /////    GurpsSkillcat.NameSkill = skillElement.Element("name") != null ? skillElement.Element("name").Value.ToString() : "0";
+            /////    GurpsSkillcat.Specialization = skillElement.Element("specialization") != null ? skillElement.Element("specialization").Value.ToString() : null;
+            /////    GurpsSkillcat.version = skillElement.Attribute("version") != null ? skillElement.Attribute("version").Value.ToString() : null;
+
+            //    ObservableCollection<GurpsSkill> qery1 = new ObservableCollection<GurpsSkill>(_context.GurpsSkills.Where(p => p.NameSkill == GurpsSkillcat.NameSkill));
+            //    ObservableCollection<GurpsSkill> qery2 = new ObservableCollection<GurpsSkill>(qery1.Where(p => p.Specialization == GurpsSkillcat.Specialization));
+            //    GurpsSkill qery3 = qery2.FirstOrDefault(p => p.version == GurpsSkillcat.version);
+
+            //    if (qery3 == null)
+            //    {
+
+
+            //        GurpsSkillcat.Points = skillElement.Element("points") != null ? Convert.ToInt32(skillElement.Element("points").Value) : 0;
+            //        GurpsSkillcat.Reference = skillElement.Element("reference") != null ? skillElement.Element("reference").Value.ToString() : null;
+
+
+            //        GurpsSkillcat.encumbrance_penalty_multiplier = skillElement.Element("encumbrance_penalty_multiplier") != null ? skillElement.Element("encumbrance_penalty_multiplier").Value.ToString() : null;
+            //        GurpsSkillcat.notes = skillElement.Element("notes") != null ? skillElement.Element("notes").Value.ToString() : null;
+
+
+            //        foreach (var item in skillElement.Elements("categories").Elements("category"))
+            //        {
+
+
+            //            var qery = item.Value.ToString();
+            //            GurpsSkillcat.GurpsSkillCategories.
+            //                Add(gurpsSkillCategories.
+            //                First(p => p.NamelCategory.Contains(qery)));
+
+            //        }
+            //        if (GurpsSkillcat.Specialization != null)
+            //        //    //if (skillElement.Element("specialization") != null)
+            //        {
+            //            //if (!item.Specialization.StartsWith("@") & !item.Specialization.EndsWith("@"))
+            //            //{
+            //            var qq = _context.GurpsSkills.FirstOrDefault(p => p.NameSkill == GurpsSkillcat.NameSkill);
+            //            //        if (item.id != qq.id)
+            //            {
+            //                GurpsSkillcat.idSpecialization = qq.id;
+            //            }
+            //        }
+
+
+
+
+            //        _context.GurpsSkills.AddObject(GurpsSkillcat);
+            //        contextAdded += 1;
+            //    }
             //}
 
-         
 
-           // WriteToFile(writePath, ResultOrder);
+            //foreach (var item in CollectionCategiry)
+            //{
+
+
+
+
+
+            //        _context.GurpsSkills.AddObject(item);
+            //        
+            //    }
+            //}
+
+            
+            //foreach (var item in _context.GurpsSkills)
+            //{
+            //    if (item.NameSkill.Contains("Area Know"))
+            //    {
+
+            //    }
+            //    if (item.Specialization != null)
+            //    //if (skillElement.Element("specialization") != null)
+            //    {
+            //        //if (!item.Specialization.StartsWith("@") & !item.Specialization.EndsWith("@"))
+            //        //{
+            //        var qq = _context.GurpsSkills.FirstOrDefault(p => p.NameSkill == item.NameSkill);
+
+            //        if (item.id != qq.id)
+            //        {
+            //            item.idSpecialization = qq.id;
+            //                                }
+            //    }
+            //}
+
+
+
+            // CollectionCategiry.OrderBy(p => p.NameSkill);
+
+
+
+
+
+
+
+            //ObservableCollection<GurpsSkill> result = new ObservableCollection<GurpsSkill>(CollectionCategiry.Distinct());
+            //ResultOrder = new ObservableCollection<GurpsSkill>(CollectionCategiry.OrderBy(i => i.NameSkill));
+
+            //WriteToFile(writePath, ResultOrder);
         }
         public void ToSqlFromCollString(ObservableCollection<DefaultSkill> ResultOrder, ObservableCollection<string> outSting)
         {

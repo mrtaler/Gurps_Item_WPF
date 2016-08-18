@@ -183,7 +183,7 @@
     <Compile Include="ItemEntityModel\DefaultSkill.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="ItemEntityModel\Difficulty.cs">
+    <Compile Include="ItemEntityModel\DifficultySkill.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemEntityModel\Drug.cs">
@@ -306,6 +306,7 @@
     <Compile Include="MVVM\Serialize\Model\Category.cs" />
     <Compile Include="MVVM\Serialize\Model\Default.cs" />
     <Compile Include="MVVM\Serialize\Model\Program.cs" />
+    <Compile Include="MVVM\Serialize\Model\SkillXMLModel.cs" />
     <Compile Include="MVVM\Serialize\SerializeView.xaml.cs">
       <DependentUpon>SerializeView.xaml</DependentUpon>
     </Compile>

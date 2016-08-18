@@ -20,7 +20,7 @@
         <Label x:Name="label"
                Margin="122,10,10,0"
                VerticalAlignment="Top"
-               Content="{Binding XMLSkillPatch}" Height="20" />
+               Content="{Binding XMLSkillPatch}" Height="45" />
         <Button x:Name="button1"
                 Width="107"
                 Margin="10,35,0,0"

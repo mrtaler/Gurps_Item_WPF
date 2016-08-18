@@ -12,7 +12,7 @@ namespace Item_WPF.ItemEntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Difficulty : System.ComponentModel.INotifyPropertyChanged
+    public partial class DifficultySkill : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -30,7 +30,7 @@ namespace Item_WPF.ItemEntityModel
      #endregion
      
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Difficulty()
+        public DifficultySkill()
         {
             this.GurpsSkills = new HashSet<GurpsSkill>();
         }

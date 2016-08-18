@@ -31,7 +31,7 @@ namespace Item_WPF.ItemEntityModel
         public virtual DbSet<Advantage> Advantages { get; set; }
         public virtual DbSet<Attribute> Attributes { get; set; }
         public virtual DbSet<CharacterDB> CharacterDBs { get; set; }
-        public virtual DbSet<Difficulty> Difficulties { get; set; }
+        public virtual DbSet<DifficultySkill> DifficultySkills { get; set; }
         public virtual DbSet<GurpsAdvCategory> GurpsAdvCategories { get; set; }
         public virtual DbSet<GurpsSkill> GurpsSkills { get; set; }
         public virtual DbSet<GurpsSkillCategory> GurpsSkillCategories { get; set; }
