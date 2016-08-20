@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Item_WPF.MVVM.Serialize.Model.prereq_list;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -50,22 +51,22 @@ namespace Item_WPF.MVVM.Serialize.Model
         /// <summary>
         /// 1_1 element ref="default" 
         /// </summary>
-        public ObservableCollection<XElement> Default;
+        public ObservableCollection<DefaultXML> Default;
         /// <summary>
         /// 1_2 element ref="categories" 
         /// </summary>
-        public ObservableCollection<XElement> categories;
+        public ObservableCollection<CategoriesXML> categories;
         /// <summary>
         /// 1_3 element ref="prereq_list" 
         /// </summary>
-        public ObservableCollection<XElement> prereq_list;
+        public ObservableCollection<Prereq_listXML> prereq_list;
         /// <summary>
         /// 1_4 element ref="attribute_bonus" 
         /// </summary>
-        public ObservableCollection<XElement> attribute_bonus;
+        public ObservableCollection<Attribute_bonusXML> attribute_bonus;
         /// <summary>
         /// 1_5 element ref="weapon_bonus" 
         /// </summary>
-        public ObservableCollection<XElement> weapon_bonus;
+        public ObservableCollection<Weapon_bonusXML> weapon_bonus;
     }
 }

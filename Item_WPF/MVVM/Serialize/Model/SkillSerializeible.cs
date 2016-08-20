@@ -7,6 +7,7 @@ using System.IO;
 using System.Xml.Linq;
 using Item_WPF.ItemEntityModel;
 using Item_WPF.MVVM.Serialize.Model;
+using Item_WPF.MVVM.Serialize.Model.prereq_list;
 using System.Windows;
 
 namespace Item_WPF.MVVM.Serialize
@@ -22,7 +23,7 @@ namespace Item_WPF.MVVM.Serialize
         public SkillSerializeible(string xmlString, string writePath)
         {
             _context = new item1Entities();
-            
+
             int contextAdded = 1;
             XDocument xdoc = XDocument.Load(xmlString);
 
@@ -32,24 +33,88 @@ namespace Item_WPF.MVVM.Serialize
                 qwerty.numPP = contextAdded;
                 qwerty.NameSkill = skillElement.Element("name");
                 qwerty.Specialization = skillElement.Element("specialization");
-                qwerty.tech_level = skillElement.Element("tech_level");
-                qwerty.difficulty = skillElement.Element("difficulty");
-                qwerty.Points = skillElement.Element("points");
-                qwerty.Reference = skillElement.Element("reference");
-                qwerty.version = skillElement.Attribute("version");
-                qwerty.encumbrance_penalty_multiplier = skillElement.Element("encumbrance_penalty_multiplier");
-                qwerty.notes = skillElement.Element("notes");
-                qwerty.Default = new ObservableCollection<XElement>(skillElement.Elements("default"));
-                qwerty.categories = new ObservableCollection<XElement>(skillElement.Elements("categories").Elements("category"));
-                qwerty.prereq_list = new ObservableCollection<XElement>(skillElement.Elements("prereq_list"));
-                qwerty.attribute_bonus = new ObservableCollection<XElement>(skillElement.Elements("attribute_bonus"));
-                qwerty.weapon_bonus = new ObservableCollection<XElement>(skillElement.Elements("weapon_bonus"));
-                OutstringCollection.Add(qwerty);
-                contextAdded += 1;
+                if (
+                    /*qwerty.NameSkill.Value.ToString() == "Brainwashing"
+                    || qwerty.NameSkill.Value.ToString() == "Breaking Blow"
+                    ||*/
+                   // qwerty.NameSkill.Value.ToString() == "Explosives"
+                    //  || qwerty.NameSkill.Value.ToString() == "Computer Hacking"
+                    //       || qwerty.NameSkill.Value.ToString() == "Explosives"
+                    // || 
+                     qwerty.NameSkill.Value.ToString() == "Engineer"
+                    )
+                {
+                    if (qwerty.Specialization.Value.ToString() == "Materials")
+                    {
+                        qwerty.tech_level = skillElement.Element("tech_level");
+                        qwerty.difficulty = skillElement.Element("difficulty");
+                        qwerty.Points = skillElement.Element("points");
+                        qwerty.Reference = skillElement.Element("reference");
+                        qwerty.version = skillElement.Attribute("version");
+                        qwerty.encumbrance_penalty_multiplier = skillElement.Element("encumbrance_penalty_multiplier");
+
+                        qwerty.notes = skillElement.Element("notes");
+                        #region  Default Collection
+                        qwerty.Default = new ObservableCollection<DefaultXML>();
+                        foreach (var itemdefault in skillElement.Elements("default"))
+                        {
+                            DefaultXML def = new DefaultXML();
+                            def.nameDefaultXml = itemdefault.Element("name");
+                            def.specializationDefaultXml = itemdefault.Element("specialization");
+                            def.typeDefaultXml = itemdefault.Element("type");
+                            def.modifierDefaultXml = itemdefault.Element("modifier");
+                            qwerty.Default.Add(def);
+                        }
+                        #endregion
+                        #region categories Collection
+                        qwerty.categories = new ObservableCollection<CategoriesXML>();
+                        foreach (var itemCategory in skillElement.Elements("categories").Elements("category"))
+                        {
+                            CategoriesXML cat = new CategoriesXML();
+                            cat.category = itemCategory;
+                            qwerty.categories.Add(cat);
+                        }
+                        #endregion
+                        #region prereq_list
+                        qwerty.prereq_list = new ObservableCollection<Prereq_listXML>();
+                        
+                        foreach (XElement itemprereq_list in skillElement.Elements("prereq_list"))
+                        {
+                            Prereq_listXML prl = new Prereq_listXML();
+                            prl.FPrereq_list(itemprereq_list);             //1
+                            prl.FSkill_prereq(itemprereq_list.Elements("skill_prereq"));            //2
+                            prl.FSpell_prereq(skillElement.Elements("prereq_list"));            //3
+                            prl.FAttribute_prereq(skillElement.Elements("prereq_list"));        //4
+                            prl.FAdvantage_prereq(skillElement.Elements("prereq_list"));        //5
+                            prl.FContained_weight_prereq(skillElement.Elements("prereq_list")); //6
+
+                            prl.when_tl = itemprereq_list.Element("when_tl");
+                            prl.college_count = itemprereq_list.Element("college_count");
+                            prl.all = itemprereq_list.Attribute("all");
+
+                            //foreach (var item in collection)
+                            //{
+
+                            //}
+                            qwerty.prereq_list.Add(prl);
+                        }
+                        #endregion
+
+                        OutstringCollection.Add(qwerty);
+                        contextAdded += 1;
+                    }
+                }
+                //qwerty.attribute_bonus =    new ObservableCollection<Attribute_bonusXML>(skillElement.Elements("attribute_bonus"));
+                //qwerty.weapon_bonus =       new ObservableCollection<Weapon_bonusXML>   (skillElement.Elements("weapon_bonus"));
+                //OutstringCollection.Add(qwerty);
+                //contextAdded += 1;
             }
             OutstringCollection.OrderBy(p => p.numPP);
 
-
+            var qew = OutstringCollection.FirstOrDefault(p => p.prereq_list
+           .FirstOrDefault(q => q.Attribute_prereq.FirstOrDefault(z => z.which.Value.ToString() == "dx") != null) != null);/*/.
+         prereq_list.FirstOrDefault(qq => qq.Attribute_prereq.FirstOrDefault(zz => zz.which.Value.ToString() == "dx") != null).
+         Attribute_prereq.FirstOrDefault(z => z.which.Value.ToString() == "dx")         ;*/
             MessageBox.Show("file contains {0} skill entities", contextAdded.ToString());
 
 
@@ -58,15 +123,15 @@ namespace Item_WPF.MVVM.Serialize
             {
                 ObservableCollection<GurpsSkill> qery1;
                 string SelectNameFromContext = item.NameSkill.Value.ToString();
-               // if (_context.GurpsSkills.Where(p => p.NameSkill == SelectNameFromContext) != null)
-               // {
-                    qery1 = new ObservableCollection<GurpsSkill>
-                    (_context.GurpsSkills
-                        .Where(p => p.NameSkill
-                            == SelectNameFromContext));
-               // }
-               // else qery1 = null;
-               
+                // if (_context.GurpsSkills.Where(p => p.NameSkill == SelectNameFromContext) != null)
+                // {
+                qery1 = new ObservableCollection<GurpsSkill>
+                (_context.GurpsSkills
+                    .Where(p => p.NameSkill
+                        == SelectNameFromContext));
+                // }
+                // else qery1 = null;
+
                 string SelectSpecFromQ1 = item.Specialization != null ? item.Specialization.Value.ToString() : null;
                 ObservableCollection<GurpsSkill> qery2 = new ObservableCollection<GurpsSkill>
                     (qery1.Where(p => p.Specialization == SelectSpecFromQ1));
@@ -94,10 +159,10 @@ namespace Item_WPF.MVVM.Serialize
                     }
                     foreach (var itemCategory in item.categories)
                     {
-                        var qery = itemCategory.Value.ToString();
-                        GurpsSkillcat.GurpsSkillCategories.
-                            Add(_context.GurpsSkillCategories.
-                            First(p => p.NamelCategory.Contains(qery)));
+                        //    var qery = itemCategory.Value.ToString();
+                        //    GurpsSkillcat.GurpsSkillCategories.
+                        //        Add(_context.GurpsSkillCategories.
+                        //        First(p => p.NamelCategory.Contains(qery)));
                     }
                     _context.GurpsSkills.Add(GurpsSkillcat);
                     contextAdded += 1;
@@ -182,7 +247,7 @@ namespace Item_WPF.MVVM.Serialize
             //    }
             //}
 
-            
+
             //foreach (var item in _context.GurpsSkills)
             //{
             //    if (item.NameSkill.Contains("Area Know"))
@@ -261,10 +326,10 @@ namespace Item_WPF.MVVM.Serialize
             if (Object.ReferenceEquals(product, null)) return 0;
 
             //Get hash code for the Name field if it is not null.
-            int hashProductName = product.NameSkill == null         ? 0 : product.NameSkill.GetHashCode();
+            int hashProductName = product.NameSkill == null ? 0 : product.NameSkill.GetHashCode();
 
             //Get hash code for the Code field.
-            int hashProductCode = product.Specialization == null    ? 0 : product.Specialization.GetHashCode();
+            int hashProductCode = product.Specialization == null ? 0 : product.Specialization.GetHashCode();
 
             //Calculate the hash code for the product.
             return hashProductName ^ hashProductCode;
