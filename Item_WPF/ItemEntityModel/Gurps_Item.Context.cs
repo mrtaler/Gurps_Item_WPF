@@ -36,7 +36,9 @@ namespace Item_WPF.ItemEntityModel
         public virtual DbSet<GurpsSkill> GurpsSkills { get; set; }
         public virtual DbSet<GurpsSkillCategory> GurpsSkillCategories { get; set; }
         public virtual DbSet<InventoryOfChar> InventoryOfChars { get; set; }
+        public virtual DbSet<prereq_listDB> prereq_listDB { get; set; }
         public virtual DbSet<Skill> Skills { get; set; }
+        public virtual DbSet<skill_prereqDB> skill_prereqDB { get; set; }
         public virtual DbSet<TypeAdv> TypeAdvs { get; set; }
         public virtual DbSet<AMMOUPGRATE> AMMOUPGRATES { get; set; }
         public virtual DbSet<AnyBoxNameType> AnyBoxNameTypes { get; set; }

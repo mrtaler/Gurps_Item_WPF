@@ -7,7 +7,7 @@ using System.Collections.ObjectModel;
 using System.Xml;
 using System.IO;
 
-namespace Item_WPF.MVVM.Serialize
+namespace Item_WPF.MVVM.Serialize.Model
 {
     public class Default
     {

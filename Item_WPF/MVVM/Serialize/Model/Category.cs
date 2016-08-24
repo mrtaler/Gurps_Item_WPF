@@ -6,7 +6,7 @@ using System.Xml.Linq;
 using System.Collections.ObjectModel;
 using System.IO;
 
-namespace Item_WPF.MVVM.Serialize
+namespace Item_WPF.MVVM.Serialize.Model
 
 {
     public class Category

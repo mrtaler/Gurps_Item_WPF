@@ -35,6 +35,7 @@ namespace Item_WPF.ItemEntityModel
             this.DefaultSkills = new HashSet<DefaultSkill>();
             this.GurpsSkill1 = new HashSet<GurpsSkill>();
             this.NeedSkills = new HashSet<NeedSkill>();
+            this.prereq_listDB = new HashSet<prereq_listDB>();
             this.GurpsSkillCategories = new HashSet<GurpsSkillCategory>();
         }
     
@@ -336,6 +337,16 @@ namespace Item_WPF.ItemEntityModel
                 set
                 { if(_NeedSkills != value)
                     {    _NeedSkills = value;    OnPropertyChanged("NeedSkills");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<prereq_listDB> _prereq_listDB;
+            public virtual ICollection<prereq_listDB> prereq_listDB
+            {
+                get { return _prereq_listDB; }
+                set
+                { if(_prereq_listDB != value)
+                    {    _prereq_listDB = value;    OnPropertyChanged("prereq_listDB");   }
                 }
             } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

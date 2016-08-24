@@ -10,7 +10,7 @@ namespace Item_WPF.MVVM.Serialize.Model
     /// <summary>
     /// Table="default"
     /// </summary>
-    public class DefaultXML
+    public partial class DefaultXML
     {
         /// <summary>
         /// 1 Element name
@@ -28,14 +28,16 @@ namespace Item_WPF.MVVM.Serialize.Model
         /// 4 Element modifier 
         /// </summary>
         public XElement modifierDefaultXml;
+        public DefaultXML() { }
     }
 
-    public class CategoriesXML
+    public partial class CategoriesXML
     {
         public XElement category;
+        public CategoriesXML(){}
     }
 
-   
+
     public class Attribute_bonusXML
     {
         public ObservableCollection<attributeXml> Attribute;

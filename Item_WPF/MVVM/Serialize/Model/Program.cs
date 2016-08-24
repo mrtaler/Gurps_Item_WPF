@@ -8,11 +8,11 @@
 //using System.IO;
 //using System.Collections.ObjectModel;
 
-//namespace Item_WPF.MVVM.Serialize
+//namespace Item_WPF.MVVM.Serialize.Model
 //{
 //    class Program
 //    {
-       
+
 //            Category CAt = new Category(@"c:\Basic Set.skl", @"C:\Category.txt");
 //            CAt.ToSqlFromCollString();
 //            var frSql = CAt.outSting;
@@ -28,7 +28,7 @@
 
 //            Skill skil = new Skill(@"c:\Basic Set.skl", @"C:\Skill.txt");
 
-          
+
 //            Console.ReadKey();
 //           // ObservableCollection<Pars> ParQwe = new ObservableCollection<Pars>();
 //           // ObservableCollection<XElement> CollectionCategiry = new ObservableCollection<XElement>();
@@ -38,7 +38,7 @@
 //           // {
 //           //     XElement cat = skillElement.Element("category");
 //           //  //   string Category = skillElement.Element("category").ToString();
-                
+
 //           //     //Pars qwerty = new Pars();
 //           //     //// XAttribute  nameAttribute = skillElement.Attribute("name");
 //           //     //qwerty.name = skillElement.Element("name");
@@ -125,7 +125,7 @@
 //           // }
 
 //           // Console.ReadKey();
-        
+
 //    }
 
 //    public class Pars

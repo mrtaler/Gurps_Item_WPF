@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace Item_WPF.MVVM.Serialize.Model.prereq_list
+namespace Item_WPF.MVVM.Serialize.Model
 {
     public partial class Prereq_listXML
     {
@@ -55,6 +55,20 @@ namespace Item_WPF.MVVM.Serialize.Model.prereq_list
             Advantage_prereq = new ObservableCollection<advantage_prereqXml>();
             Contained_weight_prereq = new ObservableCollection<contained_weight_prereqXml>();
         }
+        public Prereq_listXML(XElement itemprereq_list, XElement skillElement) :
+            this()
+        {
+            FPrereq_list(itemprereq_list);                                  //1
+            FSkill_prereq(itemprereq_list.Elements("skill_prereq"));        //2
+            FSpell_prereq(skillElement.Elements("prereq_list"));            //3
+            FAttribute_prereq(skillElement.Elements("prereq_list"));        //4
+            FAdvantage_prereq(skillElement.Elements("prereq_list"));        //5
+            FContained_weight_prereq(skillElement.Elements("prereq_list")); //6
+
+            when_tl = itemprereq_list.Element("when_tl");
+            college_count = itemprereq_list.Element("college_count");
+            all = itemprereq_list.Attribute("all");
+        }
 
         /// <summary>
         /// 2 Skill_prereq collections
@@ -64,14 +78,17 @@ namespace Item_WPF.MVVM.Serialize.Model.prereq_list
         {
             foreach (var items in itemprereq_list/*.Elements("skill_prereq")*/)
             {
-                skill_prereqXml sclprq = new skill_prereqXml();
-                //FSingleSkill_prereq(items, sclprq);
-                sclprq.name = items.Element("name");
+                if (items.Elements("skill_prereq") != null)
+                {
+                    skill_prereqXml sclprq = new skill_prereqXml();
+                    //FSingleSkill_prereq(items, sclprq);
+                    sclprq.name = items.Element("name");
 
-                sclprq.level = items.Element("level");
-                sclprq.specialization = items.Element("specialization");
-                sclprq.has = items.Attribute("has");
-                Skill_prereq.Add(sclprq);
+                    sclprq.level = items.Element("level");
+                    sclprq.specialization = items.Element("specialization");
+                    sclprq.has = items.Attribute("has");
+                    Skill_prereq.Add(sclprq);
+                }
             }
         }
 
@@ -141,5 +158,5 @@ namespace Item_WPF.MVVM.Serialize.Model.prereq_list
                 cwprq.Value = item.Value.ToString();
             }
         }
-    }    
+    }
 }

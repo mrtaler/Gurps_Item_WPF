@@ -1,15 +1,13 @@
-﻿using Item_WPF.MVVM.Serialize.Model.prereq_list;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.Collections.ObjectModel;
 
 namespace Item_WPF.MVVM.Serialize.Model
 {
-   public class SkillXMLModel
+    public class SkillXMLModel
     {
         public int numPP;
         /// <summary>

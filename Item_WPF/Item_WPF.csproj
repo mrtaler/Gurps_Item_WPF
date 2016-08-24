@@ -268,7 +268,13 @@
     <Compile Include="ItemEntityModel\level.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="ItemEntityModel\prereq_listDB.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemEntityModel\SkillBonu.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\skill_prereqDB.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="litForms\character.xaml.cs">
@@ -303,8 +309,14 @@
     <Compile Include="MVVM\Models\ItemsForSortModel.cs" />
     <Compile Include="MVVM\Models\ItemToGridModel.cs" />
     <Compile Include="MVVM\Models\Skill.cs" />
+    <Compile Include="MVVM\Serialize\Model\1.cs" />
+    <Compile Include="MVVM\Serialize\Model\CategoriesXML.cs" />
     <Compile Include="MVVM\Serialize\Model\Category.cs" />
     <Compile Include="MVVM\Serialize\Model\Default.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\DefaultSkill.cs" />
+    <Compile Include="MVVM\Serialize\Model\DefaultXML.cs" />
+    <Compile Include="MVVM\Serialize\Model\ew.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\GurpsSkill.cs" />
     <Compile Include="MVVM\Serialize\Model\prereq_list\Prereq_listXML%28list%29.cs" />
     <Compile Include="MVVM\Serialize\Model\prereq_list\Prereq_listXML%28single%29.cs" />
     <Compile Include="MVVM\Serialize\Model\prereq_list\Prereq_listXML.cs" />

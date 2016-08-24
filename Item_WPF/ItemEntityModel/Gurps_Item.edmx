@@ -146,6 +146,20 @@
           <Property Name="idSkillOut" Type="int" />
           <Property Name="Needed" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="prereq_listDB">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="all" Type="nvarchar" MaxLength="10" />
+          <Property Name="when_tlCompare" Type="nvarchar" MaxLength="10" />
+          <Property Name="when_tl" Type="nvarchar" MaxLength="10" />
+          <Property Name="college_countCompare" Type="nvarchar" MaxLength="10" />
+          <Property Name="college_count" Type="nvarchar" MaxLength="10" />
+          <Property Name="FK_prereq_list" Type="int" />
+          <Property Name="FK_skill" Type="int" />
+          <Property Name="FK_technique" Type="int" />
+        </EntityType>
         <EntityType Name="Skill">
           <Key>
             <PropertyRef Name="Id" />
@@ -153,6 +167,20 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameSkill" Type="nvarchar" MaxLength="50" />
           <Property Name="NameSpec" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="skill_prereqDB">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameCompare" Type="nvarchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="specializationCompare" Type="nvarchar" MaxLength="50" />
+          <Property Name="specialization" Type="nvarchar" MaxLength="50" />
+          <Property Name="levelSPCompare" Type="nvarchar" MaxLength="50" />
+          <Property Name="levelSP" Type="nvarchar" MaxLength="50" />
+          <Property Name="has" Type="nvarchar" MaxLength="10" />
+          <Property Name="idprereq_list" Type="int" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "Item1.CharDB.SkillBonus" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -1718,6 +1746,32 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_prereq_listDB_GurpsSkill_id">
+          <End Role="GurpsSkill" Type="Self.GurpsSkill" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="prereq_listDB" Type="Self.prereq_listDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsSkill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prereq_listDB">
+              <PropertyRef Name="FK_skill" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_prereq_listDB_prereq_listDB_id">
+          <End Role="prereq_listDB" Type="Self.prereq_listDB" Multiplicity="0..1" />
+          <End Role="prereq_listDB1" Type="Self.prereq_listDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="prereq_listDB">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prereq_listDB1">
+              <PropertyRef Name="FK_prereq_list" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_skill_container_skill_container_PrimaryKey">
           <End Role="skill_container" Type="Self.skill_container" Multiplicity="0..1" />
           <End Role="skill_container1" Type="Self.skill_container" Multiplicity="*" />
@@ -1751,6 +1805,20 @@
             </Principal>
             <Dependent Role="skill_prereq">
               <PropertyRef Name="FK_prereq_list" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_skill_prereqDB_prereq_listDB_id">
+          <End Role="prereq_listDB" Type="Self.prereq_listDB" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="skill_prereqDB" Type="Self.skill_prereqDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="prereq_listDB">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="skill_prereqDB">
+              <PropertyRef Name="idprereq_list" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2043,7 +2111,9 @@
           <EntitySet Name="GurpsSkillCategory" EntityType="Self.GurpsSkillCategory" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="GurpsSkillCategory88" EntityType="Self.GurpsSkillCategory88" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="InventoryOfChar" EntityType="Self.InventoryOfChar" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="prereq_listDB" EntityType="Self.prereq_listDB" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="Skill" EntityType="Self.Skill" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="skill_prereqDB" EntityType="Self.skill_prereqDB" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="TypeAdv" EntityType="Self.TypeAdv" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="AMMOUPGRATES" EntityType="Self.AMMOUPGRATES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AnyBoxNameType" EntityType="Self.AnyBoxNameType" Schema="dbo" store:Type="Tables" />
@@ -2382,6 +2452,14 @@
             <End Role="technique" EntitySet="technique" />
             <End Role="prereq_list1" EntitySet="prereq_list1" />
           </AssociationSet>
+          <AssociationSet Name="FK_prereq_listDB_GurpsSkill_id" Association="Self.FK_prereq_listDB_GurpsSkill_id">
+            <End Role="GurpsSkill" EntitySet="GurpsSkill" />
+            <End Role="prereq_listDB" EntitySet="prereq_listDB" />
+          </AssociationSet>
+          <AssociationSet Name="FK_prereq_listDB_prereq_listDB_id" Association="Self.FK_prereq_listDB_prereq_listDB_id">
+            <End Role="prereq_listDB" EntitySet="prereq_listDB" />
+            <End Role="prereq_listDB1" EntitySet="prereq_listDB" />
+          </AssociationSet>
           <AssociationSet Name="FK_skill_container_skill_container_PrimaryKey" Association="Self.FK_skill_container_skill_container_PrimaryKey">
             <End Role="skill_container" EntitySet="skill_container" />
             <End Role="skill_container1" EntitySet="skill_container" />
@@ -2393,6 +2471,10 @@
           <AssociationSet Name="FK_skill_prereq_prereq_list_PrimaryKey" Association="Self.FK_skill_prereq_prereq_list_PrimaryKey">
             <End Role="prereq_list1" EntitySet="prereq_list1" />
             <End Role="skill_prereq" EntitySet="skill_prereq" />
+          </AssociationSet>
+          <AssociationSet Name="FK_skill_prereqDB_prereq_listDB_id" Association="Self.FK_skill_prereqDB_prereq_listDB_id">
+            <End Role="prereq_listDB" EntitySet="prereq_listDB" />
+            <End Role="skill_prereqDB" EntitySet="skill_prereqDB" />
           </AssociationSet>
           <AssociationSet Name="FK_skill_skill_container_PrimaryKey" Association="Self.FK_skill_skill_container_PrimaryKey">
             <End Role="skill_container" EntitySet="skill_container" />
@@ -2531,7 +2613,9 @@
           <EntitySet Name="GurpsSkills" EntityType="item1Model.GurpsSkill" />
           <EntitySet Name="GurpsSkillCategories" EntityType="item1Model.GurpsSkillCategory" />
           <EntitySet Name="InventoryOfChars" EntityType="item1Model.InventoryOfChar" />
+          <EntitySet Name="prereq_listDB" EntityType="item1Model.prereq_listDB" />
           <EntitySet Name="Skills" EntityType="item1Model.Skill" />
+          <EntitySet Name="skill_prereqDB" EntityType="item1Model.skill_prereqDB" />
           <EntitySet Name="TypeAdvs" EntityType="item1Model.TypeAdv" />
           <EntitySet Name="AMMOUPGRATES" EntityType="item1Model.AMMOUPGRATE" />
           <EntitySet Name="AnyBoxNameTypes" EntityType="item1Model.AnyBoxNameType" />
@@ -2643,9 +2727,21 @@
             <End Role="GurpsSkill" EntitySet="GurpsSkills" />
             <End Role="NeedSkill" EntitySet="NeedSkills" />
           </AssociationSet>
+          <AssociationSet Name="FK_prereq_listDB_GurpsSkill_id" Association="item1Model.FK_prereq_listDB_GurpsSkill_id">
+            <End Role="GurpsSkill" EntitySet="GurpsSkills" />
+            <End Role="prereq_listDB" EntitySet="prereq_listDB" />
+          </AssociationSet>
           <AssociationSet Name="FK_InventoryOfChar_ITEM_uiIndex" Association="item1Model.FK_InventoryOfChar_ITEM_uiIndex">
             <End Role="ITEM" EntitySet="ITEMs" />
             <End Role="InventoryOfChar" EntitySet="InventoryOfChars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_prereq_listDB_prereq_listDB_id" Association="item1Model.FK_prereq_listDB_prereq_listDB_id">
+            <End Role="prereq_listDB" EntitySet="prereq_listDB" />
+            <End Role="prereq_listDB1" EntitySet="prereq_listDB" />
+          </AssociationSet>
+          <AssociationSet Name="FK_skill_prereqDB_prereq_listDB_id" Association="item1Model.FK_skill_prereqDB_prereq_listDB_id">
+            <End Role="prereq_listDB" EntitySet="prereq_listDB" />
+            <End Role="skill_prereqDB" EntitySet="skill_prereqDB" />
           </AssociationSet>
           <AssociationSet Name="FK_SkillBonus_Skill_Id" Association="item1Model.FK_SkillBonus_Skill_Id">
             <End Role="Skill" EntitySet="Skills" />
@@ -2988,6 +3084,7 @@
           <NavigationProperty Name="TL" Relationship="item1Model.FK_GurpsSkill_TL_Id_Tl" FromRole="GurpsSkill" ToRole="TL" />
           <NavigationProperty Name="NeedSkill" Relationship="item1Model.FK_NeedSkill_GurpsSkill_id_in" FromRole="GurpsSkill" ToRole="NeedSkill" />
           <NavigationProperty Name="NeedSkills" Relationship="item1Model.FK_NeedSkill_GurpsSkill_id_out" FromRole="GurpsSkill" ToRole="NeedSkill" />
+          <NavigationProperty Name="prereq_listDB" Relationship="item1Model.FK_prereq_listDB_GurpsSkill_id" FromRole="GurpsSkill" ToRole="prereq_listDB" />
           <NavigationProperty Name="GurpsSkillCategories" Relationship="item1Model.GurpsSkillCategory88" FromRole="GurpsSkill" ToRole="GurpsSkillCategory" />
         </EntityType>
         <EntityType Name="GurpsSkillCategory">
@@ -3009,6 +3106,24 @@
           <NavigationProperty Name="CharacterDB" Relationship="item1Model.FK_InventoryOfChar_CharacterDB_id" FromRole="InventoryOfChar" ToRole="CharacterDB" />
           <NavigationProperty Name="ITEM" Relationship="item1Model.FK_InventoryOfChar_ITEM_uiIndex" FromRole="InventoryOfChar" ToRole="ITEM" />
         </EntityType>
+        <EntityType Name="prereq_listDB">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="all" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="when_tlCompare" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="when_tl" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="college_countCompare" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="college_count" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FK_prereq_list" Type="Int32" />
+          <Property Name="FK_skill" Type="Int32" />
+          <Property Name="FK_technique" Type="Int32" />
+          <NavigationProperty Name="GurpsSkill" Relationship="item1Model.FK_prereq_listDB_GurpsSkill_id" FromRole="prereq_listDB" ToRole="GurpsSkill" />
+          <NavigationProperty Name="prereq_listDB1" Relationship="item1Model.FK_prereq_listDB_prereq_listDB_id" FromRole="prereq_listDB" ToRole="prereq_listDB1" />
+          <NavigationProperty Name="prereq_listDB2" Relationship="item1Model.FK_prereq_listDB_prereq_listDB_id" FromRole="prereq_listDB1" ToRole="prereq_listDB" />
+          <NavigationProperty Name="skill_prereqDB" Relationship="item1Model.FK_skill_prereqDB_prereq_listDB_id" FromRole="prereq_listDB" ToRole="skill_prereqDB" />
+        </EntityType>
         <EntityType Name="Skill">
           <Key>
             <PropertyRef Name="Id" />
@@ -3017,6 +3132,21 @@
           <Property Name="NameSkill" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NameSpec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="SkillBonus" Relationship="item1Model.FK_SkillBonus_Skill_Id" FromRole="Skill" ToRole="SkillBonu" />
+        </EntityType>
+        <EntityType Name="skill_prereqDB">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameCompare" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="specializationCompare" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="specialization" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="levelSPCompare" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="levelSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="has" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="idprereq_list" Type="Int32" />
+          <NavigationProperty Name="prereq_listDB" Relationship="item1Model.FK_skill_prereqDB_prereq_listDB_id" FromRole="skill_prereqDB" ToRole="prereq_listDB" />
         </EntityType>
         <EntityType Name="TypeAdv">
           <Key>
@@ -4020,6 +4150,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_prereq_listDB_GurpsSkill_id">
+          <End Type="item1Model.GurpsSkill" Role="GurpsSkill" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.prereq_listDB" Role="prereq_listDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsSkill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prereq_listDB">
+              <PropertyRef Name="FK_skill" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_InventoryOfChar_ITEM_uiIndex">
           <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -4031,6 +4175,32 @@
             </Principal>
             <Dependent Role="InventoryOfChar">
               <PropertyRef Name="IdItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_prereq_listDB_prereq_listDB_id">
+          <End Type="item1Model.prereq_listDB" Role="prereq_listDB" Multiplicity="0..1" />
+          <End Type="item1Model.prereq_listDB" Role="prereq_listDB1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="prereq_listDB">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prereq_listDB1">
+              <PropertyRef Name="FK_prereq_list" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_skill_prereqDB_prereq_listDB_id">
+          <End Type="item1Model.prereq_listDB" Role="prereq_listDB" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.skill_prereqDB" Role="skill_prereqDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="prereq_listDB">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="skill_prereqDB">
+              <PropertyRef Name="idprereq_list" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -4882,12 +5052,42 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="prereq_listDB">
+            <EntityTypeMapping TypeName="item1Model.prereq_listDB">
+              <MappingFragment StoreEntitySet="prereq_listDB">
+                <ScalarProperty Name="FK_technique" ColumnName="FK_technique" />
+                <ScalarProperty Name="FK_skill" ColumnName="FK_skill" />
+                <ScalarProperty Name="FK_prereq_list" ColumnName="FK_prereq_list" />
+                <ScalarProperty Name="college_count" ColumnName="college_count" />
+                <ScalarProperty Name="college_countCompare" ColumnName="college_countCompare" />
+                <ScalarProperty Name="when_tl" ColumnName="when_tl" />
+                <ScalarProperty Name="when_tlCompare" ColumnName="when_tlCompare" />
+                <ScalarProperty Name="all" ColumnName="all" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Skills">
             <EntityTypeMapping TypeName="item1Model.Skill">
               <MappingFragment StoreEntitySet="Skill">
                 <ScalarProperty Name="NameSpec" ColumnName="NameSpec" />
                 <ScalarProperty Name="NameSkill" ColumnName="NameSkill" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="skill_prereqDB">
+            <EntityTypeMapping TypeName="item1Model.skill_prereqDB">
+              <MappingFragment StoreEntitySet="skill_prereqDB">
+                <ScalarProperty Name="idprereq_list" ColumnName="idprereq_list" />
+                <ScalarProperty Name="has" ColumnName="has" />
+                <ScalarProperty Name="levelSP" ColumnName="levelSP" />
+                <ScalarProperty Name="levelSPCompare" ColumnName="levelSPCompare" />
+                <ScalarProperty Name="specialization" ColumnName="specialization" />
+                <ScalarProperty Name="specializationCompare" ColumnName="specializationCompare" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="nameCompare" ColumnName="nameCompare" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

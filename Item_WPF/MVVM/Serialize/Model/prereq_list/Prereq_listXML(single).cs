@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace Item_WPF.MVVM.Serialize.Model.prereq_list
+namespace Item_WPF.MVVM.Serialize.Model
 {
     public partial class Prereq_listXML
     {
