@@ -93,6 +93,22 @@ namespace Item_WPF.ItemEntityModel
     			}
     		}
     	}
+        private int _id;
+    	public int id 
+    	{ 
+    		get
+    		{
+    			return _id;
+    		} 
+    		set
+    		{
+    			if (_id != value)
+    			{
+    				_id = value;
+    				OnPropertyChanged("id");
+    			}
+    		}
+    	}
     
         private GurpsSkill _GurpsSkill;
             public virtual GurpsSkill GurpsSkill

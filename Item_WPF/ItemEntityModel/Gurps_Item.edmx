@@ -66,16 +66,15 @@
           <Property Name="BasicSpeedPoints" Type="real" Nullable="false" />
           <Property Name="BasicMovePoints" Type="int" Nullable="false" />
         </EntityType>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "Item1.CharDB.DefaultSkill" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="DefaultSkill">
           <Key>
-            <PropertyRef Name="idSkillIn" />
+            <PropertyRef Name="id" />
           </Key>
           <Property Name="idSkillIn" Type="int" Nullable="false" />
           <Property Name="idSkillOut" Type="int" />
           <Property Name="Modifier" Type="int" />
           <Property Name="type" Type="nvarchar" MaxLength="10" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="DifficultySkill">
           <Key>
@@ -683,329 +682,6 @@
           <Property Name="TypeOfDamage2text" Type="nvarchar" MaxLength="50" />
           <Property Name="Descrip" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "Item1.inv.attribute_bonus" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="attribute_bonus">
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" />
-          <Property Name="attribute" Type="varchar" MaxLength="255" />
-          <Property Name="amount" Type="varchar" MaxLength="255" />
-          <Property Name="FK_equipment" Type="varchar" MaxLength="255" />
-        </EntityType>-->
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "Item1.inv.categories" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="categories">
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" />
-          <Property Name="category" Type="varchar" MaxLength="255" />
-          <Property Name="FK_equipment" Type="varchar" MaxLength="255" />
-          <Property Name="FK_equipment_container" Type="varchar" MaxLength="255" />
-        </EntityType>-->
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "Item1.inv.category" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="category">
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" />
-          <Property Name="category" Type="varchar" MaxLength="255" />
-          <Property Name="FK_categories" Type="varchar" MaxLength="255" />
-        </EntityType>-->
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "Item1.inv.contained_weight_prereq" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="contained_weight_prereq">
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" />
-          <Property Name="has" Type="varchar" MaxLength="255" />
-          <Property Name="compare" Type="varchar" MaxLength="255" />
-          <Property Name="Text" Type="varchar" MaxLength="255" />
-          <Property Name="FK_prereq_list" Type="varchar" MaxLength="255" />
-        </EntityType>-->
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "Item1.inv.default" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="default">
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" />
-          <Property Name="type" Type="varchar" MaxLength="255" />
-          <Property Name="name" Type="varchar" MaxLength="255" />
-          <Property Name="specialization" Type="varchar" MaxLength="255" />
-          <Property Name="modifier" Type="varchar" MaxLength="255" />
-          <Property Name="FK_melee_weapon" Type="varchar" MaxLength="255" />
-          <Property Name="FK_ranged_weapon" Type="varchar" MaxLength="255" />
-        </EntityType>-->
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "Item1.inv.dr_bonus" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="dr_bonus">
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" />
-          <Property Name="location" Type="varchar" MaxLength="255" />
-          <Property Name="amount" Type="varchar" MaxLength="255" />
-          <Property Name="FK_equipment" Type="varchar" MaxLength="255" />
-        </EntityType>-->
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "Item1.inv.equipment" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="equipment">
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" />
-          <Property Name="version" Type="varchar" MaxLength="255" />
-          <Property Name="quantity" Type="varchar" MaxLength="255" />
-          <Property Name="description" Type="varchar" MaxLength="255" />
-          <Property Name="tech_level" Type="varchar" MaxLength="255" />
-          <Property Name="legality_class" Type="varchar" MaxLength="255" />
-          <Property Name="value" Type="varchar" MaxLength="255" />
-          <Property Name="reference" Type="varchar" MaxLength="255" />
-          <Property Name="weight" Type="varchar" MaxLength="255" />
-          <Property Name="notes" Type="varchar" MaxLength="255" />
-          <Property Name="FK_equipment_container" Type="varchar" MaxLength="255" />
-          <Property Name="FK_equipment_list" Type="varchar" MaxLength="255" />
-        </EntityType>-->
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "Item1.inv.equipment_container" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="equipment_container">
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" />
-          <Property Name="version" Type="varchar" MaxLength="255" />
-          <Property Name="open" Type="varchar" MaxLength="255" />
-          <Property Name="description" Type="varchar" MaxLength="255" />
-          <Property Name="tech_level" Type="varchar" MaxLength="255" />
-          <Property Name="legality_class" Type="varchar" MaxLength="255" />
-          <Property Name="value" Type="varchar" MaxLength="255" />
-          <Property Name="weight" Type="varchar" MaxLength="255" />
-          <Property Name="reference" Type="varchar" MaxLength="255" />
-          <Property Name="notes" Type="varchar" MaxLength="255" />
-          <Property Name="FK_equipment_list" Type="varchar" MaxLength="255" />
-        </EntityType>-->
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "Item1.inv.equipment_list" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="equipment_list">
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" />
-          <Property Name="unique_id" Type="varchar" MaxLength="255" />
-          <Property Name="version" Type="varchar" MaxLength="255" />
-        </EntityType>-->
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "Item1.inv.melee_weapon" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="melee_weapon">
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" />
-          <Property Name="damage" Type="varchar" MaxLength="255" />
-          <Property Name="usage" Type="varchar" MaxLength="255" />
-          <Property Name="reach" Type="varchar" MaxLength="255" />
-          <Property Name="parry" Type="varchar" MaxLength="255" />
-          <Property Name="block" Type="varchar" MaxLength="255" />
-          <Property Name="strength" Type="varchar" MaxLength="255" />
-          <Property Name="FK_equipment" Type="varchar" MaxLength="255" />
-        </EntityType>-->
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "Item1.inv.name" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="name">
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" />
-          <Property Name="compare" Type="varchar" MaxLength="255" />
-          <Property Name="Text" Type="varchar" MaxLength="255" />
-          <Property Name="FK_skill_bonus" Type="varchar" MaxLength="255" />
-        </EntityType>-->
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "Item1.inv.prereq_list" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="prereq_list">
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" />
-          <Property Name="all" Type="varchar" MaxLength="255" />
-          <Property Name="FK_equipment_container" Type="varchar" MaxLength="255" />
-        </EntityType>-->
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "Item1.inv.ranged_weapon" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="ranged_weapon">
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" />
-          <Property Name="damage" Type="varchar" MaxLength="255" />
-          <Property Name="strength" Type="varchar" MaxLength="255" />
-          <Property Name="accuracy" Type="varchar" MaxLength="255" />
-          <Property Name="range" Type="varchar" MaxLength="255" />
-          <Property Name="rate_of_fire" Type="varchar" MaxLength="255" />
-          <Property Name="shots" Type="varchar" MaxLength="255" />
-          <Property Name="bulk" Type="varchar" MaxLength="255" />
-          <Property Name="recoil" Type="varchar" MaxLength="255" />
-          <Property Name="usage" Type="varchar" MaxLength="255" />
-          <Property Name="FK_equipment" Type="varchar" MaxLength="255" />
-        </EntityType>-->
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "Item1.inv.skill_bonus" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="skill_bonus">
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" />
-          <Property Name="amount" Type="varchar" MaxLength="255" />
-          <Property Name="FK_equipment" Type="varchar" MaxLength="255" />
-          <Property Name="FK_equipment_container" Type="varchar" MaxLength="255" />
-        </EntityType>-->
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "Item1.inv.specialization" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="specialization">
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" />
-          <Property Name="compare" Type="varchar" MaxLength="255" />
-          <Property Name="Text" Type="varchar" MaxLength="255" />
-          <Property Name="FK_skill_bonus" Type="varchar" MaxLength="255" />
-        </EntityType>-->
-        <EntityType Name="advantage_prereq">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="has" Type="varchar" MaxLength="255" />
-          <Property Name="FK_prereq_list" Type="varchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="amount">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="per_level" Type="varchar" MaxLength="255" />
-          <Property Name="Text" Type="varchar" MaxLength="255" />
-          <Property Name="FK_weapon_bonus" Type="varchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="attribute_prereq">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="has" Type="varchar" MaxLength="255" />
-          <Property Name="which" Type="varchar" MaxLength="255" />
-          <Property Name="compare" Type="varchar" MaxLength="255" />
-          <Property Name="Text" Type="varchar" MaxLength="255" />
-          <Property Name="FK_prereq_list" Type="varchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="categories1">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="category" Type="varchar" MaxLength="255" />
-          <Property Name="FK_skill" Type="varchar" MaxLength="255" />
-          <Property Name="FK_technique" Type="varchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="category1">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="category" Type="varchar" MaxLength="255" />
-          <Property Name="FK_categories" Type="varchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="default1">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="int" Nullable="false" />
-          <Property Name="type" Type="varchar" MaxLength="255" />
-          <Property Name="modifier" Type="varchar" MaxLength="255" />
-          <Property Name="name" Type="varchar" MaxLength="255" />
-          <Property Name="specialization" Type="varchar" MaxLength="255" />
-          <Property Name="FK_skill" Type="varchar" MaxLength="255" />
-          <Property Name="FK_technique" Type="varchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="level">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="compare" Type="varchar" MaxLength="255" />
-          <Property Name="Text" Type="varchar" MaxLength="255" />
-          <Property Name="FK_advantage_prereq" Type="varchar" MaxLength="255" />
-          <Property Name="FK_skill_prereq" Type="varchar" MaxLength="255" />
-          <Property Name="FK_weapon_bonus" Type="varchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="name1">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="compare" Type="varchar" MaxLength="255" />
-          <Property Name="Text" Type="varchar" MaxLength="255" />
-          <Property Name="FK_advantage_prereq" Type="varchar" MaxLength="255" />
-          <Property Name="FK_skill_prereq" Type="varchar" MaxLength="255" />
-          <Property Name="FK_weapon_bonus" Type="varchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="notes">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="compare" Type="varchar" MaxLength="255" />
-          <Property Name="Text" Type="varchar" MaxLength="255" />
-          <Property Name="FK_advantage_prereq" Type="varchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="prereq_list1">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="all" Type="varchar" MaxLength="255" />
-          <Property Name="FK_prereq_list" Type="varchar" MaxLength="255" />
-          <Property Name="FK_skill" Type="varchar" MaxLength="255" />
-          <Property Name="FK_technique" Type="varchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="skill1">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="encumbrance_penalty_multiplier" Type="varchar" MaxLength="255" />
-          <Property Name="notes" Type="varchar" MaxLength="255" />
-          <Property Name="FK_skill_container" Type="varchar" MaxLength="255" />
-          <Property Name="FK_skill_list" Type="varchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="skill_container">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="version" Type="varchar" MaxLength="255" />
-          <Property Name="open" Type="varchar" MaxLength="255" />
-          <Property Name="name" Type="varchar" MaxLength="255" />
-          <Property Name="reference" Type="varchar" MaxLength="255" />
-          <Property Name="notes" Type="varchar" MaxLength="255" />
-          <Property Name="FK_skill_container" Type="varchar" MaxLength="255" />
-          <Property Name="FK_skill_list" Type="varchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="skill_list">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="unique_id" Type="varchar" MaxLength="255" />
-          <Property Name="version" Type="varchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="skill_prereq">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="has" Type="varchar" MaxLength="255" />
-          <Property Name="FK_prereq_list" Type="varchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="specialization1">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="compare" Type="varchar" MaxLength="255" />
-          <Property Name="Text" Type="varchar" MaxLength="255" />
-          <Property Name="FK_skill_prereq" Type="varchar" MaxLength="255" />
-          <Property Name="FK_weapon_bonus" Type="varchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="technique">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="version" Type="varchar" MaxLength="255" />
-          <Property Name="limit" Type="varchar" MaxLength="255" />
-          <Property Name="name" Type="varchar" MaxLength="255" />
-          <Property Name="difficulty" Type="varchar" MaxLength="255" />
-          <Property Name="points" Type="varchar" MaxLength="255" />
-          <Property Name="reference" Type="varchar" MaxLength="255" />
-          <Property Name="FK_skill_list" Type="varchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="weapon_bonus">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="FK_skill" Type="varchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="when_tl">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="compare" Type="varchar" MaxLength="255" />
-          <Property Name="Text" Type="varchar" MaxLength="255" />
-          <Property Name="FK_prereq_list" Type="varchar" MaxLength="255" />
-        </EntityType>
         <Association Name="FK_Advantage_Advantage_id">
           <End Role="Advantage" Type="Self.Advantage" Multiplicity="0..1" />
           <End Role="Advantage1" Type="Self.Advantage" Multiplicity="*" />
@@ -1029,18 +705,6 @@
             </Principal>
             <Dependent Role="Advantage">
               <PropertyRef Name="idCategory" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_advantage_prereq_prereq_list_PrimaryKey">
-          <End Role="prereq_list1" Type="Self.prereq_list1" Multiplicity="0..1" />
-          <End Role="advantage_prereq" Type="Self.advantage_prereq" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="prereq_list1">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="advantage_prereq">
-              <PropertyRef Name="FK_prereq_list" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1081,18 +745,6 @@
             </Principal>
             <Dependent Role="AttributeBonus">
               <PropertyRef Name="idAttribute" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_amount_weapon_bonus_PrimaryKey">
-          <End Role="weapon_bonus" Type="Self.weapon_bonus" Multiplicity="0..1" />
-          <End Role="amount" Type="Self.amount" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="weapon_bonus">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="amount">
-              <PropertyRef Name="FK_weapon_bonus" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1174,18 +826,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_attribute_prereq_prereq_list_PrimaryKey">
-          <End Role="prereq_list1" Type="Self.prereq_list1" Multiplicity="0..1" />
-          <End Role="attribute_prereq" Type="Self.attribute_prereq" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="prereq_list1">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="attribute_prereq">
-              <PropertyRef Name="FK_prereq_list" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_AvailableAttachSlot_ITEM_uiIndex">
           <End Role="ITEM" Type="Self.ITEM" Multiplicity="1" />
           <End Role="AvailableAttachSlot" Type="Self.AvailableAttachSlot" Multiplicity="*" />
@@ -1248,73 +888,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_categories_skill_PrimaryKey">
-          <End Role="skill1" Type="Self.skill1" Multiplicity="0..1" />
-          <End Role="categories1" Type="Self.categories1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill1">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="categories1">
-              <PropertyRef Name="FK_skill" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_categories_technique_PrimaryKey">
-          <End Role="technique" Type="Self.technique" Multiplicity="0..1" />
-          <End Role="categories1" Type="Self.categories1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="technique">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="categories1">
-              <PropertyRef Name="FK_technique" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_category_categories_PrimaryKey">
-          <End Role="categories1" Type="Self.categories1" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="category1" Type="Self.category1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="categories1">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="category1">
-              <PropertyRef Name="FK_categories" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_default_skill_PrimaryKey">
-          <End Role="skill1" Type="Self.skill1" Multiplicity="0..1" />
-          <End Role="default1" Type="Self.default1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill1">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="default1">
-              <PropertyRef Name="FK_skill" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_default_technique_PrimaryKey">
-          <End Role="technique" Type="Self.technique" Multiplicity="0..1" />
-          <End Role="default1" Type="Self.default1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="technique">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="default1">
-              <PropertyRef Name="FK_technique" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_DefaultSkill_GurpsSkill_id_in">
           <End Role="GurpsSkill" Type="Self.GurpsSkill" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="DefaultSkill" Type="Self.DefaultSkill" Multiplicity="0..1" />
+          <End Role="DefaultSkill" Type="Self.DefaultSkill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GurpsSkill">
               <PropertyRef Name="id" />
@@ -1586,42 +1164,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_level_advantage_prereq_PrimaryKey">
-          <End Role="advantage_prereq" Type="Self.advantage_prereq" Multiplicity="0..1" />
-          <End Role="level" Type="Self.level" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="advantage_prereq">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="level">
-              <PropertyRef Name="FK_advantage_prereq" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_level_skill_prereq_PrimaryKey">
-          <End Role="skill_prereq" Type="Self.skill_prereq" Multiplicity="0..1" />
-          <End Role="level" Type="Self.level" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill_prereq">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="level">
-              <PropertyRef Name="FK_skill_prereq" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_level_weapon_bonus_PrimaryKey">
-          <End Role="weapon_bonus" Type="Self.weapon_bonus" Multiplicity="0..1" />
-          <End Role="level" Type="Self.level" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="weapon_bonus">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="level">
-              <PropertyRef Name="FK_weapon_bonus" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex">
           <End Role="ITEM" Type="Self.ITEM" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -1633,42 +1175,6 @@
             </Principal>
             <Dependent Role="LOADBEARINGEQUIPMENT">
               <PropertyRef Name="lbeIndex" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_name_advantage_prereq_PrimaryKey">
-          <End Role="advantage_prereq" Type="Self.advantage_prereq" Multiplicity="0..1" />
-          <End Role="name1" Type="Self.name1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="advantage_prereq">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="name1">
-              <PropertyRef Name="FK_advantage_prereq" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_name_skill_prereq_PrimaryKey">
-          <End Role="skill_prereq" Type="Self.skill_prereq" Multiplicity="0..1" />
-          <End Role="name1" Type="Self.name1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill_prereq">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="name1">
-              <PropertyRef Name="FK_skill_prereq" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_name_weapon_bonus_PrimaryKey">
-          <End Role="weapon_bonus" Type="Self.weapon_bonus" Multiplicity="0..1" />
-          <End Role="name1" Type="Self.name1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="weapon_bonus">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="name1">
-              <PropertyRef Name="FK_weapon_bonus" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1698,54 +1204,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_notes_advantage_prereq_PrimaryKey">
-          <End Role="advantage_prereq" Type="Self.advantage_prereq" Multiplicity="0..1" />
-          <End Role="notes" Type="Self.notes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="advantage_prereq">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="notes">
-              <PropertyRef Name="FK_advantage_prereq" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_prereq_list_prereq_list_PrimaryKey">
-          <End Role="prereq_list1" Type="Self.prereq_list1" Multiplicity="0..1" />
-          <End Role="prereq_list11" Type="Self.prereq_list1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="prereq_list1">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="prereq_list11">
-              <PropertyRef Name="FK_prereq_list" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_prereq_list_skill_PrimaryKey">
-          <End Role="skill1" Type="Self.skill1" Multiplicity="0..1" />
-          <End Role="prereq_list1" Type="Self.prereq_list1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill1">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="prereq_list1">
-              <PropertyRef Name="FK_skill" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_prereq_list_technique_PrimaryKey">
-          <End Role="technique" Type="Self.technique" Multiplicity="0..1" />
-          <End Role="prereq_list1" Type="Self.prereq_list1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="technique">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="prereq_list1">
-              <PropertyRef Name="FK_technique" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_prereq_listDB_GurpsSkill_id">
           <End Role="GurpsSkill" Type="Self.GurpsSkill" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -1772,42 +1230,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_skill_container_skill_container_PrimaryKey">
-          <End Role="skill_container" Type="Self.skill_container" Multiplicity="0..1" />
-          <End Role="skill_container1" Type="Self.skill_container" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill_container">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="skill_container1">
-              <PropertyRef Name="FK_skill_container" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_skill_container_skill_list_PrimaryKey">
-          <End Role="skill_list" Type="Self.skill_list" Multiplicity="0..1" />
-          <End Role="skill_container" Type="Self.skill_container" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill_list">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="skill_container">
-              <PropertyRef Name="FK_skill_list" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_skill_prereq_prereq_list_PrimaryKey">
-          <End Role="prereq_list1" Type="Self.prereq_list1" Multiplicity="0..1" />
-          <End Role="skill_prereq" Type="Self.skill_prereq" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="prereq_list1">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="skill_prereq">
-              <PropertyRef Name="FK_prereq_list" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_skill_prereqDB_prereq_listDB_id">
           <End Role="prereq_listDB" Type="Self.prereq_listDB" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -1819,30 +1241,6 @@
             </Principal>
             <Dependent Role="skill_prereqDB">
               <PropertyRef Name="idprereq_list" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_skill_skill_container_PrimaryKey">
-          <End Role="skill_container" Type="Self.skill_container" Multiplicity="0..1" />
-          <End Role="skill1" Type="Self.skill1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill_container">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="skill1">
-              <PropertyRef Name="FK_skill_container" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_skill_skill_list_PrimaryKey">
-          <End Role="skill_list" Type="Self.skill_list" Multiplicity="0..1" />
-          <End Role="skill1" Type="Self.skill1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill_list">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="skill1">
-              <PropertyRef Name="FK_skill_list" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1874,30 +1272,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_specialization_skill_prereq_PrimaryKey">
-          <End Role="skill_prereq" Type="Self.skill_prereq" Multiplicity="0..1" />
-          <End Role="specialization1" Type="Self.specialization1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill_prereq">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="specialization1">
-              <PropertyRef Name="FK_skill_prereq" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_specialization_weapon_bonus_PrimaryKey">
-          <End Role="weapon_bonus" Type="Self.weapon_bonus" Multiplicity="0..1" />
-          <End Role="specialization1" Type="Self.specialization1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="weapon_bonus">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="specialization1">
-              <PropertyRef Name="FK_weapon_bonus" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_TabooAdv_Advantage_id">
           <End Role="Advantage" Type="Self.Advantage" Multiplicity="1" />
           <End Role="TabooAdv" Type="Self.TabooAdv" Multiplicity="*" />
@@ -1919,18 +1293,6 @@
             </Principal>
             <Dependent Role="TabooAdv">
               <PropertyRef Name="idOutAdv" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_technique_skill_list_PrimaryKey">
-          <End Role="skill_list" Type="Self.skill_list" Multiplicity="0..1" />
-          <End Role="technique" Type="Self.technique" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill_list">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="technique">
-              <PropertyRef Name="FK_skill_list" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1959,18 +1321,6 @@
             </Principal>
             <Dependent Role="TypeAdvSumm">
               <PropertyRef Name="idType" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_weapon_bonus_skill_PrimaryKey">
-          <End Role="skill1" Type="Self.skill1" Multiplicity="0..1" />
-          <End Role="weapon_bonus" Type="Self.weapon_bonus" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill1">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="weapon_bonus">
-              <PropertyRef Name="FK_skill" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2038,18 +1388,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_when_tl_prereq_list_PrimaryKey">
-          <End Role="prereq_list1" Type="Self.prereq_list1" Multiplicity="0..1" />
-          <End Role="when_tl" Type="Self.when_tl" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="prereq_list1">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="when_tl">
-              <PropertyRef Name="FK_prereq_list" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Function Name="NEW_ITEM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="name" Type="nvarchar" Mode="In" />
           <Parameter Name="class_ofItem" Type="nvarchar" Mode="In" />
@@ -2105,6 +1443,7 @@
           <EntitySet Name="Advantage" EntityType="Self.Advantage" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="Attribute" EntityType="Self.Attribute" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="CharacterDB" EntityType="Self.CharacterDB" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="DefaultSkill" EntityType="Self.DefaultSkill" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="DifficultySkill" EntityType="Self.DifficultySkill" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="GurpsAdvCategory" EntityType="Self.GurpsAdvCategory" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="GurpsSkill" EntityType="Self.GurpsSkill" Schema="CharDB" store:Type="Tables" />
@@ -2146,24 +1485,6 @@
           <EntitySet Name="WEAPON" EntityType="Self.WEAPON" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WeaponAttackType" EntityType="Self.WeaponAttackType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WeaponDamage" EntityType="Self.WeaponDamage" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="advantage_prereq" EntityType="Self.advantage_prereq" Schema="Skill" store:Type="Tables" />
-          <EntitySet Name="amount" EntityType="Self.amount" Schema="Skill" store:Type="Tables" />
-          <EntitySet Name="attribute_prereq" EntityType="Self.attribute_prereq" Schema="Skill" store:Type="Tables" />
-          <EntitySet Name="categories1" EntityType="Self.categories1" Schema="Skill" Table="categories" store:Type="Tables" />
-          <EntitySet Name="category1" EntityType="Self.category1" Schema="Skill" Table="category" store:Type="Tables" />
-          <EntitySet Name="default1" EntityType="Self.default1" Schema="Skill" Table="default" store:Type="Tables" />
-          <EntitySet Name="level" EntityType="Self.level" Schema="Skill" store:Type="Tables" />
-          <EntitySet Name="name1" EntityType="Self.name1" Schema="Skill" Table="name" store:Type="Tables" />
-          <EntitySet Name="notes" EntityType="Self.notes" Schema="Skill" store:Type="Tables" />
-          <EntitySet Name="prereq_list1" EntityType="Self.prereq_list1" Schema="Skill" Table="prereq_list" store:Type="Tables" />
-          <EntitySet Name="skill1" EntityType="Self.skill1" Schema="Skill" Table="skill" store:Type="Tables" />
-          <EntitySet Name="skill_container" EntityType="Self.skill_container" Schema="Skill" store:Type="Tables" />
-          <EntitySet Name="skill_list" EntityType="Self.skill_list" Schema="Skill" store:Type="Tables" />
-          <EntitySet Name="skill_prereq" EntityType="Self.skill_prereq" Schema="Skill" store:Type="Tables" />
-          <EntitySet Name="specialization1" EntityType="Self.specialization1" Schema="Skill" Table="specialization" store:Type="Tables" />
-          <EntitySet Name="technique" EntityType="Self.technique" Schema="Skill" store:Type="Tables" />
-          <EntitySet Name="weapon_bonus" EntityType="Self.weapon_bonus" Schema="Skill" store:Type="Tables" />
-          <EntitySet Name="when_tl" EntityType="Self.when_tl" Schema="Skill" store:Type="Tables" />
           <EntitySet Name="AdvantageMods" EntityType="Self.AdvantageMods" store:Type="Tables" store:Schema="CharDB">
             <DefiningQuery>SELECT 
     [AdvantageMods].[idAdvantage] AS [idAdvantage], 
@@ -2181,14 +1502,6 @@
     [AttributeBonus].[idAttribute] AS [idAttribute], 
     [AttributeBonus].[amount] AS [amount]
     FROM [CharDB].[AttributeBonus] AS [AttributeBonus]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="DefaultSkill" EntityType="Self.DefaultSkill" store:Type="Tables" store:Schema="CharDB">
-            <DefiningQuery>SELECT 
-    [DefaultSkill].[idSkillIn] AS [idSkillIn], 
-    [DefaultSkill].[idSkillOut] AS [idSkillOut], 
-    [DefaultSkill].[Modifier] AS [Modifier], 
-    [DefaultSkill].[type] AS [type]
-    FROM [CharDB].[DefaultSkill] AS [DefaultSkill]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="NeedSkill" EntityType="Self.NeedSkill" store:Type="Tables" store:Schema="CharDB">
             <DefiningQuery>SELECT 
@@ -2224,10 +1537,6 @@
             <End Role="GurpsAdvCategory" EntitySet="GurpsAdvCategory" />
             <End Role="Advantage" EntitySet="Advantage" />
           </AssociationSet>
-          <AssociationSet Name="FK_advantage_prereq_prereq_list_PrimaryKey" Association="Self.FK_advantage_prereq_prereq_list_PrimaryKey">
-            <End Role="prereq_list1" EntitySet="prereq_list1" />
-            <End Role="advantage_prereq" EntitySet="advantage_prereq" />
-          </AssociationSet>
           <AssociationSet Name="FK_AdvantageMods_Advantage_id" Association="Self.FK_AdvantageMods_Advantage_id">
             <End Role="Advantage" EntitySet="Advantage" />
             <End Role="AdvantageMods" EntitySet="AdvantageMods" />
@@ -2239,10 +1548,6 @@
           <AssociationSet Name="FK_AdvBonus_AttributeBonus_id" Association="Self.FK_AdvBonus_AttributeBonus_id">
             <End Role="Attribute" EntitySet="Attribute" />
             <End Role="AttributeBonus" EntitySet="AttributeBonus" />
-          </AssociationSet>
-          <AssociationSet Name="FK_amount_weapon_bonus_PrimaryKey" Association="Self.FK_amount_weapon_bonus_PrimaryKey">
-            <End Role="weapon_bonus" EntitySet="weapon_bonus" />
-            <End Role="amount" EntitySet="amount" />
           </AssociationSet>
           <AssociationSet Name="FK_AnyBoxNameType_AnyBoxNameType_id" Association="Self.FK_AnyBoxNameType_AnyBoxNameType_id">
             <End Role="AnyBoxNameType" EntitySet="AnyBoxNameType" />
@@ -2268,10 +1573,6 @@
             <End Role="ATTACHMENTSLOT" EntitySet="ATTACHMENTSLOT" />
             <End Role="Attachmentmount" EntitySet="Attachmentmount" />
           </AssociationSet>
-          <AssociationSet Name="FK_attribute_prereq_prereq_list_PrimaryKey" Association="Self.FK_attribute_prereq_prereq_list_PrimaryKey">
-            <End Role="prereq_list1" EntitySet="prereq_list1" />
-            <End Role="attribute_prereq" EntitySet="attribute_prereq" />
-          </AssociationSet>
           <AssociationSet Name="FK_AvailableAttachSlot_ITEM_uiIndex" Association="Self.FK_AvailableAttachSlot_ITEM_uiIndex">
             <End Role="ITEM" EntitySet="ITEM" />
             <End Role="AvailableAttachSlot" EntitySet="AvailableAttachSlot" />
@@ -2291,26 +1592,6 @@
           <AssociationSet Name="FK_Calibre" Association="Self.FK_Calibre">
             <End Role="Caliber" EntitySet="Caliber" />
             <End Role="ITEM" EntitySet="ITEM" />
-          </AssociationSet>
-          <AssociationSet Name="FK_categories_skill_PrimaryKey" Association="Self.FK_categories_skill_PrimaryKey">
-            <End Role="skill1" EntitySet="skill1" />
-            <End Role="categories1" EntitySet="categories1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_categories_technique_PrimaryKey" Association="Self.FK_categories_technique_PrimaryKey">
-            <End Role="technique" EntitySet="technique" />
-            <End Role="categories1" EntitySet="categories1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_category_categories_PrimaryKey" Association="Self.FK_category_categories_PrimaryKey">
-            <End Role="categories1" EntitySet="categories1" />
-            <End Role="category1" EntitySet="category1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_default_skill_PrimaryKey" Association="Self.FK_default_skill_PrimaryKey">
-            <End Role="skill1" EntitySet="skill1" />
-            <End Role="default1" EntitySet="default1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_default_technique_PrimaryKey" Association="Self.FK_default_technique_PrimaryKey">
-            <End Role="technique" EntitySet="technique" />
-            <End Role="default1" EntitySet="default1" />
           </AssociationSet>
           <AssociationSet Name="FK_DefaultSkill_GurpsSkill_id_in" Association="Self.FK_DefaultSkill_GurpsSkill_id_in">
             <End Role="GurpsSkill" EntitySet="GurpsSkill" />
@@ -2400,33 +1681,9 @@
             <End Role="GurpsClass" EntitySet="GurpsClass" />
             <End Role="ItemSubClass" EntitySet="ItemSubClass" />
           </AssociationSet>
-          <AssociationSet Name="FK_level_advantage_prereq_PrimaryKey" Association="Self.FK_level_advantage_prereq_PrimaryKey">
-            <End Role="advantage_prereq" EntitySet="advantage_prereq" />
-            <End Role="level" EntitySet="level" />
-          </AssociationSet>
-          <AssociationSet Name="FK_level_skill_prereq_PrimaryKey" Association="Self.FK_level_skill_prereq_PrimaryKey">
-            <End Role="skill_prereq" EntitySet="skill_prereq" />
-            <End Role="level" EntitySet="level" />
-          </AssociationSet>
-          <AssociationSet Name="FK_level_weapon_bonus_PrimaryKey" Association="Self.FK_level_weapon_bonus_PrimaryKey">
-            <End Role="weapon_bonus" EntitySet="weapon_bonus" />
-            <End Role="level" EntitySet="level" />
-          </AssociationSet>
           <AssociationSet Name="FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex" Association="Self.FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex">
             <End Role="ITEM" EntitySet="ITEM" />
             <End Role="LOADBEARINGEQUIPMENT" EntitySet="LOADBEARINGEQUIPMENT" />
-          </AssociationSet>
-          <AssociationSet Name="FK_name_advantage_prereq_PrimaryKey" Association="Self.FK_name_advantage_prereq_PrimaryKey">
-            <End Role="advantage_prereq" EntitySet="advantage_prereq" />
-            <End Role="name1" EntitySet="name1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_name_skill_prereq_PrimaryKey" Association="Self.FK_name_skill_prereq_PrimaryKey">
-            <End Role="skill_prereq" EntitySet="skill_prereq" />
-            <End Role="name1" EntitySet="name1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_name_weapon_bonus_PrimaryKey" Association="Self.FK_name_weapon_bonus_PrimaryKey">
-            <End Role="weapon_bonus" EntitySet="weapon_bonus" />
-            <End Role="name1" EntitySet="name1" />
           </AssociationSet>
           <AssociationSet Name="FK_NeedSkill_GurpsSkill_id_in" Association="Self.FK_NeedSkill_GurpsSkill_id_in">
             <End Role="GurpsSkill" EntitySet="GurpsSkill" />
@@ -2436,22 +1693,6 @@
             <End Role="GurpsSkill" EntitySet="GurpsSkill" />
             <End Role="NeedSkill" EntitySet="NeedSkill" />
           </AssociationSet>
-          <AssociationSet Name="FK_notes_advantage_prereq_PrimaryKey" Association="Self.FK_notes_advantage_prereq_PrimaryKey">
-            <End Role="advantage_prereq" EntitySet="advantage_prereq" />
-            <End Role="notes" EntitySet="notes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_prereq_list_prereq_list_PrimaryKey" Association="Self.FK_prereq_list_prereq_list_PrimaryKey">
-            <End Role="prereq_list1" EntitySet="prereq_list1" />
-            <End Role="prereq_list11" EntitySet="prereq_list1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_prereq_list_skill_PrimaryKey" Association="Self.FK_prereq_list_skill_PrimaryKey">
-            <End Role="skill1" EntitySet="skill1" />
-            <End Role="prereq_list1" EntitySet="prereq_list1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_prereq_list_technique_PrimaryKey" Association="Self.FK_prereq_list_technique_PrimaryKey">
-            <End Role="technique" EntitySet="technique" />
-            <End Role="prereq_list1" EntitySet="prereq_list1" />
-          </AssociationSet>
           <AssociationSet Name="FK_prereq_listDB_GurpsSkill_id" Association="Self.FK_prereq_listDB_GurpsSkill_id">
             <End Role="GurpsSkill" EntitySet="GurpsSkill" />
             <End Role="prereq_listDB" EntitySet="prereq_listDB" />
@@ -2460,29 +1701,9 @@
             <End Role="prereq_listDB" EntitySet="prereq_listDB" />
             <End Role="prereq_listDB1" EntitySet="prereq_listDB" />
           </AssociationSet>
-          <AssociationSet Name="FK_skill_container_skill_container_PrimaryKey" Association="Self.FK_skill_container_skill_container_PrimaryKey">
-            <End Role="skill_container" EntitySet="skill_container" />
-            <End Role="skill_container1" EntitySet="skill_container" />
-          </AssociationSet>
-          <AssociationSet Name="FK_skill_container_skill_list_PrimaryKey" Association="Self.FK_skill_container_skill_list_PrimaryKey">
-            <End Role="skill_list" EntitySet="skill_list" />
-            <End Role="skill_container" EntitySet="skill_container" />
-          </AssociationSet>
-          <AssociationSet Name="FK_skill_prereq_prereq_list_PrimaryKey" Association="Self.FK_skill_prereq_prereq_list_PrimaryKey">
-            <End Role="prereq_list1" EntitySet="prereq_list1" />
-            <End Role="skill_prereq" EntitySet="skill_prereq" />
-          </AssociationSet>
           <AssociationSet Name="FK_skill_prereqDB_prereq_listDB_id" Association="Self.FK_skill_prereqDB_prereq_listDB_id">
             <End Role="prereq_listDB" EntitySet="prereq_listDB" />
             <End Role="skill_prereqDB" EntitySet="skill_prereqDB" />
-          </AssociationSet>
-          <AssociationSet Name="FK_skill_skill_container_PrimaryKey" Association="Self.FK_skill_skill_container_PrimaryKey">
-            <End Role="skill_container" EntitySet="skill_container" />
-            <End Role="skill1" EntitySet="skill1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_skill_skill_list_PrimaryKey" Association="Self.FK_skill_skill_list_PrimaryKey">
-            <End Role="skill_list" EntitySet="skill_list" />
-            <End Role="skill1" EntitySet="skill1" />
           </AssociationSet>
           <AssociationSet Name="FK_SkillBonus_Advantage_id" Association="Self.FK_SkillBonus_Advantage_id">
             <End Role="Advantage" EntitySet="Advantage" />
@@ -2492,14 +1713,6 @@
             <End Role="Skill" EntitySet="Skill" />
             <End Role="SkillBonus" EntitySet="SkillBonus" />
           </AssociationSet>
-          <AssociationSet Name="FK_specialization_skill_prereq_PrimaryKey" Association="Self.FK_specialization_skill_prereq_PrimaryKey">
-            <End Role="skill_prereq" EntitySet="skill_prereq" />
-            <End Role="specialization1" EntitySet="specialization1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_specialization_weapon_bonus_PrimaryKey" Association="Self.FK_specialization_weapon_bonus_PrimaryKey">
-            <End Role="weapon_bonus" EntitySet="weapon_bonus" />
-            <End Role="specialization1" EntitySet="specialization1" />
-          </AssociationSet>
           <AssociationSet Name="FK_TabooAdv_Advantage_id" Association="Self.FK_TabooAdv_Advantage_id">
             <End Role="Advantage" EntitySet="Advantage" />
             <End Role="TabooAdv" EntitySet="TabooAdv" />
@@ -2508,10 +1721,6 @@
             <End Role="Advantage" EntitySet="Advantage" />
             <End Role="TabooAdv" EntitySet="TabooAdv" />
           </AssociationSet>
-          <AssociationSet Name="FK_technique_skill_list_PrimaryKey" Association="Self.FK_technique_skill_list_PrimaryKey">
-            <End Role="skill_list" EntitySet="skill_list" />
-            <End Role="technique" EntitySet="technique" />
-          </AssociationSet>
           <AssociationSet Name="FK_TypeAdvSumm_Advantage_id" Association="Self.FK_TypeAdvSumm_Advantage_id">
             <End Role="Advantage" EntitySet="Advantage" />
             <End Role="TypeAdvSumm" EntitySet="TypeAdvSumm" />
@@ -2519,10 +1728,6 @@
           <AssociationSet Name="FK_TypeAdvSumm_TypeAdv_id" Association="Self.FK_TypeAdvSumm_TypeAdv_id">
             <End Role="TypeAdv" EntitySet="TypeAdv" />
             <End Role="TypeAdvSumm" EntitySet="TypeAdvSumm" />
-          </AssociationSet>
-          <AssociationSet Name="FK_weapon_bonus_skill_PrimaryKey" Association="Self.FK_weapon_bonus_skill_PrimaryKey">
-            <End Role="skill1" EntitySet="skill1" />
-            <End Role="weapon_bonus" EntitySet="weapon_bonus" />
           </AssociationSet>
           <AssociationSet Name="FK_WEAPON_ITEM_uiIndex" Association="Self.FK_WEAPON_ITEM_uiIndex">
             <End Role="ITEM" EntitySet="ITEM" />
@@ -2543,10 +1748,6 @@
           <AssociationSet Name="FK_WeaponDamage_WeaponAttackType_id" Association="Self.FK_WeaponDamage_WeaponAttackType_id">
             <End Role="WeaponAttackType" EntitySet="WeaponAttackType" />
             <End Role="WeaponDamage" EntitySet="WeaponDamage" />
-          </AssociationSet>
-          <AssociationSet Name="FK_when_tl_prereq_list_PrimaryKey" Association="Self.FK_when_tl_prereq_list_PrimaryKey">
-            <End Role="prereq_list1" EntitySet="prereq_list1" />
-            <End Role="when_tl" EntitySet="when_tl" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -2608,6 +1809,7 @@
           <EntitySet Name="Advantages" EntityType="item1Model.Advantage" />
           <EntitySet Name="Attributes" EntityType="item1Model.Attribute" />
           <EntitySet Name="CharacterDBs" EntityType="item1Model.CharacterDB" />
+          <EntitySet Name="DefaultSkills" EntityType="item1Model.DefaultSkill" />
           <EntitySet Name="DifficultySkills" EntityType="item1Model.DifficultySkill" />
           <EntitySet Name="GurpsAdvCategories" EntityType="item1Model.GurpsAdvCategory" />
           <EntitySet Name="GurpsSkills" EntityType="item1Model.GurpsSkill" />
@@ -2648,27 +1850,8 @@
           <EntitySet Name="WEAPONs" EntityType="item1Model.WEAPON" />
           <EntitySet Name="WeaponAttackTypes" EntityType="item1Model.WeaponAttackType" />
           <EntitySet Name="WeaponDamages" EntityType="item1Model.WeaponDamage" />
-          <EntitySet Name="advantage_prereq" EntityType="item1Model.advantage_prereq" />
-          <EntitySet Name="amounts" EntityType="item1Model.amount" />
-          <EntitySet Name="attribute_prereq" EntityType="item1Model.attribute_prereq" />
-          <EntitySet Name="categories1" EntityType="item1Model.categories1" />
-          <EntitySet Name="category1" EntityType="item1Model.category1" />
-          <EntitySet Name="default1" EntityType="item1Model.default1" />
-          <EntitySet Name="levels" EntityType="item1Model.level" />
-          <EntitySet Name="name1" EntityType="item1Model.name1" />
-          <EntitySet Name="notes" EntityType="item1Model.note" />
-          <EntitySet Name="prereq_list1" EntityType="item1Model.prereq_list1" />
-          <EntitySet Name="skill1" EntityType="item1Model.skill1" />
-          <EntitySet Name="skill_container" EntityType="item1Model.skill_container" />
-          <EntitySet Name="skill_list" EntityType="item1Model.skill_list" />
-          <EntitySet Name="skill_prereq" EntityType="item1Model.skill_prereq" />
-          <EntitySet Name="specialization1" EntityType="item1Model.specialization1" />
-          <EntitySet Name="techniques" EntityType="item1Model.technique" />
-          <EntitySet Name="weapon_bonus" EntityType="item1Model.weapon_bonus" />
-          <EntitySet Name="when_tl" EntityType="item1Model.when_tl" />
           <EntitySet Name="AdvantageMods" EntityType="item1Model.AdvantageMod" />
           <EntitySet Name="AttributeBonus" EntityType="item1Model.AttributeBonu" />
-          <EntitySet Name="DefaultSkills" EntityType="item1Model.DefaultSkill" />
           <EntitySet Name="NeedSkills" EntityType="item1Model.NeedSkill" />
           <EntitySet Name="SkillBonus" EntityType="item1Model.SkillBonu" />
           <AssociationSet Name="FK_Advantage_Advantage_id" Association="item1Model.FK_Advantage_Advantage_id">
@@ -2699,10 +1882,6 @@
             <End Role="CharacterDB" EntitySet="CharacterDBs" />
             <End Role="InventoryOfChar" EntitySet="InventoryOfChars" />
           </AssociationSet>
-          <AssociationSet Name="FK_GurpsSkill_Difficulty_id" Association="item1Model.FK_GurpsSkill_Difficulty_id">
-            <End Role="DifficultySkill" EntitySet="DifficultySkills" />
-            <End Role="GurpsSkill" EntitySet="GurpsSkills" />
-          </AssociationSet>
           <AssociationSet Name="FK_DefaultSkill_GurpsSkill_id_in" Association="item1Model.FK_DefaultSkill_GurpsSkill_id_in">
             <End Role="GurpsSkill" EntitySet="GurpsSkills" />
             <End Role="DefaultSkill" EntitySet="DefaultSkills" />
@@ -2710,6 +1889,10 @@
           <AssociationSet Name="FK_DefaultSkill_GurpsSkill_id_out" Association="item1Model.FK_DefaultSkill_GurpsSkill_id_out">
             <End Role="GurpsSkill" EntitySet="GurpsSkills" />
             <End Role="DefaultSkill" EntitySet="DefaultSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GurpsSkill_Difficulty_id" Association="item1Model.FK_GurpsSkill_Difficulty_id">
+            <End Role="DifficultySkill" EntitySet="DifficultySkills" />
+            <End Role="GurpsSkill" EntitySet="GurpsSkills" />
           </AssociationSet>
           <AssociationSet Name="FK_GurpsSkill_GurpsSkill_id" Association="item1Model.FK_GurpsSkill_GurpsSkill_id">
             <End Role="GurpsSkill" EntitySet="GurpsSkills" />
@@ -2867,118 +2050,6 @@
             <End Role="WeaponAttackType" EntitySet="WeaponAttackTypes" />
             <End Role="WeaponDamage" EntitySet="WeaponDamages" />
           </AssociationSet>
-          <AssociationSet Name="FK_advantage_prereq_prereq_list_PrimaryKey" Association="item1Model.FK_advantage_prereq_prereq_list_PrimaryKey">
-            <End Role="prereq_list1" EntitySet="prereq_list1" />
-            <End Role="advantage_prereq" EntitySet="advantage_prereq" />
-          </AssociationSet>
-          <AssociationSet Name="FK_level_advantage_prereq_PrimaryKey" Association="item1Model.FK_level_advantage_prereq_PrimaryKey">
-            <End Role="advantage_prereq" EntitySet="advantage_prereq" />
-            <End Role="level" EntitySet="levels" />
-          </AssociationSet>
-          <AssociationSet Name="FK_name_advantage_prereq_PrimaryKey" Association="item1Model.FK_name_advantage_prereq_PrimaryKey">
-            <End Role="advantage_prereq" EntitySet="advantage_prereq" />
-            <End Role="name1" EntitySet="name1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_notes_advantage_prereq_PrimaryKey" Association="item1Model.FK_notes_advantage_prereq_PrimaryKey">
-            <End Role="advantage_prereq" EntitySet="advantage_prereq" />
-            <End Role="note" EntitySet="notes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_amount_weapon_bonus_PrimaryKey" Association="item1Model.FK_amount_weapon_bonus_PrimaryKey">
-            <End Role="weapon_bonus" EntitySet="weapon_bonus" />
-            <End Role="amount" EntitySet="amounts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_attribute_prereq_prereq_list_PrimaryKey" Association="item1Model.FK_attribute_prereq_prereq_list_PrimaryKey">
-            <End Role="prereq_list1" EntitySet="prereq_list1" />
-            <End Role="attribute_prereq" EntitySet="attribute_prereq" />
-          </AssociationSet>
-          <AssociationSet Name="FK_categories_skill_PrimaryKey" Association="item1Model.FK_categories_skill_PrimaryKey">
-            <End Role="skill1" EntitySet="skill1" />
-            <End Role="categories1" EntitySet="categories1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_categories_technique_PrimaryKey" Association="item1Model.FK_categories_technique_PrimaryKey">
-            <End Role="technique" EntitySet="techniques" />
-            <End Role="categories1" EntitySet="categories1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_category_categories_PrimaryKey" Association="item1Model.FK_category_categories_PrimaryKey">
-            <End Role="categories1" EntitySet="categories1" />
-            <End Role="category1" EntitySet="category1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_default_skill_PrimaryKey" Association="item1Model.FK_default_skill_PrimaryKey">
-            <End Role="skill1" EntitySet="skill1" />
-            <End Role="default1" EntitySet="default1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_default_technique_PrimaryKey" Association="item1Model.FK_default_technique_PrimaryKey">
-            <End Role="technique" EntitySet="techniques" />
-            <End Role="default1" EntitySet="default1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_level_skill_prereq_PrimaryKey" Association="item1Model.FK_level_skill_prereq_PrimaryKey">
-            <End Role="skill_prereq" EntitySet="skill_prereq" />
-            <End Role="level" EntitySet="levels" />
-          </AssociationSet>
-          <AssociationSet Name="FK_level_weapon_bonus_PrimaryKey" Association="item1Model.FK_level_weapon_bonus_PrimaryKey">
-            <End Role="weapon_bonus" EntitySet="weapon_bonus" />
-            <End Role="level" EntitySet="levels" />
-          </AssociationSet>
-          <AssociationSet Name="FK_name_skill_prereq_PrimaryKey" Association="item1Model.FK_name_skill_prereq_PrimaryKey">
-            <End Role="skill_prereq" EntitySet="skill_prereq" />
-            <End Role="name1" EntitySet="name1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_name_weapon_bonus_PrimaryKey" Association="item1Model.FK_name_weapon_bonus_PrimaryKey">
-            <End Role="weapon_bonus" EntitySet="weapon_bonus" />
-            <End Role="name1" EntitySet="name1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_prereq_list_prereq_list_PrimaryKey" Association="item1Model.FK_prereq_list_prereq_list_PrimaryKey">
-            <End Role="prereq_list1" EntitySet="prereq_list1" />
-            <End Role="prereq_list11" EntitySet="prereq_list1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_prereq_list_skill_PrimaryKey" Association="item1Model.FK_prereq_list_skill_PrimaryKey">
-            <End Role="skill1" EntitySet="skill1" />
-            <End Role="prereq_list1" EntitySet="prereq_list1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_prereq_list_technique_PrimaryKey" Association="item1Model.FK_prereq_list_technique_PrimaryKey">
-            <End Role="technique" EntitySet="techniques" />
-            <End Role="prereq_list1" EntitySet="prereq_list1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_skill_prereq_prereq_list_PrimaryKey" Association="item1Model.FK_skill_prereq_prereq_list_PrimaryKey">
-            <End Role="prereq_list1" EntitySet="prereq_list1" />
-            <End Role="skill_prereq" EntitySet="skill_prereq" />
-          </AssociationSet>
-          <AssociationSet Name="FK_when_tl_prereq_list_PrimaryKey" Association="item1Model.FK_when_tl_prereq_list_PrimaryKey">
-            <End Role="prereq_list1" EntitySet="prereq_list1" />
-            <End Role="when_tl" EntitySet="when_tl" />
-          </AssociationSet>
-          <AssociationSet Name="FK_skill_skill_container_PrimaryKey" Association="item1Model.FK_skill_skill_container_PrimaryKey">
-            <End Role="skill_container" EntitySet="skill_container" />
-            <End Role="skill1" EntitySet="skill1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_skill_skill_list_PrimaryKey" Association="item1Model.FK_skill_skill_list_PrimaryKey">
-            <End Role="skill_list" EntitySet="skill_list" />
-            <End Role="skill1" EntitySet="skill1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_weapon_bonus_skill_PrimaryKey" Association="item1Model.FK_weapon_bonus_skill_PrimaryKey">
-            <End Role="skill1" EntitySet="skill1" />
-            <End Role="weapon_bonus" EntitySet="weapon_bonus" />
-          </AssociationSet>
-          <AssociationSet Name="FK_skill_container_skill_container_PrimaryKey" Association="item1Model.FK_skill_container_skill_container_PrimaryKey">
-            <End Role="skill_container" EntitySet="skill_container" />
-            <End Role="skill_container1" EntitySet="skill_container" />
-          </AssociationSet>
-          <AssociationSet Name="FK_skill_container_skill_list_PrimaryKey" Association="item1Model.FK_skill_container_skill_list_PrimaryKey">
-            <End Role="skill_list" EntitySet="skill_list" />
-            <End Role="skill_container" EntitySet="skill_container" />
-          </AssociationSet>
-          <AssociationSet Name="FK_technique_skill_list_PrimaryKey" Association="item1Model.FK_technique_skill_list_PrimaryKey">
-            <End Role="skill_list" EntitySet="skill_list" />
-            <End Role="technique" EntitySet="techniques" />
-          </AssociationSet>
-          <AssociationSet Name="FK_specialization_skill_prereq_PrimaryKey" Association="item1Model.FK_specialization_skill_prereq_PrimaryKey">
-            <End Role="skill_prereq" EntitySet="skill_prereq" />
-            <End Role="specialization1" EntitySet="specialization1" />
-          </AssociationSet>
-          <AssociationSet Name="FK_specialization_weapon_bonus_PrimaryKey" Association="item1Model.FK_specialization_weapon_bonus_PrimaryKey">
-            <End Role="weapon_bonus" EntitySet="weapon_bonus" />
-            <End Role="specialization1" EntitySet="specialization1" />
-          </AssociationSet>
           <AssociationSet Name="GurpsSkillCategory88" Association="item1Model.GurpsSkillCategory88">
             <End Role="GurpsSkill" EntitySet="GurpsSkills" />
             <End Role="GurpsSkillCategory" EntitySet="GurpsSkillCategories" />
@@ -3040,6 +2111,18 @@
           <Property Name="BasicMovePoints" Type="Int32" Nullable="false" />
           <NavigationProperty Name="InventoryOfChars" Relationship="item1Model.FK_InventoryOfChar_CharacterDB_id" FromRole="CharacterDB" ToRole="InventoryOfChar" />
         </EntityType>
+        <EntityType Name="DefaultSkill">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="idSkillIn" Type="Int32" Nullable="false" />
+          <Property Name="idSkillOut" Type="Int32" />
+          <Property Name="Modifier" Type="Int32" />
+          <Property Name="type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="GurpsSkill" Relationship="item1Model.FK_DefaultSkill_GurpsSkill_id_in" FromRole="DefaultSkill" ToRole="GurpsSkill" />
+          <NavigationProperty Name="GurpsSkill1" Relationship="item1Model.FK_DefaultSkill_GurpsSkill_id_out" FromRole="DefaultSkill" ToRole="GurpsSkill" />
+        </EntityType>
         <EntityType Name="DifficultySkill">
           <Key>
             <PropertyRef Name="id" />
@@ -3076,9 +2159,9 @@
           <Property Name="idDifficulty" Type="Int32" />
           <Property Name="idSpecialization" Type="Int32" />
           <Property Name="idtech_level" Type="Int32" />
+          <NavigationProperty Name="DefaultSkills" Relationship="item1Model.FK_DefaultSkill_GurpsSkill_id_in" FromRole="GurpsSkill" ToRole="DefaultSkill" />
+          <NavigationProperty Name="DefaultSkills1" Relationship="item1Model.FK_DefaultSkill_GurpsSkill_id_out" FromRole="GurpsSkill" ToRole="DefaultSkill" />
           <NavigationProperty Name="DifficultySkill" Relationship="item1Model.FK_GurpsSkill_Difficulty_id" FromRole="GurpsSkill" ToRole="DifficultySkill" />
-          <NavigationProperty Name="DefaultSkill" Relationship="item1Model.FK_DefaultSkill_GurpsSkill_id_in" FromRole="GurpsSkill" ToRole="DefaultSkill" />
-          <NavigationProperty Name="DefaultSkills" Relationship="item1Model.FK_DefaultSkill_GurpsSkill_id_out" FromRole="GurpsSkill" ToRole="DefaultSkill" />
           <NavigationProperty Name="GurpsSkill1" Relationship="item1Model.FK_GurpsSkill_GurpsSkill_id" FromRole="GurpsSkill" ToRole="GurpsSkill1" />
           <NavigationProperty Name="GurpsSkill2" Relationship="item1Model.FK_GurpsSkill_GurpsSkill_id" FromRole="GurpsSkill1" ToRole="GurpsSkill" />
           <NavigationProperty Name="TL" Relationship="item1Model.FK_GurpsSkill_TL_Id_Tl" FromRole="GurpsSkill" ToRole="TL" />
@@ -3681,238 +2764,6 @@
           <NavigationProperty Name="WEAPON" Relationship="item1Model.FK_WeaponDamage_WEAPON_uiIndex" FromRole="WeaponDamage" ToRole="WEAPON" />
           <NavigationProperty Name="WeaponAttackType" Relationship="item1Model.FK_WeaponDamage_WeaponAttackType_id" FromRole="WeaponDamage" ToRole="WeaponAttackType" />
         </EntityType>
-        <EntityType Name="advantage_prereq">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="has" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_prereq_list" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="prereq_list1" Relationship="item1Model.FK_advantage_prereq_prereq_list_PrimaryKey" FromRole="advantage_prereq" ToRole="prereq_list1" />
-          <NavigationProperty Name="levels" Relationship="item1Model.FK_level_advantage_prereq_PrimaryKey" FromRole="advantage_prereq" ToRole="level" />
-          <NavigationProperty Name="name1" Relationship="item1Model.FK_name_advantage_prereq_PrimaryKey" FromRole="advantage_prereq" ToRole="name1" />
-          <NavigationProperty Name="notes" Relationship="item1Model.FK_notes_advantage_prereq_PrimaryKey" FromRole="advantage_prereq" ToRole="note" />
-        </EntityType>
-        <EntityType Name="amount">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="per_level" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Text" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_weapon_bonus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="weapon_bonus" Relationship="item1Model.FK_amount_weapon_bonus_PrimaryKey" FromRole="amount" ToRole="weapon_bonus" />
-        </EntityType>
-        <EntityType Name="attribute_prereq">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="has" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="which" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="compare" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Text" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_prereq_list" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="prereq_list1" Relationship="item1Model.FK_attribute_prereq_prereq_list_PrimaryKey" FromRole="attribute_prereq" ToRole="prereq_list1" />
-        </EntityType>
-        <EntityType Name="categories1">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="category" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_skill" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_technique" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="skill1" Relationship="item1Model.FK_categories_skill_PrimaryKey" FromRole="categories1" ToRole="skill1" />
-          <NavigationProperty Name="technique" Relationship="item1Model.FK_categories_technique_PrimaryKey" FromRole="categories1" ToRole="technique" />
-          <NavigationProperty Name="category1" Relationship="item1Model.FK_category_categories_PrimaryKey" FromRole="categories1" ToRole="category1" />
-        </EntityType>
-        <EntityType Name="category1">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="category" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_categories" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="categories1" Relationship="item1Model.FK_category_categories_PrimaryKey" FromRole="category1" ToRole="categories1" />
-        </EntityType>
-        <EntityType Name="default1">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="Int32" Nullable="false" />
-          <Property Name="type" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="modifier" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="specialization" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_skill" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_technique" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="skill1" Relationship="item1Model.FK_default_skill_PrimaryKey" FromRole="default1" ToRole="skill1" />
-          <NavigationProperty Name="technique" Relationship="item1Model.FK_default_technique_PrimaryKey" FromRole="default1" ToRole="technique" />
-        </EntityType>
-        <EntityType Name="level">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="compare" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Text" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_advantage_prereq" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_skill_prereq" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_weapon_bonus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="advantage_prereq" Relationship="item1Model.FK_level_advantage_prereq_PrimaryKey" FromRole="level" ToRole="advantage_prereq" />
-          <NavigationProperty Name="skill_prereq" Relationship="item1Model.FK_level_skill_prereq_PrimaryKey" FromRole="level" ToRole="skill_prereq" />
-          <NavigationProperty Name="weapon_bonus" Relationship="item1Model.FK_level_weapon_bonus_PrimaryKey" FromRole="level" ToRole="weapon_bonus" />
-        </EntityType>
-        <EntityType Name="name1">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="compare" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Text" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_advantage_prereq" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_skill_prereq" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_weapon_bonus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="advantage_prereq" Relationship="item1Model.FK_name_advantage_prereq_PrimaryKey" FromRole="name1" ToRole="advantage_prereq" />
-          <NavigationProperty Name="skill_prereq" Relationship="item1Model.FK_name_skill_prereq_PrimaryKey" FromRole="name1" ToRole="skill_prereq" />
-          <NavigationProperty Name="weapon_bonus" Relationship="item1Model.FK_name_weapon_bonus_PrimaryKey" FromRole="name1" ToRole="weapon_bonus" />
-        </EntityType>
-        <EntityType Name="note">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="compare" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Text" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_advantage_prereq" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="advantage_prereq" Relationship="item1Model.FK_notes_advantage_prereq_PrimaryKey" FromRole="note" ToRole="advantage_prereq" />
-        </EntityType>
-        <EntityType Name="prereq_list1">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="all" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_prereq_list" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_skill" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_technique" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="advantage_prereq" Relationship="item1Model.FK_advantage_prereq_prereq_list_PrimaryKey" FromRole="prereq_list1" ToRole="advantage_prereq" />
-          <NavigationProperty Name="attribute_prereq" Relationship="item1Model.FK_attribute_prereq_prereq_list_PrimaryKey" FromRole="prereq_list1" ToRole="attribute_prereq" />
-          <NavigationProperty Name="prereq_list11" Relationship="item1Model.FK_prereq_list_prereq_list_PrimaryKey" FromRole="prereq_list1" ToRole="prereq_list11" />
-          <NavigationProperty Name="prereq_list12" Relationship="item1Model.FK_prereq_list_prereq_list_PrimaryKey" FromRole="prereq_list11" ToRole="prereq_list1" />
-          <NavigationProperty Name="skill1" Relationship="item1Model.FK_prereq_list_skill_PrimaryKey" FromRole="prereq_list1" ToRole="skill1" />
-          <NavigationProperty Name="technique" Relationship="item1Model.FK_prereq_list_technique_PrimaryKey" FromRole="prereq_list1" ToRole="technique" />
-          <NavigationProperty Name="skill_prereq" Relationship="item1Model.FK_skill_prereq_prereq_list_PrimaryKey" FromRole="prereq_list1" ToRole="skill_prereq" />
-          <NavigationProperty Name="when_tl" Relationship="item1Model.FK_when_tl_prereq_list_PrimaryKey" FromRole="prereq_list1" ToRole="when_tl" />
-        </EntityType>
-        <EntityType Name="skill1">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="encumbrance_penalty_multiplier" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="notes" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_skill_container" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_skill_list" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="categories1" Relationship="item1Model.FK_categories_skill_PrimaryKey" FromRole="skill1" ToRole="categories1" />
-          <NavigationProperty Name="default1" Relationship="item1Model.FK_default_skill_PrimaryKey" FromRole="skill1" ToRole="default1" />
-          <NavigationProperty Name="prereq_list1" Relationship="item1Model.FK_prereq_list_skill_PrimaryKey" FromRole="skill1" ToRole="prereq_list1" />
-          <NavigationProperty Name="skill_container" Relationship="item1Model.FK_skill_skill_container_PrimaryKey" FromRole="skill1" ToRole="skill_container" />
-          <NavigationProperty Name="skill_list" Relationship="item1Model.FK_skill_skill_list_PrimaryKey" FromRole="skill1" ToRole="skill_list" />
-          <NavigationProperty Name="weapon_bonus" Relationship="item1Model.FK_weapon_bonus_skill_PrimaryKey" FromRole="skill1" ToRole="weapon_bonus" />
-        </EntityType>
-        <EntityType Name="skill_container">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="version" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="open" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="reference" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="notes" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_skill_container" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_skill_list" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="skill1" Relationship="item1Model.FK_skill_skill_container_PrimaryKey" FromRole="skill_container" ToRole="skill1" />
-          <NavigationProperty Name="skill_container1" Relationship="item1Model.FK_skill_container_skill_container_PrimaryKey" FromRole="skill_container" ToRole="skill_container1" />
-          <NavigationProperty Name="skill_container2" Relationship="item1Model.FK_skill_container_skill_container_PrimaryKey" FromRole="skill_container1" ToRole="skill_container" />
-          <NavigationProperty Name="skill_list" Relationship="item1Model.FK_skill_container_skill_list_PrimaryKey" FromRole="skill_container" ToRole="skill_list" />
-        </EntityType>
-        <EntityType Name="skill_list">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="unique_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="version" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="skill1" Relationship="item1Model.FK_skill_skill_list_PrimaryKey" FromRole="skill_list" ToRole="skill1" />
-          <NavigationProperty Name="skill_container" Relationship="item1Model.FK_skill_container_skill_list_PrimaryKey" FromRole="skill_list" ToRole="skill_container" />
-          <NavigationProperty Name="techniques" Relationship="item1Model.FK_technique_skill_list_PrimaryKey" FromRole="skill_list" ToRole="technique" />
-        </EntityType>
-        <EntityType Name="skill_prereq">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="has" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_prereq_list" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="levels" Relationship="item1Model.FK_level_skill_prereq_PrimaryKey" FromRole="skill_prereq" ToRole="level" />
-          <NavigationProperty Name="name1" Relationship="item1Model.FK_name_skill_prereq_PrimaryKey" FromRole="skill_prereq" ToRole="name1" />
-          <NavigationProperty Name="prereq_list1" Relationship="item1Model.FK_skill_prereq_prereq_list_PrimaryKey" FromRole="skill_prereq" ToRole="prereq_list1" />
-          <NavigationProperty Name="specialization1" Relationship="item1Model.FK_specialization_skill_prereq_PrimaryKey" FromRole="skill_prereq" ToRole="specialization1" />
-        </EntityType>
-        <EntityType Name="specialization1">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="compare" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Text" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_skill_prereq" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_weapon_bonus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="skill_prereq" Relationship="item1Model.FK_specialization_skill_prereq_PrimaryKey" FromRole="specialization1" ToRole="skill_prereq" />
-          <NavigationProperty Name="weapon_bonus" Relationship="item1Model.FK_specialization_weapon_bonus_PrimaryKey" FromRole="specialization1" ToRole="weapon_bonus" />
-        </EntityType>
-        <EntityType Name="technique">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="version" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="limit" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="difficulty" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="points" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="reference" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_skill_list" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="categories1" Relationship="item1Model.FK_categories_technique_PrimaryKey" FromRole="technique" ToRole="categories1" />
-          <NavigationProperty Name="default1" Relationship="item1Model.FK_default_technique_PrimaryKey" FromRole="technique" ToRole="default1" />
-          <NavigationProperty Name="prereq_list1" Relationship="item1Model.FK_prereq_list_technique_PrimaryKey" FromRole="technique" ToRole="prereq_list1" />
-          <NavigationProperty Name="skill_list" Relationship="item1Model.FK_technique_skill_list_PrimaryKey" FromRole="technique" ToRole="skill_list" />
-        </EntityType>
-        <EntityType Name="weapon_bonus">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_skill" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="amounts" Relationship="item1Model.FK_amount_weapon_bonus_PrimaryKey" FromRole="weapon_bonus" ToRole="amount" />
-          <NavigationProperty Name="levels" Relationship="item1Model.FK_level_weapon_bonus_PrimaryKey" FromRole="weapon_bonus" ToRole="level" />
-          <NavigationProperty Name="name1" Relationship="item1Model.FK_name_weapon_bonus_PrimaryKey" FromRole="weapon_bonus" ToRole="name1" />
-          <NavigationProperty Name="skill1" Relationship="item1Model.FK_weapon_bonus_skill_PrimaryKey" FromRole="weapon_bonus" ToRole="skill1" />
-          <NavigationProperty Name="specialization1" Relationship="item1Model.FK_specialization_weapon_bonus_PrimaryKey" FromRole="weapon_bonus" ToRole="specialization1" />
-        </EntityType>
-        <EntityType Name="when_tl">
-          <Key>
-            <PropertyRef Name="PrimaryKey" />
-          </Key>
-          <Property Name="PrimaryKey" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="compare" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Text" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="FK_prereq_list" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="prereq_list1" Relationship="item1Model.FK_when_tl_prereq_list_PrimaryKey" FromRole="when_tl" ToRole="prereq_list1" />
-        </EntityType>
         <EntityType Name="AdvantageMod">
           <Key>
             <PropertyRef Name="idAdvantage" />
@@ -3935,17 +2786,6 @@
           <Property Name="amount" Type="Int32" />
           <NavigationProperty Name="Advantage" Relationship="item1Model.FK_AdvBonus_Advantage_id" FromRole="AttributeBonu" ToRole="Advantage" />
           <NavigationProperty Name="Attribute" Relationship="item1Model.FK_AdvBonus_AttributeBonus_id" FromRole="AttributeBonu" ToRole="Attribute" />
-        </EntityType>
-        <EntityType Name="DefaultSkill">
-          <Key>
-            <PropertyRef Name="idSkillIn" />
-          </Key>
-          <Property Name="idSkillIn" Type="Int32" Nullable="false" />
-          <Property Name="idSkillOut" Type="Int32" />
-          <Property Name="Modifier" Type="Int32" />
-          <Property Name="type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="GurpsSkill" Relationship="item1Model.FK_DefaultSkill_GurpsSkill_id_in" FromRole="DefaultSkill" ToRole="GurpsSkill" />
-          <NavigationProperty Name="GurpsSkill1" Relationship="item1Model.FK_DefaultSkill_GurpsSkill_id_out" FromRole="DefaultSkill" ToRole="GurpsSkill" />
         </EntityType>
         <EntityType Name="NeedSkill">
           <Key>
@@ -4062,23 +2902,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_GurpsSkill_Difficulty_id">
-          <End Type="item1Model.DifficultySkill" Role="DifficultySkill" Multiplicity="0..1" />
-          <End Type="item1Model.GurpsSkill" Role="GurpsSkill" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DifficultySkill">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="GurpsSkill">
-              <PropertyRef Name="idDifficulty" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_DefaultSkill_GurpsSkill_id_in">
           <End Type="item1Model.GurpsSkill" Role="GurpsSkill" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="item1Model.DefaultSkill" Role="DefaultSkill" Multiplicity="0..1" />
+          <End Type="item1Model.DefaultSkill" Role="DefaultSkill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GurpsSkill">
               <PropertyRef Name="id" />
@@ -4097,6 +2925,18 @@
             </Principal>
             <Dependent Role="DefaultSkill">
               <PropertyRef Name="idSkillOut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GurpsSkill_Difficulty_id">
+          <End Type="item1Model.DifficultySkill" Role="DifficultySkill" Multiplicity="0..1" />
+          <End Type="item1Model.GurpsSkill" Role="GurpsSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DifficultySkill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GurpsSkill">
+              <PropertyRef Name="idDifficulty" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -4596,344 +3436,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_advantage_prereq_prereq_list_PrimaryKey">
-          <End Type="item1Model.prereq_list1" Role="prereq_list1" Multiplicity="0..1" />
-          <End Type="item1Model.advantage_prereq" Role="advantage_prereq" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="prereq_list1">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="advantage_prereq">
-              <PropertyRef Name="FK_prereq_list" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_level_advantage_prereq_PrimaryKey">
-          <End Type="item1Model.advantage_prereq" Role="advantage_prereq" Multiplicity="0..1" />
-          <End Type="item1Model.level" Role="level" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="advantage_prereq">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="level">
-              <PropertyRef Name="FK_advantage_prereq" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_name_advantage_prereq_PrimaryKey">
-          <End Type="item1Model.advantage_prereq" Role="advantage_prereq" Multiplicity="0..1" />
-          <End Type="item1Model.name1" Role="name1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="advantage_prereq">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="name1">
-              <PropertyRef Name="FK_advantage_prereq" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_notes_advantage_prereq_PrimaryKey">
-          <End Type="item1Model.advantage_prereq" Role="advantage_prereq" Multiplicity="0..1" />
-          <End Type="item1Model.note" Role="note" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="advantage_prereq">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="note">
-              <PropertyRef Name="FK_advantage_prereq" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_amount_weapon_bonus_PrimaryKey">
-          <End Type="item1Model.weapon_bonus" Role="weapon_bonus" Multiplicity="0..1" />
-          <End Type="item1Model.amount" Role="amount" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="weapon_bonus">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="amount">
-              <PropertyRef Name="FK_weapon_bonus" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_attribute_prereq_prereq_list_PrimaryKey">
-          <End Type="item1Model.prereq_list1" Role="prereq_list1" Multiplicity="0..1" />
-          <End Type="item1Model.attribute_prereq" Role="attribute_prereq" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="prereq_list1">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="attribute_prereq">
-              <PropertyRef Name="FK_prereq_list" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_categories_skill_PrimaryKey">
-          <End Type="item1Model.skill1" Role="skill1" Multiplicity="0..1" />
-          <End Type="item1Model.categories1" Role="categories1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill1">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="categories1">
-              <PropertyRef Name="FK_skill" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_categories_technique_PrimaryKey">
-          <End Type="item1Model.technique" Role="technique" Multiplicity="0..1" />
-          <End Type="item1Model.categories1" Role="categories1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="technique">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="categories1">
-              <PropertyRef Name="FK_technique" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_category_categories_PrimaryKey">
-          <End Type="item1Model.categories1" Role="categories1" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="item1Model.category1" Role="category1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="categories1">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="category1">
-              <PropertyRef Name="FK_categories" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_default_skill_PrimaryKey">
-          <End Type="item1Model.skill1" Role="skill1" Multiplicity="0..1" />
-          <End Type="item1Model.default1" Role="default1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill1">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="default1">
-              <PropertyRef Name="FK_skill" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_default_technique_PrimaryKey">
-          <End Type="item1Model.technique" Role="technique" Multiplicity="0..1" />
-          <End Type="item1Model.default1" Role="default1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="technique">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="default1">
-              <PropertyRef Name="FK_technique" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_level_skill_prereq_PrimaryKey">
-          <End Type="item1Model.skill_prereq" Role="skill_prereq" Multiplicity="0..1" />
-          <End Type="item1Model.level" Role="level" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill_prereq">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="level">
-              <PropertyRef Name="FK_skill_prereq" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_level_weapon_bonus_PrimaryKey">
-          <End Type="item1Model.weapon_bonus" Role="weapon_bonus" Multiplicity="0..1" />
-          <End Type="item1Model.level" Role="level" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="weapon_bonus">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="level">
-              <PropertyRef Name="FK_weapon_bonus" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_name_skill_prereq_PrimaryKey">
-          <End Type="item1Model.skill_prereq" Role="skill_prereq" Multiplicity="0..1" />
-          <End Type="item1Model.name1" Role="name1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill_prereq">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="name1">
-              <PropertyRef Name="FK_skill_prereq" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_name_weapon_bonus_PrimaryKey">
-          <End Type="item1Model.weapon_bonus" Role="weapon_bonus" Multiplicity="0..1" />
-          <End Type="item1Model.name1" Role="name1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="weapon_bonus">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="name1">
-              <PropertyRef Name="FK_weapon_bonus" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_prereq_list_prereq_list_PrimaryKey">
-          <End Type="item1Model.prereq_list1" Role="prereq_list1" Multiplicity="0..1" />
-          <End Type="item1Model.prereq_list1" Role="prereq_list11" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="prereq_list1">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="prereq_list11">
-              <PropertyRef Name="FK_prereq_list" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_prereq_list_skill_PrimaryKey">
-          <End Type="item1Model.skill1" Role="skill1" Multiplicity="0..1" />
-          <End Type="item1Model.prereq_list1" Role="prereq_list1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill1">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="prereq_list1">
-              <PropertyRef Name="FK_skill" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_prereq_list_technique_PrimaryKey">
-          <End Type="item1Model.technique" Role="technique" Multiplicity="0..1" />
-          <End Type="item1Model.prereq_list1" Role="prereq_list1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="technique">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="prereq_list1">
-              <PropertyRef Name="FK_technique" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_skill_prereq_prereq_list_PrimaryKey">
-          <End Type="item1Model.prereq_list1" Role="prereq_list1" Multiplicity="0..1" />
-          <End Type="item1Model.skill_prereq" Role="skill_prereq" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="prereq_list1">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="skill_prereq">
-              <PropertyRef Name="FK_prereq_list" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_when_tl_prereq_list_PrimaryKey">
-          <End Type="item1Model.prereq_list1" Role="prereq_list1" Multiplicity="0..1" />
-          <End Type="item1Model.when_tl" Role="when_tl" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="prereq_list1">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="when_tl">
-              <PropertyRef Name="FK_prereq_list" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_skill_skill_container_PrimaryKey">
-          <End Type="item1Model.skill_container" Role="skill_container" Multiplicity="0..1" />
-          <End Type="item1Model.skill1" Role="skill1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill_container">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="skill1">
-              <PropertyRef Name="FK_skill_container" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_skill_skill_list_PrimaryKey">
-          <End Type="item1Model.skill_list" Role="skill_list" Multiplicity="0..1" />
-          <End Type="item1Model.skill1" Role="skill1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill_list">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="skill1">
-              <PropertyRef Name="FK_skill_list" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_weapon_bonus_skill_PrimaryKey">
-          <End Type="item1Model.skill1" Role="skill1" Multiplicity="0..1" />
-          <End Type="item1Model.weapon_bonus" Role="weapon_bonus" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill1">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="weapon_bonus">
-              <PropertyRef Name="FK_skill" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_skill_container_skill_container_PrimaryKey">
-          <End Type="item1Model.skill_container" Role="skill_container" Multiplicity="0..1" />
-          <End Type="item1Model.skill_container" Role="skill_container1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill_container">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="skill_container1">
-              <PropertyRef Name="FK_skill_container" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_skill_container_skill_list_PrimaryKey">
-          <End Type="item1Model.skill_list" Role="skill_list" Multiplicity="0..1" />
-          <End Type="item1Model.skill_container" Role="skill_container" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill_list">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="skill_container">
-              <PropertyRef Name="FK_skill_list" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_technique_skill_list_PrimaryKey">
-          <End Type="item1Model.skill_list" Role="skill_list" Multiplicity="0..1" />
-          <End Type="item1Model.technique" Role="technique" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill_list">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="technique">
-              <PropertyRef Name="FK_skill_list" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_specialization_skill_prereq_PrimaryKey">
-          <End Type="item1Model.skill_prereq" Role="skill_prereq" Multiplicity="0..1" />
-          <End Type="item1Model.specialization1" Role="specialization1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="skill_prereq">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="specialization1">
-              <PropertyRef Name="FK_skill_prereq" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_specialization_weapon_bonus_PrimaryKey">
-          <End Type="item1Model.weapon_bonus" Role="weapon_bonus" Multiplicity="0..1" />
-          <End Type="item1Model.specialization1" Role="specialization1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="weapon_bonus">
-              <PropertyRef Name="PrimaryKey" />
-            </Principal>
-            <Dependent Role="specialization1">
-              <PropertyRef Name="FK_weapon_bonus" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="GurpsSkillCategory88">
           <End Type="item1Model.GurpsSkill" Role="GurpsSkill" Multiplicity="*" />
           <End Type="item1Model.GurpsSkillCategory" Role="GurpsSkillCategory" Multiplicity="*" />
@@ -4993,6 +3495,17 @@
                 <ScalarProperty Name="StrengthPoints" ColumnName="StrengthPoints" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DefaultSkills">
+            <EntityTypeMapping TypeName="item1Model.DefaultSkill">
+              <MappingFragment StoreEntitySet="DefaultSkill">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="Modifier" ColumnName="Modifier" />
+                <ScalarProperty Name="idSkillOut" ColumnName="idSkillOut" />
+                <ScalarProperty Name="idSkillIn" ColumnName="idSkillIn" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -5592,200 +4105,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="advantage_prereq">
-            <EntityTypeMapping TypeName="item1Model.advantage_prereq">
-              <MappingFragment StoreEntitySet="advantage_prereq">
-                <ScalarProperty Name="FK_prereq_list" ColumnName="FK_prereq_list" />
-                <ScalarProperty Name="has" ColumnName="has" />
-                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="amounts">
-            <EntityTypeMapping TypeName="item1Model.amount">
-              <MappingFragment StoreEntitySet="amount">
-                <ScalarProperty Name="FK_weapon_bonus" ColumnName="FK_weapon_bonus" />
-                <ScalarProperty Name="Text" ColumnName="Text" />
-                <ScalarProperty Name="per_level" ColumnName="per_level" />
-                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="attribute_prereq">
-            <EntityTypeMapping TypeName="item1Model.attribute_prereq">
-              <MappingFragment StoreEntitySet="attribute_prereq">
-                <ScalarProperty Name="FK_prereq_list" ColumnName="FK_prereq_list" />
-                <ScalarProperty Name="Text" ColumnName="Text" />
-                <ScalarProperty Name="compare" ColumnName="compare" />
-                <ScalarProperty Name="which" ColumnName="which" />
-                <ScalarProperty Name="has" ColumnName="has" />
-                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="categories1">
-            <EntityTypeMapping TypeName="item1Model.categories1">
-              <MappingFragment StoreEntitySet="categories1">
-                <ScalarProperty Name="FK_technique" ColumnName="FK_technique" />
-                <ScalarProperty Name="FK_skill" ColumnName="FK_skill" />
-                <ScalarProperty Name="category" ColumnName="category" />
-                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="category1">
-            <EntityTypeMapping TypeName="item1Model.category1">
-              <MappingFragment StoreEntitySet="category1">
-                <ScalarProperty Name="FK_categories" ColumnName="FK_categories" />
-                <ScalarProperty Name="category" ColumnName="category" />
-                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="default1">
-            <EntityTypeMapping TypeName="item1Model.default1">
-              <MappingFragment StoreEntitySet="default1">
-                <ScalarProperty Name="FK_technique" ColumnName="FK_technique" />
-                <ScalarProperty Name="FK_skill" ColumnName="FK_skill" />
-                <ScalarProperty Name="specialization" ColumnName="specialization" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="modifier" ColumnName="modifier" />
-                <ScalarProperty Name="type" ColumnName="type" />
-                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="levels">
-            <EntityTypeMapping TypeName="item1Model.level">
-              <MappingFragment StoreEntitySet="level">
-                <ScalarProperty Name="FK_weapon_bonus" ColumnName="FK_weapon_bonus" />
-                <ScalarProperty Name="FK_skill_prereq" ColumnName="FK_skill_prereq" />
-                <ScalarProperty Name="FK_advantage_prereq" ColumnName="FK_advantage_prereq" />
-                <ScalarProperty Name="Text" ColumnName="Text" />
-                <ScalarProperty Name="compare" ColumnName="compare" />
-                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="name1">
-            <EntityTypeMapping TypeName="item1Model.name1">
-              <MappingFragment StoreEntitySet="name1">
-                <ScalarProperty Name="FK_weapon_bonus" ColumnName="FK_weapon_bonus" />
-                <ScalarProperty Name="FK_skill_prereq" ColumnName="FK_skill_prereq" />
-                <ScalarProperty Name="FK_advantage_prereq" ColumnName="FK_advantage_prereq" />
-                <ScalarProperty Name="Text" ColumnName="Text" />
-                <ScalarProperty Name="compare" ColumnName="compare" />
-                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="notes">
-            <EntityTypeMapping TypeName="item1Model.note">
-              <MappingFragment StoreEntitySet="notes">
-                <ScalarProperty Name="FK_advantage_prereq" ColumnName="FK_advantage_prereq" />
-                <ScalarProperty Name="Text" ColumnName="Text" />
-                <ScalarProperty Name="compare" ColumnName="compare" />
-                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="prereq_list1">
-            <EntityTypeMapping TypeName="item1Model.prereq_list1">
-              <MappingFragment StoreEntitySet="prereq_list1">
-                <ScalarProperty Name="FK_technique" ColumnName="FK_technique" />
-                <ScalarProperty Name="FK_skill" ColumnName="FK_skill" />
-                <ScalarProperty Name="FK_prereq_list" ColumnName="FK_prereq_list" />
-                <ScalarProperty Name="all" ColumnName="all" />
-                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="skill1">
-            <EntityTypeMapping TypeName="item1Model.skill1">
-              <MappingFragment StoreEntitySet="skill1">
-                <ScalarProperty Name="FK_skill_list" ColumnName="FK_skill_list" />
-                <ScalarProperty Name="FK_skill_container" ColumnName="FK_skill_container" />
-                <ScalarProperty Name="notes" ColumnName="notes" />
-                <ScalarProperty Name="encumbrance_penalty_multiplier" ColumnName="encumbrance_penalty_multiplier" />
-                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="skill_container">
-            <EntityTypeMapping TypeName="item1Model.skill_container">
-              <MappingFragment StoreEntitySet="skill_container">
-                <ScalarProperty Name="FK_skill_list" ColumnName="FK_skill_list" />
-                <ScalarProperty Name="FK_skill_container" ColumnName="FK_skill_container" />
-                <ScalarProperty Name="notes" ColumnName="notes" />
-                <ScalarProperty Name="reference" ColumnName="reference" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="open" ColumnName="open" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="skill_list">
-            <EntityTypeMapping TypeName="item1Model.skill_list">
-              <MappingFragment StoreEntitySet="skill_list">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="unique_id" ColumnName="unique_id" />
-                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="skill_prereq">
-            <EntityTypeMapping TypeName="item1Model.skill_prereq">
-              <MappingFragment StoreEntitySet="skill_prereq">
-                <ScalarProperty Name="FK_prereq_list" ColumnName="FK_prereq_list" />
-                <ScalarProperty Name="has" ColumnName="has" />
-                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="specialization1">
-            <EntityTypeMapping TypeName="item1Model.specialization1">
-              <MappingFragment StoreEntitySet="specialization1">
-                <ScalarProperty Name="FK_weapon_bonus" ColumnName="FK_weapon_bonus" />
-                <ScalarProperty Name="FK_skill_prereq" ColumnName="FK_skill_prereq" />
-                <ScalarProperty Name="Text" ColumnName="Text" />
-                <ScalarProperty Name="compare" ColumnName="compare" />
-                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="techniques">
-            <EntityTypeMapping TypeName="item1Model.technique">
-              <MappingFragment StoreEntitySet="technique">
-                <ScalarProperty Name="FK_skill_list" ColumnName="FK_skill_list" />
-                <ScalarProperty Name="reference" ColumnName="reference" />
-                <ScalarProperty Name="points" ColumnName="points" />
-                <ScalarProperty Name="difficulty" ColumnName="difficulty" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="limit" ColumnName="limit" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="weapon_bonus">
-            <EntityTypeMapping TypeName="item1Model.weapon_bonus">
-              <MappingFragment StoreEntitySet="weapon_bonus">
-                <ScalarProperty Name="FK_skill" ColumnName="FK_skill" />
-                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="when_tl">
-            <EntityTypeMapping TypeName="item1Model.when_tl">
-              <MappingFragment StoreEntitySet="when_tl">
-                <ScalarProperty Name="FK_prereq_list" ColumnName="FK_prereq_list" />
-                <ScalarProperty Name="Text" ColumnName="Text" />
-                <ScalarProperty Name="compare" ColumnName="compare" />
-                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="AdvantageMods">
             <EntityTypeMapping TypeName="item1Model.AdvantageMod">
               <MappingFragment StoreEntitySet="AdvantageMods">
@@ -5805,16 +4124,6 @@
                 <ScalarProperty Name="amount" ColumnName="amount" />
                 <ScalarProperty Name="idAttribute" ColumnName="idAttribute" />
                 <ScalarProperty Name="idAdvantage" ColumnName="idAdvantage" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="DefaultSkills">
-            <EntityTypeMapping TypeName="item1Model.DefaultSkill">
-              <MappingFragment StoreEntitySet="DefaultSkill">
-                <ScalarProperty Name="type" ColumnName="type" />
-                <ScalarProperty Name="Modifier" ColumnName="Modifier" />
-                <ScalarProperty Name="idSkillOut" ColumnName="idSkillOut" />
-                <ScalarProperty Name="idSkillIn" ColumnName="idSkillIn" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

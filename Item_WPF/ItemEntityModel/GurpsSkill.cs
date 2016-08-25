@@ -33,6 +33,7 @@ namespace Item_WPF.ItemEntityModel
         public GurpsSkill()
         {
             this.DefaultSkills = new HashSet<DefaultSkill>();
+            this.DefaultSkills1 = new HashSet<DefaultSkill>();
             this.GurpsSkill1 = new HashSet<GurpsSkill>();
             this.NeedSkills = new HashSet<NeedSkill>();
             this.prereq_listDB = new HashSet<prereq_listDB>();
@@ -264,24 +265,6 @@ namespace Item_WPF.ItemEntityModel
     		}
     	}
     
-        private DifficultySkill _DifficultySkill;
-            public virtual DifficultySkill DifficultySkill
-            {
-                get { return _DifficultySkill; }
-                set
-                { if(_DifficultySkill != value)
-                    {    _DifficultySkill = value;    OnPropertyChanged("DifficultySkill");   }
-                }
-            } 
-        private DefaultSkill _DefaultSkill;
-            public virtual DefaultSkill DefaultSkill
-            {
-                get { return _DefaultSkill; }
-                set
-                { if(_DefaultSkill != value)
-                    {    _DefaultSkill = value;    OnPropertyChanged("DefaultSkill");   }
-                }
-            } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<DefaultSkill> _DefaultSkills;
             public virtual ICollection<DefaultSkill> DefaultSkills
@@ -290,6 +273,25 @@ namespace Item_WPF.ItemEntityModel
                 set
                 { if(_DefaultSkills != value)
                     {    _DefaultSkills = value;    OnPropertyChanged("DefaultSkills");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<DefaultSkill> _DefaultSkills1;
+            public virtual ICollection<DefaultSkill> DefaultSkills1
+            {
+                get { return _DefaultSkills1; }
+                set
+                { if(_DefaultSkills1 != value)
+                    {    _DefaultSkills1 = value;    OnPropertyChanged("DefaultSkills1");   }
+                }
+            } 
+        private DifficultySkill _DifficultySkill;
+            public virtual DifficultySkill DifficultySkill
+            {
+                get { return _DifficultySkill; }
+                set
+                { if(_DifficultySkill != value)
+                    {    _DifficultySkill = value;    OnPropertyChanged("DifficultySkill");   }
                 }
             } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
