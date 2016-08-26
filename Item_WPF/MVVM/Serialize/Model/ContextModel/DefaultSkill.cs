@@ -19,18 +19,18 @@ namespace Item_WPF.ItemEntityModel
            {
                string name = itemDefault.nameDefaultXml != null ? itemDefault.nameDefaultXml.Value.ToString() : null;
                string spec = itemDefault.specializationDefaultXml != null ? itemDefault.specializationDefaultXml.Value.ToString() : null;
-                GurpsSkill referenseSkillFind;
-                if (spec != null)
+                GurpsSkill referenseSkillFind/*;
+                /*if (spec != null)
                 {
-                referenseSkillFind = CollectionCategiry
+                referenseSkillFind*/ = CollectionCategiry
                        .Where(p => p.NameSkill == name)
                        .FirstOrDefault(x => x.Specialization == spec);
-                }
+                /*}
                 else
                 {
                  referenseSkillFind = CollectionCategiry
                          .FirstOrDefault(p => p.NameSkill == name);
-                }
+                }*/
                Modifier = Convert.ToInt32(modf);
                type = typex;
                GurpsSkill1 = referenseSkillFind;
@@ -39,6 +39,7 @@ namespace Item_WPF.ItemEntityModel
            {
                type = typex;
                Modifier = Convert.ToInt32(modf);
+                GurpsSkill1 = null;
            }       
        }       
     }

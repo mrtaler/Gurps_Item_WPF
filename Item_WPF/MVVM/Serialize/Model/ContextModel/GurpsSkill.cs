@@ -11,12 +11,13 @@ namespace Item_WPF.ItemEntityModel
 {
     public partial class GurpsSkill
     {
+       // public /*override */GurpsSkill() { }
 
-        public GurpsSkill(SkillXMLModel SkillFromXml, item1Entities _context, ObservableCollection<GurpsSkill> CollectionCategiry)
+        public GurpsSkill(SkillXMLModel SkillFromXml)
             :this()
         {
             NameSkill = SkillFromXml.NameSkill != null
-                 ? SkillFromXml.NameSkill.Value.ToString() : null;
+                ? SkillFromXml.NameSkill.Value.ToString() : null;
             Specialization = SkillFromXml.Specialization != null
                  ? SkillFromXml.Specialization.Value.ToString() : null;
             idtech_level = SkillFromXml.tech_level != null && SkillFromXml.tech_level.Value.ToString() != ""
@@ -35,7 +36,11 @@ namespace Item_WPF.ItemEntityModel
                  ? SkillFromXml.encumbrance_penalty_multiplier.Value.ToString() : null;
             if (idtech_level == 100)
                 idtech_level = null;
+        }
 
+        public void FGurpsSkill(SkillXMLModel SkillFromXml, item1Entities _context, ObservableCollection<GurpsSkill> CollectionCategiry)
+        // :this( SkillFromXml)
+        {
 
             #region CATEGORY
             foreach (CategoriesXML itemCategory in SkillFromXml.categories)

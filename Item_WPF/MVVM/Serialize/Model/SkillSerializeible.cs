@@ -76,35 +76,52 @@ namespace Item_WPF.MVVM.Serialize.Model
                 }
                 #endregion
                 OutstringCollection.Add(qwerty);
-
+                CollectionCategiry.Add(new GurpsSkill(qwerty));
                 //qwerty.attribute_bonus =    new ObservableCollection<Attribute_bonusXML>(skillElement.Elements("attribute_bonus"));
                 //qwerty.weapon_bonus =       new ObservableCollection<Weapon_bonusXML>   (skillElement.Elements("weapon_bonus"));
                 //OutstringCollection.Add(qwerty);
                 //contextAdded += 1;
             }
 
-            #endregion
+                #endregion
+                // Console.WriteLine("Read XML is Complite\n reading {0} entities", contextAdded.ToString());
+                //Console.ReadKey();
 
-           // Console.WriteLine("Read XML is Complite\n reading {0} entities", contextAdded.ToString());
-            //Console.ReadKey();
+                contextAdded = 0;
+            //  ObservableCollection<SkillXMLModel> qt = new ObservableCollection<SkillXMLModel>(OutstringCollection.Where(p => p.NameSkill.Value.ToString() == "Group Performance"));
+            //    SkillXMLModel qm = qt.FirstOrDefault(p => p.Specialization.Value.ToString() == "Conducting");
 
-            contextAdded = 0;
-          //  ObservableCollection<SkillXMLModel> qt = new ObservableCollection<SkillXMLModel>(OutstringCollection.Where(p => p.NameSkill.Value.ToString() == "Group Performance"));
-        //    SkillXMLModel qm = qt.FirstOrDefault(p => p.Specialization.Value.ToString() == "Conducting");
-                       foreach (SkillXMLModel item in OutstringCollection.OrderBy(p => p.numPP))
-           // foreach (SkillXMLModel item in qt)
+
+            foreach (SkillXMLModel item in OutstringCollection.OrderBy(p => p.numPP))
+            // foreach (SkillXMLModel item in qt)
             {
-                //if (item.Specialization.Value.ToString() == "Conducting")
-              //  {
-                    GurpsSkill SkillAstronomy = new GurpsSkill(item, _context, CollectionCategiry);
-                _context.GurpsSkills.Add(SkillAstronomy);
-               // }
-            }
-            
+                string NameSkill = item.NameSkill != null
+                                 ? item.NameSkill.Value.ToString() : null;
+                string SpecSkill = item.Specialization != null
+                                 ? item.Specialization.Value.ToString() : null;
+                string VersSkill = item.version != null
+                  ? item.version.Value.ToString() : null;
 
+                GurpsSkill SkillAstronomy=/* new/* GurpsSkill();
+                    SkillAstronomy=*/ CollectionCategiry
+                     .Where(p => p.NameSkill == NameSkill)
+                     .Where(p => p.Specialization == SpecSkill)
+                     .FirstOrDefault(p => p.version == VersSkill);
+
+                 //if (item.Specialization.Value.ToString() == "Conducting")
+                 //  {
+                SkillAstronomy.FGurpsSkill(item, _context, CollectionCategiry);
+_context.GurpsSkills.Add(SkillAstronomy);
+                // }
+            }
+
+            CollectionCategiry.Clear();
             _context.SaveChanges();
             MessageBox.Show("_context SaveChanges");
+            // }
         }
+
+
         public void ToSqlFromCollString(ObservableCollection<DefaultSkill> ResultOrder, ObservableCollection<string> outSting)
         {
             foreach (var item in ResultOrder)
