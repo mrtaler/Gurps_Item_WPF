@@ -36,14 +36,6 @@ namespace Item_WPF.MVVM.Serialize.Model
         public XElement category;
         public CategoriesXML(){}
     }
-
-
-    public class Attribute_bonusXML
-    {
-        public ObservableCollection<attributeXml> Attribute;
-        public ObservableCollection<amountXml> Amount;
-    }
-
     public class Weapon_bonusXML
     {
         public ObservableCollection<amountXml> Amount;

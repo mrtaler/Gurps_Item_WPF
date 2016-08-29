@@ -60,34 +60,37 @@ namespace Item_WPF.MVVM.Serialize.Model
                 #endregion
                 #region prereq_list
                 qwerty.prereq_list = new ObservableCollection<Prereq_listXML>();
-
-                if (qwerty.Specialization!=null)
-                {
-                    if (qwerty.Specialization.Value.ToString()=="Conducting")
-                    {
-                        
-                    }
-                }
-
                 foreach (XElement itemprereq_list in skillElement.Elements("prereq_list"))
                 {
                     Prereq_listXML prl = new Prereq_listXML(itemprereq_list, skillElement);
                     qwerty.prereq_list.Add(prl);
                 }
                 #endregion
+
+                #region attribute_bonus
+
+                qwerty.attribute_bonus = new ObservableCollection<Attribute_bonusXML>();
+                foreach (XElement itemskillElement in skillElement.Elements("attribute_bonus"))
+                {
+                    Attribute_bonusXML atrbns = new Attribute_bonusXML(itemskillElement);
+                    qwerty.attribute_bonus.Add(atrbns);
+                }
+                
+                #endregion
                 OutstringCollection.Add(qwerty);
                 CollectionCategiry.Add(new GurpsSkill(qwerty));
-                //qwerty.attribute_bonus =    new ObservableCollection<Attribute_bonusXML>(skillElement.Elements("attribute_bonus"));
+           
+
                 //qwerty.weapon_bonus =       new ObservableCollection<Weapon_bonusXML>   (skillElement.Elements("weapon_bonus"));
                 //OutstringCollection.Add(qwerty);
                 //contextAdded += 1;
             }
 
-                #endregion
-                // Console.WriteLine("Read XML is Complite\n reading {0} entities", contextAdded.ToString());
-                //Console.ReadKey();
+            #endregion
+            // Console.WriteLine("Read XML is Complite\n reading {0} entities", contextAdded.ToString());
+            //Console.ReadKey();
 
-                contextAdded = 0;
+            contextAdded = 0;
             //  ObservableCollection<SkillXMLModel> qt = new ObservableCollection<SkillXMLModel>(OutstringCollection.Where(p => p.NameSkill.Value.ToString() == "Group Performance"));
             //    SkillXMLModel qm = qt.FirstOrDefault(p => p.Specialization.Value.ToString() == "Conducting");
 
@@ -102,16 +105,16 @@ namespace Item_WPF.MVVM.Serialize.Model
                 string VersSkill = item.version != null
                   ? item.version.Value.ToString() : null;
 
-                GurpsSkill SkillAstronomy=/* new/* GurpsSkill();
+                GurpsSkill SkillAstronomy =/* new/* GurpsSkill();
                     SkillAstronomy=*/ CollectionCategiry
                      .Where(p => p.NameSkill == NameSkill)
                      .Where(p => p.Specialization == SpecSkill)
                      .FirstOrDefault(p => p.version == VersSkill);
 
-                 //if (item.Specialization.Value.ToString() == "Conducting")
-                 //  {
+                //if (item.Specialization.Value.ToString() == "Conducting")
+                //  {
                 SkillAstronomy.FGurpsSkill(item, _context, CollectionCategiry);
-_context.GurpsSkills.Add(SkillAstronomy);
+                _context.GurpsSkills.Add(SkillAstronomy);
                 // }
             }
 
@@ -143,5 +146,5 @@ _context.GurpsSkills.Add(SkillAstronomy);
                 }
             }
         }
-    }    
+    }
 }

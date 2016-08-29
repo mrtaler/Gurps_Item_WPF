@@ -289,6 +289,7 @@
     <Compile Include="MVVM\Models\ItemToGridModel.cs" />
     <Compile Include="MVVM\Models\Skill.cs" />
     <Compile Include="MVVM\Serialize\Model\1.cs" />
+    <Compile Include="MVVM\Serialize\Model\attribute_bonusXML.cs" />
     <Compile Include="MVVM\Serialize\Model\CategoriesXML.cs" />
     <Compile Include="MVVM\Serialize\Model\Category.cs" />
     <Compile Include="MVVM\Serialize\Model\Default.cs" />
@@ -990,6 +991,7 @@
     <None Include="ItemEntityModel\Gurps_Item.edmx.diagram">
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
     </None>
+    <None Include="MVVM\Serialize\Model\bs.skl" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
