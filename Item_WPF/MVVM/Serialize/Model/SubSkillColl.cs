@@ -36,13 +36,13 @@ namespace Item_WPF.MVVM.Serialize.Model
         public XElement category;
         public CategoriesXML(){}
     }
-    public class Weapon_bonusXML
-    {
-        public ObservableCollection<amountXml> Amount;
-        public XElement name;
-        public XElement specialization;
-        public XElement level;
-    }
+    //public class Weapon_bonusXML
+    //{
+    //    public ObservableCollection<amountXml> Amount;
+    //    public XElement name;
+    //    public XElement specialization;
+    //    public XElement level;
+    //}
 
 
 }

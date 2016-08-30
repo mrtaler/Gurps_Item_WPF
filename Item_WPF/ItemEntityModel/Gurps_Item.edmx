@@ -18,6 +18,21 @@
           <Property Name="Notes" Type="nvarchar" MaxLength="500" />
           <Property Name="ParentAdv" Type="int" />
         </EntityType>
+        <EntityType Name="advantage_prereq">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameCompare" Type="nvarchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="notesCompare" Type="nvarchar" MaxLength="50" />
+          <Property Name="notes" Type="nvarchar" MaxLength="50" />
+          <Property Name="levelCompare" Type="nvarchar" MaxLength="50" />
+          <Property Name="level" Type="nvarchar" MaxLength="50" />
+          <Property Name="has" Type="nvarchar" MaxLength="50" />
+          <Property Name="idPrqList" Type="int" />
+          <Property Name="Value" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "Item1.CharDB.AdvantageMods" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="AdvantageMods">
@@ -32,12 +47,42 @@
           <Property Name="Referense" Type="nvarchar" MaxLength="50" />
           <Property Name="notes" Type="nvarchar" MaxLength="500" />
         </EntityType>
+        <EntityType Name="AmountAtribute">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="per_level" Type="nvarchar" MaxLength="25" />
+          <Property Name="Value" Type="nvarchar" MaxLength="10" />
+          <Property Name="idAtribBonus" Type="int" />
+          <Property Name="idWeaponBonus" Type="int" />
+        </EntityType>
         <EntityType Name="Attribute">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="attribute_bonus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_Skill" Type="int" />
+          <Property Name="FK_Amount" Type="int" />
+        </EntityType>
+        <EntityType Name="attribute_prereq">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="has" Type="nvarchar" MaxLength="50" />
+          <Property Name="which" Type="nvarchar" MaxLength="50" />
+          <Property Name="compare" Type="nvarchar" MaxLength="50" />
+          <Property Name="combined_with" Type="nvarchar" MaxLength="50" />
+          <Property Name="idPrqList" Type="int" />
+          <Property Name="Value" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "Item1.CharDB.AttributeBonus" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -48,6 +93,15 @@
           <Property Name="idAdvantage" Type="int" Nullable="false" />
           <Property Name="idAttribute" Type="int" />
           <Property Name="amount" Type="int" />
+        </EntityType>
+        <EntityType Name="BonusAttribute">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="limitation" Type="nvarchar" MaxLength="50" />
+          <Property Name="Value" Type="nvarchar" MaxLength="10" />
+          <Property Name="idAtribBonus" Type="int" />
         </EntityType>
         <EntityType Name="CharacterDB">
           <Key>
@@ -65,6 +119,16 @@
           <Property Name="WillpowerPoints" Type="int" Nullable="false" />
           <Property Name="BasicSpeedPoints" Type="real" Nullable="false" />
           <Property Name="BasicMovePoints" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="contained_weight_prereq">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="has" Type="nvarchar" MaxLength="50" />
+          <Property Name="compare" Type="nvarchar" MaxLength="50" />
+          <Property Name="Value" Type="nvarchar" MaxLength="50" />
+          <Property Name="idPrqList" Type="int" />
         </EntityType>
         <EntityType Name="DefaultSkill">
           <Key>
@@ -192,6 +256,24 @@
           <Property Name="idSkill" Type="int" Nullable="false" />
           <Property Name="amount" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="spell_prereqDB">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameCompare" Type="nvarchar" MaxLength="50" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="collegeCompare" Type="varchar" MaxLength="50" />
+          <Property Name="college" Type="varchar" MaxLength="50" />
+          <Property Name="college_countCompare" Type="varchar" MaxLength="50" />
+          <Property Name="college_count" Type="varchar" MaxLength="50" />
+          <Property Name="quantityCompare" Type="varchar" MaxLength="50" />
+          <Property Name="quantity" Type="varchar" MaxLength="50" />
+          <Property Name="anyt" Type="varchar" MaxLength="50" />
+          <Property Name="has" Type="varchar" MaxLength="50" />
+          <Property Name="idPrqlist" Type="int" />
+          <Property Name="Value" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "Item1.CharDB.TabooAdv" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="TabooAdv">
@@ -218,6 +300,19 @@
           </Key>
           <Property Name="IdAdv" Type="int" Nullable="false" />
           <Property Name="idType" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="weapon_bonus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameCompare" Type="varchar" MaxLength="50" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="specializationCompare" Type="varchar" MaxLength="50" />
+          <Property Name="specialization" Type="varchar" MaxLength="50" />
+          <Property Name="levelCompare" Type="varchar" MaxLength="50" />
+          <Property Name="level" Type="varchar" MaxLength="50" />
+          <Property Name="FK_Skill" Type="int" />
         </EntityType>
         <EntityType Name="AMMOUPGRATES">
           <Key>
@@ -708,6 +803,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_advantage_prereq_prereq_listDB_id">
+          <End Role="prereq_listDB" Type="Self.prereq_listDB" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="advantage_prereq" Type="Self.advantage_prereq" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="prereq_listDB">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="advantage_prereq">
+              <PropertyRef Name="idPrqList" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_AdvantageMods_Advantage_id">
           <End Role="Advantage" Type="Self.Advantage" Multiplicity="1" />
           <End Role="AdvantageMods" Type="Self.AdvantageMods" Multiplicity="0..1" />
@@ -745,6 +854,32 @@
             </Principal>
             <Dependent Role="AttributeBonus">
               <PropertyRef Name="idAttribute" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AmountAtribute_attribute_bonus_id">
+          <End Role="attribute_bonus" Type="Self.attribute_bonus" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AmountAtribute" Type="Self.AmountAtribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="attribute_bonus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AmountAtribute">
+              <PropertyRef Name="idAtribBonus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AmountAtribute_weapon_bonus_id">
+          <End Role="weapon_bonus" Type="Self.weapon_bonus" Multiplicity="0..1" />
+          <End Role="AmountAtribute" Type="Self.AmountAtribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="weapon_bonus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AmountAtribute">
+              <PropertyRef Name="idWeaponBonus" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -826,6 +961,34 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_attribute_bonus_GurpsSkill_id">
+          <End Role="GurpsSkill" Type="Self.GurpsSkill" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="attribute_bonus" Type="Self.attribute_bonus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsSkill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="attribute_bonus">
+              <PropertyRef Name="FK_Skill" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_attribute_prereq_prereq_listDB_id">
+          <End Role="prereq_listDB" Type="Self.prereq_listDB" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="attribute_prereq" Type="Self.attribute_prereq" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="prereq_listDB">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="attribute_prereq">
+              <PropertyRef Name="idPrqList" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_AvailableAttachSlot_ITEM_uiIndex">
           <End Role="ITEM" Type="Self.ITEM" Multiplicity="1" />
           <End Role="AvailableAttachSlot" Type="Self.AvailableAttachSlot" Multiplicity="*" />
@@ -847,6 +1010,20 @@
             </Principal>
             <Dependent Role="AvailableAttachSlot">
               <PropertyRef Name="rAttachmentmount" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BonusAttribute_attribute_bonus_id">
+          <End Role="attribute_bonus" Type="Self.attribute_bonus" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BonusAttribute" Type="Self.BonusAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="attribute_bonus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="BonusAttribute">
+              <PropertyRef Name="idAtribBonus" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -885,6 +1062,20 @@
             </Principal>
             <Dependent Role="ITEM">
               <PropertyRef Name="ubCalibre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_contained_weight_prereq_prereq_listDB_id">
+          <End Role="prereq_listDB" Type="Self.prereq_listDB" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="contained_weight_prereq" Type="Self.contained_weight_prereq" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="prereq_listDB">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="contained_weight_prereq">
+              <PropertyRef Name="idPrqList" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1272,6 +1463,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_spell_prereqDB_prereq_listDB_id">
+          <End Role="prereq_listDB" Type="Self.prereq_listDB" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="spell_prereqDB" Type="Self.spell_prereqDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="prereq_listDB">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="spell_prereqDB">
+              <PropertyRef Name="idPrqlist" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TabooAdv_Advantage_id">
           <End Role="Advantage" Type="Self.Advantage" Multiplicity="1" />
           <End Role="TabooAdv" Type="Self.TabooAdv" Multiplicity="*" />
@@ -1321,6 +1526,20 @@
             </Principal>
             <Dependent Role="TypeAdvSumm">
               <PropertyRef Name="idType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_weapon_bonus_GurpsSkill_id">
+          <End Role="GurpsSkill" Type="Self.GurpsSkill" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="weapon_bonus" Type="Self.weapon_bonus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsSkill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="weapon_bonus">
+              <PropertyRef Name="FK_Skill" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1441,8 +1660,14 @@
         </Function>
         <EntityContainer Name="Хранилище item1ModelContainer">
           <EntitySet Name="Advantage" EntityType="Self.Advantage" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="advantage_prereq" EntityType="Self.advantage_prereq" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="AmountAtribute" EntityType="Self.AmountAtribute" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="Attribute" EntityType="Self.Attribute" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="attribute_bonus" EntityType="Self.attribute_bonus" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="attribute_prereq" EntityType="Self.attribute_prereq" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="BonusAttribute" EntityType="Self.BonusAttribute" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="CharacterDB" EntityType="Self.CharacterDB" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="contained_weight_prereq" EntityType="Self.contained_weight_prereq" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="DefaultSkill" EntityType="Self.DefaultSkill" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="DifficultySkill" EntityType="Self.DifficultySkill" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="GurpsAdvCategory" EntityType="Self.GurpsAdvCategory" Schema="CharDB" store:Type="Tables" />
@@ -1453,7 +1678,9 @@
           <EntitySet Name="prereq_listDB" EntityType="Self.prereq_listDB" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="Skill" EntityType="Self.Skill" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="skill_prereqDB" EntityType="Self.skill_prereqDB" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="spell_prereqDB" EntityType="Self.spell_prereqDB" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="TypeAdv" EntityType="Self.TypeAdv" Schema="CharDB" store:Type="Tables" />
+          <EntitySet Name="weapon_bonus" EntityType="Self.weapon_bonus" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="AMMOUPGRATES" EntityType="Self.AMMOUPGRATES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AnyBoxNameType" EntityType="Self.AnyBoxNameType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ARMOUR" EntityType="Self.ARMOUR" Schema="dbo" store:Type="Tables" />
@@ -1537,6 +1764,10 @@
             <End Role="GurpsAdvCategory" EntitySet="GurpsAdvCategory" />
             <End Role="Advantage" EntitySet="Advantage" />
           </AssociationSet>
+          <AssociationSet Name="FK_advantage_prereq_prereq_listDB_id" Association="Self.FK_advantage_prereq_prereq_listDB_id">
+            <End Role="prereq_listDB" EntitySet="prereq_listDB" />
+            <End Role="advantage_prereq" EntitySet="advantage_prereq" />
+          </AssociationSet>
           <AssociationSet Name="FK_AdvantageMods_Advantage_id" Association="Self.FK_AdvantageMods_Advantage_id">
             <End Role="Advantage" EntitySet="Advantage" />
             <End Role="AdvantageMods" EntitySet="AdvantageMods" />
@@ -1548,6 +1779,14 @@
           <AssociationSet Name="FK_AdvBonus_AttributeBonus_id" Association="Self.FK_AdvBonus_AttributeBonus_id">
             <End Role="Attribute" EntitySet="Attribute" />
             <End Role="AttributeBonus" EntitySet="AttributeBonus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AmountAtribute_attribute_bonus_id" Association="Self.FK_AmountAtribute_attribute_bonus_id">
+            <End Role="attribute_bonus" EntitySet="attribute_bonus" />
+            <End Role="AmountAtribute" EntitySet="AmountAtribute" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AmountAtribute_weapon_bonus_id" Association="Self.FK_AmountAtribute_weapon_bonus_id">
+            <End Role="weapon_bonus" EntitySet="weapon_bonus" />
+            <End Role="AmountAtribute" EntitySet="AmountAtribute" />
           </AssociationSet>
           <AssociationSet Name="FK_AnyBoxNameType_AnyBoxNameType_id" Association="Self.FK_AnyBoxNameType_AnyBoxNameType_id">
             <End Role="AnyBoxNameType" EntitySet="AnyBoxNameType" />
@@ -1573,6 +1812,14 @@
             <End Role="ATTACHMENTSLOT" EntitySet="ATTACHMENTSLOT" />
             <End Role="Attachmentmount" EntitySet="Attachmentmount" />
           </AssociationSet>
+          <AssociationSet Name="FK_attribute_bonus_GurpsSkill_id" Association="Self.FK_attribute_bonus_GurpsSkill_id">
+            <End Role="GurpsSkill" EntitySet="GurpsSkill" />
+            <End Role="attribute_bonus" EntitySet="attribute_bonus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_attribute_prereq_prereq_listDB_id" Association="Self.FK_attribute_prereq_prereq_listDB_id">
+            <End Role="prereq_listDB" EntitySet="prereq_listDB" />
+            <End Role="attribute_prereq" EntitySet="attribute_prereq" />
+          </AssociationSet>
           <AssociationSet Name="FK_AvailableAttachSlot_ITEM_uiIndex" Association="Self.FK_AvailableAttachSlot_ITEM_uiIndex">
             <End Role="ITEM" EntitySet="ITEM" />
             <End Role="AvailableAttachSlot" EntitySet="AvailableAttachSlot" />
@@ -1580,6 +1827,10 @@
           <AssociationSet Name="FK_AVeAttachmentmount" Association="Self.FK_AVeAttachmentmount">
             <End Role="Attachmentmount" EntitySet="Attachmentmount" />
             <End Role="AvailableAttachSlot" EntitySet="AvailableAttachSlot" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BonusAttribute_attribute_bonus_id" Association="Self.FK_BonusAttribute_attribute_bonus_id">
+            <End Role="attribute_bonus" EntitySet="attribute_bonus" />
+            <End Role="BonusAttribute" EntitySet="BonusAttribute" />
           </AssociationSet>
           <AssociationSet Name="FK_BoxItem_AnyBoxNameType_id" Association="Self.FK_BoxItem_AnyBoxNameType_id">
             <End Role="AnyBoxNameType" EntitySet="AnyBoxNameType" />
@@ -1592,6 +1843,10 @@
           <AssociationSet Name="FK_Calibre" Association="Self.FK_Calibre">
             <End Role="Caliber" EntitySet="Caliber" />
             <End Role="ITEM" EntitySet="ITEM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_contained_weight_prereq_prereq_listDB_id" Association="Self.FK_contained_weight_prereq_prereq_listDB_id">
+            <End Role="prereq_listDB" EntitySet="prereq_listDB" />
+            <End Role="contained_weight_prereq" EntitySet="contained_weight_prereq" />
           </AssociationSet>
           <AssociationSet Name="FK_DefaultSkill_GurpsSkill_id_in" Association="Self.FK_DefaultSkill_GurpsSkill_id_in">
             <End Role="GurpsSkill" EntitySet="GurpsSkill" />
@@ -1713,6 +1968,10 @@
             <End Role="Skill" EntitySet="Skill" />
             <End Role="SkillBonus" EntitySet="SkillBonus" />
           </AssociationSet>
+          <AssociationSet Name="FK_spell_prereqDB_prereq_listDB_id" Association="Self.FK_spell_prereqDB_prereq_listDB_id">
+            <End Role="prereq_listDB" EntitySet="prereq_listDB" />
+            <End Role="spell_prereqDB" EntitySet="spell_prereqDB" />
+          </AssociationSet>
           <AssociationSet Name="FK_TabooAdv_Advantage_id" Association="Self.FK_TabooAdv_Advantage_id">
             <End Role="Advantage" EntitySet="Advantage" />
             <End Role="TabooAdv" EntitySet="TabooAdv" />
@@ -1728,6 +1987,10 @@
           <AssociationSet Name="FK_TypeAdvSumm_TypeAdv_id" Association="Self.FK_TypeAdvSumm_TypeAdv_id">
             <End Role="TypeAdv" EntitySet="TypeAdv" />
             <End Role="TypeAdvSumm" EntitySet="TypeAdvSumm" />
+          </AssociationSet>
+          <AssociationSet Name="FK_weapon_bonus_GurpsSkill_id" Association="Self.FK_weapon_bonus_GurpsSkill_id">
+            <End Role="GurpsSkill" EntitySet="GurpsSkill" />
+            <End Role="weapon_bonus" EntitySet="weapon_bonus" />
           </AssociationSet>
           <AssociationSet Name="FK_WEAPON_ITEM_uiIndex" Association="Self.FK_WEAPON_ITEM_uiIndex">
             <End Role="ITEM" EntitySet="ITEM" />
@@ -1807,8 +2070,14 @@
             <Parameter Name="sClass" Mode="In" Type="String" />
           </FunctionImport>
           <EntitySet Name="Advantages" EntityType="item1Model.Advantage" />
+          <EntitySet Name="advantage_prereq" EntityType="item1Model.advantage_prereq" />
+          <EntitySet Name="AmountAtributes" EntityType="item1Model.AmountAtribute" />
           <EntitySet Name="Attributes" EntityType="item1Model.Attribute" />
+          <EntitySet Name="attribute_bonus" EntityType="item1Model.attribute_bonus" />
+          <EntitySet Name="attribute_prereq" EntityType="item1Model.attribute_prereq" />
+          <EntitySet Name="BonusAttributes" EntityType="item1Model.BonusAttribute" />
           <EntitySet Name="CharacterDBs" EntityType="item1Model.CharacterDB" />
+          <EntitySet Name="contained_weight_prereq" EntityType="item1Model.contained_weight_prereq" />
           <EntitySet Name="DefaultSkills" EntityType="item1Model.DefaultSkill" />
           <EntitySet Name="DifficultySkills" EntityType="item1Model.DifficultySkill" />
           <EntitySet Name="GurpsAdvCategories" EntityType="item1Model.GurpsAdvCategory" />
@@ -1818,7 +2087,9 @@
           <EntitySet Name="prereq_listDB" EntityType="item1Model.prereq_listDB" />
           <EntitySet Name="Skills" EntityType="item1Model.Skill" />
           <EntitySet Name="skill_prereqDB" EntityType="item1Model.skill_prereqDB" />
+          <EntitySet Name="spell_prereqDB" EntityType="item1Model.spell_prereqDB" />
           <EntitySet Name="TypeAdvs" EntityType="item1Model.TypeAdv" />
+          <EntitySet Name="weapon_bonus" EntityType="item1Model.weapon_bonus" />
           <EntitySet Name="AMMOUPGRATES" EntityType="item1Model.AMMOUPGRATE" />
           <EntitySet Name="AnyBoxNameTypes" EntityType="item1Model.AnyBoxNameType" />
           <EntitySet Name="ARMOURs" EntityType="item1Model.ARMOUR" />
@@ -1874,13 +2145,41 @@
             <End Role="Advantage" EntitySet="Advantages" />
             <End Role="SkillBonu" EntitySet="SkillBonus" />
           </AssociationSet>
+          <AssociationSet Name="FK_advantage_prereq_prereq_listDB_id" Association="item1Model.FK_advantage_prereq_prereq_listDB_id">
+            <End Role="prereq_listDB" EntitySet="prereq_listDB" />
+            <End Role="advantage_prereq" EntitySet="advantage_prereq" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AmountAtribute_attribute_bonus_id" Association="item1Model.FK_AmountAtribute_attribute_bonus_id">
+            <End Role="attribute_bonus" EntitySet="attribute_bonus" />
+            <End Role="AmountAtribute" EntitySet="AmountAtributes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AmountAtribute_weapon_bonus_id" Association="item1Model.FK_AmountAtribute_weapon_bonus_id">
+            <End Role="weapon_bonus" EntitySet="weapon_bonus" />
+            <End Role="AmountAtribute" EntitySet="AmountAtributes" />
+          </AssociationSet>
           <AssociationSet Name="FK_AdvBonus_AttributeBonus_id" Association="item1Model.FK_AdvBonus_AttributeBonus_id">
             <End Role="Attribute" EntitySet="Attributes" />
             <End Role="AttributeBonu" EntitySet="AttributeBonus" />
           </AssociationSet>
+          <AssociationSet Name="FK_attribute_bonus_GurpsSkill_id" Association="item1Model.FK_attribute_bonus_GurpsSkill_id">
+            <End Role="GurpsSkill" EntitySet="GurpsSkills" />
+            <End Role="attribute_bonus" EntitySet="attribute_bonus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BonusAttribute_attribute_bonus_id" Association="item1Model.FK_BonusAttribute_attribute_bonus_id">
+            <End Role="attribute_bonus" EntitySet="attribute_bonus" />
+            <End Role="BonusAttribute" EntitySet="BonusAttributes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_attribute_prereq_prereq_listDB_id" Association="item1Model.FK_attribute_prereq_prereq_listDB_id">
+            <End Role="prereq_listDB" EntitySet="prereq_listDB" />
+            <End Role="attribute_prereq" EntitySet="attribute_prereq" />
+          </AssociationSet>
           <AssociationSet Name="FK_InventoryOfChar_CharacterDB_id" Association="item1Model.FK_InventoryOfChar_CharacterDB_id">
             <End Role="CharacterDB" EntitySet="CharacterDBs" />
             <End Role="InventoryOfChar" EntitySet="InventoryOfChars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_contained_weight_prereq_prereq_listDB_id" Association="item1Model.FK_contained_weight_prereq_prereq_listDB_id">
+            <End Role="prereq_listDB" EntitySet="prereq_listDB" />
+            <End Role="contained_weight_prereq" EntitySet="contained_weight_prereq" />
           </AssociationSet>
           <AssociationSet Name="FK_DefaultSkill_GurpsSkill_id_in" Association="item1Model.FK_DefaultSkill_GurpsSkill_id_in">
             <End Role="GurpsSkill" EntitySet="GurpsSkills" />
@@ -1914,6 +2213,10 @@
             <End Role="GurpsSkill" EntitySet="GurpsSkills" />
             <End Role="prereq_listDB" EntitySet="prereq_listDB" />
           </AssociationSet>
+          <AssociationSet Name="FK_weapon_bonus_GurpsSkill_id" Association="item1Model.FK_weapon_bonus_GurpsSkill_id">
+            <End Role="GurpsSkill" EntitySet="GurpsSkills" />
+            <End Role="weapon_bonus" EntitySet="weapon_bonus" />
+          </AssociationSet>
           <AssociationSet Name="FK_InventoryOfChar_ITEM_uiIndex" Association="item1Model.FK_InventoryOfChar_ITEM_uiIndex">
             <End Role="ITEM" EntitySet="ITEMs" />
             <End Role="InventoryOfChar" EntitySet="InventoryOfChars" />
@@ -1925,6 +2228,10 @@
           <AssociationSet Name="FK_skill_prereqDB_prereq_listDB_id" Association="item1Model.FK_skill_prereqDB_prereq_listDB_id">
             <End Role="prereq_listDB" EntitySet="prereq_listDB" />
             <End Role="skill_prereqDB" EntitySet="skill_prereqDB" />
+          </AssociationSet>
+          <AssociationSet Name="FK_spell_prereqDB_prereq_listDB_id" Association="item1Model.FK_spell_prereqDB_prereq_listDB_id">
+            <End Role="prereq_listDB" EntitySet="prereq_listDB" />
+            <End Role="spell_prereqDB" EntitySet="spell_prereqDB" />
           </AssociationSet>
           <AssociationSet Name="FK_SkillBonus_Skill_Id" Association="item1Model.FK_SkillBonus_Skill_Id">
             <End Role="Skill" EntitySet="Skills" />
@@ -2085,6 +2392,34 @@
           <NavigationProperty Name="Advantages" Relationship="item1Model.TabooAdv" FromRole="Advantage1" ToRole="Advantage" />
           <NavigationProperty Name="TypeAdvs" Relationship="item1Model.TypeAdvSumm" FromRole="Advantage" ToRole="TypeAdv" />
         </EntityType>
+        <EntityType Name="advantage_prereq">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameCompare" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="notesCompare" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="notes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="levelCompare" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="level" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="has" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idPrqList" Type="Int32" />
+          <Property Name="Value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="prereq_listDB" Relationship="item1Model.FK_advantage_prereq_prereq_listDB_id" FromRole="advantage_prereq" ToRole="prereq_listDB" />
+        </EntityType>
+        <EntityType Name="AmountAtribute">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="per_level" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="idAtribBonus" Type="Int32" />
+          <Property Name="idWeaponBonus" Type="Int32" />
+          <NavigationProperty Name="attribute_bonus" Relationship="item1Model.FK_AmountAtribute_attribute_bonus_id" FromRole="AmountAtribute" ToRole="attribute_bonus" />
+          <NavigationProperty Name="weapon_bonus" Relationship="item1Model.FK_AmountAtribute_weapon_bonus_id" FromRole="AmountAtribute" ToRole="weapon_bonus" />
+        </EntityType>
         <EntityType Name="Attribute">
           <Key>
             <PropertyRef Name="id" />
@@ -2092,6 +2427,40 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="AttributeBonus" Relationship="item1Model.FK_AdvBonus_AttributeBonus_id" FromRole="Attribute" ToRole="AttributeBonu" />
+        </EntityType>
+        <EntityType Name="attribute_bonus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_Skill" Type="Int32" />
+          <Property Name="FK_Amount" Type="Int32" />
+          <NavigationProperty Name="AmountAtributes" Relationship="item1Model.FK_AmountAtribute_attribute_bonus_id" FromRole="attribute_bonus" ToRole="AmountAtribute" />
+          <NavigationProperty Name="GurpsSkill" Relationship="item1Model.FK_attribute_bonus_GurpsSkill_id" FromRole="attribute_bonus" ToRole="GurpsSkill" />
+          <NavigationProperty Name="BonusAttributes" Relationship="item1Model.FK_BonusAttribute_attribute_bonus_id" FromRole="attribute_bonus" ToRole="BonusAttribute" />
+        </EntityType>
+        <EntityType Name="attribute_prereq">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="has" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="which" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="compare" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="combined_with" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idPrqList" Type="Int32" />
+          <Property Name="Value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="prereq_listDB" Relationship="item1Model.FK_attribute_prereq_prereq_listDB_id" FromRole="attribute_prereq" ToRole="prereq_listDB" />
+        </EntityType>
+        <EntityType Name="BonusAttribute">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="limitation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="idAtribBonus" Type="Int32" />
+          <NavigationProperty Name="attribute_bonus" Relationship="item1Model.FK_BonusAttribute_attribute_bonus_id" FromRole="BonusAttribute" ToRole="attribute_bonus" />
         </EntityType>
         <EntityType Name="CharacterDB">
           <Key>
@@ -2110,6 +2479,17 @@
           <Property Name="BasicSpeedPoints" Type="Single" Nullable="false" />
           <Property Name="BasicMovePoints" Type="Int32" Nullable="false" />
           <NavigationProperty Name="InventoryOfChars" Relationship="item1Model.FK_InventoryOfChar_CharacterDB_id" FromRole="CharacterDB" ToRole="InventoryOfChar" />
+        </EntityType>
+        <EntityType Name="contained_weight_prereq">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="has" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="compare" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idPrqList" Type="Int32" />
+          <NavigationProperty Name="prereq_listDB" Relationship="item1Model.FK_contained_weight_prereq_prereq_listDB_id" FromRole="contained_weight_prereq" ToRole="prereq_listDB" />
         </EntityType>
         <EntityType Name="DefaultSkill">
           <Key>
@@ -2159,6 +2539,7 @@
           <Property Name="idDifficulty" Type="Int32" />
           <Property Name="idSpecialization" Type="Int32" />
           <Property Name="idtech_level" Type="Int32" />
+          <NavigationProperty Name="attribute_bonus" Relationship="item1Model.FK_attribute_bonus_GurpsSkill_id" FromRole="GurpsSkill" ToRole="attribute_bonus" />
           <NavigationProperty Name="DefaultSkills" Relationship="item1Model.FK_DefaultSkill_GurpsSkill_id_in" FromRole="GurpsSkill" ToRole="DefaultSkill" />
           <NavigationProperty Name="DefaultSkills1" Relationship="item1Model.FK_DefaultSkill_GurpsSkill_id_out" FromRole="GurpsSkill" ToRole="DefaultSkill" />
           <NavigationProperty Name="DifficultySkill" Relationship="item1Model.FK_GurpsSkill_Difficulty_id" FromRole="GurpsSkill" ToRole="DifficultySkill" />
@@ -2168,6 +2549,7 @@
           <NavigationProperty Name="NeedSkill" Relationship="item1Model.FK_NeedSkill_GurpsSkill_id_in" FromRole="GurpsSkill" ToRole="NeedSkill" />
           <NavigationProperty Name="NeedSkills" Relationship="item1Model.FK_NeedSkill_GurpsSkill_id_out" FromRole="GurpsSkill" ToRole="NeedSkill" />
           <NavigationProperty Name="prereq_listDB" Relationship="item1Model.FK_prereq_listDB_GurpsSkill_id" FromRole="GurpsSkill" ToRole="prereq_listDB" />
+          <NavigationProperty Name="weapon_bonus" Relationship="item1Model.FK_weapon_bonus_GurpsSkill_id" FromRole="GurpsSkill" ToRole="weapon_bonus" />
           <NavigationProperty Name="GurpsSkillCategories" Relationship="item1Model.GurpsSkillCategory88" FromRole="GurpsSkill" ToRole="GurpsSkillCategory" />
         </EntityType>
         <EntityType Name="GurpsSkillCategory">
@@ -2202,10 +2584,14 @@
           <Property Name="FK_prereq_list" Type="Int32" />
           <Property Name="FK_skill" Type="Int32" />
           <Property Name="FK_technique" Type="Int32" />
+          <NavigationProperty Name="advantage_prereq" Relationship="item1Model.FK_advantage_prereq_prereq_listDB_id" FromRole="prereq_listDB" ToRole="advantage_prereq" />
+          <NavigationProperty Name="attribute_prereq" Relationship="item1Model.FK_attribute_prereq_prereq_listDB_id" FromRole="prereq_listDB" ToRole="attribute_prereq" />
+          <NavigationProperty Name="contained_weight_prereq" Relationship="item1Model.FK_contained_weight_prereq_prereq_listDB_id" FromRole="prereq_listDB" ToRole="contained_weight_prereq" />
           <NavigationProperty Name="GurpsSkill" Relationship="item1Model.FK_prereq_listDB_GurpsSkill_id" FromRole="prereq_listDB" ToRole="GurpsSkill" />
           <NavigationProperty Name="prereq_listDB1" Relationship="item1Model.FK_prereq_listDB_prereq_listDB_id" FromRole="prereq_listDB" ToRole="prereq_listDB1" />
           <NavigationProperty Name="prereq_listDB2" Relationship="item1Model.FK_prereq_listDB_prereq_listDB_id" FromRole="prereq_listDB1" ToRole="prereq_listDB" />
           <NavigationProperty Name="skill_prereqDB" Relationship="item1Model.FK_skill_prereqDB_prereq_listDB_id" FromRole="prereq_listDB" ToRole="skill_prereqDB" />
+          <NavigationProperty Name="spell_prereqDB" Relationship="item1Model.FK_spell_prereqDB_prereq_listDB_id" FromRole="prereq_listDB" ToRole="spell_prereqDB" />
         </EntityType>
         <EntityType Name="Skill">
           <Key>
@@ -2231,6 +2617,25 @@
           <Property Name="idprereq_list" Type="Int32" />
           <NavigationProperty Name="prereq_listDB" Relationship="item1Model.FK_skill_prereqDB_prereq_listDB_id" FromRole="skill_prereqDB" ToRole="prereq_listDB" />
         </EntityType>
+        <EntityType Name="spell_prereqDB">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameCompare" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="collegeCompare" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="college" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="college_countCompare" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="college_count" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="quantityCompare" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="quantity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="anyt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="has" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idPrqlist" Type="Int32" />
+          <Property Name="Value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="prereq_listDB" Relationship="item1Model.FK_spell_prereqDB_prereq_listDB_id" FromRole="spell_prereqDB" ToRole="prereq_listDB" />
+        </EntityType>
         <EntityType Name="TypeAdv">
           <Key>
             <PropertyRef Name="id" />
@@ -2238,6 +2643,21 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Advantages" Relationship="item1Model.TypeAdvSumm" FromRole="TypeAdv" ToRole="Advantage" />
+        </EntityType>
+        <EntityType Name="weapon_bonus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameCompare" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="specializationCompare" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="specialization" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="levelCompare" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="level" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FK_Skill" Type="Int32" />
+          <NavigationProperty Name="AmountAtributes" Relationship="item1Model.FK_AmountAtribute_weapon_bonus_id" FromRole="weapon_bonus" ToRole="AmountAtribute" />
+          <NavigationProperty Name="GurpsSkill" Relationship="item1Model.FK_weapon_bonus_GurpsSkill_id" FromRole="weapon_bonus" ToRole="GurpsSkill" />
         </EntityType>
         <EntityType Name="AMMOUPGRATE">
           <Key>
@@ -2874,6 +3294,46 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_advantage_prereq_prereq_listDB_id">
+          <End Type="item1Model.prereq_listDB" Role="prereq_listDB" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.advantage_prereq" Role="advantage_prereq" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="prereq_listDB">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="advantage_prereq">
+              <PropertyRef Name="idPrqList" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AmountAtribute_attribute_bonus_id">
+          <End Type="item1Model.attribute_bonus" Role="attribute_bonus" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.AmountAtribute" Role="AmountAtribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="attribute_bonus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AmountAtribute">
+              <PropertyRef Name="idAtribBonus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AmountAtribute_weapon_bonus_id">
+          <End Type="item1Model.weapon_bonus" Role="weapon_bonus" Multiplicity="0..1" />
+          <End Type="item1Model.AmountAtribute" Role="AmountAtribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="weapon_bonus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AmountAtribute">
+              <PropertyRef Name="idWeaponBonus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_AdvBonus_AttributeBonus_id">
           <End Type="item1Model.Attribute" Role="Attribute" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -2888,6 +3348,48 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_attribute_bonus_GurpsSkill_id">
+          <End Type="item1Model.GurpsSkill" Role="GurpsSkill" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.attribute_bonus" Role="attribute_bonus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsSkill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="attribute_bonus">
+              <PropertyRef Name="FK_Skill" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BonusAttribute_attribute_bonus_id">
+          <End Type="item1Model.attribute_bonus" Role="attribute_bonus" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.BonusAttribute" Role="BonusAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="attribute_bonus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="BonusAttribute">
+              <PropertyRef Name="idAtribBonus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_attribute_prereq_prereq_listDB_id">
+          <End Type="item1Model.prereq_listDB" Role="prereq_listDB" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.attribute_prereq" Role="attribute_prereq" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="prereq_listDB">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="attribute_prereq">
+              <PropertyRef Name="idPrqList" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_InventoryOfChar_CharacterDB_id">
           <End Type="item1Model.CharacterDB" Role="CharacterDB" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -2899,6 +3401,20 @@
             </Principal>
             <Dependent Role="InventoryOfChar">
               <PropertyRef Name="IdCharacter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_contained_weight_prereq_prereq_listDB_id">
+          <End Type="item1Model.prereq_listDB" Role="prereq_listDB" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.contained_weight_prereq" Role="contained_weight_prereq" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="prereq_listDB">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="contained_weight_prereq">
+              <PropertyRef Name="idPrqList" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3004,6 +3520,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_weapon_bonus_GurpsSkill_id">
+          <End Type="item1Model.GurpsSkill" Role="GurpsSkill" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.weapon_bonus" Role="weapon_bonus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GurpsSkill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="weapon_bonus">
+              <PropertyRef Name="FK_Skill" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_InventoryOfChar_ITEM_uiIndex">
           <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -3041,6 +3571,20 @@
             </Principal>
             <Dependent Role="skill_prereqDB">
               <PropertyRef Name="idprereq_list" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_spell_prereqDB_prereq_listDB_id">
+          <End Type="item1Model.prereq_listDB" Role="prereq_listDB" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="item1Model.spell_prereqDB" Role="spell_prereqDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="prereq_listDB">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="spell_prereqDB">
+              <PropertyRef Name="idPrqlist" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3472,10 +4016,69 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="advantage_prereq">
+            <EntityTypeMapping TypeName="item1Model.advantage_prereq">
+              <MappingFragment StoreEntitySet="advantage_prereq">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="idPrqList" ColumnName="idPrqList" />
+                <ScalarProperty Name="has" ColumnName="has" />
+                <ScalarProperty Name="level" ColumnName="level" />
+                <ScalarProperty Name="levelCompare" ColumnName="levelCompare" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="notesCompare" ColumnName="notesCompare" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="nameCompare" ColumnName="nameCompare" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AmountAtributes">
+            <EntityTypeMapping TypeName="item1Model.AmountAtribute">
+              <MappingFragment StoreEntitySet="AmountAtribute">
+                <ScalarProperty Name="idWeaponBonus" ColumnName="idWeaponBonus" />
+                <ScalarProperty Name="idAtribBonus" ColumnName="idAtribBonus" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="per_level" ColumnName="per_level" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Attributes">
             <EntityTypeMapping TypeName="item1Model.Attribute">
               <MappingFragment StoreEntitySet="Attribute">
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="attribute_bonus">
+            <EntityTypeMapping TypeName="item1Model.attribute_bonus">
+              <MappingFragment StoreEntitySet="attribute_bonus">
+                <ScalarProperty Name="FK_Amount" ColumnName="FK_Amount" />
+                <ScalarProperty Name="FK_Skill" ColumnName="FK_Skill" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="attribute_prereq">
+            <EntityTypeMapping TypeName="item1Model.attribute_prereq">
+              <MappingFragment StoreEntitySet="attribute_prereq">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="idPrqList" ColumnName="idPrqList" />
+                <ScalarProperty Name="combined_with" ColumnName="combined_with" />
+                <ScalarProperty Name="compare" ColumnName="compare" />
+                <ScalarProperty Name="which" ColumnName="which" />
+                <ScalarProperty Name="has" ColumnName="has" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BonusAttributes">
+            <EntityTypeMapping TypeName="item1Model.BonusAttribute">
+              <MappingFragment StoreEntitySet="BonusAttribute">
+                <ScalarProperty Name="idAtribBonus" ColumnName="idAtribBonus" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="limitation" ColumnName="limitation" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -3494,6 +4097,17 @@
                 <ScalarProperty Name="DexterityPoints" ColumnName="DexterityPoints" />
                 <ScalarProperty Name="StrengthPoints" ColumnName="StrengthPoints" />
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contained_weight_prereq">
+            <EntityTypeMapping TypeName="item1Model.contained_weight_prereq">
+              <MappingFragment StoreEntitySet="contained_weight_prereq">
+                <ScalarProperty Name="idPrqList" ColumnName="idPrqList" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="compare" ColumnName="compare" />
+                <ScalarProperty Name="has" ColumnName="has" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -3604,10 +4218,43 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="spell_prereqDB">
+            <EntityTypeMapping TypeName="item1Model.spell_prereqDB">
+              <MappingFragment StoreEntitySet="spell_prereqDB">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="idPrqlist" ColumnName="idPrqlist" />
+                <ScalarProperty Name="has" ColumnName="has" />
+                <ScalarProperty Name="anyt" ColumnName="anyt" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="quantityCompare" ColumnName="quantityCompare" />
+                <ScalarProperty Name="college_count" ColumnName="college_count" />
+                <ScalarProperty Name="college_countCompare" ColumnName="college_countCompare" />
+                <ScalarProperty Name="college" ColumnName="college" />
+                <ScalarProperty Name="collegeCompare" ColumnName="collegeCompare" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="nameCompare" ColumnName="nameCompare" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TypeAdvs">
             <EntityTypeMapping TypeName="item1Model.TypeAdv">
               <MappingFragment StoreEntitySet="TypeAdv">
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="weapon_bonus">
+            <EntityTypeMapping TypeName="item1Model.weapon_bonus">
+              <MappingFragment StoreEntitySet="weapon_bonus">
+                <ScalarProperty Name="FK_Skill" ColumnName="FK_Skill" />
+                <ScalarProperty Name="level" ColumnName="level" />
+                <ScalarProperty Name="levelCompare" ColumnName="levelCompare" />
+                <ScalarProperty Name="specialization" ColumnName="specialization" />
+                <ScalarProperty Name="specializationCompare" ColumnName="specializationCompare" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="nameCompare" ColumnName="nameCompare" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

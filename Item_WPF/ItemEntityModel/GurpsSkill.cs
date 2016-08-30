@@ -32,11 +32,13 @@ namespace Item_WPF.ItemEntityModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public GurpsSkill()
         {
+            this.attribute_bonus = new HashSet<attribute_bonus>();
             this.DefaultSkills = new HashSet<DefaultSkill>();
             this.DefaultSkills1 = new HashSet<DefaultSkill>();
             this.GurpsSkill1 = new HashSet<GurpsSkill>();
             this.NeedSkills = new HashSet<NeedSkill>();
             this.prereq_listDB = new HashSet<prereq_listDB>();
+            this.weapon_bonus = new HashSet<weapon_bonus>();
             this.GurpsSkillCategories = new HashSet<GurpsSkillCategory>();
         }
     
@@ -266,6 +268,16 @@ namespace Item_WPF.ItemEntityModel
     	}
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<attribute_bonus> _attribute_bonus;
+            public virtual ICollection<attribute_bonus> attribute_bonus
+            {
+                get { return _attribute_bonus; }
+                set
+                { if(_attribute_bonus != value)
+                    {    _attribute_bonus = value;    OnPropertyChanged("attribute_bonus");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<DefaultSkill> _DefaultSkills;
             public virtual ICollection<DefaultSkill> DefaultSkills
             {
@@ -349,6 +361,16 @@ namespace Item_WPF.ItemEntityModel
                 set
                 { if(_prereq_listDB != value)
                     {    _prereq_listDB = value;    OnPropertyChanged("prereq_listDB");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<weapon_bonus> _weapon_bonus;
+            public virtual ICollection<weapon_bonus> weapon_bonus
+            {
+                get { return _weapon_bonus; }
+                set
+                { if(_weapon_bonus != value)
+                    {    _weapon_bonus = value;    OnPropertyChanged("weapon_bonus");   }
                 }
             } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

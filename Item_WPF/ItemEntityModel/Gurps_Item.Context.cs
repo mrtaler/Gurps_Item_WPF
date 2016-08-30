@@ -29,8 +29,14 @@ namespace Item_WPF.ItemEntityModel
         }
     
         public virtual DbSet<Advantage> Advantages { get; set; }
+        public virtual DbSet<advantage_prereq> advantage_prereq { get; set; }
+        public virtual DbSet<AmountAtribute> AmountAtributes { get; set; }
         public virtual DbSet<Attribute> Attributes { get; set; }
+        public virtual DbSet<attribute_bonus> attribute_bonus { get; set; }
+        public virtual DbSet<attribute_prereq> attribute_prereq { get; set; }
+        public virtual DbSet<BonusAttribute> BonusAttributes { get; set; }
         public virtual DbSet<CharacterDB> CharacterDBs { get; set; }
+        public virtual DbSet<contained_weight_prereq> contained_weight_prereq { get; set; }
         public virtual DbSet<DefaultSkill> DefaultSkills { get; set; }
         public virtual DbSet<DifficultySkill> DifficultySkills { get; set; }
         public virtual DbSet<GurpsAdvCategory> GurpsAdvCategories { get; set; }
@@ -40,7 +46,9 @@ namespace Item_WPF.ItemEntityModel
         public virtual DbSet<prereq_listDB> prereq_listDB { get; set; }
         public virtual DbSet<Skill> Skills { get; set; }
         public virtual DbSet<skill_prereqDB> skill_prereqDB { get; set; }
+        public virtual DbSet<spell_prereqDB> spell_prereqDB { get; set; }
         public virtual DbSet<TypeAdv> TypeAdvs { get; set; }
+        public virtual DbSet<weapon_bonus> weapon_bonus { get; set; }
         public virtual DbSet<AMMOUPGRATE> AMMOUPGRATES { get; set; }
         public virtual DbSet<AnyBoxNameType> AnyBoxNameTypes { get; set; }
         public virtual DbSet<ARMOUR> ARMOURs { get; set; }

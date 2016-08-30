@@ -13,8 +13,8 @@ namespace Item_WPF.MVVM.Serialize.Model
     /// </summary>
     public class Attribute_bonusXML
     {
-        public ObservableCollection<attributeXml> Attribute=new ObservableCollection<attributeXml>();
-        public ObservableCollection<amountXml> Amount;
+        public ObservableCollection<attributeXml> Attribute = new ObservableCollection<attributeXml>();
+        public ObservableCollection<amountXml> Amount = new ObservableCollection<amountXml>();
         /// <summary>
         /// Attribute bonus
         /// </summary>
@@ -23,16 +23,26 @@ namespace Item_WPF.MVVM.Serialize.Model
         {
             foreach (var item in itemAttribute_bonus.Elements("attribute"))
             {
-                Attribute=
+                attributeXml atrxml = new attributeXml();
+                atrxml.attribute = item;
+                Attribute.Add(atrxml);
             }
-
+            foreach (var item in itemAttribute_bonus.Elements("amount"))
+            {
+                amountXml amoxml = new amountXml();
+                amoxml.amount = item;
+                Amount.Add(amoxml);
+            }
         }
-
     }
-
     public class attributeXml
     {
         public XElement attribute;
-      //  public string 
+        //  public string 
+    }
+
+    public class amountXml
+    {
+        public XElement amount;
     }
 }

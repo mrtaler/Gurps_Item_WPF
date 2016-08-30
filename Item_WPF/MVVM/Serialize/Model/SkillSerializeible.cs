@@ -75,8 +75,18 @@ namespace Item_WPF.MVVM.Serialize.Model
                     Attribute_bonusXML atrbns = new Attribute_bonusXML(itemskillElement);
                     qwerty.attribute_bonus.Add(atrbns);
                 }
-                
+
                 #endregion
+                #region Weapon_bonusXML
+                qwerty.weapon_bonus = new ObservableCollection<Weapon_bonusXML>();
+                foreach (var itemweapon_bonus in skillElement.Elements("weapon_bonus"))
+                {
+                    Weapon_bonusXML wpnbns = new Weapon_bonusXML(itemweapon_bonus);
+                    qwerty.weapon_bonus.Add(wpnbns);
+                }
+                #endregion
+
+
                 OutstringCollection.Add(qwerty);
                 CollectionCategiry.Add(new GurpsSkill(qwerty));
            

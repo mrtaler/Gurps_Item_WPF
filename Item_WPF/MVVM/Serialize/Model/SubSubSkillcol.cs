@@ -53,9 +53,9 @@ namespace Item_WPF.MVVM.Serialize.Model
     //    public XAttribute limitation;
     //}
 
-    public class amountXml
-    {
-        public XAttribute per_level;
+    //public class amountXml
+    //{
+    //    public XAttribute per_level;
 
-    }
+    //}
 }

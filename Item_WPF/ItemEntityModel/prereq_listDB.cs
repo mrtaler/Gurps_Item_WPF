@@ -32,8 +32,12 @@ namespace Item_WPF.ItemEntityModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public prereq_listDB()
         {
+            this.advantage_prereq = new HashSet<advantage_prereq>();
+            this.attribute_prereq = new HashSet<attribute_prereq>();
+            this.contained_weight_prereq = new HashSet<contained_weight_prereq>();
             this.prereq_listDB1 = new HashSet<prereq_listDB>();
             this.skill_prereqDB = new HashSet<skill_prereqDB>();
+            this.spell_prereqDB = new HashSet<spell_prereqDB>();
         }
     
         private int _id;
@@ -181,6 +185,36 @@ namespace Item_WPF.ItemEntityModel
     		}
     	}
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<advantage_prereq> _advantage_prereq;
+            public virtual ICollection<advantage_prereq> advantage_prereq
+            {
+                get { return _advantage_prereq; }
+                set
+                { if(_advantage_prereq != value)
+                    {    _advantage_prereq = value;    OnPropertyChanged("advantage_prereq");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<attribute_prereq> _attribute_prereq;
+            public virtual ICollection<attribute_prereq> attribute_prereq
+            {
+                get { return _attribute_prereq; }
+                set
+                { if(_attribute_prereq != value)
+                    {    _attribute_prereq = value;    OnPropertyChanged("attribute_prereq");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<contained_weight_prereq> _contained_weight_prereq;
+            public virtual ICollection<contained_weight_prereq> contained_weight_prereq
+            {
+                get { return _contained_weight_prereq; }
+                set
+                { if(_contained_weight_prereq != value)
+                    {    _contained_weight_prereq = value;    OnPropertyChanged("contained_weight_prereq");   }
+                }
+            } 
         private GurpsSkill _GurpsSkill;
             public virtual GurpsSkill GurpsSkill
             {
@@ -217,6 +251,16 @@ namespace Item_WPF.ItemEntityModel
                 set
                 { if(_skill_prereqDB != value)
                     {    _skill_prereqDB = value;    OnPropertyChanged("skill_prereqDB");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<spell_prereqDB> _spell_prereqDB;
+            public virtual ICollection<spell_prereqDB> spell_prereqDB
+            {
+                get { return _spell_prereqDB; }
+                set
+                { if(_spell_prereqDB != value)
+                    {    _spell_prereqDB = value;    OnPropertyChanged("spell_prereqDB");   }
                 }
             } 
     }
