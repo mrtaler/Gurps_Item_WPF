@@ -60,7 +60,7 @@ namespace Item_WPF.ItemEntityModel
                 DefaultSkills.Add(dfSk);
             }
             #endregion
-
+            #region mainprqlist
             foreach (Prereq_listXML item in SkillFromXml.prereq_list)
             {
                 prereq_listDB prlDB = new prereq_listDB();
@@ -183,6 +183,48 @@ namespace Item_WPF.ItemEntityModel
                 #endregion
                 prereq_listDB.Add(prlDB);
             }
+            #endregion
+            #region attribute_bonus
+            foreach (Attribute_bonusXML item in SkillFromXml.attribute_bonus)
+            {
+                attribute_bonus atrbnr = new attribute_bonus();
+                foreach (var itemAttribute in item.Attribute)
+                {
+                    BonusAttribute bnsatr = new BonusAttribute();
+                    bnsatr.limitation = itemAttribute.attribute.Attribute("limitation").Value.ToString();
+                    bnsatr.Value = itemAttribute.attribute.Value.ToString();
+                    atrbnr.BonusAttributes.Add(bnsatr);
+                }
+                foreach (var itemAmount in item.Amount)
+                {
+                    AmountAtribute amnatr = new AmountAtribute();
+                    amnatr.per_level = itemAmount.amount.Attribute("per_level").Value.ToString();
+                    amnatr.Value = itemAmount.amount.Value.ToString();
+                    atrbnr.AmountAtributes.Add(amnatr);
+                }
+                attribute_bonus.Add(atrbnr);
+            }
+            #endregion
+            #region weapon_bonus
+            foreach (Weapon_bonusXML itemWeapon_bonus in SkillFromXml.weapon_bonus)
+            {
+                weapon_bonus weapbns = new weapon_bonus();
+                foreach (var itemAmount in itemWeapon_bonus.Amount)
+                {
+                    AmountAtribute amnatr = new AmountAtribute();
+                    amnatr.per_level = itemAmount.amount.Attribute("per_level").Value.ToString();
+                    amnatr.Value = itemAmount.amount.Value.ToString();
+                    weapbns.AmountAtributes.Add(amnatr);
+                }
+                weapbns.nameCompare = itemWeapon_bonus.name.Attribute("compare").Value.ToString();
+                weapbns.name = itemWeapon_bonus.name.Value.ToString();
+                weapbns.specializationCompare = itemWeapon_bonus.specialization.Attribute("compare").Value.ToString(); ;
+                weapbns.specialization = itemWeapon_bonus.specialization.Value.ToString();
+                weapbns.levelCompare = itemWeapon_bonus.level.Attribute("compare").Value.ToString(); ;
+                weapbns.level = itemWeapon_bonus.level.Value.ToString();
+                weapon_bonus.Add(weapbns);
+            }
+            #endregion 
         }
     }
 }
