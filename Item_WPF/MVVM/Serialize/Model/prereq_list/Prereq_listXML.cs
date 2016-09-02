@@ -60,10 +60,10 @@ namespace Item_WPF.MVVM.Serialize.Model
         {
             FPrereq_list(itemprereq_list);                                  //1
             FSkill_prereq(itemprereq_list.Elements("skill_prereq"));        //2
-            FSpell_prereq(skillElement.Elements("prereq_list"));            //3
-            FAttribute_prereq(skillElement.Elements("prereq_list"));        //4
-            FAdvantage_prereq(skillElement.Elements("prereq_list"));        //5
-            FContained_weight_prereq(skillElement.Elements("prereq_list")); //6
+            FSpell_prereq(itemprereq_list.Elements("spell_prereq"));            //3
+            FAttribute_prereq(itemprereq_list.Elements("attribute_prereq"));        //4
+            FAdvantage_prereq(itemprereq_list.Elements("advantage_prereq"));        //5
+            FContained_weight_prereq(itemprereq_list.Elements("contained_weight_prereq")); //6
 
             when_tl = itemprereq_list.Element("when_tl");
             college_count = itemprereq_list.Element("college_count");
@@ -107,7 +107,7 @@ namespace Item_WPF.MVVM.Serialize.Model
                 splrprq.quantity = item.Element("quantity");
                 splrprq.any = item.Element("any");
                 splrprq.has = item.Attribute("has");
-
+                Spell_prereq.Add(splrprq);
             }
         }
         /// <summary>
@@ -116,7 +116,7 @@ namespace Item_WPF.MVVM.Serialize.Model
         /// <param name="itemprereq_list">Prereq_listXML</param>
         public void FAttribute_prereq(IEnumerable<XElement> itemprereq_list)
         {
-            foreach (var item in itemprereq_list.Elements("attribute_prereq"))
+            foreach (var item in itemprereq_list)
             {
                 attribute_prereqXml atrprq = new attribute_prereqXml();
 
@@ -127,6 +127,7 @@ namespace Item_WPF.MVVM.Serialize.Model
                 atrprq.Value = item.Value.ToString();
                 Attribute_prereq.Add(atrprq);
             }
+
         }
         /// <summary>
         ///  5 coll advantage_prereq
@@ -134,7 +135,8 @@ namespace Item_WPF.MVVM.Serialize.Model
         /// <param name="itemprereq_list">Prereq_listXML</param>
         public void FAdvantage_prereq(IEnumerable<XElement> itemprereq_list)
         {
-            foreach (var itemAdvantage_prereq in itemprereq_list.Elements("advantage_prereq"))
+
+            foreach (var itemAdvantage_prereq in itemprereq_list)
             {
                 advantage_prereqXml advprq = new advantage_prereqXml();
                 advprq.name = itemAdvantage_prereq.Element("name");
@@ -143,6 +145,7 @@ namespace Item_WPF.MVVM.Serialize.Model
                 advprq.has = itemAdvantage_prereq.Attribute("has");
                 Advantage_prereq.Add(advprq);
             }
+
         }
         /// <summary>
         /// 6 coll contained_weight_prereq
@@ -156,6 +159,7 @@ namespace Item_WPF.MVVM.Serialize.Model
                 cwprq.has = item.Attribute("has");
                 cwprq.compare = item.Attribute("compare");
                 cwprq.Value = item.Value.ToString();
+                Contained_weight_prereq.Add(cwprq);
             }
         }
     }

@@ -26,6 +26,11 @@ namespace Item_WPF.MVVM.Serialize.Model
                 string cat = skillElement != null ? skillElement.Value.ToString() : "0";
                 CollectionCategiry.Add(cat);
             }
+            foreach (XElement skillElement in xdoc.Element("skill_list").Elements("technique").Elements("categories").Elements("category"))
+            {
+                string cat = skillElement != null ? skillElement.Value.ToString() : "0";
+                CollectionCategiry.Add(cat);
+            }
             ResultOrder = new ObservableCollection<string>(CollectionCategiry.Distinct().OrderBy(i => i));
         }
         public void ToSqlFromCollString(ObservableCollection<string> outSting)

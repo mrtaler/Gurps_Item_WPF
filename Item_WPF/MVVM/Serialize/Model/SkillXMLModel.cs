@@ -46,6 +46,8 @@ namespace Item_WPF.MVVM.Serialize.Model
         /// 9 element name="encumbrance_penalty_multiplier" type="xs:unsignedInt" 
         /// </summary>
         public XElement encumbrance_penalty_multiplier;
+        public XAttribute limit;
+        public string Type;
         /// <summary>
         /// 1_1 element ref="default" 
         /// </summary>
@@ -61,10 +63,10 @@ namespace Item_WPF.MVVM.Serialize.Model
         /// <summary>
         /// 1_4 element ref="attribute_bonus" 
         /// </summary>
-        public ObservableCollection<Attribute_bonusXML> attribute_bonus;
+        public ObservableCollection<Attribute_bonusXML> attribute_bonus=new ObservableCollection<Attribute_bonusXML>();
         /// <summary>
         /// 1_5 element ref="weapon_bonus" 
         /// </summary>
-        public ObservableCollection<Weapon_bonusXML> weapon_bonus;
+        public ObservableCollection<Weapon_bonusXML> weapon_bonus=new ObservableCollection<Weapon_bonusXML>();
     }
 }

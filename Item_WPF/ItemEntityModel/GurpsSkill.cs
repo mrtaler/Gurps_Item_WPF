@@ -266,6 +266,38 @@ namespace Item_WPF.ItemEntityModel
     			}
     		}
     	}
+        private string _limitT;
+    	public string limitT 
+    	{ 
+    		get
+    		{
+    			return _limitT;
+    		} 
+    		set
+    		{
+    			if (_limitT != value)
+    			{
+    				_limitT = value;
+    				OnPropertyChanged("limitT");
+    			}
+    		}
+    	}
+        private string _TypeSkTh;
+    	public string TypeSkTh 
+    	{ 
+    		get
+    		{
+    			return _TypeSkTh;
+    		} 
+    		set
+    		{
+    			if (_TypeSkTh != value)
+    			{
+    				_TypeSkTh = value;
+    				OnPropertyChanged("TypeSkTh");
+    			}
+    		}
+    	}
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<attribute_bonus> _attribute_bonus;
