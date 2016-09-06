@@ -23,7 +23,7 @@
 //	/** Rarely. */
 //	CR6 {
 //		@Override
-//		public String toString() {
+//		public string toString() {
 //			return CR6_TITLE;
 //		}
 
@@ -40,7 +40,7 @@
 //	/** Fairly often. */
 //	CR9 {
 //		@Override
-//		public String toString() {
+//		public string toString() {
 //			return CR9_TITLE;
 //		}
 
@@ -57,7 +57,7 @@
 //	/** Quite often. */
 //	CR12 {
 //		@Override
-//		public String toString() {
+//		public string toString() {
 //			return CR12_TITLE;
 //		}
 
@@ -74,7 +74,7 @@
 //	/** Almost all the time. */
 //	CR15 {
 //		@Override
-//		public String toString() {
+//		public string toString() {
 //			return CR15_TITLE;
 //		}
 
@@ -91,7 +91,7 @@
 //	/** No self-control roll. */
 //	NONE_REQUIRED {
 //		@Override
-//		public String toString() {
+//		public string toString() {
 //			return NONE_REQUIRED_TITLE;
 //		}
 
@@ -106,12 +106,12 @@
 //		}
 
 //		@Override
-//		public String getDescriptionWithCost() {
+//		public string getDescriptionWithCost() {
 //			return ""; //$NON-NLS-1$
 //		}
 
 //		@Override
-//		public void save(XMLWriter out, String tag, SelfControlRollAdjustments adj) {
+//		public void save(XMLWriter out, string tag, SelfControlRollAdjustments adj) {
 //			// Do nothing.
 //		}
 //	};
@@ -147,7 +147,7 @@
 //	}
 
 //	/** The attribute tag use for {@link SelfControlRollAdjustments}. */
-//	public static const String ATTR_ADJUSTMENT = "adj"; //$NON-NLS-1$
+//	public static const string ATTR_ADJUSTMENT = "adj"; //$NON-NLS-1$
 
 //	/**
 //	 * @param tagValue The value within a tag representing a {@link SelfControlRoll}.
@@ -164,7 +164,7 @@
 //	}
 
 //	/** @return The description, along with the cost. */
-//	public String getDescriptionWithCost() {
+//	public string getDescriptionWithCost() {
 //		return toString() + ", x" + getMultiplier(); //$NON-NLS-1$
 //	}
 
@@ -179,7 +179,7 @@
 //	 * @param tag The XML tag to use.
 //	 * @param adj The {@link SelfControlRollAdjustments} being used.
 //	 */
-//	public void save(XMLWriter out, String tag, SelfControlRollAdjustments adj) {
+//	public void save(XMLWriter out, string tag, SelfControlRollAdjustments adj) {
 //		if (adj != SelfControlRollAdjustments.NONE) {
 //			out.simpleTagWithAttribute(tag, getCR(), ATTR_ADJUSTMENT, Enums.toId(adj));
 //		} else {

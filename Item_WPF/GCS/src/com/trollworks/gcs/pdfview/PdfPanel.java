@@ -48,7 +48,7 @@ public class PdfPanel extends JPanel implements KeyListener, MouseListener, Scro
 	private bool				mNeedLoad;
 	private bool				mIgnorePageChange;
 
-	public PdfPanel(PdfDockable owner, PDDocument pdf, PdfRef pdfRef, int page, String highlight) {
+	public PdfPanel(PdfDockable owner, PDDocument pdf, PdfRef pdfRef, int page, string highlight) {
 		mOwner = owner;
 		mPdf = pdf;
 		setFocusable(true);
@@ -57,7 +57,7 @@ public class PdfPanel extends JPanel implements KeyListener, MouseListener, Scro
 		goToPage(pdfRef, page, highlight);
 	}
 
-	public void goToPage(PdfRef pdfRef, int page, String highlight) {
+	public void goToPage(PdfRef pdfRef, int page, string highlight) {
 		if (!mIgnorePageChange && mPdf != null) {
 			int lastPageIndex = mPageIndex;
 			mPageIndex = page;
@@ -84,7 +84,7 @@ public class PdfPanel extends JPanel implements KeyListener, MouseListener, Scro
 		return mHighlight == null ? highlight != null : !mHighlight.equals(highlight);
 	}
 
-	public int goToPageIndex(int pageIndex, String highlight) {
+	public int goToPageIndex(int pageIndex, string highlight) {
 		if (!mIgnorePageChange && mPdf != null && (mPageIndex != pageIndex || isHighlightNew(highlight)) && pageIndex >= 0 && pageIndex < mPdf.getNumberOfPages()) {
 			mPageIndex = pageIndex;
 			mHighlight = highlight;

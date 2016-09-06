@@ -69,7 +69,7 @@ public class WeightCriteria extends NumericCriteria {
 	}
 
 	@Override
-	public String getQualifierAsString(bool allowAdornments) {
+	public string getQualifierAsString(bool allowAdornments) {
 		return mQualifier.toString(allowAdornments);
 	}
 

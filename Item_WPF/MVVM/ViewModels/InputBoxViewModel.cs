@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using Item_WPF.ItemEntityModel;
 using System.Threading.Tasks;
 
 using Item_WPF.addin;

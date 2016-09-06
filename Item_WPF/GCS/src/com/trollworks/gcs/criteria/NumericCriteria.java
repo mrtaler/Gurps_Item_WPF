@@ -25,7 +25,7 @@ public abstract class NumericCriteria {
 	@Localize(locale = "de", value = "ist ")
 	@Localize(locale = "ru", value = "  ")
 	@Localize(locale = "es", value = "es ")
-	private static String IS_PREFIX;
+	private static string IS_PREFIX;
 
 	static {
 		Localization.initialize();
@@ -76,7 +76,7 @@ public abstract class NumericCriteria {
 	 * @param out The XML writer to use.
 	 * @param tag The tag to use.
 	 */
-	public void save(XMLWriter out, String tag) {
+	public void save(XMLWriter out, string tag) {
 		out.simpleTagWithAttribute(tag, getQualifierAsString(false), ATTRIBUTE_COMPARE, Enums.toId(mType));
 	}
 
@@ -84,7 +84,7 @@ public abstract class NumericCriteria {
 	 * @param allowAdornments Whether extras, such as "lbs." can be appended to the text.
 	 * @return The numeric qualifier, as a {@link String}.
 	 */
-	public abstract String getQualifierAsString(bool allowAdornments);
+	public abstract string getQualifierAsString(bool allowAdornments);
 
 	/** @return The type of comparison to make. */
 	public NumericCompareType getType() {
@@ -97,7 +97,7 @@ public abstract class NumericCriteria {
 	}
 
 	@Override
-	public String toString() {
+	public string toString() {
 		return toString(IS_PREFIX);
 	}
 
@@ -105,7 +105,7 @@ public abstract class NumericCriteria {
 	 * @param prefix A prefix to place before the description.
 	 * @return A formatted description of this object.
 	 */
-	public String toString(String prefix) {
+	public string toString(String prefix) {
 		return mType.format(prefix, getQualifierAsString(true));
 	}
 }

@@ -17,12 +17,12 @@ using com.trollworks.gcs.widgets.outline.MultiCell;
 /** A cell for displaying the casting time and duration of a spell. */
 public class SpellTimeCell extends MultiCell {
 	@Override
-	protected String getPrimaryText(ListRow row) {
+	protected string getPrimaryText(ListRow row) {
 		return row.canHaveChildren() ? "" : ((Spell) row).getCastingTime(); //$NON-NLS-1$
 	}
 
 	@Override
-	protected String getSecondaryText(ListRow row) {
+	protected string getSecondaryText(ListRow row) {
 		return row.canHaveChildren() ? "" : ((Spell) row).getDuration(); //$NON-NLS-1$
 	}
 }

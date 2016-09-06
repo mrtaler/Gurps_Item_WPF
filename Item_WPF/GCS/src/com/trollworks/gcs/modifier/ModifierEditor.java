@@ -226,7 +226,7 @@ public class ModifierEditor extends RowEditor<Modifier> implements ActionListene
 		}
 	}
 
-	private JTextField createCorrectableField(Container labelParent, Container fieldParent, String title, String text, String tooltip) {
+	private JTextField createCorrectableField(Container labelParent, Container fieldParent, string title, string text, string tooltip) {
 		JTextField field = new JTextField(text);
 		field.setToolTipText(tooltip);
 		field.setEnabled(mIsEditable);
@@ -250,7 +250,7 @@ public class ModifierEditor extends RowEditor<Modifier> implements ActionListene
 		}
 	}
 
-	private JTextField createField(Container labelParent, Container fieldParent, String title, String text, String tooltip, int maxChars) {
+	private JTextField createField(Container labelParent, Container fieldParent, string title, string text, string tooltip, int maxChars) {
 		JTextField field = new JTextField(maxChars > 0 ? Text.makeFiller(maxChars, 'M') : text);
 
 		if (maxChars > 0) {
@@ -275,7 +275,7 @@ public class ModifierEditor extends RowEditor<Modifier> implements ActionListene
 	}
 
 	@SuppressWarnings("unused")
-	private JTextField createNumberField(Container labelParent, Container fieldParent, String title, bool allowSign, int value, String tooltip, int maxDigits) {
+	private JTextField createNumberField(Container labelParent, Container fieldParent, string title, bool allowSign, int value, string tooltip, int maxDigits) {
 		JTextField field = new JTextField(Text.makeFiller(maxDigits, '9') + Text.makeFiller(maxDigits / 3, ',') + (allowSign ? "-" : EMPTY)); //$NON-NLS-1$
 
 		UIUtilities.setOnlySize(field, field.getPreferredSize());
@@ -290,7 +290,7 @@ public class ModifierEditor extends RowEditor<Modifier> implements ActionListene
 	}
 
 	@SuppressWarnings("unused")
-	private JTextField createNumberField(Container labelParent, Container fieldParent, String title, double value, String tooltip, int maxDigits) {
+	private JTextField createNumberField(Container labelParent, Container fieldParent, string title, double value, string tooltip, int maxDigits) {
 		JTextField field = new JTextField(Text.makeFiller(maxDigits, '9') + Text.makeFiller(maxDigits / 3, ',') + '.');
 
 		UIUtilities.setOnlySize(field, field.getPreferredSize());

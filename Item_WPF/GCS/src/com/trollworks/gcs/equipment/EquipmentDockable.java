@@ -22,7 +22,7 @@ public class EquipmentDockable extends LibraryDockable {
 	@Localize(locale = "de", value = "Unbenannte Ausrüstungs-Liste")
 	@Localize(locale = "ru", value = "Безымянное снаряжение")
 	@Localize(locale = "es", value = "Equipo sin nombrar")
-	private static String UNTITLED;
+	private static string UNTITLED;
 
 	static {
 		Localization.initialize();
@@ -39,7 +39,7 @@ public class EquipmentDockable extends LibraryDockable {
 	}
 
 	@Override
-	protected String getUntitledBaseName() {
+	protected string getUntitledBaseName() {
 		return UNTITLED;
 	}
 

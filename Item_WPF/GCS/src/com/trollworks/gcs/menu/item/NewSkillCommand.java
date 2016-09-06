@@ -63,7 +63,7 @@ public class NewSkillCommand extends Command {
 	private bool						mContainer;
 	private bool						mTechnique;
 
-	private NewSkillCommand(bool container, bool isTechnique, String title, String cmd, int keyCode, int modifiers) {
+	private NewSkillCommand(bool container, bool isTechnique, string title, string cmd, int keyCode, int modifiers) {
 		super(title, cmd, keyCode, modifiers);
 		mContainer = container;
 		mTechnique = isTechnique;

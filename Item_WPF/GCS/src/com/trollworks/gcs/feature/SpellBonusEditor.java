@@ -52,7 +52,7 @@ public class SpellBonusEditor extends FeatureEditor {
 		Localization.initialize();
 	}
 
-	private static const String COLLEGE_TYPE = "CollegeType"; //$NON-NLS-1$
+	private static const string COLLEGE_TYPE = "CollegeType"; //$NON-NLS-1$
 
 	/**
 	 * Create a new spell bonus editor.
@@ -90,7 +90,7 @@ public class SpellBonusEditor extends FeatureEditor {
 		grid.add(row, 1, 0);
 	}
 
-	private static String getMatchText(bool allColleges, String matchType) {
+	private static string getMatchText(bool allColleges, string matchType) {
 		if (allColleges) {
 			return ALL_COLLEGES;
 		}
@@ -132,7 +132,7 @@ public class SpellBonusEditor extends FeatureEditor {
 		}
 	}
 
-	private void adjustMatchType(SpellBonus bonus, String type) {
+	private void adjustMatchType(SpellBonus bonus, string type) {
 		if (bonus.allColleges() || !type.equals(bonus.getMatchType())) {
 			Commitable.sendCommitToFocusOwner();
 			bonus.allColleges(false);

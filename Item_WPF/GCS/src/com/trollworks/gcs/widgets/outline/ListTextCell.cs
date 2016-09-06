@@ -26,35 +26,40 @@
 //namespace com.trollworks.gcs.widgets.outline
 //{
 //    /** Represents cells in a {@link Outline}. */
-//    public class ListTextCell extends TextCell {
-//	/**
+//    public class ListTextCell : TextCell
+//    {
+//    /**
 //	 * Create a new text cell.
 //	 * 
 //	 * @param alignment The horizontal text alignment to use.
 //	 * @param wrapped Pass in <code>true</code> to enable wrapping.
 //	 */
-//	public ListTextCell(int alignment, bool wrapped) {
-//		super(alignment, wrapped);
-//	}
+//    public ListTextCell(int alignment, bool wrapped)
+//    {
+//        super(alignment, wrapped);
+//    }
 
-//	@Override
-//	public Font getFont(Row row, Column column) {
-//		return UIManager.getFont(GCSFonts.KEY_FIELD);
-//	}
+//    @Override
+//    public Font getFont(Row row, Column column)
+//    {
+//        return UIManager.getFont(GCSFonts.KEY_FIELD);
+//    }
 
-//	@Override
-//	public Color getColor(bool selected, bool active, Row row, Column column) {
-//		if (row instanceof ListRow && !((ListRow) row).isSatisfied()) {
-//			return Color.red;
-//		}
-//		return super.getColor(selected, active, row, column);
-//	}
+//    @Override
+//    public Color getColor(bool selected, bool active, Row row, Column column)
+//    {
+//        if (row instanceof ListRow && !((ListRow)row).isSatisfied()) {
+//            return Color.red;
+//        }
+//        return super.getColor(selected, active, row, column);
+//    }
 
-//	@Override
-//	public String getToolTipText(MouseEvent event, Rectangle bounds, Row row, Column column) {
-//		if (!(row instanceof ListRow) || ((ListRow) row).isSatisfied()) {
-//			return super.getToolTipText(event, bounds, row, column);
-//		}
-//		return ((ListRow) row).getReasonForUnsatisfied();
-//	}
+//    @Override
+//    public string getToolTipText(MouseEvent event, Rectangle bounds, Row row, Column column)
+//    {
+//        if (!(row instanceof ListRow) || ((ListRow)row).isSatisfied()) {
+//            return super.getToolTipText(event, bounds, row, column);
+//        }
+//        return ((ListRow)row).getReasonForUnsatisfied();
+//    }
 //}

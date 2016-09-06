@@ -1,17 +1,17 @@
 ﻿using Item_WPF.addin;
-using Item_WPF.MVVM.Models;
+
 
 namespace Item_WPF.MVVM.ViewModels
 {
     class EditPrimaryStatsViewModel : ViewModelBase
     {
-        public CharacterDB Character { get; set; }
+        public ItemEntityModel.CharacterDB Character { get; set; }
 
-        public EditPrimaryStatsViewModel() : this(new CharacterDB())
+        public EditPrimaryStatsViewModel() : this(new ItemEntityModel.CharacterDB())
         {
         }
 
-        public EditPrimaryStatsViewModel(CharacterDB character)
+        public EditPrimaryStatsViewModel(ItemEntityModel.CharacterDB character)
         {
             Character = character;
         }

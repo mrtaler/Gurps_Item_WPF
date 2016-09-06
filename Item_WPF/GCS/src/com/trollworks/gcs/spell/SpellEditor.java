@@ -448,14 +448,14 @@ public class SpellEditor extends RowEditor<Spell> implements ActionListener, Doc
 		return panel;
 	}
 
-	private static String getDisplayLevel(int level, int relativeLevel) {
+	private static string getDisplayLevel(int level, int relativeLevel) {
 		if (level < 0) {
 			return "-"; //$NON-NLS-1$
 		}
 		return Numbers.format(level) + "/" + SkillAttribute.IQ + Numbers.formatWithForcedSign(relativeLevel); //$NON-NLS-1$
 	}
 
-	private JTextField createCorrectableField(Container labelParent, Container fieldParent, String title, String text, String tooltip) {
+	private JTextField createCorrectableField(Container labelParent, Container fieldParent, string title, string text, string tooltip) {
 		JTextField field = new JTextField(text);
 		field.setToolTipText(tooltip);
 		field.setEnabled(mIsEditable);
@@ -469,7 +469,7 @@ public class SpellEditor extends RowEditor<Spell> implements ActionListener, Doc
 		return field;
 	}
 
-	private JTextField createField(Container labelParent, Container fieldParent, String title, String text, String tooltip, int maxChars) {
+	private JTextField createField(Container labelParent, Container fieldParent, string title, string text, string tooltip, int maxChars) {
 		JTextField field = new JTextField(maxChars > 0 ? Text.makeFiller(maxChars, 'M') : text);
 
 		if (maxChars > 0) {

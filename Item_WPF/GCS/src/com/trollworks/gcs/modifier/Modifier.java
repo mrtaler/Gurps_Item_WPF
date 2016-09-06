@@ -173,7 +173,7 @@ public class Modifier extends ListRow implements Comparable<Modifier> {
 	}
 
 	/** @return The page reference. */
-	public String getReference() {
+	public string getReference() {
 		return mReference;
 	}
 
@@ -201,7 +201,7 @@ public class Modifier extends ListRow implements Comparable<Modifier> {
 	}
 
 	@Override
-	public String getModifierNotes() {
+	public string getModifierNotes() {
 		return mReadOnly ? READ_ONLY : super.getModifierNotes();
 	}
 
@@ -314,22 +314,22 @@ public class Modifier extends ListRow implements Comparable<Modifier> {
 	}
 
 	@Override
-	public String getListChangedID() {
+	public string getListChangedID() {
 		return ID_LIST_CHANGED;
 	}
 
 	@Override
-	public String getLocalizedName() {
+	public string getLocalizedName() {
 		return DEFAULT_NAME;
 	}
 
 	@Override
-	public String getRowType() {
+	public string getRowType() {
 		return MODIFIER_TYPE;
 	}
 
 	@Override
-	public String getXMLTagName() {
+	public string getXMLTagName() {
 		return TAG_MODIFIER;
 	}
 
@@ -409,12 +409,12 @@ public class Modifier extends ListRow implements Comparable<Modifier> {
 	}
 
 	@Override
-	public String getDataAsText(Column column) {
+	public string getDataAsText(Column column) {
 		return ModifierColumnID.values()[column.getID()].getDataAsText(this);
 	}
 
 	@Override
-	public String toString() {
+	public string toString() {
 		StringBuilder builder = new StringBuilder();
 
 		builder.append(getName());
@@ -426,7 +426,7 @@ public class Modifier extends ListRow implements Comparable<Modifier> {
 	}
 
 	/** @return A full description of this {@link Modifier}. */
-	public String getFullDescription() {
+	public string getFullDescription() {
 		StringBuilder builder = new StringBuilder();
 		String modNote = getNotes();
 
@@ -442,7 +442,7 @@ public class Modifier extends ListRow implements Comparable<Modifier> {
 	}
 
 	/** @return The formatted cost. */
-	public String getCostDescription() {
+	public string getCostDescription() {
 		StringBuilder builder = new StringBuilder();
 		CostType costType = getCostType();
 
@@ -487,7 +487,7 @@ public class Modifier extends ListRow implements Comparable<Modifier> {
 	}
 
 	/** @return The name. */
-	public String getName() {
+	public string getName() {
 		return mName;
 	}
 

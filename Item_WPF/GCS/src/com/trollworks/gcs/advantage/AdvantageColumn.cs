@@ -42,12 +42,12 @@
 //	/** The advantage name/description. */
 //	DESCRIPTION {
 //		@Override
-//		public String toString() {
+//		public string toString() {
 //			return DESCRIPTION_TITLE;
 //		}
 
 //		@Override
-//		public String getToolTip() {
+//		public string getToolTip() {
 //			return DESCRIPTION_TOOLTIP;
 //		}
 
@@ -67,7 +67,7 @@
 //		}
 
 //		@Override
-//		public String getDataAsText(Advantage advantage) {
+//		public string getDataAsText(Advantage advantage) {
 //			StringBuilder builder = new StringBuilder();
 //			String notes = advantage.getModifierNotes();
 
@@ -87,12 +87,12 @@
 //	/** The points spent in the advantage. */
 //	POINTS {
 //		@Override
-//		public String toString() {
+//		public string toString() {
 //			return POINTS_TITLE;
 //		}
 
 //		@Override
-//		public String getToolTip() {
+//		public string getToolTip() {
 //			return POINTS_TOOLTIP;
 //		}
 
@@ -112,19 +112,19 @@
 //		}
 
 //		@Override
-//		public String getDataAsText(Advantage advantage) {
+//		public string getDataAsText(Advantage advantage) {
 //			return Numbers.format(advantage.getAdjustedPoints());
 //		}
 //	},
 //	/** The type. */
 //	TYPE {
 //		@Override
-//		public String toString() {
+//		public string toString() {
 //			return TYPE_TITLE;
 //		}
 
 //		@Override
-//		public String getToolTip() {
+//		public string getToolTip() {
 //			return TYPE_TOOLTIP;
 //		}
 
@@ -167,19 +167,19 @@
 //		}
 
 //		@Override
-//		public String getDataAsText(Advantage advantage) {
+//		public string getDataAsText(Advantage advantage) {
 //			return advantage.getTypeAsText();
 //		}
 //	},
 //	/** The category. */
 //	CATEGORY {
 //		@Override
-//		public String toString() {
+//		public string toString() {
 //			return CATEGORY_TITLE;
 //		}
 
 //		@Override
-//		public String getToolTip() {
+//		public string getToolTip() {
 //			return CATEGORY_TOOLTIP;
 //		}
 
@@ -199,19 +199,19 @@
 //		}
 
 //		@Override
-//		public String getDataAsText(Advantage advantage) {
+//		public string getDataAsText(Advantage advantage) {
 //			return advantage.getCategoriesAsString();
 //		}
 //	},
 //	/** The page reference. */
 //	REFERENCE {
 //		@Override
-//		public String toString() {
+//		public string toString() {
 //			return REFERENCE_TITLE;
 //		}
 
 //		@Override
-//		public String getToolTip() {
+//		public string getToolTip() {
 //			return REFERENCE_TOOLTIP;
 //		}
 
@@ -231,7 +231,7 @@
 //		}
 
 //		@Override
-//		public String getDataAsText(Advantage advantage) {
+//		public string getDataAsText(Advantage advantage) {
 //			return advantage.getReference();
 //		}
 //	};
@@ -301,10 +301,10 @@
 //	 * @param advantage The {@link Advantage} to get the data from.
 //	 * @return Text representing the data for this column.
 //	 */
-//	public abstract String getDataAsText(Advantage advantage);
+//	public abstract string getDataAsText(Advantage advantage);
 
 //	/** @return The tooltip for the column. */
-//	public abstract String getToolTip();
+//	public abstract string getToolTip();
 
 //	/** @return The {@link Cell} used to display the data. */
 //	public abstract Cell getCell();

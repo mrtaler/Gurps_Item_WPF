@@ -7,22 +7,19 @@
   <ConnectionName>Item1.gurpssqlserver.database.windows.net,1433</ConnectionName>
   <ConnectionString>Data Source=gurpssqlserver.database.windows.net,1433;Initial Catalog=Item1;Integrated Security=False;User ID=mrtaler</ConnectionString>
   <Database>Item1</Database>
-  <OutputDirectory>E:\Win8\Documents\GitHub\Gurps_Item_WPF\Item_WPF\addin</OutputDirectory>
+  <OutputDirectory>C:\Users\Elena\Documents\Devart\dbForge Studio for SQL Server\Export</OutputDirectory>
   <BaseFileName>Item1</BaseFileName>
   <Mode>All</Mode>
   <AppendTimestamp>True</AppendTimestamp>
   <MaxDays>0</MaxDays>
   <MaxFilesCount>0</MaxFilesCount>
   <Compression />
-  <DatabaseObjects>
-    <DatabaseObjectType ObjectType="Table" />
-    <DatabaseObjectType ObjectType="Procedure" />
-  </DatabaseObjects>
+  <DatabaseObjects />
   <Options>
     <PropertyValue Name="ScriptCreateDatabase">false</PropertyValue>
     <PropertyValue Name="SelectWithNoFromClauseComment">true</PropertyValue>
     <PropertyValue Name="ScriptUseDatabase">true</PropertyValue>
-    <PropertyValue Name="CheckObjectExistence">true</PropertyValue>
+    <PropertyValue Name="CheckObjectExistence">false</PropertyValue>
     <PropertyValue Name="UseSubSchemaNamePrefix">true</PropertyValue>
     <PropertyValue Name="ScriptCollations">false</PropertyValue>
     <PropertyValue Name="ScriptAuthorization">false</PropertyValue>
@@ -41,8 +38,8 @@
     <PropertyValue Name="ScriptPrimaryKeys">true</PropertyValue>
     <PropertyValue Name="ScriptUniqueKeys">true</PropertyValue>
     <PropertyValue Name="GenerateComments">true</PropertyValue>
-    <PropertyValue Name="LogFileName" xml:space="preserve">E:\Win8\Documents\GitHub\Gurps_Item_WPF\Item_WPF\addin\ScriptGeneration.log</PropertyValue>
+    <PropertyValue Name="LogFileName" xml:space="preserve">C:\Users\Elena\Documents\Devart\dbForge Studio for SQL Server\Export\ScriptGeneration.log</PropertyValue>
     <PropertyValue Name="WriteLog">false</PropertyValue>
-    <PropertyValue Name="ErrorHandlingMode">0</PropertyValue>
+    <PropertyValue Name="ErrorHandlingMode">2</PropertyValue>
   </Options>
 </ExportTemplate>

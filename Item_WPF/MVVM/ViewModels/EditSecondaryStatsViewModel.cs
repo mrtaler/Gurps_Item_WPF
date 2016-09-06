@@ -1,17 +1,18 @@
 ﻿using Item_WPF.addin;
 using Item_WPF.MVVM.Models;
+using Item_WPF.ItemEntityModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {
     class EditSecondaryStatsViewModel : ViewModelBase
     {
-        public CharacterDB Character { get; set; }
+        public ItemEntityModel.CharacterDB Character { get; set; }
 
-        public EditSecondaryStatsViewModel() : this(new CharacterDB())
+        public EditSecondaryStatsViewModel() : this(new ItemEntityModel.CharacterDB())
         {
         }
 
-        public EditSecondaryStatsViewModel(CharacterDB character)
+        public EditSecondaryStatsViewModel(ItemEntityModel.CharacterDB character)
         {
             Character = character;
         }

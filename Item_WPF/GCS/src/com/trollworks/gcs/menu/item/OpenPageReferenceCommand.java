@@ -56,7 +56,7 @@ public class OpenPageReferenceCommand extends Command {
 	/** The singleton {@link OpenPageReferenceCommand} for opening all page references. */
 	public static const OpenPageReferenceCommand	OPEN_EACH_INSTANCE	= new OpenPageReferenceCommand(OPEN_EACH_PAGE_REFERENCE, "OpenEachPageReferences", KeyEvent.VK_G, SHIFTED_COMMAND_MODIFIER);	//$NON-NLS-1$
 
-	private OpenPageReferenceCommand(String title, String cmd, int key, int modifiers) {
+	private OpenPageReferenceCommand(String title, string cmd, int key, int modifiers) {
 		super(title, cmd, key, modifiers);
 	}
 
@@ -83,7 +83,7 @@ public class OpenPageReferenceCommand extends Command {
 		}
 	}
 
-	public static void openReference(String reference, String highlight) {
+	public static void openReference(String reference, string highlight) {
 		int i = reference.length() - 1;
 		while (i >= 0) {
 			char ch = reference.charAt(i);

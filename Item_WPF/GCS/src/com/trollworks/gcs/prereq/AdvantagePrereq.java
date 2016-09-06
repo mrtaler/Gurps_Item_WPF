@@ -116,7 +116,7 @@ public class AdvantagePrereq extends NameLevelPrereq {
 	}
 
 	@Override
-	public String getXMLTag() {
+	public string getXMLTag() {
 		return TAG_ROOT;
 	}
 
@@ -126,7 +126,7 @@ public class AdvantagePrereq extends NameLevelPrereq {
 	}
 
 	@Override
-	public bool satisfied(GURPSCharacter character, ListRow exclude, StringBuilder builder, String prefix) {
+	public bool satisfied(GURPSCharacter character, ListRow exclude, StringBuilder builder, string prefix) {
 		bool satisfied = false;
 		StringCriteria nameCriteria = getNameCriteria();
 		IntegerCriteria levelCriteria = getLevelCriteria();

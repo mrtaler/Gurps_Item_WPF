@@ -119,12 +119,12 @@ public class CostReduction implements Feature {
 	}
 
 	@Override
-	public String getXMLTag() {
+	public string getXMLTag() {
 		return TAG_ROOT;
 	}
 
 	@Override
-	public String getKey() {
+	public string getKey() {
 		return GURPSCharacter.ATTRIBUTES_PREFIX + mAttribute.name();
 	}
 

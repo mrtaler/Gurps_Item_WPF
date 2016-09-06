@@ -262,7 +262,7 @@ public class TechniqueEditor extends RowEditor<Technique> implements ActionListe
 		return (SkillDefaultType) mDefaultTypeCombo.getSelectedItem();
 	}
 
-	private String getSpecialization() {
+	private string getSpecialization() {
 		StringBuilder builder = new StringBuilder();
 		String specialization = mDefaultSpecializationField.getText();
 
@@ -328,7 +328,7 @@ public class TechniqueEditor extends RowEditor<Technique> implements ActionListe
 		return scrollPanel;
 	}
 
-	private JTextField createCorrectableField(Container labelParent, Container fieldParent, String title, String text, String tooltip) {
+	private JTextField createCorrectableField(Container labelParent, Container fieldParent, string title, string text, string tooltip) {
 		JTextField field = new JTextField(text);
 		field.setToolTipText(tooltip);
 		field.setEnabled(mIsEditable);
@@ -344,7 +344,7 @@ public class TechniqueEditor extends RowEditor<Technique> implements ActionListe
 		return field;
 	}
 
-	private JTextField createField(Container labelParent, Container fieldParent, String title, String text, String tooltip, int maxChars) {
+	private JTextField createField(Container labelParent, Container fieldParent, string title, string text, string tooltip, int maxChars) {
 		JTextField field = new JTextField(maxChars > 0 ? Text.makeFiller(maxChars, 'M') : text);
 
 		if (maxChars > 0) {
@@ -362,7 +362,7 @@ public class TechniqueEditor extends RowEditor<Technique> implements ActionListe
 	}
 
 	@SuppressWarnings("unused")
-	private JTextField createNumberField(Container labelParent, Container fieldParent, String title, String tooltip, int value, int maxDigits) {
+	private JTextField createNumberField(Container labelParent, Container fieldParent, string title, string tooltip, int value, int maxDigits) {
 		JTextField field = createField(labelParent, fieldParent, title, Numbers.formatWithForcedSign(value), tooltip, maxDigits + 1);
 		new NumberFilter(field, false, true, false, maxDigits);
 		return field;

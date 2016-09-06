@@ -34,12 +34,12 @@ public enum SpellColumn {
 	/** The spell name/description. */
 	DESCRIPTION {
 		@Override
-		public String toString() {
+		public string toString() {
 			return DESCRIPTION_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return DESCRIPTION_TOOLTIP;
 		}
 
@@ -59,7 +59,7 @@ public enum SpellColumn {
 		}
 
 		@Override
-		public String getDataAsText(Spell spell) {
+		public string getDataAsText(Spell spell) {
 			StringBuilder builder = new StringBuilder();
 			String notes = spell.getNotes();
 
@@ -74,12 +74,12 @@ public enum SpellColumn {
 	/** The spell class/college. */
 	CLASS {
 		@Override
-		public String toString() {
+		public string toString() {
 			return CLASS_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return CLASS_TOOLTIP;
 		}
 
@@ -99,7 +99,7 @@ public enum SpellColumn {
 		}
 
 		@Override
-		public String getDataAsText(Spell spell) {
+		public string getDataAsText(Spell spell) {
 			if (!spell.canHaveChildren()) {
 				StringBuilder builder = new StringBuilder();
 
@@ -114,12 +114,12 @@ public enum SpellColumn {
 	/** The casting &amp; maintenance cost. */
 	MANA_COST {
 		@Override
-		public String toString() {
+		public string toString() {
 			return MANA_COST_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return MANA_COST_TOOLTIP;
 		}
 
@@ -139,7 +139,7 @@ public enum SpellColumn {
 		}
 
 		@Override
-		public String getDataAsText(Spell spell) {
+		public string getDataAsText(Spell spell) {
 			if (!spell.canHaveChildren()) {
 				StringBuilder builder = new StringBuilder();
 
@@ -154,12 +154,12 @@ public enum SpellColumn {
 	/** The casting time &amp; duration. */
 	TIME {
 		@Override
-		public String toString() {
+		public string toString() {
 			return TIME_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return TIME_TOOLTIP;
 		}
 
@@ -179,7 +179,7 @@ public enum SpellColumn {
 		}
 
 		@Override
-		public String getDataAsText(Spell spell) {
+		public string getDataAsText(Spell spell) {
 			if (!spell.canHaveChildren()) {
 				StringBuilder builder = new StringBuilder();
 
@@ -194,12 +194,12 @@ public enum SpellColumn {
 	/** The spell level. */
 	LEVEL {
 		@Override
-		public String toString() {
+		public string toString() {
 			return LEVEL_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return LEVEL_TOOLTIP;
 		}
 
@@ -219,7 +219,7 @@ public enum SpellColumn {
 		}
 
 		@Override
-		public String getDataAsText(Spell spell) {
+		public string getDataAsText(Spell spell) {
 			int level;
 
 			if (spell.canHaveChildren()) {
@@ -235,12 +235,12 @@ public enum SpellColumn {
 	/** The relative spell level. */
 	RELATIVE_LEVEL {
 		@Override
-		public String toString() {
+		public string toString() {
 			return RELATIVE_LEVEL_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return RELATIVE_LEVEL_TOOLTIP;
 		}
 
@@ -272,7 +272,7 @@ public enum SpellColumn {
 		}
 
 		@Override
-		public String getDataAsText(Spell spell) {
+		public string getDataAsText(Spell spell) {
 			if (!spell.canHaveChildren()) {
 				int level = getRelativeLevel(spell);
 
@@ -287,12 +287,12 @@ public enum SpellColumn {
 	/** The points spent in the spell. */
 	POINTS {
 		@Override
-		public String toString() {
+		public string toString() {
 			return POINTS_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return POINTS_TOOLTIP;
 		}
 
@@ -312,19 +312,19 @@ public enum SpellColumn {
 		}
 
 		@Override
-		public String getDataAsText(Spell spell) {
+		public string getDataAsText(Spell spell) {
 			return spell.canHaveChildren() ? "" : Numbers.format(spell.getPoints()); //$NON-NLS-1$
 		}
 	},
 	/** The category. */
 	CATEGORY {
 		@Override
-		public String toString() {
+		public string toString() {
 			return CATEGORY_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return CATEGORY_TOOLTIP;
 		}
 
@@ -344,19 +344,19 @@ public enum SpellColumn {
 		}
 
 		@Override
-		public String getDataAsText(Spell spell) {
+		public string getDataAsText(Spell spell) {
 			return spell.getCategoriesAsString();
 		}
 	},
 	/** The page reference. */
 	REFERENCE {
 		@Override
-		public String toString() {
+		public string toString() {
 			return REFERENCE_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return REFERENCE_TOOLTIP;
 		}
 
@@ -376,7 +376,7 @@ public enum SpellColumn {
 		}
 
 		@Override
-		public String getDataAsText(Spell spell) {
+		public string getDataAsText(Spell spell) {
 			return spell.getReference();
 		}
 	};
@@ -485,10 +485,10 @@ public enum SpellColumn {
 	 * @param spell The {@link Spell} to get the data from.
 	 * @return Text representing the data for this column.
 	 */
-	public abstract String getDataAsText(Spell spell);
+	public abstract string getDataAsText(Spell spell);
 
 	/** @return The tooltip for the column. */
-	public abstract String getToolTip();
+	public abstract string getToolTip();
 
 	/** @return The {@link Cell} used to display the data. */
 	public abstract Cell getCell();

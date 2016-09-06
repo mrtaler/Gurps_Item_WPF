@@ -21,42 +21,42 @@ public enum HitLocation {
 	/** The skull hit location. */
 	SKULL {
 		@Override
-		public String toString() {
+		public string toString() {
 			return SKULL_TITLE;
 		}
 	},
 	/** The eyes hit location. */
 	EYES {
 		@Override
-		public String toString() {
+		public string toString() {
 			return EYES_TITLE;
 		}
 	},
 	/** The face hit location. */
 	FACE {
 		@Override
-		public String toString() {
+		public string toString() {
 			return FACE_TITLE;
 		}
 	},
 	/** The neck hit location. */
 	NECK {
 		@Override
-		public String toString() {
+		public string toString() {
 			return NECK_TITLE;
 		}
 	},
 	/** The torso hit location. */
 	TORSO {
 		@Override
-		public String toString() {
+		public string toString() {
 			return TORSO_TITLE;
 		}
 	},
 	/** The vitals hit location. */
 	VITALS {
 		@Override
-		public String toString() {
+		public string toString() {
 			return VITALS_TITLE;
 		}
 
@@ -68,49 +68,49 @@ public enum HitLocation {
 	/** The groin hit location. */
 	GROIN {
 		@Override
-		public String toString() {
+		public string toString() {
 			return GROIN_TITLE;
 		}
 	},
 	/** The arm hit location. */
 	ARMS {
 		@Override
-		public String toString() {
+		public string toString() {
 			return ARMS_TITLE;
 		}
 	},
 	/** The hand hit location. */
 	HANDS {
 		@Override
-		public String toString() {
+		public string toString() {
 			return HANDS_TITLE;
 		}
 	},
 	/** The leg hit location. */
 	LEGS {
 		@Override
-		public String toString() {
+		public string toString() {
 			return LEGS_TITLE;
 		}
 	},
 	/** The foot hit location. */
 	FEET {
 		@Override
-		public String toString() {
+		public string toString() {
 			return FEET_TITLE;
 		}
 	},
 	/** The full body hit location. */
 	FULL_BODY {
 		@Override
-		public String toString() {
+		public string toString() {
 			return FULL_BODY_TITLE;
 		}
 	},
 	/** The full body except eyes hit location. */
 	FULL_BODY_EXCEPT_EYES {
 		@Override
-		public String toString() {
+		public string toString() {
 			return FULL_BODY_EXCEPT_EYES_TITLE;
 		}
 	};

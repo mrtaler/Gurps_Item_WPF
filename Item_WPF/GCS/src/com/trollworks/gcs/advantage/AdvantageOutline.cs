@@ -107,12 +107,12 @@
 //	}
 
 //	@Override
-//	public String getIncrementTitle() {
+//	public string getIncrementTitle() {
 //		return INCREMENT;
 //	}
 
 //	@Override
-//	public String getDecrementTitle() {
+//	public string getDecrementTitle() {
 //		return DECREMENT;
 //	}
 

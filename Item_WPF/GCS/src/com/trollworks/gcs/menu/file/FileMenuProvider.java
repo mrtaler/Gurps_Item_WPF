@@ -38,13 +38,13 @@ public class FileMenuProvider implements MenuProvider {
 	@Localize(locale = "de", value = "Datei")
 	@Localize(locale = "ru", value = "Файл")
 	@Localize(locale = "es", value = "Archivo")
-	private static String FILE;
+	private static string FILE;
 
 	static {
 		Localization.initialize();
 	}
 
-	public static const String NAME = "File"; //$NON-NLS-1$
+	public static const string NAME = "File"; //$NON-NLS-1$
 
 	@Override
 	public Set<Command> getModifiableCommands() {

@@ -195,7 +195,7 @@ public class ModifierListEditor extends ActionPanel implements ActionListener {
 	}
 
 	@Override
-	public String toString() {
+	public string toString() {
 		return MODIFIERS;
 	}
 

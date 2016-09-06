@@ -1,0 +1,33 @@
+﻿<Window x:Class="Item_WPF.MVVM.Serialize.SerializeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Item_WPF.MVVM.Serialize"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="SerializeView"
+        Width="552"
+        Height="300"
+        mc:Ignorable="d">
+    <Grid>
+        <Button x:Name="button"
+                Width="107"
+                Margin="10,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Command="{Binding LoadFileCommand}"
+                CommandParameter="skl"
+                Content="Open Skill File" />
+        <Label x:Name="label"
+               Margin="122,10,10,0"
+               VerticalAlignment="Top"
+               Content="{Binding XMLSkillPatch}" Height="45" />
+        <Button x:Name="button1"
+                Width="107"
+                Margin="10,35,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Command="{Binding SerializeSkillCommand}"
+                Content="Serialize Skill" />
+
+    </Grid>
+</Window>

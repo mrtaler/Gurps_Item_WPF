@@ -120,7 +120,7 @@ public class ExportToGurpsCalculatorCommand extends Command {
 		return result;
 	}
 
-	static String getStyle() {
+	static string getStyle() {
 		// for copying style
 		JLabel label = new JLabel();
 		Font font = label.getFont();

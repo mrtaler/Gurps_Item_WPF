@@ -133,13 +133,13 @@ public class TemplateDockable extends CommonDockable implements NotifierTarget, 
 	}
 
 	@Override
-	public String getDescriptor() {
+	public string getDescriptor() {
 		// RAW: Implement
 		return null;
 	}
 
 	@Override
-	protected String getUntitledBaseName() {
+	protected string getUntitledBaseName() {
 		return UNTITLED;
 	}
 
@@ -154,7 +154,7 @@ public class TemplateDockable extends CommonDockable implements NotifierTarget, 
 	}
 
 	@Override
-	public void handleNotification(Object producer, String name, Object data) {
+	public void handleNotification(Object producer, string name, Object data) {
 		getDataFile().notifySingle(Advantage.ID_LIST_CHANGED, null);
 	}
 
@@ -184,7 +184,7 @@ public class TemplateDockable extends CommonDockable implements NotifierTarget, 
 		return list;
 	}
 
-	private static void searchOne(ListOutline outline, String text, ArrayList<Object> list) {
+	private static void searchOne(ListOutline outline, string text, ArrayList<Object> list) {
 		for (ListRow row : new RowIterator<ListRow>(outline.getModel())) {
 			if (row.contains(text, true)) {
 				list.add(row);

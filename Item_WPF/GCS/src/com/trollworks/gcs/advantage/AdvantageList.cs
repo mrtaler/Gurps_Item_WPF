@@ -38,7 +38,7 @@
 //	}
 
 //	@Override
-//	public String getXMLTagName() {
+//	public string getXMLTagName() {
 //		return TAG_ROOT;
 //	}
 

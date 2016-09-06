@@ -20,7 +20,7 @@
 //	/** The standard grouping container type. */
 //	GROUP {
 //		@Override
-//		public String toString() {
+//		public string toString() {
 //			return GROUP_TITLE;
 //		}
 //	},
@@ -30,7 +30,7 @@
 //	 */
 //	META_TRAIT {
 //		@Override
-//		public String toString() {
+//		public string toString() {
 //			return META_TRAIT_TITLE;
 //		}
 //	},
@@ -40,7 +40,7 @@
 //	 */
 //	RACE {
 //		@Override
-//		public String toString() {
+//		public string toString() {
 //			return RACE_TITLE;
 //		}
 //	},
@@ -51,7 +51,7 @@
 //	 */
 //	ALTERNATIVE_ABILITIES {
 //		@Override
-//		public String toString() {
+//		public string toString() {
 //			return ALTERNATIVE_ABILITIES_TITLE;
 //		}
 //	};

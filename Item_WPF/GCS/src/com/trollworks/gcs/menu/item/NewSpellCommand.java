@@ -52,7 +52,7 @@ public class NewSpellCommand extends Command {
 	public static const NewSpellCommand	CONTAINER_INSTANCE	= new NewSpellCommand(true, SPELL_CONTAINER, CMD_SPELL_CONTAINER, KeyEvent.VK_B, SHIFTED_COMMAND_MODIFIER);
 	private bool						mContainer;
 
-	private NewSpellCommand(bool container, String title, String cmd, int keyCode, int modifiers) {
+	private NewSpellCommand(bool container, string title, string cmd, int keyCode, int modifiers) {
 		super(title, cmd, keyCode, modifiers);
 		mContainer = container;
 	}
