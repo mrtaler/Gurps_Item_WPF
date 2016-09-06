@@ -318,11 +318,11 @@
     <Compile Include="MVVM\Models\ItemsForSortModel.cs" />
     <Compile Include="MVVM\Models\ItemToGridModel.cs" />
     <Compile Include="MVVM\Models\Skill.cs" />
-    <Compile Include="MVVM\Serialize\Model\1.cs" />
     <Compile Include="MVVM\Serialize\Model\ContextModel\AdvantageDB.cs" />
     <Compile Include="MVVM\Serialize\Model\advantageSerialize.cs" />
     <Compile Include="MVVM\Serialize\Model\advantageXML.cs" />
     <Compile Include="MVVM\Serialize\Model\Category.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\prereq_listDB.cs" />
     <Compile Include="MVVM\Serialize\Model\Default.cs" />
     <Compile Include="MVVM\Serialize\Model\ContextModel\DefaultSkill.cs" />
     <Compile Include="MVVM\Serialize\Model\ew.cs" />
