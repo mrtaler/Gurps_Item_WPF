@@ -172,7 +172,7 @@ public abstract class DataFile implements Undoable {
 	public abstract int getXMLTagVersion();
 
 	/** @return The XML root container tag name for this particular file. */
-	public abstract String getXMLTagName();
+	public abstract string getXMLTagName();
 
 	/**
 	 * Called to match an XML tag name with the root tag for this data file.

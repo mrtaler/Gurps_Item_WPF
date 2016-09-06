@@ -37,7 +37,7 @@ public class EquipmentList extends ListFile {
 	}
 
 	@Override
-	public String getXMLTagName() {
+	public string getXMLTagName() {
 		return TAG_ROOT;
 	}
 

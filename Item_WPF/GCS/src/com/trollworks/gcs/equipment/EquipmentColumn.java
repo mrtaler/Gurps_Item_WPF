@@ -39,17 +39,17 @@ public enum EquipmentColumn {
 	/** The equipment name/description. */
 	DESCRIPTION {
 		@Override
-		public String toString() {
+		public string toString() {
 			return DESCRIPTION_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return DESCRIPTION_TOOLTIP;
 		}
 
 		@Override
-		public String toString(GURPSCharacter character) {
+		public string toString(GURPSCharacter character) {
 			if (character != null) {
 				return MessageFormat.format(DESCRIPTION_TOTALS, character.getWeightCarried().toString(), Numbers.format(character.getWealthCarried()));
 			}
@@ -72,7 +72,7 @@ public enum EquipmentColumn {
 		}
 
 		@Override
-		public String getDataAsText(Equipment equipment) {
+		public string getDataAsText(Equipment equipment) {
 			StringBuilder builder = new StringBuilder();
 			String notes = equipment.getNotes();
 
@@ -87,12 +87,12 @@ public enum EquipmentColumn {
 	/** The current equipment state. */
 	STATE {
 		@Override
-		public String toString() {
+		public string toString() {
 			return STATE_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return STATE_TOOLTIP;
 		}
 
@@ -112,19 +112,19 @@ public enum EquipmentColumn {
 		}
 
 		@Override
-		public String getDataAsText(Equipment equipment) {
+		public string getDataAsText(Equipment equipment) {
 			return equipment.getState().toShortName();
 		}
 	},
 	/** The quantity. */
 	QUANTITY {
 		@Override
-		public String toString() {
+		public string toString() {
 			return QUANTITY_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return QUANTITY_TOOLTIP;
 		}
 
@@ -144,19 +144,19 @@ public enum EquipmentColumn {
 		}
 
 		@Override
-		public String getDataAsText(Equipment equipment) {
+		public string getDataAsText(Equipment equipment) {
 			return Numbers.format(equipment.getQuantity());
 		}
 	},
 	/** The tech level. */
 	TECH_LEVEL {
 		@Override
-		public String toString() {
+		public string toString() {
 			return TECH_LEVEL_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return TECH_LEVEL_TOOLTIP;
 		}
 
@@ -176,19 +176,19 @@ public enum EquipmentColumn {
 		}
 
 		@Override
-		public String getDataAsText(Equipment equipment) {
+		public string getDataAsText(Equipment equipment) {
 			return equipment.getTechLevel();
 		}
 	},
 	/** The legality class. */
 	LEGALITY_CLASS {
 		@Override
-		public String toString() {
+		public string toString() {
 			return LEGALITY_CLASS_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return LEGALITY_CLASS_TOOLTIP;
 		}
 
@@ -208,19 +208,19 @@ public enum EquipmentColumn {
 		}
 
 		@Override
-		public String getDataAsText(Equipment equipment) {
+		public string getDataAsText(Equipment equipment) {
 			return equipment.getLegalityClass();
 		}
 	},
 	/** The value. */
 	VALUE {
 		@Override
-		public String toString() {
+		public string toString() {
 			return VALUE_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return VALUE_TOOLTIP;
 		}
 
@@ -240,19 +240,19 @@ public enum EquipmentColumn {
 		}
 
 		@Override
-		public String getDataAsText(Equipment equipment) {
+		public string getDataAsText(Equipment equipment) {
 			return Numbers.format(equipment.getValue());
 		}
 	},
 	/** The weight. */
 	WEIGHT {
 		@Override
-		public String toString() {
+		public string toString() {
 			return WEIGHT_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return WEIGHT_TOOLTIP;
 		}
 
@@ -272,19 +272,19 @@ public enum EquipmentColumn {
 		}
 
 		@Override
-		public String getDataAsText(Equipment equipment) {
+		public string getDataAsText(Equipment equipment) {
 			return getDisplayWeight(equipment.getWeight());
 		}
 	},
 	/** The value. */
 	EXT_VALUE {
 		@Override
-		public String toString() {
+		public string toString() {
 			return EXT_VALUE_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return EXT_VALUE_TOOLTIP;
 		}
 
@@ -304,19 +304,19 @@ public enum EquipmentColumn {
 		}
 
 		@Override
-		public String getDataAsText(Equipment equipment) {
+		public string getDataAsText(Equipment equipment) {
 			return Numbers.format(equipment.getExtendedValue());
 		}
 	},
 	/** The weight. */
 	EXT_WEIGHT {
 		@Override
-		public String toString() {
+		public string toString() {
 			return EXT_WEIGHT_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return EXT_WEIGHT_TOOLTIP;
 		}
 
@@ -336,19 +336,19 @@ public enum EquipmentColumn {
 		}
 
 		@Override
-		public String getDataAsText(Equipment equipment) {
+		public string getDataAsText(Equipment equipment) {
 			return getDisplayWeight(equipment.getExtendedWeight());
 		}
 	},
 	/** The category. */
 	CATEGORY {
 		@Override
-		public String toString() {
+		public string toString() {
 			return CATEGORY_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return CATEGORY_TOOLTIP;
 		}
 
@@ -368,19 +368,19 @@ public enum EquipmentColumn {
 		}
 
 		@Override
-		public String getDataAsText(Equipment equipment) {
+		public string getDataAsText(Equipment equipment) {
 			return equipment.getCategoriesAsString();
 		}
 	},
 	/** The page reference. */
 	REFERENCE {
 		@Override
-		public String toString() {
+		public string toString() {
 			return REFERENCE_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return REFERENCE_TOOLTIP;
 		}
 
@@ -400,7 +400,7 @@ public enum EquipmentColumn {
 		}
 
 		@Override
-		public String getDataAsText(Equipment equipment) {
+		public string getDataAsText(Equipment equipment) {
 			return equipment.getReference();
 		}
 	};
@@ -524,7 +524,7 @@ public enum EquipmentColumn {
 	 *            <code>null</code>.
 	 * @return The header title.
 	 */
-	public String toString(GURPSCharacter character) {
+	public string toString(GURPSCharacter character) {
 		return toString();
 	}
 
@@ -538,10 +538,10 @@ public enum EquipmentColumn {
 	 * @param equipment The {@link Equipment} to get the data from.
 	 * @return Text representing the data for this column.
 	 */
-	public abstract String getDataAsText(Equipment equipment);
+	public abstract string getDataAsText(Equipment equipment);
 
 	/** @return The tooltip for the column. */
-	public abstract String getToolTip();
+	public abstract string getToolTip();
 
 	/** @return The {@link Cell} used to display the data. */
 	public abstract Cell getCell();
@@ -573,7 +573,7 @@ public enum EquipmentColumn {
 		}
 	}
 
-	public static String getDisplayWeight(WeightValue weight) {
+	public static string getDisplayWeight(WeightValue weight) {
 		WeightUnits defaultWeightUnits = SheetPreferences.getWeightUnits();
 		if (SheetPreferences.areGurpsMetricRulesUsed()) {
 			if (defaultWeightUnits.isMetric()) {

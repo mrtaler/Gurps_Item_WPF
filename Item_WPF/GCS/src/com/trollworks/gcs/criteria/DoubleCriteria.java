@@ -68,7 +68,7 @@ public class DoubleCriteria extends NumericCriteria {
 	}
 
 	@Override
-	public String getQualifierAsString(bool allowAdornments) {
+	public string getQualifierAsString(bool allowAdornments) {
 		return Double.toString(mQualifier);
 	}
 

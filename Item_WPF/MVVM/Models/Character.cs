@@ -1,9 +1,11 @@
-﻿using Item_WPF.MVVM.Models;
+﻿using Item_WPF.ItemEntityModel;
+using Item_WPF.MVVM.Models;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 
-namespace Item_WPF
+namespace Item_WPF.ItemEntityModel
+
 {
     // This class represents a GURPS character.
     public partial class CharacterDB
@@ -321,14 +323,14 @@ namespace Item_WPF
         }
 
         // Character skills
-        private ObservableCollection<Skill> skills = new ObservableCollection<Skill>();
-        public ObservableCollection<Skill> Skills
-        {
-            get
-            {
-                return skills;
-            }
-        }
+        //private ObservableCollection<Skill> skills = new ObservableCollection<Skill>();
+        //public ObservableCollection<Skill> Skills
+        //{
+        //    get
+        //    {
+        //        return skills;
+        //    }
+        //}
 
         // Calculation of character points spent on this character
         public int CharacterPointsPrimarySkill
@@ -352,7 +354,7 @@ namespace Item_WPF
                 int points = 0;
                 foreach (Advantage advantage in Advantages)
                 {
-                    points += advantage.Points;
+               //     points += advantage.Points;
                 }
                 return points;
             }
@@ -361,12 +363,12 @@ namespace Item_WPF
         {
             get
             {
-                int points = 0;
-                foreach (Skill skill in Skills)
-                {
-                    points += skill.Points;
-                }
-                return points;
+            //    int points = 0;
+            ////    foreach (Skill skill in Skills)
+            ////    {
+            //////        points += skill.Points;
+            ////    }
+                return 0;
             }
         }
         public int CharacterPoints
@@ -377,9 +379,9 @@ namespace Item_WPF
             }
         }
 
-        public CharacterDB()
-        {
-        }
+        //public CharacterDB()
+        //{
+        //}
 
         public CharacterDB Copy()
         {
@@ -388,7 +390,8 @@ namespace Item_WPF
 
         public override string ToString()
         {
-            return Name;
+            // return Name;
+            return name;
         }
     }
 }

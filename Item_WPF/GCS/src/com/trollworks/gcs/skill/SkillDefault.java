@@ -68,7 +68,7 @@ public class SkillDefault {
 	 *            not default from a skill or the skill doesn't require a specialization.
 	 * @param modifier The modifier to use.
 	 */
-	public SkillDefault(SkillDefaultType type, String name, String specialization, int modifier) {
+	public SkillDefault(SkillDefaultType type, string name, string specialization, int modifier) {
 		setType(type);
 		setName(name);
 		setSpecialization(specialization);
@@ -184,7 +184,7 @@ public class SkillDefault {
 	}
 
 	/** @return The full name of the skill to default from. */
-	public String getFullName() {
+	public string getFullName() {
 		if (mType.isSkillBased()) {
 			StringBuilder builder = new StringBuilder();
 			builder.append(mName);
@@ -208,7 +208,7 @@ public class SkillDefault {
 	 *         {@link SkillDefaultType} whose {@link SkillDefaultType#isSkillBased()} method returns
 	 *         <code>true</code>.
 	 */
-	public String getName() {
+	public string getName() {
 		return mName;
 	}
 
@@ -222,7 +222,7 @@ public class SkillDefault {
 	 *         returns a {@link SkillDefaultType} whose {@link SkillDefaultType#isSkillBased()}
 	 *         method returns <code>true</code>.
 	 */
-	public String getSpecialization() {
+	public string getSpecialization() {
 		return mSpecialization;
 	}
 
@@ -271,11 +271,11 @@ public class SkillDefault {
 	}
 
 	@Override
-	public String toString() {
+	public string toString() {
 		return getFullName() + getModifierAsString();
 	}
 
-	public String getModifierAsString() {
+	public string getModifierAsString() {
 		if (mModifier > 0) {
 			return " + " + mModifier; //$NON-NLS-1$
 		} else if (mModifier < 0) {

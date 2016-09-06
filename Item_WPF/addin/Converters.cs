@@ -9,79 +9,10 @@ using System.Windows.Media;
 using System.Collections.Generic;
 
 using System.Text;
+using Item_WPF.ItemEntityModel;
 
 namespace Item_WPF.addin
 {
-    #region image converter
-    public class ImageConverter : ConvertorBase<ImageConverter>
-    {
-        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            byte[] bytes = (byte[])value;
-
-            if (bytes != null)
-            {
-                using (System.IO.MemoryStream ms = new System.IO.MemoryStream(bytes, 0, bytes.Length))
-                {
-                    BitmapImage image = new BitmapImage();
-                    image.BeginInit();
-                    image.CacheOption = BitmapCacheOption.OnLoad;
-                    image.StreamSource = ms;
-                    image.EndInit();
-                    return image;
-                }
-            }
-            else return null;
-        }
-
-        public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            BitmapSource image = (BitmapSource)value;
-            if (image != null) return System.IO.File.ReadAllBytes(image.ToString());
-            else return null;
-        }
-    }
-    #endregion
-    #region deciminal converter
-    public class DeciminalConverterString : ConvertorBase<DeciminalConverterString>
-    {
-        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            string str = parameter as string;
-            return System.Convert.ToString(value, culture) + str;
-        }
-
-        public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            string convertValue = (string)value;
-            string str = parameter as string;
-            if (str != null) convertValue = convertValue.Replace(str, "");
-
-            convertValue = convertValue.Replace(" ", "");
-            char separator = CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0];
-            if (separator == '.')
-                return System.Convert.ToDecimal(convertValue.Replace(',', separator));
-            else return System.Convert.ToDecimal(convertValue.Replace('.', separator));
-        }
-    }
-    public class CostDeciminalConverter : ConvertorBase<CostDeciminalConverter>
-    {
-        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            return System.Convert.ToString(value, culture) + "$";
-        }
-
-        public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            string convertValue = (string)value;
-            convertValue = convertValue.Replace("$", "");
-            char separator = CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0];
-            if (separator == '.')
-                return System.Convert.ToDecimal(convertValue.Replace(',', separator));
-            else return System.Convert.ToDecimal(convertValue.Replace('.', separator));
-        }
-    }
-    #endregion
     #region dataContextConverter
     class DatacontextTupeFromClass : MultiConvertorBase<DatacontextTupeFromClass>
     {
@@ -93,11 +24,13 @@ namespace Item_WPF.addin
             // I added this because I kept getting DependecyProperty.UnsetValue 
             // Passed in as the program initializes
 
-            ObservableCollection<WeaponType> weaponTypescCollection = (ObservableCollection<WeaponType>)values[0];
+            ObservableCollection<ItemSubClass> weaponTypescCollection = (ObservableCollection<ItemSubClass>)values[0];
             int findClass = (int)values[1];
-            return new ObservableCollection<WeaponType>(
+            ObservableCollection < ItemSubClass > ret= new ObservableCollection<ItemSubClass>(
                        weaponTypescCollection.
-                           Where(p => p.WeaponClass.id == findClass));
+                           Where(p => p.idGurpsSubClass == findClass));
+
+            return ret; 
         }
     }
     #endregion
@@ -230,8 +163,8 @@ namespace Item_WPF.addin
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            WeaponType WT = value as WeaponType;
-            if (WT != null && WT.name == "Shotgun")
+            ItemSubClass WT = value as ItemSubClass;
+            if (WT != null && WT.NameSub == "Shotgun")
                 return Visibility.Visible;
             else return Visibility.Hidden;
         }
@@ -548,7 +481,7 @@ namespace Item_WPF.addin
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             // Все проверки для краткости выкинул
-            return (string)value == "Gun" ?
+            return (string)value == "Weapon" ?
                 new SolidColorBrush(Colors.LightGreen)
                 : new SolidColorBrush(Colors.White);
         }
@@ -584,6 +517,47 @@ namespace Item_WPF.addin
                 else w += item.ITEM.usPrice * item.CountItems;
             }
             return w.ToString();
+        }
+    }
+    #endregion
+    #region MountToAttachPointConvert
+    class MountAttachmentPointConvert : MultiConvertorBase<MountAttachmentPointConvert>
+    {
+        public ObservableCollection<AvailableAttachSlot> ASlot { set; private get; }
+        public int? IdItem { set; private get; }
+        public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            ASlot = values[0] as ObservableCollection<AvailableAttachSlot>;
+            IdItem = values[1] as int?;
+            int findslotPoint = System.Convert.ToInt32(parameter);
+            if (ASlot.FirstOrDefault(p => p.rItemId == IdItem) != null)
+            {
+                return ASlot.FirstOrDefault(p => p.rItemId == IdItem && p.rATTACHMENTSLOT == findslotPoint).rAttachmentmount;
+            }
+            else return 1;      
+                //(from p in ASlot
+                            // where p.rATTACHMENTSLOT == findslotPoint
+                            // select p.rAttachmentmount).FirstOrDefault();
+            //if (MountSlot != 0)
+           
+            //else return 0;
+        }
+        public override object[] ConvertBack(object value, Type[] targetType, object parameter, CultureInfo culture)
+        {
+            int findslotPoint = System.Convert.ToInt32(parameter);
+            int selVal = System.Convert.ToInt32(value);
+            AvailableAttachSlot ase = ASlot.FirstOrDefault(p =>
+            p.rItemId == IdItem && p.rATTACHMENTSLOT == findslotPoint);
+            if (ase != null)
+            {
+                //ASlot.Remove(ase);
+                ase.rAttachmentmount = selVal;
+                //ASlot.Add(ase);
+            }
+            object[] ret = new object[2];
+            ret[0] = ASlot;
+            ret[1] = IdItem;
+            return ret;
         }
     }
     #endregion

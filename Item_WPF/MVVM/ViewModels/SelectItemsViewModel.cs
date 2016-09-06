@@ -1,4 +1,5 @@
 ﻿using Item_WPF.addin;
+using Item_WPF.ItemEntityModel;
 using Item_WPF.MVVM.Models;
 using System;
 using System.Collections.Generic;
@@ -28,16 +29,16 @@ namespace Item_WPF.MVVM.ViewModels
             Items = new ObservableCollection<ITEM>(_context.ITEMs);
 
             _parametr = Parametr;
-            #region if (Parametr=="Gun")
-            if (Parametr == "Gun")
+            #region if (Parametr=="Weapon")
+            if (Parametr == "Weapon")
             {
                 IttForSort = new ObservableCollection<ItemsForSortModel>(_context.ITEMs.
-                Where(p => p.ItemClass.name == Parametr).
+                Where(p => p.ItemSubClass.ItemClass.name == Parametr).
                 Select(p => new
                 {
                     _uiIndex = p.uiIndex,
                     _szItemName = p.szItemName,
-                    _ItemClassname = p.ItemClass.name,
+                    _ItemClassname = p.ItemSubClass.ItemClass.name,
                     _TL1name_TL = p.TL1.name_TL,
                     _LC1Name_LC = p.LC1.Name_LC,
                     _usPrice = p.usPrice
@@ -56,17 +57,29 @@ namespace Item_WPF.MVVM.ViewModels
             #region else if (Parametr=="Attachment")
             else if (Parametr == "Attachment")
             {
-                IttForSort = new ObservableCollection<ItemsForSortModel>(_context.ITEMs.
-                Where(p => p.ItemClass.name == Parametr).Where(p => p.Attachment.Attachmentmount1.id == mount).
+
+                ObservableCollection<ITEM> ITTFORSelect = new ObservableCollection<ITEM>(_context.ITEMs
+                    .Where(p => p.ItemSubClass.ItemClass.name == Parametr));
+                var q = (from p in _context.AvailableAttachSlots
+                         where p.rAttachmentmount == mount && p.rATTACHMENTSLOT == 31958
+                         select p.ITEM).ToList();
+
+                IttForSort = new ObservableCollection<ItemsForSortModel>(//_context.AvailableAttachSlots.
+                q.
+
+
+                Where(p => p.ItemSubClass.ItemClass.name == Parametr).
+                //Select(P => P.ITEM).
                 Select(p => new
                 {
                     _uiIndex = p.uiIndex,
                     _szItemName = p.szItemName,
-                    _ItemClassname = p.ItemClass.name,
+                    _ItemClassname = p.ItemSubClass.ItemClass.name,
                     _TL1name_TL = p.TL1.name_TL,
                     _LC1Name_LC = p.LC1.Name_LC,
                     _usPrice = p.usPrice
-                })./*AsEnumerable().*/
+                }).
+                /*AsEnumerable().*/
                 Select(an => new ItemsForSortModel
                 {
                     ID = an._uiIndex,
@@ -217,7 +230,7 @@ public partial class SelectItems : Window
                         if (ItemsDataGrid.SelectedItems.Count == 0) return;
                         var selectedCell = ItemsDataGrid.SelectedCells[2];
                         var cellContent = selectedCell.Column.GetCellContent(selectedCell.Item);
-                        if ((cellContent as TextBlock).Text == "Gun")
+                        if ((cellContent as TextBlock).Text == "Weapon")
                             WeaponCombine.IdWeaponItem = Convert.ToInt32(ItemsDataGrid.SelectedValue);
                         //if (cellContent is TextBlock) MessageBox.Show((cellContent as TextBlock).Text);
 

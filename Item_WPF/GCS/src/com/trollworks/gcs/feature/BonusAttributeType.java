@@ -19,105 +19,105 @@ public enum BonusAttributeType {
 	/** The ST attribute. */
 	ST {
 		@Override
-		public String toString() {
+		public string toString() {
 			return ST_TITLE;
 		}
 	},
 	/** The DX attribute. */
 	DX {
 		@Override
-		public String toString() {
+		public string toString() {
 			return DX_TITLE;
 		}
 	},
 	/** The IQ attribute. */
 	IQ {
 		@Override
-		public String toString() {
+		public string toString() {
 			return IQ_TITLE;
 		}
 	},
 	/** The HT attribute. */
 	HT {
 		@Override
-		public String toString() {
+		public string toString() {
 			return HT_TITLE;
 		}
 	},
 	/** The Will attribute. */
 	WILL {
 		@Override
-		public String toString() {
+		public string toString() {
 			return WILL_TITLE;
 		}
 	},
 	/** The Fright Check attribute. */
 	FRIGHT_CHECK {
 		@Override
-		public String toString() {
+		public string toString() {
 			return FRIGHT_CHECK_TITLE;
 		}
 	},
 	/** The Perception attribute. */
 	PERCEPTION {
 		@Override
-		public String toString() {
+		public string toString() {
 			return PERCEPTION_TITLE;
 		}
 	},
 	/** The Vision attribute. */
 	VISION {
 		@Override
-		public String toString() {
+		public string toString() {
 			return VISION_TITLE;
 		}
 	},
 	/** The Hearing attribute. */
 	HEARING {
 		@Override
-		public String toString() {
+		public string toString() {
 			return HEARING_TITLE;
 		}
 	},
 	/** The TasteSmell attribute. */
 	TASTE_SMELL {
 		@Override
-		public String toString() {
+		public string toString() {
 			return TASTE_SMELL_TITLE;
 		}
 	},
 	/** The Touch attribute. */
 	TOUCH {
 		@Override
-		public String toString() {
+		public string toString() {
 			return TOUCH_TITLE;
 		}
 	},
 	/** The Dodge attribute. */
 	DODGE {
 		@Override
-		public String toString() {
+		public string toString() {
 			return DODGE_TITLE;
 		}
 	},
 	/** The Dodge attribute. */
 	PARRY {
 		@Override
-		public String toString() {
+		public string toString() {
 			return PARRY_TITLE;
 		}
 	},
 	/** The Dodge attribute. */
 	BLOCK {
 		@Override
-		public String toString() {
+		public string toString() {
 			return BLOCK_TITLE;
 		}
 	},
 	/** The Speed attribute. */
 	SPEED {
 		@Override
-		public String toString() {
+		public string toString() {
 			return SPEED_TITLE;
 		}
 
@@ -129,28 +129,28 @@ public enum BonusAttributeType {
 	/** The Move attribute. */
 	MOVE {
 		@Override
-		public String toString() {
+		public string toString() {
 			return MOVE_TITLE;
 		}
 	},
 	/** The FP attribute. */
 	FP {
 		@Override
-		public String toString() {
+		public string toString() {
 			return FP_TITLE;
 		}
 	},
 	/** The HP attribute. */
 	HP {
 		@Override
-		public String toString() {
+		public string toString() {
 			return HP_TITLE;
 		}
 	},
 	/** The size modifier attribute. */
 	SM {
 		@Override
-		public String toString() {
+		public string toString() {
 			return SM_TITLE;
 		}
 	};
@@ -255,7 +255,7 @@ public enum BonusAttributeType {
 		Localization.initialize();
 	}
 
-	private String mTag;
+	private string mTag;
 
 	private BonusAttributeType() {
 		mTag = name();
@@ -265,7 +265,7 @@ public enum BonusAttributeType {
 	}
 
 	/** @return The presentation name. */
-	public String getPresentationName() {
+	public string getPresentationName() {
 		String name = name();
 		if (name.length() > 2) {
 			name = Character.toUpperCase(name.charAt(0)) + name.substring(1).toLowerCase();
@@ -280,7 +280,7 @@ public enum BonusAttributeType {
 	}
 
 	/** @return The XML tag to use for this {@link BonusAttributeType}. */
-	public String getXMLTag() {
+	public string getXMLTag() {
 		return mTag;
 	}
 }

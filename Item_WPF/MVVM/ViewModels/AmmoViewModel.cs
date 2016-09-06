@@ -1,4 +1,5 @@
 ﻿using Item_WPF.addin;
+using Item_WPF.ItemEntityModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,7 +21,7 @@ namespace Item_WPF.MVVM.ViewModels
            
             Save = new DelegateCommand(SaveChanges);
             caliber = new ObservableCollection<Caliber>(_context.Calibers);
-            AmmoOk = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.ItemClass.name.Contains("ammo")));
+            AmmoOk = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.ItemSubClass.ItemClass.name.Contains("ammo")));
             AmmoOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_ammoOK_CollectionChanged);
            
         }
@@ -30,7 +31,7 @@ namespace Item_WPF.MVVM.ViewModels
             int? param = (parametr as int?);    
             Save = new DelegateCommand(SaveChanges);
             caliber = new ObservableCollection<Caliber>(_context.Calibers);
-            AmmoOk = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.ItemClass.name.Contains("ammo")).Where(p=>p.ubCalibre==param));
+            AmmoOk = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.ItemSubClass.ItemClass.name.Contains("ammo")).Where(p=>p.ubCalibre==param));
             AmmoOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_ammoOK_CollectionChanged);
 
         }

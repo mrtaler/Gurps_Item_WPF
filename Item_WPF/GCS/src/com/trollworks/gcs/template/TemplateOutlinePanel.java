@@ -41,7 +41,7 @@ public class TemplateOutlinePanel extends DropPanel implements LayoutManager2 {
 	 * @param outline The outline to display.
 	 * @param title The localized title for the panel.
 	 */
-	public TemplateOutlinePanel(Outline outline, String title) {
+	public TemplateOutlinePanel(Outline outline, string title) {
 		super(null, title, false);
 		mOutline = outline;
 		mHeader = mOutline.getHeaderPanel();

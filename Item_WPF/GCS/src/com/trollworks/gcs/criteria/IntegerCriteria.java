@@ -70,7 +70,7 @@ public class IntegerCriteria extends NumericCriteria {
 	}
 
 	@Override
-	public String getQualifierAsString(bool allowAdornments) {
+	public string getQualifierAsString(bool allowAdornments) {
 		return allowAdornments ? Numbers.format(mQualifier) : Integer.toString(mQualifier);
 	}
 

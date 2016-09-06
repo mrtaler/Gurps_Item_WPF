@@ -23,12 +23,12 @@ public enum EquipmentState {
 	 */
 	EQUIPPED {
 		@Override
-		public String toShortName() {
+		public string toShortName() {
 			return EQUIPPED_SHORT;
 		}
 
 		@Override
-		public String toString() {
+		public string toString() {
 			return EQUIPPED_TITLE;
 		}
 	},
@@ -38,24 +38,24 @@ public enum EquipmentState {
 	 */
 	CARRIED {
 		@Override
-		public String toShortName() {
+		public string toShortName() {
 			return CARRIED_SHORT;
 		}
 
 		@Override
-		public String toString() {
+		public string toString() {
 			return CARRIED_TITLE;
 		}
 	},
 	/** The state of a piece of equipment that is not being carried. */
 	NOT_CARRIED {
 		@Override
-		public String toShortName() {
+		public string toShortName() {
 			return NOT_CARRIED_SHORT;
 		}
 
 		@Override
-		public String toString() {
+		public string toString() {
 			return NOT_CARRIED_TITLE;
 		}
 	};
@@ -95,5 +95,5 @@ public enum EquipmentState {
 	}
 
 	/** @return The short form of its description, typically a single character. */
-	public abstract String toShortName();
+	public abstract string toShortName();
 }

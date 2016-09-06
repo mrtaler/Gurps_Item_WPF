@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using Item_WPF.ItemEntityModel;
 using System.Threading.Tasks;
 
 namespace Item_WPF.MVVM.ViewModels
@@ -18,6 +19,7 @@ namespace Item_WPF.MVVM.ViewModels
         public ObservableCollection<TL> TlCollection { get; set; }
         public ObservableCollection<LC> LccCollection { get; set; }
         public string QT { get; set; }
+        public ObservableCollection<AvailableAttachSlot> AttachSlot { get; set; }
         public ObservableCollection<G_AttachClass> AttachClassColl { get; set; }
         public ObservableCollection<G_SubAttachClass> SubAttachClassColl { get; set; }
         public ObservableCollection<Battery> BatteryColl { get; set; }
@@ -30,9 +32,11 @@ namespace Item_WPF.MVVM.ViewModels
             ItemLoad = _context.ITEMs.Find(itemselect.uiIndex);
                        
             AttachLoad = ItemLoad.Attachment;
-
+            AttachSlot = new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlots);
             TlCollection = new ObservableCollection<TL>(_context.TLs);
             LccCollection = new ObservableCollection<LC>(_context.LCs);
+
+            
 
             AttachClassColl = new ObservableCollection<G_AttachClass>(_context.G_AttachClass);
             SubAttachClassColl = new ObservableCollection<G_SubAttachClass>(_context.G_SubAttachClass);

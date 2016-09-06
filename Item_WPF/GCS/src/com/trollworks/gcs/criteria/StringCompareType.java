@@ -19,108 +19,108 @@ public enum StringCompareType {
 	/** The comparison for "is anything". */
 	IS_ANYTHING {
 		@Override
-		public String toString() {
+		public string toString() {
 			return IS_ANYTHING_TITLE;
 		}
 
 		@Override
-		public bool matches(String qualifier, String data) {
+		public bool matches(String qualifier, string data) {
 			return true;
 		}
 	},
 	/** The comparison for "is". */
 	IS {
 		@Override
-		public String toString() {
+		public string toString() {
 			return IS_TITLE;
 		}
 
 		@Override
-		public bool matches(String qualifier, String data) {
+		public bool matches(String qualifier, string data) {
 			return data.equalsIgnoreCase(qualifier);
 		}
 	},
 	/** The comparison for "is not". */
 	IS_NOT {
 		@Override
-		public String toString() {
+		public string toString() {
 			return IS_NOT_TITLE;
 		}
 
 		@Override
-		public bool matches(String qualifier, String data) {
+		public bool matches(String qualifier, string data) {
 			return !data.equalsIgnoreCase(qualifier);
 		}
 	},
 	/** The comparison for "contains". */
 	CONTAINS {
 		@Override
-		public String toString() {
+		public string toString() {
 			return CONTAINS_TITLE;
 		}
 
 		@Override
-		public bool matches(String qualifier, String data) {
+		public bool matches(String qualifier, string data) {
 			return data.toLowerCase().indexOf(qualifier.toLowerCase()) != -1;
 		}
 	},
 	/** The comparison for "does not contain". */
 	DOES_NOT_CONTAIN {
 		@Override
-		public String toString() {
+		public string toString() {
 			return DOES_NOT_CONTAIN_TITLE;
 		}
 
 		@Override
-		public bool matches(String qualifier, String data) {
+		public bool matches(String qualifier, string data) {
 			return data.toLowerCase().indexOf(qualifier.toLowerCase()) == -1;
 		}
 	},
 	/** The comparison for "starts with". */
 	STARTS_WITH {
 		@Override
-		public String toString() {
+		public string toString() {
 			return STARTS_WITH_TITLE;
 		}
 
 		@Override
-		public bool matches(String qualifier, String data) {
+		public bool matches(String qualifier, string data) {
 			return data.toLowerCase().startsWith(qualifier.toLowerCase());
 		}
 	},
 	/** The comparison for "does not start with". */
 	DOES_NOT_START_WITH {
 		@Override
-		public String toString() {
+		public string toString() {
 			return DOES_NOT_START_WITH_TITLE;
 		}
 
 		@Override
-		public bool matches(String qualifier, String data) {
+		public bool matches(String qualifier, string data) {
 			return !data.toLowerCase().startsWith(qualifier.toLowerCase());
 		}
 	},
 	/** The comparison for "ends with". */
 	ENDS_WITH {
 		@Override
-		public String toString() {
+		public string toString() {
 			return ENDS_WITH_TITLE;
 		}
 
 		@Override
-		public bool matches(String qualifier, String data) {
+		public bool matches(String qualifier, string data) {
 			return data.toLowerCase().endsWith(qualifier.toLowerCase());
 		}
 	},
 	/** The comparison for "does not end with". */
 	DOES_NOT_END_WITH {
 		@Override
-		public String toString() {
+		public string toString() {
 			return DOES_NOT_END_WITH_TITLE;
 		}
 
 		@Override
-		public bool matches(String qualifier, String data) {
+		public bool matches(String qualifier, string data) {
 			return !data.toLowerCase().endsWith(qualifier.toLowerCase());
 		}
 	};
@@ -179,7 +179,7 @@ public enum StringCompareType {
 	 * @param qualifier The qualifier.
 	 * @return The description of this comparison type.
 	 */
-	public String describe(String qualifier) {
+	public string describe(String qualifier) {
 		StringBuilder builder = new StringBuilder();
 		builder.append(toString());
 		builder.append(" \""); //$NON-NLS-1$
@@ -195,5 +195,5 @@ public enum StringCompareType {
 	 * @param data The data to check.
 	 * @return Whether the data matches the criteria or not.
 	 */
-	public abstract bool matches(String qualifier, String data);
+	public abstract bool matches(String qualifier, string data);
 }

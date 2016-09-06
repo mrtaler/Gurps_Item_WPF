@@ -51,7 +51,7 @@ public class NewEquipmentCommand extends Command {
 	public static const NewEquipmentCommand	CARRIED_CONTAINER_INSTANCE	= new NewEquipmentCommand(true, EQUIPMENT_CONTAINER, CMD_NEW_EQUIPMENT_CONTAINER, KeyEvent.VK_E, SHIFTED_COMMAND_MODIFIER);
 	private bool							mContainer;
 
-	private NewEquipmentCommand(bool container, String title, String cmd, int keyCode, int modifiers) {
+	private NewEquipmentCommand(bool container, string title, string cmd, int keyCode, int modifiers) {
 		super(title, cmd, keyCode, modifiers);
 		mContainer = container;
 	}

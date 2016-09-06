@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Item_WPF.ItemEntityModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,12 +22,12 @@ namespace Item_WPF
     public partial class NewChar : Window
     {
         private item1Entities _context;
-        private CharacterDB Cha { get; set; }
+        private ItemEntityModel.CharacterDB Cha { get; set; }
         public NewChar()
         {
             InitializeComponent();
             _context = new item1Entities();
-            Cha = new CharacterDB();
+            Cha = new ItemEntityModel.CharacterDB();
             Main1Grid.DataContext = Cha;
         }
 

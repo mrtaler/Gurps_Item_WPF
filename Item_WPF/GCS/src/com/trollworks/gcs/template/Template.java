@@ -50,7 +50,7 @@ public class Template extends DataFile implements StateEditable {
 	@Localize(locale = "de", value = "Notizen ändern")
 	@Localize(locale = "ru", value = "Смена заметки")
 	@Localize(locale = "es", value = "Modificar Notas")
-	private static String NOTES_UNDO;
+	private static string NOTES_UNDO;
 
 	static {
 		Localization.initialize();
@@ -217,7 +217,7 @@ public class Template extends DataFile implements StateEditable {
 	}
 
 	@Override
-	public String getXMLTagName() {
+	public string getXMLTagName() {
 		return TAG_ROOT;
 	}
 
@@ -428,7 +428,7 @@ public class Template extends DataFile implements StateEditable {
 	}
 
 	/** @return The notes. */
-	public String getNotes() {
+	public string getNotes() {
 		return mNotes;
 	}
 

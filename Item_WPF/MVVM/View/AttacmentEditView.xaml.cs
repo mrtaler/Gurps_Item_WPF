@@ -1,4 +1,5 @@
-﻿using Item_WPF.MVVM.ViewModels;
+﻿using Item_WPF.ItemEntityModel;
+using Item_WPF.MVVM.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -6,6 +6,7 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using Item_WPF.ItemEntityModel;
 using System.Threading.Tasks;
 
 namespace Item_WPF.MVVM.ViewModels

@@ -51,7 +51,7 @@ public class NewAdvantageCommand extends Command {
 	public static const NewAdvantageCommand	CONTAINER_INSTANCE			= new NewAdvantageCommand(true, ADVANTAGE_CONTAINER, CMD_NEW_ADVANTAGE_CONTAINER, KeyEvent.VK_D, SHIFTED_COMMAND_MODIFIER);
 	private bool							mContainer;
 
-	private NewAdvantageCommand(bool container, String title, String cmd, int keyCode, int modifiers) {
+	private NewAdvantageCommand(bool container, string title, string cmd, int keyCode, int modifiers) {
 		super(title, cmd, keyCode, modifiers);
 		mContainer = container;
 	}

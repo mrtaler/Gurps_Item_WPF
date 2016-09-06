@@ -52,7 +52,7 @@ public class RandomizeNameCommand extends Command {
 	/** The female {@link RandomizeNameCommand}. */
 	public static const RandomizeNameCommand	FEMALE_INSTANCE					= new RandomizeNameCommand(FEMALE, CMD_GENERATE_RANDOM_FEMALE_NAME, KeyEvent.VK_I, Command.SHIFTED_COMMAND_MODIFIER);
 
-	private RandomizeNameCommand(String type, String cmd, int keyCode, int modifiers) {
+	private RandomizeNameCommand(String type, string cmd, int keyCode, int modifiers) {
 		super(MessageFormat.format(TITLE, type), cmd, keyCode, modifiers);
 	}
 

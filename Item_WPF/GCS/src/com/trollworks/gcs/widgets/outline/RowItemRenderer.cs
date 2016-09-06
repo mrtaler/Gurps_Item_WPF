@@ -15,13 +15,15 @@
 //namespace com.trollworks.gcs.widgets.outline
 //{
 //    /** An item renderer for rows. */
-//    public class RowItemRenderer : DefaultListCellRenderer {
-//	@Override
-//	public Component getListCellRendererComponent(IList<?> list, Object value, int index, bool isSelected, bool cellHasFocus) {
-//		Component comp = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-//		if (value instanceof ListRow) {
-//			setIcon(((ListRow) value).getIcon(false));
-//		}
-//		return comp;
-//	}
-//}
+//    public class RowItemRenderer : DefaultListCellRenderer
+//    {
+//        @Override
+//    public Component getListCellRendererComponent(IList<?> list, Object value, int index, bool isSelected, bool cellHasFocus)
+//        {
+//            Component comp = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+//            if (value instanceof ListRow) {
+//                setIcon(((ListRow)value).getIcon(false));
+//            }
+//            return comp;
+//        }
+//    }

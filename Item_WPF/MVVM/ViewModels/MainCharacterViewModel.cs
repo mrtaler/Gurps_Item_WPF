@@ -8,6 +8,7 @@ using Item_WPF.MVVM.Models;
 using Item_WPF.Properties;
 using Item_WPF.MVVM.View;
 using Microsoft.Win32;
+using Item_WPF.ItemEntityModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {
@@ -30,11 +31,11 @@ namespace Item_WPF.MVVM.ViewModels
         public DelegateCommand SaveAsCommand { get; private set; }
         public DelegateCommand OwnerCloseCommand { get; private set; }
         public MainCharacterViewModel(Window owner)
-            : this(owner, new CharacterDB())
+            : this(owner, new ItemEntityModel.CharacterDB())
         {
         }
 
-        public MainCharacterViewModel(Window owner, CharacterDB character)
+        public MainCharacterViewModel(Window owner, ItemEntityModel.CharacterDB character)
         {
             Owner = owner;
             Character = character;
@@ -79,7 +80,7 @@ namespace Item_WPF.MVVM.ViewModels
         {
             get
             {
-                string name = Character.Name;
+                string name = Character.name;
                 if (string.IsNullOrEmpty(name))
                     name = Properties.Resources.UnnamedCharacter;
                 return name;
@@ -214,13 +215,13 @@ namespace Item_WPF.MVVM.ViewModels
             }
         }
 
-        public ObservableCollection<Skill> Skills
-        {
-            get
-            {
-                return Character.Skills;
-            }
-        }
+        //public ObservableCollection<Skill> Skills
+        //{
+        //    get
+        //    {
+        //        return Character.Skills;
+        //    }
+        //}
 
         // Returns the window title
         public string Title
@@ -313,17 +314,17 @@ namespace Item_WPF.MVVM.ViewModels
 
         public void AddSkill(object parameter)
         {
-            EditSkillWindowView window = new EditSkillWindowView();
-            window.Owner = Owner;
-            window.DataContext = new Skill();
+            //EditSkillWindowView window = new EditSkillWindowView();
+            //window.Owner = Owner;
+            //window.DataContext = new Skill();
 
-            bool? result = window.ShowDialog();
-            if (result.HasValue && (result == true))
-            {
-                Character.Skills.Add((Skill)window.DataContext);
+            //bool? result = window.ShowDialog();
+            //if (result.HasValue && (result == true))
+            //{
+            //    Character.Skills.Add((Skill)window.DataContext);
 
-                NotifyPropertyChanged("Skills");
-            }
+            //    NotifyPropertyChanged("Skills");
+            //}
         }
 
         public void EditPrimaryStats(object parameter)
@@ -332,7 +333,7 @@ namespace Item_WPF.MVVM.ViewModels
             window.Owner = Owner;
             window.DataContext = new EditPrimaryStatsViewModel(Character);
 
-            CharacterDB copy = (CharacterDB)Character.Copy();
+            ItemEntityModel.CharacterDB copy = (CharacterDB)Character.Copy();
             bool? result = window.ShowDialog();
             if (result.HasValue && (result == true))
             {
@@ -353,7 +354,7 @@ namespace Item_WPF.MVVM.ViewModels
             window.Owner = Owner;
             window.DataContext = new EditSecondaryStatsViewModel(Character);
 
-            CharacterDB copy = (CharacterDB)Character.Copy();
+            ItemEntityModel.CharacterDB copy = (CharacterDB)Character.Copy();
             bool? result = window.ShowDialog();
             if (result.HasValue && (result == true))
             {

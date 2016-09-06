@@ -75,7 +75,7 @@ public class PdfDockable extends Dockable implements FileProxy, CloseHandler {
 	private IconButton	mPreviousPageButton;
 	private IconButton	mNextPageButton;
 
-	public PdfDockable(PdfRef pdfRef, int page, String highlight) {
+	public PdfDockable(PdfRef pdfRef, int page, string highlight) {
 		super(new BorderLayout());
 		mFile = pdfRef.getFile();
 		int pageCount = 9999;
@@ -123,7 +123,7 @@ public class PdfDockable extends Dockable implements FileProxy, CloseHandler {
 		setFocusTraversalPolicy(new DefaultFocusTraversalPolicy());
 	}
 
-	private static String formatWithKey(String title, KeyStroke key) {
+	private static string formatWithKey(String title, KeyStroke key) {
 		return title + " [" + KeyStrokeDisplay.getKeyStrokeDisplay(key) + "]"; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
@@ -160,7 +160,7 @@ public class PdfDockable extends Dockable implements FileProxy, CloseHandler {
 		return false;
 	}
 
-	public void goToPage(PdfRef pdfRef, int page, String highlight) {
+	public void goToPage(PdfRef pdfRef, int page, string highlight) {
 		mPanel.goToPage(pdfRef, page, highlight);
 	}
 
@@ -187,7 +187,7 @@ public class PdfDockable extends Dockable implements FileProxy, CloseHandler {
 	}
 
 	@Override
-	public String getDescriptor() {
+	public string getDescriptor() {
 		return null;
 	}
 
@@ -197,12 +197,12 @@ public class PdfDockable extends Dockable implements FileProxy, CloseHandler {
 	}
 
 	@Override
-	public String getTitle() {
+	public string getTitle() {
 		return PathUtils.getLeafName(mFile.getName(), false);
 	}
 
 	@Override
-	public String getTitleTooltip() {
+	public string getTitleTooltip() {
 		return null;
 	}
 

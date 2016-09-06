@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Markup;
 using System.Windows.Interactivity;
+using Item_WPF.ItemEntityModel;
 
 namespace Item_WPF.addin
 {/// <summary>

@@ -17,12 +17,12 @@ using com.trollworks.gcs.widgets.outline.MultiCell;
 /** A cell for displaying the mana cost for casting and maintaining a spell. */
 public class SpellManaCostCell extends MultiCell {
 	@Override
-	protected String getPrimaryText(ListRow row) {
+	protected string getPrimaryText(ListRow row) {
 		return row.canHaveChildren() ? "" : ((Spell) row).getCastingCost(); //$NON-NLS-1$
 	}
 
 	@Override
-	protected String getSecondaryText(ListRow row) {
+	protected string getSecondaryText(ListRow row) {
 		return row.canHaveChildren() ? "" : ((Spell) row).getMaintenance(); //$NON-NLS-1$
 	}
 }

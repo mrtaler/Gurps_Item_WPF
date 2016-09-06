@@ -450,7 +450,7 @@
 //		outerGrid.apply(this);
 //	}
 
-//	private JCheckBox createTypeCheckBox(bool selected, String tooltip) {
+//	private JCheckBox createTypeCheckBox(bool selected, string tooltip) {
 //		JCheckBox button = new JCheckBox();
 //		button.setSelected(selected);
 //		button.setToolTipText(tooltip);
@@ -488,7 +488,7 @@
 //		return label;
 //	}
 
-//	private EditorField createField(String text, String prototype, String tooltip) {
+//	private EditorField createField(String text, string prototype, string tooltip) {
 //		DefaultFormatter formatter = new DefaultFormatter();
 //		formatter.setOverwriteMode(false);
 //		EditorField field = new EditorField(new DefaultFormatterFactory(formatter), this, SwingConstants.LEFT, text, prototype, tooltip);
@@ -497,7 +497,7 @@
 //		return field;
 //	}
 
-//	private EditorField createField(int min, int max, int value, String tooltip) {
+//	private EditorField createField(int min, int max, int value, string tooltip) {
 //		int proto = Math.max(Math.abs(min), Math.abs(max));
 //		if (min < 0 || max < 0) {
 //			proto = -proto;

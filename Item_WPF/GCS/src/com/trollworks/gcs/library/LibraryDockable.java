@@ -132,7 +132,7 @@ public abstract class LibraryDockable extends CommonDockable implements RowFilte
 	}
 
 	@Override
-	public String getDescriptor() {
+	public string getDescriptor() {
 		return getDataFile().getFile().getAbsolutePath();
 	}
 
@@ -263,7 +263,7 @@ public abstract class LibraryDockable extends CommonDockable implements RowFilte
 	}
 
 	@Override
-	public void handleNotification(Object producer, String name, Object data) {
+	public void handleNotification(Object producer, string name, Object data) {
 		if (Advantage.ID_TYPE.equals(name)) {
 			getOutline().repaint();
 		} else {

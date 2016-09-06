@@ -198,7 +198,7 @@
 //		}
 //	}
 
-//	private static void createIconFiles(StdImageSet set, File dir, String name, bool generateICNS, bool generateICO) throws IOException {
+//	private static void createIconFiles(StdImageSet set, File dir, string name, bool generateICNS, bool generateICO) throws IOException {
 //		for (int size : StdImageSet.STD_SIZES) {
 //        set.getImage(size);
 //    }

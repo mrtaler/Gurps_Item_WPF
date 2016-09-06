@@ -71,7 +71,7 @@ public class HelpMenuProvider implements MenuProvider {
 		Localization.initialize();
 	}
 
-	public static const String NAME = "Help"; //$NON-NLS-1$
+	public static const string NAME = "Help"; //$NON-NLS-1$
 
 	@Override
 	public Set<Command> getModifiableCommands() {

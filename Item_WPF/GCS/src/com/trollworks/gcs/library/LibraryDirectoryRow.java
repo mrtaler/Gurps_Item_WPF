@@ -17,7 +17,7 @@ using com.trollworks.toolkit.ui.widget.tree.TreeRow;
 
 /** A {@link TreeRow} that represents a directory in the library explorer. */
 public class LibraryDirectoryRow extends TreeContainerRow implements LibraryExplorerRow {
-	private String mName;
+	private string mName;
 
 	/** @param name The name of the directory. */
 	public LibraryDirectoryRow(String name) {
@@ -25,7 +25,7 @@ public class LibraryDirectoryRow extends TreeContainerRow implements LibraryExpl
 	}
 
 	@Override
-	public String getSelectionKey() {
+	public string getSelectionKey() {
 		TreeContainerRow parent = getParent();
 		return parent instanceof LibraryDirectoryRow ? ((LibraryDirectoryRow) parent).getSelectionKey() + "/" + mName : mName; //$NON-NLS-1$
 	}
@@ -36,7 +36,7 @@ public class LibraryDirectoryRow extends TreeContainerRow implements LibraryExpl
 	}
 
 	@Override
-	public String getName() {
+	public string getName() {
 		return mName;
 	}
 }
