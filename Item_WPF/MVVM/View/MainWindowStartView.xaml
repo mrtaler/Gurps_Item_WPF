@@ -23,7 +23,7 @@
                                          CommandParameter="All"
                                          Label="{x:Static p:Resources.RibbonButtonAllItems}" />
                     <ribbon:RibbonButton Command="{Binding ShowAllItemsCommand}"
-                                         CommandParameter="Gun"
+                                         CommandParameter="Weapon"
                                          Label="{x:Static p:Resources.RibbonButtonWeaponItems}" />
                     <ribbon:RibbonButton Command="{Binding ShowAllItemsCommand}"
                                          CommandParameter="Att"
@@ -55,10 +55,14 @@
                                          Label="female" />
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="124_222">
-                    <ribbon:RibbonButton Label="2_2" />
+                    <ribbon:RibbonButton Command="{Binding AllGurpsSkillViewLaunchCommand}"
+                                         CommandParameter="0"
+                                         Label="AllGurpsSkill" />
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="124_3333">
-                    <ribbon:RibbonButton Label="3_3" />
+                    <ribbon:RibbonButton Command="{Binding SerializeCommand}"
+                                         CommandParameter="0"
+                                         Label="SerializeCommand" />
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="124_4444">
                     <ribbon:RibbonButton Label="4_4" />

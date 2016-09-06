@@ -19,21 +19,21 @@ public enum CostType {
 	/** Adds to the percentage multiplier. */
 	PERCENTAGE {
 		@Override
-		public String toString() {
+		public string toString() {
 			return PERCENTAGE_TITLE;
 		}
 	},
 	/** Adds a constant to the base value prior to any multiplier or percentage adjustment. */
 	POINTS {
 		@Override
-		public String toString() {
+		public string toString() {
 			return POINTS_TITLE;
 		}
 	},
 	/** Multiplies the const cost by a constant. */
 	MULTIPLIER {
 		@Override
-		public String toString() {
+		public string toString() {
 			return MULTIPLIER_TITLE;
 		}
 	};

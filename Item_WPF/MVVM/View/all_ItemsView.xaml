@@ -11,7 +11,7 @@
         mc:Ignorable="d">
     <Window.Resources>
         <Style TargetType="{x:Type DataGridRow}">
-            <Setter Property="Background" Value="{Binding ItemClass.name, Converter={addin:gridrowcolrConverter}}" />
+            <Setter Property="Background" Value="{Binding ItemSubClass.ItemClass.name, Converter={addin:gridrowcolrConverter}}" />
         </Style>
     </Window.Resources>
     <Grid>

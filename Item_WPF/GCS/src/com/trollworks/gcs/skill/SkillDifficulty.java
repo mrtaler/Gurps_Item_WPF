@@ -19,35 +19,35 @@ public enum SkillDifficulty {
 	/** The "easy" difficulty. */
 	E {
 		@Override
-		public String toString() {
+		public string toString() {
 			return E_TITLE;
 		}
 	},
 	/** The "average" difficulty. */
 	A {
 		@Override
-		public String toString() {
+		public string toString() {
 			return A_TITLE;
 		}
 	},
 	/** The "hard" difficulty. */
 	H {
 		@Override
-		public String toString() {
+		public string toString() {
 			return H_TITLE;
 		}
 	},
 	/** The "very hard" difficulty. */
 	VH {
 		@Override
-		public String toString() {
+		public string toString() {
 			return VH_TITLE;
 		}
 	},
 	/** The "wildcard" difficulty. */
 	W {
 		@Override
-		public String toString() {
+		public string toString() {
 			return W_TITLE;
 		}
 

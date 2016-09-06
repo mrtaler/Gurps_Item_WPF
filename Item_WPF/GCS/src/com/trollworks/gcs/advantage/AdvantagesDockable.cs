@@ -23,7 +23,7 @@
 //	@Localize(locale = "de", value = "Unbenannte Vorteils-Liste")
 //	@Localize(locale = "ru", value = "Безымянный список преимуществ")
 //	@Localize(locale = "es", value = "Ventajas sin título")
-//	private static String UNTITLED;
+//	private static string UNTITLED;
 
 //	static {
 //		Localization.initialize();
@@ -40,7 +40,7 @@
 //	}
 
 //	@Override
-//	protected String getUntitledBaseName() {
+//	protected string getUntitledBaseName() {
 //		return UNTITLED;
 //	}
 

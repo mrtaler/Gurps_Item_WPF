@@ -1,4 +1,6 @@
-﻿namespace Item_WPF.MVVM.Models
+﻿using Item_WPF.ItemEntityModel;
+
+namespace Item_WPF.MVVM.Models
 {
     // This enum is used to denote the difficulty of a skill.
     public enum SkillDifficulty { Easy, Average, Hard, VeryHard };
@@ -6,7 +8,7 @@
     // This enum is used to specify which stat a skill is based on.
     public enum SkillStat { Strength, Dexterity, Intelligence, Health }
 
-    public class Skill
+    public class SkillnotDB
     {
         public string Name { get; set; }
         public string Description { get; set; }
@@ -105,10 +107,10 @@
             }
         }
 
-        public Skill() {
+        public SkillnotDB() {
         }
 
-        public Skill(string name, string description, SkillStat stat, SkillDifficulty difficulty)
+        public SkillnotDB(string name, string description, SkillStat stat, SkillDifficulty difficulty)
         {
             Name = name;
             Description = description;

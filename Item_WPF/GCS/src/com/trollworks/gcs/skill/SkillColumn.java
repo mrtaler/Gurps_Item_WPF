@@ -34,12 +34,12 @@ public enum SkillColumn {
 	/** The skill name/description. */
 	DESCRIPTION {
 		@Override
-		public String toString() {
+		public string toString() {
 			return DESCRIPTION_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return DESCRIPTION_TOOLTIP;
 		}
 
@@ -59,7 +59,7 @@ public enum SkillColumn {
 		}
 
 		@Override
-		public String getDataAsText(Skill skill) {
+		public string getDataAsText(Skill skill) {
 			StringBuilder builder = new StringBuilder();
 			String notes = skill.getNotes();
 
@@ -74,12 +74,12 @@ public enum SkillColumn {
 	/** The skill difficulty. */
 	DIFFICULTY {
 		@Override
-		public String toString() {
+		public string toString() {
 			return DIFFICULTY_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return DIFFICULTY_TOOLTIP;
 		}
 
@@ -99,19 +99,19 @@ public enum SkillColumn {
 		}
 
 		@Override
-		public String getDataAsText(Skill skill) {
+		public string getDataAsText(Skill skill) {
 			return skill.getDifficultyAsText();
 		}
 	},
 	/** The skill level. */
 	LEVEL {
 		@Override
-		public String toString() {
+		public string toString() {
 			return LEVEL_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return LEVEL_TOOLTIP;
 		}
 
@@ -131,7 +131,7 @@ public enum SkillColumn {
 		}
 
 		@Override
-		public String getDataAsText(Skill skill) {
+		public string getDataAsText(Skill skill) {
 			int level;
 
 			if (skill.canHaveChildren()) {
@@ -147,12 +147,12 @@ public enum SkillColumn {
 	/** The relative skill level. */
 	RELATIVE_LEVEL {
 		@Override
-		public String toString() {
+		public string toString() {
 			return RELATIVE_LEVEL_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return RELATIVE_LEVEL_TOOLTIP;
 		}
 
@@ -212,7 +212,7 @@ public enum SkillColumn {
 		}
 
 		@Override
-		public String getDataAsText(Skill skill) {
+		public string getDataAsText(Skill skill) {
 			if (!skill.canHaveChildren()) {
 				int level = getRelativeLevel(skill);
 				StringBuilder builder;
@@ -233,12 +233,12 @@ public enum SkillColumn {
 	/** The points spent in the skill. */
 	POINTS {
 		@Override
-		public String toString() {
+		public string toString() {
 			return POINTS_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return POINTS_TOOLTIP;
 		}
 
@@ -258,7 +258,7 @@ public enum SkillColumn {
 		}
 
 		@Override
-		public String getDataAsText(Skill skill) {
+		public string getDataAsText(Skill skill) {
 			if (skill.canHaveChildren()) {
 				return ""; //$NON-NLS-1$
 			}
@@ -268,12 +268,12 @@ public enum SkillColumn {
 	/** The category. */
 	CATEGORY {
 		@Override
-		public String toString() {
+		public string toString() {
 			return CATEGORY_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return CATEGORY_TOOLTIP;
 		}
 
@@ -293,19 +293,19 @@ public enum SkillColumn {
 		}
 
 		@Override
-		public String getDataAsText(Skill skill) {
+		public string getDataAsText(Skill skill) {
 			return skill.getCategoriesAsString();
 		}
 	},
 	/** The page reference. */
 	REFERENCE {
 		@Override
-		public String toString() {
+		public string toString() {
 			return REFERENCE_TITLE;
 		}
 
 		@Override
-		public String getToolTip() {
+		public string getToolTip() {
 			return REFERENCE_TOOLTIP;
 		}
 
@@ -325,7 +325,7 @@ public enum SkillColumn {
 		}
 
 		@Override
-		public String getDataAsText(Skill skill) {
+		public string getDataAsText(Skill skill) {
 			return skill.getReference();
 		}
 	};
@@ -414,10 +414,10 @@ public enum SkillColumn {
 	 * @param skill The {@link Skill} to get the data from.
 	 * @return Text representing the data for this column.
 	 */
-	public abstract String getDataAsText(Skill skill);
+	public abstract string getDataAsText(Skill skill);
 
 	/** @return The tooltip for the column. */
-	public abstract String getToolTip();
+	public abstract string getToolTip();
 
 	/** @return The {@link Cell} used to display the data. */
 	public abstract Cell getCell();

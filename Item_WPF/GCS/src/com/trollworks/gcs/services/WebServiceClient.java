@@ -41,7 +41,7 @@ public class WebServiceClient {
 	}
 
 	/** Adds a querystring parameter: (?key=value) */
-	public bool addQueryParameter(String key, String value) {
+	public bool addQueryParameter(String key, string value) {
 		try {
 			mQueryParameters.put(key, URLEncoder.encode(value, StandardCharsets.UTF_8.toString()));
 		} catch (UnsupportedEncodingException exception) {
@@ -68,7 +68,7 @@ public class WebServiceClient {
 	/**
 	 * Sends the http request and returns string.
 	 */
-	public String sendRequest(HttpMethodType method, String path, Map<String, String> queryParameters, String body) throws MalformedURLException, IOException, NotImplementedException {
+	public string sendRequest(HttpMethodType method, string path, Map<String, String> queryParameters, string body) throws MalformedURLException, IOException, NotImplementedException {
 		mBody = body;
 		return sendRequest(method, path, queryParameters);
 	}
@@ -76,7 +76,7 @@ public class WebServiceClient {
 	/**
 	 * Sends the http request and returns a string.
 	 */
-	public String sendRequest(HttpMethodType method, String path, Map<String, String> queryParameters) throws MalformedURLException, IOException, NotImplementedException {
+	public string sendRequest(HttpMethodType method, string path, Map<String, String> queryParameters) throws MalformedURLException, IOException, NotImplementedException {
 		if (queryParameters != null) {
 			mQueryParameters = queryParameters;
 		}
@@ -86,13 +86,13 @@ public class WebServiceClient {
 	/**
 	 * Sends the http request and returns a string.
 	 */
-	public String sendRequest(HttpMethodType method, String path) throws MalformedURLException, IOException, NotImplementedException {
+	public string sendRequest(HttpMethodType method, string path) throws MalformedURLException, IOException, NotImplementedException {
 		mMethod = method;
 		mPath = path;
 		return sendRequest();
 	}
 
-	public String sendRequest(HttpMethodType method, String path, byte[] bytes) throws MalformedURLException, IOException, NotImplementedException {
+	public string sendRequest(HttpMethodType method, string path, byte[] bytes) throws MalformedURLException, IOException, NotImplementedException {
 		mBody = null;
 		mByteBody = bytes;
 		return sendRequest(method, path);
@@ -101,7 +101,7 @@ public class WebServiceClient {
 	/**
 	 * Sends the http request and returns a string.
 	 */
-	public String sendRequest() throws MalformedURLException, IOException, NotImplementedException {
+	public string sendRequest() throws MalformedURLException, IOException, NotImplementedException {
 		URLConnection connection = buildUrl().openConnection();
 		connection.setRequestProperty("Accept-Charset", StandardCharsets.UTF_8.toString()); //$NON-NLS-1$
 		if (mMethod == HttpMethodType.GET) {
@@ -132,7 +132,7 @@ public class WebServiceClient {
 		throw new NotImplementedException("Method type not currently supported"); //$NON-NLS-1$
 	}
 
-	static String convertStreamToString(java.io.InputStream is) {
+	static string convertStreamToString(java.io.InputStream is) {
 		try (Scanner s = new Scanner(is)) {
 			s.useDelimiter("\\A"); //$NON-NLS-1$
 			String result = s.hasNext() ? s.next() : ""; //$NON-NLS-1$
@@ -162,7 +162,7 @@ public class WebServiceClient {
 		return new URL(url.toString());
 	}
 
-	private static String ditchLeadingTrailingSlashes(String str) {
+	private static string ditchLeadingTrailingSlashes(String str) {
 		if (str.length() < 2) {
 			return str;
 		}

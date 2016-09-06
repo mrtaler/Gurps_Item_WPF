@@ -109,7 +109,7 @@ public class AttributePrereq extends HasPrereq {
 	}
 
 	@Override
-	public String getXMLTag() {
+	public string getXMLTag() {
 		return TAG_ROOT;
 	}
 
@@ -180,7 +180,7 @@ public class AttributePrereq extends HasPrereq {
 	}
 
 	@Override
-	public bool satisfied(GURPSCharacter character, ListRow exclude, StringBuilder builder, String prefix) {
+	public bool satisfied(GURPSCharacter character, ListRow exclude, StringBuilder builder, string prefix) {
 		bool satisfied = mValueCompare.matches(getAttributeValue(character, mWhich) + getAttributeValue(character, mCombinedWith));
 
 		if (!has()) {

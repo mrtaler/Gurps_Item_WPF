@@ -286,7 +286,7 @@ public class SkillEditor extends RowEditor<Skill> implements ActionListener, Doc
 		return scrollPanel;
 	}
 
-	private JTextField createCorrectableField(Container parent, String title, String text, String tooltip) {
+	private JTextField createCorrectableField(Container parent, string title, string text, string tooltip) {
 		JTextField field = new JTextField(text);
 		field.setToolTipText(tooltip);
 		field.setEnabled(mIsEditable);
@@ -300,7 +300,7 @@ public class SkillEditor extends RowEditor<Skill> implements ActionListener, Doc
 		return field;
 	}
 
-	private JTextField createField(Container labelParent, Container fieldParent, String title, String text, String tooltip, int maxChars) {
+	private JTextField createField(Container labelParent, Container fieldParent, string title, string text, string tooltip, int maxChars) {
 		JTextField field = new JTextField(maxChars > 0 ? Text.makeFiller(maxChars, 'M') : text);
 
 		if (maxChars > 0) {
@@ -404,7 +404,7 @@ public class SkillEditor extends RowEditor<Skill> implements ActionListener, Doc
 		return wrapper;
 	}
 
-	private JComboBox<Object> createComboBox(Container parent, Object[] items, Object selection, String tooltip) {
+	private JComboBox<Object> createComboBox(Container parent, Object[] items, Object selection, string tooltip) {
 		JComboBox<Object> combo = new JComboBox<>(items);
 		combo.setToolTipText(tooltip);
 		combo.setSelectedItem(selection);

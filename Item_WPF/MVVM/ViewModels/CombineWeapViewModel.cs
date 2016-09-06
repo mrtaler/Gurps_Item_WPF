@@ -8,6 +8,7 @@ using Item_WPF.addin;
 using Item_WPF.MVVM.View;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using Item_WPF.ItemEntityModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {
@@ -75,7 +76,7 @@ namespace Item_WPF.MVVM.ViewModels
             Weapon_Item_Image = null;
 
             SelectItemsView SIWvindow = new SelectItemsView();
-            SelectItemsViewModel _SIVM = new SelectItemsViewModel("Gun", null, SIWvindow);
+            SelectItemsViewModel _SIVM = new SelectItemsViewModel("Weapon", null, SIWvindow);
 
             SIWvindow.DataContext = _SIVM;
             SIWvindow.ShowDialog();

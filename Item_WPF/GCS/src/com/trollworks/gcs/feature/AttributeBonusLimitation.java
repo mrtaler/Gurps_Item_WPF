@@ -19,21 +19,21 @@ public enum AttributeBonusLimitation {
 	/** No limitation. */
 	NONE {
 		@Override
-		public String toString() {
+		public string toString() {
 			return NONE_TITLE;
 		}
 	},
 	/** Striking only. */
 	STRIKING_ONLY {
 		@Override
-		public String toString() {
+		public string toString() {
 			return STRIKING_ONLY_TITLE;
 		}
 	},
 	/** Lifting only */
 	LIFTING_ONLY {
 		@Override
-		public String toString() {
+		public string toString() {
 			return LIFTING_ONLY_TITLE;
 		}
 	};

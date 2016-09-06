@@ -24,34 +24,40 @@
 //namespace com.trollworks.gcs.widgets.outline
 //{
 //    /** Helper for causing the row post-processing to occur. */
-//    public class RowPostProcessor implements Runnable {
-//	private HashMap<Outline, ArrayList<ListRow>> mMap;
+//    public class RowPostProcessor implements Runnable
+//    {
 
-//	/**
+//    private HashMap<Outline, ArrayList<ListRow>> mMap;
+
+//    /**
 //	 * Creates a new post processor for name substitution.
 //	 *
 //	 * @param map The map to process.
 //	 */
-//	public RowPostProcessor(HashMap<Outline, ArrayList<ListRow>> map) {
-//		mMap = map;
-//	}
+//    public RowPostProcessor(HashMap<Outline, ArrayList<ListRow>> map)
+//    {
+//        mMap = map;
+//    }
 
-//	/**
+//    /**
 //	 * Creates a new post processor for name substitution.
 //	 *
 //	 * @param outline The outline containing the rows.
 //	 * @param list The list to process.
 //	 */
-//	public RowPostProcessor(Outline outline, ArrayList<ListRow> list) {
-//		mMap = new HashMap<>();
-//		mMap.put(outline, list);
-//	}
+//    public RowPostProcessor(Outline outline, ArrayList<ListRow> list)
+//    {
+//        mMap = new HashMap<>();
+//        mMap.put(outline, list);
+//    }
 
-//	@Override
-//	public void run() {
-//		for (Outline outline : mMap.keySet()) {
-//			ArrayList<ListRow> rows = mMap.get(outline);
-//			bool modified = ModifierEnabler.process(outline, new FilteredList<>(rows, Advantage.class));
+//    @Override
+//    public void run()
+//    {
+//        for (Outline outline : mMap.keySet())
+//        {
+//            ArrayList<ListRow> rows = mMap.get(outline);
+//            bool modified = ModifierEnabler.process(outline, new FilteredList<>(rows, Advantage.class));
 //			modified |= Namer.name(outline, rows);
 //			if (modified) {
 //				outline.updateRowHeights(rows);

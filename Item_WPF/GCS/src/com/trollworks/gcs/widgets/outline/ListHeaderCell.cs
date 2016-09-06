@@ -27,49 +27,61 @@
 //namespace com.trollworks.gcs.widgets.outline
 //{
 //    /** Used to draw headers in the lists. */
-//    public class ListHeaderCell extends HeaderCell {
-//	private bool mForSheet;
+//    public class ListHeaderCell extends HeaderCell
+//    {
 
-//	/**
+//    private bool mForSheet;
+
+//    /**
 //	 * Create a new header cell.
 //	 * 
 //	 * @param forSheet Whether the header will be displayed in the sheet or not.
 //	 */
-//	public ListHeaderCell(bool forSheet) {
-//		super();
-//		mForSheet = forSheet;
-//	}
+//    public ListHeaderCell(bool forSheet)
+//    {
+//        super();
+//        mForSheet = forSheet;
+//    }
 
-//	@Override
-//	public Font getFont(Row row, Column column) {
-//		return UIManager.getFont(GCSFonts.KEY_LABEL);
-//	}
+//    @Override
+//    public Font getFont(Row row, Column column)
+//    {
+//        return UIManager.getFont(GCSFonts.KEY_LABEL);
+//    }
 
-//	@Override
-//	public void drawCell(Outline outline, Graphics gc, Rectangle bounds, Row row, Column column, bool selected, bool active) {
-//		if (mForSheet) {
-//			drawCellSuper(outline, gc, bounds, row, column, selected, active);
-//		} else {
-//			super.drawCell(outline, gc, bounds, row, column, selected, active);
-//		}
-//	}
+//    @Override
+//    public void drawCell(Outline outline, Graphics gc, Rectangle bounds, Row row, Column column, bool selected, bool active)
+//    {
+//        if (mForSheet)
+//        {
+//            drawCellSuper(outline, gc, bounds, row, column, selected, active);
+//        }
+//        else
+//        {
+//            super.drawCell(outline, gc, bounds, row, column, selected, active);
+//        }
+//    }
 
-//	@Override
-//	public int getPreferredWidth(Row row, Column column) {
-//		int width = super.getPreferredWidth(row, column);
+//    @Override
+//    public int getPreferredWidth(Row row, Column column)
+//    {
+//        int width = super.getPreferredWidth(row, column);
 
-//		if (mForSheet) {
-//			width -= SORTER_WIDTH + 4;
-//		}
-//		return width;
-//	}
+//        if (mForSheet)
+//        {
+//            width -= SORTER_WIDTH + 4;
+//        }
+//        return width;
+//    }
 
-//	@Override
-//	public Color getColor(bool selected, bool active, Row row, Column column) {
-//		if (mForSheet) {
-//			return Color.white;
-//		}
-//		return super.getColor(selected, active, row, column);
-//	}
+//    @Override
+//    public Color getColor(bool selected, bool active, Row row, Column column)
+//    {
+//        if (mForSheet)
+//        {
+//            return Color.white;
+//        }
+//        return super.getColor(selected, active, row, column);
+//    }
 //}
 //}

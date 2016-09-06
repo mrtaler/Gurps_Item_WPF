@@ -63,12 +63,12 @@ public class DRBonus extends Bonus {
 	}
 
 	@Override
-	public String getXMLTag() {
+	public string getXMLTag() {
 		return TAG_ROOT;
 	}
 
 	@Override
-	public String getKey() {
+	public string getKey() {
 		StringBuffer buffer = new StringBuffer();
 
 		buffer.append(Armor.DR_PREFIX);

@@ -1,7 +1,10 @@
 ﻿using com.trollworks.gcs.character.names;
 using Item_WPF.addin;
+using Item_WPF.MVVM.GurpsSkill_m;
+using Item_WPF.MVVM.Serialize;
 using Item_WPF.MVVM.View;
 using Microsoft.Windows.Controls.Ribbon;
+using Item_WPF.ItemEntityModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,8 +31,9 @@ namespace Item_WPF.MVVM.ViewModels
         public DelegateCommand ListBoxCommand { get; private set; }
         public DelegateCommand BoxChangeCommand { get; private set; }
         public DelegateCommand NewNameCommand { get; private set; }
-
-        public MainWindowStartViewModel(RibbonWindow owner)
+        public DelegateCommand SerializeCommand { get; private set; }
+        public DelegateCommand AllGurpsSkillViewLaunchCommand { get; private set; }
+    public MainWindowStartViewModel(RibbonWindow owner)
         {
             Owner = owner;
 
@@ -45,8 +49,12 @@ namespace Item_WPF.MVVM.ViewModels
             ListBoxCommand = new DelegateCommand(ListBox);
             BoxChangeCommand = new DelegateCommand(BoxChange);
                  NewNameCommand = new DelegateCommand(randomname);
-            
-    }
+
+            SerializeCommand = new DelegateCommand(Serialize);
+
+
+            AllGurpsSkillViewLaunchCommand = new DelegateCommand(AllGurpsSkillViewLaunch);
+        }
         public void ShowAboutWindow(object parameter)
         {
             AboutWindowView window = new AboutWindowView();
@@ -72,7 +80,7 @@ namespace Item_WPF.MVVM.ViewModels
 
         public void ShowAllItems(object parameter)
         {
-            if ((parameter as string) == "Gun") { AllWeaponView allItems = new AllWeaponView(); allItems.Show(); }
+            if ((parameter as string) == "Weapon") { AllWeaponView allItems = new AllWeaponView(); allItems.Show(); }
 
             else { all_ItemsView allItems = new all_ItemsView(parameter); allItems.Show(); }
 
@@ -111,7 +119,15 @@ namespace Item_WPF.MVVM.ViewModels
             else
             MessageBox.Show(USCensusNames.INSTANCE.getFullName(false));
         }
-
-        
+        private void AllGurpsSkillViewLaunch(object parameter)
+        {
+            AllGurpsSkillView allgurpsSkillView = new AllGurpsSkillView();
+            allgurpsSkillView.Show();
+        }
+        private void Serialize(object parameter)
+        {
+            SerializeView serializeViewV = new SerializeView();
+            serializeViewV.Show();
+        }
     }
 }

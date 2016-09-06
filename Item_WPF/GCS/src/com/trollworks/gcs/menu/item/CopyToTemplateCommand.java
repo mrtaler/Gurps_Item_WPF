@@ -27,7 +27,7 @@ public class CopyToTemplateCommand extends Command {
 	@Localize(locale = "de", value = "Kopiere zur Vorlage")
 	@Localize(locale = "ru", value = "Копировать в шаблон")
 	@Localize(locale = "es", value = "Copiar a la plantilla")
-	private static String COPY_TO_TEMPLATE;
+	private static string COPY_TO_TEMPLATE;
 
 	static {
 		Localization.initialize();

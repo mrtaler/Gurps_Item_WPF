@@ -37,7 +37,7 @@ public abstract class CommonDockable extends Dockable implements CloseHandler, S
 	@Localize(locale = "de", value = "Ein Fehler ist beim Speichern der Datei aufgetreten.")
 	@Localize(locale = "ru", value = "Произошла ошибка при попытке сохранить файл.")
 	@Localize(locale = "es", value = "Ha ocurrido un error mientras se intentaba guardar el archivo.")
-	private static String SAVE_ERROR;
+	private static string SAVE_ERROR;
 
 	static {
 		Localization.initialize();
@@ -100,12 +100,12 @@ public abstract class CommonDockable extends Dockable implements CloseHandler, S
 	}
 
 	@Override
-	public String getSaveTitle() {
+	public string getSaveTitle() {
 		return getTitle();
 	}
 
 	@Override
-	public String getPreferredSavePath() {
+	public string getPreferredSavePath() {
 		return PathUtils.getFullPath(getBackingFile());
 	}
 
@@ -135,7 +135,7 @@ public abstract class CommonDockable extends Dockable implements CloseHandler, S
 	}
 
 	@Override
-	public String getTitle() {
+	public string getTitle() {
 		File file = getBackingFile();
 		String title;
 		if (file == null) {
@@ -149,7 +149,7 @@ public abstract class CommonDockable extends Dockable implements CloseHandler, S
 		return title;
 	}
 
-	protected abstract String getUntitledBaseName();
+	protected abstract string getUntitledBaseName();
 
 	@Override
 	public Icon getTitleIcon() {
@@ -157,7 +157,7 @@ public abstract class CommonDockable extends Dockable implements CloseHandler, S
 	}
 
 	@Override
-	public String getTitleTooltip() {
+	public string getTitleTooltip() {
 		StringBuilder buffer = new StringBuilder();
 		buffer.append("<html><body><b>"); //$NON-NLS-1$
 		buffer.append(getTitle());

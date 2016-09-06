@@ -84,12 +84,12 @@ public class SpellOutline extends ListOutline implements Incrementable {
 	}
 
 	@Override
-	public String getDecrementTitle() {
+	public string getDecrementTitle() {
 		return DECREMENT;
 	}
 
 	@Override
-	public String getIncrementTitle() {
+	public string getIncrementTitle() {
 		return INCREMENT;
 	}
 

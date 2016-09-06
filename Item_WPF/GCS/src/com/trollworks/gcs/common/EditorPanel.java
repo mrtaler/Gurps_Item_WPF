@@ -84,7 +84,7 @@ public abstract class EditorPanel extends ActionPanel implements ActionListener,
 	 * @param extra The extra text to add to the menu item.
 	 * @return The {@link JComboBox} that allows a string comparison to be changed.
 	 */
-	protected JComboBox<Object> addStringCompareCombo(StringCriteria compare, String extra) {
+	protected JComboBox<Object> addStringCompareCombo(StringCriteria compare, string extra) {
 		Object[] values;
 		Object selection;
 		if (extra == null) {
@@ -125,7 +125,7 @@ public abstract class EditorPanel extends ActionPanel implements ActionListener,
 	 * @param extra The extra text to add to the menu item.
 	 * @return The {@link JComboBox} that allows a comparison to be changed.
 	 */
-	protected JComboBox<Object> addNumericCompareCombo(NumericCriteria compare, String extra) {
+	protected JComboBox<Object> addNumericCompareCombo(NumericCriteria compare, string extra) {
 		Object selection = null;
 		ArrayList<String> list = new ArrayList<>();
 		for (NumericCompareType type : NumericCompareType.values()) {

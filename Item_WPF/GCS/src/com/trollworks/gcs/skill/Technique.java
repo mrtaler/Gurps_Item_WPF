@@ -70,7 +70,7 @@ public class Technique extends Skill {
 	 * @param limitModifier The maximum bonus the technique can grant.
 	 * @return The calculated technique level.
 	 */
-	public static SkillLevel calculateTechniqueLevel(GURPSCharacter character, String name, String specialization, SkillDefault def, SkillDifficulty difficulty, int points, bool limited, int limitModifier) {
+	public static SkillLevel calculateTechniqueLevel(GURPSCharacter character, string name, string specialization, SkillDefault def, SkillDifficulty difficulty, int points, bool limited, int limitModifier) {
 		int relativeLevel = 0;
 		int level = Integer.MIN_VALUE;
 		if (character != null) {
@@ -117,7 +117,7 @@ public class Technique extends Skill {
 	 * @param modifier The modifer to the skill level.
 	 * @return The formatted string.
 	 */
-	public static String getTechniqueDisplayLevel(int level, int relativeLevel, int modifier) {
+	public static string getTechniqueDisplayLevel(int level, int relativeLevel, int modifier) {
 		if (level < 0) {
 			return "-"; //$NON-NLS-1$
 		}
@@ -181,17 +181,17 @@ public class Technique extends Skill {
 	}
 
 	@Override
-	public String getLocalizedName() {
+	public string getLocalizedName() {
 		return TECHNIQUE_DEFAULT_NAME;
 	}
 
 	@Override
-	public String getXMLTagName() {
+	public string getXMLTagName() {
 		return TAG_TECHNIQUE;
 	}
 
 	@Override
-	public String getRowType() {
+	public string getRowType() {
 		return TECHNIQUE_DEFAULT_NAME;
 	}
 
@@ -246,7 +246,7 @@ public class Technique extends Skill {
 	 * @param prefix The prefix to add to each line appended to the builder.
 	 * @return <code>true</code> if this technique has its default satisfied.
 	 */
-	public bool satisfied(StringBuilder builder, String prefix) {
+	public bool satisfied(StringBuilder builder, string prefix) {
 		if (mDefault.getType().isSkillBased()) {
 			Skill skill = getCharacter().getBestSkillNamed(mDefault.getName(), mDefault.getSpecialization(), false, new HashSet<String>());
 			bool satisfied = skill != null && skill.getPoints() > 0;
@@ -283,7 +283,7 @@ public class Technique extends Skill {
 	}
 
 	@Override
-	public String getSpecialization() {
+	public string getSpecialization() {
 		return mDefault.getFullName();
 	}
 
@@ -293,7 +293,7 @@ public class Technique extends Skill {
 	}
 
 	@Override
-	public String getTechLevel() {
+	public string getTechLevel() {
 		return null;
 	}
 
@@ -330,7 +330,7 @@ public class Technique extends Skill {
 	}
 
 	@Override
-	public String getDifficultyAsText(bool localized) {
+	public string getDifficultyAsText(bool localized) {
 		return getDifficulty().toString();
 	}
 
@@ -390,7 +390,7 @@ public class Technique extends Skill {
 	}
 
 	@Override
-	public String getModifierNotes() {
+	public string getModifierNotes() {
 		StringBuilder buffer = new StringBuilder(super.getModifierNotes());
 		if (buffer.length() > 0) {
 			buffer.append(' ');

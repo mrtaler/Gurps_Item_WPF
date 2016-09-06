@@ -40,13 +40,13 @@ public class EditMenuProvider implements MenuProvider {
 	@Localize(locale = "de", value = "Bearbeiten")
 	@Localize(locale = "ru", value = "Правка")
 	@Localize(locale = "es", value = "Editar")
-	private static String EDIT;
+	private static string EDIT;
 
 	static {
 		Localization.initialize();
 	}
 
-	public static const String NAME = "Edit"; //$NON-NLS-1$
+	public static const string NAME = "Edit"; //$NON-NLS-1$
 
 	@Override
 	public Set<Command> getModifiableCommands() {

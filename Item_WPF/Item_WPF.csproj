@@ -29,9 +29,10 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -62,6 +63,9 @@
       <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="microsoft.windows.shell">
+      <HintPath>..\packages\Microsoft.Windows.Shell.3.0.1.0\lib\net40\microsoft.windows.shell.dll</HintPath>
+    </Reference>
     <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\RibbonControlsLibrary.4.0.0\lib\net40\RibbonControlsLibrary.dll</HintPath>
       <Private>True</Private>
@@ -91,6 +95,10 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="XsdToObject, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XsdToObject.1.0.0.2\lib\net45\XsdToObject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -98,74 +106,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="addin\Converters.cs" />
+    <Compile Include="addin\Converters\CostDeciminalConverter.cs" />
+    <Compile Include="addin\Converters\DeciminalConverterString.cs" />
+    <Compile Include="addin\Converters\ImageConverter.cs" />
     <Compile Include="addin\ViewModelCommand.cs" />
     <Compile Include="addin\RelayCommand.cs" />
-    <Compile Include="AMMO.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AMMOUPGRATE.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AnyBoxNameType.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ARMOUR.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ArmourClass.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Attachment.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AttachmentClass.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Attachmentmount.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ATTACHMENTSLOT.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AttachmentSystem.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AvailableAttachSlot.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Battery.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BoxItem.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Caliber.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterDB.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Cloth.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CombineWeap.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Drug.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DrugType.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ExplosionType.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EXPLOSIVE.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FOOD.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
     <Compile Include="GCS\src\com\trollworks\gcs\advantage\Advantage.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\advantage\AdvantageColumn.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\advantage\AdvantageContainerType.cs" />
@@ -190,42 +135,178 @@
     <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\RowItemRenderer.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\RowPostProcessor.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\RowUndo.cs" />
-    <Compile Include="G_AttachClass.cs">
+    <Compile Include="GCS\xsd\advantage_list.Designer.cs" />
+    <Compile Include="GCS\xsd\character.Designer.cs" />
+    <Compile Include="GCS\xsd\common.Designer.cs" />
+    <Compile Include="GCS\xsd\equipment_list.Designer.cs" />
+    <Compile Include="GCS\xsd\skill_list.Designer.cs" />
+    <Compile Include="GCS\xsd\spell_list.Designer.cs" />
+    <Compile Include="GCS\xsd\template.Designer.cs" />
+    <Compile Include="ItemEntityModel\Advantage.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="G_AvAttachClass.cs">
+    <Compile Include="ItemEntityModel\advantage_prereq.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="G_SubAttachClass.cs">
+    <Compile Include="ItemEntityModel\AMMOUPGRATE.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="ITEM.cs">
+    <Compile Include="ItemEntityModel\AmountAtribute.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="ItemClass.cs">
+    <Compile Include="ItemEntityModel\AnyBoxNameType.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="LaserColorEf.cs">
+    <Compile Include="ItemEntityModel\ARMOUR.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="LBEClass.cs">
+    <Compile Include="ItemEntityModel\Attachment.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="LC.cs">
+    <Compile Include="ItemEntityModel\Attachmentmount.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\ATTACHMENTSLOT.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\attribute_bonus.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\attribute_prereq.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\AvailableAttachSlot.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\Battery.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\BonusAttribute.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\BoxItem.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\Caliber.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\CharacterDB.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\Cloth.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\CombineWeap.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\contained_weight_prereq.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\DefaultSkill.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\DifficultySkill.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\Drug.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\EXPLOSIVE.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\FOOD.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\GurpsClass.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\GurpsSkill.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\GurpsSkillCategory.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\G_AttachClass.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\G_AvAttachClass.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\G_SubAttachClass.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\InventoryOfChar.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\ITEM.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\ItemClass.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\ItemSubClass.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\LaserColorEf.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\LC.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\LOADBEARINGEQUIPMENT.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\NeedSkill.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\prereq_listDB.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\skill_prereqDB.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\spell_prereqDB.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\TL.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\TypeOfDamage.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\Type_of_Box.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\WEAPON.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\WeaponAttackType.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\WeaponDamage.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\weapon_bonus.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="litForms\character.xaml.cs">
       <DependentUpon>character.xaml</DependentUpon>
     </Compile>
     <Compile Include="addin\File_of_Code.cs" />
-    <Compile Include="Gurps_Item.cs">
+    <Compile Include="ItemEntityModel\Gurps_Item.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="LOADBEARINGEQUIPMENT.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    <Compile Include="MVVM\GurpsSkill_m\AllGurpsSkillView.xaml.cs">
+      <DependentUpon>AllGurpsSkillView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\GurpsSkill_m\AllGurpsSkillViewModel.cs" />
+    <Compile Include="MVVM\GurpsSkill_m\GurpsSkillModel.cs" />
+    <Compile Include="MVVM\GurpsSkill_m\GurpsSkillView.xaml.cs">
+      <DependentUpon>GurpsSkillView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\GurpsSkill_m\GurpsSkillViewModel.cs" />
     <Compile Include="MVVM\Models\Advantage.cs" />
     <Compile Include="MVVM\Models\AnyBoxNameType.cs" />
     <Compile Include="MVVM\Models\AttackOption.cs" />
@@ -237,6 +318,27 @@
     <Compile Include="MVVM\Models\ItemsForSortModel.cs" />
     <Compile Include="MVVM\Models\ItemToGridModel.cs" />
     <Compile Include="MVVM\Models\Skill.cs" />
+    <Compile Include="MVVM\Serialize\Model\1.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\AdvantageDB.cs" />
+    <Compile Include="MVVM\Serialize\Model\advantageSerialize.cs" />
+    <Compile Include="MVVM\Serialize\Model\advantageXML.cs" />
+    <Compile Include="MVVM\Serialize\Model\Category.cs" />
+    <Compile Include="MVVM\Serialize\Model\Default.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\DefaultSkill.cs" />
+    <Compile Include="MVVM\Serialize\Model\ew.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\GurpsSkill.cs" />
+    <Compile Include="MVVM\Serialize\Model\prereq_list\Prereq_listXML%28list%29.cs" />
+    <Compile Include="MVVM\Serialize\Model\prereq_list\Prereq_listXML%28single%29.cs" />
+    <Compile Include="MVVM\Serialize\Model\prereq_list\Prereq_listXML.cs" />
+    <Compile Include="MVVM\Serialize\Model\Program.cs" />
+    <Compile Include="MVVM\Serialize\Model\SkillXMLModel.cs" />
+    <Compile Include="MVVM\Serialize\Model\SubSkillColl.cs" />
+    <Compile Include="MVVM\Serialize\Model\SubSubSkillcol.cs" />
+    <Compile Include="MVVM\Serialize\SerializeView.xaml.cs">
+      <DependentUpon>SerializeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\Serialize\SerializeViewModel.cs" />
+    <Compile Include="MVVM\Serialize\Model\SkillSerializeible.cs" />
     <Compile Include="MVVM\ViewModels\AboutViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AllWeaponViewModel.cs" />
     <Compile Include="MVVM\ViewModels\all_ItemsViewModel.cs" />
@@ -343,30 +445,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="TL.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TypeOfDamage.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Type_of_Box.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="WEAPON.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="WeaponAttackType.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="WeaponClass.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="WeaponDamage.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="WeaponType.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
     <Page Include="litForms\character.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -375,16 +453,28 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Gurps_Item.Context.cs">
+    <Compile Include="ItemEntityModel\Gurps_Item.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Gurps_Item.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Gurps_Item.Designer.cs">
+    <Compile Include="ItemEntityModel\Gurps_Item.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
     </Compile>
+    <Page Include="MVVM\GurpsSkill_m\AllGurpsSkillView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\GurpsSkill_m\GurpsSkillView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\Serialize\SerializeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\AboutWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -503,16 +593,14 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Gurps_Item.edmx">
+    <EntityDeploy Include="ItemEntityModel\Gurps_Item.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Gurps_Item.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="addin\id" />
-    <None Include="addin\Item1.backup" />
-    <None Include="addin\ItemModelDiagram.dbd" />
+    <None Include="addin\oldDB\ItemModelDiagram.dbd" />
     <None Include="addin\Диаграмма1.dbd" />
     <None Include="addin\Копия Fall_weap.xlsx" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="GCS\Library\Advantages\Action.adq" />
     <None Include="GCS\Library\Advantages\Banestorm.adq" />
     <None Include="GCS\Library\Advantages\Basic Set.adq" />
@@ -903,10 +991,13 @@
     <None Include="GCS\xsd\template.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Gurps_Item.edmx.diagram">
+    <None Include="ItemEntityModel\Gurps_Item.edmx.diagram">
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
     </None>
-    <None Include="packages.config" />
+    <None Include="MVVM\Serialize\Model\bs.skl" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -919,18 +1010,24 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="addin\DBGen.sql" />
-    <Content Include="addin\InsertStoreP.sql" />
-    <Content Include="addin\Item1 20160713 2232.sql" />
-    <Content Include="addin\ItemModel.edmx.sql" />
-    <Content Include="addin\SQL.sql" />
+    <Content Include="addin\02_DatabaseInitData.sql" />
+    <Content Include="addin\Al\hgf.sql" />
+    <Content Include="addin\Al\qq.sql" />
+    <Content Include="addin\Al\Skill.sql" />
+    <Content Include="addin\Al\sql1.sql" />
+    <Content Include="addin\Al\sqlADV.sql" />
+    <Content Include="addin\Al\SQlinv.sql" />
+    <Content Include="addin\oldDB\InsertStoreP.sql" />
+    <Content Include="addin\01_DatabaseInitStructure.sql" />
+    <Content Include="addin\oldDB\ItemModel.edmx.sql" />
+    <Content Include="addin\oldDB\SQL.sql" />
     <Content Include="GCS\Library\Output Templates\template.html" />
-    <Content Include="GCS\src\com\trollworks\gcs\app\AboutPanel.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\app\GCS.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\app\GCSApp.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\app\GCSFileProxyCreator.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\app\GCSFonts.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\app\GCSInfoPlistCreator.java" />
+    <Compile Include="GCS\src\com\trollworks\gcs\app\AboutPanel.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\app\GCS.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\app\GCSApp.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\app\GCSFileProxyCreator.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\app\GCSFonts.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\app\GCSInfoPlistCreator.cs" />
     <Resource Include="GCS\src\com\trollworks\gcs\app\images\about.png" />
     <Resource Include="GCS\src\com\trollworks\gcs\app\images\ActualSize%402x.png" />
     <Resource Include="GCS\src\com\trollworks\gcs\app\images\ActualSize.png" />
@@ -966,23 +1063,23 @@
     <Resource Include="GCS\src\com\trollworks\gcs\app\images\ZoomIn.png" />
     <Resource Include="GCS\src\com\trollworks\gcs\app\images\ZoomOut%402x.png" />
     <Resource Include="GCS\src\com\trollworks\gcs\app\images\ZoomOut.png" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\Armor.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\AttributesPanel.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\CharacterFieldUndo.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\CharacterSheet.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\CharacterSheetLayout.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\DescriptionPanel.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\DescriptionRandomizer.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\DoubleOutlinePanel.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\DropPanel.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\Encumbrance.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\EncumbrancePanel.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\GURPSCharacter.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\HashedWeapon.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\HitLocationPanel.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\HitPointsPanel.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\IdentityPanel.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\LiftPanel.java" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\Armor.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\AttributesPanel.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\CharacterFieldUndo.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\CharacterSheet.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\CharacterSheetLayout.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\DescriptionPanel.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\DescriptionRandomizer.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\DoubleOutlinePanel.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\DropPanel.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\Encumbrance.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\EncumbrancePanel.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\GURPSCharacter.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\HashedWeapon.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\HitLocationPanel.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\HitPointsPanel.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\IdentityPanel.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\LiftPanel.cs" />
     <Resource Include="GCS\src\com\trollworks\gcs\character\names\USCensus1990FemaleFirstNames.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <CustomToolNamespace>com.trollworks.gcs.character.names</CustomToolNamespace>
@@ -995,23 +1092,23 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <CustomToolNamespace>com.trollworks.gcs.character.names</CustomToolNamespace>
     </Resource>
-    <Content Include="GCS\src\com\trollworks\gcs\character\NotesPanel.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\OutlineInfo.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\Page.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\PageAssembler.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\PageField.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\PageHeader.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\PageLabel.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\PageOwner.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\PlayerInfoPanel.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\PointsPanel.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\PortraitPanel.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\PrerequisitesThread.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\Profile.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\SheetDockable.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\SingleOutlinePanel.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\TextEditor.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\character\WeaponOutline.java" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\NotesPanel.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\OutlineInfo.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\Page.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\PageAssembler.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\PageField.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\PageHeader.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\PageLabel.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\PageOwner.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\PlayerInfoPanel.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\PointsPanel.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\PortraitPanel.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\PrerequisitesThread.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\Profile.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\SheetDockable.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\SingleOutlinePanel.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\TextEditor.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\character\WeaponOutline.cs" />
     <Content Include="GCS\src\com\trollworks\gcs\common\CommonDockable.java" />
     <Content Include="GCS\src\com\trollworks\gcs\common\DataFile.java" />
     <Content Include="GCS\src\com\trollworks\gcs\common\EditorPanel.java" />
@@ -1030,7 +1127,7 @@
     <Content Include="GCS\src\com\trollworks\gcs\criteria\StringCompareType.java" />
     <Content Include="GCS\src\com\trollworks\gcs\criteria\StringCriteria.java" />
     <Content Include="GCS\src\com\trollworks\gcs\criteria\WeightCriteria.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\equipment\Equipment.java" />
+    <Compile Include="GCS\src\com\trollworks\gcs\equipment\Equipment.cs" />
     <Content Include="GCS\src\com\trollworks\gcs\equipment\EquipmentColumn.java" />
     <Content Include="GCS\src\com\trollworks\gcs\equipment\EquipmentDockable.java" />
     <Content Include="GCS\src\com\trollworks\gcs\equipment\EquipmentEditor.java" />
@@ -1134,7 +1231,7 @@
     <Content Include="GCS\src\com\trollworks\gcs\services\WebServiceClient.java" />
     <Content Include="GCS\src\com\trollworks\gcs\skill\Defaults.java" />
     <Content Include="GCS\src\com\trollworks\gcs\skill\OrLabel.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\skill\Skill.java" />
+    <Compile Include="GCS\src\com\trollworks\gcs\skill\Skill.cs" />
     <Content Include="GCS\src\com\trollworks\gcs\skill\SkillAttribute.java" />
     <Content Include="GCS\src\com\trollworks\gcs\skill\SkillColumn.java" />
     <Content Include="GCS\src\com\trollworks\gcs\skill\SkillDefault.java" />
@@ -1148,7 +1245,7 @@
     <Content Include="GCS\src\com\trollworks\gcs\skill\SkillsDockable.java" />
     <Content Include="GCS\src\com\trollworks\gcs\skill\Technique.java" />
     <Content Include="GCS\src\com\trollworks\gcs\skill\TechniqueEditor.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\spell\Spell.java" />
+    <Compile Include="GCS\src\com\trollworks\gcs\spell\Spell.cs" />
     <Content Include="GCS\src\com\trollworks\gcs\spell\SpellClassCell.java" />
     <Content Include="GCS\src\com\trollworks\gcs\spell\SpellColumn.java" />
     <Content Include="GCS\src\com\trollworks\gcs\spell\SpellEditor.java" />
@@ -1161,23 +1258,23 @@
     <Content Include="GCS\src\com\trollworks\gcs\template\TemplateDockable.java" />
     <Content Include="GCS\src\com\trollworks\gcs\template\TemplateOutlinePanel.java" />
     <Content Include="GCS\src\com\trollworks\gcs\template\TemplateSheet.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\weapon\MeleeWeaponEditor.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\weapon\MeleeWeaponStats.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\weapon\OldWeapon.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\weapon\RangedWeaponEditor.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\weapon\RangedWeaponStats.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\weapon\WeaponColumn.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\weapon\WeaponDescriptionCell.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\weapon\WeaponDisplayRow.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\weapon\WeaponEditor.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\weapon\WeaponOutline.java" />
-    <Content Include="GCS\src\com\trollworks\gcs\weapon\WeaponStats.java" />
-    <Content Include="Gurps_Item.Context.tt">
+    <Compile Include="GCS\src\com\trollworks\gcs\weapon\MeleeWeaponEditor.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\weapon\MeleeWeaponStats.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\weapon\OldWeapon.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\weapon\RangedWeaponEditor.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\weapon\RangedWeaponStats.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\weapon\WeaponColumn.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\weapon\WeaponDescriptionCell.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\weapon\WeaponDisplayRow.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\weapon\WeaponEditor.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\weapon\WeaponOutline.cs" />
+    <Compile Include="GCS\src\com\trollworks\gcs\weapon\WeaponStats.cs" />
+    <Content Include="ItemEntityModel\Gurps_Item.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
       <LastGenOutput>Gurps_Item.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Gurps_Item.tt">
+    <Content Include="ItemEntityModel\Gurps_Item.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
       <LastGenOutput>Gurps_Item.cs</LastGenOutput>
@@ -1198,6 +1295,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

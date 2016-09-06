@@ -136,7 +136,7 @@ public class PrereqList extends Prereq {
 	}
 
 	@Override
-	public String getXMLTag() {
+	public string getXMLTag() {
 		return TAG_ROOT;
 	}
 
@@ -234,7 +234,7 @@ public class PrereqList extends Prereq {
 	}
 
 	@Override
-	public bool satisfied(GURPSCharacter character, ListRow exclude, StringBuilder builder, String prefix) {
+	public bool satisfied(GURPSCharacter character, ListRow exclude, StringBuilder builder, string prefix) {
 		if (isWhenTLEnabled(mWhenTLCriteria)) {
 			if (!mWhenTLCriteria.matches(Numbers.extractInteger(character.getDescription().getTechLevel(), 0, false))) {
 				return true;

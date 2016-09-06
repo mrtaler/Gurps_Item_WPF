@@ -181,7 +181,7 @@ public class ListCollectionThread extends Thread implements FileVisitor<Path>, C
 		return NumericComparator.compareStrings(getName(o1), getName(o2));
 	}
 
-	private static const String getName(Object obj) {
+	private static const string getName(Object obj) {
 		if (obj instanceof Path) {
 			return ((Path) obj).getFileName().toString();
 		}

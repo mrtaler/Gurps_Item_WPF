@@ -1,13 +1,10 @@
 ﻿using Item_WPF.addin;
+using Item_WPF.ItemEntityModel;
 using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
 
 namespace Item_WPF.MVVM.ViewModels
 {
@@ -17,8 +14,8 @@ namespace Item_WPF.MVVM.ViewModels
         public ObservableCollection<AnyBoxNameType> anyBoxNameType111 { get; set; }
         public ObservableCollection<AnyBoxNameType> anyBoxNameTypeAll { get; set; }
         public ObservableCollection<ItemClass> ItemsClass { get; set; }
-        private AnyBoxNameType _bx;
-        public AnyBoxNameType bx
+        private ItemEntityModel.AnyBoxNameType _bx;
+        public ItemEntityModel.AnyBoxNameType bx
         {
             get
             {
@@ -33,8 +30,8 @@ namespace Item_WPF.MVVM.ViewModels
                 };
             }
         }
-        private BoxItem _BoxItemforWork;
-        public BoxItem BoxItemforWork
+        private ItemEntityModel.BoxItem _BoxItemforWork;
+        public ItemEntityModel.BoxItem BoxItemforWork
         {
             get { return _BoxItemforWork; }
             set
