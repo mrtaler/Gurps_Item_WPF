@@ -184,7 +184,32 @@ namespace Item_WPF.ItemEntityModel
     			}
     		}
     	}
+        private Nullable<int> _FK_Advantage;
+    	public Nullable<int> FK_Advantage 
+    	{ 
+    		get
+    		{
+    			return _FK_Advantage;
+    		} 
+    		set
+    		{
+    			if (_FK_Advantage != value)
+    			{
+    				_FK_Advantage = value;
+    				OnPropertyChanged("FK_Advantage");
+    			}
+    		}
+    	}
     
+        private Advantage _Advantage;
+            public virtual Advantage Advantage
+            {
+                get { return _Advantage; }
+                set
+                { if(_Advantage != value)
+                    {    _Advantage = value;    OnPropertyChanged("Advantage");   }
+                }
+            } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<advantage_prereq> _advantage_prereq;
             public virtual ICollection<advantage_prereq> advantage_prereq

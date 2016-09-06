@@ -14,18 +14,14 @@ namespace Item_WPF.MVVM.Serialize.Model
         private item1Entities _context;
         public ObservableCollection<GurpsSkill> CollectionCategiry = new ObservableCollection<GurpsSkill>();
         public ObservableCollection<SkillXMLModel> OutstringCollectionSkill = new ObservableCollection<SkillXMLModel>();
-
         public ObservableCollection<GurpsSkillCategory> gurpsSkillCategories = new ObservableCollection<GurpsSkillCategory>();
         public ObservableCollection<string> retcompare;
-
         public SkillSerializeible(string xmlString, string writePath)
         {
             _context = new item1Entities();
             retcompare = new ObservableCollection<string>();
-
-            int contextAdded =0;
+            int contextAdded = 1;
             XDocument xdoc = XDocument.Load(xmlString);
-
             #region Read XML For Skill
             foreach (XElement skillElement in xdoc.Element("skill_list").Elements("skill"))
             {
@@ -40,9 +36,7 @@ namespace Item_WPF.MVVM.Serialize.Model
                 qwerty.Reference = skillElement.Element("reference");
                 qwerty.version = skillElement.Attribute("version");
                 qwerty.encumbrance_penalty_multiplier = skillElement.Element("encumbrance_penalty_multiplier");
-
                 qwerty.notes = skillElement.Element("notes");
-
                 #region  Default Collection
                 qwerty.Default = new ObservableCollection<DefaultXML>();
                 foreach (var itemdefault in skillElement.Elements("default"))
@@ -59,7 +53,6 @@ namespace Item_WPF.MVVM.Serialize.Model
                     qwerty.categories.Add(cat);
                 }
                 #endregion
-
                 #region prereq_list
                 qwerty.prereq_list = new ObservableCollection<Prereq_listXML>();
                 foreach (XElement itemprereq_list in skillElement.Elements("prereq_list"))
@@ -74,7 +67,6 @@ namespace Item_WPF.MVVM.Serialize.Model
                     Attribute_bonusXML atrbns = new Attribute_bonusXML(itemskillElement);
                     qwerty.attribute_bonus.Add(atrbns);
                 }
-
                 #endregion
                 #region Weapon_bonusXML
                 foreach (var itemweapon_bonus in skillElement.Elements("weapon_bonus"))
@@ -86,12 +78,14 @@ namespace Item_WPF.MVVM.Serialize.Model
                 qwerty.Type = "skill";
                 OutstringCollectionSkill.Add(qwerty);
                 CollectionCategiry.Add(new GurpsSkill(qwerty, "skill"));
+                //qwerty.weapon_bonus =       new ObservableCollection<Weapon_bonusXML>   (skillElement.Elements("weapon_bonus"));
+                //OutstringCollection.Add(qwerty);
+                //contextAdded += 1;
             }
 
             #endregion
             foreach (XElement techElement in xdoc.Element("skill_list").Elements("technique"))
             {
-                contextAdded += 1;
                 SkillXMLModel techXML = new SkillXMLModel();
                 techXML.NameSkill = techElement.Element("name");
                 techXML.difficulty = techElement.Element("difficulty");
@@ -100,7 +94,6 @@ namespace Item_WPF.MVVM.Serialize.Model
                 techXML.notes = techElement.Element("notes");
                 techXML.version = techElement.Attribute("version");
                 techXML.limit = techElement.Attribute("limit");
-
                 #region  Default Collection
                 techXML.Default = new ObservableCollection<DefaultXML>();
                 foreach (var itemdefault in techElement.Elements("default"))
@@ -128,7 +121,6 @@ namespace Item_WPF.MVVM.Serialize.Model
                 techXML.Type = "technique";
                 OutstringCollectionSkill.Add(techXML);
                 CollectionCategiry.Add(new GurpsSkill(techXML, "technique"));
-
             }
             contextAdded = 0;
             foreach (SkillXMLModel item in OutstringCollectionSkill.OrderBy(p => p.numPP))
@@ -147,34 +139,15 @@ namespace Item_WPF.MVVM.Serialize.Model
                     .Where(p => p.NameSkill == NameSkill)
                     .Where(p => p.Specialization == SpecSkill)
                     .FirstOrDefault(p => p.version == VersSkill);
-                SkillAstronomy.FGurpsSkill(item, _context, CollectionCategiry);
-                _context.GurpsSkills.Add(SkillAstronomy);
-            }
-           
 
+                //if (item.Specialization.Value.ToString() == "Conducting")
+                //  {
+                SkillAstronomy.FGurpsSkill(item, _context, CollectionCategiry);
+                 _context.GurpsSkills.Add(SkillAstronomy);
+                // }
+            }
             _context.SaveChanges();
             MessageBox.Show("_context SaveChanges");
-        }
-        public void ToSqlFromCollString(ObservableCollection<DefaultSkill> ResultOrder, ObservableCollection<string> outSting)
-        {
-            foreach (var item in ResultOrder)
-            {
-                outSting.Add("INSERT INTO CharDB.       "
-                    + item
-                    + "' )GO"
-                    );
-            }
-        }
-        public void WriteToFile(string writePathin, ObservableCollection<string> resultin)
-        {
-            using (StreamWriter sw = new StreamWriter(writePathin, false, System.Text.Encoding.Default))
-            {
-                foreach (var article in resultin)
-                {
-                    Console.WriteLine("{0}", article);
-                    sw.WriteLine(article);
-                }
-            }
         }
     }
 }

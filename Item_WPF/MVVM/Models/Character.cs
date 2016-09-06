@@ -323,14 +323,14 @@ namespace Item_WPF.ItemEntityModel
         }
 
         // Character skills
-        private ObservableCollection<Skill> skills = new ObservableCollection<Skill>();
-        public ObservableCollection<Skill> Skills
-        {
-            get
-            {
-                return skills;
-            }
-        }
+        //private ObservableCollection<Skill> skills = new ObservableCollection<Skill>();
+        //public ObservableCollection<Skill> Skills
+        //{
+        //    get
+        //    {
+        //        return skills;
+        //    }
+        //}
 
         // Calculation of character points spent on this character
         public int CharacterPointsPrimarySkill
@@ -363,12 +363,12 @@ namespace Item_WPF.ItemEntityModel
         {
             get
             {
-                int points = 0;
-                foreach (Skill skill in Skills)
-                {
-            //        points += skill.Points;
-                }
-                return points;
+            //    int points = 0;
+            ////    foreach (Skill skill in Skills)
+            ////    {
+            //////        points += skill.Points;
+            ////    }
+                return 0;
             }
         }
         public int CharacterPoints

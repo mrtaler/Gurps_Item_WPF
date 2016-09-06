@@ -32,11 +32,7 @@ namespace Item_WPF.ItemEntityModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Advantage()
         {
-            this.Advantage1 = new HashSet<Advantage>();
-            this.SkillBonus = new HashSet<SkillBonu>();
-            this.Advantage11 = new HashSet<Advantage>();
-            this.Advantages = new HashSet<Advantage>();
-            this.TypeAdvs = new HashSet<TypeAdv>();
+            this.prereq_listDB = new HashSet<prereq_listDB>();
         }
     
         private int _id;
@@ -55,203 +51,191 @@ namespace Item_WPF.ItemEntityModel
     			}
     		}
     	}
-        private string _Name;
-    	public string Name 
+        private string _name;
+    	public string name 
     	{ 
     		get
     		{
-    			return _Name;
+    			return _name;
     		} 
     		set
     		{
-    			if (_Name != value)
+    			if (_name != value)
     			{
-    				_Name = value;
-    				OnPropertyChanged("Name");
+    				_name = value;
+    				OnPropertyChanged("name");
     			}
     		}
     	}
-        private Nullable<int> _idCategory;
-    	public Nullable<int> idCategory 
+        private string _nameCompare;
+    	public string nameCompare 
     	{ 
     		get
     		{
-    			return _idCategory;
+    			return _nameCompare;
     		} 
     		set
     		{
-    			if (_idCategory != value)
+    			if (_nameCompare != value)
     			{
-    				_idCategory = value;
-    				OnPropertyChanged("idCategory");
+    				_nameCompare = value;
+    				OnPropertyChanged("nameCompare");
     			}
     		}
     	}
-        private Nullable<int> _Cost;
-    	public Nullable<int> Cost 
+        private string _typeadc;
+    	public string typeadc 
     	{ 
     		get
     		{
-    			return _Cost;
+    			return _typeadc;
     		} 
     		set
     		{
-    			if (_Cost != value)
+    			if (_typeadc != value)
     			{
-    				_Cost = value;
-    				OnPropertyChanged("Cost");
+    				_typeadc = value;
+    				OnPropertyChanged("typeadc");
     			}
     		}
     	}
-        private Nullable<int> _idType;
-    	public Nullable<int> idType 
+        private string _levels;
+    	public string levels 
     	{ 
     		get
     		{
-    			return _idType;
+    			return _levels;
     		} 
     		set
     		{
-    			if (_idType != value)
+    			if (_levels != value)
     			{
-    				_idType = value;
-    				OnPropertyChanged("idType");
+    				_levels = value;
+    				OnPropertyChanged("levels");
     			}
     		}
     	}
-        private string _Referense;
-    	public string Referense 
+        private string _points_per_level;
+    	public string points_per_level 
     	{ 
     		get
     		{
-    			return _Referense;
+    			return _points_per_level;
     		} 
     		set
     		{
-    			if (_Referense != value)
+    			if (_points_per_level != value)
     			{
-    				_Referense = value;
-    				OnPropertyChanged("Referense");
+    				_points_per_level = value;
+    				OnPropertyChanged("points_per_level");
     			}
     		}
     	}
-        private string _Notes;
-    	public string Notes 
+        private string _base_points;
+    	public string base_points 
     	{ 
     		get
     		{
-    			return _Notes;
+    			return _base_points;
     		} 
     		set
     		{
-    			if (_Notes != value)
+    			if (_base_points != value)
     			{
-    				_Notes = value;
-    				OnPropertyChanged("Notes");
+    				_base_points = value;
+    				OnPropertyChanged("base_points");
     			}
     		}
     	}
-        private Nullable<int> _ParentAdv;
-    	public Nullable<int> ParentAdv 
+        private string _reference;
+    	public string reference 
     	{ 
     		get
     		{
-    			return _ParentAdv;
+    			return _reference;
     		} 
     		set
     		{
-    			if (_ParentAdv != value)
+    			if (_reference != value)
     			{
-    				_ParentAdv = value;
-    				OnPropertyChanged("ParentAdv");
+    				_reference = value;
+    				OnPropertyChanged("reference");
+    			}
+    		}
+    	}
+        private string _notes;
+    	public string notes 
+    	{ 
+    		get
+    		{
+    			return _notes;
+    		} 
+    		set
+    		{
+    			if (_notes != value)
+    			{
+    				_notes = value;
+    				OnPropertyChanged("notes");
+    			}
+    		}
+    	}
+        private string _cr;
+    	public string cr 
+    	{ 
+    		get
+    		{
+    			return _cr;
+    		} 
+    		set
+    		{
+    			if (_cr != value)
+    			{
+    				_cr = value;
+    				OnPropertyChanged("cr");
+    			}
+    		}
+    	}
+        private string _versionadv;
+    	public string versionadv 
+    	{ 
+    		get
+    		{
+    			return _versionadv;
+    		} 
+    		set
+    		{
+    			if (_versionadv != value)
+    			{
+    				_versionadv = value;
+    				OnPropertyChanged("versionadv");
+    			}
+    		}
+    	}
+        private string _round_down;
+    	public string round_down 
+    	{ 
+    		get
+    		{
+    			return _round_down;
+    		} 
+    		set
+    		{
+    			if (_round_down != value)
+    			{
+    				_round_down = value;
+    				OnPropertyChanged("round_down");
     			}
     		}
     	}
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<Advantage> _Advantage1;
-            public virtual ICollection<Advantage> Advantage1
+        private ICollection<prereq_listDB> _prereq_listDB;
+            public virtual ICollection<prereq_listDB> prereq_listDB
             {
-                get { return _Advantage1; }
+                get { return _prereq_listDB; }
                 set
-                { if(_Advantage1 != value)
-                    {    _Advantage1 = value;    OnPropertyChanged("Advantage1");   }
-                }
-            } 
-        private Advantage _Advantage2;
-            public virtual Advantage Advantage2
-            {
-                get { return _Advantage2; }
-                set
-                { if(_Advantage2 != value)
-                    {    _Advantage2 = value;    OnPropertyChanged("Advantage2");   }
-                }
-            } 
-        private GurpsAdvCategory _GurpsAdvCategory;
-            public virtual GurpsAdvCategory GurpsAdvCategory
-            {
-                get { return _GurpsAdvCategory; }
-                set
-                { if(_GurpsAdvCategory != value)
-                    {    _GurpsAdvCategory = value;    OnPropertyChanged("GurpsAdvCategory");   }
-                }
-            } 
-        private AdvantageMod _AdvantageMod;
-            public virtual AdvantageMod AdvantageMod
-            {
-                get { return _AdvantageMod; }
-                set
-                { if(_AdvantageMod != value)
-                    {    _AdvantageMod = value;    OnPropertyChanged("AdvantageMod");   }
-                }
-            } 
-        private AttributeBonu _AttributeBonu;
-            public virtual AttributeBonu AttributeBonu
-            {
-                get { return _AttributeBonu; }
-                set
-                { if(_AttributeBonu != value)
-                    {    _AttributeBonu = value;    OnPropertyChanged("AttributeBonu");   }
-                }
-            } 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<SkillBonu> _SkillBonus;
-            public virtual ICollection<SkillBonu> SkillBonus
-            {
-                get { return _SkillBonus; }
-                set
-                { if(_SkillBonus != value)
-                    {    _SkillBonus = value;    OnPropertyChanged("SkillBonus");   }
-                }
-            } 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<Advantage> _Advantage11;
-            public virtual ICollection<Advantage> Advantage11
-            {
-                get { return _Advantage11; }
-                set
-                { if(_Advantage11 != value)
-                    {    _Advantage11 = value;    OnPropertyChanged("Advantage11");   }
-                }
-            } 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<Advantage> _Advantages;
-            public virtual ICollection<Advantage> Advantages
-            {
-                get { return _Advantages; }
-                set
-                { if(_Advantages != value)
-                    {    _Advantages = value;    OnPropertyChanged("Advantages");   }
-                }
-            } 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<TypeAdv> _TypeAdvs;
-            public virtual ICollection<TypeAdv> TypeAdvs
-            {
-                get { return _TypeAdvs; }
-                set
-                { if(_TypeAdvs != value)
-                    {    _TypeAdvs = value;    OnPropertyChanged("TypeAdvs");   }
+                { if(_prereq_listDB != value)
+                    {    _prereq_listDB = value;    OnPropertyChanged("prereq_listDB");   }
                 }
             } 
     }

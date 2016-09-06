@@ -215,13 +215,13 @@ namespace Item_WPF.MVVM.ViewModels
             }
         }
 
-        public ObservableCollection<Skill> Skills
-        {
-            get
-            {
-                return Character.Skills;
-            }
-        }
+        //public ObservableCollection<Skill> Skills
+        //{
+        //    get
+        //    {
+        //        return Character.Skills;
+        //    }
+        //}
 
         // Returns the window title
         public string Title
@@ -314,17 +314,17 @@ namespace Item_WPF.MVVM.ViewModels
 
         public void AddSkill(object parameter)
         {
-            EditSkillWindowView window = new EditSkillWindowView();
-            window.Owner = Owner;
-            window.DataContext = new Skill();
+            //EditSkillWindowView window = new EditSkillWindowView();
+            //window.Owner = Owner;
+            //window.DataContext = new Skill();
 
-            bool? result = window.ShowDialog();
-            if (result.HasValue && (result == true))
-            {
-                Character.Skills.Add((Skill)window.DataContext);
+            //bool? result = window.ShowDialog();
+            //if (result.HasValue && (result == true))
+            //{
+            //    Character.Skills.Add((Skill)window.DataContext);
 
-                NotifyPropertyChanged("Skills");
-            }
+            //    NotifyPropertyChanged("Skills");
+            //}
         }
 
         public void EditPrimaryStats(object parameter)

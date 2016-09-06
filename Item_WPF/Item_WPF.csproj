@@ -145,9 +145,6 @@
     <Compile Include="ItemEntityModel\Advantage.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="ItemEntityModel\AdvantageMod.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
     <Compile Include="ItemEntityModel\advantage_prereq.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
@@ -170,12 +167,6 @@
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemEntityModel\ATTACHMENTSLOT.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\Attribute.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\AttributeBonu.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemEntityModel\attribute_bonus.cs">
@@ -226,9 +217,6 @@
     <Compile Include="ItemEntityModel\FOOD.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="ItemEntityModel\GurpsAdvCategory.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
     <Compile Include="ItemEntityModel\GurpsClass.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
@@ -274,12 +262,6 @@
     <Compile Include="ItemEntityModel\prereq_listDB.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="ItemEntityModel\Skill.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\SkillBonu.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
     <Compile Include="ItemEntityModel\skill_prereqDB.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
@@ -287,9 +269,6 @@
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemEntityModel\TL.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\TypeAdv.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemEntityModel\TypeOfDamage.cs">
@@ -340,12 +319,12 @@
     <Compile Include="MVVM\Models\ItemToGridModel.cs" />
     <Compile Include="MVVM\Models\Skill.cs" />
     <Compile Include="MVVM\Serialize\Model\1.cs" />
-    <Compile Include="MVVM\Serialize\Model\attribute_bonusXML.cs" />
-    <Compile Include="MVVM\Serialize\Model\CategoriesXML.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\AdvantageDB.cs" />
+    <Compile Include="MVVM\Serialize\Model\advantageSerialize.cs" />
+    <Compile Include="MVVM\Serialize\Model\advantageXML.cs" />
     <Compile Include="MVVM\Serialize\Model\Category.cs" />
     <Compile Include="MVVM\Serialize\Model\Default.cs" />
     <Compile Include="MVVM\Serialize\Model\ContextModel\DefaultSkill.cs" />
-    <Compile Include="MVVM\Serialize\Model\DefaultXML.cs" />
     <Compile Include="MVVM\Serialize\Model\ew.cs" />
     <Compile Include="MVVM\Serialize\Model\ContextModel\GurpsSkill.cs" />
     <Compile Include="MVVM\Serialize\Model\prereq_list\Prereq_listXML%28list%29.cs" />
@@ -355,7 +334,6 @@
     <Compile Include="MVVM\Serialize\Model\SkillXMLModel.cs" />
     <Compile Include="MVVM\Serialize\Model\SubSkillColl.cs" />
     <Compile Include="MVVM\Serialize\Model\SubSubSkillcol.cs" />
-    <Compile Include="MVVM\Serialize\Model\Weapon_bonusXML.cs" />
     <Compile Include="MVVM\Serialize\SerializeView.xaml.cs">
       <DependentUpon>SerializeView.xaml</DependentUpon>
     </Compile>

@@ -57,6 +57,39 @@ namespace Item_WPF.ItemEntityModel
                 DefaultSkills.Add(dfSk);
             }
         }
+
+        public void FSpecialization(SkillXMLModel SkillFromXml, ObservableCollection<GurpsSkill> CollectionCategiry)
+        {
+
+
+            string NameSkill = SkillFromXml.NameSkill != null
+                             ? SkillFromXml.NameSkill.Value.ToString() : null;
+            string SpecSkill = SkillFromXml.Specialization != null
+                             ? SkillFromXml.Specialization.Value.ToString() : null;
+            string VersSkill = SkillFromXml.version != null
+              ? SkillFromXml.version.Value.ToString() : null;
+            string TypeSkill = SkillFromXml.Type != null
+             ? SkillFromXml.Type : null;
+            if (NameSkill == "Area Knowledge")
+            { }
+
+            if (SpecSkill != null)
+            {
+                if (!SpecSkill.EndsWith("@"))
+                {
+                    GurpsSkill GSSpec = CollectionCategiry
+                    .Where(p => p.TypeSkTh == TypeSkill)
+                    .Where(p => p.NameSkill == NameSkill)
+                    .Where(p => p.version == VersSkill)
+                    .FirstOrDefault(p => p.Specialization == null || (p.Specialization.StartsWith("@") && p.Specialization.EndsWith("@")));
+                    if (GSSpec != null)
+                    {
+                        GurpsSkill2 = GSSpec;
+                        //   GurpsSkill1.Add(GSSpec);    
+                    }
+                }
+            }
+        }
         public void Fattribute_bonus(SkillXMLModel SkillFromXml)
         {
             foreach (Attribute_bonusXML item in SkillFromXml.attribute_bonus)
@@ -231,7 +264,6 @@ namespace Item_WPF.ItemEntityModel
        // public /*override */GurpsSkill() { }
 
         public GurpsSkill(SkillXMLModel SkillFromXml, string type)
-           :this()
         {
             Fmain(SkillFromXml, type);
         }
@@ -240,6 +272,7 @@ namespace Item_WPF.ItemEntityModel
         //  :this()
         {
             FCATEGORY(SkillFromXml, _context);
+            FSpecialization(SkillFromXml, CollectionCategiry);
             FDefault(SkillFromXml, CollectionCategiry);
             Fattribute_bonus(SkillFromXml);
             Fweapon_bonus(SkillFromXml);

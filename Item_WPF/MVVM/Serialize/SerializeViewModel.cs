@@ -19,7 +19,6 @@ namespace Item_WPF.MVVM.Serialize
         public ViewModelCommand LoadFileCommand { get; set; }
         public ViewModelCommand SerializeSkillCommand { get; set; }
         #endregion
-
         public string XMLSkillPatch { get; set; }
         public SerializeViewModel()
         {
@@ -28,7 +27,6 @@ namespace Item_WPF.MVVM.Serialize
             SerializeSkillCommand = new ViewModelCommand(SerializeSkill,false);
         }
         #region Command 
-
         private void LoadFile(object parameter)
         {
             string str = (parameter as string);
@@ -57,7 +55,6 @@ namespace Item_WPF.MVVM.Serialize
         {
             int InsertInToGurpsSkillCategory = 0;
             ObservableCollection<GurpsSkillCategory> GSCColl = new ObservableCollection<GurpsSkillCategory>(_context.GurpsSkillCategories);
-           
             //   Category CAt = new Category(XMLSkillPatch, @"C:\Users\Derdan\Dropbox\_Wor\Category.txt");
             Category CAt = new Category(XMLSkillPatch, @"d:\Category.txt");
             foreach (var item in CAt.ResultOrder)
@@ -66,7 +63,6 @@ namespace Item_WPF.MVVM.Serialize
                 if (qe==null)
                 {
                     GurpsSkillCategory Gm = new GurpsSkillCategory();
-
                     Gm.NamelCategory = item;
                     GSCColl.Add(Gm);
                     _context.GurpsSkillCategories.Add(Gm);
@@ -75,12 +71,8 @@ namespace Item_WPF.MVVM.Serialize
             }
             _context.SaveChanges();
             MessageBox.Show(InsertInToGurpsSkillCategory.ToString());
-            
             // SkillSerializeible sklsrib = new SkillSerializeible(XMLSkillPatch, @"C:\Users\Derdan\Dropbox\_Wor\skill.txt");
             SkillSerializeible sklsrib = new SkillSerializeible(XMLSkillPatch, @"d:\skill.txt");
-
-            
-
         }
         #endregion
     }
