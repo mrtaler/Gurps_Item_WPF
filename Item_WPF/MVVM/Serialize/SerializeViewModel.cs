@@ -54,18 +54,18 @@ namespace Item_WPF.MVVM.Serialize
         private void SerializeSkill(object parameter)
         {
             int InsertInToGurpsSkillCategory = 0;
-            ObservableCollection<GurpsSkillCategory> GSCColl = new ObservableCollection<GurpsSkillCategory>(_context.GurpsSkillCategories);
+            ObservableCollection<GurpsCategory> GSCColl = new ObservableCollection<GurpsCategory>(_context.GurpsCategories);
             //   Category CAt = new Category(XMLSkillPatch, @"C:\Users\Derdan\Dropbox\_Wor\Category.txt");
             Category CAt = new Category(XMLSkillPatch, @"d:\Category.txt");
             foreach (var item in CAt.ResultOrder)
             {
-                var qe = _context.GurpsSkillCategories.FirstOrDefault(p => p.NamelCategory.Contains(item));
+                var qe = _context.GurpsCategories.FirstOrDefault(p => p.NamelCategory.Contains(item));
                 if (qe==null)
                 {
-                    GurpsSkillCategory Gm = new GurpsSkillCategory();
+                    GurpsCategory Gm = new GurpsCategory();
                     Gm.NamelCategory = item;
                     GSCColl.Add(Gm);
-                    _context.GurpsSkillCategories.Add(Gm);
+                    _context.GurpsCategories.Add(Gm);
                     InsertInToGurpsSkillCategory += 1;
                 }
             }

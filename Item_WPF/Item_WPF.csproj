@@ -151,9 +151,6 @@
     <Compile Include="ItemEntityModel\AMMOUPGRATE.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="ItemEntityModel\AmountAtribute.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
     <Compile Include="ItemEntityModel\AnyBoxNameType.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
@@ -181,9 +178,6 @@
     <Compile Include="ItemEntityModel\Battery.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="ItemEntityModel\BonusAttribute.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
     <Compile Include="ItemEntityModel\BoxItem.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
@@ -202,7 +196,13 @@
     <Compile Include="ItemEntityModel\contained_weight_prereq.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="ItemEntityModel\cost_reduction.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemEntityModel\DefaultSkill.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\DefSkillSome.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemEntityModel\DifficultySkill.cs">
@@ -211,19 +211,22 @@
     <Compile Include="ItemEntityModel\Drug.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="ItemEntityModel\dr_bonusDB.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemEntityModel\EXPLOSIVE.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemEntityModel\FOOD.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="ItemEntityModel\GurpsCategory.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemEntityModel\GurpsClass.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemEntityModel\GurpsSkill.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\GurpsSkillCategory.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemEntityModel\G_AttachClass.cs">
@@ -256,13 +259,28 @@
     <Compile Include="ItemEntityModel\LOADBEARINGEQUIPMENT.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="ItemEntityModel\melee_weapon.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\modifier.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemEntityModel\NeedSkill.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemEntityModel\prereq_listDB.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="ItemEntityModel\ranged_weapon.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\skill_bonusDB.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemEntityModel\skill_prereqDB.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\spell_bonus.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemEntityModel\spell_prereqDB.cs">
@@ -323,6 +341,16 @@
     <Compile Include="MVVM\Serialize\Model\advantageSerialize.cs" />
     <Compile Include="MVVM\Serialize\Model\advantageXML.cs" />
     <Compile Include="MVVM\Serialize\Model\Category.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\attribute_bonus.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\cost_reduction.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\DefSkillSome.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\melee_weapon.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\modifier.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\prereq_listDB.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\ranged_weapon.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\skill_bonusDB.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\spell_bonus.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\weapon_bonus.cs" />
     <Compile Include="MVVM\Serialize\Model\Default.cs" />
     <Compile Include="MVVM\Serialize\Model\ContextModel\DefaultSkill.cs" />
     <Compile Include="MVVM\Serialize\Model\ew.cs" />

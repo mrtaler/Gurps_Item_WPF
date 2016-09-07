@@ -12,7 +12,7 @@ namespace Item_WPF.ItemEntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class AmountAtribute : System.ComponentModel.INotifyPropertyChanged
+    public partial class cost_reduction : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -45,87 +45,62 @@ namespace Item_WPF.ItemEntityModel
     			}
     		}
     	}
-        private string _per_level;
-    	public string per_level 
+        private string _attribute;
+    	public string attribute 
     	{ 
     		get
     		{
-    			return _per_level;
+    			return _attribute;
     		} 
     		set
     		{
-    			if (_per_level != value)
+    			if (_attribute != value)
     			{
-    				_per_level = value;
-    				OnPropertyChanged("per_level");
+    				_attribute = value;
+    				OnPropertyChanged("attribute");
     			}
     		}
     	}
-        private string _Value;
-    	public string Value 
+        private string _percentage;
+    	public string percentage 
     	{ 
     		get
     		{
-    			return _Value;
+    			return _percentage;
     		} 
     		set
     		{
-    			if (_Value != value)
+    			if (_percentage != value)
     			{
-    				_Value = value;
-    				OnPropertyChanged("Value");
+    				_percentage = value;
+    				OnPropertyChanged("percentage");
     			}
     		}
     	}
-        private Nullable<int> _idAtribBonus;
-    	public Nullable<int> idAtribBonus 
+        private Nullable<int> _idAdv;
+    	public Nullable<int> idAdv 
     	{ 
     		get
     		{
-    			return _idAtribBonus;
+    			return _idAdv;
     		} 
     		set
     		{
-    			if (_idAtribBonus != value)
+    			if (_idAdv != value)
     			{
-    				_idAtribBonus = value;
-    				OnPropertyChanged("idAtribBonus");
-    			}
-    		}
-    	}
-        private Nullable<int> _idWeaponBonus;
-    	public Nullable<int> idWeaponBonus 
-    	{ 
-    		get
-    		{
-    			return _idWeaponBonus;
-    		} 
-    		set
-    		{
-    			if (_idWeaponBonus != value)
-    			{
-    				_idWeaponBonus = value;
-    				OnPropertyChanged("idWeaponBonus");
+    				_idAdv = value;
+    				OnPropertyChanged("idAdv");
     			}
     		}
     	}
     
-        private attribute_bonus _attribute_bonus;
-            public virtual attribute_bonus attribute_bonus
+        private Advantage _Advantage;
+            public virtual Advantage Advantage
             {
-                get { return _attribute_bonus; }
+                get { return _Advantage; }
                 set
-                { if(_attribute_bonus != value)
-                    {    _attribute_bonus = value;    OnPropertyChanged("attribute_bonus");   }
-                }
-            } 
-        private weapon_bonus _weapon_bonus;
-            public virtual weapon_bonus weapon_bonus
-            {
-                get { return _weapon_bonus; }
-                set
-                { if(_weapon_bonus != value)
-                    {    _weapon_bonus = value;    OnPropertyChanged("weapon_bonus");   }
+                { if(_Advantage != value)
+                    {    _Advantage = value;    OnPropertyChanged("Advantage");   }
                 }
             } 
     }

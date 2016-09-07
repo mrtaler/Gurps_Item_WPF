@@ -35,11 +35,12 @@ namespace Item_WPF.ItemEntityModel
             this.attribute_bonus = new HashSet<attribute_bonus>();
             this.DefaultSkills = new HashSet<DefaultSkill>();
             this.DefaultSkills1 = new HashSet<DefaultSkill>();
+            this.DefSkillSomes = new HashSet<DefSkillSome>();
             this.GurpsSkill1 = new HashSet<GurpsSkill>();
             this.NeedSkills = new HashSet<NeedSkill>();
             this.prereq_listDB = new HashSet<prereq_listDB>();
             this.weapon_bonus = new HashSet<weapon_bonus>();
-            this.GurpsSkillCategories = new HashSet<GurpsSkillCategory>();
+            this.GurpsCategories = new HashSet<GurpsCategory>();
         }
     
         private int _id;
@@ -329,6 +330,16 @@ namespace Item_WPF.ItemEntityModel
                     {    _DefaultSkills1 = value;    OnPropertyChanged("DefaultSkills1");   }
                 }
             } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<DefSkillSome> _DefSkillSomes;
+            public virtual ICollection<DefSkillSome> DefSkillSomes
+            {
+                get { return _DefSkillSomes; }
+                set
+                { if(_DefSkillSomes != value)
+                    {    _DefSkillSomes = value;    OnPropertyChanged("DefSkillSomes");   }
+                }
+            } 
         private DifficultySkill _DifficultySkill;
             public virtual DifficultySkill DifficultySkill
             {
@@ -406,13 +417,13 @@ namespace Item_WPF.ItemEntityModel
                 }
             } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<GurpsSkillCategory> _GurpsSkillCategories;
-            public virtual ICollection<GurpsSkillCategory> GurpsSkillCategories
+        private ICollection<GurpsCategory> _GurpsCategories;
+            public virtual ICollection<GurpsCategory> GurpsCategories
             {
-                get { return _GurpsSkillCategories; }
+                get { return _GurpsCategories; }
                 set
-                { if(_GurpsSkillCategories != value)
-                    {    _GurpsSkillCategories = value;    OnPropertyChanged("GurpsSkillCategories");   }
+                { if(_GurpsCategories != value)
+                    {    _GurpsCategories = value;    OnPropertyChanged("GurpsCategories");   }
                 }
             } 
     }

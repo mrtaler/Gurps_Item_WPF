@@ -12,7 +12,7 @@ namespace Item_WPF.ItemEntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class weapon_bonus : System.ComponentModel.INotifyPropertyChanged
+    public partial class modifier : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -45,22 +45,6 @@ namespace Item_WPF.ItemEntityModel
     			}
     		}
     	}
-        private string _nameCompare;
-    	public string nameCompare 
-    	{ 
-    		get
-    		{
-    			return _nameCompare;
-    		} 
-    		set
-    		{
-    			if (_nameCompare != value)
-    			{
-    				_nameCompare = value;
-    				OnPropertyChanged("nameCompare");
-    			}
-    		}
-    	}
         private string _name;
     	public string name 
     	{ 
@@ -77,131 +61,179 @@ namespace Item_WPF.ItemEntityModel
     			}
     		}
     	}
-        private string _specializationCompare;
-    	public string specializationCompare 
+        private string _nameC;
+    	public string nameC 
     	{ 
     		get
     		{
-    			return _specializationCompare;
+    			return _nameC;
     		} 
     		set
     		{
-    			if (_specializationCompare != value)
+    			if (_nameC != value)
     			{
-    				_specializationCompare = value;
-    				OnPropertyChanged("specializationCompare");
+    				_nameC = value;
+    				OnPropertyChanged("nameC");
     			}
     		}
     	}
-        private string _specialization;
-    	public string specialization 
+        private string _notes;
+    	public string notes 
     	{ 
     		get
     		{
-    			return _specialization;
+    			return _notes;
     		} 
     		set
     		{
-    			if (_specialization != value)
+    			if (_notes != value)
     			{
-    				_specialization = value;
-    				OnPropertyChanged("specialization");
+    				_notes = value;
+    				OnPropertyChanged("notes");
     			}
     		}
     	}
-        private string _levelCompare;
-    	public string levelCompare 
+        private string _notesC;
+    	public string notesC 
     	{ 
     		get
     		{
-    			return _levelCompare;
+    			return _notesC;
     		} 
     		set
     		{
-    			if (_levelCompare != value)
+    			if (_notesC != value)
     			{
-    				_levelCompare = value;
-    				OnPropertyChanged("levelCompare");
+    				_notesC = value;
+    				OnPropertyChanged("notesC");
     			}
     		}
     	}
-        private string _level;
-    	public string level 
+        private string _levels;
+    	public string levels 
     	{ 
     		get
     		{
-    			return _level;
+    			return _levels;
     		} 
     		set
     		{
-    			if (_level != value)
+    			if (_levels != value)
     			{
-    				_level = value;
-    				OnPropertyChanged("level");
+    				_levels = value;
+    				OnPropertyChanged("levels");
     			}
     		}
     	}
-        private Nullable<int> _FK_Skill;
-    	public Nullable<int> FK_Skill 
+        private string _reference;
+    	public string reference 
     	{ 
     		get
     		{
-    			return _FK_Skill;
+    			return _reference;
     		} 
     		set
     		{
-    			if (_FK_Skill != value)
+    			if (_reference != value)
     			{
-    				_FK_Skill = value;
-    				OnPropertyChanged("FK_Skill");
+    				_reference = value;
+    				OnPropertyChanged("reference");
     			}
     		}
     	}
-        private string _AmountPer_level;
-    	public string AmountPer_level 
+        private string _affects;
+    	public string affects 
     	{ 
     		get
     		{
-    			return _AmountPer_level;
+    			return _affects;
     		} 
     		set
     		{
-    			if (_AmountPer_level != value)
+    			if (_affects != value)
     			{
-    				_AmountPer_level = value;
-    				OnPropertyChanged("AmountPer_level");
+    				_affects = value;
+    				OnPropertyChanged("affects");
     			}
     		}
     	}
-        private string _AmountValue;
-    	public string AmountValue 
+        private string _version;
+    	public string version 
     	{ 
     		get
     		{
-    			return _AmountValue;
+    			return _version;
     		} 
     		set
     		{
-    			if (_AmountValue != value)
+    			if (_version != value)
     			{
-    				_AmountValue = value;
-    				OnPropertyChanged("AmountValue");
+    				_version = value;
+    				OnPropertyChanged("version");
     			}
     		}
     	}
-        private Nullable<int> _FK_Adv;
-    	public Nullable<int> FK_Adv 
+        private string _enabled;
+    	public string enabled 
     	{ 
     		get
     		{
-    			return _FK_Adv;
+    			return _enabled;
     		} 
     		set
     		{
-    			if (_FK_Adv != value)
+    			if (_enabled != value)
     			{
-    				_FK_Adv = value;
-    				OnPropertyChanged("FK_Adv");
+    				_enabled = value;
+    				OnPropertyChanged("enabled");
+    			}
+    		}
+    	}
+        private Nullable<int> _idAdv;
+    	public Nullable<int> idAdv 
+    	{ 
+    		get
+    		{
+    			return _idAdv;
+    		} 
+    		set
+    		{
+    			if (_idAdv != value)
+    			{
+    				_idAdv = value;
+    				OnPropertyChanged("idAdv");
+    			}
+    		}
+    	}
+        private string _Cost;
+    	public string Cost 
+    	{ 
+    		get
+    		{
+    			return _Cost;
+    		} 
+    		set
+    		{
+    			if (_Cost != value)
+    			{
+    				_Cost = value;
+    				OnPropertyChanged("Cost");
+    			}
+    		}
+    	}
+        private string _CostType;
+    	public string CostType 
+    	{ 
+    		get
+    		{
+    			return _CostType;
+    		} 
+    		set
+    		{
+    			if (_CostType != value)
+    			{
+    				_CostType = value;
+    				OnPropertyChanged("CostType");
     			}
     		}
     	}
@@ -213,15 +245,6 @@ namespace Item_WPF.ItemEntityModel
                 set
                 { if(_Advantage != value)
                     {    _Advantage = value;    OnPropertyChanged("Advantage");   }
-                }
-            } 
-        private GurpsSkill _GurpsSkill;
-            public virtual GurpsSkill GurpsSkill
-            {
-                get { return _GurpsSkill; }
-                set
-                { if(_GurpsSkill != value)
-                    {    _GurpsSkill = value;    OnPropertyChanged("GurpsSkill");   }
                 }
             } 
     }

@@ -9,7 +9,7 @@ namespace Item_WPF.ItemEntityModel
 {
     public partial class DefaultSkill
     {
-      //  public DefaultSkill() { }
+        public DefaultSkill() { }
         public DefaultSkill(DefaultXML itemDefault, ObservableCollection<GurpsSkill> CollectionCategiry)
         {
             string typex = itemDefault.typeDefaultXml != null ? itemDefault.typeDefaultXml.Value.ToString() : null;
@@ -39,7 +39,6 @@ namespace Item_WPF.ItemEntityModel
             {
                 type = typex;
                 Modifier = Convert.ToInt32(modf);
-                GurpsSkill1 = null;
             }
         }
     }

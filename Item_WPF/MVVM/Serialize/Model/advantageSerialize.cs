@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using Item_WPF.ItemEntityModel;
 using System.Xml.Linq;
 using Item_WPF.MVVM.Serialize.Model;
+using System.Windows;
 
 namespace Item_WPF.MVVM.Serialize.Model
 {
@@ -18,13 +19,12 @@ namespace Item_WPF.MVVM.Serialize.Model
             _context = new item1Entities();
             int contextAdded = 0;
             XDocument xdoc = XDocument.Load(xmlString);
-
             #region Read XML For AdvantageXML
             foreach (XElement skillElement in xdoc.Element("advantage_list").Elements("advantage"))
             {
                 contextAdded += 1;
                 AdvantageXML advXML = new AdvantageXML();
-                advXML.numPP = contextAdded ;
+                advXML.numPP = contextAdded;
                 advXML.name = skillElement.Element("name");
                 advXML.type = skillElement.Element("type");
                 advXML.levels = skillElement.Element("levels");
@@ -35,7 +35,6 @@ namespace Item_WPF.MVVM.Serialize.Model
                 advXML.version = skillElement.Attribute("version");
                 advXML.round_down = skillElement.Attribute("round_down");
                 advXML.cr = skillElement.Element("cr");
-
                 #region categories
                 if (skillElement.Element("categories").Elements("category") != null)
                 {
@@ -147,18 +146,15 @@ namespace Item_WPF.MVVM.Serialize.Model
                 //    { advXML.cr.Add(new crXML(itemmodifier)); }
                 //}
                 #endregion
-                
                 AdvantageXMLCollection.Add(advXML);
-
             }
             #endregion
             foreach (AdvantageXML advXML in AdvantageXMLCollection)
             {
-             //   Advantage adv = 
-
-                _context.Advantages.AddObject(new Advantage(advXML));
+                _context.Advantages.Add(new Advantage(advXML, _context));
             }
             _context.SaveChanges();
+            MessageBox.Show("done");
         }
     }
 }

@@ -11,19 +11,24 @@ namespace Item_WPF.MVVM.Serialize.Model
     public partial class AdvantageXML
     {
         public int numPP;
-        /**/        public ObservableCollection<CategoriesXML> categories;//y
-        /**/        public ObservableCollection<Prereq_listXML> prereq_list; //y
+        /**/
+        public ObservableCollection<CategoriesXML> categories;//y
+                                                              /**/
+        public ObservableCollection<Prereq_listXML> prereq_list; //y
         public ObservableCollection<dr_bonusXml> dr_bonus;
-        /**/        public ObservableCollection<Attribute_bonusXML> attribute_bonus;//y
+        /**/
+        public ObservableCollection<Attribute_bonusXML> attribute_bonus;//y
         public ObservableCollection<skill_bonusXML> skill_bonus;
         public ObservableCollection<spell_bonusXML> spell_bonus;
-        /**/        public ObservableCollection<Weapon_bonusXML> weapon_bonus; //y
+        /**/
+        public ObservableCollection<Weapon_bonusXML> weapon_bonus; //y
         public ObservableCollection<melee_weaponXML> melee_weapon;
         public ObservableCollection<ranged_weaponXML> ranged_weapon;
         public ObservableCollection<cost_reductionXML> cost_reduction;
-      //  public ObservableCollection<crXML> cr;
+        //  public ObservableCollection<crXML> cr;
         public XElement cr;
-        /**/        public ObservableCollection<modifierXML> modifier;//y
+        /**/
+        public ObservableCollection<modifierXML> modifier;//y
 
         /// <summary>
         /// 1

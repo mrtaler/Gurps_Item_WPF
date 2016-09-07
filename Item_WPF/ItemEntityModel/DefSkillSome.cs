@@ -12,7 +12,7 @@ namespace Item_WPF.ItemEntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class attribute_bonus : System.ComponentModel.INotifyPropertyChanged
+    public partial class DefSkillSome : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -45,128 +45,119 @@ namespace Item_WPF.ItemEntityModel
     			}
     		}
     	}
-        private Nullable<int> _FK_Skill;
-    	public Nullable<int> FK_Skill 
+        private string _nameSkill;
+    	public string nameSkill 
     	{ 
     		get
     		{
-    			return _FK_Skill;
+    			return _nameSkill;
     		} 
     		set
     		{
-    			if (_FK_Skill != value)
+    			if (_nameSkill != value)
     			{
-    				_FK_Skill = value;
-    				OnPropertyChanged("FK_Skill");
+    				_nameSkill = value;
+    				OnPropertyChanged("nameSkill");
     			}
     		}
     	}
-        private Nullable<int> _FK_Amount;
-    	public Nullable<int> FK_Amount 
+        private string _specialization;
+    	public string specialization 
     	{ 
     		get
     		{
-    			return _FK_Amount;
+    			return _specialization;
     		} 
     		set
     		{
-    			if (_FK_Amount != value)
+    			if (_specialization != value)
     			{
-    				_FK_Amount = value;
-    				OnPropertyChanged("FK_Amount");
+    				_specialization = value;
+    				OnPropertyChanged("specialization");
     			}
     		}
     	}
-        private string _AttributeLimitation;
-    	public string AttributeLimitation 
+        private string _type;
+    	public string type 
     	{ 
     		get
     		{
-    			return _AttributeLimitation;
+    			return _type;
     		} 
     		set
     		{
-    			if (_AttributeLimitation != value)
+    			if (_type != value)
     			{
-    				_AttributeLimitation = value;
-    				OnPropertyChanged("AttributeLimitation");
+    				_type = value;
+    				OnPropertyChanged("type");
     			}
     		}
     	}
-        private string _AttributeValue;
-    	public string AttributeValue 
+        private string _modifier;
+    	public string modifier 
     	{ 
     		get
     		{
-    			return _AttributeValue;
+    			return _modifier;
     		} 
     		set
     		{
-    			if (_AttributeValue != value)
+    			if (_modifier != value)
     			{
-    				_AttributeValue = value;
-    				OnPropertyChanged("AttributeValue");
+    				_modifier = value;
+    				OnPropertyChanged("modifier");
     			}
     		}
     	}
-        private string _AmountPer_level;
-    	public string AmountPer_level 
+        private Nullable<int> _idSkill;
+    	public Nullable<int> idSkill 
     	{ 
     		get
     		{
-    			return _AmountPer_level;
+    			return _idSkill;
     		} 
     		set
     		{
-    			if (_AmountPer_level != value)
+    			if (_idSkill != value)
     			{
-    				_AmountPer_level = value;
-    				OnPropertyChanged("AmountPer_level");
+    				_idSkill = value;
+    				OnPropertyChanged("idSkill");
     			}
     		}
     	}
-        private string _AmountValue;
-    	public string AmountValue 
+        private Nullable<int> _idRangeWeap;
+    	public Nullable<int> idRangeWeap 
     	{ 
     		get
     		{
-    			return _AmountValue;
+    			return _idRangeWeap;
     		} 
     		set
     		{
-    			if (_AmountValue != value)
+    			if (_idRangeWeap != value)
     			{
-    				_AmountValue = value;
-    				OnPropertyChanged("AmountValue");
+    				_idRangeWeap = value;
+    				OnPropertyChanged("idRangeWeap");
     			}
     		}
     	}
-        private Nullable<int> _FK_Advantage;
-    	public Nullable<int> FK_Advantage 
+        private Nullable<int> _idMeleWeap;
+    	public Nullable<int> idMeleWeap 
     	{ 
     		get
     		{
-    			return _FK_Advantage;
+    			return _idMeleWeap;
     		} 
     		set
     		{
-    			if (_FK_Advantage != value)
+    			if (_idMeleWeap != value)
     			{
-    				_FK_Advantage = value;
-    				OnPropertyChanged("FK_Advantage");
+    				_idMeleWeap = value;
+    				OnPropertyChanged("idMeleWeap");
     			}
     		}
     	}
     
-        private Advantage _Advantage;
-            public virtual Advantage Advantage
-            {
-                get { return _Advantage; }
-                set
-                { if(_Advantage != value)
-                    {    _Advantage = value;    OnPropertyChanged("Advantage");   }
-                }
-            } 
         private GurpsSkill _GurpsSkill;
             public virtual GurpsSkill GurpsSkill
             {
@@ -174,6 +165,24 @@ namespace Item_WPF.ItemEntityModel
                 set
                 { if(_GurpsSkill != value)
                     {    _GurpsSkill = value;    OnPropertyChanged("GurpsSkill");   }
+                }
+            } 
+        private ranged_weapon _ranged_weapon;
+            public virtual ranged_weapon ranged_weapon
+            {
+                get { return _ranged_weapon; }
+                set
+                { if(_ranged_weapon != value)
+                    {    _ranged_weapon = value;    OnPropertyChanged("ranged_weapon");   }
+                }
+            } 
+        private melee_weapon _melee_weapon;
+            public virtual melee_weapon melee_weapon
+            {
+                get { return _melee_weapon; }
+                set
+                { if(_melee_weapon != value)
+                    {    _melee_weapon = value;    OnPropertyChanged("melee_weapon");   }
                 }
             } 
     }

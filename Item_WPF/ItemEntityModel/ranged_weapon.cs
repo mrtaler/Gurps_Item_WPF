@@ -12,7 +12,7 @@ namespace Item_WPF.ItemEntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class weapon_bonus : System.ComponentModel.INotifyPropertyChanged
+    public partial class ranged_weapon : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -29,6 +29,12 @@ namespace Item_WPF.ItemEntityModel
      
      #endregion
      
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ranged_weapon()
+        {
+            this.DefSkillSomes = new HashSet<DefSkillSome>();
+        }
+    
         private int _id;
     	public int id 
     	{ 
@@ -45,163 +51,163 @@ namespace Item_WPF.ItemEntityModel
     			}
     		}
     	}
-        private string _nameCompare;
-    	public string nameCompare 
+        private string _damage;
+    	public string damage 
     	{ 
     		get
     		{
-    			return _nameCompare;
+    			return _damage;
     		} 
     		set
     		{
-    			if (_nameCompare != value)
+    			if (_damage != value)
     			{
-    				_nameCompare = value;
-    				OnPropertyChanged("nameCompare");
+    				_damage = value;
+    				OnPropertyChanged("damage");
     			}
     		}
     	}
-        private string _name;
-    	public string name 
+        private string _strength;
+    	public string strength 
     	{ 
     		get
     		{
-    			return _name;
+    			return _strength;
     		} 
     		set
     		{
-    			if (_name != value)
+    			if (_strength != value)
     			{
-    				_name = value;
-    				OnPropertyChanged("name");
+    				_strength = value;
+    				OnPropertyChanged("strength");
     			}
     		}
     	}
-        private string _specializationCompare;
-    	public string specializationCompare 
+        private string _usage;
+    	public string usage 
     	{ 
     		get
     		{
-    			return _specializationCompare;
+    			return _usage;
     		} 
     		set
     		{
-    			if (_specializationCompare != value)
+    			if (_usage != value)
     			{
-    				_specializationCompare = value;
-    				OnPropertyChanged("specializationCompare");
+    				_usage = value;
+    				OnPropertyChanged("usage");
     			}
     		}
     	}
-        private string _specialization;
-    	public string specialization 
+        private string _accuracy;
+    	public string accuracy 
     	{ 
     		get
     		{
-    			return _specialization;
+    			return _accuracy;
     		} 
     		set
     		{
-    			if (_specialization != value)
+    			if (_accuracy != value)
     			{
-    				_specialization = value;
-    				OnPropertyChanged("specialization");
+    				_accuracy = value;
+    				OnPropertyChanged("accuracy");
     			}
     		}
     	}
-        private string _levelCompare;
-    	public string levelCompare 
+        private string _range;
+    	public string range 
     	{ 
     		get
     		{
-    			return _levelCompare;
+    			return _range;
     		} 
     		set
     		{
-    			if (_levelCompare != value)
+    			if (_range != value)
     			{
-    				_levelCompare = value;
-    				OnPropertyChanged("levelCompare");
+    				_range = value;
+    				OnPropertyChanged("range");
     			}
     		}
     	}
-        private string _level;
-    	public string level 
+        private string _rate_of_fire;
+    	public string rate_of_fire 
     	{ 
     		get
     		{
-    			return _level;
+    			return _rate_of_fire;
     		} 
     		set
     		{
-    			if (_level != value)
+    			if (_rate_of_fire != value)
     			{
-    				_level = value;
-    				OnPropertyChanged("level");
+    				_rate_of_fire = value;
+    				OnPropertyChanged("rate_of_fire");
     			}
     		}
     	}
-        private Nullable<int> _FK_Skill;
-    	public Nullable<int> FK_Skill 
+        private string _recoil;
+    	public string recoil 
     	{ 
     		get
     		{
-    			return _FK_Skill;
+    			return _recoil;
     		} 
     		set
     		{
-    			if (_FK_Skill != value)
+    			if (_recoil != value)
     			{
-    				_FK_Skill = value;
-    				OnPropertyChanged("FK_Skill");
+    				_recoil = value;
+    				OnPropertyChanged("recoil");
     			}
     		}
     	}
-        private string _AmountPer_level;
-    	public string AmountPer_level 
+        private string _shots;
+    	public string shots 
     	{ 
     		get
     		{
-    			return _AmountPer_level;
+    			return _shots;
     		} 
     		set
     		{
-    			if (_AmountPer_level != value)
+    			if (_shots != value)
     			{
-    				_AmountPer_level = value;
-    				OnPropertyChanged("AmountPer_level");
+    				_shots = value;
+    				OnPropertyChanged("shots");
     			}
     		}
     	}
-        private string _AmountValue;
-    	public string AmountValue 
+        private string _bulk;
+    	public string bulk 
     	{ 
     		get
     		{
-    			return _AmountValue;
+    			return _bulk;
     		} 
     		set
     		{
-    			if (_AmountValue != value)
+    			if (_bulk != value)
     			{
-    				_AmountValue = value;
-    				OnPropertyChanged("AmountValue");
+    				_bulk = value;
+    				OnPropertyChanged("bulk");
     			}
     		}
     	}
-        private Nullable<int> _FK_Adv;
-    	public Nullable<int> FK_Adv 
+        private Nullable<int> _idADV;
+    	public Nullable<int> idADV 
     	{ 
     		get
     		{
-    			return _FK_Adv;
+    			return _idADV;
     		} 
     		set
     		{
-    			if (_FK_Adv != value)
+    			if (_idADV != value)
     			{
-    				_FK_Adv = value;
-    				OnPropertyChanged("FK_Adv");
+    				_idADV = value;
+    				OnPropertyChanged("idADV");
     			}
     		}
     	}
@@ -215,13 +221,14 @@ namespace Item_WPF.ItemEntityModel
                     {    _Advantage = value;    OnPropertyChanged("Advantage");   }
                 }
             } 
-        private GurpsSkill _GurpsSkill;
-            public virtual GurpsSkill GurpsSkill
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<DefSkillSome> _DefSkillSomes;
+            public virtual ICollection<DefSkillSome> DefSkillSomes
             {
-                get { return _GurpsSkill; }
+                get { return _DefSkillSomes; }
                 set
-                { if(_GurpsSkill != value)
-                    {    _GurpsSkill = value;    OnPropertyChanged("GurpsSkill");   }
+                { if(_DefSkillSomes != value)
+                    {    _DefSkillSomes = value;    OnPropertyChanged("DefSkillSomes");   }
                 }
             } 
     }

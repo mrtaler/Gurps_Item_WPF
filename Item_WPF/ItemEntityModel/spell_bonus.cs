@@ -12,7 +12,7 @@ namespace Item_WPF.ItemEntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class attribute_bonus : System.ComponentModel.INotifyPropertyChanged
+    public partial class spell_bonus : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -45,115 +45,131 @@ namespace Item_WPF.ItemEntityModel
     			}
     		}
     	}
-        private Nullable<int> _FK_Skill;
-    	public Nullable<int> FK_Skill 
+        private string _spell_name;
+    	public string spell_name 
     	{ 
     		get
     		{
-    			return _FK_Skill;
+    			return _spell_name;
     		} 
     		set
     		{
-    			if (_FK_Skill != value)
+    			if (_spell_name != value)
     			{
-    				_FK_Skill = value;
-    				OnPropertyChanged("FK_Skill");
+    				_spell_name = value;
+    				OnPropertyChanged("spell_name");
     			}
     		}
     	}
-        private Nullable<int> _FK_Amount;
-    	public Nullable<int> FK_Amount 
+        private string _spell_nameC;
+    	public string spell_nameC 
     	{ 
     		get
     		{
-    			return _FK_Amount;
+    			return _spell_nameC;
     		} 
     		set
     		{
-    			if (_FK_Amount != value)
+    			if (_spell_nameC != value)
     			{
-    				_FK_Amount = value;
-    				OnPropertyChanged("FK_Amount");
+    				_spell_nameC = value;
+    				OnPropertyChanged("spell_nameC");
     			}
     		}
     	}
-        private string _AttributeLimitation;
-    	public string AttributeLimitation 
+        private string _college_name;
+    	public string college_name 
     	{ 
     		get
     		{
-    			return _AttributeLimitation;
+    			return _college_name;
     		} 
     		set
     		{
-    			if (_AttributeLimitation != value)
+    			if (_college_name != value)
     			{
-    				_AttributeLimitation = value;
-    				OnPropertyChanged("AttributeLimitation");
+    				_college_name = value;
+    				OnPropertyChanged("college_name");
     			}
     		}
     	}
-        private string _AttributeValue;
-    	public string AttributeValue 
+        private string _college_nameC;
+    	public string college_nameC 
     	{ 
     		get
     		{
-    			return _AttributeValue;
+    			return _college_nameC;
     		} 
     		set
     		{
-    			if (_AttributeValue != value)
+    			if (_college_nameC != value)
     			{
-    				_AttributeValue = value;
-    				OnPropertyChanged("AttributeValue");
+    				_college_nameC = value;
+    				OnPropertyChanged("college_nameC");
     			}
     		}
     	}
-        private string _AmountPer_level;
-    	public string AmountPer_level 
+        private string _all_colleges;
+    	public string all_colleges 
     	{ 
     		get
     		{
-    			return _AmountPer_level;
+    			return _all_colleges;
     		} 
     		set
     		{
-    			if (_AmountPer_level != value)
+    			if (_all_colleges != value)
     			{
-    				_AmountPer_level = value;
-    				OnPropertyChanged("AmountPer_level");
+    				_all_colleges = value;
+    				OnPropertyChanged("all_colleges");
     			}
     		}
     	}
-        private string _AmountValue;
-    	public string AmountValue 
+        private string _amountper_level;
+    	public string amountper_level 
     	{ 
     		get
     		{
-    			return _AmountValue;
+    			return _amountper_level;
     		} 
     		set
     		{
-    			if (_AmountValue != value)
+    			if (_amountper_level != value)
     			{
-    				_AmountValue = value;
-    				OnPropertyChanged("AmountValue");
+    				_amountper_level = value;
+    				OnPropertyChanged("amountper_level");
     			}
     		}
     	}
-        private Nullable<int> _FK_Advantage;
-    	public Nullable<int> FK_Advantage 
+        private string _amountValue;
+    	public string amountValue 
     	{ 
     		get
     		{
-    			return _FK_Advantage;
+    			return _amountValue;
     		} 
     		set
     		{
-    			if (_FK_Advantage != value)
+    			if (_amountValue != value)
     			{
-    				_FK_Advantage = value;
-    				OnPropertyChanged("FK_Advantage");
+    				_amountValue = value;
+    				OnPropertyChanged("amountValue");
+    			}
+    		}
+    	}
+        private Nullable<int> _id_Adv;
+    	public Nullable<int> id_Adv 
+    	{ 
+    		get
+    		{
+    			return _id_Adv;
+    		} 
+    		set
+    		{
+    			if (_id_Adv != value)
+    			{
+    				_id_Adv = value;
+    				OnPropertyChanged("id_Adv");
     			}
     		}
     	}
@@ -165,15 +181,6 @@ namespace Item_WPF.ItemEntityModel
                 set
                 { if(_Advantage != value)
                     {    _Advantage = value;    OnPropertyChanged("Advantage");   }
-                }
-            } 
-        private GurpsSkill _GurpsSkill;
-            public virtual GurpsSkill GurpsSkill
-            {
-                get { return _GurpsSkill; }
-                set
-                { if(_GurpsSkill != value)
-                    {    _GurpsSkill = value;    OnPropertyChanged("GurpsSkill");   }
                 }
             } 
     }

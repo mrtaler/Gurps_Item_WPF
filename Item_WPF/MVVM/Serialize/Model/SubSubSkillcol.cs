@@ -34,7 +34,9 @@ namespace Item_WPF.MVVM.Serialize.Model
         public XElement college_count;
         public XElement quantity;
         public XElement any;
+
         public XAttribute has;
+
     }
     public class skill_prereqXml
     {
@@ -43,6 +45,7 @@ namespace Item_WPF.MVVM.Serialize.Model
         public XElement specialization;
         public XAttribute has;
     }
+
     public class cost_reductionXML
     {
         public XElement attribute;
@@ -53,6 +56,7 @@ namespace Item_WPF.MVVM.Serialize.Model
             percentage = item.Element("percentage");
         }
     }
+
     public class crXML
     {
         public XAttribute adj;

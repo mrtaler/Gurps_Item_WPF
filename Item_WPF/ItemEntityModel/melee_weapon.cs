@@ -12,7 +12,7 @@ namespace Item_WPF.ItemEntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class attribute_bonus : System.ComponentModel.INotifyPropertyChanged
+    public partial class melee_weapon : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -29,6 +29,12 @@ namespace Item_WPF.ItemEntityModel
      
      #endregion
      
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public melee_weapon()
+        {
+            this.DefSkillSomes = new HashSet<DefSkillSome>();
+        }
+    
         private int _id;
     	public int id 
     	{ 
@@ -45,115 +51,115 @@ namespace Item_WPF.ItemEntityModel
     			}
     		}
     	}
-        private Nullable<int> _FK_Skill;
-    	public Nullable<int> FK_Skill 
+        private string _damage;
+    	public string damage 
     	{ 
     		get
     		{
-    			return _FK_Skill;
+    			return _damage;
     		} 
     		set
     		{
-    			if (_FK_Skill != value)
+    			if (_damage != value)
     			{
-    				_FK_Skill = value;
-    				OnPropertyChanged("FK_Skill");
+    				_damage = value;
+    				OnPropertyChanged("damage");
     			}
     		}
     	}
-        private Nullable<int> _FK_Amount;
-    	public Nullable<int> FK_Amount 
+        private string _strength;
+    	public string strength 
     	{ 
     		get
     		{
-    			return _FK_Amount;
+    			return _strength;
     		} 
     		set
     		{
-    			if (_FK_Amount != value)
+    			if (_strength != value)
     			{
-    				_FK_Amount = value;
-    				OnPropertyChanged("FK_Amount");
+    				_strength = value;
+    				OnPropertyChanged("strength");
     			}
     		}
     	}
-        private string _AttributeLimitation;
-    	public string AttributeLimitation 
+        private string _usage;
+    	public string usage 
     	{ 
     		get
     		{
-    			return _AttributeLimitation;
+    			return _usage;
     		} 
     		set
     		{
-    			if (_AttributeLimitation != value)
+    			if (_usage != value)
     			{
-    				_AttributeLimitation = value;
-    				OnPropertyChanged("AttributeLimitation");
+    				_usage = value;
+    				OnPropertyChanged("usage");
     			}
     		}
     	}
-        private string _AttributeValue;
-    	public string AttributeValue 
+        private string _reach;
+    	public string reach 
     	{ 
     		get
     		{
-    			return _AttributeValue;
+    			return _reach;
     		} 
     		set
     		{
-    			if (_AttributeValue != value)
+    			if (_reach != value)
     			{
-    				_AttributeValue = value;
-    				OnPropertyChanged("AttributeValue");
+    				_reach = value;
+    				OnPropertyChanged("reach");
     			}
     		}
     	}
-        private string _AmountPer_level;
-    	public string AmountPer_level 
+        private string _parry;
+    	public string parry 
     	{ 
     		get
     		{
-    			return _AmountPer_level;
+    			return _parry;
     		} 
     		set
     		{
-    			if (_AmountPer_level != value)
+    			if (_parry != value)
     			{
-    				_AmountPer_level = value;
-    				OnPropertyChanged("AmountPer_level");
+    				_parry = value;
+    				OnPropertyChanged("parry");
     			}
     		}
     	}
-        private string _AmountValue;
-    	public string AmountValue 
+        private string _block;
+    	public string block 
     	{ 
     		get
     		{
-    			return _AmountValue;
+    			return _block;
     		} 
     		set
     		{
-    			if (_AmountValue != value)
+    			if (_block != value)
     			{
-    				_AmountValue = value;
-    				OnPropertyChanged("AmountValue");
+    				_block = value;
+    				OnPropertyChanged("block");
     			}
     		}
     	}
-        private Nullable<int> _FK_Advantage;
-    	public Nullable<int> FK_Advantage 
+        private Nullable<int> _idAdv;
+    	public Nullable<int> idAdv 
     	{ 
     		get
     		{
-    			return _FK_Advantage;
+    			return _idAdv;
     		} 
     		set
     		{
-    			if (_FK_Advantage != value)
+    			if (_idAdv != value)
     			{
-    				_FK_Advantage = value;
-    				OnPropertyChanged("FK_Advantage");
+    				_idAdv = value;
+    				OnPropertyChanged("idAdv");
     			}
     		}
     	}
@@ -167,13 +173,14 @@ namespace Item_WPF.ItemEntityModel
                     {    _Advantage = value;    OnPropertyChanged("Advantage");   }
                 }
             } 
-        private GurpsSkill _GurpsSkill;
-            public virtual GurpsSkill GurpsSkill
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<DefSkillSome> _DefSkillSomes;
+            public virtual ICollection<DefSkillSome> DefSkillSomes
             {
-                get { return _GurpsSkill; }
+                get { return _DefSkillSomes; }
                 set
-                { if(_GurpsSkill != value)
-                    {    _GurpsSkill = value;    OnPropertyChanged("GurpsSkill");   }
+                { if(_DefSkillSomes != value)
+                    {    _DefSkillSomes = value;    OnPropertyChanged("DefSkillSomes");   }
                 }
             } 
     }

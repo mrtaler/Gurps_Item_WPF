@@ -12,7 +12,7 @@ namespace Item_WPF.ItemEntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class GurpsSkillCategory : System.ComponentModel.INotifyPropertyChanged
+    public partial class dr_bonusDB : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -29,12 +29,6 @@ namespace Item_WPF.ItemEntityModel
      
      #endregion
      
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public GurpsSkillCategory()
-        {
-            this.GurpsSkills = new HashSet<GurpsSkill>();
-        }
-    
         private int _id;
     	public int id 
     	{ 
@@ -51,31 +45,78 @@ namespace Item_WPF.ItemEntityModel
     			}
     		}
     	}
-        private string _NamelCategory;
-    	public string NamelCategory 
+        private string _location;
+    	public string location 
     	{ 
     		get
     		{
-    			return _NamelCategory;
+    			return _location;
     		} 
     		set
     		{
-    			if (_NamelCategory != value)
+    			if (_location != value)
     			{
-    				_NamelCategory = value;
-    				OnPropertyChanged("NamelCategory");
+    				_location = value;
+    				OnPropertyChanged("location");
+    			}
+    		}
+    	}
+        private string _per_level;
+    	public string per_level 
+    	{ 
+    		get
+    		{
+    			return _per_level;
+    		} 
+    		set
+    		{
+    			if (_per_level != value)
+    			{
+    				_per_level = value;
+    				OnPropertyChanged("per_level");
+    			}
+    		}
+    	}
+        private string _Value;
+    	public string Value 
+    	{ 
+    		get
+    		{
+    			return _Value;
+    		} 
+    		set
+    		{
+    			if (_Value != value)
+    			{
+    				_Value = value;
+    				OnPropertyChanged("Value");
+    			}
+    		}
+    	}
+        private Nullable<int> _idAdv;
+    	public Nullable<int> idAdv 
+    	{ 
+    		get
+    		{
+    			return _idAdv;
+    		} 
+    		set
+    		{
+    			if (_idAdv != value)
+    			{
+    				_idAdv = value;
+    				OnPropertyChanged("idAdv");
     			}
     		}
     	}
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<GurpsSkill> _GurpsSkills;
-            public virtual ICollection<GurpsSkill> GurpsSkills
+        private Advantage _Advantage;
+            public virtual Advantage Advantage
             {
-                get { return _GurpsSkills; }
+                get { return _Advantage; }
                 set
-                { if(_GurpsSkills != value)
-                    {    _GurpsSkills = value;    OnPropertyChanged("GurpsSkills");   }
+                { if(_Advantage != value)
+                    {    _Advantage = value;    OnPropertyChanged("Advantage");   }
                 }
             } 
     }
