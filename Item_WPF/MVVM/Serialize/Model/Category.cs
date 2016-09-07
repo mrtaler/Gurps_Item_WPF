@@ -11,25 +11,37 @@ namespace Item_WPF.MVVM.Serialize.Model
 {
     public class Category
     {
-       public ObservableCollection<string> CollectionCategiry = new ObservableCollection<string>();
-       public ObservableCollection<string> ResultOrder;
-       /// <summary>
+        public ObservableCollection<string> CollectionCategiry = new ObservableCollection<string>();
+        public ObservableCollection<string> ResultOrder;
+        /// <summary>
         /// Получение в файл категорий
         /// </summary>
         /// <param name="xdoc">извлёчённый документ</param>
         /// <param name="writePath">файл для записи результата</param>
         public Category(string xmlString, string writePath)
         {
+
             XDocument xdoc = XDocument.Load(xmlString);
-            foreach (XElement skillElement in xdoc.Element("skill_list").Elements("skill").Elements("categories").Elements("category"))
+            if (xmlString.Contains(".skl"))
             {
-                string cat = skillElement != null ? skillElement.Value.ToString() : "0";
-                CollectionCategiry.Add(cat);
+                foreach (XElement skillElement in xdoc.Element("skill_list").Elements("skill").Elements("categories").Elements("category"))
+                {
+                    string cat = skillElement != null ? skillElement.Value.ToString() : "0";
+                    CollectionCategiry.Add(cat);
+                }
+                foreach (XElement skillElement in xdoc.Element("skill_list").Elements("technique").Elements("categories").Elements("category"))
+                {
+                    string cat = skillElement != null ? skillElement.Value.ToString() : "0";
+                    CollectionCategiry.Add(cat);
+                }
             }
-            foreach (XElement skillElement in xdoc.Element("skill_list").Elements("technique").Elements("categories").Elements("category"))
+            else if (xmlString.Contains(".adq"))
             {
-                string cat = skillElement != null ? skillElement.Value.ToString() : "0";
-                CollectionCategiry.Add(cat);
+                foreach (XElement skillElement in xdoc.Element("advantage_list").Elements("advantage").Elements("categories").Elements("category"))
+                {
+                    string cat = skillElement != null ? skillElement.Value.ToString() : "0";
+                    CollectionCategiry.Add(cat);
+                }
             }
             ResultOrder = new ObservableCollection<string>(CollectionCategiry.Distinct().OrderBy(i => i));
         }
