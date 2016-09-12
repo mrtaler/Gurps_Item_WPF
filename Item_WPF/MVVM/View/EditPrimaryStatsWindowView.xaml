@@ -6,6 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:p="clr-namespace:Item_WPF.Properties"
         Title="{x:Static p:Resources.PrimaryStatsWindow}"
+        Height="159.017"
         SizeToContent="WidthAndHeight"
         WindowStartupLocation="CenterOwner"
         mc:Ignorable="d">
@@ -19,25 +20,222 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Orientation="Vertical">
                 <TextBlock Text="{x:Static p:Resources.CharacterSheetStrength}" />
-                <TextBox Text="{Binding Path=StrengthPoints, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox>
+                    <TextBox.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <TextBox Grid.Column="0"
+                                         Width="36"
+                                         HorizontalAlignment="Left"
+                                         IsReadOnly="True"
+                                         Text="{Binding Path=Strength,
+                                                        Mode=OneWay}" />
+                                <TextBox Grid.Column="0"
+                                         Width="36"
+                                         HorizontalAlignment="Right"
+                                         IsReadOnly="True"
+                                         Text="{Binding Path=StrengthCost,
+                                                        Mode=OneWay}" />
+                            </Grid>
+                        </ControlTemplate>
+                    </TextBox.Template>
+                </TextBox>
+
+                <TextBox>
+                    <TextBox.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <TextBox Grid.Column="0"
+                                         Height="26"
+                                         Text="{Binding Path=StrengthPoints,
+                                                        UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Grid.Column="1"
+                                        Width="13"
+                                        Height="13"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Top"
+                                        Command="{Binding IncreasePointCommand}"
+                                        CommandParameter="StrengthPoints"
+                                        Content="/\"
+                                        FontSize="7" />
+                                <Button Grid.Column="1"
+                                        Width="13"
+                                        Height="13"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Bottom"
+                                        Command="{Binding DecreasePointCommand}"
+                                        CommandParameter="StrengthPoints"
+                                        Content="\/"
+                                        FontSize="7" />
+                            </Grid>
+                        </ControlTemplate>
+                    </TextBox.Template>
+                </TextBox>
             </StackPanel>
             <StackPanel Grid.Column="1"
                         Margin="8 0 0 0"
                         Orientation="Vertical">
                 <TextBlock Text="{x:Static p:Resources.CharacterSheetDexterity}" />
-                <TextBox Text="{Binding Path=DexterityPoints, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox>
+                    <TextBox.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <TextBox Grid.Column="0"
+                                         Width="36"
+                                         HorizontalAlignment="Left"
+                                         IsReadOnly="True"
+                                         Text="{Binding Path=Dexterity,
+                                                        Mode=OneWay}" />
+                                <TextBox Grid.Column="0"
+                                         Width="36"
+                                         HorizontalAlignment="Right"
+                                         IsReadOnly="True"
+                                         Text="{Binding Path=DexterityCost,
+                                                        Mode=OneWay}" />
+                            </Grid>
+                        </ControlTemplate>
+                    </TextBox.Template>
+                </TextBox>
+                <TextBox>
+                    <TextBox.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <TextBox Grid.Column="0"
+                                         Height="26"
+                                         Text="{Binding Path=DexterityPoints,
+                                                        UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Grid.Column="1"
+                                        Width="13"
+                                        Height="13"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Top"
+                                        Command="{Binding IncreasePointCommand}"
+                                        CommandParameter="DexterityPoints"
+                                        Content="/\"
+                                        FontSize="7" />
+                                <Button Grid.Column="1"
+                                        Width="13"
+                                        Height="13"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Bottom"
+                                        Command="{Binding DecreasePointCommand}"
+                                        CommandParameter="DexterityPoints"
+                                        Content="\/"
+                                        FontSize="7" />
+                            </Grid>
+                        </ControlTemplate>
+                    </TextBox.Template>
+                </TextBox>
             </StackPanel>
             <StackPanel Grid.Column="2"
                         Margin="8 0 0 0"
                         Orientation="Vertical">
                 <TextBlock Text="{x:Static p:Resources.CharacterSheetIntelligence}" />
-                <TextBox Text="{Binding Path=IntelligencePoints, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox>
+                    <TextBox.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <TextBox Grid.Column="0"
+                                         Width="36"
+                                         HorizontalAlignment="Left"
+                                         IsReadOnly="True"
+                                         Text="{Binding Path=Intelligence,
+                                                        Mode=OneWay}" />
+                                <TextBox Grid.Column="0"
+                                         Width="36"
+                                         HorizontalAlignment="Right"
+                                         IsReadOnly="True"
+                                         Text="{Binding Path=IntelligenceCost,
+                                                        Mode=OneWay}" />
+                            </Grid>
+                        </ControlTemplate>
+                    </TextBox.Template>
+                </TextBox>
+                <TextBox>
+                    <TextBox.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <TextBox Grid.Column="0"
+                                         Height="26"
+                                         Text="{Binding Path=IntelligencePoints,
+                                                        UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Grid.Column="1"
+                                        Width="13"
+                                        Height="13"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Top"
+                                        Command="{Binding IncreasePointCommand}"
+                                        CommandParameter="IntelligencePoints"
+                                        Content="/\"
+                                        FontSize="7" />
+                                <Button Grid.Column="1"
+                                        Width="13"
+                                        Height="13"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Bottom"
+                                        Command="{Binding DecreasePointCommand}"
+                                        CommandParameter="IntelligencePoints"
+                                        Content="\/"
+                                        FontSize="7" />
+                            </Grid>
+                        </ControlTemplate>
+                    </TextBox.Template>
+                </TextBox>
             </StackPanel>
             <StackPanel Grid.Column="3"
                         Margin="8 0 0 0"
                         Orientation="Vertical">
                 <TextBlock Text="{x:Static p:Resources.CharacterSheetHealth}" />
-                <TextBox Text="{Binding Path=HealthPoints, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox>
+                    <TextBox.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <TextBox Grid.Column="0"
+                                         Width="36"
+                                         HorizontalAlignment="Left"
+                                         IsReadOnly="True"
+                                         Text="{Binding Path=Health,
+                                                        Mode=OneWay}" />
+                                <TextBox Grid.Column="0"
+                                         Width="36"
+                                         HorizontalAlignment="Right"
+                                         IsReadOnly="True"
+                                         Text="{Binding Path=HealthCost,
+                                                        Mode=OneWay}" />
+                            </Grid>
+                        </ControlTemplate>
+                    </TextBox.Template>
+                </TextBox>
+                <TextBox Text="{Binding Path=HealthPoints, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <TextBox Grid.Column="0"
+                                         Height="26"
+                                         Text="{Binding Path=HealthPoints,
+                                                        UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Grid.Column="1"
+                                        Width="13"
+                                        Height="13"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Top"
+                                        Command="{Binding IncreasePointCommand}"
+                                        CommandParameter="HealthPoints"
+                                        Content="/\"
+                                        FontSize="7" />
+                                <Button Grid.Column="1"
+                                        Width="13"
+                                        Height="13"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Bottom"
+                                        Command="{Binding DecreasePointCommand}"
+                                        CommandParameter="HealthPoints"
+                                        Content="\/"
+                                        FontSize="7" />
+                            </Grid>
+                        </ControlTemplate>
+                    </TextBox.Template>
+                </TextBox>
             </StackPanel>
         </Grid>
         <StackPanel Margin=" 8 0 8 8" Orientation="Horizontal">
@@ -46,5 +244,11 @@
                     Click="CancelButtonClick"
                     Content="{x:Static p:Resources.PrimaryStatsWindowCancel}" />
         </StackPanel>
+        <Grid>
+            <Label Width="120"
+                   Height="20"
+                   HorizontalAlignment="Left"
+                   Content="{Binding TotalPoint, Mode=OneWay}" />
+        </Grid>
     </StackPanel>
 </Window>

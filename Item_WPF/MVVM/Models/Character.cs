@@ -375,7 +375,7 @@ namespace Item_WPF.ItemEntityModel
         {
             get
             {
-                return CharacterPointsPrimarySkill + CharacterPointsSecondarySkill + CharacterPointsAdvantages + CharacterPointsSkills;
+                return CharacterPointsPrimarySkill + CharacterPointsSecondarySkill + CharacterPointsAdvantages;// + CharacterPointsSkills;
             }
         }
 

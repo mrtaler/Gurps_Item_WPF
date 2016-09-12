@@ -27,7 +27,7 @@ namespace Item_WPF.MVVM.ViewModels
         public DelegateCommand NewCommand { get; private set; }
         public DelegateCommand OpenCommand { get; private set; }
 
-        public DelegateCommand OpenDBCommand { get; private set; }
+        public DelegateCommand OpenDbCommand { get; private set; }
         public DelegateCommand SaveAsCommand { get; private set; }
         public DelegateCommand OwnerCloseCommand { get; private set; }
         public MainCharacterViewModel(Window owner)
@@ -49,7 +49,7 @@ namespace Item_WPF.MVVM.ViewModels
             AddSkillCommand = new DelegateCommand(AddSkill);
             NewCommand = new DelegateCommand(New);
             OpenCommand = new DelegateCommand(Open);
-            OpenDBCommand=new DelegateCommand(OpenDB);
+            OpenDbCommand=new DelegateCommand(OpenDB);
             SaveAsCommand = new DelegateCommand(SaveAs);
             OwnerCloseCommand = new DelegateCommand(OwnerClose);
 
@@ -327,7 +327,7 @@ namespace Item_WPF.MVVM.ViewModels
             //}
         }
 
-        public void EditPrimaryStats(object parameter)
+        private void EditPrimaryStats(object parameter)
         {
             EditPrimaryStatsWindowView window = new EditPrimaryStatsWindowView();
             window.Owner = Owner;
