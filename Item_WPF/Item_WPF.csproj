@@ -350,7 +350,7 @@
     <Compile Include="MVVM\ViewModels\AttacmentMountViewModel.cs" />
     <Compile Include="MVVM\ViewModels\CombineWeapViewModel.cs" />
     <Compile Include="MVVM\ViewModels\DamageTypeViewModel.cs" />
-    <Compile Include="MVVM\ViewModels\EditPrimaryStatsViewModel.cs" />
+    <Compile Include="MVVM\EditPrimaryStats\EditPrimaryStatsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\EditSecondaryStatsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\InputBoxViewModel.cs" />
     <Compile Include="MVVM\ViewModels\MainCharacterViewModel.cs" />
@@ -402,7 +402,7 @@
     <Compile Include="MVVM\View\EditItemWindowView.xaml.cs">
       <DependentUpon>EditItemWindowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\EditPrimaryStatsWindowView.xaml.cs">
+    <Compile Include="MVVM\EditPrimaryStats\EditPrimaryStatsWindowView.xaml.cs">
       <DependentUpon>EditPrimaryStatsWindowView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\EditSecondaryStatsWindowView.xaml.cs">
@@ -531,7 +531,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\EditPrimaryStatsWindowView.xaml">
+    <Page Include="MVVM\EditPrimaryStats\EditPrimaryStatsWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1017,6 +1017,7 @@
     <Content Include="addin\Al\sql1.sql" />
     <Content Include="addin\Al\sqlADV.sql" />
     <Content Include="addin\Al\SQlinv.sql" />
+    <Content Include="addin\microsoft.windows.shell.dll" />
     <Content Include="addin\oldDB\InsertStoreP.sql" />
     <Content Include="addin\01_DatabaseInitStructure.sql" />
     <Content Include="addin\oldDB\ItemModel.edmx.sql" />

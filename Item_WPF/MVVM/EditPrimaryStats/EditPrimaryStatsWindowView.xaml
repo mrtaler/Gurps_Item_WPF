@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:p="clr-namespace:Item_WPF.Properties"
         Title="{x:Static p:Resources.PrimaryStatsWindow}"
-        Height="159.017"
+        Height="180.981"
         SizeToContent="WidthAndHeight"
         WindowStartupLocation="CenterOwner"
         mc:Ignorable="d">
@@ -28,7 +28,7 @@
                                          Width="36"
                                          HorizontalAlignment="Left"
                                          IsReadOnly="True"
-                                         Text="{Binding Path=Strength,
+                                         Text="{Binding Path=StrengthPoints,
                                                         Mode=OneWay}" />
                                 <TextBox Grid.Column="0"
                                          Width="36"
@@ -45,12 +45,8 @@
                     <TextBox.Template>
                         <ControlTemplate>
                             <Grid>
-                                <TextBox Grid.Column="0"
-                                         Height="26"
-                                         Text="{Binding Path=StrengthPoints,
-                                                        UpdateSourceTrigger=PropertyChanged}" />
-                                <Button Grid.Column="1"
-                                        Width="13"
+                                <TextBox Height="26" Text="{Binding Path=Strength, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Width="13"
                                         Height="13"
                                         HorizontalAlignment="Right"
                                         VerticalAlignment="Top"
@@ -58,8 +54,7 @@
                                         CommandParameter="StrengthPoints"
                                         Content="/\"
                                         FontSize="7" />
-                                <Button Grid.Column="1"
-                                        Width="13"
+                                <Button Width="13"
                                         Height="13"
                                         HorizontalAlignment="Right"
                                         VerticalAlignment="Bottom"
@@ -100,12 +95,8 @@
                     <TextBox.Template>
                         <ControlTemplate>
                             <Grid>
-                                <TextBox Grid.Column="0"
-                                         Height="26"
-                                         Text="{Binding Path=DexterityPoints,
-                                                        UpdateSourceTrigger=PropertyChanged}" />
-                                <Button Grid.Column="1"
-                                        Width="13"
+                                <TextBox Height="26" Text="{Binding Path=DexterityPoints, UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Width="13"
                                         Height="13"
                                         HorizontalAlignment="Right"
                                         VerticalAlignment="Top"
@@ -113,8 +104,7 @@
                                         CommandParameter="DexterityPoints"
                                         Content="/\"
                                         FontSize="7" />
-                                <Button Grid.Column="1"
-                                        Width="13"
+                                <Button Width="13"
                                         Height="13"
                                         HorizontalAlignment="Right"
                                         VerticalAlignment="Bottom"
@@ -155,12 +145,8 @@
                     <TextBox.Template>
                         <ControlTemplate>
                             <Grid>
-                                <TextBox Grid.Column="0"
-                                         Height="26"
-                                         Text="{Binding Path=IntelligencePoints,
-                                                        UpdateSourceTrigger=PropertyChanged}" />
-                                <Button Grid.Column="1"
-                                        Width="13"
+                                <TextBox Height="26" Text="{Binding Path=IntelligencePoints, UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Width="13"
                                         Height="13"
                                         HorizontalAlignment="Right"
                                         VerticalAlignment="Top"
@@ -168,8 +154,7 @@
                                         CommandParameter="IntelligencePoints"
                                         Content="/\"
                                         FontSize="7" />
-                                <Button Grid.Column="1"
-                                        Width="13"
+                                <Button Width="13"
                                         Height="13"
                                         HorizontalAlignment="Right"
                                         VerticalAlignment="Bottom"
@@ -190,14 +175,12 @@
                     <TextBox.Template>
                         <ControlTemplate>
                             <Grid>
-                                <TextBox Grid.Column="0"
-                                         Width="36"
+                                <TextBox Width="36"
                                          HorizontalAlignment="Left"
                                          IsReadOnly="True"
                                          Text="{Binding Path=Health,
                                                         Mode=OneWay}" />
-                                <TextBox Grid.Column="0"
-                                         Width="36"
+                                <TextBox Width="36"
                                          HorizontalAlignment="Right"
                                          IsReadOnly="True"
                                          Text="{Binding Path=HealthCost,
@@ -210,12 +193,8 @@
                     <TextBox.Template>
                         <ControlTemplate>
                             <Grid>
-                                <TextBox Grid.Column="0"
-                                         Height="26"
-                                         Text="{Binding Path=HealthPoints,
-                                                        UpdateSourceTrigger=PropertyChanged}" />
-                                <Button Grid.Column="1"
-                                        Width="13"
+                                <TextBox Height="26" Text="{Binding Path=HealthPoints, UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Width="13"
                                         Height="13"
                                         HorizontalAlignment="Right"
                                         VerticalAlignment="Top"
@@ -223,8 +202,7 @@
                                         CommandParameter="HealthPoints"
                                         Content="/\"
                                         FontSize="7" />
-                                <Button Grid.Column="1"
-                                        Width="13"
+                                <Button Width="13"
                                         Height="13"
                                         HorizontalAlignment="Right"
                                         VerticalAlignment="Bottom"
@@ -248,7 +226,8 @@
             <Label Width="120"
                    Height="20"
                    HorizontalAlignment="Left"
-                   Content="{Binding TotalPoint, Mode=OneWay}" />
+                   Content="{Binding TotalPoint,
+                                     Mode=OneWay}" />
         </Grid>
     </StackPanel>
 </Window>

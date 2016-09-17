@@ -22,23 +22,21 @@ namespace Item_WPF.MVVM.ViewModels
             PropertyDependencyMap.Add("IntelligencePoints", new[] { "Intelligence", "CharacterPoints", "IntelligenceCost", "TotalPoint" });
             PropertyDependencyMap.Add("HealthPoints", new[] { "Health", "CharacterPoints", "HealthCost", "TotalPoint" });
         }
-
+        #region Strength
         public int Strength
         {
             get
             {
                 return Character.Strength;
             }
-            
         }
         public int StrengthCost
         {
             get
             {
-                return 10*StrengthPoints;
+                return 10 * StrengthPoints;
             }
         }
-
         public int StrengthPoints
         {
             get
@@ -48,16 +46,18 @@ namespace Item_WPF.MVVM.ViewModels
             set
             {
                 Character.StrengthPoints = value;
-               NotifyPropertyChanged("StrengthPoints");
+                NotifyPropertyChanged("StrengthPoints");
             }
         }
+        #endregion
+
         public int Dexterity
         {
             get { return Character.Dexterity; }
         }
         public int DexterityCost
         {
-            get { return 20*DexterityPoints; }
+            get { return 20 * DexterityPoints; }
         }
         public int DexterityPoints
         {
@@ -74,11 +74,10 @@ namespace Item_WPF.MVVM.ViewModels
         public int Intelligence
         {
             get { return Character.Intelligence; }
-
         }
         public int IntelligenceCost
         {
-            get { return 20*IntelligencePoints; }
+            get { return 20 * IntelligencePoints; }
         }
         public int IntelligencePoints
         {
@@ -95,11 +94,10 @@ namespace Item_WPF.MVVM.ViewModels
         public int Health
         {
             get { return Character.Health; }
-
         }
         public int HealthCost
         {
-            get { return 10*HealthPoints; }
+            get { return 10 * HealthPoints; }
         }
         public int HealthPoints
         {
@@ -113,18 +111,16 @@ namespace Item_WPF.MVVM.ViewModels
                 NotifyPropertyChanged("HealthPoints");
             }
         }
-
         public int TotalPoint
         { get { return Character.CharacterPoints; } }
-     private void   IncreasePoint(object parameter)
+        private void IncreasePoint(object parameter)
         {
-           
             string param = parameter.ToString();
             switch (param)
             {
                 case "StrengthPoints":
                     StrengthPoints += 1;
-                   break;
+                    break;
                 case "DexterityPoints":
                     DexterityPoints += 1;
                     break;
@@ -136,7 +132,7 @@ namespace Item_WPF.MVVM.ViewModels
                     break;
             }
         }
-       private void DecreasePoint(object parameter)
+        private void DecreasePoint(object parameter)
         {
             string param = parameter.ToString();
             switch (param)
