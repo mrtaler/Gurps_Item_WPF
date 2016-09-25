@@ -46,7 +46,6 @@ namespace Item_WPF.MVVM.Serialize.Model
             category = itemCategoryx;
         }
     }
-
     public class dr_bonusXml
     {
         public XElement amount;
@@ -57,7 +56,6 @@ namespace Item_WPF.MVVM.Serialize.Model
             amount = item.Element("amount");
         }
     }
-
     public class skill_bonusXML
     {
         public XElement amount;
@@ -79,13 +77,16 @@ namespace Item_WPF.MVVM.Serialize.Model
         public XAttribute all_colleges;
         public spell_bonusXML(XElement item)
         {
-            spell_name = item.Element("spell_name");
-            college_name = item.Element("college_name");
-            all_colleges = item.Attribute("all_colleges");
-            amount = item.Element("amount");
+            spell_name = item.Element("spell_name") != null
+            ? item.Element("spell_name") : null;
+            college_name = item.Element("college_name") != null
+            ? item.Element("college_name") : null;
+            all_colleges = item.Attribute("all_colleges") != null
+            ? item.Attribute("all_colleges") : null;
+            amount = item.Element("amount") != null
+            ? item.Element("amount") : null;
         }
     }
-
     public class ranged_weaponXML
     {
         public ObservableCollection<DefaultXML> Default;

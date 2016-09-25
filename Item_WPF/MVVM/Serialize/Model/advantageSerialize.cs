@@ -151,7 +151,7 @@ namespace Item_WPF.MVVM.Serialize.Model
             #endregion
             foreach (AdvantageXML advXML in AdvantageXMLCollection)
             {
-                _context.Advantages.Add(new Advantage(advXML, _context));
+                _context.Advantages.AddObject(new Advantage(advXML, _context));
             }
             _context.SaveChanges();
             MessageBox.Show("done");

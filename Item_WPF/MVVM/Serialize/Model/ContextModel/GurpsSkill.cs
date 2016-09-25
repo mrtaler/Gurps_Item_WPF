@@ -104,7 +104,7 @@ namespace Item_WPF.ItemEntityModel
             }
         }
 
-        //public /*override */GurpsSkill() { }
+        public /*override */GurpsSkill() { }
 
         public GurpsSkill(SkillXMLModel SkillFromXml, string type)
         {

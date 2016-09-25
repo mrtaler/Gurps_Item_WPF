@@ -10,7 +10,7 @@ namespace Item_WPF.ItemEntityModel
 
     public partial class prereq_listDB
     {
-     //   public prereq_listDB() { }
+        public prereq_listDB() { }
 
         public void FPPrereq_list(Prereq_listXML item)
         {
@@ -141,7 +141,7 @@ namespace Item_WPF.ItemEntityModel
             }
         }
         public prereq_listDB(Prereq_listXML item)
-       //     : this()
+        //     : this()
         {
 
             FPPrereq_list(item);

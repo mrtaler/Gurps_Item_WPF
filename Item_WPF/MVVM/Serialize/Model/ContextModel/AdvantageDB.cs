@@ -8,7 +8,7 @@ namespace Item_WPF.ItemEntityModel
 {
     public partial class Advantage
     {
-      //  public Advantage() { }
+        public Advantage() { }
         public Advantage(AdvantageXML advXML, item1Entities _context)
         {
             name = advXML.name != null

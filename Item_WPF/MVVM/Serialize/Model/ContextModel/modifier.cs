@@ -16,11 +16,13 @@ namespace Item_WPF.ItemEntityModel
                            ? item.name.Attribute("compare").Value.ToString() : null;
             notes = item.notes != null
                            ? item.notes.Value.ToString() : null;
+
             if (item.notes != null)
             {
                 notesC = item.notes.Attribute("compare") != null
                      ? item.notes.Attribute("compare").Value.ToString() : null;
             }
+
             levels = item.levels != null
             ? item.levels.Value.ToString() : null;
 

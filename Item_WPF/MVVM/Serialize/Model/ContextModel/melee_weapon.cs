@@ -11,13 +11,19 @@ namespace Item_WPF.ItemEntityModel
      //   public melee_weapon() { }
         public melee_weapon(melee_weaponXML item)
         {
-            damage = item.damage.Value.ToString();
-            strength = item.strength.Value.ToString();
-            usage = item.usage.Value.ToString();
-            reach = item.reach.Value.ToString();
-            parry = item.parry.Value.ToString();
-            block = item.block.Value.ToString();
-            if (item.Default!=null)
+            damage = item.damage != null
+                           ? item.damage.Value.ToString() : null;
+            strength = item.strength != null
+                           ? item.strength.Value.ToString() : null;
+            usage = item.usage != null
+                           ? item.usage.Value.ToString() : null;
+            reach = item.reach != null
+                           ? item.reach.Value.ToString() : null;
+            parry = item.parry != null
+                           ? item.parry.Value.ToString() : null;
+            block = item.block != null
+                           ? item.block.Value.ToString() : null;
+            if (item.Default != null)
             {
                 foreach (DefaultXML itemDefault in item.Default)
                 {
