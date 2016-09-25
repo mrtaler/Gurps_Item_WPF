@@ -5,6 +5,7 @@
                      xmlns:p="clr-namespace:Item_WPF.Properties"
                      xmlns:ribbon="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
                      Title="{Binding Path=Title}"
+                     Width="762.753"
                      SizeToContent="WidthAndHeight">
     <Window.Resources>
         <Style x:Key="Stat" TargetType="TextBlock">
@@ -98,6 +99,14 @@
                             <StackPanel Margin="8 0 0 0" Orientation="Vertical">
                                 <TextBlock Text="{x:Static p:Resources.CharacterSheetBasicMove}" />
                                 <TextBlock Style="{StaticResource Stat}" Text="{Binding Path=BasicMove}" />
+                            </StackPanel>
+                            <StackPanel Margin="8 0 0 0" Orientation="Vertical">
+                                <TextBlock Text="{x:Static p:Resources.CharacterSheetMaxHP}" />
+                                <TextBlock Style="{StaticResource Stat}" Text="{Binding Path=MaxHP}" />
+                            </StackPanel>
+                            <StackPanel Margin="8 0 0 0" Orientation="Vertical">
+                                <TextBlock Text="{x:Static p:Resources.CharacterSheetMaxFP}" />
+                                <TextBlock Style="{StaticResource Stat}" Text="{Binding Path=MaxFP}" />
                             </StackPanel>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">

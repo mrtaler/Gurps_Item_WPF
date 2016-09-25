@@ -53,8 +53,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-1490 px</X>
-              <Y>340 px</Y>
+              <X>-1550 px</X>
+              <Y>-180 px</Y>
             </Location>
             <Size>
               <Width>211 px</Width>
@@ -76,8 +76,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>800 px</X>
-              <Y>1110 px</Y>
+              <X>630 px</X>
+              <Y>580 px</Y>
             </Location>
             <Size>
               <Width>139 px</Width>
@@ -99,15 +99,16 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1580 px</X>
-              <Y>370 px</Y>
+              <X>1500 px</X>
+              <Y>-90 px</Y>
             </Location>
             <Size>
               <Width>197 px</Width>
               <Height>124 px</Height>
             </Size>
+            <IsCollapsed>true</IsCollapsed>
             <DbOid>
-              <Path>Item1.CharDB.GurpsSkillCategory</Path>
+              <Path>Item1.CharDB.GurpsCategory</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -122,13 +123,14 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1170 px</X>
-              <Y>400 px</Y>
+              <X>1180 px</X>
+              <Y>-50 px</Y>
             </Location>
             <Size>
               <Width>201 px</Width>
               <Height>124 px</Height>
             </Size>
+            <IsCollapsed>true</IsCollapsed>
             <DbOid>
               <Path>Item1.CharDB.GurpsSkillCategory88</Path>
               <TypeName>Table</TypeName>
@@ -153,7 +155,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>47 px</Y>
+                  <Y>10.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -164,17 +166,23 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>77 px</Y>
+                  <X>49.25 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>8</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>1549.25 px</X>
+                <Y>-39.5 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>Item1.CharDB.GurpsSkillCategory88.FK_GurpsSkillCategory88_GurpsSkillCategory_id</Path>
@@ -191,7 +199,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-104.5 px</X>
+                  <X>-84.125 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -214,8 +222,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-1060 px</X>
-              <Y>370 px</Y>
+              <X>-1120 px</X>
+              <Y>-150 px</Y>
             </Location>
             <Size>
               <Width>167 px</Width>
@@ -306,8 +314,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>400 px</X>
-              <Y>630 px</Y>
+              <X>340 px</X>
+              <Y>110 px</Y>
             </Location>
             <Size>
               <Width>161 px</Width>
@@ -1588,7 +1596,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>108 px</Y>
+                  <Y>72 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -1599,17 +1607,23 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>408 px</Y>
+                  <X>63.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>97</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>-646.5 px</X>
+                <Y>-78 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>Item1.CharDB.InventoryOfChar.FK_InventoryOfChar_ITEM_uiIndex</Path>
@@ -1626,7 +1640,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-91.5 px</X>
+                  <X>-153.25 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -2346,8 +2360,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-1010 px</X>
-              <Y>860 px</Y>
+              <X>-1020 px</X>
+              <Y>780 px</Y>
             </Location>
             <Size>
               <Width>172 px</Width>
@@ -2377,7 +2391,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>862 px</Y>
+                  <Y>782 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -2415,7 +2429,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>64 px</X>
+                  <X>69 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -3152,8 +3166,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>870 px</X>
-              <Y>600 px</Y>
+              <X>810 px</X>
+              <Y>80 px</Y>
             </Location>
             <Size>
               <Width>301 px</Width>
@@ -3182,7 +3196,7 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>34.5 px</X>
+                  <X>150.5 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
@@ -3194,17 +3208,23 @@
               </Port>
               <Port>
                 <Location>
-                  <X>104.5 px</X>
-                  <Y>0 px</Y>
+                  <X>0 px</X>
+                  <Y>72 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>203</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>960.5 px</X>
+                <Y>652 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>Item1.CharDB.GurpsSkill.FK_GurpsSkill_Difficulty_id</Path>
@@ -3222,7 +3242,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>0 px</X>
-                  <Y>-81 px</Y>
+                  <Y>-112 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -3252,7 +3272,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>174 px</Y>
+                  <Y>261 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -3264,7 +3284,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>261 px</Y>
+                  <Y>174 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -3276,12 +3296,12 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>851 px</X>
-                <Y>774 px</Y>
+                <X>791 px</X>
+                <Y>341 px</Y>
               </PointD>
               <PointD>
-                <X>851 px</X>
-                <Y>861 px</Y>
+                <X>791 px</X>
+                <Y>254 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
@@ -3301,7 +3321,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>19 px</X>
-                  <Y>-43.5 px</Y>
+                  <Y>43.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -3331,7 +3351,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>298 px</Y>
+                  <Y>304.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -3342,17 +3362,23 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>108 px</Y>
+                  <X>86.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>213</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>346.5 px</X>
+                <Y>384.5 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>Item1.CharDB.GurpsSkill.FK_GurpsSkill_TL_Id_Tl</Path>
@@ -3369,7 +3395,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>218.5 px</X>
+                  <X>231.75 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -3399,7 +3425,7 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0.5 px</X>
+                  <X>100.5 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
@@ -3411,17 +3437,23 @@
               </Port>
               <Port>
                 <Location>
-                  <X>300.5 px</X>
-                  <Y>0 px</Y>
+                  <X>0 px</X>
+                  <Y>87 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>218</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>1280.5 px</X>
+                <Y>167 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>Item1.CharDB.GurpsSkillCategory88.FK_GurpsSkillCategory88_GurpsSkill_id</Path>
@@ -3439,7 +3471,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>0 px</X>
-                  <Y>-38 px</Y>
+                  <Y>-98 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -3491,6 +3523,24 @@
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>521 px</X>
+                <Y>163.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>521 px</X>
+                <Y>191.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>790 px</X>
+                <Y>191.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>790 px</X>
+                <Y>163.5 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>Item1.CharDB.NeedSkill.FK_NeedSkill_GurpsSkill_id_in</Path>
@@ -3508,7 +3558,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>-154.5 px</X>
-                  <Y>0 px</Y>
+                  <Y>-28 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
@@ -3599,8 +3649,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>910 px</X>
-              <Y>400 px</Y>
+              <X>890 px</X>
+              <Y>-200 px</Y>
             </Location>
             <Size>
               <Width>161 px</Width>
@@ -3641,7 +3691,7 @@
               </Port>
               <Port>
                 <Location>
-                  <X>120.5 px</X>
+                  <X>160.5 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
@@ -3669,7 +3719,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>0 px</X>
-                  <Y>-19.5 px</Y>
+                  <Y>-59.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -3710,7 +3760,7 @@
               </Port>
               <Port>
                 <Location>
-                  <X>160.75 px</X>
+                  <X>200.75 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
@@ -3738,7 +3788,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>0 px</X>
-                  <Y>-19.5 px</Y>
+                  <Y>-59.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -3760,8 +3810,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1110 px</X>
-              <Y>1380 px</Y>
+              <X>1050 px</X>
+              <Y>860 px</Y>
             </Location>
             <Size>
               <Width>242 px</Width>
@@ -3813,6 +3863,16 @@
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>1080.5 px</X>
+                <Y>644 px</Y>
+              </PointD>
+              <PointD>
+                <X>1080.5 px</X>
+                <Y>644 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>Item1.CharDB.prereq_listDB.FK_prereq_listDB_GurpsSkill_id</Path>
@@ -3830,7 +3890,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>0 px</X>
-                  <Y>216 px</Y>
+                  <Y>108 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Top</Align>
@@ -3884,12 +3944,12 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>1091 px</X>
-                <Y>1503 px</Y>
+                <X>1031 px</X>
+                <Y>983 px</Y>
               </PointD>
               <PointD>
-                <X>1091 px</X>
-                <Y>1564.5 px</Y>
+                <X>1031 px</X>
+                <Y>1044.5 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
@@ -3931,8 +3991,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>580 px</X>
-              <Y>1380 px</Y>
+              <X>520 px</X>
+              <Y>860 px</Y>
             </Location>
             <Size>
               <Width>238 px</Width>
@@ -4023,8 +4083,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1650 px</X>
-              <Y>1270 px</Y>
+              <X>700 px</X>
+              <Y>1550 px</Y>
             </Location>
             <Size>
               <Width>192 px</Width>
@@ -4053,11 +4113,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>178 px</Y>
+                  <X>96 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>261</OID>
                   <PortType>FloatAnchor</PortType>
@@ -4066,16 +4126,22 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>68 px</Y>
+                  <Y>215.25 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>262</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>796 px</X>
+                <Y>1075.25 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>Item1.CharDB.advantage_prereq.FK_advantage_prereq_prereq_listDB_id</Path>
@@ -4092,11 +4158,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>149 px</X>
-                  <Y>0 px</Y>
+                  <X>0 px</X>
+                  <Y>237.375 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Left</Align>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>263</OID>
                   <PortType>FixedAnchor</PortType>
@@ -4115,35 +4181,12 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1860 px</X>
-              <Y>930 px</Y>
-            </Location>
-            <Size>
-              <Width>201 px</Width>
-              <Height>161 px</Height>
-            </Size>
-            <DbOid>
-              <Path>Item1.CharDB.AmountAtribute</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>265</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>1860 px</X>
-              <Y>640 px</Y>
+              <X>1800 px</X>
+              <Y>120 px</Y>
             </Location>
             <Size>
               <Width>163 px</Width>
-              <Height>127 px</Height>
+              <Height>212 px</Height>
             </Size>
             <DbOid>
               <Path>Item1.CharDB.attribute_bonus</Path>
@@ -4157,36 +4200,36 @@
           </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>266</OID>
-              <Comment>267</Comment>
-              <OutModel>265</OutModel>
+              <OID>265</OID>
+              <Comment>266</Comment>
+              <OutModel>264</OutModel>
               <InModel>199</InModel>
-              <OutPort>268</OutPort>
-              <InPort>269</InPort>
+              <OutPort>267</OutPort>
+              <InPort>268</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>63.5 px</Y>
+                  <Y>106 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
                 <CustomProperties>
-                  <OID>268</OID>
+                  <OID>267</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>103.5 px</Y>
+                  <Y>146 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
                 <CustomProperties>
-                  <OID>269</OID>
+                  <OID>268</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
@@ -4199,9 +4242,9 @@
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>267</OID>
-              <HolderModel>266</HolderModel>
-              <Port>270</Port>
+              <OID>266</OID>
+              <HolderModel>265</HolderModel>
+              <Port>269</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
@@ -4213,7 +4256,7 @@
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
                 <CustomProperties>
-                  <OID>270</OID>
+                  <OID>269</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -4224,12 +4267,35 @@
               <Y>2 px</Y>
             </CommentOffset>
           </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>270</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1570 px</X>
+              <Y>1080 px</Y>
+            </Location>
+            <Size>
+              <Width>196 px</Width>
+              <Height>195 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.CharDB.attribute_prereq</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
               <OID>271</OID>
               <Comment>272</Comment>
-              <OutModel>264</OutModel>
-              <InModel>265</InModel>
+              <OutModel>270</OutModel>
+              <InModel>241</InModel>
               <OutPort>273</OutPort>
               <InPort>274</InPort>
               <Parent>0</Parent>
@@ -4237,11 +4303,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>81.5 px</X>
-                  <Y>0 px</Y>
+                  <X>0 px</X>
+                  <Y>13 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>273</OID>
                   <PortType>FloatAnchor</PortType>
@@ -4249,11 +4315,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>81.5 px</X>
-                  <Y>0 px</Y>
+                  <X>0 px</X>
+                  <Y>233 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>274</OID>
                   <PortType>FloatAnchor</PortType>
@@ -4262,7 +4328,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.AmountAtribute.FK_AmountAtribute_attribute_bonus_id</Path>
+              <Path>Item1.CharDB.attribute_prereq.FK_attribute_prereq_prereq_listDB_id</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -4276,11 +4342,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>0 px</X>
-                  <Y>81.5 px</Y>
+                  <X>139 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Top</Align>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>275</OID>
                   <PortType>FixedAnchor</PortType>
@@ -4299,15 +4365,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1630 px</X>
-              <Y>1600 px</Y>
+              <X>1280 px</X>
+              <Y>1380 px</Y>
             </Location>
             <Size>
-              <Width>196 px</Width>
-              <Height>195 px</Height>
+              <Width>230 px</Width>
+              <Height>161 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.attribute_prereq</Path>
+              <Path>Item1.CharDB.contained_weight_prereq</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -4329,11 +4395,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>13 px</Y>
+                  <X>6 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>279</OID>
                   <PortType>FloatAnchor</PortType>
@@ -4341,11 +4407,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>233 px</Y>
+                  <X>236 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>280</OID>
                   <PortType>FloatAnchor</PortType>
@@ -4354,7 +4420,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.attribute_prereq.FK_attribute_prereq_prereq_listDB_id</Path>
+              <Path>Item1.CharDB.contained_weight_prereq.FK_contained_weight_prereq_prereq_listDB_id</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -4368,11 +4434,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>139 px</X>
-                  <Y>0 px</Y>
+                  <X>0 px</X>
+                  <Y>137 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Left</Align>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>281</OID>
                   <PortType>FixedAnchor</PortType>
@@ -4391,15 +4457,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1930 px</X>
-              <Y>430 px</Y>
+              <X>520 px</X>
+              <Y>1170 px</Y>
             </Location>
             <Size>
-              <Width>180 px</Width>
-              <Height>144 px</Height>
+              <Width>242 px</Width>
+              <Height>297 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.BonusAttribute</Path>
+              <Path>Item1.CharDB.spell_prereqDB</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -4413,7 +4479,7 @@
               <OID>283</OID>
               <Comment>284</Comment>
               <OutModel>282</OutModel>
-              <InModel>265</InModel>
+              <InModel>241</InModel>
               <OutPort>285</OutPort>
               <InPort>286</InPort>
               <Parent>0</Parent>
@@ -4421,11 +4487,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>46.5 px</X>
-                  <Y>0 px</Y>
+                  <X>0 px</X>
+                  <Y>148.5 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>285</OID>
                   <PortType>FloatAnchor</PortType>
@@ -4433,20 +4499,26 @@
               </Port>
               <Port>
                 <Location>
-                  <X>116.5 px</X>
+                  <X>121 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>286</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>1171 px</X>
+                <Y>1318.5 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.BonusAttribute.FK_BonusAttribute_attribute_bonus_id</Path>
+              <Path>Item1.CharDB.spell_prereqDB.FK_spell_prereqDB_prereq_listDB_id</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -4460,11 +4532,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>0 px</X>
-                  <Y>-33 px</Y>
+                  <X>-204.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Bottom</Align>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>287</OID>
                   <PortType>FixedAnchor</PortType>
@@ -4483,15 +4555,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1340 px</X>
-              <Y>1900 px</Y>
+              <X>1370 px</X>
+              <Y>390 px</Y>
             </Location>
             <Size>
-              <Width>230 px</Width>
-              <Height>161 px</Height>
+              <Width>231 px</Width>
+              <Height>263 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.contained_weight_prereq</Path>
+              <Path>Item1.CharDB.weapon_bonus</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -4505,7 +4577,7 @@
               <OID>289</OID>
               <Comment>290</Comment>
               <OutModel>288</OutModel>
-              <InModel>241</InModel>
+              <InModel>199</InModel>
               <OutPort>291</OutPort>
               <InPort>292</InPort>
               <Parent>0</Parent>
@@ -4513,11 +4585,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>6 px</X>
-                  <Y>0 px</Y>
+                  <X>0 px</X>
+                  <Y>19 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>291</OID>
                   <PortType>FloatAnchor</PortType>
@@ -4525,11 +4597,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>236 px</X>
-                  <Y>0 px</Y>
+                  <X>0 px</X>
+                  <Y>329 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>292</OID>
                   <PortType>FloatAnchor</PortType>
@@ -4538,7 +4610,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.contained_weight_prereq.FK_contained_weight_prereq_prereq_listDB_id</Path>
+              <Path>Item1.CharDB.weapon_bonus.FK_weapon_bonus_GurpsSkill_id</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -4552,11 +4624,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>0 px</X>
-                  <Y>137 px</Y>
+                  <X>129.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Top</Align>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>293</OID>
                   <PortType>FixedAnchor</PortType>
@@ -4575,15 +4647,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>580 px</X>
-              <Y>1690 px</Y>
+              <X>2460 px</X>
+              <Y>-20 px</Y>
             </Location>
             <Size>
-              <Width>242 px</Width>
-              <Height>297 px</Height>
+              <Width>203 px</Width>
+              <Height>280 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.spell_prereqDB</Path>
+              <Path>Item1.CharDB.Advantage</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -4596,8 +4668,8 @@
             <CustomProperties>
               <OID>295</OID>
               <Comment>296</Comment>
-              <OutModel>294</OutModel>
-              <InModel>241</InModel>
+              <OutModel>241</OutModel>
+              <InModel>294</InModel>
               <OutPort>297</OutPort>
               <InPort>298</InPort>
               <Parent>0</Parent>
@@ -4606,7 +4678,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>148.5 px</Y>
+                  <Y>123 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -4617,7 +4689,7 @@
               </Port>
               <Port>
                 <Location>
-                  <X>121 px</X>
+                  <X>101.5 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
@@ -4630,13 +4702,13 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>1231 px</X>
-                <Y>1838.5 px</Y>
+                <X>2561.5 px</X>
+                <Y>983 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.spell_prereqDB.FK_spell_prereqDB_prereq_listDB_id</Path>
+              <Path>Item1.CharDB.prereq_listDB.FK_prereq_listDB_Advantage_id</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -4650,7 +4722,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-204.5 px</X>
+                  <X>-634.75 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -4673,15 +4745,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1430 px</X>
-              <Y>910 px</Y>
+              <X>2230 px</X>
+              <Y>-630 px</Y>
             </Location>
             <Size>
-              <Width>231 px</Width>
-              <Height>212 px</Height>
+              <Width>164 px</Width>
+              <Height>144 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.weapon_bonus</Path>
+              <Path>Item1.CharDB.cost_reduction</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -4695,7 +4767,7 @@
               <OID>301</OID>
               <Comment>302</Comment>
               <OutModel>300</OutModel>
-              <InModel>199</InModel>
+              <InModel>294</InModel>
               <OutPort>303</OutPort>
               <InPort>304</InPort>
               <Parent>0</Parent>
@@ -4703,11 +4775,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>19 px</Y>
+                  <X>82 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>303</OID>
                   <PortType>FloatAnchor</PortType>
@@ -4716,19 +4788,25 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>329 px</Y>
+                  <Y>140 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>304</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>2312 px</X>
+                <Y>120 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.weapon_bonus.FK_weapon_bonus_GurpsSkill_id</Path>
+              <Path>Item1.CharDB.cost_reduction.FK_cost_reduction_Advantage_id</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -4742,11 +4820,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>129.5 px</X>
-                  <Y>0 px</Y>
+                  <X>0 px</X>
+                  <Y>-303 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Left</Align>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>305</OID>
                   <PortType>FixedAnchor</PortType>
@@ -4759,65 +4837,102 @@
               <Y>2 px</Y>
             </CommentOffset>
           </Model>
-          <Model xsi:type="RelationLinkModel">
+          <Model xsi:type="TableModel">
             <CustomProperties>
               <OID>306</OID>
-              <Comment>307</Comment>
-              <OutModel>264</OutModel>
-              <InModel>300</InModel>
-              <OutPort>308</OutPort>
-              <InPort>309</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1520 px</X>
+              <Y>-540 px</Y>
+            </Location>
+            <Size>
+              <Width>180 px</Width>
+              <Height>212 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.CharDB.DefSkillSome</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>307</OID>
+              <Comment>308</Comment>
+              <OutModel>306</OutModel>
+              <InModel>199</InModel>
+              <OutPort>309</OutPort>
+              <InPort>310</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>80.5 px</Y>
+                  <Y>106 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
-                <CustomProperties>
-                  <OID>308</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>0 px</X>
-                  <Y>100.5 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
                 <CustomProperties>
                   <OID>309</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
+              <Port>
+                <Location>
+                  <X>75.25 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>310</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>871.25 px</X>
+                <Y>-434 px</Y>
+              </PointD>
+              <PointD>
+                <X>871.25 px</X>
+                <Y>-29 px</Y>
+              </PointD>
+              <PointD>
+                <X>885.25 px</X>
+                <Y>-29 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.AmountAtribute.FK_AmountAtribute_weapon_bonus_id</Path>
+              <Path>Item1.CharDB.DefSkillSome.FK_DefSkillAdv_GurpsSkill_id</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>307</OID>
-              <HolderModel>306</HolderModel>
-              <Port>310</Port>
+              <OID>308</OID>
+              <HolderModel>307</HolderModel>
+              <Port>311</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>99.5 px</X>
+                  <X>324.375 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
                 <CustomProperties>
-                  <OID>310</OID>
+                  <OID>311</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -4830,19 +4945,20 @@
           </Model>
           <Model xsi:type="TableModel">
             <CustomProperties>
-              <OID>311</OID>
+              <OID>312</OID>
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2350 px</X>
-              <Y>1320 px</Y>
+              <X>1940 px</X>
+              <Y>-330 px</Y>
             </Location>
             <Size>
-              <Width>203 px</Width>
-              <Height>280 px</Height>
+              <Width>156 px</Width>
+              <Height>212 px</Height>
             </Size>
+            <IsCollapsed>true</IsCollapsed>
             <DbOid>
-              <Path>Item1.CharDB.Advantage</Path>
+              <Path>Item1.CharDB.melee_weapon</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -4853,63 +4969,816 @@
           </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>312</OID>
-              <Comment>313</Comment>
-              <OutModel>241</OutModel>
-              <InModel>311</InModel>
-              <OutPort>314</OutPort>
-              <InPort>315</InPort>
+              <OID>313</OID>
+              <Comment>314</Comment>
+              <OutModel>312</OutModel>
+              <InModel>294</InModel>
+              <OutPort>315</OutPort>
+              <InPort>316</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>165 px</Y>
+                  <Y>10.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
                 <CustomProperties>
-                  <OID>314</OID>
+                  <OID>315</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>50.75 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>316</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>2510.75 px</X>
+                <Y>-319.5 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.CharDB.melee_weapon.FK_melee_weapon_Advantage_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>314</OID>
+              <HolderModel>313</HolderModel>
+              <Port>317</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-207.375 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>317</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>318</OID>
+              <Comment>319</Comment>
+              <OutModel>306</OutModel>
+              <InModel>312</InModel>
+              <OutPort>320</OutPort>
+              <InPort>321</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>211 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>320</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>225 px</Y>
+                  <Y>1 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
                 <CustomProperties>
-                  <OID>315</OID>
+                  <OID>321</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.prereq_listDB.FK_prereq_listDB_Advantage_id</Path>
+              <Path>Item1.CharDB.DefSkillSome.FK_DefSkillSome_melee_weapon_id</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>313</OID>
-              <HolderModel>312</HolderModel>
-              <Port>316</Port>
+              <OID>319</OID>
+              <HolderModel>318</HolderModel>
+              <Port>322</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-499 px</X>
+                  <X>-120 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
                 <CustomProperties>
-                  <OID>316</OID>
+                  <OID>322</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>323</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2910 px</X>
+              <Y>210 px</Y>
+            </Location>
+            <Size>
+              <Width>161 px</Width>
+              <Height>297 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.CharDB.modifier</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>324</OID>
+              <Comment>325</Comment>
+              <OutModel>323</OutModel>
+              <InModel>294</InModel>
+              <OutPort>326</OutPort>
+              <InPort>327</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>25 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>326</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>255 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>327</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.CharDB.modifier.FK_modifier_Advantage_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>325</OID>
+              <HolderModel>324</HolderModel>
+              <Port>328</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>123.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>328</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>329</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1910 px</X>
+              <Y>-200 px</Y>
+            </Location>
+            <Size>
+              <Width>167 px</Width>
+              <Height>263 px</Height>
+            </Size>
+            <IsCollapsed>true</IsCollapsed>
+            <DbOid>
+              <Path>Item1.CharDB.ranged_weapon</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>330</OID>
+              <Comment>331</Comment>
+              <OutModel>329</OutModel>
+              <InModel>294</InModel>
+              <OutPort>332</OutPort>
+              <InPort>333</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>10.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>332</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>101.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>333</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>2561.5 px</X>
+                <Y>-189.5 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.CharDB.ranged_weapon.FK_ranged_weapon_Advantage_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>331</OID>
+              <HolderModel>330</HolderModel>
+              <Port>334</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-242.25 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>334</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>335</OID>
+              <Comment>336</Comment>
+              <OutModel>306</OutModel>
+              <InModel>329</InModel>
+              <OutPort>337</OutPort>
+              <InPort>338</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>106 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>337</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>83.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>338</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>1720 px</X>
+                <Y>-434 px</Y>
+              </PointD>
+              <PointD>
+                <X>1720 px</X>
+                <Y>-220 px</Y>
+              </PointD>
+              <PointD>
+                <X>1993.5 px</X>
+                <Y>-220 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.CharDB.DefSkillSome.FK_DefSkillAdv_ranged_weapon_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>336</OID>
+              <HolderModel>335</HolderModel>
+              <Port>339</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-156.75 px</X>
+                  <Y>-214 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>339</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>340</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1870 px</X>
+              <Y>0 px</Y>
+            </Location>
+            <Size>
+              <Width>204 px</Width>
+              <Height>124 px</Height>
+            </Size>
+            <IsCollapsed>true</IsCollapsed>
+            <DbOid>
+              <Path>Item1.CharDB.AdvantageCategory88</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>341</OID>
+              <Comment>342</Comment>
+              <OutModel>340</OutModel>
+              <InModel>294</InModel>
+              <OutPort>343</OutPort>
+              <InPort>344</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>10.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>343</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>30.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>344</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.CharDB.AdvantageCategory88.FK_AdvantageCategory88_Advantage_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>342</OID>
+              <HolderModel>341</HolderModel>
+              <Port>345</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-193 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>345</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>346</OID>
+              <Comment>347</Comment>
+              <OutModel>340</OutModel>
+              <InModel>3</InModel>
+              <OutPort>348</OutPort>
+              <InPort>349</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>10.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>348</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>147.75 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>349</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>1647.75 px</X>
+                <Y>10.5 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.CharDB.AdvantageCategory88.FK_AdvantageCategory88_GurpsCategory_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>347</OID>
+              <HolderModel>346</HolderModel>
+              <Port>350</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>111.125 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>350</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>351</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3290 px</X>
+              <Y>-40 px</Y>
+            </Location>
+            <Size>
+              <Width>159 px</Width>
+              <Height>161 px</Height>
+            </Size>
+            <DbOid>
+              <Path>Item1.CharDB.dr_bonusDB</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>352</OID>
+              <Comment>353</Comment>
+              <OutModel>351</OutModel>
+              <InModel>294</InModel>
+              <OutPort>354</OutPort>
+              <InPort>355</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>125.75 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>354</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>105.75 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>355</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.CharDB.dr_bonusDB.FK_dr_bonusDB_Advantage_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>353</OID>
+              <HolderModel>352</HolderModel>
+              <Port>356</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>313.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>356</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>357</OID>
+              <Comment>358</Comment>
+              <OutModel>264</OutModel>
+              <InModel>294</InModel>
+              <OutPort>359</OutPort>
+              <InPort>360</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>70 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>359</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>210 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>360</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.CharDB.attribute_bonus.FK_attribute_bonus_Advantage_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>358</OID>
+              <HolderModel>357</HolderModel>
+              <Port>361</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-248.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>361</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>362</OID>
+              <Comment>363</Comment>
+              <OutModel>288</OutModel>
+              <InModel>294</InModel>
+              <OutPort>364</OutPort>
+              <InPort>365</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>131.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>364</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>50.75 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>365</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>2510.75 px</X>
+                <Y>521.5 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>Item1.CharDB.weapon_bonus.FK_weapon_bonus_Advantage_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>363</OID>
+              <HolderModel>362</HolderModel>
+              <Port>366</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-454.875 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>366</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -4923,10 +5792,10 @@
         </Children>
         <ViewPort>
           <ScaleMode>Free</ScaleMode>
-          <Scale>0.61</Scale>
+          <Scale>1.44</Scale>
           <Location>
-            <X>1324.59013431542 px</X>
-            <Y>932.786878464845 px</Y>
+            <X>-1618.05549700614 px</X>
+            <Y>-277.777761344557 px</Y>
           </Location>
         </ViewPort>
       </Model>

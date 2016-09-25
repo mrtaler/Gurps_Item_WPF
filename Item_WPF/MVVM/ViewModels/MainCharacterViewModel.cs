@@ -9,6 +9,10 @@ using Item_WPF.Properties;
 using Item_WPF.MVVM.View;
 using Microsoft.Win32;
 using Item_WPF.ItemEntityModel;
+using Item_WPF.MVVM.EditPrimaryStats;
+using Item_WPF.MVVM.EditSecondaryStats;
+using EditPrimaryStatsWindowView = Item_WPF.MVVM.EditPrimaryStats.EditPrimaryStatsWindowView;
+using EditSecondaryStatsWindowView = Item_WPF.MVVM.EditSecondaryStats.EditSecondaryStatsWindowView;
 
 namespace Item_WPF.MVVM.ViewModels
 {

@@ -1,0 +1,295 @@
+﻿<Window x:Class="Item_WPF.MVVM.EditSecondaryStats.EditSecondaryStatsWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Item_WPF.MVVM.View"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:Item_WPF.Properties"
+        Title="{x:Static p:Resources.SecondaryStatsWindow}"
+        Height="172.624"
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterOwner"
+        mc:Ignorable="d">
+    <StackPanel Grid.IsSharedSizeScope="True" Orientation="Vertical">
+        <Grid Margin="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70" />
+                <ColumnDefinition Width="75" />
+                <ColumnDefinition Width="75" />
+                <ColumnDefinition Width="75" />
+                <ColumnDefinition Width="75" />
+                <ColumnDefinition Width="75" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Vertical">
+                <TextBlock Text="{x:Static p:Resources.CharacterSheetMaxHP}" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="35" />
+                        <ColumnDefinition Width="35" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0"
+                             IsReadOnly="True"
+                             Text="{Binding Path=HPPoints,
+                                            Mode=OneWay}" />
+                    <TextBox Grid.Column="1"
+                             IsReadOnly="True"
+                             Text="{Binding Path=HPPointsCost,
+                                            Mode=OneWay}" />
+                </Grid>
+                <TextBox>
+                    <TextBox.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <TextBox Height="26" Text="{Binding Path=MaxHPPoints, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Width="13"
+                                        Height="13"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Top"
+                                        Command="{Binding IncreasePointCommand}"
+                                        CommandParameter="MaxHPPoints"
+                                        Content="/\"
+                                        FontSize="7" />
+                                <Button Width="13"
+                                        Height="13"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Bottom"
+                                        Command="{Binding DecreasePointCommand}"
+                                        CommandParameter="MaxHPPoints"
+                                        Content="\/"
+                                        FontSize="7" />
+                            </Grid>
+                        </ControlTemplate>
+                    </TextBox.Template>
+                </TextBox>
+
+            </StackPanel>
+            <StackPanel Grid.Column="1"
+                        Margin="5 0 0 0"
+                        Orientation="Vertical">
+                <TextBlock Text="{x:Static p:Resources.CharacterSheetMaxFP}" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="35" />
+                        <ColumnDefinition Width="35" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0"
+                             IsReadOnly="True"
+                             Text="{Binding Path=FPPoints,
+                                            Mode=OneWay}" />
+                    <TextBox Grid.Column="1"
+                             IsReadOnly="True"
+                             Text="{Binding Path=FPPointsCost,
+                                            Mode=OneWay}" />
+                </Grid>
+                <TextBox>
+                    <TextBox.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <TextBox Height="26" Text="{Binding Path=MaxFPPoints, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Width="13"
+                                        Height="13"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Top"
+                                        Command="{Binding IncreasePointCommand}"
+                                        CommandParameter="MaxFPPoints"
+                                        Content="/\"
+                                        FontSize="7" />
+                                <Button Width="13"
+                                        Height="13"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Bottom"
+                                        Command="{Binding DecreasePointCommand}"
+                                        CommandParameter="MaxFPPoints"
+                                        Content="\/"
+                                        FontSize="7" />
+                            </Grid>
+                        </ControlTemplate>
+                    </TextBox.Template>
+                </TextBox>
+            </StackPanel>
+            <StackPanel Grid.Column="2"
+                        Margin="5 0 0 0"
+                        Orientation="Vertical">
+                <TextBlock Text="{x:Static p:Resources.CharacterSheetWillpower}" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="35" />
+                        <ColumnDefinition Width="35" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0"
+                             IsReadOnly="True"
+                             Text="{Binding Path=Willpower,
+                                            Mode=OneWay}" />
+                    <TextBox Grid.Column="1"
+                             IsReadOnly="True"
+                             Text="{Binding Path=WillpowerCost,
+                                            Mode=OneWay}" />
+
+                </Grid>
+                <TextBox>
+                    <TextBox.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <TextBox Height="26" Text="{Binding Path=WillpowerPoints, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Width="13"
+                                        Height="13"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Top"
+                                        Command="{Binding IncreasePointCommand}"
+                                        CommandParameter="WillpowerPoints"
+                                        Content="/\"
+                                        FontSize="7" />
+                                <Button Width="13"
+                                        Height="13"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Bottom"
+                                        Command="{Binding DecreasePointCommand}"
+                                        CommandParameter="WillpowerPoints"
+                                        Content="\/"
+                                        FontSize="7" />
+                            </Grid>
+                        </ControlTemplate>
+                    </TextBox.Template>
+                </TextBox>
+            </StackPanel>
+            <StackPanel Grid.Column="3"
+                        Margin="5 0 0 0"
+                        Orientation="Vertical">
+                <TextBlock Text="{x:Static p:Resources.CharacterSheetPerception}" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="35" />
+                        <ColumnDefinition Width="35" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0"
+                             IsReadOnly="True"
+                             Text="{Binding Path=Perception,
+                                            Mode=OneWay}" />
+                    <TextBox Grid.Column="1"
+                             IsReadOnly="True"
+                             Text="{Binding Path=PerceptionCost,
+                                            Mode=OneWay}" />
+                </Grid>
+                <TextBox>
+                    <TextBox.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <TextBox Height="26" Text="{Binding Path=PerceptionPoints, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Width="13"
+                                        Height="13"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Top"
+                                        Command="{Binding IncreasePointCommand}"
+                                        CommandParameter="PerceptionPoints"
+                                        Content="/\"
+                                        FontSize="7" />
+                                <Button Width="13"
+                                        Height="13"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Bottom"
+                                        Command="{Binding DecreasePointCommand}"
+                                        CommandParameter="PerceptionPoints"
+                                        Content="\/"
+                                        FontSize="7" />
+                            </Grid>
+                        </ControlTemplate>
+                    </TextBox.Template>
+                </TextBox>
+            </StackPanel>
+            <StackPanel Grid.Column="4"
+                        Margin="5 0 0 0"
+                        Orientation="Vertical">
+                <TextBlock Text="{x:Static p:Resources.CharacterSheetBasicSpeed}" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="35" />
+                        <ColumnDefinition Width="35" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0"
+                             IsReadOnly="True"
+                             Text="{Binding Path=BasicSpeed,
+                                            Mode=OneWay}" />
+                    <TextBox Grid.Column="1"
+                             IsReadOnly="True"
+                             Text="{Binding Path=BasicSpeedCost,
+                                            Mode=OneWay}" />
+                </Grid>
+                <TextBox>
+                    <TextBox.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <TextBox Height="26" Text="{Binding Path=BasicSpeedPoints, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Width="13"
+                                        Height="13"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Top"
+                                        Command="{Binding IncreasePointCommand}"
+                                        CommandParameter="BasicSpeedPoints"
+                                        Content="/\"
+                                        FontSize="7" />
+                                <Button Width="13"
+                                        Height="13"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Bottom"
+                                        Command="{Binding DecreasePointCommand}"
+                                        CommandParameter="BasicSpeedPoints"
+                                        Content="\/"
+                                        FontSize="7" />
+                            </Grid>
+                        </ControlTemplate>
+                    </TextBox.Template>
+                </TextBox>
+            </StackPanel>
+            <StackPanel Grid.Column="5"
+                        Margin="5 0 0 0"
+                        Orientation="Vertical">
+                <TextBlock Text="{x:Static p:Resources.CharacterSheetBasicMove}" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="35" />
+                        <ColumnDefinition Width="35" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0"
+                             IsReadOnly="True"
+                             Text="{Binding Path=BasicMove,
+                                            Mode=OneWay}" />
+                    <TextBox Grid.Column="1"
+                             IsReadOnly="True"
+                             Text="{Binding Path=BasicMoveCost,
+                                            Mode=OneWay}" />
+                </Grid>
+                <TextBox>
+                    <TextBox.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <TextBox Height="26" Text="{Binding Path=BasicMovePoints, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Width="13"
+                                        Height="13"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Top"
+                                        Command="{Binding IncreasePointCommand}"
+                                        CommandParameter="BasicMovePoints"
+                                        Content="/\"
+                                        FontSize="7" />
+                                <Button Width="13"
+                                        Height="13"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Bottom"
+                                        Command="{Binding DecreasePointCommand}"
+                                        CommandParameter="BasicMovePoints"
+                                        Content="\/"
+                                        FontSize="7" />
+                            </Grid>
+                        </ControlTemplate>
+                    </TextBox.Template>
+                </TextBox>
+            </StackPanel>
+        </Grid>
+        <StackPanel Margin=" 8 0 8 8" Orientation="Horizontal">
+            <Button Click="OkButtonClick" Content="{x:Static p:Resources.SecondaryStatsWindowOk}" />
+            <Button Margin=" 8 0 0 0"
+                    Click="CancelButtonClick"
+                    Content="{x:Static p:Resources.SecondaryStatsWindowCancel}" />
+        </StackPanel>
+    </StackPanel>
+</Window>

@@ -351,7 +351,7 @@
     <Compile Include="MVVM\ViewModels\CombineWeapViewModel.cs" />
     <Compile Include="MVVM\ViewModels\DamageTypeViewModel.cs" />
     <Compile Include="MVVM\EditPrimaryStats\EditPrimaryStatsViewModel.cs" />
-    <Compile Include="MVVM\ViewModels\EditSecondaryStatsViewModel.cs" />
+    <Compile Include="MVVM\EditSecondaryStats\EditSecondaryStatsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\InputBoxViewModel.cs" />
     <Compile Include="MVVM\ViewModels\MainCharacterViewModel.cs" />
     <Compile Include="MVVM\ViewModels\MainWindowStartViewModel.cs" />
@@ -405,7 +405,7 @@
     <Compile Include="MVVM\EditPrimaryStats\EditPrimaryStatsWindowView.xaml.cs">
       <DependentUpon>EditPrimaryStatsWindowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\EditSecondaryStatsWindowView.xaml.cs">
+    <Compile Include="MVVM\EditSecondaryStats\EditSecondaryStatsWindowView.xaml.cs">
       <DependentUpon>EditSecondaryStatsWindowView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\EditSkillWindowView.xaml.cs">
@@ -535,7 +535,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\EditSecondaryStatsWindowView.xaml">
+    <Page Include="MVVM\EditSecondaryStats\EditSecondaryStatsWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

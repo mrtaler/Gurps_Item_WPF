@@ -10,6 +10,8 @@ namespace Item_WPF.ItemEntityModel
     // This class represents a GURPS character.
     public partial class CharacterDB
     {
+        private int HumanStat = 10;
+
         // The Points properties contains the number of points to be
         // added/subtracted from the base value of the stat, thus acting
         // as a modifier.
@@ -17,62 +19,42 @@ namespace Item_WPF.ItemEntityModel
         // For example the base value of Strength is 10. If StrengthPoints
         // is 3, then the effective Strength is 13.
         // These read-only properties returns the effective value of the stats.
-        public int Strength
-        {
-            get
-            {
-                return 10 + StrengthPoints;
-            }
-        }
-        public int Dexterity
-        {
-            get
-            {
-                return 10 + DexterityPoints;
-            }
-        }
-        public int Intelligence
-        {
-            get
-            {
-                return 10 + IntelligencePoints;
-            }
-        }
-        public int Health
-        {
-            get
-            {
-                return 10 + HealthPoints;
-            }
-        }
-        public int MaxHP
-        {
-            get
-            {
-                return MaxHPPoints + Strength;
-            }
-        }
-        public int MaxFP
-        {
-            get
-            {
-                return MaxFPPoints + Health;
-            }
-        }
-        public int Willpower
-        {
-            get
-            {
-                return WillpowerPoints + Intelligence;
-            }
-        }
-        public int Perception
-        {
-            get
-            {
-                return PerceptionPoints + Intelligence;
-            }
-        }
+        #region MainAttrib
+        #region Strength
+        public int Strength => HumanStat + StrengthPoints;
+        public int StrengthCost => BasicCost.ST_Cost * StrengthPoints;
+        #endregion
+        #region Dexterity
+        public int Dexterity => HumanStat + DexterityPoints;
+        public int DexterityCost => BasicCost.DX_Cost * DexterityPoints;
+        #endregion
+        #region Intelligence
+        public int Intelligence => HumanStat + IntelligencePoints;
+        public int IntelligenceCost => BasicCost.IQ_Cost * IntelligencePoints;
+        #endregion
+        #region Health
+        public int Health => HumanStat + HealthPoints;
+        public int HealtCost => BasicCost.HT_Cost * HealthPoints;
+        #endregion
+        public int CharacterPointsPrimarySkill => StrengthCost + IntelligenceCost + DexterityCost + HealtCost;
+        #endregion
+        #region SecAtrib
+        #region MaxHP
+        public int MaxHP => MaxHPPoints + Strength;
+        public int MaxHPCost => BasicCost.HP_Cost * MaxHPPoints;
+        #endregion
+        #region MaxFP
+        public int MaxFP => MaxFPPoints + Health;
+        public int MaxFPCost => BasicCost.FP_Cost * MaxFPPoints;
+        #endregion
+        #region Willpower
+        public int Willpower => WillpowerPoints + Intelligence;
+        public int WillpowerCost => BasicCost.WL_Cost * WillpowerPoints;
+        #endregion
+        #region Perception
+        public int Perception => PerceptionPoints + Intelligence;
+        public int PerceptionCost => BasicCost.PR_Cost * PerceptionPoints;
+        #endregion
         public float BasicLift
         {
             get
@@ -83,6 +65,7 @@ namespace Item_WPF.ItemEntityModel
                 return bl;
             }
         }
+        #region BasicSpeed
         public float BasicSpeed
         {
             get
@@ -91,6 +74,9 @@ namespace Item_WPF.ItemEntityModel
                 return bs + BasicSpeedPoints;
             }
         }
+        public int BasicSpeedCost => (int)(BasicCost.BS_Cost * (BasicSpeedPoints / 0.25F));
+        #endregion
+        #region BasicMove
         public int BasicMove
         {
             get
@@ -99,6 +85,16 @@ namespace Item_WPF.ItemEntityModel
                 return bm + BasicMovePoints;
             }
         }
+        public int BasicMoveCost => BasicCost.BM_Cost * BasicMovePoints;
+        #endregion
+        public int CharacterPointsSecondarySkill =>
+            MaxHPCost +
+            MaxFPCost +
+            PerceptionCost +
+            WillpowerCost+
+            BasicSpeedCost+
+            BasicMoveCost;
+
         public int Move
         {
             get
@@ -119,6 +115,9 @@ namespace Item_WPF.ItemEntityModel
                     return 0;
             }
         }
+
+
+        #endregion
         public DiceString ThrustDamage
         {
             get
@@ -333,20 +332,9 @@ namespace Item_WPF.ItemEntityModel
         //}
 
         // Calculation of character points spent on this character
-        public int CharacterPointsPrimarySkill
-        {
-            get
-            {
-                return 10 * StrengthPoints + 20 * IntelligencePoints + 20 * DexterityPoints + 10 * HealthPoints;
-            }
-        }
-        public int CharacterPointsSecondarySkill
-        {
-            get
-            {
-                return 2 * MaxHPPoints + 5 * WillpowerPoints + 5 * PerceptionPoints + 3 * MaxFPPoints;
-            }
-        }
+
+
+
         public int CharacterPointsAdvantages
         {
             get
@@ -354,7 +342,7 @@ namespace Item_WPF.ItemEntityModel
                 int points = 0;
                 foreach (Advantage advantage in Advantages)
                 {
-               //     points += advantage.Points;
+                    //     points += advantage.Points;
                 }
                 return points;
             }
@@ -363,11 +351,11 @@ namespace Item_WPF.ItemEntityModel
         {
             get
             {
-            //    int points = 0;
-            ////    foreach (Skill skill in Skills)
-            ////    {
-            //////        points += skill.Points;
-            ////    }
+                //    int points = 0;
+                ////    foreach (Skill skill in Skills)
+                ////    {
+                //////        points += skill.Points;
+                ////    }
                 return 0;
             }
         }
@@ -393,5 +381,21 @@ namespace Item_WPF.ItemEntityModel
             // return Name;
             return name;
         }
+        public class BasicCost
+        {
+            public const int ST_Cost = 10;
+            public const int DX_Cost = 20;
+            public const int IQ_Cost = 20;
+            public const int HT_Cost = 10;
+
+            public const int HP_Cost = 2;
+            public const int WL_Cost = 5;
+            public const int PR_Cost = 5;
+            public const int FP_Cost = 3;
+            public const int BS_Cost = 5;
+            public const int BM_Cost = 5;
+        }
     }
+
+
 }

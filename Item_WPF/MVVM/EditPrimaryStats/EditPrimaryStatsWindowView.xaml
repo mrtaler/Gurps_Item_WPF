@@ -1,4 +1,4 @@
-﻿<Window x:Class="Item_WPF.MVVM.View.EditPrimaryStatsWindowView"
+﻿<Window x:Class="Item_WPF.MVVM.EditPrimaryStats.EditPrimaryStatsWindowView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -40,7 +40,6 @@
                         </ControlTemplate>
                     </TextBox.Template>
                 </TextBox>
-
                 <TextBox>
                     <TextBox.Template>
                         <ControlTemplate>
@@ -75,14 +74,12 @@
                     <TextBox.Template>
                         <ControlTemplate>
                             <Grid>
-                                <TextBox Grid.Column="0"
-                                         Width="36"
+                                <TextBox Width="36"
                                          HorizontalAlignment="Left"
                                          IsReadOnly="True"
-                                         Text="{Binding Path=Dexterity,
+                                         Text="{Binding Path=DexterityPoints,
                                                         Mode=OneWay}" />
-                                <TextBox Grid.Column="0"
-                                         Width="36"
+                                <TextBox Width="36"
                                          HorizontalAlignment="Right"
                                          IsReadOnly="True"
                                          Text="{Binding Path=DexterityCost,
@@ -95,7 +92,7 @@
                     <TextBox.Template>
                         <ControlTemplate>
                             <Grid>
-                                <TextBox Height="26" Text="{Binding Path=DexterityPoints, UpdateSourceTrigger=PropertyChanged}" />
+                                <TextBox Height="26" Text="{Binding Path=Dexterity, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
                                 <Button Width="13"
                                         Height="13"
                                         HorizontalAlignment="Right"
@@ -129,7 +126,7 @@
                                          Width="36"
                                          HorizontalAlignment="Left"
                                          IsReadOnly="True"
-                                         Text="{Binding Path=Intelligence,
+                                         Text="{Binding Path=IntelligencePoints,
                                                         Mode=OneWay}" />
                                 <TextBox Grid.Column="0"
                                          Width="36"
@@ -145,7 +142,7 @@
                     <TextBox.Template>
                         <ControlTemplate>
                             <Grid>
-                                <TextBox Height="26" Text="{Binding Path=IntelligencePoints, UpdateSourceTrigger=PropertyChanged}" />
+                                <TextBox Height="26" Text="{Binding Path=Intelligence, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
                                 <Button Width="13"
                                         Height="13"
                                         HorizontalAlignment="Right"
@@ -178,7 +175,7 @@
                                 <TextBox Width="36"
                                          HorizontalAlignment="Left"
                                          IsReadOnly="True"
-                                         Text="{Binding Path=Health,
+                                         Text="{Binding Path=HealthPoints,
                                                         Mode=OneWay}" />
                                 <TextBox Width="36"
                                          HorizontalAlignment="Right"
@@ -193,7 +190,7 @@
                     <TextBox.Template>
                         <ControlTemplate>
                             <Grid>
-                                <TextBox Height="26" Text="{Binding Path=HealthPoints, UpdateSourceTrigger=PropertyChanged}" />
+                                <TextBox Height="26" Text="{Binding Path=Health, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
                                 <Button Width="13"
                                         Height="13"
                                         HorizontalAlignment="Right"
