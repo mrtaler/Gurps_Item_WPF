@@ -1,0 +1,66 @@
+﻿<Window x:Class="Item_WPF.MVVM.AddSkilltoChar.AddSkilltoCharView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Item_WPF.MVVM.AddSkilltoChar"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:Item_WPF.Properties"
+        Title="AddSkilltoCharView"
+        Width="596.935"
+        Height="345.484"
+        mc:Ignorable="d">
+    <Grid>
+        <DockPanel Margin="0,0,351,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           Text="{x:Static p:Resources.CharacterSheetSkills}"
+                           TextAlignment="Center" />
+                <ListBox Grid.Row="1"
+                         HorizontalContentAlignment="Stretch"
+                         Grid.IsSharedSizeScope="True"
+                         ItemsSource="{Binding Path=AllGurpsSkillCollection}">
+                    <ListBox.ItemContainerStyle>
+                        <Style BasedOn="{StaticResource {x:Type ListBoxItem}}" TargetType="{x:Type ListBoxItem}">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Height="20">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="30" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="{Binding Path=NameSkill}">
+                                        <TextBlock.ToolTip>
+                                            <StackPanel>
+                                                <TextBlock FontWeight="Bold" Text="{Binding Path=NameSkill}" />
+                                                <TextBlock Text="{Binding Path=Specialization}" />
+                                            </StackPanel>
+                                        </TextBlock.ToolTip>
+                                    </TextBlock>
+                                    <Button Grid.Column="1"
+                                            Height="20"
+                                            HorizontalAlignment="Right"
+                                            VerticalAlignment="Top"
+                                            Command="{Binding Path=AddSkillCommand}"
+                                            CommandParameter="{}"
+                                            Content="Add" />
+                                </Grid>
+                            </StackPanel>
+                        </DataTemplate>
+
+                    </ListBox.ItemTemplate>
+
+
+                </ListBox>
+            </Grid>
+        </DockPanel>
+
+    </Grid>
+</Window>

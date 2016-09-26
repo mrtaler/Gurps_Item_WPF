@@ -298,6 +298,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\AddSkilltoChar\AddSkilltoCharView.xaml.cs">
+      <DependentUpon>AddSkilltoCharView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\AddSkilltoChar\AddSkilltoCharViewModel.cs" />
     <Compile Include="MVVM\GurpsSkill_m\AllGurpsSkillView.xaml.cs">
       <DependentUpon>AllGurpsSkillView.xaml</DependentUpon>
     </Compile>
@@ -463,6 +467,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
     </Compile>
+    <Page Include="MVVM\AddSkilltoChar\AddSkilltoCharView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\GurpsSkill_m\AllGurpsSkillView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

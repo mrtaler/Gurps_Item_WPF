@@ -8,7 +8,7 @@
         Title="{x:Static p:Resources.EditSkillWindow}"
         SizeToContent="WidthAndHeight"
         WindowStartupLocation="CenterOwner"
-        mc:Ignorable="d">
+        mc:Ignorable="d" Height="246.45">
     <StackPanel Grid.IsSharedSizeScope="True" Orientation="Vertical">
         <Grid Margin="8">
             <Grid.ColumnDefinitions>

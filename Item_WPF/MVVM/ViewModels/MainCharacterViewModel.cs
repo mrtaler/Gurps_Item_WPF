@@ -9,6 +9,7 @@ using Item_WPF.Properties;
 using Item_WPF.MVVM.View;
 using Microsoft.Win32;
 using Item_WPF.ItemEntityModel;
+using Item_WPF.MVVM.AddSkilltoChar;
 using Item_WPF.MVVM.EditPrimaryStats;
 using Item_WPF.MVVM.EditSecondaryStats;
 using EditPrimaryStatsWindowView = Item_WPF.MVVM.EditPrimaryStats.EditPrimaryStatsWindowView;
@@ -35,12 +36,13 @@ namespace Item_WPF.MVVM.ViewModels
         public DelegateCommand SaveAsCommand { get; private set; }
         public DelegateCommand OwnerCloseCommand { get; private set; }
         public MainCharacterViewModel(Window owner)
-            : this(owner, new ItemEntityModel.CharacterDB())
+            : this(owner, new CharacterDB())
         {
         }
 
-        public MainCharacterViewModel(Window owner, ItemEntityModel.CharacterDB character)
+        public MainCharacterViewModel(Window owner, CharacterDB character)
         {
+            _context=new item1Entities();
             Owner = owner;
             Character = character;
 
@@ -53,7 +55,7 @@ namespace Item_WPF.MVVM.ViewModels
             AddSkillCommand = new DelegateCommand(AddSkill);
             NewCommand = new DelegateCommand(New);
             OpenCommand = new DelegateCommand(Open);
-            OpenDbCommand=new DelegateCommand(OpenDB);
+            OpenDbCommand=new DelegateCommand(OpenDb);
             SaveAsCommand = new DelegateCommand(SaveAs);
             OwnerCloseCommand = new DelegateCommand(OwnerClose);
 
@@ -86,7 +88,7 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 string name = Character.name;
                 if (string.IsNullOrEmpty(name))
-                    name = Properties.Resources.UnnamedCharacter;
+                    name = Resources.UnnamedCharacter;
                 return name;
             }
         }
@@ -219,13 +221,13 @@ namespace Item_WPF.MVVM.ViewModels
             }
         }
 
-        //public ObservableCollection<Skill> Skills
-        //{
-        //    get
-        //    {
-        //        return Character.Skills;
-        //    }
-        //}
+        public ObservableCollection<GurpsSkill> Skills
+        {
+            get
+            {
+                return Character.Skills;
+            }
+        }
 
         // Returns the window title
         public string Title
@@ -295,7 +297,7 @@ namespace Item_WPF.MVVM.ViewModels
             bool? result = window.ShowDialog();
             if (result.HasValue && (result == true))
             {
-                Character.Inventory.Add((ITEM)window._allItemsViewModel.SelectedItemForWork);
+                Character.Inventory.Add(window._allItemsViewModel.SelectedItemForWork);
 
                 NotifyPropertyChanged("Inventory");
             }
@@ -318,17 +320,17 @@ namespace Item_WPF.MVVM.ViewModels
 
         public void AddSkill(object parameter)
         {
-            //EditSkillWindowView window = new EditSkillWindowView();
-            //window.Owner = Owner;
-            //window.DataContext = new Skill();
+            AddSkilltoCharView window = new AddSkilltoCharView(Character);
+            window.Owner = Owner;
+         //   window.DataContext = new Skill();
 
-            //bool? result = window.ShowDialog();
-            //if (result.HasValue && (result == true))
-            //{
-            //    Character.Skills.Add((Skill)window.DataContext);
+            bool? result = window.ShowDialog();
+            if (result.HasValue && (result == true))
+            {
+               // Character.Skills.Add((Skill)window.DataContext);
 
-            //    NotifyPropertyChanged("Skills");
-            //}
+                NotifyPropertyChanged("Skills");
+            }
         }
 
         private void EditPrimaryStats(object parameter)
@@ -337,7 +339,7 @@ namespace Item_WPF.MVVM.ViewModels
             window.Owner = Owner;
             window.DataContext = new EditPrimaryStatsViewModel(Character);
 
-            ItemEntityModel.CharacterDB copy = (CharacterDB)Character.Copy();
+            CharacterDB copy = Character.Copy();
             bool? result = window.ShowDialog();
             if (result.HasValue && (result == true))
             {
@@ -358,7 +360,7 @@ namespace Item_WPF.MVVM.ViewModels
             window.Owner = Owner;
             window.DataContext = new EditSecondaryStatsViewModel(Character);
 
-            ItemEntityModel.CharacterDB copy = (CharacterDB)Character.Copy();
+            CharacterDB copy = Character.Copy();
             bool? result = window.ShowDialog();
             if (result.HasValue && (result == true))
             {
@@ -382,7 +384,7 @@ namespace Item_WPF.MVVM.ViewModels
             // Notify all properties changed
             NotifyPropertyChanged(string.Empty);
         }
-        public void OpenDB(object parameter)
+        public void OpenDb(object parameter)
         {
             AllCharfromDBView dialog = new AllCharfromDBView();
             dialog.DataContext = _context.CharacterDBs;
@@ -406,7 +408,7 @@ namespace Item_WPF.MVVM.ViewModels
                 }
                 catch (InvalidOperationException)
                 {
-                    System.Windows.MessageBox.Show(Resources.DialogLoadFailed);
+                    MessageBox.Show(Resources.DialogLoadFailed);
                 }
                 stream.Close();
 
@@ -417,7 +419,7 @@ namespace Item_WPF.MVVM.ViewModels
 
         public void SaveAs(object parameter)
         {
-            SaveFileDialog dialog = new SaveFileDialog(); ;
+            SaveFileDialog dialog = new SaveFileDialog();
             dialog.DefaultExt = ".gurps";
             dialog.OverwritePrompt = true;
             dialog.CheckPathExists = true;
