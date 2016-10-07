@@ -12,7 +12,7 @@ namespace Item_WPF.ItemEntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class GurpsSkillCategory : System.ComponentModel.INotifyPropertyChanged
+    public partial class GurpsCategory : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -30,8 +30,9 @@ namespace Item_WPF.ItemEntityModel
      #endregion
      
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public GurpsSkillCategory()
+        public GurpsCategory()
         {
+            this.Advantages = new HashSet<Advantage>();
             this.GurpsSkills = new HashSet<GurpsSkill>();
         }
     
@@ -68,6 +69,16 @@ namespace Item_WPF.ItemEntityModel
     		}
     	}
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<Advantage> _Advantages;
+            public virtual ICollection<Advantage> Advantages
+            {
+                get { return _Advantages; }
+                set
+                { if(_Advantages != value)
+                    {    _Advantages = value;    OnPropertyChanged("Advantages");   }
+                }
+            } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<GurpsSkill> _GurpsSkills;
             public virtual ICollection<GurpsSkill> GurpsSkills

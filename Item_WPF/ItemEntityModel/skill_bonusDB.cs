@@ -12,7 +12,7 @@ namespace Item_WPF.ItemEntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class attribute_bonus : System.ComponentModel.INotifyPropertyChanged
+    public partial class skill_bonusDB : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -45,67 +45,67 @@ namespace Item_WPF.ItemEntityModel
     			}
     		}
     	}
-        private Nullable<int> _FK_Skill;
-    	public Nullable<int> FK_Skill 
+        private string _name;
+    	public string name 
     	{ 
     		get
     		{
-    			return _FK_Skill;
+    			return _name;
     		} 
     		set
     		{
-    			if (_FK_Skill != value)
+    			if (_name != value)
     			{
-    				_FK_Skill = value;
-    				OnPropertyChanged("FK_Skill");
+    				_name = value;
+    				OnPropertyChanged("name");
     			}
     		}
     	}
-        private Nullable<int> _FK_Amount;
-    	public Nullable<int> FK_Amount 
+        private string _namecompare;
+    	public string namecompare 
     	{ 
     		get
     		{
-    			return _FK_Amount;
+    			return _namecompare;
     		} 
     		set
     		{
-    			if (_FK_Amount != value)
+    			if (_namecompare != value)
     			{
-    				_FK_Amount = value;
-    				OnPropertyChanged("FK_Amount");
+    				_namecompare = value;
+    				OnPropertyChanged("namecompare");
     			}
     		}
     	}
-        private string _AttributeLimitation;
-    	public string AttributeLimitation 
+        private string _specialization;
+    	public string specialization 
     	{ 
     		get
     		{
-    			return _AttributeLimitation;
+    			return _specialization;
     		} 
     		set
     		{
-    			if (_AttributeLimitation != value)
+    			if (_specialization != value)
     			{
-    				_AttributeLimitation = value;
-    				OnPropertyChanged("AttributeLimitation");
+    				_specialization = value;
+    				OnPropertyChanged("specialization");
     			}
     		}
     	}
-        private string _AttributeValue;
-    	public string AttributeValue 
+        private string _specializationcompare;
+    	public string specializationcompare 
     	{ 
     		get
     		{
-    			return _AttributeValue;
+    			return _specializationcompare;
     		} 
     		set
     		{
-    			if (_AttributeValue != value)
+    			if (_specializationcompare != value)
     			{
-    				_AttributeValue = value;
-    				OnPropertyChanged("AttributeValue");
+    				_specializationcompare = value;
+    				OnPropertyChanged("specializationcompare");
     			}
     		}
     	}
@@ -141,19 +141,19 @@ namespace Item_WPF.ItemEntityModel
     			}
     		}
     	}
-        private Nullable<int> _FK_Advantage;
-    	public Nullable<int> FK_Advantage 
+        private Nullable<int> _FK_Adv;
+    	public Nullable<int> FK_Adv 
     	{ 
     		get
     		{
-    			return _FK_Advantage;
+    			return _FK_Adv;
     		} 
     		set
     		{
-    			if (_FK_Advantage != value)
+    			if (_FK_Adv != value)
     			{
-    				_FK_Advantage = value;
-    				OnPropertyChanged("FK_Advantage");
+    				_FK_Adv = value;
+    				OnPropertyChanged("FK_Adv");
     			}
     		}
     	}
@@ -165,15 +165,6 @@ namespace Item_WPF.ItemEntityModel
                 set
                 { if(_Advantage != value)
                     {    _Advantage = value;    OnPropertyChanged("Advantage");   }
-                }
-            } 
-        private GurpsSkill _GurpsSkill;
-            public virtual GurpsSkill GurpsSkill
-            {
-                get { return _GurpsSkill; }
-                set
-                { if(_GurpsSkill != value)
-                    {    _GurpsSkill = value;    OnPropertyChanged("GurpsSkill");   }
                 }
             } 
     }

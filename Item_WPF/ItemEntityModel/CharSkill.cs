@@ -12,7 +12,7 @@ namespace Item_WPF.ItemEntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class BonusAttribute : System.ComponentModel.INotifyPropertyChanged
+    public partial class CharSkill : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -45,62 +45,55 @@ namespace Item_WPF.ItemEntityModel
     			}
     		}
     	}
-        private string _limitation;
-    	public string limitation 
+        private Nullable<int> _idSkill;
+    	public Nullable<int> idSkill 
     	{ 
     		get
     		{
-    			return _limitation;
+    			return _idSkill;
     		} 
     		set
     		{
-    			if (_limitation != value)
+    			if (_idSkill != value)
     			{
-    				_limitation = value;
-    				OnPropertyChanged("limitation");
+    				_idSkill = value;
+    				OnPropertyChanged("idSkill");
     			}
     		}
     	}
-        private string _Value;
-    	public string Value 
+        private Nullable<int> _idChar;
+    	public Nullable<int> idChar 
     	{ 
     		get
     		{
-    			return _Value;
+    			return _idChar;
     		} 
     		set
     		{
-    			if (_Value != value)
+    			if (_idChar != value)
     			{
-    				_Value = value;
-    				OnPropertyChanged("Value");
-    			}
-    		}
-    	}
-        private Nullable<int> _idAtribBonus;
-    	public Nullable<int> idAtribBonus 
-    	{ 
-    		get
-    		{
-    			return _idAtribBonus;
-    		} 
-    		set
-    		{
-    			if (_idAtribBonus != value)
-    			{
-    				_idAtribBonus = value;
-    				OnPropertyChanged("idAtribBonus");
+    				_idChar = value;
+    				OnPropertyChanged("idChar");
     			}
     		}
     	}
     
-        private attribute_bonus _attribute_bonus;
-            public virtual attribute_bonus attribute_bonus
+        private CharacterDB _CharacterDB;
+            public virtual CharacterDB CharacterDB
             {
-                get { return _attribute_bonus; }
+                get { return _CharacterDB; }
                 set
-                { if(_attribute_bonus != value)
-                    {    _attribute_bonus = value;    OnPropertyChanged("attribute_bonus");   }
+                { if(_CharacterDB != value)
+                    {    _CharacterDB = value;    OnPropertyChanged("CharacterDB");   }
+                }
+            } 
+        private GurpsSkill _GurpsSkill;
+            public virtual GurpsSkill GurpsSkill
+            {
+                get { return _GurpsSkill; }
+                set
+                { if(_GurpsSkill != value)
+                    {    _GurpsSkill = value;    OnPropertyChanged("GurpsSkill");   }
                 }
             } 
     }

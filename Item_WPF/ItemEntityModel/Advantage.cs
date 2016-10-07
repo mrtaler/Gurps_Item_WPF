@@ -32,7 +32,17 @@ namespace Item_WPF.ItemEntityModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Advantage()
         {
+            this.attribute_bonus = new HashSet<attribute_bonus>();
+            this.cost_reduction = new HashSet<cost_reduction>();
+            this.dr_bonusDB = new HashSet<dr_bonusDB>();
+            this.melee_weapon = new HashSet<melee_weapon>();
+            this.modifiers = new HashSet<modifier>();
             this.prereq_listDB = new HashSet<prereq_listDB>();
+            this.ranged_weapon = new HashSet<ranged_weapon>();
+            this.skill_bonusDB = new HashSet<skill_bonusDB>();
+            this.spell_bonus = new HashSet<spell_bonus>();
+            this.weapon_bonus = new HashSet<weapon_bonus>();
+            this.GurpsCategories = new HashSet<GurpsCategory>();
         }
     
         private int _id;
@@ -229,6 +239,56 @@ namespace Item_WPF.ItemEntityModel
     	}
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<attribute_bonus> _attribute_bonus;
+            public virtual ICollection<attribute_bonus> attribute_bonus
+            {
+                get { return _attribute_bonus; }
+                set
+                { if(_attribute_bonus != value)
+                    {    _attribute_bonus = value;    OnPropertyChanged("attribute_bonus");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<cost_reduction> _cost_reduction;
+            public virtual ICollection<cost_reduction> cost_reduction
+            {
+                get { return _cost_reduction; }
+                set
+                { if(_cost_reduction != value)
+                    {    _cost_reduction = value;    OnPropertyChanged("cost_reduction");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<dr_bonusDB> _dr_bonusDB;
+            public virtual ICollection<dr_bonusDB> dr_bonusDB
+            {
+                get { return _dr_bonusDB; }
+                set
+                { if(_dr_bonusDB != value)
+                    {    _dr_bonusDB = value;    OnPropertyChanged("dr_bonusDB");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<melee_weapon> _melee_weapon;
+            public virtual ICollection<melee_weapon> melee_weapon
+            {
+                get { return _melee_weapon; }
+                set
+                { if(_melee_weapon != value)
+                    {    _melee_weapon = value;    OnPropertyChanged("melee_weapon");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<modifier> _modifiers;
+            public virtual ICollection<modifier> modifiers
+            {
+                get { return _modifiers; }
+                set
+                { if(_modifiers != value)
+                    {    _modifiers = value;    OnPropertyChanged("modifiers");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<prereq_listDB> _prereq_listDB;
             public virtual ICollection<prereq_listDB> prereq_listDB
             {
@@ -236,6 +296,56 @@ namespace Item_WPF.ItemEntityModel
                 set
                 { if(_prereq_listDB != value)
                     {    _prereq_listDB = value;    OnPropertyChanged("prereq_listDB");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<ranged_weapon> _ranged_weapon;
+            public virtual ICollection<ranged_weapon> ranged_weapon
+            {
+                get { return _ranged_weapon; }
+                set
+                { if(_ranged_weapon != value)
+                    {    _ranged_weapon = value;    OnPropertyChanged("ranged_weapon");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<skill_bonusDB> _skill_bonusDB;
+            public virtual ICollection<skill_bonusDB> skill_bonusDB
+            {
+                get { return _skill_bonusDB; }
+                set
+                { if(_skill_bonusDB != value)
+                    {    _skill_bonusDB = value;    OnPropertyChanged("skill_bonusDB");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<spell_bonus> _spell_bonus;
+            public virtual ICollection<spell_bonus> spell_bonus
+            {
+                get { return _spell_bonus; }
+                set
+                { if(_spell_bonus != value)
+                    {    _spell_bonus = value;    OnPropertyChanged("spell_bonus");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<weapon_bonus> _weapon_bonus;
+            public virtual ICollection<weapon_bonus> weapon_bonus
+            {
+                get { return _weapon_bonus; }
+                set
+                { if(_weapon_bonus != value)
+                    {    _weapon_bonus = value;    OnPropertyChanged("weapon_bonus");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<GurpsCategory> _GurpsCategories;
+            public virtual ICollection<GurpsCategory> GurpsCategories
+            {
+                get { return _GurpsCategories; }
+                set
+                { if(_GurpsCategories != value)
+                    {    _GurpsCategories = value;    OnPropertyChanged("GurpsCategories");   }
                 }
             } 
     }

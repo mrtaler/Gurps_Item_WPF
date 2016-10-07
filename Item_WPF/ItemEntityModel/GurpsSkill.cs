@@ -33,13 +33,15 @@ namespace Item_WPF.ItemEntityModel
         public GurpsSkill()
         {
             this.attribute_bonus = new HashSet<attribute_bonus>();
+            this.CharSkills = new HashSet<CharSkill>();
             this.DefaultSkills = new HashSet<DefaultSkill>();
             this.DefaultSkills1 = new HashSet<DefaultSkill>();
+            this.DefSkillSomes = new HashSet<DefSkillSome>();
             this.GurpsSkill1 = new HashSet<GurpsSkill>();
             this.NeedSkills = new HashSet<NeedSkill>();
             this.prereq_listDB = new HashSet<prereq_listDB>();
             this.weapon_bonus = new HashSet<weapon_bonus>();
-            this.GurpsSkillCategories = new HashSet<GurpsSkillCategory>();
+            this.GurpsCategories = new HashSet<GurpsCategory>();
         }
     
         private int _id;
@@ -310,6 +312,16 @@ namespace Item_WPF.ItemEntityModel
                 }
             } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<CharSkill> _CharSkills;
+            public virtual ICollection<CharSkill> CharSkills
+            {
+                get { return _CharSkills; }
+                set
+                { if(_CharSkills != value)
+                    {    _CharSkills = value;    OnPropertyChanged("CharSkills");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<DefaultSkill> _DefaultSkills;
             public virtual ICollection<DefaultSkill> DefaultSkills
             {
@@ -327,6 +339,16 @@ namespace Item_WPF.ItemEntityModel
                 set
                 { if(_DefaultSkills1 != value)
                     {    _DefaultSkills1 = value;    OnPropertyChanged("DefaultSkills1");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<DefSkillSome> _DefSkillSomes;
+            public virtual ICollection<DefSkillSome> DefSkillSomes
+            {
+                get { return _DefSkillSomes; }
+                set
+                { if(_DefSkillSomes != value)
+                    {    _DefSkillSomes = value;    OnPropertyChanged("DefSkillSomes");   }
                 }
             } 
         private DifficultySkill _DifficultySkill;
@@ -406,13 +428,13 @@ namespace Item_WPF.ItemEntityModel
                 }
             } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<GurpsSkillCategory> _GurpsSkillCategories;
-            public virtual ICollection<GurpsSkillCategory> GurpsSkillCategories
+        private ICollection<GurpsCategory> _GurpsCategories;
+            public virtual ICollection<GurpsCategory> GurpsCategories
             {
-                get { return _GurpsSkillCategories; }
+                get { return _GurpsCategories; }
                 set
-                { if(_GurpsSkillCategories != value)
-                    {    _GurpsSkillCategories = value;    OnPropertyChanged("GurpsSkillCategories");   }
+                { if(_GurpsCategories != value)
+                    {    _GurpsCategories = value;    OnPropertyChanged("GurpsCategories");   }
                 }
             } 
     }
