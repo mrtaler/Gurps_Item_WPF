@@ -4,63 +4,62 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="520cd847813e4f0ab1ad981dc27ed446" Name="Diagram1" ZoomLevel="74">
-        <EntityTypeShape EntityType="item1Model.Advantage" Width="1.5" PointX="9" PointY="29.875" />
-        <EntityTypeShape EntityType="item1Model.advantage_prereq" Width="1.5" PointX="13.5" PointY="31.75" />
-        <EntityTypeShape EntityType="item1Model.attribute_bonus" Width="1.5" PointX="11.25" PointY="51.125" />
-        <EntityTypeShape EntityType="item1Model.attribute_prereq" Width="1.5" PointX="13.5" PointY="27.625" />
-        <EntityTypeShape EntityType="item1Model.CharacterDB" Width="1.5" PointX="6" PointY="61.75" />
-        <EntityTypeShape EntityType="item1Model.CharSkill" Width="1.5" PointX="8.25" PointY="51.5" />
-        <EntityTypeShape EntityType="item1Model.contained_weight_prereq" Width="1.5" PointX="13.5" PointY="58.625" />
-        <EntityTypeShape EntityType="item1Model.cost_reduction" Width="1.5" PointX="11.25" PointY="58.875" />
-        <EntityTypeShape EntityType="item1Model.DefaultSkill" Width="1.5" PointX="5.25" PointY="84.125" />
-        <EntityTypeShape EntityType="item1Model.DefSkillSome" Width="1.5" PointX="8.25" PointY="47" />
-        <EntityTypeShape EntityType="item1Model.DifficultySkill" Width="1.5" PointX="0.75" PointY="44.5" />
-        <EntityTypeShape EntityType="item1Model.dr_bonusDB" Width="1.5" PointX="11.25" PointY="24.25" />
-        <EntityTypeShape EntityType="item1Model.GurpsCategory" Width="1.5" PointX="11.25" PointY="43.625" />
-        <EntityTypeShape EntityType="item1Model.GurpsSkill" Width="1.5" PointX="3" PointY="45.125" />
-        <EntityTypeShape EntityType="item1Model.InventoryOfChar" Width="1.5" PointX="11.25" PointY="55.5" />
-        <EntityTypeShape EntityType="item1Model.melee_weapon" Width="1.5" PointX="6" PointY="57.25" />
-        <EntityTypeShape EntityType="item1Model.modifier" Width="1.5" PointX="11.25" PointY="15.875" />
-        <EntityTypeShape EntityType="item1Model.prereq_listDB" Width="1.5" PointX="11.25" PointY="38.25" />
-        <EntityTypeShape EntityType="item1Model.ranged_weapon" Width="1.5" PointX="6" PointY="36" />
-        <EntityTypeShape EntityType="item1Model.skill_bonusDB" Width="1.5" PointX="11.25" PointY="12.375" />
-        <EntityTypeShape EntityType="item1Model.skill_prereqDB" Width="1.5" PointX="13.5" PointY="24" />
-        <EntityTypeShape EntityType="item1Model.spell_bonus" Width="1.5" PointX="11.25" PointY="27.25" />
-        <EntityTypeShape EntityType="item1Model.spell_prereqDB" Width="1.5" PointX="13.5" PointY="61.625" />
-        <EntityTypeShape EntityType="item1Model.weapon_bonus" Width="1.5" PointX="11.25" PointY="46.75" />
+      <Diagram DiagramId="520cd847813e4f0ab1ad981dc27ed446" Name="Diagram1" ZoomLevel="63">
+        <EntityTypeShape EntityType="item1Model.Advantage" Width="1.5" PointX="9" PointY="35.375" />
+        <EntityTypeShape EntityType="item1Model.advantage_prereq" Width="1.5" PointX="13.5" PointY="52.25" />
+        <EntityTypeShape EntityType="item1Model.attribute_bonus" Width="1.5" PointX="11.25" PointY="45.625" />
+        <EntityTypeShape EntityType="item1Model.attribute_prereq" Width="1.5" PointX="13.5" PointY="29.25" />
+        <EntityTypeShape EntityType="item1Model.CharacterDB" Width="1.5" PointX="0.75" PointY="40.875" />
+        <EntityTypeShape EntityType="item1Model.contained_weight_prereq" Width="1.5" PointX="13.5" PointY="56.125" />
+        <EntityTypeShape EntityType="item1Model.cost_reduction" Width="1.5" PointX="11.25" PointY="52.875" />
+        <EntityTypeShape EntityType="item1Model.DefaultSkill" Width="1.5" PointX="5.25" PointY="79.875" />
+        <EntityTypeShape EntityType="item1Model.DefSkillSome" Width="1.5" PointX="8.25" PointY="45.5" />
+        <EntityTypeShape EntityType="item1Model.DifficultySkill" Width="1.5" PointX="0.75" PointY="49.25" />
+        <EntityTypeShape EntityType="item1Model.dr_bonusDB" Width="1.5" PointX="11.25" PointY="26" />
+        <EntityTypeShape EntityType="item1Model.GurpsCategory" Width="1.5" PointX="8.25" PointY="42.125" />
+        <EntityTypeShape EntityType="item1Model.GurpsSkill" Width="1.5" PointX="3" PointY="43.625" />
+        <EntityTypeShape EntityType="item1Model.InventoryOfChar" Width="1.5" PointX="11.25" PointY="50" />
+        <EntityTypeShape EntityType="item1Model.melee_weapon" Width="1.5" PointX="6" PointY="58.75" />
+        <EntityTypeShape EntityType="item1Model.modifier" Width="1.5" PointX="11.25" PointY="55.625" />
+        <EntityTypeShape EntityType="item1Model.prereq_listDB" Width="1.5" PointX="11.25" PointY="39.75" />
+        <EntityTypeShape EntityType="item1Model.ranged_weapon" Width="1.5" PointX="6" PointY="34.5" />
+        <EntityTypeShape EntityType="item1Model.skill_bonusDB" Width="1.5" PointX="11.25" PointY="29.75" />
+        <EntityTypeShape EntityType="item1Model.skill_prereqDB" Width="1.5" PointX="13.5" PointY="25.625" />
+        <EntityTypeShape EntityType="item1Model.spell_bonus" Width="1.5" PointX="11.25" PointY="33.25" />
+        <EntityTypeShape EntityType="item1Model.spell_prereqDB" Width="1.5" PointX="13.5" PointY="59.125" />
+        <EntityTypeShape EntityType="item1Model.weapon_bonus" Width="1.5" PointX="8.25" PointY="50.25" />
         <EntityTypeShape EntityType="item1Model.AMMOUPGRATE" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="item1Model.AnyBoxNameType" Width="1.5" PointX="6" PointY="66.25" />
-        <EntityTypeShape EntityType="item1Model.ARMOUR" Width="1.5" PointX="8.25" PointY="70.75" />
-        <EntityTypeShape EntityType="item1Model.Attachment" Width="1.5" PointX="14.25" PointY="42.625" />
-        <EntityTypeShape EntityType="item1Model.Attachmentmount" Width="1.5" PointX="12" PointY="20.5" />
-        <EntityTypeShape EntityType="item1Model.ATTACHMENTSLOT" Width="1.5" PointX="9.75" PointY="20.625" />
-        <EntityTypeShape EntityType="item1Model.AvailableAttachSlot" Width="1.5" PointX="14.25" PointY="55.5" />
+        <EntityTypeShape EntityType="item1Model.AnyBoxNameType" Width="1.5" PointX="12" PointY="14.75" />
+        <EntityTypeShape EntityType="item1Model.ARMOUR" Width="1.5" PointX="8.25" PointY="69.25" />
+        <EntityTypeShape EntityType="item1Model.Attachment" Width="1.5" PointX="14.25" PointY="33.125" />
+        <EntityTypeShape EntityType="item1Model.Attachmentmount" Width="1.5" PointX="12" PointY="22" />
+        <EntityTypeShape EntityType="item1Model.ATTACHMENTSLOT" Width="1.5" PointX="9.75" PointY="22.125" />
+        <EntityTypeShape EntityType="item1Model.AvailableAttachSlot" Width="1.5" PointX="14.25" PointY="49" />
         <EntityTypeShape EntityType="item1Model.Battery" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="item1Model.BoxItem" Width="1.5" PointX="8.25" PointY="54.5" />
-        <EntityTypeShape EntityType="item1Model.Caliber" Width="1.5" PointX="3.75" PointY="60.375" />
-        <EntityTypeShape EntityType="item1Model.Cloth" Width="1.5" PointX="3.75" PointY="55.375" />
+        <EntityTypeShape EntityType="item1Model.BoxItem" Width="1.5" PointX="14.25" PointY="46" />
+        <EntityTypeShape EntityType="item1Model.Caliber" Width="1.5" PointX="3.75" PointY="36.125" />
+        <EntityTypeShape EntityType="item1Model.Cloth" Width="1.5" PointX="3.75" PointY="39.75" />
         <EntityTypeShape EntityType="item1Model.CombineWeap" Width="1.5" PointX="2.75" PointY="3.75" />
-        <EntityTypeShape EntityType="item1Model.Drug" Width="1.5" PointX="8.25" PointY="74" />
-        <EntityTypeShape EntityType="item1Model.EXPLOSIVE" Width="1.5" PointX="8.25" PointY="76.5" />
-        <EntityTypeShape EntityType="item1Model.FOOD" Width="1.5" PointX="3.75" PointY="53" />
-        <EntityTypeShape EntityType="item1Model.G_AttachClass" Width="1.5" PointX="12" PointY="66.75" />
-        <EntityTypeShape EntityType="item1Model.G_AvAttachClass" Width="1.5" PointX="16.5" PointY="47.5" />
-        <EntityTypeShape EntityType="item1Model.G_SubAttachClass" Width="1.5" PointX="14.25" PointY="66.25" />
-        <EntityTypeShape EntityType="item1Model.GurpsClass" Width="1.5" PointX="1.5" PointY="41.625" />
-        <EntityTypeShape EntityType="item1Model.ITEM" Width="1.5" PointX="6" PointY="41.125" />
-        <EntityTypeShape EntityType="item1Model.ItemClass" Width="1.5" PointX="1.5" PointY="39.375" />
-        <EntityTypeShape EntityType="item1Model.ItemSubClass" Width="1.5" PointX="3.75" PointY="40" />
+        <EntityTypeShape EntityType="item1Model.Drug" Width="1.5" PointX="8.25" PointY="78.75" />
+        <EntityTypeShape EntityType="item1Model.EXPLOSIVE" Width="1.5" PointX="8.25" PointY="72.5" />
+        <EntityTypeShape EntityType="item1Model.FOOD" Width="1.5" PointX="3.75" PointY="63.75" />
+        <EntityTypeShape EntityType="item1Model.G_AttachClass" Width="1.5" PointX="12" PointY="18.25" />
+        <EntityTypeShape EntityType="item1Model.G_AvAttachClass" Width="1.5" PointX="16.5" PointY="38" />
+        <EntityTypeShape EntityType="item1Model.G_SubAttachClass" Width="1.5" PointX="14.25" PointY="17.75" />
+        <EntityTypeShape EntityType="item1Model.GurpsClass" Width="1.5" PointX="1.5" PointY="59" />
+        <EntityTypeShape EntityType="item1Model.ITEM" Width="1.5" PointX="6" PointY="39.625" />
+        <EntityTypeShape EntityType="item1Model.ItemClass" Width="1.5" PointX="1.5" PointY="61.375" />
+        <EntityTypeShape EntityType="item1Model.ItemSubClass" Width="1.5" PointX="3.75" PointY="59.75" />
         <EntityTypeShape EntityType="item1Model.LaserColorEf" Width="1.5" PointX="4.75" PointY="0.75" />
-        <EntityTypeShape EntityType="item1Model.LC" Width="1.5" PointX="3.75" PointY="57.75" />
-        <EntityTypeShape EntityType="item1Model.LOADBEARINGEQUIPMENT" Width="1.5" PointX="8.25" PointY="65.25" />
-        <EntityTypeShape EntityType="item1Model.TL" Width="1.5" PointX="0.75" PointY="47.5" />
-        <EntityTypeShape EntityType="item1Model.Type_of_Box" Width="1.5" PointX="3.75" PointY="66.75" />
-        <EntityTypeShape EntityType="item1Model.TypeOfDamage" Width="1.5" PointX="11.25" PointY="34.5" />
-        <EntityTypeShape EntityType="item1Model.WEAPON" Width="1.5" PointX="8.25" PointY="36.375" />
-        <EntityTypeShape EntityType="item1Model.WeaponAttackType" Width="1.5" PointX="11.25" PointY="31.375" />
-        <EntityTypeShape EntityType="item1Model.WeaponDamage" Width="1.5" PointX="13.5" PointY="38" />
-        <EntityTypeShape EntityType="item1Model.NeedSkill" Width="1.5" PointX="5.25" PointY="81.375" />
+        <EntityTypeShape EntityType="item1Model.LC" Width="1.5" PointX="3.75" PointY="51.25" />
+        <EntityTypeShape EntityType="item1Model.LOADBEARINGEQUIPMENT" Width="1.5" PointX="8.25" PointY="56.25" />
+        <EntityTypeShape EntityType="item1Model.TL" Width="1.5" PointX="0.75" PointY="46" />
+        <EntityTypeShape EntityType="item1Model.Type_of_Box" Width="1.5" PointX="9.75" PointY="15.25" />
+        <EntityTypeShape EntityType="item1Model.TypeOfDamage" Width="1.5" PointX="8.25" PointY="84.25" />
+        <EntityTypeShape EntityType="item1Model.WEAPON" Width="1.5" PointX="8.25" PointY="61.625" />
+        <EntityTypeShape EntityType="item1Model.WeaponAttackType" Width="1.5" PointX="8.25" PointY="81.75" />
+        <EntityTypeShape EntityType="item1Model.WeaponDamage" Width="1.5" PointX="10.5" PointY="63.25" />
+        <EntityTypeShape EntityType="item1Model.NeedSkill" Width="1.5" PointX="5.25" PointY="55.875" />
         <AssociationConnector Association="item1Model.FK_attribute_bonus_Advantage_id" />
         <AssociationConnector Association="item1Model.FK_cost_reduction_Advantage_id" />
         <AssociationConnector Association="item1Model.FK_dr_bonusDB_Advantage_id" />
@@ -74,9 +73,7 @@
         <AssociationConnector Association="item1Model.FK_advantage_prereq_prereq_listDB_id" />
         <AssociationConnector Association="item1Model.FK_attribute_bonus_GurpsSkill_id" />
         <AssociationConnector Association="item1Model.FK_attribute_prereq_prereq_listDB_id" />
-        <AssociationConnector Association="item1Model.FK_CharSkill_CharacterDB_id" />
         <AssociationConnector Association="item1Model.FK_InventoryOfChar_CharacterDB_id" />
-        <AssociationConnector Association="item1Model.FK_CharSkill_GurpsSkill_id" />
         <AssociationConnector Association="item1Model.FK_contained_weight_prereq_prereq_listDB_id" />
         <AssociationConnector Association="item1Model.FK_DefaultSkill_GurpsSkill_id_in" />
         <AssociationConnector Association="item1Model.FK_DefaultSkill_GurpsSkill_id_out" />
@@ -126,6 +123,7 @@
         <AssociationConnector Association="item1Model.FK_WeaponDamage_WeaponAttackType_id" />
         <AssociationConnector Association="item1Model.AdvantageCategory88" />
         <AssociationConnector Association="item1Model.GurpsSkillCategory88" />
+        <AssociationConnector Association="item1Model.CharSkill" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

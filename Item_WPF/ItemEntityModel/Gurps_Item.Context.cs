@@ -33,7 +33,6 @@ namespace Item_WPF.ItemEntityModel
         public virtual DbSet<attribute_bonus> attribute_bonus { get; set; }
         public virtual DbSet<attribute_prereq> attribute_prereq { get; set; }
         public virtual DbSet<CharacterDB> CharacterDBs { get; set; }
-        public virtual DbSet<CharSkill> CharSkills { get; set; }
         public virtual DbSet<contained_weight_prereq> contained_weight_prereq { get; set; }
         public virtual DbSet<cost_reduction> cost_reduction { get; set; }
         public virtual DbSet<DefaultSkill> DefaultSkills { get; set; }

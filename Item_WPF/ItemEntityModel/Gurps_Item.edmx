@@ -87,13 +87,15 @@
           <Property Name="BasicSpeedPoints" Type="real" Nullable="false" />
           <Property Name="BasicMovePoints" Type="int" Nullable="false" />
         </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Item1.CharDB.CharSkill" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="CharSkill">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="idSkill" />
+            <PropertyRef Name="idChar" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idSkill" Type="int" />
-          <Property Name="idChar" Type="int" />
+          <Property Name="idSkill" Type="int" Nullable="false" />
+          <Property Name="idChar" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="contained_weight_prereq">
           <Key>
@@ -1036,7 +1038,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CharSkill_CharacterDB_id">
-          <End Role="CharacterDB" Type="Self.CharacterDB" Multiplicity="0..1">
+          <End Role="CharacterDB" Type="Self.CharacterDB" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="CharSkill" Type="Self.CharSkill" Multiplicity="*" />
@@ -1050,7 +1052,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CharSkill_GurpsSkill_id">
-          <End Role="GurpsSkill" Type="Self.GurpsSkill" Multiplicity="0..1">
+          <End Role="GurpsSkill" Type="Self.GurpsSkill" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="CharSkill" Type="Self.CharSkill" Multiplicity="*" />
@@ -1747,7 +1749,6 @@
           <EntitySet Name="attribute_bonus" EntityType="Self.attribute_bonus" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="attribute_prereq" EntityType="Self.attribute_prereq" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="CharacterDB" EntityType="Self.CharacterDB" Schema="CharDB" store:Type="Tables" />
-          <EntitySet Name="CharSkill" EntityType="Self.CharSkill" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="contained_weight_prereq" EntityType="Self.contained_weight_prereq" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="cost_reduction" EntityType="Self.cost_reduction" Schema="CharDB" store:Type="Tables" />
           <EntitySet Name="DefaultSkill" EntityType="Self.DefaultSkill" Schema="CharDB" store:Type="Tables" />
@@ -1798,6 +1799,12 @@
           <EntitySet Name="WEAPON" EntityType="Self.WEAPON" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WeaponAttackType" EntityType="Self.WeaponAttackType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WeaponDamage" EntityType="Self.WeaponDamage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharSkill" EntityType="Self.CharSkill" store:Type="Tables" store:Schema="CharDB">
+            <DefiningQuery>SELECT 
+    [CharSkill].[idSkill] AS [idSkill], 
+    [CharSkill].[idChar] AS [idChar]
+    FROM [CharDB].[CharSkill] AS [CharSkill]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="NeedSkill" EntityType="Self.NeedSkill" store:Type="Tables" store:Schema="CharDB">
             <DefiningQuery>SELECT 
     [NeedSkill].[idSkillIn] AS [idSkillIn], 
@@ -2135,7 +2142,6 @@
           <EntitySet Name="attribute_bonus" EntityType="item1Model.attribute_bonus" />
           <EntitySet Name="attribute_prereq" EntityType="item1Model.attribute_prereq" />
           <EntitySet Name="CharacterDBs" EntityType="item1Model.CharacterDB" />
-          <EntitySet Name="CharSkills" EntityType="item1Model.CharSkill" />
           <EntitySet Name="contained_weight_prereq" EntityType="item1Model.contained_weight_prereq" />
           <EntitySet Name="cost_reduction" EntityType="item1Model.cost_reduction" />
           <EntitySet Name="DefaultSkills" EntityType="item1Model.DefaultSkill" />
@@ -2238,17 +2244,9 @@
             <End Role="prereq_listDB" EntitySet="prereq_listDB" />
             <End Role="attribute_prereq" EntitySet="attribute_prereq" />
           </AssociationSet>
-          <AssociationSet Name="FK_CharSkill_CharacterDB_id" Association="item1Model.FK_CharSkill_CharacterDB_id">
-            <End Role="CharacterDB" EntitySet="CharacterDBs" />
-            <End Role="CharSkill" EntitySet="CharSkills" />
-          </AssociationSet>
           <AssociationSet Name="FK_InventoryOfChar_CharacterDB_id" Association="item1Model.FK_InventoryOfChar_CharacterDB_id">
             <End Role="CharacterDB" EntitySet="CharacterDBs" />
             <End Role="InventoryOfChar" EntitySet="InventoryOfChars" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CharSkill_GurpsSkill_id" Association="item1Model.FK_CharSkill_GurpsSkill_id">
-            <End Role="GurpsSkill" EntitySet="GurpsSkills" />
-            <End Role="CharSkill" EntitySet="CharSkills" />
           </AssociationSet>
           <AssociationSet Name="FK_contained_weight_prereq_prereq_listDB_id" Association="item1Model.FK_contained_weight_prereq_prereq_listDB_id">
             <End Role="prereq_listDB" EntitySet="prereq_listDB" />
@@ -2446,6 +2444,10 @@
             <End Role="GurpsSkill" EntitySet="GurpsSkills" />
             <End Role="GurpsCategory" EntitySet="GurpsCategories" />
           </AssociationSet>
+          <AssociationSet Name="CharSkill" Association="item1Model.CharSkill">
+            <End Role="CharacterDB" EntitySet="CharacterDBs" />
+            <End Role="GurpsSkill" EntitySet="GurpsSkills" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="Advantage">
           <Key>
@@ -2535,18 +2537,8 @@
           <Property Name="WillpowerPoints" Type="Int32" Nullable="false" />
           <Property Name="BasicSpeedPoints" Type="Single" Nullable="false" />
           <Property Name="BasicMovePoints" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="CharSkills" Relationship="item1Model.FK_CharSkill_CharacterDB_id" FromRole="CharacterDB" ToRole="CharSkill" />
           <NavigationProperty Name="InventoryOfChars" Relationship="item1Model.FK_InventoryOfChar_CharacterDB_id" FromRole="CharacterDB" ToRole="InventoryOfChar" />
-        </EntityType>
-        <EntityType Name="CharSkill">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idSkill" Type="Int32" />
-          <Property Name="idChar" Type="Int32" />
-          <NavigationProperty Name="CharacterDB" Relationship="item1Model.FK_CharSkill_CharacterDB_id" FromRole="CharSkill" ToRole="CharacterDB" />
-          <NavigationProperty Name="GurpsSkill" Relationship="item1Model.FK_CharSkill_GurpsSkill_id" FromRole="CharSkill" ToRole="GurpsSkill" />
+          <NavigationProperty Name="GurpsSkills" Relationship="item1Model.CharSkill" FromRole="CharacterDB" ToRole="GurpsSkill" />
         </EntityType>
         <EntityType Name="contained_weight_prereq">
           <Key>
@@ -2648,7 +2640,6 @@
           <Property Name="limitT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TypeSkTh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="attribute_bonus" Relationship="item1Model.FK_attribute_bonus_GurpsSkill_id" FromRole="GurpsSkill" ToRole="attribute_bonus" />
-          <NavigationProperty Name="CharSkills" Relationship="item1Model.FK_CharSkill_GurpsSkill_id" FromRole="GurpsSkill" ToRole="CharSkill" />
           <NavigationProperty Name="DefaultSkills" Relationship="item1Model.FK_DefaultSkill_GurpsSkill_id_in" FromRole="GurpsSkill" ToRole="DefaultSkill" />
           <NavigationProperty Name="DefaultSkills1" Relationship="item1Model.FK_DefaultSkill_GurpsSkill_id_out" FromRole="GurpsSkill" ToRole="DefaultSkill" />
           <NavigationProperty Name="DefSkillSomes" Relationship="item1Model.FK_DefSkillAdv_GurpsSkill_id" FromRole="GurpsSkill" ToRole="DefSkillSome" />
@@ -2661,6 +2652,7 @@
           <NavigationProperty Name="prereq_listDB" Relationship="item1Model.FK_prereq_listDB_GurpsSkill_id" FromRole="GurpsSkill" ToRole="prereq_listDB" />
           <NavigationProperty Name="weapon_bonus" Relationship="item1Model.FK_weapon_bonus_GurpsSkill_id" FromRole="GurpsSkill" ToRole="weapon_bonus" />
           <NavigationProperty Name="GurpsCategories" Relationship="item1Model.GurpsSkillCategory88" FromRole="GurpsSkill" ToRole="GurpsCategory" />
+          <NavigationProperty Name="CharacterDBs" Relationship="item1Model.CharSkill" FromRole="GurpsSkill" ToRole="CharacterDB" />
         </EntityType>
         <EntityType Name="InventoryOfChar">
           <Key>
@@ -3545,20 +3537,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_CharSkill_CharacterDB_id">
-          <End Type="item1Model.CharacterDB" Role="CharacterDB" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="item1Model.CharSkill" Role="CharSkill" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CharacterDB">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="CharSkill">
-              <PropertyRef Name="idChar" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_InventoryOfChar_CharacterDB_id">
           <End Type="item1Model.CharacterDB" Role="CharacterDB" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -3570,20 +3548,6 @@
             </Principal>
             <Dependent Role="InventoryOfChar">
               <PropertyRef Name="IdCharacter" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CharSkill_GurpsSkill_id">
-          <End Type="item1Model.GurpsSkill" Role="GurpsSkill" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="item1Model.CharSkill" Role="CharSkill" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="GurpsSkill">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="CharSkill">
-              <PropertyRef Name="idSkill" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -4197,6 +4161,10 @@
           <End Type="item1Model.GurpsSkill" Role="GurpsSkill" Multiplicity="*" />
           <End Type="item1Model.GurpsCategory" Role="GurpsCategory" Multiplicity="*" />
         </Association>
+        <Association Name="CharSkill">
+          <End Type="item1Model.CharacterDB" Role="CharacterDB" Multiplicity="*" />
+          <End Type="item1Model.GurpsSkill" Role="GurpsSkill" Multiplicity="*" />
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -4282,15 +4250,6 @@
                 <ScalarProperty Name="DexterityPoints" ColumnName="DexterityPoints" />
                 <ScalarProperty Name="StrengthPoints" ColumnName="StrengthPoints" />
                 <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CharSkills">
-            <EntityTypeMapping TypeName="item1Model.CharSkill">
-              <MappingFragment StoreEntitySet="CharSkill">
-                <ScalarProperty Name="idChar" ColumnName="idChar" />
-                <ScalarProperty Name="idSkill" ColumnName="idSkill" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -5064,6 +5023,14 @@
             </EndProperty>
             <EndProperty Name="GurpsSkill">
               <ScalarProperty Name="id" ColumnName="idSkill" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="CharSkill" TypeName="item1Model.CharSkill" StoreEntitySet="CharSkill">
+            <EndProperty Name="GurpsSkill">
+              <ScalarProperty Name="id" ColumnName="idSkill" />
+            </EndProperty>
+            <EndProperty Name="CharacterDB">
+              <ScalarProperty Name="id" ColumnName="idChar" />
             </EndProperty>
           </AssociationSetMapping>
           </EntityContainerMapping>

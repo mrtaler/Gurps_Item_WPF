@@ -6,11 +6,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:p="clr-namespace:Item_WPF.Properties"
         Title="AddSkilltoCharView"
-        Width="596.935"
+        Width="858.935"
         Height="345.484"
         mc:Ignorable="d">
     <Grid>
-        <DockPanel Margin="0,0,351,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.Column="0">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30" />
@@ -20,9 +24,11 @@
                            Text="{x:Static p:Resources.CharacterSheetSkills}"
                            TextAlignment="Center" />
                 <ListBox Grid.Row="1"
+                         HorizontalAlignment="Stretch"
                          HorizontalContentAlignment="Stretch"
                          Grid.IsSharedSizeScope="True"
                          ItemsSource="{Binding Path=AllGurpsSkillCollection}">
+                    <!--    -->
                     <ListBox.ItemContainerStyle>
                         <Style BasedOn="{StaticResource {x:Type ListBoxItem}}" TargetType="{x:Type ListBoxItem}">
                             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -55,14 +61,11 @@
                                 </Grid>
                             </StackPanel>
                         </DataTemplate>
-
                     </ListBox.ItemTemplate>
-
-
                 </ListBox>
             </Grid>
         </DockPanel>
-        <DockPanel Margin="300,0,0,0">
+        <DockPanel Grid.Column="1">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30" />
@@ -74,7 +77,7 @@
                 <ListBox Grid.Row="1"
                          HorizontalContentAlignment="Stretch"
                          Grid.IsSharedSizeScope="True"
-                         ItemsSource="{Binding Path=_character.CharSkills}">
+                         ItemsSource="{Binding Path=CharGurpsSkillCollection}">
                     <ListBox.ItemContainerStyle>
                         <Style BasedOn="{StaticResource {x:Type ListBoxItem}}" TargetType="{x:Type ListBoxItem}">
                             <Setter Property="HorizontalContentAlignment" Value="Stretch" />

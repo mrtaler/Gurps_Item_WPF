@@ -32,8 +32,8 @@ namespace Item_WPF.ItemEntityModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CharacterDB()
         {
-            this.CharSkills = new HashSet<CharSkill>();
             this.InventoryOfChars = new HashSet<InventoryOfChar>();
+            this.GurpsSkills = new HashSet<GurpsSkill>();
         }
     
         private int _id;
@@ -230,16 +230,6 @@ namespace Item_WPF.ItemEntityModel
     	}
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<CharSkill> _CharSkills;
-            public virtual ICollection<CharSkill> CharSkills
-            {
-                get { return _CharSkills; }
-                set
-                { if(_CharSkills != value)
-                    {    _CharSkills = value;    OnPropertyChanged("CharSkills");   }
-                }
-            } 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<InventoryOfChar> _InventoryOfChars;
             public virtual ICollection<InventoryOfChar> InventoryOfChars
             {
@@ -247,6 +237,16 @@ namespace Item_WPF.ItemEntityModel
                 set
                 { if(_InventoryOfChars != value)
                     {    _InventoryOfChars = value;    OnPropertyChanged("InventoryOfChars");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<GurpsSkill> _GurpsSkills;
+            public virtual ICollection<GurpsSkill> GurpsSkills
+            {
+                get { return _GurpsSkills; }
+                set
+                { if(_GurpsSkills != value)
+                    {    _GurpsSkills = value;    OnPropertyChanged("GurpsSkills");   }
                 }
             } 
     }

@@ -187,9 +187,6 @@
     <Compile Include="ItemEntityModel\CharacterDB.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="ItemEntityModel\CharSkill.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
     <Compile Include="ItemEntityModel\Cloth.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>

@@ -33,7 +33,6 @@ namespace Item_WPF.ItemEntityModel
         public GurpsSkill()
         {
             this.attribute_bonus = new HashSet<attribute_bonus>();
-            this.CharSkills = new HashSet<CharSkill>();
             this.DefaultSkills = new HashSet<DefaultSkill>();
             this.DefaultSkills1 = new HashSet<DefaultSkill>();
             this.DefSkillSomes = new HashSet<DefSkillSome>();
@@ -42,6 +41,7 @@ namespace Item_WPF.ItemEntityModel
             this.prereq_listDB = new HashSet<prereq_listDB>();
             this.weapon_bonus = new HashSet<weapon_bonus>();
             this.GurpsCategories = new HashSet<GurpsCategory>();
+            this.CharacterDBs = new HashSet<CharacterDB>();
         }
     
         private int _id;
@@ -312,16 +312,6 @@ namespace Item_WPF.ItemEntityModel
                 }
             } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<CharSkill> _CharSkills;
-            public virtual ICollection<CharSkill> CharSkills
-            {
-                get { return _CharSkills; }
-                set
-                { if(_CharSkills != value)
-                    {    _CharSkills = value;    OnPropertyChanged("CharSkills");   }
-                }
-            } 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<DefaultSkill> _DefaultSkills;
             public virtual ICollection<DefaultSkill> DefaultSkills
             {
@@ -435,6 +425,16 @@ namespace Item_WPF.ItemEntityModel
                 set
                 { if(_GurpsCategories != value)
                     {    _GurpsCategories = value;    OnPropertyChanged("GurpsCategories");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<CharacterDB> _CharacterDBs;
+            public virtual ICollection<CharacterDB> CharacterDBs
+            {
+                get { return _CharacterDBs; }
+                set
+                { if(_CharacterDBs != value)
+                    {    _CharacterDBs = value;    OnPropertyChanged("CharacterDBs");   }
                 }
             } 
     }

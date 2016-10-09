@@ -2,6 +2,7 @@
 using Item_WPF.ItemEntityModel;
 using Item_WPF.addin;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Item_WPF.MVVM.AddSkilltoChar
@@ -11,9 +12,18 @@ namespace Item_WPF.MVVM.AddSkilltoChar
         private item1Entities _context;
         public CharacterDB _character;
         public ObservableCollection<GurpsSkill> AllGurpsSkillCollection { get; set; }
+
+
         public ObservableCollection<GurpsSkill> CharGurpsSkillCollection
         {
-            get { return new ObservableCollection<GurpsSkill>(_character.CharSkills.Select(p=>p.GurpsSkill)); }
+            get { return new ObservableCollection<GurpsSkill>(_character.GurpsSkills); }
+            set
+            {
+                if (_character.GurpsSkills != value)
+                {
+                    _character.GurpsSkills = value;
+                }
+            }
         }
         public ViewModelCommand AddSkillCommand { get; set; }
         public ViewModelCommand RemSkillCommand { get; set; }
@@ -31,22 +41,19 @@ namespace Item_WPF.MVVM.AddSkilltoChar
         {
             int gsid = Convert.ToInt32(param);
 
-            CharSkill charSkill = new CharSkill
-            {
-                CharacterDB = _character,
-                GurpsSkill = AllGurpsSkillCollection.First(p => p.id == gsid)
-            };
+            GurpsSkill GurpsSkillFind = AllGurpsSkillCollection.First(p => p.id == gsid);
+            
 
-            _character.CharSkills.Add(charSkill);
+            _character.GurpsSkills.Add(GurpsSkillFind);
             NotifyPropertyChanged("CharGurpsSkillCollection");
         }
         private void RemSkill(object param)
         {
             int gsid = Convert.ToInt32(param);
             GurpsSkill gs = CharGurpsSkillCollection.First(p => p.id == gsid);
-          //  CharSkill charSkill=
+            //  CharSkill charSkill=
 
-           // _character.CharSkills.Remove();
+            // _character.CharSkills.Remove();
             NotifyPropertyChanged("CharGurpsSkillCollection");
 
         }
