@@ -82,6 +82,7 @@ namespace Item_WPF.ItemEntityModel
         public virtual DbSet<WEAPON> WEAPONs { get; set; }
         public virtual DbSet<WeaponAttackType> WeaponAttackTypes { get; set; }
         public virtual DbSet<WeaponDamage> WeaponDamages { get; set; }
+        public virtual DbSet<CharSkill> CharSkills { get; set; }
         public virtual DbSet<NeedSkill> NeedSkills { get; set; }
     
         public virtual int NEW_ITEM_att(string name, Nullable<int> g_att_class, Nullable<int> g_sub_att, string id_att_mount)

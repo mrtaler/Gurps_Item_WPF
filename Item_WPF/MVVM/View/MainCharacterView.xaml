@@ -196,11 +196,11 @@
                                 <DataTemplate>
                                     <TextBlock Grid.Column="0"
                                                Margin="0 0 4 0"
-                                               Text="{Binding Path=Name}">
+                                               Text="{Binding Path=NameSkill}">
                                         <TextBlock.ToolTip>
                                             <StackPanel>
-                                                <TextBlock FontWeight="Bold" Text="{Binding Path=Name}" />
-                                                <TextBlock Text="{Binding Path=Description}" />
+                                                <TextBlock FontWeight="Bold" Text="{Binding Path=NameSkill}" />
+                                                <TextBlock Text="{Binding Path=Specialization}" />
                                             </StackPanel>
                                         </TextBlock.ToolTip>
                                     </TextBlock>

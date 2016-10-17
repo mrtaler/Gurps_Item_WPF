@@ -36,12 +36,12 @@ namespace Item_WPF.ItemEntityModel
             this.DefaultSkills = new HashSet<DefaultSkill>();
             this.DefaultSkills1 = new HashSet<DefaultSkill>();
             this.DefSkillSomes = new HashSet<DefSkillSome>();
+            this.CharSkills = new HashSet<CharSkill>();
             this.GurpsSkill1 = new HashSet<GurpsSkill>();
             this.NeedSkills = new HashSet<NeedSkill>();
             this.prereq_listDB = new HashSet<prereq_listDB>();
             this.weapon_bonus = new HashSet<weapon_bonus>();
             this.GurpsCategories = new HashSet<GurpsCategory>();
-            this.CharacterDBs = new HashSet<CharacterDB>();
         }
     
         private int _id;
@@ -351,6 +351,16 @@ namespace Item_WPF.ItemEntityModel
                 }
             } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<CharSkill> _CharSkills;
+            public virtual ICollection<CharSkill> CharSkills
+            {
+                get { return _CharSkills; }
+                set
+                { if(_CharSkills != value)
+                    {    _CharSkills = value;    OnPropertyChanged("CharSkills");   }
+                }
+            } 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<GurpsSkill> _GurpsSkill1;
             public virtual ICollection<GurpsSkill> GurpsSkill1
             {
@@ -425,16 +435,6 @@ namespace Item_WPF.ItemEntityModel
                 set
                 { if(_GurpsCategories != value)
                     {    _GurpsCategories = value;    OnPropertyChanged("GurpsCategories");   }
-                }
-            } 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<CharacterDB> _CharacterDBs;
-            public virtual ICollection<CharacterDB> CharacterDBs
-            {
-                get { return _CharacterDBs; }
-                set
-                { if(_CharacterDBs != value)
-                    {    _CharacterDBs = value;    OnPropertyChanged("CharacterDBs");   }
                 }
             } 
     }
