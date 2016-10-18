@@ -323,6 +323,7 @@
       <DependentUpon>AddSkilltoCharView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\AddSkilltoChar\AddSkilltoCharViewModel.cs" />
+    <Compile Include="MVVM\AllCharfromDB\AllCharFromDBViewModel.cs" />
     <Compile Include="MVVM\GurpsSkill_m\AllGurpsSkillView.xaml.cs">
       <DependentUpon>AllGurpsSkillView.xaml</DependentUpon>
     </Compile>
@@ -388,7 +389,7 @@
     <Compile Include="MVVM\View\AboutWindowView.xaml.cs">
       <DependentUpon>AboutWindowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\AllCharfromDBView.xaml.cs">
+    <Compile Include="MVVM\AllCharfromDB\AllCharfromDBView.xaml.cs">
       <DependentUpon>AllCharfromDBView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\AllWeaponView.xaml.cs">
@@ -508,7 +509,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\AllCharfromDBView.xaml">
+    <Page Include="MVVM\AllCharfromDB\AllCharfromDBView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

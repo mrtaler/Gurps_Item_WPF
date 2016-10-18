@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Xml.Serialization;
 using Item_WPF.addin;
@@ -14,6 +15,7 @@ using Item_WPF.MVVM.EditPrimaryStats;
 using Item_WPF.MVVM.EditSecondaryStats;
 using EditPrimaryStatsWindowView = Item_WPF.MVVM.EditPrimaryStats.EditPrimaryStatsWindowView;
 using EditSecondaryStatsWindowView = Item_WPF.MVVM.EditSecondaryStats.EditSecondaryStatsWindowView;
+using Item_WPF.MVVM.AllCharfromDB;
 
 namespace Item_WPF.MVVM.ViewModels
 {
@@ -31,10 +33,11 @@ namespace Item_WPF.MVVM.ViewModels
         public DelegateCommand AddSkillCommand { get; private set; }
         public DelegateCommand NewCommand { get; private set; }
         public DelegateCommand OpenCommand { get; private set; }
-
+        public DelegateCommand SaveDBCommand { get; private set; }
         public DelegateCommand OpenDbCommand { get; private set; }
         public DelegateCommand SaveAsCommand { get; private set; }
         public DelegateCommand OwnerCloseCommand { get; private set; }
+
         public MainCharacterViewModel(Window owner)
             : this(owner, new CharacterDB())
         {
@@ -42,7 +45,7 @@ namespace Item_WPF.MVVM.ViewModels
 
         public MainCharacterViewModel(Window owner, CharacterDB character)
         {
-            _context=new item1Entities();
+            _context = new item1Entities();
             Owner = owner;
             Character = character;
 
@@ -55,31 +58,33 @@ namespace Item_WPF.MVVM.ViewModels
             AddSkillCommand = new DelegateCommand(AddSkill);
             NewCommand = new DelegateCommand(New);
             OpenCommand = new DelegateCommand(Open);
-            OpenDbCommand=new DelegateCommand(OpenDb);
+            OpenDbCommand = new DelegateCommand(OpenDb);
             SaveAsCommand = new DelegateCommand(SaveAs);
             OwnerCloseCommand = new DelegateCommand(OwnerClose);
 
+            SaveDBCommand = new DelegateCommand(SaveDB);
+
             // Setup property dependencies
-            PropertyDependencyMap.Add("Strength", new[] { "MaxHP", "BasicLift", "ThrustDamage", "SwingDamage" });
-            PropertyDependencyMap.Add("StrengthPoints", new[] { "Strength", "CharacterPoints" });
-            PropertyDependencyMap.Add("Dexterity", new[] { "BasicSpeed" });
-            PropertyDependencyMap.Add("DexterityPoints", new[] { "Dexterity", "CharacterPoints" });
-            PropertyDependencyMap.Add("Intelligence", new[] { "Willpower", "Perception" });
-            PropertyDependencyMap.Add("IntelligencePoints", new[] { "Intelligence", "CharacterPoints" });
-            PropertyDependencyMap.Add("Health", new[] { "MaxFP", "BasicSpeed" });
-            PropertyDependencyMap.Add("HealthPoints", new[] { "Health", "CharacterPoints" });
-            PropertyDependencyMap.Add("MaxHPPoints", new[] { "MaxHP", "CharacterPoints" });
-            PropertyDependencyMap.Add("MaxFPPoints", new[] { "MaxFP", "CharacterPoints" });
-            PropertyDependencyMap.Add("WillpowerPoints", new[] { "Willpower", "CharacterPoints" });
-            PropertyDependencyMap.Add("PerceptionPoints", new[] { "Perception", "CharacterPoints" });
-            PropertyDependencyMap.Add("BasicSpeed", new[] { "BasicMove" });
-            PropertyDependencyMap.Add("BasicSpeedPoints", new[] { "BasicSpeed", "CharacterPoints" });
-            PropertyDependencyMap.Add("BasicMovePoints", new[] { "BasicMove", "CharacterPoints" });
-            PropertyDependencyMap.Add("BasicLift", new[] { "Encumbrance" });
-            PropertyDependencyMap.Add("Inventory", new[] { "Encumbrance" });
-            PropertyDependencyMap.Add("Advantages", new[] { "CharacterPoints" });
-            PropertyDependencyMap.Add("Skills", new[] { "CharacterPoints" });
-            PropertyDependencyMap.Add("Encumbrance", new[] { "EncumbranceAsInt", "EncumbranceAsString", "Move", "Dodge" });
+            PropertyDependencyMap.Add("Strength", new[] {"MaxHP", "BasicLift", "ThrustDamage", "SwingDamage"});
+            PropertyDependencyMap.Add("StrengthPoints", new[] {"Strength", "CharacterPoints"});
+            PropertyDependencyMap.Add("Dexterity", new[] {"BasicSpeed"});
+            PropertyDependencyMap.Add("DexterityPoints", new[] {"Dexterity", "CharacterPoints"});
+            PropertyDependencyMap.Add("Intelligence", new[] {"Willpower", "Perception"});
+            PropertyDependencyMap.Add("IntelligencePoints", new[] {"Intelligence", "CharacterPoints"});
+            PropertyDependencyMap.Add("Health", new[] {"MaxFP", "BasicSpeed"});
+            PropertyDependencyMap.Add("HealthPoints", new[] {"Health", "CharacterPoints"});
+            PropertyDependencyMap.Add("MaxHPPoints", new[] {"MaxHP", "CharacterPoints"});
+            PropertyDependencyMap.Add("MaxFPPoints", new[] {"MaxFP", "CharacterPoints"});
+            PropertyDependencyMap.Add("WillpowerPoints", new[] {"Willpower", "CharacterPoints"});
+            PropertyDependencyMap.Add("PerceptionPoints", new[] {"Perception", "CharacterPoints"});
+            PropertyDependencyMap.Add("BasicSpeed", new[] {"BasicMove"});
+            PropertyDependencyMap.Add("BasicSpeedPoints", new[] {"BasicSpeed", "CharacterPoints"});
+            PropertyDependencyMap.Add("BasicMovePoints", new[] {"BasicMove", "CharacterPoints"});
+            PropertyDependencyMap.Add("BasicLift", new[] {"Encumbrance"});
+            PropertyDependencyMap.Add("Inventory", new[] {"Encumbrance"});
+            PropertyDependencyMap.Add("Advantages", new[] {"CharacterPoints"});
+            PropertyDependencyMap.Add("Skills", new[] {"CharacterPoints"});
+            PropertyDependencyMap.Add("Encumbrance", new[] {"EncumbranceAsInt", "EncumbranceAsString", "Move", "Dodge"});
         }
 
         public string Name
@@ -92,173 +97,125 @@ namespace Item_WPF.MVVM.ViewModels
                 return name;
             }
         }
+
         public int Strength
         {
-            get
-            {
-                return Character.Strength;
-            }
+            get { return Character.Strength; }
         }
+
         public int Dexterity
         {
-            get
-            {
-                return Character.Dexterity;
-            }
+            get { return Character.Dexterity; }
         }
+
         public int Intelligence
         {
-            get
-            {
-                return Character.Intelligence;
-            }
+            get { return Character.Intelligence; }
         }
+
         public int Health
         {
-            get
-            {
-                return Character.Health;
-            }
+            get { return Character.Health; }
         }
+
         public int MaxHP
         {
-            get
-            {
-                return Character.MaxHP;
-            }
+            get { return Character.MaxHP; }
         }
+
         public int MaxFP
         {
-            get
-            {
-                return Character.MaxFP;
-            }
+            get { return Character.MaxFP; }
         }
+
         public int Willpower
         {
-            get
-            {
-                return Character.Willpower;
-            }
+            get { return Character.Willpower; }
         }
+
         public int Perception
         {
-            get
-            {
-                return Character.Perception;
-            }
+            get { return Character.Perception; }
         }
+
         public float BasicLift
         {
-            get
-            {
-                return Character.BasicLift;
-            }
+            get { return Character.BasicLift; }
         }
+
         public float BasicSpeed
         {
-            get
-            {
-                return Character.BasicSpeed;
-            }
+            get { return Character.BasicSpeed; }
         }
+
         public int BasicMove
         {
-            get
-            {
-                return Character.BasicMove;
-            }
+            get { return Character.BasicMove; }
         }
+
         public int Move
         {
-            get
-            {
-                return Character.Move;
-            }
+            get { return Character.Move; }
         }
+
         public int Dodge
         {
-            get
-            {
-                return Character.Dodge;
-            }
+            get { return Character.Dodge; }
         }
+
         public DiceString ThrustDamage
         {
-            get
-            {
-                return Character.ThrustDamage;
-            }
+            get { return Character.ThrustDamage; }
         }
+
         public DiceString SwingDamage
         {
-            get
-            {
-                return Character.SwingDamage;
-            }
+            get { return Character.SwingDamage; }
         }
 
         public ObservableCollection<ITEM> Inventory
         {
-            get
-            {
-                return Character.Inventory;
-            }
+            get { return Character.Inventory; }
         }
+
         public int TotalWeight
         {
-            get
-            {
-                return Character.TotalWeight;
-            }
+            get { return Character.TotalWeight; }
         }
 
         public ObservableCollection<Advantage> Advantages
         {
-            get
-            {
-                return Character.Advantages;
-            }
+            get { return Character.Advantages; }
         }
 
         public ObservableCollection<GurpsSkill> Skills
         {
-            get
-            {
-                return Character.Skills;
-            }
+            get { return Character.Skills; }
         }
 
         // Returns the window title
         public string Title
         {
-            get
-            {
-                return "GURPS Character Editor - " + Name;
-            }
+            get { return "GURPS Character Editor - " + Name; }
         }
 
         public int CharacterPoints
         {
-            get
-            {
-                return Character.CharacterPoints;
-            }
+            get { return Character.CharacterPoints; }
         }
+
         public int? EncumbranceAsInt
         {
-            get
-            {
-                return Character.Encumbrance;
-            }
+            get { return Character.Encumbrance; }
         }
+
         public string EncumbranceAsString
         {
             get
             {
                 if (Character.Encumbrance.HasValue)
                 {
-                    switch ((int)Character.Encumbrance)
+                    switch ((int) Character.Encumbrance)
                     {
                         case 0:
                             return Resources.EncumbranceNo;
@@ -312,7 +269,7 @@ namespace Item_WPF.MVVM.ViewModels
             bool? result = window.ShowDialog();
             if (result.HasValue && (result == true))
             {
-                Character.Advantages.Add((Advantage)window.DataContext);
+                Character.Advantages.Add((Advantage) window.DataContext);
 
                 NotifyPropertyChanged("Advantages");
             }
@@ -320,14 +277,14 @@ namespace Item_WPF.MVVM.ViewModels
 
         public void AddSkill(object parameter)
         {
-            AddSkilltoCharView window = new AddSkilltoCharView(Character);
+            AddSkilltoCharView window = new AddSkilltoCharView(Character, _context);
             window.Owner = Owner;
-         //   window.DataContext = new Skill();
+            //   window.DataContext = new Skill();
 
             bool? result = window.ShowDialog();
             if (result.HasValue && (result == true))
             {
-               // Character.Skills.Add((Skill)window.DataContext);
+                // Character.Skills.Add((Skill)window.DataContext);
 
                 NotifyPropertyChanged("Skills");
             }
@@ -384,12 +341,14 @@ namespace Item_WPF.MVVM.ViewModels
             // Notify all properties changed
             NotifyPropertyChanged(string.Empty);
         }
+
         public void OpenDb(object parameter)
         {
             AllCharfromDBView dialog = new AllCharfromDBView();
-            dialog.DataContext = _context.CharacterDBs;
-
+            dialog.DataContext = new AllCharFromDBViewModel();
+            dialog.Show();
         }
+
         public void Open(object parameter)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -404,7 +363,7 @@ namespace Item_WPF.MVVM.ViewModels
                 XmlSerializer serializer = new XmlSerializer(Character.GetType());
                 try
                 {
-                    Character = (CharacterDB)serializer.Deserialize(stream);
+                    Character = (CharacterDB) serializer.Deserialize(stream);
                 }
                 catch (InvalidOperationException)
                 {
@@ -434,7 +393,18 @@ namespace Item_WPF.MVVM.ViewModels
                 stream.Close();
             }
         }
-        public void OwnerClose(object parameter)
+
+        private void SaveDB(object parameter)
+        {
+           var qe= _context.CharacterDBs.Find(Character.name);
+            if (qe==null)
+            {
+                _context.CharacterDBs.Add(Character);
+            }
+            _context.SaveChanges();
+        }
+
+    public void OwnerClose(object parameter)
         {
             Owner.Close();
         }

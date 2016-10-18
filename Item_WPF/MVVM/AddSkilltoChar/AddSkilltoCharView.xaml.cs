@@ -13,10 +13,10 @@ namespace Item_WPF.MVVM.AddSkilltoChar
             InitializeComponent();
         }
 
-        public AddSkilltoCharView(CharacterDB Char)
+        public AddSkilltoCharView(CharacterDB Char, item1Entities context)
      //       :base()
         {
-            DataContext=new AddSkilltoCharViewModel(Char);
+            DataContext=new AddSkilltoCharViewModel(Char, context);
             InitializeComponent();
         }
     }

@@ -33,6 +33,7 @@ namespace Item_WPF.ItemEntityModel
         public virtual DbSet<attribute_bonus> attribute_bonus { get; set; }
         public virtual DbSet<attribute_prereq> attribute_prereq { get; set; }
         public virtual DbSet<CharacterDB> CharacterDBs { get; set; }
+        public virtual DbSet<CharSkill> CharSkills { get; set; }
         public virtual DbSet<contained_weight_prereq> contained_weight_prereq { get; set; }
         public virtual DbSet<cost_reduction> cost_reduction { get; set; }
         public virtual DbSet<DefaultSkill> DefaultSkills { get; set; }
@@ -82,7 +83,6 @@ namespace Item_WPF.ItemEntityModel
         public virtual DbSet<WEAPON> WEAPONs { get; set; }
         public virtual DbSet<WeaponAttackType> WeaponAttackTypes { get; set; }
         public virtual DbSet<WeaponDamage> WeaponDamages { get; set; }
-        public virtual DbSet<CharSkill> CharSkills { get; set; }
         public virtual DbSet<NeedSkill> NeedSkills { get; set; }
     
         public virtual int NEW_ITEM_att(string name, Nullable<int> g_att_class, Nullable<int> g_sub_att, string id_att_mount)

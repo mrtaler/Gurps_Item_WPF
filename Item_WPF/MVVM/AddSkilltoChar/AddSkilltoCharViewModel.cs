@@ -3,6 +3,7 @@ using Item_WPF.ItemEntityModel;
 using Item_WPF.addin;
 using System;
 using System.Linq;
+using System.Collections.Specialized;
 
 namespace Item_WPF.MVVM.AddSkilltoChar
 {
@@ -28,11 +29,13 @@ namespace Item_WPF.MVVM.AddSkilltoChar
         }
         public ViewModelCommand AddSkillCommand { get; set; }
         public ViewModelCommand RemSkillCommand { get; set; }
-        public AddSkilltoCharViewModel(CharacterDB character)
+        public AddSkilltoCharViewModel(CharacterDB character, item1Entities context)
         {
             Character = character;
-            Context = new item1Entities();
+            Context = context;
             AllGurpsSkillCollection = new ObservableCollection<GurpsSkill>(Context.GurpsSkills);
+
+            CharSkillsCollection.CollectionChanged += new NotifyCollectionChangedEventHandler(CharSkillsCollectionChanged);
 
             AddSkillCommand = new ViewModelCommand(AddSkill, true);
             RemSkillCommand = new ViewModelCommand(RemSkill, true);
@@ -64,6 +67,25 @@ namespace Item_WPF.MVVM.AddSkilltoChar
             // Character.CharSkills.Remove();
             NotifyPropertyChanged("CharGurpsSkillCollection");
 
+        }
+
+        private void CharSkillsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            //if (e.Action == NotifyCollectionChangedAction.Remove)
+            //{
+            //    foreach (CharSkill item in e.OldItems)
+            //    {
+            //        Context.CharSkills.Remove(item);
+            //    }
+            //    //  SaveChanges();
+            //}
+            //else if (e.Action == NotifyCollectionChangedAction.Add)
+            //{
+            //    foreach (CharSkill item in e.NewItems)
+            //    {
+            //        Context.CharSkills.Add(item);
+            //    }
+            //}
         }
     }
 }
