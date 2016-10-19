@@ -379,7 +379,7 @@
     <Compile Include="MVVM\EditPrimaryStats\EditPrimaryStatsViewModel.cs" />
     <Compile Include="MVVM\EditSecondaryStats\EditSecondaryStatsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\InputBoxViewModel.cs" />
-    <Compile Include="MVVM\ViewModels\MainCharacterViewModel.cs" />
+    <Compile Include="MVVM\MainCharacter\MainCharacterViewModel.cs" />
     <Compile Include="MVVM\ViewModels\MainWindowStartViewModel.cs" />
     <Compile Include="MVVM\ViewModels\NewBoxViewModel.cs" />
     <Compile Include="MVVM\ViewModels\NewItemsViewModel.cs" />
@@ -440,7 +440,7 @@
     <Compile Include="MVVM\View\InputBoxView.xaml.cs">
       <DependentUpon>InputBoxView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\MainCharacterView.xaml.cs">
+    <Compile Include="MVVM\MainCharacter\MainCharacterView.xaml.cs">
       <DependentUpon>MainCharacterView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\MainWindowStartView.xaml.cs">
@@ -577,7 +577,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\MainCharacterView.xaml">
+    <Page Include="MVVM\MainCharacter\MainCharacterView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

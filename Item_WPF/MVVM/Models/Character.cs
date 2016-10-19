@@ -3,6 +3,7 @@ using Item_WPF.MVVM.Models;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Linq;
 
 namespace Item_WPF.ItemEntityModel
 
@@ -91,8 +92,8 @@ namespace Item_WPF.ItemEntityModel
             MaxHPCost +
             MaxFPCost +
             PerceptionCost +
-            WillpowerCost+
-            BasicSpeedCost+
+            WillpowerCost +
+            BasicSpeedCost +
             BasicMoveCost;
 
         public int Move
@@ -320,11 +321,6 @@ namespace Item_WPF.ItemEntityModel
                 return advantages;
             }
         }
-
-        // Character skills
-        private ObservableCollection<GurpsSkill> skills = new ObservableCollection<GurpsSkill>();
-        public ObservableCollection<GurpsSkill> Skills => skills;
-
         // Calculation of character points spent on this character
 
 
@@ -345,12 +341,13 @@ namespace Item_WPF.ItemEntityModel
         {
             get
             {
-                    int? points = 0;
-                    foreach (GurpsSkill skill in Skills)
-                    {
-                        points += skill.Points;
-                    }
-                return Convert.ToInt32(points);
+                return 1;
+                //    int? points = 0;
+                //    foreach (GurpsSkill skill in Skills)
+                //    {
+                //        points += skill.Points;
+                //    }
+                //    return Convert.ToInt32(points);
             }
         }
         public int CharacterPoints

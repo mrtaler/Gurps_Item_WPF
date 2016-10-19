@@ -1,19 +1,20 @@
-﻿using Item_WPF.ItemEntityModel;
-using System;
-using System.Collections.Generic;
+﻿using Item_WPF.addin;
+using Item_WPF.ItemEntityModel;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Item_WPF.MVVM.AllCharfromDB
 {
-    public class AllCharFromDBViewModel
+    public class AllCharFromDbViewModel : ViewModelBase
     {
+        private item1Entities _context;
+
         public ObservableCollection<CharacterDB> CharacterDbCollection { get; set; }
-        public AllCharFromDBViewModel()
+        public CharacterDB SelectedCharacterDb { get; set; }
+        public AllCharFromDbViewModel(item1Entities context)
         {
-            CharacterDbCollection = new ObservableCollection<CharacterDB>((new item1Entities()).CharacterDBs);
+            _context = context;
+            SelectedCharacterDb = null;
+            CharacterDbCollection = new ObservableCollection<CharacterDB>(_context.CharacterDBs);
         }
     }
 }

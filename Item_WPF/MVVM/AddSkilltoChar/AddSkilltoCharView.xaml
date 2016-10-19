@@ -7,7 +7,7 @@
         xmlns:p="clr-namespace:Item_WPF.Properties"
         Title="AddSkilltoCharView"
         Width="858.935"
-        Height="345.484"
+        Height="384.484"
         mc:Ignorable="d">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -19,6 +19,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30" />
                     <RowDefinition Height="*" />
+                    <RowDefinition Height="20" />
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0"
                            Text="{x:Static p:Resources.CharacterSheetSkills}"
@@ -63,6 +64,18 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
+                <Button Grid.Row="2"
+                        Grid.Column="0"
+                        Width="50"
+                        HorizontalAlignment="Left"
+                        Click="Button_Click"
+                        Content="OK" />
+                <Button Grid.Row="2"
+                        Grid.Column="0"
+                        Width="50"
+                        Margin="60 0 0 0"
+                        HorizontalAlignment="Left"
+                        Content="Cancel" Click="Button_Click_1" />
             </Grid>
         </DockPanel>
         <DockPanel Grid.Column="1">
@@ -103,9 +116,10 @@
                                             Height="20"
                                             HorizontalAlignment="Right"
                                             VerticalAlignment="Top"
-                                            Command="{Binding Path=AddSkillCommand}"
-                                            CommandParameter="{}"
-                                            Content="Add" />
+                                            Command="{Binding Path=DataContext.RemSkillCommand,
+                                                              RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}"
+                                            CommandParameter="{Binding Path=id}"
+                                            Content="Rem" />
                                 </Grid>
                             </StackPanel>
                         </DataTemplate>
