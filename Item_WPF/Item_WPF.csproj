@@ -339,6 +339,7 @@
     <Compile Include="MVVM\Models\BoxItem.cs" />
     <Compile Include="MVVM\Models\Character.cs" />
     <Compile Include="MVVM\Models\CombineWeapModel.cs" />
+    <Compile Include="MVVM\Models\DB\CharSkill.cs" />
     <Compile Include="MVVM\Models\DiceString.cs" />
     <Compile Include="MVVM\Models\Item.cs" />
     <Compile Include="MVVM\Models\ItemsForSortModel.cs" />

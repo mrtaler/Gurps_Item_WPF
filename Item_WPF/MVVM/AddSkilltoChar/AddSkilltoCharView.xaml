@@ -75,7 +75,8 @@
                         Width="50"
                         Margin="60 0 0 0"
                         HorizontalAlignment="Left"
-                        Content="Cancel" Click="Button_Click_1" />
+                        Click="Button_Click_1"
+                        Content="Cancel" />
             </Grid>
         </DockPanel>
         <DockPanel Grid.Column="1">
@@ -87,10 +88,11 @@
                 <TextBlock Grid.Row="0"
                            Text="Skills in char"
                            TextAlignment="Center" />
-                <ListBox Grid.Row="1"
+                <ListBox Name="ListBoxForMe"
+                         Grid.Row="1"
                          HorizontalContentAlignment="Stretch"
                          Grid.IsSharedSizeScope="True"
-                         ItemsSource="{Binding Path=CharGurpsSkillCollection}">
+                         ItemsSource="{Binding Path=CharSkillCollection}">
                     <ListBox.ItemContainerStyle>
                         <Style BasedOn="{StaticResource {x:Type ListBoxItem}}" TargetType="{x:Type ListBoxItem}">
                             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -101,24 +103,54 @@
                             <StackPanel Height="20">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
+                                        <!--  0  -->
                                         <ColumnDefinition Width="*" />
+                                        <!--  1  -->
+                                        <ColumnDefinition Width="50" />
+                                        <!--  2  -->
                                         <ColumnDefinition Width="30" />
+                                        <!--  3  -->
+                                        <ColumnDefinition Width="30" />
+                                        <!--  4  -->
+                                        <ColumnDefinition Width="30" />
+
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Text="{Binding Path=NameSkill}">
+                                    <TextBlock Grid.Column="0" Text="{Binding Path=GurpsSkill.NameSkill}">
                                         <TextBlock.ToolTip>
                                             <StackPanel>
-                                                <TextBlock FontWeight="Bold" Text="{Binding Path=NameSkill}" />
-                                                <TextBlock Text="{Binding Path=Specialization}" />
+                                                <TextBlock FontWeight="Bold" Text="{Binding Path=GurpsSkill.NameSkill}" />
+                                                <TextBlock Text="{Binding Path=GurpsSkill.Specialization}" />
                                             </StackPanel>
                                         </TextBlock.ToolTip>
                                     </TextBlock>
-                                    <Button Grid.Column="1"
+                                    <TextBlock Grid.Column="1" Text="{Binding Path=GurpsSkill.Difficulty}" />
+                                    <TextBlock Grid.Column="2" Text="{Binding Path=PointOfSkill}" />
+                                    <Grid Grid.Column="3">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Button Grid.Row="0"
+                                                Height="10"
+                                                Command="{Binding Path=DataContext.SkillPointIncreaseCommand,
+                                                                  RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}"
+                                                CommandParameter="{Binding Path=GurpsSkill}"
+                                                Content="+"
+                                                FontSize="8" />
+                                        <Button Grid.Row="1"
+                                                Command="{Binding Path=DataContext.SkillPointDecreaseCommand,
+                                                                  RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}"
+                                                CommandParameter="{Binding Path=GurpsSkill}"
+                                                Content="-"
+                                                FontSize="8" />
+                                    </Grid>
+                                    <Button Grid.Column="4"
                                             Height="20"
                                             HorizontalAlignment="Right"
                                             VerticalAlignment="Top"
                                             Command="{Binding Path=DataContext.RemSkillCommand,
                                                               RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}"
-                                            CommandParameter="{Binding Path=id}"
+                                            CommandParameter="{Binding Path=GurpsSkill}"
                                             Content="Rem" />
                                 </Grid>
                             </StackPanel>

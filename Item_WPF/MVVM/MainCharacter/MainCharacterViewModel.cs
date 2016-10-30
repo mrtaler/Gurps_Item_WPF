@@ -91,6 +91,10 @@ namespace Item_WPF.MVVM.ViewModels
             PropertyDependencyMap.Add("Skills", new[] { "CharacterPoints" });
             PropertyDependencyMap.Add("Encumbrance", new[] { "EncumbranceAsInt", "EncumbranceAsString", "Move", "Dodge" });
         }
+        public int Strength
+        {
+            get { return Character.Strength; }
+        }
 
         public string Name
         {
@@ -101,11 +105,6 @@ namespace Item_WPF.MVVM.ViewModels
                     name = Resources.UnnamedCharacter;
                 return name;
             }
-        }
-
-        public int Strength
-        {
-            get { return Character.Strength; }
         }
 
         public int Dexterity
