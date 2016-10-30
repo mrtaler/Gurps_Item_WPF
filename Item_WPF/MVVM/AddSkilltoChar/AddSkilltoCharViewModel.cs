@@ -19,7 +19,6 @@ namespace Item_WPF.MVVM.AddSkilltoChar
             {
                 return new ObservableCollection<CharSkill>(Character.CharSkills);
             }
-
         }
         public ObservableCollection<GurpsSkill> CharGurpsSkillCollection
         {
@@ -28,10 +27,7 @@ namespace Item_WPF.MVVM.AddSkilltoChar
                 return new ObservableCollection<GurpsSkill>
                     (Character.CharSkills.Select(p => p.GurpsSkill));
             }
-
         }
-
-
         public ViewModelCommand AddSkillCommand { get; set; }
         public ViewModelCommand RemSkillCommand { get; set; }
 
@@ -41,7 +37,10 @@ namespace Item_WPF.MVVM.AddSkilltoChar
         {
             Character = character;
             Context = context;
-            AllGurpsSkillCollection = new ObservableCollection<GurpsSkill>(Context.GurpsSkills);
+            AllGurpsSkillCollection = new ObservableCollection<GurpsSkill>(Context.GurpsSkills.
+                OrderBy(p=>p.TypeSkTh).
+                OrderBy(p=>p.NameSkill)
+                );
 
             AddSkillCommand = new ViewModelCommand(AddSkill, true);
             RemSkillCommand = new ViewModelCommand(RemSkill, true);

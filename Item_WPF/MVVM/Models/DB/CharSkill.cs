@@ -13,7 +13,19 @@ namespace Item_WPF.ItemEntityModel
         {
             get
             {
-                return 1;
+                switch (DefaultSkill.PrimaryStat)
+                {
+                    case "ST":
+                        return CharacterDB.Strength + Convert.ToInt32(DefaultSkill.Modif) + PointOfSkill;
+                    case "DX":
+                        return CharacterDB.Dexterity + Convert.ToInt32(DefaultSkill.Modif) + PointOfSkill;
+                    case "IQ":
+                        return CharacterDB.Intelligence + Convert.ToInt32(DefaultSkill.Modif) + PointOfSkill;
+                    case "HT":
+                        return CharacterDB.Health + Convert.ToInt32(DefaultSkill.Modif) + PointOfSkill;
+                    default:
+                        return 0;
+                }
             }
         }
 
@@ -33,7 +45,7 @@ namespace Item_WPF.ItemEntityModel
                         GurpsSkill.DefaultSkills.FirstOrDefault(p => p.type.ToLower() != "skill")?.Modifier.ToString();
 
 
-                    return new DefaultSkillToCalc(type,mod);
+                    return new DefaultSkillToCalc(type, mod);
                 }
             }
         }
@@ -45,26 +57,80 @@ namespace Item_WPF.ItemEntityModel
             GurpsSkill = gurpsSkill;
             PointOfSkill = 1;
         }
-        public void AddSkilPoint()
+        public void DifficultyMultiplex(int atribute)
         {
-            //  GurpsSkill.Difficulty;
-
+            switch (atribute)
+            {
+                case :
+                    break;
+                case:
+                    break;
+                case:
+                    break;
+                case:
+                    break;
+                case:
+                    break;
+                case:
+                    break;
+                case:
+                    break;
+            }
         }
-       public  class DefaultSkillToCalc
-        {
 
-            public string type;
-            public string modif;
+        public void DifficultySkillLevel(string difficulty)
+        {
+            switch (difficulty.ToLower())
+            {
+                case "e":
+                    break;
+                case "a":
+                    break;
+                case "h":
+                    break;
+                case "vh":
+                    break;
+                case "wc":
+                    break;
+            }
+        }
+
+        public void AddSkillPoint()
+        {
+            int point=0;
+            switch (DefaultSkill.PrimaryStat)
+            {
+                case "ST":
+                    point= CharacterDB.Strength;
+                    break;
+                case "DX":
+                    point = CharacterDB.Dexterity;
+                    break;
+                case "IQ":
+                    point = CharacterDB.Intelligence;
+                    break;
+                case "HT":
+                    point = CharacterDB.Health;
+                    break;
+                default:
+                    point = 0;
+                    break;
+            }
+        }
+         public class DefaultSkillToCalc
+        {
+            public string PrimaryStat { get; set; }
+            public string Modif { get; set; }
             public DefaultSkillToCalc()
             {
-                type = string.Empty;
-                modif = string.Empty;
+                PrimaryStat = string.Empty;
+                Modif = string.Empty;
             }
 
             public DefaultSkillToCalc(string type, string modif)
             {
-                this.type=type;
-                this.modif=modif;
+                this.PrimaryStat = type;
+                this.Modif = modif;
             }
         }
     }

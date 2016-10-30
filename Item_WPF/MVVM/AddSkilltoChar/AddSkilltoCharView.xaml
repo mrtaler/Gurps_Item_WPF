@@ -113,7 +113,8 @@
                                         <ColumnDefinition Width="30" />
                                         <!--  4  -->
                                         <ColumnDefinition Width="30" />
-
+                                        <!--  5  -->
+                                        <ColumnDefinition Width="30" />
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Grid.Column="0" Text="{Binding Path=GurpsSkill.NameSkill}">
                                         <TextBlock.ToolTip>
@@ -152,6 +153,7 @@
                                                               RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}"
                                             CommandParameter="{Binding Path=GurpsSkill}"
                                             Content="Rem" />
+                                    <TextBlock Grid.Column="5" Text="{Binding Path=LevelSkills}" />
                                 </Grid>
                             </StackPanel>
                         </DataTemplate>
