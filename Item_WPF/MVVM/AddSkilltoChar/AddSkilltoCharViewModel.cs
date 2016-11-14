@@ -12,7 +12,6 @@ namespace Item_WPF.MVVM.AddSkilltoChar
         public CharacterDB Character;
         public item1Entities Context { get; set; }
         public ObservableCollection<GurpsSkill> AllGurpsSkillCollection { get; set; }
-
         public ObservableCollection<CharSkill> CharSkillCollection
         {
             get
@@ -28,18 +27,20 @@ namespace Item_WPF.MVVM.AddSkilltoChar
                     (Character.CharSkills.Select(p => p.GurpsSkill));
             }
         }
+
         public ViewModelCommand AddSkillCommand { get; set; }
         public ViewModelCommand RemSkillCommand { get; set; }
 
         public ViewModelCommand SkillPointIncreaseCommand { get; set; }
         public ViewModelCommand SkillPointDecreaseCommand { get; set; }
+
         public AddSkilltoCharViewModel(CharacterDB character, item1Entities context)
         {
             Character = character;
             Context = context;
             AllGurpsSkillCollection = new ObservableCollection<GurpsSkill>(Context.GurpsSkills.
-                OrderBy(p=>p.TypeSkTh).
-                OrderBy(p=>p.NameSkill)
+                OrderBy(p => p.TypeSkTh).
+                OrderBy(p => p.NameSkill)
                 );
 
             AddSkillCommand = new ViewModelCommand(AddSkill, true);
@@ -47,29 +48,24 @@ namespace Item_WPF.MVVM.AddSkilltoChar
 
             SkillPointIncreaseCommand = new ViewModelCommand(SkillPointIncrease, true);
             SkillPointDecreaseCommand = new ViewModelCommand(SkillPointDecrease, true);
-            CharSkill cd = new CharSkill();
-            //  cd.GurpsSkill.Difficulty;
         }
+        private void SkillPointIncrease(object param)
+        {
+            GurpsSkill skillToWork = (param as GurpsSkill);
+            CharSkill charSkillsToWork = Character.CharSkills.First(p => p.GurpsSkill == skillToWork);
 
+
+            charSkillsToWork.PointOfSkill++;
+
+            NotifyPropertyChanged("CharGurpsSkillCollection");
+            NotifyPropertyChanged("CharSkillCollection");
+        }
         private void SkillPointDecrease(object param)
         {
             GurpsSkill gs = (param as GurpsSkill);
             var Cha = Character.CharSkills.First(p => p.GurpsSkill == gs);
 
             Cha.PointOfSkill--;
-
-            NotifyPropertyChanged("CharGurpsSkillCollection");
-            NotifyPropertyChanged("CharSkillCollection");
-        }
-
-        private void SkillPointIncrease(object param)
-        {
-            GurpsSkill skillToWork = (param as GurpsSkill);
-            CharSkill charSkillsToWork = Character.CharSkills.First(p => p.GurpsSkill == skillToWork);
-
-            string difficulty = skillToWork.Difficulty;
-
-            charSkillsToWork.PointOfSkill++;
 
             NotifyPropertyChanged("CharGurpsSkillCollection");
             NotifyPropertyChanged("CharSkillCollection");
@@ -86,7 +82,7 @@ namespace Item_WPF.MVVM.AddSkilltoChar
 
                 CharSkill charSkill = new CharSkill(Character, AllGurpsSkillCollection.First(p => p.id == gsid));
 
-              //  string sd = charSkill.DefaultSkill;
+                //  string sd = charSkill.DefaultSkill;
 
 
                 Character.CharSkills.Add(charSkill);
@@ -108,26 +104,6 @@ namespace Item_WPF.MVVM.AddSkilltoChar
 
             NotifyPropertyChanged("CharGurpsSkillCollection");
             NotifyPropertyChanged("CharSkillCollection");
-
-        }
-
-        private void CharSkillsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            //if (e.Action == NotifyCollectionChangedAction.Remove)
-            //{
-            //    foreach (CharSkill item in e.OldItems)
-            //    {
-            //        Context.CharSkills.Remove(item);
-            //    }
-            //    //  SaveChanges();
-            //}
-            //else if (e.Action == NotifyCollectionChangedAction.Add)
-            //{
-            //    foreach (CharSkill item in e.NewItems)
-            //    {
-            //        Context.CharSkills.Add(item);
-            //    }
-            //}
         }
     }
 }

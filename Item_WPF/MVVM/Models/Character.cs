@@ -138,15 +138,15 @@ namespace Item_WPF.ItemEntityModel
                         case 8: return new DiceString(1, 1);
                         case 9: return new DiceString(1, 2);
                         case 10: return new DiceString(2, -1);
-                        case 11: return new DiceString(2, 0);
+                        case 11: return new DiceString(2);
                         case 12: return new DiceString(2, 1);
                         case 13: return new DiceString(2, 2);
                         case 14: return new DiceString(3, -1);
-                        case 15: return new DiceString(3, 0);
+                        case 15: return new DiceString(3);
                         case 16: return new DiceString(3, 1);
                         case 17: return new DiceString(3, 2);
                         case 18: return new DiceString(4, -1);
-                        case 19: return new DiceString(4, 0);
+                        case 19: return new DiceString(4);
                         case 20: return new DiceString(4, 1);
                     }
                 }
@@ -155,18 +155,18 @@ namespace Item_WPF.ItemEntityModel
                     switch ((str - 40) / 5)
                     {
                         case 0: return new DiceString(4, 1);
-                        case 1: return new DiceString(5, 0);
+                        case 1: return new DiceString(5);
                         case 2: return new DiceString(5, 2);
-                        case 3: return new DiceString(6, 0);
+                        case 3: return new DiceString(6);
                         case 4: return new DiceString(7, -1);
                         case 5: return new DiceString(7, 1);
-                        case 6: return new DiceString(8, 0);
+                        case 6: return new DiceString(8);
                         case 7: return new DiceString(8, 2);
-                        case 8: return new DiceString(9, 0);
+                        case 8: return new DiceString(9);
                         case 9: return new DiceString(9, 2);
-                        case 10: return new DiceString(10, 0);
+                        case 10: return new DiceString(10);
                         case 11: return new DiceString(10, 2);
-                        case 12: return new DiceString(11, 0);
+                        case 12: return new DiceString(11);
                     }
                 }
                 Debug.Assert(str > 100);
@@ -197,7 +197,7 @@ namespace Item_WPF.ItemEntityModel
                         case 9:
                             return new DiceString(1, -1);
                         case 10:
-                            return new DiceString(1, 0);
+                            return new DiceString(1);
                         case 11:
                             return new DiceString(1, 1);
                         case 12:
@@ -205,7 +205,7 @@ namespace Item_WPF.ItemEntityModel
                         case 13:
                             return new DiceString(2, -1);
                         case 14:
-                            return new DiceString(2, 0);
+                            return new DiceString(2);
                         case 15:
                             return new DiceString(2, 1);
                         case 16:
@@ -213,7 +213,7 @@ namespace Item_WPF.ItemEntityModel
                         case 17:
                             return new DiceString(3, -1);
                         case 18:
-                            return new DiceString(3, 0);
+                            return new DiceString(3);
                         case 19:
                             return new DiceString(3, 1);
                         case 20:
@@ -221,7 +221,7 @@ namespace Item_WPF.ItemEntityModel
                         case 21:
                             return new DiceString(4, -1);
                         case 22:
-                            return new DiceString(4, 0);
+                            return new DiceString(4);
                         case 23:
                             return new DiceString(4, 1);
                         case 24:
@@ -229,7 +229,7 @@ namespace Item_WPF.ItemEntityModel
                         case 25:
                             return new DiceString(5, -1);
                         case 26:
-                            return new DiceString(5, 0);
+                            return new DiceString(5);
                         case 27:
                         case 28:
                             return new DiceString(5, 1);
@@ -241,7 +241,7 @@ namespace Item_WPF.ItemEntityModel
                             return new DiceString(6, -1);
                         case 33:
                         case 34:
-                            return new DiceString(6, 0);
+                            return new DiceString(6);
                         case 35:
                         case 36:
                             return new DiceString(6, 1);
@@ -261,15 +261,15 @@ namespace Item_WPF.ItemEntityModel
                         case 1: return new DiceString(7, 1);
                         case 2: return new DiceString(8, -1);
                         case 3: return new DiceString(8, 1);
-                        case 4: return new DiceString(9, 0);
+                        case 4: return new DiceString(9);
                         case 5: return new DiceString(9, 2);
-                        case 6: return new DiceString(10, 0);
+                        case 6: return new DiceString(10);
                         case 7: return new DiceString(10, 2);
-                        case 8: return new DiceString(11, 0);
+                        case 8: return new DiceString(11);
                         case 9: return new DiceString(11, 2);
-                        case 10: return new DiceString(12, 0);
+                        case 10: return new DiceString(12);
                         case 11: return new DiceString(12, 2);
-                        case 12: return new DiceString(13, 0);
+                        case 12: return new DiceString(13);
                     }
                 }
                 Debug.Assert(str > 100);
@@ -341,7 +341,9 @@ namespace Item_WPF.ItemEntityModel
         {
             get
             {
-                return 1;
+
+                return CharSkills.Sum(p => p.SkillPointCost);
+
                 //    int? points = 0;
                 //    foreach (GurpsSkill skill in Skills)
                 //    {
@@ -354,7 +356,7 @@ namespace Item_WPF.ItemEntityModel
         {
             get
             {
-                return CharacterPointsPrimarySkill + CharacterPointsSecondarySkill + CharacterPointsAdvantages;// + CharacterPointsSkills;
+                return CharacterPointsPrimarySkill + CharacterPointsSecondarySkill +/* CharacterPointsAdvantages */+CharacterPointsSkills;
             }
         }
 

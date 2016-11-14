@@ -1,136 +1,163 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Item_WPF.ItemEntityModel
 {
-
-    public partial class CharSkill
+    public sealed partial class CharSkill
     {
-        public int LevelSkills
+        /// <summary>
+        /// Start point for this skill
+        /// </summary>
+        private int StartPoint
         {
             get
             {
-                switch (DefaultSkill.PrimaryStat)
-                {
-                    case "ST":
-                        return CharacterDB.Strength + Convert.ToInt32(DefaultSkill.Modif) + PointOfSkill;
-                    case "DX":
-                        return CharacterDB.Dexterity + Convert.ToInt32(DefaultSkill.Modif) + PointOfSkill;
-                    case "IQ":
-                        return CharacterDB.Intelligence + Convert.ToInt32(DefaultSkill.Modif) + PointOfSkill;
-                    case "HT":
-                        return CharacterDB.Health + Convert.ToInt32(DefaultSkill.Modif) + PointOfSkill;
-                    default:
-                        return 0;
-                }
+                return GetIntAllAtribute() + GetStartPointOfSkill();
             }
         }
-
-        public DefaultSkillToCalc DefaultSkill
+        /// <summary>
+        /// Skill point cost for all point
+        /// </summary>
+        public int SkillPointCost
         {
             get
             {
-                var qery = GurpsSkill.DefaultSkills;
-                if (GurpsSkill.DefaultSkills == null)
-                {
-                    return new DefaultSkillToCalc();
-                }
-                else
-                {
-                    string type = GurpsSkill.DefaultSkills.FirstOrDefault(p => p.type.ToLower() != "skill")?.type;
-                    string mod =
-                        GurpsSkill.DefaultSkills.FirstOrDefault(p => p.type.ToLower() != "skill")?.Modifier.ToString();
-
-
-                    return new DefaultSkillToCalc(type, mod);
-                }
+                return Convert.ToInt32(GetPoint(PointOfSkill));
             }
         }
-
-        public CharSkill() { }
+        /// <summary>
+        /// Curent skill value 
+        /// </summary>
+        public int? CurrentSkillValue
+        {
+            get
+            {
+                return GetIntAllAtribute() + (GetStartPointOfSkill() + PointOfSkill - 1);
+            }
+        }
+        /// <summary>
+        /// Наименование 
+        /// </summary>
+        public string LevelSkills
+        {
+            get
+            {
+                return GetAttributteFromDb() + (GetStartPointOfSkill() + PointOfSkill - 1);
+            }
+        }
+        /// <summary>
+        /// конструктор по умолчанию
+        /// </summary>
+        public CharSkill()
+        {
+            CharacterDB = null;
+            GurpsSkill = null;
+            PointOfSkill = 1;
+        }
+        /// <summary>
+        /// конструктор для создания присваивания нового скилла персонажу
+        /// </summary>
+        /// <param name="characterDb">Персонаж</param>
+        /// <param name="gurpsSkill">Навык</param>
         public CharSkill(CharacterDB characterDb, GurpsSkill gurpsSkill)
         {
             CharacterDB = characterDb;
             GurpsSkill = gurpsSkill;
             PointOfSkill = 1;
         }
-        public void DifficultyMultiplex(int atribute)
+        #region diff & atrib
+        /// <summary>
+        /// Получить от навыка сложность
+        /// </summary>
+        /// <returns>Сложность</returns>
+        private string GetDifficultyFromDb()
         {
-            switch (atribute)
+            if (GurpsSkill.Difficulty.Contains("/"))
             {
-                case :
-                    break;
-                case:
-                    break;
-                case:
-                    break;
-                case:
-                    break;
-                case:
-                    break;
-                case:
-                    break;
-                case:
-                    break;
+                return GurpsSkill.Difficulty.Substring(GurpsSkill.Difficulty.IndexOf('/') + 1);
             }
+            else return GurpsSkill.Difficulty;
         }
-
-        public void DifficultySkillLevel(string difficulty)
+        /// <summary>
+        /// Получить от навыка Атрибут
+        /// </summary>
+        /// <returns>Атрибут</returns>
+        private string GetAttributteFromDb()
         {
-            switch (difficulty.ToLower())
+            if (GurpsSkill.Difficulty.Contains("/"))
+            {
+                return GurpsSkill.Difficulty.Remove(GurpsSkill.Difficulty.IndexOf('/'));
+            }
+            else return GurpsSkill.Difficulty;
+        }
+        #endregion
+        /// <summary>
+        /// получение начального значения разницы в зависимости от сложности
+        /// </summary>
+        /// <returns>разница к атрибуту</returns>
+        private int GetStartPointOfSkill()
+        {
+            switch (GetDifficultyFromDb().ToLower())
             {
                 case "e":
-                    break;
+                    return 0;
                 case "a":
-                    break;
+                    return -1;
                 case "h":
-                    break;
+                    return -2;
                 case "vh":
-                    break;
+                    return -3;
                 case "wc":
-                    break;
+                    return -4;
+                default:
+                    return 0;
             }
         }
-
-        public void AddSkillPoint()
+        /// <summary>
+        /// Получение значения атрибута в завичимости от скилла
+        /// </summary>
+        /// <returns>числовое значение соответствующего скилла</returns>
+        private int GetIntAllAtribute()
         {
-            int point=0;
-            switch (DefaultSkill.PrimaryStat)
+            switch (GetAttributteFromDb())
             {
                 case "ST":
-                    point= CharacterDB.Strength;
-                    break;
+                    return CharacterDB.Strength;
                 case "DX":
-                    point = CharacterDB.Dexterity;
-                    break;
+                    return CharacterDB.Dexterity;
                 case "IQ":
-                    point = CharacterDB.Intelligence;
-                    break;
+                    return CharacterDB.Intelligence;
                 case "HT":
-                    point = CharacterDB.Health;
-                    break;
+                    return CharacterDB.Health;
                 default:
-                    point = 0;
-                    break;
+                    return 0;
             }
         }
-         public class DefaultSkillToCalc
+        /// <summary>
+        /// Получить значение стоимости скила 
+        /// </summary>
+        /// <param name="pointOfSkill"></param>
+        /// <returns></returns>
+        private int? GetPoint(int? pointOfSkill)
         {
-            public string PrimaryStat { get; set; }
-            public string Modif { get; set; }
-            public DefaultSkillToCalc()
+            if (pointOfSkill > 0)
             {
-                PrimaryStat = string.Empty;
-                Modif = string.Empty;
-            }
+                switch (pointOfSkill)
+                {
+                    case 1:
+                        return 1;
+                    case 2:
+                        return 2;
+                    case 3:
+                        return 4;
+                    default:
+                        int? skille = pointOfSkill - 3;
 
-            public DefaultSkillToCalc(string type, string modif)
+                        return 4 + skille * 4;
+                }
+            }
+            else
             {
-                this.PrimaryStat = type;
-                this.Modif = modif;
+                return 0;
             }
         }
     }
