@@ -64,7 +64,7 @@
 //        return UIManager.getFont(mForEditor ? "TextField.font" : GCSFonts.KEY_FIELD); //$NON-NLS-1$
 //    }
 
-//    /** @return The secondary font, for Notes. */
+//    /** @return The secondary font, for notes. */
 //    public Font getSecondaryFont()
 //    {
 //        if (mForEditor)
@@ -123,8 +123,8 @@
 //    protected string getSecondaryText(ListRow row)
 //    {
 //        String modifierNotes = row.getModifierNotes();
-//        String Notes = row.getNotes();
-//        return modifierNotes.length() == 0 ? Notes : modifierNotes + '\n' + Notes;
+//        String notes = row.getNotes();
+//        return modifierNotes.length() == 0 ? notes : modifierNotes + '\n' + notes;
 //    }
 
 //    @Override
@@ -132,18 +132,18 @@
 //    {
 //        ListRow theRow = (ListRow)row;
 //        Rectangle insetBounds = new Rectangle(bounds.x + H_MARGIN, bounds.y, bounds.width - H_MARGIN * 2, bounds.height);
-//        String Notes = getSecondaryText(theRow);
+//        String notes = getSecondaryText(theRow);
 //        Font font = getPrimaryFont();
 //        int pos;
 //        gc.setColor(getColor(selected, active, row, column));
 //        gc.setFont(font);
 //        pos = TextDrawing.draw(gc, insetBounds, getPrimaryText(theRow), SwingConstants.LEFT, SwingConstants.TOP);
-//        if (Notes.trim().length() > 0)
+//        if (notes.trim().length() > 0)
 //        {
 //            insetBounds.height -= pos - insetBounds.y;
 //            insetBounds.y = pos;
 //            gc.setFont(getSecondaryFont());
-//            TextDrawing.draw(gc, insetBounds, Notes, SwingConstants.LEFT, SwingConstants.TOP);
+//            TextDrawing.draw(gc, insetBounds, notes, SwingConstants.LEFT, SwingConstants.TOP);
 //        }
 //    }
 
@@ -170,10 +170,10 @@
 //    {
 //        ListRow theRow = (ListRow)row;
 //        int width = TextDrawing.getWidth(getPrimaryFont(), getPrimaryText(theRow));
-//        String Notes = getSecondaryText(theRow);
-//        if (Notes.trim().length() > 0)
+//        String notes = getSecondaryText(theRow);
+//        if (notes.trim().length() > 0)
 //        {
-//            int notesWidth = TextDrawing.getWidth(getSecondaryFont(), Notes);
+//            int notesWidth = TextDrawing.getWidth(getSecondaryFont(), notes);
 
 //            if (notesWidth > width)
 //            {
@@ -190,11 +190,11 @@
 //        ListRow theRow = (ListRow)row;
 //        Font font = getPrimaryFont();
 //        int height = TextDrawing.getPreferredSize(font, wrap(theRow, column, getPrimaryText(theRow), font)).height;
-//        String Notes = getSecondaryText(theRow);
-//        if (Notes.trim().length() > 0)
+//        String notes = getSecondaryText(theRow);
+//        if (notes.trim().length() > 0)
 //        {
 //            font = getSecondaryFont();
-//            height += TextDrawing.getPreferredSize(font, wrap(theRow, column, Notes, font)).height;
+//            height += TextDrawing.getPreferredSize(font, wrap(theRow, column, notes, font)).height;
 //        }
 //        return height;
 //    }
@@ -214,7 +214,7 @@
 //    }
 
 //    @Override
-//    public int Compare(Column column, Row one, Row two)
+//    public int compare(Column column, Row one, Row two)
 //    {
 //        return NumericComparator.caselessCompareStrings(getSortText((ListRow)one), getSortText((ListRow)two));
 //    }

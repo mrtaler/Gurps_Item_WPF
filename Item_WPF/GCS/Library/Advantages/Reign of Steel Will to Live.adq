@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="US-ASCII" ?>
 <advantage_list unique_id="ih122ve9:-f976njym3r79" version="1">
 	<advantage_container version="2" open="yes">
-		<Name>Built-In Weapons</Name>
+		<name>Built-In Weapons</name>
 		<advantage version="2">
-			<Name>Buzzsaw (3d)</Name>
+			<name>Buzzsaw (3d)</name>
 			<type>Physical</type>
 			<levels>3</levels>
 			<points_per_level>7</points_per_level>
 			<modifier version="1">
-				<Name>Melee Attack (Reach 1)</Name>
-				<cost type="Percentage">-25</cost>
+				<name>Melee Attack (Reach 1)</name>
+				<cost type="percentage">-25</cost>
 				<affects>total</affects>
 				<reference>B112</reference>
 			</modifier>
@@ -19,32 +19,32 @@
 			</categories>
 		</advantage>
 		<advantage_container version="2" open="no">
-			<Name>Drug Injector</Name>
+			<name>Drug Injector</name>
 			<reference>RSWL20</reference>
 			<categories>
 				<category>Built-In Weapon</category>
 			</categories>
 			<advantage version="2">
-				<Name>Drug Injector</Name>
+				<name>Drug Injector</name>
 				<type>Physical</type>
 				<levels>1</levels>
 				<points_per_level>3</points_per_level>
 				<modifier version="1">
-					<Name>Melee Attack (Reach C, Cannot Parry)</Name>
-					<cost type="Percentage">-35</cost>
+					<name>Melee Attack (Reach C, Cannot Parry)</name>
+					<cost type="percentage">-35</cost>
 					<affects>total</affects>
 					<reference>B112</reference>
 				</modifier>
 				<reference>B61</reference>
 			</advantage>
 			<advantage version="2">
-				<Name>Toxic Attack</Name>
+				<name>Toxic Attack</name>
 				<type>Physical</type>
 				<levels>3</levels>
 				<points_per_level>4</points_per_level>
 				<modifier version="1">
-					<Name>Follow-Up</Name>
-					<cost type="Percentage">-35</cost>
+					<name>Follow-Up</name>
+					<cost type="percentage">-35</cost>
 					<affects>total</affects>
 					<reference>B105</reference>
 				</modifier>
@@ -52,55 +52,55 @@
 			</advantage>
 		</advantage_container>
 		<advantage_container version="2" open="no">
-			<Name>Electric Stun Wand (for 3+ handed robots)</Name>
+			<name>Electric Stun Wand (for 3+ handed robots)</name>
 			<reference>RSWL20</reference>
 			<categories>
 				<category>Built-In Weapon</category>
 			</categories>
 			<advantage version="2">
-				<Name>-1 to lower point cost (as in original book)</Name>
+				<name>-1 to lower point cost (as in original book)</name>
 				<type>Physical</type>
 				<base_points>-1</base_points>
 			</advantage>
 			<advantage version="2">
-				<Name>Affliction (HT-5)</Name>
+				<name>Affliction (HT-5)</name>
 				<type>Physical</type>
 				<levels>6</levels>
 				<points_per_level>10</points_per_level>
 				<modifier version="1">
-					<Name>Armor Divisor 0.5</Name>
-					<cost type="Percentage">-30</cost>
+					<name>Armor Divisor 0.5</name>
+					<cost type="percentage">-30</cost>
 					<affects>total</affects>
 					<reference>B102</reference>
 				</modifier>
 				<modifier version="1">
-					<Name>Link</Name>
-					<cost type="Percentage">10</cost>
+					<name>Link</name>
+					<cost type="percentage">10</cost>
 					<affects>total</affects>
 					<reference>B115</reference>
 				</modifier>
 				<modifier version="1">
-					<Name>Melee Attack, Reach 1</Name>
-					<cost type="Percentage">-25</cost>
+					<name>Melee Attack, Reach 1</name>
+					<cost type="percentage">-25</cost>
 					<affects>total</affects>
 					<reference>B112</reference>
 				</modifier>
 				<reference>B35</reference>
 			</advantage>
 			<advantage version="2">
-				<Name>Electric Stun Wand</Name>
+				<name>Electric Stun Wand</name>
 				<type>Physical</type>
 				<levels>1</levels>
 				<points_per_level>5</points_per_level>
 				<modifier version="1">
-					<Name>Link</Name>
-					<cost type="Percentage">10</cost>
+					<name>Link</name>
+					<cost type="percentage">10</cost>
 					<affects>total</affects>
 					<reference>B106</reference>
 				</modifier>
 				<modifier version="1">
-					<Name>Melee Attack (Reach 1, ST-Based)</Name>
-					<cost type="Percentage">75</cost>
+					<name>Melee Attack (Reach 1, ST-Based)</name>
+					<cost type="percentage">75</cost>
 					<affects>total</affects>
 					<reference>B112</reference>
 				</modifier>
@@ -108,67 +108,67 @@
 			</advantage>
 		</advantage_container>
 		<advantage_container version="2" open="no">
-			<Name>Electric Stun Wand (for one-handed robots)</Name>
+			<name>Electric Stun Wand (for one-handed robots)</name>
 			<reference>RSWL20</reference>
 			<categories>
 				<category>Built-In Weapon</category>
 			</categories>
 			<advantage version="2">
-				<Name>+2 to raise point cost (as in original book)</Name>
+				<name>+2 to raise point cost (as in original book)</name>
 				<type>Physical</type>
 				<base_points>2</base_points>
 			</advantage>
 			<advantage version="2">
-				<Name>Affliction (HT-5)</Name>
+				<name>Affliction (HT-5)</name>
 				<type>Physical</type>
 				<levels>6</levels>
 				<points_per_level>10</points_per_level>
 				<modifier version="1">
-					<Name>Armor Divisor 0.5</Name>
-					<cost type="Percentage">-30</cost>
+					<name>Armor Divisor 0.5</name>
+					<cost type="percentage">-30</cost>
 					<affects>total</affects>
 					<reference>B102</reference>
 				</modifier>
 				<modifier version="1">
-					<Name>Link</Name>
-					<cost type="Percentage">10</cost>
+					<name>Link</name>
+					<cost type="percentage">10</cost>
 					<affects>total</affects>
 					<reference>B106</reference>
 				</modifier>
 				<modifier version="1">
-					<Name>Melee Attack, Reach 1</Name>
-					<cost type="Percentage">-25</cost>
+					<name>Melee Attack, Reach 1</name>
+					<cost type="percentage">-25</cost>
 					<affects>total</affects>
 					<reference>B112</reference>
 				</modifier>
 				<modifier version="1">
-					<Name>Temporary Disadvantage (No Manipulators)</Name>
-					<cost type="Percentage">-50</cost>
+					<name>Temporary Disadvantage (No Manipulators)</name>
+					<cost type="percentage">-50</cost>
 					<affects>total</affects>
 					<reference>B115</reference>
 				</modifier>
 				<reference>B35</reference>
 			</advantage>
 			<advantage version="2">
-				<Name>Electric Stun Wand</Name>
+				<name>Electric Stun Wand</name>
 				<type>Physical</type>
 				<levels>1</levels>
 				<points_per_level>5</points_per_level>
 				<modifier version="1">
-					<Name>Link</Name>
-					<cost type="Percentage">10</cost>
+					<name>Link</name>
+					<cost type="percentage">10</cost>
 					<affects>total</affects>
 					<reference>B106</reference>
 				</modifier>
 				<modifier version="1">
-					<Name>Melee Attack (Reach 1, ST-Based)</Name>
-					<cost type="Percentage">75</cost>
+					<name>Melee Attack (Reach 1, ST-Based)</name>
+					<cost type="percentage">75</cost>
 					<affects>total</affects>
 					<reference>B112</reference>
 				</modifier>
 				<modifier version="1">
-					<Name>Temporary Disadvantage (No Manipulators)</Name>
-					<cost type="Percentage">-50</cost>
+					<name>Temporary Disadvantage (No Manipulators)</name>
+					<cost type="percentage">-50</cost>
 					<affects>total</affects>
 					<reference>B115</reference>
 				</modifier>
@@ -176,62 +176,62 @@
 			</advantage>
 		</advantage_container>
 		<advantage_container version="2" open="no">
-			<Name>Electric Stun Wand (for two-handed robots)</Name>
+			<name>Electric Stun Wand (for two-handed robots)</name>
 			<reference>RSWL20</reference>
 			<categories>
 				<category>Built-In Weapon</category>
 			</categories>
 			<advantage version="2">
-				<Name>Affliction (HT-5)</Name>
+				<name>Affliction (HT-5)</name>
 				<type>Physical</type>
 				<levels>6</levels>
 				<points_per_level>10</points_per_level>
 				<modifier version="1">
-					<Name>Armor Divisor 0.5</Name>
-					<cost type="Percentage">-30</cost>
+					<name>Armor Divisor 0.5</name>
+					<cost type="percentage">-30</cost>
 					<affects>total</affects>
 					<reference>B102</reference>
 				</modifier>
 				<modifier version="1">
-					<Name>Link</Name>
-					<cost type="Percentage">10</cost>
+					<name>Link</name>
+					<cost type="percentage">10</cost>
 					<affects>total</affects>
 					<reference>B106</reference>
 				</modifier>
 				<modifier version="1">
-					<Name>Melee Attack, Reach 1</Name>
-					<cost type="Percentage">-25</cost>
+					<name>Melee Attack, Reach 1</name>
+					<cost type="percentage">-25</cost>
 					<affects>total</affects>
 					<reference>B112</reference>
 				</modifier>
 				<modifier version="1">
-					<Name>Temporary Disadvantage (One-Hand)</Name>
-					<cost type="Percentage">-15</cost>
+					<name>Temporary Disadvantage (One-Hand)</name>
+					<cost type="percentage">-15</cost>
 					<affects>total</affects>
 					<reference>B115</reference>
 				</modifier>
 				<reference>B35</reference>
 			</advantage>
 			<advantage version="2">
-				<Name>Electric Stun Wand</Name>
+				<name>Electric Stun Wand</name>
 				<type>Physical</type>
 				<levels>1</levels>
 				<points_per_level>5</points_per_level>
 				<modifier version="1">
-					<Name>Link</Name>
-					<cost type="Percentage">10</cost>
+					<name>Link</name>
+					<cost type="percentage">10</cost>
 					<affects>total</affects>
 					<reference>B106</reference>
 				</modifier>
 				<modifier version="1">
-					<Name>Melee Attack (Reach 1, ST-Based)</Name>
-					<cost type="Percentage">75</cost>
+					<name>Melee Attack (Reach 1, ST-Based)</name>
+					<cost type="percentage">75</cost>
 					<affects>total</affects>
 					<reference>B112</reference>
 				</modifier>
 				<modifier version="1">
-					<Name>Temporary Disadvantage (One-Hand)</Name>
-					<cost type="Percentage">-15</cost>
+					<name>Temporary Disadvantage (One-Hand)</name>
+					<cost type="percentage">-15</cost>
 					<affects>total</affects>
 					<reference>B115</reference>
 				</modifier>
@@ -239,36 +239,36 @@
 			</advantage>
 		</advantage_container>
 		<advantage version="2">
-			<Name>ETC Payload Rifle (5dx3)</Name>
+			<name>ETC Payload Rifle (5dx3)</name>
 			<type>Physical</type>
 			<levels>15</levels>
 			<points_per_level>8</points_per_level>
 			<modifier version="1">
-				<Name>Accurate</Name>
-				<cost type="Percentage">5</cost>
+				<name>Accurate</name>
+				<cost type="percentage">5</cost>
 				<levels>1</levels>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Extra Recoil</Name>
-				<cost type="Percentage">-10</cost>
+				<name>Extra Recoil</name>
+				<cost type="percentage">-10</cost>
 				<levels>3</levels>
 				<affects>total</affects>
 				<reference>B112</reference>
-				<Notes>Rcl 4</Notes>
+				<notes>Rcl 4</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased Range</Name>
-				<cost type="Percentage">10</cost>
+				<name>Increased Range</name>
+				<cost type="percentage">10</cost>
 				<levels>6</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>100x</Notes>
+				<notes>100x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Rapid Fire (ROF 3)</Name>
-				<cost type="Percentage">50</cost>
+				<name>Rapid Fire (ROF 3)</name>
+				<cost type="percentage">50</cost>
 				<affects>total</affects>
 				<reference>B108</reference>
 			</modifier>
@@ -278,42 +278,42 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<Name>Gatling Laser (12d)</Name>
+			<name>Gatling Laser (12d)</name>
 			<type>Physical</type>
 			<levels>12</levels>
 			<points_per_level>5</points_per_level>
 			<modifier version="1">
-				<Name>Accurate</Name>
-				<cost type="Percentage">5</cost>
+				<name>Accurate</name>
+				<cost type="percentage">5</cost>
 				<levels>15</levels>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Armor Divisor (2)</Name>
-				<cost type="Percentage">50</cost>
+				<name>Armor Divisor (2)</name>
+				<cost type="percentage">50</cost>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased 1/2D</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased 1/2D</name>
+				<cost type="percentage">5</cost>
 				<levels>7</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>200x</Notes>
+				<notes>200x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased Max Range</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased Max Range</name>
+				<cost type="percentage">5</cost>
 				<levels>6</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>100x</Notes>
+				<notes>100x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Rapid Fire (ROF 4)</Name>
-				<cost type="Percentage">70</cost>
+				<name>Rapid Fire (ROF 4)</name>
+				<cost type="percentage">70</cost>
 				<affects>total</affects>
 				<reference>B108</reference>
 			</modifier>
@@ -323,48 +323,48 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<Name>Gatling Laser Blue-Green (12d)</Name>
+			<name>Gatling Laser Blue-Green (12d)</name>
 			<type>Physical</type>
 			<levels>12</levels>
 			<points_per_level>5</points_per_level>
 			<modifier version="1">
-				<Name>Accurate</Name>
-				<cost type="Percentage">5</cost>
+				<name>Accurate</name>
+				<cost type="percentage">5</cost>
 				<levels>15</levels>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Armor Divisor (2)</Name>
-				<cost type="Percentage">50</cost>
+				<name>Armor Divisor (2)</name>
+				<cost type="percentage">50</cost>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased 1/2D</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased 1/2D</name>
+				<cost type="percentage">5</cost>
 				<levels>8</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>500x</Notes>
+				<notes>500x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased Max Range</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased Max Range</name>
+				<cost type="percentage">5</cost>
 				<levels>7</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>200x</Notes>
+				<notes>200x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Rapid Fire (ROF 2)</Name>
-				<cost type="Percentage">40</cost>
+				<name>Rapid Fire (ROF 2)</name>
+				<cost type="percentage">40</cost>
 				<affects>total</affects>
 				<reference>B108</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Underwater</Name>
-				<cost type="Percentage">20</cost>
+				<name>Underwater</name>
+				<cost type="percentage">20</cost>
 				<affects>total</affects>
 				<reference>B109</reference>
 			</modifier>
@@ -374,50 +374,50 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<Name>Gauss Rifle (6d)</Name>
+			<name>Gauss Rifle (6d)</name>
 			<type>Physical</type>
 			<levels>6</levels>
 			<points_per_level>3</points_per_level>
 			<modifier version="1">
-				<Name>Accurate</Name>
-				<cost type="Percentage">5</cost>
+				<name>Accurate</name>
+				<cost type="percentage">5</cost>
 				<levels>4</levels>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Armor Divisor (3)</Name>
-				<cost type="Percentage">100</cost>
+				<name>Armor Divisor (3)</name>
+				<cost type="percentage">100</cost>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Extra Recoil</Name>
-				<cost type="Percentage">-10</cost>
+				<name>Extra Recoil</name>
+				<cost type="percentage">-10</cost>
 				<levels>1</levels>
 				<affects>total</affects>
 				<reference>B112</reference>
-				<Notes>Rcl 2</Notes>
+				<notes>Rcl 2</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased 1/2D</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased 1/2D</name>
+				<cost type="percentage">5</cost>
 				<levels>6</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>100x</Notes>
+				<notes>100x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased Max Range</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased Max Range</name>
+				<cost type="percentage">5</cost>
 				<levels>5</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>50x</Notes>
+				<notes>50x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Rapid Fire (ROF 12), Selective Fire</Name>
-				<cost type="Percentage">110</cost>
+				<name>Rapid Fire (ROF 12), Selective Fire</name>
+				<cost type="percentage">110</cost>
 				<affects>total</affects>
 				<reference>B108</reference>
 			</modifier>
@@ -427,48 +427,48 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<Name>Heavy Blaster (4d)</Name>
+			<name>Heavy Blaster (4d)</name>
 			<type>Physical</type>
 			<levels>4</levels>
 			<points_per_level>5</points_per_level>
 			<modifier version="1">
-				<Name>Accurate</Name>
-				<cost type="Percentage">5</cost>
+				<name>Accurate</name>
+				<cost type="percentage">5</cost>
 				<levels>2</levels>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Armor Divisor (5)</Name>
-				<cost type="Percentage">150</cost>
+				<name>Armor Divisor (5)</name>
+				<cost type="percentage">150</cost>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased 1/2D</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased 1/2D</name>
+				<cost type="percentage">5</cost>
 				<levels>5</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>50x</Notes>
+				<notes>50x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased Max Range</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased Max Range</name>
+				<cost type="percentage">5</cost>
 				<levels>3</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>15x</Notes>
+				<notes>15x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Rapid Fire (ROF 3)</Name>
-				<cost type="Percentage">50</cost>
+				<name>Rapid Fire (ROF 3)</name>
+				<cost type="percentage">50</cost>
 				<affects>total</affects>
 				<reference>B108</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Surge</Name>
-				<cost type="Percentage">20</cost>
+				<name>Surge</name>
+				<cost type="percentage">20</cost>
 				<affects>total</affects>
 				<reference>B105</reference>
 			</modifier>
@@ -478,47 +478,47 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<Name>Heavy Electrolaser (Affliction HT-6)</Name>
+			<name>Heavy Electrolaser (Affliction HT-6)</name>
 			<type>Physical</type>
 			<levels>7</levels>
 			<points_per_level>10</points_per_level>
 			<modifier version="1">
-				<Name>Accurate</Name>
-				<cost type="Percentage">5</cost>
+				<name>Accurate</name>
+				<cost type="percentage">5</cost>
 				<levels>5</levels>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Armor Divisor (2)</Name>
-				<cost type="Percentage">50</cost>
+				<name>Armor Divisor (2)</name>
+				<cost type="percentage">50</cost>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased 1/2D</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased 1/2D</name>
+				<cost type="percentage">5</cost>
 				<levels>5</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>50x</Notes>
+				<notes>50x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased Max Range</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased Max Range</name>
+				<cost type="percentage">5</cost>
 				<levels>3</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>10x</Notes>
+				<notes>10x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Secondary (Heart Attack)</Name>
-				<cost type="Percentage">60</cost>
+				<name>Secondary (Heart Attack)</name>
+				<cost type="percentage">60</cost>
 				<affects>total</affects>
 			</modifier>
 			<modifier version="1">
-				<Name>Selectivity</Name>
-				<cost type="Percentage">10</cost>
+				<name>Selectivity</name>
+				<cost type="percentage">10</cost>
 				<affects>total</affects>
 				<reference>B108</reference>
 			</modifier>
@@ -528,19 +528,19 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<Name>Heavy Plasma Torch (4d)</Name>
+			<name>Heavy Plasma Torch (4d)</name>
 			<type>Physical</type>
 			<levels>4</levels>
 			<points_per_level>5</points_per_level>
 			<modifier version="1">
-				<Name>Armor Divisor (5)</Name>
-				<cost type="Percentage">150</cost>
+				<name>Armor Divisor (5)</name>
+				<cost type="percentage">150</cost>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Melee Attack (Reach C, 1, Cannot Parry)</Name>
-				<cost type="Percentage">-25</cost>
+				<name>Melee Attack (Reach C, 1, Cannot Parry)</name>
+				<cost type="percentage">-25</cost>
 				<affects>total</affects>
 				<reference>B112</reference>
 			</modifier>
@@ -550,35 +550,35 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<Name>Holdout Laser (2d)</Name>
+			<name>Holdout Laser (2d)</name>
 			<type>Physical</type>
 			<levels>2</levels>
 			<points_per_level>5</points_per_level>
 			<modifier version="1">
-				<Name>Armor Divisor (2)</Name>
-				<cost type="Percentage">50</cost>
+				<name>Armor Divisor (2)</name>
+				<cost type="percentage">50</cost>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased 1/2D</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased 1/2D</name>
+				<cost type="percentage">5</cost>
 				<levels>3</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>10x</Notes>
+				<notes>10x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased Max Range</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased Max Range</name>
+				<cost type="percentage">5</cost>
 				<levels>1</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>2x</Notes>
+				<notes>2x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Rapid Fire (ROF 10), Selective Fire</Name>
-				<cost type="Percentage">110</cost>
+				<name>Rapid Fire (ROF 10), Selective Fire</name>
+				<cost type="percentage">110</cost>
 				<affects>total</affects>
 				<reference>B108</reference>
 			</modifier>
@@ -588,42 +588,42 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<Name>Laser Carbine (5d)</Name>
+			<name>Laser Carbine (5d)</name>
 			<type>Physical</type>
 			<levels>5</levels>
 			<points_per_level>5</points_per_level>
 			<modifier version="1">
-				<Name>Accurate</Name>
-				<cost type="Percentage">5</cost>
+				<name>Accurate</name>
+				<cost type="percentage">5</cost>
 				<levels>9</levels>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Armor Divisor (2)</Name>
-				<cost type="Percentage">50</cost>
+				<name>Armor Divisor (2)</name>
+				<cost type="percentage">50</cost>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased 1/2D</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased 1/2D</name>
+				<cost type="percentage">5</cost>
 				<levels>5</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>50x</Notes>
+				<notes>50x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased Max Range</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased Max Range</name>
+				<cost type="percentage">5</cost>
 				<levels>4</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>20x</Notes>
+				<notes>20x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Rapid Fire (ROF 10), Selective Fire</Name>
-				<cost type="Percentage">110</cost>
+				<name>Rapid Fire (ROF 10), Selective Fire</name>
+				<cost type="percentage">110</cost>
 				<affects>total</affects>
 				<reference>B108</reference>
 			</modifier>
@@ -633,42 +633,42 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<Name>Laser Rifle (6d)</Name>
+			<name>Laser Rifle (6d)</name>
 			<type>Physical</type>
 			<levels>6</levels>
 			<points_per_level>5</points_per_level>
 			<modifier version="1">
-				<Name>Accurate</Name>
-				<cost type="Percentage">5</cost>
+				<name>Accurate</name>
+				<cost type="percentage">5</cost>
 				<levels>9</levels>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Armor Divisor (2)</Name>
-				<cost type="Percentage">50</cost>
+				<name>Armor Divisor (2)</name>
+				<cost type="percentage">50</cost>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased 1/2D</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased 1/2D</name>
+				<cost type="percentage">5</cost>
 				<levels>5</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>50x</Notes>
+				<notes>50x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased Max Range</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased Max Range</name>
+				<cost type="percentage">5</cost>
 				<levels>4</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>20x</Notes>
+				<notes>20x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Rapid Fire (ROF 10), Selective Fire</Name>
-				<cost type="Percentage">110</cost>
+				<name>Rapid Fire (ROF 10), Selective Fire</name>
+				<cost type="percentage">110</cost>
 				<affects>total</affects>
 				<reference>B108</reference>
 			</modifier>
@@ -678,19 +678,19 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<Name>Laser Torch (2d)</Name>
+			<name>Laser Torch (2d)</name>
 			<type>Physical</type>
 			<levels>2</levels>
 			<points_per_level>5</points_per_level>
 			<modifier version="1">
-				<Name>Armor Divisor (2)</Name>
-				<cost type="Percentage">50</cost>
+				<name>Armor Divisor (2)</name>
+				<cost type="percentage">50</cost>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Melee Attack (Reach C, 1, Cannot Parry)</Name>
-				<cost type="Percentage">-25</cost>
+				<name>Melee Attack (Reach C, 1, Cannot Parry)</name>
+				<cost type="percentage">-25</cost>
 				<affects>total</affects>
 				<reference>B112</reference>
 			</modifier>
@@ -700,45 +700,45 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<Name>Light Electrolaser (Affliction HT-4)</Name>
+			<name>Light Electrolaser (Affliction HT-4)</name>
 			<type>Physical</type>
 			<levels>5</levels>
 			<points_per_level>10</points_per_level>
 			<modifier version="1">
-				<Name>Accurate</Name>
-				<cost type="Percentage">5</cost>
+				<name>Accurate</name>
+				<cost type="percentage">5</cost>
 				<levels>1</levels>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Armor Divisor (2)</Name>
-				<cost type="Percentage">50</cost>
+				<name>Armor Divisor (2)</name>
+				<cost type="percentage">50</cost>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased 1/2D</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased 1/2D</name>
+				<cost type="percentage">5</cost>
 				<levels>2</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>5x</Notes>
+				<notes>5x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Rapid Fire (ROF 3)</Name>
-				<cost type="Percentage">50</cost>
+				<name>Rapid Fire (ROF 3)</name>
+				<cost type="percentage">50</cost>
 				<affects>total</affects>
 				<reference>B108</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Secondary (Heart Attack)</Name>
-				<cost type="Percentage">60</cost>
+				<name>Secondary (Heart Attack)</name>
+				<cost type="percentage">60</cost>
 				<affects>total</affects>
 			</modifier>
 			<modifier version="1">
-				<Name>Selectivity</Name>
-				<cost type="Percentage">10</cost>
+				<name>Selectivity</name>
+				<cost type="percentage">10</cost>
 				<affects>total</affects>
 				<reference>B108</reference>
 			</modifier>
@@ -748,13 +748,13 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<Name>Mini-Chainsaw (2d)</Name>
+			<name>Mini-Chainsaw (2d)</name>
 			<type>Physical</type>
 			<levels>2</levels>
 			<points_per_level>7</points_per_level>
 			<modifier version="1">
-				<Name>Melee Attack (Reach 1)</Name>
-				<cost type="Percentage">-25</cost>
+				<name>Melee Attack (Reach 1)</name>
+				<cost type="percentage">-25</cost>
 				<affects>total</affects>
 				<reference>B112</reference>
 			</modifier>
@@ -764,135 +764,135 @@
 			</categories>
 		</advantage>
 		<advantage_container version="2" open="no">
-			<Name>Monowire Claws</Name>
+			<name>Monowire Claws</name>
 			<reference>RSWL20</reference>
 			<categories>
 				<category>Built-In Weapon</category>
 			</categories>
 			<advantage version="2">
-				<Name>+10 points for every die of the robot&#8217;s thrust damage (minimum +2 points)</Name>
+				<name>+10 points for every die of the robot&#8217;s thrust damage (minimum +2 points)</name>
 				<type>Physical</type>
 				<levels>0</levels>
 				<points_per_level>10</points_per_level>
 			</advantage>
 			<advantage version="2">
-				<Name>Monowire Claws (1d)</Name>
+				<name>Monowire Claws (1d)</name>
 				<type>Physical</type>
 				<levels>1</levels>
 				<points_per_level>7</points_per_level>
 				<modifier version="1">
-					<Name>Armor Divisor (10)</Name>
-					<cost type="Percentage">200</cost>
+					<name>Armor Divisor (10)</name>
+					<cost type="percentage">200</cost>
 					<affects>total</affects>
 					<reference>B102</reference>
 				</modifier>
 				<modifier version="1">
-					<Name>Melee Attack (Reach C), Dual, ST-based</Name>
-					<cost type="Percentage">80</cost>
+					<name>Melee Attack (Reach C), Dual, ST-based</name>
+					<cost type="percentage">80</cost>
 					<affects>total</affects>
 					<reference>B112</reference>
 				</modifier>
 			</advantage>
 		</advantage_container>
 		<advantage_container version="2" open="no">
-			<Name>Monowire Jaw</Name>
+			<name>Monowire Jaw</name>
 			<reference>RSWL21</reference>
 			<categories>
 				<category>Built-In Weapon</category>
 			</categories>
 			<advantage version="2">
-				<Name>+10 points for every die of the robot&#8217;s thrust damage (minimum +2 points)</Name>
+				<name>+10 points for every die of the robot&#8217;s thrust damage (minimum +2 points)</name>
 				<type>Physical</type>
 				<levels>0</levels>
 				<points_per_level>10</points_per_level>
 			</advantage>
 			<advantage version="2">
-				<Name>Monowire Jaw (1d)</Name>
+				<name>Monowire Jaw (1d)</name>
 				<type>Physical</type>
 				<levels>1</levels>
 				<points_per_level>7</points_per_level>
 				<modifier version="1">
-					<Name>Armor Divisor (10)</Name>
-					<cost type="Percentage">200</cost>
+					<name>Armor Divisor (10)</name>
+					<cost type="percentage">200</cost>
 					<affects>total</affects>
 					<reference>B102</reference>
 				</modifier>
 				<modifier version="1">
-					<Name>Melee Attack (Reach C), Dual, Cannot Parry, ST-based</Name>
-					<cost type="Percentage">65</cost>
+					<name>Melee Attack (Reach C), Dual, Cannot Parry, ST-based</name>
+					<cost type="percentage">65</cost>
 					<affects>total</affects>
 					<reference>B112</reference>
 				</modifier>
 			</advantage>
 		</advantage_container>
 		<advantage_container version="2" open="no">
-			<Name>Monowire Talons</Name>
+			<name>Monowire Talons</name>
 			<reference>RSWL21</reference>
 			<categories>
 				<category>Built-In Weapon</category>
 			</categories>
 			<advantage version="2">
-				<Name>+10 points for every die of the robot&#8217;s thrust damage (minimum +2 points)</Name>
+				<name>+10 points for every die of the robot&#8217;s thrust damage (minimum +2 points)</name>
 				<type>Physical</type>
 				<levels>0</levels>
 				<points_per_level>10</points_per_level>
 			</advantage>
 			<advantage version="2">
-				<Name>Monowire Talons (1d)</Name>
+				<name>Monowire Talons (1d)</name>
 				<type>Physical</type>
 				<levels>1</levels>
 				<points_per_level>7</points_per_level>
 				<modifier version="1">
-					<Name>Armor Divisor (10)</Name>
-					<cost type="Percentage">200</cost>
+					<name>Armor Divisor (10)</name>
+					<cost type="percentage">200</cost>
 					<affects>total</affects>
 					<reference>B102</reference>
 				</modifier>
 				<modifier version="1">
-					<Name>Melee Attack (Reach C, 1), Dual, ST-based</Name>
-					<cost type="Percentage">90</cost>
+					<name>Melee Attack (Reach C, 1), Dual, ST-based</name>
+					<cost type="percentage">90</cost>
 					<affects>total</affects>
 					<reference>B112</reference>
 				</modifier>
 			</advantage>
 		</advantage_container>
 		<advantage version="2">
-			<Name>Particle Beam Cannon (10dx10)</Name>
+			<name>Particle Beam Cannon (10dx10)</name>
 			<type>Physical</type>
 			<levels>100</levels>
 			<points_per_level>5</points_per_level>
 			<modifier version="1">
-				<Name>Accurate</Name>
-				<cost type="Percentage">5</cost>
+				<name>Accurate</name>
+				<cost type="percentage">5</cost>
 				<levels>12</levels>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Armor Divisor (5)</Name>
-				<cost type="Percentage">150</cost>
+				<name>Armor Divisor (5)</name>
+				<cost type="percentage">150</cost>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased 1/2D</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased 1/2D</name>
+				<cost type="percentage">5</cost>
 				<levels>12</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>10000x</Notes>
+				<notes>10000x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased Max Range</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased Max Range</name>
+				<cost type="percentage">5</cost>
 				<levels>11</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>5000x</Notes>
+				<notes>5000x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Surge</Name>
-				<cost type="Percentage">20</cost>
+				<name>Surge</name>
+				<cost type="percentage">20</cost>
 				<affects>total</affects>
 				<reference>B105</reference>
 			</modifier>
@@ -902,50 +902,50 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<Name>Portable Railgun (15d)</Name>
+			<name>Portable Railgun (15d)</name>
 			<type>Physical</type>
 			<levels>15</levels>
 			<points_per_level>6</points_per_level>
 			<modifier version="1">
-				<Name>Accurate</Name>
-				<cost type="Percentage">5</cost>
+				<name>Accurate</name>
+				<cost type="percentage">5</cost>
 				<levels>1</levels>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Armor Divisor (3)</Name>
-				<cost type="Percentage">100</cost>
+				<name>Armor Divisor (3)</name>
+				<cost type="percentage">100</cost>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Extra Recoil</Name>
-				<cost type="Percentage">-10</cost>
+				<name>Extra Recoil</name>
+				<cost type="percentage">-10</cost>
 				<levels>2</levels>
 				<affects>total</affects>
 				<reference>B112</reference>
-				<Notes>Rcl 3</Notes>
+				<notes>Rcl 3</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased 1/2D</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased 1/2D</name>
+				<cost type="percentage">5</cost>
 				<levels>6</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>100x</Notes>
+				<notes>100x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased Max Range</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased Max Range</name>
+				<cost type="percentage">5</cost>
 				<levels>7</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>200x</Notes>
+				<notes>200x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Rapid Fire (ROF 3), Selective Fire</Name>
-				<cost type="Percentage">60</cost>
+				<name>Rapid Fire (ROF 3), Selective Fire</name>
+				<cost type="percentage">60</cost>
 				<affects>total</affects>
 				<reference>B108</reference>
 			</modifier>
@@ -955,16 +955,16 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<Name>Tangler (Binding)</Name>
+			<name>Tangler (Binding)</name>
 			<type>Physical</type>
 			<levels>20</levels>
 			<points_per_level>2</points_per_level>
 			<modifier version="1">
-				<Name>Reduced Range</Name>
-				<cost type="Percentage">-10</cost>
+				<name>Reduced Range</name>
+				<cost type="percentage">-10</cost>
 				<levels>2</levels>
 				<affects>total</affects>
-				<Notes>x1/5</Notes>
+				<notes>x1/5</notes>
 			</modifier>
 			<reference>RSWL21</reference>
 			<categories>
@@ -972,55 +972,55 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<Name>Torpedoes (6dx3)</Name>
+			<name>Torpedoes (6dx3)</name>
 			<type>Physical</type>
 			<levels>18</levels>
 			<points_per_level>5</points_per_level>
 			<modifier version="1">
-				<Name>Accurate</Name>
-				<cost type="Percentage">5</cost>
+				<name>Accurate</name>
+				<cost type="percentage">5</cost>
 				<levels>6</levels>
 				<affects>total</affects>
 				<reference>B102</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased 1/2D</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased 1/2D</name>
+				<cost type="percentage">5</cost>
 				<levels>3</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>10x</Notes>
+				<notes>10x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Increased Max Range</Name>
-				<cost type="Percentage">5</cost>
+				<name>Increased Max Range</name>
+				<cost type="percentage">5</cost>
 				<levels>4</levels>
 				<affects>total</affects>
 				<reference>B106</reference>
-				<Notes>20x</Notes>
+				<notes>20x</notes>
 			</modifier>
 			<modifier version="1">
-				<Name>Explosion</Name>
-				<cost type="Percentage">50</cost>
+				<name>Explosion</name>
+				<cost type="percentage">50</cost>
 				<levels>1</levels>
 				<affects>total</affects>
 				<reference>B104</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Guided</Name>
-				<cost type="Percentage">50</cost>
+				<name>Guided</name>
+				<cost type="percentage">50</cost>
 				<affects>total</affects>
 				<reference>B106</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Limited Use (2/day) Slow Reload</Name>
-				<cost type="Percentage">-25</cost>
+				<name>Limited Use (2/day) Slow Reload</name>
+				<cost type="percentage">-25</cost>
 				<affects>total</affects>
 				<reference>B112</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Underwater only</Name>
-				<cost type="Percentage">0</cost>
+				<name>Underwater only</name>
+				<cost type="percentage">0</cost>
 				<affects>total</affects>
 			</modifier>
 			<reference>RSWL21</reference>
@@ -1029,53 +1029,53 @@
 			</categories>
 		</advantage>
 		<advantage_container version="2" open="no">
-			<Name>Vibroblade Claws</Name>
+			<name>Vibroblade Claws</name>
 			<reference>RSWL21</reference>
 			<categories>
 				<category>Built-In Weapon</category>
 			</categories>
 			<advantage version="2">
-				<Name>+5 points for every die of the robot&#8217;s thrust damage (minimum +1 point)</Name>
+				<name>+5 points for every die of the robot&#8217;s thrust damage (minimum +1 point)</name>
 				<type>Physical</type>
 				<levels>0</levels>
 				<points_per_level>5</points_per_level>
 			</advantage>
 			<advantage version="2">
-				<Name>Vibroblade Claws (3d)</Name>
+				<name>Vibroblade Claws (3d)</name>
 				<type>Physical</type>
 				<levels>3</levels>
 				<points_per_level>7</points_per_level>
 				<modifier version="1">
-					<Name>Armor Divisor (3)</Name>
-					<cost type="Percentage">100</cost>
+					<name>Armor Divisor (3)</name>
+					<cost type="percentage">100</cost>
 					<affects>total</affects>
 					<reference>B102</reference>
 				</modifier>
 				<modifier version="1">
-					<Name>Melee Attack (Reach C), Dual, ST-based</Name>
-					<cost type="Percentage">80</cost>
+					<name>Melee Attack (Reach C), Dual, ST-based</name>
+					<cost type="percentage">80</cost>
 					<affects>total</affects>
 					<reference>B112</reference>
 				</modifier>
 			</advantage>
 		</advantage_container>
 		<advantage version="2">
-			<Name>Weighted Tail (Crushing Striker)</Name>
+			<name>Weighted Tail (Crushing Striker)</name>
 			<type>Physical</type>
 			<base_points>5</base_points>
 			<modifier version="1">
-				<Name>Clumsy (-1 to hit)</Name>
-				<cost type="Percentage">-20</cost>
+				<name>Clumsy (-1 to hit)</name>
+				<cost type="percentage">-20</cost>
 				<affects>total</affects>
 				<reference>B88</reference>
 			</modifier>
 			<modifier version="1">
-				<Name>Long</Name>
-				<cost type="Percentage">100</cost>
+				<name>Long</name>
+				<cost type="percentage">100</cost>
 				<levels>1</levels>
 				<affects>total</affects>
 				<reference>B88</reference>
-				<Notes>SM+1</Notes>
+				<notes>SM+1</notes>
 			</modifier>
 			<reference>RSWL21</reference>
 			<categories>
@@ -1084,11 +1084,11 @@
 		</advantage>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Social Stigma (Outlaw)</Name>
+		<name>Social Stigma (Outlaw)</name>
 		<type>Social</type>
 		<base_points>-15</base_points>
 		<reference>RSWL8</reference>
-		<Notes>Reaction -3 from robots, +3 from humans from the same subculture</Notes>
+		<notes>Reaction -3 from robots, +3 from humans from the same subculture</notes>
 		<categories>
 			<category>Disadvantage</category>
 		</categories>

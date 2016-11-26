@@ -90,15 +90,15 @@
 //		add(mRandomize, BorderLayout.SOUTH);
 //	}
 
-//	private void addField(Container wrapper, string title, string tooltip, int Which, string value) {
-//		mCheckBoxes[Which] = new JCheckBox(title, true);
-//		mCheckBoxes[Which].setToolTipText(tooltip);
-//		wrapper.add(mCheckBoxes[Which]);
+//	private void addField(Container wrapper, string title, string tooltip, int which, string value) {
+//		mCheckBoxes[which] = new JCheckBox(title, true);
+//		mCheckBoxes[which].setToolTipText(tooltip);
+//		wrapper.add(mCheckBoxes[which]);
 
-//		mFields[Which] = new JTextField(value, 20);
-//		mFields[Which].setToolTipText(tooltip);
-//		mFields[Which].setEnabled(false);
-//		wrapper.add(mFields[Which]);
+//		mFields[which] = new JTextField(value, 20);
+//		mFields[which].setToolTipText(tooltip);
+//		mFields[which].setEnabled(false);
+//		wrapper.add(mFields[which]);
 //	}
 
 //	@Override

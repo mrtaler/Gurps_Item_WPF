@@ -50,7 +50,7 @@
 //    {
 
 //    private static const string ATTRIBUTE_OPEN = "open";        //$NON-NLS-1$
-//    private static const string TAG_NOTES = "Notes";        //$NON-NLS-1$
+//    private static const string TAG_NOTES = "notes";        //$NON-NLS-1$
 //    private static const string TAG_CATEGORIES = "categories";  //$NON-NLS-1$
 //    private static const string TAG_CATEGORY = "category";  //$NON-NLS-1$
 //                                                            /** The data file the row is associated with. */
@@ -64,7 +64,7 @@
 //    private TreeSet<String> mCategories;
 
 //    /**
-//	 * Extracts Any "nameable" portions of the buffer and puts their keys into the provided set.
+//	 * Extracts any "nameable" portions of the buffer and puts their keys into the provided set.
 //	 *
 //	 * @param set The set to add the nameable keys to.
 //	 * @param buffer The text to check for nameable portions.
@@ -83,7 +83,7 @@
 //    }
 
 //    /**
-//	 * Names Any "nameable" portions of the data and returns the resulting string.
+//	 * Names any "nameable" portions of the data and returns the resulting string.
 //	 *
 //	 * @param map The map of nameable keys to names.
 //	 * @param data The data to change.
@@ -175,7 +175,7 @@
 //    }
 
 //    /**
-//	 * @param obj The other object to Compare against.
+//	 * @param obj The other object to compare against.
 //	 * @return Whether or not this {@link ListRow} is equivalent.
 //	 */
 //    public bool isEquivalentTo(Object obj)
@@ -217,7 +217,7 @@
 //    /** @return Creates a detailed editor for this row. */
 //    public abstract RowEditor<? extends ListRow> createEditor();
 
-//    /** @return The localized Name for this row object. */
+//    /** @return The localized name for this row object. */
 //    public abstract string getLocalizedName();
 
 //    @Override
@@ -235,7 +235,7 @@
 //    /** @return The ID for the "list changed" notification. */
 //    public abstract string getListChangedID();
 
-//    /** @return The XML root container tag Name for this particular row. */
+//    /** @return The XML root container tag name for this particular row. */
 //    public abstract string getXMLTagName();
 
 //    /** @return The most recent version of the XML tag this object knows how to load. */
@@ -291,39 +291,39 @@
 //        loadAttributes(reader, state);
 //		do {
 //			if (reader.next() == XMLNodeType.START_TAG) {
-//				String Name = reader.getName();
-//				if (AttributeBonus.TAG_ROOT.equals(Name)) {
+//				String name = reader.getName();
+//				if (AttributeBonus.TAG_ROOT.equals(name)) {
 //					mFeatures.add(new AttributeBonus(reader));
-//				} else if (DRBonus.TAG_ROOT.equals(Name)) {
+//				} else if (DRBonus.TAG_ROOT.equals(name)) {
 //					mFeatures.add(new DRBonus(reader));
-//				} else if (SkillBonus.TAG_ROOT.equals(Name)) {
+//				} else if (SkillBonus.TAG_ROOT.equals(name)) {
 //					mFeatures.add(new SkillBonus(reader));
-//				} else if (SpellBonus.TAG_ROOT.equals(Name)) {
+//				} else if (SpellBonus.TAG_ROOT.equals(name)) {
 //					mFeatures.add(new SpellBonus(reader));
-//				} else if (WeaponBonus.TAG_ROOT.equals(Name)) {
+//				} else if (WeaponBonus.TAG_ROOT.equals(name)) {
 //					mFeatures.add(new WeaponBonus(reader));
-//				} else if (CostReduction.TAG_ROOT.equals(Name)) {
+//				} else if (CostReduction.TAG_ROOT.equals(name)) {
 //					mFeatures.add(new CostReduction(reader));
-//				} else if (PrereqList.TAG_ROOT.equals(Name)) {
+//				} else if (PrereqList.TAG_ROOT.equals(name)) {
 //					mPrereqList = new PrereqList(null, reader);
-//				} else if (!(this instanceof Technique) && SkillDefault.TAG_ROOT.equals(Name)) {
+//				} else if (!(this instanceof Technique) && SkillDefault.TAG_ROOT.equals(name)) {
 //    mDefaults.add(new SkillDefault(reader));
-//} else if (TAG_NOTES.equals(Name)) {
+//} else if (TAG_NOTES.equals(name)) {
 //    mNotes = reader.readText();
-//} else if (TAG_CATEGORIES.equals(Name)) {
+//} else if (TAG_CATEGORIES.equals(name)) {
 //    string subMarker = reader.getMarker();
 //    do
 //    {
 //        if (reader.next() == XMLNodeType.START_TAG)
 //        {
-//            Name = reader.getName();
-//            if (TAG_CATEGORY.equals(Name))
+//            name = reader.getName();
+//            if (TAG_CATEGORY.equals(name))
 //            {
 //                mCategories.add(reader.readText());
 //            }
 //            else
 //            {
-//                reader.skipTag(Name);
+//                reader.skipTag(name);
 //            }
 //        }
 //    } while (reader.withinMarker(subMarker));
@@ -452,7 +452,7 @@
 //protected abstract void saveSelf(XMLWriter out, bool forUndo);
 
 ///**
-// * Saves extra attributes of the row, if Any.
+// * Saves extra attributes of the row, if any.
 // *
 // * @param out The XML writer to use.
 // * @param forUndo Whether this is being called to save undo state.
@@ -509,7 +509,7 @@
 //    }
 //}
 
-///** Called to update Any information that relies on children. */
+///** Called to update any information that relies on children. */
 //public void update()
 //{
 //    // Do nothing by default.
@@ -733,13 +733,13 @@
 //    mPrereqList.applyNameableKeys(map);
 //}
 
-///** @return The Notes. */
+///** @return The notes. */
 //public string getNotes()
 //{
 //    return mNotes;
 //}
 
-//    /** @return The Notes due to modifiers. */
+//    /** @return The notes due to modifiers. */
 //    @SuppressWarnings("static-method")
 
 //    public string getModifierNotes()
@@ -748,14 +748,14 @@
 //}
 
 ///**
-// * @param Notes The Notes to set.
+// * @param notes The notes to set.
 // * @return Whether it was changed.
 // */
-//public bool setNotes(String Notes)
+//public bool setNotes(String notes)
 //{
-//    if (!mNotes.equals(Notes))
+//    if (!mNotes.equals(notes))
 //    {
-//        mNotes = Notes;
+//        mNotes = notes;
 //        return true;
 //    }
 //    return false;

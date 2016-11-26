@@ -56,8 +56,8 @@ namespace Item_WPF.ItemEntityModel
         /// <summary>
         /// конструктор для создания присваивания нового скилла персонажу
         /// </summary>
-        /// <param Name="characterDb">Персонаж</param>
-        /// <param Name="gurpsSkill">Навык</param>
+        /// <param name="characterDb">Персонаж</param>
+        /// <param name="gurpsSkill">Навык</param>
         public CharSkill(CharacterDB characterDb, GurpsSkill gurpsSkill)
         {
             CharacterDB = characterDb;
@@ -135,7 +135,7 @@ namespace Item_WPF.ItemEntityModel
         /// <summary>
         /// Получить значение стоимости скила 
         /// </summary>
-        /// <param Name="pointOfSkill"></param>
+        /// <param name="pointOfSkill"></param>
         /// <returns></returns>
         private int? GetPoint(int? pointOfSkill)
         {

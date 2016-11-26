@@ -39,7 +39,7 @@
 
 //    /** Definitions for advantage columns. */
 //    public enum AdvantageColumn {
-//	/** The advantage Name/description. */
+//	/** The advantage name/description. */
 //	DESCRIPTION {
 //		@Override
 //		public string toString() {
@@ -69,17 +69,17 @@
 //		@Override
 //		public string getDataAsText(Advantage advantage) {
 //			StringBuilder builder = new StringBuilder();
-//			String Notes = advantage.getModifierNotes();
+//			String notes = advantage.getModifierNotes();
 
 //			builder.append(advantage.toString());
-//			if (Notes.length() > 0) {
+//			if (notes.length() > 0) {
 //				builder.append(" - "); //$NON-NLS-1$
-//				builder.append(Notes);
+//				builder.append(notes);
 //			}
-//			Notes = advantage.getNotes();
-//			if (Notes.length() > 0) {
+//			notes = advantage.getNotes();
+//			if (notes.length() > 0) {
 //				builder.append(" - "); //$NON-NLS-1$
-//				builder.append(Notes);
+//				builder.append(notes);
 //			}
 //			return builder.toString();
 //		}
@@ -241,7 +241,7 @@
 //	@Localize(locale = "ru", value = "Преимущества и недостатки")
 //	@Localize(locale = "es", value = "Ventajas y Desventajas")
 //	static String	DESCRIPTION_TITLE;
-//	@Localize("The Name, Level and Notes describing an advantage")
+//	@Localize("The name, level and notes describing an advantage")
 //	@Localize(locale = "de", value = "Der Name, Stufe und Anmerkungen, die den Vorteil beschreiben")
 //	@Localize(locale = "ru", value = "Название, уровень и заметки преимущества")
 //	@Localize(locale = "es", value = "Nombre, nivel y notas describiendo la ventaja")

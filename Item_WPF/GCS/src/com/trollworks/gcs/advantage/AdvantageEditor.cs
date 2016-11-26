@@ -64,7 +64,7 @@
 //	@Localize(locale = "ru", value = "Название")
 //	@Localize(locale = "es", value = "Nombre")
 //	private static String	NAME;
-//	@Localize("The Name of the advantage, without Any Notes")
+//	@Localize("The name of the advantage, without any notes")
 //	@Localize(locale = "de", value = "Der Name des Vorteils ohne Anmerkungen")
 //	@Localize(locale = "ru", value = "Название преимущества без заметок")
 //	@Localize(locale = "es", value = "Nombre de la ventaja, sin anotaciones")
@@ -73,7 +73,7 @@
 //	private static String	SHOULD_ROUND_COST_DOWN_TITLE;
 //	@Localize("Round point costs down if selected, round them up if not (most things in GURPS round up)")
 //	private static String	SHOULD_ROUND_COST_DOWN_TOOLTIP;
-//	@Localize("The Name field may not be empty")
+//	@Localize("The name field may not be empty")
 //	@Localize(locale = "de", value = "Der Name darf nicht leer sein")
 //	@Localize(locale = "ru", value = "Поле \"Название\" не может быть пустым")
 //	@Localize(locale = "es", value = "El campo Nombre no puede estar vacio")
@@ -113,7 +113,7 @@
 //	@Localize(locale = "ru", value = "Количество очков за уровень")
 //	@Localize(locale = "es", value = "Coste por nivel")
 //	private static String	LEVEL_POINTS;
-//	@Localize("The per Level cost of this advantage. If this is set to zero\nand there is a value other than zero in the Level field, then the\nvalue in the base points field will be used")
+//	@Localize("The per level cost of this advantage. If this is set to zero\nand there is a value other than zero in the level field, then the\nvalue in the base points field will be used")
 //	@Localize(locale = "de", value = "Die Kosten pro Stufe dieses Vorteils.  Wenn dieses Feld leer ist\nund im Stufen-Feld etwas anderes als Null steht, dann wird\nder Wert im Grundkosten-Feld verwendet")
 //	@Localize(locale = "ru", value = "Стоимость одного уровня преимущества. Если этот параметр установлен в ноль\n и есть значение, отличное от нуля в поле Уровень, то\nбудет использоваться значение из поля Базовая стоимость")
 //	@Localize(locale = "es", value = "Coste por nivel de la ventaja. Si está a cero pero el campo por nivel no, entonces se usa el coste base en su lugar")
@@ -123,7 +123,7 @@
 //	@Localize(locale = "ru", value = "Уровень")
 //	@Localize(locale = "es", value = "Nivel")
 //	private static String	LEVEL;
-//	@Localize("The Level of this advantage")
+//	@Localize("The level of this advantage")
 //	@Localize(locale = "de", value = "Die Stufe dieses Vorteils")
 //	@Localize(locale = "ru", value = "Уровень преимущества")
 //	@Localize(locale = "es", value = "Nivel de la ventaja")
@@ -145,7 +145,7 @@
 //	@Localize(locale = "ru", value = "Заметка")
 //	@Localize(locale = "es", value = "Notas")
 //	private static String	NOTES;
-//	@Localize("Any Notes that you would like to show up in the list along with this advantage")
+//	@Localize("Any notes that you would like to show up in the list along with this advantage")
 //	@Localize(locale = "de", value = "Anmerkungen, die in der Liste neben dem Vorteil erscheinen sollen")
 //	@Localize(locale = "ru", value = "Заметки, которые показываются в списке рядом с преимуществом")
 //	@Localize(locale = "es", value = "Cualquier nota que desees mostrar en la lista de esta ventaja")

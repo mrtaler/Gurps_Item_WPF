@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="US-ASCII" ?>
 <advantage_list unique_id="hv8ubgz2:-1achnn5mx6mys" version="1">
 	<advantage_container version="2" open="yes">
-		<Name>Air</Name>
+		<name>Air</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Elemental</Notes>
+			<notes>Elemental</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P121</reference>
 		<categories>
@@ -44,7 +44,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Air Talent</Name>
+		<name>Air Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -55,41 +55,41 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Animal Control</Name>
+		<name>Animal Control</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-20</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-20</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Nature</Notes>
+			<notes>Nature</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P121</reference>
 		<categories>
@@ -98,7 +98,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Animal Control Talent</Name>
+		<name>Animal Control Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -109,27 +109,27 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Anti-Magic</Name>
+		<name>Anti-Magic</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">0</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
 			<reference>P122</reference>
-			<Notes>Anti-Magic</Notes>
+			<notes>Anti-Magic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<reference>P121</reference>
 		<categories>
@@ -138,7 +138,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Anti-Magic Talent</Name>
+		<name>Anti-Magic Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -149,38 +149,38 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Anti-Super</Name>
+		<name>Anti-Super</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Biological</Notes>
+			<notes>Biological</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-20</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-20</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Nature</Notes>
+			<notes>Nature</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Anti-Super</Name>
-			<cost type="Percentage">0</cost>
+			<name>Anti-Super</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
 			<reference>P122</reference>
 		</modifier>
@@ -191,7 +191,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Anti-Super Talent</Name>
+		<name>Anti-Super Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -202,34 +202,34 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Antipsi</Name>
+		<name>Antipsi</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">0</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
 			<reference>P122</reference>
-			<Notes>Antipsi</Notes>
+			<notes>Antipsi</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Biological</Notes>
+			<notes>Biological</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Chi</Notes>
+			<notes>Chi</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P122</reference>
 		<categories>
@@ -238,7 +238,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Antipsi Talent</Name>
+		<name>Antipsi Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -249,41 +249,41 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Astral Projection</Name>
+		<name>Astral Projection</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-20</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-20</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Moral</Notes>
+			<notes>Moral</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<reference>P122</reference>
 		<categories>
@@ -292,7 +292,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Astral Projection Talent</Name>
+		<name>Astral Projection Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -303,26 +303,26 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Awe</Name>
+		<name>Awe</name>
 		<type>Mental, Supernatural</type>
 		<levels>1</levels>
 		<base_points>30</base_points>
 		<points_per_level>10</points_per_level>
 		<modifier version="1" enabled="no">
-			<Name>Always On</Name>
-			<cost type="Percentage">-20</cost>
+			<name>Always On</name>
+			<cost type="percentage">-20</cost>
 			<affects>total</affects>
 			<reference>B93</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Active</Name>
-			<cost type="Percentage">0</cost>
+			<name>Active</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
 			<reference>P84</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Presence</Name>
-			<cost type="Percentage">25</cost>
+			<name>Presence</name>
+			<cost type="percentage">25</cost>
 			<affects>total</affects>
 			<reference>P84</reference>
 		</modifier>
@@ -332,34 +332,34 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Bioenergy</Name>
+		<name>Bioenergy</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Biological</Notes>
+			<notes>Biological</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Chi</Notes>
+			<notes>Chi</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P123</reference>
 		<categories>
@@ -368,7 +368,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Bioenergy Talent</Name>
+		<name>Bioenergy Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -379,34 +379,34 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Body Alteration</Name>
+		<name>Body Alteration</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Biological</Notes>
+			<notes>Biological</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P123</reference>
 		<categories>
@@ -415,7 +415,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Body Alteration Talent</Name>
+		<name>Body Alteration Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -426,34 +426,34 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Body Control</Name>
+		<name>Body Control</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Biological</Notes>
+			<notes>Biological</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Chi</Notes>
+			<notes>Chi</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P123</reference>
 		<categories>
@@ -462,7 +462,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Body Control Talent</Name>
+		<name>Body Control Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -473,34 +473,34 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Chaos</Name>
+		<name>Chaos</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-20</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-20</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Moral</Notes>
+			<notes>Moral</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P124</reference>
 		<categories>
@@ -509,7 +509,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Chaos Talent</Name>
+		<name>Chaos Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -520,27 +520,27 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Cold/Ice</Name>
+		<name>Cold/Ice</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Elemental</Notes>
+			<notes>Elemental</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P124</reference>
 		<categories>
@@ -549,7 +549,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Cold/Ice Talent</Name>
+		<name>Cold/Ice Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -560,26 +560,26 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Confusion</Name>
+		<name>Confusion</name>
 		<type>Mental, Supernatural</type>
 		<levels>1</levels>
 		<base_points>30</base_points>
 		<points_per_level>10</points_per_level>
 		<modifier version="1" enabled="no">
-			<Name>Always On</Name>
-			<cost type="Percentage">-20</cost>
+			<name>Always On</name>
+			<cost type="percentage">-20</cost>
 			<affects>total</affects>
 			<reference>B93</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Active</Name>
-			<cost type="Percentage">0</cost>
+			<name>Active</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
 			<reference>P84</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Presence</Name>
-			<cost type="Percentage">25</cost>
+			<name>Presence</name>
+			<cost type="percentage">25</cost>
 			<affects>total</affects>
 			<reference>P84</reference>
 		</modifier>
@@ -589,58 +589,58 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Control (@Element@)</Name>
+		<name>Control (@Element@)</name>
 		<type>Physical</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
 		<modifier version="1" enabled="no">
-			<Name>Persistent</Name>
-			<cost type="Percentage">40</cost>
+			<name>Persistent</name>
+			<cost type="percentage">40</cost>
 			<affects>total</affects>
 			<reference>P91</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Ranged</Name>
-			<cost type="Percentage">40</cost>
+			<name>Ranged</name>
+			<cost type="percentage">40</cost>
 			<affects>total</affects>
 			<reference>P91</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Collective</Name>
-			<cost type="Percentage">100</cost>
+			<name>Collective</name>
+			<cost type="percentage">100</cost>
 			<affects>total</affects>
 			<reference>P92</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Natural Phenomena</Name>
-			<cost type="Percentage">100</cost>
+			<name>Natural Phenomena</name>
+			<cost type="percentage">100</cost>
 			<affects>total</affects>
 			<reference>P92</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Cosmetic</Name>
-			<cost type="Percentage">-80</cost>
+			<name>Cosmetic</name>
+			<cost type="percentage">-80</cost>
 			<affects>total</affects>
 			<reference>P92</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Super-Effort</Name>
-			<cost type="Percentage">400</cost>
+			<name>Super-Effort</name>
+			<cost type="percentage">400</cost>
 			<affects>total</affects>
 			<reference>SU26</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Rare</Name>
+			<name>Rare</name>
 			<cost type="multiplier">2</cost>
 			<reference>P90</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Occasional</Name>
+			<name>Occasional</name>
 			<cost type="multiplier">3</cost>
 			<reference>P90</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Common</Name>
+			<name>Common</name>
 			<cost type="multiplier">4</cost>
 			<reference>P90</reference>
 		</modifier>
@@ -650,13 +650,13 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Cosmic</Name>
+		<name>Cosmic</name>
 		<modifier version="1">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">50</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">50</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Cosmic</Notes>
+			<notes>Cosmic</notes>
 		</modifier>
 		<reference>P124</reference>
 		<categories>
@@ -665,7 +665,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Cosmic Talent</Name>
+		<name>Cosmic Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>15</points_per_level>
@@ -676,52 +676,52 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Create (@Item@)</Name>
+		<name>Create (@Item@)</name>
 		<type>Physical</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
 		<modifier version="1" enabled="no">
-			<Name>Destruction</Name>
-			<cost type="Percentage">100</cost>
+			<name>Destruction</name>
+			<cost type="percentage">100</cost>
 			<affects>total</affects>
 			<reference>P94</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Destruction Only</Name>
-			<cost type="Percentage">0</cost>
+			<name>Destruction Only</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
 			<reference>P94</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Transmutation</Name>
-			<cost type="Percentage">50</cost>
+			<name>Transmutation</name>
+			<cost type="percentage">50</cost>
 			<affects>total</affects>
 			<reference>P94</reference>
-			<Notes>@Category@ to @Category@</Notes>
+			<notes>@Category@ to @Category@</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Transmutation only</Name>
-			<cost type="Percentage">-100</cost>
+			<name>Transmutation only</name>
+			<cost type="percentage">-100</cost>
 			<affects>total</affects>
 			<reference>P94</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Specific item</Name>
+			<name>Specific item</name>
 			<cost type="multiplier">1</cost>
 			<reference>P92</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Small category</Name>
+			<name>Small category</name>
 			<cost type="multiplier">2</cost>
 			<reference>P92</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Medium category</Name>
+			<name>Medium category</name>
 			<cost type="multiplier">4</cost>
 			<reference>P92</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Large category</Name>
+			<name>Large category</name>
 			<cost type="multiplier">8</cost>
 			<reference>P92</reference>
 		</modifier>
@@ -731,34 +731,34 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Darkness</Name>
+		<name>Darkness</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Elemental</Notes>
+			<notes>Elemental</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P125</reference>
 		<categories>
@@ -767,7 +767,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Darkness Talent</Name>
+		<name>Darkness Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -778,27 +778,27 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Death</Name>
+		<name>Death</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<reference>P125</reference>
 		<categories>
@@ -807,7 +807,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Death Talent</Name>
+		<name>Death Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -818,41 +818,41 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Dimensional Travel</Name>
+		<name>Dimensional Travel</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P125</reference>
 		<categories>
@@ -861,7 +861,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Dimensional Travel Talent</Name>
+		<name>Dimensional Travel Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -872,13 +872,13 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Divine (@Deity@)</Name>
+		<name>Divine (@Deity@)</name>
 		<modifier version="1">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<reference>P126</reference>
 		<categories>
@@ -887,41 +887,41 @@
 		</categories>
 	</advantage_container>
 	<advantage_container version="2" open="yes">
-		<Name>Earth</Name>
+		<name>Earth</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Elemental</Notes>
+			<notes>Elemental</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P126</reference>
 		<categories>
@@ -930,7 +930,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Earth Talent</Name>
+		<name>Earth Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -941,27 +941,27 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Electricity</Name>
+		<name>Electricity</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Elemental</Notes>
+			<notes>Elemental</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P126</reference>
 		<categories>
@@ -970,7 +970,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Electricity Talent</Name>
+		<name>Electricity Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -981,20 +981,20 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Electrokinesis</Name>
+		<name>Electrokinesis</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P126</reference>
 		<categories>
@@ -1003,7 +1003,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Electrokinesis Talent</Name>
+		<name>Electrokinesis Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -1014,52 +1014,52 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Energy Reserve (@Source@)</Name>
+		<name>Energy Reserve (@Source@)</name>
 		<type>Physical, Exotic</type>
 		<levels>1</levels>
 		<points_per_level>3</points_per_level>
 		<modifier version="1" enabled="no">
-			<Name>Abilities Only</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Abilities Only</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P119</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>One Power</Name>
-			<cost type="Percentage">-50</cost>
+			<name>One Power</name>
+			<cost type="percentage">-50</cost>
 			<affects>total</affects>
 			<reference>P117</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Slow Recharge</Name>
-			<cost type="Percentage">-20</cost>
+			<name>Slow Recharge</name>
+			<cost type="percentage">-20</cost>
 			<affects>total</affects>
 			<reference>P117</reference>
-			<Notes>1/hour</Notes>
+			<notes>1/hour</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Slow Recharge</Name>
-			<cost type="Percentage">-60</cost>
+			<name>Slow Recharge</name>
+			<cost type="percentage">-60</cost>
 			<affects>total</affects>
 			<reference>P117</reference>
-			<Notes>1/day</Notes>
+			<notes>1/day</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Special Recharge</Name>
-			<cost type="Percentage">-70</cost>
+			<name>Special Recharge</name>
+			<cost type="percentage">-70</cost>
 			<affects>total</affects>
 			<reference>P117</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Special Recharge</Name>
-			<cost type="Percentage">-80</cost>
+			<name>Special Recharge</name>
+			<cost type="percentage">-80</cost>
 			<affects>total</affects>
 			<reference>P117</reference>
-			<Notes>1/s bleed</Notes>
+			<notes>1/s bleed</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Stunts Only</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Stunts Only</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P117</reference>
 		</modifier>
@@ -1070,41 +1070,41 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>ESP</Name>
+		<name>ESP</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Chi</Notes>
+			<notes>Chi</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P127</reference>
 		<categories>
@@ -1113,7 +1113,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>ESP Talent</Name>
+		<name>ESP Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -1124,34 +1124,34 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Evil</Name>
+		<name>Evil</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-20</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-20</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Moral</Notes>
+			<notes>Moral</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<reference>P127</reference>
 		<categories>
@@ -1160,7 +1160,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Evil Talent</Name>
+		<name>Evil Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -1171,7 +1171,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Force Construct Talent</Name>
+		<name>Force Construct Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -1182,27 +1182,27 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Force Constructs</Name>
+		<name>Force Constructs</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P127</reference>
 		<categories>
@@ -1211,34 +1211,34 @@
 		</categories>
 	</advantage_container>
 	<advantage_container version="2" open="yes">
-		<Name>Good</Name>
+		<name>Good</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-20</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-20</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Moral</Notes>
+			<notes>Moral</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<reference>P128</reference>
 		<categories>
@@ -1247,7 +1247,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Good Talent</Name>
+		<name>Good Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -1258,20 +1258,20 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Gravity</Name>
+		<name>Gravity</name>
 		<modifier version="1" enabled="no">
-			<Name>Power modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Elemental</Notes>
+			<notes>Elemental</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P128</reference>
 		<categories>
@@ -1280,7 +1280,7 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Gravity Talent</Name>
+		<name>Gravity Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -1291,55 +1291,55 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Healing</Name>
+		<name>Healing</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Biological</Notes>
+			<notes>Biological</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Chi</Notes>
+			<notes>Chi</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P128</reference>
 		<categories>
@@ -1348,55 +1348,55 @@
 		</categories>
 	</advantage_container>
 	<advantage_container version="2" open="yes">
-		<Name>Heat/Fire</Name>
+		<name>Heat/Fire</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Elemental</Notes>
+			<notes>Elemental</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-20</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-20</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Moral</Notes>
+			<notes>Moral</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P129</reference>
 		<categories>
@@ -1405,41 +1405,41 @@
 		</categories>
 	</advantage_container>
 	<advantage_container version="2" open="yes">
-		<Name>Illusion</Name>
+		<name>Illusion</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-20</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-20</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Moral</Notes>
+			<notes>Moral</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P129</reference>
 		<categories>
@@ -1448,55 +1448,55 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Illusion</Name>
+		<name>Illusion</name>
 		<type>Physical</type>
 		<base_points>25</base_points>
 		<modifier version="1" enabled="no">
-			<Name>Extended</Name>
-			<cost type="Percentage">0</cost>
+			<name>Extended</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
 			<reference>P95</reference>
-			<Notes>@Sense@</Notes>
+			<notes>@Sense@</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Independence</Name>
-			<cost type="Percentage">50</cost>
-			<affects>total</affects>
-			<reference>P95</reference>
-		</modifier>
-		<modifier version="1" enabled="no">
-			<Name>Initiative</Name>
-			<cost type="Percentage">100</cost>
+			<name>Independence</name>
+			<cost type="percentage">50</cost>
 			<affects>total</affects>
 			<reference>P95</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Mental</Name>
-			<cost type="Percentage">100</cost>
+			<name>Initiative</name>
+			<cost type="percentage">100</cost>
 			<affects>total</affects>
 			<reference>P95</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Stigmata</Name>
-			<cost type="Percentage">100</cost>
+			<name>Mental</name>
+			<cost type="percentage">100</cost>
 			<affects>total</affects>
 			<reference>P95</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Auditory Only</Name>
-			<cost type="Percentage">-70</cost>
+			<name>Stigmata</name>
+			<cost type="percentage">100</cost>
 			<affects>total</affects>
 			<reference>P95</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Static</Name>
-			<cost type="Percentage">-30</cost>
+			<name>Auditory Only</name>
+			<cost type="percentage">-70</cost>
 			<affects>total</affects>
 			<reference>P95</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Visual Only</Name>
-			<cost type="Percentage">-30</cost>
+			<name>Static</name>
+			<cost type="percentage">-30</cost>
+			<affects>total</affects>
+			<reference>P95</reference>
+		</modifier>
+		<modifier version="1" enabled="no">
+			<name>Visual Only</name>
+			<cost type="percentage">-30</cost>
 			<affects>total</affects>
 			<reference>P95</reference>
 		</modifier>
@@ -1506,37 +1506,37 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Injury Tolerance (Damage Reduction)</Name>
+		<name>Injury Tolerance (Damage Reduction)</name>
 		<type>Physical, Exotic</type>
 		<levels>2</levels>
 		<points_per_level>25</points_per_level>
 		<modifier version="1" enabled="no">
-			<Name>Limited</Name>
-			<cost type="Percentage">-40</cost>
+			<name>Limited</name>
+			<cost type="percentage">-40</cost>
 			<affects>total</affects>
 			<reference>B46</reference>
-			<Notes>@Common Attack Form@</Notes>
+			<notes>@Common Attack Form@</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Limited</Name>
-			<cost type="Percentage">-60</cost>
+			<name>Limited</name>
+			<cost type="percentage">-60</cost>
 			<affects>total</affects>
 			<reference>B46</reference>
-			<Notes>@Occasional Attack Form@</Notes>
+			<notes>@Occasional Attack Form@</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Limited</Name>
-			<cost type="Percentage">-80</cost>
+			<name>Limited</name>
+			<cost type="percentage">-80</cost>
 			<affects>total</affects>
 			<reference>B46</reference>
-			<Notes>@Rare Attack Form@</Notes>
+			<notes>@Rare Attack Form@</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Limited</Name>
-			<cost type="Percentage">-20</cost>
+			<name>Limited</name>
+			<cost type="percentage">-20</cost>
 			<affects>total</affects>
 			<reference>B46</reference>
-			<Notes>@Very Common Attack Form@</Notes>
+			<notes>@Very Common Attack Form@</notes>
 		</modifier>
 		<reference>P53</reference>
 		<categories>
@@ -1544,30 +1544,30 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Injury Tolerance (Independent Body Parts)</Name>
+		<name>Injury Tolerance (Independent Body Parts)</name>
 		<type>Physical, Exotic</type>
 		<base_points>35</base_points>
 		<modifier version="1" enabled="no">
-			<Name>Detachable Head</Name>
-			<cost type="Percentage">15</cost>
+			<name>Detachable Head</name>
+			<cost type="percentage">15</cost>
 			<affects>total</affects>
 			<reference>P52</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Instant Reattachment</Name>
-			<cost type="Percentage">50</cost>
+			<name>Instant Reattachment</name>
+			<cost type="percentage">50</cost>
 			<affects>total</affects>
 			<reference>P52</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>No Reattachment</Name>
-			<cost type="Percentage">-60</cost>
+			<name>No Reattachment</name>
+			<cost type="percentage">-60</cost>
 			<affects>total</affects>
 			<reference>P52</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Reattachment Only</Name>
-			<cost type="Percentage">-50</cost>
+			<name>Reattachment Only</name>
+			<cost type="percentage">-50</cost>
 			<affects>total</affects>
 			<reference>P52</reference>
 		</modifier>
@@ -1577,7 +1577,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Injury Tolerance (Unbreakable Bones)</Name>
+		<name>Injury Tolerance (Unbreakable Bones)</name>
 		<type>Physical</type>
 		<base_points>10</base_points>
 		<reference>P53</reference>
@@ -1586,108 +1586,108 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Leech</Name>
+		<name>Leech</name>
 		<type>Physical</type>
 		<levels>1</levels>
 		<base_points>21</base_points>
 		<points_per_level>4</points_per_level>
 		<modifier version="1" enabled="no">
-			<Name>Accelerated Healing</Name>
-			<cost type="Percentage">25</cost>
+			<name>Accelerated Healing</name>
+			<cost type="percentage">25</cost>
 			<affects>total</affects>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Heals FP</Name>
-			<cost type="Percentage">30</cost>
+			<name>Heals FP</name>
+			<cost type="percentage">30</cost>
 			<affects>total</affects>
-			<Notes>After HP</Notes>
+			<notes>After HP</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Heals FP</Name>
-			<cost type="Percentage">60</cost>
+			<name>Heals FP</name>
+			<cost type="percentage">60</cost>
 			<affects>total</affects>
-			<Notes>Player Chooses</Notes>
+			<notes>Player Chooses</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Steal FP</Name>
-			<cost type="Percentage">-25</cost>
-			<affects>total</affects>
-		</modifier>
-		<modifier version="1" enabled="no">
-			<Name>Steal FP then HP</Name>
-			<cost type="Percentage">50</cost>
+			<name>Steal FP</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Steal ST</Name>
-			<cost type="Percentage">100</cost>
+			<name>Steal FP then HP</name>
+			<cost type="percentage">50</cost>
 			<affects>total</affects>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Steal HT</Name>
-			<cost type="Percentage">100</cost>
+			<name>Steal ST</name>
+			<cost type="percentage">100</cost>
 			<affects>total</affects>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Steal DX</Name>
-			<cost type="Percentage">300</cost>
+			<name>Steal HT</name>
+			<cost type="percentage">100</cost>
 			<affects>total</affects>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Steal IQ</Name>
-			<cost type="Percentage">300</cost>
+			<name>Steal DX</name>
+			<cost type="percentage">300</cost>
 			<affects>total</affects>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Steal Youth</Name>
-			<cost type="Percentage">300</cost>
-			<affects>total</affects>
-			<Notes>Temporary</Notes>
-		</modifier>
-		<modifier version="1" enabled="no">
-			<Name>Steal Youth</Name>
-			<cost type="Percentage">450</cost>
-			<affects>total</affects>
-			<Notes>Permanent</Notes>
-		</modifier>
-		<modifier version="1" enabled="no">
-			<Name>Only Heals FP</Name>
-			<cost type="Percentage">-20</cost>
+			<name>Steal IQ</name>
+			<cost type="percentage">300</cost>
 			<affects>total</affects>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Hazard: Dehydration</Name>
-			<cost type="Percentage">20</cost>
+			<name>Steal Youth</name>
+			<cost type="percentage">300</cost>
 			<affects>total</affects>
-			<reference>B104</reference>
+			<notes>Temporary</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Hazard: Drowning</Name>
-			<cost type="Percentage">0</cost>
+			<name>Steal Youth</name>
+			<cost type="percentage">450</cost>
+			<affects>total</affects>
+			<notes>Permanent</notes>
+		</modifier>
+		<modifier version="1" enabled="no">
+			<name>Only Heals FP</name>
+			<cost type="percentage">-20</cost>
+			<affects>total</affects>
+		</modifier>
+		<modifier version="1" enabled="no">
+			<name>Hazard: Dehydration</name>
+			<cost type="percentage">20</cost>
 			<affects>total</affects>
 			<reference>B104</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Hazard: Freezing</Name>
-			<cost type="Percentage">20</cost>
+			<name>Hazard: Drowning</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
 			<reference>B104</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Hazard: Missed Sleep</Name>
-			<cost type="Percentage">50</cost>
+			<name>Hazard: Freezing</name>
+			<cost type="percentage">20</cost>
 			<affects>total</affects>
 			<reference>B104</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Hazard: Starvation</Name>
-			<cost type="Percentage">40</cost>
+			<name>Hazard: Missed Sleep</name>
+			<cost type="percentage">50</cost>
 			<affects>total</affects>
 			<reference>B104</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Hazard: Suffocation</Name>
-			<cost type="Percentage">0</cost>
+			<name>Hazard: Starvation</name>
+			<cost type="percentage">40</cost>
+			<affects>total</affects>
+			<reference>B104</reference>
+		</modifier>
+		<modifier version="1" enabled="no">
+			<name>Hazard: Suffocation</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
 			<reference>B104</reference>
 		</modifier>
@@ -1697,34 +1697,34 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Life</Name>
+		<name>Life</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-20</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-20</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Nature</Notes>
+			<notes>Nature</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<reference>P130</reference>
 		<categories>
@@ -1733,34 +1733,34 @@
 		</categories>
 	</advantage_container>
 	<advantage_container version="2" open="yes">
-		<Name>Light</Name>
+		<name>Light</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Elemental</Notes>
+			<notes>Elemental</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P130</reference>
 		<categories>
@@ -1769,20 +1769,20 @@
 		</categories>
 	</advantage_container>
 	<advantage_container version="2" open="yes">
-		<Name>Machine Telepathy</Name>
+		<name>Machine Telepathy</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P130</reference>
 		<categories>
@@ -1791,13 +1791,13 @@
 		</categories>
 	</advantage_container>
 	<advantage_container version="2" open="yes">
-		<Name>Magic</Name>
+		<name>Magic</name>
 		<modifier version="1">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<reference>P131</reference>
 		<categories>
@@ -1806,20 +1806,20 @@
 		</categories>
 	</advantage_container>
 	<advantage_container version="2" open="yes">
-		<Name>Magnetism</Name>
+		<name>Magnetism</name>
 		<modifier version="1" enabled="no">
-			<Name>Power modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Elemental</Notes>
+			<notes>Elemental</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P131</reference>
 		<categories>
@@ -1828,13 +1828,13 @@
 		</categories>
 	</advantage_container>
 	<advantage_container version="2" open="yes">
-		<Name>Matter Control</Name>
+		<name>Matter Control</name>
 		<modifier version="1">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P131</reference>
 		<categories>
@@ -1843,54 +1843,54 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Neutralize (@Source@)</Name>
+		<name>Neutralize (@Source@)</name>
 		<type>Mental, Exotic</type>
 		<base_points>50</base_points>
 		<modifier version="1" enabled="no">
-			<Name>Power Theft</Name>
-			<cost type="Percentage">200</cost>
+			<name>Power Theft</name>
+			<cost type="percentage">200</cost>
 			<affects>total</affects>
 			<reference>P97</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>One Power</Name>
-			<cost type="Percentage">-50</cost>
+			<name>One Power</name>
+			<cost type="percentage">-50</cost>
 			<affects>total</affects>
 			<reference>P97</reference>
-			<Notes>@Power@</Notes>
+			<notes>@Power@</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Cosmic</Name>
-			<cost type="Percentage">300</cost>
+			<name>Cosmic</name>
+			<cost type="percentage">300</cost>
 			<affects>total</affects>
 			<reference>P97</reference>
-			<Notes>Any Source</Notes>
+			<notes>Any Source</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Theft</Name>
-			<cost type="Percentage">300</cost>
+			<name>Power Theft</name>
+			<cost type="percentage">300</cost>
 			<affects>total</affects>
 			<reference>P97</reference>
-			<Notes>Point Total</Notes>
+			<notes>Point Total</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Precise</Name>
-			<cost type="Percentage">20</cost>
-			<affects>total</affects>
-			<reference>P97</reference>
-		</modifier>
-		<modifier version="1" enabled="no">
-			<Name>Derange</Name>
-			<cost type="Percentage">-20</cost>
+			<name>Precise</name>
+			<cost type="percentage">20</cost>
 			<affects>total</affects>
 			<reference>P97</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>One Ability</Name>
-			<cost type="Percentage">-80</cost>
+			<name>Derange</name>
+			<cost type="percentage">-20</cost>
 			<affects>total</affects>
 			<reference>P97</reference>
-			<Notes>@Ability@ in @Power@</Notes>
+		</modifier>
+		<modifier version="1" enabled="no">
+			<name>One Ability</name>
+			<cost type="percentage">-80</cost>
+			<affects>total</affects>
+			<reference>P97</reference>
+			<notes>@Ability@ in @Power@</notes>
 		</modifier>
 		<reference>P97</reference>
 		<categories>
@@ -1898,27 +1898,27 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Order</Name>
+		<name>Order</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-20</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-20</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Moral</Notes>
+			<notes>Moral</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<reference>P132</reference>
 		<categories>
@@ -1927,41 +1927,41 @@
 		</categories>
 	</advantage_container>
 	<advantage_container version="2" open="yes">
-		<Name>Plant Control</Name>
+		<name>Plant Control</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-20</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-20</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Nature</Notes>
+			<notes>Nature</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P132</reference>
 		<categories>
@@ -1970,135 +1970,135 @@
 		</categories>
 	</advantage_container>
 	<advantage_container version="2" open="yes">
-		<Name>Power</Name>
+		<name>Power</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Biological</Notes>
+			<notes>Biological</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Chi</Notes>
+			<notes>Chi</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">50</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">50</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Cosmic</Notes>
+			<notes>Cosmic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Elemental</Notes>
+			<notes>Elemental</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-20</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-20</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Moral</Notes>
+			<notes>Moral</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-20</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-20</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Nature</Notes>
+			<notes>Nature</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-30</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-30</cost>
 			<affects>total</affects>
 			<reference>SU34</reference>
-			<Notes>Electronic</Notes>
+			<notes>Electronic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>SU34</reference>
-			<Notes>Mechanical</Notes>
+			<notes>Mechanical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>SU34</reference>
-			<Notes>Mutant</Notes>
+			<notes>Mutant</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-15</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-15</cost>
 			<affects>total</affects>
 			<reference>SU34</reference>
-			<Notes>Nanotech</Notes>
+			<notes>Nanotech</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>SU34</reference>
-			<Notes>Savant</Notes>
+			<notes>Savant</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>SU34</reference>
-			<Notes>Superscience</Notes>
+			<notes>Superscience</notes>
 		</modifier>
 		<reference>P7</reference>
-		<Notes>To be tooled to a new power</Notes>
+		<notes>To be tooled to a new power</notes>
 		<categories>
 			<category>Advantage</category>
 			<category>Power</category>
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Power Talent</Name>
+		<name>Power Talent</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
@@ -2109,41 +2109,41 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Probability Alteration</Name>
+		<name>Probability Alteration</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P132</reference>
 		<categories>
@@ -2152,41 +2152,41 @@
 		</categories>
 	</advantage_container>
 	<advantage_container version="2" open="yes">
-		<Name>Psychokinesis</Name>
+		<name>Psychokinesis</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P133</reference>
 		<categories>
@@ -2195,20 +2195,20 @@
 		</categories>
 	</advantage_container>
 	<advantage_container version="2" open="yes">
-		<Name>Radiation</Name>
+		<name>Radiation</name>
 		<modifier version="1" enabled="no">
-			<Name>Power modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Elemental</Notes>
+			<notes>Elemental</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P133</reference>
 		<categories>
@@ -2217,27 +2217,27 @@
 		</categories>
 	</advantage_container>
 	<advantage_container version="2" open="yes">
-		<Name>Sound/Vibration</Name>
+		<name>Sound/Vibration</name>
 		<modifier version="1" enabled="no">
-			<Name>Power modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Elemental</Notes>
+			<notes>Elemental</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P133</reference>
 		<categories>
@@ -2246,27 +2246,27 @@
 		</categories>
 	</advantage_container>
 	<advantage_container version="2" open="yes">
-		<Name>Spirit Control</Name>
+		<name>Spirit Control</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<reference>P134</reference>
 		<categories>
@@ -2275,31 +2275,31 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<Name>Static (@Source@)</Name>
+		<name>Static (@Source@)</name>
 		<type>Mental, Supernatural</type>
 		<base_points>30</base_points>
 		<modifier version="1" enabled="no">
-			<Name>Area Effect</Name>
-			<cost type="Percentage">50</cost>
+			<name>Area Effect</name>
+			<cost type="percentage">50</cost>
 			<levels>1</levels>
 			<affects>total</affects>
 			<reference>P98</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Switchable</Name>
-			<cost type="Percentage">100</cost>
+			<name>Switchable</name>
+			<cost type="percentage">100</cost>
 			<affects>total</affects>
 			<reference>P98</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Resistible</Name>
-			<cost type="Percentage">-50</cost>
+			<name>Resistible</name>
+			<cost type="percentage">-50</cost>
 			<affects>total</affects>
 			<reference>P98</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Discriminatory</Name>
-			<cost type="Percentage">150</cost>
+			<name>Discriminatory</name>
+			<cost type="percentage">150</cost>
 			<affects>total</affects>
 			<reference>P98</reference>
 		</modifier>
@@ -2309,34 +2309,34 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<Name>Telepathy</Name>
+		<name>Telepathy</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Biological</Notes>
+			<notes>Biological</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P134</reference>
 		<categories>
@@ -2345,27 +2345,27 @@
 		</categories>
 	</advantage_container>
 	<advantage_container version="2" open="yes">
-		<Name>Teleportation</Name>
+		<name>Teleportation</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P134</reference>
 		<categories>
@@ -2374,34 +2374,34 @@
 		</categories>
 	</advantage_container>
 	<advantage_container version="2" open="yes">
-		<Name>Time Mastery</Name>
+		<name>Time Mastery</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P135</reference>
 		<categories>
@@ -2410,34 +2410,34 @@
 		</categories>
 	</advantage_container>
 	<advantage_container version="2" open="yes">
-		<Name>Vampirism</Name>
+		<name>Vampirism</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Biological</Notes>
+			<notes>Biological</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Psionic</Notes>
+			<notes>Psionic</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P135</reference>
 		<categories>
@@ -2446,41 +2446,41 @@
 		</categories>
 	</advantage_container>
 	<advantage_container version="2" open="yes">
-		<Name>Water</Name>
+		<name>Water</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Elemental</Notes>
+			<notes>Elemental</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P135</reference>
 		<categories>
@@ -2489,41 +2489,41 @@
 		</categories>
 	</advantage_container>
 	<advantage_container version="2" open="yes">
-		<Name>Weather Control</Name>
+		<name>Weather Control</name>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<Notes>Divine</Notes>
+			<notes>Divine</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<Notes>Magical</Notes>
+			<notes>Magical</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-20</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-20</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Nature</Notes>
+			<notes>Nature</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-25</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<Notes>Spirit</Notes>
+			<notes>Spirit</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Power Modifier</Name>
-			<cost type="Percentage">-10</cost>
+			<name>Power Modifier</name>
+			<cost type="percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<Notes>Super</Notes>
+			<notes>Super</notes>
 		</modifier>
 		<reference>P136</reference>
 		<categories>

@@ -18,8 +18,8 @@ namespace Item_WPF.addin
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewModelCommand"/> class.
         /// </summary>
-        /// <param Name="action">The action.</param>
-        /// <param Name="canExecute">if set to <c>true</c> [can execute].</param>
+        /// <param name="action">The action.</param>
+        /// <param name="canExecute">if set to <c>true</c> [can execute].</param>
         public ViewModelCommand(Action action, bool canExecute)
         {
             //  Set the action.
@@ -29,8 +29,8 @@ namespace Item_WPF.addin
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewModelCommand"/> class.
         /// </summary>
-        /// <param Name="parameterizedAction">The parameterized action.</param>
-        /// <param Name="canExecute">if set to <c>true</c> [can execute].</param>
+        /// <param name="parameterizedAction">The parameterized action.</param>
+        /// <param name="canExecute">if set to <c>true</c> [can execute].</param>
         public ViewModelCommand(Action<object> parameterizedAction, bool canExecute)
         {
             //  Set the action.
@@ -40,7 +40,7 @@ namespace Item_WPF.addin
         /// <summary>
         /// Executes the command.
         /// </summary>
-        /// <param Name="param">The param.</param>
+        /// <param name="param">The param.</param>
         public virtual void DoExecute(object param)
         {
             //  Get copies of the two event handlers we'll be using.
@@ -55,11 +55,11 @@ namespace Item_WPF.addin
                 CancelCommandEventArgs args =
                     new CancelCommandEventArgs() { Parameter = param };
                 executing(this, args);
-                //  If the event Has been cancelled, bail now.
+                //  If the event has been cancelled, bail now.
                 if (args.Cancel)
                     return;
             }
-            //  Call the action or the parameterized action, whichever Has been set.
+            //  Call the action or the parameterized action, whichever has been set.
             if (action != null)
                 action();
             else if (parameterizedAction != null)
@@ -104,7 +104,7 @@ namespace Item_WPF.addin
         /// Defines the method that determines whether
         /// the command can execute in its current state.
         /// </summary>
-        /// <param Name="parameter">Data used by the command.
+        /// <param name="parameter">Data used by the command.
         /// If the command does not require data to be passed,
         /// this object can be set to null.</param>
         /// <returns>
@@ -117,7 +117,7 @@ namespace Item_WPF.addin
         /// <summary>
         /// Defines the method to be called when the command is invoked.
         /// </summary>
-        /// <param Name="parameter">Data used by the command.
+        /// <param name="parameter">Data used by the command.
         /// If the command does not require data to be passed,
         /// this object can be set to null.</param>
         void ICommand.Execute(object parameter)

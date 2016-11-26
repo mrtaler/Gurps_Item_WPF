@@ -47,7 +47,7 @@
                   Margin="10,7,0,0"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
-                  DisplayMemberPath="Name"
+                  DisplayMemberPath="name"
                   ItemsSource="{Binding ItemsClass}"
                   SelectedValue="{Binding SelectedItClassforSort}"
                   SelectedValuePath="id" />
@@ -151,7 +151,7 @@
                                     Binding="{Binding id}"
                                     Header="id" />
                 <DataGridTextColumn Binding="{Binding ITEM.szItemName}"
-                                    Header="Name"
+                                    Header="name"
                                     IsReadOnly="True" />
                 <DataGridTextColumn Binding="{Binding CountItems,
                                                       Mode=TwoWay,

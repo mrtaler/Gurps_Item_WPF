@@ -32,7 +32,7 @@ namespace Item_WPF.ItemEntityModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Advantage()
         {
-            this.attribute_bonus = new HashSet<attribute_bonus1>();
+            this.attribute_bonus = new HashSet<attribute_bonus>();
             this.cost_reduction = new HashSet<cost_reduction>();
             this.dr_bonusDB = new HashSet<dr_bonusDB>();
             this.melee_weapon = new HashSet<melee_weapon>();
@@ -239,8 +239,8 @@ namespace Item_WPF.ItemEntityModel
     	}
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<attribute_bonus1> _attribute_bonus;
-            public virtual ICollection<attribute_bonus1> attribute_bonus
+        private ICollection<attribute_bonus> _attribute_bonus;
+            public virtual ICollection<attribute_bonus> attribute_bonus
             {
                 get { return _attribute_bonus; }
                 set

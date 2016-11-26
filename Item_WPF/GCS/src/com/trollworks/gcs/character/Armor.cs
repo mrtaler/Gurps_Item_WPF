@@ -18,29 +18,29 @@
 //	/** The prefix used in front of all IDs for damage resistance. */
 //	public static const String	DR_PREFIX					= GURPSCharacter.CHARACTER_PREFIX + "dr.";				//$NON-NLS-1$
 //	/** The skull hit location's DR. */
-//	public static const String	ID_SKULL_DR					= DR_PREFIX + HitLocation.SKULL.Name();
+//	public static const String	ID_SKULL_DR					= DR_PREFIX + HitLocation.SKULL.name();
 //	/** The eyes hit location's DR. */
-//	public static const String	ID_EYES_DR					= DR_PREFIX + HitLocation.EYES.Name();
+//	public static const String	ID_EYES_DR					= DR_PREFIX + HitLocation.EYES.name();
 //	/** The face hit location's DR. */
-//	public static const String	ID_FACE_DR					= DR_PREFIX + HitLocation.FACE.Name();
+//	public static const String	ID_FACE_DR					= DR_PREFIX + HitLocation.FACE.name();
 //	/** The neck hit location's DR. */
-//	public static const String	ID_NECK_DR					= DR_PREFIX + HitLocation.NECK.Name();
+//	public static const String	ID_NECK_DR					= DR_PREFIX + HitLocation.NECK.name();
 //	/** The torso hit location's DR. */
-//	public static const String	ID_TORSO_DR					= DR_PREFIX + HitLocation.TORSO.Name();
+//	public static const String	ID_TORSO_DR					= DR_PREFIX + HitLocation.TORSO.name();
 //	/** The vitals hit location's DR. */
-//	public static const String	ID_VITALS_DR				= DR_PREFIX + HitLocation.VITALS.Name();
-//	private static const String	ID_FULL_BODY_DR				= DR_PREFIX + HitLocation.FULL_BODY.Name();
-//	private static const String	ID_FULL_BODY_EXCEPT_EYES_DR	= DR_PREFIX + HitLocation.FULL_BODY_EXCEPT_EYES.Name();
+//	public static const String	ID_VITALS_DR				= DR_PREFIX + HitLocation.VITALS.name();
+//	private static const String	ID_FULL_BODY_DR				= DR_PREFIX + HitLocation.FULL_BODY.name();
+//	private static const String	ID_FULL_BODY_EXCEPT_EYES_DR	= DR_PREFIX + HitLocation.FULL_BODY_EXCEPT_EYES.name();
 //	/** The groin hit location's DR. */
-//	public static const String	ID_GROIN_DR					= DR_PREFIX + HitLocation.GROIN.Name();
+//	public static const String	ID_GROIN_DR					= DR_PREFIX + HitLocation.GROIN.name();
 //	/** The arm hit location's DR. */
-//	public static const String	ID_ARM_DR					= DR_PREFIX + HitLocation.ARMS.Name();
+//	public static const String	ID_ARM_DR					= DR_PREFIX + HitLocation.ARMS.name();
 //	/** The hand hit location's DR. */
-//	public static const String	ID_HAND_DR					= DR_PREFIX + HitLocation.HANDS.Name();
+//	public static const String	ID_HAND_DR					= DR_PREFIX + HitLocation.HANDS.name();
 //	/** The leg hit location's DR. */
-//	public static const String	ID_LEG_DR					= DR_PREFIX + HitLocation.LEGS.Name();
+//	public static const String	ID_LEG_DR					= DR_PREFIX + HitLocation.LEGS.name();
 //	/** The foot hit location's DR. */
-//	public static const String	ID_FOOT_DR					= DR_PREFIX + HitLocation.FEET.Name();
+//	public static const String	ID_FOOT_DR					= DR_PREFIX + HitLocation.FEET.name();
 //	private GURPSCharacter		mCharacter;
 //	private int					mSkullDR;
 //	private int					mEyesDR;
@@ -85,7 +85,7 @@
 //	/**
 //	 * Sets the skull hit location's DR.
 //	 * 
-//	 * @param dr The DR Amount.
+//	 * @param dr The DR amount.
 //	 */
 //	public void setSkullDR(int dr) {
 //		if (mSkullDR != dr) {
@@ -102,7 +102,7 @@
 //	/**
 //	 * Sets the eyes hit location's DR.
 //	 * 
-//	 * @param dr The DR Amount.
+//	 * @param dr The DR amount.
 //	 */
 //	public void setEyesDR(int dr) {
 //		if (mEyesDR != dr) {
@@ -119,7 +119,7 @@
 //	/**
 //	 * Sets the face hit location's DR.
 //	 * 
-//	 * @param dr The DR Amount.
+//	 * @param dr The DR amount.
 //	 */
 //	public void setFaceDR(int dr) {
 //		if (mFaceDR != dr) {
@@ -136,7 +136,7 @@
 //	/**
 //	 * Sets the neck hit location's DR.
 //	 * 
-//	 * @param dr The DR Amount.
+//	 * @param dr The DR amount.
 //	 */
 //	public void setNeckDR(int dr) {
 //		if (mNeckDR != dr) {
@@ -153,7 +153,7 @@
 //	/**
 //	 * Sets the torso hit location's DR.
 //	 * 
-//	 * @param dr The DR Amount.
+//	 * @param dr The DR amount.
 //	 */
 //	public void setTorsoDR(int dr) {
 //		if (mTorsoDR != dr) {
@@ -170,7 +170,7 @@
 //	/**
 //	 * Sets the vitals hit location's DR.
 //	 * 
-//	 * @param dr The DR Amount.
+//	 * @param dr The DR amount.
 //	 */
 //	public void setVitalsDR(int dr) {
 //		if (mVitalsDR != dr) {
@@ -187,7 +187,7 @@
 //	/**
 //	 * Sets the groin hit location's DR.
 //	 * 
-//	 * @param dr The DR Amount.
+//	 * @param dr The DR amount.
 //	 */
 //	public void setGroinDR(int dr) {
 //		if (mGroinDR != dr) {
@@ -204,7 +204,7 @@
 //	/**
 //	 * Sets the arm hit location's DR.
 //	 * 
-//	 * @param dr The DR Amount.
+//	 * @param dr The DR amount.
 //	 */
 //	public void setArmDR(int dr) {
 //		if (mArmDR != dr) {
@@ -221,7 +221,7 @@
 //	/**
 //	 * Sets the hand hit location's DR.
 //	 * 
-//	 * @param dr The DR Amount.
+//	 * @param dr The DR amount.
 //	 */
 //	public void setHandDR(int dr) {
 //		if (mHandDR != dr) {
@@ -238,7 +238,7 @@
 //	/**
 //	 * Sets the leg hit location's DR.
 //	 * 
-//	 * @param dr The DR Amount.
+//	 * @param dr The DR amount.
 //	 */
 //	public void setLegDR(int dr) {
 //		if (mLegDR != dr) {
@@ -255,7 +255,7 @@
 //	/**
 //	 * Sets the foot hit location's DR.
 //	 * 
-//	 * @param dr The DR Amount.
+//	 * @param dr The DR amount.
 //	 */
 //	public void setFootDR(int dr) {
 //		if (mFootDR != dr) {

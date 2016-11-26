@@ -58,12 +58,12 @@
 //		String marker = reader.getMarker();
 //		do {
 //			if (reader.next() == XMLNodeType.START_TAG) {
-//				String Name = reader.getName();
+//				String name = reader.getName();
 
-//				if (Advantage.TAG_ADVANTAGE.equals(Name) || Advantage.TAG_ADVANTAGE_CONTAINER.equals(Name)) {
+//				if (Advantage.TAG_ADVANTAGE.equals(name) || Advantage.TAG_ADVANTAGE_CONTAINER.equals(name)) {
 //					model.addRow(new Advantage(this, reader, state), true);
 //				} else {
-//					reader.skipTag(Name);
+//					reader.skipTag(name);
 //				}
 //			}
 //		} while (reader.withinMarker(marker));

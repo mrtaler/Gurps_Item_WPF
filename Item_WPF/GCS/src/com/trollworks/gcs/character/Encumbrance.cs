@@ -83,12 +83,12 @@
 //		mMultiplier = multiplier;
 //	}
 
-//	/** @return The weight multiplier associated with this Level of encumbrance. */
+//	/** @return The weight multiplier associated with this level of encumbrance. */
 //	public int getWeightMultiplier() {
 //		return mMultiplier;
 //	}
 
-//	/** @return The penalty associated with this Level of encumbrance. */
+//	/** @return The penalty associated with this level of encumbrance. */
 //	public int getEncumbrancePenalty() {
 //		return -ordinal();
 //	}

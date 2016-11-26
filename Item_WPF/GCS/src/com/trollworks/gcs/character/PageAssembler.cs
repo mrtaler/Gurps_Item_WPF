@@ -40,26 +40,26 @@
 //		addPageInternal();
 //	}
 
-//	/** Adds the Notes field to the sheet. */
+//	/** Adds the notes field to the sheet. */
 //	public void addNotes() {
-//		NotesPanel Notes = new NotesPanel(mSheet.getCharacter().getDescription().getNotes(), false);
-//		Insets insets = Notes.getInsets();
+//		NotesPanel notes = new NotesPanel(mSheet.getCharacter().getDescription().getNotes(), false);
+//		Insets insets = notes.getInsets();
 //		int width = mContentWidth - (insets.left + insets.right);
-//		bool addPage = mRemaining < Notes.getMinimumSize().height;
-//		Notes.addActionListener(mSheet);
-//		Notes.setWrapWidth(width);
+//		bool addPage = mRemaining < notes.getMinimumSize().height;
+//		notes.addActionListener(mSheet);
+//		notes.setWrapWidth(width);
 //		while (true) {
 //			if (addPage) {
 //				addPageInternal();
 //			}
-//			String text = Notes.setMaxHeight(mRemaining);
-//			addPage = !addToContent(Notes, null, null);
+//			String text = notes.setMaxHeight(mRemaining);
+//			addPage = !addToContent(notes, null, null);
 //			if (text == null) {
 //				break;
 //			}
-//			Notes = new NotesPanel(text, true);
-//			Notes.addActionListener(mSheet);
-//			Notes.setWrapWidth(width);
+//			notes = new NotesPanel(text, true);
+//			notes.addActionListener(mSheet);
+//			notes.setWrapWidth(width);
 //		}
 //	}
 

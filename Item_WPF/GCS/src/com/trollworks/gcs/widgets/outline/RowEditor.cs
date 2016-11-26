@@ -190,14 +190,14 @@
 //    return LAST_TAB_MAP.get(getClass());
 //}
 
-///** @param Name The last tab showing for this specific row editor class. */
-//public void updateLastTabName(String Name)
+///** @param name The last tab showing for this specific row editor class. */
+//public void updateLastTabName(String name)
 //{
-//    LAST_TAB_MAP.put(getClass(), Name);
+//    LAST_TAB_MAP.put(getClass(), name);
 //}
 
 ///**
-// * Called to apply Any changes that were made.
+// * Called to apply any changes that were made.
 // *
 // * @return Whether anything was modified.
 // */
@@ -212,7 +212,7 @@
 //	}
 
 //	/**
-//	 * Called to apply Any changes that were made.
+//	 * Called to apply any changes that were made.
 //	 *
 //	 * @return Whether anything was modified.
 //	 */

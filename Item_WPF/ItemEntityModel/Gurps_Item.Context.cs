@@ -28,12 +28,10 @@ namespace Item_WPF.ItemEntityModel
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Attribute_bonus> Attribute_bonus { get; set; }
-        public virtual DbSet<Attribute_prereq> Attribute_prereq { get; set; }
         public virtual DbSet<Advantage> Advantages { get; set; }
         public virtual DbSet<advantage_prereq> advantage_prereq { get; set; }
-        public virtual DbSet<attribute_bonus1> attribute_bonus1 { get; set; }
-        public virtual DbSet<attribute_prereq1> attribute_prereq1 { get; set; }
+        public virtual DbSet<attribute_bonus> attribute_bonus { get; set; }
+        public virtual DbSet<attribute_prereq> attribute_prereq { get; set; }
         public virtual DbSet<CharacterDB> CharacterDBs { get; set; }
         public virtual DbSet<CharSkill> CharSkills { get; set; }
         public virtual DbSet<contained_weight_prereq> contained_weight_prereq { get; set; }

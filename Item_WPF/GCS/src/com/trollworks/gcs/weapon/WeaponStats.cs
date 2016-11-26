@@ -117,18 +117,18 @@
 
 //	/** @param reader The reader to load from. */
 //	protected void loadSelf(XMLReader reader) throws IOException {
-//		String Name = reader.getName();
+//		String name = reader.getName();
 
-//		if (TAG_DAMAGE.equals(Name)) {
+//		if (TAG_DAMAGE.equals(name)) {
 //			mDamage = reader.readText();
-//		} else if (TAG_STRENGTH.equals(Name)) {
+//		} else if (TAG_STRENGTH.equals(name)) {
 //			mStrength = reader.readText();
-//		} else if (TAG_USAGE.equals(Name)) {
+//		} else if (TAG_USAGE.equals(name)) {
 //			mUsage = reader.readText();
-//		} else if (SkillDefault.TAG_ROOT.equals(Name)) {
+//		} else if (SkillDefault.TAG_ROOT.equals(name)) {
 //			mDefaults.add(new SkillDefault(reader));
 //		} else {
-//			reader.skipTag(Name);
+//			reader.skipTag(name);
 //		}
 //	}
 
@@ -205,7 +205,7 @@
 //		return getDescription();
 //	}
 
-//	/** @return The Notes for this weapon. */
+//	/** @return The notes for this weapon. */
 //	public string getNotes() {
 //		return mOwner != null ? mOwner.getNotes() : EMPTY;
 //	}
@@ -412,7 +412,7 @@
 //		}
 //	}
 
-//	/** @return The skill Level. */
+//	/** @return The skill level. */
 //	public int getSkillLevel() {
 //		DataFile df = mOwner.getDataFile();
 
@@ -426,9 +426,9 @@
 //		int best = Integer.MIN_VALUE;
 //		for (SkillDefault skillDefault : getDefaults()) {
 //			SkillDefaultType type = skillDefault.getType();
-//			int Level = type.getSkillLevelFast(character, skillDefault, new HashSet<String>());
-//			if (Level > best) {
-//				best = Level;
+//			int level = type.getSkillLevelFast(character, skillDefault, new HashSet<String>());
+//			if (level > best) {
+//				best = level;
 //			}
 //		}
 //		if (best != Integer.MIN_VALUE) {

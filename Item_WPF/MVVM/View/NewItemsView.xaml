@@ -33,7 +33,7 @@
                   Margin="90,46,0,0"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
-                  DisplayMemberPath="Name"
+                  DisplayMemberPath="name"
                   ItemsSource="{Binding ItemsClass}"
                   SelectedItem="{Binding SelectedItemClass}"
                   SelectedValuePath="id" />

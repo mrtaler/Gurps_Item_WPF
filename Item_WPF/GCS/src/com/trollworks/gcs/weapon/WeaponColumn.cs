@@ -26,7 +26,7 @@
 
 ///** Definitions for weapon columns. */
 //public enum WeaponColumn {
-//	/** The weapon Name/description. */
+//	/** The weapon name/description. */
 //	DESCRIPTION {
 //		@Override
 //		public string toString(Class<? extends WeaponStats> weaponClass) {
@@ -52,12 +52,12 @@
 //		@Override
 //		public string getDataAsText(WeaponStats weapon) {
 //			StringBuilder builder = new StringBuilder();
-//			String Notes = weapon.getNotes();
+//			String notes = weapon.getNotes();
 
 //			builder.append(weapon.toString());
-//			if (Notes.length() > 0) {
+//			if (notes.length() > 0) {
 //				builder.append(" - "); //$NON-NLS-1$
-//				builder.append(Notes);
+//				builder.append(notes);
 //			}
 //			return builder.toString();
 //		}
@@ -84,7 +84,7 @@
 //			return weapon.getUsage();
 //		}
 //	},
-//	/** The weapon skill Level. */
+//	/** The weapon skill level. */
 //	LEVEL {
 //		@Override
 //		public string toString(Class<? extends WeaponStats> weaponClass) {
@@ -111,12 +111,12 @@
 
 //		@Override
 //		public string getDataAsText(WeaponStats weapon) {
-//			int Level = weapon.getSkillLevel();
+//			int level = weapon.getSkillLevel();
 
-//			if (Level < 0) {
+//			if (level < 0) {
 //				return "-"; //$NON-NLS-1$
 //			}
-//			return Numbers.format(Level);
+//			return Numbers.format(level);
 //		}
 //	},
 //	/** The weapon accuracy. */
@@ -367,7 +367,7 @@
 //	@Localize(locale = "ru", value = "Дистанционные орудия")
 //	@Localize(locale = "es", value = "Armas de ataque a distancia")
 //	static String	RANGED;
-//	@Localize("The Name/description of the weapon")
+//	@Localize("The name/description of the weapon")
 //	@Localize(locale = "de", value = "Der Name und die Beschreibung der Waffe.")
 //	@Localize(locale = "ru", value = "Название/описание оружия")
 //	@Localize(locale = "es", value = "Nombre/Descripción del arma")
@@ -497,7 +497,7 @@
 //	@Localize(locale = "ru", value = "Уров")
 //	@Localize(locale = "es", value = "Niv")
 //	static String	LEVEL_TITLE;
-//	@Localize("The skill Level with the weapon")
+//	@Localize("The skill level with the weapon")
 //	@Localize(locale = "de", value = "Der Fertigkeitswert, mit dem die Waffe beherrscht wird.")
 //	@Localize(locale = "ru", value = "Уровень умения владения оружием")
 //	@Localize(locale = "es", value = "Nivel de habilidad con el arma")

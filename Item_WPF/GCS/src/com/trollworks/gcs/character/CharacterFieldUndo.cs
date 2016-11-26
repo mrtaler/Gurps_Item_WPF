@@ -27,15 +27,15 @@
 //	 * Create a new character field undo edit.
 //	 * 
 //	 * @param character The character to provide an undo edit for.
-//	 * @param Name The Name of the undo edit.
+//	 * @param name The name of the undo edit.
 //	 * @param id The ID of the field being changed.
 //	 * @param before The original value.
 //	 * @param after The new value.
 //	 */
-//	public CharacterFieldUndo(GURPSCharacter character, string Name, string id, Object before, Object after) {
+//	public CharacterFieldUndo(GURPSCharacter character, string name, string id, Object before, Object after) {
 //		super();
 //		mCharacter = character;
-//		mName = Name;
+//		mName = name;
 //		mID = id;
 //		mBefore = before;
 //		mAfter = after;

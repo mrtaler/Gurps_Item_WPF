@@ -11,39 +11,39 @@ namespace Item_WPF.MVVM.Serialize.Model
     {
         public int numPP;
         /// <summary>
-        /// 1 element Name="Name" type="StringWithCompareAttribute"
+        /// 1 element name="name" type="StringWithCompareAttribute"
         /// </summary>
         public XElement NameSkill;
         /// <summary>
-        /// 2  element Name="Specialization" type="StringWithCompareAttribute"
+        /// 2  element name="specialization" type="StringWithCompareAttribute"
         /// </summary>
         public XElement Specialization;
         /// <summary>
-        /// 3 element Name="tech_level" type="xs:string"
+        /// 3 element name="tech_level" type="xs:string"
         /// </summary>
         public XElement tech_level;
         /// <summary>
-        /// 4 element Name="difficulty" type="xs:string"
+        /// 4 element name="difficulty" type="xs:string"
         /// </summary>
         public XElement difficulty;
         /// <summary>
-        /// 5 element Name="points" type="xs:unsignedInt" 
+        /// 5 element name="points" type="xs:unsignedInt" 
         /// </summary>
         public XElement Points;
         /// <summary>
-        /// 6 element Name="reference" type="xs:string" 
+        /// 6 element name="reference" type="xs:string" 
         /// </summary>
         public XElement Reference;
         /// <summary>
-        /// 7 Attribute Name="version" type="xs:unsignedShort" use="required" 
+        /// 7 attribute name="version" type="xs:unsignedShort" use="required" 
         /// </summary>
         public XAttribute version;
         /// <summary>
-        /// 8 element Name="Notes" type="StringWithCompareAttribute" 
+        /// 8 element name="notes" type="StringWithCompareAttribute" 
         /// </summary>
         public XElement notes;
         /// <summary>
-        /// 9 element Name="encumbrance_penalty_multiplier" type="xs:unsignedInt" 
+        /// 9 element name="encumbrance_penalty_multiplier" type="xs:unsignedInt" 
         /// </summary>
         public XElement encumbrance_penalty_multiplier;
         public XAttribute limit;

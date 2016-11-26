@@ -16,8 +16,8 @@ namespace Item_WPF.MVVM.Serialize.Model
         /// <summary>
         /// Получение в файл категорий
         /// </summary>
-        /// <param Name="xdoc">извлёчённый документ</param>
-        /// <param Name="writePath">файл для записи результата</param>
+        /// <param name="xdoc">извлёчённый документ</param>
+        /// <param name="writePath">файл для записи результата</param>
         public Category(string xmlString, string writePath)
         {
 

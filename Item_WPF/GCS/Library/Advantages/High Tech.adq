@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="US-ASCII" ?>
 <advantage_list unique_id="hv8u8t7p:-e5u7if0u13k2" version="1">
 	<advantage version="2">
-		<Name>Akimbo(@One Handed Weapon Skill@)</Name>
+		<name>Akimbo(@One Handed Weapon Skill@)</name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>HT249</reference>
@@ -11,7 +11,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Armorer's Gift (Guns(@Speciallity@))</Name>
+		<name>Armorer's Gift (Guns(@Speciallity@))</name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>HT249</reference>
@@ -20,17 +20,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Cross-Trained(Guns(@Speciallity@))</Name>
-		<type>Mental</type>
-		<base_points>1</base_points>
-		<reference>HT249</reference>
-		<categories>
-			<category>Cinematic</category>
-			<category>Perk</category>
-		</categories>
-	</advantage>
-	<advantage version="2">
-		<Name>One-Armed Bandit (Guns (@Weapon@))</Name>
+		<name>Cross-Trained(Guns(@Speciallity@))</name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>HT249</reference>
@@ -40,7 +30,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Pants-Positive Safety</Name>
+		<name>One-Armed Bandit (Guns (@Weapon@))</name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>HT249</reference>
@@ -50,58 +40,68 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Quick-Sheathe (@Weapon Skill@)</Name>
+		<name>Pants-Positive Safety</name>
+		<type>Mental</type>
+		<base_points>1</base_points>
+		<reference>HT249</reference>
+		<categories>
+			<category>Cinematic</category>
+			<category>Perk</category>
+		</categories>
+	</advantage>
+	<advantage version="2">
+		<name>Quick-Sheathe (@Weapon Skill@)</name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>HT249,MA51</reference>
-		<Notes>Let you use Fast-Draw to save one second when sheating</Notes>
+		<notes>Let you use Fast-Draw to save one second when sheating</notes>
 		<categories>
 			<category>Cinematic</category>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Quick-Swap (@Skill@)</Name>
+		<name>Quick-Swap (@Skill@)</name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>HT249,MA51</reference>
-		<Notes>Let you switch hands as a free action.</Notes>
+		<notes>Let you switch hands as a free action.</notes>
 		<categories>
 			<category>Cinematic</category>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Sure Footed (@Surface Feature@)</Name>
+		<name>Sure Footed (@Surface Feature@)</name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>HT250,MA52</reference>
-		<Notes>Let you ignore bad footing.</Notes>
+		<notes>Let you ignore bad footing.</notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Talent (Antiquary)</Name>
+		<name>Talent (Antiquary)</name>
 		<type>Mental</type>
-		<Levels>1</Levels>
-		<points_per_Level>5</points_per_Level>
+		<levels>1</levels>
+		<points_per_level>5</points_per_level>
 		<modifier version="1">
-			<Name>Reaction Bonus</Name>
-			<cost type="Percentage">0</cost>
+			<name>Reaction Bonus</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
-			<Notes>Devotees of the old and beautiful.</Notes>
+			<notes>Devotees of the old and beautiful.</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Alternate Benefit</Name>
-			<cost type="Percentage">0</cost>
+			<name>Alternate Benefit</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
-			<Notes>Applies to science skills when used at lower TL</Notes>
+			<notes>Applies to science skills when used at lower TL</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Alternative Cost</Name>
+			<name>Alternative Cost</name>
 			<cost type="points">1</cost>
-			<affects>Levels only</affects>
+			<affects>levels only</affects>
 		</modifier>
 		<reference>H19,PU3:6</reference>
 		<categories>
@@ -109,57 +109,57 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<Name Compare="contains">architecture</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="contains">architecture</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">connoisseur</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">connoisseur</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="contains">heraldry</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="contains">heraldry</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="contains">history</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="contains">history</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="contains">literature</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="contains">literature</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="contains">research</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="contains">research</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 	</advantage>
 	<advantage version="2">
-		<Name>Talent (Cunning Folk)</Name>
+		<name>Talent (Cunning Folk)</name>
 		<type>Mental</type>
-		<Levels>1</Levels>
-		<points_per_Level>10</points_per_Level>
+		<levels>1</levels>
+		<points_per_level>10</points_per_level>
 		<modifier version="1">
-			<Name>Reaction Bonus</Name>
-			<cost type="Percentage">0</cost>
+			<name>Reaction Bonus</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
-			<Notes>Local peasantry, clients, and acolytes</Notes>
+			<notes>Local peasantry, clients, and acolytes</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Alternate Benefit</Name>
-			<cost type="Percentage">0</cost>
+			<name>Alternate Benefit</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
-			<Notes>IQ-4+Level to notice anything odd in an area you have lived 6-Level months</Notes>
+			<notes>IQ-4+level to notice anything odd in an area you have lived 6-level months</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Alternative Cost</Name>
+			<name>Alternative Cost</name>
 			<cost type="points">-2</cost>
-			<affects>Levels only</affects>
+			<affects>levels only</affects>
 		</modifier>
 		<reference>H19,PU3:9</reference>
 		<categories>
@@ -167,55 +167,55 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<Name Compare="is">Animal Handling</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Animal Handling</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Fortune-Telling</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Fortune-Telling</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Herb Lore</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Herb Lore</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Naturalist</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Naturalist</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Occultism</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Occultism</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Poisons</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Poisons</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Veterinary</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Veterinary</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Weather Sense</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Weather Sense</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 	</advantage>
 	<advantage version="2">
-		<Name>Talent (Evil Computer Talent)</Name>
+		<name>Talent (Evil Computer Talent)</name>
 		<type>Mental, Exotic</type>
-		<Levels>1</Levels>
-		<points_per_Level>5</points_per_Level>
+		<levels>1</levels>
+		<points_per_level>5</points_per_level>
 		<modifier version="1" enabled="no">
-			<Name>Alternative Cost</Name>
+			<name>Alternative Cost</name>
 			<cost type="points">1</cost>
-			<affects>Levels only</affects>
+			<affects>levels only</affects>
 		</modifier>
 		<reference>PU3:9</reference>
 		<categories>
@@ -223,58 +223,58 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<Name Compare="is">Computer Hacking</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Computer Hacking</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Computer Operation</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Computer Operation</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Computer Programming</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Computer Programming</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Cryptography</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Cryptography</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Expert Skill</Name>
-			<Specialization Compare="is">Computer Security</Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Expert Skill</name>
+			<specialization compare="is">Computer Security</specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Research</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Research</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<prereq_list all="yes">
-			<advantage_prereq Has="yes">
-				<Name Compare="is">Digital Mind</Name>
-				<Notes Compare="is anything"></Notes>
+			<advantage_prereq has="yes">
+				<name compare="is">Digital Mind</name>
+				<notes compare="is anything"></notes>
 			</advantage_prereq>
 		</prereq_list>
 	</advantage>
 	<advantage version="2">
-		<Name>Talent (Mesmerist)</Name>
+		<name>Talent (Mesmerist)</name>
 		<type>Mental, Exotic</type>
-		<Levels>1</Levels>
-		<points_per_Level>10</points_per_Level>
+		<levels>1</levels>
+		<points_per_level>10</points_per_level>
 		<modifier version="1">
-			<Name>Reaction Bonus</Name>
-			<cost type="Percentage">0</cost>
+			<name>Reaction Bonus</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
-			<Notes>The foolish and weak-minded</Notes>
+			<notes>The foolish and weak-minded</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Alternate Benefit</Name>
-			<cost type="Percentage">0</cost>
+			<name>Alternate Benefit</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
-			<Notes>Bonus to resist covered skills</Notes>
+			<notes>Bonus to resist covered skills</notes>
 		</modifier>
 		<reference>H19,PU3:12</reference>
 		<categories>
@@ -282,87 +282,87 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<Name Compare="is">Autohypnosis</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Autohypnosis</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Brainwashing</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Brainwashing</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Captivate</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Captivate</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Gesture</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Gesture</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Hypnotism</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Hypnotism</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Intimidation</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Intimidation</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Musical Influence</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Musical Influence</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Persuade</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Persuade</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Suggest</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Suggest</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Sway Emotions</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Sway Emotions</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is"></Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is"></name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is"></Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is"></name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 	</advantage>
 	<advantage version="2">
-		<Name>Talent (Occultist)</Name>
+		<name>Talent (Occultist)</name>
 		<type>Mental, Supernatural</type>
-		<Levels>1</Levels>
-		<points_per_Level>10</points_per_Level>
+		<levels>1</levels>
+		<points_per_level>10</points_per_level>
 		<modifier version="1">
-			<Name>Reaction Bonus</Name>
-			<cost type="Percentage">0</cost>
+			<name>Reaction Bonus</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
-			<Notes>Students of the arcane, gullible College students, and monster-hunters</Notes>
+			<notes>Students of the arcane, gullible college students, and monster-hunters</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Alternate Benefit</Name>
-			<cost type="Percentage">0</cost>
+			<name>Alternate Benefit</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
-			<Notes>Bonus to fright checks due to supenatural beings or sanity destroying tomes</Notes>
+			<notes>Bonus to fright checks due to supenatural beings or sanity destroying tomes</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Alternative Cost</Name>
+			<name>Alternative Cost</name>
 			<cost type="points">2</cost>
-			<affects>Levels only</affects>
+			<affects>levels only</affects>
 		</modifier>
 		<reference>H19,PU3:14</reference>
 		<categories>
@@ -370,82 +370,82 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<Name Compare="is">Alchemy</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Alchemy</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Anthropology</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Anthropology</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Archaeology</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Archaeology</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Exorcism</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Exorcism</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Hidden Lore</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Hidden Lore</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">History</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">History</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Linguistics</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Linguistics</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Literature</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Literature</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Occultism</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Occultism</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Research</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Research</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Ritual Magic</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Ritual Magic</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Thaumatology</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Thaumatology</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 	</advantage>
 	<advantage version="2">
-		<Name>Talent (Poet)</Name>
+		<name>Talent (Poet)</name>
 		<type>Mental</type>
-		<Levels>1</Levels>
-		<points_per_Level>5</points_per_Level>
+		<levels>1</levels>
+		<points_per_level>5</points_per_level>
 		<modifier version="1">
-			<Name>Reaction Bonus</Name>
-			<cost type="Percentage">0</cost>
+			<name>Reaction Bonus</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
-			<Notes>Readers/Listeners, Literati</Notes>
+			<notes>Readers/Listeners, Literati</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Alternate Benefit</Name>
-			<cost type="Percentage">0</cost>
+			<name>Alternate Benefit</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
-			<Notes>Bonus to first influence roll made against one or more audience members after a successful performance.</Notes>
+			<notes>Bonus to first influence roll made against one or more audience members after a successful performance.</notes>
 		</modifier>
 		<reference>H19,PU3:14</reference>
 		<categories>
@@ -453,40 +453,40 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<Name Compare="is">Connoisseur</Name>
-			<Specialization Compare="is anything">Literature</Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Connoisseur</name>
+			<specialization compare="is anything">Literature</specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Literature</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Literature</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Poetry</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Poetry</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Public Speaking</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Public Speaking</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Writing</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Writing</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 	</advantage>
 	<advantage version="2">
-		<Name>Talent (Unseelie Talent)</Name>
+		<name>Talent (Unseelie Talent)</name>
 		<type>Mental</type>
-		<Levels>1</Levels>
-		<points_per_Level>5</points_per_Level>
+		<levels>1</levels>
+		<points_per_level>5</points_per_level>
 		<modifier version="1" enabled="no">
-			<Name>Alternative Cost</Name>
+			<name>Alternative Cost</name>
 			<cost type="points">1</cost>
-			<affects>Levels only</affects>
+			<affects>levels only</affects>
 		</modifier>
 		<reference>PU3:17</reference>
 		<categories>
@@ -494,42 +494,42 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<Name Compare="is">Camouflage</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Camouflage</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Disguise</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Disguise</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Scrounging</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Scrounging</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Stealth</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Stealth</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Survival</Name>
-			<Specialization Compare="is">Swampland</Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Survival</name>
+			<specialization compare="is">Swampland</specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Urban Survival</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_Level="yes">1</Amount>
+			<name compare="is">Urban Survival</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 	</advantage>
 	<advantage version="2">
-		<Name>Weapon Bond</Name>
+		<name>Weapon Bond</name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>HT250,MA52</reference>
-		<Notes>You own a Weapon that is uniquely suited to you.</Notes>
+		<notes>You own a Weapon that is uniquely suited to you.</notes>
 		<categories>
 			<category>Perk</category>
 		</categories>

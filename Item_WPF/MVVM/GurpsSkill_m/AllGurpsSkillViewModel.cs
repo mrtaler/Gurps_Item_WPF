@@ -43,7 +43,7 @@ namespace Item_WPF.MVVM.GurpsSkill_m
             else
                 if (_context.GurpsSkills.FirstOrDefault(p => p.id == vx).idSpecialization != null)
             {
-                //SelectedGurpsForWork.NameSkill = "Name: " +
+                //SelectedGurpsForWork.NameSkill = "name: " +
                 //    _context.GurpsSkills.Find(_context.GurpsSkills.Find(vx).idSpecialization).NameSkill
                 //    + "/"
                 //    + _context.GurpsSkills.Find(vx).NameSkill;

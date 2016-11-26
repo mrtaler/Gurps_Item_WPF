@@ -95,15 +95,15 @@ namespace Item_WPF.ItemEntityModel
                 attribute_bonus atrbnr = new attribute_bonus();
                 //foreach (var itemAttribute in item.Attribute)
                 //{
-                //    atrbnr.AttributeLimitation = itemAttribute.Attribute.Attribute("limitation").Value.ToString();
-                //    atrbnr.atr= itemAttribute.Attribute.Value.ToString();
+                //    atrbnr.AttributeLimitation = itemAttribute.attribute.Attribute("limitation").Value.ToString();
+                //    atrbnr.atr= itemAttribute.attribute.Value.ToString();
                 //    atrbnr.BonusAttributes.Add(bnsatr);
                 //}
                 //foreach (var itemAmount in item.Amount)
                 //{
                 //    AmountAtribute amnatr = new AmountAtribute();
-                //    amnatr.per_level = itemAmount.Amount.Attribute("per_level").Value.ToString();
-                //    amnatr.Value = itemAmount.Amount.Value.ToString();
+                //    amnatr.per_level = itemAmount.amount.Attribute("per_level").Value.ToString();
+                //    amnatr.Value = itemAmount.amount.Value.ToString();
                 //    atrbnr.AmountAtributes.Add(amnatr);
                 //}
                 attribute_bonus.Add(atrbnr);
@@ -117,15 +117,15 @@ namespace Item_WPF.ItemEntityModel
                 //foreach (var itemAmount in itemWeapon_bonus.Amount)
                 //{
                 //    AmountAtribute amnatr = new AmountAtribute();
-                //    amnatr.per_level = itemAmount.Amount.Attribute("per_level").Value.ToString();
-                //    amnatr.Value = itemAmount.Amount.Value.ToString();
+                //    amnatr.per_level = itemAmount.amount.Attribute("per_level").Value.ToString();
+                //    amnatr.Value = itemAmount.amount.Value.ToString();
                 //    weapbns.AmountAtributes.Add(amnatr);
                 //}
-                weapbns.nameCompare = itemWeapon_bonus.name.Attribute("Compare").Value.ToString();
+                weapbns.nameCompare = itemWeapon_bonus.name.Attribute("compare").Value.ToString();
                 weapbns.name = itemWeapon_bonus.name.Value.ToString();
-                weapbns.specializationCompare = itemWeapon_bonus.specialization.Attribute("Compare").Value.ToString(); ;
+                weapbns.specializationCompare = itemWeapon_bonus.specialization.Attribute("compare").Value.ToString(); ;
                 weapbns.specialization = itemWeapon_bonus.specialization.Value.ToString();
-                weapbns.levelCompare = itemWeapon_bonus.level.Attribute("Compare").Value.ToString(); ;
+                weapbns.levelCompare = itemWeapon_bonus.level.Attribute("compare").Value.ToString(); ;
                 weapbns.level = itemWeapon_bonus.level.Value.ToString();
                 weapon_bonus.Add(weapbns);
             }

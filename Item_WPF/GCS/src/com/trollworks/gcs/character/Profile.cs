@@ -298,15 +298,15 @@
 
 //	/** The root XML tag. */
 //	public static const String		TAG_ROOT			= "profile";																				//$NON-NLS-1$
-//	/** The preferences module Name. */
+//	/** The preferences module name. */
 //	public static const String		MODULE				= "GURPSCharacter";																			//$NON-NLS-1$
 //	/** The prefix used in front of all IDs for profile. */
 //	public static const String		PROFILE_PREFIX		= GURPSCharacter.CHARACTER_PREFIX + "pi.";													//$NON-NLS-1$
 //	/** The field ID for portrait changes. */
 //	public static const String		ID_PORTRAIT			= PROFILE_PREFIX + "Portrait";																//$NON-NLS-1$
-//	/** The field ID for Name changes. */
+//	/** The field ID for name changes. */
 //	public static const String		ID_NAME				= PROFILE_PREFIX + "Name";																	//$NON-NLS-1$
-//	/** The field ID for Notes changes. */
+//	/** The field ID for notes changes. */
 //	public static const String		ID_NOTES			= PROFILE_PREFIX + "Notes";																	//$NON-NLS-1$
 //	/** The field ID for title changes. */
 //	public static const String		ID_TITLE			= PROFILE_PREFIX + "Title";																	//$NON-NLS-1$
@@ -332,14 +332,14 @@
 //	public static const String		ID_RACE				= PROFILE_PREFIX + "Race";																	//$NON-NLS-1$
 //	/** The field ID for religion changes. */
 //	public static const String		ID_RELIGION			= PROFILE_PREFIX + "Religion";																//$NON-NLS-1$
-//	/** The field ID for player Name changes. */
+//	/** The field ID for player name changes. */
 //	public static const String		ID_PLAYER_NAME		= PROFILE_PREFIX + "PlayerName";															//$NON-NLS-1$
 //	/** The field ID for campaign changes. */
 //	public static const String		ID_CAMPAIGN			= PROFILE_PREFIX + "Campaign";																//$NON-NLS-1$
-//	/** The field ID for tech Level changes. */
+//	/** The field ID for tech level changes. */
 //	public static const String		ID_TECH_LEVEL		= PROFILE_PREFIX + "TechLevel";																//$NON-NLS-1$
 //	/** The field ID for size modifier changes. */
-//	public static const String		ID_SIZE_MODIFIER	= PROFILE_PREFIX + BonusAttributeType.SM.Name();
+//	public static const String		ID_SIZE_MODIFIER	= PROFILE_PREFIX + BonusAttributeType.SM.name();
 //	/** The default portrait marker. */
 //	public static const String		DEFAULT_PORTRAIT	= "!\000";																					//$NON-NLS-1$
 //	/** The default Tech Level. */
@@ -350,7 +350,7 @@
 //	public static const int			PORTRAIT_WIDTH		= 3 * PORTRAIT_HEIGHT / 4;
 //	private static const String		TAG_PLAYER_NAME		= "player_name";																			//$NON-NLS-1$
 //	private static const String		TAG_CAMPAIGN		= "campaign";																				//$NON-NLS-1$
-//	private static const String		TAG_NAME			= "Name";																					//$NON-NLS-1$
+//	private static const String		TAG_NAME			= "name";																					//$NON-NLS-1$
 //	private static const String		TAG_TITLE			= "title";																					//$NON-NLS-1$
 //	private static const String		TAG_AGE				= "age";																					//$NON-NLS-1$
 //	private static const String		TAG_BIRTHDAY		= "birthday";																				//$NON-NLS-1$
@@ -365,7 +365,7 @@
 //	private static const String		TAG_TECH_LEVEL		= "tech_level";																				//$NON-NLS-1$
 //	private static const String		TAG_RELIGION		= "religion";																				//$NON-NLS-1$
 //	private static const String		TAG_PORTRAIT		= "portrait";																				//$NON-NLS-1$
-//	private static const String		TAG_NOTES			= "Notes";																					//$NON-NLS-1$
+//	private static const String		TAG_NOTES			= "notes";																					//$NON-NLS-1$
 //	private static const String		EMPTY				= "";																						//$NON-NLS-1$
 //	private static const Random		RANDOM				= new Random();
 //	private static const String[]	EYE_OPTIONS			= new String[] { BROWN, BROWN, BLUE, BLUE, GREEN, GREY, VIOLET };
@@ -523,7 +523,7 @@
 //	}
 
 //	void update() {
-//		setSizeModifierBonus(mCharacter.getIntegerBonusFor(GURPSCharacter.ATTRIBUTES_PREFIX + BonusAttributeType.SM.Name()));
+//		setSizeModifierBonus(mCharacter.getIntegerBonusFor(GURPSCharacter.ATTRIBUTES_PREFIX + BonusAttributeType.SM.name()));
 //	}
 
 //	/** @return The portrait. */
@@ -566,20 +566,20 @@
 //		return new RetinaIcon(normal, retina);
 //	}
 
-//	/** @return The Name. */
+//	/** @return The name. */
 //	public string getName() {
 //		return mName;
 //	}
 
 //	/**
-//	 * Sets the Name.
+//	 * Sets the name.
 //	 *
-//	 * @param Name The new Name.
+//	 * @param name The new name.
 //	 */
-//	public void setName(String Name) {
-//		if (!mName.equals(Name)) {
-//			mCharacter.postUndoEdit(NAME_UNDO, ID_NAME, mName, Name);
-//			mName = Name;
+//	public void setName(String name) {
+//		if (!mName.equals(name)) {
+//			mCharacter.postUndoEdit(NAME_UNDO, ID_NAME, mName, name);
+//			mName = name;
 //			mCharacter.notifySingle(ID_NAME, mName);
 //		}
 //	}
@@ -638,15 +638,15 @@
 //		}
 //	}
 
-//	/** @return The player's Name. */
+//	/** @return The player's name. */
 //	public string getPlayerName() {
 //		return mPlayerName;
 //	}
 
 //	/**
-//	 * Sets the player's Name.
+//	 * Sets the player's name.
 //	 *
-//	 * @param player The new player's Name.
+//	 * @param player The new player's name.
 //	 */
 //	public void setPlayerName(String player) {
 //		if (!mPlayerName.equals(player)) {
@@ -674,15 +674,15 @@
 //		}
 //	}
 
-//	/** @return The tech Level. */
+//	/** @return The tech level. */
 //	public string getTechLevel() {
 //		return mTechLevel;
 //	}
 
 //	/**
-//	 * Sets the tech Level.
+//	 * Sets the tech level.
 //	 *
-//	 * @param techLevel The new tech Level.
+//	 * @param techLevel The new tech level.
 //	 */
 //	public void setTechLevel(String techLevel) {
 //		if (!mTechLevel.equals(techLevel)) {
@@ -896,20 +896,20 @@
 //		}
 //	}
 
-//	/** @return The Notes. */
+//	/** @return The notes. */
 //	public string getNotes() {
 //		return mNotes;
 //	}
 
 //	/**
-//	 * Sets the Notes.
+//	 * Sets the notes.
 //	 *
-//	 * @param Notes The new Notes.
+//	 * @param notes The new notes.
 //	 */
-//	public void setNotes(String Notes) {
-//		if (!mNotes.equals(Notes)) {
-//			mCharacter.postUndoEdit(NOTES_UNDO, ID_NOTES, mNotes, Notes);
-//			mNotes = Notes;
+//	public void setNotes(String notes) {
+//		if (!mNotes.equals(notes)) {
+//			mCharacter.postUndoEdit(NOTES_UNDO, ID_NOTES, mNotes, notes);
+//			mNotes = notes;
 //			mCharacter.notifySingle(ID_NOTES, mNotes);
 //		}
 //	}
@@ -1179,14 +1179,14 @@
 //		return new WeightValue(desiredUnits.convert(calcUnits, base), desiredUnits);
 //	}
 
-//	/** @return The default player Name. */
+//	/** @return The default player name. */
 //	public static string getDefaultPlayerName() {
-//		return Preferences.getInstance().getStringValue(MODULE, Profile.ID_NAME, System.getProperty("user.Name")); //$NON-NLS-1$
+//		return Preferences.getInstance().getStringValue(MODULE, Profile.ID_NAME, System.getProperty("user.name")); //$NON-NLS-1$
 //	}
 
-//	/** @param Name The default player Name. */
-//	public static void setDefaultPlayerName(String Name) {
-//		Preferences.getInstance().setValue(MODULE, Profile.ID_NAME, Name);
+//	/** @param name The default player name. */
+//	public static void setDefaultPlayerName(String name) {
+//		Preferences.getInstance().setValue(MODULE, Profile.ID_NAME, name);
 //	}
 
 //	/** @return The default campaign value. */
@@ -1199,12 +1199,12 @@
 //		Preferences.getInstance().setValue(MODULE, Profile.ID_CAMPAIGN, campaign);
 //	}
 
-//	/** @return The default tech Level. */
+//	/** @return The default tech level. */
 //	public static string getDefaultTechLevel() {
 //		return Preferences.getInstance().getStringValue(MODULE, Profile.ID_TECH_LEVEL, DEFAULT_TECH_LEVEL);
 //	}
 
-//	/** @param techLevel The default tech Level. */
+//	/** @param techLevel The default tech level. */
 //	public static void setDefaultTechLevel(String techLevel) {
 //		Preferences.getInstance().setValue(MODULE, Profile.ID_TECH_LEVEL, techLevel);
 //	}

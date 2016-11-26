@@ -101,19 +101,19 @@
 
 //	@Override
 //	protected void loadSelf(XMLReader reader) throws IOException {
-//		String Name = reader.getName();
+//		String name = reader.getName();
 
-//		if (TAG_ACCURACY.equals(Name)) {
+//		if (TAG_ACCURACY.equals(name)) {
 //			mAccuracy = reader.readText();
-//		} else if (TAG_RANGE.equals(Name)) {
+//		} else if (TAG_RANGE.equals(name)) {
 //			mRange = reader.readText();
-//		} else if (TAG_RATE_OF_FIRE.equals(Name)) {
+//		} else if (TAG_RATE_OF_FIRE.equals(name)) {
 //			mRateOfFire = reader.readText();
-//		} else if (TAG_SHOTS.equals(Name)) {
+//		} else if (TAG_SHOTS.equals(name)) {
 //			mShots = reader.readText();
-//		} else if (TAG_BULK.equals(Name)) {
+//		} else if (TAG_BULK.equals(name)) {
 //			mBulk = reader.readText();
-//		} else if (TAG_RECOIL.equals(Name)) {
+//		} else if (TAG_RECOIL.equals(name)) {
 //			mRecoil = reader.readText();
 //		} else {
 //			super.loadSelf(reader);

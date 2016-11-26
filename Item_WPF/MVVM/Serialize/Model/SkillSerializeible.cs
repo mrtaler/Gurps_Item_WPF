@@ -28,15 +28,15 @@ namespace Item_WPF.MVVM.Serialize.Model
                 contextAdded += 1;
                 SkillXMLModel qwerty = new SkillXMLModel();
                 qwerty.numPP = contextAdded;
-                qwerty.NameSkill = skillElement.Element("Name");
-                qwerty.Specialization = skillElement.Element("Specialization");
+                qwerty.NameSkill = skillElement.Element("name");
+                qwerty.Specialization = skillElement.Element("specialization");
                 qwerty.tech_level = skillElement.Element("tech_level");
                 qwerty.difficulty = skillElement.Element("difficulty");
                 qwerty.Points = skillElement.Element("points");
                 qwerty.Reference = skillElement.Element("reference");
                 qwerty.version = skillElement.Attribute("version");
                 qwerty.encumbrance_penalty_multiplier = skillElement.Element("encumbrance_penalty_multiplier");
-                qwerty.notes = skillElement.Element("Notes");
+                qwerty.notes = skillElement.Element("notes");
                 #region  Default Collection
                 qwerty.Default = new ObservableCollection<DefaultXML>();
                 foreach (var itemdefault in skillElement.Elements("default"))
@@ -87,11 +87,11 @@ namespace Item_WPF.MVVM.Serialize.Model
             foreach (XElement techElement in xdoc.Element("skill_list").Elements("technique"))
             {
                 SkillXMLModel techXML = new SkillXMLModel();
-                techXML.NameSkill = techElement.Element("Name");
+                techXML.NameSkill = techElement.Element("name");
                 techXML.difficulty = techElement.Element("difficulty");
                 techXML.Points = techElement.Element("points");
                 techXML.Reference = techElement.Element("reference");
-                techXML.notes = techElement.Element("Notes");
+                techXML.notes = techElement.Element("notes");
                 techXML.version = techElement.Attribute("version");
                 techXML.limit = techElement.Attribute("limit");
                 #region  Default Collection

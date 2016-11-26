@@ -139,24 +139,24 @@
 //	}
 
 //	private static StdImageSet getDocumentIcons(String prefix) {
-//		String Name = prefix + "_doc";
-//		StdImageSet set = StdImageSet.get(Name);
+//		String name = prefix + "_doc";
+//		StdImageSet set = StdImageSet.get(name);
 //		if (set == null) {
-//			set = new StdImageSet(Name, StdImageSet.getOrLoad("document"), StdImageSet.getOrLoad(prefix));
+//			set = new StdImageSet(name, StdImageSet.getOrLoad("document"), StdImageSet.getOrLoad(prefix));
 //		}
 //		return set;
 //	}
 
 //	/** Utility for creating GCS's icon sets. */
 //	public static void main(String[] args) {
-//		String Name = "GenerateIcons";
+//		String name = "GenerateIcons";
 //		Attributes attributes = new Attributes();
-//		attributes.putValue(BundleInfo.BUNDLE_NAME, Name);
+//		attributes.putValue(BundleInfo.BUNDLE_NAME, name);
 //		attributes.putValue(BundleInfo.BUNDLE_VERSION, "1.0");
 //		attributes.putValue(BundleInfo.BUNDLE_COPYRIGHT_OWNER, "Richard A. Wilkes");
 //		attributes.putValue(BundleInfo.BUNDLE_COPYRIGHT_YEARS, "2014");
 //		attributes.putValue(BundleInfo.BUNDLE_LICENSE, "Mozilla Public License 2.0");
-//		BundleInfo.setDefault(new BundleInfo(attributes, Name));
+//		BundleInfo.setDefault(new BundleInfo(attributes, name));
 //		CmdLineOption icnsOption = new CmdLineOption("Generate ICNS files", null, "icns");
 //		CmdLineOption icoOption = new CmdLineOption("Generate ICO files", null, "ico");
 //		CmdLineOption appOption = new CmdLineOption("Generate just the 128x128 app icon", null, "app");
@@ -198,13 +198,13 @@
 //		}
 //	}
 
-//	private static void createIconFiles(StdImageSet set, File dir, string Name, bool generateICNS, bool generateICO) throws IOException {
+//	private static void createIconFiles(StdImageSet set, File dir, string name, bool generateICNS, bool generateICO) throws IOException {
 //		for (int size : StdImageSet.STD_SIZES) {
 //        set.getImage(size);
 //    }
 //    File file;
 //		if (generateICNS) {
-//        file = new File(dir, Name + ".icns");
+//        file = new File(dir, name + ".icns");
 //        try (BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(file))) {
 //            set.saveAsIcns(out);
 //            System.out.println("Created: " + file);
@@ -212,7 +212,7 @@
 //        }
 
 //        if (generateICO) {
-//            file = new File(dir, Name + ".ico");
+//            file = new File(dir, name + ".ico");
 //            try (BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(file))) {
 //                set.saveAsIco(out);
 //                System.out.println("Created: " + file);

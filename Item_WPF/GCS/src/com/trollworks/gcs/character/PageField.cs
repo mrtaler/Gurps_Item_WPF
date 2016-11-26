@@ -96,7 +96,7 @@
 //	public PageField(GURPSCharacter character, string consumedType, int alignment, bool editable, string tooltip) {
 //		super(getFormatterFactoryForType(consumedType), character.getValueForID(consumedType));
 //		if (Platform.isLinux()) {
-//			// I override the UI here since the GTK UI on Linux Has no way to turn off the border
+//			// I override the UI here since the GTK UI on Linux has no way to turn off the border
 //			// around text fields.
 //			setUI(new BasicTextFieldUI());
 //		}
@@ -125,7 +125,7 @@
 
 //		// Reset the selection colors back to what is standard for text fields.
 //		// This is necessary, since (at least on the Mac) JFormattedTextField
-//		// Has the wrong values by default.
+//		// has the wrong values by default.
 //		setCaretColor(UIManager.getColor("TextField.caretForeground")); //$NON-NLS-1$
 //		setSelectionColor(UIManager.getColor("TextField.selectionBackground")); //$NON-NLS-1$
 //		setSelectedTextColor(UIManager.getColor("TextField.selectionForeground")); //$NON-NLS-1$
@@ -150,7 +150,7 @@
 //	}
 
 //	@Override
-//	public void handleNotification(Object producer, string Name, Object data) {
+//	public void handleNotification(Object producer, string name, Object data) {
 //		setValue(data);
 //		invalidate();
 //		repaint();

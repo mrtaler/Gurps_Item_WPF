@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="US-ASCII" ?>
 <advantage_list unique_id="ilyquu9e:ivcjz24nhgo6" version="1">
 	<advantage version="2">
-		<Name>Code of Honor (Gentleman P.I.)</Name>
+		<name>Code of Honor (Gentleman P.I.)</name>
 		<type>Mental</type>
 		<base_points>-5</base_points>
 		<reference>MYST109</reference>
@@ -10,7 +10,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Code of Honor (Police)</Name>
+		<name>Code of Honor (Police)</name>
 		<type>Mental</type>
 		<base_points>-5</base_points>
 		<reference>MYST109</reference>
@@ -19,7 +19,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Code of Honor (Private Investigator)</Name>
+		<name>Code of Honor (Private Investigator)</name>
 		<type>Mental</type>
 		<base_points>-10</base_points>
 		<reference>MYST109</reference>
@@ -28,7 +28,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Duty (Legal Ethics)</Name>
+		<name>Duty (Legal Ethics)</name>
 		<type>Social</type>
 		<base_points>-1</base_points>
 		<reference>MYST109</reference>
@@ -38,10 +38,10 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Intolerance (Non-cops)</Name>
+		<name>Intolerance (Non-cops)</name>
 		<type>Mental</type>
 		<modifier version="1">
-			<Name>Scope: Common</Name>
+			<name>Scope: Common</name>
 			<cost type="points">-5</cost>
 			<affects>total</affects>
 			<reference>B140</reference>
@@ -52,58 +52,58 @@
 		</categories>
 	</advantage>
 	<advantage version="2" round_down="yes">
-		<Name>Reputation ("Not a team player")</Name>
+		<name>Reputation ("Not a team player")</name>
 		<type>Social</type>
 		<levels>2</levels>
 		<points_per_level>-5</points_per_level>
 		<modifier version="1">
-			<Name>People Affected</Name>
+			<name>People Affected</name>
 			<cost type="multiplier">0.5</cost>
 			<reference>B27</reference>
-			<Notes>Police</Notes>
+			<notes>Police</notes>
 		</modifier>
 		<reference>MYST110</reference>
 		<categories>
 			<category>Disadvantage</category>
 		</categories>
 		<prereq_list all="yes">
-			<advantage_prereq Has="no">
-				<Name Compare="is">Intolerance (Non-cops)</Name>
-				<Notes Compare="is anything"></Notes>
+			<advantage_prereq has="no">
+				<name compare="is">Intolerance (Non-cops)</name>
+				<notes compare="is anything"></notes>
 			</advantage_prereq>
-			<advantage_prereq Has="no">
-				<Name Compare="is">Code of Honor (Police)</Name>
-				<Notes Compare="is anything"></Notes>
+			<advantage_prereq has="no">
+				<name compare="is">Code of Honor (Police)</name>
+				<notes compare="is anything"></notes>
 			</advantage_prereq>
 		</prereq_list>
 	</advantage>
 	<advantage version="2" round_down="yes">
-		<Name>Reputation (Pinkerton Agent)</Name>
+		<name>Reputation (Pinkerton Agent)</name>
 		<type>Social</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
 		<modifier version="1">
-			<Name>People Affected</Name>
+			<name>People Affected</name>
 			<cost type="multiplier">0.5</cost>
 			<reference>B27</reference>
-			<Notes>Law Enforcement</Notes>
+			<notes>Law Enforcement</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Recognized all the time</Name>
+			<name>Recognized all the time</name>
 			<cost type="multiplier">1</cost>
 			<reference>B28</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Recognized sometimes</Name>
+			<name>Recognized sometimes</name>
 			<cost type="multiplier">0.5</cost>
 			<reference>B28</reference>
-			<Notes>10-</Notes>
+			<notes>10-</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Recognized occasionally</Name>
+			<name>Recognized occasionally</name>
 			<cost type="multiplier">0.33</cost>
 			<reference>B28</reference>
-			<Notes>7-</Notes>
+			<notes>7-</notes>
 		</modifier>
 		<reference>MYST108</reference>
 		<categories>
@@ -111,50 +111,50 @@
 		</categories>
 	</advantage>
 	<advantage version="2" round_down="yes">
-		<Name>Reputation (Pinkerton Agent)</Name>
+		<name>Reputation (Pinkerton Agent)</name>
 		<type>Social</type>
 		<levels>1</levels>
 		<points_per_level>-5</points_per_level>
 		<modifier version="1">
-			<Name>People Affected</Name>
+			<name>People Affected</name>
 			<cost type="multiplier">0.33</cost>
 			<reference>B27</reference>
-			<Notes>Socialists and union members</Notes>
+			<notes>Socialists and union members</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Recognized all the time</Name>
+			<name>Recognized all the time</name>
 			<cost type="multiplier">1</cost>
 			<reference>B28</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Recognized sometimes</Name>
+			<name>Recognized sometimes</name>
 			<cost type="multiplier">0.5</cost>
 			<reference>B28</reference>
-			<Notes>10-</Notes>
+			<notes>10-</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Recognized occasionally</Name>
+			<name>Recognized occasionally</name>
 			<cost type="multiplier">0.33</cost>
 			<reference>B28</reference>
-			<Notes>7-</Notes>
+			<notes>7-</notes>
 		</modifier>
 		<reference>MYST108</reference>
-		<Notes>Late 19th to early 20th centuries</Notes>
+		<notes>Late 19th to early 20th centuries</notes>
 		<categories>
 			<category>Disadvantage</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Sense of Duty (Client)</Name>
+		<name>Sense of Duty (Client)</name>
 		<type>Mental</type>
 		<modifier version="1">
-			<Name>Clients</Name>
+			<name>Clients</name>
 			<cost type="points">-5</cost>
 			<affects>total</affects>
 			<reference>MYST110</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Will commit illegal acts</Name>
+			<name>Will commit illegal acts</name>
 			<cost type="points">-5</cost>
 			<affects>total</affects>
 			<reference>MYST110</reference>
@@ -165,38 +165,38 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Spirit Advisor</Name>
+		<name>Spirit Advisor</name>
 		<type>Supernatural</type>
 		<base_points>10</base_points>
 		<modifier version="1" enabled="no">
-			<Name>Appears constantly</Name>
+			<name>Appears constantly</name>
 			<cost type="multiplier">4</cost>
 			<reference>B36</reference>
-			<Notes>No roll required</Notes>
+			<notes>No roll required</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Appears almost all the time</Name>
+			<name>Appears almost all the time</name>
 			<cost type="multiplier">3</cost>
 			<reference>B36</reference>
-			<Notes>15-</Notes>
+			<notes>15-</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Appears quite often</Name>
+			<name>Appears quite often</name>
 			<cost type="multiplier">2</cost>
 			<reference>B36</reference>
-			<Notes>12-</Notes>
+			<notes>12-</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Appears fairly often</Name>
+			<name>Appears fairly often</name>
 			<cost type="multiplier">1</cost>
 			<reference>B36</reference>
-			<Notes>9-</Notes>
+			<notes>9-</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Appears quite rarely</Name>
+			<name>Appears quite rarely</name>
 			<cost type="multiplier">0.5</cost>
 			<reference>B36</reference>
-			<Notes>6-</Notes>
+			<notes>6-</notes>
 		</modifier>
 		<reference>MYST112</reference>
 		<categories>
@@ -204,16 +204,16 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Talent (Talker)</Name>
+		<name>Talent (Talker)</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<base_points>5</base_points>
 		<modifier version="1">
-			<Name>Reaction Bonus</Name>
-			<cost type="Percentage">0</cost>
+			<name>Reaction Bonus</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
 			<reference>MYST108</reference>
-			<Notes>Clients and other investigators</Notes>
+			<notes>Clients and other investigators</notes>
 		</modifier>
 		<reference>MYST108</reference>
 		<categories>
@@ -221,42 +221,42 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<Name Compare="is">Detect Lies</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Detect Lies</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Diplomacy</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Diplomacy</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Fast-Talk</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Fast-Talk</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Psychology</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Psychology</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Savoir-Faire</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Savoir-Faire</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 	</advantage>
 	<advantage version="2">
-		<Name>Talent (Tough Guy)</Name>
+		<name>Talent (Tough Guy)</name>
 		<type>Physical</type>
 		<levels>1</levels>
 		<base_points>5</base_points>
 		<modifier version="1">
-			<Name>Reaction Bonus</Name>
-			<cost type="Percentage">0</cost>
+			<name>Reaction Bonus</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
 			<reference>MYST108</reference>
-			<Notes>Police, detectives, bouncers, gangsters, street-thugs</Notes>
+			<notes>Police, detectives, bouncers, gangsters, street-thugs</notes>
 		</modifier>
 		<reference>MYST108</reference>
 		<categories>
@@ -264,42 +264,42 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<Name Compare="is">Fast-Talk</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Fast-Talk</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Forced Entry</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Forced Entry</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Intimidation</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Intimidation</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Shadowing</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Shadowing</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Streetwise</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Streetwise</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 	</advantage>
 	<advantage version="2">
-		<Name>Talent (Whiz Kid)</Name>
+		<name>Talent (Whiz Kid)</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<base_points>5</base_points>
 		<modifier version="1">
-			<Name>Reaction Bonus</Name>
-			<cost type="Percentage">0</cost>
+			<name>Reaction Bonus</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
 			<reference>MYST108</reference>
-			<Notes>Crime lab employers and detectives.</Notes>
+			<notes>Crime lab employers and detectives.</notes>
 		</modifier>
 		<reference>MYST108</reference>
 		<categories>
@@ -307,34 +307,34 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<Name Compare="is">Chemistry</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Chemistry</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Criminology</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Criminology</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Diagnosis</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Diagnosis</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Forensics</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Forensics</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Psychology</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Psychology</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Research</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Research</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 	</advantage>
 </advantage_list>

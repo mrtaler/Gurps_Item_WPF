@@ -170,11 +170,11 @@
 
 //	@Override
 //	public string getPreferredSavePath() {
-//		String Name = getDataFile().getDescription().getName();
-//		if (Name.length() == 0) {
-//			Name = getTitle();
+//		String name = getDataFile().getDescription().getName();
+//		if (name.length() == 0) {
+//			name = getTitle();
 //		}
-//		return PathUtils.getFullPath(PathUtils.getParent(PathUtils.getFullPath(getBackingFile())), Name);
+//		return PathUtils.getFullPath(PathUtils.getParent(PathUtils.getFullPath(getBackingFile())), name);
 //	}
 
 //	@Override

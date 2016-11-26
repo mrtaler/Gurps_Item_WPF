@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="US-ASCII" ?>
 <advantage_list unique_id="hv8tvs47:-3xiofvu287ox" version="1">
 	<advantage version="2">
-		<Name>Code of Honor (Arab)</Name>
+		<name>Code of Honor (Arab)</name>
 		<type>Mental</type>
 		<base_points>-10</base_points>
 		<reference>BS185</reference>
@@ -10,7 +10,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Code of Honor (Elven)</Name>
+		<name>Code of Honor (Elven)</name>
 		<type>Mental</type>
 		<base_points>-10</base_points>
 		<reference>BS185</reference>
@@ -19,34 +19,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Code of Honor (Halfling)</Name>
-		<type>Mental</type>
-		<base_points>-5</base_points>
-		<reference>BS185</reference>
-		<categories>
-			<category>Disadvantage</category>
-		</categories>
-	</advantage>
-	<advantage version="2">
-		<Name>Code of Honor (Northman's)</Name>
-		<type>Mental</type>
-		<base_points>-10</base_points>
-		<reference>BS185</reference>
-		<categories>
-			<category>Disadvantage</category>
-		</categories>
-	</advantage>
-	<advantage version="2">
-		<Name>Code of Honor (Sahudese)</Name>
-		<type>Mental</type>
-		<base_points>-10</base_points>
-		<reference>BS185</reference>
-		<categories>
-			<category>Disadvantage</category>
-		</categories>
-	</advantage>
-	<advantage version="2">
-		<Name>Code of Honor (Stays Bought)</Name>
+		<name>Code of Honor (Halfling)</name>
 		<type>Mental</type>
 		<base_points>-5</base_points>
 		<reference>BS185</reference>
@@ -55,51 +28,78 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Social Stigma (Barbarian)</Name>
-		<type>Social</type>
+		<name>Code of Honor (Northman's)</name>
+		<type>Mental</type>
 		<base_points>-10</base_points>
-		<reference>BS186</reference>
-		<Notes>-2 Reaction from others; +2 Reaction by Barbarians</Notes>
+		<reference>BS185</reference>
 		<categories>
 			<category>Disadvantage</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Social Stigma (Known Criminal)</Name>
+		<name>Code of Honor (Sahudese)</name>
+		<type>Mental</type>
+		<base_points>-10</base_points>
+		<reference>BS185</reference>
+		<categories>
+			<category>Disadvantage</category>
+		</categories>
+	</advantage>
+	<advantage version="2">
+		<name>Code of Honor (Stays Bought)</name>
+		<type>Mental</type>
+		<base_points>-5</base_points>
+		<reference>BS185</reference>
+		<categories>
+			<category>Disadvantage</category>
+		</categories>
+	</advantage>
+	<advantage version="2">
+		<name>Social Stigma (Barbarian)</name>
+		<type>Social</type>
+		<base_points>-10</base_points>
+		<reference>BS186</reference>
+		<notes>-2 Reaction from others; +2 Reaction by Barbarians</notes>
+		<categories>
+			<category>Disadvantage</category>
+		</categories>
+	</advantage>
+	<advantage version="2">
+		<name>Social Stigma (Known Criminal)</name>
 		<type>Social</type>
 		<base_points>-5</base_points>
 		<reference>BS186</reference>
-		<Notes>-1 Reaction, -2 for cops &amp; judges after public denouncement or visible sign</Notes>
+		<notes>-1 Reaction, -2 for cops &amp; judges after public denouncement or visible sign</notes>
 		<categories>
 			<category>Disadvantage</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Social Stigma (Perceived as an Animal)</Name>
+		<name>Social Stigma (Perceived as an Animal)</name>
 		<type>Social</type>
 		<base_points>-10</base_points>
 		<reference>BS186</reference>
-		<Notes>No intellectual respect; killing you is not a crime</Notes>
+		<notes>No intellectual respect; killing you is not a crime</notes>
 		<categories>
 			<category>Disadvantage</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<Name>Talent (Born War-Leader)</Name>
+		<name>Talent (Born War-Leader)</name>
 		<type>Mental</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
 		<modifier version="1">
-			<Name>Reaction Bonus</Name>
-			<cost type="Percentage">0</cost>
+			<name>Reaction Bonus</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
-			<Notes>Military officers, tribal war-leaders, soldiers, and other professional warriors</Notes>
+			<notes>Military officers, tribal war-leaders, soldiers, and other professional warriors</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Alternate Benefit</Name>
-			<cost type="Percentage">0</cost>
+			<name>Alternate Benefit</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
-			<Notes>Bonus to initiative rolls if leader</Notes>
+			<notes>Bonus to initiative rolls if leader</notes>
 		</modifier>
 		<reference>BS184,DF1:14,PU3:12</reference>
 		<categories>
@@ -107,47 +107,47 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<Name Compare="is">Intelligence Analysis</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Intelligence Analysis</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Leadership</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Leadership</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Savoir-Faire</Name>
-			<Specialization Compare="is">Military</Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Savoir-Faire</name>
+			<specialization compare="is">Military</specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Strategy</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Strategy</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Tactics</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Tactics</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 	</advantage>
 	<advantage version="2">
-		<Name>Talent (Halfling Marksmanship)</Name>
+		<name>Talent (Halfling Marksmanship)</name>
 		<type>Mental, Exotic</type>
 		<levels>1</levels>
 		<points_per_level>5</points_per_level>
 		<modifier version="1">
-			<Name>Reaction Bonus</Name>
-			<cost type="Percentage">0</cost>
+			<name>Reaction Bonus</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
-			<Notes>Ranged weapon users</Notes>
+			<notes>Ranged weapon users</notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<Name>Alternate Benefit</Name>
-			<cost type="Percentage">0</cost>
+			<name>Alternate Benefit</name>
+			<cost type="percentage">0</cost>
 			<affects>total</affects>
-			<Notes>Bonus to default rolls to maintain, evaluate, or trade in ranged weapons</Notes>
+			<notes>Bonus to default rolls to maintain, evaluate, or trade in ranged weapons</notes>
 		</modifier>
 		<reference>BS184,DF3:14,PU3:11</reference>
 		<categories>
@@ -155,39 +155,39 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<Name Compare="is">Bow</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Bow</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Sling</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Sling</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Throwing</Name>
-			<Specialization Compare="is anything"></Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Throwing</name>
+			<specialization compare="is anything"></specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Thrown Weapon</Name>
-			<Specialization Compare="is">Dart</Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Thrown Weapon</name>
+			<specialization compare="is">Dart</specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Thrown Weapon</Name>
-			<Specialization Compare="is">Knife</Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Thrown Weapon</name>
+			<specialization compare="is">Knife</specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<skill_bonus>
-			<Name Compare="is">Thrown Weapon</Name>
-			<Specialization Compare="is">Stick</Specialization>
-			<Amount per_level="yes">1</Amount>
+			<name compare="is">Thrown Weapon</name>
+			<specialization compare="is">Stick</specialization>
+			<amount per_level="yes">1</amount>
 		</skill_bonus>
 		<prereq_list all="yes">
-			<advantage_prereq Has="yes">
-				<Name Compare="is">Halfling</Name>
-				<Notes Compare="is anything"></Notes>
+			<advantage_prereq has="yes">
+				<name compare="is">Halfling</name>
+				<notes compare="is anything"></notes>
 			</advantage_prereq>
 		</prereq_list>
 	</advantage>

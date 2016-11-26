@@ -1,67 +1,71 @@
-﻿<Window x:Class="Item_WPF.MVVM.View.NewBoxView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:Item_WPF.MVVM.View"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        Title="NewBoxView"
-        Width="244.78"
-        Height="166.484"
-        mc:Ignorable="d">
+﻿<Window
+    x:Class="Item_WPF.MVVM.View.NewBoxView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Item_WPF.MVVM.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="NewBoxView"
+    Width="244.78"
+    Height="166.484"
+    mc:Ignorable="d">
     <Grid>
-        <Label x:Name="Label"
-               Margin="10,10,0,0"
-               HorizontalAlignment="Left"
-               VerticalAlignment="Top"
-               Content="NewBoxName" />
-        <TextBox x:Name="textBox"
-                 Width="120"
-                 Height="23"
-                 Margin="100,14,0,0"
-                 HorizontalAlignment="Left"
-                 VerticalAlignment="Top"
-                 Text="{Binding NewBox.nameOfBox}"
-                 TextWrapping="Wrap" />
-        <Label x:Name="label"
-               Margin="10,41,0,0"
-               HorizontalAlignment="Left"
-               VerticalAlignment="Top"
-               Content="Box Type" />
-        <ComboBox x:Name="comboBox"
-                  Width="120"
-                  Margin="100,45,0,0"
-                  HorizontalAlignment="Left"
-                  VerticalAlignment="Top"
-                  DisplayMemberPath="NameOfType"
-                  ItemsSource="{Binding BoxType}"
-                  SelectedValue="{Binding NewBox.TypeOfBox,
-                                          UpdateSourceTrigger=PropertyChanged,
-                                          Mode=TwoWay}"
-                  SelectedValuePath="id" />
-        <ComboBox x:Name="comboBox1"
-                  Width="120"
-                  Margin="100,72,0,0"
-                  HorizontalAlignment="Left"
-                  VerticalAlignment="Top"
-                  DisplayMemberPath="NameOfBox"
-                  ItemsSource="{Binding ParentBoxName}"
-                  SelectedValue="{Binding NewBox.ParentBoxName,
-                                          UpdateSourceTrigger=PropertyChanged,
-                                          Mode=TwoWay}"
-                  SelectedValuePath="id" />
-        <Label x:Name="label1"
-               Width="85"
-               Margin="10,72,0,0"
-               HorizontalAlignment="Left"
-               VerticalAlignment="Top"
-               Content="ParentBox" />
-        <Button x:Name="button"
-                Width="75"
-                Margin="10,105,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Command="{Binding SaveCommand}"
-                Content="save" />
+        <Label
+            x:Name="Label"
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="NewBoxName" />
+        <TextBox
+            x:Name="textBox"
+            Width="120"
+            Height="23"
+            Margin="100,14,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="{Binding NewBox.nameOfBox}"
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="label"
+            Margin="10,41,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Box Type" />
+        <ComboBox
+            x:Name="comboBox"
+            Width="120"
+            Margin="100,45,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            DisplayMemberPath="nameOfType"
+            ItemsSource="{Binding BoxType}"
+            SelectedValue="{Binding NewBox.TypeOfBox, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+            SelectedValuePath="id" />
+        <ComboBox
+            x:Name="comboBox1"
+            Width="120"
+            Margin="100,72,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            DisplayMemberPath="nameOfBox"
+            ItemsSource="{Binding ParentBoxName}"
+            SelectedValue="{Binding NewBox.ParentBoxName, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+            SelectedValuePath="id" />
+        <Label
+            x:Name="label1"
+            Width="85"
+            Margin="10,72,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="ParentBox" />
+        <Button
+            x:Name="button"
+            Width="75"
+            Margin="10,105,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Command="{Binding SaveCommand}"
+            Content="save" />
 
     </Grid>
 </Window>

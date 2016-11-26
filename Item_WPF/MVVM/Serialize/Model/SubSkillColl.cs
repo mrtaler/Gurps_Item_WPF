@@ -13,11 +13,11 @@ namespace Item_WPF.MVVM.Serialize.Model
     public partial class DefaultXML
     {
         /// <summary>
-        /// 1 Element Name
+        /// 1 Element name
         /// </summary>
         public XElement nameDefaultXml;
         /// <summary>
-        /// 2 Element Specialization
+        /// 2 Element specialization
         /// </summary>
         public XElement specializationDefaultXml;
         /// <summary>
@@ -31,8 +31,8 @@ namespace Item_WPF.MVVM.Serialize.Model
         public DefaultXML() { }
         public DefaultXML(XElement itemdefault)
         {
-            nameDefaultXml = itemdefault.Element("Name");
-            specializationDefaultXml = itemdefault.Element("Specialization");
+            nameDefaultXml = itemdefault.Element("name");
+            specializationDefaultXml = itemdefault.Element("specialization");
             typeDefaultXml = itemdefault.Element("type");
             modifierDefaultXml = itemdefault.Element("modifier");
         }
@@ -54,7 +54,7 @@ namespace Item_WPF.MVVM.Serialize.Model
         public dr_bonusXml(XElement item)
         {
             location = item.Element("location");
-            amount = item.Element("Amount");
+            amount = item.Element("amount");
         }
     }
 
@@ -66,9 +66,9 @@ namespace Item_WPF.MVVM.Serialize.Model
 
         public skill_bonusXML(XElement item)
         {
-            name = item.Element("Name");
-            specialization = item.Element("Specialization");
-            amount = item.Element("Amount");
+            name = item.Element("name");
+            specialization = item.Element("specialization");
+            amount = item.Element("amount");
         }
     }
     public class spell_bonusXML
@@ -82,7 +82,7 @@ namespace Item_WPF.MVVM.Serialize.Model
             spell_name = item.Element("spell_name");
             college_name = item.Element("college_name");
             all_colleges = item.Attribute("all_colleges");
-            amount = item.Element("Amount");
+            amount = item.Element("amount");
         }
     }
 
@@ -127,11 +127,11 @@ namespace Item_WPF.MVVM.Serialize.Model
         /// <summary>
         /// Attribute bonus
         /// </summary>
-        /// <param Name="itemAttribute_bonus">give 1up Attribute_bonus collection</param>
+        /// <param name="itemAttribute_bonus">give 1up Attribute_bonus collection</param>
         public Attribute_bonusXML(XElement itemAttribute_bonus)
         {
-            Attribute = itemAttribute_bonus.Element("Attribute");
-            Amount = itemAttribute_bonus.Element("Amount");
+            Attribute = itemAttribute_bonus.Element("attribute");
+            Amount = itemAttribute_bonus.Element("amount");
         }
     }
     /// <summary>
@@ -151,11 +151,11 @@ namespace Item_WPF.MVVM.Serialize.Model
         public XAttribute enabled;
         public modifierXML(XElement itemmodifier)
         {
-            name = itemmodifier.Element("Name") != null
-            ? itemmodifier.Element("Name") : null;
+            name = itemmodifier.Element("name") != null
+            ? itemmodifier.Element("name") : null;
 
-            notes = itemmodifier.Element("Notes") != null
-            ? itemmodifier.Element("Notes") : null;
+            notes = itemmodifier.Element("notes") != null
+            ? itemmodifier.Element("notes") : null;
             levels = itemmodifier.Element("levels") != null
               ? itemmodifier.Element("levels") : null;
             cost = itemmodifier.Element("cost") != null
@@ -196,10 +196,10 @@ namespace Item_WPF.MVVM.Serialize.Model
         public XElement level;
         public Weapon_bonusXML(XElement itemWeapon_bonusXML)
         {
-            Amount = itemWeapon_bonusXML.Element("Amount");
-            name = itemWeapon_bonusXML.Element("Name");
-            specialization = itemWeapon_bonusXML.Element("Specialization");
-            level = itemWeapon_bonusXML.Element("Level");
+            Amount = itemWeapon_bonusXML.Element("amount");
+            name = itemWeapon_bonusXML.Element("name");
+            specialization = itemWeapon_bonusXML.Element("specialization");
+            level = itemWeapon_bonusXML.Element("level");
         }
     }
     public class melee_weaponXML

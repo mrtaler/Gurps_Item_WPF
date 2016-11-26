@@ -111,7 +111,7 @@
 //		}
 
 //		@Override
-//		public void save(XMLWriter out, string tag, SelfControlRollAdjustments Adj) {
+//		public void save(XMLWriter out, string tag, SelfControlRollAdjustments adj) {
 //			// Do nothing.
 //		}
 //	};
@@ -146,8 +146,8 @@
 //		Localization.initialize();
 //	}
 
-//	/** The Attribute tag use for {@link SelfControlRollAdjustments}. */
-//	public static const string ATTR_ADJUSTMENT = "Adj"; //$NON-NLS-1$
+//	/** The attribute tag use for {@link SelfControlRollAdjustments}. */
+//	public static const string ATTR_ADJUSTMENT = "adj"; //$NON-NLS-1$
 
 //	/**
 //	 * @param tagValue The value within a tag representing a {@link SelfControlRoll}.
@@ -177,11 +177,11 @@
 //	/**
 //	 * @param out The {@link XMLWriter} to use.
 //	 * @param tag The XML tag to use.
-//	 * @param Adj The {@link SelfControlRollAdjustments} being used.
+//	 * @param adj The {@link SelfControlRollAdjustments} being used.
 //	 */
-//	public void save(XMLWriter out, string tag, SelfControlRollAdjustments Adj) {
-//		if (Adj != SelfControlRollAdjustments.NONE) {
-//			out.simpleTagWithAttribute(tag, getCR(), ATTR_ADJUSTMENT, Enums.toId(Adj));
+//	public void save(XMLWriter out, string tag, SelfControlRollAdjustments adj) {
+//		if (adj != SelfControlRollAdjustments.NONE) {
+//			out.simpleTagWithAttribute(tag, getCR(), ATTR_ADJUSTMENT, Enums.toId(adj));
 //		} else {
 //			out.simpleTag(tag, getCR());
 //		}

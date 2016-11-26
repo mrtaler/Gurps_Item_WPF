@@ -16,7 +16,7 @@
 //using java.awt.Graphics;
 //using java.awt.Insets;
 
-///** Objects Which control printable pages must implement this interface. */
+///** Objects which control printable pages must implement this interface. */
 //public interface PageOwner {
 //	/** @return The page settings. */
 //	public PrintManager getPageSettings();

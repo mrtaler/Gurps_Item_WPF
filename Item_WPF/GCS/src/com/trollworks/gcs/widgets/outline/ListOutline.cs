@@ -134,29 +134,29 @@
 // * Adds a row at the "best" place (i.e. looks at the selection).
 // *
 // * @param row The row to add.
-// * @param Name The Name for the undo event.
+// * @param name The name for the undo event.
 // * @param sibling If the current selection is a container, whether to insert into it, or as a
 // *            sibling.
 // * @return The index of the row that was added.
 // */
-//public int addRow(ListRow row, string Name, bool sibling)
+//public int addRow(ListRow row, string name, bool sibling)
 //{
-//    return addRow(new ListRow[] { row }, Name, sibling);
+//    return addRow(new ListRow[] { row }, name, sibling);
 //}
 
 ///**
 // * Adds rows at the "best" place (i.e. looks at the selection).
 // *
 // * @param rows The rows to add.
-// * @param Name The Name for the undo event.
+// * @param name The name for the undo event.
 // * @param sibling If the current selection is a container, whether to insert into it, or as a
 // *            sibling.
 // * @return The index of the first row that was added.
 // */
-//public int addRow(ListRow[] rows, string Name, bool sibling)
+//public int addRow(ListRow[] rows, string name, bool sibling)
 //{
 //    OutlineModel model = getModel();
-//    StateEdit edit = new StateEdit(model, Name);
+//    StateEdit edit = new StateEdit(model, name);
 //    Selection selection = model.getSelection();
 //    int count = selection.getCount();
 //    int insertAt;
@@ -241,7 +241,7 @@
 //    if (RowEditor.edit(this, mRowsToEdit))
 //    {
 //        if (mDataFile instanceof GURPSCharacter || mDataFile instanceof Template) {
-//            Namer.Name(this, mRowsToEdit);
+//            Namer.name(this, mRowsToEdit);
 //        }
 //        updateRows(mRowsToEdit);
 //        updateRowHeights(mRowsToEdit);

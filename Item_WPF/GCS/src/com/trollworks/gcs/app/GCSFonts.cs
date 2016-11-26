@@ -63,26 +63,26 @@
 //	public static const String	KEY_LABEL				= "trollworks.label";				//$NON-NLS-1$
 //	/** The field font. */
 //	public static const String	KEY_FIELD				= "trollworks.field";				//$NON-NLS-1$
-//	/** The field Notes font. */
-//	public static const String	KEY_FIELD_NOTES			= "trollworks.field.Notes";			//$NON-NLS-1$
+//	/** The field notes font. */
+//	public static const String	KEY_FIELD_NOTES			= "trollworks.field.notes";			//$NON-NLS-1$
 //	/** The technique field font. */
 //	public static const String	KEY_TECHNIQUE_FIELD		= "trollworks.field.technique";		//$NON-NLS-1$
 //	/** The primary footer font. */
 //	public static const String	KEY_PRIMARY_FOOTER		= "trollworks.footer.primary";		//$NON-NLS-1$
 //	/** The secondary footer font. */
 //	public static const String	KEY_SECONDARY_FOOTER	= "trollworks.footer.secondary";	//$NON-NLS-1$
-//	/** The Notes font. */
-//	public static const String	KEY_NOTES				= "trollworks.Notes";				//$NON-NLS-1$
+//	/** The notes font. */
+//	public static const String	KEY_NOTES				= "trollworks.notes";				//$NON-NLS-1$
 
 //	/** Register our fonts. */
 //	public static const void register() {
-//		String Name = Fonts.getDefaultFontName();
-//		Fonts.register(KEY_LABEL, LABELS_FONT, new Font(Name, Font.PLAIN, 9));
-//		Fonts.register(KEY_FIELD, FIELDS_FONT, new Font(Name, Font.BOLD, 9));
-//		Fonts.register(KEY_FIELD_NOTES, FIELD_NOTES_FONT, new Font(Name, Font.PLAIN, 8));
-//		Fonts.register(KEY_TECHNIQUE_FIELD, TECHNIQUE_FIELDS_FONT, new Font(Name, Font.BOLD + Font.ITALIC, 9));
-//		Fonts.register(KEY_PRIMARY_FOOTER, PRIMARY_FOOTER_FONT, new Font(Name, Font.BOLD, 8));
-//		Fonts.register(KEY_SECONDARY_FOOTER, SECONDARY_FOOTER_FONT, new Font(Name, Font.PLAIN, 6));
-//		Fonts.register(KEY_NOTES, NOTES_FONT, new Font(Name, Font.PLAIN, 9));
+//		String name = Fonts.getDefaultFontName();
+//		Fonts.register(KEY_LABEL, LABELS_FONT, new Font(name, Font.PLAIN, 9));
+//		Fonts.register(KEY_FIELD, FIELDS_FONT, new Font(name, Font.BOLD, 9));
+//		Fonts.register(KEY_FIELD_NOTES, FIELD_NOTES_FONT, new Font(name, Font.PLAIN, 8));
+//		Fonts.register(KEY_TECHNIQUE_FIELD, TECHNIQUE_FIELDS_FONT, new Font(name, Font.BOLD + Font.ITALIC, 9));
+//		Fonts.register(KEY_PRIMARY_FOOTER, PRIMARY_FOOTER_FONT, new Font(name, Font.BOLD, 8));
+//		Fonts.register(KEY_SECONDARY_FOOTER, SECONDARY_FOOTER_FONT, new Font(name, Font.PLAIN, 6));
+//		Fonts.register(KEY_NOTES, NOTES_FONT, new Font(name, Font.PLAIN, 9));
 //	}
 //}
