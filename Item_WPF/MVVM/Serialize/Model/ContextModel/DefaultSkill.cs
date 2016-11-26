@@ -39,7 +39,6 @@ namespace Item_WPF.ItemEntityModel
             {
                 type = typex;
                 Modifier = Convert.ToInt32(modf);
-                GurpsSkill1 = null;
             }
         }
     }

@@ -8,8 +8,8 @@ namespace Item_WPF.ItemEntityModel
 {
     public partial class Advantage
     {
-       // public Advantage() { }
-        public Advantage(AdvantageXML advXML)
+      //  public Advantage() { }
+        public Advantage(AdvantageXML advXML, item1Entities _context)
         {
             name = advXML.name != null
                                   ? advXML.name.Value.ToString() : null;
@@ -36,72 +36,138 @@ namespace Item_WPF.ItemEntityModel
             #region Prereq_listXML
             if (advXML.prereq_list != null)
             {
-
-
-                var q = advXML.prereq_list;
+                //  prereq_listDB = new System.Data.Objects.DataClasses.EntityCollection<ItemEntityModel.prereq_listDB>();
+                //     var q = advXML.prereq_list;
                 foreach (Prereq_listXML item in advXML.prereq_list)
                 {
-                    prereq_listDB prlDB = new prereq_listDB();
-                    FPPrereq_list(item, prlDB);
-
-                    //   FPskill_prereq(item, prlDB);
-                    //   FPspell_prereq(item, prlDB);
-                    //   FPattribute_prereq(item, prlDB);
-                    //   FPadvantage_prereq(item, prlDB);
-                    //   FPcontained_weight_prereq(item, prlDB);
-
-                    #region prq_list
-                    foreach (var itemPrereq_list in item.Prereq_list)
-                    {
-                        prereq_listDB prlDBSub = new prereq_listDB();
-
-
-                        FPPrereq_list(itemPrereq_list, prlDBSub);
-                        //        FPskill_prereq(itemPrereq_list, prlDBSub);
-
-                        // FPspell_prereq(itemPrereq_list, prlDBSub);
-                        //FPattribute_prereq(itemPrereq_list, prlDBSub);
-                        //FPadvantage_prereq(itemPrereq_list, prlDBSub);
-                        //FPcontained_weight_prereq(itemPrereq_list, prlDBSub);
-
-
-                        foreach (var itemSubPrereq_list in itemPrereq_list.Prereq_list)
-                        {
-                            prereq_listDB prlDBSubSub = new prereq_listDB();
-
-                            FPPrereq_list(itemSubPrereq_list, prlDBSubSub);
-                            //      FPskill_prereq(itemSubPrereq_list, prlDBSubSub);
-
-                            //    FPspell_prereq(itemSubPrereq_list, prlDBSubSub);
-                            //  FPattribute_prereq(itemSubPrereq_list, prlDBSubSub);
-                            //FPadvantage_prereq(itemSubPrereq_list, prlDBSubSub);
-                            //FPcontained_weight_prereq(itemSubPrereq_list, prlDBSubSub);
-
-                            prlDBSub.prereq_listDB1.Add(prlDBSubSub);
-                        }
-                        prlDB.prereq_listDB1.Add(prlDBSub);
-                    }
-                    #endregion
-                    prereq_listDB.Add(prlDB);
+                    prereq_listDB.Add(new prereq_listDB(item));
                 }
             }
             #endregion
-        }
+            FCATEGORY(advXML, _context);
+            Fdr_bonus(advXML);
+            Fattribute_bonus(advXML);
 
-        public void FPPrereq_list(Prereq_listXML item, prereq_listDB prlDB)
+            Fweapon_bonus(advXML);
+            Fcost_reduction(advXML);
+
+            Fmelee_weapon(advXML);
+            Franged_weapon(advXML);
+            Fskill_bonus(advXML);
+            Fspell_bonus(advXML);
+            Fmodifier(advXML);
+
+
+        }
+        public void FCATEGORY(AdvantageXML AdvFromXml, item1Entities _context)
         {
-            prlDB.when_tlCompare = item.when_tl != null
-                                           ? item.when_tl.Attribute("compare").Value.ToString() : null;
-            prlDB.when_tl = item.when_tl != null
-                                    ? item.when_tl.Value.ToString() : null;
-            prlDB.college_countCompare = item.college_count != null
-                                    ? item.college_count.Attribute("compare").Value.ToString() : null;
-            prlDB.college_count = item.college_count != null
-                                    ? item.college_count.Value.ToString() : null;
-            prlDB.all = item.all != null
-                                    ? item.all.Value.ToString() : null;
+            foreach (CategoriesXML itemCategory in AdvFromXml.categories)
+            {
+                string qery = itemCategory.category.Value.ToString();
 
+                var qe = _context.GurpsCategories.
+                      FirstOrDefault(p => p.NamelCategory.Contains(qery));
+                GurpsCategories.
+                      Add(qe);
+            }
+        }
+        public void Fdr_bonus(AdvantageXML AdvFromXml)
+        {
+            if (AdvFromXml.dr_bonus != null)
+            {
+                foreach (var itemdr_bonus in AdvFromXml.dr_bonus)
+                {
+                    dr_bonusDB drb = new dr_bonusDB();
+                    drb.location = itemdr_bonus.location.Value.ToString();
+
+                    drb.per_level = itemdr_bonus.amount.Attribute("per_level") != null
+                                        ? itemdr_bonus.amount.Attribute("per_level").Value.ToString() : null;
+                    drb.Value = itemdr_bonus.amount.Value.ToString();
+                    dr_bonusDB.Add(drb);
+                }
+            }
+        }
+        public void Fattribute_bonus(AdvantageXML AdvFromXml)
+        {
+            if (AdvFromXml.attribute_bonus != null)
+            {
+                foreach (Attribute_bonusXML item in AdvFromXml.attribute_bonus)
+                {
+                    attribute_bonus.Add(new attribute_bonus(item));
+                }
+            }
         }
 
+        public void Fweapon_bonus(AdvantageXML AdvFromXml)
+        {
+            if (AdvFromXml.weapon_bonus != null)
+            {
+                foreach (Weapon_bonusXML itemWeapon_bonus in AdvFromXml.weapon_bonus)
+                {
+                    weapon_bonus.Add(new weapon_bonus(itemWeapon_bonus));
+                }
+            }
+        }
+        public void Fcost_reduction(AdvantageXML AdvFromXml)
+        {
+            if (AdvFromXml.cost_reduction != null)
+            {
+                foreach (cost_reductionXML item in AdvFromXml.cost_reduction)
+                {
+                    cost_reduction.Add(new cost_reduction(item));
+                }
+            }
+        }
+
+        public void Fmelee_weapon(AdvantageXML AdvFromXml)
+        {
+            if (AdvFromXml.melee_weapon != null)
+            {
+                foreach (melee_weaponXML item in AdvFromXml.melee_weapon)
+                {
+                    melee_weapon.Add(new melee_weapon(item));
+                }
+            }
+        }
+        public void Franged_weapon(AdvantageXML AdvFromXml)
+        {
+            if (AdvFromXml.ranged_weapon != null)
+            {
+                foreach (ranged_weaponXML item in AdvFromXml.ranged_weapon)
+                {
+                    ranged_weapon.Add(new ranged_weapon(item));
+                }
+            }
+        }
+        public void Fskill_bonus(AdvantageXML AdvFromXml)
+        {
+            if (AdvFromXml.skill_bonus != null)
+            {
+                foreach (skill_bonusXML item in AdvFromXml.skill_bonus)
+                {
+                    skill_bonusDB.Add(new skill_bonusDB(item));
+                }
+            }
+        }
+        public void Fspell_bonus(AdvantageXML AdvFromXml)
+        {
+            if (AdvFromXml.spell_bonus != null)
+            {
+                foreach (spell_bonusXML item in AdvFromXml.spell_bonus)
+                {
+                    spell_bonus.Add(new spell_bonus(item));
+                }
+            }
+        }
+        public void Fmodifier(AdvantageXML AdvFromXml)
+        {
+            if (AdvFromXml.modifier != null)
+            {
+                foreach (modifierXML item in AdvFromXml.modifier)
+                {
+                    modifiers.Add(new modifier(item));
+                }
+            }
+        }
     }
 }

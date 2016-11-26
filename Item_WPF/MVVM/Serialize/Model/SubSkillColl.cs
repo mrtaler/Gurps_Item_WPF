@@ -46,47 +46,34 @@ namespace Item_WPF.MVVM.Serialize.Model
             category = itemCategoryx;
         }
     }
+
     public class dr_bonusXml
     {
-        public ObservableCollection<amountXml> amount;
+        public XElement amount;
         public XElement location;
         public dr_bonusXml(XElement item)
         {
             location = item.Element("location");
-            if (item.Element("amount") != null)
-            {
-                amount = new ObservableCollection<amountXml>();
-                foreach (var itemamount in item.Elements("amount"))
-                {
-                    amount.Add(new amountXml(itemamount));
-                }
-            }
+            amount = item.Element("amount");
         }
     }
+
     public class skill_bonusXML
     {
-        public ObservableCollection<amountXml> amount;
+        public XElement amount;
         public XElement name;
         public XElement specialization;
+
         public skill_bonusXML(XElement item)
         {
             name = item.Element("name");
             specialization = item.Element("specialization");
-            if (item.Element("amount") != null)
-            {
-                amount = new ObservableCollection<amountXml>();
-                foreach (var itemamount in item.Elements("amount"))
-                {
-                    amountXml amoxml = new amountXml(itemamount);
-                    amount.Add(amoxml);
-                }
-            }
+            amount = item.Element("amount");
         }
-
     }
     public class spell_bonusXML
     {
-        public ObservableCollection<amountXml> amount;
+        public XElement amount;
         public XElement spell_name;
         public XElement college_name;
         public XAttribute all_colleges;
@@ -95,17 +82,10 @@ namespace Item_WPF.MVVM.Serialize.Model
             spell_name = item.Element("spell_name");
             college_name = item.Element("college_name");
             all_colleges = item.Attribute("all_colleges");
-            if (item.Element("amount") != null)
-            {
-                amount = new ObservableCollection<amountXml>();
-                foreach (var itemamount in item.Elements("amount"))
-                {
-                    amountXml amoxml = new amountXml(itemamount);
-                    amount.Add(amoxml);
-                }
-            }
+            amount = item.Element("amount");
         }
     }
+
     public class ranged_weaponXML
     {
         public ObservableCollection<DefaultXML> Default;
@@ -142,26 +122,16 @@ namespace Item_WPF.MVVM.Serialize.Model
     }
     public class Attribute_bonusXML
     {
-        public ObservableCollection<attributeXml> Attribute = new ObservableCollection<attributeXml>();
-        public ObservableCollection<amountXml> Amount = new ObservableCollection<amountXml>();
+        public XElement Attribute;
+        public XElement Amount;
         /// <summary>
         /// Attribute bonus
         /// </summary>
         /// <param name="itemAttribute_bonus">give 1up Attribute_bonus collection</param>
         public Attribute_bonusXML(XElement itemAttribute_bonus)
         {
-            foreach (var item in itemAttribute_bonus.Elements("attribute"))
-            {
-                attributeXml atrxml = new attributeXml();
-                atrxml.attribute = item;
-                Attribute.Add(atrxml);
-            }
-            foreach (var item in itemAttribute_bonus.Elements("amount"))
-            {
-                amountXml amoxml = new amountXml();
-                amoxml.amount = item;
-                Amount.Add(amoxml);
-            }
+            Attribute = itemAttribute_bonus.Element("attribute");
+            Amount = itemAttribute_bonus.Element("amount");
         }
     }
     /// <summary>
@@ -181,14 +151,23 @@ namespace Item_WPF.MVVM.Serialize.Model
         public XAttribute enabled;
         public modifierXML(XElement itemmodifier)
         {
-            name = itemmodifier.Element("name");
-            notes = itemmodifier.Element("notes");
-            levels = itemmodifier.Element("levels");
-            cost = itemmodifier.Element("cost");
-            reference = itemmodifier.Element("reference");
-            affects = itemmodifier.Element("affects");
-            version = itemmodifier.Attribute("version");
-            enabled = itemmodifier.Attribute("enabled");
+            name = itemmodifier.Element("name") != null
+            ? itemmodifier.Element("name") : null;
+
+            notes = itemmodifier.Element("notes") != null
+            ? itemmodifier.Element("notes") : null;
+            levels = itemmodifier.Element("levels") != null
+              ? itemmodifier.Element("levels") : null;
+            cost = itemmodifier.Element("cost") != null
+               ? itemmodifier.Element("cost") : null;
+            reference = itemmodifier.Element("reference") != null
+               ? itemmodifier.Element("reference") : null;
+            affects = itemmodifier.Element("affects") != null
+               ? itemmodifier.Element("affects") : null;
+            version = itemmodifier.Attribute("version") != null
+                ? itemmodifier.Attribute("version") : null;
+            enabled = itemmodifier.Attribute("enabled") != null
+                ? itemmodifier.Attribute("enabled") : null;
 
             if (itemmodifier.Element("skill_bonus") != null)
             {
@@ -211,18 +190,13 @@ namespace Item_WPF.MVVM.Serialize.Model
     }
     public class Weapon_bonusXML
     {
-        public ObservableCollection<amountXml> Amount = new ObservableCollection<amountXml>();
+        public XElement Amount;
         public XElement name;
         public XElement specialization;
         public XElement level;
         public Weapon_bonusXML(XElement itemWeapon_bonusXML)
         {
-            foreach (var item in itemWeapon_bonusXML.Elements("amount"))
-            {
-                amountXml amoxml = new amountXml();
-                amoxml.amount = item;
-                Amount.Add(amoxml);
-            }
+            Amount = itemWeapon_bonusXML.Element("amount");
             name = itemWeapon_bonusXML.Element("name");
             specialization = itemWeapon_bonusXML.Element("specialization");
             level = itemWeapon_bonusXML.Element("level");
