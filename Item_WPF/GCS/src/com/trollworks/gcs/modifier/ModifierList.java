@@ -80,7 +80,7 @@ public class ModifierList extends ListFile {
 	}
 
 	@Override
-	public string getXMLTagName() {
+	public String getXMLTagName() {
 		return TAG_ROOT;
 	}
 }

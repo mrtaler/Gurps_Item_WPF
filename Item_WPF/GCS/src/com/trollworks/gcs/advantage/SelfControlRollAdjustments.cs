@@ -31,12 +31,12 @@
 //	/** None. */
 //	NONE {
 //		@Override
-//		public string toString() {
+//		public String toString() {
 //			return NONE_TITLE;
 //		}
 
 //		@Override
-//		public string getDescription(SelfControlRoll cr) {
+//		public String getDescription(SelfControlRoll cr) {
 //			return ""; //$NON-NLS-1$
 //		}
 
@@ -48,12 +48,12 @@
 //	/** General action penalty. */
 //	ACTION_PENALTY {
 //		@Override
-//		public string toString() {
+//		public String toString() {
 //			return ACTION_PENALTY_TITLE;
 //		}
 
 //		@Override
-//		public string getDescription(SelfControlRoll cr) {
+//		public String getDescription(SelfControlRoll cr) {
 //			if (cr == SelfControlRoll.NONE_REQUIRED) {
 //				return ""; //$NON-NLS-1$
 //			}
@@ -68,12 +68,12 @@
 //	/** Reaction penalty. */
 //	REACTION_PENALTY {
 //		@Override
-//		public string toString() {
+//		public String toString() {
 //			return REACTION_PENALTY_TITLE;
 //		}
 
 //		@Override
-//		public string getDescription(SelfControlRoll cr) {
+//		public String getDescription(SelfControlRoll cr) {
 //			if (cr == SelfControlRoll.NONE_REQUIRED) {
 //				return ""; //$NON-NLS-1$
 //			}
@@ -88,12 +88,12 @@
 //	/** Fright Check penalty. */
 //	FRIGHT_CHECK_PENALTY {
 //		@Override
-//		public string toString() {
+//		public String toString() {
 //			return FRIGHT_CHECK_PENALTY_TITLE;
 //		}
 
 //		@Override
-//		public string getDescription(SelfControlRoll cr) {
+//		public String getDescription(SelfControlRoll cr) {
 //			if (cr == SelfControlRoll.NONE_REQUIRED) {
 //				return ""; //$NON-NLS-1$
 //			}
@@ -108,12 +108,12 @@
 //	/** Fright Check bonus. */
 //	FRIGHT_CHECK_BONUS {
 //		@Override
-//		public string toString() {
+//		public String toString() {
 //			return FRIGHT_CHECK_BONUS_TITLE;
 //		}
 
 //		@Override
-//		public string getDescription(SelfControlRoll cr) {
+//		public String getDescription(SelfControlRoll cr) {
 //			if (cr == SelfControlRoll.NONE_REQUIRED) {
 //				return ""; //$NON-NLS-1$
 //			}
@@ -128,12 +128,12 @@
 //	/** Minor cost of living increase. */
 //	MINOR_COST_OF_LIVING_INCREASE {
 //		@Override
-//		public string toString() {
+//		public String toString() {
 //			return MINOR_COST_OF_LIVING_INCREASE_TITLE;
 //		}
 
 //		@Override
-//		public string getDescription(SelfControlRoll cr) {
+//		public String getDescription(SelfControlRoll cr) {
 //			if (cr == SelfControlRoll.NONE_REQUIRED) {
 //				return ""; //$NON-NLS-1$
 //			}
@@ -148,12 +148,12 @@
 //	/** Major cost of living increase plus merchant penalty. */
 //	MAJOR_COST_OF_LIVING_INCREASE {
 //		@Override
-//		public string toString() {
+//		public String toString() {
 //			return MAJOR_COST_OF_LIVING_INCREASE_TITLE;
 //		}
 
 //		@Override
-//		public string getDescription(SelfControlRoll cr) {
+//		public String getDescription(SelfControlRoll cr) {
 //			if (cr == SelfControlRoll.NONE_REQUIRED) {
 //				return ""; //$NON-NLS-1$
 //			}
@@ -268,7 +268,7 @@
 //	 * @param cr The {@link SelfControlRoll} being adjusted.
 //	 * @return The short description.
 //	 */
-//	public abstract string getDescription(SelfControlRoll cr);
+//	public abstract String getDescription(SelfControlRoll cr);
 
 //	/**
 //	 * @param cr The {@link SelfControlRoll} being adjusted.
