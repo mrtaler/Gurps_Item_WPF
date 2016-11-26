@@ -30,19 +30,26 @@ namespace Item_WPF.ItemEntityModel
     
         public virtual DbSet<Advantage> Advantages { get; set; }
         public virtual DbSet<advantage_prereq> advantage_prereq { get; set; }
-        public virtual DbSet<AmountAtribute> AmountAtributes { get; set; }
         public virtual DbSet<attribute_bonus> attribute_bonus { get; set; }
         public virtual DbSet<attribute_prereq> attribute_prereq { get; set; }
-        public virtual DbSet<BonusAttribute> BonusAttributes { get; set; }
         public virtual DbSet<CharacterDB> CharacterDBs { get; set; }
+        public virtual DbSet<CharSkill> CharSkills { get; set; }
         public virtual DbSet<contained_weight_prereq> contained_weight_prereq { get; set; }
+        public virtual DbSet<cost_reduction> cost_reduction { get; set; }
         public virtual DbSet<DefaultSkill> DefaultSkills { get; set; }
+        public virtual DbSet<DefSkillSome> DefSkillSomes { get; set; }
         public virtual DbSet<DifficultySkill> DifficultySkills { get; set; }
+        public virtual DbSet<dr_bonusDB> dr_bonusDB { get; set; }
+        public virtual DbSet<GurpsCategory> GurpsCategories { get; set; }
         public virtual DbSet<GurpsSkill> GurpsSkills { get; set; }
-        public virtual DbSet<GurpsSkillCategory> GurpsSkillCategories { get; set; }
         public virtual DbSet<InventoryOfChar> InventoryOfChars { get; set; }
+        public virtual DbSet<melee_weapon> melee_weapon { get; set; }
+        public virtual DbSet<modifier> modifiers { get; set; }
         public virtual DbSet<prereq_listDB> prereq_listDB { get; set; }
+        public virtual DbSet<ranged_weapon> ranged_weapon { get; set; }
+        public virtual DbSet<skill_bonusDB> skill_bonusDB { get; set; }
         public virtual DbSet<skill_prereqDB> skill_prereqDB { get; set; }
+        public virtual DbSet<spell_bonus> spell_bonus { get; set; }
         public virtual DbSet<spell_prereqDB> spell_prereqDB { get; set; }
         public virtual DbSet<weapon_bonus> weapon_bonus { get; set; }
         public virtual DbSet<AMMOUPGRATE> AMMOUPGRATES { get; set; }

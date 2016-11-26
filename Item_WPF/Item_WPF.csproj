@@ -32,7 +32,7 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -151,9 +151,6 @@
     <Compile Include="ItemEntityModel\AMMOUPGRATE.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="ItemEntityModel\AmountAtribute.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
     <Compile Include="ItemEntityModel\AnyBoxNameType.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
@@ -181,9 +178,6 @@
     <Compile Include="ItemEntityModel\Battery.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="ItemEntityModel\BonusAttribute.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
     <Compile Include="ItemEntityModel\BoxItem.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
@@ -191,6 +185,9 @@
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemEntityModel\CharacterDB.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\CharSkill.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemEntityModel\Cloth.cs">
@@ -202,7 +199,13 @@
     <Compile Include="ItemEntityModel\contained_weight_prereq.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="ItemEntityModel\cost_reduction.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemEntityModel\DefaultSkill.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\DefSkillSome.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemEntityModel\DifficultySkill.cs">
@@ -211,19 +214,22 @@
     <Compile Include="ItemEntityModel\Drug.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="ItemEntityModel\dr_bonusDB.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemEntityModel\EXPLOSIVE.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemEntityModel\FOOD.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="ItemEntityModel\GurpsCategory.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemEntityModel\GurpsClass.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemEntityModel\GurpsSkill.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\GurpsSkillCategory.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemEntityModel\G_AttachClass.cs">
@@ -256,13 +262,28 @@
     <Compile Include="ItemEntityModel\LOADBEARINGEQUIPMENT.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="ItemEntityModel\melee_weapon.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\modifier.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemEntityModel\NeedSkill.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemEntityModel\prereq_listDB.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="ItemEntityModel\ranged_weapon.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\skill_bonusDB.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemEntityModel\skill_prereqDB.cs">
+      <DependentUpon>Gurps_Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemEntityModel\spell_bonus.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemEntityModel\spell_prereqDB.cs">
@@ -298,6 +319,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\AddSkilltoChar\AddSkilltoCharView.xaml.cs">
+      <DependentUpon>AddSkilltoCharView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\AddSkilltoChar\AddSkilltoCharViewModel.cs" />
+    <Compile Include="MVVM\AllCharfromDB\AllCharFromDBViewModel.cs" />
     <Compile Include="MVVM\GurpsSkill_m\AllGurpsSkillView.xaml.cs">
       <DependentUpon>AllGurpsSkillView.xaml</DependentUpon>
     </Compile>
@@ -313,6 +339,7 @@
     <Compile Include="MVVM\Models\BoxItem.cs" />
     <Compile Include="MVVM\Models\Character.cs" />
     <Compile Include="MVVM\Models\CombineWeapModel.cs" />
+    <Compile Include="MVVM\Models\DB\CharSkill.cs" />
     <Compile Include="MVVM\Models\DiceString.cs" />
     <Compile Include="MVVM\Models\Item.cs" />
     <Compile Include="MVVM\Models\ItemsForSortModel.cs" />
@@ -350,10 +377,10 @@
     <Compile Include="MVVM\ViewModels\AttacmentMountViewModel.cs" />
     <Compile Include="MVVM\ViewModels\CombineWeapViewModel.cs" />
     <Compile Include="MVVM\ViewModels\DamageTypeViewModel.cs" />
-    <Compile Include="MVVM\ViewModels\EditPrimaryStatsViewModel.cs" />
-    <Compile Include="MVVM\ViewModels\EditSecondaryStatsViewModel.cs" />
+    <Compile Include="MVVM\EditPrimaryStats\EditPrimaryStatsViewModel.cs" />
+    <Compile Include="MVVM\EditSecondaryStats\EditSecondaryStatsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\InputBoxViewModel.cs" />
-    <Compile Include="MVVM\ViewModels\MainCharacterViewModel.cs" />
+    <Compile Include="MVVM\MainCharacter\MainCharacterViewModel.cs" />
     <Compile Include="MVVM\ViewModels\MainWindowStartViewModel.cs" />
     <Compile Include="MVVM\ViewModels\NewBoxViewModel.cs" />
     <Compile Include="MVVM\ViewModels\NewItemsViewModel.cs" />
@@ -363,7 +390,7 @@
     <Compile Include="MVVM\View\AboutWindowView.xaml.cs">
       <DependentUpon>AboutWindowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\AllCharfromDBView.xaml.cs">
+    <Compile Include="MVVM\AllCharfromDB\AllCharfromDBView.xaml.cs">
       <DependentUpon>AllCharfromDBView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\AllWeaponView.xaml.cs">
@@ -402,10 +429,10 @@
     <Compile Include="MVVM\View\EditItemWindowView.xaml.cs">
       <DependentUpon>EditItemWindowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\EditPrimaryStatsWindowView.xaml.cs">
+    <Compile Include="MVVM\EditPrimaryStats\EditPrimaryStatsWindowView.xaml.cs">
       <DependentUpon>EditPrimaryStatsWindowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\EditSecondaryStatsWindowView.xaml.cs">
+    <Compile Include="MVVM\EditSecondaryStats\EditSecondaryStatsWindowView.xaml.cs">
       <DependentUpon>EditSecondaryStatsWindowView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\EditSkillWindowView.xaml.cs">
@@ -414,7 +441,7 @@
     <Compile Include="MVVM\View\InputBoxView.xaml.cs">
       <DependentUpon>InputBoxView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\MainCharacterView.xaml.cs">
+    <Compile Include="MVVM\MainCharacter\MainCharacterView.xaml.cs">
       <DependentUpon>MainCharacterView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\MainWindowStartView.xaml.cs">
@@ -463,6 +490,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
     </Compile>
+    <Page Include="MVVM\AddSkilltoChar\AddSkilltoCharView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\GurpsSkill_m\AllGurpsSkillView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -479,7 +510,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\AllCharfromDBView.xaml">
+    <Page Include="MVVM\AllCharfromDB\AllCharfromDBView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -531,11 +562,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\EditPrimaryStatsWindowView.xaml">
+    <Page Include="MVVM\EditPrimaryStats\EditPrimaryStatsWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\EditSecondaryStatsWindowView.xaml">
+    <Page Include="MVVM\EditSecondaryStats\EditSecondaryStatsWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -547,7 +578,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\MainCharacterView.xaml">
+    <Page Include="MVVM\MainCharacter\MainCharacterView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1017,6 +1048,7 @@
     <Content Include="addin\Al\sql1.sql" />
     <Content Include="addin\Al\sqlADV.sql" />
     <Content Include="addin\Al\SQlinv.sql" />
+    <Content Include="addin\microsoft.windows.shell.dll" />
     <Content Include="addin\oldDB\InsertStoreP.sql" />
     <Content Include="addin\01_DatabaseInitStructure.sql" />
     <Content Include="addin\oldDB\ItemModel.edmx.sql" />

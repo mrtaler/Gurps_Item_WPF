@@ -32,6 +32,7 @@ namespace Item_WPF.ItemEntityModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CharacterDB()
         {
+            this.CharSkills = new HashSet<CharSkill>();
             this.InventoryOfChars = new HashSet<InventoryOfChar>();
         }
     
@@ -228,6 +229,16 @@ namespace Item_WPF.ItemEntityModel
     		}
     	}
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        private ICollection<CharSkill> _CharSkills;
+            public virtual ICollection<CharSkill> CharSkills
+            {
+                get { return _CharSkills; }
+                set
+                { if(_CharSkills != value)
+                    {    _CharSkills = value;    OnPropertyChanged("CharSkills");   }
+                }
+            } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<InventoryOfChar> _InventoryOfChars;
             public virtual ICollection<InventoryOfChar> InventoryOfChars

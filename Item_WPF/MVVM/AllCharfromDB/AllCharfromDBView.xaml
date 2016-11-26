@@ -14,19 +14,24 @@
                  Height="215"
                  Margin="10,10,0,0"
                  HorizontalAlignment="Left"
-                 VerticalAlignment="Top" />
+                 VerticalAlignment="Top"
+                 DisplayMemberPath="name"
+                 ItemsSource="{Binding CharacterDbCollection}"
+                 SelectedItem="{Binding SelectedCharacterDb}" />
         <Button x:Name="button"
                 Width="75"
                 Margin="10,239,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Content="Button" />
+                Click="button_Click"
+                Content="ok" />
         <Button x:Name="button1"
                 Width="75"
                 Margin="90,239,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Content="Button" />
+                Click="button1_Click"
+                Content="Cancel" />
 
     </Grid>
 </Window>

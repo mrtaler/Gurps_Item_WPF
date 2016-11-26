@@ -11,43 +11,42 @@ namespace Item_WPF.ItemEntityModel
 {
     public partial class GurpsSkill
     {
-        public void Fmain(SkillXMLModel SkillFromXml, string type)
+        public void Fmain(SkillXMLModel skillFromXml, string type)
         {
-            NameSkill = SkillFromXml.NameSkill != null
-                ? SkillFromXml.NameSkill.Value.ToString() : null;
-            Specialization = SkillFromXml.Specialization != null
-                 ? SkillFromXml.Specialization.Value.ToString() : null;
-            idtech_level = SkillFromXml.tech_level != null && SkillFromXml.tech_level.Value.ToString() != ""
-                 ? Convert.ToInt32(SkillFromXml.tech_level.Value) : 100;
-            Difficulty = SkillFromXml.difficulty != null
-                 ? SkillFromXml.difficulty.Value.ToString() : null;
-            Points = SkillFromXml.Points != null
-                 ? Convert.ToInt32(SkillFromXml.Points.Value) : 0;
-            Reference = SkillFromXml.Reference != null
-                 ? SkillFromXml.Reference.Value.ToString() : null;
-            version = SkillFromXml.version != null
-                 ? SkillFromXml.version.Value.ToString() : null;
-            notes = SkillFromXml.notes != null
-                 ? SkillFromXml.notes.Value.ToString() : null;
-            encumbrance_penalty_multiplier = SkillFromXml.encumbrance_penalty_multiplier != null
-                 ? SkillFromXml.encumbrance_penalty_multiplier.Value.ToString() : null;
-            limitT = SkillFromXml.limit != null
-                 ? SkillFromXml.limit.Value.ToString() : null;
+            NameSkill = skillFromXml.NameSkill != null
+                ? skillFromXml.NameSkill.Value.ToString() : null;
+            Specialization = skillFromXml.Specialization != null
+                 ? skillFromXml.Specialization.Value.ToString() : null;
+            idtech_level = skillFromXml.tech_level != null && skillFromXml.tech_level.Value.ToString() != ""
+                 ? Convert.ToInt32(skillFromXml.tech_level.Value) : 100;
+            Difficulty = skillFromXml.difficulty != null
+                 ? skillFromXml.difficulty.Value.ToString() : null;
+            Points = skillFromXml.Points != null
+                 ? Convert.ToInt32(skillFromXml.Points.Value) : 0;
+            Reference = skillFromXml.Reference != null
+                 ? skillFromXml.Reference.Value.ToString() : null;
+            version = skillFromXml.version != null
+                 ? skillFromXml.version.Value.ToString() : null;
+            notes = skillFromXml.notes != null
+                 ? skillFromXml.notes.Value.ToString() : null;
+            encumbrance_penalty_multiplier = skillFromXml.encumbrance_penalty_multiplier != null
+                 ? skillFromXml.encumbrance_penalty_multiplier.Value.ToString() : null;
+            limitT = skillFromXml.limit != null
+                 ? skillFromXml.limit.Value.ToString() : null;
             if (idtech_level == 100)
                 idtech_level = null;
             TypeSkTh = type;
         }
         public void FCATEGORY(SkillXMLModel SkillFromXml, item1Entities _context)
         {
-            foreach (CategoriesXML itemCategory in SkillFromXml.categories)
-            {
-                string qery = itemCategory.category.Value.ToString();
-
-                var qe = _context.GurpsSkillCategories.
-                      FirstOrDefault(p => p.NamelCategory.Contains(qery));
-                GurpsSkillCategories.
-                      Add(qe);
-            }
+            //foreach (CategoriesXML itemCategory in SkillFromXml.categories)
+            //{
+            //    string qery = itemCategory.category.Value.ToString();
+            //    var qe = _context.GurpsSkillCategories.
+            //          FirstOrDefault(p => p.NamelCategory.Contains(qery));
+            //    GurpsSkillCategories.
+            //          Add(qe);
+            //}
         }
         public void FDefault(SkillXMLModel SkillFromXml, ObservableCollection<GurpsSkill> CollectionCategiry)
         {
@@ -95,20 +94,19 @@ namespace Item_WPF.ItemEntityModel
             foreach (Attribute_bonusXML item in SkillFromXml.attribute_bonus)
             {
                 attribute_bonus atrbnr = new attribute_bonus();
-                foreach (var itemAttribute in item.Attribute)
-                {
-                    BonusAttribute bnsatr = new BonusAttribute();
-                    bnsatr.limitation = itemAttribute.attribute.Attribute("limitation").Value.ToString();
-                    bnsatr.Value = itemAttribute.attribute.Value.ToString();
-                    atrbnr.BonusAttributes.Add(bnsatr);
-                }
-                foreach (var itemAmount in item.Amount)
-                {
-                    AmountAtribute amnatr = new AmountAtribute();
-                    amnatr.per_level = itemAmount.amount.Attribute("per_level").Value.ToString();
-                    amnatr.Value = itemAmount.amount.Value.ToString();
-                    atrbnr.AmountAtributes.Add(amnatr);
-                }
+                //foreach (var itemAttribute in item.Attribute)
+                //{
+                //    atrbnr.AttributeLimitation = itemAttribute.attribute.Attribute("limitation").Value.ToString();
+                //    atrbnr.atr= itemAttribute.attribute.Value.ToString();
+                //    atrbnr.BonusAttributes.Add(bnsatr);
+                //}
+                //foreach (var itemAmount in item.Amount)
+                //{
+                //    AmountAtribute amnatr = new AmountAtribute();
+                //    amnatr.per_level = itemAmount.amount.Attribute("per_level").Value.ToString();
+                //    amnatr.Value = itemAmount.amount.Value.ToString();
+                //    atrbnr.AmountAtributes.Add(amnatr);
+                //}
                 attribute_bonus.Add(atrbnr);
             }
         }
@@ -117,13 +115,13 @@ namespace Item_WPF.ItemEntityModel
             foreach (Weapon_bonusXML itemWeapon_bonus in SkillFromXml.weapon_bonus)
             {
                 weapon_bonus weapbns = new weapon_bonus();
-                foreach (var itemAmount in itemWeapon_bonus.Amount)
-                {
-                    AmountAtribute amnatr = new AmountAtribute();
-                    amnatr.per_level = itemAmount.amount.Attribute("per_level").Value.ToString();
-                    amnatr.Value = itemAmount.amount.Value.ToString();
-                    weapbns.AmountAtributes.Add(amnatr);
-                }
+                //foreach (var itemAmount in itemWeapon_bonus.Amount)
+                //{
+                //    AmountAtribute amnatr = new AmountAtribute();
+                //    amnatr.per_level = itemAmount.amount.Attribute("per_level").Value.ToString();
+                //    amnatr.Value = itemAmount.amount.Value.ToString();
+                //    weapbns.AmountAtributes.Add(amnatr);
+                //}
                 weapbns.nameCompare = itemWeapon_bonus.name.Attribute("compare").Value.ToString();
                 weapbns.name = itemWeapon_bonus.name.Value.ToString();
                 weapbns.specializationCompare = itemWeapon_bonus.specialization.Attribute("compare").Value.ToString(); ;

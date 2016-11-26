@@ -3,6 +3,7 @@ using Item_WPF.MVVM.Models;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Linq;
 
 namespace Item_WPF.ItemEntityModel
 
@@ -10,6 +11,8 @@ namespace Item_WPF.ItemEntityModel
     // This class represents a GURPS character.
     public partial class CharacterDB
     {
+        private int HumanStat = 10;
+
         // The Points properties contains the number of points to be
         // added/subtracted from the base value of the stat, thus acting
         // as a modifier.
@@ -17,62 +20,42 @@ namespace Item_WPF.ItemEntityModel
         // For example the base value of Strength is 10. If StrengthPoints
         // is 3, then the effective Strength is 13.
         // These read-only properties returns the effective value of the stats.
-        public int Strength
-        {
-            get
-            {
-                return 10 + StrengthPoints;
-            }
-        }
-        public int Dexterity
-        {
-            get
-            {
-                return 10 + DexterityPoints;
-            }
-        }
-        public int Intelligence
-        {
-            get
-            {
-                return 10 + IntelligencePoints;
-            }
-        }
-        public int Health
-        {
-            get
-            {
-                return 10 + HealthPoints;
-            }
-        }
-        public int MaxHP
-        {
-            get
-            {
-                return MaxHPPoints + Strength;
-            }
-        }
-        public int MaxFP
-        {
-            get
-            {
-                return MaxFPPoints + Health;
-            }
-        }
-        public int Willpower
-        {
-            get
-            {
-                return WillpowerPoints + Intelligence;
-            }
-        }
-        public int Perception
-        {
-            get
-            {
-                return PerceptionPoints + Intelligence;
-            }
-        }
+        #region MainAttrib
+        #region Strength
+        public int Strength => HumanStat + StrengthPoints;
+        public int StrengthCost => BasicCost.ST_Cost * StrengthPoints;
+        #endregion
+        #region Dexterity
+        public int Dexterity => HumanStat + DexterityPoints;
+        public int DexterityCost => BasicCost.DX_Cost * DexterityPoints;
+        #endregion
+        #region Intelligence
+        public int Intelligence => HumanStat + IntelligencePoints;
+        public int IntelligenceCost => BasicCost.IQ_Cost * IntelligencePoints;
+        #endregion
+        #region Health
+        public int Health => HumanStat + HealthPoints;
+        public int HealtCost => BasicCost.HT_Cost * HealthPoints;
+        #endregion
+        public int CharacterPointsPrimarySkill => StrengthCost + IntelligenceCost + DexterityCost + HealtCost;
+        #endregion
+        #region SecAtrib
+        #region MaxHP
+        public int MaxHP => MaxHPPoints + Strength;
+        public int MaxHPCost => BasicCost.HP_Cost * MaxHPPoints;
+        #endregion
+        #region MaxFP
+        public int MaxFP => MaxFPPoints + Health;
+        public int MaxFPCost => BasicCost.FP_Cost * MaxFPPoints;
+        #endregion
+        #region Willpower
+        public int Willpower => WillpowerPoints + Intelligence;
+        public int WillpowerCost => BasicCost.WL_Cost * WillpowerPoints;
+        #endregion
+        #region Perception
+        public int Perception => PerceptionPoints + Intelligence;
+        public int PerceptionCost => BasicCost.PR_Cost * PerceptionPoints;
+        #endregion
         public float BasicLift
         {
             get
@@ -83,6 +66,7 @@ namespace Item_WPF.ItemEntityModel
                 return bl;
             }
         }
+        #region BasicSpeed
         public float BasicSpeed
         {
             get
@@ -91,6 +75,9 @@ namespace Item_WPF.ItemEntityModel
                 return bs + BasicSpeedPoints;
             }
         }
+        public int BasicSpeedCost => (int)(BasicCost.BS_Cost * (BasicSpeedPoints / 0.25F));
+        #endregion
+        #region BasicMove
         public int BasicMove
         {
             get
@@ -99,6 +86,16 @@ namespace Item_WPF.ItemEntityModel
                 return bm + BasicMovePoints;
             }
         }
+        public int BasicMoveCost => BasicCost.BM_Cost * BasicMovePoints;
+        #endregion
+        public int CharacterPointsSecondarySkill =>
+            MaxHPCost +
+            MaxFPCost +
+            PerceptionCost +
+            WillpowerCost +
+            BasicSpeedCost +
+            BasicMoveCost;
+
         public int Move
         {
             get
@@ -119,6 +116,9 @@ namespace Item_WPF.ItemEntityModel
                     return 0;
             }
         }
+
+
+        #endregion
         public DiceString ThrustDamage
         {
             get
@@ -138,15 +138,15 @@ namespace Item_WPF.ItemEntityModel
                         case 8: return new DiceString(1, 1);
                         case 9: return new DiceString(1, 2);
                         case 10: return new DiceString(2, -1);
-                        case 11: return new DiceString(2, 0);
+                        case 11: return new DiceString(2);
                         case 12: return new DiceString(2, 1);
                         case 13: return new DiceString(2, 2);
                         case 14: return new DiceString(3, -1);
-                        case 15: return new DiceString(3, 0);
+                        case 15: return new DiceString(3);
                         case 16: return new DiceString(3, 1);
                         case 17: return new DiceString(3, 2);
                         case 18: return new DiceString(4, -1);
-                        case 19: return new DiceString(4, 0);
+                        case 19: return new DiceString(4);
                         case 20: return new DiceString(4, 1);
                     }
                 }
@@ -155,18 +155,18 @@ namespace Item_WPF.ItemEntityModel
                     switch ((str - 40) / 5)
                     {
                         case 0: return new DiceString(4, 1);
-                        case 1: return new DiceString(5, 0);
+                        case 1: return new DiceString(5);
                         case 2: return new DiceString(5, 2);
-                        case 3: return new DiceString(6, 0);
+                        case 3: return new DiceString(6);
                         case 4: return new DiceString(7, -1);
                         case 5: return new DiceString(7, 1);
-                        case 6: return new DiceString(8, 0);
+                        case 6: return new DiceString(8);
                         case 7: return new DiceString(8, 2);
-                        case 8: return new DiceString(9, 0);
+                        case 8: return new DiceString(9);
                         case 9: return new DiceString(9, 2);
-                        case 10: return new DiceString(10, 0);
+                        case 10: return new DiceString(10);
                         case 11: return new DiceString(10, 2);
-                        case 12: return new DiceString(11, 0);
+                        case 12: return new DiceString(11);
                     }
                 }
                 Debug.Assert(str > 100);
@@ -197,7 +197,7 @@ namespace Item_WPF.ItemEntityModel
                         case 9:
                             return new DiceString(1, -1);
                         case 10:
-                            return new DiceString(1, 0);
+                            return new DiceString(1);
                         case 11:
                             return new DiceString(1, 1);
                         case 12:
@@ -205,7 +205,7 @@ namespace Item_WPF.ItemEntityModel
                         case 13:
                             return new DiceString(2, -1);
                         case 14:
-                            return new DiceString(2, 0);
+                            return new DiceString(2);
                         case 15:
                             return new DiceString(2, 1);
                         case 16:
@@ -213,7 +213,7 @@ namespace Item_WPF.ItemEntityModel
                         case 17:
                             return new DiceString(3, -1);
                         case 18:
-                            return new DiceString(3, 0);
+                            return new DiceString(3);
                         case 19:
                             return new DiceString(3, 1);
                         case 20:
@@ -221,7 +221,7 @@ namespace Item_WPF.ItemEntityModel
                         case 21:
                             return new DiceString(4, -1);
                         case 22:
-                            return new DiceString(4, 0);
+                            return new DiceString(4);
                         case 23:
                             return new DiceString(4, 1);
                         case 24:
@@ -229,7 +229,7 @@ namespace Item_WPF.ItemEntityModel
                         case 25:
                             return new DiceString(5, -1);
                         case 26:
-                            return new DiceString(5, 0);
+                            return new DiceString(5);
                         case 27:
                         case 28:
                             return new DiceString(5, 1);
@@ -241,7 +241,7 @@ namespace Item_WPF.ItemEntityModel
                             return new DiceString(6, -1);
                         case 33:
                         case 34:
-                            return new DiceString(6, 0);
+                            return new DiceString(6);
                         case 35:
                         case 36:
                             return new DiceString(6, 1);
@@ -261,15 +261,15 @@ namespace Item_WPF.ItemEntityModel
                         case 1: return new DiceString(7, 1);
                         case 2: return new DiceString(8, -1);
                         case 3: return new DiceString(8, 1);
-                        case 4: return new DiceString(9, 0);
+                        case 4: return new DiceString(9);
                         case 5: return new DiceString(9, 2);
-                        case 6: return new DiceString(10, 0);
+                        case 6: return new DiceString(10);
                         case 7: return new DiceString(10, 2);
-                        case 8: return new DiceString(11, 0);
+                        case 8: return new DiceString(11);
                         case 9: return new DiceString(11, 2);
-                        case 10: return new DiceString(12, 0);
+                        case 10: return new DiceString(12);
                         case 11: return new DiceString(12, 2);
-                        case 12: return new DiceString(13, 0);
+                        case 12: return new DiceString(13);
                     }
                 }
                 Debug.Assert(str > 100);
@@ -321,32 +321,10 @@ namespace Item_WPF.ItemEntityModel
                 return advantages;
             }
         }
-
-        // Character skills
-        //private ObservableCollection<Skill> skills = new ObservableCollection<Skill>();
-        //public ObservableCollection<Skill> Skills
-        //{
-        //    get
-        //    {
-        //        return skills;
-        //    }
-        //}
-
         // Calculation of character points spent on this character
-        public int CharacterPointsPrimarySkill
-        {
-            get
-            {
-                return 10 * StrengthPoints + 20 * IntelligencePoints + 20 * DexterityPoints + 10 * HealthPoints;
-            }
-        }
-        public int CharacterPointsSecondarySkill
-        {
-            get
-            {
-                return 2 * MaxHPPoints + 5 * WillpowerPoints + 5 * PerceptionPoints + 3 * MaxFPPoints;
-            }
-        }
+
+
+
         public int CharacterPointsAdvantages
         {
             get
@@ -354,7 +332,7 @@ namespace Item_WPF.ItemEntityModel
                 int points = 0;
                 foreach (Advantage advantage in Advantages)
                 {
-               //     points += advantage.Points;
+                    //     points += advantage.Points;
                 }
                 return points;
             }
@@ -363,19 +341,22 @@ namespace Item_WPF.ItemEntityModel
         {
             get
             {
-            //    int points = 0;
-            ////    foreach (Skill skill in Skills)
-            ////    {
-            //////        points += skill.Points;
-            ////    }
-                return 0;
+
+                return CharSkills.Sum(p => p.SkillPointCost);
+
+                //    int? points = 0;
+                //    foreach (GurpsSkill skill in Skills)
+                //    {
+                //        points += skill.Points;
+                //    }
+                //    return Convert.ToInt32(points);
             }
         }
         public int CharacterPoints
         {
             get
             {
-                return CharacterPointsPrimarySkill + CharacterPointsSecondarySkill + CharacterPointsAdvantages + CharacterPointsSkills;
+                return CharacterPointsPrimarySkill + CharacterPointsSecondarySkill +/* CharacterPointsAdvantages */+CharacterPointsSkills;
             }
         }
 
@@ -393,5 +374,21 @@ namespace Item_WPF.ItemEntityModel
             // return Name;
             return name;
         }
+        public class BasicCost
+        {
+            public const int ST_Cost = 10;
+            public const int DX_Cost = 20;
+            public const int IQ_Cost = 20;
+            public const int HT_Cost = 10;
+
+            public const int HP_Cost = 2;
+            public const int WL_Cost = 5;
+            public const int PR_Cost = 5;
+            public const int FP_Cost = 3;
+            public const int BS_Cost = 5;
+            public const int BM_Cost = 5;
+        }
     }
+
+
 }

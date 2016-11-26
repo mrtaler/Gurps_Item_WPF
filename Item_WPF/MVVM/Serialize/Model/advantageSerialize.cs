@@ -156,7 +156,7 @@ namespace Item_WPF.MVVM.Serialize.Model
             {
              //   Advantage adv = 
 
-                _context.Advantages.AddObject(new Advantage(advXML));
+                _context.Advantages.Add(new Advantage(advXML));
             }
             _context.SaveChanges();
         }

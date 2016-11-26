@@ -14,7 +14,7 @@ namespace Item_WPF.MVVM.Serialize.Model
         private item1Entities _context;
         public ObservableCollection<GurpsSkill> CollectionCategiry = new ObservableCollection<GurpsSkill>();
         public ObservableCollection<SkillXMLModel> OutstringCollectionSkill = new ObservableCollection<SkillXMLModel>();
-        public ObservableCollection<GurpsSkillCategory> gurpsSkillCategories = new ObservableCollection<GurpsSkillCategory>();
+        //   public ObservableCollection<GurpsSkillCategory> gurpsSkillCategories = new ObservableCollection<GurpsSkillCategory>();
         public ObservableCollection<string> retcompare;
         public SkillSerializeible(string xmlString, string writePath)
         {
@@ -112,9 +112,9 @@ namespace Item_WPF.MVVM.Serialize.Model
                 #endregion
                 #region prereq_list
                 techXML.prereq_list = new ObservableCollection<Prereq_listXML>();
-                foreach (XElement itemprereq_list in techElement.Elements("prereq_list"))
+                foreach (XElement itemprereqList in techElement.Elements("prereq_list"))
                 {
-                    Prereq_listXML prl = new Prereq_listXML(itemprereq_list, techElement);
+                    Prereq_listXML prl = new Prereq_listXML(itemprereqList, techElement);
                     techXML.prereq_list.Add(prl);
                 }
                 #endregion
@@ -126,24 +126,24 @@ namespace Item_WPF.MVVM.Serialize.Model
             foreach (SkillXMLModel item in OutstringCollectionSkill.OrderBy(p => p.numPP))
             // foreach (SkillXMLModel item in qt)
             {
-                string NameSkill = item.NameSkill != null
+                string nameSkill = item.NameSkill != null
                                  ? item.NameSkill.Value.ToString() : null;
-                string SpecSkill = item.Specialization != null
+                string specSkill = item.Specialization != null
                                  ? item.Specialization.Value.ToString() : null;
-                string VersSkill = item.version != null
+                string versSkill = item.version != null
                   ? item.version.Value.ToString() : null;
-                string TypeSkill = item.Type != null
+                string typeSkill = item.Type != null
                  ? item.Type : null;
-                GurpsSkill SkillAstronomy = CollectionCategiry
-                    .Where(p => p.TypeSkTh == TypeSkill)
-                    .Where(p => p.NameSkill == NameSkill)
-                    .Where(p => p.Specialization == SpecSkill)
-                    .FirstOrDefault(p => p.version == VersSkill);
+                GurpsSkill skillAstronomy = CollectionCategiry
+                    .Where(p => p.TypeSkTh == typeSkill)
+                    .Where(p => p.NameSkill == nameSkill)
+                    .Where(p => p.Specialization == specSkill)
+                    .FirstOrDefault(p => p.version == versSkill);
 
                 //if (item.Specialization.Value.ToString() == "Conducting")
                 //  {
-                SkillAstronomy.FGurpsSkill(item, _context, CollectionCategiry);
-                 _context.GurpsSkills.Add(SkillAstronomy);
+                skillAstronomy.FGurpsSkill(item, _context, CollectionCategiry);
+                _context.GurpsSkills.Add(skillAstronomy);
                 // }
             }
             _context.SaveChanges();
