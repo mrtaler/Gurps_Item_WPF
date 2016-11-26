@@ -17,8 +17,8 @@ namespace Item_WPF.addin
         /// <summary>
         /// функция бросателя
         /// </summary>
-        /// <param name="_numDice">количество кубиков</param>
-        /// <param name="_dice">число сторон</param>
+        /// <param Name="_numDice">количество кубиков</param>
+        /// <param Name="_dice">число сторон</param>
         /// <returns></returns>
         public static int RollDie(int _numDice, int _dice)
         {

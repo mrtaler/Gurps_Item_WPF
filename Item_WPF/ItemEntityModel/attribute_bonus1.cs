@@ -12,7 +12,7 @@ namespace Item_WPF.ItemEntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Attribute_bonus : System.ComponentModel.INotifyPropertyChanged
+    public partial class attribute_bonus1 : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -109,19 +109,19 @@ namespace Item_WPF.ItemEntityModel
     			}
     		}
     	}
-        private string _AmountPer_Level;
-    	public string AmountPer_Level 
+        private string _AmountPer_level;
+    	public string AmountPer_level 
     	{ 
     		get
     		{
-    			return _AmountPer_Level;
+    			return _AmountPer_level;
     		} 
     		set
     		{
-    			if (_AmountPer_Level != value)
+    			if (_AmountPer_level != value)
     			{
-    				_AmountPer_Level = value;
-    				OnPropertyChanged("AmountPer_Level");
+    				_AmountPer_level = value;
+    				OnPropertyChanged("AmountPer_level");
     			}
     		}
     	}
@@ -157,5 +157,24 @@ namespace Item_WPF.ItemEntityModel
     			}
     		}
     	}
+    
+        private Advantage _Advantage;
+            public virtual Advantage Advantage
+            {
+                get { return _Advantage; }
+                set
+                { if(_Advantage != value)
+                    {    _Advantage = value;    OnPropertyChanged("Advantage");   }
+                }
+            } 
+        private GurpsSkill _GurpsSkill;
+            public virtual GurpsSkill GurpsSkill
+            {
+                get { return _GurpsSkill; }
+                set
+                { if(_GurpsSkill != value)
+                    {    _GurpsSkill = value;    OnPropertyChanged("GurpsSkill");   }
+                }
+            } 
     }
 }

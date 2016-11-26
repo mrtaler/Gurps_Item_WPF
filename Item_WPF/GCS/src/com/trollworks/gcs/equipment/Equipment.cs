@@ -67,7 +67,7 @@
 //	public static const String		TAG_EQUIPMENT_CONTAINER		= "equipment_container";							//$NON-NLS-1$
 //	private static const String		ATTRIBUTE_STATE				= "state";											//$NON-NLS-1$
 //	private static const String		ATTRIBUTE_EQUIPPED			= "equipped";										//$NON-NLS-1$
-//	private static const String		TAG_QUANTITY				= "quantity";										//$NON-NLS-1$
+//	private static const String		TAG_QUANTITY				= "Quantity";										//$NON-NLS-1$
 //	private static const String		TAG_DESCRIPTION				= "description";									//$NON-NLS-1$
 //	private static const String		TAG_TECH_LEVEL				= "tech_level";										//$NON-NLS-1$
 //	private static const String		TAG_LEGALITY_CLASS			= "legality_class";									//$NON-NLS-1$
@@ -78,11 +78,11 @@
 //	public static const String		PREFIX						= GURPSCharacter.CHARACTER_PREFIX + "equipment.";	//$NON-NLS-1$
 //	/** The field ID for equipped/carried/not carried changes. */
 //	public static const String		ID_STATE					= PREFIX + "State";									//$NON-NLS-1$
-//	/** The field ID for quantity changes. */
+//	/** The field ID for Quantity changes. */
 //	public static const String		ID_QUANTITY					= PREFIX + "Quantity";								//$NON-NLS-1$
 //	/** The field ID for description changes. */
 //	public static const String		ID_DESCRIPTION				= PREFIX + "Description";							//$NON-NLS-1$
-//	/** The field ID for tech level changes. */
+//	/** The field ID for tech Level changes. */
 //	public static const String		ID_TECH_LEVEL				= PREFIX + "TechLevel";								//$NON-NLS-1$
 //	/** The field ID for legality changes. */
 //	public static const String		ID_LEGALITY_CLASS			= PREFIX + "LegalityClass";							//$NON-NLS-1$
@@ -254,29 +254,29 @@
 
 //	@Override
 //	protected void loadSubElement(XMLReader reader, LoadState state) throws IOException {
-//		String name = reader.getName();
-//		if (TAG_DESCRIPTION.equals(name)) {
+//		String Name = reader.getName();
+//		if (TAG_DESCRIPTION.equals(Name)) {
 //			mDescription = reader.readText().replace(NEWLINE, SPACE);
-//		} else if (TAG_TECH_LEVEL.equals(name)) {
+//		} else if (TAG_TECH_LEVEL.equals(Name)) {
 //			mTechLevel = reader.readText().replace(NEWLINE, SPACE);
-//		} else if (TAG_LEGALITY_CLASS.equals(name)) {
+//		} else if (TAG_LEGALITY_CLASS.equals(Name)) {
 //			mLegalityClass = reader.readText().replace(NEWLINE, SPACE);
-//		} else if (TAG_VALUE.equals(name)) {
+//		} else if (TAG_VALUE.equals(Name)) {
 //			mValue = reader.readDouble(0.0);
-//		} else if (TAG_WEIGHT.equals(name)) {
+//		} else if (TAG_WEIGHT.equals(Name)) {
 //			mWeight = WeightValue.extract(reader.readText(), false);
-//		} else if (TAG_REFERENCE.equals(name)) {
+//		} else if (TAG_REFERENCE.equals(Name)) {
 //			mReference = reader.readText().replace(NEWLINE, SPACE);
-//		} else if (!state.mForUndo && (TAG_EQUIPMENT.equals(name) || TAG_EQUIPMENT_CONTAINER.equals(name))) {
+//		} else if (!state.mForUndo && (TAG_EQUIPMENT.equals(Name) || TAG_EQUIPMENT_CONTAINER.equals(Name))) {
 //			addChild(new Equipment(mDataFile, reader, state));
-//		} else if (MeleeWeaponStats.TAG_ROOT.equals(name)) {
+//		} else if (MeleeWeaponStats.TAG_ROOT.equals(Name)) {
 //			mWeapons.add(new MeleeWeaponStats(this, reader));
-//		} else if (RangedWeaponStats.TAG_ROOT.equals(name)) {
+//		} else if (RangedWeaponStats.TAG_ROOT.equals(Name)) {
 //			mWeapons.add(new RangedWeaponStats(this, reader));
-//		} else if (OldWeapon.TAG_ROOT.equals(name)) {
+//		} else if (OldWeapon.TAG_ROOT.equals(Name)) {
 //			state.mOldWeapons.put(this, new OldWeapon(reader));
 //		} else if (!canHaveChildren()) {
-//			if (TAG_QUANTITY.equals(name)) {
+//			if (TAG_QUANTITY.equals(Name)) {
 //				mQuantity = reader.readInteger(1);
 //			} else {
 //				super.loadSubElement(reader, state);
@@ -330,18 +330,18 @@
 //		updateExtendedWeight(true);
 //	}
 
-//	/** @return The quantity. */
+//	/** @return The Quantity. */
 //	public int getQuantity() {
 //		return mQuantity;
 //	}
 
 //	/**
-//	 * @param quantity The quantity to set.
+//	 * @param Quantity The Quantity to set.
 //	 * @return Whether it was modified.
 //	 */
-//	public bool setQuantity(int quantity) {
-//		if (quantity != mQuantity) {
-//			mQuantity = quantity;
+//	public bool setQuantity(int Quantity) {
+//		if (Quantity != mQuantity) {
+//			mQuantity = Quantity;
 //			startNotify();
 //			notify(ID_QUANTITY, this);
 //			updateContainingWeights(true);
@@ -370,13 +370,13 @@
 //		return false;
 //	}
 
-//	/** @return The tech level. */
+//	/** @return The tech Level. */
 //	public string getTechLevel() {
 //		return mTechLevel;
 //	}
 
 //	/**
-//	 * @param techLevel The tech level to set.
+//	 * @param techLevel The tech Level to set.
 //	 * @return Whether it was modified.
 //	 */
 //	public bool setTechLevel(String techLevel) {

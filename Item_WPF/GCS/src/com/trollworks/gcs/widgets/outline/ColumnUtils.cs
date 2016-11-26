@@ -87,19 +87,19 @@
 //                    }
 //                    for (int i = 0; i < pos && width < 0; i++)
 //                    {
-//                        int which = list[i];
+//                        int Which = list[i];
 //                        int minWidth = minList[i];
 
-//                        widths[which] += amt;
+//                        widths[Which] += amt;
 //                        width -= amt;
-//                        if (widths[which] < minWidth)
+//                        if (widths[Which] < minWidth)
 //                        {
-//                            width -= minWidth - widths[which];
-//                            widths[which] = minWidth;
+//                            width -= minWidth - widths[Which];
+//                            widths[Which] = minWidth;
 //                        }
-//                        else if (widths[which] > minWidth)
+//                        else if (widths[Which] > minWidth)
 //                        {
-//                            list2[pos2] = which;
+//                            list2[pos2] = Which;
 //                            minList2[pos2++] = minWidth;
 //                        }
 //                    }

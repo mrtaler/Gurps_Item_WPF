@@ -2,7 +2,7 @@
 
 namespace Item_WPF.MVVM.Models
 {
-    // This item represents an inventory item, which can be carried by a
+    // This item represents an inventory item, Which can be carried by a
     // character.
     //
     // This class is mutable - do not use as key in dictionaries.

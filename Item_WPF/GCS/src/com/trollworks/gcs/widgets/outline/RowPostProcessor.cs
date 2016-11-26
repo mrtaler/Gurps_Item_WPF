@@ -30,7 +30,7 @@
 //    private HashMap<Outline, ArrayList<ListRow>> mMap;
 
 //    /**
-//	 * Creates a new post processor for name substitution.
+//	 * Creates a new post processor for Name substitution.
 //	 *
 //	 * @param map The map to process.
 //	 */
@@ -40,7 +40,7 @@
 //    }
 
 //    /**
-//	 * Creates a new post processor for name substitution.
+//	 * Creates a new post processor for Name substitution.
 //	 *
 //	 * @param outline The outline containing the rows.
 //	 * @param list The list to process.
@@ -58,7 +58,7 @@
 //        {
 //            ArrayList<ListRow> rows = mMap.get(outline);
 //            bool modified = ModifierEnabler.process(outline, new FilteredList<>(rows, Advantage.class));
-//			modified |= Namer.name(outline, rows);
+//			modified |= Namer.Name(outline, rows);
 //			if (modified) {
 //				outline.updateRowHeights(rows);
 //				outline.repaint();

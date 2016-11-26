@@ -173,9 +173,9 @@ public partial class SelectItems : Window
         /// <summary>
         /// конструктор для поиска аттачей
         /// </summary>
-        /// <param name="typeName">тип запускаемого конструктора</param>
-        /// <param name="attslot">слот для аттача</param>
-        /// <param name="attmount">тип точки крепления аттача</param>
+        /// <param Name="typeName">тип запускаемого конструктора</param>
+        /// <param Name="attslot">слот для аттача</param>
+        /// <param Name="attmount">тип точки крепления аттача</param>
         public SelectItems(string typeName, int attslot, int attmount)
         {
             _attSlot = attslot;
@@ -190,7 +190,7 @@ public partial class SelectItems : Window
                 foreach (var itt in att)
                 {
                     var qwery = (from p in context.ITEMs
-                                 where p.ItemClass.name == typeName && p.ubClassIndex == itt.uiIndex
+                                 where p.ItemClass.Name == typeName && p.ubClassIndex == itt.uiIndex
                                  select p).First();
                     itemsAtt.Add(qwery);
                 }
@@ -199,7 +199,7 @@ public partial class SelectItems : Window
                                               {
                                                   p.uiIndex,
                                                   p.szItemName,
-                                                  p.ItemClass.name,
+                                                  p.ItemClass.Name,
                                                   p.TL1.name_TL,
                                                   p.LC1.Name_LC,
                                                   p.usPrice

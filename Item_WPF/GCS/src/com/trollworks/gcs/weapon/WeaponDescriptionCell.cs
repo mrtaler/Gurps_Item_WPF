@@ -58,18 +58,18 @@
 //	public void drawCell(Outline outline, Graphics gc, Rectangle bounds, Row row, Column column, bool selected, bool active) {
 //		WeaponDisplayRow theRow = (WeaponDisplayRow) row;
 //		Rectangle insetBounds = new Rectangle(bounds.x + H_MARGIN, bounds.y, bounds.width - H_MARGIN * 2, bounds.height);
-//		String notes = getSecondaryText(theRow);
+//		String Notes = getSecondaryText(theRow);
 //		Font font = UIManager.getFont(GCSFonts.KEY_FIELD);
 //		int pos;
 
 //		gc.setColor(Colors.getListForeground(selected, active));
 //		gc.setFont(font);
 //		pos = TextDrawing.draw(gc, insetBounds, getPrimaryText(theRow), SwingConstants.LEFT, SwingConstants.TOP);
-//		if (notes.trim().length() > 0) {
+//		if (Notes.trim().length() > 0) {
 //			insetBounds.height -= pos - insetBounds.y;
 //			insetBounds.y = pos;
 //			gc.setFont(UIManager.getFont(GCSFonts.KEY_FIELD_NOTES));
-//			TextDrawing.draw(gc, insetBounds, notes, SwingConstants.LEFT, SwingConstants.TOP);
+//			TextDrawing.draw(gc, insetBounds, Notes, SwingConstants.LEFT, SwingConstants.TOP);
 //		}
 //	}
 
@@ -77,10 +77,10 @@
 //	public int getPreferredWidth(Row row, Column column) {
 //		WeaponDisplayRow theRow = (WeaponDisplayRow) row;
 //		int width = TextDrawing.getWidth(UIManager.getFont(GCSFonts.KEY_FIELD), getPrimaryText(theRow));
-//		String notes = getSecondaryText(theRow);
+//		String Notes = getSecondaryText(theRow);
 
-//		if (notes.trim().length() > 0) {
-//			int notesWidth = TextDrawing.getWidth(UIManager.getFont(GCSFonts.KEY_FIELD_NOTES), notes);
+//		if (Notes.trim().length() > 0) {
+//			int notesWidth = TextDrawing.getWidth(UIManager.getFont(GCSFonts.KEY_FIELD_NOTES), Notes);
 
 //			if (notesWidth > width) {
 //				width = notesWidth;
@@ -94,11 +94,11 @@
 //		WeaponDisplayRow theRow = (WeaponDisplayRow) row;
 //		Font font = UIManager.getFont(GCSFonts.KEY_FIELD);
 //		int height = TextDrawing.getPreferredSize(font, wrap(theRow, column, getPrimaryText(theRow), font)).height;
-//		String notes = getSecondaryText(theRow);
+//		String Notes = getSecondaryText(theRow);
 
-//		if (notes.trim().length() > 0) {
+//		if (Notes.trim().length() > 0) {
 //			font = UIManager.getFont(GCSFonts.KEY_FIELD_NOTES);
-//			height += TextDrawing.getPreferredSize(font, wrap(theRow, column, notes, font)).height;
+//			height += TextDrawing.getPreferredSize(font, wrap(theRow, column, Notes, font)).height;
 //		}
 //		return height;
 //	}
@@ -113,7 +113,7 @@
 //	}
 
 //	@Override
-//	public int compare(Column column, Row one, Row two) {
+//	public int Compare(Column column, Row one, Row two) {
 //		WeaponDisplayRow r1 = (WeaponDisplayRow) one;
 //		WeaponDisplayRow r2 = (WeaponDisplayRow) two;
 //		int result = NumericComparator.caselessCompareStrings(getPrimaryText(r1), getPrimaryText(r2));

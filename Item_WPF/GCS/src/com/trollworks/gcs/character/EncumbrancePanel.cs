@@ -53,22 +53,22 @@
 //	@Localize(locale = "ru", value = "Укл.")
 //	@Localize(locale = "es", value = "Esqu.")
 //	private static String	DODGE;
-//	@Localize("The encumbrance level")
+//	@Localize("The encumbrance Level")
 //	@Localize(locale = "de", value = "Die Belastungsstufe")
 //	@Localize(locale = "ru", value = "Уровень нагрузки")
 //	@Localize(locale = "es", value = "Nivel de carga")
 //	private static String	ENCUMBRANCE_TOOLTIP;
-//	@Localize("The maximum load a character can carry and still remain within a specific encumbrance level")
+//	@Localize("The maximum load a character can carry and still remain within a specific encumbrance Level")
 //	@Localize(locale = "de", value = "Das maximale Gewicht, das ein Charakter tragen und immer noch in einer bestimmten Belastungsstufe bleiben kann")
 //	@Localize(locale = "ru", value = "Максимальная нагрузка, которую персонаж может нести, \nоставаясь в пределах указанного уровня нагрузки")
 //	@Localize(locale = "es", value = "Carga máxima que un personaje puede soportar y mantenerse todavia en el nivel actual de carga")
 //	private static String	MAX_CARRY_TOOLTIP;
-//	@Localize("The character's ground movement rate for a specific encumbrance level")
+//	@Localize("The character's ground movement rate for a specific encumbrance Level")
 //	@Localize(locale = "de", value = "Die Bewegungswert eines Charakters am Boden für eine bestimmte Belastungsstufe")
 //	@Localize(locale = "ru", value = "Единицы движения персонажа при указанном уровне нагрузки")
 //	@Localize(locale = "es", value = "Ritmo de movimento de un personaje para un nivel especifico de carga")
 //	private static String	MOVE_TOOLTIP;
-//	@Localize("The character's dodge for a specific encumbrance level")
+//	@Localize("The character's dodge for a specific encumbrance Level")
 //	@Localize(locale = "de", value = "Der Ausweichen-Wert eines Charakters für eine bestimmte Belastungsstufe")
 //	@Localize(locale = "ru", value = "Уклонение персонажа для указанного уровня нагрузки")
 //	@Localize(locale = "es", value = "Esquiva del personaje para un nivel especifico de carga")
@@ -124,8 +124,8 @@
 //		character.addTarget(this, GURPSCharacter.ID_CARRIED_WEIGHT, GURPSCharacter.ID_BASIC_LIFT);
 //	}
 
-//	private static string getMarkerText(Encumbrance which, Encumbrance current) {
-//		return MessageFormat.format(which == current ? CURRENT_ENCUMBRANCE_FORMAT : ENCUMBRANCE_FORMAT, which, Numbers.format(-which.getEncumbrancePenalty()));
+//	private static string getMarkerText(Encumbrance Which, Encumbrance current) {
+//		return MessageFormat.format(Which == current ? CURRENT_ENCUMBRANCE_FORMAT : ENCUMBRANCE_FORMAT, Which, Numbers.format(-Which.getEncumbrancePenalty()));
 //	}
 
 //	private Container createDivider() {

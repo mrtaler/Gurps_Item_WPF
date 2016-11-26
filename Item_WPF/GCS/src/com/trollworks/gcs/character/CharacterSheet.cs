@@ -265,7 +265,7 @@
 //		mDisposed = true;
 //	}
 
-//	/** @return Whether the sheet has had {@link #dispose()} called on it. */
+//	/** @return Whether the sheet Has had {@link #dispose()} called on it. */
 //	public bool hasBeenDisposed() {
 //		return mDisposed;
 //	}
@@ -315,7 +315,7 @@
 //		removeAll();
 //		mCharacter.resetNotifier(PrerequisitesThread.getThread(mCharacter));
 
-//		// Create the first page, which holds stuff that has a fixed vertical size.
+//		// Create the first page, Which holds stuff that Has a fixed vertical size.
 //		pageAssembler = new PageAssembler(this);
 //		pageAssembler.addToContent(hwrap(new PortraitPanel(mCharacter), vwrap(hwrap(new IdentityPanel(mCharacter), new PlayerInfoPanel(mCharacter)), new DescriptionPanel(mCharacter), RowDistribution.GIVE_EXCESS_TO_LAST), new PointsPanel(mCharacter)), null, null);
 //		pageAssembler.addToContent(hwrap(new AttributesPanel(mCharacter), vwrap(new EncumbrancePanel(mCharacter), new LiftPanel(mCharacter)), new HitLocationPanel(mCharacter), new HitPointsPanel(mCharacter)), null, null);
@@ -686,7 +686,7 @@
 //		}
 
 //		// We do the following trick to avoid going through the work twice,
-//		// as we are called twice for each page, the first of which doesn't
+//		// as we are called twice for each page, the first of Which doesn't
 //		// seem to be used.
 //		if (mLastPage != pageIndex) {
 //			mLastPage = pageIndex;
@@ -838,9 +838,9 @@
 //			markForRebuild();
 //		} else if (NotesPanel.CMD_EDIT_NOTES.equals(command)) {
 //			Profile description = mCharacter.getDescription();
-//			String notes = TextEditor.edit((Component) event.getSource(), NOTES, description.getNotes());
-//			if (notes != null) {
-//				description.setNotes(notes);
+//			String Notes = TextEditor.edit((Component) event.getSource(), NOTES, description.getNotes());
+//			if (Notes != null) {
+//				description.setNotes(Notes);
 //				rebuild();
 //				SwingUtilities.invokeLater(() -> requestFocusInWindow());
 //			}
@@ -1495,7 +1495,7 @@
 //		int length = contents.length();
 //		StringBuilder keyBuffer = new StringBuilder();
 //		bool lookForKeyMarker = true;
-//		for (int which = 0; which < HitLocationPanel.DR_KEYS.length; which++) {
+//		for (int Which = 0; Which < HitLocationPanel.DR_KEYS.length; Which++) {
 //			for (int i = 0; i < length; i++) {
 //				char ch = contents.charAt(i);
 //				if (lookForKeyMarker) {
@@ -1513,13 +1513,13 @@
 //						keyBuffer.setLength(0);
 //						lookForKeyMarker = true;
 //						if (key.equals("ROLL")) { //$NON-NLS-1$
-//							writeXMLText(out, HitLocationPanel.ROLLS[which]);
+//							writeXMLText(out, HitLocationPanel.ROLLS[Which]);
 //						} else if (key.equals("WHERE")) { //$NON-NLS-1$
-//							writeXMLText(out, HitLocationPanel.LOCATIONS[which]);
+//							writeXMLText(out, HitLocationPanel.LOCATIONS[Which]);
 //						} else if (key.equals("PENALTY")) { //$NON-NLS-1$
-//							writeXMLText(out, HitLocationPanel.PENALTIES[which]);
+//							writeXMLText(out, HitLocationPanel.PENALTIES[Which]);
 //						} else if (key.equals("DR")) { //$NON-NLS-1$
-//							writeXMLText(out, Numbers.format(((Integer) mCharacter.getValueForID(HitLocationPanel.DR_KEYS[which])).intValue()));
+//							writeXMLText(out, Numbers.format(((Integer) mCharacter.getValueForID(HitLocationPanel.DR_KEYS[Which])).intValue()));
 //						} else {
 //							writeXMLText(out, UNIDENTIFIED_KEY);
 //						}
@@ -1610,7 +1610,7 @@
 //									} else if (key.equals("ID")) { //$NON-NLS-1$
 //										writeXMLText(out, Integer.toString(counter));
 //									} else if (key.equals("TYPE")) { //$NON-NLS-1$
-//										writeXMLText(out, advantage.canHaveChildren() ? advantage.getContainerType().name() : "ITEM"); //$NON-NLS-1$
+//										writeXMLText(out, advantage.canHaveChildren() ? advantage.getContainerType().Name() : "ITEM"); //$NON-NLS-1$
 //									} else {
 //										writeXMLText(out, UNIDENTIFIED_KEY);
 //									}
@@ -1654,10 +1654,10 @@
 //		}
 //	}
 
-//	private static void writeNote(BufferedWriter out, string notes) throws IOException {
-//		if (notes.length() > 0) {
+//	private static void writeNote(BufferedWriter out, string Notes) throws IOException {
+//		if (Notes.length() > 0) {
 //			out.write("<div class=\"note\">"); //$NON-NLS-1$
-//			writeXMLText(out, notes);
+//			writeXMLText(out, Notes);
 //			out.write("</div>"); //$NON-NLS-1$
 //		}
 //	}
@@ -2002,7 +2002,7 @@
 //			int height = (int) (paper.getHeight() / 72.0 * dpi);
 //			StdImage buffer = StdImage.create(width, height, Transparency.OPAQUE);
 //			int pageNum = 0;
-//			String name = PathUtils.getLeafName(file.getName(), false);
+//			String Name = PathUtils.getLeafName(file.getName(), false);
 
 //			file = file.getParentFile();
 
@@ -2022,7 +2022,7 @@
 //				print(gc, format, pageNum++);
 //				setPrinting(false);
 //				gc.dispose();
-//				pngFile = new File(file, PathUtils.enforceExtension(name + (pageNum > 1 ? " " + pageNum : ""), FileType.PNG_EXTENSION)); //$NON-NLS-1$ //$NON-NLS-2$
+//				pngFile = new File(file, PathUtils.enforceExtension(Name + (pageNum > 1 ? " " + pageNum : ""), FileType.PNG_EXTENSION)); //$NON-NLS-1$ //$NON-NLS-2$
 //				if (!StdImage.writePNG(pngFile, buffer, dpi)) {
 //					throw new IOException();
 //				}

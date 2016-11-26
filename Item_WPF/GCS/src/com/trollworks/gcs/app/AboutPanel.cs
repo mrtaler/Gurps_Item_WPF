@@ -41,7 +41,7 @@
 //	@Localize(locale = "ru", value = "%s %s\n%s Архитектура\nJava %s")
 //	@Localize(locale = "es", value = "%s %s\n%s Arquitectura\nJava %s")
 //	private static String	PLATFORM_FORMAT;
-//	@Localize("GURPS is a trademark of Steve Jackson Games, used by permission. All rights reserved.\nThis product includes copyrighted material from the GURPS game, which is used by permission of Steve Jackson Games.\nThe iText Library is licensed under LGPL 2.1 by Bruno Lowagie and Paulo Soares.\nThe Trove Library is licensed under LGPL 2.1 by Eric D. Friedman and Rob Eden.\nThe PDFBox and FontBox libraries are licensed under the Apache License v2 by the Apache Software Foundation.")
+//	@Localize("GURPS is a trademark of Steve Jackson Games, used by permission. All rights reserved.\nThis product includes copyrighted material from the GURPS game, Which is used by permission of Steve Jackson Games.\nThe iText Library is licensed under LGPL 2.1 by Bruno Lowagie and Paulo Soares.\nThe Trove Library is licensed under LGPL 2.1 by Eric D. Friedman and Rob Eden.\nThe PDFBox and FontBox libraries are licensed under the Apache License v2 by the Apache Software Foundation.")
 //	private static String	LICENSES;
 //	@Localize("Unknown build date")
 //	@Localize(locale = "de", value = "Unbekanntes Erstellungsdatum")
@@ -85,7 +85,7 @@
 //		BundleInfo bundleInfo = BundleInfo.getDefault();
 //		long version = bundleInfo.getVersion();
 //		int y2 = draw(gc, bundleInfo.getCopyrightBanner(), y, right, false, true);
-//		draw(gc, String.format(PLATFORM_FORMAT, System.getProperty("os.name"), System.getProperty("os.version"), System.getProperty("os.arch"), System.getProperty("java.version")), y, right, false, false);//$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+//		draw(gc, String.format(PLATFORM_FORMAT, System.getProperty("os.Name"), System.getProperty("os.version"), System.getProperty("os.arch"), System.getProperty("java.version")), y, right, false, false);//$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 //		y2 = draw(gc, version != 0 ? Version.toBuildTimestamp(version) : UNKNOWN_BUILD_DATE, y2, right, false, true);
 //		gc.setFont(baseFont.deriveFont(Font.BOLD, 12f));
 //		draw(gc, version != 0 ? String.format(VERSION_FORMAT, Version.toString(version, false)) : DEVELOPMENT, y2, right, false, true);

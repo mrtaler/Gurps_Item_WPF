@@ -1,100 +1,100 @@
 <?xml version="1.0" encoding="US-ASCII" ?>
 <advantage_list unique_id="hv8u9l3e:1jobmctdb6ygt" version="1">
 	<advantage version="2">
-		<name>Armor Familiarity (@Skill@)</name>
+		<Name>Armor Familiarity (@Skill@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA49</reference>
-		<notes>Let you ignore one encumbrance level</notes>
+		<Notes>Let you ignore one encumbrance Level</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Biting Mastery</name>
+		<Name>Biting Mastery</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA50</reference>
-		<notes>Let you use Karate skill when biting</notes>
+		<Notes>Let you use Karate skill when biting</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Chi Resistance (@Attack@)</name>
+		<Name>Chi Resistance (@Attack@)</Name>
 		<type>Mental, Supernatural</type>
 		<base_points>1</base_points>
 		<reference>MA50</reference>
-		<notes>+3 to withstand chi-based attacks</notes>
+		<Notes>+3 to withstand chi-based attacks</Notes>
 		<categories>
 			<category>Cinematic</category>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Cotton Stomach</name>
+		<Name>Cotton Stomach</Name>
 		<type>Physical, Exotic</type>
 		<base_points>1</base_points>
 		<reference>MA50</reference>
-		<notes>Lets you catch attacker's incoming hand or feed with your abdominal muscles</notes>
+		<Notes>Lets you catch attacker's incoming hand or feed with your abdominal muscles</Notes>
 		<categories>
 			<category>Cinematic</category>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Drunken Fighting</name>
+		<Name>Drunken Fighting</Name>
 		<type>Physical, Exotic</type>
 		<base_points>1</base_points>
 		<reference>MA50</reference>
-		<notes>Let you fight effectively when intoxicated</notes>
+		<Notes>Let you fight effectively when intoxicated</Notes>
 		<categories>
 			<category>Cinematic</category>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Exotic Weapon Training (@Weapon@)</name>
+		<Name>Exotic Weapon Training (@Weapon@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA50</reference>
-		<notes>Lets you ignore built-in penalties for a particular weapon</notes>
+		<Notes>Lets you ignore built-in penalties for a particular weapon</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Form Mastery (@Weapon@)</name>
+		<Name>Form Mastery (@Weapon@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA50</reference>
-		<notes>Let you switch skill at any time</notes>
+		<Notes>Let you switch skill at Any time</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Grip Mastery (@Weapon@)</name>
+		<Name>Grip Mastery (@Weapon@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA50</reference>
-		<notes>Lets you change grip as a free action</notes>
+		<Notes>Lets you change grip as a free action</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Ground Guard</name>
+		<Name>Ground Guard</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA50</reference>
-		<notes>+1 to quick contests when lying down</notes>
+		<Notes>+1 to quick contests when lying down</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Heroic Archer</name>
+		<Name>Heroic Archer</Name>
 		<type>Physical</type>
 		<base_points>20</base_points>
 		<reference>MA45</reference>
@@ -103,17 +103,17 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Improvised Weapons (@Weapon@)</name>
+		<Name>Improvised Weapons (@Weapon@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA50</reference>
-		<notes>Ignore skill penalties when wielding an improvised weapon</notes>
+		<Notes>Ignore skill penalties when wielding an improvised weapon</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Iron Arms </name>
+		<Name>Iron Arms </Name>
 		<type>Physical, Exotic</type>
 		<base_points>1</base_points>
 		<melee_weapon>
@@ -128,148 +128,148 @@
 			</default>
 			<default>
 				<type>Skill</type>
-				<name>Karate</name>
+				<Name>Karate</Name>
 				<modifier>0</modifier>
 			</default>
 			<default>
 				<type>Skill</type>
-				<name>Boxing</name>
+				<Name>Boxing</Name>
 				<modifier>0</modifier>
 			</default>
 			<default>
 				<type>Skill</type>
-				<name>Brawling</name>
+				<Name>Brawling</Name>
 				<modifier>0</modifier>
 			</default>
 		</melee_weapon>
 		<reference>MA50</reference>
-		<notes>+3 to resist injury from Arm Lock, Arm Wrench, etc.; You may opt to buy Partial DR or Striker</notes>
+		<Notes>+3 to resist injury from Arm Lock, Arm Wrench, etc.; You may opt to buy Partial DR or Striker</Notes>
 		<categories>
 			<category>Cinematic</category>
 			<category>Perk</category>
 		</categories>
 		<dr_bonus>
 			<location>arms</location>
-			<amount per_level="yes">1</amount>
+			<Amount per_Level="yes">1</Amount>
 		</dr_bonus>
 	</advantage>
 	<advantage version="2">
-		<name>Iron Hands</name>
+		<Name>Iron Hands</Name>
 		<type>Physical, Exotic</type>
 		<base_points>5</base_points>
 		<modifier version="1">
-			<name>Tough Skin</name>
-			<cost type="percentage">-40</cost>
+			<Name>Tough Skin</Name>
+			<cost type="Percentage">-40</cost>
 			<affects>total</affects>
 		</modifier>
 		<modifier version="1">
-			<name>Partial DR (Hands)</name>
-			<cost type="percentage">-40</cost>
+			<Name>Partial DR (Hands)</Name>
+			<cost type="Percentage">-40</cost>
 			<affects>total</affects>
 		</modifier>
 		<reference>MA50</reference>
-		<notes>DR 1</notes>
+		<Notes>DR 1</Notes>
 		<categories>
 			<category>Advantage</category>
 			<category>Cinematic</category>
 		</categories>
 		<dr_bonus>
 			<location>hands</location>
-			<amount per_level="yes">1</amount>
+			<Amount per_Level="yes">1</Amount>
 		</dr_bonus>
 	</advantage>
 	<advantage version="2">
-		<name>Iron Legs</name>
+		<Name>Iron Legs</Name>
 		<type>Physical, Exotic</type>
 		<base_points>1</base_points>
 		<reference>MA50</reference>
-		<notes>+3 to resist injury from Leg Lock, Leg Wrench, etc.; You may opt to buy partial DR</notes>
+		<Notes>+3 to resist injury from Leg Lock, Leg Wrench, etc.; You may opt to buy partial DR</Notes>
 		<categories>
 			<category>Cinematic</category>
 			<category>Perk</category>
 		</categories>
 		<dr_bonus>
 			<location>hands</location>
-			<amount per_level="yes">1</amount>
+			<Amount per_Level="yes">1</Amount>
 		</dr_bonus>
 	</advantage>
 	<advantage version="2">
-		<name>Iron Neck</name>
+		<Name>Iron Neck</Name>
 		<type>Physical, Exotic</type>
 		<base_points>1</base_points>
 		<reference>MA50</reference>
-		<notes>+3 to resist injury from chokes, strangles and Neck Snaps; You may opt to buy partial DR</notes>
+		<Notes>+3 to resist injury from chokes, strangles and Neck Snaps; You may opt to buy partial DR</Notes>
 		<categories>
 			<category>Cinematic</category>
 			<category>Perk</category>
 		</categories>
 		<dr_bonus>
 			<location>hands</location>
-			<amount per_level="yes">1</amount>
+			<Amount per_Level="yes">1</Amount>
 		</dr_bonus>
 	</advantage>
 	<advantage version="2">
-		<name>Naval Training</name>
+		<Name>Naval Training</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA50</reference>
-		<notes>You may ignore -2 to attacks and -1 to defend from bad footing due to naval vessels movement.</notes>
+		<Notes>You may ignore -2 to attacks and -1 to defend from bad footing due to naval vessels movement.</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Neck Control (@Striking Skill@)</name>
+		<Name>Neck Control (@Striking Skill@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA50</reference>
-		<notes>+1 to hit head, neck or torso in a clinch</notes>
+		<Notes>+1 to hit head, neck or torso in a clinch</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Off-Hand Weapon Training (@Weapon@)</name>
+		<Name>Off-Hand Weapon Training (@Weapon@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA50</reference>
-		<notes>Replaces equal-named technique on p. B232</notes>
+		<Notes>Replaces equal-Named technique on p. B232</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Power Grappling</name>
+		<Name>Power Grappling</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA51</reference>
-		<notes>You may base DX-based grappling rolls on ST</notes>
+		<Notes>You may base DX-based grappling rolls on ST</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Rapid Retraction (@Kick or Punch@)</name>
+		<Name>Rapid Retraction (@Kick or Punch@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA51</reference>
-		<notes>+1 to avoid Arm Lock or Leg Grapple after been parried</notes>
+		<Notes>+1 to avoid Arm Lock or Leg Grapple after been parried</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>School Adaptation (@School@)</name>
+		<Name>School Adaptation (@School@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA51</reference>
-		<notes>Lets you learn traits belonging to other schools.</notes>
+		<Notes>Lets you learn traits belonging to other schools.</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Secret Knowledge (@Skill@)</name>
+		<Name>Secret Knowledge (@Skill@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA51</reference>
@@ -278,7 +278,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Secret Style (@Style@)</name>
+		<Name>Secret Style (@Style@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA49</reference>
@@ -288,67 +288,67 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Shield-Wall Training</name>
+		<Name>Shield-Wall Training</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA51</reference>
-		<notes>You may block attacks on an ally beside you and ignore attack penalty for large shields</notes>
+		<Notes>You may block attacks on an ally beside you and ignore attack penalty for large shields</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Skill Adaptation (@Speciality@)</name>
+		<Name>Skill Adaptation (@Speciality@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA51</reference>
-		<notes>Lets you base Techniques on different skill.</notes>
+		<Notes>Lets you base Techniques on different skill.</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Special Excercises (@Trait@)</name>
+		<Name>Special Excercises (@Trait@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA51</reference>
-		<notes>Let you buy a trait normally off-limits</notes>
+		<Notes>Let you buy a trait normally off-limits</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Special Setup (@Setup@)</name>
+		<Name>Special Setup (@Setup@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA51</reference>
-		<notes>Lets you use a setup attack differently</notes>
+		<Notes>Lets you use a setup attack differently</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Strongbow</name>
+		<Name>Strongbow</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA51</reference>
-		<notes>Let you ignore some penalties when shooting a bow too strong for you</notes>
+		<Notes>Let you ignore some penalties when shooting a bow too strong for you</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Style Adaptation (@Styles@)</name>
+		<Name>Style Adaptation (@Styles@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA51</reference>
-		<notes>Lets you learn techniques belonging to other styles</notes>
+		<Notes>Lets you learn techniques belonging to other styles</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Style Familiarity (@Style@)</name>
+		<Name>Style Familiarity (@Style@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA49</reference>
@@ -357,36 +357,36 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Suit Familiarity (@Suit Skill@)</name>
+		<Name>Suit Familiarity (@Suit Skill@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA52</reference>
-		<notes>Let you ignore DX penalties when using environmental suits.</notes>
+		<Notes>Let you ignore DX penalties when using environmental suits.</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Talent (Born Sailor)</name>
+		<Name>Talent (Born Sailor)</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>5</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>5</points_per_Level>
 		<modifier version="1">
-			<name>Reaction Bonus</name>
-			<cost type="percentage">0</cost>
+			<Name>Reaction Bonus</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Sailors</notes>
+			<Notes>Sailors</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternate Benefit</name>
-			<cost type="percentage">0</cost>
+			<Name>Alternate Benefit</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Bonus to resist seasickness and reduce unfamiliarity penalties for system on an appropriate boat or ship</notes>
+			<Notes>Bonus to resist seasickness and reduce unfamiliarity penalties for system on an appropriate boat or ship</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternative Cost</name>
+			<Name>Alternative Cost</Name>
 			<cost type="points">1</cost>
-			<affects>levels only</affects>
+			<affects>Levels only</affects>
 		</modifier>
 		<reference>MAFCCS17,PU3:13</reference>
 		<categories>
@@ -394,63 +394,63 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<name compare="is">Boating</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Boating</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Knot-Tying</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Knot-Tying</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Meteorology</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Meteorology</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Navigation</name>
-			<specialization compare="is">Sea</specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Navigation</Name>
+			<Specialization Compare="is">Sea</Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Seamanship</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Seamanship</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Shiphandling</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Shiphandling</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Weather Sense</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Weather Sense</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<prereq_list all="yes">
-			<advantage_prereq has="no">
-				<name compare="is">Talent (Mariner)</name>
-				<notes compare="is anything"></notes>
+			<advantage_prereq Has="no">
+				<Name Compare="is">Talent (Mariner)</Name>
+				<Notes Compare="is Anything"></Notes>
 			</advantage_prereq>
 		</prereq_list>
 	</advantage>
 	<advantage version="2">
-		<name>Talent (Born Soldier)</name>
+		<Name>Talent (Born Soldier)</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>5</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>5</points_per_Level>
 		<modifier version="1">
-			<name>Reaction Bonus</name>
-			<cost type="percentage">0</cost>
+			<Name>Reaction Bonus</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Those you serve with or command</notes>
+			<Notes>Those you serve with or command</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternate Benefit</name>
-			<cost type="percentage">0</cost>
+			<Name>Alternate Benefit</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Reduce chance of impersonal battlefield hazards</notes>
+			<Notes>Reduce chance of impersonal battlefield hazards</Notes>
 		</modifier>
 		<reference>MAFCCS17,PU3:12</reference>
 		<categories>
@@ -458,52 +458,52 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<name compare="is">Leadership</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Leadership</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Savoir-Faire</name>
-			<specialization compare="is anything">Military</specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Savoir-Faire</Name>
+			<Specialization Compare="is Anything">Military</Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Scrounging</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Scrounging</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Soldier</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Soldier</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Tactics</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Tactics</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 	</advantage>
 	<advantage version="2">
-		<name>Talent (Forceful Chi)</name>
+		<Name>Talent (Forceful Chi)</Name>
 		<type>Mental, Supernatural</type>
-		<levels>1</levels>
-		<points_per_level>15</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>15</points_per_Level>
 		<modifier version="1">
-			<name>Reaction Bonus</name>
-			<cost type="percentage">0</cost>
+			<Name>Reaction Bonus</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Honourable opponents, Hard stylists, Lovers</notes>
+			<Notes>Honourable opponents, Hard stylists, Lovers</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternate Benefit</name>
-			<cost type="percentage">0</cost>
+			<Name>Alternate Benefit</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Bonus to be heard or to Intimidation after using a covered skill</notes>
+			<Notes>Bonus to be heard or to Intimidation after using a covered skill</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternative Cost</name>
+			<Name>Alternative Cost</Name>
 			<cost type="points">-1</cost>
-			<affects>levels only</affects>
+			<affects>Levels only</affects>
 		</modifier>
 		<reference>MA47,PU3:7</reference>
 		<categories>
@@ -511,97 +511,97 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<name compare="is">Breaking Blow</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Breaking Blow</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Erotic Art</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Erotic Art</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Flying Leap</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Flying Leap</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Hypnotic Hands</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Hypnotic Hands</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Hypnotism</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Hypnotism</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Invisibility Art</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Invisibility Art</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Kiai</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Kiai</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Power Blow</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Power Blow</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Precognitive Parry</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Precognitive Parry</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Pressure Points</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Pressure Points</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Pressure Secrets</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Pressure Secrets</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Push</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Push</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Throwing Art</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Throwing Art</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Zen Archery</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Zen Archery</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 	</advantage>
 	<advantage version="2">
-		<name>Talent (Inner Balance)</name>
+		<Name>Talent (Inner Balance)</Name>
 		<type>Mental, Supernatural</type>
-		<levels>1</levels>
-		<points_per_level>15</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>15</points_per_Level>
 		<modifier version="1">
-			<name>Reaction Bonus</name>
-			<cost type="percentage">0</cost>
+			<Name>Reaction Bonus</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Pacifists, Ascetics, Soft stylists</notes>
+			<Notes>Pacifists, Ascetics, Soft stylists</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternate Benefit</name>
-			<cost type="percentage">0</cost>
+			<Name>Alternate Benefit</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Bonus to resist mundane disease</notes>
+			<Notes>Bonus to resist mundane disease</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternative Cost</name>
+			<Name>Alternative Cost</Name>
 			<cost type="points">-1</cost>
-			<affects>levels only</affects>
+			<affects>Levels only</affects>
 		</modifier>
 		<reference>MA47,PU3:7</reference>
 		<categories>
@@ -609,97 +609,97 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<name compare="is">Autohypnosis</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Autohypnosis</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Blind Fighting</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Blind Fighting</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Body Control</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Body Control</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Body Language</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Body Language</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Body Sense</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Body Sense</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Breath Control</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Breath Control</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Dreaming</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Dreaming</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Immovable Stance</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Immovable Stance</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Light Walk</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Light Walk</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Lizard Climb</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Lizard Climb</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Meditation</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Meditation</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Mental Strength</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Mental Strength</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Mind Block</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Mind Block</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Sensitivity</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Sensitivity</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is"></name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is"></Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 	</advantage>
 	<advantage version="2">
-		<name>Talent (Natural Copper)</name>
+		<Name>Talent (Natural Copper)</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>10</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>10</points_per_Level>
 		<modifier version="1">
-			<name>Reaction Bonus</name>
-			<cost type="percentage">0</cost>
+			<Name>Reaction Bonus</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Police and PIs</notes>
+			<Notes>Police and PIs</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternate Benefit</name>
-			<cost type="percentage">0</cost>
+			<Name>Alternate Benefit</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Bonus to unskilled Per rolls to notice clues, and to all rolls to use Intuition</notes>
+			<Notes>Bonus to unskilled Per rolls to notice clues, and to all rolls to use Intuition</Notes>
 		</modifier>
 		<reference>MAFCCS17,PU3:13</reference>
 		<categories>
@@ -707,98 +707,98 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<name compare="is">Body Language</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Body Language</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Criminology</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Criminology</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Detect Lies</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Detect Lies</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Intelligence Analysis</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Intelligence Analysis</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Interrogation</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Interrogation</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Observation</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Observation</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Savoir-Faire</name>
-			<specialization compare="is anything">Police</specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Savoir-Faire</Name>
+			<Specialization Compare="is Anything">Police</Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Search</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Search</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Shadowing</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Shadowing</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Streetwise</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Streetwise</Name>
+			<Specialization Compare="is Anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 	</advantage>
 	<advantage version="2">
-		<name>Teamwork (@Style or Team@)</name>
+		<Name>Teamwork (@Style or Team@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA52</reference>
-		<notes>Let you work in a team action</notes>
+		<Notes>Let you work in a team action</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Technique Adaptation (@Technique@)</name>
+		<Name>Technique Adaptation (@Technique@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA52</reference>
-		<notes>Let you learn a style's technique for a skill it doesn't teach</notes>
+		<Notes>Let you learn a style's technique for a skill it doesn't teach</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Technique Mastery (@Technique@)</name>
+		<Name>Technique Mastery (@Technique@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA52</reference>
-		<notes>Increases your maximum level in a technique</notes>
+		<Notes>Increases your maximum Level in a technique</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Template Adaptation (@Templates@)</name>
+		<Name>Template Adaptation (@Templates@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA51</reference>
-		<notes>Lets you learn traits belonging to other templates.</notes>
+		<Notes>Lets you learn traits belonging to other templates.</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Unique Technique (@Technique@)</name>
+		<Name>Unique Technique (@Technique@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA52</reference>
@@ -807,7 +807,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Unusual Training (@Cinematic Skill@)</name>
+		<Name>Unusual Training (@Cinematic Skill@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA52</reference>
@@ -816,11 +816,11 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Weapon Adaptation (@Skill to Skill@)</name>
+		<Name>Weapon Adaptation (@Skill to Skill@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MA52</reference>
-		<notes>Let you use one class of weapons with a different skill.</notes>
+		<Notes>Let you use one class of weapons with a different skill.</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>

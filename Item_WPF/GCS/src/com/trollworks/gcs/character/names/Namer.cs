@@ -42,7 +42,7 @@
 //namespace com.trollworks.gcs.character.names
 //{
     
-///** Asks the user to name items that have been marked to be customized. */
+///** Asks the user to Name items that have been marked to be customized. */
 //public class Namer extends JPanel {
 //	@Localize("Name {0}")
 //	@Localize(locale = "de", value = "Benenne {0}")
@@ -86,10 +86,10 @@
 //	 * Brings up a modal naming dialog for each row in the list.
 //	 *
 //	 * @param owner The owning component.
-//	 * @param list The rows to name.
+//	 * @param list The rows to Name.
 //	 * @return Whether anything was modified.
 //	 */
-//	static public bool name(Component owner, ArrayList<ListRow> list) {
+//	static public bool Name(Component owner, ArrayList<ListRow> list) {
 //		ArrayList<ListRow> rowList = new ArrayList<>();
 //		ArrayList<HashSet<String>> setList = new ArrayList<>();
 //		bool modified = false;
@@ -163,14 +163,14 @@
 //		grid.setFillHorizontal(true);
 //		ArrayList<String> list = new ArrayList<>(set);
 //		Collections.sort(list);
-//		for (String name : list) {
+//		for (String Name : list) {
 //			JTextField field = new JTextField(25);
-//			field.setName(name);
+//			field.setName(Name);
 //			size = field.getPreferredSize();
 //			size.width = LayoutSize.MAXIMUM_SIZE;
 //			field.setMaximumSize(size);
 //			mFields.add(field);
-//			label = new JLabel(name, SwingConstants.RIGHT);
+//			label = new JLabel(Name, SwingConstants.RIGHT);
 //			UIUtilities.setOnlySize(label, label.getPreferredSize());
 //			add(label);
 //			add(field);

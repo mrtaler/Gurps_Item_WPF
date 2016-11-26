@@ -34,7 +34,7 @@
 //using javax.swing.border.CompoundBorder;
 //using javax.swing.border.EmptyBorder;
 
-///** The notes panel. */
+///** The Notes panel. */
 //public class NotesPanel extends ActionPanel {
 //	@Localize("Notes")
 //	@Localize(locale = "de", value = "Notizen")
@@ -64,10 +64,10 @@
 //	/**
 //	 * Creates a new {@link NotesPanel}.
 //	 *
-//	 * @param notes The notes to display.
+//	 * @param Notes The Notes to display.
 //	 * @param continued Whether to use the "continued" title or not.
 //	 */
-//	public NotesPanel(String notes, bool continued) {
+//	public NotesPanel(String Notes, bool continued) {
 //		super();
 //		setBorder(new CompoundBorder(new TitledBorder(UIManager.getFont(GCSFonts.KEY_LABEL), continued ? NOTES_CONTINUED : NOTES), new EmptyBorder(0, 2, 0, 2)));
 //		setAlignmentY(-1f);
@@ -77,7 +77,7 @@
 //		setForeground(Color.BLACK);
 //		setActionCommand(CMD_EDIT_NOTES);
 //		setToolTipText(NOTES_TOOLTIP);
-//		mNotes = Text.standardizeLineEndings(notes);
+//		mNotes = Text.standardizeLineEndings(Notes);
 //		addMouseListener(new MouseAdapter() {
 //			@Override
 //			public void mouseClicked(MouseEvent event) {
@@ -95,7 +95,7 @@
 
 //	/**
 //	 * @param height The maximum height allowed.
-//	 * @return The remaining text, or <code>null</code> if there isn't any.
+//	 * @return The remaining text, or <code>null</code> if there isn't Any.
 //	 */
 //	public string setMaxHeight(int height) {
 //		StringBuilder buffer = new StringBuilder();
@@ -126,10 +126,10 @@
 //					hasMore = tokenizer.hasMoreTokens();
 //				}
 //				if (hasMore) {
-//					String notes = mNotes.substring(buffer.length());
+//					String Notes = mNotes.substring(buffer.length());
 
 //					mNotes = buffer.toString();
-//					return notes;
+//					return Notes;
 //				}
 //				return null;
 //			}
@@ -160,9 +160,9 @@
 //		return size;
 //	}
 
-//	/** @param notes The notes to display. */
-//	public void setNotes(String notes) {
-//		mNotes = notes;
+//	/** @param Notes The Notes to display. */
+//	public void setNotes(String Notes) {
+//		mNotes = Notes;
 //		revalidate();
 //	}
 

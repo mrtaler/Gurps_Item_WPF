@@ -71,7 +71,7 @@ namespace Item_WPF.MVVM.ViewModels
             Owner = owner;
             _context = new item1Entities();
             string Param = param as string;
-            //SelectedItClassforSort = _context.ItemClasses.FirstOrDefault(p => p.name.Contains(Param)).id;
+            //SelectedItClassforSort = _context.ItemClasses.FirstOrDefault(p => p.Name.Contains(Param)).id;
             ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClasses);
 
             Refresh = new DelegateCommand(Refreshnew) ;

@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="US-ASCII" ?>
 <advantage_list unique_id="hv8renqd:14n5tu2fwh7nz" version="1">
 	<advantage version="2">
-		<name>Panic Attacks (Crippling, 3d minutes)</name>
+		<Name>Panic Attacks (Crippling, 3d minutes)</Name>
 		<type>Physical</type>
 		<base_points>-25</base_points>
 		<reference>H27</reference>
-		<notes>You have -4 to all attribute and skill rolls, and -6 to active
+		<Notes>You have -4 to all Attribute and skill rolls, and -6 to active
 		defenses. You can't move from the spot, although you may cower (crouch).
 		At the beginning of the attack, you lose 3 FP. At the end, the GM will
-		immediately roll again to see if it triggers another attack!</notes>
+		immediately roll again to see if it triggers another attack!</Notes>
 		<categories>
 			<category>Disadvantage</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Panic Attacks (Mild, 2d seconds)</name>
+		<Name>Panic Attacks (Mild, 2d seconds)</Name>
 		<type>Physical</type>
 		<base_points>-5</base_points>
 		<reference>H27</reference>
-		<notes>You have -2 to all attribute and skill rolls, and -4 to active defenses.</notes>
+		<Notes>You have -2 to all Attribute and skill rolls, and -4 to active defenses.</Notes>
 		<categories>
 			<category>Disadvantage</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Panic Attacks (Severe, 1d minutes)</name>
+		<Name>Panic Attacks (Severe, 1d minutes)</Name>
 		<type>Physical</type>
 		<base_points>-10</base_points>
 		<reference>H27</reference>
-		<notes>You have -3 to all attribute and skill rolls, and -5 to active
+		<Notes>You have -3 to all Attribute and skill rolls, and -5 to active
 		defenses. You can't move from the spot unless you flee at full Move from it!
-		At the beginning of the attack, you lose 2 FP. </notes>
+		At the beginning of the attack, you lose 2 FP. </Notes>
 		<categories>
 			<category>Disadvantage</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Pestilent</name>
+		<Name>Pestilent</Name>
 		<type>Physical, Exotic</type>
 		<base_points>1</base_points>
 		<reference>H22</reference>

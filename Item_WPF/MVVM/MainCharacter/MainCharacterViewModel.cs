@@ -50,7 +50,7 @@ namespace Item_WPF.MVVM.ViewModels
             Owner = owner;
             Character = character;
 
-            //name
+            //Name
             if (string.IsNullOrEmpty(Character.name))
                 Character.name = USCensusNames.INSTANCE.getFullName(true);
 

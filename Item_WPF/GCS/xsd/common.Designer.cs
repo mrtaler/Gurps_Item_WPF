@@ -30,9 +30,9 @@
 
 //        private ItemsChoiceType[] _itemsElementName;
 
-//        [System.Xml.Serialization.XmlElementAttribute("amount", typeof(amount))]
-//        [System.Xml.Serialization.XmlElementAttribute("name", typeof(StringWithCompareAttribute))]
-//        [System.Xml.Serialization.XmlElementAttribute("specialization", typeof(StringWithCompareAttribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("Amount", typeof(Amount))]
+//        [System.Xml.Serialization.XmlElementAttribute("Name", typeof(StringWithCompareAttribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("Specialization", typeof(StringWithCompareAttribute))]
 //        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
 //        public object[] Items
 //        {
@@ -96,7 +96,7 @@
 //    [System.ComponentModel.DesignerCategoryAttribute("code")]
 //    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
 //    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
-//    public partial class amount : System.ComponentModel.INotifyPropertyChanged
+//    public partial class Amount : System.ComponentModel.INotifyPropertyChanged
 //    {
 
 //        private string _per_level;
@@ -166,7 +166,7 @@
 //        private string _value;
 
 //        [System.Xml.Serialization.XmlAttributeAttribute()]
-//        public string compare
+//        public string Compare
 //        {
 //            get
 //            {
@@ -182,7 +182,7 @@
 //                            || (_compare.Equals(value) != true)))
 //                {
 //                    this._compare = value;
-//                    this.OnPropertyChanged("compare");
+//                    this.OnPropertyChanged("Compare");
 //                }
 //            }
 //        }
@@ -228,13 +228,13 @@
 //    {
 
 //        /// <remarks/>
-//        amount,
+//        Amount,
 
 //        /// <remarks/>
-//        name,
+//        Name,
 
 //        /// <remarks/>
-//        specialization,
+//        Specialization,
 //    }
 
 //    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
@@ -250,10 +250,10 @@
 
 //        private ItemsChoiceType1[] _itemsElementName;
 
-//        [System.Xml.Serialization.XmlElementAttribute("amount", typeof(amount))]
-//        [System.Xml.Serialization.XmlElementAttribute("level", typeof(IntegerWithCompareAttribute))]
-//        [System.Xml.Serialization.XmlElementAttribute("name", typeof(StringWithCompareAttribute))]
-//        [System.Xml.Serialization.XmlElementAttribute("specialization", typeof(StringWithCompareAttribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("Amount", typeof(Amount))]
+//        [System.Xml.Serialization.XmlElementAttribute("Level", typeof(IntegerWithCompareAttribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("Name", typeof(StringWithCompareAttribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("Specialization", typeof(StringWithCompareAttribute))]
 //        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
 //        public object[] Items
 //        {
@@ -323,7 +323,7 @@
 //        private string _value;
 
 //        [System.Xml.Serialization.XmlAttributeAttribute()]
-//        public string compare
+//        public string Compare
 //        {
 //            get
 //            {
@@ -339,7 +339,7 @@
 //                            || (_compare.Equals(value) != true)))
 //                {
 //                    this._compare = value;
-//                    this.OnPropertyChanged("compare");
+//                    this.OnPropertyChanged("Compare");
 //                }
 //            }
 //        }
@@ -385,16 +385,16 @@
 //    {
 
 //        /// <remarks/>
-//        amount,
+//        Amount,
 
 //        /// <remarks/>
-//        level,
+//        Level,
 
 //        /// <remarks/>
-//        name,
+//        Name,
 
 //        /// <remarks/>
-//        specialization,
+//        Specialization,
 //    }
 
 //    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
@@ -412,7 +412,7 @@
 
 //        private string _all_colleges;
 
-//        [System.Xml.Serialization.XmlElementAttribute("amount", typeof(amount))]
+//        [System.Xml.Serialization.XmlElementAttribute("Amount", typeof(Amount))]
 //        [System.Xml.Serialization.XmlElementAttribute("college_name", typeof(StringWithCompareAttribute))]
 //        [System.Xml.Serialization.XmlElementAttribute("spell_name", typeof(StringWithCompareAttribute))]
 //        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
@@ -501,7 +501,7 @@
 //    {
 
 //        /// <remarks/>
-//        amount,
+//        Amount,
 
 //        /// <remarks/>
 //        college_name,
@@ -526,7 +526,7 @@
 //            this._items = new ObservableCollection<object>();
 //        }
 
-//        [System.Xml.Serialization.XmlElementAttribute("amount", typeof(amount))]
+//        [System.Xml.Serialization.XmlElementAttribute("Amount", typeof(Amount))]
 //        [System.Xml.Serialization.XmlElementAttribute("location", typeof(string))]
 //        public ObservableCollection<object> Items
 //        {
@@ -577,8 +577,8 @@
 //            this._items = new ObservableCollection<object>();
 //        }
 
-//        [System.Xml.Serialization.XmlElementAttribute("amount", typeof(amount))]
-//        [System.Xml.Serialization.XmlElementAttribute("attribute", typeof(attribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("Amount", typeof(Amount))]
+//        [System.Xml.Serialization.XmlElementAttribute("Attribute", typeof(Attribute))]
 //        public ObservableCollection<object> Items
 //        {
 //            get
@@ -618,7 +618,7 @@
 //    [System.ComponentModel.DesignerCategoryAttribute("code")]
 //    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
 //    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
-//    public partial class attribute : System.ComponentModel.INotifyPropertyChanged
+//    public partial class Attribute : System.ComponentModel.INotifyPropertyChanged
 //    {
 
 //        private string _limitation;
@@ -775,8 +775,8 @@
 //        private ItemsChoiceType3[] _itemsElementName;
 
 //        [System.Xml.Serialization.XmlElementAttribute("modifier", typeof(short))]
-//        [System.Xml.Serialization.XmlElementAttribute("name", typeof(StringWithCompareAttribute))]
-//        [System.Xml.Serialization.XmlElementAttribute("specialization", typeof(StringWithCompareAttribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("Name", typeof(StringWithCompareAttribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("Specialization", typeof(StringWithCompareAttribute))]
 //        [System.Xml.Serialization.XmlElementAttribute("type", typeof(string))]
 //        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
 //        public object[] Items
@@ -845,10 +845,10 @@
 //        modifier,
 
 //        /// <remarks/>
-//        name,
+//        Name,
 
 //        /// <remarks/>
-//        specialization,
+//        Specialization,
 
 //        /// <remarks/>
 //        type,
@@ -1013,7 +1013,7 @@
 
 //        [System.Xml.Serialization.XmlElementAttribute("advantage_prereq", typeof(advantage_prereq))]
 //        [System.Xml.Serialization.XmlElementAttribute("attribute_prereq", typeof(attribute_prereq))]
-//        [System.Xml.Serialization.XmlElementAttribute("college_count", typeof(IntegerWithCompareAttribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("CollegeCount", typeof(IntegerWithCompareAttribute))]
 //        [System.Xml.Serialization.XmlElementAttribute("contained_weight_prereq", typeof(contained_weight_prereq))]
 //        [System.Xml.Serialization.XmlElementAttribute("prereq_list", typeof(prereq_list))]
 //        [System.Xml.Serialization.XmlElementAttribute("skill_prereq", typeof(skill_prereq))]
@@ -1113,9 +1113,9 @@
 
 //        private string _has;
 
-//        [System.Xml.Serialization.XmlElementAttribute("level", typeof(IntegerWithCompareAttribute))]
-//        [System.Xml.Serialization.XmlElementAttribute("name", typeof(StringWithCompareAttribute))]
-//        [System.Xml.Serialization.XmlElementAttribute("notes", typeof(StringWithCompareAttribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("Level", typeof(IntegerWithCompareAttribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("Name", typeof(StringWithCompareAttribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("Notes", typeof(StringWithCompareAttribute))]
 //        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
 //        public object[] Items
 //        {
@@ -1162,7 +1162,7 @@
 //        }
 
 //        [System.Xml.Serialization.XmlAttributeAttribute()]
-//        public string has
+//        public string Has
 //        {
 //            get
 //            {
@@ -1178,7 +1178,7 @@
 //                            || (_has.Equals(value) != true)))
 //                {
 //                    this._has = value;
-//                    this.OnPropertyChanged("has");
+//                    this.OnPropertyChanged("Has");
 //                }
 //            }
 //        }
@@ -1202,13 +1202,13 @@
 //    {
 
 //        /// <remarks/>
-//        level,
+//        Level,
 
 //        /// <remarks/>
-//        name,
+//        Name,
 
 //        /// <remarks/>
-//        notes,
+//        Notes,
 //    }
 
 //    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
@@ -1231,7 +1231,7 @@
 //        private uint _value;
 
 //        [System.Xml.Serialization.XmlAttributeAttribute()]
-//        public string has
+//        public string Has
 //        {
 //            get
 //            {
@@ -1247,13 +1247,13 @@
 //                            || (_has.Equals(value) != true)))
 //                {
 //                    this._has = value;
-//                    this.OnPropertyChanged("has");
+//                    this.OnPropertyChanged("Has");
 //                }
 //            }
 //        }
 
 //        [System.Xml.Serialization.XmlAttributeAttribute()]
-//        public string which
+//        public string Which
 //        {
 //            get
 //            {
@@ -1269,13 +1269,13 @@
 //                            || (_which.Equals(value) != true)))
 //                {
 //                    this._which = value;
-//                    this.OnPropertyChanged("which");
+//                    this.OnPropertyChanged("Which");
 //                }
 //            }
 //        }
 
 //        [System.Xml.Serialization.XmlAttributeAttribute()]
-//        public string compare
+//        public string Compare
 //        {
 //            get
 //            {
@@ -1291,13 +1291,13 @@
 //                            || (_compare.Equals(value) != true)))
 //                {
 //                    this._compare = value;
-//                    this.OnPropertyChanged("compare");
+//                    this.OnPropertyChanged("Compare");
 //                }
 //            }
 //        }
 
 //        [System.Xml.Serialization.XmlAttributeAttribute()]
-//        public string combined_with
+//        public string CombinedWith
 //        {
 //            get
 //            {
@@ -1313,7 +1313,7 @@
 //                            || (_combined_with.Equals(value) != true)))
 //                {
 //                    this._combined_with = value;
-//                    this.OnPropertyChanged("combined_with");
+//                    this.OnPropertyChanged("CombinedWith");
 //                }
 //            }
 //        }
@@ -1363,7 +1363,7 @@
 //        private string _value;
 
 //        [System.Xml.Serialization.XmlAttributeAttribute()]
-//        public string has
+//        public string Has
 //        {
 //            get
 //            {
@@ -1379,13 +1379,13 @@
 //                            || (_has.Equals(value) != true)))
 //                {
 //                    this._has = value;
-//                    this.OnPropertyChanged("has");
+//                    this.OnPropertyChanged("Has");
 //                }
 //            }
 //        }
 
 //        [System.Xml.Serialization.XmlAttributeAttribute()]
-//        public string compare
+//        public string Compare
 //        {
 //            get
 //            {
@@ -1401,7 +1401,7 @@
 //                            || (_compare.Equals(value) != true)))
 //                {
 //                    this._compare = value;
-//                    this.OnPropertyChanged("compare");
+//                    this.OnPropertyChanged("Compare");
 //                }
 //            }
 //        }
@@ -1455,9 +1455,9 @@
 
 //        private string _has;
 
-//        [System.Xml.Serialization.XmlElementAttribute("level", typeof(IntegerWithCompareAttribute))]
-//        [System.Xml.Serialization.XmlElementAttribute("name", typeof(StringWithCompareAttribute))]
-//        [System.Xml.Serialization.XmlElementAttribute("specialization", typeof(StringWithCompareAttribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("Level", typeof(IntegerWithCompareAttribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("Name", typeof(StringWithCompareAttribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("Specialization", typeof(StringWithCompareAttribute))]
 //        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
 //        public object[] Items
 //        {
@@ -1504,7 +1504,7 @@
 //        }
 
 //        [System.Xml.Serialization.XmlAttributeAttribute()]
-//        public string has
+//        public string Has
 //        {
 //            get
 //            {
@@ -1520,7 +1520,7 @@
 //                            || (_has.Equals(value) != true)))
 //                {
 //                    this._has = value;
-//                    this.OnPropertyChanged("has");
+//                    this.OnPropertyChanged("Has");
 //                }
 //            }
 //        }
@@ -1544,13 +1544,13 @@
 //    {
 
 //        /// <remarks/>
-//        level,
+//        Level,
 
 //        /// <remarks/>
-//        name,
+//        Name,
 
 //        /// <remarks/>
-//        specialization,
+//        Specialization,
 //    }
 
 //    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
@@ -1568,11 +1568,11 @@
 
 //        private string _has;
 
-//        [System.Xml.Serialization.XmlElementAttribute("any", typeof(ushort))]
-//        [System.Xml.Serialization.XmlElementAttribute("college", typeof(StringWithCompareAttribute))]
-//        [System.Xml.Serialization.XmlElementAttribute("college_count", typeof(IntegerWithCompareAttribute))]
-//        [System.Xml.Serialization.XmlElementAttribute("name", typeof(StringWithCompareAttribute))]
-//        [System.Xml.Serialization.XmlElementAttribute("quantity", typeof(IntegerWithCompareAttribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("Any", typeof(ushort))]
+//        [System.Xml.Serialization.XmlElementAttribute("College", typeof(StringWithCompareAttribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("CollegeCount", typeof(IntegerWithCompareAttribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("Name", typeof(StringWithCompareAttribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("Quantity", typeof(IntegerWithCompareAttribute))]
 //        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
 //        public object[] Items
 //        {
@@ -1619,7 +1619,7 @@
 //        }
 
 //        [System.Xml.Serialization.XmlAttributeAttribute()]
-//        public string has
+//        public string Has
 //        {
 //            get
 //            {
@@ -1635,7 +1635,7 @@
 //                            || (_has.Equals(value) != true)))
 //                {
 //                    this._has = value;
-//                    this.OnPropertyChanged("has");
+//                    this.OnPropertyChanged("Has");
 //                }
 //            }
 //        }
@@ -1659,19 +1659,19 @@
 //    {
 
 //        /// <remarks/>
-//        any,
+//        Any,
 
 //        /// <remarks/>
-//        college,
+//        College,
 
 //        /// <remarks/>
-//        college_count,
+//        CollegeCount,
 
 //        /// <remarks/>
-//        name,
+//        Name,
 
 //        /// <remarks/>
-//        quantity,
+//        Quantity,
 //    }
 
 //    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
@@ -1687,7 +1687,7 @@
 //        attribute_prereq,
 
 //        /// <remarks/>
-//        college_count,
+//        CollegeCount,
 
 //        /// <remarks/>
 //        contained_weight_prereq,
@@ -1832,8 +1832,8 @@
 
 //        private ItemsChoiceType10[] _itemsElementName;
 
-//        [System.Xml.Serialization.XmlElementAttribute("attribute")]
-//        [System.Xml.Serialization.XmlElementAttribute("percentage", DataType = "integer")]
+//        [System.Xml.Serialization.XmlElementAttribute("Attribute")]
+//        [System.Xml.Serialization.XmlElementAttribute("Percentage", DataType = "integer")]
 //        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
 //        public string[] Items
 //        {
@@ -1898,10 +1898,10 @@
 //    {
 
 //        /// <remarks/>
-//        attribute,
+//        Attribute,
 
 //        /// <remarks/>
-//        percentage,
+//        Percentage,
 //    }
 
 //    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
@@ -1925,8 +1925,8 @@
 //        [System.Xml.Serialization.XmlElementAttribute("attribute_bonus", typeof(attribute_bonus))]
 //        [System.Xml.Serialization.XmlElementAttribute("cost", typeof(cost))]
 //        [System.Xml.Serialization.XmlElementAttribute("levels", typeof(uint))]
-//        [System.Xml.Serialization.XmlElementAttribute("name", typeof(StringWithCompareAttribute))]
-//        [System.Xml.Serialization.XmlElementAttribute("notes", typeof(StringWithCompareAttribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("Name", typeof(StringWithCompareAttribute))]
+//        [System.Xml.Serialization.XmlElementAttribute("Notes", typeof(StringWithCompareAttribute))]
 //        [System.Xml.Serialization.XmlElementAttribute("reference", typeof(string))]
 //        [System.Xml.Serialization.XmlElementAttribute("skill_bonus", typeof(skill_bonus))]
 //        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
@@ -2049,10 +2049,10 @@
 //        levels,
 
 //        /// <remarks/>
-//        name,
+//        Name,
 
 //        /// <remarks/>
-//        notes,
+//        Notes,
 
 //        /// <remarks/>
 //        reference,

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="US-ASCII" ?>
 <advantage_list id="242b3f80-5f13-447d-9db0-99ec379e5add" version="1">
 	<advantage version="2">
-		<name>Cyborg Brain</name>
+		<Name>Cyborg Brain</Name>
 		<type>Mental, Exotic</type>
 		<reference>UT27</reference>
 		<categories>
@@ -10,7 +10,7 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="no" type="meta trait">
-		<name>Drone</name>
+		<Name>Drone</Name>
 		<reference>UT27</reference>
 		<categories>
 			<category>Machine Intelligence</category>
@@ -18,7 +18,7 @@
 			<category>Robot</category>
 		</categories>
 		<advantage version="2">
-			<name>Decreased Intelligence</name>
+			<Name>Decreased Intelligence</Name>
 			<type>Mental</type>
 			<levels>10</levels>
 			<points_per_level>-20</points_per_level>
@@ -27,23 +27,23 @@
 				<category>Attribute</category>
 				<category>Disadvantage</category>
 			</categories>
-			<attribute_bonus>
-				<attribute>iq</attribute>
-				<amount per_level="yes">-1</amount>
-			</attribute_bonus>
+			<Attribute_bonus>
+				<Attribute>iq</Attribute>
+				<Amount per_level="yes">-1</Amount>
+			</Attribute_bonus>
 		</advantage>
 		<advantage version="2">
-			<name>Fixed IQ</name>
+			<Name>Fixed IQ</Name>
 			<type></type>
 			<categories>
 				<category>Taboo Trait</category>
 			</categories>
 			<prereq_list all="yes">
-				<attribute_prereq has="yes" which="iq" compare="at most">0</attribute_prereq>
+				<Attribute_prereq Has="yes" Which="iq" Compare="at most">0</Attribute_prereq>
 			</prereq_list>
 		</advantage>
 		<advantage version="2">
-			<name>Reprogrammable</name>
+			<Name>Reprogrammable</Name>
 			<type>Mental, Exotic</type>
 			<base_points>-10</base_points>
 			<reference>B150</reference>
@@ -52,17 +52,17 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Social Stigma (Subjugated)</name>
+			<Name>Social Stigma (Subjugated)</Name>
 			<type>Social</type>
 			<base_points>-20</base_points>
 			<reference>B155</reference>
-			<notes>-1 Reaction</notes>
+			<Notes>-1 Reaction</Notes>
 			<categories>
 				<category>Disadvantage</category>
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Wealth (Dead Broke)</name>
+			<Name>Wealth (Dead Broke)</Name>
 			<type>Social</type>
 			<base_points>-25</base_points>
 			<reference>B25</reference>
@@ -72,15 +72,15 @@
 		</advantage>
 	</advantage_container>
 	<advantage_container version="2" open="no" type="meta trait">
-		<name>Expiration Date</name>
+		<Name>Expiration Date</Name>
 		<reference>UT28</reference>
-		<notes>Choose one.</notes>
+		<Notes>Choose one.</Notes>
 		<categories>
 			<category>Lens</category>
 			<category>Machine Intelligence</category>
 		</categories>
 		<advantage version="2">
-			<name>Terminally Ill (1 month to live)</name>
+			<Name>Terminally Ill (1 month to live)</Name>
 			<type>Physical</type>
 			<base_points>-100</base_points>
 			<reference>B158</reference>
@@ -89,7 +89,7 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Terminally Ill (1 year to live)</name>
+			<Name>Terminally Ill (1 year to live)</Name>
 			<type>Physical</type>
 			<base_points>-75</base_points>
 			<reference>B158</reference>
@@ -98,7 +98,7 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Terminally Ill (2 years to live)</name>
+			<Name>Terminally Ill (2 years to live)</Name>
 			<type>Physical</type>
 			<base_points>-50</base_points>
 			<reference>B158</reference>
@@ -108,18 +108,18 @@
 		</advantage>
 	</advantage_container>
 	<advantage_container version="2" open="no" type="meta trait">
-		<name>Fast</name>
+		<Name>Fast</Name>
 		<reference>UT28</reference>
 		<categories>
 			<category>Lens</category>
 			<category>Machine Intelligence</category>
 		</categories>
 		<advantage version="2">
-			<name>+1 Complexity</name>
+			<Name>+1 Complexity</Name>
 			<type></type>
 		</advantage>
 		<advantage version="2">
-			<name>Enhanced Time Sense</name>
+			<Name>Enhanced Time Sense</Name>
 			<type>Mental, Exotic</type>
 			<base_points>45</base_points>
 			<reference>B52</reference>
@@ -127,21 +127,21 @@
 				<category>Advantage</category>
 			</categories>
 			<skill_bonus>
-				<name compare="contains">fast-draw</name>
-				<specialization compare="is anything"></specialization>
-				<amount>1</amount>
+				<Name Compare="contains">fast-draw</Name>
+				<Specialization Compare="is anything"></Specialization>
+				<Amount>1</Amount>
 			</skill_bonus>
 		</advantage>
 	</advantage_container>
 	<advantage_container version="2" open="no" type="meta trait">
-		<name>Fragment</name>
+		<Name>Fragment</Name>
 		<reference>HT28</reference>
 		<categories>
 			<category>Lens</category>
 			<category>Machine Intelligence</category>
 		</categories>
 		<advantage version="2">
-			<name>Amnesia (Partial)</name>
+			<Name>Amnesia (Partial)</Name>
 			<type>Physical</type>
 			<base_points>-10</base_points>
 			<reference>B123</reference>
@@ -151,7 +151,7 @@
 		</advantage>
 	</advantage_container>
 	<advantage version="2">
-		<name>Furry</name>
+		<Name>Furry</Name>
 		<type>Physical</type>
 		<base_points>1</base_points>
 		<reference>UT28</reference>
@@ -160,52 +160,52 @@
 			<category>Robot</category>
 		</categories>
 		<prereq_list all="no">
-			<when_tl compare="at least">9</when_tl>
-			<advantage_prereq has="yes">
-				<name compare="is">Realistic Flesh</name>
-				<notes compare="is anything"></notes>
+			<when_tl Compare="at least">9</when_tl>
+			<advantage_prereq Has="yes">
+				<Name Compare="is">Realistic Flesh</Name>
+				<Notes Compare="is anything"></Notes>
 			</advantage_prereq>
-			<advantage_prereq has="yes">
-				<name compare="is">Mannequin</name>
-				<notes compare="is anything"></notes>
+			<advantage_prereq Has="yes">
+				<Name Compare="is">Mannequin</Name>
+				<Notes Compare="is anything"></Notes>
 			</advantage_prereq>
-			<advantage_prereq has="yes">
-				<name compare="is">Living Flesh</name>
-				<notes compare="is anything"></notes>
+			<advantage_prereq Has="yes">
+				<Name Compare="is">Living Flesh</Name>
+				<Notes Compare="is anything"></Notes>
 			</advantage_prereq>
 		</prereq_list>
 	</advantage>
 	<advantage version="2">
-		<name>Living Flesh</name>
+		<Name>Living Flesh</Name>
 		<type>Physical</type>
 		<reference>UT28</reference>
-		<notes>+50% dollars.</notes>
+		<Notes>+50% dollars.</Notes>
 		<categories>
 			<category>Lens</category>
 			<category>Robot</category>
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="no" type="meta trait">
-		<name>Low-Res Upload</name>
+		<Name>Low-Res Upload</Name>
 		<reference>UT28</reference>
 		<categories>
 			<category>Lens</category>
 			<category>Machine Intelligence</category>
 		</categories>
 		<advantage version="2">
-			<name>-1 Complexity</name>
+			<Name>-1 Complexity</Name>
 			<type></type>
 		</advantage>
 		<advantage_container version="2" open="yes">
-			<name>Choose -5 to -20 points</name>
+			<Name>Choose -5 to -20 points</Name>
 			<modifier version="1" enabled="no">
-				<name>Modifier</name>
-				<cost type="percentage">0</cost>
+				<Name>Modifier</Name>
+				<cost type="Percentage">0</cost>
 				<affects>total</affects>
 			</modifier>
 			<reference>UT28</reference>
 			<advantage version="2">
-				<name>Confused</name>
+				<Name>Confused</Name>
 				<type>Physical</type>
 				<base_points>-10</base_points>
 				<cr>12</cr>
@@ -215,7 +215,7 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Hidebound</name>
+				<Name>Hidebound</Name>
 				<type>Physical</type>
 				<base_points>-5</base_points>
 				<reference>B138</reference>
@@ -224,7 +224,7 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Neurological Disorder (Mild)</name>
+				<Name>Neurological Disorder (Mild)</Name>
 				<type>Physical</type>
 				<base_points>-15</base_points>
 				<reference>B144</reference>
@@ -232,79 +232,79 @@
 					<category>Disadvantage</category>
 				</categories>
 				<skill_bonus>
-					<name compare="is">artist</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-2</amount>
+					<Name Compare="is">artist</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-2</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">jeweler</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-2</amount>
+					<Name Compare="is">jeweler</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-2</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">knot-tying</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-2</amount>
+					<Name Compare="is">knot-tying</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-2</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">leatherworking</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-2</amount>
+					<Name Compare="is">leatherworking</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-2</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">lockpicking</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-2</amount>
+					<Name Compare="is">lockpicking</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-2</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">pickpocket</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-2</amount>
+					<Name Compare="is">pickpocket</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-2</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">sewing</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-2</amount>
+					<Name Compare="is">sewing</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-2</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">sleight of hand</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-2</amount>
+					<Name Compare="is">sleight of hand</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-2</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">surgery</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-2</amount>
+					<Name Compare="is">surgery</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-2</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">acting</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-2</amount>
+					<Name Compare="is">acting</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-2</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">leadership</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-2</amount>
+					<Name Compare="is">leadership</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-2</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">performance</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-2</amount>
+					<Name Compare="is">performance</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-2</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">pubic speaking</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-2</amount>
+					<Name Compare="is">pubic speaking</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-2</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">sex appeal</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-2</amount>
+					<Name Compare="is">sex appeal</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-2</Amount>
 				</skill_bonus>
 			</advantage>
 		</advantage_container>
 		<advantage version="2">
-			<name>Decreased Intelligence</name>
+			<Name>Decreased Intelligence</Name>
 			<type>Mental</type>
 			<levels>1</levels>
 			<points_per_level>-20</points_per_level>
@@ -313,32 +313,32 @@
 				<category>Attribute</category>
 				<category>Disadvantage</category>
 			</categories>
-			<attribute_bonus>
-				<attribute>iq</attribute>
-				<amount per_level="yes">-1</amount>
-			</attribute_bonus>
+			<Attribute_bonus>
+				<Attribute>iq</Attribute>
+				<Amount per_level="yes">-1</Amount>
+			</Attribute_bonus>
 		</advantage>
 	</advantage_container>
 	<advantage version="2">
-		<name>Mannequin</name>
+		<Name>Mannequin</Name>
 		<type>Physical</type>
 		<base_points>-2</base_points>
 		<reference>UT28</reference>
-		<notes>-2 reaction. +10% dollars.</notes>
+		<Notes>-2 reaction. +10% dollars.</Notes>
 		<categories>
 			<category>Lens</category>
 			<category>Robot</category>
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="no" type="meta trait">
-		<name>Mind Emulation</name>
+		<Name>Mind Emulation</Name>
 		<reference>UT27</reference>
 		<categories>
 			<category>Machine Intelligence</category>
 			<category>Meta-Trait</category>
 		</categories>
 		<advantage version="2">
-			<name>Complexity-Limited IQ</name>
+			<Name>Complexity-Limited IQ</Name>
 			<type>Mental</type>
 			<reference>UT27</reference>
 			<categories>
@@ -346,7 +346,7 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Digital Mind</name>
+			<Name>Digital Mind</Name>
 			<type>Physical, Exotic</type>
 			<base_points>5</base_points>
 			<reference>B49</reference>
@@ -356,14 +356,14 @@
 		</advantage>
 	</advantage_container>
 	<advantage_container version="2" open="no" type="meta trait">
-		<name>Non-Volitional AI</name>
+		<Name>Non-Volitional AI</Name>
 		<reference>UT27</reference>
 		<categories>
 			<category>Machine Intelligence</category>
 			<category>Meta-Trait</category>
 		</categories>
 		<advantage version="2">
-			<name>Complexity-Limited IQ</name>
+			<Name>Complexity-Limited IQ</Name>
 			<type>Mental</type>
 			<reference>UT27</reference>
 			<categories>
@@ -371,7 +371,7 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Indomitable</name>
+			<Name>Indomitable</Name>
 			<type>Mental</type>
 			<base_points>15</base_points>
 			<reference>B60</reference>
@@ -380,169 +380,169 @@
 			</categories>
 		</advantage>
 		<advantage_container version="2" open="yes" type="meta trait">
-			<name>Meta-Trait: Artificial Intelligence</name>
+			<Name>Meta-Trait: Artificial Intelligence</Name>
 			<reference>B263</reference>
 			<advantage version="2">
-				<name>Absolute Timing</name>
+				<Name>Absolute Timing</Name>
 				<type>Mental</type>
 				<base_points>2</base_points>
 				<reference>B35</reference>
 			</advantage>
 			<advantage version="2">
-				<name>Digital Mind</name>
+				<Name>Digital Mind</Name>
 				<type>Physical, Exotic</type>
 				<base_points>5</base_points>
 				<reference>B49</reference>
 			</advantage>
 			<advantage version="2">
-				<name>Doesn't Sleep</name>
+				<Name>Doesn't Sleep</Name>
 				<type>Physical, Exotic</type>
 				<base_points>20</base_points>
 				<reference>B50</reference>
 			</advantage>
 			<advantage version="2">
-				<name>Eidetic Memory (Photographic)</name>
+				<Name>Eidetic Memory (Photographic)</Name>
 				<type>Mental</type>
 				<base_points>10</base_points>
 				<reference>B51</reference>
 			</advantage>
 			<advantage version="2">
-				<name>Lightning Calculator (Intuitive Mathematician)</name>
+				<Name>Lightning Calculator (Intuitive Mathematician)</Name>
 				<type>Mental</type>
 				<base_points>5</base_points>
 				<reference>B66</reference>
 			</advantage>
 			<advantage version="2">
-				<name>Reprogrammable</name>
+				<Name>Reprogrammable</Name>
 				<type>Mental, Exotic</type>
 				<base_points>-10</base_points>
 				<reference>B150</reference>
 			</advantage>
 		</advantage_container>
 		<advantage_container version="2" open="yes" type="meta trait">
-			<name>Meta-Trait: Automaton</name>
+			<Name>Meta-Trait: Automaton</Name>
 			<reference>B263</reference>
 			<advantage version="2">
-				<name>Hidebound</name>
+				<Name>Hidebound</Name>
 				<type>Physical</type>
 				<base_points>-5</base_points>
 				<reference>B138</reference>
 			</advantage>
 			<advantage version="2">
-				<name>Incurious (CR: 6)</name>
+				<Name>Incurious (CR: 6)</Name>
 				<type>Mental</type>
 				<base_points>-10</base_points>
 				<reference>B140</reference>
 			</advantage>
 			<advantage version="2">
-				<name>Low Empathy</name>
+				<Name>Low Empathy</Name>
 				<type>Mental</type>
 				<base_points>-20</base_points>
 				<reference>B142</reference>
 				<skill_bonus>
-					<name compare="is">acting</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">acting</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">carousing</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">carousing</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">criminology</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">criminology</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">detect lies</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">detect lies</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">diplomacy</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">diplomacy</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">enthrallment</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">enthrallment</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">fast-talk</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">fast-talk</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">interrogation</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">interrogation</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">leadership</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">leadership</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">merchant</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">merchant</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">politics</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">politics</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="contains">psychology</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="contains">psychology</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="contains">savoir-faire</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="contains">savoir-faire</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">sex appeal</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">sex appeal</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">sociology</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">sociology</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">streetwise</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">streetwise</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<prereq_list all="yes">
-					<advantage_prereq has="no">
-						<name compare="is">oblivious</name>
-						<notes compare="is anything"></notes>
+					<advantage_prereq Has="no">
+						<Name Compare="is">oblivious</Name>
+						<Notes Compare="is anything"></Notes>
 					</advantage_prereq>
-					<advantage_prereq has="no">
-						<name compare="is">callous</name>
-						<notes compare="is anything"></notes>
+					<advantage_prereq Has="no">
+						<Name Compare="is">callous</Name>
+						<Notes Compare="is anything"></Notes>
 					</advantage_prereq>
-					<advantage_prereq has="no">
-						<name compare="is">empathy</name>
-						<notes compare="is anything"></notes>
+					<advantage_prereq Has="no">
+						<Name Compare="is">empathy</Name>
+						<Notes Compare="is anything"></Notes>
 					</advantage_prereq>
 				</prereq_list>
 			</advantage>
 			<advantage version="2">
-				<name>No Sense of Humor</name>
+				<Name>No Sense of Humor</Name>
 				<type>Physical</type>
 				<base_points>-10</base_points>
 				<reference>B146</reference>
-				<notes>-2 Reaction</notes>
+				<Notes>-2 Reaction</Notes>
 			</advantage>
 			<advantage version="2">
-				<name>Slave Mentality</name>
+				<Name>Slave Mentality</Name>
 				<type>Physical</type>
 				<base_points>-40</base_points>
 				<reference>B154</reference>
@@ -550,18 +550,18 @@
 		</advantage_container>
 	</advantage_container>
 	<advantage version="2">
-		<name>Realistic Flesh</name>
+		<Name>Realistic Flesh</Name>
 		<type>Physical</type>
 		<base_points>-1</base_points>
 		<reference>UT28</reference>
-		<notes>-1 reaction. +20% dollars.</notes>
+		<Notes>-1 reaction. +20% dollars.</Notes>
 		<categories>
 			<category>Lens</category>
 			<category>Robot</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Sculpted Body</name>
+		<Name>Sculpted Body</Name>
 		<type>Physical</type>
 		<reference>UT28</reference>
 		<categories>
@@ -570,35 +570,35 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Semi-Sculpted Body</name>
+		<Name>Semi-Sculpted Body</Name>
 		<type>Physical</type>
 		<base_points>-3</base_points>
 		<reference>UT28</reference>
-		<notes>-3 reaction. +5% dollars.</notes>
+		<Notes>-3 reaction. +5% dollars.</Notes>
 		<categories>
 			<category>Lens</category>
 			<category>Robot</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Synthetic Organs</name>
+		<Name>Synthetic Organs</Name>
 		<type>Physical</type>
 		<reference>UT28</reference>
-		<notes>+100% dollars.</notes>
+		<Notes>+100% dollars.</Notes>
 		<categories>
 			<category>Lens</category>
 			<category>Robot</category>
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="no" type="meta trait">
-		<name>Volitional AI</name>
+		<Name>Volitional AI</Name>
 		<reference>UT28</reference>
 		<categories>
 			<category>Machine Intelligence</category>
 			<category>Meta-Trait</category>
 		</categories>
 		<advantage version="2">
-			<name>Complexity-Limited IQ</name>
+			<Name>Complexity-Limited IQ</Name>
 			<type>Mental</type>
 			<reference>UT27</reference>
 			<categories>
@@ -606,40 +606,40 @@
 			</categories>
 		</advantage>
 		<advantage_container version="2" open="yes" type="meta trait">
-			<name>Meta-Trait: Artificial Intelligence</name>
+			<Name>Meta-Trait: Artificial Intelligence</Name>
 			<reference>B263</reference>
 			<advantage version="2">
-				<name>Absolute Timing</name>
+				<Name>Absolute Timing</Name>
 				<type>Mental</type>
 				<base_points>2</base_points>
 				<reference>B35</reference>
 			</advantage>
 			<advantage version="2">
-				<name>Digital Mind</name>
+				<Name>Digital Mind</Name>
 				<type>Physical, Exotic</type>
 				<base_points>5</base_points>
 				<reference>B49</reference>
 			</advantage>
 			<advantage version="2">
-				<name>Doesn't Sleep</name>
+				<Name>Doesn't Sleep</Name>
 				<type>Physical, Exotic</type>
 				<base_points>20</base_points>
 				<reference>B50</reference>
 			</advantage>
 			<advantage version="2">
-				<name>Eidetic Memory (Photographic)</name>
+				<Name>Eidetic Memory (Photographic)</Name>
 				<type>Mental</type>
 				<base_points>10</base_points>
 				<reference>B51</reference>
 			</advantage>
 			<advantage version="2">
-				<name>Lightning Calculator (Intuitive Mathematician)</name>
+				<Name>Lightning Calculator (Intuitive Mathematician)</Name>
 				<type>Mental</type>
 				<base_points>5</base_points>
 				<reference>B66</reference>
 			</advantage>
 			<advantage version="2">
-				<name>Reprogrammable</name>
+				<Name>Reprogrammable</Name>
 				<type>Mental, Exotic</type>
 				<base_points>-10</base_points>
 				<reference>B150</reference>
@@ -647,14 +647,14 @@
 		</advantage_container>
 	</advantage_container>
 	<advantage_container version="2" open="no" type="meta trait">
-		<name>Weak Dedicated AI</name>
+		<Name>Weak Dedicated AI</Name>
 		<reference>UT28</reference>
 		<categories>
 			<category>Machine Intelligence</category>
 			<category>Meta-Trait</category>
 		</categories>
 		<advantage version="2">
-			<name>Cannot Learn</name>
+			<Name>Cannot Learn</Name>
 			<type>Mental</type>
 			<base_points>-30</base_points>
 			<reference>B125</reference>
@@ -663,7 +663,7 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Complexity-Limited IQ</name>
+			<Name>Complexity-Limited IQ</Name>
 			<type>Mental</type>
 			<reference>UT27</reference>
 			<categories>
@@ -671,169 +671,169 @@
 			</categories>
 		</advantage>
 		<advantage_container version="2" open="yes" type="meta trait">
-			<name>Meta-Trait: Artificial Intelligence</name>
+			<Name>Meta-Trait: Artificial Intelligence</Name>
 			<reference>B263</reference>
 			<advantage version="2">
-				<name>Absolute Timing</name>
+				<Name>Absolute Timing</Name>
 				<type>Mental</type>
 				<base_points>2</base_points>
 				<reference>B35</reference>
 			</advantage>
 			<advantage version="2">
-				<name>Digital Mind</name>
+				<Name>Digital Mind</Name>
 				<type>Physical, Exotic</type>
 				<base_points>5</base_points>
 				<reference>B49</reference>
 			</advantage>
 			<advantage version="2">
-				<name>Doesn't Sleep</name>
+				<Name>Doesn't Sleep</Name>
 				<type>Physical, Exotic</type>
 				<base_points>20</base_points>
 				<reference>B50</reference>
 			</advantage>
 			<advantage version="2">
-				<name>Eidetic Memory (Photographic)</name>
+				<Name>Eidetic Memory (Photographic)</Name>
 				<type>Mental</type>
 				<base_points>10</base_points>
 				<reference>B51</reference>
 			</advantage>
 			<advantage version="2">
-				<name>Lightning Calculator (Intuitive Mathematician)</name>
+				<Name>Lightning Calculator (Intuitive Mathematician)</Name>
 				<type>Mental</type>
 				<base_points>5</base_points>
 				<reference>B66</reference>
 			</advantage>
 			<advantage version="2">
-				<name>Reprogrammable</name>
+				<Name>Reprogrammable</Name>
 				<type>Mental, Exotic</type>
 				<base_points>-10</base_points>
 				<reference>B150</reference>
 			</advantage>
 		</advantage_container>
 		<advantage_container version="2" open="yes" type="meta trait">
-			<name>Meta-Trait: Automaton</name>
+			<Name>Meta-Trait: Automaton</Name>
 			<reference>B263</reference>
 			<advantage version="2">
-				<name>Hidebound</name>
+				<Name>Hidebound</Name>
 				<type>Physical</type>
 				<base_points>-5</base_points>
 				<reference>B138</reference>
 			</advantage>
 			<advantage version="2">
-				<name>Incurious (CR: 6)</name>
+				<Name>Incurious (CR: 6)</Name>
 				<type>Mental</type>
 				<base_points>-10</base_points>
 				<reference>B140</reference>
 			</advantage>
 			<advantage version="2">
-				<name>Low Empathy</name>
+				<Name>Low Empathy</Name>
 				<type>Mental</type>
 				<base_points>-20</base_points>
 				<reference>B142</reference>
 				<skill_bonus>
-					<name compare="is">acting</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">acting</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">carousing</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">carousing</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">criminology</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">criminology</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">detect lies</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">detect lies</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">diplomacy</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">diplomacy</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">enthrallment</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">enthrallment</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">fast-talk</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">fast-talk</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">interrogation</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">interrogation</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">leadership</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">leadership</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">merchant</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">merchant</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">politics</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">politics</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="contains">psychology</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="contains">psychology</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="contains">savoir-faire</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="contains">savoir-faire</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">sex appeal</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">sex appeal</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">sociology</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">sociology</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">streetwise</name>
-					<specialization compare="is anything"></specialization>
-					<amount>-3</amount>
+					<Name Compare="is">streetwise</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Amount>-3</Amount>
 				</skill_bonus>
 				<prereq_list all="yes">
-					<advantage_prereq has="no">
-						<name compare="is">oblivious</name>
-						<notes compare="is anything"></notes>
+					<advantage_prereq Has="no">
+						<Name Compare="is">oblivious</Name>
+						<Notes Compare="is anything"></Notes>
 					</advantage_prereq>
-					<advantage_prereq has="no">
-						<name compare="is">callous</name>
-						<notes compare="is anything"></notes>
+					<advantage_prereq Has="no">
+						<Name Compare="is">callous</Name>
+						<Notes Compare="is anything"></Notes>
 					</advantage_prereq>
-					<advantage_prereq has="no">
-						<name compare="is">empathy</name>
-						<notes compare="is anything"></notes>
+					<advantage_prereq Has="no">
+						<Name Compare="is">empathy</Name>
+						<Notes Compare="is anything"></Notes>
 					</advantage_prereq>
 				</prereq_list>
 			</advantage>
 			<advantage version="2">
-				<name>No Sense of Humor</name>
+				<Name>No Sense of Humor</Name>
 				<type>Physical</type>
 				<base_points>-10</base_points>
 				<reference>B146</reference>
-				<notes>-2 Reaction</notes>
+				<Notes>-2 Reaction</Notes>
 			</advantage>
 			<advantage version="2">
-				<name>Slave Mentality</name>
+				<Name>Slave Mentality</Name>
 				<type>Physical</type>
 				<base_points>-40</base_points>
 				<reference>B154</reference>

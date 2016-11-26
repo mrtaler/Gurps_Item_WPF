@@ -54,30 +54,30 @@
 
 //		do {
 //			if (reader.next() == XMLNodeType.START_TAG) {
-//				String name = reader.getName();
+//				String Name = reader.getName();
 
-//				if (TAG_DAMAGE.equals(name)) {
+//				if (TAG_DAMAGE.equals(Name)) {
 //					mDamage = extract(reader);
-//				} else if (TAG_STRENGTH.equals(name)) {
+//				} else if (TAG_STRENGTH.equals(Name)) {
 //					mStrength = extract(reader);
-//				} else if (TAG_ACCURACY.equals(name)) {
+//				} else if (TAG_ACCURACY.equals(Name)) {
 //					mAccuracy = extract(reader);
-//				} else if (TAG_RANGE.equals(name)) {
+//				} else if (TAG_RANGE.equals(Name)) {
 //					mRange = extract(reader);
-//				} else if (TAG_RATE_OF_FIRE.equals(name)) {
+//				} else if (TAG_RATE_OF_FIRE.equals(Name)) {
 //					mRateOfFire = extract(reader);
-//				} else if (TAG_SHOTS.equals(name)) {
+//				} else if (TAG_SHOTS.equals(Name)) {
 //					mShots = extract(reader);
-//				} else if (TAG_BULK.equals(name)) {
+//				} else if (TAG_BULK.equals(Name)) {
 //					mBulk = extract(reader);
-//				} else if (TAG_RECOIL.equals(name)) {
+//				} else if (TAG_RECOIL.equals(Name)) {
 //					mRecoil = extract(reader);
-//				} else if (TAG_REACH.equals(name)) {
+//				} else if (TAG_REACH.equals(Name)) {
 //					mReach = extract(reader);
-//				} else if (TAG_PARRY.equals(name)) {
+//				} else if (TAG_PARRY.equals(Name)) {
 //					mParry = extract(reader);
 //				} else {
-//					reader.skipTag(name);
+//					reader.skipTag(Name);
 //				}
 //			}
 //		} while (reader.withinMarker(marker));
@@ -178,7 +178,7 @@
 //		return count > max ? count : max;
 //	}
 
-//	private static int count(String[] which) {
-//		return which != null ? which.length : 0;
+//	private static int count(String[] Which) {
+//		return Which != null ? Which.length : 0;
 //	}
 //}

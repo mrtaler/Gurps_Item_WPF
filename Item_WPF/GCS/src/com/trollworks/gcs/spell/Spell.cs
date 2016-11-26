@@ -82,9 +82,9 @@
 //	public static const String		TAG_SPELL					= "spell";										//$NON-NLS-1$
 //	/** The XML tag used for containers. */
 //	public static const String		TAG_SPELL_CONTAINER			= "spell_container";							//$NON-NLS-1$
-//	private static const String		TAG_NAME					= "name";										//$NON-NLS-1$
+//	private static const String		TAG_NAME					= "Name";										//$NON-NLS-1$
 //	private static const String		TAG_TECH_LEVEL				= "tech_level";									//$NON-NLS-1$
-//	private static const String		TAG_COLLEGE					= "college";									//$NON-NLS-1$
+//	private static const String		TAG_COLLEGE					= "College";									//$NON-NLS-1$
 //	private static const String		TAG_POWER_SOURCE			= "power_source";								//$NON-NLS-1$
 //	private static const String		TAG_SPELL_CLASS				= "spell_class";								//$NON-NLS-1$
 //	private static const String		TAG_CASTING_COST			= "casting_cost";								//$NON-NLS-1$
@@ -96,11 +96,11 @@
 //	private static const String		ATTRIBUTE_VERY_HARD			= "very_hard";									//$NON-NLS-1$
 //	/** The prefix used in front of all IDs for the spells. */
 //	public static const String		PREFIX						= GURPSCharacter.CHARACTER_PREFIX + "spell.";	//$NON-NLS-1$
-//	/** The field ID for name changes. */
+//	/** The field ID for Name changes. */
 //	public static const String		ID_NAME						= PREFIX + "Name";								//$NON-NLS-1$
-//	/** The field ID for tech level changes. */
+//	/** The field ID for tech Level changes. */
 //	public static const String		ID_TECH_LEVEL				= PREFIX + "TechLevel";							//$NON-NLS-1$
-//	/** The field ID for college changes. */
+//	/** The field ID for College changes. */
 //	public static const String		ID_COLLEGE					= PREFIX + "College";							//$NON-NLS-1$
 //	/** The field ID for power source changes. */
 //	public static const String		ID_POWER_SOURCE				= PREFIX + "PowerSource";						//$NON-NLS-1$
@@ -116,7 +116,7 @@
 //	public static const String		ID_DURATION					= PREFIX + "Duration";							//$NON-NLS-1$
 //	/** The field ID for point changes. */
 //	public static const String		ID_POINTS					= PREFIX + "Points";							//$NON-NLS-1$
-//	/** The field ID for level changes. */
+//	/** The field ID for Level changes. */
 //	public static const String		ID_LEVEL					= PREFIX + "Level";								//$NON-NLS-1$
 //	/** The field ID for page reference changes. */
 //	public static const String		ID_REFERENCE				= PREFIX + "Reference";							//$NON-NLS-1$
@@ -304,15 +304,15 @@
 
 //	@Override
 //	protected void loadSubElement(XMLReader reader, LoadState state) throws IOException {
-//		String name = reader.getName();
-//		if (TAG_NAME.equals(name)) {
+//		String Name = reader.getName();
+//		if (TAG_NAME.equals(Name)) {
 //			mName = reader.readText().replace(NEWLINE, SPACE);
 //			// Fix for legacy format...
 //			if (mName.toLowerCase().endsWith("(vh)")) { //$NON-NLS-1$
 //				mName = mName.substring(0, mName.length() - 4).trim();
 //				mIsVeryHard = true;
 //			}
-//		} else if (TAG_TECH_LEVEL.equals(name)) {
+//		} else if (TAG_TECH_LEVEL.equals(Name)) {
 //			mTechLevel = reader.readText();
 //			if (mTechLevel != null) {
 //				DataFile dataFile = getDataFile();
@@ -320,30 +320,30 @@
 //					mTechLevel = EMPTY;
 //				}
 //			}
-//		} else if (TAG_REFERENCE.equals(name)) {
+//		} else if (TAG_REFERENCE.equals(Name)) {
 //			mReference = reader.readText().replace(NEWLINE, SPACE);
-//		} else if (!state.mForUndo && (TAG_SPELL.equals(name) || TAG_SPELL_CONTAINER.equals(name))) {
+//		} else if (!state.mForUndo && (TAG_SPELL.equals(Name) || TAG_SPELL_CONTAINER.equals(Name))) {
 //			addChild(new Spell(mDataFile, reader, state));
 //		} else if (!canHaveChildren()) {
-//			if (TAG_COLLEGE.equals(name)) {
+//			if (TAG_COLLEGE.equals(Name)) {
 //				mCollege = reader.readText().replace(NEWLINE, SPACE).replace("/ ", "/"); //$NON-NLS-1$ //$NON-NLS-2$
-//			} else if (TAG_POWER_SOURCE.equals(name)) {
+//			} else if (TAG_POWER_SOURCE.equals(Name)) {
 //				mPowerSource = reader.readText().replace(NEWLINE, SPACE);
-//			} else if (TAG_SPELL_CLASS.equals(name)) {
+//			} else if (TAG_SPELL_CLASS.equals(Name)) {
 //				mSpellClass = reader.readText().replace(NEWLINE, SPACE);
-//			} else if (TAG_CASTING_COST.equals(name)) {
+//			} else if (TAG_CASTING_COST.equals(Name)) {
 //				mCastingCost = reader.readText().replace(NEWLINE, SPACE);
-//			} else if (TAG_MAINTENANCE_COST.equals(name)) {
+//			} else if (TAG_MAINTENANCE_COST.equals(Name)) {
 //				mMaintenance = reader.readText().replace(NEWLINE, SPACE);
-//			} else if (TAG_CASTING_TIME.equals(name)) {
+//			} else if (TAG_CASTING_TIME.equals(Name)) {
 //				mCastingTime = reader.readText().replace(NEWLINE, SPACE);
-//			} else if (TAG_DURATION.equals(name)) {
+//			} else if (TAG_DURATION.equals(Name)) {
 //				mDuration = reader.readText().replace(NEWLINE, SPACE);
-//			} else if (TAG_POINTS.equals(name)) {
+//			} else if (TAG_POINTS.equals(Name)) {
 //				mPoints = reader.readInteger(1);
-//			} else if (MeleeWeaponStats.TAG_ROOT.equals(name)) {
+//			} else if (MeleeWeaponStats.TAG_ROOT.equals(Name)) {
 //				mWeapons.add(new MeleeWeaponStats(this, reader));
-//			} else if (RangedWeaponStats.TAG_ROOT.equals(name)) {
+//			} else if (RangedWeaponStats.TAG_ROOT.equals(Name)) {
 //				mWeapons.add(new RangedWeaponStats(this, reader));
 //			} else {
 //				super.loadSubElement(reader, state);
@@ -416,13 +416,13 @@
 //		return false;
 //	}
 
-//	/** @return The tech level. */
+//	/** @return The tech Level. */
 //	public string getTechLevel() {
 //		return mTechLevel;
 //	}
 
 //	/**
-//	 * @param techLevel The tech level to set.
+//	 * @param techLevel The tech Level to set.
 //	 * @return Whether it was changed.
 //	 */
 //	public bool setTechLevel(String techLevel) {
@@ -434,28 +434,28 @@
 //		return false;
 //	}
 
-//	/** @return The level. */
+//	/** @return The Level. */
 //	public int getLevel() {
 //		return mLevel;
 //	}
 
-//	/** @return The relative level. */
+//	/** @return The relative Level. */
 //	public int getRelativeLevel() {
 //		return mRelativeLevel;
 //	}
 
 //	/**
-//	 * Call to force an update of the level and relative level for this spell.
+//	 * Call to force an update of the Level and relative Level for this spell.
 //	 *
 //	 * @param notify Whether or not a notification should be issued on a change.
 //	 */
 //	public void updateLevel(bool notify) {
 //		int savedLevel = mLevel;
 //		int savedRelativeLevel = mRelativeLevel;
-//		SkillLevel level = calculateLevel(getCharacter(), mPoints, mIsVeryHard, mCollege, mPowerSource, mName);
+//		SkillLevel Level = calculateLevel(getCharacter(), mPoints, mIsVeryHard, mCollege, mPowerSource, mName);
 
-//		mLevel = level.mLevel;
-//		mRelativeLevel = level.mRelativeLevel;
+//		mLevel = Level.mLevel;
+//		mRelativeLevel = Level.mRelativeLevel;
 
 //		if (notify && (savedLevel != mLevel || savedRelativeLevel != mRelativeLevel)) {
 //			notify(ID_LEVEL, this);
@@ -463,24 +463,24 @@
 //	}
 
 //	/**
-//	 * Calculates the spell level.
+//	 * Calculates the spell Level.
 //	 *
 //	 * @param character The character the spell will be attached to.
 //	 * @param points The number of points spent in the spell.
 //	 * @param isVeryHard Whether the spell is "Very Hard" or not.
-//	 * @param college The college the spell belongs to.
+//	 * @param College The College the spell belongs to.
 //	 * @param powerSource The source of power for the spell.
-//	 * @param name The name of the spell.
-//	 * @return The calculated spell level.
+//	 * @param Name The Name of the spell.
+//	 * @return The calculated spell Level.
 //	 */
-//	public static SkillLevel calculateLevel(GURPSCharacter character, int points, bool isVeryHard, string college, string powerSource, string name) {
+//	public static SkillLevel calculateLevel(GURPSCharacter character, int points, bool isVeryHard, string College, string powerSource, string Name) {
 //		int relativeLevel = isVeryHard ? -3 : -2;
-//		int level;
+//		int Level;
 
 //		if (character != null) {
-//			level = character.getIntelligence();
+//			Level = character.getIntelligence();
 //			if (points < 1) {
-//				level = -1;
+//				Level = -1;
 //				relativeLevel = 0;
 //			} else if (points == 1) {
 //				// mRelativeLevel is preset to this point value
@@ -490,56 +490,56 @@
 //				relativeLevel += 1 + points / 4;
 //			}
 
-//			if (level != -1) {
-//				relativeLevel += getSpellBonusesFor(character, ID_COLLEGE, college);
+//			if (Level != -1) {
+//				relativeLevel += getSpellBonusesFor(character, ID_COLLEGE, College);
 //				relativeLevel += getSpellBonusesFor(character, ID_POWER_SOURCE, powerSource);
-//				relativeLevel += getSpellBonusesFor(character, ID_NAME, name);
-//				level += relativeLevel;
+//				relativeLevel += getSpellBonusesFor(character, ID_NAME, Name);
+//				Level += relativeLevel;
 //			}
 //		} else {
-//			level = -1;
+//			Level = -1;
 //		}
 
-//		return new SkillLevel(level, relativeLevel);
+//		return new SkillLevel(Level, relativeLevel);
 //	}
 
 //	private static int getSpellBonusesFor(GURPSCharacter character, string id, string qualifier) {
-//		int level = character.getIntegerBonusFor(id);
-//		level += character.getIntegerBonusFor(id + '/' + qualifier.toLowerCase());
-//		level += character.getSpellComparedIntegerBonusFor(id + '*', qualifier);
-//		return level;
+//		int Level = character.getIntegerBonusFor(id);
+//		Level += character.getIntegerBonusFor(id + '/' + qualifier.toLowerCase());
+//		Level += character.getSpellComparedIntegerBonusFor(id + '*', qualifier);
+//		return Level;
 //	}
 
-//	/** @return The name. */
+//	/** @return The Name. */
 //	public string getName() {
 //		return mName;
 //	}
 
 //	/**
-//	 * @param name The name to set.
+//	 * @param Name The Name to set.
 //	 * @return Whether it was changed.
 //	 */
-//	public bool setName(String name) {
-//		if (!mName.equals(name)) {
-//			mName = name;
+//	public bool setName(String Name) {
+//		if (!mName.equals(Name)) {
+//			mName = Name;
 //			notifySingle(ID_NAME);
 //			return true;
 //		}
 //		return false;
 //	}
 
-//	/** @return The college. */
+//	/** @return The College. */
 //	public string getCollege() {
 //		return mCollege;
 //	}
 
 //	/**
-//	 * @param college The college to set.
+//	 * @param College The College to set.
 //	 * @return Whether it was changed.
 //	 */
-//	public bool setCollege(String college) {
-//		if (!mCollege.equals(college)) {
-//			mCollege = college;
+//	public bool setCollege(String College) {
+//		if (!mCollege.equals(College)) {
+//			mCollege = College;
 //			notifySingle(ID_COLLEGE);
 //			return true;
 //		}
@@ -552,7 +552,7 @@
 //	}
 
 //	/**
-//	 * @param powerSource The college to set.
+//	 * @param powerSource The College to set.
 //	 * @return Whether it was changed.
 //	 */
 //	public bool setPowerSource(String powerSource) {

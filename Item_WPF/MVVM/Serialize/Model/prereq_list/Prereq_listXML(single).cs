@@ -9,13 +9,13 @@ namespace Item_WPF.MVVM.Serialize.Model
 {
     public partial class Prereq_listXML
     {
-        //public void FSingleSkill_prereq( XElement itemskill_prereq, skill_prereqXml sclprq)
+        //public void FSingleSkill_prereq( XElement itemskill_prereq, SkillPrereqXml sclprq)
         //{
-        //        sclprq.name = itemskill_prereq.Element("name");
+        //        sclprq.Name = itemskill_prereq.Element("Name");
 
-        //        sclprq.level = itemskill_prereq.Element("level");
-        //        sclprq.specialization = itemskill_prereq.Element("specialization");
-        //        sclprq.has = itemskill_prereq.Attribute("has");
+        //        sclprq.Level = itemskill_prereq.Element("Level");
+        //        sclprq.Specialization = itemskill_prereq.Element("Specialization");
+        //        sclprq.Has = itemskill_prereq.Attribute("Has");
         //       // Skill_prereq.Add(sclprq);
         //}
     }

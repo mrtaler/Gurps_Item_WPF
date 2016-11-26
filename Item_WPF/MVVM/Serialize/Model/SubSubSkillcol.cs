@@ -1,82 +1,78 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
 
 namespace Item_WPF.MVVM.Serialize.Model
 {
-    public class contained_weight_prereqXml
+    public class ContainedWeightPrereqXml
     {
-        public XAttribute has;
-        public XAttribute compare;
+        public XAttribute Has;
+        public XAttribute Compare;
         public string Value;
     }
-    public class advantage_prereqXml
+    public class AdvantagePrereqXml
     {
-        public XElement name;
-        public XElement notes;
-        public XElement level;
-        public XAttribute has;
+        public XElement Name;
+        public XElement Notes;
+        public XElement Level;
+        public XAttribute Has;
     }
-    public class attribute_prereqXml
+    public class AttributePrereqXml
     {
-        public XAttribute has;
-        public XAttribute which;
-        public XAttribute compare;
-        public XAttribute combined_with;
+        public XAttribute Has;
+        public XAttribute Which;
+        public XAttribute Compare;
+        public XAttribute CombinedWith;
         public string Value;
     }
-    public class spell_prereqXml
+    public class SpellPrereqXml
     {
-        public XElement name;
-        public XElement college;
-        public XElement college_count;
-        public XElement quantity;
-        public XElement any;
+        public XElement Name;
+        public XElement College;
+        public XElement CollegeCount;
+        public XElement Quantity;
+        public XElement Any;
 
-        public XAttribute has;
+        public XAttribute Has;
 
     }
-    public class skill_prereqXml
+    public class SkillPrereqXml
     {
-        public XElement name;
-        public XElement level;
-        public XElement specialization;
-        public XAttribute has;
+        public XElement Name;
+        public XElement Level;
+        public XElement Specialization;
+        public XAttribute Has;
     }
 
-    public class cost_reductionXML
+    public class CostReductionXml
     {
-        public XElement attribute;
-        public XElement percentage;
-        public cost_reductionXML(XElement item)
+        public XElement Attribute;
+        public XElement Percentage;
+        public CostReductionXml(XElement item)
         {
-            attribute = item.Element("attribute");
-            percentage = item.Element("percentage");
+            Attribute = item.Element("Attribute");
+            Percentage = item.Element("Percentage");
         }
     }
 
-    public class crXML
+    public class CrXml
     {
-        public XAttribute adj;
-        public crXML(XElement item)
+        public XAttribute Adj;
+        public CrXml(XElement item)
         {
-            adj = item.Attribute("adj");
+            Adj = item.Attribute("Adj");
         }
     }
-    public class attributeXml
+    public class AttributeXml
     {
-        public XElement attribute;
+        public XElement Attribute;
     }
 
-    public class amountXml
+    public class AmountXml
     {
-        public XElement amount;
-        public amountXml() { }
-        public amountXml(XElement item)
+        public XElement Amount;
+        public AmountXml() { }
+        public AmountXml(XElement item)
         {
-            amount = item;
+            Amount = item;
         }
     }
 }

@@ -30,7 +30,7 @@
 //	}
 
 //	/**
-//	 * @param obj The other object to compare against.
+//	 * @param obj The other object to Compare against.
 //	 * @return Whether or not this {@link ListRow} is equivalent.
 //	 */
 //	public bool isEquivalentTo(Object obj) {

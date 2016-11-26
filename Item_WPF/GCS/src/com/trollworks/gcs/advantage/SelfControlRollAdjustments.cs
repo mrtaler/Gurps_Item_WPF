@@ -185,10 +185,10 @@
 //			criteria.setQualifier("Merchant"); //$NON-NLS-1$
 //			criteria = bonus.getSpecializationCriteria();
 //			criteria.setType(StringCompareType.IS_ANYTHING);
-//			LeveledAmount amount = bonus.getAmount();
-//			amount.setIntegerOnly(true);
-//			amount.setPerLevel(false);
-//			amount.setAmount(cr.ordinal() - 4);
+//			LeveledAmount Amount = bonus.getAmount();
+//			Amount.setIntegerOnly(true);
+//			Amount.setPerLevel(false);
+//			Amount.setAmount(cr.ordinal() - 4);
 //			list.add(bonus);
 //			return list;
 //		}

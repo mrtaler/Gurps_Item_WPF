@@ -60,313 +60,313 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
+    <xsd:import Namespace="http://www.w3.org/XML/1998/Namespace" />
+    <xsd:element Name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
+          <xsd:element Name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element Name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:Attribute Name="Name" use="required" type="xsd:string" />
+              <xsd:Attribute Name="type" type="xsd:string" />
+              <xsd:Attribute Name="mimetype" type="xsd:string" />
+              <xsd:Attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
-          <xsd:element name="assembly">
+          <xsd:element Name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:Attribute Name="alias" type="xsd:string" />
+              <xsd:Attribute Name="Name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
+          <xsd:element Name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element Name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element Name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:Attribute Name="Name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:Attribute Name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:Attribute Name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:Attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element Name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element Name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:Attribute Name="Name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
       </xsd:complexType>
     </xsd:element>
   </xsd:schema>
-  <resheader name="resmimetype">
+  <resheader Name="resmimetype">
     <value>text/microsoft-resx</value>
   </resheader>
-  <resheader name="version">
+  <resheader Name="version">
     <value>2.0</value>
   </resheader>
-  <resheader name="reader">
+  <resheader Name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <resheader name="writer">
+  <resheader Name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutWindow" xml:space="preserve">
+  <data Name="AboutWindow" xml:space="preserve">
     <value>About</value>
   </data>
-  <data name="AboutWindowClose" xml:space="preserve">
+  <data Name="AboutWindowClose" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="CharacterSheetAdvantages" xml:space="preserve">
+  <data Name="CharacterSheetAdvantages" xml:space="preserve">
     <value>Advantages/disadvantages:</value>
   </data>
-  <data name="CharacterSheetBasicLift" xml:space="preserve">
+  <data Name="CharacterSheetBasicLift" xml:space="preserve">
     <value>Basic Lift:</value>
   </data>
-  <data name="CharacterSheetBasicMove" xml:space="preserve">
+  <data Name="CharacterSheetBasicMove" xml:space="preserve">
     <value>Basic Move:</value>
   </data>
-  <data name="CharacterSheetBasicSpeed" xml:space="preserve">
+  <data Name="CharacterSheetBasicSpeed" xml:space="preserve">
     <value>Basic Speed:</value>
   </data>
-  <data name="CharacterSheetDexterity" xml:space="preserve">
+  <data Name="CharacterSheetDexterity" xml:space="preserve">
     <value>Dexterity:</value>
   </data>
-  <data name="CharacterSheetDodge" xml:space="preserve">
+  <data Name="CharacterSheetDodge" xml:space="preserve">
     <value>Dodge:</value>
   </data>
-  <data name="CharacterSheetEncumbrance" xml:space="preserve">
+  <data Name="CharacterSheetEncumbrance" xml:space="preserve">
     <value>Encumbrance:</value>
   </data>
-  <data name="CharacterSheetHealth" xml:space="preserve">
+  <data Name="CharacterSheetHealth" xml:space="preserve">
     <value>Health:</value>
   </data>
-  <data name="CharacterSheetIntelligence" xml:space="preserve">
+  <data Name="CharacterSheetIntelligence" xml:space="preserve">
     <value>Intelligence:</value>
   </data>
-  <data name="CharacterSheetInventory" xml:space="preserve">
+  <data Name="CharacterSheetInventory" xml:space="preserve">
     <value>Inventory:</value>
   </data>
-  <data name="CharacterSheetMaxFP" xml:space="preserve">
+  <data Name="CharacterSheetMaxFP" xml:space="preserve">
     <value>Max FP:</value>
   </data>
-  <data name="CharacterSheetMaxHP" xml:space="preserve">
+  <data Name="CharacterSheetMaxHP" xml:space="preserve">
     <value>Max HP:</value>
   </data>
-  <data name="CharacterSheetMove" xml:space="preserve">
+  <data Name="CharacterSheetMove" xml:space="preserve">
     <value>Move:</value>
   </data>
-  <data name="CharacterSheetNoPicture" xml:space="preserve">
+  <data Name="CharacterSheetNoPicture" xml:space="preserve">
     <value>No picture</value>
   </data>
-  <data name="CharacterSheetPerception" xml:space="preserve">
+  <data Name="CharacterSheetPerception" xml:space="preserve">
     <value>Perception:</value>
   </data>
-  <data name="CharacterSheetSkills" xml:space="preserve">
+  <data Name="CharacterSheetSkills" xml:space="preserve">
     <value>Skills:</value>
   </data>
-  <data name="CharacterSheetStrength" xml:space="preserve">
+  <data Name="CharacterSheetStrength" xml:space="preserve">
     <value>Strength:</value>
   </data>
-  <data name="CharacterSheetSwingDamage" xml:space="preserve">
+  <data Name="CharacterSheetSwingDamage" xml:space="preserve">
     <value>Swing damage:</value>
   </data>
-  <data name="CharacterSheetThrustDamage" xml:space="preserve">
+  <data Name="CharacterSheetThrustDamage" xml:space="preserve">
     <value>Thrust damage:</value>
   </data>
-  <data name="CharacterSheetTotalPoints" xml:space="preserve">
+  <data Name="CharacterSheetTotalPoints" xml:space="preserve">
     <value>Character points:</value>
   </data>
-  <data name="CharacterSheetWillpower" xml:space="preserve">
+  <data Name="CharacterSheetWillpower" xml:space="preserve">
     <value>Willpower:</value>
   </data>
-  <data name="DialogLoadFailed" xml:space="preserve">
+  <data Name="DialogLoadFailed" xml:space="preserve">
     <value>Failed to load file.</value>
   </data>
-  <data name="EditAdvantageDescription" xml:space="preserve">
+  <data Name="EditAdvantageDescription" xml:space="preserve">
     <value>Description:</value>
   </data>
-  <data name="EditAdvantageName" xml:space="preserve">
+  <data Name="EditAdvantageName" xml:space="preserve">
     <value>Name:</value>
   </data>
-  <data name="EditAdvantagePoints" xml:space="preserve">
+  <data Name="EditAdvantagePoints" xml:space="preserve">
     <value>Points:</value>
   </data>
-  <data name="EditAdvantageWindow" xml:space="preserve">
+  <data Name="EditAdvantageWindow" xml:space="preserve">
     <value>Edit advantage/disadvantage</value>
   </data>
-  <data name="EditAdvantageWindowCancel" xml:space="preserve">
+  <data Name="EditAdvantageWindowCancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="EditAdvantageWindowOk" xml:space="preserve">
+  <data Name="EditAdvantageWindowOk" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="EditItemDescription" xml:space="preserve">
+  <data Name="EditItemDescription" xml:space="preserve">
     <value>Description:</value>
   </data>
-  <data name="EditItemName" xml:space="preserve">
+  <data Name="EditItemName" xml:space="preserve">
     <value>Name:</value>
   </data>
-  <data name="EditItemValue" xml:space="preserve">
+  <data Name="EditItemValue" xml:space="preserve">
     <value>Value:</value>
   </data>
-  <data name="EditItemWeight" xml:space="preserve">
+  <data Name="EditItemWeight" xml:space="preserve">
     <value>Weight:</value>
   </data>
-  <data name="EditItemWindow" xml:space="preserve">
+  <data Name="EditItemWindow" xml:space="preserve">
     <value>Edit item</value>
   </data>
-  <data name="EditItemWindowCancel" xml:space="preserve">
+  <data Name="EditItemWindowCancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="EditItemWindowOk" xml:space="preserve">
+  <data Name="EditItemWindowOk" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="EditSkillDescription" xml:space="preserve">
+  <data Name="EditSkillDescription" xml:space="preserve">
     <value>Description:</value>
   </data>
-  <data name="EditSkillDifficulty" xml:space="preserve">
+  <data Name="EditSkillDifficulty" xml:space="preserve">
     <value>Difficulty:</value>
   </data>
-  <data name="EditSkillName" xml:space="preserve">
+  <data Name="EditSkillName" xml:space="preserve">
     <value>Name:</value>
   </data>
-  <data name="EditSkillRelativeLevel" xml:space="preserve">
-    <value>Relative level:</value>
+  <data Name="EditSkillRelativeLevel" xml:space="preserve">
+    <value>Relative Level:</value>
   </data>
-  <data name="EditSkillStat" xml:space="preserve">
+  <data Name="EditSkillStat" xml:space="preserve">
     <value>Statistic:</value>
   </data>
-  <data name="EditSkillWindow" xml:space="preserve">
+  <data Name="EditSkillWindow" xml:space="preserve">
     <value>Edit skill</value>
   </data>
-  <data name="EditSkillWindowCancel" xml:space="preserve">
+  <data Name="EditSkillWindowCancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="EditSkillWindowOk" xml:space="preserve">
+  <data Name="EditSkillWindowOk" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="EncumbranceExtraHeavy" xml:space="preserve">
+  <data Name="EncumbranceExtraHeavy" xml:space="preserve">
     <value>Extra-heavy encumbrance</value>
   </data>
-  <data name="EncumbranceHeavy" xml:space="preserve">
+  <data Name="EncumbranceHeavy" xml:space="preserve">
     <value>Heavy encumbrance</value>
   </data>
-  <data name="EncumbranceLight" xml:space="preserve">
+  <data Name="EncumbranceLight" xml:space="preserve">
     <value>Light encumbrance</value>
   </data>
-  <data name="EncumbranceMedium" xml:space="preserve">
+  <data Name="EncumbranceMedium" xml:space="preserve">
     <value>Medium encumbrance</value>
   </data>
-  <data name="EncumbranceNo" xml:space="preserve">
+  <data Name="EncumbranceNo" xml:space="preserve">
     <value>No encumbrance</value>
   </data>
-  <data name="MenuAddAdvantage" xml:space="preserve">
+  <data Name="MenuAddAdvantage" xml:space="preserve">
     <value>Add advantage/disadvantage</value>
   </data>
-  <data name="MenuAddItem" xml:space="preserve">
+  <data Name="MenuAddItem" xml:space="preserve">
     <value>Add item</value>
   </data>
-  <data name="MenuAddSkill" xml:space="preserve">
+  <data Name="MenuAddSkill" xml:space="preserve">
     <value>Add skill</value>
   </data>
-  <data name="MenuEdit" xml:space="preserve">
+  <data Name="MenuEdit" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="MenuEditPrimaryStats" xml:space="preserve">
+  <data Name="MenuEditPrimaryStats" xml:space="preserve">
     <value>Edit primary stats</value>
   </data>
-  <data name="MenuEditSecondaryStats" xml:space="preserve">
+  <data Name="MenuEditSecondaryStats" xml:space="preserve">
     <value>Edit secondary stats</value>
   </data>
-  <data name="MenuHelp" xml:space="preserve">
+  <data Name="MenuHelp" xml:space="preserve">
     <value>Help</value>
   </data>
-  <data name="PrimaryStatsWindow" xml:space="preserve">
+  <data Name="PrimaryStatsWindow" xml:space="preserve">
     <value>Edit primary stats</value>
   </data>
-  <data name="PrimaryStatsWindowCancel" xml:space="preserve">
+  <data Name="PrimaryStatsWindowCancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="PrimaryStatsWindowOk" xml:space="preserve">
+  <data Name="PrimaryStatsWindowOk" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="RibbonAppMenuItemAbout" xml:space="preserve">
+  <data Name="RibbonAppMenuItemAbout" xml:space="preserve">
     <value>About</value>
   </data>
-  <data name="RibbonAppMenuItemDropDice" xml:space="preserve">
+  <data Name="RibbonAppMenuItemDropDice" xml:space="preserve">
     <value>Бросить кубик</value>
   </data>
-  <data name="RibbonAppMenuItemNew" xml:space="preserve">
+  <data Name="RibbonAppMenuItemNew" xml:space="preserve">
     <value>New</value>
   </data>
-  <data name="RibbonAppMenuItemOpen" xml:space="preserve">
+  <data Name="RibbonAppMenuItemOpen" xml:space="preserve">
     <value>Open</value>
   </data>
-  <data name="RibbonAppMenuItemQuit" xml:space="preserve">
+  <data Name="RibbonAppMenuItemQuit" xml:space="preserve">
     <value>Выход</value>
   </data>
-  <data name="RibbonAppMenuItemSaveAs" xml:space="preserve">
+  <data Name="RibbonAppMenuItemSaveAs" xml:space="preserve">
     <value>Save as</value>
   </data>
-  <data name="RibbonButtonAllItems" xml:space="preserve">
+  <data Name="RibbonButtonAllItems" xml:space="preserve">
     <value>Все предметы</value>
   </data>
-  <data name="RibbonButtonAttachmentItems" xml:space="preserve">
+  <data Name="RibbonButtonAttachmentItems" xml:space="preserve">
     <value>Атачи</value>
   </data>
-  <data name="RibbonButtonCombineWeapon" xml:space="preserve">
+  <data Name="RibbonButtonCombineWeapon" xml:space="preserve">
     <value>Комбинирование оружия</value>
   </data>
-  <data name="RibbonButtonShowCharacter" xml:space="preserve">
+  <data Name="RibbonButtonShowCharacter" xml:space="preserve">
     <value>Новые персонажи</value>
   </data>
-  <data name="RibbonButtonWeaponItems" xml:space="preserve">
+  <data Name="RibbonButtonWeaponItems" xml:space="preserve">
     <value>Оружие</value>
   </data>
-  <data name="RibbonGroupAdvantages" xml:space="preserve">
+  <data Name="RibbonGroupAdvantages" xml:space="preserve">
     <value>Advantages/disadvantages</value>
   </data>
-  <data name="RibbonGroupCombineWeapon" xml:space="preserve">
+  <data Name="RibbonGroupCombineWeapon" xml:space="preserve">
     <value>Комбинирование</value>
   </data>
-  <data name="RibbonGroupInventory" xml:space="preserve">
+  <data Name="RibbonGroupInventory" xml:space="preserve">
     <value>Inventory</value>
   </data>
-  <data name="RibbonGroupItems" xml:space="preserve">
+  <data Name="RibbonGroupItems" xml:space="preserve">
     <value>Предметы</value>
   </data>
-  <data name="RibbonGroupSkills" xml:space="preserve">
+  <data Name="RibbonGroupSkills" xml:space="preserve">
     <value>Skills</value>
   </data>
-  <data name="RibbonGroupStats" xml:space="preserve">
+  <data Name="RibbonGroupStats" xml:space="preserve">
     <value>Statistics</value>
   </data>
-  <data name="RibbonSubTabCharacter" xml:space="preserve">
+  <data Name="RibbonSubTabCharacter" xml:space="preserve">
     <value>Персонаж</value>
   </data>
-  <data name="RibbonTabCharacterSheet" xml:space="preserve">
+  <data Name="RibbonTabCharacterSheet" xml:space="preserve">
     <value>Character sheet</value>
   </data>
-  <data name="RibbonTabGeneral" xml:space="preserve">
+  <data Name="RibbonTabGeneral" xml:space="preserve">
     <value>Главная</value>
   </data>
-  <data name="SecondaryStatsWindow" xml:space="preserve">
+  <data Name="SecondaryStatsWindow" xml:space="preserve">
     <value>Edit secondary stats</value>
   </data>
-  <data name="SecondaryStatsWindowCancel" xml:space="preserve">
+  <data Name="SecondaryStatsWindowCancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="SecondaryStatsWindowOk" xml:space="preserve">
+  <data Name="SecondaryStatsWindowOk" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="UnnamedCharacter" xml:space="preserve">
-    <value>(unnamed character)</value>
+  <data Name="UnNamedCharacter" xml:space="preserve">
+    <value>(unNamed character)</value>
   </data>
 </root>

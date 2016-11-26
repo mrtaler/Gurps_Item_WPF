@@ -12,7 +12,7 @@ namespace Item_WPF.MVVM.Serialize.Model
         /// <summary>
         /// 1 coll prereq_list 
         /// </summary>
-        /// <param name="itemprereq_list">Prereq_listXML</param>
+        /// <param Name="itemprereq_list">Prereq_listXML</param>
         public void FPrereq_list(XElement itemprereq_list)
         {
             //
@@ -28,7 +28,7 @@ namespace Item_WPF.MVVM.Serialize.Model
                 prqList.FContained_weight_prereq(item.Elements("prereq_list"));
 
                 prqList.when_tl = item.Element("when_tl");
-                prqList.college_count = item.Element("college_count");
+                prqList.college_count = item.Element("CollegeCount");
                 prqList.all = item.Attribute("all");
                 foreach (var itprereq_list in item.Elements("prereq_list"))
                 {
@@ -43,7 +43,7 @@ namespace Item_WPF.MVVM.Serialize.Model
                     prqListSub.FContained_weight_prereq(itprereq_list.Elements("prereq_list"));
 
                     prqListSub.when_tl = itprereq_list.Element("when_tl");
-                    prqListSub.college_count = itprereq_list.Element("college_count");
+                    prqListSub.college_count = itprereq_list.Element("CollegeCount");
                     prqListSub.all = itprereq_list.Attribute("all");
                     prqList.Prereq_list.Add(prqListSub);
                 }

@@ -35,7 +35,7 @@ namespace Item_WPF.MVVM.Serialize.Model
                     {
 
                         DefaultSkill Defsk = new DefaultSkill();
-                        if (childnode.Name == "name")
+                        if (childnode.Name == "Name")
                             namemain = childnode.InnerText;
 
                         // если узел - company
@@ -51,8 +51,8 @@ namespace Item_WPF.MVVM.Serialize.Model
 
                             foreach (XmlNode childnodeSub in childnode.ChildNodes)
                             {
-                                if (childnodeSub.Name == "name") Defsk.nameSubSkill = childnodeSub.InnerText;
-                                if (childnodeSub.Name == "specialization") Defsk.specialization = childnodeSub.InnerText;
+                                if (childnodeSub.Name == "Name") Defsk.nameSubSkill = childnodeSub.InnerText;
+                                if (childnodeSub.Name == "Specialization") Defsk.specialization = childnodeSub.InnerText;
                                 if (childnodeSub.Name == "type") Defsk.type = childnodeSub.InnerText;
                                 if (childnodeSub.Name == "modifier") Defsk.modifier = childnodeSub.InnerText;
 

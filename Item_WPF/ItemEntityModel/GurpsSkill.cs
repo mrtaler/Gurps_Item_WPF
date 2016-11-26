@@ -32,7 +32,7 @@ namespace Item_WPF.ItemEntityModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public GurpsSkill()
         {
-            this.attribute_bonus = new HashSet<attribute_bonus>();
+            this.attribute_bonus = new HashSet<attribute_bonus1>();
             this.CharSkills = new HashSet<CharSkill>();
             this.DefaultSkills = new HashSet<DefaultSkill>();
             this.DefaultSkills1 = new HashSet<DefaultSkill>();
@@ -302,8 +302,8 @@ namespace Item_WPF.ItemEntityModel
     	}
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<attribute_bonus> _attribute_bonus;
-            public virtual ICollection<attribute_bonus> attribute_bonus
+        private ICollection<attribute_bonus1> _attribute_bonus;
+            public virtual ICollection<attribute_bonus1> attribute_bonus
             {
                 get { return _attribute_bonus; }
                 set

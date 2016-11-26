@@ -12,7 +12,7 @@ namespace Item_WPF.ItemEntityModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Attribute_prereq : System.ComponentModel.INotifyPropertyChanged
+    public partial class attribute_prereq1 : System.ComponentModel.INotifyPropertyChanged
     {
      
      #region Implement INotifyPropertyChanged
@@ -45,67 +45,67 @@ namespace Item_WPF.ItemEntityModel
     			}
     		}
     	}
-        private string _Has;
-    	public string Has 
+        private string _has;
+    	public string has 
     	{ 
     		get
     		{
-    			return _Has;
+    			return _has;
     		} 
     		set
     		{
-    			if (_Has != value)
+    			if (_has != value)
     			{
-    				_Has = value;
-    				OnPropertyChanged("Has");
+    				_has = value;
+    				OnPropertyChanged("has");
     			}
     		}
     	}
-        private string _Which;
-    	public string Which 
+        private string _which;
+    	public string which 
     	{ 
     		get
     		{
-    			return _Which;
+    			return _which;
     		} 
     		set
     		{
-    			if (_Which != value)
+    			if (_which != value)
     			{
-    				_Which = value;
-    				OnPropertyChanged("Which");
+    				_which = value;
+    				OnPropertyChanged("which");
     			}
     		}
     	}
-        private string _Compare;
-    	public string Compare 
+        private string _compare;
+    	public string compare 
     	{ 
     		get
     		{
-    			return _Compare;
+    			return _compare;
     		} 
     		set
     		{
-    			if (_Compare != value)
+    			if (_compare != value)
     			{
-    				_Compare = value;
-    				OnPropertyChanged("Compare");
+    				_compare = value;
+    				OnPropertyChanged("compare");
     			}
     		}
     	}
-        private string _CombinedWith;
-    	public string CombinedWith 
+        private string _combined_with;
+    	public string combined_with 
     	{ 
     		get
     		{
-    			return _CombinedWith;
+    			return _combined_with;
     		} 
     		set
     		{
-    			if (_CombinedWith != value)
+    			if (_combined_with != value)
     			{
-    				_CombinedWith = value;
-    				OnPropertyChanged("CombinedWith");
+    				_combined_with = value;
+    				OnPropertyChanged("combined_with");
     			}
     		}
     	}
@@ -141,5 +141,15 @@ namespace Item_WPF.ItemEntityModel
     			}
     		}
     	}
+    
+        private prereq_listDB _prereq_listDB;
+            public virtual prereq_listDB prereq_listDB
+            {
+                get { return _prereq_listDB; }
+                set
+                { if(_prereq_listDB != value)
+                    {    _prereq_listDB = value;    OnPropertyChanged("prereq_listDB");   }
+                }
+            } 
     }
 }

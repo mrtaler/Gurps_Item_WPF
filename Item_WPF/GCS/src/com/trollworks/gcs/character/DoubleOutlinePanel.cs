@@ -77,7 +77,7 @@
 //	}
 
 //	@Override
-//	public void addLayoutComponent(String name, Component comp) {
+//	public void addLayoutComponent(String Name, Component comp) {
 //		// Not used.
 //	}
 

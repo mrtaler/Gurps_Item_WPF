@@ -5,7 +5,7 @@ namespace Item_WPF.MVVM.Models
     // This enum is used to denote the difficulty of a skill.
     public enum SkillDifficulty { Easy, Average, Hard, VeryHard };
 
-    // This enum is used to specify which stat a skill is based on.
+    // This enum is used to specify Which stat a skill is based on.
     public enum SkillStat { Strength, Dexterity, Intelligence, Health }
 
     public class SkillnotDB
@@ -19,14 +19,14 @@ namespace Item_WPF.MVVM.Models
         // The difficulty of the skill
         public SkillDifficulty Difficulty { get; set; }
 
-        // The skill level relative to the base skill level.
+        // The skill Level relative to the base skill Level.
         public int? RelativeLevel { get; set; }
 
-        // The skill level relative to the base skill level if the skill is untrained.
+        // The skill Level relative to the base skill Level if the skill is untrained.
         // If null, the skill is impossible without training.
         public int? DefaultRelativeLevel { get; set; }
 
-        // The number of character points the training of this level is worth.
+        // The number of character points the training of this Level is worth.
         public int Points
         {
             get
@@ -63,7 +63,7 @@ namespace Item_WPF.MVVM.Models
             }
         }
 
-        // The effective skill level.
+        // The effective skill Level.
         public int? Level(CharacterDB character)
         {
             // If skill is not learned
@@ -73,7 +73,7 @@ namespace Item_WPF.MVVM.Models
                 if (DefaultRelativeLevel == null)
                     return null;
 
-                // Default skill level;
+                // Default skill Level;
                 switch (Stat)
                 {
                     case SkillStat.Strength:
@@ -90,7 +90,7 @@ namespace Item_WPF.MVVM.Models
             }
             else
             {
-                // Add base skill level to relative level.
+                // Add base skill Level to relative Level.
                 switch (Stat)
                 {
                     case SkillStat.Strength:

@@ -200,45 +200,45 @@
 //	/** The prefix used in front of all IDs for basic attributes. */
 //	public static const String					ATTRIBUTES_PREFIX						= CHARACTER_PREFIX + "ba.";										//$NON-NLS-1$
 //	/** The field ID for strength (ST) changes. */
-//	public static const String					ID_STRENGTH								= ATTRIBUTES_PREFIX + BonusAttributeType.ST.name();
+//	public static const String					ID_STRENGTH								= ATTRIBUTES_PREFIX + BonusAttributeType.ST.Name();
 //	/** The field ID for lifting strength bonuses -- used by features. */
-//	public static const String					ID_LIFTING_STRENGTH						= ID_STRENGTH + AttributeBonusLimitation.LIFTING_ONLY.name();
+//	public static const String					ID_LIFTING_STRENGTH						= ID_STRENGTH + AttributeBonusLimitation.LIFTING_ONLY.Name();
 //	/** The field ID for striking strength bonuses -- used by features. */
-//	public static const String					ID_STRIKING_STRENGTH					= ID_STRENGTH + AttributeBonusLimitation.STRIKING_ONLY.name();
+//	public static const String					ID_STRIKING_STRENGTH					= ID_STRENGTH + AttributeBonusLimitation.STRIKING_ONLY.Name();
 //	/** The field ID for dexterity (DX) changes. */
-//	public static const String					ID_DEXTERITY							= ATTRIBUTES_PREFIX + BonusAttributeType.DX.name();
+//	public static const String					ID_DEXTERITY							= ATTRIBUTES_PREFIX + BonusAttributeType.DX.Name();
 //	/** The field ID for intelligence (IQ) changes. */
-//	public static const String					ID_INTELLIGENCE							= ATTRIBUTES_PREFIX + BonusAttributeType.IQ.name();
+//	public static const String					ID_INTELLIGENCE							= ATTRIBUTES_PREFIX + BonusAttributeType.IQ.Name();
 //	/** The field ID for health (HT) changes. */
-//	public static const String					ID_HEALTH								= ATTRIBUTES_PREFIX + BonusAttributeType.HT.name();
+//	public static const String					ID_HEALTH								= ATTRIBUTES_PREFIX + BonusAttributeType.HT.Name();
 //	/** The field ID for perception changes. */
-//	public static const String					ID_PERCEPTION							= ATTRIBUTES_PREFIX + BonusAttributeType.PERCEPTION.name();
+//	public static const String					ID_PERCEPTION							= ATTRIBUTES_PREFIX + BonusAttributeType.PERCEPTION.Name();
 //	/** The field ID for vision changes. */
-//	public static const String					ID_VISION								= ATTRIBUTES_PREFIX + BonusAttributeType.VISION.name();
+//	public static const String					ID_VISION								= ATTRIBUTES_PREFIX + BonusAttributeType.VISION.Name();
 //	/** The field ID for hearing changes. */
-//	public static const String					ID_HEARING								= ATTRIBUTES_PREFIX + BonusAttributeType.HEARING.name();
+//	public static const String					ID_HEARING								= ATTRIBUTES_PREFIX + BonusAttributeType.HEARING.Name();
 //	/** The field ID for taste changes. */
-//	public static const String					ID_TASTE_AND_SMELL						= ATTRIBUTES_PREFIX + BonusAttributeType.TASTE_SMELL.name();
+//	public static const String					ID_TASTE_AND_SMELL						= ATTRIBUTES_PREFIX + BonusAttributeType.TASTE_SMELL.Name();
 //	/** The field ID for smell changes. */
-//	public static const String					ID_TOUCH								= ATTRIBUTES_PREFIX + BonusAttributeType.TOUCH.name();
+//	public static const String					ID_TOUCH								= ATTRIBUTES_PREFIX + BonusAttributeType.TOUCH.Name();
 //	/** The field ID for will changes. */
-//	public static const String					ID_WILL									= ATTRIBUTES_PREFIX + BonusAttributeType.WILL.name();
+//	public static const String					ID_WILL									= ATTRIBUTES_PREFIX + BonusAttributeType.WILL.Name();
 //	/** The field ID for fright check changes. */
-//	public static const String					ID_FRIGHT_CHECK							= ATTRIBUTES_PREFIX + BonusAttributeType.FRIGHT_CHECK.name();
+//	public static const String					ID_FRIGHT_CHECK							= ATTRIBUTES_PREFIX + BonusAttributeType.FRIGHT_CHECK.Name();
 //	/** The field ID for basic speed changes. */
-//	public static const String					ID_BASIC_SPEED							= ATTRIBUTES_PREFIX + BonusAttributeType.SPEED.name();
+//	public static const String					ID_BASIC_SPEED							= ATTRIBUTES_PREFIX + BonusAttributeType.SPEED.Name();
 //	/** The field ID for basic move changes. */
-//	public static const String					ID_BASIC_MOVE							= ATTRIBUTES_PREFIX + BonusAttributeType.MOVE.name();
+//	public static const String					ID_BASIC_MOVE							= ATTRIBUTES_PREFIX + BonusAttributeType.MOVE.Name();
 //	/** The prefix used in front of all IDs for dodge changes. */
-//	public static const String					DODGE_PREFIX							= ATTRIBUTES_PREFIX + BonusAttributeType.DODGE.name() + "#.";	//$NON-NLS-1$
+//	public static const String					DODGE_PREFIX							= ATTRIBUTES_PREFIX + BonusAttributeType.DODGE.Name() + "#.";	//$NON-NLS-1$
 //	/** The field ID for dodge bonus changes. */
-//	public static const String					ID_DODGE_BONUS							= ATTRIBUTES_PREFIX + BonusAttributeType.DODGE.name();
+//	public static const String					ID_DODGE_BONUS							= ATTRIBUTES_PREFIX + BonusAttributeType.DODGE.Name();
 //	/** The field ID for parry bonus changes. */
-//	public static const String					ID_PARRY_BONUS							= ATTRIBUTES_PREFIX + BonusAttributeType.PARRY.name();
+//	public static const String					ID_PARRY_BONUS							= ATTRIBUTES_PREFIX + BonusAttributeType.PARRY.Name();
 //	/** The field ID for block bonus changes. */
-//	public static const String					ID_BLOCK_BONUS							= ATTRIBUTES_PREFIX + BonusAttributeType.BLOCK.name();
+//	public static const String					ID_BLOCK_BONUS							= ATTRIBUTES_PREFIX + BonusAttributeType.BLOCK.Name();
 //	/** The prefix used in front of all IDs for move changes. */
-//	public static const String					MOVE_PREFIX								= ATTRIBUTES_PREFIX + BonusAttributeType.MOVE.name() + "#.";	//$NON-NLS-1$
+//	public static const String					MOVE_PREFIX								= ATTRIBUTES_PREFIX + BonusAttributeType.MOVE.Name() + "#.";	//$NON-NLS-1$
 //	/** The field ID for carried weight changes. */
 //	public static const String					ID_CARRIED_WEIGHT						= CHARACTER_PREFIX + "CarriedWeight";							//$NON-NLS-1$
 //	/** The field ID for carried wealth changes. */
@@ -264,7 +264,7 @@
 //	public static const String					POINT_SUMMARY_PREFIX					= CHARACTER_PREFIX + "ps.";										//$NON-NLS-1$
 //	/** The field ID for point total changes. */
 //	public static const String					ID_TOTAL_POINTS							= POINT_SUMMARY_PREFIX + "TotalPoints";							//$NON-NLS-1$
-//	/** The field ID for attribute point summary changes. */
+//	/** The field ID for Attribute point summary changes. */
 //	public static const String					ID_ATTRIBUTE_POINTS						= POINT_SUMMARY_PREFIX + "AttributePoints";						//$NON-NLS-1$
 //	/** The field ID for advantage point summary changes. */
 //	public static const String					ID_ADVANTAGE_POINTS						= POINT_SUMMARY_PREFIX + "AdvantagePoints";						//$NON-NLS-1$
@@ -288,7 +288,7 @@
 //	public static const String					ID_BASIC_SWING							= BASIC_DAMAGE_PREFIX + "Swing";								//$NON-NLS-1$
 //	private static const String					HIT_POINTS_PREFIX						= ATTRIBUTES_PREFIX + "derived_hp.";							//$NON-NLS-1$
 //	/** The field ID for hit point changes. */
-//	public static const String					ID_HIT_POINTS							= ATTRIBUTES_PREFIX + BonusAttributeType.HP.name();
+//	public static const String					ID_HIT_POINTS							= ATTRIBUTES_PREFIX + BonusAttributeType.HP.Name();
 //	/** The field ID for current hit point changes. */
 //	public static const String					ID_CURRENT_HIT_POINTS					= HIT_POINTS_PREFIX + "Current";								//$NON-NLS-1$
 //	/** The field ID for reeling hit point changes. */
@@ -307,7 +307,7 @@
 //	public static const String					ID_DEAD_HIT_POINTS						= HIT_POINTS_PREFIX + "Dead";									//$NON-NLS-1$
 //	private static const String					FATIGUE_POINTS_PREFIX					= ATTRIBUTES_PREFIX + "derived_fp.";							//$NON-NLS-1$
 //	/** The field ID for fatigue point changes. */
-//	public static const String					ID_FATIGUE_POINTS						= ATTRIBUTES_PREFIX + BonusAttributeType.FP.name();
+//	public static const String					ID_FATIGUE_POINTS						= ATTRIBUTES_PREFIX + BonusAttributeType.FP.Name();
 //	/** The field ID for current fatigue point changes. */
 //	public static const String					ID_CURRENT_FATIGUE_POINTS				= FATIGUE_POINTS_PREFIX + "Current";							//$NON-NLS-1$
 //	/** The field ID for tired fatigue point changes. */
@@ -433,7 +433,7 @@
 //		setCreatedOn(getCreatedOn());
 //	}
 
-//	/** @return The page settings. May return <code>null</code> if not printer has been defined. */
+//	/** @return The page settings. May return <code>null</code> if not printer Has been defined. */
 //	public PrintManager getPageSettings() {
 //		return mPageSettings;
 //	}
@@ -456,68 +456,68 @@
 //		characterInitialize(false);
 //		do {
 //			if (reader.next() == XMLNodeType.START_TAG) {
-//				String name = reader.getName();
+//				String Name = reader.getName();
 
 //				if (state.mDataFileVersion == 0) {
-//					if (mDescription.loadTag(reader, name)) {
+//					if (mDescription.loadTag(reader, Name)) {
 //						continue;
 //					}
 //				}
 
-//				if (Profile.TAG_ROOT.equals(name)) {
+//				if (Profile.TAG_ROOT.equals(Name)) {
 //					mDescription.load(reader);
-//				} else if (TAG_CREATED_DATE.equals(name)) {
+//				} else if (TAG_CREATED_DATE.equals(Name)) {
 //					mCreatedOn = Numbers.extractDate(reader.readText());
-//				} else if (TAG_MODIFIED_DATE.equals(name)) {
+//				} else if (TAG_MODIFIED_DATE.equals(Name)) {
 //					mLastModified = Numbers.extractDateTime(reader.readText());
-//				} else if (BonusAttributeType.HP.getXMLTag().equals(name)) {
+//				} else if (BonusAttributeType.HP.getXMLTag().equals(Name)) {
 //					mHitPoints = reader.readInteger(0);
-//				} else if (TAG_CURRENT_HP.equals(name)) {
+//				} else if (TAG_CURRENT_HP.equals(Name)) {
 //					mCurrentHitPoints = reader.readText();
-//				} else if (BonusAttributeType.FP.getXMLTag().equals(name)) {
+//				} else if (BonusAttributeType.FP.getXMLTag().equals(Name)) {
 //					mFatiguePoints = reader.readInteger(0);
-//				} else if (TAG_CURRENT_FP.equals(name)) {
+//				} else if (TAG_CURRENT_FP.equals(Name)) {
 //					mCurrentFatiguePoints = reader.readText();
-//				} else if (TAG_UNSPENT_POINTS.equals(name)) {
+//				} else if (TAG_UNSPENT_POINTS.equals(Name)) {
 //					unspentPoints = reader.readInteger(0);
-//				} else if (TAG_TOTAL_POINTS.equals(name)) {
+//				} else if (TAG_TOTAL_POINTS.equals(Name)) {
 //					mTotalPoints = reader.readInteger(0);
-//				} else if (BonusAttributeType.ST.getXMLTag().equals(name)) {
+//				} else if (BonusAttributeType.ST.getXMLTag().equals(Name)) {
 //					mStrength = reader.readInteger(0);
-//				} else if (BonusAttributeType.DX.getXMLTag().equals(name)) {
+//				} else if (BonusAttributeType.DX.getXMLTag().equals(Name)) {
 //					mDexterity = reader.readInteger(0);
-//				} else if (BonusAttributeType.IQ.getXMLTag().equals(name)) {
+//				} else if (BonusAttributeType.IQ.getXMLTag().equals(Name)) {
 //					mIntelligence = reader.readInteger(0);
-//				} else if (BonusAttributeType.HT.getXMLTag().equals(name)) {
+//				} else if (BonusAttributeType.HT.getXMLTag().equals(Name)) {
 //					mHealth = reader.readInteger(0);
-//				} else if (BonusAttributeType.WILL.getXMLTag().equals(name)) {
+//				} else if (BonusAttributeType.WILL.getXMLTag().equals(Name)) {
 //					mWill = reader.readInteger(0);
-//				} else if (BonusAttributeType.PERCEPTION.getXMLTag().equals(name)) {
+//				} else if (BonusAttributeType.PERCEPTION.getXMLTag().equals(Name)) {
 //					mPerception = reader.readInteger(0);
-//				} else if (BonusAttributeType.SPEED.getXMLTag().equals(name)) {
+//				} else if (BonusAttributeType.SPEED.getXMLTag().equals(Name)) {
 //					mSpeed = reader.readDouble(0.0);
-//				} else if (BonusAttributeType.MOVE.getXMLTag().equals(name)) {
+//				} else if (BonusAttributeType.MOVE.getXMLTag().equals(Name)) {
 //					mMove = reader.readInteger(0);
-//				} else if (TAG_INCLUDE_PUNCH.equals(name)) {
+//				} else if (TAG_INCLUDE_PUNCH.equals(Name)) {
 //					mIncludePunch = reader.readbool();
-//				} else if (TAG_INCLUDE_KICK.equals(name)) {
+//				} else if (TAG_INCLUDE_KICK.equals(Name)) {
 //					mIncludeKick = reader.readbool();
-//				} else if (TAG_INCLUDE_BOOTS.equals(name)) {
+//				} else if (TAG_INCLUDE_BOOTS.equals(Name)) {
 //					mIncludeKickBoots = reader.readbool();
-//				} else if (AdvantageList.TAG_ROOT.equals(name)) {
+//				} else if (AdvantageList.TAG_ROOT.equals(Name)) {
 //					loadAdvantageList(reader, state);
-//				} else if (SkillList.TAG_ROOT.equals(name)) {
+//				} else if (SkillList.TAG_ROOT.equals(Name)) {
 //					loadSkillList(reader, state);
-//				} else if (SpellList.TAG_ROOT.equals(name)) {
+//				} else if (SpellList.TAG_ROOT.equals(Name)) {
 //					loadSpellList(reader, state);
-//				} else if (EquipmentList.TAG_ROOT.equals(name)) {
+//				} else if (EquipmentList.TAG_ROOT.equals(Name)) {
 //					loadEquipmentList(reader, state);
-//				} else if (PrintManager.TAG_ROOT.equals(name)) {
+//				} else if (PrintManager.TAG_ROOT.equals(Name)) {
 //					if (mPageSettings != null) {
 //						mPageSettings.load(reader);
 //					}
 //				} else {
-//					reader.skipTag(name);
+//					reader.skipTag(Name);
 //				}
 //			}
 //		} while (reader.withinMarker(marker));
@@ -532,11 +532,11 @@
 //		String marker = reader.getMarker();
 //		do {
 //			if (reader.next() == XMLNodeType.START_TAG) {
-//				String name = reader.getName();
-//				if (Advantage.TAG_ADVANTAGE.equals(name) || Advantage.TAG_ADVANTAGE_CONTAINER.equals(name)) {
+//				String Name = reader.getName();
+//				if (Advantage.TAG_ADVANTAGE.equals(Name) || Advantage.TAG_ADVANTAGE_CONTAINER.equals(Name)) {
 //					mAdvantages.addRow(new Advantage(this, reader, state), true);
 //				} else {
-//					reader.skipTag(name);
+//					reader.skipTag(Name);
 //				}
 //			}
 //		} while (reader.withinMarker(marker));
@@ -546,13 +546,13 @@
 //		String marker = reader.getMarker();
 //		do {
 //			if (reader.next() == XMLNodeType.START_TAG) {
-//				String name = reader.getName();
-//				if (Skill.TAG_SKILL.equals(name) || Skill.TAG_SKILL_CONTAINER.equals(name)) {
+//				String Name = reader.getName();
+//				if (Skill.TAG_SKILL.equals(Name) || Skill.TAG_SKILL_CONTAINER.equals(Name)) {
 //					mSkills.addRow(new Skill(this, reader, state), true);
-//				} else if (Technique.TAG_TECHNIQUE.equals(name)) {
+//				} else if (Technique.TAG_TECHNIQUE.equals(Name)) {
 //					mSkills.addRow(new Technique(this, reader, state), true);
 //				} else {
-//					reader.skipTag(name);
+//					reader.skipTag(Name);
 //				}
 //			}
 //		} while (reader.withinMarker(marker));
@@ -562,11 +562,11 @@
 //		String marker = reader.getMarker();
 //		do {
 //			if (reader.next() == XMLNodeType.START_TAG) {
-//				String name = reader.getName();
-//				if (Spell.TAG_SPELL.equals(name) || Spell.TAG_SPELL_CONTAINER.equals(name)) {
+//				String Name = reader.getName();
+//				if (Spell.TAG_SPELL.equals(Name) || Spell.TAG_SPELL_CONTAINER.equals(Name)) {
 //					mSpells.addRow(new Spell(this, reader, state), true);
 //				} else {
-//					reader.skipTag(name);
+//					reader.skipTag(Name);
 //				}
 //			}
 //		} while (reader.withinMarker(marker));
@@ -577,11 +577,11 @@
 //		state.mDefaultCarried = state.mDataFileVersion != 0 ? true : reader.isAttributeSet(ATTRIBUTE_CARRIED);
 //		do {
 //			if (reader.next() == XMLNodeType.START_TAG) {
-//				String name = reader.getName();
-//				if (Equipment.TAG_EQUIPMENT.equals(name) || Equipment.TAG_EQUIPMENT_CONTAINER.equals(name)) {
+//				String Name = reader.getName();
+//				if (Equipment.TAG_EQUIPMENT.equals(Name) || Equipment.TAG_EQUIPMENT_CONTAINER.equals(Name)) {
 //					mEquipment.addRow(new Equipment(this, reader, state), true);
 //				} else {
-//					reader.skipTag(name);
+//					reader.skipTag(Name);
 //				}
 //			}
 //		} while (reader.withinMarker(marker));
@@ -1220,8 +1220,8 @@
 //	}
 
 //	/**
-//	 * @param encumbrance The encumbrance level.
-//	 * @return The maximum amount the character can carry for the specified encumbrance level.
+//	 * @param encumbrance The encumbrance Level.
+//	 * @return The maximum Amount the character can carry for the specified encumbrance Level.
 //	 */
 //	public WeightValue getMaximumCarry(Encumbrance encumbrance) {
 //		WeightUnits calcUnits = SheetPreferences.areGurpsMetricRulesUsed() && SheetPreferences.getWeightUnits().isMetric() ? WeightUnits.KG : WeightUnits.LB;
@@ -1349,8 +1349,8 @@
 //	}
 
 //	/**
-//	 * @param encumbrance The encumbrance level.
-//	 * @return The character's ground move for the specified encumbrance level.
+//	 * @param encumbrance The encumbrance Level.
+//	 * @return The character's ground move for the specified encumbrance Level.
 //	 */
 //	public int getMove(Encumbrance encumbrance) {
 //		int basicMove = getBasicMove();
@@ -1362,8 +1362,8 @@
 //	}
 
 //	/**
-//	 * @param encumbrance The encumbrance level.
-//	 * @return The character's dodge for the specified encumbrance level.
+//	 * @param encumbrance The encumbrance Level.
+//	 * @return The character's dodge for the specified encumbrance Level.
 //	 */
 //	public int getDodge(Encumbrance encumbrance) {
 //		int dodge = (int) Math.floor(getBasicSpeed()) + 3 + encumbrance.getEncumbrancePenalty() + mDodgeBonus;
@@ -1414,7 +1414,7 @@
 //		}
 //	}
 
-//	/** @return The current encumbrance level. */
+//	/** @return The current encumbrance Level. */
 //	public Encumbrance getEncumbranceLevel() {
 //		double carried = getWeightCarried().getNormalizedValue();
 //		for (Encumbrance encumbrance : Encumbrance.values()) {
@@ -1489,7 +1489,7 @@
 //		mCachedWeightCarried = new WeightValue(0, SheetPreferences.getWeightUnits());
 //		mCachedWealthCarried = 0.0;
 //		for (Equipment equipment : getEquipmentIterator()) {
-//			int quantity = equipment.getQuantity();
+//			int Quantity = equipment.getQuantity();
 //			if (equipment.isCarried()) {
 //				WeightValue weight = new WeightValue(equipment.getWeight());
 //				if (SheetPreferences.areGurpsMetricRulesUsed()) {
@@ -1499,10 +1499,10 @@
 //						weight = GURPSCharacter.convertFromGurpsMetric(weight);
 //					}
 //				}
-//				weight.setValue(weight.getValue() * quantity);
+//				weight.setValue(weight.getValue() * Quantity);
 //				mCachedWeightCarried.add(weight);
 //			}
-//			mCachedWealthCarried += quantity * equipment.getValue();
+//			mCachedWealthCarried += Quantity * equipment.getValue();
 //		}
 //		if (notify) {
 //			if (!savedWeight.equals(mCachedWeightCarried)) {
@@ -1756,7 +1756,7 @@
 //		return getPointsForAttribute(mHealth - 10, 10, mHealthCostReduction);
 //	}
 
-//	/** @return The total number of points this character has. */
+//	/** @return The total number of points this character Has. */
 //	public int getTotalPoints() {
 //		return mTotalPoints;
 //	}
@@ -2005,7 +2005,7 @@
 //	/**
 //	 * Sets the current hit points.
 //	 *
-//	 * @param hp The hit point amount.
+//	 * @param hp The hit point Amount.
 //	 */
 //	public void setCurrentHitPoints(String hp) {
 //		if (!mCurrentHitPoints.equals(hp)) {
@@ -2310,7 +2310,7 @@
 //	/**
 //	 * Sets the current fatigue points.
 //	 *
-//	 * @param fp The fatigue point amount.
+//	 * @param fp The fatigue point Amount.
 //	 */
 //	public void setCurrentFatiguePoints(String fp) {
 //		if (!mCurrentFatiguePoints.equals(fp)) {
@@ -2359,14 +2359,14 @@
 //	}
 
 //	/**
-//	 * Searches the character's current advantages list for the specified name.
+//	 * Searches the character's current advantages list for the specified Name.
 //	 *
-//	 * @param name The name to look for.
+//	 * @param Name The Name to look for.
 //	 * @return The advantage, if present, or <code>null</code>.
 //	 */
-//	public Advantage getAdvantageNamed(String name) {
+//	public Advantage getAdvantageNamed(String Name) {
 //		for (Advantage advantage : getAdvantagesIterator()) {
-//			if (advantage.getName().equals(name)) {
+//			if (advantage.getName().equals(Name)) {
 //				return advantage;
 //			}
 //		}
@@ -2374,13 +2374,13 @@
 //	}
 
 //	/**
-//	 * Searches the character's current advantages list for the specified name.
+//	 * Searches the character's current advantages list for the specified Name.
 //	 *
-//	 * @param name The name to look for.
+//	 * @param Name The Name to look for.
 //	 * @return Whether it is present or not.
 //	 */
-//	public bool hasAdvantageNamed(String name) {
-//		return getAdvantageNamed(name) != null;
+//	public bool hasAdvantageNamed(String Name) {
+//		return getAdvantageNamed(Name) != null;
 //	}
 
 //	/** @return The outline model for the character's skills. */
@@ -2394,23 +2394,23 @@
 //	}
 
 //	/**
-//	 * Searches the character's current skill list for the specified name.
+//	 * Searches the character's current skill list for the specified Name.
 //	 *
-//	 * @param name The name to look for.
-//	 * @param specialization The specialization to look for. Pass in <code>null</code> or an empty
+//	 * @param Name The Name to look for.
+//	 * @param Specialization The Specialization to look for. Pass in <code>null</code> or an empty
 //	 *            string to ignore.
 //	 * @param requirePoints Only look at {@link Skill}s that have points.
 //	 * @param excludes The set of {@link Skill}s to exclude from consideration.
 //	 * @return The skill if it is present, or <code>null</code> if its not.
 //	 */
-//	public ArrayList<Skill> getSkillNamed(String name, string specialization, bool requirePoints, HashSet<String> excludes) {
+//	public ArrayList<Skill> getSkillNamed(String Name, string Specialization, bool requirePoints, HashSet<String> excludes) {
 //		ArrayList<Skill> skills = new ArrayList<>();
-//		bool checkSpecialization = specialization != null && specialization.length() > 0;
+//		bool checkSpecialization = Specialization != null && Specialization.length() > 0;
 //		for (Skill skill : getSkillsIterator()) {
 //			if (excludes == null || !excludes.contains(skill.toString())) {
 //				if (!requirePoints || skill.getPoints() > 0) {
-//					if (skill.getName().equalsIgnoreCase(name)) {
-//						if (!checkSpecialization || skill.getSpecialization().equalsIgnoreCase(specialization)) {
+//					if (skill.getName().equalsIgnoreCase(Name)) {
+//						if (!checkSpecialization || skill.getSpecialization().equalsIgnoreCase(Specialization)) {
 //							skills.add(skill);
 //						}
 //					}
@@ -2421,26 +2421,26 @@
 //	}
 
 //	/**
-//	 * Searches the character's current {@link Skill} list for the {@link Skill} with the best level
-//	 * that matches the name.
+//	 * Searches the character's current {@link Skill} list for the {@link Skill} with the best Level
+//	 * that matches the Name.
 //	 *
-//	 * @param name The {@link Skill} name to look for.
-//	 * @param specialization An optional specialization to look for. Pass <code>null</code> if it is
+//	 * @param Name The {@link Skill} Name to look for.
+//	 * @param Specialization An optional Specialization to look for. Pass <code>null</code> if it is
 //	 *            not needed.
 //	 * @param requirePoints Only look at {@link Skill}s that have points.
 //	 * @param excludes The set of {@link Skill}s to exclude from consideration.
-//	 * @return The {@link Skill} that matches with the highest level.
+//	 * @return The {@link Skill} that matches with the highest Level.
 //	 */
-//	public Skill getBestSkillNamed(String name, string specialization, bool requirePoints, HashSet<String> excludes) {
+//	public Skill getBestSkillNamed(String Name, string Specialization, bool requirePoints, HashSet<String> excludes) {
 //		Skill best = null;
-//		int level = Integer.MIN_VALUE;
+//		int Level = Integer.MIN_VALUE;
 
-//		for (Skill skill : getSkillNamed(name, specialization, requirePoints, excludes)) {
+//		for (Skill skill : getSkillNamed(Name, Specialization, requirePoints, excludes)) {
 //			int skillLevel = skill.getLevel(excludes);
 
-//			if (best == null || skillLevel > level) {
+//			if (best == null || skillLevel > Level) {
 //				best = skill;
-//				level = skillLevel;
+//				Level = skillLevel;
 //			}
 //		}
 //		return best;
@@ -2510,7 +2510,7 @@
 
 //	/**
 //	 * @param id The cost reduction ID to search for.
-//	 * @return The cost reduction, as a percentage.
+//	 * @return The cost reduction, as a Percentage.
 //	 */
 //	public int getCostReductionFor(String id) {
 //		int total = 0;
@@ -2548,8 +2548,8 @@
 
 //	/**
 //	 * @param id The feature ID to search for.
-//	 * @param nameQualifier The name qualifier.
-//	 * @param specializationQualifier The specialization qualifier.
+//	 * @param nameQualifier The Name qualifier.
+//	 * @param specializationQualifier The Specialization qualifier.
 //	 * @return The bonuses.
 //	 */
 //	public ArrayList<WeaponBonus> getWeaponComparedBonusesFor(String id, string nameQualifier, string specializationQualifier) {
@@ -2582,8 +2582,8 @@
 
 //	/**
 //	 * @param id The feature ID to search for.
-//	 * @param nameQualifier The name qualifier.
-//	 * @param specializationQualifier The specialization qualifier.
+//	 * @param nameQualifier The Name qualifier.
+//	 * @param specializationQualifier The Specialization qualifier.
 //	 * @return The bonus.
 //	 */
 //	public int getSkillComparedIntegerBonusFor(String id, string nameQualifier, string specializationQualifier) {
@@ -2643,12 +2643,12 @@
 //	/**
 //	 * Post an undo edit if we're not currently in an undo.
 //	 *
-//	 * @param name The name of the undo.
+//	 * @param Name The Name of the undo.
 //	 * @param id The ID of the field being changed.
 //	 * @param before The original value.
 //	 * @param after The new value.
 //	 */
-//	void postUndoEdit(String name, string id, Object before, Object after) {
+//	void postUndoEdit(String Name, string id, Object before, Object after) {
 //		StdUndoManager mgr = getUndoManager();
 //		if (!mgr.isInTransaction()) {
 //			bool add;
@@ -2658,7 +2658,7 @@
 //				add = !before.equals(after);
 //			}
 //			if (add) {
-//				addEdit(new CharacterFieldUndo(this, name, id, before, after));
+//				addEdit(new CharacterFieldUndo(this, Name, id, before, after));
 //			}
 //		}
 //	}

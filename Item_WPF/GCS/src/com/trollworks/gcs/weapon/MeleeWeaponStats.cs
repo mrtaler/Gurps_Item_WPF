@@ -87,13 +87,13 @@
 
 //	@Override
 //	protected void loadSelf(XMLReader reader) throws IOException {
-//		String name = reader.getName();
+//		String Name = reader.getName();
 
-//		if (TAG_REACH.equals(name)) {
+//		if (TAG_REACH.equals(Name)) {
 //			mReach = reader.readText();
-//		} else if (TAG_PARRY.equals(name)) {
+//		} else if (TAG_PARRY.equals(Name)) {
 //			mParry = reader.readText();
-//		} else if (TAG_BLOCK.equals(name)) {
+//		} else if (TAG_BLOCK.equals(Name)) {
 //			mBlock = reader.readText();
 //		} else {
 //			super.loadSelf(reader);
@@ -165,12 +165,12 @@
 //								int best = Integer.MIN_VALUE;
 //								for (SkillDefault skillDefault : getDefaults()) {
 //									SkillDefaultType type = skillDefault.getType();
-//									int level = type.getSkillLevelFast(character, skillDefault, new HashSet<String>());
-//									if (level != Integer.MIN_VALUE && type != baseDefaultType) {
-//										level = level / 2 + 3 + (baseDefaultType == SkillDefaultType.Parry ? character.getParryBonus() : character.getBlockBonus());
+//									int Level = type.getSkillLevelFast(character, skillDefault, new HashSet<String>());
+//									if (Level != Integer.MIN_VALUE && type != baseDefaultType) {
+//										Level = Level / 2 + 3 + (baseDefaultType == SkillDefaultType.Parry ? character.getParryBonus() : character.getBlockBonus());
 //									}
-//									if (level > best) {
-//										best = level;
+//									if (Level > best) {
+//										best = Level;
 //									}
 //								}
 //								skillLevel = best != Integer.MIN_VALUE ? best : 0;

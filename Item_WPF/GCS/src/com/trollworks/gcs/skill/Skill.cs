@@ -65,8 +65,8 @@
 //	public static const String		TAG_SKILL					= "skill";										//$NON-NLS-1$
 //	/** The XML tag used for containers. */
 //	public static const String		TAG_SKILL_CONTAINER			= "skill_container";							//$NON-NLS-1$
-//	private static const String		TAG_NAME					= "name";										//$NON-NLS-1$
-//	private static const String		TAG_SPECIALIZATION			= "specialization";								//$NON-NLS-1$
+//	private static const String		TAG_NAME					= "Name";										//$NON-NLS-1$
+//	private static const String		TAG_SPECIALIZATION			= "Specialization";								//$NON-NLS-1$
 //	private static const String		TAG_TECH_LEVEL				= "tech_level";									//$NON-NLS-1$
 //	private static const String		TAG_DIFFICULTY				= "difficulty";									//$NON-NLS-1$
 //	private static const String		TAG_POINTS					= "points";										//$NON-NLS-1$
@@ -74,15 +74,15 @@
 //	private static const String		TAG_ENCUMBRANCE_PENALTY		= "encumbrance_penalty_multiplier";				//$NON-NLS-1$
 //	/** The prefix used in front of all IDs for the skills. */
 //	public static const String		PREFIX						= GURPSCharacter.CHARACTER_PREFIX + "skill.";	//$NON-NLS-1$
-//	/** The field ID for name changes. */
+//	/** The field ID for Name changes. */
 //	public static const String		ID_NAME						= PREFIX + "Name";								//$NON-NLS-1$
-//	/** The field ID for specialization changes. */
+//	/** The field ID for Specialization changes. */
 //	public static const String		ID_SPECIALIZATION			= PREFIX + "Specialization";					//$NON-NLS-1$
-//	/** The field ID for tech level changes. */
+//	/** The field ID for tech Level changes. */
 //	public static const String		ID_TECH_LEVEL				= PREFIX + "TechLevel";							//$NON-NLS-1$
-//	/** The field ID for level changes. */
+//	/** The field ID for Level changes. */
 //	public static const String		ID_LEVEL					= PREFIX + "Level";								//$NON-NLS-1$
-//	/** The field ID for relative level changes. */
+//	/** The field ID for relative Level changes. */
 //	public static const String		ID_RELATIVE_LEVEL			= PREFIX + "RelativeLevel";						//$NON-NLS-1$
 //	/** The field ID for difficulty changes. */
 //	public static const String		ID_DIFFICULTY				= PREFIX + "Difficulty";						//$NON-NLS-1$
@@ -118,22 +118,22 @@
 //	private SkillDefault			mDefaultedFrom;
 
 //	/**
-//	 * Creates a string suitable for displaying the level.
+//	 * Creates a string suitable for displaying the Level.
 //	 *
-//	 * @param level The skill level.
-//	 * @param relativeLevel The relative skill level.
-//	 * @param attribute The attribute the skill is based on.
+//	 * @param Level The skill Level.
+//	 * @param relativeLevel The relative skill Level.
+//	 * @param Attribute The Attribute the skill is based on.
 //	 * @param isContainer Whether this skill is a container or not.
 //	 * @return The formatted string.
 //	 */
-//	public static string getSkillDisplayLevel(int level, int relativeLevel, SkillAttribute attribute, bool isContainer) {
+//	public static string getSkillDisplayLevel(int Level, int relativeLevel, SkillAttribute Attribute, bool isContainer) {
 //		if (isContainer) {
 //			return EMPTY;
 //		}
-//		if (level < 0) {
+//		if (Level < 0) {
 //			return "-"; //$NON-NLS-1$
 //		}
-//		return Numbers.format(level) + SLASH + attribute + Numbers.formatWithForcedSign(relativeLevel);
+//		return Numbers.format(Level) + SLASH + Attribute + Numbers.formatWithForcedSign(relativeLevel);
 //	}
 
 //	/**
@@ -289,12 +289,12 @@
 
 //	@Override
 //	protected void loadSubElement(XMLReader reader, LoadState state) throws IOException {
-//		String name = reader.getName();
-//		if (TAG_NAME.equals(name)) {
+//		String Name = reader.getName();
+//		if (TAG_NAME.equals(Name)) {
 //			mName = reader.readText().replace(NEWLINE, SPACE);
-//		} else if (TAG_SPECIALIZATION.equals(name)) {
+//		} else if (TAG_SPECIALIZATION.equals(Name)) {
 //			mSpecialization = reader.readText().replace(NEWLINE, SPACE);
-//		} else if (TAG_TECH_LEVEL.equals(name)) {
+//		} else if (TAG_TECH_LEVEL.equals(Name)) {
 //			mTechLevel = reader.readText().replace(NEWLINE, SPACE);
 //			if (mTechLevel != null) {
 //				DataFile dataFile = getDataFile();
@@ -302,22 +302,22 @@
 //					mTechLevel = EMPTY;
 //				}
 //			}
-//		} else if (TAG_REFERENCE.equals(name)) {
+//		} else if (TAG_REFERENCE.equals(Name)) {
 //			mReference = reader.readText().replace(NEWLINE, SPACE);
-//		} else if (!state.mForUndo && (TAG_SKILL.equals(name) || TAG_SKILL_CONTAINER.equals(name))) {
+//		} else if (!state.mForUndo && (TAG_SKILL.equals(Name) || TAG_SKILL_CONTAINER.equals(Name))) {
 //			addChild(new Skill(mDataFile, reader, state));
-//		} else if (!state.mForUndo && Technique.TAG_TECHNIQUE.equals(name)) {
+//		} else if (!state.mForUndo && Technique.TAG_TECHNIQUE.equals(Name)) {
 //			addChild(new Technique(mDataFile, reader, state));
 //		} else if (!canHaveChildren()) {
-//			if (TAG_DIFFICULTY.equals(name)) {
+//			if (TAG_DIFFICULTY.equals(Name)) {
 //				setDifficultyFromText(reader.readText().replace(NEWLINE, SPACE));
-//			} else if (TAG_POINTS.equals(name)) {
+//			} else if (TAG_POINTS.equals(Name)) {
 //				mPoints = reader.readInteger(1);
-//			} else if (TAG_ENCUMBRANCE_PENALTY.equals(name)) {
+//			} else if (TAG_ENCUMBRANCE_PENALTY.equals(Name)) {
 //				mEncumbrancePenaltyMultiplier = Math.min(Math.max(reader.readInteger(0), 0), 9);
-//			} else if (MeleeWeaponStats.TAG_ROOT.equals(name)) {
+//			} else if (MeleeWeaponStats.TAG_ROOT.equals(Name)) {
 //				mWeapons.add(new MeleeWeaponStats(this, reader));
-//			} else if (RangedWeaponStats.TAG_ROOT.equals(name)) {
+//			} else if (RangedWeaponStats.TAG_ROOT.equals(Name)) {
 //				mWeapons.add(new RangedWeaponStats(this, reader));
 //			} else {
 //				super.loadSubElement(reader, state);
@@ -379,59 +379,59 @@
 //		return false;
 //	}
 
-//	/** @return The level. */
+//	/** @return The Level. */
 //	public int getLevel() {
 //		return mLevel;
 //	}
 
-//	/** @return The relative level. */
+//	/** @return The relative Level. */
 //	public int getRelativeLevel() {
 //		return mRelativeLevel;
 //	}
 
-//	/** @return The name. */
+//	/** @return The Name. */
 //	public string getName() {
 //		return mName;
 //	}
 
 //	/**
-//	 * @param name The name to set.
+//	 * @param Name The Name to set.
 //	 * @return Whether it was changed.
 //	 */
-//	public bool setName(String name) {
-//		if (!mName.equals(name)) {
-//			mName = name;
+//	public bool setName(String Name) {
+//		if (!mName.equals(Name)) {
+//			mName = Name;
 //			notifySingle(ID_NAME);
 //			return true;
 //		}
 //		return false;
 //	}
 
-//	/** @return The specialization. */
+//	/** @return The Specialization. */
 //	public string getSpecialization() {
 //		return mSpecialization;
 //	}
 
 //	/**
-//	 * @param specialization The specialization to set.
+//	 * @param Specialization The Specialization to set.
 //	 * @return Whether it was changed.
 //	 */
-//	public bool setSpecialization(String specialization) {
-//		if (!mSpecialization.equals(specialization)) {
-//			mSpecialization = specialization;
+//	public bool setSpecialization(String Specialization) {
+//		if (!mSpecialization.equals(Specialization)) {
+//			mSpecialization = Specialization;
 //			notifySingle(ID_SPECIALIZATION);
 //			return true;
 //		}
 //		return false;
 //	}
 
-//	/** @return The tech level. */
+//	/** @return The tech Level. */
 //	public string getTechLevel() {
 //		return mTechLevel;
 //	}
 
 //	/**
-//	 * @param techLevel The tech level to set.
+//	 * @param techLevel The tech Level to set.
 //	 * @return Whether it was changed.
 //	 */
 //	public bool setTechLevel(String techLevel) {
@@ -465,17 +465,17 @@
 //	}
 
 //	/**
-//	 * Call to force an update of the level and relative level for this skill or technique.
+//	 * Call to force an update of the Level and relative Level for this skill or technique.
 //	 *
 //	 * @param notify Whether or not a notification should be issued on a change.
 //	 */
 //	public void updateLevel(bool notify) {
 //		int savedLevel = mLevel;
 //		int savedRelativeLevel = mRelativeLevel;
-//		SkillLevel level = calculateLevelSelf();
+//		SkillLevel Level = calculateLevelSelf();
 
-//		mLevel = level.mLevel;
-//		mRelativeLevel = level.mRelativeLevel;
+//		mLevel = Level.mLevel;
+//		mRelativeLevel = Level.mRelativeLevel;
 
 //		if (notify) {
 //			startNotify();
@@ -489,7 +489,7 @@
 //		}
 //	}
 
-//	/** @return The calculated skill level. */
+//	/** @return The calculated skill Level. */
 //	protected SkillLevel calculateLevelSelf() {
 //		mDefaultedFrom = getBestDefaultWithPoints();
 //		return calculateLevel(getCharacter(), getName(), getSpecialization(), getDefaults(), getAttribute(), getDifficulty(), getPoints(), new HashSet<String>(), getEncumbrancePenaltyMultiplier());
@@ -497,13 +497,13 @@
 
 //	/**
 //	 * @param excludes Skills to exclude, other than this one.
-//	 * @return The calculated level.
+//	 * @return The calculated Level.
 //	 */
 //	public int getLevel(HashSet<String> excludes) {
 //		return calculateLevel(getCharacter(), getName(), getSpecialization(), getDefaults(), getAttribute(), getDifficulty(), getPoints(), excludes, getEncumbrancePenaltyMultiplier()).mLevel;
 //	}
 
-//	/** @return The attribute. */
+//	/** @return The Attribute. */
 //	public SkillAttribute getAttribute() {
 //		return mAttribute;
 //	}
@@ -514,13 +514,13 @@
 //	}
 
 //	/**
-//	 * @param attribute The attribute to set.
+//	 * @param Attribute The Attribute to set.
 //	 * @param difficulty The difficulty to set.
 //	 * @return Whether it was changed.
 //	 */
-//	public bool setDifficulty(SkillAttribute attribute, SkillDifficulty difficulty) {
-//		if (mAttribute != attribute || mDifficulty != difficulty) {
-//			mAttribute = attribute;
+//	public bool setDifficulty(SkillAttribute Attribute, SkillDifficulty difficulty) {
+//		if (mAttribute != Attribute || mDifficulty != difficulty) {
+//			mAttribute = Attribute;
 //			mDifficulty = difficulty;
 //			startNotify();
 //			notify(ID_DIFFICULTY, this);
@@ -588,17 +588,17 @@
 //		return SkillColumn.values()[column.getID()].getDataAsText(this);
 //	}
 
-//	/** @param text The combined attribute/difficulty to set. */
+//	/** @param text The combined Attribute/difficulty to set. */
 //	public void setDifficultyFromText(String text) {
-//		SkillAttribute[] attribute = SkillAttribute.values();
+//		SkillAttribute[] Attribute = SkillAttribute.values();
 //		SkillDifficulty[] difficulty = SkillDifficulty.values();
 //		String input = text.trim();
 
-//		for (SkillAttribute element : attribute) {
+//		for (SkillAttribute element : Attribute) {
 //			// We have to go backwards through the list to avoid the
 //			// regex grabbing the "H" in "VH".
 //			for (int j = difficulty.length - 1; j >= 0; j--) {
-//				if (input.matches("(?i).*" + element.name() + ".*/.*" + difficulty[j].name() + ".*")) { //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+//				if (input.matches("(?i).*" + element.Name() + ".*/.*" + difficulty[j].Name() + ".*")) { //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 //					setDifficulty(element, difficulty[j]);
 //					return;
 //				}
@@ -606,23 +606,23 @@
 //		}
 //	}
 
-//	/** @return The formatted attribute/difficulty. */
+//	/** @return The formatted Attribute/difficulty. */
 //	public string getDifficultyAsText() {
 //		return getDifficultyAsText(true);
 //	}
 
 //	/**
-//	 * @param localized Whether to use localized versions of attribute and difficulty.
-//	 * @return The formatted attribute/difficulty.
+//	 * @param localized Whether to use localized versions of Attribute and difficulty.
+//	 * @return The formatted Attribute/difficulty.
 //	 */
 //	public string getDifficultyAsText(bool localized) {
 //		if (canHaveChildren()) {
 //			return EMPTY;
 //		}
 //		StringBuilder buffer = new StringBuilder();
-//		buffer.append(localized ? mAttribute.toString() : mAttribute.name());
+//		buffer.append(localized ? mAttribute.toString() : mAttribute.Name());
 //		buffer.append(SLASH);
-//		buffer.append(localized ? mDifficulty.toString() : mDifficulty.name());
+//		buffer.append(localized ? mDifficulty.toString() : mDifficulty.Name());
 //		return buffer.toString();
 //	}
 
@@ -633,7 +633,7 @@
 //		builder.append(getName());
 //		if (!canHaveChildren()) {
 //			String techLevel = getTechLevel();
-//			String specialization = getSpecialization();
+//			String Specialization = getSpecialization();
 
 //			if (techLevel != null) {
 //				builder.append("/TL"); //$NON-NLS-1$
@@ -642,9 +642,9 @@
 //				}
 //			}
 
-//			if (specialization.length() > 0) {
+//			if (Specialization.length() > 0) {
 //				builder.append(" ("); //$NON-NLS-1$
-//				builder.append(specialization);
+//				builder.append(Specialization);
 //				builder.append(')');
 //			}
 //		}
@@ -678,23 +678,23 @@
 //	}
 
 //	/**
-//	 * Calculates the skill level.
+//	 * Calculates the skill Level.
 //	 *
 //	 * @param character The character the skill will be attached to.
-//	 * @param name The name of the skill.
-//	 * @param specialization The specialization of the skill.
-//	 * @param defaults The defaults the skill has.
-//	 * @param attribute The attribute the skill is based on.
+//	 * @param Name The Name of the skill.
+//	 * @param Specialization The Specialization of the skill.
+//	 * @param defaults The defaults the skill Has.
+//	 * @param Attribute The Attribute the skill is based on.
 //	 * @param difficulty The difficulty of the skill.
 //	 * @param points The number of points spent in the skill.
-//	 * @param excludes The set of skills to exclude from any default calculations.
+//	 * @param excludes The set of skills to exclude from Any default calculations.
 //	 * @param encPenaltyMult The encumbrance penalty multiplier.
-//	 * @return The calculated skill level.
+//	 * @return The calculated skill Level.
 //	 */
-//	public SkillLevel calculateLevel(GURPSCharacter character, string name, string specialization, List<SkillDefault> defaults, SkillAttribute attribute, SkillDifficulty difficulty, int points, HashSet<String> excludes, int encPenaltyMult) {
+//	public SkillLevel calculateLevel(GURPSCharacter character, string Name, string Specialization, List<SkillDefault> defaults, SkillAttribute Attribute, SkillDifficulty difficulty, int points, HashSet<String> excludes, int encPenaltyMult) {
 //		int relativeLevel = difficulty.getBaseRelativeLevel();
-//		int level = attribute.getBaseSkillLevel(character);
-//		if (level != Integer.MIN_VALUE) {
+//		int Level = Attribute.getBaseSkillLevel(character);
+//		if (Level != Integer.MIN_VALUE) {
 //			if (difficulty != SkillDifficulty.W) {
 //				if (mDefaultedFrom != null && mDefaultedFrom.getPoints() > 0) {
 //					points += mDefaultedFrom.getPoints();
@@ -706,33 +706,33 @@
 //			if (points > 0) {
 //				relativeLevel = calculateRelativeLevel(points, relativeLevel);
 //			} else if (mDefaultedFrom != null && mDefaultedFrom.getPoints() < 0) {
-//				relativeLevel = mDefaultedFrom.getAdjLevel() - level;
+//				relativeLevel = mDefaultedFrom.getAdjLevel() - Level;
 //			} else {
-//				level = Integer.MIN_VALUE;
+//				Level = Integer.MIN_VALUE;
 //				relativeLevel = 0;
 //			}
 
-//			if (level != Integer.MIN_VALUE) {
-//				level += relativeLevel;
+//			if (Level != Integer.MIN_VALUE) {
+//				Level += relativeLevel;
 //				if (mDefaultedFrom != null) {
-//					if (level < mDefaultedFrom.getAdjLevel()) {
-//						level = mDefaultedFrom.getAdjLevel();
+//					if (Level < mDefaultedFrom.getAdjLevel()) {
+//						Level = mDefaultedFrom.getAdjLevel();
 //					}
 //				}
-//				int bonus = character.getSkillComparedIntegerBonusFor(ID_NAME + ASTERISK, name, specialization);
-//				level += bonus;
+//				int bonus = character.getSkillComparedIntegerBonusFor(ID_NAME + ASTERISK, Name, Specialization);
+//				Level += bonus;
 //				relativeLevel += bonus;
-//				bonus = character.getIntegerBonusFor(ID_NAME + SLASH + name.toLowerCase());
-//				level += bonus;
+//				bonus = character.getIntegerBonusFor(ID_NAME + SLASH + Name.toLowerCase());
+//				Level += bonus;
 //				relativeLevel += bonus;
-//				level += character.getEncumbranceLevel().getEncumbrancePenalty() * encPenaltyMult;
+//				Level += character.getEncumbranceLevel().getEncumbrancePenalty() * encPenaltyMult;
 //			}
 //		}
-//		return new SkillLevel(level, relativeLevel);
+//		return new SkillLevel(Level, relativeLevel);
 //	}
 
 //	/**
-//	 * Tries to switch defaults with its current default keeping skill level, by adding and freeing
+//	 * Tries to switch defaults with its current default keeping skill Level, by adding and freeing
 //	 * points as necessary. Freed points are kept in former default skill, added points are taken
 //	 * from unspent points.
 //	 *
@@ -805,19 +805,19 @@
 //		if (best != null) {
 //			GURPSCharacter character = getCharacter();
 //			int baseLine = getAttribute().getBaseSkillLevel(character) + getDifficulty().getBaseRelativeLevel();
-//			int level = best.getLevel();
+//			int Level = best.getLevel();
 //			if (best.getType().isSkillBased()) {
-//				String name = best.getName();
-//				level -= character.getSkillComparedIntegerBonusFor(ID_NAME + ASTERISK, name, best.getSpecialization());
-//				level -= character.getIntegerBonusFor(ID_NAME + SLASH + name.toLowerCase());
+//				String Name = best.getName();
+//				Level -= character.getSkillComparedIntegerBonusFor(ID_NAME + ASTERISK, Name, best.getSpecialization());
+//				Level -= character.getIntegerBonusFor(ID_NAME + SLASH + Name.toLowerCase());
 //			}
-//			best.setAdjLevel(level);
-//			if (level == baseLine) {
+//			best.setAdjLevel(Level);
+//			if (Level == baseLine) {
 //				best.setPoints(1);
-//			} else if (level == baseLine + 1) {
+//			} else if (Level == baseLine + 1) {
 //				best.setPoints(2);
-//			} else if (level > baseLine + 1) {
-//				best.setPoints(4 * (level - (baseLine + 1)));
+//			} else if (Level > baseLine + 1) {
+//				best.setPoints(4 * (Level - (baseLine + 1)));
 //			} else {
 //				best.setPoints(-best.getLevel());
 //			}
@@ -836,14 +836,14 @@
 //				HashSet<String> excludes = new HashSet<>();
 //				excludes.add(exclude);
 //				for (SkillDefault skillDefault : defaults) {
-//					// For skill-based defaults, prune out any that already use a default that we
+//					// For skill-based defaults, prune out Any that already use a default that we
 //					// are involved with
 //					if (!skillDefault.equals(excludedDefault) && !isInDefaultChain(this, skillDefault, new HashSet<>())) {
-//						int level = skillDefault.getType().getSkillLevel(character, skillDefault, excludes);
-//						if (level > best) {
-//							best = level;
+//						int Level = skillDefault.getType().getSkillLevel(character, skillDefault, excludes);
+//						if (Level > best) {
+//							best = Level;
 //							bestSkill = new SkillDefault(skillDefault);
-//							bestSkill.setLevel(level);
+//							bestSkill.setLevel(Level);
 //						}
 //					}
 //				}

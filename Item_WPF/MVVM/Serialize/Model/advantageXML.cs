@@ -24,8 +24,8 @@ namespace Item_WPF.MVVM.Serialize.Model
         public ObservableCollection<Weapon_bonusXML> weapon_bonus; //y
         public ObservableCollection<melee_weaponXML> melee_weapon;
         public ObservableCollection<ranged_weaponXML> ranged_weapon;
-        public ObservableCollection<cost_reductionXML> cost_reduction;
-        //  public ObservableCollection<crXML> cr;
+        public ObservableCollection<CostReductionXml> cost_reduction;
+        //  public ObservableCollection<CrXml> cr;
         public XElement cr;
         /**/
         public ObservableCollection<modifierXML> modifier;//y

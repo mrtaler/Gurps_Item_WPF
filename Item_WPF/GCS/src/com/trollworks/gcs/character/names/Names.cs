@@ -15,7 +15,7 @@ using System.Windows;
 
 namespace com.trollworks.gcs.character.names
 {
-    /** An abstract base class for name generation. */
+    /** An abstract base class for Name generation. */
     public abstract class Names
     {
         /**
@@ -23,27 +23,27 @@ namespace com.trollworks.gcs.character.names
          */
         protected static Random RANDOM = new Random();
 
-        /** @return A newly generated male first name. */
+        /** @return A newly generated male first Name. */
         public abstract string getMaleFirstName();
 
-        /** @return A newly generated female first name. */
+        /** @return A newly generated female first Name. */
         public abstract string getFemaleFirstName();
 
         /**
-         * @param male Whether to generate a male or female name.
-         * @return A newly generated first name.
+         * @param male Whether to generate a male or female Name.
+         * @return A newly generated first Name.
          */
         public string getGivenName(bool male)
         {
             return male ? getMaleFirstName() : getFemaleFirstName();
         }
 
-        /** @return A newly generated last name. */
+        /** @return A newly generated last Name. */
         public abstract string getLastName();
 
         /**
-         * @param male Whether to generate a male or female name.
-         * @return A newly generated full (first and last) name.
+         * @param male Whether to generate a male or female Name.
+         * @return A newly generated full (first and last) Name.
          */
         public string getFullName(bool male)
         {
@@ -54,8 +54,8 @@ namespace com.trollworks.gcs.character.names
          * Loads names from a file into an array of strings. The names in the file should be listed one
          * per line.
          *
-         * @param url The {@link URL} to load the name data from.
-         * @param fallback A single name to use in case the file couldn't be loaded.
+         * @param url The {@link URL} to load the Name data from.
+         * @param fallback A single Name to use in case the file couldn't be loaded.
          * @return An array of strings representing the contents of the file.
          */
         protected static string[] loadNames(string url, string fallback)

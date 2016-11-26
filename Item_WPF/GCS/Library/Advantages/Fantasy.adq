@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="US-ASCII" ?>
 <advantage_list unique_id="hv8u7c9f:1c3g0kz6t6jfu" version="1">
 	<advantage version="2">
-		<name>Acute Mana Sense</name>
+		<Name>Acute Mana Sense</Name>
 		<type>Mental, Exotic</type>
-		<levels>1</levels>
-		<points_per_level>2</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>2</points_per_Level>
 		<reference>F128</reference>
 		<categories>
 			<category>Advantage</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Blessed (Armor of Faith)</name>
+		<Name>Blessed (Armor of Faith)</Name>
 		<type>Mental, Supernatural</type>
 		<base_points>11</base_points>
 		<reference>F128</reference>
@@ -20,7 +20,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Blessed (The King's Two Bodies)</name>
+		<Name>Blessed (The King's Two Bodies)</Name>
 		<type>Mental, Supernatural</type>
 		<base_points>10</base_points>
 		<reference>F128</reference>
@@ -29,7 +29,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Code of Honor (Highwayman's)</name>
+		<Name>Code of Honor (Highwayman's)</Name>
 		<type>Mental</type>
 		<base_points>-5</base_points>
 		<reference>F132</reference>
@@ -38,7 +38,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Compulsive Debating</name>
+		<Name>Compulsive Debating</Name>
 		<type>Mental</type>
 		<base_points>-5</base_points>
 		<cr>12</cr>
@@ -48,14 +48,14 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Modular Abilities (Spirit Trapping)</name>
+		<Name>Modular Abilities (Spirit Trapping)</Name>
 		<type>Mental, Exotic</type>
-		<levels>1</levels>
+		<Levels>1</Levels>
 		<base_points>6</base_points>
-		<points_per_level>4</points_per_level>
+		<points_per_Level>4</points_per_Level>
 		<modifier version="1" enabled="no">
-			<name>With physical objects</name>
-			<cost type="percentage">-20</cost>
+			<Name>With physical objects</Name>
+			<cost type="Percentage">-20</cost>
 			<affects>total</affects>
 		</modifier>
 		<reference>F130</reference>
@@ -64,35 +64,35 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Social Stigma (Dead)</name>
+		<Name>Social Stigma (Dead)</Name>
 		<type>Social</type>
 		<base_points>-20</base_points>
 		<reference>F133</reference>
-		<notes>-4 Reaction</notes>
+		<Notes>-4 Reaction</Notes>
 		<categories>
 			<category>Disadvantage</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Social Stigma (Vermin)</name>
+		<Name>Social Stigma (Vermin)</Name>
 		<type>Social</type>
 		<base_points>-15</base_points>
 		<reference>F133</reference>
-		<notes>-3 Reaction</notes>
+		<Notes>-3 Reaction</Notes>
 		<categories>
 			<category>Disadvantage</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Talent (Allure)</name>
+		<Name>Talent (Allure)</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>5</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>5</points_per_Level>
 		<modifier version="1">
-			<name>Reaction Bonus</name>
-			<cost type="percentage">0</cost>
+			<Name>Reaction Bonus</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Anyone attracted to you or who would employ you as actress, courtesan, or model</notes>
+			<Notes>Anyone attracted to you or who would employ you as actress, courtesan, or model</Notes>
 		</modifier>
 		<reference>F132,PU3:6</reference>
 		<categories>
@@ -100,52 +100,52 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<name compare="is">Dancing</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Dancing</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Erotic Art</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Erotic Art</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Makeup</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Makeup</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Sex Appeal</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Sex Appeal</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Singing</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Singing</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 	</advantage>
 	<advantage version="2">
-		<name>Talent (Artificer)</name>
+		<Name>Talent (Artificer)</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>10</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>10</points_per_Level>
 		<modifier version="1">
-			<name>Reaction Bonus</name>
-			<cost type="percentage">0</cost>
+			<Name>Reaction Bonus</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Employers</notes>
+			<Notes>Employers</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternate Benefit</name>
-			<cost type="percentage">0</cost>
+			<Name>Alternate Benefit</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Eliminate -1/level to a skill with success on another to improvise tools; Apply to Enigmatic Device Table rolls and other unskilled tech rolls.</notes>
+			<Notes>Eliminate -1/Level to a skill with success on another to improvise tools; Apply to Enigmatic Device Table rolls and other unskilled tech rolls.</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternative Cost</name>
+			<Name>Alternative Cost</Name>
 			<cost type="points">-1</cost>
-			<affects>levels only</affects>
+			<affects>Levels only</affects>
 		</modifier>
 		<reference>F132,PU3:6</reference>
 		<categories>
@@ -153,72 +153,72 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<name compare="is">armoury</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">armoury</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">carpentry</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">carpentry</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">electrician</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">electrician</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">electronics repair</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">electronics repair</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">engineer</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">engineer</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">machinist</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">machinist</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">masonry</name>
-			<specialization compare="is anything"></specialization>
-			<amount>1</amount>
+			<Name Compare="is">masonry</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount>1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">mechanic</name>
-			<specialization compare="is anything"></specialization>
-			<amount>1</amount>
+			<Name Compare="is">mechanic</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount>1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">smith</name>
-			<specialization compare="is anything"></specialization>
-			<amount>1</amount>
+			<Name Compare="is">smith</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount>1</Amount>
 		</skill_bonus>
 	</advantage>
 	<advantage version="2">
-		<name>Talent (Bard)</name>
+		<Name>Talent (Bard)</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>5</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>5</points_per_Level>
 		<modifier version="1">
-			<name>Reaction Bonus</name>
-			<cost type="percentage">0</cost>
+			<Name>Reaction Bonus</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Audiences and fellow bards</notes>
+			<Notes>Audiences and fellow bards</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternate Benefit</name>
-			<cost type="percentage">0</cost>
+			<Name>Alternate Benefit</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Bonus to first influence roll made against one or more audience members after a successful performance.</notes>
+			<Notes>Bonus to first influence roll made against one or more audience members after a successful performance.</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternative Cost</name>
+			<Name>Alternative Cost</Name>
 			<cost type="points">1</cost>
-			<affects>levels only</affects>
+			<affects>Levels only</affects>
 		</modifier>
 		<reference>F132,PU3:6</reference>
 		<categories>
@@ -226,57 +226,57 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<name compare="is">heraldry</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">heraldry</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">literature</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">literature</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">musical influence</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">musical influence</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">poetry</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">poetry</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">public speaking</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">public speaking</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">singing</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">singing</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 	</advantage>
 	<advantage version="2">
-		<name>Talent (Born Entertainer)</name>
+		<Name>Talent (Born Entertainer)</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>5</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>5</points_per_Level>
 		<modifier version="1">
-			<name>Reaction Bonus</name>
-			<cost type="percentage">0</cost>
+			<Name>Reaction Bonus</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Crowds</notes>
+			<Notes>Crowds</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternate Benefit</name>
-			<cost type="percentage">0</cost>
+			<Name>Alternate Benefit</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>+1/level to first influence roll made against one or more audience members after a successful performance.</notes>
+			<Notes>+1/Level to first influence roll made against one or more audience members after a successful performance.</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternative Cost</name>
+			<Name>Alternative Cost</Name>
 			<cost type="points">1</cost>
-			<affects>levels only</affects>
+			<affects>Levels only</affects>
 		</modifier>
 		<reference>F132,PU3:6</reference>
 		<categories>
@@ -284,52 +284,52 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<name compare="is">acting</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">acting</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">dancing</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">dancing</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">performance</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">performance</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">public speaking</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">public speaking</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">singing</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">singing</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">stage combat</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">stage combat</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 	</advantage>
 	<advantage version="2">
-		<name>Talent (Devotion)</name>
+		<Name>Talent (Devotion)</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>5</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>5</points_per_Level>
 		<modifier version="1">
-			<name>Reaction Bonus</name>
-			<cost type="percentage">0</cost>
+			<Name>Reaction Bonus</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Coreligionists and sympathizers</notes>
+			<Notes>Coreligionists and sympathizers</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternate Benefit</name>
-			<cost type="percentage">0</cost>
+			<Name>Alternate Benefit</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Bonus to will to resist "evil influences"</notes>
+			<Notes>Bonus to will to resist "evil influences"</Notes>
 		</modifier>
 		<reference>F132,PU3:9</reference>
 		<categories>
@@ -337,42 +337,42 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<name compare="is">Autohypnosis</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Autohypnosis</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Exorcism</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Exorcism</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Meditation</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Meditation</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Religious Ritual</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Religious Ritual</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 	</advantage>
 	<advantage version="2">
-		<name>Talent (Goodwife)</name>
+		<Name>Talent (Goodwife)</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>5</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>5</points_per_Level>
 		<modifier version="1">
-			<name>Reaction Bonus</name>
-			<cost type="percentage">0</cost>
+			<Name>Reaction Bonus</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Beneficiaries, prospective spouses, other housewives</notes>
+			<Notes>Beneficiaries, prospective spouses, other housewives</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternate Benefit</name>
-			<cost type="percentage">0</cost>
+			<Name>Alternate Benefit</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Bonus to defaults made in your own home to repair, maintain, and protect it.</notes>
+			<Notes>Bonus to defaults made in your own home to repair, maintain, and protect it.</Notes>
 		</modifier>
 		<reference>F132,PU3:10</reference>
 		<categories>
@@ -380,52 +380,52 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<name compare="is">Cooking</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Cooking</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Diagnosis</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Diagnosis</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Gardening</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Gardening</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Housekeeping</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Housekeeping</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Sewing</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Sewing</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 	</advantage>
 	<advantage version="2">
-		<name>Talent (Mariner)</name>
+		<Name>Talent (Mariner)</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>10</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>10</points_per_Level>
 		<modifier version="1">
-			<name>Reaction Bonus</name>
-			<cost type="percentage">0</cost>
+			<Name>Reaction Bonus</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Seafarers</notes>
+			<Notes>Seafarers</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternate Benefit</name>
-			<cost type="percentage">0</cost>
+			<Name>Alternate Benefit</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Bonus to resist seasicknes and reduce unfamiliarity penalties for system on an appropriate boat or ship</notes>
+			<Notes>Bonus to resist seasicknes and reduce unfamiliarity penalties for system on an appropriate boat or ship</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternative Cost</name>
+			<Name>Alternative Cost</Name>
 			<cost type="points">-3</cost>
-			<affects>levels only</affects>
+			<affects>Levels only</affects>
 		</modifier>
 		<reference>F132,PU3:13</reference>
 		<categories>
@@ -433,68 +433,68 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<name compare="is">Boating</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Boating</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Freight Handling</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Freight Handling</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Knot-Tying</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Knot-Tying</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Meteorology</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Meteorology</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Navigation</name>
-			<specialization compare="is">Sea</specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Navigation</Name>
+			<Specialization Compare="is">Sea</Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Seamanship</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Seamanship</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Shiphandling</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Shiphandling</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Weather Sense</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Weather Sense</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<prereq_list all="yes">
-			<advantage_prereq has="no">
-				<name compare="is">Talent (Born Sailor)</name>
-				<notes compare="is anything"></notes>
+			<advantage_prereq Has="no">
+				<Name Compare="is">Talent (Born Sailor)</Name>
+				<Notes Compare="is anything"></Notes>
 			</advantage_prereq>
 		</prereq_list>
 	</advantage>
 	<advantage version="2">
-		<name>Talent (Master Builder)</name>
+		<Name>Talent (Master Builder)</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>5</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>5</points_per_Level>
 		<modifier version="1">
-			<name>Reaction Bonus</name>
-			<cost type="percentage">0</cost>
+			<Name>Reaction Bonus</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Workers on projects, prospective employers</notes>
+			<Notes>Workers on projects, prospective employers</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternate Benefit</name>
-			<cost type="percentage">0</cost>
+			<Name>Alternate Benefit</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Bonus to avoid common workplace hazards, even if used as traps</notes>
+			<Notes>Bonus to avoid common workplace hazards, even if used as traps</Notes>
 		</modifier>
 		<reference>F132,PU3:11</reference>
 		<categories>
@@ -502,52 +502,52 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<name compare="is">Architecture</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Architecture</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Carpentry</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Carpentry</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Engineer</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Engineer</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Forced Entry</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Forced Entry</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Masonry</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Masonry</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 	</advantage>
 	<advantage version="2">
-		<name>Talent (Sage)</name>
+		<Name>Talent (Sage)</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>10</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>10</points_per_Level>
 		<modifier version="1">
-			<name>Reaction Bonus</name>
-			<cost type="percentage">0</cost>
+			<Name>Reaction Bonus</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Scholars, students, and people who consult you</notes>
+			<Notes>Scholars, students, and people who consult you</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternate Benefit</name>
-			<cost type="percentage">0</cost>
+			<Name>Alternate Benefit</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
-			<notes>Bonus to IQ defaults to non-covered skills for general knowledge only</notes>
+			<Notes>Bonus to IQ defaults to non-covered skills for general knowledge only</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Alternative Cost</name>
+			<Name>Alternative Cost</Name>
 			<cost type="points">2</cost>
-			<affects>levels only</affects>
+			<affects>Levels only</affects>
 		</modifier>
 		<reference>F132</reference>
 		<categories>
@@ -555,64 +555,64 @@
 			<category>Talent</category>
 		</categories>
 		<skill_bonus>
-			<name compare="is">Archaeology</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Archaeology</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Expert Skill</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Expert Skill</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Geography</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Geography</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Heraldry</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Heraldry</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Hidden Lore</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Hidden Lore</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">History</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">History</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Law</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Law</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Literature</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Literature</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Occultism</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Occultism</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Philosophy</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Philosophy</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Research</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Research</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 		<skill_bonus>
-			<name compare="is">Theology</name>
-			<specialization compare="is anything"></specialization>
-			<amount per_level="yes">1</amount>
+			<Name Compare="is">Theology</Name>
+			<Specialization Compare="is anything"></Specialization>
+			<Amount per_Level="yes">1</Amount>
 		</skill_bonus>
 	</advantage>
 </advantage_list>

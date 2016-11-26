@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="US-ASCII" ?>
 <advantage_list unique_id="hvpj79q7:1byc1ise52e3f" version="1">
 	<advantage_container version="2" open="yes">
-		<name>Bioenhancement</name>
+		<Name>Bioenhancement</Name>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier (Bioenhancement)</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier (Bioenhancement)</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 		</modifier>
-		<notes>You may learn Autohypnosis and Body Control, ignoring prerequisites</notes>
+		<Notes>You may learn Autohypnosis and Body Control, ignoring prerequisites</Notes>
 		<categories>
 			<category>Advantage</category>
 			<category>Power</category>
 		</categories>
 		<advantage version="2">
-			<name>Adrenal-Muscular Trigger</name>
+			<Name>Adrenal-Muscular Trigger</Name>
 			<type>Physical, Exotic</type>
-			<levels>1</levels>
-			<points_per_level>8</points_per_level>
+			<Levels>1</Levels>
+			<points_per_Level>8</points_per_Level>
 			<modifier version="1">
-				<name>Maximum Duration 1dx5 seconds</name>
-				<cost type="percentage">-65</cost>
+				<Name>Maximum Duration 1dx5 seconds</Name>
+				<cost type="Percentage">-65</cost>
 				<affects>total</affects>
 			</modifier>
 			<modifier version="1">
-				<name>Power Modifier (Bioenhancement)</name>
-				<cost type="percentage">-10</cost>
+				<Name>Power Modifier (Bioenhancement)</Name>
+				<cost type="Percentage">-10</cost>
 				<affects>total</affects>
 			</modifier>
 			<reference>MH1:41</reference>
@@ -33,13 +33,13 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Bioenhancement Talent</name>
+			<Name>Bioenhancement Talent</Name>
 			<type>Mental, Supernatural</type>
-			<levels>1</levels>
-			<points_per_level>5</points_per_level>
+			<Levels>1</Levels>
+			<points_per_Level>5</points_per_Level>
 			<modifier version="1">
-				<name>Power Modifier (Bioenhancement)</name>
-				<cost type="percentage">-10</cost>
+				<Name>Power Modifier (Bioenhancement)</Name>
+				<cost type="Percentage">-10</cost>
 				<affects>total</affects>
 			</modifier>
 			<categories>
@@ -49,13 +49,13 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Breath-Holding</name>
+			<Name>Breath-Holding</Name>
 			<type>Physical, Exotic</type>
-			<levels>1</levels>
-			<points_per_level>2</points_per_level>
+			<Levels>1</Levels>
+			<points_per_Level>2</points_per_Level>
 			<modifier version="1">
-				<name>Power Modifier (Bioenhancement)</name>
-				<cost type="percentage">-10</cost>
+				<Name>Power Modifier (Bioenhancement)</Name>
+				<cost type="Percentage">-10</cost>
 				<affects>total</affects>
 			</modifier>
 			<reference>MH1:41</reference>
@@ -64,26 +64,26 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Cellular Regeneration</name>
+			<Name>Cellular Regeneration</Name>
 			<type>Physical, Exotic</type>
 			<base_points>9</base_points>
 			<modifier version="1">
-				<name>Power Modifier (Bioenhancement)</name>
-				<cost type="percentage">-10</cost>
+				<Name>Power Modifier (Bioenhancement)</Name>
+				<cost type="Percentage">-10</cost>
 				<affects>total</affects>
 			</modifier>
 			<modifier version="1" enabled="no">
-				<name>Slow Regeneration</name>
+				<Name>Slow Regeneration</Name>
 				<cost type="points">9</cost>
 				<affects>total</affects>
 			</modifier>
 			<modifier version="1" enabled="no">
-				<name>Regular Regeneration</name>
+				<Name>Regular Regeneration</Name>
 				<cost type="points">23</cost>
 				<affects>total</affects>
 			</modifier>
 			<modifier version="1" enabled="no">
-				<name>Fast Regeneration</name>
+				<Name>Fast Regeneration</Name>
 				<cost type="points">45</cost>
 				<affects>total</affects>
 			</modifier>
@@ -93,22 +93,22 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Cerebral-Motor Multitasking</name>
+			<Name>Cerebral-Motor Multitasking</Name>
 			<type>Physical</type>
-			<levels>1</levels>
-			<points_per_level>25</points_per_level>
+			<Levels>1</Levels>
+			<points_per_Level>25</points_per_Level>
 			<modifier version="1">
-				<name>Power Modifier (Bioenhancement)</name>
-				<cost type="percentage">-10</cost>
+				<Name>Power Modifier (Bioenhancement)</Name>
+				<cost type="Percentage">-10</cost>
 				<affects>total</affects>
 			</modifier>
 			<modifier version="1">
-				<name>Multi-Strike</name>
-				<cost type="percentage">20</cost>
+				<Name>Multi-Strike</Name>
+				<cost type="Percentage">20</cost>
 				<affects>total</affects>
 			</modifier>
 			<modifier version="1">
-				<name>Multiplicative Modifiers</name>
+				<Name>Multiplicative Modifiers</Name>
 				<cost type="points">-1</cost>
 				<affects>total</affects>
 			</modifier>
@@ -118,20 +118,20 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Circadian Rhythm Control</name>
+			<Name>Circadian Rhythm Control</Name>
 			<type>Physical, Exotic</type>
 			<modifier version="1">
-				<name>Power Modifier (Bioenhancement)</name>
-				<cost type="percentage">-10</cost>
+				<Name>Power Modifier (Bioenhancement)</Name>
+				<cost type="Percentage">-10</cost>
 				<affects>total</affects>
 			</modifier>
 			<modifier version="1" enabled="no">
-				<name>Less Sleep 4</name>
+				<Name>Less Sleep 4</Name>
 				<cost type="points">8</cost>
 				<affects>total</affects>
 			</modifier>
 			<modifier version="1" enabled="no">
-				<name>Doesn't Sleep</name>
+				<Name>Doesn't Sleep</Name>
 				<cost type="points">20</cost>
 				<affects>total</affects>
 			</modifier>
@@ -141,12 +141,12 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Discriminatory Hearing</name>
+			<Name>Discriminatory Hearing</Name>
 			<type>Physical, Exotic</type>
 			<base_points>15</base_points>
 			<modifier version="1">
-				<name>Power Modifier (Bioenhancement)</name>
-				<cost type="percentage">-10</cost>
+				<Name>Power Modifier (Bioenhancement)</Name>
+				<cost type="Percentage">-10</cost>
 				<affects>total</affects>
 			</modifier>
 			<reference>MH1:41</reference>
@@ -155,17 +155,17 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Discriminatory smell</name>
+			<Name>Discriminatory smell</Name>
 			<type>Physical, Exotic</type>
 			<base_points>15</base_points>
 			<modifier version="1">
-				<name>Power Modifier (Bioenhancement)</name>
-				<cost type="percentage">-10</cost>
+				<Name>Power Modifier (Bioenhancement)</Name>
+				<cost type="Percentage">-10</cost>
 				<affects>total</affects>
 			</modifier>
 			<modifier version="1" enabled="no">
-				<name>Emotion Sense</name>
-				<cost type="percentage">50</cost>
+				<Name>Emotion Sense</Name>
+				<cost type="Percentage">50</cost>
 				<affects>total</affects>
 			</modifier>
 			<reference>MH1:41</reference>
@@ -174,18 +174,18 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Eagle Eyes</name>
+			<Name>Eagle Eyes</Name>
 			<type>Physical, Exotic</type>
-			<levels>1</levels>
-			<points_per_level>5</points_per_level>
+			<Levels>1</Levels>
+			<points_per_Level>5</points_per_Level>
 			<modifier version="1">
-				<name>Power Modifier (Bioenhancement)</name>
-				<cost type="percentage">-10</cost>
+				<Name>Power Modifier (Bioenhancement)</Name>
+				<cost type="Percentage">-10</cost>
 				<affects>total</affects>
 			</modifier>
 			<modifier version="1">
-				<name>Temporary Disadvantage, Vulnerability ( Blinding Attacks) x2</name>
-				<cost type="percentage">-10</cost>
+				<Name>Temporary Disadvantage, Vulnerability ( Blinding Attacks) x2</Name>
+				<cost type="Percentage">-10</cost>
 				<affects>total</affects>
 			</modifier>
 			<reference>MH1:41</reference>
@@ -194,16 +194,16 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Enhanced Ground Move</name>
+			<Name>Enhanced Ground Move</Name>
 			<type>Physical, Exotic</type>
 			<base_points>20</base_points>
 			<modifier version="1">
-				<name>Power Modifier (Bioenhancement)</name>
-				<cost type="percentage">-10</cost>
+				<Name>Power Modifier (Bioenhancement)</Name>
+				<cost type="Percentage">-10</cost>
 				<affects>total</affects>
 			</modifier>
 			<modifier version="1" enabled="no">
-				<name>Top Speed x3</name>
+				<Name>Top Speed x3</Name>
 				<cost type="points">9</cost>
 				<affects>total</affects>
 			</modifier>
@@ -213,13 +213,13 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Enhanced Speed</name>
+			<Name>Enhanced Speed</Name>
 			<type>Physical, Exotic</type>
-			<levels>1</levels>
-			<points_per_level>20</points_per_level>
+			<Levels>1</Levels>
+			<points_per_Level>20</points_per_Level>
 			<modifier version="1">
-				<name>Power Modifier (Bioenhancement)</name>
-				<cost type="percentage">-10</cost>
+				<Name>Power Modifier (Bioenhancement)</Name>
+				<cost type="Percentage">-10</cost>
 				<affects>total</affects>
 			</modifier>
 			<reference>MH1:42</reference>
@@ -228,23 +228,23 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Epidermal Resilience</name>
+			<Name>Epidermal Resilience</Name>
 			<type>Physical, Exotic</type>
-			<levels>1</levels>
-			<points_per_level>5</points_per_level>
+			<Levels>1</Levels>
+			<points_per_Level>5</points_per_Level>
 			<modifier version="1">
-				<name>Power Modifier (Bioenhancement)</name>
-				<cost type="percentage">-10</cost>
+				<Name>Power Modifier (Bioenhancement)</Name>
+				<cost type="Percentage">-10</cost>
 				<affects>total</affects>
 			</modifier>
 			<modifier version="1">
-				<name>Low Signature</name>
-				<cost type="percentage">10</cost>
+				<Name>Low Signature</Name>
+				<cost type="Percentage">10</cost>
 				<affects>total</affects>
 			</modifier>
 			<modifier version="1">
-				<name>Tough Skin</name>
-				<cost type="percentage">-40</cost>
+				<Name>Tough Skin</Name>
+				<cost type="Percentage">-40</cost>
 				<affects>total</affects>
 			</modifier>
 			<reference>MH1:42</reference>
@@ -253,53 +253,53 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Equilibrium Enhancement</name>
+			<Name>Equilibrium Enhancement</Name>
 			<type>Physical, Exotic</type>
 			<base_points>25</base_points>
 			<modifier version="1">
-				<name>Power Modifier (Bioenhancement)</name>
-				<cost type="percentage">-10</cost>
+				<Name>Power Modifier (Bioenhancement)</Name>
+				<cost type="Percentage">-10</cost>
 				<affects>total</affects>
 			</modifier>
 			<reference>MH1:42</reference>
 		</advantage>
 		<advantage version="2">
-			<name>Injury Tolerance (Unliving)</name>
+			<Name>Injury Tolerance (Unliving)</Name>
 			<type>Physical, Exotic</type>
 			<base_points>20</base_points>
 			<modifier version="1">
-				<name>Power Modifier (Bioenhancement)</name>
-				<cost type="percentage">-10</cost>
+				<Name>Power Modifier (Bioenhancement)</Name>
+				<cost type="Percentage">-10</cost>
 				<affects>total</affects>
 			</modifier>
 			<reference>MH1:42</reference>
 		</advantage>
 		<advantage version="2">
-			<name>Neural Computational Matrix</name>
+			<Name>Neural Computational Matrix</Name>
 			<type>Mental, Exotic</type>
 			<base_points>1</base_points>
 			<modifier version="1">
-				<name>Power Modifier (Bioenhancement)</name>
-				<cost type="percentage">-10</cost>
+				<Name>Power Modifier (Bioenhancement)</Name>
+				<cost type="Percentage">-10</cost>
 				<affects>total</affects>
 			</modifier>
 			<modifier version="1" enabled="no">
-				<name>Eidetic Memory</name>
+				<Name>Eidetic Memory</Name>
 				<cost type="points">5</cost>
 				<affects>total</affects>
 			</modifier>
 			<modifier version="1" enabled="no">
-				<name>Lightning Calculator</name>
+				<Name>Lightning Calculator</Name>
 				<cost type="points">2</cost>
 				<affects>total</affects>
 			</modifier>
 			<modifier version="1" enabled="no">
-				<name>Intuitive Mathematician</name>
+				<Name>Intuitive Mathematician</Name>
 				<cost type="points">5</cost>
 				<affects>total</affects>
 			</modifier>
 			<modifier version="1" enabled="no">
-				<name>Photographic Memory</name>
+				<Name>Photographic Memory</Name>
 				<cost type="points">10</cost>
 				<affects>total</affects>
 			</modifier>
@@ -309,16 +309,16 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Ocular Adaptability</name>
+			<Name>Ocular Adaptability</Name>
 			<type>Physical, Exotic</type>
 			<base_points>10</base_points>
 			<modifier version="1">
-				<name>Power Modifier (Bioenhancement)</name>
-				<cost type="percentage">-10</cost>
+				<Name>Power Modifier (Bioenhancement)</Name>
+				<cost type="Percentage">-10</cost>
 				<affects>total</affects>
 			</modifier>
 			<modifier version="1" enabled="no">
-				<name>Hyperspectral Vision</name>
+				<Name>Hyperspectral Vision</Name>
 				<cost type="points">15</cost>
 				<affects>total</affects>
 			</modifier>
@@ -328,13 +328,13 @@
 			</categories>
 		</advantage>
 		<advantage version="2">
-			<name>Super Jump</name>
+			<Name>Super Jump</Name>
 			<type>Physical, Exotic</type>
-			<levels>1</levels>
-			<points_per_level>10</points_per_level>
+			<Levels>1</Levels>
+			<points_per_Level>10</points_per_Level>
 			<modifier version="1">
-				<name>Power Modifier (Bioenhancement)</name>
-				<cost type="percentage">-10</cost>
+				<Name>Power Modifier (Bioenhancement)</Name>
+				<cost type="Percentage">-10</cost>
 				<affects>total</affects>
 			</modifier>
 			<reference>MH1:42</reference>
@@ -344,7 +344,7 @@
 		</advantage>
 	</advantage_container>
 	<advantage version="2">
-		<name>Blessed (Ghost Weapon)</name>
+		<Name>Blessed (Ghost Weapon)</Name>
 		<type>Mental, Supernatural</type>
 		<base_points>15</base_points>
 		<reference>MH1:23</reference>
@@ -353,10 +353,10 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Born War-Leader</name>
+		<Name>Born War-Leader</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>5</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>5</points_per_Level>
 		<reference>MH1:25</reference>
 		<categories>
 			<category>Advantage</category>
@@ -364,7 +364,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Brave</name>
+		<Name>Brave</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MH1:25</reference>
@@ -373,10 +373,10 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Close to Heaven</name>
+		<Name>Close to Heaven</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>5</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>5</points_per_Level>
 		<reference>MH1:25</reference>
 		<categories>
 			<category>Advantage</category>
@@ -384,7 +384,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Compulsive (Thrill-Seeking)</name>
+		<Name>Compulsive (Thrill-Seeking)</Name>
 		<type>Mental</type>
 		<base_points>-10</base_points>
 		<cr>9</cr>
@@ -394,7 +394,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Compulsive (Thrill-Seeking)</name>
+		<Name>Compulsive (Thrill-Seeking)</Name>
 		<type>Mental</type>
 		<base_points>-10</base_points>
 		<cr>12</cr>
@@ -403,10 +403,10 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Craftiness</name>
+		<Name>Craftiness</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>5</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>5</points_per_Level>
 		<reference>MH1:25</reference>
 		<categories>
 			<category>Advantage</category>
@@ -414,20 +414,20 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Divine Curse (Monster Magnet)</name>
+		<Name>Divine Curse (Monster Magnet)</Name>
 		<type>Mental, Supernatural</type>
 		<modifier version="1" enabled="no">
-			<name>Minor</name>
+			<Name>Minor</Name>
 			<cost type="points">-5</cost>
 			<affects>total</affects>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Major</name>
+			<Name>Major</Name>
 			<cost type="points">-10</cost>
 			<affects>total</affects>
 		</modifier>
 		<modifier version="1">
-			<name>Severe</name>
+			<Name>Severe</Name>
 			<cost type="points">-15</cost>
 			<affects>total</affects>
 		</modifier>
@@ -438,125 +438,125 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Dual Shooting (@One Handed Ranged Weapon Skill@)</name>
+		<Name>Dual Shooting (@One Handed Ranged Weapon Skill@)</Name>
 		<type>Physical</type>
 		<base_points>5</base_points>
 		<reference>MH1:23</reference>
-		<notes>Based on Technique</notes>
+		<Notes>Based on Technique</Notes>
 		<categories>
 			<category>Advantage</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Enemies (Monster of the week)</name>
+		<Name>Enemies (Monster of the week)</Name>
 		<type>Social</type>
 		<modifier version="1" enabled="no">
-			<name>Weak Individual</name>
+			<Name>Weak Individual</Name>
 			<cost type="points">-5</cost>
 			<affects>total</affects>
 			<reference>B135</reference>
-			<notes>50% of your starting points</notes>
+			<Notes>50% of your starting points</Notes>
 		</modifier>
 		<modifier version="1">
-			<name>Equal Individual</name>
+			<Name>Equal Individual</Name>
 			<cost type="points">-10</cost>
 			<affects>total</affects>
 			<reference>B135</reference>
-			<notes>100% of your starting points</notes>
+			<Notes>100% of your starting points</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Powerful Individual</name>
+			<Name>Powerful Individual</Name>
 			<cost type="points">-20</cost>
 			<affects>total</affects>
 			<reference>B135</reference>
-			<notes>&gt;150% of your starting points</notes>
+			<Notes>&gt;150% of your starting points</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Weak Group</name>
+			<Name>Weak Group</Name>
 			<cost type="points">-10</cost>
 			<affects>total</affects>
 			<reference>B135</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Medium Group</name>
+			<Name>Medium Group</Name>
 			<cost type="points">-20</cost>
 			<affects>total</affects>
 			<reference>B135</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Appears almost all the time</name>
+			<Name>Appears almost all the time</Name>
 			<cost type="multiplier">3</cost>
 			<reference>B36</reference>
-			<notes>15-</notes>
+			<Notes>15-</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Appears quite often</name>
+			<Name>Appears quite often</Name>
 			<cost type="multiplier">2</cost>
 			<reference>B36</reference>
-			<notes>12-</notes>
+			<Notes>12-</Notes>
 		</modifier>
 		<modifier version="1">
-			<name>Appears fairly often</name>
+			<Name>Appears fairly often</Name>
 			<cost type="multiplier">1</cost>
 			<reference>B36</reference>
-			<notes>9-</notes>
+			<Notes>9-</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Appears quite rarely</name>
+			<Name>Appears quite rarely</Name>
 			<cost type="multiplier">0.5</cost>
 			<reference>B36</reference>
-			<notes>6-</notes>
+			<Notes>6-</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Large/Powerful Group</name>
+			<Name>Large/Powerful Group</Name>
 			<cost type="points">-30</cost>
 			<affects>total</affects>
 			<reference>B135</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Utterly Formidable Group</name>
+			<Name>Utterly Formidable Group</Name>
 			<cost type="points">-40</cost>
 			<affects>total</affects>
 			<reference>B135</reference>
 		</modifier>
 		<modifier version="1">
-			<name>Unknown</name>
+			<Name>Unknown</Name>
 			<cost type="points">-5</cost>
 			<affects>total</affects>
 			<reference>B135</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Evil Twin</name>
+			<Name>Evil Twin</Name>
 			<cost type="points">0</cost>
 			<affects>total</affects>
 			<reference>B135</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Evil Twin</name>
+			<Name>Evil Twin</Name>
 			<cost type="points">-5</cost>
 			<affects>total</affects>
 			<reference>B135</reference>
-			<notes>More skilled or extra abilities</notes>
+			<Notes>More skilled or extra abilities</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Evil Twin</name>
+			<Name>Evil Twin</Name>
 			<cost type="points">-10</cost>
 			<affects>total</affects>
 			<reference>B135</reference>
-			<notes>More skilled and extra abilities</notes>
+			<Notes>More skilled and extra abilities</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Watcher</name>
+			<Name>Watcher</Name>
 			<cost type="multiplier">0.25</cost>
 			<reference>B135</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Rival</name>
+			<Name>Rival</Name>
 			<cost type="multiplier">0.5</cost>
 			<reference>B135</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Hunter</name>
+			<Name>Hunter</Name>
 			<cost type="multiplier">1</cost>
 			<reference>B135</reference>
 		</modifier>
@@ -567,7 +567,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Equipment Bond (@Gear@)</name>
+		<Name>Equipment Bond (@Gear@)</Name>
 		<type>Physical</type>
 		<base_points>1</base_points>
 		<reference>MH1:25</reference>
@@ -576,12 +576,12 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Fanaticism (The Mission)</name>
+		<Name>Fanaticism (The Mission)</Name>
 		<type>Mental</type>
 		<base_points>-15</base_points>
 		<modifier version="1" enabled="no">
-			<name>Extreme</name>
-			<cost type="percentage">0</cost>
+			<Name>Extreme</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
 			<reference>B136</reference>
 		</modifier>
@@ -592,7 +592,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Higher Purpose (Acquire Knowledge)</name>
+		<Name>Higher Purpose (Acquire Knowledge)</Name>
 		<type>Mental, Exotic</type>
 		<base_points>5</base_points>
 		<reference>B59,MH1:24</reference>
@@ -601,7 +601,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Higher Purpose (Defend the Faith)</name>
+		<Name>Higher Purpose (Defend the Faith)</Name>
 		<type>Mental, Exotic</type>
 		<base_points>5</base_points>
 		<reference>B59,MH1:24</reference>
@@ -610,7 +610,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Higher Purpose (Hunt @one type of monster@)</name>
+		<Name>Higher Purpose (Hunt @one type of monster@)</Name>
 		<type>Mental, Exotic</type>
 		<base_points>5</base_points>
 		<reference>B59,MH1:24</reference>
@@ -619,7 +619,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Improvised Weapons (@Weapon Skill@)</name>
+		<Name>Improvised Weapons (@Weapon Skill@)</Name>
 		<type>Physical</type>
 		<base_points>1</base_points>
 		<reference>MH1:25</reference>
@@ -628,7 +628,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Motivational Lens</name>
+		<Name>Motivational Lens</Name>
 		<type>Mental</type>
 		<base_points>15</base_points>
 		<categories>
@@ -636,55 +636,55 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<name>Mysticism</name>
+		<Name>Mysticism</Name>
 		<advantage version="2">
-			<name>Mysticism Talent</name>
+			<Name>Mysticism Talent</Name>
 			<type>Mental</type>
-			<levels>1</levels>
-			<points_per_level>5</points_per_level>
+			<Levels>1</Levels>
+			<points_per_Level>5</points_per_Level>
 			<reference>MH1:45</reference>
-			<notes>Adds +1 per level to any mysticism rolls</notes>
+			<Notes>Adds +1 per Level to Any mysticism rolls</Notes>
 			<categories>
 				<category>Advantage</category>
 				<category>Talent</category>
 			</categories>
 			<skill_bonus>
-				<name compare="is">Exorcism</name>
-				<specialization compare="is anything"></specialization>
-				<amount per_level="yes">1</amount>
+				<Name Compare="is">Exorcism</Name>
+				<Specialization Compare="is Anything"></Specialization>
+				<Amount per_Level="yes">1</Amount>
 			</skill_bonus>
 		</advantage>
 		<advantage_container version="2" open="yes">
-			<name>Powers</name>
+			<Name>Powers</Name>
 			<advantage version="2">
-				<name>Armor of Faith</name>
+				<Name>Armor of Faith</Name>
 				<type>Mental, Supernatural</type>
-				<levels>1</levels>
-				<points_per_level>5</points_per_level>
+				<Levels>1</Levels>
+				<points_per_Level>5</points_per_Level>
 				<modifier version="1">
-					<name>Limited</name>
-					<cost type="percentage">-30</cost>
+					<Name>Limited</Name>
+					<cost type="Percentage">-30</cost>
 					<affects>total</affects>
 					<reference>MH1:43</reference>
-					<notes>Half-Strength except against evil undead or spirit beings</notes>
+					<Notes>Half-Strength except against evil undead or spirit beings</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Force Field</name>
-					<cost type="percentage">20</cost>
+					<Name>Force Field</Name>
+					<cost type="Percentage">20</cost>
 					<affects>total</affects>
 					<reference>B47</reference>
 				</modifier>
 				<modifier version="1">
-					<name>No signature</name>
-					<cost type="percentage">20</cost>
+					<Name>No signature</Name>
+					<cost type="Percentage">20</cost>
 					<affects>total</affects>
 				</modifier>
 				<modifier version="1">
-					<name>Mysticism</name>
-					<cost type="percentage">-10</cost>
+					<Name>Mysticism</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
 					<reference>MH1:43</reference>
-					<notes>Must live by a strict moral code</notes>
+					<Notes>Must live by a strict moral code</Notes>
 				</modifier>
 				<reference>MH1:43</reference>
 				<categories>
@@ -693,24 +693,24 @@
 				</categories>
 				<dr_bonus>
 					<location>full body</location>
-					<amount per_level="yes">1</amount>
+					<Amount per_Level="yes">1</Amount>
 				</dr_bonus>
 			</advantage>
 			<advantage version="2">
-				<name>Blessed</name>
+				<Name>Blessed</Name>
 				<type>Mental, Supernatural</type>
 				<base_points>10</base_points>
 				<modifier version="1" enabled="no">
-					<name>Very</name>
+					<Name>Very</Name>
 					<cost type="points">10</cost>
 					<affects>total</affects>
 					<reference>B40</reference>
 				</modifier>
 				<modifier version="1">
-					<name>Mysticism</name>
-					<cost type="percentage">-10</cost>
+					<Name>Mysticism</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Must live by a strict moral code</notes>
+					<Notes>Must live by a strict moral code</Notes>
 				</modifier>
 				<reference>MH1:43</reference>
 				<categories>
@@ -719,14 +719,14 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Extra Life</name>
+				<Name>Extra Life</Name>
 				<type>Mental, Supernatural</type>
 				<base_points>25</base_points>
 				<modifier version="1">
-					<name>Mysticism</name>
-					<cost type="percentage">-10</cost>
+					<Name>Mysticism</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Must live by strict moral code</notes>
+					<Notes>Must live by strict moral code</Notes>
 				</modifier>
 				<reference>MH1:43</reference>
 				<categories>
@@ -735,58 +735,58 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Eyes of the Dead (Mind Probe)</name>
+				<Name>Eyes of the Dead (Mind Probe)</Name>
 				<type>Mental, Supernatural</type>
 				<base_points>20</base_points>
 				<modifier version="1">
-					<name>Mysticism</name>
-					<cost type="percentage">-10</cost>
+					<Name>Mysticism</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Must live by a strict moral code</notes>
+					<Notes>Must live by a strict moral code</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Cosmic: works on the dead</name>
-					<cost type="percentage">50</cost>
+					<Name>Cosmic: works on the dead</Name>
+					<cost type="Percentage">50</cost>
 					<affects>total</affects>
 				</modifier>
 				<modifier version="1">
-					<name>Only for last sight before death</name>
-					<cost type="percentage">-40</cost>
+					<Name>Only for last sight before death</Name>
+					<cost type="Percentage">-40</cost>
 					<affects>total</affects>
 				</modifier>
 				<reference>MH1:43</reference>
-				<notes>Time penalty replaces Quick Contest</notes>
+				<Notes>Time penalty replaces Quick Contest</Notes>
 				<categories>
 					<category>Advantage</category>
 					<category>Power</category>
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Ghost Weapon</name>
+				<Name>Ghost Weapon</Name>
 				<type>Mental, Supernatural</type>
 				<base_points>15</base_points>
 				<modifier version="1">
-					<name>Mysticism</name>
-					<cost type="percentage">-10</cost>
+					<Name>Mysticism</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Must live by strict moral code</notes>
+					<Notes>Must live by strict moral code</Notes>
 				</modifier>
 				<reference>MH1:43</reference>
-				<notes>You can attack malevolent spirits as though physical</notes>
+				<Notes>You can attack malevolent spirits as though physical</Notes>
 				<categories>
 					<category>Advantage</category>
 					<category>Power</category>
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Heroic Feats (Blessed)</name>
+				<Name>Heroic Feats (Blessed)</Name>
 				<type>Mental, Supernatural</type>
 				<base_points>10</base_points>
 				<modifier version="1">
-					<name>Mysticism</name>
-					<cost type="percentage">-10</cost>
+					<Name>Mysticism</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Must live by strict moral code</notes>
+					<Notes>Must live by strict moral code</Notes>
 				</modifier>
 				<reference>MH1:43</reference>
 				<categories>
@@ -795,26 +795,26 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Lay on Hands (Healing)</name>
+				<Name>Lay on Hands (Healing)</Name>
 				<type>Mental, Supernatural</type>
 				<base_points>30</base_points>
 				<modifier version="1">
-					<name>Faith Healing</name>
-					<cost type="percentage">20</cost>
+					<Name>Faith Healing</Name>
+					<cost type="Percentage">20</cost>
 					<affects>total</affects>
 					<reference>B59</reference>
 				</modifier>
 				<modifier version="1" enabled="no">
-					<name>Affects Self</name>
-					<cost type="percentage">50</cost>
+					<Name>Affects Self</Name>
+					<cost type="Percentage">50</cost>
 					<affects>total</affects>
 					<reference>P51</reference>
 				</modifier>
 				<modifier version="1">
-					<name>Mysticism</name>
-					<cost type="percentage">-10</cost>
+					<Name>Mysticism</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Must live by strict moral code</notes>
+					<Notes>Must live by strict moral code</Notes>
 				</modifier>
 				<reference>MH1:43</reference>
 				<categories>
@@ -823,15 +823,15 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Mind Shield</name>
+				<Name>Mind Shield</Name>
 				<type>Mental, Supernatural</type>
-				<levels>1</levels>
-				<points_per_level>4</points_per_level>
+				<Levels>1</Levels>
+				<points_per_Level>4</points_per_Level>
 				<modifier version="1">
-					<name>Mysticism</name>
-					<cost type="percentage">-10</cost>
+					<Name>Mysticism</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Must live by strict moral code</notes>
+					<Notes>Must live by strict moral code</Notes>
 				</modifier>
 				<reference>MH1:43</reference>
 				<categories>
@@ -840,20 +840,20 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Mystic Coincidence (Serendipity)</name>
+				<Name>Mystic Coincidence (Serendipity)</Name>
 				<type>Mental, Supernatural</type>
-				<levels>1</levels>
-				<points_per_level>15</points_per_level>
+				<Levels>1</Levels>
+				<points_per_Level>15</points_per_Level>
 				<modifier version="1">
-					<name>Aid will never violate god's/spirit's tenets</name>
-					<cost type="percentage">-10</cost>
+					<Name>Aid will never violate god's/spirit's tenets</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
 				</modifier>
 				<modifier version="1">
-					<name>Mysticism</name>
-					<cost type="percentage">-10</cost>
+					<Name>Mysticism</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Must live by strict moral code</notes>
+					<Notes>Must live by strict moral code</Notes>
 				</modifier>
 				<reference>MH1:43</reference>
 				<categories>
@@ -862,42 +862,42 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Prayer (Patron)</name>
+				<Name>Prayer (Patron)</Name>
 				<type>Mental, Supernatural</type>
 				<modifier version="1">
-					<name>@Who: Ultra-powerful entity@</name>
+					<Name>@Who: Ultra-powerful entity@</Name>
 					<cost type="points">20</cost>
 					<affects>total</affects>
 					<reference>B72</reference>
 				</modifier>
 				<modifier version="1" enabled="no">
-					<name>Appears fairly often</name>
+					<Name>Appears fairly often</Name>
 					<cost type="multiplier">1</cost>
 					<reference>B36</reference>
-					<notes>9-</notes>
+					<Notes>9-</Notes>
 				</modifier>
 				<modifier version="1" enabled="no">
-					<name>Appears quite rarely</name>
+					<Name>Appears quite rarely</Name>
 					<cost type="multiplier">0.5</cost>
 					<reference>B36</reference>
-					<notes>6-</notes>
+					<Notes>6-</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Highly Accessible</name>
-					<cost type="percentage">50</cost>
+					<Name>Highly Accessible</Name>
+					<cost type="Percentage">50</cost>
 					<affects>total</affects>
 					<reference>B73</reference>
 				</modifier>
 				<modifier version="1">
-					<name>Special Abilities</name>
-					<cost type="percentage">100</cost>
+					<Name>Special Abilities</Name>
+					<cost type="Percentage">100</cost>
 					<affects>total</affects>
 				</modifier>
 				<modifier version="1">
-					<name>Mysticism</name>
-					<cost type="percentage">-10</cost>
+					<Name>Mysticism</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Must live by strict moral code</notes>
+					<Notes>Must live by strict moral code</Notes>
 				</modifier>
 				<reference>MH1:44</reference>
 				<categories>
@@ -906,55 +906,55 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Resistant</name>
+				<Name>Resistant</Name>
 				<type>Mental, Supernatural</type>
 				<modifier version="1">
-					<name>Evil Supernatural Powers</name>
+					<Name>Evil Supernatural Powers</Name>
 					<cost type="points">15</cost>
 					<affects>total</affects>
 					<reference>B81</reference>
 				</modifier>
 				<modifier version="1" enabled="no">
-					<name>+8 to all HT rolls to resist</name>
+					<Name>+8 to all HT rolls to resist</Name>
 					<cost type="multiplier">0.5</cost>
 					<reference>B81</reference>
 				</modifier>
 				<modifier version="1" enabled="no">
-					<name>+3 to all HT rolls to resist</name>
+					<Name>+3 to all HT rolls to resist</Name>
 					<cost type="multiplier">0.33</cost>
 					<reference>B81</reference>
 				</modifier>
 				<modifier version="1">
-					<name>Mysticism</name>
-					<cost type="percentage">-10</cost>
+					<Name>Mysticism</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
 					<reference>MH1:44</reference>
-					<notes>Must live by strict moral code</notes>
+					<Notes>Must live by strict moral code</Notes>
 				</modifier>
 				<reference>MH1:44</reference>
-				<notes>Must select +3 or +8</notes>
+				<Notes>Must select +3 or +8</Notes>
 				<categories>
 					<category>Advantage</category>
 					<category>Power</category>
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Shock and Awe (Terror)</name>
+				<Name>Shock and Awe (Terror)</Name>
 				<type>Mental, Supernatural</type>
 				<base_points>30</base_points>
 				<modifier version="1">
-					<name>Mysticism</name>
-					<cost type="percentage">-10</cost>
+					<Name>Mysticism</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Must live by strict moral code</notes>
+					<Notes>Must live by strict moral code</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Takes recharge, One hour</name>
-					<cost type="percentage">-30</cost>
+					<Name>Takes recharge, One hour</Name>
+					<cost type="Percentage">-30</cost>
 					<affects>total</affects>
 				</modifier>
 				<modifier version="1" enabled="no">
-					<name>-4 to Fright Checks</name>
+					<Name>-4 to Fright Checks</Name>
 					<cost type="points">40</cost>
 					<affects>total</affects>
 				</modifier>
@@ -965,11 +965,11 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Smite (Innate Attack: Burn)</name>
+				<Name>Smite (Innate Attack: Burn)</Name>
 				<type>Mental, Supernatural</type>
-				<levels>1</levels>
+				<Levels>1</Levels>
 				<base_points>5</base_points>
-				<points_per_level>5</points_per_level>
+				<points_per_Level>5</points_per_Level>
 				<ranged_weapon>
 					<damage>1d (+1d) burn</damage>
 					<accuracy>3</accuracy>
@@ -982,48 +982,48 @@
 					</default>
 				</ranged_weapon>
 				<modifier version="1">
-					<name>Accessibility, Evil undead or spirit beings</name>
-					<cost type="percentage">-50</cost>
+					<Name>Accessibility, Evil undead or spirit beings</Name>
+					<cost type="Percentage">-50</cost>
 					<affects>total</affects>
 				</modifier>
 				<modifier version="1">
-					<name>Low signature</name>
-					<cost type="percentage">10</cost>
+					<Name>Low signature</Name>
+					<cost type="Percentage">10</cost>
 					<affects>total</affects>
 				</modifier>
 				<modifier version="1">
-					<name>Malediction 2</name>
-					<cost type="percentage">150</cost>
+					<Name>Malediction 2</Name>
+					<cost type="Percentage">150</cost>
 					<affects>total</affects>
 				</modifier>
 				<modifier version="1">
-					<name>Mysticism</name>
-					<cost type="percentage">-10</cost>
+					<Name>Mysticism</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Must live by strict moral code</notes>
+					<Notes>Must live by strict moral code</Notes>
 				</modifier>
 				<reference>MH1:44</reference>
-				<notes>1d + 1d/level damage</notes>
+				<Notes>1d + 1d/Level damage</Notes>
 				<categories>
 					<category>Advantage</category>
 					<category>Power</category>
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Spirit Channeling</name>
+				<Name>Spirit Channeling</Name>
 				<type>Mental, Supernatural</type>
 				<base_points>10</base_points>
 				<modifier version="1">
-					<name>Aware</name>
-					<cost type="percentage">50</cost>
+					<Name>Aware</Name>
+					<cost type="Percentage">50</cost>
 					<affects>total</affects>
 					<reference>P43</reference>
 				</modifier>
 				<modifier version="1">
-					<name>Mysticism</name>
-					<cost type="percentage">-10</cost>
+					<Name>Mysticism</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Must live by a strict moral code</notes>
+					<Notes>Must live by a strict moral code</Notes>
 				</modifier>
 				<reference>MH1:44</reference>
 				<categories>
@@ -1032,26 +1032,26 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Spirit Communication (Medium)</name>
+				<Name>Spirit Communication (Medium)</Name>
 				<type>Mental, Supernatural</type>
 				<base_points>10</base_points>
 				<modifier version="1" enabled="no">
-					<name>Manifestation</name>
-					<cost type="percentage">100</cost>
+					<Name>Manifestation</Name>
+					<cost type="Percentage">100</cost>
 					<affects>total</affects>
 					<reference>P60</reference>
 				</modifier>
 				<modifier version="1">
-					<name>Visual</name>
-					<cost type="percentage">50</cost>
+					<Name>Visual</Name>
+					<cost type="Percentage">50</cost>
 					<affects>total</affects>
 					<reference>P60</reference>
 				</modifier>
 				<modifier version="1">
-					<name>Mysticism</name>
-					<cost type="percentage">-10</cost>
+					<Name>Mysticism</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Must live by strict moral code</notes>
+					<Notes>Must live by strict moral code</Notes>
 				</modifier>
 				<reference>MH1:44</reference>
 				<categories>
@@ -1060,14 +1060,14 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Spirit Empathy</name>
+				<Name>Spirit Empathy</Name>
 				<type>Mental, Supernatural</type>
 				<base_points>10</base_points>
 				<modifier version="1">
-					<name>Mysticism</name>
-					<cost type="percentage">-10</cost>
+					<Name>Mysticism</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Must live by strict moral code</notes>
+					<Notes>Must live by strict moral code</Notes>
 				</modifier>
 				<reference>MH1:44</reference>
 				<categories>
@@ -1075,36 +1075,36 @@
 					<category>Power</category>
 				</categories>
 				<prereq_list all="no">
-					<advantage_prereq has="yes">
-						<name compare="is">Spirit Channeling</name>
-						<notes compare="is anything"></notes>
+					<advantage_prereq Has="yes">
+						<Name Compare="is">Spirit Channeling</Name>
+						<Notes Compare="is Anything"></Notes>
 					</advantage_prereq>
-					<advantage_prereq has="yes">
-						<name compare="starts with">Spirit Communication</name>
-						<notes compare="is anything"></notes>
+					<advantage_prereq Has="yes">
+						<Name Compare="starts with">Spirit Communication</Name>
+						<Notes Compare="is Anything"></Notes>
 					</advantage_prereq>
 				</prereq_list>
 			</advantage>
 			<advantage version="2">
-				<name>Supernatural Sense (Detect)</name>
+				<Name>Supernatural Sense (Detect)</Name>
 				<type>Mental, Supernatural</type>
 				<modifier version="1">
-					<name>Supernatural Beings</name>
+					<Name>Supernatural Beings</Name>
 					<cost type="points">20</cost>
 					<affects>total</affects>
 					<reference>B48</reference>
 				</modifier>
 				<modifier version="1" enabled="no">
-					<name>Vague</name>
-					<cost type="percentage">-50</cost>
+					<Name>Vague</Name>
+					<cost type="Percentage">-50</cost>
 					<affects>total</affects>
 					<reference>B48</reference>
 				</modifier>
 				<modifier version="1">
-					<name>Mysticism</name>
-					<cost type="percentage">-10</cost>
+					<Name>Mysticism</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Must live by strict moral code</notes>
+					<Notes>Must live by strict moral code</Notes>
 				</modifier>
 				<reference>MH1:44</reference>
 				<categories>
@@ -1113,20 +1113,20 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Turn Evil (True Faith)</name>
+				<Name>Turn Evil (True Faith)</Name>
 				<type>Mental, Supernatural</type>
 				<base_points>15</base_points>
 				<modifier version="1">
-					<name>Turning</name>
-					<cost type="percentage">65</cost>
+					<Name>Turning</Name>
+					<cost type="Percentage">65</cost>
 					<affects>total</affects>
 					<reference>P84</reference>
 				</modifier>
 				<modifier version="1">
-					<name>Mysticism</name>
-					<cost type="percentage">-10</cost>
+					<Name>Mysticism</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Must live by strict moral code</notes>
+					<Notes>Must live by strict moral code</Notes>
 				</modifier>
 				<reference>MH1:44</reference>
 				<categories>
@@ -1135,14 +1135,14 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Visualization</name>
+				<Name>Visualization</Name>
 				<type>Mental, Supernatural</type>
 				<base_points>10</base_points>
 				<modifier version="1">
-					<name>Mysticism</name>
-					<cost type="percentage">-10</cost>
+					<Name>Mysticism</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Must live by strict moral code</notes>
+					<Notes>Must live by strict moral code</Notes>
 				</modifier>
 				<reference>MH1:45</reference>
 				<categories>
@@ -1153,30 +1153,30 @@
 		</advantage_container>
 	</advantage_container>
 	<advantage version="2">
-		<name>Obsession (Rid the world of monsters)</name>
+		<Name>Obsession (Rid the world of monsters)</Name>
 		<type>Mental</type>
 		<cr>9</cr>
 		<modifier version="1" enabled="no">
-			<name>Short term</name>
+			<Name>Short term</Name>
 			<cost type="points">-5</cost>
 			<affects>total</affects>
 			<reference>B146</reference>
 		</modifier>
 		<modifier version="1">
-			<name>Long term</name>
+			<Name>Long term</Name>
 			<cost type="points">-10</cost>
 			<affects>total</affects>
 			<reference>B146</reference>
 		</modifier>
 		<reference>B146</reference>
-		<notes>@Goal@</notes>
+		<Notes>@Goal@</Notes>
 		<categories>
 			<category>Disadvantage</category>
 			<category>Why we fight</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Off-Hand Weapon Training (@One Handed Weapon Skill@)</name>
+		<Name>Off-Hand Weapon Training (@One Handed Weapon Skill@)</Name>
 		<type>Mental</type>
 		<base_points>1</base_points>
 		<reference>MH1:25</reference>
@@ -1185,10 +1185,10 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Parapsychologist</name>
+		<Name>Parapsychologist</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>5</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>5</points_per_Level>
 		<reference>MH1:25</reference>
 		<categories>
 			<category>Advantage</category>
@@ -1196,32 +1196,32 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Patrons</name>
+		<Name>Patrons</Name>
 		<type>Social</type>
 		<base_points>10</base_points>
 		<modifier version="1" enabled="no">
-			<name>Heavy Influence</name>
-			<cost type="percentage">100</cost>
+			<Name>Heavy Influence</Name>
+			<cost type="Percentage">100</cost>
 			<affects>total</affects>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Large Budget</name>
-			<cost type="percentage">100</cost>
+			<Name>Large Budget</Name>
+			<cost type="Percentage">100</cost>
 			<affects>total</affects>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Loaded Budget</name>
-			<cost type="percentage">200</cost>
+			<Name>Loaded Budget</Name>
+			<cost type="Percentage">200</cost>
 			<affects>total</affects>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Modest Budget</name>
-			<cost type="percentage">0</cost>
+			<Name>Modest Budget</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Light Influence</name>
-			<cost type="percentage">0</cost>
+			<Name>Light Influence</Name>
+			<cost type="Percentage">0</cost>
 			<affects>total</affects>
 		</modifier>
 		<reference>MH1:24</reference>
@@ -1230,50 +1230,50 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Prophetic Dreams</name>
+		<Name>Prophetic Dreams</Name>
 		<type>Mental, Supernatural</type>
 		<base_points>5</base_points>
 		<reference>MH1:23</reference>
-		<notes>Precognition (Only while dreaming -70%; Passive Only -20%)</notes>
+		<Notes>Precognition (Only while dreaming -70%; Passive Only -20%)</Notes>
 		<categories>
 			<category>Advantage</category>
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<name>Psionics</name>
+		<Name>Psionics</Name>
 		<advantage_container version="2" open="yes">
-			<name>ESP Abilities</name>
+			<Name>ESP Abilities</Name>
 			<advantage version="2">
-				<name>Aura Reading (Empathy)</name>
+				<Name>Aura Reading (Empathy)</Name>
 				<type>Mental, Exotic</type>
 				<base_points>15</base_points>
 				<modifier version="1">
-					<name>Includes physical status</name>
-					<cost type="percentage">50</cost>
+					<Name>Includes physical status</Name>
+					<cost type="Percentage">50</cost>
 					<affects>total</affects>
-					<notes>+3 to skill rolls to diagnose or treat an illness or injury</notes>
+					<Notes>+3 to skill rolls to diagnose or treat an illness or injury</Notes>
 					<skill_bonus>
-						<name compare="is">Diagnosis</name>
-						<specialization compare="is anything"></specialization>
-						<amount>3</amount>
+						<Name Compare="is">Diagnosis</Name>
+						<Specialization Compare="is Anything"></Specialization>
+						<Amount>3</Amount>
 					</skill_bonus>
 					<skill_bonus>
-						<name compare="is">First Aid</name>
-						<specialization compare="is anything"></specialization>
-						<amount>1</amount>
+						<Name Compare="is">First Aid</Name>
+						<Specialization Compare="is Anything"></Specialization>
+						<Amount>1</Amount>
 					</skill_bonus>
 					<skill_bonus>
-						<name compare="is">Physician</name>
-						<specialization compare="is anything"></specialization>
-						<amount>3</amount>
+						<Name Compare="is">Physician</Name>
+						<Specialization Compare="is Anything"></Specialization>
+						<Amount>3</Amount>
 					</skill_bonus>
 				</modifier>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
 					<reference>MH1:45</reference>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<reference>MH1:45</reference>
 				<categories>
@@ -1281,30 +1281,30 @@
 					<category>Power</category>
 				</categories>
 				<skill_bonus>
-					<name compare="is">detect lies</name>
-					<specialization compare="is anything"></specialization>
-					<amount>3</amount>
+					<Name Compare="is">detect lies</Name>
+					<Specialization Compare="is Anything"></Specialization>
+					<Amount>3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">fortune-telling</name>
-					<specialization compare="is anything"></specialization>
-					<amount>3</amount>
+					<Name Compare="is">fortune-telling</Name>
+					<Specialization Compare="is Anything"></Specialization>
+					<Amount>3</Amount>
 				</skill_bonus>
 				<skill_bonus>
-					<name compare="is">psychology</name>
-					<specialization compare="is anything"></specialization>
-					<amount>3</amount>
+					<Name Compare="is">psychology</Name>
+					<Specialization Compare="is Anything"></Specialization>
+					<Amount>3</Amount>
 				</skill_bonus>
 			</advantage>
 			<advantage version="2">
-				<name>Precognition</name>
+				<Name>Precognition</Name>
 				<type>Mental, Exotic</type>
 				<base_points>25</base_points>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<reference>MH1:45</reference>
 				<categories>
@@ -1313,31 +1313,31 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Psi Sense (Detect)</name>
+				<Name>Psi Sense (Detect)</Name>
 				<type>Mental, Exotic</type>
 				<modifier version="1">
-					<name>Psionic Activity</name>
+					<Name>Psionic Activity</Name>
 					<cost type="points">10</cost>
 					<affects>total</affects>
 					<reference>B48</reference>
 				</modifier>
 				<modifier version="1" enabled="no">
-					<name>Precise</name>
-					<cost type="percentage">100</cost>
+					<Name>Precise</Name>
+					<cost type="Percentage">100</cost>
 					<affects>total</affects>
 					<reference>B48</reference>
 				</modifier>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Reflexive</name>
-					<cost type="percentage">40</cost>
+					<Name>Reflexive</Name>
+					<cost type="Percentage">40</cost>
 					<affects>total</affects>
-					<notes>GM rolls whenever anyone nearby uses or is targeted by psi</notes>
+					<Notes>GM rolls whenever Anyone nearby uses or is targeted by psi</Notes>
 				</modifier>
 				<reference>MH1:45</reference>
 				<categories>
@@ -1346,14 +1346,14 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Psychometry</name>
+				<Name>Psychometry</Name>
 				<type>Mental, Exotic</type>
 				<base_points>20</base_points>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<reference>MH1:45</reference>
 				<categories>
@@ -1362,24 +1362,24 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Remote Senses (Clairsentience)</name>
+				<Name>Remote Senses (Clairsentience)</Name>
 				<type>Mental, Exotic</type>
 				<base_points>50</base_points>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Takes Extra Time</name>
-					<cost type="percentage">-10</cost>
-					<levels>2</levels>
+					<Name>Takes Extra Time</Name>
+					<cost type="Percentage">-10</cost>
+					<Levels>2</Levels>
 					<affects>total</affects>
 				</modifier>
 				<modifier version="1" enabled="no">
-					<name>Increased Range x10</name>
-					<cost type="percentage">30</cost>
+					<Name>Increased Range x10</Name>
+					<cost type="Percentage">30</cost>
 					<affects>total</affects>
 				</modifier>
 				<reference>MH1:45</reference>
@@ -1389,27 +1389,27 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Seekersense (Super-Memorization)</name>
+				<Name>Seekersense (Super-Memorization)</Name>
 				<type>Mental, Exotic</type>
-				<levels>1</levels>
+				<Levels>1</Levels>
 				<base_points>5</base_points>
-				<points_per_level>3</points_per_level>
+				<points_per_Level>3</points_per_Level>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Limited to one advantage</name>
-					<cost type="percentage">-50</cost>
+					<Name>Limited to one advantage</Name>
+					<cost type="Percentage">-50</cost>
 					<affects>total</affects>
-					<notes>Detect for any one thing (Long-range 1)</notes>
+					<Notes>Detect for Any one thing (Long-range 1)</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Reduced Time</name>
-					<cost type="percentage">20</cost>
-					<levels>3</levels>
+					<Name>Reduced Time</Name>
+					<cost type="Percentage">20</cost>
+					<Levels>3</Levels>
 					<affects>total</affects>
 				</modifier>
 				<reference>MH1:46</reference>
@@ -1419,20 +1419,20 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Spirit Channeling</name>
+				<Name>Spirit Channeling</Name>
 				<type>Mental, Exotic</type>
 				<base_points>10</base_points>
 				<modifier version="1">
-					<name>Aware</name>
-					<cost type="percentage">50</cost>
+					<Name>Aware</Name>
+					<cost type="Percentage">50</cost>
 					<affects>total</affects>
 					<reference>P43</reference>
 				</modifier>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<reference>MH1:46</reference>
 				<categories>
@@ -1441,26 +1441,26 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Spirit Communication (Medium)</name>
+				<Name>Spirit Communication (Medium)</Name>
 				<type>Mental, Exotic</type>
 				<base_points>10</base_points>
 				<modifier version="1" enabled="no">
-					<name>Manifestation</name>
-					<cost type="percentage">100</cost>
+					<Name>Manifestation</Name>
+					<cost type="Percentage">100</cost>
 					<affects>total</affects>
 					<reference>P60</reference>
 				</modifier>
 				<modifier version="1">
-					<name>Visual</name>
-					<cost type="percentage">50</cost>
+					<Name>Visual</Name>
+					<cost type="Percentage">50</cost>
 					<affects>total</affects>
 					<reference>P60</reference>
 				</modifier>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<reference>MH1:46</reference>
 				<categories>
@@ -1470,24 +1470,24 @@
 			</advantage>
 		</advantage_container>
 		<advantage version="2">
-			<name>ESP Talent</name>
+			<Name>ESP Talent</Name>
 			<type>Mental</type>
-			<levels>1</levels>
-			<points_per_level>5</points_per_level>
+			<Levels>1</Levels>
+			<points_per_Level>5</points_per_Level>
 			<reference>MH1:48</reference>
-			<notes>Adds +1 per level to any roll to use an ESP ability</notes>
+			<Notes>Adds +1 per Level to Any roll to use an ESP ability</Notes>
 			<categories>
 				<category>Advantage</category>
 				<category>Power</category>
 			</categories>
 		</advantage>
 		<advantage_container version="2" open="yes">
-			<name>Psychokinesis Abilities</name>
+			<Name>Psychokinesis Abilities</Name>
 			<advantage version="2">
-				<name>Cryokinesis (Innate Attack: Fatigue)</name>
+				<Name>Cryokinesis (Innate Attack: Fatigue)</Name>
 				<type>Mental, Exotic</type>
-				<levels>1</levels>
-				<points_per_level>7</points_per_level>
+				<Levels>1</Levels>
+				<points_per_Level>7</points_per_Level>
 				<ranged_weapon>
 					<damage>1d-1 fat</damage>
 					<accuracy>3</accuracy>
@@ -1496,13 +1496,13 @@
 					<recoil>1</recoil>
 					<default>
 						<type>Skill</type>
-						<name>Innate Attack</name>
-						<specialization>@Attack Type@</specialization>
+						<Name>Innate Attack</Name>
+						<Specialization>@Attack Type@</Specialization>
 						<modifier>0</modifier>
 					</default>
 					<default>
 						<type>Skill</type>
-						<name>Innate Attack</name>
+						<Name>Innate Attack</Name>
 						<modifier>-2</modifier>
 					</default>
 					<default>
@@ -1511,31 +1511,31 @@
 					</default>
 				</ranged_weapon>
 				<modifier version="1">
-					<name>Hazard: Freezing</name>
-					<cost type="percentage">20</cost>
+					<Name>Hazard: Freezing</Name>
+					<cost type="Percentage">20</cost>
 					<affects>total</affects>
 					<reference>B104</reference>
 				</modifier>
 				<modifier version="1">
-					<name>Malediction 2</name>
-					<cost type="percentage">150</cost>
+					<Name>Malediction 2</Name>
+					<cost type="Percentage">150</cost>
 					<affects>total</affects>
-					<notes>Uses penalties on Size and Range/Speed table</notes>
+					<Notes>Uses penalties on Size and Range/Speed table</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>No signature</name>
-					<cost type="percentage">20</cost>
+					<Name>No signature</Name>
+					<cost type="Percentage">20</cost>
 					<affects>total</affects>
 				</modifier>
 				<modifier version="1">
-					<name>Variable</name>
-					<cost type="percentage">5</cost>
+					<Name>Variable</Name>
+					<cost type="Percentage">5</cost>
 					<affects>total</affects>
 				</modifier>
 				<reference>MH1:46</reference>
@@ -1545,31 +1545,31 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>PK Shield (Damage Resistance)</name>
+				<Name>PK Shield (Damage Resistance)</Name>
 				<type>Mental, Exotic</type>
-				<levels>1</levels>
-				<points_per_level>5</points_per_level>
+				<Levels>1</Levels>
+				<points_per_Level>5</points_per_Level>
 				<modifier version="1">
-					<name>Force Field</name>
-					<cost type="percentage">20</cost>
+					<Name>Force Field</Name>
+					<cost type="Percentage">20</cost>
 					<affects>total</affects>
 					<reference>B47</reference>
 				</modifier>
 				<modifier version="1">
-					<name>No Signature</name>
-					<cost type="percentage">20</cost>
+					<Name>No Signature</Name>
+					<cost type="Percentage">20</cost>
 					<affects>total</affects>
 				</modifier>
 				<modifier version="1">
-					<name>Not when unconscious</name>
-					<cost type="percentage">-10</cost>
+					<Name>Not when unconscious</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
 				</modifier>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<reference>MH1:46</reference>
 				<categories>
@@ -1578,32 +1578,32 @@
 				</categories>
 				<dr_bonus>
 					<location>full body</location>
-					<amount per_level="yes">1</amount>
+					<Amount per_Level="yes">1</Amount>
 				</dr_bonus>
 			</advantage>
 			<advantage version="2">
-				<name>Psychic Healing (Healing)</name>
+				<Name>Psychic Healing (Healing)</Name>
 				<type>Mental, Exotic</type>
 				<base_points>30</base_points>
 				<modifier version="1" enabled="no">
-					<name>Xenohealing</name>
-					<cost type="percentage">40</cost>
+					<Name>Xenohealing</Name>
+					<cost type="Percentage">40</cost>
 					<affects>total</affects>
 					<reference>B59</reference>
-					<notes>All Earthly Life</notes>
+					<Notes>All Earthly Life</Notes>
 				</modifier>
 				<modifier version="1" enabled="no">
-					<name>Xenohealing</name>
-					<cost type="percentage">100</cost>
+					<Name>Xenohealing</Name>
+					<cost type="Percentage">100</cost>
 					<affects>total</affects>
 					<reference>B59</reference>
-					<notes>Anything Animate</notes>
+					<Notes>Anything Animate</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<reference>MH1:46</reference>
 				<categories>
@@ -1612,10 +1612,10 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Pyrokinesis (Innate Attack: Burn)</name>
+				<Name>Pyrokinesis (Innate Attack: Burn)</Name>
 				<type>Mental, Exotic</type>
-				<levels>1</levels>
-				<points_per_level>5</points_per_level>
+				<Levels>1</Levels>
+				<points_per_Level>5</points_per_Level>
 				<ranged_weapon>
 					<damage>1d burn</damage>
 					<accuracy>3</accuracy>
@@ -1624,13 +1624,13 @@
 					<recoil>1</recoil>
 					<default>
 						<type>Skill</type>
-						<name>Innate Attack</name>
-						<specialization>@Attack Type@</specialization>
+						<Name>Innate Attack</Name>
+						<Specialization>@Attack Type@</Specialization>
 						<modifier>0</modifier>
 					</default>
 					<default>
 						<type>Skill</type>
-						<name>Innate Attack</name>
+						<Name>Innate Attack</Name>
 						<modifier>-2</modifier>
 					</default>
 					<default>
@@ -1639,32 +1639,32 @@
 					</default>
 				</ranged_weapon>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Costs Fatigue</name>
-					<cost type="percentage">-5</cost>
-					<levels>1</levels>
+					<Name>Costs Fatigue</Name>
+					<cost type="Percentage">-5</cost>
+					<Levels>1</Levels>
 					<affects>total</affects>
-					<notes>1 FP</notes>
+					<Notes>1 FP</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Malediction 2</name>
-					<cost type="percentage">150</cost>
+					<Name>Malediction 2</Name>
+					<cost type="Percentage">150</cost>
 					<affects>total</affects>
-					<notes>Penalties to roll per Size and Speed/Range table</notes>
+					<Notes>Penalties to roll per Size and Speed/Range table</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>No Signature</name>
-					<cost type="percentage">20</cost>
+					<Name>No Signature</Name>
+					<cost type="Percentage">20</cost>
 					<affects>total</affects>
 				</modifier>
 				<modifier version="1">
-					<name>Variable</name>
-					<cost type="percentage">5</cost>
+					<Name>Variable</Name>
+					<cost type="Percentage">5</cost>
 					<affects>total</affects>
 				</modifier>
 				<reference>MH1:46</reference>
@@ -1674,20 +1674,20 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Telekinesis</name>
+				<Name>Telekinesis</Name>
 				<type>Mental, Exotic</type>
-				<levels>1</levels>
-				<points_per_level>5</points_per_level>
+				<Levels>1</Levels>
+				<points_per_Level>5</points_per_Level>
 				<modifier version="1">
-					<name>Increased Range x2</name>
-					<cost type="percentage">10</cost>
+					<Name>Increased Range x2</Name>
+					<cost type="Percentage">10</cost>
 					<affects>total</affects>
 				</modifier>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<reference>MH1:46</reference>
 				<categories>
@@ -1696,19 +1696,19 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Temperature Control</name>
+				<Name>Temperature Control</Name>
 				<type>Mental, Exotic</type>
-				<levels>1</levels>
-				<points_per_level>5</points_per_level>
+				<Levels>1</Levels>
+				<points_per_Level>5</points_per_Level>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Increase range x2</name>
-					<cost type="percentage">10</cost>
+					<Name>Increase range x2</Name>
+					<cost type="Percentage">10</cost>
 					<affects>total</affects>
 				</modifier>
 				<reference>MH1:47</reference>
@@ -1719,48 +1719,48 @@
 			</advantage>
 		</advantage_container>
 		<advantage version="2">
-			<name>Psychokinesis Talent</name>
+			<Name>Psychokinesis Talent</Name>
 			<type>Mental</type>
-			<levels>1</levels>
-			<points_per_level>5</points_per_level>
+			<Levels>1</Levels>
+			<points_per_Level>5</points_per_Level>
 			<reference>MH1:48</reference>
-			<notes>Adds +1 per level to any roll to use a Psychokinesis ability</notes>
+			<Notes>Adds +1 per Level to Any roll to use a Psychokinesis ability</Notes>
 			<categories>
 				<category>Advantage</category>
 				<category>Power</category>
 			</categories>
 		</advantage>
 		<advantage_container version="2" open="yes">
-			<name>Telepathy Abilities</name>
+			<Name>Telepathy Abilities</Name>
 			<advantage version="2">
-				<name>Mental Blow (Affliction)</name>
+				<Name>Mental Blow (Affliction)</Name>
 				<type>Mental, Exotic</type>
 				<base_points>10</base_points>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Based on Will</name>
-					<cost type="percentage">20</cost>
-					<affects>total</affects>
-				</modifier>
-				<modifier version="1">
-					<name>Malediction 2</name>
-					<cost type="percentage">150</cost>
-					<affects>total</affects>
-					<notes>Use range penalties from Size and Speed/Range table</notes>
-				</modifier>
-				<modifier version="1">
-					<name>No Signature</name>
-					<cost type="percentage">20</cost>
+					<Name>Based on Will</Name>
+					<cost type="Percentage">20</cost>
 					<affects>total</affects>
 				</modifier>
 				<modifier version="1">
-					<name>Secondary Unconsciousness</name>
-					<cost type="percentage">40</cost>
+					<Name>Malediction 2</Name>
+					<cost type="Percentage">150</cost>
+					<affects>total</affects>
+					<Notes>Use range penalties from Size and Speed/Range table</Notes>
+				</modifier>
+				<modifier version="1">
+					<Name>No Signature</Name>
+					<cost type="Percentage">20</cost>
+					<affects>total</affects>
+				</modifier>
+				<modifier version="1">
+					<Name>Secondary Unconsciousness</Name>
+					<cost type="Percentage">40</cost>
 					<affects>total</affects>
 				</modifier>
 				<reference>MH1:47</reference>
@@ -1770,20 +1770,20 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Mind Control</name>
+				<Name>Mind Control</Name>
 				<type>Mental, Exotic</type>
 				<base_points>50</base_points>
 				<modifier version="1" enabled="no">
-					<name>Suggestion</name>
-					<cost type="percentage">-40</cost>
+					<Name>Suggestion</Name>
+					<cost type="Percentage">-40</cost>
 					<affects>total</affects>
 					<reference>P61</reference>
 				</modifier>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<reference>MH1:47</reference>
 				<categories>
@@ -1792,14 +1792,14 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Mind Probe</name>
+				<Name>Mind Probe</Name>
 				<type>Mental, Exotic</type>
 				<base_points>20</base_points>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<reference>MH1:47</reference>
 				<categories>
@@ -1808,14 +1808,14 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Mind Reading</name>
+				<Name>Mind Reading</Name>
 				<type>Mental, Exotic</type>
 				<base_points>30</base_points>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<reference>MH1:47</reference>
 				<categories>
@@ -1824,15 +1824,15 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Mind Shield</name>
+				<Name>Mind Shield</Name>
 				<type>Mental, Exotic</type>
-				<levels>1</levels>
-				<points_per_level>4</points_per_level>
+				<Levels>1</Levels>
+				<points_per_Level>4</points_per_Level>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<reference>MH1:47</reference>
 				<categories>
@@ -1841,40 +1841,40 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Mindwipe (Affliction)</name>
+				<Name>Mindwipe (Affliction)</Name>
 				<type>Mental, Exotic</type>
-				<levels>1</levels>
-				<points_per_level>10</points_per_level>
+				<Levels>1</Levels>
+				<points_per_Level>10</points_per_Level>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Based on Will</name>
-					<cost type="percentage">20</cost>
-					<affects>total</affects>
-				</modifier>
-				<modifier version="1">
-					<name>Total Amnesia</name>
-					<cost type="percentage">25</cost>
+					<Name>Based on Will</Name>
+					<cost type="Percentage">20</cost>
 					<affects>total</affects>
 				</modifier>
 				<modifier version="1">
-					<name>Malediction 2 </name>
-					<cost type="percentage">150</cost>
-					<affects>total</affects>
-					<notes>Use range penalties from Speed and Size/Range table</notes>
-				</modifier>
-				<modifier version="1">
-					<name>No signature</name>
-					<cost type="percentage">20</cost>
+					<Name>Total Amnesia</Name>
+					<cost type="Percentage">25</cost>
 					<affects>total</affects>
 				</modifier>
 				<modifier version="1">
-					<name>Variable</name>
-					<cost type="percentage">5</cost>
+					<Name>Malediction 2 </Name>
+					<cost type="Percentage">150</cost>
+					<affects>total</affects>
+					<Notes>Use range penalties from Speed and Size/Range table</Notes>
+				</modifier>
+				<modifier version="1">
+					<Name>No signature</Name>
+					<cost type="Percentage">20</cost>
+					<affects>total</affects>
+				</modifier>
+				<modifier version="1">
+					<Name>Variable</Name>
+					<cost type="Percentage">5</cost>
 					<affects>total</affects>
 				</modifier>
 				<reference>MH1:47</reference>
@@ -1884,88 +1884,88 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Telecontrol (Possession)</name>
+				<Name>Telecontrol (Possession)</Name>
 				<type>Mental, Exotic</type>
 				<base_points>100</base_points>
 				<modifier version="1">
-					<name>Telecontrol</name>
-					<cost type="percentage">50</cost>
+					<Name>Telecontrol</Name>
+					<cost type="Percentage">50</cost>
 					<affects>total</affects>
 					<reference>B76</reference>
 				</modifier>
 				<modifier version="1">
-					<name>No Memory Access</name>
-					<cost type="percentage">-10</cost>
+					<Name>No Memory Access</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
 					<reference>B76</reference>
 				</modifier>
 				<modifier version="1">
-					<name>Specialized</name>
-					<cost type="percentage">-40</cost>
+					<Name>Specialized</Name>
+					<cost type="Percentage">-40</cost>
 					<affects>total</affects>
 					<reference>MH1:47</reference>
-					<notes>@Humans or Own Race@</notes>
+					<Notes>@Humans or Own Race@</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Poor Control -4</name>
-					<cost type="percentage">-45</cost>
+					<Name>Poor Control -4</Name>
+					<cost type="Percentage">-45</cost>
 					<affects>total</affects>
-					<notes>-4 to all physical rolls and skills</notes>
+					<Notes>-4 to all physical rolls and skills</Notes>
 				</modifier>
 				<modifier version="1" enabled="no">
-					<name>Specialized</name>
-					<cost type="percentage">-20</cost>
+					<Name>Specialized</Name>
+					<cost type="Percentage">-20</cost>
 					<affects>total</affects>
 					<reference>MH1:47</reference>
-					<notes>Humans AND @Own Race@</notes>
+					<Notes>Humans AND @Own Race@</Notes>
 				</modifier>
 				<reference>MH1:47</reference>
-				<notes>Must specialize</notes>
+				<Notes>Must specialize</Notes>
 				<categories>
 					<category>Advantage</category>
 					<category>Power</category>
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Telescan (Detect)</name>
+				<Name>Telescan (Detect)</Name>
 				<type>Mental, Exotic</type>
 				<modifier version="1">
-					<name>Known Minds</name>
+					<Name>Known Minds</Name>
 					<cost type="points">10</cost>
 					<affects>total</affects>
 					<reference>B48</reference>
 				</modifier>
 				<modifier version="1">
-					<name>Precise</name>
-					<cost type="percentage">100</cost>
+					<Name>Precise</Name>
+					<cost type="Percentage">100</cost>
 					<affects>total</affects>
 					<reference>B48</reference>
 				</modifier>
 				<modifier version="1">
-					<name>Cannot analyze</name>
-					<cost type="percentage">-10</cost>
+					<Name>Cannot analyze</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
 				</modifier>
 				<modifier version="1">
-					<name>Long Range 1</name>
-					<cost type="percentage">50</cost>
+					<Name>Long Range 1</Name>
+					<cost type="Percentage">50</cost>
 					<affects>total</affects>
 				</modifier>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Selective effect</name>
-					<cost type="percentage">20</cost>
+					<Name>Selective effect</Name>
+					<cost type="Percentage">20</cost>
 					<affects>total</affects>
 				</modifier>
 				<reference>MH1:48</reference>
@@ -1975,19 +1975,19 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Telesend (Telecommunication)</name>
+				<Name>Telesend (Telecommunication)</Name>
 				<type>Mental, Exotic</type>
 				<modifier version="1">
-					<name>Telesend</name>
+					<Name>Telesend</Name>
 					<cost type="points">30</cost>
 					<affects>total</affects>
 					<reference>B91</reference>
 				</modifier>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<reference>MH1:48</reference>
 				<categories>
@@ -1997,55 +1997,55 @@
 			</advantage>
 		</advantage_container>
 		<advantage version="2">
-			<name>Telepathy Talent</name>
+			<Name>Telepathy Talent</Name>
 			<type>Mental</type>
-			<levels>1</levels>
-			<points_per_level>5</points_per_level>
+			<Levels>1</Levels>
+			<points_per_Level>5</points_per_Level>
 			<reference>MH1:48</reference>
-			<notes>Adds +1 per level to any roll to use a Telepathy ability</notes>
+			<Notes>Adds +1 per Level to Any roll to use a Telepathy ability</Notes>
 			<categories>
 				<category>Advantage</category>
 				<category>Power</category>
 			</categories>
 		</advantage>
 		<advantage_container version="2" open="yes">
-			<name>Teleportation Abilities</name>
+			<Name>Teleportation Abilities</Name>
 			<advantage version="2">
-				<name>Autoteleport (Warp)</name>
+				<Name>Autoteleport (Warp)</Name>
 				<type>Mental, Supernatural</type>
 				<base_points>100</base_points>
 				<modifier version="1">
-					<name>Reliable</name>
-					<cost type="percentage">5</cost>
-					<levels>5</levels>
+					<Name>Reliable</Name>
+					<cost type="Percentage">5</cost>
+					<Levels>5</Levels>
 					<affects>total</affects>
 					<reference>B98</reference>
 				</modifier>
 				<modifier version="1" enabled="no">
-					<name>Range Limit</name>
-					<cost type="percentage">-45</cost>
+					<Name>Range Limit</Name>
+					<cost type="Percentage">-45</cost>
 					<affects>total</affects>
 					<reference>B99</reference>
-					<notes>20 yards</notes>
+					<Notes>20 yards</Notes>
 				</modifier>
 				<modifier version="1" enabled="no">
-					<name>Range Limit</name>
-					<cost type="percentage">-25</cost>
+					<Name>Range Limit</Name>
+					<cost type="Percentage">-25</cost>
 					<affects>total</affects>
 					<reference>B99</reference>
-					<notes>10 miles</notes>
+					<Notes>10 miles</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Blind Only</name>
-					<cost type="percentage">-50</cost>
+					<Name>Blind Only</Name>
+					<cost type="Percentage">-50</cost>
 					<affects>total</affects>
 					<reference>P89</reference>
 				</modifier>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<reference>B97</reference>
 				<categories>
@@ -2053,92 +2053,92 @@
 				</categories>
 			</advantage>
 			<advantage version="2">
-				<name>Combat Teleport (Warp)</name>
+				<Name>Combat Teleport (Warp)</Name>
 				<type>Mental, Exotic</type>
 				<base_points>25</base_points>
 				<reference>MH1:48</reference>
-				<notes>Adds Blink (P89) to Autoteleport</notes>
+				<Notes>Adds Blink (P89) to Autoteleport</Notes>
 				<categories>
 					<category>Advantage</category>
 					<category>Power</category>
 				</categories>
 				<prereq_list all="yes">
-					<advantage_prereq has="yes">
-						<name compare="starts with">Autoteleport</name>
-						<notes compare="is anything"></notes>
+					<advantage_prereq Has="yes">
+						<Name Compare="starts with">Autoteleport</Name>
+						<Notes Compare="is Anything"></Notes>
 					</advantage_prereq>
 				</prereq_list>
 			</advantage>
 			<advantage version="2">
-				<name>Exoteleport (Affliction)</name>
+				<Name>Exoteleport (Affliction)</Name>
 				<type>Physical, Exotic</type>
 				<base_points>10</base_points>
 				<modifier version="1">
-					<name>Psionic</name>
-					<cost type="percentage">-10</cost>
+					<Name>Psionic</Name>
+					<cost type="Percentage">-10</cost>
 					<affects>total</affects>
-					<notes>Vulnerable to anti-psi and psychotronics</notes>
+					<Notes>Vulnerable to anti-psi and psychotronics</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Based on IQ</name>
-					<cost type="percentage">20</cost>
+					<Name>Based on IQ</Name>
+					<cost type="Percentage">20</cost>
 					<affects>total</affects>
-					<notes>Own roll</notes>
+					<Notes>Own roll</Notes>
 				</modifier>
 				<modifier version="1">
-					<name>Cannot warp self</name>
-					<cost type="percentage">-50</cost>
-					<affects>total</affects>
-				</modifier>
-				<modifier version="1">
-					<name>Contact Agent</name>
-					<cost type="percentage">-30</cost>
+					<Name>Cannot warp self</Name>
+					<cost type="Percentage">-50</cost>
 					<affects>total</affects>
 				</modifier>
 				<modifier version="1">
-					<name>Malediction 1</name>
-					<cost type="percentage">100</cost>
+					<Name>Contact Agent</Name>
+					<cost type="Percentage">-30</cost>
 					<affects>total</affects>
-					<notes>DR has no effect</notes>
 				</modifier>
 				<modifier version="1">
-					<name>Melee Attack</name>
-					<cost type="percentage">-35</cost>
+					<Name>Malediction 1</Name>
+					<cost type="Percentage">100</cost>
 					<affects>total</affects>
-					<notes>Range C, cannot parry</notes>
+					<Notes>DR Has no effect</Notes>
+				</modifier>
+				<modifier version="1">
+					<Name>Melee Attack</Name>
+					<cost type="Percentage">-35</cost>
+					<affects>total</affects>
+					<Notes>Range C, cannot parry</Notes>
 				</modifier>
 				<modifier version="1" enabled="no">
-					<name>Warp</name>
-					<cost type="percentage">300</cost>
+					<Name>Warp</Name>
+					<cost type="Percentage">300</cost>
 					<affects>total</affects>
-					<notes>Blind only, Range Limit: 20 yds, Reliable 5</notes>
+					<Notes>Blind only, Range Limit: 20 yds, Reliable 5</Notes>
 				</modifier>
 				<modifier version="1" enabled="no">
-					<name>Warp</name>
-					<cost type="percentage">500</cost>
+					<Name>Warp</Name>
+					<cost type="Percentage">500</cost>
 					<affects>total</affects>
-					<notes>Blind only, Range Limit: 10 miles, Reliable 5</notes>
+					<Notes>Blind only, Range Limit: 10 miles, Reliable 5</Notes>
 				</modifier>
 				<modifier version="1" enabled="no">
-					<name>Warp</name>
-					<cost type="percentage">750</cost>
+					<Name>Warp</Name>
+					<cost type="Percentage">750</cost>
 					<affects>total</affects>
-					<notes>Blind only, Reliable 5</notes>
+					<Notes>Blind only, Reliable 5</Notes>
 				</modifier>
 				<reference>B35</reference>
-				<notes>Must select one Warp enhancement</notes>
+				<Notes>Must select one Warp enhancement</Notes>
 				<categories>
 					<category>Advantage</category>
 				</categories>
 			</advantage>
 		</advantage_container>
 		<advantage version="2">
-			<name>Teleportation Talent</name>
+			<Name>Teleportation Talent</Name>
 			<type>Mental</type>
-			<levels>1</levels>
-			<points_per_level>5</points_per_level>
+			<Levels>1</Levels>
+			<points_per_Level>5</points_per_Level>
 			<reference>MH1:48</reference>
-			<notes>Adds +1 per level to any roll to use a Teleportation ability</notes>
+			<Notes>Adds +1 per Level to Any roll to use a Teleportation ability</Notes>
 			<categories>
 				<category>Advantage</category>
 				<category>Power</category>
@@ -2146,7 +2146,7 @@
 		</advantage>
 	</advantage_container>
 	<advantage version="2">
-		<name>Quick Reload (@Weapon Skill@)</name>
+		<Name>Quick Reload (@Weapon Skill@)</Name>
 		<type>Physical</type>
 		<base_points>1</base_points>
 		<reference>MH1:25</reference>
@@ -2155,7 +2155,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Ritual Adept</name>
+		<Name>Ritual Adept</Name>
 		<type>Mental, Supernatural</type>
 		<base_points>40</base_points>
 		<reference>MH1:25</reference>
@@ -2163,14 +2163,14 @@
 			<category>Advantage</category>
 		</categories>
 		<prereq_list all="yes">
-			<advantage_prereq has="yes">
-				<name compare="is">Magery</name>
-				<notes compare="is anything"></notes>
+			<advantage_prereq Has="yes">
+				<Name Compare="is">Magery</Name>
+				<Notes Compare="is Anything"></Notes>
 			</advantage_prereq>
 		</prereq_list>
 	</advantage>
 	<advantage version="2">
-		<name>Ritual Mastery (@Ritual@)</name>
+		<Name>Ritual Mastery (@Ritual@)</Name>
 		<type>Mental, Supernatural</type>
 		<base_points>1</base_points>
 		<reference>MH1:25</reference>
@@ -2179,40 +2179,40 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Sense of Duty</name>
+		<Name>Sense of Duty</Name>
 		<type>Mental</type>
 		<modifier version="1" enabled="no">
-			<name>Friends and Companions</name>
+			<Name>Friends and Companions</Name>
 			<cost type="points">-5</cost>
 			<affects>total</affects>
 			<reference>B153</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>@Small Group@</name>
+			<Name>@Small Group@</Name>
 			<cost type="points">-5</cost>
 			<affects>total</affects>
 			<reference>B153</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>@Individual@</name>
+			<Name>@Individual@</Name>
 			<cost type="points">-2</cost>
 			<affects>total</affects>
 			<reference>B153</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>@Large Group@</name>
+			<Name>@Large Group@</Name>
 			<cost type="points">-10</cost>
 			<affects>total</affects>
 			<reference>B153</reference>
 		</modifier>
 		<modifier version="1">
-			<name>Humanity</name>
+			<Name>Humanity</Name>
 			<cost type="points">-15</cost>
 			<affects>total</affects>
 			<reference>B153</reference>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Every Living Being</name>
+			<Name>Every Living Being</Name>
 			<cost type="points">-20</cost>
 			<affects>total</affects>
 			<reference>B153</reference>

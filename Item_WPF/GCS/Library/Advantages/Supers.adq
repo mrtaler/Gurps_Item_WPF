@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="US-ASCII" ?>
 <advantage_list unique_id="hv8ufr49:-zx8lxjqvs1c4" version="1">
 	<advantage_container version="2" open="yes">
-		<name>Animal Function</name>
+		<Name>Animal Function</Name>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<notes>Biological</notes>
+			<Notes>Biological</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<notes>Divine</notes>
+			<Notes>Divine</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<notes>Magical</notes>
+			<Notes>Magical</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-20</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-20</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<notes>Nature</notes>
+			<Notes>Nature</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-25</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<notes>Spirit</notes>
+			<Notes>Spirit</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<notes>Super</notes>
+			<Notes>Super</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>SU34</reference>
-			<notes>Mutant</notes>
+			<Notes>Mutant</Notes>
 		</modifier>
 		<reference>SU39</reference>
 		<categories>
@@ -58,10 +58,10 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<name>Animal Function Talent</name>
+		<Name>Animal Function Talent</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>5</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>5</points_per_Level>
 		<reference>SU39</reference>
 		<categories>
 			<category>Advantage</category>
@@ -69,38 +69,38 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Burrower</name>
+		<Name>Burrower</Name>
 		<type>Physical, Exotic</type>
 		<base_points>1</base_points>
 		<reference>SU30</reference>
-		<notes>You can dig as if you had a shovel.</notes>
+		<Notes>You can dig as if you had a shovel.</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Climbing Line</name>
+		<Name>Climbing Line</Name>
 		<type>Physical, Exotic</type>
 		<base_points>1</base_points>
 		<reference>SU31</reference>
-		<notes>You can generate a climbing line at will.</notes>
+		<Notes>You can generate a climbing line at will.</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Cloaked</name>
+		<Name>Cloaked</Name>
 		<type>Physical</type>
 		<base_points>1</base_points>
 		<reference>SU30</reference>
-		<notes>Your cloak doesn't snag, tangle, or provide your opponents with something to grab.</notes>
+		<Notes>Your cloak doesn't snag, tangle, or provide your opponents with something to grab.</Notes>
 		<categories>
 			<category>Cinematic</category>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Code of Honor (Comics Code)</name>
+		<Name>Code of Honor (Comics Code)</Name>
 		<type>Mental</type>
 		<base_points>-15</base_points>
 		<reference>SU31</reference>
@@ -109,7 +109,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Compulsive Rhetoric</name>
+		<Name>Compulsive Rhetoric</Name>
 		<type>Mental</type>
 		<base_points>-5</base_points>
 		<cr>12</cr>
@@ -119,7 +119,7 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Dual Identity</name>
+		<Name>Dual Identity</Name>
 		<type>Mental</type>
 		<base_points>-1</base_points>
 		<reference>SU33</reference>
@@ -128,34 +128,34 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<name>Elasticity</name>
+		<Name>Elasticity</Name>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<notes>Biological</notes>
+			<Notes>Biological</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<notes>Super</notes>
+			<Notes>Super</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>SU34</reference>
-			<notes>Mutant</notes>
+			<Notes>Mutant</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-15</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-15</cost>
 			<affects>total</affects>
 			<reference>SU34</reference>
-			<notes>Nanotech</notes>
+			<Notes>Nanotech</Notes>
 		</modifier>
 		<reference>SU39</reference>
 		<categories>
@@ -164,10 +164,10 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<name>Elasticity Talent</name>
+		<Name>Elasticity Talent</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>5</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>5</points_per_Level>
 		<reference>SU39</reference>
 		<categories>
 			<category>Advantage</category>
@@ -175,57 +175,57 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Equipment Bond</name>
+		<Name>Equipment Bond</Name>
 		<type>Physical, Exotic</type>
 		<base_points>1</base_points>
 		<reference>SU31</reference>
-		<notes>You have a tool particularly suited to you for +1 to skill rolls using it.</notes>
+		<Notes>You have a tool particularly suited to you for +1 to skill rolls using it.</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Forgetful</name>
+		<Name>Forgetful</Name>
 		<type>Mental</type>
 		<base_points>-1</base_points>
 		<reference>SU33</reference>
-		<notes>You often forget about your powers and equipment.</notes>
+		<Notes>You often forget about your powers and equipment.</Notes>
 		<categories>
 			<category>Quirk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Generator</name>
+		<Name>Generator</Name>
 		<type>Physical, Exotic</type>
 		<base_points>1</base_points>
 		<reference>SU31</reference>
-		<notes>You can produce a steady direct current.  Maximum: @Power@ Watts</notes>
+		<Notes>You can produce a steady direct current.  Maximum: @Power@ Watts</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Ignition</name>
+		<Name>Ignition</Name>
 		<type>Physical, Exotic</type>
 		<base_points>1</base_points>
 		<reference>SU31</reference>
-		<notes>You can ignite Highly Flammable or Super Flammable material.</notes>
+		<Notes>You can ignite Highly Flammable or Super Flammable material.</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Illumination</name>
+		<Name>Illumination</Name>
 		<type>Physical, Exotic</type>
 		<base_points>1</base_points>
 		<reference>SU31</reference>
-		<notes>You can produce light as if you had a flashlight.</notes>
+		<Notes>You can produce light as if you had a flashlight.</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Mania (@Element@)</name>
+		<Name>Mania (@Element@)</Name>
 		<type>Mental</type>
 		<base_points>-5</base_points>
 		<cr>12</cr>
@@ -235,53 +235,53 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Masked</name>
+		<Name>Masked</Name>
 		<type>Physical</type>
 		<base_points>1</base_points>
 		<reference>SU30</reference>
-		<notes>A domino mask, glasses, or similar disguise renders you totally unrecognizable to even your closest friends.</notes>
+		<Notes>A domino mask, glasses, or similar disguise renders you totally unrecognizable to even your closest friends.</Notes>
 		<categories>
 			<category>Cinematic</category>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Modular Abilities (Grimoire)</name>
+		<Name>Modular Abilities (Grimoire)</Name>
 		<type>Mental, Exotic</type>
-		<levels>1</levels>
+		<Levels>1</Levels>
 		<base_points>5</base_points>
-		<points_per_level>3</points_per_level>
+		<points_per_Level>3</points_per_Level>
 		<reference>SU27</reference>
 		<categories>
 			<category>Advantage</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Modular Abilities (Reconfigurable Mechanisms)</name>
+		<Name>Modular Abilities (Reconfigurable Mechanisms)</Name>
 		<type>Mental, Exotic</type>
-		<levels>1</levels>
+		<Levels>1</Levels>
 		<base_points>6</base_points>
-		<points_per_level>3</points_per_level>
+		<points_per_Level>3</points_per_Level>
 		<reference>SU27</reference>
-		<notes>External</notes>
+		<Notes>External</Notes>
 		<categories>
 			<category>Advantage</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Modular Abilities (Reconfigurable Mechanisms)</name>
+		<Name>Modular Abilities (Reconfigurable Mechanisms)</Name>
 		<type>Mental, Exotic</type>
-		<levels>1</levels>
+		<Levels>1</Levels>
 		<base_points>6</base_points>
-		<points_per_level>4</points_per_level>
+		<points_per_Level>4</points_per_Level>
 		<reference>SU27</reference>
-		<notes>Internal</notes>
+		<Notes>Internal</Notes>
 		<categories>
 			<category>Advantage</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>No Visible Damage</name>
+		<Name>No Visible Damage</Name>
 		<type>Physical, Exotic</type>
 		<base_points>1</base_points>
 		<reference>SU31</reference>
@@ -289,86 +289,86 @@
 			<category>Perk</category>
 		</categories>
 		<prereq_list all="yes">
-			<advantage_prereq has="yes">
-				<name compare="is">Unkillable</name>
-				<notes compare="is anything"></notes>
+			<advantage_prereq Has="yes">
+				<Name Compare="is">Unkillable</Name>
+				<Notes Compare="is anything"></Notes>
 			</advantage_prereq>
 		</prereq_list>
 	</advantage>
 	<advantage version="2">
-		<name>Nonprotective Clothing</name>
+		<Name>Nonprotective Clothing</Name>
 		<type>Physical</type>
 		<base_points>1</base_points>
 		<reference>SU30</reference>
-		<notes>You can wear clothing other than armour.</notes>
+		<Notes>You can wear clothing other than armour.</Notes>
 		<categories>
 			<category>Cinematic</category>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Perfume</name>
+		<Name>Perfume</Name>
 		<type>Physical, Exotic</type>
 		<base_points>1</base_points>
 		<reference>SU31</reference>
-		<notes>+1 to reactions where smell makes a difference.</notes>
+		<Notes>+1 to reactions where smell makes a difference.</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Periscope</name>
+		<Name>Periscope</Name>
 		<type>Physical, Exotic</type>
 		<base_points>1</base_points>
 		<reference>SU31</reference>
-		<notes>Can't see directly ahead and must take aim maneuvers while using.</notes>
+		<Notes>Can't see directly ahead and must take aim maneuvers while using.</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<name>Phasing</name>
+		<Name>PHasing</Name>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<notes>Magical</notes>
+			<Notes>Magical</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<notes>Psionic</notes>
+			<Notes>Psionic</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-25</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<notes>Spirit</notes>
+			<Notes>Spirit</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<notes>Super</notes>
+			<Notes>Super</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>SU34</reference>
-			<notes>Mutant</notes>
+			<Notes>Mutant</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-15</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-15</cost>
 			<affects>total</affects>
 			<reference>SU34</reference>
-			<notes>Nanotech</notes>
+			<Notes>Nanotech</Notes>
 		</modifier>
 		<reference>SU39</reference>
 		<categories>
@@ -377,10 +377,10 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<name>Phasing Talent</name>
+		<Name>PHasing Talent</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>5</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>5</points_per_Level>
 		<reference>SU30</reference>
 		<categories>
 			<category>Advantage</category>
@@ -388,55 +388,55 @@
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<name>Plant Function</name>
+		<Name>Plant Function</Name>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<notes>Biological</notes>
+			<Notes>Biological</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<notes>Divine</notes>
+			<Notes>Divine</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<notes>Magical</notes>
+			<Notes>Magical</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-20</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-20</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<notes>Nature</notes>
+			<Notes>Nature</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-25</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-25</cost>
 			<affects>total</affects>
 			<reference>P28</reference>
-			<notes>Spirit</notes>
+			<Notes>Spirit</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<notes>Super</notes>
+			<Notes>Super</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>SU34</reference>
-			<notes>Mutant</notes>
+			<Notes>Mutant</Notes>
 		</modifier>
 		<reference>SU39</reference>
 		<categories>
@@ -445,10 +445,10 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<name>Plant Function Talent</name>
+		<Name>Plant Function Talent</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>5</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>5</points_per_Level>
 		<reference>SU39</reference>
 		<categories>
 			<category>Advantage</category>
@@ -456,69 +456,69 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Skintight</name>
+		<Name>Skintight</Name>
 		<type>Physical</type>
 		<base_points>1</base_points>
 		<reference>SU30</reference>
-		<notes>Your costume can be worn under normal clothing without showing.</notes>
+		<Notes>Your costume can be worn under normal clothing without showing.</Notes>
 		<categories>
 			<category>Cinematic</category>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Social Stigma (Freak)</name>
+		<Name>Social Stigma (Freak)</Name>
 		<type>Social</type>
 		<base_points>-10</base_points>
 		<reference>SU32</reference>
-		<notes>-2 Reaction</notes>
+		<Notes>-2 Reaction</Notes>
 		<categories>
 			<category>Disadvantage</category>
 		</categories>
 	</advantage>
 	<advantage_container version="2" open="yes">
-		<name>Speed</name>
+		<Name>Speed</Name>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<notes>Biological</notes>
+			<Notes>Biological</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P26</reference>
-			<notes>Divine</notes>
+			<Notes>Divine</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P27</reference>
-			<notes>Magical</notes>
+			<Notes>Magical</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>P29</reference>
-			<notes>Super</notes>
+			<Notes>Super</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-10</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-10</cost>
 			<affects>total</affects>
 			<reference>SU34</reference>
-			<notes>Mutant</notes>
+			<Notes>Mutant</Notes>
 		</modifier>
 		<modifier version="1" enabled="no">
-			<name>Power Modifier</name>
-			<cost type="percentage">-15</cost>
+			<Name>Power Modifier</Name>
+			<cost type="Percentage">-15</cost>
 			<affects>total</affects>
 			<reference>SU34</reference>
-			<notes>Nanotech</notes>
+			<Notes>Nanotech</Notes>
 		</modifier>
 		<reference>SU39</reference>
 		<categories>
@@ -527,10 +527,10 @@
 		</categories>
 	</advantage_container>
 	<advantage version="2">
-		<name>Speed Talent</name>
+		<Name>Speed Talent</Name>
 		<type>Mental</type>
-		<levels>1</levels>
-		<points_per_level>5</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>5</points_per_Level>
 		<reference>SU39</reference>
 		<categories>
 			<category>Advantage</category>
@@ -538,103 +538,103 @@
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Striking Surface</name>
+		<Name>Striking Surface</Name>
 		<type>Physical, Exotic</type>
 		<base_points>1</base_points>
 		<reference>SU31</reference>
-		<notes>Punch and kick as if you had brass knuckles and boots.</notes>
+		<Notes>Punch and kick as if you had brass knuckles and boots.</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 		<prereq_list all="yes">
-			<advantage_prereq has="yes">
-				<name compare="starts with">Damage Resistance</name>
-				<notes compare="is anything"></notes>
-				<level compare="at least">3</level>
+			<advantage_prereq Has="yes">
+				<Name Compare="starts with">Damage Resistance</Name>
+				<Notes Compare="is anything"></Notes>
+				<Level Compare="at least">3</Level>
 			</advantage_prereq>
 		</prereq_list>
 	</advantage>
 	<advantage version="2">
-		<name>Super Throw</name>
+		<Name>Super Throw</Name>
 		<type>Physical</type>
-		<levels>1</levels>
-		<points_per_level>10</points_per_level>
+		<Levels>1</Levels>
+		<points_per_Level>10</points_per_Level>
 		<reference>SU30</reference>
 		<categories>
 			<category>Advantage</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Supersuit</name>
+		<Name>Supersuit</Name>
 		<type>Physical</type>
 		<base_points>1</base_points>
 		<reference>SU30</reference>
-		<notes>Your costume works with and is not harmed by your powers.</notes>
+		<Notes>Your costume works with and is not harmed by your powers.</Notes>
 		<categories>
 			<category>Cinematic</category>
 			<category>Perk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Swinging</name>
+		<Name>Swinging</Name>
 		<type>Physical, Exotic</type>
 		<base_points>1</base_points>
 		<reference>SU31</reference>
-		<notes>Swing from vines, grappling lines, or the like without needing skill rolls.</notes>
+		<Notes>Swing from vines, grappling lines, or the like without needing skill rolls.</Notes>
 		<categories>
 			<category>Perk</category>
 		</categories>
 		<prereq_list all="no">
 			<prereq_list all="no">
-				<skill_prereq has="yes">
-					<name compare="is">Move!</name>
-					<specialization compare="is anything"></specialization>
-					<level compare="at least">16</level>
+				<skill_prereq Has="yes">
+					<Name Compare="is">Move!</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Level Compare="at least">16</Level>
 				</skill_prereq>
-				<skill_prereq has="yes">
-					<name compare="is">Throw!</name>
-					<specialization compare="is anything"></specialization>
-					<level compare="at least">16</level>
+				<skill_prereq Has="yes">
+					<Name Compare="is">Throw!</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Level Compare="at least">16</Level>
 				</skill_prereq>
-				<skill_prereq has="yes">
-					<name compare="is">Bow!</name>
-					<specialization compare="is anything"></specialization>
-					<level compare="at least">16</level>
+				<skill_prereq Has="yes">
+					<Name Compare="is">Bow!</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Level Compare="at least">16</Level>
 				</skill_prereq>
 			</prereq_list>
 			<prereq_list all="yes">
-				<skill_prereq has="yes">
-					<name compare="is">Acrobatics</name>
-					<specialization compare="is anything"></specialization>
-					<level compare="at least">16</level>
+				<skill_prereq Has="yes">
+					<Name Compare="is">Acrobatics</Name>
+					<Specialization Compare="is anything"></Specialization>
+					<Level Compare="at least">16</Level>
 				</skill_prereq>
 				<prereq_list all="no">
-					<skill_prereq has="yes">
-						<name compare="is">Observation</name>
-						<specialization compare="is anything"></specialization>
-						<level compare="at least">16</level>
+					<skill_prereq Has="yes">
+						<Name Compare="is">Observation</Name>
+						<Specialization Compare="is anything"></Specialization>
+						<Level Compare="at least">16</Level>
 					</skill_prereq>
 				</prereq_list>
 			</prereq_list>
 		</prereq_list>
 	</advantage>
 	<advantage version="2">
-		<name>Third Person</name>
+		<Name>Third Person</Name>
 		<type>Mental</type>
 		<base_points>-1</base_points>
 		<reference>SU33</reference>
-		<notes>You always refer to yourself by name.</notes>
+		<Notes>You always refer to yourself by Name.</Notes>
 		<categories>
 			<category>Quirk</category>
 		</categories>
 	</advantage>
 	<advantage version="2">
-		<name>Ultrapower</name>
+		<Name>Ultrapower</Name>
 		<type>Physical</type>
 		<base_points>50</base_points>
 		<modifier version="1" enabled="no">
-			<name>Externaly Boosted</name>
-			<cost type="percentage">-50</cost>
+			<Name>Externaly Boosted</Name>
+			<cost type="Percentage">-50</cost>
 			<affects>total</affects>
 			<reference>SU30</reference>
 		</modifier>

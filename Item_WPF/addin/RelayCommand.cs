@@ -153,7 +153,7 @@ namespace Item_WPF.addin
        /// <summary>
        /// Создает новую команду, которая всегда может выполняться.
        /// </summary>
-       /// <param name="execute">Логика выполнения.</param>
+       /// <param Name="execute">Логика выполнения.</param>
        public RelayCommand(Action<T> execute)
            : this(execute, null)
        {
@@ -162,8 +162,8 @@ namespace Item_WPF.addin
        /// <summary>
        /// Создает новую команду.
        /// </summary>
-       /// <param name="execute">Логика выполнения.</param>
-       /// <param name="canExecute">Логика состояния выполнения.</param>
+       /// <param Name="execute">Логика выполнения.</param>
+       /// <param Name="canExecute">Логика состояния выполнения.</param>
        public RelayCommand(Action<T> execute, Predicate<T> canExecute)
        {
            if (execute == null)
@@ -175,7 +175,7 @@ namespace Item_WPF.addin
        /// <summary>
        /// Определяет, можно ли выполнить эту команду <see cref="RelayCommand"/> в текущем состоянии.
        /// </summary>
-       /// <param name="parameter">
+       /// <param Name="parameter">
        /// Данные, используемые командой. Если команда не требует передачи данных, этот объект можно установить равным NULL.
        /// </param>
        /// <returns>true, если команда может быть выполнена; в противном случае - false.</returns>
@@ -187,7 +187,7 @@ namespace Item_WPF.addin
        /// <summary>
        /// Выполняет <see cref="RelayCommand"/> текущей цели команды.
        /// </summary>
-       /// <param name="parameter">
+       /// <param Name="parameter">
        /// Данные, используемые командой. Если команда не требует передачи данных, этот объект можно установить равным NULL.
        /// </param>
        public void Execute(object parameter)
@@ -248,7 +248,7 @@ namespace Item_WPF.addin
         /// <summary>
         /// Предикат показывает можно ли запускать команды при заданном аргументе.
         /// </summary>
-        /// <param name="parameter"></param>
+        /// <param Name="parameter"></param>
         /// <returns></returns>
         public bool CanExecute(object parameter)
         {
@@ -260,7 +260,7 @@ namespace Item_WPF.addin
         /// <summary>
         /// Что должна выполнять команда
         /// </summary>
-        /// <param name="parameter"></param>
+        /// <param Name="parameter"></param>
         public void Execute(object parameter)
         {
             _action();
@@ -277,8 +277,8 @@ namespace Item_WPF.addin
         /// <summary>
         /// Инициализация нового экземпляра класса без параметров <see cref="Command"/>.
         /// </summary>
-        /// <param name="action">Действие.</param>
-        /// <param name="canExecute">Если установлено в<c>true</c> [can execute] (выполнение разрешено).</param>
+        /// <param Name="action">Действие.</param>
+        /// <param Name="canExecute">Если установлено в<c>true</c> [can execute] (выполнение разрешено).</param>
         public Command(Action action, bool canExecute = true)
         {
             //  Set the action.
@@ -289,8 +289,8 @@ namespace Item_WPF.addin
         /// <summary>
         /// Инициализация нового экземпляра класса с параметрами <see cref="Command"/> class.
         /// </summary>
-        /// <param name="parameterizedAction">Параметризированное действие.</param>
-        /// <param name="canExecute"> Если установлено в <c>true</c> [can execute](выполнение разрешено).</param>
+        /// <param Name="parameterizedAction">Параметризированное действие.</param>
+        /// <param Name="canExecute"> Если установлено в <c>true</c> [can execute](выполнение разрешено).</param>
         public Command(Action<object> parameterizedAction, bool canExecute = true)
         {
             //  Set the action.
@@ -333,7 +333,7 @@ namespace Item_WPF.addin
         /// <summary>
         /// Определяем метод, определющий, что выполнение команды допускается в текущем состоянии
         /// </summary>
-        /// <param name="parameter">Этот параметр используется командой.
+        /// <param Name="parameter">Этот параметр используется командой.
         ///  Если команда вызывается без использования параметра,
         ///  то этот объект может быть установлен в  null.</param>
         /// <returns>
@@ -347,7 +347,7 @@ namespace Item_WPF.addin
         /// <summary>
         /// Задание метода, который будет вызван при активации команды.
         /// </summary>
-        /// <param name="parameter"> Этот параметр используется командой.
+        /// <param Name="parameter"> Этот параметр используется командой.
         ///  Если команда вызывается без использования параметра,
         ///  то этот объект может быть установлен в  null.</param>
         void ICommand.Execute(object parameter)
@@ -406,7 +406,7 @@ namespace Item_WPF.addin
         /// <summary>
         /// Выполнение команды
         /// </summary>
-        /// <param name="param">The param.</param>
+        /// <param Name="param">The param.</param>
         public virtual void DoExecute(object param)
         {
             //  Вызывает выполнении команды с возможностью отмены

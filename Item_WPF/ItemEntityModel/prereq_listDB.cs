@@ -33,7 +33,7 @@ namespace Item_WPF.ItemEntityModel
         public prereq_listDB()
         {
             this.advantage_prereq = new HashSet<advantage_prereq>();
-            this.attribute_prereq = new HashSet<attribute_prereq>();
+            this.attribute_prereq = new HashSet<attribute_prereq1>();
             this.contained_weight_prereq = new HashSet<contained_weight_prereq>();
             this.prereq_listDB1 = new HashSet<prereq_listDB>();
             this.skill_prereqDB = new HashSet<skill_prereqDB>();
@@ -221,8 +221,8 @@ namespace Item_WPF.ItemEntityModel
                 }
             } 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        private ICollection<attribute_prereq> _attribute_prereq;
-            public virtual ICollection<attribute_prereq> attribute_prereq
+        private ICollection<attribute_prereq1> _attribute_prereq;
+            public virtual ICollection<attribute_prereq1> attribute_prereq
             {
                 get { return _attribute_prereq; }
                 set

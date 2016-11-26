@@ -190,7 +190,7 @@
                                       Margin="93,122,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      DisplayMemberPath="name_TL"
+                                      DisplayMemberPath="Name_TL"
                                       IsReadOnly="True"
                                       ItemsSource="{Binding TlCollection}"
                                       SelectedValue="{Binding ItemLoad.TL}"
@@ -341,7 +341,7 @@
                                       Margin="164,10,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      DisplayMemberPath="name_class"
+                                      DisplayMemberPath="Name_class"
                                       ItemsSource="{Binding AttachClassColl,
                                                             Mode=TwoWay,
                                                             UpdateSourceTrigger=PropertyChanged}"
@@ -354,7 +354,7 @@
                                       Margin="164,37,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      DisplayMemberPath="SubAttach_name"
+                                      DisplayMemberPath="SubAttach_Name"
                                       IsSynchronizedWithCurrentItem="True"
                                       SelectedValue="{Binding AttachLoad.G_SubAttachClass,
                                                               Mode=TwoWay,
@@ -373,7 +373,7 @@
                                       Margin="164,92,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      DisplayMemberPath="name"
+                                      DisplayMemberPath="Name"
                                       IsSynchronizedWithCurrentItem="True"
                                       SelectedValuePath="id">
                                 <!--  SelectedValue="{Binding AttachLoad.id_Attachmentmount}"  -->
@@ -883,7 +883,7 @@
                                               Margin="89,41,0,0"
                                               HorizontalAlignment="Left"
                                               VerticalAlignment="Top"
-                                              DisplayMemberPath="name"
+                                              DisplayMemberPath="Name"
                                               ItemsSource="{Binding LaserColorEfColl}"
                                               SelectedValue="{Binding AttachLoad.LaserColor}"
                                               SelectedValuePath="id" />

@@ -65,7 +65,7 @@
 //	private static const String			TAG_POINTS_PER_LEVEL		= "points_per_level";								//$NON-NLS-1$
 //	private static const String			TAG_LEVELS					= "levels";											//$NON-NLS-1$
 //	private static const String			TAG_TYPE					= "type";											//$NON-NLS-1$
-//	private static const String			TAG_NAME					= "name";											//$NON-NLS-1$
+//	private static const String			TAG_NAME					= "Name";											//$NON-NLS-1$
 //	private static const String			TAG_CR						= "cr";												//$NON-NLS-1$
 //	private static const String			TYPE_MENTAL					= "Mental";											//$NON-NLS-1$
 //	private static const String			TYPE_PHYSICAL				= "Physical";										//$NON-NLS-1$
@@ -81,13 +81,13 @@
 //	public static const String			ID_TYPE						= PREFIX + "Type";									//$NON-NLS-1$
 //	/** The field ID for container type changes. */
 //	public static const String			ID_CONTAINER_TYPE			= PREFIX + "ContainerType";							//$NON-NLS-1$
-//	/** The field ID for name changes. */
+//	/** The field ID for Name changes. */
 //	public static const String			ID_NAME						= PREFIX + "Name";									//$NON-NLS-1$
 //	/** The field ID for CR changes. */
 //	public static const String			ID_CR						= PREFIX + "CR";									//$NON-NLS-1$
-//	/** The field ID for level changes. */
+//	/** The field ID for Level changes. */
 //	public static const String			ID_LEVELS					= PREFIX + "Levels";								//$NON-NLS-1$
-//	/** The field ID for half level. */
+//	/** The field ID for half Level. */
 //	public static const String			ID_HALF_LEVEL				= PREFIX + "HalfLevel";								//$NON-NLS-1$
 //	/** The field ID for round cost down changes. */
 //	public static const String			ID_ROUND_COST_DOWN			= PREFIX + "RoundCostDown";							//$NON-NLS-1$
@@ -262,37 +262,37 @@
 
 //	@Override
 //	protected void loadSubElement(XMLReader reader, LoadState state) throws IOException {
-//		String name = reader.getName();
+//		String Name = reader.getName();
 
-//		if (TAG_NAME.equals(name)) {
+//		if (TAG_NAME.equals(Name)) {
 //			mName = reader.readText().replace("\n", " "); //$NON-NLS-1$ //$NON-NLS-2$
-//		} else if (TAG_CR.equals(name)) {
+//		} else if (TAG_CR.equals(Name)) {
 //			mCRAdj = Enums.extract(reader.getAttribute(SelfControlRoll.ATTR_ADJUSTMENT), SelfControlRollAdjustments.values(), SelfControlRollAdjustments.NONE);
 //			mCR = SelfControlRoll.get(reader.readText());
-//		} else if (TAG_REFERENCE.equals(name)) {
+//		} else if (TAG_REFERENCE.equals(Name)) {
 //			mReference = reader.readText().replace("\n", " "); //$NON-NLS-1$ //$NON-NLS-2$
-//		} else if (!state.mForUndo && (TAG_ADVANTAGE.equals(name) || TAG_ADVANTAGE_CONTAINER.equals(name))) {
+//		} else if (!state.mForUndo && (TAG_ADVANTAGE.equals(Name) || TAG_ADVANTAGE_CONTAINER.equals(Name))) {
 //			addChild(new Advantage(mDataFile, reader, state));
-//		} else if (Modifier.TAG_MODIFIER.equals(name)) {
+//		} else if (Modifier.TAG_MODIFIER.equals(Name)) {
 //			mModifiers.add(new Modifier(getDataFile(), reader, state));
 //		} else if (!canHaveChildren()) {
-//			if (TAG_TYPE.equals(name)) {
+//			if (TAG_TYPE.equals(Name)) {
 //				mType = getTypeFromText(reader.readText());
-//			} else if (TAG_LEVELS.equals(name)) {
-//				// Read the attribute first as next operation clears attribute map
+//			} else if (TAG_LEVELS.equals(Name)) {
+//				// Read the Attribute first as next operation clears Attribute map
 //				mHalfLevel = mAllowHalfLevels && reader.isAttributeSet(ATTR_HALF_LEVEL);
 //				mLevels = reader.readInteger(-1);
-//			} else if (TAG_OLD_POINTS.equals(name)) {
+//			} else if (TAG_OLD_POINTS.equals(Name)) {
 //				mOldPointsString = reader.readText();
-//			} else if (TAG_BASE_POINTS.equals(name)) {
+//			} else if (TAG_BASE_POINTS.equals(Name)) {
 //				mPoints = reader.readInteger(0);
-//			} else if (TAG_POINTS_PER_LEVEL.equals(name)) {
+//			} else if (TAG_POINTS_PER_LEVEL.equals(Name)) {
 //				mPointsPerLevel = reader.readInteger(0);
-//			} else if (MeleeWeaponStats.TAG_ROOT.equals(name)) {
+//			} else if (MeleeWeaponStats.TAG_ROOT.equals(Name)) {
 //				mWeapons.add(new MeleeWeaponStats(this, reader));
-//			} else if (RangedWeaponStats.TAG_ROOT.equals(name)) {
+//			} else if (RangedWeaponStats.TAG_ROOT.equals(Name)) {
 //				mWeapons.add(new RangedWeaponStats(this, reader));
-//			} else if (OldWeapon.TAG_ROOT.equals(name)) {
+//			} else if (OldWeapon.TAG_ROOT.equals(Name)) {
 //				state.mOldWeapons.put(this, new OldWeapon(reader));
 //			} else {
 //				super.loadSubElement(reader, state);
@@ -433,18 +433,18 @@
 //		return DEFAULT_NAME;
 //	}
 
-//	/** @return The name. */
+//	/** @return The Name. */
 //	public String getName() {
 //		return mName;
 //	}
 
 //	/**
-//	 * @param name The name to set.
+//	 * @param Name The Name to set.
 //	 * @return Whether it was changed.
 //	 */
-//	public bool setName(String name) {
-//		if (!mName.equals(name)) {
-//			mName = name;
+//	public bool setName(String Name) {
+//		if (!mName.equals(Name)) {
+//			mName = Name;
 //			notifySingle(ID_NAME);
 //			return true;
 //		}
@@ -510,18 +510,18 @@
 //		return false;
 //	}
 
-//	/** @return Whether there is at least half a level. */
+//	/** @return Whether there is at least half a Level. */
 //	public bool hasLevel() {
 //		return mLevels > 0 || mLevels == 0 && mHalfLevel && mAllowHalfLevels;
 //	}
 
-//	/** @return Whether there is a half level */
+//	/** @return Whether there is a half Level */
 //	public bool hasHalfLevel() {
 //		return mHalfLevel;
 //	}
 
 //	/**
-//	 * @param halfLevel The half level to set.
+//	 * @param halfLevel The half Level to set.
 //	 * @return Whether it was modified.
 //	 */
 //	public bool setHalfLevel(bool halfLevel) {
@@ -594,8 +594,8 @@
 //	/**
 //	 * @param basePoints The base point cost.
 //	 * @param levels The number of levels.
-//	 * @param halfLevel Whether a half level is present.
-//	 * @param pointsPerLevel The point cost per level.
+//	 * @param halfLevel Whether a half Level is present.
+//	 * @param pointsPerLevel The point cost per Level.
 //	 * @param cr The {@link SelfControlRoll} to apply.
 //	 * @param modifiers The {@link Modifier}s to apply.
 //	 * @param roundCostDown Whether the point cost should be rounded down rather than up, as is
@@ -720,13 +720,13 @@
 //		return false;
 //	}
 
-//	/** @return The points per level. */
+//	/** @return The points per Level. */
 //	public int getPointsPerLevel() {
 //		return mPointsPerLevel;
 //	}
 
 //	/**
-//	 * @param points The points per level to set.
+//	 * @param points The points per Level to set.
 //	 * @return Whether it was modified.
 //	 */
 //	public bool setPointsPerLevel(int points) {
