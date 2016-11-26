@@ -6,12 +6,14 @@
         xmlns:local="clr-namespace:Item_WPF.MVVM.GurpsSkill_m"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="AllGurpsSkillView"
-        Width="786"
-        Height="397"
+        Width="954"
+        Height="553"
         mc:Ignorable="d">
     <Grid>
         <TreeView x:Name="treeView"
-                  Margin="10,56,394,10"
+                  Width="192"
+                  Margin="10,56,0,10"
+                  HorizontalAlignment="Left"
                   ItemsSource="{Binding Path=AllGurpsSkillforTree}"
                   SelectedValuePath="id">
             <TreeView.ItemTemplate>
@@ -19,11 +21,11 @@
                     <TextBlock Text="{Binding Path=NameSkill}" />
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>
-            <!--<TreeView.ItemContainerStyle>
+            <TreeView.ItemContainerStyle>
                 <Style TargetType="{x:Type TreeViewItem}">
                     <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
                 </Style>
-            </TreeView.ItemContainerStyle>-->
+            </TreeView.ItemContainerStyle>
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectedItemChanged">
                     <i:InvokeCommandAction Command="{Binding SelectedItemChangedCommand}" CommandParameter="{Binding ElementName=treeView, Path=SelectedItem}" />
@@ -33,25 +35,99 @@
         </TreeView>
         <Label x:Name="label"
                Width="250"
-               Height="34"
-               Margin="400,10,0,0"
-               HorizontalAlignment="Left"
+               Height="25"
+               Margin="0,12,245,0"
+               HorizontalAlignment="Right"
                VerticalAlignment="Top"
-               Content="{Binding SelectedGurpsForWork.NameSkill}" />
-        <DataGrid x:Name="dataGrid"
-                  Width="368"
-                  Height="132"
-                  Margin="400,224,0,0"
-                  HorizontalAlignment="Left"
-                  VerticalAlignment="Top"
-                  ItemsSource="{Binding SelectedGurpsForWork.SkillDifficulty}" />
+               Content="{Binding SelectedGurps.NameSkill}" />
         <Label x:Name="label1"
                Width="250"
-               Height="35"
-               Margin="400,56,0,0"
-               HorizontalAlignment="Left"
+               Height="25"
+               Margin="0,43,245,0"
+               HorizontalAlignment="Right"
                VerticalAlignment="Top"
-               Content="{Binding SelectedGurpsForWork.SkillDifficulty}" />
+               Content="{Binding SelectedGurps.Specialization}" />
+        <ListBox Name="listBox1"
+                 Width="227"
+                 Height="75"
+                 Margin="0,12,12,0"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Top"
+                 DisplayMemberPath="NamelCategory"
+                 ItemsSource="{Binding SelectedGurps.GurpsCategories}" />
+        <Label Name="label2"
+               Width="250"
+               Height="25"
+               Margin="0,74,245,0"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Top"
+               Content="{Binding SelectedGurps.TypeSkTh}" />
+        <DataGrid Name="dataGrid1"
+                  Width="263"
+                  Height="212"
+                  Margin="0,106,12,0"
+                  HorizontalAlignment="Right"
+                  VerticalAlignment="Top"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  ItemsSource="{Binding SelectedGurps.DefaultSkills}">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="Type"
+                                    Binding="{Binding Path=type}"
+                                    Header="Type" />
+                <DataGridTextColumn x:Name="DependSkill"
+                                    Binding="{Binding Path=GurpsSkill1.NameSkill}"
+                                    Header="Depend Skill" />
+                <DataGridTextColumn x:Name="Dependspe"
+                                    Binding="{Binding Path=GurpsSkill1.Specialization}"
+                                    Header="" />
+                <DataGridTextColumn x:Name="Modifier"
+                                    Binding="{Binding Path=Modifier}"
+                                    Header="Modifier" />
 
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <GroupBox Name="groupBox1"
+                  Width="443"
+                  Height="361"
+                  Margin="208,141,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Header="groupBox1">
+            <Grid>
+                <TabControl Name="tabControl1"
+                            Width="419"
+                            Height="159"
+                            Margin="6,177,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
+                    <TabItem Name="tabItem1" Header="skill_prereqDB">
+                        <Grid>
+                            <DataGrid Name="dataGrid2"
+                                      Width="402"
+                                      Height="122"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Top"
+                                      AutoGenerateColumns="True"
+                                      ItemsSource="{Binding ElementName=dataGrid3,
+                                                            Path=SelectedItem.skill_prereqDB}" />
+                        </Grid>
+                    </TabItem>
+                    <TabItem Name="tabItem2" Header="tabItem2">
+                        <Grid />
+                    </TabItem>
+                </TabControl>
+                <DataGrid Name="dataGrid3"
+                          Width="414"
+                          Height="94"
+                          Margin="11,6,0,0"
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          AutoGenerateColumns="True"
+                          ItemsSource="{Binding SelectedGurps.prereq_listDB}" />
+            </Grid>
+        </GroupBox>
     </Grid>
 </Window>
