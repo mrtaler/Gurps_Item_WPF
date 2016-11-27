@@ -23,7 +23,7 @@ namespace Item_WPF.MVVM.ViewModels
             _context = new item1Entities();
             ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClasses.Where(p => p.name != "All"));
 
-            CCreateNewItem = new DelegateCommand(CreateNewItem) ;
+            CCreateNewItem = new ViewModelCommand(CreateNewItem) ;
         }
         #region Command CreateNewItem
         private void CreateNewItem(object parameter)
@@ -53,7 +53,7 @@ namespace Item_WPF.MVVM.ViewModels
                 attachNr.ShowDialog();
             }
         }
-        public DelegateCommand CCreateNewItem { get; set; }
+        public ViewModelCommand CCreateNewItem { get; set; }
         #endregion
         #region intrfeis
         public event PropertyChangedEventHandler PropertyChanged;

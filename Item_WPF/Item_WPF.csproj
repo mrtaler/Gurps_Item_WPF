@@ -322,11 +322,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\AddSkilltoChar\AddSkilltoCharView.xaml.cs">
+    <Compile Include="MVVM\Char\AddSkilltoChar\AddSkilltoCharView.xaml.cs">
       <DependentUpon>AddSkilltoCharView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\AddSkilltoChar\AddSkilltoCharViewModel.cs" />
-    <Compile Include="MVVM\AllCharfromDB\AllCharFromDBViewModel.cs" />
+    <Compile Include="MVVM\Char\AddSkilltoChar\AddSkilltoCharViewModel.cs" />
+    <Compile Include="MVVM\Char\AllCharfromDB\AllCharFromDBViewModel.cs" />
     <Compile Include="MVVM\GurpsSkill_m\AllGurpsSkillView.xaml.cs">
       <DependentUpon>AllGurpsSkillView.xaml</DependentUpon>
     </Compile>
@@ -340,7 +340,7 @@
     <Compile Include="MVVM\Models\AnyBoxNameType.cs" />
     <Compile Include="MVVM\Models\AttackOption.cs" />
     <Compile Include="MVVM\Models\BoxItem.cs" />
-    <Compile Include="MVVM\Models\Character.cs" />
+    <Compile Include="MVVM\Char\MainCharacter\Character.cs" />
     <Compile Include="MVVM\Models\CombineWeapModel.cs" />
     <Compile Include="MVVM\Models\DB\CharSkill.cs" />
     <Compile Include="MVVM\Models\DiceString.cs" />
@@ -389,10 +389,10 @@
     <Compile Include="MVVM\ViewModels\AttacmentMountViewModel.cs" />
     <Compile Include="MVVM\ViewModels\CombineWeapViewModel.cs" />
     <Compile Include="MVVM\ViewModels\DamageTypeViewModel.cs" />
-    <Compile Include="MVVM\EditPrimaryStats\EditPrimaryStatsViewModel.cs" />
-    <Compile Include="MVVM\EditSecondaryStats\EditSecondaryStatsViewModel.cs" />
+    <Compile Include="MVVM\Char\EditPrimaryStats\EditPrimaryStatsViewModel.cs" />
+    <Compile Include="MVVM\Char\EditSecondaryStats\EditSecondaryStatsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\InputBoxViewModel.cs" />
-    <Compile Include="MVVM\MainCharacter\MainCharacterViewModel.cs" />
+    <Compile Include="MVVM\Char\MainCharacter\MainCharacterViewModel.cs" />
     <Compile Include="MVVM\ViewModels\MainWindowStartViewModel.cs" />
     <Compile Include="MVVM\ViewModels\NewBoxViewModel.cs" />
     <Compile Include="MVVM\ViewModels\NewItemsViewModel.cs" />
@@ -402,7 +402,7 @@
     <Compile Include="MVVM\View\AboutWindowView.xaml.cs">
       <DependentUpon>AboutWindowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\AllCharfromDB\AllCharfromDBView.xaml.cs">
+    <Compile Include="MVVM\Char\AllCharfromDB\AllCharfromDBView.xaml.cs">
       <DependentUpon>AllCharfromDBView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\AllWeaponView.xaml.cs">
@@ -441,10 +441,10 @@
     <Compile Include="MVVM\View\EditItemWindowView.xaml.cs">
       <DependentUpon>EditItemWindowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\EditPrimaryStats\EditPrimaryStatsWindowView.xaml.cs">
+    <Compile Include="MVVM\Char\EditPrimaryStats\EditPrimaryStatsWindowView.xaml.cs">
       <DependentUpon>EditPrimaryStatsWindowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\EditSecondaryStats\EditSecondaryStatsWindowView.xaml.cs">
+    <Compile Include="MVVM\Char\EditSecondaryStats\EditSecondaryStatsWindowView.xaml.cs">
       <DependentUpon>EditSecondaryStatsWindowView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\EditSkillWindowView.xaml.cs">
@@ -453,7 +453,7 @@
     <Compile Include="MVVM\View\InputBoxView.xaml.cs">
       <DependentUpon>InputBoxView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\MainCharacter\MainCharacterView.xaml.cs">
+    <Compile Include="MVVM\Char\MainCharacter\MainCharacterView.xaml.cs">
       <DependentUpon>MainCharacterView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\MainWindowStartView.xaml.cs">
@@ -502,7 +502,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
     </Compile>
-    <Page Include="MVVM\AddSkilltoChar\AddSkilltoCharView.xaml">
+    <Page Include="MVVM\Char\AddSkilltoChar\AddSkilltoCharView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -522,7 +522,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\AllCharfromDB\AllCharfromDBView.xaml">
+    <Page Include="MVVM\Char\AllCharfromDB\AllCharfromDBView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -574,11 +574,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\EditPrimaryStats\EditPrimaryStatsWindowView.xaml">
+    <Page Include="MVVM\Char\EditPrimaryStats\EditPrimaryStatsWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\EditSecondaryStats\EditSecondaryStatsWindowView.xaml">
+    <Page Include="MVVM\Char\EditSecondaryStats\EditSecondaryStatsWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -590,7 +590,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\MainCharacter\MainCharacterView.xaml">
+    <Page Include="MVVM\Char\MainCharacter\MainCharacterView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -74,11 +74,11 @@ namespace Item_WPF.MVVM.ViewModels
             //SelectedItClassforSort = _context.ItemClasses.FirstOrDefault(p => p.name.Contains(Param)).id;
             ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClasses);
 
-            Refresh = new DelegateCommand(Refreshnew) ;
-            CSelItem = new DelegateCommand(CSelectedItem);
-            Save = new DelegateCommand(SaveChanges) ;
-            CDelItem = new DelegateCommand(DelItem);
-            CNewItem = new DelegateCommand(NewItem);
+            Refresh = new ViewModelCommand(Refreshnew) ;
+            CSelItem = new ViewModelCommand(CSelectedItem);
+            Save = new ViewModelCommand(SaveChanges) ;
+            CDelItem = new ViewModelCommand(DelItem);
+            CNewItem = new ViewModelCommand(NewItem);
             PropertyDependencyMap.Add("SelectedItClassforSort", new[] { "Items" });
         }
 
@@ -91,7 +91,7 @@ namespace Item_WPF.MVVM.ViewModels
             SelectedItClassforSort = 1;
             //else Items = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.usItemClass == SelectedItClassforSort));
         }
-        public DelegateCommand Refresh { get; set; }
+        public ViewModelCommand Refresh { get; set; }
         #endregion
         #region Command CSelectedItem
         private void CSelectedItem(object parameter)
@@ -134,7 +134,7 @@ namespace Item_WPF.MVVM.ViewModels
             }
         }
 
-        public DelegateCommand CSelItem { get; set; }
+        public ViewModelCommand CSelItem { get; set; }
         #endregion
         #region Command DelItem
         private void DelItem(object parameter)
@@ -157,14 +157,14 @@ namespace Item_WPF.MVVM.ViewModels
             else MessageBox.Show("This rows is used");
         }
 
-        public DelegateCommand CDelItem { get; set; }
+        public ViewModelCommand CDelItem { get; set; }
         #endregion
         #region Command Save
         private void SaveChanges(object parameter)
         {
             _context.SaveChanges();
         }
-        public DelegateCommand Save { get; set; }
+        public ViewModelCommand Save { get; set; }
         #endregion
         #region Command NewItem
         private void NewItem(object parameter)
@@ -172,7 +172,7 @@ namespace Item_WPF.MVVM.ViewModels
             NewItemsView _newItemView = new NewItemsView();
             _newItemView.ShowDialog();
         }
-        public DelegateCommand CNewItem { get; set; }
+        public ViewModelCommand CNewItem { get; set; }
         #endregion
 
         #region intrfeis       

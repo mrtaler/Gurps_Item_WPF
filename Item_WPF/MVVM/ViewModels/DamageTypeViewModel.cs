@@ -19,7 +19,7 @@ namespace Item_WPF.MVVM.ViewModels
         {
             _context = new item1Entities();
             TypeOfDamageOk = new ObservableCollection<TypeOfDamage>(_context.TypeOfDamages);
-            Save = new DelegateCommand(SaveChanges);
+            Save = new ViewModelCommand(SaveChanges);
             TypeOfDamageOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_TypeOfDamageOK_CollectionChanged);
         }
         private void _TypeOfDamageOK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -48,7 +48,7 @@ namespace Item_WPF.MVVM.ViewModels
         {
             _context.SaveChanges();
         }
-        public DelegateCommand Save { get; set; }
+        public ViewModelCommand Save { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertyChanged(string propertyName)
         {

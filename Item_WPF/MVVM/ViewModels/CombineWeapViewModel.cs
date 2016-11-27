@@ -41,7 +41,7 @@ namespace Item_WPF.MVVM.ViewModels
             _context = new item1Entities();
             ItemToGridColl = new ObservableCollection<ItemToGridModel>();
 
-            CSelectWeapon = new DelegateCommand(SelectWeapon);//work
+            CSelectWeapon = new ViewModelCommand(SelectWeapon);//work
 
 
             CScopeSelect = new ViewModelCommand(SelectScope, false);
@@ -117,7 +117,7 @@ namespace Item_WPF.MVVM.ViewModels
                 CAmmoSelect.CanExecute = true;
             }
         }
-        public DelegateCommand CSelectWeapon { get; set; }
+        public ViewModelCommand CSelectWeapon { get; set; }
         #endregion
         #region Command SelectScope
         private void SelectScope(object parameter)

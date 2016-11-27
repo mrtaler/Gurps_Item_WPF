@@ -109,7 +109,7 @@ namespace Item_WPF.MVVM.ViewModels
 
 
 
-            Save = new DelegateCommand(SaveChanges);
+            Save = new ViewModelCommand(SaveChanges);
             AddNewMainBoxCommand = new ViewModelCommand(AddNewMainBox, true);
             AddNewSubMainBoxCommand = new ViewModelCommand(AddNewSubMainBox, true);
             PropertyDependencyMap.Add("SelectedItClassforSort", new[] { "ItemsFromDB" });
@@ -193,7 +193,7 @@ namespace Item_WPF.MVVM.ViewModels
         {
             _context.SaveChanges();
         }
-        public DelegateCommand Save { get; set; }
+        public ViewModelCommand Save { get; set; }
 
 
         private void anyBoxNameTypeAll_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)

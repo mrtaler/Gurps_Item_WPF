@@ -22,7 +22,7 @@ namespace Item_WPF.MVVM.ViewModels
             BoxType = new ObservableCollection<Type_of_Box>(_context.Type_of_Box);
             ParentBoxName = new ObservableCollection<AnyBoxNameType>(_context.AnyBoxNameTypes);
 
-            SaveCommand = new DelegateCommand(Save);
+            SaveCommand = new ViewModelCommand(Save);
         }
         private void Save(object parameter)
         {
@@ -40,6 +40,6 @@ namespace Item_WPF.MVVM.ViewModels
             _context.SaveChanges();
         }
 
-        public DelegateCommand SaveCommand { get; set; }
+        public ViewModelCommand SaveCommand { get; set; }
     }
 }

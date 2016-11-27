@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using Item_WPF.ItemEntityModel;
+using Item_WPF.MVVM.Char.AddSkilltoChar;
 
 namespace Item_WPF.MVVM.AddSkilltoChar
 {

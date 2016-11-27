@@ -24,7 +24,7 @@ namespace Item_WPF.MVVM.ViewModels
             _context = new item1Entities();
             avvAttSlotOk = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
             avvAttSlotOkForWork = new ObservableCollection<Attachmentmount>(avvAttSlotOk.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains(_slot)));
-            Save = new DelegateCommand(SaveChanges);
+            Save = new ViewModelCommand(SaveChanges);
             avvAttSlotOkForWork.CollectionChanged += new NotifyCollectionChangedEventHandler(_Avv_att_slot_OK_CollectionChanged);
         }
 
@@ -93,7 +93,7 @@ namespace Item_WPF.MVVM.ViewModels
                 MessageBox.Show(ex.ToString());
             }
         }
-        public DelegateCommand Save { get; set; }  
+        public ViewModelCommand Save { get; set; }  
       
         public void Dispose()
         {

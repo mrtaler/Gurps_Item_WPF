@@ -16,7 +16,7 @@ namespace Item_WPF.MVVM.ViewModels
         {
             _context = new item1Entities();
             CaliberOk = new ObservableCollection<Caliber>(_context.Calibers);
-            Save = new DelegateCommand(SaveChanges);
+            Save = new ViewModelCommand(SaveChanges);
             CaliberOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_ammoOK_CollectionChanged);
         }
         private void _ammoOK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -44,7 +44,7 @@ namespace Item_WPF.MVVM.ViewModels
         {
             _context.SaveChanges();
         }
-        public DelegateCommand Save { get; set; }
+        public ViewModelCommand Save { get; set; }
 
         //      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 

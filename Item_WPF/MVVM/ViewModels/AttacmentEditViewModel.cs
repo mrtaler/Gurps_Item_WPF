@@ -47,9 +47,9 @@ namespace Item_WPF.MVVM.ViewModels
             BatteryColl = new ObservableCollection<Battery>(_context.Batteries);
 
             #region Commands
-            Save = new DelegateCommand(SaveChanges);
-            LoadImage = new DelegateCommand(LoadImageToForm) ;
-            DellImage = new DelegateCommand(DellImageFromAll);
+            Save = new ViewModelCommand(SaveChanges);
+            LoadImage = new ViewModelCommand(LoadImageToForm) ;
+            DellImage = new ViewModelCommand(DellImageFromAll);
             #endregion
         }
 
@@ -76,9 +76,9 @@ namespace Item_WPF.MVVM.ViewModels
         #endregion
 
         #region Declaration Command
-        public DelegateCommand Save { get; set; }
-        public DelegateCommand LoadImage { get; set; }
-        public DelegateCommand DellImage { get; set; }
+        public ViewModelCommand Save { get; set; }
+        public ViewModelCommand LoadImage { get; set; }
+        public ViewModelCommand DellImage { get; set; }
         #endregion
 
         #region Реализация интерфейса

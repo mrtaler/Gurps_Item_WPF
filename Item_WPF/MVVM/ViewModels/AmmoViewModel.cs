@@ -19,7 +19,7 @@ namespace Item_WPF.MVVM.ViewModels
         {
             _context = new item1Entities();
            
-            Save = new DelegateCommand(SaveChanges);
+            Save = new ViewModelCommand(SaveChanges);
             caliber = new ObservableCollection<Caliber>(_context.Calibers);
             AmmoOk = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.ItemSubClass.ItemClass.name.Contains("ammo")));
             AmmoOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_ammoOK_CollectionChanged);
@@ -29,7 +29,7 @@ namespace Item_WPF.MVVM.ViewModels
         {
             _context = new item1Entities();
             int? param = (parametr as int?);    
-            Save = new DelegateCommand(SaveChanges);
+            Save = new ViewModelCommand(SaveChanges);
             caliber = new ObservableCollection<Caliber>(_context.Calibers);
             AmmoOk = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.ItemSubClass.ItemClass.name.Contains("ammo")).Where(p=>p.ubCalibre==param));
             AmmoOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_ammoOK_CollectionChanged);
@@ -61,7 +61,7 @@ namespace Item_WPF.MVVM.ViewModels
             _context.SaveChanges();
         }
 
-        public DelegateCommand Save { get; set; }
+        public ViewModelCommand Save { get; set; }
 
         //      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 

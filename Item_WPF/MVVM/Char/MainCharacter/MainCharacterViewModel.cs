@@ -26,18 +26,18 @@ namespace Item_WPF.MVVM.ViewModels
         private item1Entities _context;
         public CharacterDB Character { get; set; }
 
-        public DelegateCommand AboutCommand { get; private set; }
-        public DelegateCommand EditPrimaryStatsCommand { get; private set; }
-        public DelegateCommand EditSecondaryStatsCommand { get; private set; }
-        public DelegateCommand AddItemCommand { get; private set; }
-        public DelegateCommand AddAdvantageCommand { get; private set; }
-        public DelegateCommand AddSkillCommand { get; private set; }
-        public DelegateCommand NewCommand { get; private set; }
-        public DelegateCommand OpenCommand { get; private set; }
-        public DelegateCommand SaveDBCommand { get; private set; }
-        public DelegateCommand OpenDbCommand { get; private set; }
-        public DelegateCommand SaveAsCommand { get; private set; }
-        public DelegateCommand OwnerCloseCommand { get; private set; }
+        public ViewModelCommand AboutCommand { get; private set; }
+        public ViewModelCommand EditPrimaryStatsCommand { get; private set; }
+        public ViewModelCommand EditSecondaryStatsCommand { get; private set; }
+        public ViewModelCommand AddItemCommand { get; private set; }
+        public ViewModelCommand AddAdvantageCommand { get; private set; }
+        public ViewModelCommand AddSkillCommand { get; private set; }
+        public ViewModelCommand NewCommand { get; private set; }
+        public ViewModelCommand OpenCommand { get; private set; }
+        public ViewModelCommand SaveDBCommand { get; private set; }
+        public ViewModelCommand OpenDbCommand { get; private set; }
+        public ViewModelCommand SaveAsCommand { get; private set; }
+        public ViewModelCommand OwnerCloseCommand { get; private set; }
 
         public MainCharacterViewModel(Window owner)
             : this(owner, new CharacterDB())
@@ -55,19 +55,19 @@ namespace Item_WPF.MVVM.ViewModels
                 Character.name = USCensusNames.INSTANCE.getFullName(true);
 
             // Create commands
-            AboutCommand = new DelegateCommand(ShowAboutWindow);
-            EditPrimaryStatsCommand = new DelegateCommand(EditPrimaryStats);
-            EditSecondaryStatsCommand = new DelegateCommand(EditSecondaryStats);
-            AddItemCommand = new DelegateCommand(AddItem);
-            AddAdvantageCommand = new DelegateCommand(AddAdvantage);
-            AddSkillCommand = new DelegateCommand(AddSkill);
-            NewCommand = new DelegateCommand(New);
-            OpenCommand = new DelegateCommand(Open);
-            OpenDbCommand = new DelegateCommand(OpenDb);
-            SaveAsCommand = new DelegateCommand(SaveAs);
-            OwnerCloseCommand = new DelegateCommand(OwnerClose);
+            AboutCommand = new ViewModelCommand(ShowAboutWindow);
+            EditPrimaryStatsCommand = new ViewModelCommand(EditPrimaryStats);
+            EditSecondaryStatsCommand = new ViewModelCommand(EditSecondaryStats);
+            AddItemCommand = new ViewModelCommand(AddItem);
+            AddAdvantageCommand = new ViewModelCommand(AddAdvantage);
+            AddSkillCommand = new ViewModelCommand(AddSkill);
+            NewCommand = new ViewModelCommand(New);
+            OpenCommand = new ViewModelCommand(Open);
+            OpenDbCommand = new ViewModelCommand(OpenDb);
+            SaveAsCommand = new ViewModelCommand(SaveAs);
+            OwnerCloseCommand = new ViewModelCommand(OwnerClose);
 
-            SaveDBCommand = new DelegateCommand(SaveDB);
+            SaveDBCommand = new ViewModelCommand(SaveDb);
 
             // Setup property dependencies
             PropertyDependencyMap.Add("Strength", new[] { "MaxHP", "BasicLift", "ThrustDamage", "SwingDamage" });
@@ -422,7 +422,7 @@ namespace Item_WPF.MVVM.ViewModels
             }
         }
 
-        private void SaveDB(object parameter)
+        private void SaveDb(object parameter)
         {
             if (Character.id == 0 || Character.id == -1)
             {

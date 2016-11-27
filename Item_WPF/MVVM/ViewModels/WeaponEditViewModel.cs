@@ -129,14 +129,14 @@ namespace Item_WPF.MVVM.ViewModels
 
 
             #region Load Command
-            Save =                  new DelegateCommand(SaveChanges);       // сохранение контекста
-            LoadImage =             new DelegateCommand(LoadImageToForm);   //загрузка картинки
-            DellImage =             new DelegateCommand(DellImageFromAll);  //удаление картинки
-            CExtendDamage =         new DelegateCommand(ExtendDamage);
-            AddMountslot1 =         new DelegateCommand(AddMountslot1_Execute);
-            CheckThreeCheckBox =    new DelegateCommand(CheckThreeCheckBox_Execute); //
-            CloseWindowC =          new DelegateCommand(CloseWindow);       //Закрытие окна
-            CalliberWindowC =       new DelegateCommand(CalliberWindow);    //Caliber
+            Save =                  new ViewModelCommand(SaveChanges);       // сохранение контекста
+            LoadImage =             new ViewModelCommand(LoadImageToForm);   //загрузка картинки
+            DellImage =             new ViewModelCommand(DellImageFromAll);  //удаление картинки
+            CExtendDamage =         new ViewModelCommand(ExtendDamage);
+            AddMountslot1 =         new ViewModelCommand(AddMountslot1_Execute);
+            CheckThreeCheckBox =    new ViewModelCommand(CheckThreeCheckBox_Execute); //
+            CloseWindowC =          new ViewModelCommand(CloseWindow);       //Закрытие окна
+            CalliberWindowC =       new ViewModelCommand(CalliberWindow);    //Caliber
 
             //AddMountslot1 = new ActionCommand(AddMountslot1_Execute) { IsExecutable = true };
             #endregion
@@ -150,7 +150,7 @@ namespace Item_WPF.MVVM.ViewModels
         #endregion
         #region Command
         #region Command CalliberWindow
-        public DelegateCommand CalliberWindowC { get; set; }
+        public ViewModelCommand CalliberWindowC { get; set; }
         private void CalliberWindow(object parameter)
         {
             CaliberView AmmoViewWindow = new CaliberView();
@@ -168,7 +168,7 @@ namespace Item_WPF.MVVM.ViewModels
         #endregion
 
         #region Command CloseWindow
-        public DelegateCommand CloseWindowC { get; set; }
+        public ViewModelCommand CloseWindowC { get; set; }
         private void CloseWindow(object parameter)
         {
 
@@ -178,7 +178,7 @@ namespace Item_WPF.MVVM.ViewModels
         }
         #endregion
         #region Command ExtendDamage
-        public DelegateCommand CExtendDamage { get; set; }
+        public ViewModelCommand CExtendDamage { get; set; }
         private void ExtendDamage(object parameter)
         {
 
@@ -197,14 +197,14 @@ namespace Item_WPF.MVVM.ViewModels
         }
         #endregion
         #region Command CheckThreeCheckBox
-        public DelegateCommand CheckThreeCheckBox { get; set; }
+        public ViewModelCommand CheckThreeCheckBox { get; set; }
         private void CheckThreeCheckBox_Execute(object parameter)
         {
             bool Param = (bool)parameter;
         }
         #endregion
         #region Command AddMountslot1
-        public DelegateCommand AddMountslot1 { get; set; }
+        public ViewModelCommand AddMountslot1 { get; set; }
         private void AddMountslot1_Execute(object parameter)
         {
             AttacmentMountView AddMountslotWindow = new AttacmentMountView(parameter);
@@ -275,7 +275,7 @@ namespace Item_WPF.MVVM.ViewModels
         }
         #endregion
         #region Command SaveChanges
-        public DelegateCommand Save { get; set; }
+        public ViewModelCommand Save { get; set; }
         private void SaveChanges(object parameter)
         {
             var Nwe = (from p in _context.ItemSubClasses
@@ -291,7 +291,7 @@ namespace Item_WPF.MVVM.ViewModels
         }
         #endregion
         #region Command LoadImage
-        public DelegateCommand LoadImage { get; set; }
+        public ViewModelCommand LoadImage { get; set; }
         private void LoadImageToForm(object parameter)
         {
             OpenFileDialog dlg = new OpenFileDialog();
@@ -306,7 +306,7 @@ namespace Item_WPF.MVVM.ViewModels
         }
         #endregion
         #region Command DellImageFromAll
-        public DelegateCommand DellImage { get; set; }
+        public ViewModelCommand DellImage { get; set; }
         private void DellImageFromAll(object parameter)
         {
             ItemLoad.Item_Image = null;
