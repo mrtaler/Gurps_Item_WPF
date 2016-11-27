@@ -138,13 +138,13 @@ namespace Item_WPF.ItemEntityModel
         // public /*override */GurpsSkill() { }
 
         public GurpsSkill(SkillXMLModel SkillFromXml, string type)
-            :this()
+            : this()
         {
             Fmain(SkillFromXml, type);
         }
 
         public void FGurpsSkill(SkillXMLModel SkillFromXml, item1Entities _context, ObservableCollection<GurpsSkill> CollectionCategiry)
-         // :this()
+        // :this()
         {
             FCATEGORY(SkillFromXml, _context);
             FSpecialization(SkillFromXml, CollectionCategiry);

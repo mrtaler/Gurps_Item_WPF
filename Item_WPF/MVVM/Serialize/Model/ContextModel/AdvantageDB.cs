@@ -8,8 +8,8 @@ namespace Item_WPF.ItemEntityModel
 {
     public partial class Advantage
     {
-      //  public Advantage() { }
-        public Advantage(AdvantageXML advXML, item1Entities _context)
+        //  public Advantage() { }
+       public Advantage(AdvantageXML advXML)
         {
             name = advXML.name != null
                                   ? advXML.name.Value.ToString() : null;
@@ -44,7 +44,7 @@ namespace Item_WPF.ItemEntityModel
                 }
             }
             #endregion
-            FCATEGORY(advXML, _context);
+          //  FCATEGORY(advXML);
             Fdr_bonus(advXML);
             Fattribute_bonus(advXML);
 

@@ -105,12 +105,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="addin\AnyBoxNameType_mem.cs" />
+    <Compile Include="addin\BindableSelectedItemBehavior.cs" />
     <Compile Include="addin\Converters.cs" />
     <Compile Include="addin\Converters\CostDeciminalConverter.cs" />
     <Compile Include="addin\Converters\DeciminalConverterString.cs" />
     <Compile Include="addin\Converters\ImageConverter.cs" />
+    <Compile Include="addin\ConvertorBase.cs" />
+    <Compile Include="addin\MultiConvertorBase.cs" />
     <Compile Include="addin\ViewModelCommand.cs" />
-    <Compile Include="addin\RelayCommand.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\advantage\Advantage.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\advantage\AdvantageColumn.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\advantage\AdvantageContainerType.cs" />
@@ -313,7 +316,7 @@
     <Compile Include="litForms\character.xaml.cs">
       <DependentUpon>character.xaml</DependentUpon>
     </Compile>
-    <Compile Include="addin\File_of_Code.cs" />
+    <Compile Include="addin\Dice.cs" />
     <Compile Include="ItemEntityModel\Gurps_Item.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -349,7 +352,16 @@
     <Compile Include="MVVM\Serialize\Model\advantageSerialize.cs" />
     <Compile Include="MVVM\Serialize\Model\advantageXML.cs" />
     <Compile Include="MVVM\Serialize\Model\Category.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\attribute_bonus.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\cost_reduction.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\DefSkillSome.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\melee_weapon.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\modifier.cs" />
     <Compile Include="MVVM\Serialize\Model\ContextModel\prereq_listDB.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\ranged_weapon.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\skill_bonusDB.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\spell_bonus.cs" />
+    <Compile Include="MVVM\Serialize\Model\ContextModel\weapon_bonus.cs" />
     <Compile Include="MVVM\Serialize\Model\Default.cs" />
     <Compile Include="MVVM\Serialize\Model\ContextModel\DefaultSkill.cs" />
     <Compile Include="MVVM\Serialize\Model\ew.cs" />
@@ -628,7 +640,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Gurps_Item.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="addin\id" />
     <None Include="addin\oldDB\ItemModelDiagram.dbd" />
     <None Include="addin\Диаграмма1.dbd" />
     <None Include="addin\Копия Fall_weap.xlsx" />
@@ -1026,6 +1037,7 @@
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
     </None>
     <None Include="MVVM\Serialize\Model\bs.skl" />
+    <None Include="MVVM\Serialize\Model\ContextModel\cost_reduction" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

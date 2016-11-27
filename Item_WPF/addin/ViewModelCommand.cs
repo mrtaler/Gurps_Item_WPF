@@ -7,9 +7,6 @@ using System.Threading.Tasks;
 
 namespace Item_WPF.addin
 {
-
-
-
     /// <summary>
     /// The ViewModelCommand class - an ICommand that can fire a function.
     /// </summary>

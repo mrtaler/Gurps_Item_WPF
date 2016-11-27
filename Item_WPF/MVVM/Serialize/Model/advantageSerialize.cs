@@ -24,7 +24,7 @@ namespace Item_WPF.MVVM.Serialize.Model
             {
                 contextAdded += 1;
                 AdvantageXML advXML = new AdvantageXML();
-                advXML.numPP = contextAdded ;
+                advXML.numPP = contextAdded;
                 advXML.name = skillElement.Element("name");
                 advXML.type = skillElement.Element("type");
                 advXML.levels = skillElement.Element("levels");
@@ -147,14 +147,14 @@ namespace Item_WPF.MVVM.Serialize.Model
                 //    { advXML.cr.Add(new crXML(itemmodifier)); }
                 //}
                 #endregion
-                
+
                 AdvantageXMLCollection.Add(advXML);
 
             }
             #endregion
             foreach (AdvantageXML advXML in AdvantageXMLCollection)
             {
-             //   Advantage adv = 
+                //   Advantage adv = 
 
                 _context.Advantages.Add(new Advantage(advXML));
             }

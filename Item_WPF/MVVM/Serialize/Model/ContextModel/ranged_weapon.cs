@@ -8,7 +8,7 @@ namespace Item_WPF.ItemEntityModel
 {
     public partial class ranged_weapon
     {
-   //     public ranged_weapon() { }
+        //     public ranged_weapon() { }
         public ranged_weapon(ranged_weaponXML item)
         {
             damage = item.damage.Value.ToString();

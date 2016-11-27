@@ -25,7 +25,7 @@ namespace Item_WPF.ItemEntityModel
         }
         public void FPskill_prereq(Prereq_listXML item)
         {
-           // skill_prereqDB=new  
+            // skill_prereqDB=new  
             foreach (var itemSkill_prereq in item.Skill_prereq)
             {
                 skill_prereqDB sklprq = new skill_prereqDB();
@@ -138,7 +138,7 @@ namespace Item_WPF.ItemEntityModel
             }
         }
         public prereq_listDB(Prereq_listXML item)
-            :this()
+            : this()
         {
 
             FPPrereq_list(item);
