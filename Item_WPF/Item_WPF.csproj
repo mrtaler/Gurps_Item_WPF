@@ -313,15 +313,16 @@
     <Compile Include="ItemEntityModel\weapon_bonus.cs">
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
-    <Compile Include="litForms\character.xaml.cs">
-      <DependentUpon>character.xaml</DependentUpon>
-    </Compile>
     <Compile Include="addin\Dice.cs" />
     <Compile Include="ItemEntityModel\Gurps_Item.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Gurps_Item.tt</DependentUpon>
     </Compile>
+    <Compile Include="litForms\TextInput\TextInputView.xaml.cs">
+      <DependentUpon>TextInputView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="litForms\TextInput\TextInputViewModel.cs" />
     <Compile Include="MVVM\Char\AddSkilltoChar\AddSkilltoCharView.xaml.cs">
       <DependentUpon>AddSkilltoCharView.xaml</DependentUpon>
     </Compile>
@@ -444,8 +445,8 @@
     <Compile Include="MVVM\Char\EditPrimaryStats\EditPrimaryStatsView.xaml.cs">
       <DependentUpon>EditPrimaryStatsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\Char\EditSecondaryStats\EditSecondaryStatsWindowView.xaml.cs">
-      <DependentUpon>EditSecondaryStatsWindowView.xaml</DependentUpon>
+    <Compile Include="MVVM\Char\EditSecondaryStats\EditSecondaryStatsView.xaml.cs">
+      <DependentUpon>EditSecondaryStatsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\EditSkillWindowView.xaml.cs">
       <DependentUpon>EditSkillWindowView.xaml</DependentUpon>
@@ -471,9 +472,6 @@
     <Compile Include="MVVM\View\WeaponEditView.xaml.cs">
       <DependentUpon>WeaponEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="litForms\new_char.xaml.cs">
-      <DependentUpon>new_char.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -484,10 +482,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Page Include="litForms\character.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -502,6 +496,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Gurps_Item.edmx</DependentUpon>
     </Compile>
+    <Page Include="litForms\TextInput\TextInputView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\Char\AddSkilltoChar\AddSkilltoCharView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -578,7 +576,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\Char\EditSecondaryStats\EditSecondaryStatsWindowView.xaml">
+    <Page Include="MVVM\Char\EditSecondaryStats\EditSecondaryStatsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -611,10 +609,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\WeaponEditView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="litForms\new_char.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

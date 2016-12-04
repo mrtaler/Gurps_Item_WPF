@@ -10,7 +10,6 @@ namespace Item_WPF.MVVM.EditPrimaryStats
         public EditPrimaryStatsViewModel() : this(new ItemEntityModel.CharacterDB())
         {
         }
-
         public EditPrimaryStatsViewModel(ItemEntityModel.CharacterDB character)
         {
             Character = character;
