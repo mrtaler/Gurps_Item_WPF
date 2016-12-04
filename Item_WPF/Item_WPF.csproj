@@ -441,8 +441,8 @@
     <Compile Include="MVVM\View\EditItemWindowView.xaml.cs">
       <DependentUpon>EditItemWindowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\Char\EditPrimaryStats\EditPrimaryStatsWindowView.xaml.cs">
-      <DependentUpon>EditPrimaryStatsWindowView.xaml</DependentUpon>
+    <Compile Include="MVVM\Char\EditPrimaryStats\EditPrimaryStatsView.xaml.cs">
+      <DependentUpon>EditPrimaryStatsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\Char\EditSecondaryStats\EditSecondaryStatsWindowView.xaml.cs">
       <DependentUpon>EditSecondaryStatsWindowView.xaml</DependentUpon>
@@ -574,7 +574,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\Char\EditPrimaryStats\EditPrimaryStatsWindowView.xaml">
+    <Page Include="MVVM\Char\EditPrimaryStats\EditPrimaryStatsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
