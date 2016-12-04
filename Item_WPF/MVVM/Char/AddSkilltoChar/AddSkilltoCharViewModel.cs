@@ -23,7 +23,8 @@ namespace Item_WPF.MVVM.Char.AddSkilltoChar
         /// <summary>
         /// COllection from Character Skill 
         /// </summary>
-        public ObservableCollection<CharSkill> CharSkillCollection => new ObservableCollection<CharSkill>(Character.CharSkills);
+        public ObservableCollection<CharSkill> CharSkillCollection =>
+            new ObservableCollection<CharSkill>(Character.CharSkills);
         /// <summary>
         /// Collection for gurps char skill
         /// </summary>
@@ -35,6 +36,7 @@ namespace Item_WPF.MVVM.Char.AddSkilltoChar
                     (Character.CharSkills.Select(p => p.GurpsSkill));
             }
         }
+        #region Command
         /// <summary>
         /// Add Skill to Char From DB
         /// </summary>
@@ -51,6 +53,7 @@ namespace Item_WPF.MVVM.Char.AddSkilltoChar
         /// Decrease skill point in char skill collection
         /// </summary>
         public ViewModelCommand SkillPointDecreaseCommand { get; set; }
+        #endregion
         /// <summary>
         /// Constructor With param
         /// </summary>
@@ -60,13 +63,16 @@ namespace Item_WPF.MVVM.Char.AddSkilltoChar
         {
             Character = character;
             Context = context;
-      
+
             // Load GurpsSkills from DB
             AllGurpsSkillCollection = new ObservableCollection<GurpsSkill>(Context.GurpsSkills.
                 OrderBy(p => p.TypeSkTh).
                 ThenBy(p => p.NameSkill)
                 );
 
+
+            //  GurpsSkill nf=new GurpsSkill();
+            //   nf.CharSkills
             #region Command definshion
             AddSkillCommand = new ViewModelCommand(AddSkill);
             RemSkillCommand = new ViewModelCommand(RemSkill);
@@ -83,7 +89,7 @@ namespace Item_WPF.MVVM.Char.AddSkilltoChar
             GurpsSkill skillToWork = (param as GurpsSkill);
             CharSkill charSkillsToWork = Character.CharSkills.First(p => p.GurpsSkill == skillToWork);
 
-            charSkillsToWork.PointOfSkill++;
+            charSkillsToWork.IncreasePoint();
 
             NotifyPropertyChanged("CharGurpsSkillCollection");
             NotifyPropertyChanged("CharSkillCollection");
@@ -97,8 +103,7 @@ namespace Item_WPF.MVVM.Char.AddSkilltoChar
             GurpsSkill gs = (param as GurpsSkill);
             var cha = Character.CharSkills.First(p => p.GurpsSkill == gs);
 
-            cha.PointOfSkill--;
-
+            cha.DecreasePoint();
             NotifyPropertyChanged("CharGurpsSkillCollection");
             NotifyPropertyChanged("CharSkillCollection");
         }

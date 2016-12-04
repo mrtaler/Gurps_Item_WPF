@@ -115,6 +115,10 @@
                                         <ColumnDefinition Width="30" />
                                         <!--  5  -->
                                         <ColumnDefinition Width="30" />
+                                        <!--  6  -->
+                                        <ColumnDefinition Width="30" />
+                                        <!--  7  -->
+                                        <ColumnDefinition Width="30" />
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Grid.Column="0" Text="{Binding Path=GurpsSkill.NameSkill}">
                                         <TextBlock.ToolTip>
@@ -128,8 +132,8 @@
                                     <TextBlock Grid.Column="2" Text="{Binding Path=PointOfSkill}" />
                                     <Grid Grid.Column="3">
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="*" />
-                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="12" />
+                                            <RowDefinition Height="12" />
                                         </Grid.RowDefinitions>
                                         <Button Grid.Row="0"
                                                 Height="10"
@@ -153,7 +157,9 @@
                                                               RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}"
                                             CommandParameter="{Binding Path=GurpsSkill}"
                                             Content="Rem" />
-                                    <TextBlock Grid.Column="5" Text="{Binding Path=LevelSkills}" />
+                                    <TextBlock Grid.Column="5" Text="{Binding Path=SkillPointCost}" />
+                                    <TextBlock Grid.Column="6" Text="{Binding Path=LevelSkills}" />
+
                                 </Grid>
                             </StackPanel>
                         </DataTemplate>

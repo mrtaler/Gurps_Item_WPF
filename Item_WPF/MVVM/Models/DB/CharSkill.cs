@@ -1,8 +1,9 @@
 ﻿using System;
+using Item_WPF.addin;
 
 namespace Item_WPF.ItemEntityModel
 {
-    public sealed partial class CharSkill
+    public partial class CharSkill : ViewModelBase
     {
         /// <summary>
         /// Start point for this skill
@@ -160,5 +161,20 @@ namespace Item_WPF.ItemEntityModel
                 return 0;
             }
         }
+        /// <summary>
+        /// Method for increase point
+        /// </summary>
+        public void IncreasePoint()
+        {
+            PointOfSkill++;
+        }
+        /// <summary>
+        /// Method for Decrease point
+        /// </summary>
+        public void DecreasePoint()
+        {
+            PointOfSkill--;
+        }
+
     }
 }

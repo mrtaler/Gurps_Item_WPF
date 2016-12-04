@@ -204,6 +204,13 @@ namespace Item_WPF.MVVM.ViewModels
                 return new ObservableCollection<GurpsSkill>(Character.CharSkills.Select(p => p.GurpsSkill));
             }
         }
+        public ObservableCollection<CharSkill> ChaSkills
+        {
+            get
+            {
+                return new ObservableCollection<CharSkill>(Character.CharSkills);
+            }
+        }
 
         // Returns the window title
         public string Title
@@ -308,6 +315,7 @@ namespace Item_WPF.MVVM.ViewModels
             //          {
             NotifyPropertyChanged("Skills");
             NotifyPropertyChanged("CharSkills");
+            NotifyPropertyChanged("ChaSkills");
             //        }
         }
         /// <summary>
@@ -389,6 +397,7 @@ namespace Item_WPF.MVVM.ViewModels
                 if ((window.DataContext as AllCharFromDbViewModel).SelectedCharacterDb != null)
                 {
                     Character = (window.DataContext as AllCharFromDbViewModel).SelectedCharacterDb;
+                    var qq2 = Character.CharSkills.ToList();
                     if (string.IsNullOrEmpty(Character.name))
                         Character.name = USCensusNames.INSTANCE.GetFullName(true);
                 }
@@ -472,11 +481,13 @@ namespace Item_WPF.MVVM.ViewModels
 
         private void ChangeName(object parameter)
         {
-            TextInputView txInputView=new TextInputView(Character.name);
+            TextInputView txInputView = new TextInputView(Character.name);
             bool? result = txInputView.ShowDialog();
             if (result.HasValue && (result == true))
             {
+                Character.name = (txInputView.DataContext as TextInputViewModel).Text;
                 NotifyPropertyChanged("Name");
+                NotifyPropertyChanged("Title");
             }
         }
 

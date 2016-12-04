@@ -195,19 +195,40 @@
                         <TextBlock Margin="0 8 0 0" Text="{x:Static p:Resources.CharacterSheetSkills}" />
                         <ListBox HorizontalContentAlignment="Stretch"
                                  Grid.IsSharedSizeScope="True"
-                                 ItemsSource="{Binding Path=Skills}">
+                                 ItemsSource="{Binding Path=ChaSkills}">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Grid.Column="0"
-                                               Margin="0 0 4 0"
-                                               Text="{Binding Path=NameSkill}">
-                                        <TextBlock.ToolTip>
-                                            <StackPanel>
-                                                <TextBlock FontWeight="Bold" Text="{Binding Path=NameSkill}" />
-                                                <TextBlock Text="{Binding Path=Specialization}" />
-                                            </StackPanel>
-                                        </TextBlock.ToolTip>
-                                    </TextBlock>
+                                    <StackPanel Height="20">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <!--  0  -->
+                                                <ColumnDefinition Width="*" />
+                                                <!--  1  -->
+                                                <ColumnDefinition Width="50" />
+                                                <!--  2  -->
+                                                <ColumnDefinition Width="30" />
+                                                <!--  3  -->
+                                                <ColumnDefinition Width="30" />
+                                                <!--  4  -->
+                                                <ColumnDefinition Width="30" />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0" Text="{Binding Path=GurpsSkill.NameSkill}">
+                                                <TextBlock.ToolTip>
+                                                    <StackPanel>
+                                                        <TextBlock FontWeight="Bold" Text="{Binding Path=GurpsSkill.NameSkill}" />
+                                                        <TextBlock Text="{Binding Path=GurpsSkill.Specialization}" />
+                                                    </StackPanel>
+                                                </TextBlock.ToolTip>
+                                            </TextBlock>
+                                            <TextBlock Grid.Column="1" Text="{Binding Path=GurpsSkill.Difficulty}" />
+
+                                            <TextBlock Grid.Column="2" Text="{Binding Path=PointOfSkill}" />
+
+                                            <TextBlock Grid.Column="3" Text="{Binding Path=SkillPointCost}"  Background="Aqua"/>
+
+                                            <TextBlock Grid.Column="4" Text="{Binding Path=LevelSkills}" FontStyle="Oblique" />
+                                        </Grid>
+                                    </StackPanel>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
