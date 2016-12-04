@@ -27,6 +27,9 @@
                 </ribbon:RibbonApplicationMenu>
             </ribbon:Ribbon.ApplicationMenu>
             <ribbon:RibbonTab Header="{x:Static p:Resources.RibbonTabCharacterSheet}">
+                <ribbon:RibbonGroup Header="Char">
+                    <ribbon:RibbonButton Command="{Binding ChangeNameCommand}" Label="Name" />
+                </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="{x:Static p:Resources.RibbonGroupStats}">
                     <ribbon:RibbonButton Command="{Binding EditPrimaryStatsCommand}" Label="{x:Static p:Resources.MenuEditPrimaryStats}" />
                     <ribbon:RibbonButton Command="{Binding EditSecondaryStatsCommand}" Label="{x:Static p:Resources.MenuEditSecondaryStats}" />

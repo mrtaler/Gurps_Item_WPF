@@ -24,7 +24,6 @@ namespace Item_WPF.MVVM.Char.AddSkilltoChar
         /// COllection from Character Skill 
         /// </summary>
         public ObservableCollection<CharSkill> CharSkillCollection => new ObservableCollection<CharSkill>(Character.CharSkills);
-
         /// <summary>
         /// Collection for gurps char skill
         /// </summary>
@@ -83,7 +82,6 @@ namespace Item_WPF.MVVM.Char.AddSkilltoChar
         {
             GurpsSkill skillToWork = (param as GurpsSkill);
             CharSkill charSkillsToWork = Character.CharSkills.First(p => p.GurpsSkill == skillToWork);
-
 
             charSkillsToWork.PointOfSkill++;
 

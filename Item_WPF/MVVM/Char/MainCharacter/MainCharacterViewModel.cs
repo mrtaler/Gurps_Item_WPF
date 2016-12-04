@@ -17,6 +17,7 @@ using EditPrimaryStatsWindowView = Item_WPF.MVVM.EditPrimaryStats.EditPrimarySta
 using EditSecondaryStatsWindowView = Item_WPF.MVVM.EditSecondaryStats.EditSecondaryStatsWindowView;
 using Item_WPF.MVVM.AllCharfromDB;
 using com.trollworks.gcs.character.names;
+using Item_WPF.litForms.TextInput;
 
 namespace Item_WPF.MVVM.ViewModels
 {
@@ -38,6 +39,8 @@ namespace Item_WPF.MVVM.ViewModels
         public ViewModelCommand OpenDbCommand { get; private set; }
         public ViewModelCommand SaveAsCommand { get; private set; }
         public ViewModelCommand OwnerCloseCommand { get; private set; }
+
+        public ViewModelCommand ChangeNameCommand { get; private set; }
 
         public MainCharacterViewModel(Window owner)
             : this(owner, new CharacterDB())
@@ -68,6 +71,8 @@ namespace Item_WPF.MVVM.ViewModels
             OwnerCloseCommand = new ViewModelCommand(OwnerClose);
 
             SaveDBCommand = new ViewModelCommand(SaveDb);
+
+            ChangeNameCommand = new ViewModelCommand(ChangeName);
 
             // Setup property dependencies
             PropertyDependencyMap.Add("Strength", new[] { "MaxHP", "BasicLift", "ThrustDamage", "SwingDamage" });
@@ -464,6 +469,17 @@ namespace Item_WPF.MVVM.ViewModels
             }
 
         }
+
+        private void ChangeName(object parameter)
+        {
+            TextInputView txInputView=new TextInputView(Character.name);
+            bool? result = txInputView.ShowDialog();
+            if (result.HasValue && (result == true))
+            {
+                NotifyPropertyChanged("Name");
+            }
+        }
+
         /// <summary>
         /// Close owner window
         /// </summary>
