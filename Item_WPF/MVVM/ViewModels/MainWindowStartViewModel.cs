@@ -114,10 +114,10 @@ namespace Item_WPF.MVVM.ViewModels
         {
             if (parameter.ToString() == "male")
             {
-                MessageBox.Show(USCensusNames.INSTANCE.getFullName(true));
+                MessageBox.Show(USCensusNames.INSTANCE.GetFullName(true));
             }
             else
-                MessageBox.Show(USCensusNames.INSTANCE.getFullName(false));
+                MessageBox.Show(USCensusNames.INSTANCE.GetFullName(false));
         }
         private void AllGurpsSkillViewLaunch(object parameter)
         {

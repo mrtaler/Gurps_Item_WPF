@@ -23,7 +23,7 @@ namespace Item_WPF.MVVM.ViewModels
     class MainCharacterViewModel : ViewModelBase
     {
         protected Window Owner;
-        private item1Entities _context;
+        private item1Entities context;
         public CharacterDB Character { get; set; }
 
         public ViewModelCommand AboutCommand { get; private set; }
@@ -46,13 +46,13 @@ namespace Item_WPF.MVVM.ViewModels
 
         public MainCharacterViewModel(Window owner, CharacterDB character)
         {
-            _context = new item1Entities();
+            context = new item1Entities();
             Owner = owner;
             Character = character;
 
             //name
             if (string.IsNullOrEmpty(Character.name))
-                Character.name = USCensusNames.INSTANCE.getFullName(true);
+                Character.name = USCensusNames.INSTANCE.GetFullName(true);
 
             // Create commands
             AboutCommand = new ViewModelCommand(ShowAboutWindow);
@@ -244,59 +244,71 @@ namespace Item_WPF.MVVM.ViewModels
                 }
             }
         }
-
+        /// <summary>
+        /// Method for open About Window
+        /// </summary>
+        /// <param name="parameter"></param>
         public void ShowAboutWindow(object parameter)
         {
             AboutWindowView window = new AboutWindowView();
             window.Owner = Owner;
             window.ShowDialog();
         }
-
+        /// <summary>
+        /// Method for work with inventory
+        /// </summary>
+        /// <param name="parameter"></param>
         public void AddItem(object parameter)
         {
-            all_ItemsView window = new all_ItemsView("all");
-            window.Owner = Owner;
-            //window.DataContext = new ITEM();
+            //all_ItemsView window = new all_ItemsView("all");
+            //window.Owner = Owner;
+            ////window.DataContext = new ITEM();
 
-            bool? result = window.ShowDialog();
-            if (result.HasValue && (result == true))
-            {
-                Character.Inventory.Add(window._allItemsViewModel.SelectedItemForWork);
+            //bool? result = window.ShowDialog();
+            //if (result.HasValue && (result == true))
+            //{
+            //    Character.Inventory.Add(window._allItemsViewModel.SelectedItemForWork);
 
-                NotifyPropertyChanged("Inventory");
-            }
+            //    NotifyPropertyChanged("Inventory");
+            //}
         }
-
+        /// <summary>
+        /// Method for Work With Advantage
+        /// </summary>
+        /// <param name="parameter"></param>
         public void AddAdvantage(object parameter)
         {
-            EditAdvantageWindowView window = new EditAdvantageWindowView();
-            window.Owner = Owner;
-            window.DataContext = new Advantage();
+            //   EditAdvantageWindowView window = new EditAdvantageWindowView();
+            //   window.Owner = Owner;
+            //  window.DataContext = new Advantage();
 
-            bool? result = window.ShowDialog();
-            if (result.HasValue && (result == true))
-            {
-                Character.Advantages.Add((Advantage)window.DataContext);
-
-                NotifyPropertyChanged("Advantages");
-            }
+            //bool? result = window.ShowDialog();
+            //if (result.HasValue && (result == true))
+            // {
+            //    Character.Advantages.Add((Advantage)window.DataContext);
+            //                NotifyPropertyChanged("Advantages");
+            //          }
         }
-
+        /// <summary>
+        /// Method for work With skill in char
+        /// </summary>
+        /// <param name="parameter"></param>
         public void AddSkill(object parameter)
         {
-            AddSkilltoCharView window = new AddSkilltoCharView(Character, _context);
+            AddSkilltoCharView window = new AddSkilltoCharView(Character, context);
             window.Owner = Owner;
-            //   window.DataContext = new Skill();
 
             bool? result = window.ShowDialog();
-            if (result.HasValue && (result == true))
-            {
-                // Character.Skills.Add((Skill)window.DataContext);
-
-                NotifyPropertyChanged("Skills");
-            }
+            //            if (result.HasValue && (result == true))
+            //          {
+            NotifyPropertyChanged("Skills");
+            NotifyPropertyChanged("CharSkills");
+            //        }
         }
-
+        /// <summary>
+        /// Method for open window to edit Primary start
+        /// </summary>
+        /// <param name="parameter"></param>
         private void EditPrimaryStats(object parameter)
         {
             EditPrimaryStatsWindowView window = new EditPrimaryStatsWindowView();
@@ -317,8 +329,11 @@ namespace Item_WPF.MVVM.ViewModels
                 Character = copy;
             }
         }
-
-        public void EditSecondaryStats(object parameter)
+        /// <summary>
+        /// Method for open window to edit second start
+        /// </summary>
+        /// <param name="parameter"></param>
+        private void EditSecondaryStats(object parameter)
         {
             EditSecondaryStatsWindowView window = new EditSecondaryStatsWindowView();
             window.Owner = Owner;
@@ -340,21 +355,26 @@ namespace Item_WPF.MVVM.ViewModels
                 Character = copy;
             }
         }
-
-        public void New(object parameter)
+        /// <summary>
+        /// Method for make new Char
+        /// </summary>
+        /// <param name="parameter"></param>
+        private void New(object parameter)
         {
             Character = new CharacterDB();
             if (string.IsNullOrEmpty(Character.name))
-                Character.name = USCensusNames.INSTANCE.getFullName(true);
+                Character.name = USCensusNames.INSTANCE.GetFullName(true);
             // Notify all properties changed
             NotifyPropertyChanged(string.Empty);
         }
-
-        public void OpenDb(object parameter)
+        /// <summary>
+        /// Method for open Char from DB
+        /// </summary>
+        /// <param name="parameter"></param>
+        private void OpenDb(object parameter)
         {
-            AllCharfromDBView window = new AllCharfromDBView(_context);
+            AllCharfromDBView window = new AllCharfromDBView(context);
             window.Owner = Owner;
-            //  window.DataContext = new AllCharFromDBViewModel();
 
             CharacterDB copy = Character.Copy();
             bool? result = window.ShowDialog();
@@ -365,7 +385,7 @@ namespace Item_WPF.MVVM.ViewModels
                 {
                     Character = (window.DataContext as AllCharFromDbViewModel).SelectedCharacterDb;
                     if (string.IsNullOrEmpty(Character.name))
-                        Character.name = USCensusNames.INSTANCE.getFullName(true);
+                        Character.name = USCensusNames.INSTANCE.GetFullName(true);
                 }
 
                 // Notify all properties changed
@@ -376,8 +396,11 @@ namespace Item_WPF.MVVM.ViewModels
                 Character = copy;
             }
         }
-
-        public void Open(object parameter)
+        /// <summary>
+        /// Method for open from file XML
+        /// </summary>
+        /// <param name="parameter"></param>
+        private void Open(object parameter)
         {
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.DefaultExt = ".gurps";
@@ -403,8 +426,11 @@ namespace Item_WPF.MVVM.ViewModels
                 NotifyPropertyChanged(string.Empty);
             }
         }
-
-        public void SaveAs(object parameter)
+        /// <summary>
+        /// Method for save file in XML
+        /// </summary>
+        /// <param name="parameter"></param>
+        private void SaveAs(object parameter)
         {
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.DefaultExt = ".gurps";
@@ -421,21 +447,27 @@ namespace Item_WPF.MVVM.ViewModels
                 stream.Close();
             }
         }
-
+        /// <summary>
+        /// Method for save character in db 
+        /// </summary>
+        /// <param name="parameter"></param>
         private void SaveDb(object parameter)
         {
             if (Character.id == 0 || Character.id == -1)
             {
-                _context.CharacterDBs.Add(Character);
-                _context.SaveChanges();
+                context.CharacterDBs.Add(Character);
+                context.SaveChanges();
             }
             else
             {
-                _context.SaveChanges();
+                context.SaveChanges();
             }
 
         }
-
+        /// <summary>
+        /// Close owner window
+        /// </summary>
+        /// <param name="parameter">null</param>
         public void OwnerClose(object parameter)
         {
             Owner.Close();

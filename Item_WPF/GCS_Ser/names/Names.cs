@@ -13,52 +13,62 @@ using System;
 using System.IO;
 using System.Windows;
 
-namespace com.trollworks.gcs.character.names
+namespace Item_WPF.GCS_Ser.names
 {
-    /** An abstract base class for name generation. */
+    /// <summary> 
+    /// An abstract base class for name generation. 
+    /// </summary>
     public abstract class Names
     {
-        /**
-         * A random number generator that can be shared amongst instances of the {@link Names} class.
-         */
-        protected static Random RANDOM = new Random();
+        /// <summary> 
+        /// A random number generator that can be shared amongst instances of the {@link Names} class.
+        /// </summary>
+        protected static Random Random = new Random();
 
-        /** @return A newly generated male first name. */
-        public abstract string getMaleFirstName();
+        /// <summary>
+        /// Get male first name
+        /// </summary>
+        /// <returns>A newly generated male first name</returns>
+        public abstract string GetMaleFirstName();
+        /// <summary>
+        /// Get female first name
+        /// </summary>
+        /// <returns>A newly generated female first name</returns>
+        public abstract string GetFemaleFirstName();
 
-        /** @return A newly generated female first name. */
-        public abstract string getFemaleFirstName();
-
-        /**
-         * @param male Whether to generate a male or female name.
-         * @return A newly generated first name.
-         */
-        public string getGivenName(bool male)
+        /// <summary>
+        /// * @param male Whether to generate a male or female name.
+        /// * @return
+        /// </summary>
+        /// <returns>A newly generated first name.</returns>
+        public string GetGivenName(bool male)
         {
-            return male ? getMaleFirstName() : getFemaleFirstName();
+            return male ? GetMaleFirstName() : GetFemaleFirstName();
         }
 
-        /** @return A newly generated last name. */
-        public abstract string getLastName();
+        /// <summary>
+        /// Get Last name
+        /// </summary>
+        /// <returns>A newly generated last name.</returns>
+        public abstract string GetLastName();
 
-        /**
-         * @param male Whether to generate a male or female name.
-         * @return A newly generated full (first and last) name.
-         */
-        public string getFullName(bool male)
+        /// <summary>
+        /// * @param male Whether to generate a male or female name.
+        /// * @return A newly generated full (first and last) name.
+        /// </summary>
+        public string GetFullName(bool male)
         {
-            return getGivenName(male) + " " + getLastName(); //$NON-NLS-1$
+            return GetGivenName(male) + " " + GetLastName(); //$NON-NLS-1$
         }
 
-        /**
-         * Loads names from a file into an array of strings. The names in the file should be listed one
-         * per line.
-         *
-         * @param url The {@link URL} to load the name data from.
-         * @param fallback A single name to use in case the file couldn't be loaded.
-         * @return An array of strings representing the contents of the file.
-         */
-        protected static string[] loadNames(string url, string fallback)
+        /// <summary>
+        ///  * Loads names from a file into an array of strings. The names in the file should be listed one
+        ///  * per line.
+        /// * @param url The {@link URL} to load the name data from.
+        ///  * @param fallback A single name to use in case the file couldn't be loaded.
+        ///  * @return An array of strings representing the contents of the file.
+        /// </summary>
+        protected static string[] LoadNames(string url, string fallback)
         {
             string[] names;
 
@@ -109,7 +119,7 @@ namespace com.trollworks.gcs.character.names
                     // This should never occur... but if it does, we won't fail.
                     MessageBox.Show("s: " +
                  exception);
-                    names = new string[]
+                    names = new[]
                     {
                         fallback
                     };
@@ -119,7 +129,7 @@ namespace com.trollworks.gcs.character.names
             }
             catch (Exception exception)
             {
-                names = new string[]
+                names = new[]
                     {
                         fallback
                     };
@@ -128,7 +138,7 @@ namespace com.trollworks.gcs.character.names
                 return names;
 
             }
-            
+
         }
 
     }

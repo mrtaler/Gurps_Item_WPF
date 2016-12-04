@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Item_WPF</RootNamespace>
     <AssemblyName>Item_WPF</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -124,9 +124,8 @@
     <Compile Include="GCS\src\com\trollworks\gcs\advantage\SelfControlRoll.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\advantage\SelfControlRollAdjustments.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\app\GCSImages.cs" />
-    <Compile Include="GCS\src\com\trollworks\gcs\character\names\Namer.cs" />
-    <Compile Include="GCS\src\com\trollworks\gcs\character\names\Names.cs" />
-    <Compile Include="GCS\src\com\trollworks\gcs\character\names\USCensusNames.cs" />
+    <Compile Include="GCS_Ser\names\Names.cs" />
+    <Compile Include="GCS_Ser\names\USCensusNames.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\ColumnUtils.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\ListHeaderCell.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\widgets\outline\ListOutline.cs" />
@@ -435,9 +434,6 @@
     <Compile Include="MVVM\View\DamageTypeView.xaml.cs">
       <DependentUpon>DamageTypeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\EditAdvantageWindowView.xaml.cs">
-      <DependentUpon>EditAdvantageWindowView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MVVM\View\EditItemWindowView.xaml.cs">
       <DependentUpon>EditItemWindowView.xaml</DependentUpon>
     </Compile>
@@ -563,10 +559,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\DamageTypeView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MVVM\View\EditAdvantageWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1124,15 +1116,15 @@
     <Compile Include="GCS\src\com\trollworks\gcs\character\HitPointsPanel.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\character\IdentityPanel.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\character\LiftPanel.cs" />
-    <Resource Include="GCS\src\com\trollworks\gcs\character\names\USCensus1990FemaleFirstNames.txt">
+    <Resource Include="GCS_Ser\names\USCensus1990FemaleFirstNames.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <CustomToolNamespace>com.trollworks.gcs.character.names</CustomToolNamespace>
     </Resource>
-    <Resource Include="GCS\src\com\trollworks\gcs\character\names\USCensus1990LastNames.txt">
+    <Resource Include="GCS_Ser\names\USCensus1990LastNames.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <CustomToolNamespace>com.trollworks.gcs.character.names</CustomToolNamespace>
     </Resource>
-    <Resource Include="GCS\src\com\trollworks\gcs\character\names\USCensus1990MaleFirstNames.txt">
+    <Resource Include="GCS_Ser\names\USCensus1990MaleFirstNames.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <CustomToolNamespace>com.trollworks.gcs.character.names</CustomToolNamespace>
     </Resource>

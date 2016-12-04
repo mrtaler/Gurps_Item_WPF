@@ -367,7 +367,7 @@
 //	private static const String		TAG_PORTRAIT		= "portrait";																				//$NON-NLS-1$
 //	private static const String		TAG_NOTES			= "notes";																					//$NON-NLS-1$
 //	private static const String		EMPTY				= "";																						//$NON-NLS-1$
-//	private static const Random		RANDOM				= new Random();
+//	private static const Random		Random				= new Random();
 //	private static const String[]	EYE_OPTIONS			= new String[] { BROWN, BROWN, BLUE, BLUE, GREEN, GREY, VIOLET };
 //	private static const String[]	SKIN_OPTIONS		= new String[] { FRECKLED, TAN, LIGHT_TAN, DARK_TAN, BROWN, LIGHT_BROWN, DARK_BROWN, PALE };
 //	private static const String[]	HANDEDNESS_OPTIONS	= new String[] { RIGHT, RIGHT, RIGHT, LEFT };
@@ -410,7 +410,7 @@
 //		mHeight = full ? getRandomHeight(mCharacter.getStrength(), getSizeModifier()) : new LengthValue(0, SheetPreferences.getLengthUnits());
 //		mWeight = full ? getRandomWeight(mCharacter.getStrength(), getSizeModifier(), 1.0) : new WeightValue(0, SheetPreferences.getWeightUnits());
 //		mGender = full ? getRandomGender() : EMPTY;
-//		mName = full && SheetPreferences.isNewCharacterAutoNamed() ? USCensusNames.INSTANCE.getFullName(mGender == MALE) : EMPTY;
+//		mName = full && SheetPreferences.isNewCharacterAutoNamed() ? USCensusNames.INSTANCE.GetFullName(mGender == MALE) : EMPTY;
 //		mRace = full ? DEFAULT_RACE : EMPTY;
 //		mTechLevel = full ? getDefaultTechLevel() : EMPTY;
 //		mReligion = EMPTY;
@@ -738,12 +738,12 @@
 //		int levels;
 
 //		if (lifespan != null) {
-//			return 18 + RANDOM.nextInt(7);
+//			return 18 + Random.nextInt(7);
 //		}
 
-//		if (RANDOM.nextInt(3) == 1) {
+//		if (Random.nextInt(3) == 1) {
 //			mod += 7;
-//			if (RANDOM.nextInt(4) == 1) {
+//			if (Random.nextInt(4) == 1) {
 //				mod += 13;
 //			}
 //		}
@@ -765,7 +765,7 @@
 //			mod = 1;
 //		}
 
-//		return base + RANDOM.nextInt(mod);
+//		return base + Random.nextInt(mod);
 //	}
 
 //	/** @return The date of birth. */
@@ -1075,33 +1075,33 @@
 
 //	/** @return A random hair color, style & length. */
 //	public static string getRandomHair() {
-//		return HAIR_OPTIONS[RANDOM.nextInt(HAIR_OPTIONS.length)];
+//		return HAIR_OPTIONS[Random.nextInt(HAIR_OPTIONS.length)];
 //	}
 
 //	/** @return A random eye color. */
 //	public static string getRandomEyeColor() {
-//		return EYE_OPTIONS[RANDOM.nextInt(EYE_OPTIONS.length)];
+//		return EYE_OPTIONS[Random.nextInt(EYE_OPTIONS.length)];
 //	}
 
 //	/** @return A random sking color. */
 //	public static string getRandomSkinColor() {
-//		return SKIN_OPTIONS[RANDOM.nextInt(SKIN_OPTIONS.length)];
+//		return SKIN_OPTIONS[Random.nextInt(SKIN_OPTIONS.length)];
 //	}
 
 //	/** @return A random handedness. */
 //	public static string getRandomHandedness() {
-//		return HANDEDNESS_OPTIONS[RANDOM.nextInt(HANDEDNESS_OPTIONS.length)];
+//		return HANDEDNESS_OPTIONS[Random.nextInt(HANDEDNESS_OPTIONS.length)];
 //	}
 
 //	/** @return A random gender. */
 //	public static string getRandomGender() {
-//		return GENDER_OPTIONS[RANDOM.nextInt(GENDER_OPTIONS.length)];
+//		return GENDER_OPTIONS[Random.nextInt(GENDER_OPTIONS.length)];
 //	}
 
 //	/** @return A random month and day. */
 //	public static string getRandomMonthAndDay() {
 //		SimpleDateFormat formatter = new SimpleDateFormat(BIRTHDAY_FORMAT);
-//		return formatter.format(new Date(RANDOM.nextLong()));
+//		return formatter.format(new Date(Random.nextLong()));
 //	}
 
 //	/**
@@ -1126,9 +1126,9 @@
 //		bool useMetric = SheetPreferences.getWeightUnits().isMetric();
 //		if (useMetric) {
 //			base = (int) Math.round(LengthUnits.CM.convert(LengthUnits.FT_IN, base));
-//			base += RANDOM.nextInt(16);
+//			base += Random.nextInt(16);
 //		} else {
-//			base += RANDOM.nextInt(11);
+//			base += Random.nextInt(11);
 //		}
 //		if (sm != 0) {
 //			base = (int) Math.max(Math.round(base * Math.pow(10.0, sm / 6.0)), 1);
@@ -1169,7 +1169,7 @@
 //			base = (int) Math.round(WeightUnits.KG.convert(WeightUnits.LB, base));
 //			range = (int) Math.round(WeightUnits.KG.convert(WeightUnits.LB, range - 1)) + 1;
 //		}
-//		base += RANDOM.nextInt(range);
+//		base += Random.nextInt(range);
 //		if (sm != 0) {
 //			base = (int) Math.round(base * Math.pow(1000.0, sm / 6.0));
 //		}
