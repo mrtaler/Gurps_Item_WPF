@@ -6096,7 +6096,7 @@
             </Location>
             <Size>
               <Width>120 px</Width>
-              <Height>231 px</Height>
+              <Height>194 px</Height>
             </Size>
             <DbOid>
               <Path>Item1.CharDB.CharSkill</Path>
@@ -6191,7 +6191,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>115.5 px</Y>
+                  <Y>97 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -6216,7 +6216,7 @@
             <BendPoints>
               <PointD>
                 <X>3555.5 px</X>
-                <Y>3185.5 px</Y>
+                <Y>3167 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
@@ -6257,8 +6257,8 @@
           <ScaleMode>Free</ScaleMode>
           <Scale>1.25</Scale>
           <Location>
-            <X>3238.39999389648 px</X>
-            <Y>2459.99998779297 px</Y>
+            <X>2455.19998779297 px</X>
+            <Y>2837.59999389648 px</Y>
           </Location>
         </ViewPort>
       </Model>

@@ -17,15 +17,24 @@ using EditPrimaryStatsWindowView = Item_WPF.MVVM.EditPrimaryStats.EditPrimarySta
 using EditSecondaryStatsWindowView = Item_WPF.MVVM.EditSecondaryStats.EditSecondaryStatsWindowView;
 using Item_WPF.MVVM.AllCharfromDB;
 using com.trollworks.gcs.character.names;
+using GurpsDb;
 using Item_WPF.litForms.TextInput;
+using Advantage = Item_WPF.ItemEntityModel.Advantage;
+using CharacterDB = Item_WPF.ItemEntityModel.CharacterDB;
+using CharSkill = Item_WPF.ItemEntityModel.CharSkill;
+using GurpsSkill = Item_WPF.ItemEntityModel.GurpsSkill;
+using ITEM = Item_WPF.ItemEntityModel.ITEM;
 
 namespace Item_WPF.MVVM.ViewModels
 {
     class MainCharacterViewModel : ViewModelBase
     {
         protected Window Owner;
-        private item1Entities context;
-        public CharacterDB Character { get; set; }
+        private item1Entities contextitem1Entities;
+        private GurpsDb.GurpsModel.GurpsModel contextGurpsModel;
+
+        // public CharacterDB Character { get; set; }
+        public GurpsDb.GurpsModel.CharacterDB Character { get; set; }
 
         public ViewModelCommand AboutCommand { get; private set; }
         public ViewModelCommand EditPrimaryStatsCommand { get; private set; }
@@ -43,13 +52,16 @@ namespace Item_WPF.MVVM.ViewModels
         public ViewModelCommand ChangeNameCommand { get; private set; }
 
         public MainCharacterViewModel(Window owner)
-            : this(owner, new CharacterDB())
+            : this(owner, new GurpsDb.GurpsModel.CharacterDB())
         {
         }
 
-        public MainCharacterViewModel(Window owner, CharacterDB character)
+        public MainCharacterViewModel(Window owner, GurpsDb.GurpsModel.CharacterDB character)
         {
-            context = new item1Entities();
+            //  contextitem1Entities = new item1Entities();
+            contextGurpsModel = new GurpsDb.GurpsModel.GurpsModel();
+
+
             Owner = owner;
             Character = character;
 
@@ -307,7 +319,7 @@ namespace Item_WPF.MVVM.ViewModels
         /// <param name="parameter"></param>
         public void AddSkill(object parameter)
         {
-            AddSkilltoCharView window = new AddSkilltoCharView(Character, context);
+            AddSkilltoCharView window = new AddSkilltoCharView(Character, contextitem1Entities);
             window.Owner = Owner;
 
             bool? result = window.ShowDialog();
@@ -386,7 +398,7 @@ namespace Item_WPF.MVVM.ViewModels
         /// <param name="parameter"></param>
         private void OpenDb(object parameter)
         {
-            AllCharfromDBView window = new AllCharfromDBView(context);
+            AllCharfromDBView window = new AllCharfromDBView(contextitem1Entities);
             window.Owner = Owner;
 
             CharacterDB copy = Character.Copy();
@@ -469,12 +481,12 @@ namespace Item_WPF.MVVM.ViewModels
         {
             if (Character.id == 0 || Character.id == -1)
             {
-                context.CharacterDBs.Add(Character);
-                context.SaveChanges();
+                contextitem1Entities.CharacterDBs.Add(Character);
+                contextitem1Entities.SaveChanges();
             }
             else
             {
-                context.SaveChanges();
+                contextitem1Entities.SaveChanges();
             }
 
         }

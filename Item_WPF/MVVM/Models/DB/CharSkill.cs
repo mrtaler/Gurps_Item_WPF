@@ -1,10 +1,20 @@
 ﻿using System;
 using Item_WPF.addin;
+using System.Data.Entity.Core.Objects.DataClasses;
 
 namespace Item_WPF.ItemEntityModel
 {
     public partial class CharSkill : ViewModelBase
     {
+        public static CharSkill CreateCharSkill(global::System.Int32 idSkill, global::System.Int32 idChar)
+        {
+            CharSkill charSkill = new CharSkill();
+            charSkill.idSkill = idSkill;
+            charSkill.idChar = idChar;
+            return charSkill;
+        }
+
+
         /// <summary>
         /// Start point for this skill
         /// </summary>
@@ -50,9 +60,9 @@ namespace Item_WPF.ItemEntityModel
         /// </summary>
         public CharSkill()
         {
-            CharacterDB = null;
-            GurpsSkill = null;
-            PointOfSkill = 1;
+            //    CharacterDB = null;
+            //    GurpsSkill = null;
+            //    PointOfSkill = 1;
         }
         /// <summary>
         /// конструктор для создания присваивания нового скилла персонажу
@@ -63,6 +73,10 @@ namespace Item_WPF.ItemEntityModel
         {
             CharacterDB = characterDb;
             GurpsSkill = gurpsSkill;
+
+            //  idChar = characterDb.id;
+            //  idSkill = gurpsSkill.id;
+
             PointOfSkill = 1;
         }
         #region diff & atrib
@@ -175,6 +189,7 @@ namespace Item_WPF.ItemEntityModel
         {
             PointOfSkill--;
         }
+
 
     }
 }

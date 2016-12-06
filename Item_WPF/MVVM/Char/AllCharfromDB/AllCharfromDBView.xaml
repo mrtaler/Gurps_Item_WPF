@@ -24,6 +24,7 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Click="button_Click"
+                Command="{Binding SelectedCharacterFromDbCommand}"
                 Content="ok" />
         <Button x:Name="button1"
                 Width="75"
