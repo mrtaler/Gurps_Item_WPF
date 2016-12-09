@@ -69,7 +69,7 @@ namespace Item_WPF.MVVM.ViewModels
 
 
                 Where(p => p.ItemSubClass.ItemClass.name == Parametr).
-                //Select(P => P.ITEM).
+                //Select(P => P.Item).
                 Select(p => new
                 {
                     _uiIndex = p.uiIndex,
@@ -186,7 +186,7 @@ public partial class SelectItems : Window
                 List<Attachment> att = (from p in context.Attachments
                                         where p.G_SubAttachClass == attslot && p.id_Attachmentmount == attmount
                                         select p).ToList();
-                List<ITEM> itemsAtt = new List<ITEM>();
+                List<Item> itemsAtt = new List<Item>();
                 foreach (var itt in att)
                 {
                     var qwery = (from p in context.ITEMs

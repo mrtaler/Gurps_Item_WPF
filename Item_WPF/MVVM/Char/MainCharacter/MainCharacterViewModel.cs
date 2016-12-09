@@ -33,8 +33,8 @@ namespace Item_WPF.MVVM.ViewModels
         private item1Entities contextitem1Entities;
         private GurpsDb.GurpsModel.GurpsModel contextGurpsModel;
 
-        // public CharacterDB Character { get; set; }
-        public GurpsDb.GurpsModel.CharacterDB Character { get; set; }
+        // public CharacterDb Character { get; set; }
+        public GurpsDb.GurpsModel.CharacterDb Character { get; set; }
 
         public ViewModelCommand AboutCommand { get; private set; }
         public ViewModelCommand EditPrimaryStatsCommand { get; private set; }
@@ -52,11 +52,11 @@ namespace Item_WPF.MVVM.ViewModels
         public ViewModelCommand ChangeNameCommand { get; private set; }
 
         public MainCharacterViewModel(Window owner)
-            : this(owner, new GurpsDb.GurpsModel.CharacterDB())
+            : this(owner, new GurpsDb.GurpsModel.CharacterDb())
         {
         }
 
-        public MainCharacterViewModel(Window owner, GurpsDb.GurpsModel.CharacterDB character)
+        public MainCharacterViewModel(Window owner, GurpsDb.GurpsModel.CharacterDb character)
         {
             //  contextitem1Entities = new item1Entities();
             contextGurpsModel = new GurpsDb.GurpsModel.GurpsModel();
@@ -66,8 +66,8 @@ namespace Item_WPF.MVVM.ViewModels
             Character = character;
 
             //name
-            if (string.IsNullOrEmpty(Character.name))
-                Character.name = USCensusNames.INSTANCE.GetFullName(true);
+            if (string.IsNullOrEmpty(Character.Name))
+                Character.Name = USCensusNames.INSTANCE.GetFullName(true);
 
             // Create commands
             AboutCommand = new ViewModelCommand(ShowAboutWindow);
@@ -117,7 +117,7 @@ namespace Item_WPF.MVVM.ViewModels
         {
             get
             {
-                string name = Character.name;
+                string name = Character.Name;
                 if (string.IsNullOrEmpty(name))
                     name = Resources.UnnamedCharacter;
                 return name;
@@ -184,43 +184,43 @@ namespace Item_WPF.MVVM.ViewModels
             get { return Character.Dodge; }
         }
 
-        public DiceString ThrustDamage
+        public GurpsDb.GurpsExtendModel.DiceString ThrustDamage
         {
             get { return Character.ThrustDamage; }
         }
 
-        public DiceString SwingDamage
+        public GurpsDb.GurpsExtendModel.DiceString SwingDamage
         {
             get { return Character.SwingDamage; }
         }
 
-        public ObservableCollection<ITEM> Inventory
-        {
-            get { return Character.Inventory; }
-        }
+        //public ObservableCollection<Item> Inventory
+        //{
+        //    get { return Character.InventoryOfChar; }
+        //}
 
         public int TotalWeight
         {
             get { return Character.TotalWeight; }
         }
 
-        public ObservableCollection<Advantage> Advantages
-        {
-            get { return Character.Advantages; }
-        }
+        //public ObservableCollection<Advantage> Advantages
+        //{
+        //    get { return Character.Advantages; }
+        //}
 
-        public ObservableCollection<GurpsSkill> Skills
+        public ObservableCollection<GurpsDb.GurpsModel.GurpsSkill> Skills
         {
             get
             {
-                return new ObservableCollection<GurpsSkill>(Character.CharSkills.Select(p => p.GurpsSkill));
+                return new ObservableCollection<GurpsDb.GurpsModel.GurpsSkill>(Character.CharSkillCollection.Select(p => p.GurpsSkill));
             }
         }
-        public ObservableCollection<CharSkill> ChaSkills
+        public ObservableCollection<GurpsDb.GurpsModel.CharSkill> ChaSkills
         {
             get
             {
-                return new ObservableCollection<CharSkill>(Character.CharSkills);
+                return new ObservableCollection<GurpsDb.GurpsModel.CharSkill>(Character.CharSkillCollection);
             }
         }
 
@@ -286,7 +286,7 @@ namespace Item_WPF.MVVM.ViewModels
         {
             //all_ItemsView window = new all_ItemsView("all");
             //window.Owner = Owner;
-            ////window.DataContext = new ITEM();
+            ////window.DataContext = new Item();
 
             //bool? result = window.ShowDialog();
             //if (result.HasValue && (result == true))
@@ -319,16 +319,16 @@ namespace Item_WPF.MVVM.ViewModels
         /// <param name="parameter"></param>
         public void AddSkill(object parameter)
         {
-            AddSkilltoCharView window = new AddSkilltoCharView(Character, contextitem1Entities);
+            AddSkilltoCharView window = new AddSkilltoCharView(Character, /*contextitem1Entities*/ contextGurpsModel);
             window.Owner = Owner;
 
             bool? result = window.ShowDialog();
-            //            if (result.HasValue && (result == true))
-            //          {
-            NotifyPropertyChanged("Skills");
-            NotifyPropertyChanged("CharSkills");
-            NotifyPropertyChanged("ChaSkills");
-            //        }
+            if (result.HasValue && (result == true))
+            {
+                NotifyPropertyChanged("Skills");
+                NotifyPropertyChanged("CharSkills");
+                NotifyPropertyChanged("ChaSkills");
+            }
         }
         /// <summary>
         /// Method for open window to edit Primary start
@@ -336,23 +336,23 @@ namespace Item_WPF.MVVM.ViewModels
         /// <param name="parameter"></param>
         private void EditPrimaryStats(object parameter)
         {
-            EditPrimaryStatsWindowView window = new EditPrimaryStatsWindowView();
-            window.Owner = Owner;
-            window.DataContext = new EditPrimaryStatsViewModel(Character);
+            ////EditPrimaryStatsWindowView window = new EditPrimaryStatsWindowView();
+            ////window.Owner = Owner;
+            ////window.DataContext = new EditPrimaryStatsViewModel(Character);
 
-            CharacterDB copy = Character.Copy();
-            bool? result = window.ShowDialog();
-            if (result.HasValue && (result == true))
-            {
-                NotifyPropertyChanged("StrengthPoints");
-                NotifyPropertyChanged("DexterityPoints");
-                NotifyPropertyChanged("IntelligencePoints");
-                NotifyPropertyChanged("HealthPoints");
-            }
-            else
-            {
-                Character = copy;
-            }
+            ////CharacterDb copy = Character.Copy();
+            ////bool? result = window.ShowDialog();
+            //if (result.HasValue && (result == true))
+            //{
+            //    NotifyPropertyChanged("StrengthPoints");
+            //    NotifyPropertyChanged("DexterityPoints");
+            //    NotifyPropertyChanged("IntelligencePoints");
+            //    NotifyPropertyChanged("HealthPoints");
+            //}
+            //else
+            //{
+            //    Character = copy;
+            //}
         }
         /// <summary>
         /// Method for open window to edit second start
@@ -360,25 +360,25 @@ namespace Item_WPF.MVVM.ViewModels
         /// <param name="parameter"></param>
         private void EditSecondaryStats(object parameter)
         {
-            EditSecondaryStatsWindowView window = new EditSecondaryStatsWindowView();
-            window.Owner = Owner;
-            window.DataContext = new EditSecondaryStatsViewModel(Character);
+            //EditSecondaryStatsWindowView window = new EditSecondaryStatsWindowView();
+            //window.Owner = Owner;
+            //window.DataContext = new EditSecondaryStatsViewModel(Character);
 
-            CharacterDB copy = Character.Copy();
-            bool? result = window.ShowDialog();
-            if (result.HasValue && (result == true))
-            {
-                NotifyPropertyChanged("MaxHPPoints");
-                NotifyPropertyChanged("MaxFPPoints");
-                NotifyPropertyChanged("WillpowerPoints");
-                NotifyPropertyChanged("PerceptionPoints");
-                NotifyPropertyChanged("BasicSpeedPoints");
-                NotifyPropertyChanged("BasicMovePoints");
-            }
-            else
-            {
-                Character = copy;
-            }
+            //CharacterDb copy = Character.Copy();
+            //bool? result = window.ShowDialog();
+            //if (result.HasValue && (result == true))
+            //{
+            //    NotifyPropertyChanged("MaxHPPoints");
+            //    NotifyPropertyChanged("MaxFPPoints");
+            //    NotifyPropertyChanged("WillpowerPoints");
+            //    NotifyPropertyChanged("PerceptionPoints");
+            //    NotifyPropertyChanged("BasicSpeedPoints");
+            //    NotifyPropertyChanged("BasicMovePoints");
+            //}
+            //else
+            //{
+            //    Character = copy;
+            //}
         }
         /// <summary>
         /// Method for make new Char
@@ -386,9 +386,9 @@ namespace Item_WPF.MVVM.ViewModels
         /// <param name="parameter"></param>
         private void New(object parameter)
         {
-            Character = new CharacterDB();
-            if (string.IsNullOrEmpty(Character.name))
-                Character.name = USCensusNames.INSTANCE.GetFullName(true);
+            Character = new GurpsDb.GurpsModel.CharacterDb();
+            if (string.IsNullOrEmpty(Character.Name))
+                Character.Name = USCensusNames.INSTANCE.GetFullName(true);
             // Notify all properties changed
             NotifyPropertyChanged(string.Empty);
         }
@@ -398,10 +398,10 @@ namespace Item_WPF.MVVM.ViewModels
         /// <param name="parameter"></param>
         private void OpenDb(object parameter)
         {
-            AllCharfromDBView window = new AllCharfromDBView(contextitem1Entities);
+            AllCharfromDBView window = new AllCharfromDBView(contextGurpsModel);
             window.Owner = Owner;
 
-            CharacterDB copy = Character.Copy();
+            GurpsDb.GurpsModel.CharacterDb copy = Character.Copy();
             bool? result = window.ShowDialog();
 
             if (result.HasValue && (result == true))
@@ -409,9 +409,9 @@ namespace Item_WPF.MVVM.ViewModels
                 if ((window.DataContext as AllCharFromDbViewModel).SelectedCharacterDb != null)
                 {
                     Character = (window.DataContext as AllCharFromDbViewModel).SelectedCharacterDb;
-                    var qq2 = Character.CharSkills.ToList();
-                    if (string.IsNullOrEmpty(Character.name))
-                        Character.name = USCensusNames.INSTANCE.GetFullName(true);
+                    var qq2 = Character.CharSkillCollection;
+                    if (string.IsNullOrEmpty(Character.Name))
+                        Character.Name = USCensusNames.INSTANCE.GetFullName(true);
                 }
 
                 // Notify all properties changed
@@ -428,29 +428,29 @@ namespace Item_WPF.MVVM.ViewModels
         /// <param name="parameter"></param>
         private void Open(object parameter)
         {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.DefaultExt = ".gurps";
-            dialog.CheckFileExists = true;
-            dialog.Filter = "GURPS files|*.gurps";
-            bool? result = dialog.ShowDialog();
-            if (result.HasValue && (result == true))
-            {
-                // Deserialize the file
-                FileStream stream = File.OpenRead(dialog.FileName);
-                XmlSerializer serializer = new XmlSerializer(Character.GetType());
-                try
-                {
-                    Character = (CharacterDB)serializer.Deserialize(stream);
-                }
-                catch (InvalidOperationException)
-                {
-                    MessageBox.Show(Resources.DialogLoadFailed);
-                }
-                stream.Close();
+            //OpenFileDialog dialog = new OpenFileDialog();
+            //dialog.DefaultExt = ".gurps";
+            //dialog.CheckFileExists = true;
+            //dialog.Filter = "GURPS files|*.gurps";
+            //bool? result = dialog.ShowDialog();
+            //if (result.HasValue && (result == true))
+            //{
+            //    // Deserialize the file
+            //    FileStream stream = File.OpenRead(dialog.FileName);
+            //    XmlSerializer serializer = new XmlSerializer(Character.GetType());
+            //    try
+            //    {
+            //        Character = (CharacterDb)serializer.Deserialize(stream);
+            //    }
+            //    catch (InvalidOperationException)
+            //    {
+            //        MessageBox.Show(Resources.DialogLoadFailed);
+            //    }
+            //    stream.Close();
 
-                // Notify all properties changed
-                NotifyPropertyChanged(string.Empty);
-            }
+            //    // Notify all properties changed
+            //    NotifyPropertyChanged(string.Empty);
+            //}
         }
         /// <summary>
         /// Method for save file in XML
@@ -479,25 +479,26 @@ namespace Item_WPF.MVVM.ViewModels
         /// <param name="parameter"></param>
         private void SaveDb(object parameter)
         {
-            if (Character.id == 0 || Character.id == -1)
+            if (Character.Id == 0 || Character.Id == -1)
             {
-                contextitem1Entities.CharacterDBs.Add(Character);
+                contextGurpsModel.CharacterDB.Add(Character);
                 contextitem1Entities.SaveChanges();
             }
             else
             {
-                contextitem1Entities.SaveChanges();
+                contextGurpsModel.SaveChanges();
+                //contextitem1Entities.SaveChanges();
             }
 
         }
 
         private void ChangeName(object parameter)
         {
-            TextInputView txInputView = new TextInputView(Character.name);
+            TextInputView txInputView = new TextInputView(Character.Name);
             bool? result = txInputView.ShowDialog();
             if (result.HasValue && (result == true))
             {
-                Character.name = (txInputView.DataContext as TextInputViewModel).Text;
+                Character.Name = (txInputView.DataContext as TextInputViewModel).Text;
                 NotifyPropertyChanged("Name");
                 NotifyPropertyChanged("Title");
             }

@@ -38,14 +38,14 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 if (_BoxItemforWork != value)
                 {
-                    _BoxItemforWork = value;                   
+                    _BoxItemforWork = value;
                     NotifyPropertyChanged("boxItem");
                 }
             }
         }
         public ITEM itemtobox { get; set; }
         public ObservableCollection<BoxItem> boxItem { get; set; }
-        #region public ObservableCollection<ITEM> ItemsFromDB
+        #region public ObservableCollection<Item> ItemsFromDB
         public ObservableCollection<ITEM> ItemsFromDB
         {
             get
@@ -94,7 +94,7 @@ namespace Item_WPF.MVVM.ViewModels
             _context = new item1Entities();
             anyBoxNameType111 = new ObservableCollection<AnyBoxNameType>(_context.AnyBoxNameTypes.Where(p => p.ParentBoxName == null));
             anyBoxNameTypeAll = new ObservableCollection<AnyBoxNameType>(_context.AnyBoxNameTypes);
-           boxItem = new ObservableCollection<BoxItem>();
+            boxItem = new ObservableCollection<BoxItem>();
             ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClasses);
             BoxItemforWork = null;
 
@@ -105,7 +105,7 @@ namespace Item_WPF.MVVM.ViewModels
             DellCommand = new ViewModelCommand(Dell, true);
 
 
-            SelectedItemChangedCommand=new ViewModelCommand(SelectedItemChanged, true);
+            SelectedItemChangedCommand = new ViewModelCommand(SelectedItemChanged, true);
 
 
 
@@ -113,8 +113,8 @@ namespace Item_WPF.MVVM.ViewModels
             AddNewMainBoxCommand = new ViewModelCommand(AddNewMainBox, true);
             AddNewSubMainBoxCommand = new ViewModelCommand(AddNewSubMainBox, true);
             PropertyDependencyMap.Add("SelectedItClassforSort", new[] { "ItemsFromDB" });
-            
-            
+
+
 
         }
         #region Command
@@ -123,15 +123,15 @@ namespace Item_WPF.MVVM.ViewModels
         {
             int vx = System.Convert.ToInt32(parameter);
             // AnyBoxNameType vx = (parameter as AnyBoxNameType);
-            
-       
-                boxItem = new ObservableCollection<BoxItem>(_context.BoxItems.Where(p => p.BoxName == vx));
+
+
+            boxItem = new ObservableCollection<BoxItem>(_context.BoxItems.Where(p => p.BoxName == vx));
             boxItem.CollectionChanged += new NotifyCollectionChangedEventHandler(boxItem_CollectionChanged);
             NotifyPropertyChanged("boxItem");
         }
         //private ViewModelCommand _SelectedItemChangedCommand;
         public ViewModelCommand SelectedItemChangedCommand { get; set; }
-         #endregion
+        #endregion
 
 
         #region Command public ViewModelCommand AddCommand { get; set; }
@@ -184,7 +184,7 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 foreach (BoxItem item in e.NewItems)
                 {
-                    _context.BoxItems.Add(/*new BoxItem { ITEM = itemtobox, BoxName = Test, CountItems = 1 }*/item);
+                    _context.BoxItems.Add(/*new BoxItem { Item = itemtobox, BoxName = Test, CountItems = 1 }*/item);
                 }
                 SaveChanges(1);
             }
@@ -274,12 +274,12 @@ namespace Item_WPF.MVVM.ViewModels
         {
             int param = Convert.ToInt32(parameter);
             bx = _context.AnyBoxNameTypes.First(p => p.id == param);
-            anyBoxNameTypeAll.Remove(bx);          
+            anyBoxNameTypeAll.Remove(bx);
             NotifyPropertyChanged("anyBoxNameType111");
         }
 
         public ViewModelCommand DellCommand { get; set; }
-        #endregion       
-       
-    }   
+        #endregion
+
+    }
 }

@@ -34,7 +34,7 @@ namespace Item_WPF.ItemEntityModel
                 if (value != _isSelected)
                 {
                     _isSelected = value;
-                  //  OnPropertyChanged("IsSelected");
+                    //  OnPropertyChanged("IsSelected");
                 }
             }
         }
@@ -43,7 +43,7 @@ namespace Item_WPF.ItemEntityModel
 
         //    //decimal totalweight = 0;
 
-        //    //foreach (ITEM item in Inventory)
+        //    //foreach (Item item in Inventory)
         //    //    totalweight += System.Convert.ToInt32(item.ubWeight);
         //    //return totalweight;
         //}
@@ -54,7 +54,7 @@ namespace Item_WPF.ItemEntityModel
         //    get
         //    {
         //        int w = 0;
-        //        foreach (ITEM item in Inventory)
+        //        foreach (Item item in Inventory)
         //            w += System.Convert.ToInt32(item.ubWeight);
         //        return w;
         //    }

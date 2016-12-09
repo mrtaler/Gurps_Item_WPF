@@ -1,25 +1,23 @@
 namespace GurpsDb.GurpsModel
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
-    [Table("CharDB.CharacterDB")]
-    public partial class CharacterDB
+    [Table("CharDB.CharacterDb")]
+    public partial class CharacterDb
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CharacterDB()
+        public CharacterDb()
         {
-            CharSkill = new HashSet<CharSkill>();
+            CharSkillCollection = new HashSet<CharSkill>();
             InventoryOfChar = new HashSet<InventoryOfChar>();
         }
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(80)]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         public int StrengthPoints { get; set; }
 
@@ -42,7 +40,7 @@ namespace GurpsDb.GurpsModel
         public int BasicMovePoints { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CharSkill> CharSkill { get; set; }
+        public virtual ICollection<CharSkill> CharSkillCollection { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<InventoryOfChar> InventoryOfChar { get; set; }

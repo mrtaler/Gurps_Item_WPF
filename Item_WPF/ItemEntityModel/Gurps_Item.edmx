@@ -620,7 +620,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="16" Nullable="false" />
         </EntityType>
-        <EntityType Name="ITEM">
+        <EntityType Name="Item">
           <Key>
             <PropertyRef Name="uiIndex" />
           </Key>
@@ -716,17 +716,17 @@
           <Property Name="ShortDes" Type="nvarchar" MaxLength="15" />
           <Property Name="Description" Type="nvarchar" MaxLength="300" />
         </EntityType>
-        <EntityType Name="LOADBEARINGEQUIPMENT">
+        <EntityType Name="Loadbearingequipment">
           <Key>
-            <PropertyRef Name="lbeIndex" />
+            <PropertyRef Name="LbeIndex" />
           </Key>
-          <Property Name="lbeIndex" Type="int" Nullable="false" />
-          <Property Name="LBEClass" Type="int" Nullable="false" />
-          <Property Name="lbeCombo" Type="int" Nullable="false" />
-          <Property Name="lbeFilledSize" Type="int" Nullable="false" />
-          <Property Name="lbeAvailableVolume" Type="int" Nullable="false" />
-          <Property Name="lbePocketsAvailable" Type="int" Nullable="false" />
-          <Property Name="lbePocketIndex1" Type="int" Nullable="false" />
+          <Property Name="LbeIndex" Type="int" Nullable="false" />
+          <Property Name="LbeClass" Type="int" Nullable="false" />
+          <Property Name="LbeCombo" Type="int" Nullable="false" />
+          <Property Name="LbeFilledSize" Type="int" Nullable="false" />
+          <Property Name="LbeAvailableVolume" Type="int" Nullable="false" />
+          <Property Name="LbePocketsAvailable" Type="int" Nullable="false" />
+          <Property Name="LbePocketIndex1" Type="int" Nullable="false" />
           <Property Name="lbePocketIndex2" Type="int" Nullable="false" />
           <Property Name="lbePocketIndex3" Type="int" Nullable="false" />
           <Property Name="lbePocketIndex4" Type="int" Nullable="false" />
@@ -735,9 +735,9 @@
           <Property Name="lbePocketIndex7" Type="int" Nullable="false" />
           <Property Name="lbePocketIndex8" Type="int" Nullable="false" />
           <Property Name="lbePocketIndex9" Type="int" Nullable="false" />
-          <Property Name="lbePocketIndex10" Type="int" Nullable="false" />
-          <Property Name="lbePocketIndex11" Type="int" Nullable="false" />
-          <Property Name="lbePocketIndex12" Type="int" Nullable="false" />
+          <Property Name="LbePocketIndex10" Type="int" Nullable="false" />
+          <Property Name="LbePocketIndex11" Type="int" Nullable="false" />
+          <Property Name="LbePocketIndex12" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="TL">
           <Key>
@@ -748,7 +748,7 @@
           <Property Name="Description" Type="nvarchar" MaxLength="60" />
           <Property Name="StartMoney" Type="decimal" Precision="19" Scale="4" />
         </EntityType>
-        <EntityType Name="Type_of_Box">
+        <EntityType Name="TypeOfBox">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -874,13 +874,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_AnyBoxNameType_Type_of_Box_id">
-          <End Role="Type_of_Box" Type="Self.Type_of_Box" Multiplicity="1">
+        <Association Name="FK_AnyBoxNameType_TypeOfBox_id">
+          <End Role="TypeOfBox" Type="Self.TypeOfBox" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="AnyBoxNameType" Type="Self.AnyBoxNameType" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Type_of_Box">
+            <Principal Role="TypeOfBox">
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="AnyBoxNameType">
@@ -888,13 +888,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ARMOUR_ITEM_uiIndex">
-          <End Role="ITEM" Type="Self.ITEM" Multiplicity="1">
+        <Association Name="FK_ARMOUR_Item_uiIndex">
+          <End Role="Item" Type="Self.Item" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="ARMOUR" Type="Self.ARMOUR" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="ITEM">
+            <Principal Role="Item">
               <PropertyRef Name="uiIndex" />
             </Principal>
             <Dependent Role="ARMOUR">
@@ -914,13 +914,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Attachment_ITEM_uiIndex">
-          <End Role="ITEM" Type="Self.ITEM" Multiplicity="1">
+        <Association Name="FK_Attachment_Item_uiIndex">
+          <End Role="Item" Type="Self.Item" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="Attachment" Type="Self.Attachment" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="ITEM">
+            <Principal Role="Item">
               <PropertyRef Name="uiIndex" />
             </Principal>
             <Dependent Role="Attachment">
@@ -982,11 +982,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_AvailableAttachSlot_ITEM_uiIndex">
-          <End Role="ITEM" Type="Self.ITEM" Multiplicity="1" />
+        <Association Name="FK_AvailableAttachSlot_Item_uiIndex">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
           <End Role="AvailableAttachSlot" Type="Self.AvailableAttachSlot" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="ITEM">
+            <Principal Role="Item">
               <PropertyRef Name="uiIndex" />
             </Principal>
             <Dependent Role="AvailableAttachSlot">
@@ -1020,11 +1020,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_BoxItem_ITEM_uiIndex">
-          <End Role="ITEM" Type="Self.ITEM" Multiplicity="1" />
+        <Association Name="FK_BoxItem_Item_uiIndex">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
           <End Role="BoxItem" Type="Self.BoxItem" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="ITEM">
+            <Principal Role="Item">
               <PropertyRef Name="uiIndex" />
             </Principal>
             <Dependent Role="BoxItem">
@@ -1034,12 +1034,12 @@
         </Association>
         <Association Name="FK_Calibre">
           <End Role="Caliber" Type="Self.Caliber" Multiplicity="0..1" />
-          <End Role="ITEM" Type="Self.ITEM" Multiplicity="*" />
+          <End Role="Item" Type="Self.Item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Caliber">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="ITEM">
+            <Dependent Role="Item">
               <PropertyRef Name="ubCalibre" />
             </Dependent>
           </ReferentialConstraint>
@@ -1180,11 +1180,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Drug_ITEM_uiIndex">
-          <End Role="ITEM" Type="Self.ITEM" Multiplicity="1" />
+        <Association Name="FK_Drug_Item_uiIndex">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
           <End Role="Drug" Type="Self.Drug" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="ITEM">
+            <Principal Role="Item">
               <PropertyRef Name="uiIndex" />
             </Principal>
             <Dependent Role="Drug">
@@ -1192,13 +1192,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_EXPLOSIVE_ITEM_uiIndex">
-          <End Role="ITEM" Type="Self.ITEM" Multiplicity="1">
+        <Association Name="FK_EXPLOSIVE_Item_uiIndex">
+          <End Role="Item" Type="Self.Item" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="EXPLOSIVE" Type="Self.EXPLOSIVE" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="ITEM">
+            <Principal Role="Item">
               <PropertyRef Name="uiIndex" />
             </Principal>
             <Dependent Role="EXPLOSIVE">
@@ -1332,13 +1332,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_InventoryOfChar_ITEM_uiIndex">
-          <End Role="ITEM" Type="Self.ITEM" Multiplicity="1">
+        <Association Name="FK_InventoryOfChar_Item_uiIndex">
+          <End Role="Item" Type="Self.Item" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="InventoryOfChar" Type="Self.InventoryOfChar" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="ITEM">
+            <Principal Role="Item">
               <PropertyRef Name="uiIndex" />
             </Principal>
             <Dependent Role="InventoryOfChar">
@@ -1346,62 +1346,62 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ITEM_Clothes">
+        <Association Name="FK_Item_Clothes">
           <End Role="Clothes" Type="Self.Clothes" Multiplicity="1" />
-          <End Role="ITEM" Type="Self.ITEM" Multiplicity="*" />
+          <End Role="Item" Type="Self.Item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Clothes">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="ITEM">
+            <Dependent Role="Item">
               <PropertyRef Name="clothestype" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ITEM_Food">
+        <Association Name="FK_Item_Food">
           <End Role="FOOD" Type="Self.FOOD" Multiplicity="1" />
-          <End Role="ITEM" Type="Self.ITEM" Multiplicity="*" />
+          <End Role="Item" Type="Self.Item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="FOOD">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="ITEM">
+            <Dependent Role="Item">
               <PropertyRef Name="FoodType" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ITEM_ItemSubClass_id">
+        <Association Name="FK_Item_ItemSubClass_id">
           <End Role="ItemSubClass" Type="Self.ItemSubClass" Multiplicity="1" />
-          <End Role="ITEM" Type="Self.ITEM" Multiplicity="*" />
+          <End Role="Item" Type="Self.Item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ItemSubClass">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="ITEM">
+            <Dependent Role="Item">
               <PropertyRef Name="usItemClass" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ITEM_LC">
+        <Association Name="FK_Item_LC">
           <End Role="LC" Type="Self.LC" Multiplicity="1" />
-          <End Role="ITEM" Type="Self.ITEM" Multiplicity="*" />
+          <End Role="Item" Type="Self.Item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="LC">
               <PropertyRef Name="Id_LC" />
             </Principal>
-            <Dependent Role="ITEM">
+            <Dependent Role="Item">
               <PropertyRef Name="LC" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ITEM_TL">
+        <Association Name="FK_Item_TL">
           <End Role="TL" Type="Self.TL" Multiplicity="1" />
-          <End Role="ITEM" Type="Self.ITEM" Multiplicity="*" />
+          <End Role="Item" Type="Self.Item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TL">
               <PropertyRef Name="Id_Tl" />
             </Principal>
-            <Dependent Role="ITEM">
+            <Dependent Role="Item">
               <PropertyRef Name="TL" />
             </Dependent>
           </ReferentialConstraint>
@@ -1430,17 +1430,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex">
-          <End Role="ITEM" Type="Self.ITEM" Multiplicity="1">
+        <Association Name="FK_Loadbearingequipment_Item_uiIndex">
+          <End Role="Item" Type="Self.Item" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="LOADBEARINGEQUIPMENT" Type="Self.LOADBEARINGEQUIPMENT" Multiplicity="0..1" />
+          <End Role="Loadbearingequipment" Type="Self.Loadbearingequipment" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="ITEM">
+            <Principal Role="Item">
               <PropertyRef Name="uiIndex" />
             </Principal>
-            <Dependent Role="LOADBEARINGEQUIPMENT">
-              <PropertyRef Name="lbeIndex" />
+            <Dependent Role="Loadbearingequipment">
+              <PropertyRef Name="LbeIndex" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1634,13 +1634,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_WEAPON_ITEM_uiIndex">
-          <End Role="ITEM" Type="Self.ITEM" Multiplicity="1">
+        <Association Name="FK_WEAPON_Item_uiIndex">
+          <End Role="Item" Type="Self.Item" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="WEAPON" Type="Self.WEAPON" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="ITEM">
+            <Principal Role="Item">
               <PropertyRef Name="uiIndex" />
             </Principal>
             <Dependent Role="WEAPON">
@@ -1698,24 +1698,24 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="NEW_ITEM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="NEW_Item" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="name" Type="nvarchar" Mode="In" />
           <Parameter Name="class_ofItem" Type="nvarchar" Mode="In" />
           <Parameter Name="Returns" Type="int" Mode="InOut" />
         </Function>
-        <Function Name="NEW_ITEM_Ammo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="NEW_Item_Ammo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="name" Type="nvarchar" Mode="In" />
           <Parameter Name="weigth" Type="decimal" Mode="In" />
           <Parameter Name="price" Type="money" Mode="In" />
           <Parameter Name="sClass" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="NEW_ITEM_att" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="NEW_Item_att" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="name" Type="nvarchar" Mode="In" />
           <Parameter Name="G_att_class" Type="int" Mode="In" />
           <Parameter Name="G_sub_att" Type="int" Mode="In" />
           <Parameter Name="id_att_mount" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="NEW_ITEMWeap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="NEW_ItemWeap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="name" Type="nvarchar" Mode="In" />
           <Parameter Name="class_ofItem" Type="nvarchar" Mode="In" />
           <Parameter Name="Weight" Type="decimal" Mode="In" />
@@ -1794,14 +1794,14 @@
           <EntitySet Name="G_AvAttachClass" EntityType="Self.G_AvAttachClass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="G_SubAttachClass" EntityType="Self.G_SubAttachClass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GurpsClass" EntityType="Self.GurpsClass" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ITEM" EntityType="Self.ITEM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ItemClass" EntityType="Self.ItemClass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ItemSubClass" EntityType="Self.ItemSubClass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LaserColorEf" EntityType="Self.LaserColorEf" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LC" EntityType="Self.LC" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="LOADBEARINGEQUIPMENT" EntityType="Self.LOADBEARINGEQUIPMENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Loadbearingequipment" EntityType="Self.Loadbearingequipment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TL" EntityType="Self.TL" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Type_of_Box" EntityType="Self.Type_of_Box" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeOfBox" EntityType="Self.TypeOfBox" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypeOfDamage" EntityType="Self.TypeOfDamage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WEAPON" EntityType="Self.WEAPON" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WeaponAttackType" EntityType="Self.WeaponAttackType" Schema="dbo" store:Type="Tables" />
@@ -1836,20 +1836,20 @@
             <End Role="AnyBoxNameType" EntitySet="AnyBoxNameType" />
             <End Role="AnyBoxNameType1" EntitySet="AnyBoxNameType" />
           </AssociationSet>
-          <AssociationSet Name="FK_AnyBoxNameType_Type_of_Box_id" Association="Self.FK_AnyBoxNameType_Type_of_Box_id">
-            <End Role="Type_of_Box" EntitySet="Type_of_Box" />
+          <AssociationSet Name="FK_AnyBoxNameType_TypeOfBox_id" Association="Self.FK_AnyBoxNameType_TypeOfBox_id">
+            <End Role="TypeOfBox" EntitySet="TypeOfBox" />
             <End Role="AnyBoxNameType" EntitySet="AnyBoxNameType" />
           </AssociationSet>
-          <AssociationSet Name="FK_ARMOUR_ITEM_uiIndex" Association="Self.FK_ARMOUR_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEM" />
+          <AssociationSet Name="FK_ARMOUR_Item_uiIndex" Association="Self.FK_ARMOUR_Item_uiIndex">
+            <End Role="Item" EntitySet="Item" />
             <End Role="ARMOUR" EntitySet="ARMOUR" />
           </AssociationSet>
           <AssociationSet Name="FK_Attachment_Attachmentmount" Association="Self.FK_Attachment_Attachmentmount">
             <End Role="Attachmentmount" EntitySet="Attachmentmount" />
             <End Role="Attachment" EntitySet="Attachment" />
           </AssociationSet>
-          <AssociationSet Name="FK_Attachment_ITEM_uiIndex" Association="Self.FK_Attachment_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEM" />
+          <AssociationSet Name="FK_Attachment_Item_uiIndex" Association="Self.FK_Attachment_Item_uiIndex">
+            <End Role="Item" EntitySet="Item" />
             <End Role="Attachment" EntitySet="Attachment" />
           </AssociationSet>
           <AssociationSet Name="FK_Attachmentmount_NasAttachmentClass1" Association="Self.FK_Attachmentmount_NasAttachmentClass1">
@@ -1868,8 +1868,8 @@
             <End Role="prereq_listDB" EntitySet="prereq_listDB" />
             <End Role="attribute_prereq" EntitySet="attribute_prereq" />
           </AssociationSet>
-          <AssociationSet Name="FK_AvailableAttachSlot_ITEM_uiIndex" Association="Self.FK_AvailableAttachSlot_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEM" />
+          <AssociationSet Name="FK_AvailableAttachSlot_Item_uiIndex" Association="Self.FK_AvailableAttachSlot_Item_uiIndex">
+            <End Role="Item" EntitySet="Item" />
             <End Role="AvailableAttachSlot" EntitySet="AvailableAttachSlot" />
           </AssociationSet>
           <AssociationSet Name="FK_AVeAttachmentmount" Association="Self.FK_AVeAttachmentmount">
@@ -1880,13 +1880,13 @@
             <End Role="AnyBoxNameType" EntitySet="AnyBoxNameType" />
             <End Role="BoxItem" EntitySet="BoxItem" />
           </AssociationSet>
-          <AssociationSet Name="FK_BoxItem_ITEM_uiIndex" Association="Self.FK_BoxItem_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEM" />
+          <AssociationSet Name="FK_BoxItem_Item_uiIndex" Association="Self.FK_BoxItem_Item_uiIndex">
+            <End Role="Item" EntitySet="Item" />
             <End Role="BoxItem" EntitySet="BoxItem" />
           </AssociationSet>
           <AssociationSet Name="FK_Calibre" Association="Self.FK_Calibre">
             <End Role="Caliber" EntitySet="Caliber" />
-            <End Role="ITEM" EntitySet="ITEM" />
+            <End Role="Item" EntitySet="Item" />
           </AssociationSet>
           <AssociationSet Name="FK_CharSkill_CharacterDB_id" Association="Self.FK_CharSkill_CharacterDB_id">
             <End Role="CharacterDB" EntitySet="CharacterDB" />
@@ -1928,12 +1928,12 @@
             <End Role="Advantage" EntitySet="Advantage" />
             <End Role="dr_bonusDB" EntitySet="dr_bonusDB" />
           </AssociationSet>
-          <AssociationSet Name="FK_Drug_ITEM_uiIndex" Association="Self.FK_Drug_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEM" />
+          <AssociationSet Name="FK_Drug_Item_uiIndex" Association="Self.FK_Drug_Item_uiIndex">
+            <End Role="Item" EntitySet="Item" />
             <End Role="Drug" EntitySet="Drug" />
           </AssociationSet>
-          <AssociationSet Name="FK_EXPLOSIVE_ITEM_uiIndex" Association="Self.FK_EXPLOSIVE_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEM" />
+          <AssociationSet Name="FK_EXPLOSIVE_Item_uiIndex" Association="Self.FK_EXPLOSIVE_Item_uiIndex">
+            <End Role="Item" EntitySet="Item" />
             <End Role="EXPLOSIVE" EntitySet="EXPLOSIVE" />
           </AssociationSet>
           <AssociationSet Name="FK_G_AvAttachClass_Attachment" Association="Self.FK_G_AvAttachClass_Attachment">
@@ -1976,29 +1976,29 @@
             <End Role="CharacterDB" EntitySet="CharacterDB" />
             <End Role="InventoryOfChar" EntitySet="InventoryOfChar" />
           </AssociationSet>
-          <AssociationSet Name="FK_InventoryOfChar_ITEM_uiIndex" Association="Self.FK_InventoryOfChar_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEM" />
+          <AssociationSet Name="FK_InventoryOfChar_Item_uiIndex" Association="Self.FK_InventoryOfChar_Item_uiIndex">
+            <End Role="Item" EntitySet="Item" />
             <End Role="InventoryOfChar" EntitySet="InventoryOfChar" />
           </AssociationSet>
-          <AssociationSet Name="FK_ITEM_Clothes" Association="Self.FK_ITEM_Clothes">
+          <AssociationSet Name="FK_Item_Clothes" Association="Self.FK_Item_Clothes">
             <End Role="Clothes" EntitySet="Clothes" />
-            <End Role="ITEM" EntitySet="ITEM" />
+            <End Role="Item" EntitySet="Item" />
           </AssociationSet>
-          <AssociationSet Name="FK_ITEM_Food" Association="Self.FK_ITEM_Food">
+          <AssociationSet Name="FK_Item_Food" Association="Self.FK_Item_Food">
             <End Role="FOOD" EntitySet="FOOD" />
-            <End Role="ITEM" EntitySet="ITEM" />
+            <End Role="Item" EntitySet="Item" />
           </AssociationSet>
-          <AssociationSet Name="FK_ITEM_ItemSubClass_id" Association="Self.FK_ITEM_ItemSubClass_id">
+          <AssociationSet Name="FK_Item_ItemSubClass_id" Association="Self.FK_Item_ItemSubClass_id">
             <End Role="ItemSubClass" EntitySet="ItemSubClass" />
-            <End Role="ITEM" EntitySet="ITEM" />
+            <End Role="Item" EntitySet="Item" />
           </AssociationSet>
-          <AssociationSet Name="FK_ITEM_LC" Association="Self.FK_ITEM_LC">
+          <AssociationSet Name="FK_Item_LC" Association="Self.FK_Item_LC">
             <End Role="LC" EntitySet="LC" />
-            <End Role="ITEM" EntitySet="ITEM" />
+            <End Role="Item" EntitySet="Item" />
           </AssociationSet>
-          <AssociationSet Name="FK_ITEM_TL" Association="Self.FK_ITEM_TL">
+          <AssociationSet Name="FK_Item_TL" Association="Self.FK_Item_TL">
             <End Role="TL" EntitySet="TL" />
-            <End Role="ITEM" EntitySet="ITEM" />
+            <End Role="Item" EntitySet="Item" />
           </AssociationSet>
           <AssociationSet Name="FK_ItemSubClass_ItemClass_id" Association="Self.FK_ItemSubClass_ItemClass_id">
             <End Role="ItemClass" EntitySet="ItemClass" />
@@ -2008,9 +2008,9 @@
             <End Role="GurpsClass" EntitySet="GurpsClass" />
             <End Role="ItemSubClass" EntitySet="ItemSubClass" />
           </AssociationSet>
-          <AssociationSet Name="FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex" Association="Self.FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEM" />
-            <End Role="LOADBEARINGEQUIPMENT" EntitySet="LOADBEARINGEQUIPMENT" />
+          <AssociationSet Name="FK_Loadbearingequipment_Item_uiIndex" Association="Self.FK_Loadbearingequipment_Item_uiIndex">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="Loadbearingequipment" EntitySet="Loadbearingequipment" />
           </AssociationSet>
           <AssociationSet Name="FK_melee_weapon_Advantage_id" Association="Self.FK_melee_weapon_Advantage_id">
             <End Role="Advantage" EntitySet="Advantage" />
@@ -2068,8 +2068,8 @@
             <End Role="GurpsSkill" EntitySet="GurpsSkill" />
             <End Role="weapon_bonus" EntitySet="weapon_bonus" />
           </AssociationSet>
-          <AssociationSet Name="FK_WEAPON_ITEM_uiIndex" Association="Self.FK_WEAPON_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEM" />
+          <AssociationSet Name="FK_WEAPON_Item_uiIndex" Association="Self.FK_WEAPON_Item_uiIndex">
+            <End Role="Item" EntitySet="Item" />
             <End Role="WEAPON" EntitySet="WEAPON" />
           </AssociationSet>
           <AssociationSet Name="FK_WeaponDamage_TypeOfDamage_id1" Association="Self.FK_WeaponDamage_TypeOfDamage_id1">
@@ -2094,18 +2094,18 @@
     <edmx:ConceptualModels>
       <Schema Namespace="item1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="item1Entities" annotation:LazyLoadingEnabled="true">
-          <FunctionImport Name="NEW_ITEM_att">
+          <FunctionImport Name="NEW_Item_att">
             <Parameter Name="name" Mode="In" Type="String" />
             <Parameter Name="G_att_class" Mode="In" Type="Int32" />
             <Parameter Name="G_sub_att" Mode="In" Type="Int32" />
             <Parameter Name="id_att_mount" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="NEW_ITEM">
+          <FunctionImport Name="NEW_Item">
             <Parameter Name="name" Mode="In" Type="String" />
             <Parameter Name="class_ofItem" Mode="In" Type="String" />
             <Parameter Name="Returns" Mode="InOut" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="NEW_ITEMWeap">
+          <FunctionImport Name="NEW_ItemWeap">
             <Parameter Name="name" Mode="In" Type="String" />
             <Parameter Name="class_ofItem" Mode="In" Type="String" />
             <Parameter Name="Weight" Mode="In" Type="Decimal" />
@@ -2139,7 +2139,7 @@
             <Parameter Name="TypeOfDam2" Mode="In" Type="String" />
             <Parameter Name="Returns" Mode="InOut" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="NEW_ITEM_Ammo">
+          <FunctionImport Name="NEW_Item_Ammo">
             <Parameter Name="name" Mode="In" Type="String" />
             <Parameter Name="weigth" Mode="In" Type="Decimal" />
             <Parameter Name="price" Mode="In" Type="Decimal" />
@@ -2187,16 +2187,16 @@
           <EntitySet Name="G_AvAttachClass" EntityType="item1Model.G_AvAttachClass" />
           <EntitySet Name="G_SubAttachClass" EntityType="item1Model.G_SubAttachClass" />
           <EntitySet Name="GurpsClasses" EntityType="item1Model.GurpsClass" />
-          <EntitySet Name="ITEMs" EntityType="item1Model.ITEM" />
+          <EntitySet Name="Items" EntityType="item1Model.Item" />
           <EntitySet Name="ItemClasses" EntityType="item1Model.ItemClass" />
           <EntitySet Name="ItemSubClasses" EntityType="item1Model.ItemSubClass" />
           <EntitySet Name="LaserColorEfs" EntityType="item1Model.LaserColorEf" />
           <EntitySet Name="LCs" EntityType="item1Model.LC" />
-          <EntitySet Name="LOADBEARINGEQUIPMENTs" EntityType="item1Model.LOADBEARINGEQUIPMENT" />
+          <EntitySet Name="Loadbearingequipments" EntityType="item1Model.Loadbearingequipment" />
           <EntitySet Name="TLs" EntityType="item1Model.TL" />
-          <EntitySet Name="Type_of_Box" EntityType="item1Model.Type_of_Box" />
+          <EntitySet Name="TypeOfBox" EntityType="item1Model.TypeOfBox" />
           <EntitySet Name="TypeOfDamages" EntityType="item1Model.TypeOfDamage" />
-          <EntitySet Name="WEAPONs" EntityType="item1Model.WEAPON" />
+          <EntitySet Name="WeapoNs" EntityType="item1Model.WEAPON" />
           <EntitySet Name="WeaponAttackTypes" EntityType="item1Model.WeaponAttackType" />
           <EntitySet Name="WeaponDamages" EntityType="item1Model.WeaponDamage" />
           <EntitySet Name="CharSkills" EntityType="item1Model.CharSkill" />
@@ -2317,8 +2317,8 @@
             <End Role="GurpsSkill" EntitySet="GurpsSkills" />
             <End Role="weapon_bonus" EntitySet="weapon_bonus" />
           </AssociationSet>
-          <AssociationSet Name="FK_InventoryOfChar_ITEM_uiIndex" Association="item1Model.FK_InventoryOfChar_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEMs" />
+          <AssociationSet Name="FK_InventoryOfChar_Item_uiIndex" Association="item1Model.FK_InventoryOfChar_Item_uiIndex">
+            <End Role="Item" EntitySet="Items" />
             <End Role="InventoryOfChar" EntitySet="InventoryOfChars" />
           </AssociationSet>
           <AssociationSet Name="FK_prereq_listDB_prereq_listDB_id" Association="item1Model.FK_prereq_listDB_prereq_listDB_id">
@@ -2337,24 +2337,24 @@
             <End Role="AnyBoxNameType" EntitySet="AnyBoxNameTypes" />
             <End Role="AnyBoxNameType1" EntitySet="AnyBoxNameTypes" />
           </AssociationSet>
-          <AssociationSet Name="FK_AnyBoxNameType_Type_of_Box_id" Association="item1Model.FK_AnyBoxNameType_Type_of_Box_id">
-            <End Role="Type_of_Box" EntitySet="Type_of_Box" />
+          <AssociationSet Name="FK_AnyBoxNameType_TypeOfBox_id" Association="item1Model.FK_AnyBoxNameType_TypeOfBox_id">
+            <End Role="TypeOfBox" EntitySet="TypeOfBox" />
             <End Role="AnyBoxNameType" EntitySet="AnyBoxNameTypes" />
           </AssociationSet>
           <AssociationSet Name="FK_BoxItem_AnyBoxNameType_id" Association="item1Model.FK_BoxItem_AnyBoxNameType_id">
             <End Role="AnyBoxNameType" EntitySet="AnyBoxNameTypes" />
             <End Role="BoxItem" EntitySet="BoxItems" />
           </AssociationSet>
-          <AssociationSet Name="FK_ARMOUR_ITEM_uiIndex" Association="item1Model.FK_ARMOUR_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEMs" />
+          <AssociationSet Name="FK_ARMOUR_Item_uiIndex" Association="item1Model.FK_ARMOUR_Item_uiIndex">
+            <End Role="Item" EntitySet="Items" />
             <End Role="ARMOUR" EntitySet="ARMOURs" />
           </AssociationSet>
           <AssociationSet Name="FK_Attachment_Attachmentmount" Association="item1Model.FK_Attachment_Attachmentmount">
             <End Role="Attachmentmount" EntitySet="Attachmentmounts" />
             <End Role="Attachment" EntitySet="Attachments" />
           </AssociationSet>
-          <AssociationSet Name="FK_Attachment_ITEM_uiIndex" Association="item1Model.FK_Attachment_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEMs" />
+          <AssociationSet Name="FK_Attachment_Item_uiIndex" Association="item1Model.FK_Attachment_Item_uiIndex">
+            <End Role="Item" EntitySet="Items" />
             <End Role="Attachment" EntitySet="Attachments" />
           </AssociationSet>
           <AssociationSet Name="FK_G_AvAttachClass_Attachment" Association="item1Model.FK_G_AvAttachClass_Attachment">
@@ -2373,33 +2373,33 @@
             <End Role="ATTACHMENTSLOT" EntitySet="ATTACHMENTSLOTs" />
             <End Role="G_SubAttachClass" EntitySet="G_SubAttachClass" />
           </AssociationSet>
-          <AssociationSet Name="FK_AvailableAttachSlot_ITEM_uiIndex" Association="item1Model.FK_AvailableAttachSlot_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEMs" />
+          <AssociationSet Name="FK_AvailableAttachSlot_Item_uiIndex" Association="item1Model.FK_AvailableAttachSlot_Item_uiIndex">
+            <End Role="Item" EntitySet="Items" />
             <End Role="AvailableAttachSlot" EntitySet="AvailableAttachSlots" />
           </AssociationSet>
-          <AssociationSet Name="FK_BoxItem_ITEM_uiIndex" Association="item1Model.FK_BoxItem_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEMs" />
+          <AssociationSet Name="FK_BoxItem_Item_uiIndex" Association="item1Model.FK_BoxItem_Item_uiIndex">
+            <End Role="Item" EntitySet="Items" />
             <End Role="BoxItem" EntitySet="BoxItems" />
           </AssociationSet>
           <AssociationSet Name="FK_Calibre" Association="item1Model.FK_Calibre">
             <End Role="Caliber" EntitySet="Calibers" />
-            <End Role="ITEM" EntitySet="ITEMs" />
+            <End Role="Item" EntitySet="Items" />
           </AssociationSet>
-          <AssociationSet Name="FK_ITEM_Clothes" Association="item1Model.FK_ITEM_Clothes">
+          <AssociationSet Name="FK_Item_Clothes" Association="item1Model.FK_Item_Clothes">
             <End Role="Cloth" EntitySet="Clothes" />
-            <End Role="ITEM" EntitySet="ITEMs" />
+            <End Role="Item" EntitySet="Items" />
           </AssociationSet>
-          <AssociationSet Name="FK_Drug_ITEM_uiIndex" Association="item1Model.FK_Drug_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEMs" />
+          <AssociationSet Name="FK_Drug_Item_uiIndex" Association="item1Model.FK_Drug_Item_uiIndex">
+            <End Role="Item" EntitySet="Items" />
             <End Role="Drug" EntitySet="Drugs" />
           </AssociationSet>
-          <AssociationSet Name="FK_EXPLOSIVE_ITEM_uiIndex" Association="item1Model.FK_EXPLOSIVE_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEMs" />
+          <AssociationSet Name="FK_EXPLOSIVE_Item_uiIndex" Association="item1Model.FK_EXPLOSIVE_Item_uiIndex">
+            <End Role="Item" EntitySet="Items" />
             <End Role="EXPLOSIVE" EntitySet="EXPLOSIVEs" />
           </AssociationSet>
-          <AssociationSet Name="FK_ITEM_Food" Association="item1Model.FK_ITEM_Food">
+          <AssociationSet Name="FK_Item_Food" Association="item1Model.FK_Item_Food">
             <End Role="FOOD" EntitySet="FOODs" />
-            <End Role="ITEM" EntitySet="ITEMs" />
+            <End Role="Item" EntitySet="Items" />
           </AssociationSet>
           <AssociationSet Name="FK_G_SubAttachClass_G_AttachClass" Association="item1Model.FK_G_SubAttachClass_G_AttachClass">
             <End Role="G_AttachClass" EntitySet="G_AttachClass" />
@@ -2413,25 +2413,25 @@
             <End Role="GurpsClass" EntitySet="GurpsClasses" />
             <End Role="ItemSubClass" EntitySet="ItemSubClasses" />
           </AssociationSet>
-          <AssociationSet Name="FK_ITEM_ItemSubClass_id" Association="item1Model.FK_ITEM_ItemSubClass_id">
+          <AssociationSet Name="FK_Item_ItemSubClass_id" Association="item1Model.FK_Item_ItemSubClass_id">
             <End Role="ItemSubClass" EntitySet="ItemSubClasses" />
-            <End Role="ITEM" EntitySet="ITEMs" />
+            <End Role="Item" EntitySet="Items" />
           </AssociationSet>
-          <AssociationSet Name="FK_ITEM_LC" Association="item1Model.FK_ITEM_LC">
+          <AssociationSet Name="FK_Item_LC" Association="item1Model.FK_Item_LC">
             <End Role="LC" EntitySet="LCs" />
-            <End Role="ITEM" EntitySet="ITEMs" />
+            <End Role="Item" EntitySet="Items" />
           </AssociationSet>
-          <AssociationSet Name="FK_ITEM_TL" Association="item1Model.FK_ITEM_TL">
+          <AssociationSet Name="FK_Item_TL" Association="item1Model.FK_Item_TL">
             <End Role="TL" EntitySet="TLs" />
-            <End Role="ITEM" EntitySet="ITEMs" />
+            <End Role="Item" EntitySet="Items" />
           </AssociationSet>
-          <AssociationSet Name="FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex" Association="item1Model.FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEMs" />
-            <End Role="LOADBEARINGEQUIPMENT" EntitySet="LOADBEARINGEQUIPMENTs" />
+          <AssociationSet Name="FK_Loadbearingequipment_Item_uiIndex" Association="item1Model.FK_Loadbearingequipment_Item_uiIndex">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="Loadbearingequipment" EntitySet="Loadbearingequipments" />
           </AssociationSet>
-          <AssociationSet Name="FK_WEAPON_ITEM_uiIndex" Association="item1Model.FK_WEAPON_ITEM_uiIndex">
-            <End Role="ITEM" EntitySet="ITEMs" />
-            <End Role="WEAPON" EntitySet="WEAPONs" />
+          <AssociationSet Name="FK_WEAPON_Item_uiIndex" Association="item1Model.FK_WEAPON_Item_uiIndex">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="WEAPON" EntitySet="WeapoNs" />
           </AssociationSet>
           <AssociationSet Name="FK_ItemSubClass_ItemClass_id" Association="item1Model.FK_ItemSubClass_ItemClass_id">
             <End Role="ItemClass" EntitySet="ItemClasses" />
@@ -2446,7 +2446,7 @@
             <End Role="WeaponDamage" EntitySet="WeaponDamages" />
           </AssociationSet>
           <AssociationSet Name="FK_WeaponDamage_WEAPON_uiIndex" Association="item1Model.FK_WeaponDamage_WEAPON_uiIndex">
-            <End Role="WEAPON" EntitySet="WEAPONs" />
+            <End Role="WEAPON" EntitySet="WeapoNs" />
             <End Role="WeaponDamage" EntitySet="WeaponDamages" />
           </AssociationSet>
           <AssociationSet Name="FK_WeaponDamage_WeaponAttackType_id" Association="item1Model.FK_WeaponDamage_WeaponAttackType_id">
@@ -2676,7 +2676,7 @@
           <Property Name="IdItem" Type="Int32" Nullable="false" />
           <Property Name="Count" Type="Int64" Nullable="false" />
           <NavigationProperty Name="CharacterDB" Relationship="item1Model.FK_InventoryOfChar_CharacterDB_id" FromRole="InventoryOfChar" ToRole="CharacterDB" />
-          <NavigationProperty Name="ITEM" Relationship="item1Model.FK_InventoryOfChar_ITEM_uiIndex" FromRole="InventoryOfChar" ToRole="ITEM" />
+          <NavigationProperty Name="Item" Relationship="item1Model.FK_InventoryOfChar_Item_uiIndex" FromRole="InventoryOfChar" ToRole="Item" />
         </EntityType>
         <EntityType Name="melee_weapon">
           <Key>
@@ -2874,7 +2874,7 @@
           <Property Name="ParentBoxName" Type="Int32" />
           <NavigationProperty Name="AnyBoxNameType1" Relationship="item1Model.FK_AnyBoxNameType_AnyBoxNameType_id" FromRole="AnyBoxNameType" ToRole="AnyBoxNameType1" />
           <NavigationProperty Name="AnyBoxNameType2" Relationship="item1Model.FK_AnyBoxNameType_AnyBoxNameType_id" FromRole="AnyBoxNameType1" ToRole="AnyBoxNameType" />
-          <NavigationProperty Name="Type_of_Box" Relationship="item1Model.FK_AnyBoxNameType_Type_of_Box_id" FromRole="AnyBoxNameType" ToRole="Type_of_Box" />
+          <NavigationProperty Name="TypeOfBox" Relationship="item1Model.FK_AnyBoxNameType_TypeOfBox_id" FromRole="AnyBoxNameType" ToRole="TypeOfBox" />
           <NavigationProperty Name="BoxItems" Relationship="item1Model.FK_BoxItem_AnyBoxNameType_id" FromRole="AnyBoxNameType" ToRole="BoxItem" />
         </EntityType>
         <EntityType Name="ARMOUR">
@@ -2888,7 +2888,7 @@
           <Property Name="ubDegradePercent" Type="Int32" Nullable="false" />
           <Property Name="FlakJacket" Type="Boolean" Nullable="false" />
           <Property Name="LeatherJacket" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="ITEM" Relationship="item1Model.FK_ARMOUR_ITEM_uiIndex" FromRole="ARMOUR" ToRole="ITEM" />
+          <NavigationProperty Name="Item" Relationship="item1Model.FK_ARMOUR_Item_uiIndex" FromRole="ARMOUR" ToRole="Item" />
         </EntityType>
         <EntityType Name="Attachment">
           <Key>
@@ -2948,7 +2948,7 @@
           <Property Name="LaserColorEf" Type="Decimal" Precision="4" Scale="2" />
           <Property Name="usedBatType" Type="Int32" />
           <NavigationProperty Name="Attachmentmount1" Relationship="item1Model.FK_Attachment_Attachmentmount" FromRole="Attachment" ToRole="Attachmentmount" />
-          <NavigationProperty Name="ITEM" Relationship="item1Model.FK_Attachment_ITEM_uiIndex" FromRole="Attachment" ToRole="ITEM" />
+          <NavigationProperty Name="Item" Relationship="item1Model.FK_Attachment_Item_uiIndex" FromRole="Attachment" ToRole="Item" />
           <NavigationProperty Name="G_AvAttachClass" Relationship="item1Model.FK_G_AvAttachClass_Attachment" FromRole="Attachment" ToRole="G_AvAttachClass" />
         </EntityType>
         <EntityType Name="Attachmentmount">
@@ -2980,7 +2980,7 @@
           <Property Name="rATTACHMENTSLOT" Type="Int32" Nullable="false" />
           <Property Name="rAttachmentmount" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Attachmentmount" Relationship="item1Model.FK_AVeAttachmentmount" FromRole="AvailableAttachSlot" ToRole="Attachmentmount" />
-          <NavigationProperty Name="ITEM" Relationship="item1Model.FK_AvailableAttachSlot_ITEM_uiIndex" FromRole="AvailableAttachSlot" ToRole="ITEM" />
+          <NavigationProperty Name="Item" Relationship="item1Model.FK_AvailableAttachSlot_Item_uiIndex" FromRole="AvailableAttachSlot" ToRole="Item" />
         </EntityType>
         <EntityType Name="Battery">
           <Key>
@@ -3002,7 +3002,7 @@
           <Property Name="Items" Type="Int32" Nullable="false" />
           <Property Name="CountItems" Type="Int32" Nullable="false" />
           <NavigationProperty Name="AnyBoxNameType" Relationship="item1Model.FK_BoxItem_AnyBoxNameType_id" FromRole="BoxItem" ToRole="AnyBoxNameType" />
-          <NavigationProperty Name="ITEM" Relationship="item1Model.FK_BoxItem_ITEM_uiIndex" FromRole="BoxItem" ToRole="ITEM" />
+          <NavigationProperty Name="Item" Relationship="item1Model.FK_BoxItem_Item_uiIndex" FromRole="BoxItem" ToRole="Item" />
         </EntityType>
         <EntityType Name="Caliber">
           <Key>
@@ -3014,7 +3014,7 @@
           <Property Name="Class_of_Caliber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Dim_of_bullet_SI" Type="Decimal" Precision="8" Scale="4" />
           <Property Name="Dim_of_bullet_US" Type="Decimal" Precision="8" Scale="4" />
-          <NavigationProperty Name="ITEMs" Relationship="item1Model.FK_Calibre" FromRole="Caliber" ToRole="ITEM" />
+          <NavigationProperty Name="Items" Relationship="item1Model.FK_Calibre" FromRole="Caliber" ToRole="Item" />
         </EntityType>
         <EntityType Name="Cloth">
           <Key>
@@ -3022,7 +3022,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ITEMs" Relationship="item1Model.FK_ITEM_Clothes" FromRole="Cloth" ToRole="ITEM" />
+          <NavigationProperty Name="Items" Relationship="item1Model.FK_Item_Clothes" FromRole="Cloth" ToRole="Item" />
         </EntityType>
         <EntityType Name="CombineWeap">
           <Key>
@@ -3049,7 +3049,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="IdDrugType" Type="Int32" />
-          <NavigationProperty Name="ITEM" Relationship="item1Model.FK_Drug_ITEM_uiIndex" FromRole="Drug" ToRole="ITEM" />
+          <NavigationProperty Name="Item" Relationship="item1Model.FK_Drug_Item_uiIndex" FromRole="Drug" ToRole="Item" />
         </EntityType>
         <EntityType Name="EXPLOSIVE">
           <Key>
@@ -3077,7 +3077,7 @@
           <Property Name="Flare" Type="Boolean" Nullable="false" />
           <Property Name="Directional" Type="Boolean" Nullable="false" />
           <Property Name="ShapedCharge" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="ITEM" Relationship="item1Model.FK_EXPLOSIVE_ITEM_uiIndex" FromRole="EXPLOSIVE" ToRole="ITEM" />
+          <NavigationProperty Name="Item" Relationship="item1Model.FK_EXPLOSIVE_Item_uiIndex" FromRole="EXPLOSIVE" ToRole="Item" />
         </EntityType>
         <EntityType Name="FOOD">
           <Key>
@@ -3085,7 +3085,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ITEMs" Relationship="item1Model.FK_ITEM_Food" FromRole="FOOD" ToRole="ITEM" />
+          <NavigationProperty Name="Items" Relationship="item1Model.FK_Item_Food" FromRole="FOOD" ToRole="Item" />
         </EntityType>
         <EntityType Name="G_AttachClass">
           <Key>
@@ -3127,7 +3127,7 @@
           <Property Name="name" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ItemSubClasses" Relationship="item1Model.FK_ItemSubClass_WeaponClass_id" FromRole="GurpsClass" ToRole="ItemSubClass" />
         </EntityType>
-        <EntityType Name="ITEM">
+        <EntityType Name="Item">
           <Key>
             <PropertyRef Name="uiIndex" />
           </Key>
@@ -3188,21 +3188,21 @@
           <Property Name="dt" Type="DateTime" Precision="3" />
           <Property Name="Count_of_Bat" Type="Int32" Nullable="false" />
           <Property Name="Works_on_Bat" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="InventoryOfChars" Relationship="item1Model.FK_InventoryOfChar_ITEM_uiIndex" FromRole="ITEM" ToRole="InventoryOfChar" />
-          <NavigationProperty Name="ARMOUR" Relationship="item1Model.FK_ARMOUR_ITEM_uiIndex" FromRole="ITEM" ToRole="ARMOUR" />
-          <NavigationProperty Name="Attachment" Relationship="item1Model.FK_Attachment_ITEM_uiIndex" FromRole="ITEM" ToRole="Attachment" />
-          <NavigationProperty Name="AvailableAttachSlots" Relationship="item1Model.FK_AvailableAttachSlot_ITEM_uiIndex" FromRole="ITEM" ToRole="AvailableAttachSlot" />
-          <NavigationProperty Name="BoxItems" Relationship="item1Model.FK_BoxItem_ITEM_uiIndex" FromRole="ITEM" ToRole="BoxItem" />
-          <NavigationProperty Name="Caliber" Relationship="item1Model.FK_Calibre" FromRole="ITEM" ToRole="Caliber" />
-          <NavigationProperty Name="Cloth" Relationship="item1Model.FK_ITEM_Clothes" FromRole="ITEM" ToRole="Cloth" />
-          <NavigationProperty Name="Drug" Relationship="item1Model.FK_Drug_ITEM_uiIndex" FromRole="ITEM" ToRole="Drug" />
-          <NavigationProperty Name="EXPLOSIVE" Relationship="item1Model.FK_EXPLOSIVE_ITEM_uiIndex" FromRole="ITEM" ToRole="EXPLOSIVE" />
-          <NavigationProperty Name="FOOD" Relationship="item1Model.FK_ITEM_Food" FromRole="ITEM" ToRole="FOOD" />
-          <NavigationProperty Name="ItemSubClass" Relationship="item1Model.FK_ITEM_ItemSubClass_id" FromRole="ITEM" ToRole="ItemSubClass" />
-          <NavigationProperty Name="LC1" Relationship="item1Model.FK_ITEM_LC" FromRole="ITEM" ToRole="LC" />
-          <NavigationProperty Name="TL1" Relationship="item1Model.FK_ITEM_TL" FromRole="ITEM" ToRole="TL" />
-          <NavigationProperty Name="LOADBEARINGEQUIPMENT" Relationship="item1Model.FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex" FromRole="ITEM" ToRole="LOADBEARINGEQUIPMENT" />
-          <NavigationProperty Name="WEAPON" Relationship="item1Model.FK_WEAPON_ITEM_uiIndex" FromRole="ITEM" ToRole="WEAPON" />
+          <NavigationProperty Name="InventoryOfChars" Relationship="item1Model.FK_InventoryOfChar_Item_uiIndex" FromRole="Item" ToRole="InventoryOfChar" />
+          <NavigationProperty Name="ARMOUR" Relationship="item1Model.FK_ARMOUR_Item_uiIndex" FromRole="Item" ToRole="ARMOUR" />
+          <NavigationProperty Name="Attachment" Relationship="item1Model.FK_Attachment_Item_uiIndex" FromRole="Item" ToRole="Attachment" />
+          <NavigationProperty Name="AvailableAttachSlots" Relationship="item1Model.FK_AvailableAttachSlot_Item_uiIndex" FromRole="Item" ToRole="AvailableAttachSlot" />
+          <NavigationProperty Name="BoxItems" Relationship="item1Model.FK_BoxItem_Item_uiIndex" FromRole="Item" ToRole="BoxItem" />
+          <NavigationProperty Name="Caliber" Relationship="item1Model.FK_Calibre" FromRole="Item" ToRole="Caliber" />
+          <NavigationProperty Name="Cloth" Relationship="item1Model.FK_Item_Clothes" FromRole="Item" ToRole="Cloth" />
+          <NavigationProperty Name="Drug" Relationship="item1Model.FK_Drug_Item_uiIndex" FromRole="Item" ToRole="Drug" />
+          <NavigationProperty Name="EXPLOSIVE" Relationship="item1Model.FK_EXPLOSIVE_Item_uiIndex" FromRole="Item" ToRole="EXPLOSIVE" />
+          <NavigationProperty Name="FOOD" Relationship="item1Model.FK_Item_Food" FromRole="Item" ToRole="FOOD" />
+          <NavigationProperty Name="ItemSubClass" Relationship="item1Model.FK_Item_ItemSubClass_id" FromRole="Item" ToRole="ItemSubClass" />
+          <NavigationProperty Name="LC1" Relationship="item1Model.FK_Item_LC" FromRole="Item" ToRole="LC" />
+          <NavigationProperty Name="TL1" Relationship="item1Model.FK_Item_TL" FromRole="Item" ToRole="TL" />
+          <NavigationProperty Name="Loadbearingequipment" Relationship="item1Model.FK_Loadbearingequipment_Item_uiIndex" FromRole="Item" ToRole="Loadbearingequipment" />
+          <NavigationProperty Name="WEAPON" Relationship="item1Model.FK_WEAPON_Item_uiIndex" FromRole="Item" ToRole="WEAPON" />
         </EntityType>
         <EntityType Name="ItemClass">
           <Key>
@@ -3222,7 +3222,7 @@
           <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="idGurpsSubClass" Type="Int32" />
           <NavigationProperty Name="GurpsClass" Relationship="item1Model.FK_ItemSubClass_WeaponClass_id" FromRole="ItemSubClass" ToRole="GurpsClass" />
-          <NavigationProperty Name="ITEMs" Relationship="item1Model.FK_ITEM_ItemSubClass_id" FromRole="ItemSubClass" ToRole="ITEM" />
+          <NavigationProperty Name="Items" Relationship="item1Model.FK_Item_ItemSubClass_id" FromRole="ItemSubClass" ToRole="Item" />
           <NavigationProperty Name="ItemClass" Relationship="item1Model.FK_ItemSubClass_ItemClass_id" FromRole="ItemSubClass" ToRole="ItemClass" />
         </EntityType>
         <EntityType Name="LaserColorEf">
@@ -3241,19 +3241,19 @@
           <Property Name="Name_LC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="ShortDes" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ITEMs" Relationship="item1Model.FK_ITEM_LC" FromRole="LC" ToRole="ITEM" />
+          <NavigationProperty Name="Items" Relationship="item1Model.FK_Item_LC" FromRole="LC" ToRole="Item" />
         </EntityType>
-        <EntityType Name="LOADBEARINGEQUIPMENT">
+        <EntityType Name="Loadbearingequipment">
           <Key>
-            <PropertyRef Name="lbeIndex" />
+            <PropertyRef Name="LbeIndex" />
           </Key>
-          <Property Name="lbeIndex" Type="Int32" Nullable="false" />
-          <Property Name="LBEClass" Type="Int32" Nullable="false" />
-          <Property Name="lbeCombo" Type="Int32" Nullable="false" />
-          <Property Name="lbeFilledSize" Type="Int32" Nullable="false" />
-          <Property Name="lbeAvailableVolume" Type="Int32" Nullable="false" />
-          <Property Name="lbePocketsAvailable" Type="Int32" Nullable="false" />
-          <Property Name="lbePocketIndex1" Type="Int32" Nullable="false" />
+          <Property Name="LbeIndex" Type="Int32" Nullable="false" />
+          <Property Name="LbeClass" Type="Int32" Nullable="false" />
+          <Property Name="LbeCombo" Type="Int32" Nullable="false" />
+          <Property Name="LbeFilledSize" Type="Int32" Nullable="false" />
+          <Property Name="LbeAvailableVolume" Type="Int32" Nullable="false" />
+          <Property Name="LbePocketsAvailable" Type="Int32" Nullable="false" />
+          <Property Name="LbePocketIndex1" Type="Int32" Nullable="false" />
           <Property Name="lbePocketIndex2" Type="Int32" Nullable="false" />
           <Property Name="lbePocketIndex3" Type="Int32" Nullable="false" />
           <Property Name="lbePocketIndex4" Type="Int32" Nullable="false" />
@@ -3262,10 +3262,10 @@
           <Property Name="lbePocketIndex7" Type="Int32" Nullable="false" />
           <Property Name="lbePocketIndex8" Type="Int32" Nullable="false" />
           <Property Name="lbePocketIndex9" Type="Int32" Nullable="false" />
-          <Property Name="lbePocketIndex10" Type="Int32" Nullable="false" />
-          <Property Name="lbePocketIndex11" Type="Int32" Nullable="false" />
-          <Property Name="lbePocketIndex12" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ITEM" Relationship="item1Model.FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex" FromRole="LOADBEARINGEQUIPMENT" ToRole="ITEM" />
+          <Property Name="LbePocketIndex10" Type="Int32" Nullable="false" />
+          <Property Name="LbePocketIndex11" Type="Int32" Nullable="false" />
+          <Property Name="LbePocketIndex12" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Item" Relationship="item1Model.FK_Loadbearingequipment_Item_uiIndex" FromRole="Loadbearingequipment" ToRole="Item" />
         </EntityType>
         <EntityType Name="TL">
           <Key>
@@ -3276,15 +3276,15 @@
           <Property Name="Description" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
           <Property Name="StartMoney" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="GurpsSkills" Relationship="item1Model.FK_GurpsSkill_TL_Id_Tl" FromRole="TL" ToRole="GurpsSkill" />
-          <NavigationProperty Name="ITEMs" Relationship="item1Model.FK_ITEM_TL" FromRole="TL" ToRole="ITEM" />
+          <NavigationProperty Name="Items" Relationship="item1Model.FK_Item_TL" FromRole="TL" ToRole="Item" />
         </EntityType>
-        <EntityType Name="Type_of_Box">
+        <EntityType Name="TypeOfBox">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nameOfType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="AnyBoxNameTypes" Relationship="item1Model.FK_AnyBoxNameType_Type_of_Box_id" FromRole="Type_of_Box" ToRole="AnyBoxNameType" />
+          <NavigationProperty Name="AnyBoxNameTypes" Relationship="item1Model.FK_AnyBoxNameType_TypeOfBox_id" FromRole="TypeOfBox" ToRole="AnyBoxNameType" />
         </EntityType>
         <EntityType Name="TypeOfDamage">
           <Key>
@@ -3329,7 +3329,7 @@
           <Property Name="Bulkfolded" Type="Boolean" Nullable="false" />
           <Property Name="HCROF" Type="Boolean" Nullable="false" />
           <Property Name="HCROFValue" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ITEM" Relationship="item1Model.FK_WEAPON_ITEM_uiIndex" FromRole="WEAPON" ToRole="ITEM" />
+          <NavigationProperty Name="Item" Relationship="item1Model.FK_WEAPON_Item_uiIndex" FromRole="WEAPON" ToRole="Item" />
           <NavigationProperty Name="WeaponDamages" Relationship="item1Model.FK_WeaponDamage_WEAPON_uiIndex" FromRole="WEAPON" ToRole="WeaponDamage" />
         </EntityType>
         <EntityType Name="WeaponAttackType">
@@ -3773,13 +3773,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_InventoryOfChar_ITEM_uiIndex">
-          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1">
+        <Association Name="FK_InventoryOfChar_Item_uiIndex">
+          <End Type="item1Model.Item" Role="Item" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Type="item1Model.InventoryOfChar" Role="InventoryOfChar" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="ITEM">
+            <Principal Role="Item">
               <PropertyRef Name="uiIndex" />
             </Principal>
             <Dependent Role="InventoryOfChar">
@@ -3839,13 +3839,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_AnyBoxNameType_Type_of_Box_id">
-          <End Type="item1Model.Type_of_Box" Role="Type_of_Box" Multiplicity="1">
+        <Association Name="FK_AnyBoxNameType_TypeOfBox_id">
+          <End Type="item1Model.TypeOfBox" Role="TypeOfBox" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Type="item1Model.AnyBoxNameType" Role="AnyBoxNameType" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Type_of_Box">
+            <Principal Role="TypeOfBox">
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="AnyBoxNameType">
@@ -3867,13 +3867,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ARMOUR_ITEM_uiIndex">
-          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1">
+        <Association Name="FK_ARMOUR_Item_uiIndex">
+          <End Type="item1Model.Item" Role="Item" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Type="item1Model.ARMOUR" Role="ARMOUR" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="ITEM">
+            <Principal Role="Item">
               <PropertyRef Name="uiIndex" />
             </Principal>
             <Dependent Role="ARMOUR">
@@ -3893,13 +3893,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Attachment_ITEM_uiIndex">
-          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1">
+        <Association Name="FK_Attachment_Item_uiIndex">
+          <End Type="item1Model.Item" Role="Item" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Type="item1Model.Attachment" Role="Attachment" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="ITEM">
+            <Principal Role="Item">
               <PropertyRef Name="uiIndex" />
             </Principal>
             <Dependent Role="Attachment">
@@ -3957,11 +3957,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_AvailableAttachSlot_ITEM_uiIndex">
-          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1" />
+        <Association Name="FK_AvailableAttachSlot_Item_uiIndex">
+          <End Type="item1Model.Item" Role="Item" Multiplicity="1" />
           <End Type="item1Model.AvailableAttachSlot" Role="AvailableAttachSlot" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="ITEM">
+            <Principal Role="Item">
               <PropertyRef Name="uiIndex" />
             </Principal>
             <Dependent Role="AvailableAttachSlot">
@@ -3969,11 +3969,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_BoxItem_ITEM_uiIndex">
-          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1" />
+        <Association Name="FK_BoxItem_Item_uiIndex">
+          <End Type="item1Model.Item" Role="Item" Multiplicity="1" />
           <End Type="item1Model.BoxItem" Role="BoxItem" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="ITEM">
+            <Principal Role="Item">
               <PropertyRef Name="uiIndex" />
             </Principal>
             <Dependent Role="BoxItem">
@@ -3983,33 +3983,33 @@
         </Association>
         <Association Name="FK_Calibre">
           <End Type="item1Model.Caliber" Role="Caliber" Multiplicity="0..1" />
-          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="*" />
+          <End Type="item1Model.Item" Role="Item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Caliber">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="ITEM">
+            <Dependent Role="Item">
               <PropertyRef Name="ubCalibre" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ITEM_Clothes">
+        <Association Name="FK_Item_Clothes">
           <End Type="item1Model.Cloth" Role="Cloth" Multiplicity="1" />
-          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="*" />
+          <End Type="item1Model.Item" Role="Item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cloth">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="ITEM">
+            <Dependent Role="Item">
               <PropertyRef Name="clothestype" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Drug_ITEM_uiIndex">
-          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1" />
+        <Association Name="FK_Drug_Item_uiIndex">
+          <End Type="item1Model.Item" Role="Item" Multiplicity="1" />
           <End Type="item1Model.Drug" Role="Drug" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="ITEM">
+            <Principal Role="Item">
               <PropertyRef Name="uiIndex" />
             </Principal>
             <Dependent Role="Drug">
@@ -4017,13 +4017,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_EXPLOSIVE_ITEM_uiIndex">
-          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1">
+        <Association Name="FK_EXPLOSIVE_Item_uiIndex">
+          <End Type="item1Model.Item" Role="Item" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Type="item1Model.EXPLOSIVE" Role="EXPLOSIVE" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="ITEM">
+            <Principal Role="Item">
               <PropertyRef Name="uiIndex" />
             </Principal>
             <Dependent Role="EXPLOSIVE">
@@ -4031,14 +4031,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ITEM_Food">
+        <Association Name="FK_Item_Food">
           <End Type="item1Model.FOOD" Role="FOOD" Multiplicity="1" />
-          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="*" />
+          <End Type="item1Model.Item" Role="Item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="FOOD">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="ITEM">
+            <Dependent Role="Item">
               <PropertyRef Name="FoodType" />
             </Dependent>
           </ReferentialConstraint>
@@ -4079,63 +4079,63 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ITEM_ItemSubClass_id">
+        <Association Name="FK_Item_ItemSubClass_id">
           <End Type="item1Model.ItemSubClass" Role="ItemSubClass" Multiplicity="1" />
-          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="*" />
+          <End Type="item1Model.Item" Role="Item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ItemSubClass">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="ITEM">
+            <Dependent Role="Item">
               <PropertyRef Name="usItemClass" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ITEM_LC">
+        <Association Name="FK_Item_LC">
           <End Type="item1Model.LC" Role="LC" Multiplicity="1" />
-          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="*" />
+          <End Type="item1Model.Item" Role="Item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="LC">
               <PropertyRef Name="Id_LC" />
             </Principal>
-            <Dependent Role="ITEM">
+            <Dependent Role="Item">
               <PropertyRef Name="LC" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ITEM_TL">
+        <Association Name="FK_Item_TL">
           <End Type="item1Model.TL" Role="TL" Multiplicity="1" />
-          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="*" />
+          <End Type="item1Model.Item" Role="Item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TL">
               <PropertyRef Name="Id_Tl" />
             </Principal>
-            <Dependent Role="ITEM">
+            <Dependent Role="Item">
               <PropertyRef Name="TL" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_LOADBEARINGEQUIPMENT_ITEM_uiIndex">
-          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1">
+        <Association Name="FK_Loadbearingequipment_Item_uiIndex">
+          <End Type="item1Model.Item" Role="Item" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="item1Model.LOADBEARINGEQUIPMENT" Role="LOADBEARINGEQUIPMENT" Multiplicity="0..1" />
+          <End Type="item1Model.Loadbearingequipment" Role="Loadbearingequipment" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="ITEM">
+            <Principal Role="Item">
               <PropertyRef Name="uiIndex" />
             </Principal>
-            <Dependent Role="LOADBEARINGEQUIPMENT">
-              <PropertyRef Name="lbeIndex" />
+            <Dependent Role="Loadbearingequipment">
+              <PropertyRef Name="LbeIndex" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_WEAPON_ITEM_uiIndex">
-          <End Type="item1Model.ITEM" Role="ITEM" Multiplicity="1">
+        <Association Name="FK_WEAPON_Item_uiIndex">
+          <End Type="item1Model.Item" Role="Item" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Type="item1Model.WEAPON" Role="WEAPON" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="ITEM">
+            <Principal Role="Item">
               <PropertyRef Name="uiIndex" />
             </Principal>
             <Dependent Role="WEAPON">
@@ -4219,10 +4219,10 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище item1ModelContainer" CdmEntityContainer="item1Entities">
-          <FunctionImportMapping FunctionImportName="NEW_ITEM_att" FunctionName="Хранилище item1Model.NEW_ITEM_att" />
-          <FunctionImportMapping FunctionImportName="NEW_ITEM" FunctionName="Хранилище item1Model.NEW_ITEM" />
-          <FunctionImportMapping FunctionImportName="NEW_ITEMWeap" FunctionName="Хранилище item1Model.NEW_ITEMWeap" />
-          <FunctionImportMapping FunctionImportName="NEW_ITEM_Ammo" FunctionName="Хранилище item1Model.NEW_ITEM_Ammo" />
+          <FunctionImportMapping FunctionImportName="NEW_Item_att" FunctionName="Хранилище item1Model.NEW_Item_att" />
+          <FunctionImportMapping FunctionImportName="NEW_Item" FunctionName="Хранилище item1Model.NEW_Item" />
+          <FunctionImportMapping FunctionImportName="NEW_ItemWeap" FunctionName="Хранилище item1Model.NEW_ItemWeap" />
+          <FunctionImportMapping FunctionImportName="NEW_Item_Ammo" FunctionName="Хранилище item1Model.NEW_Item_Ammo" />
           <EntitySetMapping Name="Advantages">
             <EntityTypeMapping TypeName="item1Model.Advantage">
               <MappingFragment StoreEntitySet="Advantage">
@@ -4836,9 +4836,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ITEMs">
-            <EntityTypeMapping TypeName="item1Model.ITEM">
-              <MappingFragment StoreEntitySet="ITEM">
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="item1Model.Item">
+              <MappingFragment StoreEntitySet="Item">
                 <ScalarProperty Name="Works_on_Bat" ColumnName="Works_on_Bat" />
                 <ScalarProperty Name="Count_of_Bat" ColumnName="Count_of_Bat" />
                 <ScalarProperty Name="dt" ColumnName="dt" />
@@ -4937,12 +4937,12 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="LOADBEARINGEQUIPMENTs">
-            <EntityTypeMapping TypeName="item1Model.LOADBEARINGEQUIPMENT">
-              <MappingFragment StoreEntitySet="LOADBEARINGEQUIPMENT">
-                <ScalarProperty Name="lbePocketIndex12" ColumnName="lbePocketIndex12" />
-                <ScalarProperty Name="lbePocketIndex11" ColumnName="lbePocketIndex11" />
-                <ScalarProperty Name="lbePocketIndex10" ColumnName="lbePocketIndex10" />
+          <EntitySetMapping Name="Loadbearingequipments">
+            <EntityTypeMapping TypeName="item1Model.Loadbearingequipment">
+              <MappingFragment StoreEntitySet="Loadbearingequipment">
+                <ScalarProperty Name="LbePocketIndex12" ColumnName="LbePocketIndex12" />
+                <ScalarProperty Name="LbePocketIndex11" ColumnName="LbePocketIndex11" />
+                <ScalarProperty Name="LbePocketIndex10" ColumnName="LbePocketIndex10" />
                 <ScalarProperty Name="lbePocketIndex9" ColumnName="lbePocketIndex9" />
                 <ScalarProperty Name="lbePocketIndex8" ColumnName="lbePocketIndex8" />
                 <ScalarProperty Name="lbePocketIndex7" ColumnName="lbePocketIndex7" />
@@ -4951,13 +4951,13 @@
                 <ScalarProperty Name="lbePocketIndex4" ColumnName="lbePocketIndex4" />
                 <ScalarProperty Name="lbePocketIndex3" ColumnName="lbePocketIndex3" />
                 <ScalarProperty Name="lbePocketIndex2" ColumnName="lbePocketIndex2" />
-                <ScalarProperty Name="lbePocketIndex1" ColumnName="lbePocketIndex1" />
-                <ScalarProperty Name="lbePocketsAvailable" ColumnName="lbePocketsAvailable" />
-                <ScalarProperty Name="lbeAvailableVolume" ColumnName="lbeAvailableVolume" />
-                <ScalarProperty Name="lbeFilledSize" ColumnName="lbeFilledSize" />
-                <ScalarProperty Name="lbeCombo" ColumnName="lbeCombo" />
-                <ScalarProperty Name="LBEClass" ColumnName="LBEClass" />
-                <ScalarProperty Name="lbeIndex" ColumnName="lbeIndex" />
+                <ScalarProperty Name="LbePocketIndex1" ColumnName="LbePocketIndex1" />
+                <ScalarProperty Name="LbePocketsAvailable" ColumnName="LbePocketsAvailable" />
+                <ScalarProperty Name="LbeAvailableVolume" ColumnName="LbeAvailableVolume" />
+                <ScalarProperty Name="LbeFilledSize" ColumnName="LbeFilledSize" />
+                <ScalarProperty Name="LbeCombo" ColumnName="LbeCombo" />
+                <ScalarProperty Name="LbeClass" ColumnName="LbeClass" />
+                <ScalarProperty Name="LbeIndex" ColumnName="LbeIndex" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -4971,9 +4971,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Type_of_Box">
-            <EntityTypeMapping TypeName="item1Model.Type_of_Box">
-              <MappingFragment StoreEntitySet="Type_of_Box">
+          <EntitySetMapping Name="TypeOfBox">
+            <EntityTypeMapping TypeName="item1Model.TypeOfBox">
+              <MappingFragment StoreEntitySet="TypeOfBox">
                 <ScalarProperty Name="nameOfType" ColumnName="nameOfType" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
@@ -4989,7 +4989,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="WEAPONs">
+          <EntitySetMapping Name="WeapoNs">
             <EntityTypeMapping TypeName="item1Model.WEAPON">
               <MappingFragment StoreEntitySet="WEAPON">
                 <ScalarProperty Name="HCROFValue" ColumnName="HCROFValue" />

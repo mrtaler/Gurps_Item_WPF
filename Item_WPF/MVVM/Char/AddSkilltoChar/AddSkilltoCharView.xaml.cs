@@ -14,7 +14,7 @@ namespace Item_WPF.MVVM.AddSkilltoChar
             InitializeComponent();
         }
 
-        public AddSkilltoCharView(CharacterDB Char, item1Entities context)
+        public AddSkilltoCharView(GurpsDb.GurpsModel.CharacterDb Char, GurpsDb.GurpsModel.GurpsModel context)
         //       :base()
         {
             DataContext = new AddSkilltoCharViewModel(Char, context);

@@ -10,28 +10,29 @@ namespace Item_WPF.MVVM.AllCharfromDB
     /// </summary>
     public class AllCharFromDbViewModel : ViewModelBase
     {
-        private item1Entities _context;
+        //private item1Entities _context;
+        GurpsDb.GurpsModel.GurpsModel _context;
         /// <summary>
         /// Collection for all character from db
         /// </summary>
-        public ObservableCollection<CharacterDB> CharacterDbCollection { get; set; }
+        public ObservableCollection<GurpsDb.GurpsModel.CharacterDb> CharacterDbCollection { get; set; }
         /// <summary>
         /// Selected Character
         /// </summary>
-        public CharacterDB SelectedCharacterDb { get; set; }
+      //  public CharacterDb SelectedCharacterDb { get; set; }
+        public GurpsDb.GurpsModel.CharacterDb SelectedCharacterDb { get; set; }
 
-
-        public CharacterDB ChacFromDb { get; set; }
+        public GurpsDb.GurpsModel.CharacterDb ChacFromDb { get; set; }
         /// <summary>
         /// Constructor for view char in this context
         /// </summary>
         /// <param name="context">Now working context</param>
-        public AllCharFromDbViewModel(item1Entities context)
+        public AllCharFromDbViewModel(GurpsDb.GurpsModel.GurpsModel context)
         {
-            //  _context = context;
-            _context = new item1Entities();
+            _context = context;
+            //  _context = new item1Entities();
             SelectedCharacterDb = null;
-            CharacterDbCollection = new ObservableCollection<CharacterDB>(_context.CharacterDBs);
+            CharacterDbCollection = new ObservableCollection<GurpsDb.GurpsModel.CharacterDb>(_context.CharacterDB);
             SelectedCharacterFromDbCommand = new ViewModelCommand(SelectedCharacterFromDb);
         }
 
@@ -40,9 +41,9 @@ namespace Item_WPF.MVVM.AllCharfromDB
         {
             if (SelectedCharacterDb != null)
             {
-                ChacFromDb = _context.CharacterDBs.FirstOrDefault(p => p.id == SelectedCharacterDb.id);
+                ChacFromDb = _context.CharacterDB.FirstOrDefault(p => p.Id == SelectedCharacterDb.Id);
                 /*  var commentsOfMembers = _context.CharSkills
-      .Where(mc => mc.CharacterDB.id == SelectedCharacterDb.id)
+      .Where(mc => mc.CharacterDb.id == SelectedCharacterDb.id)
       .Select(mc => mc)
       .ToList();
       */

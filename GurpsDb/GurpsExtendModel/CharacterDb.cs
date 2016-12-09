@@ -1,15 +1,14 @@
-﻿using Item_WPF.ItemEntityModel;
-using Item_WPF.MVVM.Models;
+﻿using GurpsDb.GurpsExtendModel;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 
-namespace Item_WPF.ItemEntityModel
+// ReSharper disable CheckNamespace
 
+namespace GurpsDb.GurpsModel
 {
-    // This class represents a GURPS character.
-    public partial class CharacterDB
+    public partial class CharacterDb
     {
         private int HumanStat = 10;
 
@@ -23,38 +22,38 @@ namespace Item_WPF.ItemEntityModel
         #region MainAttrib
         #region Strength
         public int Strength => HumanStat + StrengthPoints;
-        public int StrengthCost => BasicCost.ST_Cost * StrengthPoints;
+        public int StrengthCost => BasicCost.StCost * StrengthPoints;
         #endregion
         #region Dexterity
         public int Dexterity => HumanStat + DexterityPoints;
-        public int DexterityCost => BasicCost.DX_Cost * DexterityPoints;
+        public int DexterityCost => BasicCost.DxCost * DexterityPoints;
         #endregion
         #region Intelligence
         public int Intelligence => HumanStat + IntelligencePoints;
-        public int IntelligenceCost => BasicCost.IQ_Cost * IntelligencePoints;
+        public int IntelligenceCost => BasicCost.IqCost * IntelligencePoints;
         #endregion
         #region Health
         public int Health => HumanStat + HealthPoints;
-        public int HealtCost => BasicCost.HT_Cost * HealthPoints;
+        public int HealtCost => BasicCost.HtCost * HealthPoints;
         #endregion
         public int CharacterPointsPrimarySkill => StrengthCost + IntelligenceCost + DexterityCost + HealtCost;
         #endregion
         #region SecAtrib
         #region MaxHP
         public int MaxHP => MaxHPPoints + Strength;
-        public int MaxHPCost => BasicCost.HP_Cost * MaxHPPoints;
+        public int MaxHPCost => BasicCost.HPCost * MaxHPPoints;
         #endregion
         #region MaxFP
         public int MaxFP => MaxFPPoints + Health;
-        public int MaxFPCost => BasicCost.FP_Cost * MaxFPPoints;
+        public int MaxFPCost => BasicCost.FPCost * MaxFPPoints;
         #endregion
         #region Willpower
         public int Willpower => WillpowerPoints + Intelligence;
-        public int WillpowerCost => BasicCost.WL_Cost * WillpowerPoints;
+        public int WillpowerCost => BasicCost.WlCost * WillpowerPoints;
         #endregion
         #region Perception
         public int Perception => PerceptionPoints + Intelligence;
-        public int PerceptionCost => BasicCost.PR_Cost * PerceptionPoints;
+        public int PerceptionCost => BasicCost.PrCost * PerceptionPoints;
         #endregion
         public float BasicLift
         {
@@ -75,7 +74,7 @@ namespace Item_WPF.ItemEntityModel
                 return bs + BasicSpeedPoints;
             }
         }
-        public int BasicSpeedCost => (int)(BasicCost.BS_Cost * (BasicSpeedPoints / 0.25F));
+        public int BasicSpeedCost => (int)(BasicCost.BsCost * (BasicSpeedPoints / 0.25F));
         #endregion
         #region BasicMove
         public int BasicMove
@@ -86,7 +85,7 @@ namespace Item_WPF.ItemEntityModel
                 return bm + BasicMovePoints;
             }
         }
-        public int BasicMoveCost => BasicCost.BM_Cost * BasicMovePoints;
+        public int BasicMoveCost => BasicCost.BmCost * BasicMovePoints;
         #endregion
         public int CharacterPointsSecondarySkill =>
             MaxHPCost +
@@ -134,7 +133,7 @@ namespace Item_WPF.ItemEntityModel
                         case 4: return new DiceString(1, -3);
                         case 5: return new DiceString(1, -2);
                         case 6: return new DiceString(1, -1);
-                        case 7: return new DiceString(1, 0);
+                        case 7: return new DiceString(1);
                         case 8: return new DiceString(1, 1);
                         case 9: return new DiceString(1, 2);
                         case 10: return new DiceString(2, -1);
@@ -278,22 +277,22 @@ namespace Item_WPF.ItemEntityModel
         }
 
         // Inventory of the character.
-        private ObservableCollection<ITEM> inventory = new ObservableCollection<ITEM>();
-        public ObservableCollection<ITEM> Inventory
-        {
-            get
-            {
-                return inventory;
-            }
-        }
+        //private ObservableCollection<Item> inventory = new ObservableCollection<Item>();
+        //public ObservableCollection<Item> Inventory
+        //{
+        //    get
+        //    {
+        //        return inventory;
+        //    }
+        //}
         public int TotalWeight
         {
             get
             {
-                int w = 0;
-                foreach (ITEM item in Inventory)
-                    w += System.Convert.ToInt32(item.ubWeight);
-                return w;
+                //    int w = 0;
+                //    foreach (Item item in Inventory)
+                //        w += Convert.ToInt32(item.ubWeight);
+                return 0; //w;
             }
         }
         public int? Encumbrance
@@ -313,14 +312,14 @@ namespace Item_WPF.ItemEntityModel
         }
 
         // Character advantages and disadvantages
-        private ObservableCollection<Advantage> advantages = new ObservableCollection<Advantage>();
-        public ObservableCollection<Advantage> Advantages
-        {
-            get
-            {
-                return advantages;
-            }
-        }
+        //private ObservableCollection<Advantage> advantages = new ObservableCollection<Advantage>();
+        //public ObservableCollection<Advantage> Advantages
+        //{
+        //    get
+        //    {
+        //        return advantages;
+        //    }
+        //}
         // Calculation of character points spent on this character
 
 
@@ -330,10 +329,10 @@ namespace Item_WPF.ItemEntityModel
             get
             {
                 int points = 0;
-                foreach (Advantage advantage in Advantages)
-                {
-                    //     points += advantage.Points;
-                }
+                //foreach (Advantage advantage in Advantages)
+                //{
+                //    //     points += advantage.Points;
+                //}
                 return points;
             }
         }
@@ -342,7 +341,10 @@ namespace Item_WPF.ItemEntityModel
             get
             {
 
-                return CharSkills.Sum(p => p.SkillPointCost);
+                return Convert.ToInt32(CharSkillCollection.Sum(p => p.PointOfSkill));
+
+
+                //.Sum(p => p.SkillPointCost);
 
                 //    int? points = 0;
                 //    foreach (GurpsSkill skill in Skills)
@@ -364,31 +366,30 @@ namespace Item_WPF.ItemEntityModel
         //{
         //}
 
-        public CharacterDB Copy()
+        public CharacterDb Copy()
         {
-            return (CharacterDB)this.MemberwiseClone();
+            return (CharacterDb)MemberwiseClone();
         }
 
         public override string ToString()
         {
             // return Name;
-            return name;
+            return Name;
         }
         public class BasicCost
         {
-            public const int ST_Cost = 10;
-            public const int DX_Cost = 20;
-            public const int IQ_Cost = 20;
-            public const int HT_Cost = 10;
+            public const int StCost = 10;
+            public const int DxCost = 20;
+            public const int IqCost = 20;
+            public const int HtCost = 10;
 
-            public const int HP_Cost = 2;
-            public const int WL_Cost = 5;
-            public const int PR_Cost = 5;
-            public const int FP_Cost = 3;
-            public const int BS_Cost = 5;
-            public const int BM_Cost = 5;
+            public const int HPCost = 2;
+            public const int WlCost = 5;
+            public const int PrCost = 5;
+            public const int FPCost = 3;
+            public const int BsCost = 5;
+            public const int BmCost = 5;
         }
     }
-
 
 }

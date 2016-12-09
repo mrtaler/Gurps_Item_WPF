@@ -11,81 +11,82 @@ namespace Item_WPF.ItemEntityModel
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Drug : System.ComponentModel.INotifyPropertyChanged
     {
-     
-     #region Implement INotifyPropertyChanged
-     
-     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-     
-     protected virtual void OnPropertyChanged(string propertyName)
-     {
-      if (PropertyChanged != null)
-      {
-       PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-      }
-     }
-     
-     #endregion
-     
-        private int _id;
-    	public int id 
-    	{ 
-    		get
-    		{
-    			return _id;
-    		} 
-    		set
-    		{
-    			if (_id != value)
-    			{
-    				_id = value;
-    				OnPropertyChanged("id");
-    			}
-    		}
-    	}
-        private string _name;
-    	public string name 
-    	{ 
-    		get
-    		{
-    			return _name;
-    		} 
-    		set
-    		{
-    			if (_name != value)
-    			{
-    				_name = value;
-    				OnPropertyChanged("name");
-    			}
-    		}
-    	}
-        private Nullable<int> _IdDrugType;
-    	public Nullable<int> IdDrugType 
-    	{ 
-    		get
-    		{
-    			return _IdDrugType;
-    		} 
-    		set
-    		{
-    			if (_IdDrugType != value)
-    			{
-    				_IdDrugType = value;
-    				OnPropertyChanged("IdDrugType");
-    			}
-    		}
-    	}
-    
-        private ITEM _ITEM;
-            public virtual ITEM ITEM
+
+        #region Implement INotifyPropertyChanged
+
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
             {
-                get { return _ITEM; }
-                set
-                { if(_ITEM != value)
-                    {    _ITEM = value;    OnPropertyChanged("ITEM");   }
+                PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        #endregion
+
+        private int _id;
+        public int id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    _id = value;
+                    OnPropertyChanged("id");
                 }
-            } 
+            }
+        }
+        private string _name;
+        public string name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                if (_name != value)
+                {
+                    _name = value;
+                    OnPropertyChanged("name");
+                }
+            }
+        }
+        private Nullable<int> _IdDrugType;
+        public Nullable<int> IdDrugType
+        {
+            get
+            {
+                return _IdDrugType;
+            }
+            set
+            {
+                if (_IdDrugType != value)
+                {
+                    _IdDrugType = value;
+                    OnPropertyChanged("IdDrugType");
+                }
+            }
+        }
+
+        private ITEM _ITEM;
+        public virtual ITEM ITEM
+        {
+            get { return _ITEM; }
+            set
+            {
+                if (_ITEM != value)
+                { _ITEM = value; OnPropertyChanged("Item"); }
+            }
+        }
     }
 }

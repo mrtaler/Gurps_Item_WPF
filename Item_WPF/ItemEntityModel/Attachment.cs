@@ -11,906 +11,909 @@ namespace Item_WPF.ItemEntityModel
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Attachment : System.ComponentModel.INotifyPropertyChanged
     {
-     
-     #region Implement INotifyPropertyChanged
-     
-     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-     
-     protected virtual void OnPropertyChanged(string propertyName)
-     {
-      if (PropertyChanged != null)
-      {
-       PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-      }
-     }
-     
-     #endregion
-     
+
+        #region Implement INotifyPropertyChanged
+
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        #endregion
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Attachment()
         {
             this.G_AvAttachClass = new HashSet<G_AvAttachClass>();
         }
-    
+
         private int _uiIndex;
-    	public int uiIndex 
-    	{ 
-    		get
-    		{
-    			return _uiIndex;
-    		} 
-    		set
-    		{
-    			if (_uiIndex != value)
-    			{
-    				_uiIndex = value;
-    				OnPropertyChanged("uiIndex");
-    			}
-    		}
-    	}
+        public int uiIndex
+        {
+            get
+            {
+                return _uiIndex;
+            }
+            set
+            {
+                if (_uiIndex != value)
+                {
+                    _uiIndex = value;
+                    OnPropertyChanged("uiIndex");
+                }
+            }
+        }
         private string _szAttName;
-    	public string szAttName 
-    	{ 
-    		get
-    		{
-    			return _szAttName;
-    		} 
-    		set
-    		{
-    			if (_szAttName != value)
-    			{
-    				_szAttName = value;
-    				OnPropertyChanged("szAttName");
-    			}
-    		}
-    	}
+        public string szAttName
+        {
+            get
+            {
+                return _szAttName;
+            }
+            set
+            {
+                if (_szAttName != value)
+                {
+                    _szAttName = value;
+                    OnPropertyChanged("szAttName");
+                }
+            }
+        }
         private int _rAttachmentClass;
-    	public int rAttachmentClass 
-    	{ 
-    		get
-    		{
-    			return _rAttachmentClass;
-    		} 
-    		set
-    		{
-    			if (_rAttachmentClass != value)
-    			{
-    				_rAttachmentClass = value;
-    				OnPropertyChanged("rAttachmentClass");
-    			}
-    		}
-    	}
+        public int rAttachmentClass
+        {
+            get
+            {
+                return _rAttachmentClass;
+            }
+            set
+            {
+                if (_rAttachmentClass != value)
+                {
+                    _rAttachmentClass = value;
+                    OnPropertyChanged("rAttachmentClass");
+                }
+            }
+        }
         private string _Attachmentmount;
-    	public string Attachmentmount 
-    	{ 
-    		get
-    		{
-    			return _Attachmentmount;
-    		} 
-    		set
-    		{
-    			if (_Attachmentmount != value)
-    			{
-    				_Attachmentmount = value;
-    				OnPropertyChanged("Attachmentmount");
-    			}
-    		}
-    	}
+        public string Attachmentmount
+        {
+            get
+            {
+                return _Attachmentmount;
+            }
+            set
+            {
+                if (_Attachmentmount != value)
+                {
+                    _Attachmentmount = value;
+                    OnPropertyChanged("Attachmentmount");
+                }
+            }
+        }
         private bool _HiddenAttachment;
-    	public bool HiddenAttachment 
-    	{ 
-    		get
-    		{
-    			return _HiddenAttachment;
-    		} 
-    		set
-    		{
-    			if (_HiddenAttachment != value)
-    			{
-    				_HiddenAttachment = value;
-    				OnPropertyChanged("HiddenAttachment");
-    			}
-    		}
-    	}
+        public bool HiddenAttachment
+        {
+            get
+            {
+                return _HiddenAttachment;
+            }
+            set
+            {
+                if (_HiddenAttachment != value)
+                {
+                    _HiddenAttachment = value;
+                    OnPropertyChanged("HiddenAttachment");
+                }
+            }
+        }
         private Nullable<int> _NoiseReduction;
-    	public Nullable<int> NoiseReduction 
-    	{ 
-    		get
-    		{
-    			return _NoiseReduction;
-    		} 
-    		set
-    		{
-    			if (_NoiseReduction != value)
-    			{
-    				_NoiseReduction = value;
-    				OnPropertyChanged("NoiseReduction");
-    			}
-    		}
-    	}
+        public Nullable<int> NoiseReduction
+        {
+            get
+            {
+                return _NoiseReduction;
+            }
+            set
+            {
+                if (_NoiseReduction != value)
+                {
+                    _NoiseReduction = value;
+                    OnPropertyChanged("NoiseReduction");
+                }
+            }
+        }
         private bool _HideMuzzleFlash;
-    	public bool HideMuzzleFlash 
-    	{ 
-    		get
-    		{
-    			return _HideMuzzleFlash;
-    		} 
-    		set
-    		{
-    			if (_HideMuzzleFlash != value)
-    			{
-    				_HideMuzzleFlash = value;
-    				OnPropertyChanged("HideMuzzleFlash");
-    			}
-    		}
-    	}
+        public bool HideMuzzleFlash
+        {
+            get
+            {
+                return _HideMuzzleFlash;
+            }
+            set
+            {
+                if (_HideMuzzleFlash != value)
+                {
+                    _HideMuzzleFlash = value;
+                    OnPropertyChanged("HideMuzzleFlash");
+                }
+            }
+        }
         private Nullable<int> _RangeBonus;
-    	public Nullable<int> RangeBonus 
-    	{ 
-    		get
-    		{
-    			return _RangeBonus;
-    		} 
-    		set
-    		{
-    			if (_RangeBonus != value)
-    			{
-    				_RangeBonus = value;
-    				OnPropertyChanged("RangeBonus");
-    			}
-    		}
-    	}
+        public Nullable<int> RangeBonus
+        {
+            get
+            {
+                return _RangeBonus;
+            }
+            set
+            {
+                if (_RangeBonus != value)
+                {
+                    _RangeBonus = value;
+                    OnPropertyChanged("RangeBonus");
+                }
+            }
+        }
         private Nullable<int> _AimBonus;
-    	public Nullable<int> AimBonus 
-    	{ 
-    		get
-    		{
-    			return _AimBonus;
-    		} 
-    		set
-    		{
-    			if (_AimBonus != value)
-    			{
-    				_AimBonus = value;
-    				OnPropertyChanged("AimBonus");
-    			}
-    		}
-    	}
+        public Nullable<int> AimBonus
+        {
+            get
+            {
+                return _AimBonus;
+            }
+            set
+            {
+                if (_AimBonus != value)
+                {
+                    _AimBonus = value;
+                    OnPropertyChanged("AimBonus");
+                }
+            }
+        }
         private Nullable<int> _MinRangeForAimBonus;
-    	public Nullable<int> MinRangeForAimBonus 
-    	{ 
-    		get
-    		{
-    			return _MinRangeForAimBonus;
-    		} 
-    		set
-    		{
-    			if (_MinRangeForAimBonus != value)
-    			{
-    				_MinRangeForAimBonus = value;
-    				OnPropertyChanged("MinRangeForAimBonus");
-    			}
-    		}
-    	}
+        public Nullable<int> MinRangeForAimBonus
+        {
+            get
+            {
+                return _MinRangeForAimBonus;
+            }
+            set
+            {
+                if (_MinRangeForAimBonus != value)
+                {
+                    _MinRangeForAimBonus = value;
+                    OnPropertyChanged("MinRangeForAimBonus");
+                }
+            }
+        }
         private Nullable<int> _MagSizeBonus;
-    	public Nullable<int> MagSizeBonus 
-    	{ 
-    		get
-    		{
-    			return _MagSizeBonus;
-    		} 
-    		set
-    		{
-    			if (_MagSizeBonus != value)
-    			{
-    				_MagSizeBonus = value;
-    				OnPropertyChanged("MagSizeBonus");
-    			}
-    		}
-    	}
+        public Nullable<int> MagSizeBonus
+        {
+            get
+            {
+                return _MagSizeBonus;
+            }
+            set
+            {
+                if (_MagSizeBonus != value)
+                {
+                    _MagSizeBonus = value;
+                    OnPropertyChanged("MagSizeBonus");
+                }
+            }
+        }
         private Nullable<int> _BurstSizeBonus;
-    	public Nullable<int> BurstSizeBonus 
-    	{ 
-    		get
-    		{
-    			return _BurstSizeBonus;
-    		} 
-    		set
-    		{
-    			if (_BurstSizeBonus != value)
-    			{
-    				_BurstSizeBonus = value;
-    				OnPropertyChanged("BurstSizeBonus");
-    			}
-    		}
-    	}
+        public Nullable<int> BurstSizeBonus
+        {
+            get
+            {
+                return _BurstSizeBonus;
+            }
+            set
+            {
+                if (_BurstSizeBonus != value)
+                {
+                    _BurstSizeBonus = value;
+                    OnPropertyChanged("BurstSizeBonus");
+                }
+            }
+        }
         private Nullable<int> _RateOfFireBonus;
-    	public Nullable<int> RateOfFireBonus 
-    	{ 
-    		get
-    		{
-    			return _RateOfFireBonus;
-    		} 
-    		set
-    		{
-    			if (_RateOfFireBonus != value)
-    			{
-    				_RateOfFireBonus = value;
-    				OnPropertyChanged("RateOfFireBonus");
-    			}
-    		}
-    	}
+        public Nullable<int> RateOfFireBonus
+        {
+            get
+            {
+                return _RateOfFireBonus;
+            }
+            set
+            {
+                if (_RateOfFireBonus != value)
+                {
+                    _RateOfFireBonus = value;
+                    OnPropertyChanged("RateOfFireBonus");
+                }
+            }
+        }
         private Nullable<int> _DamageBonus;
-    	public Nullable<int> DamageBonus 
-    	{ 
-    		get
-    		{
-    			return _DamageBonus;
-    		} 
-    		set
-    		{
-    			if (_DamageBonus != value)
-    			{
-    				_DamageBonus = value;
-    				OnPropertyChanged("DamageBonus");
-    			}
-    		}
-    	}
+        public Nullable<int> DamageBonus
+        {
+            get
+            {
+                return _DamageBonus;
+            }
+            set
+            {
+                if (_DamageBonus != value)
+                {
+                    _DamageBonus = value;
+                    OnPropertyChanged("DamageBonus");
+                }
+            }
+        }
         private Nullable<decimal> _ScopeMagFactor;
-    	public Nullable<decimal> ScopeMagFactor 
-    	{ 
-    		get
-    		{
-    			return _ScopeMagFactor;
-    		} 
-    		set
-    		{
-    			if (_ScopeMagFactor != value)
-    			{
-    				_ScopeMagFactor = value;
-    				OnPropertyChanged("ScopeMagFactor");
-    			}
-    		}
-    	}
+        public Nullable<decimal> ScopeMagFactor
+        {
+            get
+            {
+                return _ScopeMagFactor;
+            }
+            set
+            {
+                if (_ScopeMagFactor != value)
+                {
+                    _ScopeMagFactor = value;
+                    OnPropertyChanged("ScopeMagFactor");
+                }
+            }
+        }
         private Nullable<int> _HearingRangeBonus;
-    	public Nullable<int> HearingRangeBonus 
-    	{ 
-    		get
-    		{
-    			return _HearingRangeBonus;
-    		} 
-    		set
-    		{
-    			if (_HearingRangeBonus != value)
-    			{
-    				_HearingRangeBonus = value;
-    				OnPropertyChanged("HearingRangeBonus");
-    			}
-    		}
-    	}
+        public Nullable<int> HearingRangeBonus
+        {
+            get
+            {
+                return _HearingRangeBonus;
+            }
+            set
+            {
+                if (_HearingRangeBonus != value)
+                {
+                    _HearingRangeBonus = value;
+                    OnPropertyChanged("HearingRangeBonus");
+                }
+            }
+        }
         private Nullable<int> _VisionRangeBonus;
-    	public Nullable<int> VisionRangeBonus 
-    	{ 
-    		get
-    		{
-    			return _VisionRangeBonus;
-    		} 
-    		set
-    		{
-    			if (_VisionRangeBonus != value)
-    			{
-    				_VisionRangeBonus = value;
-    				OnPropertyChanged("VisionRangeBonus");
-    			}
-    		}
-    	}
+        public Nullable<int> VisionRangeBonus
+        {
+            get
+            {
+                return _VisionRangeBonus;
+            }
+            set
+            {
+                if (_VisionRangeBonus != value)
+                {
+                    _VisionRangeBonus = value;
+                    OnPropertyChanged("VisionRangeBonus");
+                }
+            }
+        }
         private Nullable<int> _NightVisionRangeBonus;
-    	public Nullable<int> NightVisionRangeBonus 
-    	{ 
-    		get
-    		{
-    			return _NightVisionRangeBonus;
-    		} 
-    		set
-    		{
-    			if (_NightVisionRangeBonus != value)
-    			{
-    				_NightVisionRangeBonus = value;
-    				OnPropertyChanged("NightVisionRangeBonus");
-    			}
-    		}
-    	}
+        public Nullable<int> NightVisionRangeBonus
+        {
+            get
+            {
+                return _NightVisionRangeBonus;
+            }
+            set
+            {
+                if (_NightVisionRangeBonus != value)
+                {
+                    _NightVisionRangeBonus = value;
+                    OnPropertyChanged("NightVisionRangeBonus");
+                }
+            }
+        }
         private Nullable<int> _DayVisionRangeBonus;
-    	public Nullable<int> DayVisionRangeBonus 
-    	{ 
-    		get
-    		{
-    			return _DayVisionRangeBonus;
-    		} 
-    		set
-    		{
-    			if (_DayVisionRangeBonus != value)
-    			{
-    				_DayVisionRangeBonus = value;
-    				OnPropertyChanged("DayVisionRangeBonus");
-    			}
-    		}
-    	}
+        public Nullable<int> DayVisionRangeBonus
+        {
+            get
+            {
+                return _DayVisionRangeBonus;
+            }
+            set
+            {
+                if (_DayVisionRangeBonus != value)
+                {
+                    _DayVisionRangeBonus = value;
+                    OnPropertyChanged("DayVisionRangeBonus");
+                }
+            }
+        }
         private Nullable<int> _CaveVisionRangeBonus;
-    	public Nullable<int> CaveVisionRangeBonus 
-    	{ 
-    		get
-    		{
-    			return _CaveVisionRangeBonus;
-    		} 
-    		set
-    		{
-    			if (_CaveVisionRangeBonus != value)
-    			{
-    				_CaveVisionRangeBonus = value;
-    				OnPropertyChanged("CaveVisionRangeBonus");
-    			}
-    		}
-    	}
+        public Nullable<int> CaveVisionRangeBonus
+        {
+            get
+            {
+                return _CaveVisionRangeBonus;
+            }
+            set
+            {
+                if (_CaveVisionRangeBonus != value)
+                {
+                    _CaveVisionRangeBonus = value;
+                    OnPropertyChanged("CaveVisionRangeBonus");
+                }
+            }
+        }
         private Nullable<int> _BrightLightVisionRangeBonus;
-    	public Nullable<int> BrightLightVisionRangeBonus 
-    	{ 
-    		get
-    		{
-    			return _BrightLightVisionRangeBonus;
-    		} 
-    		set
-    		{
-    			if (_BrightLightVisionRangeBonus != value)
-    			{
-    				_BrightLightVisionRangeBonus = value;
-    				OnPropertyChanged("BrightLightVisionRangeBonus");
-    			}
-    		}
-    	}
+        public Nullable<int> BrightLightVisionRangeBonus
+        {
+            get
+            {
+                return _BrightLightVisionRangeBonus;
+            }
+            set
+            {
+                if (_BrightLightVisionRangeBonus != value)
+                {
+                    _BrightLightVisionRangeBonus = value;
+                    OnPropertyChanged("BrightLightVisionRangeBonus");
+                }
+            }
+        }
         private Nullable<int> _PercentTunnelVision;
-    	public Nullable<int> PercentTunnelVision 
-    	{ 
-    		get
-    		{
-    			return _PercentTunnelVision;
-    		} 
-    		set
-    		{
-    			if (_PercentTunnelVision != value)
-    			{
-    				_PercentTunnelVision = value;
-    				OnPropertyChanged("PercentTunnelVision");
-    			}
-    		}
-    	}
+        public Nullable<int> PercentTunnelVision
+        {
+            get
+            {
+                return _PercentTunnelVision;
+            }
+            set
+            {
+                if (_PercentTunnelVision != value)
+                {
+                    _PercentTunnelVision = value;
+                    OnPropertyChanged("PercentTunnelVision");
+                }
+            }
+        }
         private Nullable<int> _FlashLightRange;
-    	public Nullable<int> FlashLightRange 
-    	{ 
-    		get
-    		{
-    			return _FlashLightRange;
-    		} 
-    		set
-    		{
-    			if (_FlashLightRange != value)
-    			{
-    				_FlashLightRange = value;
-    				OnPropertyChanged("FlashLightRange");
-    			}
-    		}
-    	}
+        public Nullable<int> FlashLightRange
+        {
+            get
+            {
+                return _FlashLightRange;
+            }
+            set
+            {
+                if (_FlashLightRange != value)
+                {
+                    _FlashLightRange = value;
+                    OnPropertyChanged("FlashLightRange");
+                }
+            }
+        }
         private Nullable<int> _RecoilModifier;
-    	public Nullable<int> RecoilModifier 
-    	{ 
-    		get
-    		{
-    			return _RecoilModifier;
-    		} 
-    		set
-    		{
-    			if (_RecoilModifier != value)
-    			{
-    				_RecoilModifier = value;
-    				OnPropertyChanged("RecoilModifier");
-    			}
-    		}
-    	}
+        public Nullable<int> RecoilModifier
+        {
+            get
+            {
+                return _RecoilModifier;
+            }
+            set
+            {
+                if (_RecoilModifier != value)
+                {
+                    _RecoilModifier = value;
+                    OnPropertyChanged("RecoilModifier");
+                }
+            }
+        }
         private int _G_SubAttachClass;
-    	public int G_SubAttachClass 
-    	{ 
-    		get
-    		{
-    			return _G_SubAttachClass;
-    		} 
-    		set
-    		{
-    			if (_G_SubAttachClass != value)
-    			{
-    				_G_SubAttachClass = value;
-    				OnPropertyChanged("G_SubAttachClass");
-    			}
-    		}
-    	}
+        public int G_SubAttachClass
+        {
+            get
+            {
+                return _G_SubAttachClass;
+            }
+            set
+            {
+                if (_G_SubAttachClass != value)
+                {
+                    _G_SubAttachClass = value;
+                    OnPropertyChanged("G_SubAttachClass");
+                }
+            }
+        }
         private int _G_AttachClass;
-    	public int G_AttachClass 
-    	{ 
-    		get
-    		{
-    			return _G_AttachClass;
-    		} 
-    		set
-    		{
-    			if (_G_AttachClass != value)
-    			{
-    				_G_AttachClass = value;
-    				OnPropertyChanged("G_AttachClass");
-    			}
-    		}
-    	}
+        public int G_AttachClass
+        {
+            get
+            {
+                return _G_AttachClass;
+            }
+            set
+            {
+                if (_G_AttachClass != value)
+                {
+                    _G_AttachClass = value;
+                    OnPropertyChanged("G_AttachClass");
+                }
+            }
+        }
         private Nullable<int> _Darkness;
-    	public Nullable<int> Darkness 
-    	{ 
-    		get
-    		{
-    			return _Darkness;
-    		} 
-    		set
-    		{
-    			if (_Darkness != value)
-    			{
-    				_Darkness = value;
-    				OnPropertyChanged("Darkness");
-    			}
-    		}
-    	}
+        public Nullable<int> Darkness
+        {
+            get
+            {
+                return _Darkness;
+            }
+            set
+            {
+                if (_Darkness != value)
+                {
+                    _Darkness = value;
+                    OnPropertyChanged("Darkness");
+                }
+            }
+        }
         private Nullable<int> _Bulk_add;
-    	public Nullable<int> Bulk_add 
-    	{ 
-    		get
-    		{
-    			return _Bulk_add;
-    		} 
-    		set
-    		{
-    			if (_Bulk_add != value)
-    			{
-    				_Bulk_add = value;
-    				OnPropertyChanged("Bulk_add");
-    			}
-    		}
-    	}
+        public Nullable<int> Bulk_add
+        {
+            get
+            {
+                return _Bulk_add;
+            }
+            set
+            {
+                if (_Bulk_add != value)
+                {
+                    _Bulk_add = value;
+                    OnPropertyChanged("Bulk_add");
+                }
+            }
+        }
         private bool _Fix;
-    	public bool Fix 
-    	{ 
-    		get
-    		{
-    			return _Fix;
-    		} 
-    		set
-    		{
-    			if (_Fix != value)
-    			{
-    				_Fix = value;
-    				OnPropertyChanged("Fix");
-    			}
-    		}
-    	}
+        public bool Fix
+        {
+            get
+            {
+                return _Fix;
+            }
+            set
+            {
+                if (_Fix != value)
+                {
+                    _Fix = value;
+                    OnPropertyChanged("Fix");
+                }
+            }
+        }
         private Nullable<int> _BatTimeWork;
-    	public Nullable<int> BatTimeWork 
-    	{ 
-    		get
-    		{
-    			return _BatTimeWork;
-    		} 
-    		set
-    		{
-    			if (_BatTimeWork != value)
-    			{
-    				_BatTimeWork = value;
-    				OnPropertyChanged("BatTimeWork");
-    			}
-    		}
-    	}
+        public Nullable<int> BatTimeWork
+        {
+            get
+            {
+                return _BatTimeWork;
+            }
+            set
+            {
+                if (_BatTimeWork != value)
+                {
+                    _BatTimeWork = value;
+                    OnPropertyChanged("BatTimeWork");
+                }
+            }
+        }
         private bool _Tritium;
-    	public bool Tritium 
-    	{ 
-    		get
-    		{
-    			return _Tritium;
-    		} 
-    		set
-    		{
-    			if (_Tritium != value)
-    			{
-    				_Tritium = value;
-    				OnPropertyChanged("Tritium");
-    			}
-    		}
-    	}
+        public bool Tritium
+        {
+            get
+            {
+                return _Tritium;
+            }
+            set
+            {
+                if (_Tritium != value)
+                {
+                    _Tritium = value;
+                    OnPropertyChanged("Tritium");
+                }
+            }
+        }
         private Nullable<int> _ScopeMagMin;
-    	public Nullable<int> ScopeMagMin 
-    	{ 
-    		get
-    		{
-    			return _ScopeMagMin;
-    		} 
-    		set
-    		{
-    			if (_ScopeMagMin != value)
-    			{
-    				_ScopeMagMin = value;
-    				OnPropertyChanged("ScopeMagMin");
-    			}
-    		}
-    	}
+        public Nullable<int> ScopeMagMin
+        {
+            get
+            {
+                return _ScopeMagMin;
+            }
+            set
+            {
+                if (_ScopeMagMin != value)
+                {
+                    _ScopeMagMin = value;
+                    OnPropertyChanged("ScopeMagMin");
+                }
+            }
+        }
         private Nullable<int> _ScopeMagMax;
-    	public Nullable<int> ScopeMagMax 
-    	{ 
-    		get
-    		{
-    			return _ScopeMagMax;
-    		} 
-    		set
-    		{
-    			if (_ScopeMagMax != value)
-    			{
-    				_ScopeMagMax = value;
-    				OnPropertyChanged("ScopeMagMax");
-    			}
-    		}
-    	}
+        public Nullable<int> ScopeMagMax
+        {
+            get
+            {
+                return _ScopeMagMax;
+            }
+            set
+            {
+                if (_ScopeMagMax != value)
+                {
+                    _ScopeMagMax = value;
+                    OnPropertyChanged("ScopeMagMax");
+                }
+            }
+        }
         private Nullable<int> _AccAddmax;
-    	public Nullable<int> AccAddmax 
-    	{ 
-    		get
-    		{
-    			return _AccAddmax;
-    		} 
-    		set
-    		{
-    			if (_AccAddmax != value)
-    			{
-    				_AccAddmax = value;
-    				OnPropertyChanged("AccAddmax");
-    			}
-    		}
-    	}
+        public Nullable<int> AccAddmax
+        {
+            get
+            {
+                return _AccAddmax;
+            }
+            set
+            {
+                if (_AccAddmax != value)
+                {
+                    _AccAddmax = value;
+                    OnPropertyChanged("AccAddmax");
+                }
+            }
+        }
         private int _id_Attachmentmount;
-    	public int id_Attachmentmount 
-    	{ 
-    		get
-    		{
-    			return _id_Attachmentmount;
-    		} 
-    		set
-    		{
-    			if (_id_Attachmentmount != value)
-    			{
-    				_id_Attachmentmount = value;
-    				OnPropertyChanged("id_Attachmentmount");
-    			}
-    		}
-    	}
+        public int id_Attachmentmount
+        {
+            get
+            {
+                return _id_Attachmentmount;
+            }
+            set
+            {
+                if (_id_Attachmentmount != value)
+                {
+                    _id_Attachmentmount = value;
+                    OnPropertyChanged("id_Attachmentmount");
+                }
+            }
+        }
         private bool _ImpVisSights;
-    	public bool ImpVisSights 
-    	{ 
-    		get
-    		{
-    			return _ImpVisSights;
-    		} 
-    		set
-    		{
-    			if (_ImpVisSights != value)
-    			{
-    				_ImpVisSights = value;
-    				OnPropertyChanged("ImpVisSights");
-    			}
-    		}
-    	}
+        public bool ImpVisSights
+        {
+            get
+            {
+                return _ImpVisSights;
+            }
+            set
+            {
+                if (_ImpVisSights != value)
+                {
+                    _ImpVisSights = value;
+                    OnPropertyChanged("ImpVisSights");
+                }
+            }
+        }
         private bool _BlockIronSight;
-    	public bool BlockIronSight 
-    	{ 
-    		get
-    		{
-    			return _BlockIronSight;
-    		} 
-    		set
-    		{
-    			if (_BlockIronSight != value)
-    			{
-    				_BlockIronSight = value;
-    				OnPropertyChanged("BlockIronSight");
-    			}
-    		}
-    	}
+        public bool BlockIronSight
+        {
+            get
+            {
+                return _BlockIronSight;
+            }
+            set
+            {
+                if (_BlockIronSight != value)
+                {
+                    _BlockIronSight = value;
+                    OnPropertyChanged("BlockIronSight");
+                }
+            }
+        }
         private bool _Collimator;
-    	public bool Collimator 
-    	{ 
-    		get
-    		{
-    			return _Collimator;
-    		} 
-    		set
-    		{
-    			if (_Collimator != value)
-    			{
-    				_Collimator = value;
-    				OnPropertyChanged("Collimator");
-    			}
-    		}
-    	}
+        public bool Collimator
+        {
+            get
+            {
+                return _Collimator;
+            }
+            set
+            {
+                if (_Collimator != value)
+                {
+                    _Collimator = value;
+                    OnPropertyChanged("Collimator");
+                }
+            }
+        }
         private bool _Reflex;
-    	public bool Reflex 
-    	{ 
-    		get
-    		{
-    			return _Reflex;
-    		} 
-    		set
-    		{
-    			if (_Reflex != value)
-    			{
-    				_Reflex = value;
-    				OnPropertyChanged("Reflex");
-    			}
-    		}
-    	}
+        public bool Reflex
+        {
+            get
+            {
+                return _Reflex;
+            }
+            set
+            {
+                if (_Reflex != value)
+                {
+                    _Reflex = value;
+                    OnPropertyChanged("Reflex");
+                }
+            }
+        }
         private bool _Targetingprogram;
-    	public bool Targetingprogram 
-    	{ 
-    		get
-    		{
-    			return _Targetingprogram;
-    		} 
-    		set
-    		{
-    			if (_Targetingprogram != value)
-    			{
-    				_Targetingprogram = value;
-    				OnPropertyChanged("Targetingprogram");
-    			}
-    		}
-    	}
+        public bool Targetingprogram
+        {
+            get
+            {
+                return _Targetingprogram;
+            }
+            set
+            {
+                if (_Targetingprogram != value)
+                {
+                    _Targetingprogram = value;
+                    OnPropertyChanged("Targetingprogram");
+                }
+            }
+        }
         private bool _Laserrangefinder;
-    	public bool Laserrangefinder 
-    	{ 
-    		get
-    		{
-    			return _Laserrangefinder;
-    		} 
-    		set
-    		{
-    			if (_Laserrangefinder != value)
-    			{
-    				_Laserrangefinder = value;
-    				OnPropertyChanged("Laserrangefinder");
-    			}
-    		}
-    	}
+        public bool Laserrangefinder
+        {
+            get
+            {
+                return _Laserrangefinder;
+            }
+            set
+            {
+                if (_Laserrangefinder != value)
+                {
+                    _Laserrangefinder = value;
+                    OnPropertyChanged("Laserrangefinder");
+                }
+            }
+        }
         private Nullable<int> _LaserRFrange;
-    	public Nullable<int> LaserRFrange 
-    	{ 
-    		get
-    		{
-    			return _LaserRFrange;
-    		} 
-    		set
-    		{
-    			if (_LaserRFrange != value)
-    			{
-    				_LaserRFrange = value;
-    				OnPropertyChanged("LaserRFrange");
-    			}
-    		}
-    	}
+        public Nullable<int> LaserRFrange
+        {
+            get
+            {
+                return _LaserRFrange;
+            }
+            set
+            {
+                if (_LaserRFrange != value)
+                {
+                    _LaserRFrange = value;
+                    OnPropertyChanged("LaserRFrange");
+                }
+            }
+        }
         private Nullable<int> _LaserRFAcc;
-    	public Nullable<int> LaserRFAcc 
-    	{ 
-    		get
-    		{
-    			return _LaserRFAcc;
-    		} 
-    		set
-    		{
-    			if (_LaserRFAcc != value)
-    			{
-    				_LaserRFAcc = value;
-    				OnPropertyChanged("LaserRFAcc");
-    			}
-    		}
-    	}
+        public Nullable<int> LaserRFAcc
+        {
+            get
+            {
+                return _LaserRFAcc;
+            }
+            set
+            {
+                if (_LaserRFAcc != value)
+                {
+                    _LaserRFAcc = value;
+                    OnPropertyChanged("LaserRFAcc");
+                }
+            }
+        }
         private Nullable<int> _NightVision;
-    	public Nullable<int> NightVision 
-    	{ 
-    		get
-    		{
-    			return _NightVision;
-    		} 
-    		set
-    		{
-    			if (_NightVision != value)
-    			{
-    				_NightVision = value;
-    				OnPropertyChanged("NightVision");
-    			}
-    		}
-    	}
+        public Nullable<int> NightVision
+        {
+            get
+            {
+                return _NightVision;
+            }
+            set
+            {
+                if (_NightVision != value)
+                {
+                    _NightVision = value;
+                    OnPropertyChanged("NightVision");
+                }
+            }
+        }
         private bool _NeedIRillumination;
-    	public bool NeedIRillumination 
-    	{ 
-    		get
-    		{
-    			return _NeedIRillumination;
-    		} 
-    		set
-    		{
-    			if (_NeedIRillumination != value)
-    			{
-    				_NeedIRillumination = value;
-    				OnPropertyChanged("NeedIRillumination");
-    			}
-    		}
-    	}
+        public bool NeedIRillumination
+        {
+            get
+            {
+                return _NeedIRillumination;
+            }
+            set
+            {
+                if (_NeedIRillumination != value)
+                {
+                    _NeedIRillumination = value;
+                    OnPropertyChanged("NeedIRillumination");
+                }
+            }
+        }
         private bool _Infravision;
-    	public bool Infravision 
-    	{ 
-    		get
-    		{
-    			return _Infravision;
-    		} 
-    		set
-    		{
-    			if (_Infravision != value)
-    			{
-    				_Infravision = value;
-    				OnPropertyChanged("Infravision");
-    			}
-    		}
-    	}
+        public bool Infravision
+        {
+            get
+            {
+                return _Infravision;
+            }
+            set
+            {
+                if (_Infravision != value)
+                {
+                    _Infravision = value;
+                    OnPropertyChanged("Infravision");
+                }
+            }
+        }
         private bool _IRFilter;
-    	public bool IRFilter 
-    	{ 
-    		get
-    		{
-    			return _IRFilter;
-    		} 
-    		set
-    		{
-    			if (_IRFilter != value)
-    			{
-    				_IRFilter = value;
-    				OnPropertyChanged("IRFilter");
-    			}
-    		}
-    	}
+        public bool IRFilter
+        {
+            get
+            {
+                return _IRFilter;
+            }
+            set
+            {
+                if (_IRFilter != value)
+                {
+                    _IRFilter = value;
+                    OnPropertyChanged("IRFilter");
+                }
+            }
+        }
         private Nullable<int> _LightRange;
-    	public Nullable<int> LightRange 
-    	{ 
-    		get
-    		{
-    			return _LightRange;
-    		} 
-    		set
-    		{
-    			if (_LightRange != value)
-    			{
-    				_LightRange = value;
-    				OnPropertyChanged("LightRange");
-    			}
-    		}
-    	}
+        public Nullable<int> LightRange
+        {
+            get
+            {
+                return _LightRange;
+            }
+            set
+            {
+                if (_LightRange != value)
+                {
+                    _LightRange = value;
+                    OnPropertyChanged("LightRange");
+                }
+            }
+        }
         private Nullable<int> _IRLigRange;
-    	public Nullable<int> IRLigRange 
-    	{ 
-    		get
-    		{
-    			return _IRLigRange;
-    		} 
-    		set
-    		{
-    			if (_IRLigRange != value)
-    			{
-    				_IRLigRange = value;
-    				OnPropertyChanged("IRLigRange");
-    			}
-    		}
-    	}
+        public Nullable<int> IRLigRange
+        {
+            get
+            {
+                return _IRLigRange;
+            }
+            set
+            {
+                if (_IRLigRange != value)
+                {
+                    _IRLigRange = value;
+                    OnPropertyChanged("IRLigRange");
+                }
+            }
+        }
         private Nullable<int> _LaserRange;
-    	public Nullable<int> LaserRange 
-    	{ 
-    		get
-    		{
-    			return _LaserRange;
-    		} 
-    		set
-    		{
-    			if (_LaserRange != value)
-    			{
-    				_LaserRange = value;
-    				OnPropertyChanged("LaserRange");
-    			}
-    		}
-    	}
+        public Nullable<int> LaserRange
+        {
+            get
+            {
+                return _LaserRange;
+            }
+            set
+            {
+                if (_LaserRange != value)
+                {
+                    _LaserRange = value;
+                    OnPropertyChanged("LaserRange");
+                }
+            }
+        }
         private string _LaserColor;
-    	public string LaserColor 
-    	{ 
-    		get
-    		{
-    			return _LaserColor;
-    		} 
-    		set
-    		{
-    			if (_LaserColor != value)
-    			{
-    				_LaserColor = value;
-    				OnPropertyChanged("LaserColor");
-    			}
-    		}
-    	}
+        public string LaserColor
+        {
+            get
+            {
+                return _LaserColor;
+            }
+            set
+            {
+                if (_LaserColor != value)
+                {
+                    _LaserColor = value;
+                    OnPropertyChanged("LaserColor");
+                }
+            }
+        }
         private Nullable<decimal> _LaserColorEf;
-    	public Nullable<decimal> LaserColorEf 
-    	{ 
-    		get
-    		{
-    			return _LaserColorEf;
-    		} 
-    		set
-    		{
-    			if (_LaserColorEf != value)
-    			{
-    				_LaserColorEf = value;
-    				OnPropertyChanged("LaserColorEf");
-    			}
-    		}
-    	}
+        public Nullable<decimal> LaserColorEf
+        {
+            get
+            {
+                return _LaserColorEf;
+            }
+            set
+            {
+                if (_LaserColorEf != value)
+                {
+                    _LaserColorEf = value;
+                    OnPropertyChanged("LaserColorEf");
+                }
+            }
+        }
         private Nullable<int> _usedBatType;
-    	public Nullable<int> usedBatType 
-    	{ 
-    		get
-    		{
-    			return _usedBatType;
-    		} 
-    		set
-    		{
-    			if (_usedBatType != value)
-    			{
-    				_usedBatType = value;
-    				OnPropertyChanged("usedBatType");
-    			}
-    		}
-    	}
-    
+        public Nullable<int> usedBatType
+        {
+            get
+            {
+                return _usedBatType;
+            }
+            set
+            {
+                if (_usedBatType != value)
+                {
+                    _usedBatType = value;
+                    OnPropertyChanged("usedBatType");
+                }
+            }
+        }
+
         private Attachmentmount _Attachmentmount1;
-            public virtual Attachmentmount Attachmentmount1
+        public virtual Attachmentmount Attachmentmount1
+        {
+            get { return _Attachmentmount1; }
+            set
             {
-                get { return _Attachmentmount1; }
-                set
-                { if(_Attachmentmount1 != value)
-                    {    _Attachmentmount1 = value;    OnPropertyChanged("Attachmentmount1");   }
-                }
-            } 
+                if (_Attachmentmount1 != value)
+                { _Attachmentmount1 = value; OnPropertyChanged("Attachmentmount1"); }
+            }
+        }
         private ITEM _ITEM;
-            public virtual ITEM ITEM
+        public virtual ITEM ITEM
+        {
+            get { return _ITEM; }
+            set
             {
-                get { return _ITEM; }
-                set
-                { if(_ITEM != value)
-                    {    _ITEM = value;    OnPropertyChanged("ITEM");   }
-                }
-            } 
+                if (_ITEM != value)
+                { _ITEM = value; OnPropertyChanged("Item"); }
+            }
+        }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         private ICollection<G_AvAttachClass> _G_AvAttachClass;
-            public virtual ICollection<G_AvAttachClass> G_AvAttachClass
+        public virtual ICollection<G_AvAttachClass> G_AvAttachClass
+        {
+            get { return _G_AvAttachClass; }
+            set
             {
-                get { return _G_AvAttachClass; }
-                set
-                { if(_G_AvAttachClass != value)
-                    {    _G_AvAttachClass = value;    OnPropertyChanged("G_AvAttachClass");   }
-                }
-            } 
+                if (_G_AvAttachClass != value)
+                { _G_AvAttachClass = value; OnPropertyChanged("G_AvAttachClass"); }
+            }
+        }
     }
 }

@@ -6,7 +6,7 @@ namespace GurpsDb.GurpsModel
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ITEM")]
+    [Table("Item")]
     public partial class ITEM
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

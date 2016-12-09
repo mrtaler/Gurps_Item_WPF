@@ -16,7 +16,7 @@ namespace GurpsDb.GurpsModel
         public virtual DbSet<advantage_prereq> advantage_prereq { get; set; }
         public virtual DbSet<attribute_bonus> attribute_bonus { get; set; }
         public virtual DbSet<attribute_prereq> attribute_prereq { get; set; }
-        public virtual DbSet<CharacterDB> CharacterDB { get; set; }
+        public virtual DbSet<CharacterDb> CharacterDB { get; set; }
         public virtual DbSet<contained_weight_prereq> contained_weight_prereq { get; set; }
         public virtual DbSet<cost_reduction> cost_reduction { get; set; }
         public virtual DbSet<DefaultSkill> DefaultSkill { get; set; }
@@ -55,19 +55,19 @@ namespace GurpsDb.GurpsModel
         public virtual DbSet<G_SubAttachClass> G_SubAttachClass { get; set; }
         public virtual DbSet<GurpsClass> GurpsClass { get; set; }
         public virtual DbSet<ITEM> ITEM { get; set; }
-        public virtual DbSet<ItemClass> ItemClass { get; set; }
-        public virtual DbSet<ItemSubClass> ItemSubClass { get; set; }
-        public virtual DbSet<LaserColorEf> LaserColorEf { get; set; }
-        public virtual DbSet<LC> LC { get; set; }
-        public virtual DbSet<LOADBEARINGEQUIPMENT> LOADBEARINGEQUIPMENT { get; set; }
-        public virtual DbSet<TL> TL { get; set; }
-        public virtual DbSet<Type_of_Box> Type_of_Box { get; set; }
-        public virtual DbSet<TypeOfDamage> TypeOfDamage { get; set; }
-        public virtual DbSet<WEAPON> WEAPON { get; set; }
-        public virtual DbSet<WeaponAttackType> WeaponAttackType { get; set; }
-        public virtual DbSet<WeaponDamage> WeaponDamage { get; set; }
-        public virtual DbSet<CharSkill> CharSkill { get; set; }
-        public virtual DbSet<NeedSkill> NeedSkill { get; set; }
+        public virtual DbSet<ItemClass> ItemClasses { get; set; }
+        public virtual DbSet<ItemSubClass> ItemSubClasses { get; set; }
+        public virtual DbSet<LaserColorEf> LaserColorEfs { get; set; }
+        public virtual DbSet<LC> Lcs { get; set; }
+        public virtual DbSet<LOADBEARINGEQUIPMENT> Loadbearingequipments { get; set; }
+        public virtual DbSet<TL> Tls { get; set; }
+        public virtual DbSet<Type_of_Box> TypeOfBoxes { get; set; }
+        public virtual DbSet<TypeOfDamage> TypeOfDamages { get; set; }
+        public virtual DbSet<WEAPON> Weapons { get; set; }
+        public virtual DbSet<WeaponAttackType> WeaponAttackTypes { get; set; }
+        public virtual DbSet<WeaponDamage> WeaponDamages { get; set; }
+        public virtual DbSet<CharSkill> CharSkills { get; set; }
+        public virtual DbSet<NeedSkill> NeedSkills { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -135,12 +135,12 @@ namespace GurpsDb.GurpsModel
                 .WithMany(e => e.Advantage)
                 .Map(m => m.ToTable("AdvantageCategory88", "CharDB").MapLeftKey("idAdvantage").MapRightKey("idGurpsCategory"));
 
-            modelBuilder.Entity<CharacterDB>()
-                .HasMany(e => e.CharSkill)
-                .WithRequired(e => e.CharacterDB)
-                .HasForeignKey(e => e.idChar);
+            modelBuilder.Entity<CharacterDb>()
+                .HasMany(e => e.CharSkillCollection)
+                .WithRequired(e => e.CharacterDb)
+                .HasForeignKey(e => e.IdChar);
 
-            modelBuilder.Entity<CharacterDB>()
+            modelBuilder.Entity<CharacterDb>()
                 .HasMany(e => e.InventoryOfChar)
                 .WithRequired(e => e.CharacterDB)
                 .HasForeignKey(e => e.IdCharacter);
@@ -199,7 +199,7 @@ namespace GurpsDb.GurpsModel
             modelBuilder.Entity<GurpsSkill>()
                 .HasMany(e => e.CharSkill)
                 .WithRequired(e => e.GurpsSkill)
-                .HasForeignKey(e => e.idSkill);
+                .HasForeignKey(e => e.IdSkill);
 
             modelBuilder.Entity<GurpsSkill>()
                 .HasMany(e => e.GurpsSkill1)
@@ -231,7 +231,7 @@ namespace GurpsDb.GurpsModel
             modelBuilder.Entity<GurpsSkill>()
                 .HasMany(e => e.GurpsCategory)
                 .WithMany(e => e.GurpsSkill)
-                .Map(m => m.ToTable("GurpsSkillCategory88", "CharDB").MapLeftKey("idSkill").MapRightKey("idSkillCategory"));
+                .Map(m => m.ToTable("GurpsSkillCategory88", "CharDB").MapLeftKey("IdSkill").MapRightKey("idSkillCategory"));
 
             modelBuilder.Entity<melee_weapon>()
                 .Property(e => e.damage)
@@ -682,7 +682,7 @@ namespace GurpsDb.GurpsModel
 
             modelBuilder.Entity<ITEM>()
                 .HasOptional(e => e.LOADBEARINGEQUIPMENT)
-                .WithRequired(e => e.ITEM)
+                .WithRequired(e => e.Item)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<ITEM>()

@@ -26,11 +26,11 @@ namespace Item_WPF.addin
 
             ObservableCollection<ItemSubClass> weaponTypescCollection = (ObservableCollection<ItemSubClass>)values[0];
             int findClass = (int)values[1];
-            ObservableCollection < ItemSubClass > ret= new ObservableCollection<ItemSubClass>(
+            ObservableCollection<ItemSubClass> ret = new ObservableCollection<ItemSubClass>(
                        weaponTypescCollection.
                            Where(p => p.idGurpsSubClass == findClass));
 
-            return ret; 
+            return ret;
         }
     }
     #endregion
@@ -249,11 +249,11 @@ namespace Item_WPF.addin
     {
         public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            ObservableCollection<ITEM> ItemsForSort = values[0] as ObservableCollection<ITEM>;
+            ObservableCollection<Item> ItemsForSort = values[0] as ObservableCollection<Item>;
             int? Class_for_Sort = values[1] as int?;
             if (Class_for_Sort == null || Class_for_Sort == 1)
                 return ItemsForSort;
-            else return new ObservableCollection<ITEM>(ItemsForSort.Where(p => p.usItemClass == Class_for_Sort));
+            else return new ObservableCollection<Item>(ItemsForSort.Where(p => p.usItemClass == Class_for_Sort));
         }
     }
     #endregion
@@ -534,12 +534,12 @@ namespace Item_WPF.addin
             {
                 return ASlot.FirstOrDefault(p => p.rItemId == IdItem && p.rATTACHMENTSLOT == findslotPoint).rAttachmentmount;
             }
-            else return 1;      
-                //(from p in ASlot
-                            // where p.rATTACHMENTSLOT == findslotPoint
-                            // select p.rAttachmentmount).FirstOrDefault();
+            else return 1;
+            //(from p in ASlot
+            // where p.rATTACHMENTSLOT == findslotPoint
+            // select p.rAttachmentmount).FirstOrDefault();
             //if (MountSlot != 0)
-           
+
             //else return 0;
         }
         public override object[] ConvertBack(object value, Type[] targetType, object parameter, CultureInfo culture)

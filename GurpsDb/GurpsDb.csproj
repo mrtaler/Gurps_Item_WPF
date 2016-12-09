@@ -54,6 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GurpsExtendModel\CharacterDb.cs" />
+    <Compile Include="GurpsExtendModel\CharSkill.cs" />
+    <Compile Include="GurpsExtendModel\DiceString.cs" />
     <Compile Include="GurpsModel\Advantage.cs" />
     <Compile Include="GurpsModel\advantage_prereq.cs" />
     <Compile Include="GurpsModel\AMMOUPGRATES.cs" />
@@ -68,7 +71,7 @@
     <Compile Include="GurpsModel\Battery.cs" />
     <Compile Include="GurpsModel\BoxItem.cs" />
     <Compile Include="GurpsModel\Caliber.cs" />
-    <Compile Include="GurpsModel\CharacterDB.cs" />
+    <Compile Include="GurpsModel\CharacterDb.cs" />
     <Compile Include="GurpsModel\CharSkill.cs" />
     <Compile Include="GurpsModel\Clothes.cs" />
     <Compile Include="GurpsModel\CombineWeap.cs" />
@@ -83,7 +86,7 @@
     <Compile Include="GurpsModel\FOOD.cs" />
     <Compile Include="GurpsModel\GurpsCategory.cs" />
     <Compile Include="GurpsModel\GurpsClass.cs" />
-    <Compile Include="GurpsModel\GurpsModel.cs" />
+    <Compile Include="GurpsModel.cs" />
     <Compile Include="GurpsModel\GurpsSkill.cs" />
     <Compile Include="GurpsModel\G_AttachClass.cs" />
     <Compile Include="GurpsModel\G_AvAttachClass.cs" />
@@ -120,6 +123,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,20 +1,10 @@
 ﻿using System;
-using Item_WPF.addin;
-using System.Data.Entity.Core.Objects.DataClasses;
 
-namespace Item_WPF.ItemEntityModel
+// ReSharper disable once CheckNamespace
+namespace GurpsDb.GurpsModel
 {
-    public partial class CharSkill : ViewModelBase
+    public partial class CharSkill
     {
-        public static CharSkill CreateCharSkill(global::System.Int32 idSkill, global::System.Int32 idChar)
-        {
-            CharSkill charSkill = new CharSkill();
-            charSkill.idSkill = idSkill;
-            charSkill.idChar = idChar;
-            return charSkill;
-        }
-
-
         /// <summary>
         /// Start point for this skill
         /// </summary>
@@ -69,9 +59,9 @@ namespace Item_WPF.ItemEntityModel
         /// </summary>
         /// <param name="characterDb">Персонаж</param>
         /// <param name="gurpsSkill">Навык</param>
-        public CharSkill(CharacterDB characterDb, GurpsSkill gurpsSkill)
+        public CharSkill(/*CharacterDb characterDb, */GurpsSkill gurpsSkill)
         {
-            CharacterDB = characterDb;
+            //  CharacterDb  = characterDb;
             GurpsSkill = gurpsSkill;
 
             //  IdChar = characterDb.id;
@@ -136,13 +126,13 @@ namespace Item_WPF.ItemEntityModel
             switch (GetAttributteFromDb())
             {
                 case "ST":
-                    return CharacterDB.Strength;
+                    return CharacterDb.Strength;
                 case "DX":
-                    return CharacterDB.Dexterity;
+                    return CharacterDb.Dexterity;
                 case "IQ":
-                    return CharacterDB.Intelligence;
+                    return CharacterDb.Intelligence;
                 case "HT":
-                    return CharacterDB.Health;
+                    return CharacterDb.Health;
                 default:
                     return 0;
             }
@@ -189,7 +179,5 @@ namespace Item_WPF.ItemEntityModel
         {
             PointOfSkill--;
         }
-
-
     }
 }

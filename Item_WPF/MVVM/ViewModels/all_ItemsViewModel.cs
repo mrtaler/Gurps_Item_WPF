@@ -12,13 +12,13 @@ using System.Windows;
 
 namespace Item_WPF.MVVM.ViewModels
 {
-    public  class all_ItemsViewModel : ViewModelBase, IDisposable
+    public class all_ItemsViewModel : ViewModelBase, IDisposable
     {
         protected Window Owner;
         private item1Entities _context;
         public string pass { get; set; }
         public ObservableCollection<ItemClass> ItemsClass { get; set; }
-        #region  public ObservableCollection<ITEM> Items
+        #region  public ObservableCollection<Item> Items
         public ObservableCollection<ITEM> Items
         {
             get
@@ -47,7 +47,7 @@ namespace Item_WPF.MVVM.ViewModels
             }
         }
         #endregion
-        #region public  ITEM SelectedItemForWork
+        #region public  Item SelectedItemForWork
         private ITEM _SelectedItemForWork;
         public ITEM SelectedItemForWork
         {
@@ -74,9 +74,9 @@ namespace Item_WPF.MVVM.ViewModels
             //SelectedItClassforSort = _context.ItemClasses.FirstOrDefault(p => p.name.Contains(Param)).id;
             ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClasses);
 
-            Refresh = new ViewModelCommand(Refreshnew) ;
+            Refresh = new ViewModelCommand(Refreshnew);
             CSelItem = new ViewModelCommand(CSelectedItem);
-            Save = new ViewModelCommand(SaveChanges) ;
+            Save = new ViewModelCommand(SaveChanges);
             CDelItem = new ViewModelCommand(DelItem);
             CNewItem = new ViewModelCommand(NewItem);
             PropertyDependencyMap.Add("SelectedItClassforSort", new[] { "Items" });
@@ -87,9 +87,9 @@ namespace Item_WPF.MVVM.ViewModels
         {
             _context?.Dispose();
             _context = new item1Entities();
-            //  Items = new ObservableCollection<ITEM>(_context.ITEMs);
+            //  Items = new ObservableCollection<Item>(_context.ITEMs);
             SelectedItClassforSort = 1;
-            //else Items = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.usItemClass == SelectedItClassforSort));
+            //else Items = new ObservableCollection<Item>(_context.ITEMs.Where(p => p.usItemClass == SelectedItClassforSort));
         }
         public ViewModelCommand Refresh { get; set; }
         #endregion
@@ -111,7 +111,7 @@ namespace Item_WPF.MVVM.ViewModels
                     WeaponEditView avView = new WeaponEditView(SelectedItemForWork);
                     avView.Owner = Owner;
                     bool? result = avView.ShowDialog();
-   
+
                     if (result.HasValue && (result == true))
                     {
                         _context?.Dispose();
@@ -120,7 +120,7 @@ namespace Item_WPF.MVVM.ViewModels
 
                     }
                 }
-                else if (SelectedItemForWork.usItemClass ==att)
+                else if (SelectedItemForWork.usItemClass == att)
                 {
                     SelectedItemForWork.used = true;
                     SelectedItemForWork.dt = System.DateTime.UtcNow;
@@ -146,7 +146,7 @@ namespace Item_WPF.MVVM.ViewModels
             InputBoxViewModel ib_datacontext = new InputBoxViewModel("Password for Del entity", "Type Password", "");
             ib.DataContext = ib_datacontext;
             ib.ShowDialog();
-            pass = ib_datacontext.passinput;            
+            pass = ib_datacontext.passinput;
             if (pass == "123")
             {
                 MessageBox.Show("Correct Pass");
@@ -187,8 +187,8 @@ namespace Item_WPF.MVVM.ViewModels
         private void dataGridViewAllItems_LoadingRow(object sender, DataGridRowEventArgs e)
         {
             bool ew2;
-            //ITEM item1 = (ITEM)e.Row.Item;
-            ITEM item1 = e.Row.DataContext as ITEM;
+            //Item item1 = (Item)e.Row.Item;
+            Item item1 = e.Row.DataContext as Item;
             if (item1 != null)
             {
                 ew2 = item1.used;

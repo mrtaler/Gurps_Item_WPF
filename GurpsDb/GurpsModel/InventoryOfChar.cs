@@ -18,7 +18,7 @@ namespace GurpsDb.GurpsModel
 
         public long Count { get; set; }
 
-        public virtual CharacterDB CharacterDB { get; set; }
+        public virtual CharacterDb CharacterDB { get; set; }
 
         public virtual ITEM ITEM { get; set; }
     }

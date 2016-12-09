@@ -15,7 +15,7 @@
                  Margin="10,10,0,0"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
-                 DisplayMemberPath="name"
+                 DisplayMemberPath="Name"
                  ItemsSource="{Binding CharacterDbCollection}"
                  SelectedItem="{Binding SelectedCharacterDb}" />
         <Button x:Name="button"

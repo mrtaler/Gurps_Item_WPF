@@ -1610,7 +1610,7 @@
 //									} else if (key.equals("ID")) { //$NON-NLS-1$
 //										writeXMLText(out, Integer.toString(counter));
 //									} else if (key.equals("TYPE")) { //$NON-NLS-1$
-//										writeXMLText(out, advantage.canHaveChildren() ? advantage.getContainerType().name() : "ITEM"); //$NON-NLS-1$
+//										writeXMLText(out, advantage.canHaveChildren() ? advantage.getContainerType().name() : "Item"); //$NON-NLS-1$
 //									} else {
 //										writeXMLText(out, UNIDENTIFIED_KEY);
 //									}

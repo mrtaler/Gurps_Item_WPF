@@ -11,179 +11,182 @@ namespace Item_WPF.ItemEntityModel
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class DefSkillSome : System.ComponentModel.INotifyPropertyChanged
     {
-     
-     #region Implement INotifyPropertyChanged
-     
-     public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-     
-     protected virtual void OnPropertyChanged(string propertyName)
-     {
-      if (PropertyChanged != null)
-      {
-       PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-      }
-     }
-     
-     #endregion
-     
+
+        #region Implement INotifyPropertyChanged
+
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        #endregion
+
         private int _id;
-    	public int id 
-    	{ 
-    		get
-    		{
-    			return _id;
-    		} 
-    		set
-    		{
-    			if (_id != value)
-    			{
-    				_id = value;
-    				OnPropertyChanged("id");
-    			}
-    		}
-    	}
+        public int id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    _id = value;
+                    OnPropertyChanged("id");
+                }
+            }
+        }
         private string _nameSkill;
-    	public string nameSkill 
-    	{ 
-    		get
-    		{
-    			return _nameSkill;
-    		} 
-    		set
-    		{
-    			if (_nameSkill != value)
-    			{
-    				_nameSkill = value;
-    				OnPropertyChanged("nameSkill");
-    			}
-    		}
-    	}
+        public string nameSkill
+        {
+            get
+            {
+                return _nameSkill;
+            }
+            set
+            {
+                if (_nameSkill != value)
+                {
+                    _nameSkill = value;
+                    OnPropertyChanged("nameSkill");
+                }
+            }
+        }
         private string _specialization;
-    	public string specialization 
-    	{ 
-    		get
-    		{
-    			return _specialization;
-    		} 
-    		set
-    		{
-    			if (_specialization != value)
-    			{
-    				_specialization = value;
-    				OnPropertyChanged("specialization");
-    			}
-    		}
-    	}
+        public string specialization
+        {
+            get
+            {
+                return _specialization;
+            }
+            set
+            {
+                if (_specialization != value)
+                {
+                    _specialization = value;
+                    OnPropertyChanged("specialization");
+                }
+            }
+        }
         private string _type;
-    	public string type 
-    	{ 
-    		get
-    		{
-    			return _type;
-    		} 
-    		set
-    		{
-    			if (_type != value)
-    			{
-    				_type = value;
-    				OnPropertyChanged("type");
-    			}
-    		}
-    	}
+        public string type
+        {
+            get
+            {
+                return _type;
+            }
+            set
+            {
+                if (_type != value)
+                {
+                    _type = value;
+                    OnPropertyChanged("type");
+                }
+            }
+        }
         private string _modifier;
-    	public string modifier 
-    	{ 
-    		get
-    		{
-    			return _modifier;
-    		} 
-    		set
-    		{
-    			if (_modifier != value)
-    			{
-    				_modifier = value;
-    				OnPropertyChanged("modifier");
-    			}
-    		}
-    	}
+        public string modifier
+        {
+            get
+            {
+                return _modifier;
+            }
+            set
+            {
+                if (_modifier != value)
+                {
+                    _modifier = value;
+                    OnPropertyChanged("modifier");
+                }
+            }
+        }
         private Nullable<int> _idSkill;
-    	public Nullable<int> idSkill 
-    	{ 
-    		get
-    		{
-    			return _idSkill;
-    		} 
-    		set
-    		{
-    			if (_idSkill != value)
-    			{
-    				_idSkill = value;
-    				OnPropertyChanged("idSkill");
-    			}
-    		}
-    	}
+        public Nullable<int> idSkill
+        {
+            get
+            {
+                return _idSkill;
+            }
+            set
+            {
+                if (_idSkill != value)
+                {
+                    _idSkill = value;
+                    OnPropertyChanged("IdSkill");
+                }
+            }
+        }
         private Nullable<int> _idRangeWeap;
-    	public Nullable<int> idRangeWeap 
-    	{ 
-    		get
-    		{
-    			return _idRangeWeap;
-    		} 
-    		set
-    		{
-    			if (_idRangeWeap != value)
-    			{
-    				_idRangeWeap = value;
-    				OnPropertyChanged("idRangeWeap");
-    			}
-    		}
-    	}
+        public Nullable<int> idRangeWeap
+        {
+            get
+            {
+                return _idRangeWeap;
+            }
+            set
+            {
+                if (_idRangeWeap != value)
+                {
+                    _idRangeWeap = value;
+                    OnPropertyChanged("idRangeWeap");
+                }
+            }
+        }
         private Nullable<int> _idMeleWeap;
-    	public Nullable<int> idMeleWeap 
-    	{ 
-    		get
-    		{
-    			return _idMeleWeap;
-    		} 
-    		set
-    		{
-    			if (_idMeleWeap != value)
-    			{
-    				_idMeleWeap = value;
-    				OnPropertyChanged("idMeleWeap");
-    			}
-    		}
-    	}
-    
+        public Nullable<int> idMeleWeap
+        {
+            get
+            {
+                return _idMeleWeap;
+            }
+            set
+            {
+                if (_idMeleWeap != value)
+                {
+                    _idMeleWeap = value;
+                    OnPropertyChanged("idMeleWeap");
+                }
+            }
+        }
+
         private GurpsSkill _GurpsSkill;
-            public virtual GurpsSkill GurpsSkill
+        public virtual GurpsSkill GurpsSkill
+        {
+            get { return _GurpsSkill; }
+            set
             {
-                get { return _GurpsSkill; }
-                set
-                { if(_GurpsSkill != value)
-                    {    _GurpsSkill = value;    OnPropertyChanged("GurpsSkill");   }
-                }
-            } 
+                if (_GurpsSkill != value)
+                { _GurpsSkill = value; OnPropertyChanged("GurpsSkill"); }
+            }
+        }
         private ranged_weapon _ranged_weapon;
-            public virtual ranged_weapon ranged_weapon
+        public virtual ranged_weapon ranged_weapon
+        {
+            get { return _ranged_weapon; }
+            set
             {
-                get { return _ranged_weapon; }
-                set
-                { if(_ranged_weapon != value)
-                    {    _ranged_weapon = value;    OnPropertyChanged("ranged_weapon");   }
-                }
-            } 
+                if (_ranged_weapon != value)
+                { _ranged_weapon = value; OnPropertyChanged("ranged_weapon"); }
+            }
+        }
         private melee_weapon _melee_weapon;
-            public virtual melee_weapon melee_weapon
+        public virtual melee_weapon melee_weapon
+        {
+            get { return _melee_weapon; }
+            set
             {
-                get { return _melee_weapon; }
-                set
-                { if(_melee_weapon != value)
-                    {    _melee_weapon = value;    OnPropertyChanged("melee_weapon");   }
-                }
-            } 
+                if (_melee_weapon != value)
+                { _melee_weapon = value; OnPropertyChanged("melee_weapon"); }
+            }
+        }
     }
 }

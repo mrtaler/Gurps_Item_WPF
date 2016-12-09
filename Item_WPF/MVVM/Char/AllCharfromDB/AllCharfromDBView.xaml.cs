@@ -21,7 +21,7 @@ namespace Item_WPF.MVVM.View
     /// </summary>
     public partial class AllCharfromDBView : Window
     {
-        public AllCharfromDBView(item1Entities context)
+        public AllCharfromDBView(GurpsDb.GurpsModel.GurpsModel context)
         {
             DataContext = new AllCharFromDbViewModel(context);
             InitializeComponent();

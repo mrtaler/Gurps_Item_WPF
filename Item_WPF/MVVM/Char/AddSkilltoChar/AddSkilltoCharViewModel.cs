@@ -11,29 +11,29 @@ namespace Item_WPF.MVVM.Char.AddSkilltoChar
         /// <summary>
         /// Character With now work
         /// </summary>
-        public CharacterDB Character;
+        public GurpsDb.GurpsModel.CharacterDb Character;
         /// <summary>
         /// Context with now work
         /// </summary>
-        public item1Entities Context { get; set; }
+        public GurpsDb.GurpsModel.GurpsModel Context { get; set; }
         /// <summary>
         /// Collection for All Gurps Skill in DB
         /// </summary>
-        public ObservableCollection<GurpsSkill> AllGurpsSkillCollection { get; set; }
+        public ObservableCollection<GurpsDb.GurpsModel.GurpsSkill> AllGurpsSkillCollection { get; set; }
         /// <summary>
         /// COllection from Character Skill 
         /// </summary>
-        public ObservableCollection<CharSkill> CharSkillCollection =>
-            new ObservableCollection<CharSkill>(Character.CharSkills);
+        public ObservableCollection<GurpsDb.GurpsModel.CharSkill> CharSkillCollection =>
+            new ObservableCollection<GurpsDb.GurpsModel.CharSkill>(Character.CharSkillCollection);
         /// <summary>
         /// Collection for gurps char skill
         /// </summary>
-        public ObservableCollection<GurpsSkill> CharGurpsSkillCollection
+        public ObservableCollection<GurpsDb.GurpsModel.GurpsSkill> CharGurpsSkillCollection
         {
             get
             {
-                return new ObservableCollection<GurpsSkill>
-                    (Character.CharSkills.Select(p => p.GurpsSkill));
+                return new ObservableCollection<GurpsDb.GurpsModel.GurpsSkill>
+                    (Character.CharSkillCollection.Select(p => p.GurpsSkill));
             }
         }
         #region Command
@@ -59,13 +59,13 @@ namespace Item_WPF.MVVM.Char.AddSkilltoChar
         /// </summary>
         /// <param name="character">Character who now worked</param>
         /// <param name="context">now Context</param>
-        public AddSkilltoCharViewModel(CharacterDB character, item1Entities context)
+        public AddSkilltoCharViewModel(GurpsDb.GurpsModel.CharacterDb character, GurpsDb.GurpsModel.GurpsModel context)
         {
             Character = character;
             Context = context;
 
             // Load GurpsSkills from DB
-            AllGurpsSkillCollection = new ObservableCollection<GurpsSkill>(Context.GurpsSkills.
+            AllGurpsSkillCollection = new ObservableCollection<GurpsDb.GurpsModel.GurpsSkill>(Context.GurpsSkill.
                 OrderBy(p => p.TypeSkTh).
                 ThenBy(p => p.NameSkill)
                 );
@@ -86,10 +86,10 @@ namespace Item_WPF.MVVM.Char.AddSkilltoChar
         /// <param name="param">GurpsSkill as object</param>
         private void SkillPointIncrease(object param)
         {
-            GurpsSkill skillToWork = (param as GurpsSkill);
-            CharSkill charSkillsToWork = Character.CharSkills.First(p => p.GurpsSkill == skillToWork);
+            GurpsDb.GurpsModel.GurpsSkill skillToWork = (param as GurpsDb.GurpsModel.GurpsSkill);
+            GurpsDb.GurpsModel.CharSkill charSkillsToWork = Character.CharSkillCollection.First(p => p.GurpsSkill == skillToWork);
 
-            charSkillsToWork.IncreasePoint();
+            charSkillsToWork.PointOfSkill++;/*.IncreasePoint();*/
 
             NotifyPropertyChanged("CharGurpsSkillCollection");
             NotifyPropertyChanged("CharSkillCollection");
@@ -100,10 +100,10 @@ namespace Item_WPF.MVVM.Char.AddSkilltoChar
         /// <param name="param">GurpsSkill as object</param>
         private void SkillPointDecrease(object param)
         {
-            GurpsSkill gs = (param as GurpsSkill);
-            var cha = Character.CharSkills.First(p => p.GurpsSkill == gs);
+            GurpsDb.GurpsModel.GurpsSkill gs = (param as GurpsDb.GurpsModel.GurpsSkill);
+            var cha = Character.CharSkillCollection.First(p => p.GurpsSkill == gs);
 
-            cha.DecreasePoint();
+            cha.PointOfSkill--; /*DecreasePoint();*/
             NotifyPropertyChanged("CharGurpsSkillCollection");
             NotifyPropertyChanged("CharSkillCollection");
         }
@@ -116,8 +116,8 @@ namespace Item_WPF.MVVM.Char.AddSkilltoChar
             int gsid = Convert.ToInt32(param);
             if (CharGurpsSkillCollection.FirstOrDefault(p => p.id == gsid) == null)
             {
-                CharSkill charSkill = new CharSkill(Character, AllGurpsSkillCollection.First(p => p.id == gsid));
-                Character.CharSkills.Add(charSkill);
+                GurpsDb.GurpsModel.CharSkill charSkill = new GurpsDb.GurpsModel.CharSkill(AllGurpsSkillCollection.First(p => p.id == gsid));
+                Character.CharSkillCollection.Add(charSkill);
                 NotifyPropertyChanged("CharGurpsSkillCollection");
                 NotifyPropertyChanged("CharSkillCollection");
             }
@@ -128,10 +128,10 @@ namespace Item_WPF.MVVM.Char.AddSkilltoChar
         /// <param name="param"></param>
         private void RemSkill(object param)
         {
-            GurpsSkill gs = (param as GurpsSkill);
-            CharSkill cha = Character.CharSkills.FirstOrDefault(p => p.GurpsSkill == gs);
-            Context.CharSkills.Remove(cha);
-            Character.CharSkills.Remove(cha);
+            GurpsDb.GurpsModel.GurpsSkill gs = (param as GurpsDb.GurpsModel.GurpsSkill);
+            GurpsDb.GurpsModel.CharSkill cha = Character.CharSkillCollection.FirstOrDefault(p => p.GurpsSkill == gs);
+            //Context.GurpsSkill.Remove(cha);
+            Character.CharSkillCollection.Remove(cha);
 
             NotifyPropertyChanged("CharGurpsSkillCollection");
             NotifyPropertyChanged("CharSkillCollection");
