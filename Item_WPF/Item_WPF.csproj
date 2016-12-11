@@ -371,8 +371,6 @@
     <Compile Include="MVVM\Serialize\Model\prereq_list\Prereq_listXML.cs" />
     <Compile Include="MVVM\Serialize\Model\Program.cs" />
     <Compile Include="MVVM\Serialize\Model\SkillXMLModel.cs" />
-    <Compile Include="MVVM\Serialize\Model\SubSkillColl.cs" />
-    <Compile Include="MVVM\Serialize\Model\SubSubSkillcol.cs" />
     <Compile Include="MVVM\Serialize\SerializeView.xaml.cs">
       <DependentUpon>SerializeView.xaml</DependentUpon>
     </Compile>
