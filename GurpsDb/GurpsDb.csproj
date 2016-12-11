@@ -86,7 +86,7 @@
     <Compile Include="GurpsModel\FOOD.cs" />
     <Compile Include="GurpsModel\GurpsCategory.cs" />
     <Compile Include="GurpsModel\GurpsClass.cs" />
-    <Compile Include="GurpsModel.cs" />
+    <Compile Include="ContextGurpsModel.cs" />
     <Compile Include="GurpsModel\GurpsSkill.cs" />
     <Compile Include="GurpsModel\G_AttachClass.cs" />
     <Compile Include="GurpsModel\G_AvAttachClass.cs" />
@@ -115,6 +115,23 @@
     <Compile Include="GurpsModel\WeaponDamage.cs" />
     <Compile Include="GurpsModel\weapon_bonus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XML\advantageSerialize.cs" />
+    <Compile Include="XML\Category.cs" />
+    <Compile Include="XML\DBExtend\AdvantageDB.cs" />
+    <Compile Include="XML\DBExtend\attribute_bonus.cs" />
+    <Compile Include="XML\DBExtend\cost_reduction.cs" />
+    <Compile Include="XML\DBExtend\DefaultSkill.cs" />
+    <Compile Include="XML\DBExtend\DefSkillSome.cs" />
+    <Compile Include="XML\DBExtend\GurpsSkill.cs" />
+    <Compile Include="XML\DBExtend\melee_weapon.cs" />
+    <Compile Include="XML\DBExtend\modifier.cs" />
+    <Compile Include="XML\DBExtend\prereq_listDB.cs" />
+    <Compile Include="XML\DBExtend\ranged_weapon.cs" />
+    <Compile Include="XML\DBExtend\skill_bonusDB.cs" />
+    <Compile Include="XML\DBExtend\spell_bonus.cs" />
+    <Compile Include="XML\DBExtend\weapon_bonus.cs" />
+    <Compile Include="XML\Program.cs" />
+    <Compile Include="XML\SkillSerializeible.cs" />
     <Compile Include="XML\XSD\advantageXML.cs" />
     <Compile Include="XML\XSD\DefaultSkill.cs" />
     <Compile Include="XML\XSD\prereq_list\Prereq_listXML%28list%29.cs" />
@@ -147,10 +164,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="XML\DBExtend\cost_reduction" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="XML\DBExtend\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -175,27 +175,10 @@
     <Compile Include="MVVM\Models\ItemsForSortModel.cs" />
     <Compile Include="MVVM\Models\ItemToGridModel.cs" />
     <Compile Include="MVVM\Models\Skill.cs" />
-    <Compile Include="MVVM\Serialize\Model\ContextModel\AdvantageDB.cs" />
-    <Compile Include="MVVM\Serialize\Model\advantageSerialize.cs" />
-    <Compile Include="MVVM\Serialize\Model\Category.cs" />
-    <Compile Include="MVVM\Serialize\Model\ContextModel\attribute_bonus.cs" />
-    <Compile Include="MVVM\Serialize\Model\ContextModel\cost_reduction.cs" />
-    <Compile Include="MVVM\Serialize\Model\ContextModel\DefSkillSome.cs" />
-    <Compile Include="MVVM\Serialize\Model\ContextModel\melee_weapon.cs" />
-    <Compile Include="MVVM\Serialize\Model\ContextModel\modifier.cs" />
-    <Compile Include="MVVM\Serialize\Model\ContextModel\prereq_listDB.cs" />
-    <Compile Include="MVVM\Serialize\Model\ContextModel\ranged_weapon.cs" />
-    <Compile Include="MVVM\Serialize\Model\ContextModel\skill_bonusDB.cs" />
-    <Compile Include="MVVM\Serialize\Model\ContextModel\spell_bonus.cs" />
-    <Compile Include="MVVM\Serialize\Model\ContextModel\weapon_bonus.cs" />
-    <Compile Include="MVVM\Serialize\Model\ContextModel\DefaultSkill.cs" />
-    <Compile Include="MVVM\Serialize\Model\ContextModel\GurpsSkill.cs" />
-    <Compile Include="MVVM\Serialize\Model\Program.cs" />
     <Compile Include="MVVM\Serialize\SerializeView.xaml.cs">
       <DependentUpon>SerializeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\Serialize\SerializeViewModel.cs" />
-    <Compile Include="MVVM\Serialize\Model\SkillSerializeible.cs" />
     <Compile Include="MVVM\ViewModels\AboutViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AllWeaponViewModel.cs" />
     <Compile Include="MVVM\ViewModels\all_ItemsViewModel.cs" />
@@ -823,7 +806,6 @@
     <None Include="GCS\xsd\template.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="MVVM\Serialize\Model\ContextModel\cost_reduction" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

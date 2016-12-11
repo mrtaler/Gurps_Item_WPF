@@ -31,7 +31,7 @@ namespace Item_WPF.MVVM.ViewModels
     {
         protected Window Owner;
         private item1Entities contextitem1Entities;
-        private GurpsDb.GurpsModel.GurpsModel contextGurpsModel;
+        private GurpsDb.GurpsModel.ContextGurpsModel contextGurpsModel;
 
         // public CharacterDb Character { get; set; }
         public GurpsDb.GurpsModel.CharacterDb Character { get; set; }
@@ -59,7 +59,7 @@ namespace Item_WPF.MVVM.ViewModels
         public MainCharacterViewModel(Window owner, GurpsDb.GurpsModel.CharacterDb character)
         {
             //  contextitem1Entities = new item1Entities();
-            contextGurpsModel = new GurpsDb.GurpsModel.GurpsModel();
+            contextGurpsModel = new GurpsDb.GurpsModel.ContextGurpsModel();
 
 
             Owner = owner;

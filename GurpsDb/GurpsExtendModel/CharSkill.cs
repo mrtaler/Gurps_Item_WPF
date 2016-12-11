@@ -64,8 +64,8 @@ namespace GurpsDb.GurpsModel
             //  CharacterDb  = characterDb;
             GurpsSkill = gurpsSkill;
 
-            //  IdChar = characterDb.id;
-            //  IdSkill = gurpsSkill.id;
+            //  IdChar = characterDb.Id;
+            //  IdSkill = gurpsSkill.Id;
 
             PointOfSkill = 1;
         }
