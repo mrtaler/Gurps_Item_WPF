@@ -7,19 +7,19 @@ namespace GurpsDb.GurpsModel
     using System.Data.Entity.Spatial;
 
     [Table("LC")]
-    public partial class LC
+    public partial class Lc
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LC()
+        public Lc()
         {
-            ITEM = new HashSet<ITEM>();
+            Item = new HashSet<Item>();
         }
 
         [Key]
-        public int Id_LC { get; set; }
+        public int IdLc { get; set; }
 
         [StringLength(10)]
-        public string Name_LC { get; set; }
+        public string NameLc { get; set; }
 
         [StringLength(15)]
         public string ShortDes { get; set; }
@@ -28,6 +28,6 @@ namespace GurpsDb.GurpsModel
         public string Description { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ITEM> ITEM { get; set; }
+        public virtual ICollection<Item> Item { get; set; }
     }
 }

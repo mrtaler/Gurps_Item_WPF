@@ -15,13 +15,13 @@ namespace GurpsDb.GurpsModel
             WeaponDamage = new HashSet<WeaponDamage>();
         }
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(20)]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [StringLength(150)]
-        public string descr { get; set; }
+        public string Descr { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WeaponDamage> WeaponDamage { get; set; }

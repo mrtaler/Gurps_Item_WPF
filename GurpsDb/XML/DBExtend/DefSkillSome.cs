@@ -14,7 +14,7 @@ namespace Item_WPF.ItemEntityModel
             nameSkill = itemDefault.nameDefaultXml.Value.ToString();
             specialization = itemDefault.specializationDefaultXml.Value.ToString();
             type = itemDefault.typeDefaultXml.Value.ToString();
-            modifier = itemDefault.modifierDefaultXml.Value.ToString();
+            Modifier = itemDefault.modifierDefaultXml.Value.ToString();
         }
     }
 }

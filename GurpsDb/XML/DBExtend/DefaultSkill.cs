@@ -10,7 +10,7 @@ namespace Item_WPF.ItemEntityModel
     public partial class DefaultSkill
     {
         public DefaultSkill() { }
-        public DefaultSkill(DefaultXML itemDefault, ObservableCollection<GurpsSkill> CollectionCategiry)
+        public DefaultSkill(DefaultXML itemDefault, ObservableCollection<GurpsSkill> collectionCategiry)
         {
             string typex = itemDefault.typeDefaultXml != null ? itemDefault.typeDefaultXml.Value.ToString() : null;
             string modf = itemDefault.modifierDefaultXml != null ? itemDefault.modifierDefaultXml.Value.ToString() : null;
@@ -22,13 +22,13 @@ namespace Item_WPF.ItemEntityModel
                 GurpsSkill referenseSkillFind;
                 if (spec != null)
                 {
-                    referenseSkillFind = CollectionCategiry
+                    referenseSkillFind = collectionCategiry
                            .Where(p => p.NameSkill == name)
                            .FirstOrDefault(x => x.Specialization == spec);
                 }
                 else
                 {
-                    referenseSkillFind = CollectionCategiry
+                    referenseSkillFind = collectionCategiry
                             .FirstOrDefault(p => p.NameSkill == name);
                 }
                 Modifier = Convert.ToInt32(modf);

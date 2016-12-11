@@ -7,45 +7,45 @@ namespace GurpsDb.GurpsModel
     using System.Data.Entity.Spatial;
 
     [Table("CharDB.spell_prereqDB")]
-    public partial class spell_prereqDB
+    public partial class SpellPrereqDb
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(50)]
-        public string nameCompare { get; set; }
+        public string NameCompare { get; set; }
 
         [StringLength(50)]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [StringLength(50)]
-        public string collegeCompare { get; set; }
+        public string CollegeCompare { get; set; }
 
         [StringLength(50)]
-        public string college { get; set; }
+        public string College { get; set; }
 
         [StringLength(50)]
-        public string college_countCompare { get; set; }
+        public string CollegeCountCompare { get; set; }
 
         [StringLength(50)]
-        public string college_count { get; set; }
+        public string CollegeCount { get; set; }
 
         [StringLength(50)]
-        public string quantityCompare { get; set; }
+        public string QuantityCompare { get; set; }
 
         [StringLength(50)]
-        public string quantity { get; set; }
+        public string Quantity { get; set; }
 
         [StringLength(50)]
-        public string anyt { get; set; }
+        public string Anyt { get; set; }
 
         [StringLength(50)]
-        public string has { get; set; }
+        public string Has { get; set; }
 
-        public int? idPrqlist { get; set; }
+        public int? IdPrqlist { get; set; }
 
         [StringLength(50)]
         public string Value { get; set; }
 
-        public virtual prereq_listDB prereq_listDB { get; set; }
+        public virtual PrereqListDb PrereqListDb { get; set; }
     }
 }

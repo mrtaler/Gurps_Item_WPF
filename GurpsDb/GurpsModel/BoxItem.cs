@@ -9,7 +9,7 @@ namespace GurpsDb.GurpsModel
     [Table("BoxItem")]
     public partial class BoxItem
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         public int BoxName { get; set; }
 
@@ -19,6 +19,6 @@ namespace GurpsDb.GurpsModel
 
         public virtual AnyBoxNameType AnyBoxNameType { get; set; }
 
-        public virtual ITEM ITEM { get; set; }
+        public virtual Item Item { get; set; }
     }
 }

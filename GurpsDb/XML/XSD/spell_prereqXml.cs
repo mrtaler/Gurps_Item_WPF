@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace GurpsDb.XML.XSD
 {
-    public class spell_prereqXml
+    public class SpellPrereqXml
     {
-        public XElement name;
-        public XElement college;
-        public XElement college_count;
-        public XElement quantity;
-        public XElement any;
+        public XElement Name;
+        public XElement College;
+        public XElement CollegeCount;
+        public XElement Quantity;
+        public XElement Any;
 
-        public XAttribute has;
+        public XAttribute Has;
 
     }
 }

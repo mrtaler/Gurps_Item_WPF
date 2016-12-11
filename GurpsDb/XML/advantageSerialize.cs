@@ -9,11 +9,11 @@ using Item_WPF.MVVM.Serialize.Model;
 
 namespace Item_WPF.MVVM.Serialize.Model
 {
-    class advantageSerialize
+    class AdvantageSerialize
     {
         private item1Entities _context;
-        public ObservableCollection<AdvantageXML> AdvantageXMLCollection = new ObservableCollection<AdvantageXML>();
-        public advantageSerialize(string xmlString, string writePath)
+        public ObservableCollection<AdvantageXml> AdvantageXmlCollection = new ObservableCollection<AdvantageXml>();
+        public AdvantageSerialize(string xmlString, string writePath)
         {
             _context = new item1Entities();
             int contextAdded = 0;
@@ -23,120 +23,120 @@ namespace Item_WPF.MVVM.Serialize.Model
             foreach (XElement skillElement in xdoc.Element("advantage_list").Elements("advantage"))
             {
                 contextAdded += 1;
-                AdvantageXML advXML = new AdvantageXML();
-                advXML.numPP = contextAdded;
-                advXML.name = skillElement.Element("name");
-                advXML.type = skillElement.Element("type");
-                advXML.levels = skillElement.Element("levels");
-                advXML.points_per_level = skillElement.Element("points_per_level");
-                advXML.base_points = skillElement.Element("base_points");
-                advXML.reference = skillElement.Element("reference");
-                advXML.notes = skillElement.Element("notes");
-                advXML.version = skillElement.Attribute("version");
-                advXML.round_down = skillElement.Attribute("round_down");
-                advXML.cr = skillElement.Element("cr");
+                AdvantageXml advXml = new AdvantageXml();
+                advXml.NumPp = contextAdded;
+                advXml.Name = skillElement.Element("name");
+                advXml.Type = skillElement.Element("type");
+                advXml.Levels = skillElement.Element("levels");
+                advXml.PointsPerLevel = skillElement.Element("points_per_level");
+                advXml.BasePoints = skillElement.Element("base_points");
+                advXml.Reference = skillElement.Element("reference");
+                advXml.Notes = skillElement.Element("notes");
+                advXml.Version = skillElement.Attribute("version");
+                advXml.RoundDown = skillElement.Attribute("round_down");
+                advXml.Cr = skillElement.Element("cr");
 
                 #region categories
                 if (skillElement.Element("categories").Elements("category") != null)
                 {
-                    advXML.categories = new ObservableCollection<CategoriesXML>();
+                    advXml.Categories = new ObservableCollection<CategoriesXML>();
                     foreach (var itemCategory in skillElement.Elements("categories").Elements("category"))
                     {
                         CategoriesXML cat = new CategoriesXML(itemCategory);
-                        advXML.categories.Add(cat);
+                        advXml.Categories.Add(cat);
                     }
                 }
                 #endregion
                 #region prereq_list
                 if (skillElement.Element("prereq_list") != null)
                 {
-                    advXML.prereq_list = new ObservableCollection<Prereq_listXML>();
-                    foreach (XElement itemprereq_list in skillElement.Elements("prereq_list"))
+                    advXml.PrereqList = new ObservableCollection<PrereqListXml>();
+                    foreach (XElement itemprereqList in skillElement.Elements("prereq_list"))
                     {
-                        Prereq_listXML prl = new Prereq_listXML(itemprereq_list, skillElement);
-                        advXML.prereq_list.Add(prl);
+                        PrereqListXml prl = new PrereqListXml(itemprereqList, skillElement);
+                        advXml.PrereqList.Add(prl);
                     }
                 }
                 #endregion
                 #region attribute_bonus
                 if (skillElement.Element("attribute_bonus") != null)
                 {
-                    advXML.attribute_bonus = new ObservableCollection<Attribute_bonusXML>();
+                    advXml.AttributeBonus = new ObservableCollection<Attribute_bonusXML>();
                     foreach (XElement itemskillElement in skillElement.Elements("attribute_bonus"))
                     {
                         Attribute_bonusXML atrbns = new Attribute_bonusXML(itemskillElement);
-                        advXML.attribute_bonus.Add(atrbns);
+                        advXml.AttributeBonus.Add(atrbns);
                     }
                 }
                 #endregion
                 #region Weapon_bonusXML
                 if (skillElement.Element("weapon_bonus") != null)
                 {
-                    advXML.weapon_bonus = new ObservableCollection<Weapon_bonusXML>();
-                    foreach (var itemweapon_bonus in skillElement.Elements("weapon_bonus"))
+                    advXml.WeaponBonus = new ObservableCollection<Weapon_bonusXML>();
+                    foreach (var itemweaponBonus in skillElement.Elements("weapon_bonus"))
                     {
-                        Weapon_bonusXML wpnbns = new Weapon_bonusXML(itemweapon_bonus);
-                        advXML.weapon_bonus.Add(wpnbns);
+                        Weapon_bonusXML wpnbns = new Weapon_bonusXML(itemweaponBonus);
+                        advXml.WeaponBonus.Add(wpnbns);
                     }
                 }
                 #endregion
                 #region modifier
                 if (skillElement.Element("modifier") != null)
                 {
-                    advXML.modifier = new ObservableCollection<modifierXML>();
+                    advXml.Modifier = new ObservableCollection<modifierXML>();
                     foreach (var itemmodifier in skillElement.Elements("modifier"))
                     {
                         modifierXML mdf = new modifierXML(itemmodifier);
-                        advXML.modifier.Add(mdf);
+                        advXml.Modifier.Add(mdf);
                     }
                 }
                 #endregion
                 #region   skill_bonus
                 if (skillElement.Element("skill_bonus") != null)
                 {
-                    advXML.skill_bonus = new ObservableCollection<skill_bonusXML>();
+                    advXml.SkillBonus = new ObservableCollection<skill_bonusXML>();
                     foreach (var itemmodifier in skillElement.Elements("skill_bonus"))
-                    { advXML.skill_bonus.Add(new skill_bonusXML(itemmodifier)); }
+                    { advXml.SkillBonus.Add(new skill_bonusXML(itemmodifier)); }
                 }
                 #endregion
                 #region     spell_bonus
                 if (skillElement.Element("spell_bonus") != null)
                 {
-                    advXML.spell_bonus = new ObservableCollection<spell_bonusXML>();
+                    advXml.SpellBonus = new ObservableCollection<spell_bonusXML>();
                     foreach (var itemmodifier in skillElement.Elements("spell_bonus"))
-                    { advXML.spell_bonus.Add(new spell_bonusXML(itemmodifier)); }
+                    { advXml.SpellBonus.Add(new spell_bonusXML(itemmodifier)); }
                 }
                 #endregion
                 #region  dr_bonus
                 if (skillElement.Element("dr_bonus") != null)
                 {
-                    advXML.dr_bonus = new ObservableCollection<dr_bonusXml>();
+                    advXml.DrBonus = new ObservableCollection<dr_bonusXml>();
                     foreach (var itemmodifier in skillElement.Elements("dr_bonus"))
-                    { advXML.dr_bonus.Add(new dr_bonusXml(itemmodifier)); }
+                    { advXml.DrBonus.Add(new dr_bonusXml(itemmodifier)); }
                 }
                 #endregion
                 #region   melee_weapon;
                 if (skillElement.Element("melee_weapon") != null)
                 {
-                    advXML.melee_weapon = new ObservableCollection<melee_weaponXML>();
+                    advXml.MeleeWeapon = new ObservableCollection<melee_weaponXML>();
                     foreach (var itemmodifier in skillElement.Elements("melee_weapon"))
-                    { advXML.melee_weapon.Add(new melee_weaponXML(itemmodifier)); }
+                    { advXml.MeleeWeapon.Add(new melee_weaponXML(itemmodifier)); }
                 }
                 #endregion
                 #region      ranged_weapon;
                 if (skillElement.Element("ranged_weapon") != null)
                 {
-                    advXML.ranged_weapon = new ObservableCollection<ranged_weaponXML>();
+                    advXml.RangedWeapon = new ObservableCollection<ranged_weaponXML>();
                     foreach (var itemmodifier in skillElement.Elements("ranged_weapon"))
-                    { advXML.ranged_weapon.Add(new ranged_weaponXML(itemmodifier)); }
+                    { advXml.RangedWeapon.Add(new ranged_weaponXML(itemmodifier)); }
                 }
                 #endregion
                 #region        cost_reduction;
                 if (skillElement.Element("cost_reduction") != null)
                 {
-                    advXML.cost_reduction = new ObservableCollection<cost_reductionXML>();
+                    advXml.CostReduction = new ObservableCollection<cost_reductionXML>();
                     foreach (var itemmodifier in skillElement.Elements("cost_reduction"))
-                    { advXML.cost_reduction.Add(new cost_reductionXML(itemmodifier)); }
+                    { advXml.CostReduction.Add(new cost_reductionXML(itemmodifier)); }
                 }
                 #endregion
                 #region          cr;
@@ -148,15 +148,15 @@ namespace Item_WPF.MVVM.Serialize.Model
                 //}
                 #endregion
 
-                AdvantageXMLCollection.Add(advXML);
+                AdvantageXmlCollection.Add(advXml);
 
             }
             #endregion
-            foreach (AdvantageXML advXML in AdvantageXMLCollection)
+            foreach (AdvantageXml advXml in AdvantageXmlCollection)
             {
                 //   Advantage adv = 
 
-                _context.Advantages.Add(new Advantage(advXML));
+                _context.Advantages.Add(new Advantage(advXml));
             }
             _context.SaveChanges();
         }

@@ -7,20 +7,20 @@ namespace GurpsDb.GurpsModel
     using System.Data.Entity.Spatial;
 
     [Table("TL")]
-    public partial class TL
+    public partial class Tl
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TL()
+        public Tl()
         {
             GurpsSkill = new HashSet<GurpsSkill>();
-            ITEM = new HashSet<ITEM>();
+            Item = new HashSet<Item>();
         }
 
         [Key]
-        public int Id_Tl { get; set; }
+        public int IdTl { get; set; }
 
         [StringLength(50)]
-        public string name_TL { get; set; }
+        public string NameTl { get; set; }
 
         [StringLength(60)]
         public string Description { get; set; }
@@ -31,6 +31,6 @@ namespace GurpsDb.GurpsModel
         public virtual ICollection<GurpsSkill> GurpsSkill { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ITEM> ITEM { get; set; }
+        public virtual ICollection<Item> Item { get; set; }
     }
 }

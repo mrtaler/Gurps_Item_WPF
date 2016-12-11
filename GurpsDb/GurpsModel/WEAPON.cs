@@ -7,27 +7,27 @@ namespace GurpsDb.GurpsModel
     using System.Data.Entity.Spatial;
 
     [Table("WEAPON")]
-    public partial class WEAPON
+    public partial class Weapon
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public WEAPON()
+        public Weapon()
         {
             WeaponDamage = new HashSet<WeaponDamage>();
         }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int uiIndex { get; set; }
+        public int UiIndex { get; set; }
 
         [Required]
         [StringLength(80)]
-        public string szWeaponName { get; set; }
+        public string SzWeaponName { get; set; }
 
-        public int DefACC { get; set; }
+        public int DefAcc { get; set; }
 
-        public int? ACCAddin { get; set; }
+        public int? AccAddin { get; set; }
 
-        public decimal Half_Range { get; set; }
+        public decimal HalfRange { get; set; }
 
         public decimal FullRange { get; set; }
 
@@ -35,27 +35,27 @@ namespace GurpsDb.GurpsModel
 
         public decimal AWeight { get; set; }
 
-        public int ROF { get; set; }
+        public int Rof { get; set; }
 
-        public bool Full_auto { get; set; }
+        public bool FullAuto { get; set; }
 
-        public int? ROF_for_Sh { get; set; }
+        public int? RofForSh { get; set; }
 
         public int Shots { get; set; }
 
-        public int Time_For_reload { get; set; }
+        public int TimeForReload { get; set; }
 
-        public bool single_reload { get; set; }
+        public bool SingleReload { get; set; }
 
         public int Recoil { get; set; }
 
         public bool HeavyWeapon { get; set; }
 
-        public bool Add_in_Chamber { get; set; }
+        public bool AddInChamber { get; set; }
 
-        public bool CutOff_shots { get; set; }
+        public bool CutOffShots { get; set; }
 
-        public int CutOff_shotsCount { get; set; }
+        public int CutOffShotsCount { get; set; }
 
         public bool GrenadeLauncher { get; set; }
 
@@ -65,17 +65,17 @@ namespace GurpsDb.GurpsModel
 
         public bool Cannon { get; set; }
 
-        public bool SingleShot_RocketLauncher { get; set; }
+        public bool SingleShotRocketLauncher { get; set; }
 
         public bool RocketRifle { get; set; }
 
         public bool Bulkfolded { get; set; }
 
-        public bool HCROF { get; set; }
+        public bool Hcrof { get; set; }
 
-        public int HCROFValue { get; set; }
+        public int HcrofValue { get; set; }
 
-        public virtual ITEM ITEM { get; set; }
+        public virtual Item Item { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WeaponDamage> WeaponDamage { get; set; }

@@ -8,75 +8,75 @@ using System.Xml.Linq;
 
 namespace Item_WPF.MVVM.Serialize.Model
 {
-    public partial class Prereq_listXML
+    public partial class PrereqListXml
     {
         /// <summary>
         /// 1 coll prereq_list
         /// </summary>
-        public ObservableCollection<Prereq_listXML> Prereq_list;
+        public ObservableCollection<PrereqListXml> PrereqList;
         /// <summary>
         /// 2 coll skill_prereq
         /// </summary>
-        public ObservableCollection<skill_prereqXml> Skill_prereq;
+        public ObservableCollection<skill_prereqXml> SkillPrereq;
         /// <summary>
         /// 3 coll spell_prereq
         /// </summary>
-        public ObservableCollection<spell_prereqXml> Spell_prereq;
+        public ObservableCollection<spell_prereqXml> SpellPrereq;
         /// <summary>
         /// 4 coll attribute_prereq
         /// </summary>
-        public ObservableCollection<attribute_prereqXml> Attribute_prereq;
+        public ObservableCollection<attribute_prereqXml> AttributePrereq;
         /// <summary>
         /// 5 coll advantage_prereq
         /// </summary>
-        public ObservableCollection<advantage_prereqXml> Advantage_prereq;
+        public ObservableCollection<advantage_prereqXml> AdvantagePrereq;
         /// <summary>
         /// 6 coll contained_weight_prereq
         /// </summary>
-        public ObservableCollection<contained_weight_prereqXml> Contained_weight_prereq;
+        public ObservableCollection<contained_weight_prereqXml> ContainedWeightPrereq;
         /// <summary>
         /// 1_1 Element   when_tl
         /// </summary>
-        public XElement when_tl;
+        public XElement WhenTl;
         /// <summary>
         /// 1_2 Element college_count
         /// </summary>
-        public XElement college_count;
+        public XElement CollegeCount;
         /// <summary>
         /// 1_3  Attribute all
         /// </summary>
-        public XAttribute all;
-        public Prereq_listXML()
+        public XAttribute All;
+        public PrereqListXml()
         {
-            Prereq_list = new ObservableCollection<Prereq_listXML>();
-            Skill_prereq = new ObservableCollection<skill_prereqXml>();
-            Spell_prereq = new ObservableCollection<spell_prereqXml>();
-            Attribute_prereq = new ObservableCollection<attribute_prereqXml>();
-            Advantage_prereq = new ObservableCollection<advantage_prereqXml>();
-            Contained_weight_prereq = new ObservableCollection<contained_weight_prereqXml>();
+            PrereqList = new ObservableCollection<PrereqListXml>();
+            SkillPrereq = new ObservableCollection<skill_prereqXml>();
+            SpellPrereq = new ObservableCollection<spell_prereqXml>();
+            AttributePrereq = new ObservableCollection<attribute_prereqXml>();
+            AdvantagePrereq = new ObservableCollection<advantage_prereqXml>();
+            ContainedWeightPrereq = new ObservableCollection<contained_weight_prereqXml>();
         }
-        public Prereq_listXML(XElement itemprereq_list, XElement skillElement) :
+        public PrereqListXml(XElement itemprereqList, XElement skillElement) :
             this()
         {
-            FPrereq_list(itemprereq_list);                                  //1
-            FSkill_prereq(itemprereq_list.Elements("skill_prereq"));        //2
-            FSpell_prereq(itemprereq_list.Elements("spell_prereq"));            //3
-            FAttribute_prereq(itemprereq_list.Elements("attribute_prereq"));        //4
-            FAdvantage_prereq(itemprereq_list.Elements("advantage_prereq"));        //5
-            FContained_weight_prereq(itemprereq_list.Elements("contained_weight_prereq")); //6
+            FPrereq_list(itemprereqList);                                  //1
+            FSkill_prereq(itemprereqList.Elements("skill_prereq"));        //2
+            FSpell_prereq(itemprereqList.Elements("spell_prereq"));            //3
+            FAttribute_prereq(itemprereqList.Elements("attribute_prereq"));        //4
+            FAdvantage_prereq(itemprereqList.Elements("advantage_prereq"));        //5
+            FContained_weight_prereq(itemprereqList.Elements("contained_weight_prereq")); //6
 
-            when_tl = itemprereq_list.Element("when_tl");
-            college_count = itemprereq_list.Element("college_count");
-            all = itemprereq_list.Attribute("all");
+            WhenTl = itemprereqList.Element("when_tl");
+            CollegeCount = itemprereqList.Element("college_count");
+            All = itemprereqList.Attribute("all");
         }
 
         /// <summary>
         /// 2 Skill_prereq collections
         /// </summary>
-        /// <param name="itemprereq_list">Prereq_listXML</param>
-        public void FSkill_prereq(IEnumerable<XElement> itemprereq_list)
+        /// <param name="itemprereqList">Prereq_listXML</param>
+        public void FSkill_prereq(IEnumerable<XElement> itemprereqList)
         {
-            foreach (var items in itemprereq_list/*.Elements("skill_prereq")*/)
+            foreach (var items in itemprereqList/*.Elements("skill_prereq")*/)
             {
                 if (items.Elements("skill_prereq") != null)
                 {
@@ -87,7 +87,7 @@ namespace Item_WPF.MVVM.Serialize.Model
                     sclprq.level = items.Element("level");
                     sclprq.specialization = items.Element("specialization");
                     sclprq.has = items.Attribute("has");
-                    Skill_prereq.Add(sclprq);
+                    SkillPrereq.Add(sclprq);
                 }
             }
         }
@@ -95,10 +95,10 @@ namespace Item_WPF.MVVM.Serialize.Model
         /// <summary>
         ///  3 coll spell_prereq
         /// </summary>
-        /// <param name="itemprereq_list">Prereq_listXML</param>
-        public void FSpell_prereq(IEnumerable<XElement> itemprereq_list)
+        /// <param name="itemprereqList">Prereq_listXML</param>
+        public void FSpell_prereq(IEnumerable<XElement> itemprereqList)
         {
-            foreach (var item in itemprereq_list)
+            foreach (var item in itemprereqList)
             {
                 spell_prereqXml splrprq = new spell_prereqXml();
                 splrprq.name = item.Element("name");
@@ -107,16 +107,16 @@ namespace Item_WPF.MVVM.Serialize.Model
                 splrprq.quantity = item.Element("quantity");
                 splrprq.any = item.Element("any");
                 splrprq.has = item.Attribute("has");
-                Spell_prereq.Add(splrprq);
+                SpellPrereq.Add(splrprq);
             }
         }
         /// <summary>
         /// 4 coll attribute_prereq
         /// </summary>
-        /// <param name="itemprereq_list">Prereq_listXML</param>
-        public void FAttribute_prereq(IEnumerable<XElement> itemprereq_list)
+        /// <param name="itemprereqList">Prereq_listXML</param>
+        public void FAttribute_prereq(IEnumerable<XElement> itemprereqList)
         {
-            foreach (var item in itemprereq_list)
+            foreach (var item in itemprereqList)
             {
                 attribute_prereqXml atrprq = new attribute_prereqXml();
 
@@ -125,41 +125,41 @@ namespace Item_WPF.MVVM.Serialize.Model
                 atrprq.compare = item.Attribute("compare");
                 atrprq.combined_with = item.Attribute("combined_with");
                 atrprq.Value = item.Value.ToString();
-                Attribute_prereq.Add(atrprq);
+                AttributePrereq.Add(atrprq);
             }
 
         }
         /// <summary>
         ///  5 coll advantage_prereq
         /// </summary>
-        /// <param name="itemprereq_list">Prereq_listXML</param>
-        public void FAdvantage_prereq(IEnumerable<XElement> itemprereq_list)
+        /// <param name="itemprereqList">Prereq_listXML</param>
+        public void FAdvantage_prereq(IEnumerable<XElement> itemprereqList)
         {
 
-            foreach (var itemAdvantage_prereq in itemprereq_list)
+            foreach (var itemAdvantagePrereq in itemprereqList)
             {
                 advantage_prereqXml advprq = new advantage_prereqXml();
-                advprq.name = itemAdvantage_prereq.Element("name");
-                advprq.notes = itemAdvantage_prereq.Element("notes");
-                advprq.level = itemAdvantage_prereq.Element("level");
-                advprq.has = itemAdvantage_prereq.Attribute("has");
-                Advantage_prereq.Add(advprq);
+                advprq.name = itemAdvantagePrereq.Element("name");
+                advprq.notes = itemAdvantagePrereq.Element("notes");
+                advprq.level = itemAdvantagePrereq.Element("level");
+                advprq.has = itemAdvantagePrereq.Attribute("has");
+                AdvantagePrereq.Add(advprq);
             }
 
         }
         /// <summary>
         /// 6 coll contained_weight_prereq
         /// </summary>
-        /// <param name="itemprereq_list">Prereq_listXML</param>
-        public void FContained_weight_prereq(IEnumerable<XElement> itemprereq_list)
+        /// <param name="itemprereqList">Prereq_listXML</param>
+        public void FContained_weight_prereq(IEnumerable<XElement> itemprereqList)
         {
-            foreach (var item in itemprereq_list)
+            foreach (var item in itemprereqList)
             {
                 contained_weight_prereqXml cwprq = new contained_weight_prereqXml();
                 cwprq.has = item.Attribute("has");
                 cwprq.compare = item.Attribute("compare");
                 cwprq.Value = item.Value.ToString();
-                Contained_weight_prereq.Add(cwprq);
+                ContainedWeightPrereq.Add(cwprq);
             }
         }
     }

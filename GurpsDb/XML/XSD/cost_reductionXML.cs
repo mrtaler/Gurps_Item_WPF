@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace GurpsDb.XML.XSD
 {
-    public class cost_reductionXML
+    public class CostReductionXml
     {
-        public XElement attribute;
-        public XElement percentage;
-        public cost_reductionXML(XElement item)
+        public XElement Attribute;
+        public XElement Percentage;
+        public CostReductionXml(XElement item)
         {
-            attribute = item.Element("attribute");
-            percentage = item.Element("percentage");
+            Attribute = item.Element("attribute");
+            Percentage = item.Element("percentage");
         }
     }
 }

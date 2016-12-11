@@ -6,20 +6,20 @@ using Item_WPF.MVVM.Serialize.Model;
 
 namespace Item_WPF.ItemEntityModel
 {
-  public partial  class weapon_bonus
+  public partial  class WeaponBonus
     {
-      public weapon_bonus() { }
-      public weapon_bonus(Weapon_bonusXML itemWeapon_bonus)
+      public WeaponBonus() { }
+      public WeaponBonus(Weapon_bonusXML itemWeaponBonus)
       {
-          AmountPer_level = itemWeapon_bonus.Amount.Attribute("per_level").Value.ToString();
-          AmountValue = itemWeapon_bonus.Amount.Value.ToString();
+          AmountPer_level = itemWeaponBonus.Amount.Attribute("per_level").Value.ToString();
+          AmountValue = itemWeaponBonus.Amount.Value.ToString();
           
-          nameCompare = itemWeapon_bonus.name.Attribute("compare").Value.ToString();
-          name = itemWeapon_bonus.name.Value.ToString();
-          specializationCompare = itemWeapon_bonus.specialization.Attribute("compare").Value.ToString(); ;
-          specialization = itemWeapon_bonus.specialization.Value.ToString();
-          levelCompare = itemWeapon_bonus.level.Attribute("compare").Value.ToString(); ;
-          level = itemWeapon_bonus.level.Value.ToString();
+          nameCompare = itemWeaponBonus.name.Attribute("compare").Value.ToString();
+          name = itemWeaponBonus.name.Value.ToString();
+          specializationCompare = itemWeaponBonus.specialization.Attribute("compare").Value.ToString(); ;
+          specialization = itemWeaponBonus.specialization.Value.ToString();
+          levelCompare = itemWeaponBonus.level.Attribute("compare").Value.ToString(); ;
+          level = itemWeaponBonus.level.Value.ToString();
       }
     }
 }

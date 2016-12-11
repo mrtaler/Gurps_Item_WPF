@@ -6,22 +6,22 @@ namespace GurpsDb.GurpsModel
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class G_AvAttachClass
+    public partial class GAvAttachClass
     {
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int id_attach { get; set; }
+        public int IdAttach { get; set; }
 
         [Key]
         [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int id_GSubClass { get; set; }
+        public int IdGSubClass { get; set; }
 
-        public int? id_AttachClass { get; set; }
+        public int? IdAttachClass { get; set; }
 
         public virtual Attachment Attachment { get; set; }
 
-        public virtual G_SubAttachClass G_SubAttachClass { get; set; }
+        public virtual GSubAttachClass GSubAttachClass { get; set; }
     }
 }

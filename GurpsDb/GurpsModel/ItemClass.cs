@@ -15,11 +15,11 @@ namespace GurpsDb.GurpsModel
             ItemSubClass = new HashSet<ItemSubClass>();
         }
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(70)]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ItemSubClass> ItemSubClass { get; set; }

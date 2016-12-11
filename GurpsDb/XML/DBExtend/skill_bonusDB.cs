@@ -6,10 +6,10 @@ using Item_WPF.MVVM.Serialize.Model;
 
 namespace Item_WPF.ItemEntityModel
 {
-    public partial class skill_bonusDB
+    public partial class SkillBonusDb
     {
-        public skill_bonusDB() { }
-        public skill_bonusDB(skill_bonusXML item)
+        public SkillBonusDb() { }
+        public SkillBonusDb(skill_bonusXML item)
         {
             name = item.name.Value.ToString();
             namecompare = item.name.Attribute("compare") != null

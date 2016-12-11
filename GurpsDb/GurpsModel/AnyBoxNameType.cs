@@ -16,10 +16,10 @@ namespace GurpsDb.GurpsModel
             BoxItem = new HashSet<BoxItem>();
         }
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(50)]
-        public string nameOfBox { get; set; }
+        public string NameOfBox { get; set; }
 
         public int TypeOfBox { get; set; }
 
@@ -30,7 +30,7 @@ namespace GurpsDb.GurpsModel
 
         public virtual AnyBoxNameType AnyBoxNameType2 { get; set; }
 
-        public virtual Type_of_Box Type_of_Box { get; set; }
+        public virtual TypeOfBox Type_of_Box { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BoxItem> BoxItem { get; set; }

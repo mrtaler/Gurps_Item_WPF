@@ -6,10 +6,10 @@ using Item_WPF.MVVM.Serialize.Model;
 
 namespace Item_WPF.ItemEntityModel
 {
-    public partial class spell_bonus
+    public partial class SpellBonus
     {
-        public spell_bonus() { }
-        public spell_bonus(spell_bonusXML item)
+        public SpellBonus() { }
+        public SpellBonus(spell_bonusXML item)
         {
             spell_name = item.spell_name.Value.ToString();
             spell_nameC = item.spell_name.Attribute("compare") != null

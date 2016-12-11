@@ -7,29 +7,29 @@ namespace GurpsDb.GurpsModel
     using System.Data.Entity.Spatial;
 
     [Table("CharDB.skill_bonusDB")]
-    public partial class skill_bonusDB
+    public partial class SkillBonusDb
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(50)]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [StringLength(50)]
-        public string namecompare { get; set; }
+        public string Namecompare { get; set; }
 
         [StringLength(50)]
-        public string specialization { get; set; }
+        public string Specialization { get; set; }
 
         [StringLength(50)]
-        public string specializationcompare { get; set; }
+        public string Specializationcompare { get; set; }
 
         [StringLength(50)]
-        public string AmountPer_level { get; set; }
+        public string AmountPerLevel { get; set; }
 
         [StringLength(50)]
         public string AmountValue { get; set; }
 
-        public int? FK_Adv { get; set; }
+        public int? FkAdv { get; set; }
 
         public virtual Advantage Advantage { get; set; }
     }

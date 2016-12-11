@@ -7,36 +7,36 @@ namespace GurpsDb.GurpsModel
     using System.Data.Entity.Spatial;
 
     [Table("CharDB.advantage_prereq")]
-    public partial class advantage_prereq
+    public partial class AdvantagePrereq
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(50)]
-        public string nameCompare { get; set; }
+        public string NameCompare { get; set; }
 
         [StringLength(50)]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [StringLength(50)]
-        public string notesCompare { get; set; }
+        public string NotesCompare { get; set; }
 
         [StringLength(50)]
-        public string notes { get; set; }
+        public string Notes { get; set; }
 
         [StringLength(50)]
-        public string levelCompare { get; set; }
+        public string LevelCompare { get; set; }
 
         [StringLength(50)]
-        public string level { get; set; }
+        public string Level { get; set; }
 
         [StringLength(50)]
-        public string has { get; set; }
+        public string Has { get; set; }
 
-        public int? idPrqList { get; set; }
+        public int? IdPrqList { get; set; }
 
         [StringLength(50)]
         public string Value { get; set; }
 
-        public virtual prereq_listDB prereq_listDB { get; set; }
+        public virtual PrereqListDb PrereqListDb { get; set; }
     }
 }

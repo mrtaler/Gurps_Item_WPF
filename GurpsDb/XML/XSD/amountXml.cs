@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace GurpsDb.XML.XSD
 {
-    public class amountXml
+    public class AmountXml
     {
-        public XElement amount;
-        public amountXml() { }
-        public amountXml(XElement item)
+        public XElement Amount;
+        public AmountXml() { }
+        public AmountXml(XElement item)
         {
-            amount = item;
+            Amount = item;
         }
     }
 }

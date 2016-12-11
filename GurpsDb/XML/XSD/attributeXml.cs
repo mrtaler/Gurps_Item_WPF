@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace GurpsDb.XML.XSD
 {
-    public class attributeXml
+    public class AttributeXml
     {
-        public XElement attribute;
+        public XElement Attribute;
     }
 }

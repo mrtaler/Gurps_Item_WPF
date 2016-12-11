@@ -31,7 +31,7 @@ namespace Item_WPF.MVVM.GurpsSkill_m
             GurpsSkill SelectGurpsSkill = (parameter as ItemEntityModel.GurpsSkill);
             int vx = SelectGurpsSkill.id;
             //int vx = System.Convert.ToInt32(parameter);
-            prereq_listDB ng = new prereq_listDB();
+            PrereqListDb ng = new PrereqListDb();
 
             SelectedGurps = _context.GurpsSkills.First(p => p.id == vx);
             // SelectedGurpsForWork = (parameter as Item_WPF.GurpsSkill);

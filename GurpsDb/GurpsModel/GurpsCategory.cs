@@ -16,7 +16,7 @@ namespace GurpsDb.GurpsModel
             GurpsSkill = new HashSet<GurpsSkill>();
         }
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(50)]
         public string NamelCategory { get; set; }

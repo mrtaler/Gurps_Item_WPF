@@ -114,9 +114,9 @@ namespace Item_WPF.MVVM.Char.AddSkilltoChar
         private void AddSkill(object param)
         {
             int gsid = Convert.ToInt32(param);
-            if (CharGurpsSkillCollection.FirstOrDefault(p => p.id == gsid) == null)
+            if (CharGurpsSkillCollection.FirstOrDefault(p => p.Id == gsid) == null)
             {
-                GurpsDb.GurpsModel.CharSkill charSkill = new GurpsDb.GurpsModel.CharSkill(AllGurpsSkillCollection.First(p => p.id == gsid));
+                GurpsDb.GurpsModel.CharSkill charSkill = new GurpsDb.GurpsModel.CharSkill(AllGurpsSkillCollection.First(p => p.Id == gsid));
                 Character.CharSkillCollection.Add(charSkill);
                 NotifyPropertyChanged("CharGurpsSkillCollection");
                 NotifyPropertyChanged("CharSkillCollection");

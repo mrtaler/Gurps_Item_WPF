@@ -7,26 +7,26 @@ namespace GurpsDb.GurpsModel
     using System.Data.Entity.Spatial;
 
     [Table("ATTACHMENTSLOT")]
-    public partial class ATTACHMENTSLOT
+    public partial class Attachmentslot
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ATTACHMENTSLOT()
+        public Attachmentslot()
         {
             Attachmentmount = new HashSet<Attachmentmount>();
-            G_SubAttachClass = new HashSet<G_SubAttachClass>();
+            GSubAttachClass = new HashSet<GSubAttachClass>();
         }
 
         [Key]
-        public int uiSlotIndex { get; set; }
+        public int UiSlotIndex { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string szSlotName { get; set; }
+        public string SzSlotName { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Attachmentmount> Attachmentmount { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<G_SubAttachClass> G_SubAttachClass { get; set; }
+        public virtual ICollection<GSubAttachClass> GSubAttachClass { get; set; }
     }
 }

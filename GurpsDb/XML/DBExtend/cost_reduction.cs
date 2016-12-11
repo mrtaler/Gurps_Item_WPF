@@ -6,10 +6,10 @@ using Item_WPF.MVVM.Serialize.Model;
 
 namespace Item_WPF.ItemEntityModel
 {
-    public partial class cost_reduction
+    public partial class CostReduction
     {
-        public cost_reduction() { }
-        public cost_reduction(cost_reductionXML item)
+        public CostReduction() { }
+        public CostReduction(cost_reductionXML item)
         {
             attribute = item.attribute.Value.ToString();
             percentage = item.percentage.Value.ToString();

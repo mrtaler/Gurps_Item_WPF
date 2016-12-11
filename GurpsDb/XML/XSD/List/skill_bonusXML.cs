@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace GurpsDb.XML.XSD.List
 {
-    public class skill_bonusXML
+    public class SkillBonusXml
     {
-        public XElement amount;
-        public XElement name;
-        public XElement specialization;
+        public XElement Amount;
+        public XElement Name;
+        public XElement Specialization;
 
-        public skill_bonusXML(XElement item)
+        public SkillBonusXml(XElement item)
         {
-            name = item.Element("name");
-            specialization = item.Element("specialization");
-            amount = item.Element("amount");
+            Name = item.Element("name");
+            Specialization = item.Element("specialization");
+            Amount = item.Element("amount");
         }
     }
 }

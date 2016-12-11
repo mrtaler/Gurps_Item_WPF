@@ -6,29 +6,29 @@ using System.Threading.Tasks;
 
 namespace GurpsDb.XML.XSD.List
 {
-    public class melee_weaponXML
+    public class MeleeWeaponXml
     {
-        public ObservableCollection<DefaultXML> Default;
-        public XElement damage;
-        public XElement strength;
-        public XElement usage;
-        public XElement reach;
-        public XElement parry;
-        public XElement block;
-        public melee_weaponXML(XElement item)
+        public ObservableCollection<DefaultXml> Default;
+        public XElement Damage;
+        public XElement Strength;
+        public XElement Usage;
+        public XElement Reach;
+        public XElement Parry;
+        public XElement Block;
+        public MeleeWeaponXml(XElement item)
         {
-            damage = item.Element("damage");
-            strength = item.Element("strength");
-            usage = item.Element("usage");
-            reach = item.Element("reach");
-            parry = item.Element("parry");
-            block = item.Element("block");
+            Damage = item.Element("damage");
+            Strength = item.Element("strength");
+            Usage = item.Element("usage");
+            Reach = item.Element("reach");
+            Parry = item.Element("parry");
+            Block = item.Element("block");
             if (item.Element("default") != null)
             {
-                Default = new ObservableCollection<DefaultXML>();
+                Default = new ObservableCollection<DefaultXml>();
                 foreach (var itemdefault in item.Elements("default"))
                 {
-                    Default.Add(new DefaultXML(itemdefault));
+                    Default.Add(new DefaultXml(itemdefault));
                 }
             }
 

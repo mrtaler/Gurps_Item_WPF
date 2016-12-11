@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace GurpsDb.XML.XSD.List
 {
-    public class Weapon_bonusXML
+    public class WeaponBonusXml
     {
         public XElement Amount;
-        public XElement name;
-        public XElement specialization;
-        public XElement level;
-        public Weapon_bonusXML(XElement itemWeapon_bonusXML)
+        public XElement Name;
+        public XElement Specialization;
+        public XElement Level;
+        public WeaponBonusXml(XElement itemWeaponBonusXml)
         {
-            Amount = itemWeapon_bonusXML.Element("amount");
-            name = itemWeapon_bonusXML.Element("name");
-            specialization = itemWeapon_bonusXML.Element("specialization");
-            level = itemWeapon_bonusXML.Element("level");
+            Amount = itemWeaponBonusXml.Element("amount");
+            Name = itemWeaponBonusXml.Element("name");
+            Specialization = itemWeaponBonusXml.Element("specialization");
+            Level = itemWeaponBonusXml.Element("level");
         }
     }
 }

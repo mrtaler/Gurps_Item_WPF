@@ -12,10 +12,10 @@ namespace GurpsDb.GurpsModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ItemSubClass()
         {
-            ITEM = new HashSet<ITEM>();
+            Item = new HashSet<Item>();
         }
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(50)]
         public string NameSub { get; set; }
@@ -25,12 +25,12 @@ namespace GurpsDb.GurpsModel
         [StringLength(50)]
         public string Type { get; set; }
 
-        public int? idGurpsSubClass { get; set; }
+        public int? IdGurpsSubClass { get; set; }
 
         public virtual GurpsClass GurpsClass { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ITEM> ITEM { get; set; }
+        public virtual ICollection<Item> Item { get; set; }
 
         public virtual ItemClass ItemClass { get; set; }
     }

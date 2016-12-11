@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace Item_WPF.MVVM.Serialize.Model
 {
-    public partial class Prereq_listXML
+    public partial class PrereqListXml
     {
         //public void FSingleSkill_prereq( XElement itemskill_prereq, skill_prereqXml sclprq)
         //{

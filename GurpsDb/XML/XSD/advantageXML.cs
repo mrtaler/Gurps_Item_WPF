@@ -8,63 +8,63 @@ using System.Xml.Linq;
 
 namespace Item_WPF.MVVM.Serialize.Model
 {
-    public partial class AdvantageXML
+    public partial class AdvantageXml
     {
-        public int numPP;
+        public int NumPp;
         /**/
-        public ObservableCollection<CategoriesXML> categories;//y
+        public ObservableCollection<CategoriesXML> Categories;//y
                                                               /**/
-        public ObservableCollection<Prereq_listXML> prereq_list; //y
-        public ObservableCollection<dr_bonusXml> dr_bonus;
+        public ObservableCollection<PrereqListXml> PrereqList; //y
+        public ObservableCollection<dr_bonusXml> DrBonus;
         /**/
-        public ObservableCollection<Attribute_bonusXML> attribute_bonus;//y
-        public ObservableCollection<skill_bonusXML> skill_bonus;
-        public ObservableCollection<spell_bonusXML> spell_bonus;
+        public ObservableCollection<Attribute_bonusXML> AttributeBonus;//y
+        public ObservableCollection<skill_bonusXML> SkillBonus;
+        public ObservableCollection<spell_bonusXML> SpellBonus;
         /**/
-        public ObservableCollection<Weapon_bonusXML> weapon_bonus; //y
-        public ObservableCollection<melee_weaponXML> melee_weapon;
-        public ObservableCollection<ranged_weaponXML> ranged_weapon;
-        public ObservableCollection<cost_reductionXML> cost_reduction;
+        public ObservableCollection<Weapon_bonusXML> WeaponBonus; //y
+        public ObservableCollection<melee_weaponXML> MeleeWeapon;
+        public ObservableCollection<ranged_weaponXML> RangedWeapon;
+        public ObservableCollection<cost_reductionXML> CostReduction;
         //  public ObservableCollection<crXML> cr;
-        public XElement cr;
+        public XElement Cr;
         /**/
-        public ObservableCollection<modifierXML> modifier;//y
+        public ObservableCollection<modifierXML> Modifier;//y
 
         /// <summary>
         /// 1
         /// </summary>
-        public XElement name;
+        public XElement Name;
         /// <summary>
         /// 2
         /// </summary>
-        public XElement type;
+        public XElement Type;
         /// <summary>
         /// 3
         /// </summary>
-        public XElement levels;
+        public XElement Levels;
         /// <summary>
         /// 4
         /// </summary>
-        public XElement points_per_level;
+        public XElement PointsPerLevel;
         /// <summary>
         /// 5
         /// </summary>
-        public XElement base_points;
+        public XElement BasePoints;
         /// <summary>
         /// 6
         /// </summary>
-        public XElement reference;
+        public XElement Reference;
         /// <summary>
         /// 7
         /// </summary>
-        public XElement notes;
+        public XElement Notes;
         /// <summary>
         /// 8
         /// </summary>
-        public XAttribute version;
+        public XAttribute Version;
         /// <summary>
         /// 9
         /// </summary>
-        public XAttribute round_down;
+        public XAttribute RoundDown;
     }
 }

@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace GurpsDb.XML.XSD.List
 {
-    public class spell_bonusXML
+    public class SpellBonusXml
     {
-        public XElement amount;
-        public XElement spell_name;
-        public XElement college_name;
-        public XAttribute all_colleges;
-        public spell_bonusXML(XElement item)
+        public XElement Amount;
+        public XElement SpellName;
+        public XElement CollegeName;
+        public XAttribute AllColleges;
+        public SpellBonusXml(XElement item)
         {
-            spell_name = item.Element("spell_name");
-            college_name = item.Element("college_name");
-            all_colleges = item.Attribute("all_colleges");
-            amount = item.Element("amount");
+            SpellName = item.Element("spell_name");
+            CollegeName = item.Element("college_name");
+            AllColleges = item.Attribute("all_colleges");
+            Amount = item.Element("amount");
         }
     }
 }

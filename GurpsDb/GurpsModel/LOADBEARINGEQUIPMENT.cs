@@ -7,7 +7,7 @@ namespace GurpsDb.GurpsModel
     using System.Data.Entity.Spatial;
 
     [Table("Loadbearingequipment")]
-    public partial class LOADBEARINGEQUIPMENT
+    public partial class Loadbearingequipment
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -25,28 +25,28 @@ namespace GurpsDb.GurpsModel
 
         public int LbePocketIndex1 { get; set; }
 
-        public int lbePocketIndex2 { get; set; }
+        public int LbePocketIndex2 { get; set; }
 
-        public int lbePocketIndex3 { get; set; }
+        public int LbePocketIndex3 { get; set; }
 
-        public int lbePocketIndex4 { get; set; }
+        public int LbePocketIndex4 { get; set; }
 
-        public int lbePocketIndex5 { get; set; }
+        public int LbePocketIndex5 { get; set; }
 
-        public int lbePocketIndex6 { get; set; }
+        public int LbePocketIndex6 { get; set; }
 
-        public int lbePocketIndex7 { get; set; }
+        public int LbePocketIndex7 { get; set; }
 
-        public int lbePocketIndex8 { get; set; }
+        public int LbePocketIndex8 { get; set; }
 
-        public int lbePocketIndex9 { get; set; }
+        public int LbePocketIndex9 { get; set; }
 
-        public int lbePocketIndex10 { get; set; }
+        public int LbePocketIndex10 { get; set; }
 
-        public int lbePocketIndex11 { get; set; }
+        public int LbePocketIndex11 { get; set; }
 
-        public int lbePocketIndex12 { get; set; }
+        public int LbePocketIndex12 { get; set; }
 
-        public virtual ITEM Item { get; set; }
+        public virtual Item Item { get; set; }
     }
 }

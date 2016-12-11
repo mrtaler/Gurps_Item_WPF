@@ -15,16 +15,16 @@ namespace GurpsDb.GurpsModel
             GurpsSkill = new HashSet<GurpsSkill>();
         }
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(50)]
         public string Name { get; set; }
 
         [StringLength(50)]
-        public string cost { get; set; }
+        public string Cost { get; set; }
 
         [StringLength(50)]
-        public string baseCost { get; set; }
+        public string BaseCost { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GurpsSkill> GurpsSkill { get; set; }

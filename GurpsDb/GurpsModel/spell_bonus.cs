@@ -7,32 +7,32 @@ namespace GurpsDb.GurpsModel
     using System.Data.Entity.Spatial;
 
     [Table("CharDB.spell_bonus")]
-    public partial class spell_bonus
+    public partial class SpellBonus
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(50)]
-        public string spell_name { get; set; }
+        public string SpellName { get; set; }
 
         [StringLength(50)]
-        public string spell_nameC { get; set; }
+        public string SpellNameC { get; set; }
 
         [StringLength(50)]
-        public string college_name { get; set; }
+        public string CollegeName { get; set; }
 
         [StringLength(50)]
-        public string college_nameC { get; set; }
+        public string CollegeNameC { get; set; }
 
         [StringLength(50)]
-        public string all_colleges { get; set; }
+        public string AllColleges { get; set; }
 
         [StringLength(50)]
-        public string amountper_level { get; set; }
+        public string AmountperLevel { get; set; }
 
         [StringLength(50)]
-        public string amountValue { get; set; }
+        public string AmountValue { get; set; }
 
-        public int? id_Adv { get; set; }
+        public int? IdAdv { get; set; }
 
         public virtual Advantage Advantage { get; set; }
     }

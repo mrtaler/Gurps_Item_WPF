@@ -16,17 +16,17 @@ namespace GurpsDb.GurpsModel
             AvailableAttachSlot = new HashSet<AvailableAttachSlot>();
         }
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(50)]
-        public string name { get; set; }
+        public string Name { get; set; }
 
-        public int idAttacClass { get; set; }
+        public int IdAttacClass { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Attachment> Attachment { get; set; }
 
-        public virtual ATTACHMENTSLOT ATTACHMENTSLOT { get; set; }
+        public virtual Attachmentslot Attachmentslot { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AvailableAttachSlot> AvailableAttachSlot { get; set; }

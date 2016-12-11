@@ -7,27 +7,27 @@ namespace GurpsDb.GurpsModel
     using System.Data.Entity.Spatial;
 
     [Table("CharDB.attribute_prereq")]
-    public partial class attribute_prereq
+    public partial class AttributePrereq
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(50)]
-        public string has { get; set; }
+        public string Has { get; set; }
 
         [StringLength(50)]
-        public string which { get; set; }
+        public string Which { get; set; }
 
         [StringLength(50)]
-        public string compare { get; set; }
+        public string Compare { get; set; }
 
         [StringLength(50)]
-        public string combined_with { get; set; }
+        public string CombinedWith { get; set; }
 
-        public int? idPrqList { get; set; }
+        public int? IdPrqList { get; set; }
 
         [StringLength(50)]
         public string Value { get; set; }
 
-        public virtual prereq_listDB prereq_listDB { get; set; }
+        public virtual PrereqListDb PrereqListDb { get; set; }
     }
 }

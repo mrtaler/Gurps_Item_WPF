@@ -7,20 +7,20 @@ namespace GurpsDb.GurpsModel
     using System.Data.Entity.Spatial;
 
     [Table("CharDB.dr_bonusDB")]
-    public partial class dr_bonusDB
+    public partial class DrBonusDb
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(50)]
-        public string location { get; set; }
+        public string Location { get; set; }
 
         [StringLength(50)]
-        public string per_level { get; set; }
+        public string PerLevel { get; set; }
 
         [StringLength(50)]
         public string Value { get; set; }
 
-        public int? idAdv { get; set; }
+        public int? IdAdv { get; set; }
 
         public virtual Advantage Advantage { get; set; }
     }

@@ -9,7 +9,7 @@ namespace GurpsDb.GurpsModel
 {
     public partial class CharacterDb
     {
-        private int HumanStat = 10;
+        private int _humanStat = 10;
 
         // The Points properties contains the number of points to be
         // added/subtracted from the base value of the stat, thus acting
@@ -20,19 +20,19 @@ namespace GurpsDb.GurpsModel
         // These read-only properties returns the effective value of the stats.
         #region MainAttrib
         #region Strength
-        public int Strength => HumanStat + StrengthPoints;
+        public int Strength => _humanStat + StrengthPoints;
         public int StrengthCost => BasicCost.StCost * StrengthPoints;
         #endregion
         #region Dexterity
-        public int Dexterity => HumanStat + DexterityPoints;
+        public int Dexterity => _humanStat + DexterityPoints;
         public int DexterityCost => BasicCost.DxCost * DexterityPoints;
         #endregion
         #region Intelligence
-        public int Intelligence => HumanStat + IntelligencePoints;
+        public int Intelligence => _humanStat + IntelligencePoints;
         public int IntelligenceCost => BasicCost.IqCost * IntelligencePoints;
         #endregion
         #region Health
-        public int Health => HumanStat + HealthPoints;
+        public int Health => _humanStat + HealthPoints;
         public int HealtCost => BasicCost.HtCost * HealthPoints;
         #endregion
         public int CharacterPointsPrimarySkill => StrengthCost + IntelligenceCost + DexterityCost + HealtCost;

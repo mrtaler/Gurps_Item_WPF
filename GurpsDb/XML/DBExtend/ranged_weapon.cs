@@ -6,10 +6,10 @@ using Item_WPF.MVVM.Serialize.Model;
 
 namespace Item_WPF.ItemEntityModel
 {
-    public partial class ranged_weapon
+    public partial class RangedWeapon
     {
         //     public ranged_weapon() { }
-        public ranged_weapon(ranged_weaponXML item)
+        public RangedWeapon(ranged_weaponXML item)
         {
             damage = item.damage.Value.ToString();
             strength = item.strength.Value.ToString();

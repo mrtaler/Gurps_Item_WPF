@@ -12,27 +12,27 @@ namespace GurpsDb.GurpsModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Caliber()
         {
-            ITEM = new HashSet<ITEM>();
+            Item = new HashSet<Item>();
         }
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(255)]
-        public string Caliber_name { get; set; }
+        public string CaliberName { get; set; }
 
         [StringLength(255)]
-        public string alt_caliber_name { get; set; }
+        public string AltCaliberName { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string Class_of_Caliber { get; set; }
+        public string ClassOfCaliber { get; set; }
 
-        public decimal? Dim_of_bullet_SI { get; set; }
+        public decimal? DimOfBulletSi { get; set; }
 
-        public decimal? Dim_of_bullet_US { get; set; }
+        public decimal? DimOfBulletUs { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ITEM> ITEM { get; set; }
+        public virtual ICollection<Item> Item { get; set; }
     }
 }

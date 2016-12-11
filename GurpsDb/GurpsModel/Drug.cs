@@ -9,13 +9,13 @@ namespace GurpsDb.GurpsModel
     [Table("Drug")]
     public partial class Drug
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(255)]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         public int? IdDrugType { get; set; }
 
-        public virtual ITEM ITEM { get; set; }
+        public virtual Item Item { get; set; }
     }
 }

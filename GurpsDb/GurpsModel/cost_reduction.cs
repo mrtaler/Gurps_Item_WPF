@@ -7,17 +7,17 @@ namespace GurpsDb.GurpsModel
     using System.Data.Entity.Spatial;
 
     [Table("CharDB.cost_reduction")]
-    public partial class cost_reduction
+    public partial class CostReduction
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(50)]
-        public string attribute { get; set; }
+        public string Attribute { get; set; }
 
         [StringLength(50)]
-        public string percentage { get; set; }
+        public string Percentage { get; set; }
 
-        public int? idAdv { get; set; }
+        public int? IdAdv { get; set; }
 
         public virtual Advantage Advantage { get; set; }
     }

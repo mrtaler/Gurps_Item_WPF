@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace GurpsDb.XML.XSD.List
 {
-    public class dr_bonusXml
+    public class DrBonusXml
     {
-        public XElement amount;
-        public XElement location;
-        public dr_bonusXml(XElement item)
+        public XElement Amount;
+        public XElement Location;
+        public DrBonusXml(XElement item)
         {
-            location = item.Element("location");
-            amount = item.Element("amount");
+            Location = item.Element("location");
+            Amount = item.Element("amount");
         }
     }
 }

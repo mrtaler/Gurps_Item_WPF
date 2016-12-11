@@ -7,10 +7,10 @@ namespace GurpsDb.GurpsModel
     using System.Data.Entity.Spatial;
 
     [Table("Item")]
-    public partial class ITEM
+    public partial class Item
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ITEM()
+        public Item()
         {
             InventoryOfChar = new HashSet<InventoryOfChar>();
             AvailableAttachSlot = new HashSet<AvailableAttachSlot>();
@@ -18,31 +18,31 @@ namespace GurpsDb.GurpsModel
         }
 
         [Key]
-        public int uiIndex { get; set; }
+        public int UiIndex { get; set; }
 
         [Required]
         [StringLength(80)]
-        public string szItemName { get; set; }
+        public string SzItemName { get; set; }
 
         [StringLength(80)]
-        public string szLongItemName { get; set; }
+        public string SzLongItemName { get; set; }
 
-        public string szItemDesc { get; set; }
+        public string SzItemDesc { get; set; }
 
-        public int usItemClass { get; set; }
+        public int UsItemClass { get; set; }
 
-        public int ubClassIndex { get; set; }
+        public int UbClassIndex { get; set; }
 
-        public decimal ubWeight { get; set; }
+        public decimal UbWeight { get; set; }
 
         [Required]
         [StringLength(80)]
         public string ItemSize { get; set; }
 
         [Column(TypeName = "money")]
-        public decimal usPrice { get; set; }
+        public decimal UsPrice { get; set; }
 
-        public int? ubCalibre { get; set; }
+        public int? UbCalibre { get; set; }
 
         public bool Damageable { get; set; }
 
@@ -56,9 +56,9 @@ namespace GurpsDb.GurpsModel
 
         public bool Electronic { get; set; }
 
-        public bool HT { get; set; }
+        public bool Ht { get; set; }
 
-        public bool UT { get; set; }
+        public bool Ut { get; set; }
 
         public bool RemoteTrigger { get; set; }
 
@@ -94,7 +94,7 @@ namespace GurpsDb.GurpsModel
 
         public bool MetalDetector { get; set; }
 
-        public bool FingerPrintID { get; set; }
+        public bool FingerPrintId { get; set; }
 
         public bool TripWireActivation { get; set; }
 
@@ -102,9 +102,9 @@ namespace GurpsDb.GurpsModel
 
         public bool Mount { get; set; }
 
-        public int TL { get; set; }
+        public int Tl { get; set; }
 
-        public int LC { get; set; }
+        public int Lc { get; set; }
 
         [StringLength(4)]
         public string SizeBatteries { get; set; }
@@ -121,30 +121,30 @@ namespace GurpsDb.GurpsModel
 
         public int DamageChance { get; set; }
 
-        public int clothestype { get; set; }
+        public int Clothestype { get; set; }
 
         public int DrugType { get; set; }
 
-        public byte[] Item_Image { get; set; }
+        public byte[] ItemImage { get; set; }
 
-        public int minST { get; set; }
+        public int MinSt { get; set; }
 
         public string Link { get; set; }
 
-        public bool used { get; set; }
+        public bool Used { get; set; }
 
-        public DateTime? dt { get; set; }
+        public DateTime? Dt { get; set; }
 
-        public int Count_of_Bat { get; set; }
+        public int CountOfBat { get; set; }
 
         [Required]
         [StringLength(15)]
-        public string Works_on_Bat { get; set; }
+        public string WorksOnBat { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<InventoryOfChar> InventoryOfChar { get; set; }
 
-        public virtual ARMOUR ARMOUR { get; set; }
+        public virtual Armour Armour { get; set; }
 
         public virtual Attachment Attachment { get; set; }
 
@@ -160,18 +160,18 @@ namespace GurpsDb.GurpsModel
 
         public virtual Drug Drug { get; set; }
 
-        public virtual EXPLOSIVE EXPLOSIVE { get; set; }
+        public virtual Explosive Explosive { get; set; }
 
-        public virtual FOOD FOOD { get; set; }
+        public virtual Food Food { get; set; }
 
         public virtual ItemSubClass ItemSubClass { get; set; }
 
-        public virtual LC LC1 { get; set; }
+        public virtual Lc Lc1 { get; set; }
 
-        public virtual TL TL1 { get; set; }
+        public virtual Tl Tl1 { get; set; }
 
-        public virtual LOADBEARINGEQUIPMENT LOADBEARINGEQUIPMENT { get; set; }
+        public virtual Loadbearingequipment Loadbearingequipment { get; set; }
 
-        public virtual WEAPON WEAPON { get; set; }
+        public virtual Weapon Weapon { get; set; }
     }
 }

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace GurpsDb.XML.XSD.List
 {
-    public partial class CategoriesXML
+    public partial class CategoriesXml
     {
-        public XElement category;
-        public CategoriesXML() { }
-        public CategoriesXML(XElement itemCategoryx)
+        public XElement Category;
+        public CategoriesXml() { }
+        public CategoriesXml(XElement itemCategoryx)
         {
-            category = itemCategoryx;
+            Category = itemCategoryx;
         }
     }
 }

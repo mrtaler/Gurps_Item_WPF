@@ -9,11 +9,11 @@ namespace GurpsDb.GurpsModel
     [Table("Battery")]
     public partial class Battery
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [StringLength(50)]
         public string SmolName { get; set; }
@@ -22,8 +22,8 @@ namespace GurpsDb.GurpsModel
         public string Description { get; set; }
 
         [Column(TypeName = "money")]
-        public decimal? CPP { get; set; }
+        public decimal? Cpp { get; set; }
 
-        public decimal? WPP { get; set; }
+        public decimal? Wpp { get; set; }
     }
 }

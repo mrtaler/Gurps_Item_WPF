@@ -9,16 +9,16 @@ namespace GurpsDb.GurpsModel
     [Table("AvailableAttachSlot")]
     public partial class AvailableAttachSlot
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public int rItemId { get; set; }
+        public int RItemId { get; set; }
 
-        public int rATTACHMENTSLOT { get; set; }
+        public int RAttachmentslot { get; set; }
 
-        public int rAttachmentmount { get; set; }
+        public int RAttachmentmount { get; set; }
 
         public virtual Attachmentmount Attachmentmount { get; set; }
 
-        public virtual ITEM ITEM { get; set; }
+        public virtual Item Item { get; set; }
     }
 }

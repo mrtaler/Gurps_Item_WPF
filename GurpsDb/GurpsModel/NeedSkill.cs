@@ -11,9 +11,9 @@ namespace GurpsDb.GurpsModel
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int idSkillIn { get; set; }
+        public int IdSkillIn { get; set; }
 
-        public int? idSkillOut { get; set; }
+        public int? IdSkillOut { get; set; }
 
         [StringLength(50)]
         public string Needed { get; set; }

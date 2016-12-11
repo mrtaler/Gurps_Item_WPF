@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace GurpsDb.XML.XSD
 {
-    public class crXML
+    public class CrXml
     {
-        public XAttribute adj;
-        public crXML(XElement item)
+        public XAttribute Adj;
+        public CrXml(XElement item)
         {
-            adj = item.Attribute("adj");
+            Adj = item.Attribute("adj");
         }
     }
 }

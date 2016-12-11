@@ -9,16 +9,16 @@ namespace GurpsDb.GurpsModel
     [Table("CharDB.DefaultSkill")]
     public partial class DefaultSkill
     {
-        public int idSkillIn { get; set; }
+        public int IdSkillIn { get; set; }
 
-        public int? idSkillOut { get; set; }
+        public int? IdSkillOut { get; set; }
 
         public int? Modifier { get; set; }
 
         [StringLength(10)]
-        public string type { get; set; }
+        public string Type { get; set; }
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
         public virtual GurpsSkill GurpsSkill { get; set; }
 

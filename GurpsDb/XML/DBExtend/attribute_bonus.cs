@@ -6,10 +6,10 @@ using Item_WPF.MVVM.Serialize.Model;
 
 namespace Item_WPF.ItemEntityModel
 {
-    public partial class attribute_bonus
+    public partial class AttributeBonus
     {
-        public attribute_bonus() { }
-        public attribute_bonus(Attribute_bonusXML item)
+        public AttributeBonus() { }
+        public AttributeBonus(Attribute_bonusXML item)
         {
             AttributeLimitation = item.Attribute.Attribute("limitation") != null
                                         ? item.Attribute.Attribute("limitation").Value.ToString() : null;

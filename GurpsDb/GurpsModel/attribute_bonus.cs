@@ -7,13 +7,13 @@ namespace GurpsDb.GurpsModel
     using System.Data.Entity.Spatial;
 
     [Table("CharDB.attribute_bonus")]
-    public partial class attribute_bonus
+    public partial class AttributeBonus
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public int? FK_Skill { get; set; }
+        public int? FkSkill { get; set; }
 
-        public int? FK_Amount { get; set; }
+        public int? FkAmount { get; set; }
 
         [StringLength(50)]
         public string AttributeLimitation { get; set; }
@@ -22,12 +22,12 @@ namespace GurpsDb.GurpsModel
         public string AttributeValue { get; set; }
 
         [StringLength(50)]
-        public string AmountPer_level { get; set; }
+        public string AmountPerLevel { get; set; }
 
         [StringLength(50)]
         public string AmountValue { get; set; }
 
-        public int? FK_Advantage { get; set; }
+        public int? FkAdvantage { get; set; }
 
         public virtual Advantage Advantage { get; set; }
 

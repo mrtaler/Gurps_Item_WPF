@@ -8,10 +8,10 @@ namespace GurpsDb.XML.XSD
 {
     public class DefaultSkill
     {
-        public string nameMainSkill;
-        public string nameSubSkill;
-        public string specialization;
-        public string type;
-        public string modifier;
+        public string NameMainSkill;
+        public string NameSubSkill;
+        public string Specialization;
+        public string Type;
+        public string Modifier;
     }
 }

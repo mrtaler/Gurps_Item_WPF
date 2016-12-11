@@ -7,9 +7,9 @@ using System.Collections.ObjectModel;
 
 namespace Item_WPF.MVVM.Serialize.Model
 {
-    public class SkillXMLModel
+    public class SkillXmlModel
     {
-        public int numPP;
+        public int NumPp;
         /// <summary>
         /// 1 element name="name" type="StringWithCompareAttribute"
         /// </summary>
@@ -21,11 +21,11 @@ namespace Item_WPF.MVVM.Serialize.Model
         /// <summary>
         /// 3 element name="tech_level" type="xs:string"
         /// </summary>
-        public XElement tech_level;
+        public XElement TechLevel;
         /// <summary>
         /// 4 element name="difficulty" type="xs:string"
         /// </summary>
-        public XElement difficulty;
+        public XElement Difficulty;
         /// <summary>
         /// 5 element name="points" type="xs:unsignedInt" 
         /// </summary>
@@ -37,16 +37,16 @@ namespace Item_WPF.MVVM.Serialize.Model
         /// <summary>
         /// 7 attribute name="version" type="xs:unsignedShort" use="required" 
         /// </summary>
-        public XAttribute version;
+        public XAttribute Version;
         /// <summary>
         /// 8 element name="notes" type="StringWithCompareAttribute" 
         /// </summary>
-        public XElement notes;
+        public XElement Notes;
         /// <summary>
         /// 9 element name="encumbrance_penalty_multiplier" type="xs:unsignedInt" 
         /// </summary>
-        public XElement encumbrance_penalty_multiplier;
-        public XAttribute limit;
+        public XElement EncumbrancePenaltyMultiplier;
+        public XAttribute Limit;
         public string Type;
         /// <summary>
         /// 1_1 element ref="default" 
@@ -55,18 +55,18 @@ namespace Item_WPF.MVVM.Serialize.Model
         /// <summary>
         /// 1_2 element ref="categories" 
         /// </summary>
-        public ObservableCollection<CategoriesXML> categories;
+        public ObservableCollection<CategoriesXML> Categories;
         /// <summary>
         /// 1_3 element ref="prereq_list" 
         /// </summary>
-        public ObservableCollection<Prereq_listXML> prereq_list;
+        public ObservableCollection<PrereqListXml> PrereqList;
         /// <summary>
         /// 1_4 element ref="attribute_bonus" 
         /// </summary>
-        public ObservableCollection<Attribute_bonusXML> attribute_bonus=new ObservableCollection<Attribute_bonusXML>();
+        public ObservableCollection<Attribute_bonusXML> AttributeBonus=new ObservableCollection<Attribute_bonusXML>();
         /// <summary>
         /// 1_5 element ref="weapon_bonus" 
         /// </summary>
-        public ObservableCollection<Weapon_bonusXML> weapon_bonus=new ObservableCollection<Weapon_bonusXML>();
+        public ObservableCollection<Weapon_bonusXML> WeaponBonus=new ObservableCollection<Weapon_bonusXML>();
     }
 }

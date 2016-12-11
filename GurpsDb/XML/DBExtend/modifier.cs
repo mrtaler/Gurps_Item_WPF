@@ -6,10 +6,10 @@ using Item_WPF.MVVM.Serialize.Model;
 
 namespace Item_WPF.ItemEntityModel
 {
-    public partial class modifier
+    public partial class Modifier
     {
-        public modifier() { }
-        public modifier(modifierXML item)
+        public Modifier() { }
+        public Modifier(modifierXML item)
         {
             name = item.name.Value.ToString();
             nameC = item.name.Attribute("compare") != null

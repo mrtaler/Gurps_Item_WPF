@@ -10,7 +10,7 @@ namespace GurpsDb.GurpsModel
     public partial class InventoryOfChar
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int id { get; set; }
+        public int Id { get; set; }
 
         public int IdCharacter { get; set; }
 
@@ -18,8 +18,8 @@ namespace GurpsDb.GurpsModel
 
         public long Count { get; set; }
 
-        public virtual CharacterDb CharacterDB { get; set; }
+        public virtual CharacterDb CharacterDb { get; set; }
 
-        public virtual ITEM ITEM { get; set; }
+        public virtual Item Item { get; set; }
     }
 }

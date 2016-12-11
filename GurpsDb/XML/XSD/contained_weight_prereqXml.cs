@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace GurpsDb.XML.XSD
 {
-    public class contained_weight_prereqXml
+    public class ContainedWeightPrereqXml
     {
-        public XAttribute has;
-        public XAttribute compare;
+        public XAttribute Has;
+        public XAttribute Compare;
         public string Value;
     }
 

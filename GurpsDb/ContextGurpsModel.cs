@@ -11,34 +11,34 @@ namespace GurpsDb.GurpsModel
         }
 
         public virtual DbSet<Advantage> AdvantageDbSet { get; set; }
-        public virtual DbSet<advantage_prereq> AdvantagePrereqDbSet { get; set; }
-        public virtual DbSet<attribute_bonus> AttributeBonusDbSet { get; set; }
-        public virtual DbSet<attribute_prereq> AttributePrereqDbSet { get; set; }
+        public virtual DbSet<AdvantagePrereq> AdvantagePrereqDbSet { get; set; }
+        public virtual DbSet<AttributeBonus> AttributeBonusDbSet { get; set; }
+        public virtual DbSet<AttributePrereq> AttributePrereqDbSet { get; set; }
         public virtual DbSet<CharacterDb> CharacterDbDbSet { get; set; }
-        public virtual DbSet<contained_weight_prereq> ContainedWeightPrereqDbSet { get; set; }
-        public virtual DbSet<cost_reduction> CostReductionDbSet { get; set; }
+        public virtual DbSet<ContainedWeightPrereq> ContainedWeightPrereqDbSet { get; set; }
+        public virtual DbSet<CostReduction> CostReductionDbSet { get; set; }
         public virtual DbSet<DefaultSkill> DefaultSkillDbSet { get; set; }
         public virtual DbSet<DefSkillSome> DefSkillSomeDbSet { get; set; }
         public virtual DbSet<DifficultySkill> DifficultySkillDbSet { get; set; }
-        public virtual DbSet<dr_bonusDB> DrBonusDbDbSet { get; set; }
+        public virtual DbSet<DrBonusDb> DrBonusDbDbSet { get; set; }
         public virtual DbSet<GurpsCategory> GurpsCategoryDbSet { get; set; }
         public virtual DbSet<GurpsSkill> GurpsSkillDbSet { get; set; }
         public virtual DbSet<InventoryOfChar> InventoryOfCharDbSet { get; set; }
-        public virtual DbSet<melee_weapon> MeleeWeaponDbSet { get; set; }
-        public virtual DbSet<modifier> ModifierDbSet { get; set; }
-        public virtual DbSet<prereq_listDB> PrereqListDbDbSet { get; set; }
-        public virtual DbSet<ranged_weapon> RangedWeaponDbSet { get; set; }
-        public virtual DbSet<skill_bonusDB> SkillBonusDbDbSet { get; set; }
-        public virtual DbSet<skill_prereqDB> SkillPrereqDbDbSet { get; set; }
-        public virtual DbSet<spell_bonus> SpellBonusDbSet { get; set; }
-        public virtual DbSet<spell_prereqDB> SpellPrereqDbDbSet { get; set; }
-        public virtual DbSet<weapon_bonus> WeaponBonusDbSet { get; set; }
-        public virtual DbSet<AMMOUPGRATES> AmmoupgratesDbSet { get; set; }
+        public virtual DbSet<MeleeWeapon> MeleeWeaponDbSet { get; set; }
+        public virtual DbSet<Modifier> ModifierDbSet { get; set; }
+        public virtual DbSet<PrereqListDb> PrereqListDbDbSet { get; set; }
+        public virtual DbSet<RangedWeapon> RangedWeaponDbSet { get; set; }
+        public virtual DbSet<SkillBonusDb> SkillBonusDbDbSet { get; set; }
+        public virtual DbSet<SkillPrereqDb> SkillPrereqDbDbSet { get; set; }
+        public virtual DbSet<SpellBonus> SpellBonusDbSet { get; set; }
+        public virtual DbSet<SpellPrereqDb> SpellPrereqDbDbSet { get; set; }
+        public virtual DbSet<WeaponBonus> WeaponBonusDbSet { get; set; }
+        public virtual DbSet<Ammoupgrates> AmmoupgratesDbSet { get; set; }
         public virtual DbSet<AnyBoxNameType> AnyBoxNameTypeDbSet { get; set; }
-        public virtual DbSet<ARMOUR> ArmourDbSet { get; set; }
+        public virtual DbSet<Armour> ArmourDbSet { get; set; }
         public virtual DbSet<Attachment> AttachmentDbSet { get; set; }
         public virtual DbSet<Attachmentmount> AttachmentmountDbSet { get; set; }
-        public virtual DbSet<ATTACHMENTSLOT> AttachmentslotDbSet { get; set; }
+        public virtual DbSet<Attachmentslot> AttachmentslotDbSet { get; set; }
         public virtual DbSet<AvailableAttachSlot> AvailableAttachSlotDbSet { get; set; }
         public virtual DbSet<Battery> BatteryDbSet { get; set; }
         public virtual DbSet<BoxItem> BoxItemDbSet { get; set; }
@@ -46,22 +46,22 @@ namespace GurpsDb.GurpsModel
         public virtual DbSet<Clothes> ClothesDbSet { get; set; }
         public virtual DbSet<CombineWeap> CombineWeapDbSet { get; set; }
         public virtual DbSet<Drug> DrugDbSet { get; set; }
-        public virtual DbSet<EXPLOSIVE> ExplosiveDbSet { get; set; }
-        public virtual DbSet<FOOD> FoodDbSet { get; set; }
-        public virtual DbSet<G_AttachClass> GAttachClassDbSet { get; set; }
-        public virtual DbSet<G_AvAttachClass> GAvAttachClassDbSet { get; set; }
-        public virtual DbSet<G_SubAttachClass> GSubAttachClassDbSet { get; set; }
+        public virtual DbSet<Explosive> ExplosiveDbSet { get; set; }
+        public virtual DbSet<Food> FoodDbSet { get; set; }
+        public virtual DbSet<GAttachClass> GAttachClassDbSet { get; set; }
+        public virtual DbSet<GAvAttachClass> GAvAttachClassDbSet { get; set; }
+        public virtual DbSet<GSubAttachClass> GSubAttachClassDbSet { get; set; }
         public virtual DbSet<GurpsClass> GurpsClassDbSet { get; set; }
-        public virtual DbSet<ITEM> ItemDbSet { get; set; }
+        public virtual DbSet<Item> ItemDbSet { get; set; }
         public virtual DbSet<ItemClass> ItemClassDbSet { get; set; }
         public virtual DbSet<ItemSubClass> ItemSubClassDbSet { get; set; }
         public virtual DbSet<LaserColorEf> LaserColorEfDbSet { get; set; }
-        public virtual DbSet<LC> LcDbSet { get; set; }
-        public virtual DbSet<LOADBEARINGEQUIPMENT> LoadbearingequipmentDbSet { get; set; }
-        public virtual DbSet<TL> TlDbSet { get; set; }
-        public virtual DbSet<Type_of_Box> TypeOfBoxeDbSet { get; set; }
+        public virtual DbSet<Lc> LcDbSet { get; set; }
+        public virtual DbSet<Loadbearingequipment> LoadbearingequipmentDbSet { get; set; }
+        public virtual DbSet<Tl> TlDbSet { get; set; }
+        public virtual DbSet<TypeOfBox> TypeOfBoxeDbSet { get; set; }
         public virtual DbSet<TypeOfDamage> TypeOfDamageDbSet { get; set; }
-        public virtual DbSet<WEAPON> WeaponDbSet { get; set; }
+        public virtual DbSet<Weapon> WeaponDbSet { get; set; }
         public virtual DbSet<WeaponAttackType> WeaponAttackTypeDbSet { get; set; }
         public virtual DbSet<WeaponDamage> WeaponDamageDbSet { get; set; }
         public virtual DbSet<CharSkill> CharSkillDbSet { get; set; }
@@ -70,62 +70,62 @@ namespace GurpsDb.GurpsModel
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Advantage>()
-                .HasMany(e => e.attribute_bonus)
+                .HasMany(e => e.AttributeBonus)
                 .WithOptional(e => e.Advantage)
-                .HasForeignKey(e => e.FK_Advantage)
+                .HasForeignKey(e => e.FkAdvantage)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<Advantage>()
-                .HasMany(e => e.cost_reduction)
+                .HasMany(e => e.CostReduction)
                 .WithOptional(e => e.Advantage)
-                .HasForeignKey(e => e.idAdv)
+                .HasForeignKey(e => e.IdAdv)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<Advantage>()
-                .HasMany(e => e.dr_bonusDB)
+                .HasMany(e => e.DrBonusDb)
                 .WithOptional(e => e.Advantage)
-                .HasForeignKey(e => e.idAdv)
+                .HasForeignKey(e => e.IdAdv)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<Advantage>()
-                .HasMany(e => e.melee_weapon)
+                .HasMany(e => e.MeleeWeapon)
                 .WithOptional(e => e.Advantage)
-                .HasForeignKey(e => e.idAdv)
+                .HasForeignKey(e => e.IdAdv)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<Advantage>()
-                .HasMany(e => e.modifier)
+                .HasMany(e => e.Modifier)
                 .WithOptional(e => e.Advantage)
-                .HasForeignKey(e => e.idAdv);
+                .HasForeignKey(e => e.IdAdv);
 
             modelBuilder.Entity<Advantage>()
-                .HasMany(e => e.prereq_listDB)
+                .HasMany(e => e.PrereqListDb)
                 .WithOptional(e => e.Advantage)
-                .HasForeignKey(e => e.FK_Advantage)
+                .HasForeignKey(e => e.FkAdvantage)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<Advantage>()
-                .HasMany(e => e.ranged_weapon)
+                .HasMany(e => e.RangedWeapon)
                 .WithOptional(e => e.Advantage)
-                .HasForeignKey(e => e.idADV)
+                .HasForeignKey(e => e.IdAdv)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<Advantage>()
-                .HasMany(e => e.skill_bonusDB)
+                .HasMany(e => e.SkillBonusDb)
                 .WithOptional(e => e.Advantage)
-                .HasForeignKey(e => e.FK_Adv)
+                .HasForeignKey(e => e.FkAdv)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<Advantage>()
-                .HasMany(e => e.spell_bonus)
+                .HasMany(e => e.SpellBonus)
                 .WithOptional(e => e.Advantage)
-                .HasForeignKey(e => e.id_Adv)
+                .HasForeignKey(e => e.IdAdv)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<Advantage>()
-                .HasMany(e => e.weapon_bonus)
+                .HasMany(e => e.WeaponBonus)
                 .WithOptional(e => e.Advantage)
-                .HasForeignKey(e => e.FK_Adv)
+                .HasForeignKey(e => e.FkAdv)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<Advantage>()
@@ -140,58 +140,58 @@ namespace GurpsDb.GurpsModel
 
             modelBuilder.Entity<CharacterDb>()
                 .HasMany(e => e.InventoryOfChar)
-                .WithRequired(e => e.CharacterDB)
+                .WithRequired(e => e.CharacterDb)
                 .HasForeignKey(e => e.IdCharacter);
 
-            modelBuilder.Entity<cost_reduction>()
-                .Property(e => e.attribute)
+            modelBuilder.Entity<CostReduction>()
+                .Property(e => e.Attribute)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<cost_reduction>()
-                .Property(e => e.percentage)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<DefSkillSome>()
-                .Property(e => e.nameSkill)
+            modelBuilder.Entity<CostReduction>()
+                .Property(e => e.Percentage)
                 .IsUnicode(false);
 
             modelBuilder.Entity<DefSkillSome>()
-                .Property(e => e.specialization)
+                .Property(e => e.NameSkill)
                 .IsUnicode(false);
 
             modelBuilder.Entity<DefSkillSome>()
-                .Property(e => e.type)
+                .Property(e => e.Specialization)
                 .IsUnicode(false);
 
             modelBuilder.Entity<DefSkillSome>()
-                .Property(e => e.modifier)
+                .Property(e => e.Type)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<DefSkillSome>()
+                .Property(e => e.Modifier)
                 .IsUnicode(false);
 
             modelBuilder.Entity<DifficultySkill>()
                 .HasMany(e => e.GurpsSkill)
                 .WithOptional(e => e.DifficultySkill)
-                .HasForeignKey(e => e.idDifficulty);
+                .HasForeignKey(e => e.IdDifficulty);
 
             modelBuilder.Entity<GurpsSkill>()
-                .HasMany(e => e.attribute_bonus)
+                .HasMany(e => e.AttributeBonus)
                 .WithOptional(e => e.GurpsSkill)
-                .HasForeignKey(e => e.FK_Skill)
+                .HasForeignKey(e => e.FkSkill)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<GurpsSkill>()
                 .HasMany(e => e.DefaultSkill)
                 .WithRequired(e => e.GurpsSkill)
-                .HasForeignKey(e => e.idSkillIn);
+                .HasForeignKey(e => e.IdSkillIn);
 
             modelBuilder.Entity<GurpsSkill>()
                 .HasMany(e => e.DefaultSkill1)
                 .WithOptional(e => e.GurpsSkill1)
-                .HasForeignKey(e => e.idSkillOut);
+                .HasForeignKey(e => e.IdSkillOut);
 
             modelBuilder.Entity<GurpsSkill>()
                 .HasMany(e => e.DefSkillSome)
                 .WithOptional(e => e.GurpsSkill)
-                .HasForeignKey(e => e.idSkill)
+                .HasForeignKey(e => e.IdSkill)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<GurpsSkill>()
@@ -202,7 +202,7 @@ namespace GurpsDb.GurpsModel
             modelBuilder.Entity<GurpsSkill>()
                 .HasMany(e => e.GurpsSkill1)
                 .WithOptional(e => e.GurpsSkill2)
-                .HasForeignKey(e => e.idSpecialization);
+                .HasForeignKey(e => e.IdSpecialization);
 
             modelBuilder.Entity<GurpsSkill>()
                 .HasOptional(e => e.NeedSkill)
@@ -212,18 +212,18 @@ namespace GurpsDb.GurpsModel
             modelBuilder.Entity<GurpsSkill>()
                 .HasMany(e => e.NeedSkill1)
                 .WithOptional(e => e.GurpsSkill1)
-                .HasForeignKey(e => e.idSkillOut);
+                .HasForeignKey(e => e.IdSkillOut);
 
             modelBuilder.Entity<GurpsSkill>()
-                .HasMany(e => e.prereq_listDB)
+                .HasMany(e => e.PrereqListDb)
                 .WithOptional(e => e.GurpsSkill)
-                .HasForeignKey(e => e.FK_skill)
+                .HasForeignKey(e => e.FkSkill)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<GurpsSkill>()
-                .HasMany(e => e.weapon_bonus)
+                .HasMany(e => e.WeaponBonus)
                 .WithOptional(e => e.GurpsSkill)
-                .HasForeignKey(e => e.FK_Skill)
+                .HasForeignKey(e => e.FkSkill)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<GurpsSkill>()
@@ -231,306 +231,306 @@ namespace GurpsDb.GurpsModel
                 .WithMany(e => e.GurpsSkill)
                 .Map(m => m.ToTable("GurpsSkillCategory88", "CharDB").MapLeftKey("IdSkill").MapRightKey("idSkillCategory"));
 
-            modelBuilder.Entity<melee_weapon>()
-                .Property(e => e.damage)
+            modelBuilder.Entity<MeleeWeapon>()
+                .Property(e => e.Damage)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<melee_weapon>()
-                .Property(e => e.strength)
+            modelBuilder.Entity<MeleeWeapon>()
+                .Property(e => e.Strength)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<melee_weapon>()
-                .Property(e => e.usage)
+            modelBuilder.Entity<MeleeWeapon>()
+                .Property(e => e.Usage)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<melee_weapon>()
-                .Property(e => e.reach)
+            modelBuilder.Entity<MeleeWeapon>()
+                .Property(e => e.Reach)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<melee_weapon>()
-                .Property(e => e.parry)
+            modelBuilder.Entity<MeleeWeapon>()
+                .Property(e => e.Parry)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<melee_weapon>()
-                .Property(e => e.block)
+            modelBuilder.Entity<MeleeWeapon>()
+                .Property(e => e.Block)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<melee_weapon>()
+            modelBuilder.Entity<MeleeWeapon>()
                 .HasMany(e => e.DefSkillSome)
-                .WithOptional(e => e.melee_weapon)
-                .HasForeignKey(e => e.idMeleWeap);
+                .WithOptional(e => e.MeleeWeapon)
+                .HasForeignKey(e => e.IdMeleWeap);
 
-            modelBuilder.Entity<modifier>()
-                .Property(e => e.name)
+            modelBuilder.Entity<Modifier>()
+                .Property(e => e.Name)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<modifier>()
-                .Property(e => e.nameC)
+            modelBuilder.Entity<Modifier>()
+                .Property(e => e.NameC)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<modifier>()
-                .Property(e => e.notes)
+            modelBuilder.Entity<Modifier>()
+                .Property(e => e.Notes)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<modifier>()
-                .Property(e => e.notesC)
+            modelBuilder.Entity<Modifier>()
+                .Property(e => e.NotesC)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<modifier>()
-                .Property(e => e.levels)
+            modelBuilder.Entity<Modifier>()
+                .Property(e => e.Levels)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<modifier>()
-                .Property(e => e.reference)
+            modelBuilder.Entity<Modifier>()
+                .Property(e => e.Reference)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<modifier>()
-                .Property(e => e.affects)
+            modelBuilder.Entity<Modifier>()
+                .Property(e => e.Affects)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<modifier>()
-                .Property(e => e.version)
+            modelBuilder.Entity<Modifier>()
+                .Property(e => e.Version)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<modifier>()
-                .Property(e => e.enabled)
+            modelBuilder.Entity<Modifier>()
+                .Property(e => e.Enabled)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<prereq_listDB>()
-                .HasMany(e => e.advantage_prereq)
-                .WithOptional(e => e.prereq_listDB)
-                .HasForeignKey(e => e.idPrqList)
+            modelBuilder.Entity<PrereqListDb>()
+                .HasMany(e => e.AdvantagePrereq)
+                .WithOptional(e => e.PrereqListDb)
+                .HasForeignKey(e => e.IdPrqList)
                 .WillCascadeOnDelete();
 
-            modelBuilder.Entity<prereq_listDB>()
-                .HasMany(e => e.attribute_prereq)
-                .WithOptional(e => e.prereq_listDB)
-                .HasForeignKey(e => e.idPrqList)
+            modelBuilder.Entity<PrereqListDb>()
+                .HasMany(e => e.AttributePrereq)
+                .WithOptional(e => e.PrereqListDb)
+                .HasForeignKey(e => e.IdPrqList)
                 .WillCascadeOnDelete();
 
-            modelBuilder.Entity<prereq_listDB>()
-                .HasMany(e => e.contained_weight_prereq)
-                .WithOptional(e => e.prereq_listDB)
-                .HasForeignKey(e => e.idPrqList)
+            modelBuilder.Entity<PrereqListDb>()
+                .HasMany(e => e.ContainedWeightPrereq)
+                .WithOptional(e => e.PrereqListDb)
+                .HasForeignKey(e => e.IdPrqList)
                 .WillCascadeOnDelete();
 
-            modelBuilder.Entity<prereq_listDB>()
-                .HasMany(e => e.prereq_listDB1)
-                .WithOptional(e => e.prereq_listDB2)
-                .HasForeignKey(e => e.FK_prereq_list);
+            modelBuilder.Entity<PrereqListDb>()
+                .HasMany(e => e.PrereqListDb1)
+                .WithOptional(e => e.PrereqListDb2)
+                .HasForeignKey(e => e.FkPrereqList);
 
-            modelBuilder.Entity<prereq_listDB>()
-                .HasMany(e => e.skill_prereqDB)
-                .WithOptional(e => e.prereq_listDB)
-                .HasForeignKey(e => e.idprereq_list)
+            modelBuilder.Entity<PrereqListDb>()
+                .HasMany(e => e.SkillPrereqDb)
+                .WithOptional(e => e.PrereqListDb)
+                .HasForeignKey(e => e.IdprereqList)
                 .WillCascadeOnDelete();
 
-            modelBuilder.Entity<prereq_listDB>()
-                .HasMany(e => e.spell_prereqDB)
-                .WithOptional(e => e.prereq_listDB)
-                .HasForeignKey(e => e.idPrqlist)
+            modelBuilder.Entity<PrereqListDb>()
+                .HasMany(e => e.SpellPrereqDb)
+                .WithOptional(e => e.PrereqListDb)
+                .HasForeignKey(e => e.IdPrqlist)
                 .WillCascadeOnDelete();
 
-            modelBuilder.Entity<ranged_weapon>()
-                .Property(e => e.damage)
+            modelBuilder.Entity<RangedWeapon>()
+                .Property(e => e.Damage)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<ranged_weapon>()
-                .Property(e => e.strength)
+            modelBuilder.Entity<RangedWeapon>()
+                .Property(e => e.Strength)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<ranged_weapon>()
-                .Property(e => e.usage)
+            modelBuilder.Entity<RangedWeapon>()
+                .Property(e => e.Usage)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<ranged_weapon>()
-                .Property(e => e.accuracy)
+            modelBuilder.Entity<RangedWeapon>()
+                .Property(e => e.Accuracy)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<ranged_weapon>()
-                .Property(e => e.range)
+            modelBuilder.Entity<RangedWeapon>()
+                .Property(e => e.Range)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<ranged_weapon>()
-                .Property(e => e.rate_of_fire)
+            modelBuilder.Entity<RangedWeapon>()
+                .Property(e => e.RateOfFire)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<ranged_weapon>()
-                .Property(e => e.recoil)
+            modelBuilder.Entity<RangedWeapon>()
+                .Property(e => e.Recoil)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<ranged_weapon>()
-                .Property(e => e.shots)
+            modelBuilder.Entity<RangedWeapon>()
+                .Property(e => e.Shots)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<ranged_weapon>()
-                .Property(e => e.bulk)
+            modelBuilder.Entity<RangedWeapon>()
+                .Property(e => e.Bulk)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<ranged_weapon>()
+            modelBuilder.Entity<RangedWeapon>()
                 .HasMany(e => e.DefSkillSome)
-                .WithOptional(e => e.ranged_weapon)
-                .HasForeignKey(e => e.idRangeWeap)
+                .WithOptional(e => e.RangedWeapon)
+                .HasForeignKey(e => e.IdRangeWeap)
                 .WillCascadeOnDelete();
 
-            modelBuilder.Entity<skill_bonusDB>()
-                .Property(e => e.name)
+            modelBuilder.Entity<SkillBonusDb>()
+                .Property(e => e.Name)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<skill_bonusDB>()
-                .Property(e => e.namecompare)
+            modelBuilder.Entity<SkillBonusDb>()
+                .Property(e => e.Namecompare)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<skill_bonusDB>()
-                .Property(e => e.specialization)
+            modelBuilder.Entity<SkillBonusDb>()
+                .Property(e => e.Specialization)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<skill_bonusDB>()
-                .Property(e => e.specializationcompare)
+            modelBuilder.Entity<SkillBonusDb>()
+                .Property(e => e.Specializationcompare)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<skill_bonusDB>()
-                .Property(e => e.AmountPer_level)
+            modelBuilder.Entity<SkillBonusDb>()
+                .Property(e => e.AmountPerLevel)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<skill_bonusDB>()
+            modelBuilder.Entity<SkillBonusDb>()
                 .Property(e => e.AmountValue)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<spell_bonus>()
-                .Property(e => e.spell_name)
+            modelBuilder.Entity<SpellBonus>()
+                .Property(e => e.SpellName)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<spell_bonus>()
-                .Property(e => e.spell_nameC)
+            modelBuilder.Entity<SpellBonus>()
+                .Property(e => e.SpellNameC)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<spell_bonus>()
-                .Property(e => e.college_name)
+            modelBuilder.Entity<SpellBonus>()
+                .Property(e => e.CollegeName)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<spell_bonus>()
-                .Property(e => e.college_nameC)
+            modelBuilder.Entity<SpellBonus>()
+                .Property(e => e.CollegeNameC)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<spell_bonus>()
-                .Property(e => e.all_colleges)
+            modelBuilder.Entity<SpellBonus>()
+                .Property(e => e.AllColleges)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<spell_bonus>()
-                .Property(e => e.amountper_level)
+            modelBuilder.Entity<SpellBonus>()
+                .Property(e => e.AmountperLevel)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<spell_bonus>()
-                .Property(e => e.amountValue)
+            modelBuilder.Entity<SpellBonus>()
+                .Property(e => e.AmountValue)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<spell_prereqDB>()
-                .Property(e => e.name)
+            modelBuilder.Entity<SpellPrereqDb>()
+                .Property(e => e.Name)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<spell_prereqDB>()
-                .Property(e => e.collegeCompare)
+            modelBuilder.Entity<SpellPrereqDb>()
+                .Property(e => e.CollegeCompare)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<spell_prereqDB>()
-                .Property(e => e.college)
+            modelBuilder.Entity<SpellPrereqDb>()
+                .Property(e => e.College)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<spell_prereqDB>()
-                .Property(e => e.college_countCompare)
+            modelBuilder.Entity<SpellPrereqDb>()
+                .Property(e => e.CollegeCountCompare)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<spell_prereqDB>()
-                .Property(e => e.college_count)
+            modelBuilder.Entity<SpellPrereqDb>()
+                .Property(e => e.CollegeCount)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<spell_prereqDB>()
-                .Property(e => e.quantityCompare)
+            modelBuilder.Entity<SpellPrereqDb>()
+                .Property(e => e.QuantityCompare)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<spell_prereqDB>()
-                .Property(e => e.quantity)
+            modelBuilder.Entity<SpellPrereqDb>()
+                .Property(e => e.Quantity)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<spell_prereqDB>()
-                .Property(e => e.anyt)
+            modelBuilder.Entity<SpellPrereqDb>()
+                .Property(e => e.Anyt)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<spell_prereqDB>()
-                .Property(e => e.has)
+            modelBuilder.Entity<SpellPrereqDb>()
+                .Property(e => e.Has)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<weapon_bonus>()
-                .Property(e => e.nameCompare)
+            modelBuilder.Entity<WeaponBonus>()
+                .Property(e => e.NameCompare)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<weapon_bonus>()
-                .Property(e => e.name)
+            modelBuilder.Entity<WeaponBonus>()
+                .Property(e => e.Name)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<weapon_bonus>()
-                .Property(e => e.specializationCompare)
+            modelBuilder.Entity<WeaponBonus>()
+                .Property(e => e.SpecializationCompare)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<weapon_bonus>()
-                .Property(e => e.specialization)
+            modelBuilder.Entity<WeaponBonus>()
+                .Property(e => e.Specialization)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<weapon_bonus>()
-                .Property(e => e.levelCompare)
+            modelBuilder.Entity<WeaponBonus>()
+                .Property(e => e.LevelCompare)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<weapon_bonus>()
-                .Property(e => e.level)
+            modelBuilder.Entity<WeaponBonus>()
+                .Property(e => e.Level)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<AMMOUPGRATES>()
-                .Property(e => e.AR_divX)
+            modelBuilder.Entity<Ammoupgrates>()
+                .Property(e => e.ArDivX)
                 .HasPrecision(4, 2);
 
-            modelBuilder.Entity<AMMOUPGRATES>()
-                .Property(e => e.ACC_x)
+            modelBuilder.Entity<Ammoupgrates>()
+                .Property(e => e.AccX)
                 .HasPrecision(4, 2);
 
-            modelBuilder.Entity<AMMOUPGRATES>()
-                .Property(e => e.damage_x)
+            modelBuilder.Entity<Ammoupgrates>()
+                .Property(e => e.DamageX)
                 .HasPrecision(4, 2);
 
-            modelBuilder.Entity<AMMOUPGRATES>()
-                .Property(e => e.range_x12)
+            modelBuilder.Entity<Ammoupgrates>()
+                .Property(e => e.RangeX12)
                 .HasPrecision(4, 2);
 
-            modelBuilder.Entity<AMMOUPGRATES>()
-                .Property(e => e.range_x)
+            modelBuilder.Entity<Ammoupgrates>()
+                .Property(e => e.RangeX)
                 .HasPrecision(4, 2);
 
-            modelBuilder.Entity<AMMOUPGRATES>()
-                .Property(e => e.ST_x)
+            modelBuilder.Entity<Ammoupgrates>()
+                .Property(e => e.StX)
                 .HasPrecision(4, 2);
 
-            modelBuilder.Entity<AMMOUPGRATES>()
-                .Property(e => e.WPS_x)
+            modelBuilder.Entity<Ammoupgrates>()
+                .Property(e => e.WpsX)
                 .HasPrecision(4, 2);
 
-            modelBuilder.Entity<AMMOUPGRATES>()
-                .Property(e => e.CPS_x)
+            modelBuilder.Entity<Ammoupgrates>()
+                .Property(e => e.CpsX)
                 .HasPrecision(4, 2);
 
-            modelBuilder.Entity<AMMOUPGRATES>()
-                .Property(e => e.min_Caliber)
+            modelBuilder.Entity<Ammoupgrates>()
+                .Property(e => e.MinCaliber)
                 .HasPrecision(4, 2);
 
-            modelBuilder.Entity<AMMOUPGRATES>()
-                .Property(e => e.Max_Calider)
+            modelBuilder.Entity<Ammoupgrates>()
+                .Property(e => e.MaxCalider)
                 .HasPrecision(4, 2);
 
-            modelBuilder.Entity<AMMOUPGRATES>()
-                .Property(e => e.DT_Min_Ammo_CAliber)
+            modelBuilder.Entity<Ammoupgrates>()
+                .Property(e => e.DtMinAmmoCAliber)
                 .HasPrecision(4, 2);
 
             modelBuilder.Entity<AnyBoxNameType>()
-                .Property(e => e.nameOfBox)
+                .Property(e => e.NameOfBox)
                 .IsUnicode(false);
 
             modelBuilder.Entity<AnyBoxNameType>()
@@ -552,140 +552,140 @@ namespace GurpsDb.GurpsModel
                 .HasPrecision(4, 2);
 
             modelBuilder.Entity<Attachment>()
-                .HasMany(e => e.G_AvAttachClass)
+                .HasMany(e => e.GAvAttachClass)
                 .WithRequired(e => e.Attachment)
-                .HasForeignKey(e => e.id_attach);
+                .HasForeignKey(e => e.IdAttach);
 
             modelBuilder.Entity<Attachmentmount>()
                 .HasMany(e => e.Attachment)
                 .WithRequired(e => e.Attachmentmount1)
-                .HasForeignKey(e => e.id_Attachmentmount)
+                .HasForeignKey(e => e.IdAttachmentmount)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Attachmentmount>()
                 .HasMany(e => e.AvailableAttachSlot)
                 .WithRequired(e => e.Attachmentmount)
-                .HasForeignKey(e => e.rAttachmentmount)
+                .HasForeignKey(e => e.RAttachmentmount)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<ATTACHMENTSLOT>()
+            modelBuilder.Entity<Attachmentslot>()
                 .HasMany(e => e.Attachmentmount)
-                .WithRequired(e => e.ATTACHMENTSLOT)
-                .HasForeignKey(e => e.idAttacClass)
+                .WithRequired(e => e.Attachmentslot)
+                .HasForeignKey(e => e.IdAttacClass)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<ATTACHMENTSLOT>()
-                .HasMany(e => e.G_SubAttachClass)
-                .WithRequired(e => e.ATTACHMENTSLOT1)
-                .HasForeignKey(e => e.ATTACHMENTSLOT)
+            modelBuilder.Entity<Attachmentslot>()
+                .HasMany(e => e.GSubAttachClass)
+                .WithRequired(e => e.Attachmentslot1)
+                .HasForeignKey(e => e.Attachmentslot)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Battery>()
-                .Property(e => e.CPP)
+                .Property(e => e.Cpp)
                 .HasPrecision(19, 4);
 
             modelBuilder.Entity<Battery>()
-                .Property(e => e.WPP)
+                .Property(e => e.Wpp)
                 .HasPrecision(7, 3);
 
             modelBuilder.Entity<Caliber>()
-                .Property(e => e.Dim_of_bullet_SI)
+                .Property(e => e.DimOfBulletSi)
                 .HasPrecision(8, 4);
 
             modelBuilder.Entity<Caliber>()
-                .Property(e => e.Dim_of_bullet_US)
+                .Property(e => e.DimOfBulletUs)
                 .HasPrecision(8, 4);
 
             modelBuilder.Entity<Caliber>()
-                .HasMany(e => e.ITEM)
+                .HasMany(e => e.Item)
                 .WithOptional(e => e.Caliber)
-                .HasForeignKey(e => e.ubCalibre);
+                .HasForeignKey(e => e.UbCalibre);
 
             modelBuilder.Entity<Clothes>()
-                .HasMany(e => e.ITEM)
+                .HasMany(e => e.Item)
                 .WithRequired(e => e.Clothes)
-                .HasForeignKey(e => e.clothestype)
+                .HasForeignKey(e => e.Clothestype)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<EXPLOSIVE>()
-                .Property(e => e.bIndoorModifier)
+            modelBuilder.Entity<Explosive>()
+                .Property(e => e.BIndoorModifier)
                 .HasPrecision(38, 0);
 
-            modelBuilder.Entity<FOOD>()
-                .HasMany(e => e.ITEM)
-                .WithRequired(e => e.FOOD)
+            modelBuilder.Entity<Food>()
+                .HasMany(e => e.Item)
+                .WithRequired(e => e.Food)
                 .HasForeignKey(e => e.FoodType)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<G_AttachClass>()
-                .HasMany(e => e.G_SubAttachClass)
-                .WithRequired(e => e.G_AttachClass)
+            modelBuilder.Entity<GAttachClass>()
+                .HasMany(e => e.GSubAttachClass)
+                .WithRequired(e => e.GAttachClass)
                 .HasForeignKey(e => e.AttachClass)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<G_SubAttachClass>()
-                .HasMany(e => e.G_AvAttachClass)
-                .WithRequired(e => e.G_SubAttachClass)
-                .HasForeignKey(e => e.id_GSubClass)
+            modelBuilder.Entity<GSubAttachClass>()
+                .HasMany(e => e.GAvAttachClass)
+                .WithRequired(e => e.GSubAttachClass)
+                .HasForeignKey(e => e.IdGSubClass)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<GurpsClass>()
                 .HasMany(e => e.ItemSubClass)
                 .WithOptional(e => e.GurpsClass)
-                .HasForeignKey(e => e.idGurpsSubClass);
+                .HasForeignKey(e => e.IdGurpsSubClass);
 
-            modelBuilder.Entity<ITEM>()
-                .Property(e => e.ubWeight)
+            modelBuilder.Entity<Item>()
+                .Property(e => e.UbWeight)
                 .HasPrecision(7, 3);
 
-            modelBuilder.Entity<ITEM>()
-                .Property(e => e.usPrice)
+            modelBuilder.Entity<Item>()
+                .Property(e => e.UsPrice)
                 .HasPrecision(19, 4);
 
-            modelBuilder.Entity<ITEM>()
+            modelBuilder.Entity<Item>()
                 .HasMany(e => e.InventoryOfChar)
-                .WithRequired(e => e.ITEM)
+                .WithRequired(e => e.Item)
                 .HasForeignKey(e => e.IdItem);
 
-            modelBuilder.Entity<ITEM>()
-                .HasOptional(e => e.ARMOUR)
-                .WithRequired(e => e.ITEM)
-                .WillCascadeOnDelete();
-
-            modelBuilder.Entity<ITEM>()
-                .HasOptional(e => e.Attachment)
-                .WithRequired(e => e.ITEM)
-                .WillCascadeOnDelete();
-
-            modelBuilder.Entity<ITEM>()
-                .HasMany(e => e.AvailableAttachSlot)
-                .WithRequired(e => e.ITEM)
-                .HasForeignKey(e => e.rItemId)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<ITEM>()
-                .HasMany(e => e.BoxItem)
-                .WithRequired(e => e.ITEM)
-                .HasForeignKey(e => e.Items)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<ITEM>()
-                .HasOptional(e => e.Drug)
-                .WithRequired(e => e.ITEM);
-
-            modelBuilder.Entity<ITEM>()
-                .HasOptional(e => e.EXPLOSIVE)
-                .WithRequired(e => e.ITEM)
-                .WillCascadeOnDelete();
-
-            modelBuilder.Entity<ITEM>()
-                .HasOptional(e => e.LOADBEARINGEQUIPMENT)
+            modelBuilder.Entity<Item>()
+                .HasOptional(e => e.Armour)
                 .WithRequired(e => e.Item)
                 .WillCascadeOnDelete();
 
-            modelBuilder.Entity<ITEM>()
-                .HasOptional(e => e.WEAPON)
-                .WithRequired(e => e.ITEM)
+            modelBuilder.Entity<Item>()
+                .HasOptional(e => e.Attachment)
+                .WithRequired(e => e.Item)
+                .WillCascadeOnDelete();
+
+            modelBuilder.Entity<Item>()
+                .HasMany(e => e.AvailableAttachSlot)
+                .WithRequired(e => e.Item)
+                .HasForeignKey(e => e.RItemId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Item>()
+                .HasMany(e => e.BoxItem)
+                .WithRequired(e => e.Item)
+                .HasForeignKey(e => e.Items)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Item>()
+                .HasOptional(e => e.Drug)
+                .WithRequired(e => e.Item);
+
+            modelBuilder.Entity<Item>()
+                .HasOptional(e => e.Explosive)
+                .WithRequired(e => e.Item)
+                .WillCascadeOnDelete();
+
+            modelBuilder.Entity<Item>()
+                .HasOptional(e => e.Loadbearingequipment)
+                .WithRequired(e => e.Item)
+                .WillCascadeOnDelete();
+
+            modelBuilder.Entity<Item>()
+                .HasOptional(e => e.Weapon)
+                .WithRequired(e => e.Item)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<ItemClass>()
@@ -695,41 +695,41 @@ namespace GurpsDb.GurpsModel
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<ItemSubClass>()
-                .HasMany(e => e.ITEM)
+                .HasMany(e => e.Item)
                 .WithRequired(e => e.ItemSubClass)
-                .HasForeignKey(e => e.usItemClass)
+                .HasForeignKey(e => e.UsItemClass)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<LaserColorEf>()
                 .Property(e => e.LaserColorDayEfect)
                 .HasPrecision(4, 2);
 
-            modelBuilder.Entity<LC>()
-                .HasMany(e => e.ITEM)
-                .WithRequired(e => e.LC1)
-                .HasForeignKey(e => e.LC)
+            modelBuilder.Entity<Lc>()
+                .HasMany(e => e.Item)
+                .WithRequired(e => e.Lc1)
+                .HasForeignKey(e => e.Lc)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<TL>()
+            modelBuilder.Entity<Tl>()
                 .Property(e => e.StartMoney)
                 .HasPrecision(19, 4);
 
-            modelBuilder.Entity<TL>()
+            modelBuilder.Entity<Tl>()
                 .HasMany(e => e.GurpsSkill)
-                .WithOptional(e => e.TL)
-                .HasForeignKey(e => e.idtech_level);
+                .WithOptional(e => e.Tl)
+                .HasForeignKey(e => e.IdtechLevel);
 
-            modelBuilder.Entity<TL>()
-                .HasMany(e => e.ITEM)
-                .WithRequired(e => e.TL1)
-                .HasForeignKey(e => e.TL)
+            modelBuilder.Entity<Tl>()
+                .HasMany(e => e.Item)
+                .WithRequired(e => e.Tl1)
+                .HasForeignKey(e => e.Tl)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Type_of_Box>()
-                .Property(e => e.nameOfType)
+            modelBuilder.Entity<TypeOfBox>()
+                .Property(e => e.NameOfType)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Type_of_Box>()
+            modelBuilder.Entity<TypeOfBox>()
                 .HasMany(e => e.AnyBoxNameType)
                 .WithRequired(e => e.Type_of_Box)
                 .HasForeignKey(e => e.TypeOfBox);
@@ -737,34 +737,34 @@ namespace GurpsDb.GurpsModel
             modelBuilder.Entity<TypeOfDamage>()
                 .HasMany(e => e.WeaponDamage)
                 .WithOptional(e => e.TypeOfDamage)
-                .HasForeignKey(e => e.idTypeOfDamage1);
+                .HasForeignKey(e => e.IdTypeOfDamage1);
 
             modelBuilder.Entity<TypeOfDamage>()
                 .HasMany(e => e.WeaponDamage1)
                 .WithOptional(e => e.TypeOfDamage1)
-                .HasForeignKey(e => e.idTypeOfDamage2);
+                .HasForeignKey(e => e.IdTypeOfDamage2);
 
-            modelBuilder.Entity<WEAPON>()
-                .Property(e => e.Half_Range)
+            modelBuilder.Entity<Weapon>()
+                .Property(e => e.HalfRange)
                 .HasPrecision(10, 4);
 
-            modelBuilder.Entity<WEAPON>()
+            modelBuilder.Entity<Weapon>()
                 .Property(e => e.FullRange)
                 .HasPrecision(10, 4);
 
-            modelBuilder.Entity<WEAPON>()
+            modelBuilder.Entity<Weapon>()
                 .Property(e => e.AWeight)
                 .HasPrecision(5, 3);
 
-            modelBuilder.Entity<WEAPON>()
+            modelBuilder.Entity<Weapon>()
                 .HasMany(e => e.WeaponDamage)
-                .WithRequired(e => e.WEAPON)
-                .HasForeignKey(e => e.idWeapon);
+                .WithRequired(e => e.Weapon)
+                .HasForeignKey(e => e.IdWeapon);
 
             modelBuilder.Entity<WeaponAttackType>()
                 .HasMany(e => e.WeaponDamage)
                 .WithRequired(e => e.WeaponAttackType)
-                .HasForeignKey(e => e.idWeaponAttackType)
+                .HasForeignKey(e => e.IdWeaponAttackType)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<WeaponDamage>()

@@ -9,30 +9,30 @@ namespace GurpsDb.GurpsModel
     [Table("CharDB.DefSkillSome")]
     public partial class DefSkillSome
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(50)]
-        public string nameSkill { get; set; }
+        public string NameSkill { get; set; }
 
         [StringLength(50)]
-        public string specialization { get; set; }
+        public string Specialization { get; set; }
 
         [StringLength(50)]
-        public string type { get; set; }
+        public string Type { get; set; }
 
         [StringLength(50)]
-        public string modifier { get; set; }
+        public string Modifier { get; set; }
 
-        public int? idSkill { get; set; }
+        public int? IdSkill { get; set; }
 
-        public int? idRangeWeap { get; set; }
+        public int? IdRangeWeap { get; set; }
 
-        public int? idMeleWeap { get; set; }
+        public int? IdMeleWeap { get; set; }
 
         public virtual GurpsSkill GurpsSkill { get; set; }
 
-        public virtual ranged_weapon ranged_weapon { get; set; }
+        public virtual RangedWeapon RangedWeapon { get; set; }
 
-        public virtual melee_weapon melee_weapon { get; set; }
+        public virtual MeleeWeapon MeleeWeapon { get; set; }
     }
 }

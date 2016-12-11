@@ -7,35 +7,35 @@ namespace GurpsDb.GurpsModel
     using System.Data.Entity.Spatial;
 
     [Table("CharDB.melee_weapon")]
-    public partial class melee_weapon
+    public partial class MeleeWeapon
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public melee_weapon()
+        public MeleeWeapon()
         {
             DefSkillSome = new HashSet<DefSkillSome>();
         }
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(50)]
-        public string damage { get; set; }
+        public string Damage { get; set; }
 
         [StringLength(50)]
-        public string strength { get; set; }
+        public string Strength { get; set; }
 
         [StringLength(50)]
-        public string usage { get; set; }
+        public string Usage { get; set; }
 
         [StringLength(50)]
-        public string reach { get; set; }
+        public string Reach { get; set; }
 
         [StringLength(50)]
-        public string parry { get; set; }
+        public string Parry { get; set; }
 
         [StringLength(50)]
-        public string block { get; set; }
+        public string Block { get; set; }
 
-        public int? idAdv { get; set; }
+        public int? IdAdv { get; set; }
 
         public virtual Advantage Advantage { get; set; }
 

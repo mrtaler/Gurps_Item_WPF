@@ -12,18 +12,18 @@ namespace GurpsDb.GurpsModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Attachment()
         {
-            G_AvAttachClass = new HashSet<G_AvAttachClass>();
+            GAvAttachClass = new HashSet<GAvAttachClass>();
         }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int uiIndex { get; set; }
+        public int UiIndex { get; set; }
 
         [Required]
         [StringLength(80)]
-        public string szAttName { get; set; }
+        public string SzAttName { get; set; }
 
-        public int rAttachmentClass { get; set; }
+        public int RAttachmentClass { get; set; }
 
         [StringLength(50)]
         public string Attachmentmount { get; set; }
@@ -68,13 +68,13 @@ namespace GurpsDb.GurpsModel
 
         public int? RecoilModifier { get; set; }
 
-        public int G_SubAttachClass { get; set; }
+        public int GSubAttachClass { get; set; }
 
-        public int G_AttachClass { get; set; }
+        public int GAttachClass { get; set; }
 
         public int? Darkness { get; set; }
 
-        public int? Bulk_add { get; set; }
+        public int? BulkAdd { get; set; }
 
         public bool Fix { get; set; }
 
@@ -88,7 +88,7 @@ namespace GurpsDb.GurpsModel
 
         public int? AccAddmax { get; set; }
 
-        public int id_Attachmentmount { get; set; }
+        public int IdAttachmentmount { get; set; }
 
         public bool ImpVisSights { get; set; }
 
@@ -104,7 +104,7 @@ namespace GurpsDb.GurpsModel
 
         public int? LaserRFrange { get; set; }
 
-        public int? LaserRFAcc { get; set; }
+        public int? LaserRfAcc { get; set; }
 
         public int? NightVision { get; set; }
 
@@ -112,11 +112,11 @@ namespace GurpsDb.GurpsModel
 
         public bool Infravision { get; set; }
 
-        public bool IRFilter { get; set; }
+        public bool IrFilter { get; set; }
 
         public int? LightRange { get; set; }
 
-        public int? IRLigRange { get; set; }
+        public int? IrLigRange { get; set; }
 
         public int? LaserRange { get; set; }
 
@@ -125,13 +125,13 @@ namespace GurpsDb.GurpsModel
 
         public decimal? LaserColorEf { get; set; }
 
-        public int? usedBatType { get; set; }
+        public int? UsedBatType { get; set; }
 
         public virtual Attachmentmount Attachmentmount1 { get; set; }
 
-        public virtual ITEM ITEM { get; set; }
+        public virtual Item Item { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<G_AvAttachClass> G_AvAttachClass { get; set; }
+        public virtual ICollection<GAvAttachClass> GAvAttachClass { get; set; }
     }
 }

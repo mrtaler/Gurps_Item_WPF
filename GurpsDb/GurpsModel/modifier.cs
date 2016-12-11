@@ -7,38 +7,38 @@ namespace GurpsDb.GurpsModel
     using System.Data.Entity.Spatial;
 
     [Table("CharDB.modifier")]
-    public partial class modifier
+    public partial class Modifier
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(50)]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [StringLength(50)]
-        public string nameC { get; set; }
+        public string NameC { get; set; }
 
         [StringLength(50)]
-        public string notes { get; set; }
+        public string Notes { get; set; }
 
         [StringLength(50)]
-        public string notesC { get; set; }
+        public string NotesC { get; set; }
 
         [StringLength(50)]
-        public string levels { get; set; }
+        public string Levels { get; set; }
 
         [StringLength(50)]
-        public string reference { get; set; }
+        public string Reference { get; set; }
 
         [StringLength(50)]
-        public string affects { get; set; }
+        public string Affects { get; set; }
 
         [StringLength(50)]
-        public string version { get; set; }
+        public string Version { get; set; }
 
         [StringLength(50)]
-        public string enabled { get; set; }
+        public string Enabled { get; set; }
 
-        public int? idAdv { get; set; }
+        public int? IdAdv { get; set; }
 
         [StringLength(50)]
         public string Cost { get; set; }

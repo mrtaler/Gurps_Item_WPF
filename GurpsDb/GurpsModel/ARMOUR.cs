@@ -7,24 +7,24 @@ namespace GurpsDb.GurpsModel
     using System.Data.Entity.Spatial;
 
     [Table("ARMOUR")]
-    public partial class ARMOUR
+    public partial class Armour
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int uiIndex { get; set; }
+        public int UiIndex { get; set; }
 
-        public int ubArmourClass { get; set; }
+        public int UbArmourClass { get; set; }
 
-        public int ubProtection { get; set; }
+        public int UbProtection { get; set; }
 
-        public int ubCoverage { get; set; }
+        public int UbCoverage { get; set; }
 
-        public int ubDegradePercent { get; set; }
+        public int UbDegradePercent { get; set; }
 
         public bool FlakJacket { get; set; }
 
         public bool LeatherJacket { get; set; }
 
-        public virtual ITEM ITEM { get; set; }
+        public virtual Item Item { get; set; }
     }
 }

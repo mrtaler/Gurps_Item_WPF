@@ -7,33 +7,33 @@ namespace GurpsDb.GurpsModel
     using System.Data.Entity.Spatial;
 
     [Table("CharDB.skill_prereqDB")]
-    public partial class skill_prereqDB
+    public partial class SkillPrereqDb
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(50)]
-        public string nameCompare { get; set; }
+        public string NameCompare { get; set; }
 
         [StringLength(50)]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [StringLength(50)]
-        public string specializationCompare { get; set; }
+        public string SpecializationCompare { get; set; }
 
         [StringLength(50)]
-        public string specialization { get; set; }
+        public string Specialization { get; set; }
 
         [StringLength(50)]
-        public string levelSPCompare { get; set; }
+        public string LevelSpCompare { get; set; }
 
         [StringLength(50)]
-        public string levelSP { get; set; }
+        public string LevelSp { get; set; }
 
         [StringLength(10)]
-        public string has { get; set; }
+        public string Has { get; set; }
 
-        public int? idprereq_list { get; set; }
+        public int? IdprereqList { get; set; }
 
-        public virtual prereq_listDB prereq_listDB { get; set; }
+        public virtual PrereqListDb PrereqListDb { get; set; }
     }
 }

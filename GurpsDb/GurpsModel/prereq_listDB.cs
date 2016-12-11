@@ -7,66 +7,66 @@ namespace GurpsDb.GurpsModel
     using System.Data.Entity.Spatial;
 
     [Table("CharDB.prereq_listDB")]
-    public partial class prereq_listDB
+    public partial class PrereqListDb
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public prereq_listDB()
+        public PrereqListDb()
         {
-            advantage_prereq = new HashSet<advantage_prereq>();
-            attribute_prereq = new HashSet<attribute_prereq>();
-            contained_weight_prereq = new HashSet<contained_weight_prereq>();
-            prereq_listDB1 = new HashSet<prereq_listDB>();
-            skill_prereqDB = new HashSet<skill_prereqDB>();
-            spell_prereqDB = new HashSet<spell_prereqDB>();
+            AdvantagePrereq = new HashSet<AdvantagePrereq>();
+            AttributePrereq = new HashSet<AttributePrereq>();
+            ContainedWeightPrereq = new HashSet<ContainedWeightPrereq>();
+            PrereqListDb1 = new HashSet<PrereqListDb>();
+            SkillPrereqDb = new HashSet<SkillPrereqDb>();
+            SpellPrereqDb = new HashSet<SpellPrereqDb>();
         }
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(10)]
-        public string all { get; set; }
+        public string All { get; set; }
 
         [StringLength(10)]
-        public string when_tlCompare { get; set; }
+        public string WhenTlCompare { get; set; }
 
         [StringLength(10)]
-        public string when_tl { get; set; }
+        public string WhenTl { get; set; }
 
         [StringLength(10)]
-        public string college_countCompare { get; set; }
+        public string CollegeCountCompare { get; set; }
 
         [StringLength(10)]
-        public string college_count { get; set; }
+        public string CollegeCount { get; set; }
 
-        public int? FK_prereq_list { get; set; }
+        public int? FkPrereqList { get; set; }
 
-        public int? FK_skill { get; set; }
+        public int? FkSkill { get; set; }
 
-        public int? FK_technique { get; set; }
+        public int? FkTechnique { get; set; }
 
-        public int? FK_Advantage { get; set; }
+        public int? FkAdvantage { get; set; }
 
         public virtual Advantage Advantage { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<advantage_prereq> advantage_prereq { get; set; }
+        public virtual ICollection<AdvantagePrereq> AdvantagePrereq { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<attribute_prereq> attribute_prereq { get; set; }
+        public virtual ICollection<AttributePrereq> AttributePrereq { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<contained_weight_prereq> contained_weight_prereq { get; set; }
+        public virtual ICollection<ContainedWeightPrereq> ContainedWeightPrereq { get; set; }
 
         public virtual GurpsSkill GurpsSkill { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<prereq_listDB> prereq_listDB1 { get; set; }
+        public virtual ICollection<PrereqListDb> PrereqListDb1 { get; set; }
 
-        public virtual prereq_listDB prereq_listDB2 { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<skill_prereqDB> skill_prereqDB { get; set; }
+        public virtual PrereqListDb PrereqListDb2 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<spell_prereqDB> spell_prereqDB { get; set; }
+        public virtual ICollection<SkillPrereqDb> SkillPrereqDb { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SpellPrereqDb> SpellPrereqDb { get; set; }
     }
 }

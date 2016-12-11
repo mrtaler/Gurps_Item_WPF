@@ -9,31 +9,31 @@ namespace GurpsDb.XML.XSD.List
     /// <summary>
     /// Table="default"
     /// </summary>
-    public partial class DefaultXML
+    public partial class DefaultXml
     {
         /// <summary>
         /// 1 Element name
         /// </summary>
-        public XElement nameDefaultXml;
+        public XElement NameDefaultXml;
         /// <summary>
         /// 2 Element specialization
         /// </summary>
-        public XElement specializationDefaultXml;
+        public XElement SpecializationDefaultXml;
         /// <summary>
         /// 3 Element type
         /// </summary>
-        public XElement typeDefaultXml;
+        public XElement TypeDefaultXml;
         /// <summary>
         /// 4 Element modifier 
         /// </summary>
-        public XElement modifierDefaultXml;
-        public DefaultXML() { }
-        public DefaultXML(XElement itemdefault)
+        public XElement ModifierDefaultXml;
+        public DefaultXml() { }
+        public DefaultXml(XElement itemdefault)
         {
-            nameDefaultXml = itemdefault.Element("name");
-            specializationDefaultXml = itemdefault.Element("specialization");
-            typeDefaultXml = itemdefault.Element("type");
-            modifierDefaultXml = itemdefault.Element("modifier");
+            NameDefaultXml = itemdefault.Element("name");
+            SpecializationDefaultXml = itemdefault.Element("specialization");
+            TypeDefaultXml = itemdefault.Element("type");
+            ModifierDefaultXml = itemdefault.Element("modifier");
         }
     }
 }

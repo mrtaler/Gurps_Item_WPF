@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace GurpsDb.XML.XSD.List
 {
-    public class Attribute_bonusXML
+    public class AttributeBonusXml
     {
         public XElement Attribute;
         public XElement Amount;
         /// <summary>
         /// Attribute bonus
         /// </summary>
-        /// <param name="itemAttribute_bonus">give 1up Attribute_bonus collection</param>
-        public Attribute_bonusXML(XElement itemAttribute_bonus)
+        /// <param name="itemAttributeBonus">give 1up Attribute_bonus collection</param>
+        public AttributeBonusXml(XElement itemAttributeBonus)
         {
-            Attribute = itemAttribute_bonus.Element("attribute");
-            Amount = itemAttribute_bonus.Element("amount");
+            Attribute = itemAttributeBonus.Element("attribute");
+            Amount = itemAttributeBonus.Element("amount");
         }
     }
 }

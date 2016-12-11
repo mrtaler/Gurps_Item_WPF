@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace GurpsDb.XML.XSD
 {
-    public class advantage_prereqXml
+    public class AdvantagePrereqXml
     {
-        public XElement name;
-        public XElement notes;
-        public XElement level;
-        public XAttribute has;
+        public XElement Name;
+        public XElement Notes;
+        public XElement Level;
+        public XAttribute Has;
     }
 }

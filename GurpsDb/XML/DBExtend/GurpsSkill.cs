@@ -10,33 +10,33 @@ namespace Item_WPF.ItemEntityModel
 {
     public partial class GurpsSkill
     {
-        public void Fmain(SkillXMLModel skillFromXml, string type)
+        public void Fmain(SkillXmlModel skillFromXml, string type)
         {
             NameSkill = skillFromXml.NameSkill != null
                 ? skillFromXml.NameSkill.Value.ToString() : null;
             Specialization = skillFromXml.Specialization != null
                  ? skillFromXml.Specialization.Value.ToString() : null;
-            idtech_level = skillFromXml.tech_level != null && skillFromXml.tech_level.Value.ToString() != ""
-                 ? Convert.ToInt32(skillFromXml.tech_level.Value) : 100;
-            Difficulty = skillFromXml.difficulty != null
-                 ? skillFromXml.difficulty.Value.ToString() : null;
+            idtech_level = skillFromXml.TechLevel != null && skillFromXml.TechLevel.Value.ToString() != ""
+                 ? Convert.ToInt32(skillFromXml.TechLevel.Value) : 100;
+            Difficulty = skillFromXml.Difficulty != null
+                 ? skillFromXml.Difficulty.Value.ToString() : null;
             Points = skillFromXml.Points != null
                  ? Convert.ToInt32(skillFromXml.Points.Value) : 0;
             Reference = skillFromXml.Reference != null
                  ? skillFromXml.Reference.Value.ToString() : null;
-            version = skillFromXml.version != null
-                 ? skillFromXml.version.Value.ToString() : null;
-            notes = skillFromXml.notes != null
-                 ? skillFromXml.notes.Value.ToString() : null;
-            encumbrance_penalty_multiplier = skillFromXml.encumbrance_penalty_multiplier != null
-                 ? skillFromXml.encumbrance_penalty_multiplier.Value.ToString() : null;
-            limitT = skillFromXml.limit != null
-                 ? skillFromXml.limit.Value.ToString() : null;
+            version = skillFromXml.Version != null
+                 ? skillFromXml.Version.Value.ToString() : null;
+            notes = skillFromXml.Notes != null
+                 ? skillFromXml.Notes.Value.ToString() : null;
+            encumbrance_penalty_multiplier = skillFromXml.EncumbrancePenaltyMultiplier != null
+                 ? skillFromXml.EncumbrancePenaltyMultiplier.Value.ToString() : null;
+            limitT = skillFromXml.Limit != null
+                 ? skillFromXml.Limit.Value.ToString() : null;
             if (idtech_level == 100)
                 idtech_level = null;
             TypeSkTh = type;
         }
-        public void FCATEGORY(SkillXMLModel SkillFromXml, item1Entities _context)
+        public void Fcategory(SkillXmlModel skillFromXml, item1Entities context)
         {
             //foreach (CategoriesXML itemCategory in SkillFromXml.categories)
             //{
@@ -47,52 +47,52 @@ namespace Item_WPF.ItemEntityModel
             //          Add(qe);
             //}
         }
-        public void FDefault(SkillXMLModel SkillFromXml, ObservableCollection<GurpsSkill> CollectionCategiry)
+        public void FDefault(SkillXmlModel skillFromXml, ObservableCollection<GurpsSkill> collectionCategiry)
         {
-            foreach (DefaultXML itemDefault in SkillFromXml.Default)
+            foreach (DefaultXML itemDefault in skillFromXml.Default)
             {
-                DefaultSkill dfSk = new DefaultSkill(itemDefault, CollectionCategiry);
+                DefaultSkill dfSk = new DefaultSkill(itemDefault, collectionCategiry);
                 DefaultSkills.Add(dfSk);
             }
         }
 
-        public void FSpecialization(SkillXMLModel SkillFromXml, ObservableCollection<GurpsSkill> CollectionCategiry)
+        public void FSpecialization(SkillXmlModel skillFromXml, ObservableCollection<GurpsSkill> collectionCategiry)
         {
 
 
-            string NameSkill = SkillFromXml.NameSkill != null
-                             ? SkillFromXml.NameSkill.Value.ToString() : null;
-            string SpecSkill = SkillFromXml.Specialization != null
-                             ? SkillFromXml.Specialization.Value.ToString() : null;
-            string VersSkill = SkillFromXml.version != null
-              ? SkillFromXml.version.Value.ToString() : null;
-            string TypeSkill = SkillFromXml.Type != null
-             ? SkillFromXml.Type : null;
-            if (NameSkill == "Area Knowledge")
+            string nameSkill = skillFromXml.NameSkill != null
+                             ? skillFromXml.NameSkill.Value.ToString() : null;
+            string specSkill = skillFromXml.Specialization != null
+                             ? skillFromXml.Specialization.Value.ToString() : null;
+            string versSkill = skillFromXml.Version != null
+              ? skillFromXml.Version.Value.ToString() : null;
+            string typeSkill = skillFromXml.Type != null
+             ? skillFromXml.Type : null;
+            if (nameSkill == "Area Knowledge")
             { }
 
-            if (SpecSkill != null)
+            if (specSkill != null)
             {
-                if (!SpecSkill.EndsWith("@"))
+                if (!specSkill.EndsWith("@"))
                 {
-                    GurpsSkill GSSpec = CollectionCategiry
-                    .Where(p => p.TypeSkTh == TypeSkill)
-                    .Where(p => p.NameSkill == NameSkill)
-                    .Where(p => p.version == VersSkill)
+                    GurpsSkill gsSpec = collectionCategiry
+                    .Where(p => p.TypeSkTh == typeSkill)
+                    .Where(p => p.NameSkill == nameSkill)
+                    .Where(p => p.version == versSkill)
                     .FirstOrDefault(p => p.Specialization == null || (p.Specialization.StartsWith("@") && p.Specialization.EndsWith("@")));
-                    if (GSSpec != null)
+                    if (gsSpec != null)
                     {
-                        GurpsSkill2 = GSSpec;
+                        GurpsSkill2 = gsSpec;
                         //   GurpsSkill1.Add(GSSpec);    
                     }
                 }
             }
         }
-        public void Fattribute_bonus(SkillXMLModel SkillFromXml)
+        public void Fattribute_bonus(SkillXmlModel skillFromXml)
         {
-            foreach (Attribute_bonusXML item in SkillFromXml.attribute_bonus)
+            foreach (Attribute_bonusXML item in skillFromXml.AttributeBonus)
             {
-                attribute_bonus atrbnr = new attribute_bonus();
+                AttributeBonus atrbnr = new AttributeBonus();
                 //foreach (var itemAttribute in item.Attribute)
                 //{
                 //    atrbnr.AttributeLimitation = itemAttribute.attribute.Attribute("limitation").Value.ToString();
@@ -106,14 +106,14 @@ namespace Item_WPF.ItemEntityModel
                 //    amnatr.Value = itemAmount.amount.Value.ToString();
                 //    atrbnr.AmountAtributes.Add(amnatr);
                 //}
-                attribute_bonus.Add(atrbnr);
+                AttributeBonus.Add(atrbnr);
             }
         }
-        public void Fweapon_bonus(SkillXMLModel SkillFromXml)
+        public void Fweapon_bonus(SkillXmlModel skillFromXml)
         {
-            foreach (Weapon_bonusXML itemWeapon_bonus in SkillFromXml.weapon_bonus)
+            foreach (Weapon_bonusXML itemWeaponBonus in skillFromXml.WeaponBonus)
             {
-                weapon_bonus weapbns = new weapon_bonus();
+                WeaponBonus weapbns = new WeaponBonus();
                 //foreach (var itemAmount in itemWeapon_bonus.Amount)
                 //{
                 //    AmountAtribute amnatr = new AmountAtribute();
@@ -121,13 +121,13 @@ namespace Item_WPF.ItemEntityModel
                 //    amnatr.Value = itemAmount.amount.Value.ToString();
                 //    weapbns.AmountAtributes.Add(amnatr);
                 //}
-                weapbns.nameCompare = itemWeapon_bonus.name.Attribute("compare").Value.ToString();
-                weapbns.name = itemWeapon_bonus.name.Value.ToString();
-                weapbns.specializationCompare = itemWeapon_bonus.specialization.Attribute("compare").Value.ToString(); ;
-                weapbns.specialization = itemWeapon_bonus.specialization.Value.ToString();
-                weapbns.levelCompare = itemWeapon_bonus.level.Attribute("compare").Value.ToString(); ;
-                weapbns.level = itemWeapon_bonus.level.Value.ToString();
-                weapon_bonus.Add(weapbns);
+                weapbns.nameCompare = itemWeaponBonus.name.Attribute("compare").Value.ToString();
+                weapbns.name = itemWeaponBonus.name.Value.ToString();
+                weapbns.specializationCompare = itemWeaponBonus.specialization.Attribute("compare").Value.ToString(); ;
+                weapbns.specialization = itemWeaponBonus.specialization.Value.ToString();
+                weapbns.levelCompare = itemWeaponBonus.level.Attribute("compare").Value.ToString(); ;
+                weapbns.level = itemWeaponBonus.level.Value.ToString();
+                WeaponBonus.Add(weapbns);
             }
         }
 
@@ -137,26 +137,26 @@ namespace Item_WPF.ItemEntityModel
 
         // public /*override */GurpsSkill() { }
 
-        public GurpsSkill(SkillXMLModel SkillFromXml, string type)
+        public GurpsSkill(SkillXmlModel skillFromXml, string type)
             : this()
         {
-            Fmain(SkillFromXml, type);
+            Fmain(skillFromXml, type);
         }
 
-        public void FGurpsSkill(SkillXMLModel SkillFromXml, item1Entities _context, ObservableCollection<GurpsSkill> CollectionCategiry)
+        public void FGurpsSkill(SkillXmlModel skillFromXml, item1Entities context, ObservableCollection<GurpsSkill> collectionCategiry)
         // :this()
         {
-            FCATEGORY(SkillFromXml, _context);
-            FSpecialization(SkillFromXml, CollectionCategiry);
-            FDefault(SkillFromXml, CollectionCategiry);
-            Fattribute_bonus(SkillFromXml);
-            Fweapon_bonus(SkillFromXml);
+            Fcategory(skillFromXml, context);
+            FSpecialization(skillFromXml, collectionCategiry);
+            FDefault(skillFromXml, collectionCategiry);
+            Fattribute_bonus(skillFromXml);
+            Fweapon_bonus(skillFromXml);
 
             #region Prereq_listXML
-            var q = SkillFromXml.prereq_list;
-            foreach (Prereq_listXML item in SkillFromXml.prereq_list)
+            var q = skillFromXml.PrereqList;
+            foreach (PrereqListXml item in skillFromXml.PrereqList)
             {
-                prereq_listDB.Add(new prereq_listDB(item));
+                PrereqListDb.Add(new PrereqListDb(item));
             }
             #endregion
         }

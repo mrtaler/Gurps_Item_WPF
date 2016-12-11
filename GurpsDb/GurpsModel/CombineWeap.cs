@@ -9,9 +9,9 @@ namespace GurpsDb.GurpsModel
     [Table("CombineWeap")]
     public partial class CombineWeap
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public int idWeapon { get; set; }
+        public int IdWeapon { get; set; }
 
         public int? ScopeSelect { get; set; }
 

@@ -9,10 +9,10 @@ namespace GurpsDb.GurpsModel
     [Table("LaserColorEf")]
     public partial class LaserColorEf
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(10)]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         public decimal? LaserColorDayEfect { get; set; }
     }

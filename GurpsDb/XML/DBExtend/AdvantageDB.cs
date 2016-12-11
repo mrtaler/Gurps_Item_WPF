@@ -9,163 +9,163 @@ namespace Item_WPF.ItemEntityModel
     public partial class Advantage
     {
         //  public Advantage() { }
-       public Advantage(AdvantageXML advXML)
+       public Advantage(AdvantageXml advXml)
         {
-            name = advXML.name != null
-                                  ? advXML.name.Value.ToString() : null;
-            nameCompare = advXML.name.Attribute("Compare") != null
-                                        ? advXML.name.Attribute("Compare").Value.ToString() : null;
-            typeadc = advXML.type != null
-                                        ? advXML.type.Value.ToString() : null;
-            levels = advXML.levels != null
-                                        ? advXML.levels.Value.ToString() : null;
-            points_per_level = advXML.points_per_level != null
-                                        ? advXML.points_per_level.Value.ToString() : null;
-            base_points = advXML.base_points != null
-                                        ? advXML.base_points.Value.ToString() : null;
-            reference = advXML.reference != null
-                                        ? advXML.reference.Value.ToString() : null;
-            notes = advXML.notes != null
-                                        ? advXML.notes.Value.ToString() : null;
-            cr = advXML.cr != null
-                                        ? advXML.cr.Value.ToString() : null;
-            versionadv = advXML.version != null
-                                        ? advXML.version.Value.ToString() : null;
-            round_down = advXML.round_down != null
-                                        ? advXML.round_down.Value.ToString() : null;
+            name = advXml.Name != null
+                                  ? advXml.Name.Value.ToString() : null;
+            nameCompare = advXml.Name.Attribute("Compare") != null
+                                        ? advXml.Name.Attribute("Compare").Value.ToString() : null;
+            typeadc = advXml.Type != null
+                                        ? advXml.Type.Value.ToString() : null;
+            levels = advXml.Levels != null
+                                        ? advXml.Levels.Value.ToString() : null;
+            points_per_level = advXml.PointsPerLevel != null
+                                        ? advXml.PointsPerLevel.Value.ToString() : null;
+            base_points = advXml.BasePoints != null
+                                        ? advXml.BasePoints.Value.ToString() : null;
+            reference = advXml.Reference != null
+                                        ? advXml.Reference.Value.ToString() : null;
+            notes = advXml.Notes != null
+                                        ? advXml.Notes.Value.ToString() : null;
+            cr = advXml.Cr != null
+                                        ? advXml.Cr.Value.ToString() : null;
+            versionadv = advXml.Version != null
+                                        ? advXml.Version.Value.ToString() : null;
+            round_down = advXml.RoundDown != null
+                                        ? advXml.RoundDown.Value.ToString() : null;
             #region Prereq_listXML
-            if (advXML.prereq_list != null)
+            if (advXml.PrereqList != null)
             {
                 //  prereq_listDB = new System.Data.Objects.DataClasses.EntityCollection<ItemEntityModel.prereq_listDB>();
                 //     var q = advXML.prereq_list;
-                foreach (Prereq_listXML item in advXML.prereq_list)
+                foreach (PrereqListXml item in advXml.PrereqList)
                 {
-                    prereq_listDB.Add(new prereq_listDB(item));
+                    PrereqListDb.Add(new PrereqListDb(item));
                 }
             }
             #endregion
           //  FCATEGORY(advXML);
-            Fdr_bonus(advXML);
-            Fattribute_bonus(advXML);
+            Fdr_bonus(advXml);
+            Fattribute_bonus(advXml);
 
-            Fweapon_bonus(advXML);
-            Fcost_reduction(advXML);
+            Fweapon_bonus(advXml);
+            Fcost_reduction(advXml);
 
-            Fmelee_weapon(advXML);
-            Franged_weapon(advXML);
-            Fskill_bonus(advXML);
-            Fspell_bonus(advXML);
-            Fmodifier(advXML);
+            Fmelee_weapon(advXml);
+            Franged_weapon(advXml);
+            Fskill_bonus(advXml);
+            Fspell_bonus(advXml);
+            Fmodifier(advXml);
 
 
         }
-        public void FCATEGORY(AdvantageXML AdvFromXml, item1Entities _context)
+        public void Fcategory(AdvantageXml advFromXml, item1Entities context)
         {
-            foreach (CategoriesXML itemCategory in AdvFromXml.categories)
+            foreach (CategoriesXML itemCategory in advFromXml.Categories)
             {
                 string qery = itemCategory.category.Value.ToString();
 
-                var qe = _context.GurpsCategories.
+                var qe = context.GurpsCategories.
                       FirstOrDefault(p => p.NamelCategory.Contains(qery));
                 GurpsCategories.
                       Add(qe);
             }
         }
-        public void Fdr_bonus(AdvantageXML AdvFromXml)
+        public void Fdr_bonus(AdvantageXml advFromXml)
         {
-            if (AdvFromXml.dr_bonus != null)
+            if (advFromXml.DrBonus != null)
             {
-                foreach (var itemdr_bonus in AdvFromXml.dr_bonus)
+                foreach (var itemdrBonus in advFromXml.DrBonus)
                 {
                     dr_bonusDB drb = new dr_bonusDB();
-                    drb.location = itemdr_bonus.location.Value.ToString();
+                    drb.location = itemdrBonus.location.Value.ToString();
 
-                    drb.per_level = itemdr_bonus.amount.Attribute("per_level") != null
-                                        ? itemdr_bonus.amount.Attribute("per_level").Value.ToString() : null;
-                    drb.Value = itemdr_bonus.amount.Value.ToString();
+                    drb.per_level = itemdrBonus.amount.Attribute("per_level") != null
+                                        ? itemdrBonus.amount.Attribute("per_level").Value.ToString() : null;
+                    drb.Value = itemdrBonus.amount.Value.ToString();
                     dr_bonusDB.Add(drb);
                 }
             }
         }
-        public void Fattribute_bonus(AdvantageXML AdvFromXml)
+        public void Fattribute_bonus(AdvantageXml advFromXml)
         {
-            if (AdvFromXml.attribute_bonus != null)
+            if (advFromXml.AttributeBonus != null)
             {
-                foreach (Attribute_bonusXML item in AdvFromXml.attribute_bonus)
+                foreach (Attribute_bonusXML item in advFromXml.AttributeBonus)
                 {
-                    attribute_bonus.Add(new attribute_bonus(item));
+                    AttributeBonus.Add(new AttributeBonus(item));
                 }
             }
         }
 
-        public void Fweapon_bonus(AdvantageXML AdvFromXml)
+        public void Fweapon_bonus(AdvantageXml advFromXml)
         {
-            if (AdvFromXml.weapon_bonus != null)
+            if (advFromXml.WeaponBonus != null)
             {
-                foreach (Weapon_bonusXML itemWeapon_bonus in AdvFromXml.weapon_bonus)
+                foreach (Weapon_bonusXML itemWeaponBonus in advFromXml.WeaponBonus)
                 {
-                    weapon_bonus.Add(new weapon_bonus(itemWeapon_bonus));
+                    WeaponBonus.Add(new WeaponBonus(itemWeaponBonus));
                 }
             }
         }
-        public void Fcost_reduction(AdvantageXML AdvFromXml)
+        public void Fcost_reduction(AdvantageXml advFromXml)
         {
-            if (AdvFromXml.cost_reduction != null)
+            if (advFromXml.CostReduction != null)
             {
-                foreach (cost_reductionXML item in AdvFromXml.cost_reduction)
+                foreach (cost_reductionXML item in advFromXml.CostReduction)
                 {
-                    cost_reduction.Add(new cost_reduction(item));
+                    CostReduction.Add(new CostReduction(item));
                 }
             }
         }
 
-        public void Fmelee_weapon(AdvantageXML AdvFromXml)
+        public void Fmelee_weapon(AdvantageXml advFromXml)
         {
-            if (AdvFromXml.melee_weapon != null)
+            if (advFromXml.MeleeWeapon != null)
             {
-                foreach (melee_weaponXML item in AdvFromXml.melee_weapon)
+                foreach (melee_weaponXML item in advFromXml.MeleeWeapon)
                 {
-                    melee_weapon.Add(new melee_weapon(item));
+                    MeleeWeapon.Add(new MeleeWeapon(item));
                 }
             }
         }
-        public void Franged_weapon(AdvantageXML AdvFromXml)
+        public void Franged_weapon(AdvantageXml advFromXml)
         {
-            if (AdvFromXml.ranged_weapon != null)
+            if (advFromXml.RangedWeapon != null)
             {
-                foreach (ranged_weaponXML item in AdvFromXml.ranged_weapon)
+                foreach (ranged_weaponXML item in advFromXml.RangedWeapon)
                 {
-                    ranged_weapon.Add(new ranged_weapon(item));
+                    RangedWeapon.Add(new RangedWeapon(item));
                 }
             }
         }
-        public void Fskill_bonus(AdvantageXML AdvFromXml)
+        public void Fskill_bonus(AdvantageXml advFromXml)
         {
-            if (AdvFromXml.skill_bonus != null)
+            if (advFromXml.SkillBonus != null)
             {
-                foreach (skill_bonusXML item in AdvFromXml.skill_bonus)
+                foreach (skill_bonusXML item in advFromXml.SkillBonus)
                 {
-                    skill_bonusDB.Add(new skill_bonusDB(item));
+                    SkillBonusDb.Add(new SkillBonusDb(item));
                 }
             }
         }
-        public void Fspell_bonus(AdvantageXML AdvFromXml)
+        public void Fspell_bonus(AdvantageXml advFromXml)
         {
-            if (AdvFromXml.spell_bonus != null)
+            if (advFromXml.SpellBonus != null)
             {
-                foreach (spell_bonusXML item in AdvFromXml.spell_bonus)
+                foreach (spell_bonusXML item in advFromXml.SpellBonus)
                 {
-                    spell_bonus.Add(new spell_bonus(item));
+                    SpellBonus.Add(new SpellBonus(item));
                 }
             }
         }
-        public void Fmodifier(AdvantageXML AdvFromXml)
+        public void Fmodifier(AdvantageXml advFromXml)
         {
-            if (AdvFromXml.modifier != null)
+            if (advFromXml.Modifier != null)
             {
-                foreach (modifierXML item in AdvFromXml.modifier)
+                foreach (modifierXML item in advFromXml.Modifier)
                 {
-                    modifiers.Add(new modifier(item));
+                    modifiers.Add(new Modifier(item));
                 }
             }
         }

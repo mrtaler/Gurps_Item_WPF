@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace GurpsDb.XML.XSD
 {
-    public class attribute_prereqXml
+    public class AttributePrereqXml
     {
-        public XAttribute has;
-        public XAttribute which;
-        public XAttribute compare;
-        public XAttribute combined_with;
+        public XAttribute Has;
+        public XAttribute Which;
+        public XAttribute Compare;
+        public XAttribute CombinedWith;
         public string Value;
     }
 }
