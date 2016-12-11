@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Item_WPF.MVVM.Serialize.Model;
+﻿using Item_WPF.MVVM.Serialize.Model;
 
 namespace Item_WPF.ItemEntityModel
 {
     public partial class Advantage
     {
         //  public Advantage() { }
-       public Advantage(AdvantageXml advXml)
+        public Advantage(AdvantageXml advXml)
         {
             name = advXml.Name != null
                                   ? advXml.Name.Value.ToString() : null;
@@ -44,7 +40,7 @@ namespace Item_WPF.ItemEntityModel
                 }
             }
             #endregion
-          //  FCATEGORY(advXML);
+            //  FCATEGORY(advXML);
             Fdr_bonus(advXml);
             Fattribute_bonus(advXml);
 

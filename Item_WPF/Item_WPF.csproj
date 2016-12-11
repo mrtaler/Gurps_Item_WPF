@@ -412,6 +412,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="addin\oldDB\ItemModelDiagram.dbd" />
     <None Include="addin\Диаграмма1.dbd" />

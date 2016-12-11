@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Collections.ObjectModel;
-using Item_WPF.MVVM.Serialize.Model;
+﻿using System.Collections.ObjectModel;
 using System.Xml.Linq;
 
 namespace Item_WPF.MVVM.Serialize.Model

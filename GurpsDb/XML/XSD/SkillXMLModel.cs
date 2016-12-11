@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
 using System.Collections.ObjectModel;
 
 namespace Item_WPF.MVVM.Serialize.Model
@@ -63,10 +59,10 @@ namespace Item_WPF.MVVM.Serialize.Model
         /// <summary>
         /// 1_4 element ref="attribute_bonus" 
         /// </summary>
-        public ObservableCollection<Attribute_bonusXML> AttributeBonus=new ObservableCollection<Attribute_bonusXML>();
+        public ObservableCollection<Attribute_bonusXML> AttributeBonus = new ObservableCollection<Attribute_bonusXML>();
         /// <summary>
         /// 1_5 element ref="weapon_bonus" 
         /// </summary>
-        public ObservableCollection<Weapon_bonusXML> WeaponBonus=new ObservableCollection<Weapon_bonusXML>();
+        public ObservableCollection<Weapon_bonusXML> WeaponBonus = new ObservableCollection<Weapon_bonusXML>();
     }
 }
