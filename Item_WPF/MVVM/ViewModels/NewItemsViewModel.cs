@@ -1,53 +1,50 @@
 ﻿using Item_WPF.addin;
 using Item_WPF.MVVM.View;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data.Entity.Core.Objects;
 using System.Linq;
-using Item_WPF.ItemEntityModel;
-using System.Text;
-using System.Threading.Tasks;
+using GurpsDb.GurpsModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {
     class NewItemsViewModel : INotifyPropertyChanged, IDisposable
     {
-        private item1Entities _context;
+        private ContextGurpsModel _context;
         public ObservableCollection<ItemClass> ItemsClass { get; set; }
         public ItemClass SelectedItemClass { get; set; }
         public string NewItemName { get; set; }
         public NewItemsViewModel()
         {
-            _context = new item1Entities();
-            ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClasses.Where(p => p.name != "All"));
+            _context = new ContextGurpsModel();
+            ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClassDbSet.Where(p => p.Name != "All"));
 
-            CCreateNewItem = new ViewModelCommand(CreateNewItem) ;
+            CCreateNewItem = new ViewModelCommand(CreateNewItem);
         }
         #region Command CreateNewItem
         private void CreateNewItem(object parameter)
         {
             ObjectParameter Returns = new ObjectParameter("Returns", typeof(string));
-            _context.NEW_ITEM(NewItemName, SelectedItemClass.name, Returns);
+            // _context.NEW_ITEM(NewItemName, SelectedItemClass.Name, Returns);
 
             int _idRetuns = Convert.ToInt32(Returns.Value);
-            ITEM _newItem = _context.ITEMs.First(p => p.uiIndex == _idRetuns);
-            _newItem.dt = System.DateTime.UtcNow;
+            Item _newItem = _context.ItemDbSet.First(p => p.UiIndex == _idRetuns);
+            _newItem.Dt = System.DateTime.UtcNow;
             // _newItem.used = true;
-            if (_newItem.ItemSubClass.ItemClass.name == "Weapon"
-                                || _newItem.ItemSubClass.ItemClass.name == "Knife"
-                                || _newItem.ItemSubClass.ItemClass.name == "Throwing Knife"
-                                || _newItem.ItemSubClass.ItemClass.name == "Launcher"
-                                || _newItem.ItemSubClass.ItemClass.name == "Thrown Weapon"
-                                || _newItem.ItemSubClass.ItemClass.name == "Blunt Weapon")
+            if (_newItem.ItemSubClass.ItemClass.Name == "Weapon"
+                                || _newItem.ItemSubClass.ItemClass.Name == "Knife"
+                                || _newItem.ItemSubClass.ItemClass.Name == "Throwing Knife"
+                                || _newItem.ItemSubClass.ItemClass.Name == "Launcher"
+                                || _newItem.ItemSubClass.ItemClass.Name == "Thrown Weapon"
+                                || _newItem.ItemSubClass.ItemClass.Name == "Blunt Weapon")
             {
 
                 WeaponEditView WeapView = new WeaponEditView(_newItem);
                 WeapView.ShowDialog();
             }
 
-            else if (_newItem.ItemSubClass.ItemClass.name == "Attachment")
+            else if (_newItem.ItemSubClass.ItemClass.Name == "Attachment")
             {
                 AttacmentEditView attachNr = new AttacmentEditView(_newItem);
                 attachNr.ShowDialog();

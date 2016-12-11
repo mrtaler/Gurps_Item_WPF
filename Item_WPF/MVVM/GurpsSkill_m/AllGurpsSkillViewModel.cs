@@ -1,20 +1,16 @@
 ﻿using Item_WPF.addin;
-using Item_WPF.ItemEntityModel;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using GurpsDb.GurpsModel;
 
 namespace Item_WPF.MVVM.GurpsSkill_m
 {
     public class AllGurpsSkillViewModel : ViewModelBase
     {
-        private item1Entities _context;
-        public ObservableCollection<ItemEntityModel.GurpsSkill> AllGurpsSkillforTree
+        private ContextGurpsModel _context;
+        public ObservableCollection<GurpsSkill> AllGurpsSkillforTree
         {
-            get { return new ObservableCollection<GurpsSkill>(_context.GurpsSkills.Where(p => p.idSpecialization == null).OrderBy(p => p.id)); }
+            get { return new ObservableCollection<GurpsSkill>(_context.GurpsSkillDbSet.Where(p => p.IdSpecialization == null).OrderBy(p => p.Id)); }
         }
         public ViewModelCommand SelectedItemChangedCommand { get; set; }
         public GurpsSkill SelectedGurps { get; set; }
@@ -22,26 +18,26 @@ namespace Item_WPF.MVVM.GurpsSkill_m
 
         public AllGurpsSkillViewModel()
         {
-            _context = new item1Entities();
+            _context = new ContextGurpsModel();
             SelectedItemChangedCommand = new ViewModelCommand(SelectedItemChanged, true);
             SelectedGurps = new GurpsSkill();
         }
         private void SelectedItemChanged(object parameter)
         {
-            GurpsSkill SelectGurpsSkill = (parameter as ItemEntityModel.GurpsSkill);
-            int vx = SelectGurpsSkill.id;
+            GurpsSkill SelectGurpsSkill = (parameter as GurpsSkill);
+            int vx = SelectGurpsSkill.Id;
             //int vx = System.Convert.ToInt32(parameter);
             PrereqListDb ng = new PrereqListDb();
 
-            SelectedGurps = _context.GurpsSkills.First(p => p.id == vx);
+            SelectedGurps = _context.GurpsSkillDbSet.First(p => p.Id == vx);
             // SelectedGurpsForWork = (parameter as Item_WPF.GurpsSkill);
 
-            if (_context.GurpsSkills.FirstOrDefault(p => p.id == vx).idSpecialization == null)
+            if (_context.GurpsSkillDbSet.FirstOrDefault(p => p.Id == vx).IdSpecialization == null)
             {
                 //SelectedGurpsForWork.NameSkill = SelectGurpsSkill.NameSkill;
             }
             else
-                if (_context.GurpsSkills.FirstOrDefault(p => p.id == vx).idSpecialization != null)
+                if (_context.GurpsSkillDbSet.FirstOrDefault(p => p.Id == vx).IdSpecialization != null)
             {
                 //SelectedGurpsForWork.NameSkill = "name: " +
                 //    _context.GurpsSkills.Find(_context.GurpsSkills.Find(vx).idSpecialization).NameSkill

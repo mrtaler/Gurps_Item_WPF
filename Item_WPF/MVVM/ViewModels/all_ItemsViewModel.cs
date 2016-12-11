@@ -1,31 +1,27 @@
 ﻿using Item_WPF.addin;
-using Item_WPF.ItemEntityModel;
 using Item_WPF.MVVM.View;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
+using GurpsDb.GurpsModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {
     public class all_ItemsViewModel : ViewModelBase, IDisposable
     {
         protected Window Owner;
-        private item1Entities _context;
+        private ContextGurpsModel _context;
         public string pass { get; set; }
         public ObservableCollection<ItemClass> ItemsClass { get; set; }
         #region  public ObservableCollection<Item> Items
-        public ObservableCollection<ITEM> Items
+        public ObservableCollection<Item> Items
         {
             get
             {
                 if (SelectedItClassforSort == 1 || SelectedItClassforSort == 0 || SelectedItClassforSort == null)
-                    return new ObservableCollection<ITEM>(_context.ITEMs);
-                else return new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.usItemClass == SelectedItClassforSort));
+                    return new ObservableCollection<Item>(_context.ItemDbSet);
+                else return new ObservableCollection<Item>(_context.ItemDbSet.Where(p => p.UsItemClass == SelectedItClassforSort));
             }
         }
         #endregion
@@ -48,8 +44,8 @@ namespace Item_WPF.MVVM.ViewModels
         }
         #endregion
         #region public  Item SelectedItemForWork
-        private ITEM _SelectedItemForWork;
-        public ITEM SelectedItemForWork
+        private Item _SelectedItemForWork;
+        public Item SelectedItemForWork
         {
             get
             {
@@ -69,10 +65,10 @@ namespace Item_WPF.MVVM.ViewModels
         public all_ItemsViewModel(Window owner, object param)
         {
             Owner = owner;
-            _context = new item1Entities();
+            _context = new ContextGurpsModel();
             string Param = param as string;
             //SelectedItClassforSort = _context.ItemClasses.FirstOrDefault(p => p.name.Contains(Param)).id;
-            ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClasses);
+            ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClassDbSet);
 
             Refresh = new ViewModelCommand(Refreshnew);
             CSelItem = new ViewModelCommand(CSelectedItem);
@@ -86,7 +82,7 @@ namespace Item_WPF.MVVM.ViewModels
         private void Refreshnew(object parame)
         {
             _context?.Dispose();
-            _context = new item1Entities();
+            _context = new ContextGurpsModel();
             //  Items = new ObservableCollection<Item>(_context.ITEMs);
             SelectedItClassforSort = 1;
             //else Items = new ObservableCollection<Item>(_context.ITEMs.Where(p => p.usItemClass == SelectedItClassforSort));
@@ -100,12 +96,12 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 // if (SelectedItemForWork.used == false)// созаем сущьность для сравнения
                 //  {
-                int att = _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Att")).id;
-                int gun = _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Weapon")).id;
-                if (SelectedItemForWork.ItemSubClass.ItemClass.id == gun)
+                int att = _context.ItemClassDbSet.FirstOrDefault(p => p.Name.Contains("Att")).Id;
+                int gun = _context.ItemClassDbSet.FirstOrDefault(p => p.Name.Contains("Weapon")).Id;
+                if (SelectedItemForWork.ItemSubClass.ItemClass.Id == gun)
                 {
-                    SelectedItemForWork.used = true;
-                    SelectedItemForWork.dt = System.DateTime.UtcNow;
+                    SelectedItemForWork.Used = true;
+                    SelectedItemForWork.Dt = System.DateTime.UtcNow;
                     SaveChanges(1);
 
                     WeaponEditView avView = new WeaponEditView(SelectedItemForWork);
@@ -115,15 +111,15 @@ namespace Item_WPF.MVVM.ViewModels
                     if (result.HasValue && (result == true))
                     {
                         _context?.Dispose();
-                        _context = new item1Entities();
+                        _context = new ContextGurpsModel();
                         NotifyPropertyChanged("SelectedItClassforSort");
 
                     }
                 }
-                else if (SelectedItemForWork.usItemClass == att)
+                else if (SelectedItemForWork.UsItemClass == att)
                 {
-                    SelectedItemForWork.used = true;
-                    SelectedItemForWork.dt = System.DateTime.UtcNow;
+                    SelectedItemForWork.Used = true;
+                    SelectedItemForWork.Dt = System.DateTime.UtcNow;
                     SaveChanges(1);
 
                     AttacmentEditView attachNr = new AttacmentEditView(SelectedItemForWork);
@@ -150,7 +146,7 @@ namespace Item_WPF.MVVM.ViewModels
             if (pass == "123")
             {
                 MessageBox.Show("Correct Pass");
-                _context.ITEMs.Remove(SelectedItemForWork);
+                _context.ItemDbSet.Remove(SelectedItemForWork);
                 Items.Remove(SelectedItemForWork);
                 _context.SaveChanges();
             }

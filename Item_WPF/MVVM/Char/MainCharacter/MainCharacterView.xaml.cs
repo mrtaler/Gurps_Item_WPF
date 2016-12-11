@@ -1,6 +1,6 @@
 ﻿using System.Windows;
+using Item_WPF.MVVM.Char.MainCharacter;
 using Microsoft.Windows.Controls.Ribbon;
-using Item_WPF.MVVM.ViewModels;
 
 
 namespace Item_WPF.MVVM.View
@@ -8,7 +8,7 @@ namespace Item_WPF.MVVM.View
     /// <summary>
     /// Логика взаимодействия для MainCharacterView.xaml
     /// </summary>
-    public partial class MainCharacterView:RibbonWindow
+    public partial class MainCharacterView : RibbonWindow
     {
         public MainCharacterView()
         {

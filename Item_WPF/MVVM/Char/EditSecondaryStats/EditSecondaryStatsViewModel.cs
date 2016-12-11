@@ -1,16 +1,17 @@
-﻿using Item_WPF.addin;
+﻿using GurpsDb.GurpsModel;
+using Item_WPF.addin;
 
 namespace Item_WPF.MVVM.EditSecondaryStats
 {
     class EditSecondaryStatsViewModel : ViewModelBase
     {
-        public ItemEntityModel.CharacterDB Character { get; set; }
+        public CharacterDb Character { get; set; }
         public ViewModelCommand IncreasePointCommand { get; set; }
         public ViewModelCommand DecreasePointCommand { get; set; }
-        public EditSecondaryStatsViewModel() : this(new ItemEntityModel.CharacterDB())
+        public EditSecondaryStatsViewModel() : this(new CharacterDb())
         {
         }
-        public EditSecondaryStatsViewModel(ItemEntityModel.CharacterDB character)
+        public EditSecondaryStatsViewModel(CharacterDb character)
         {
             Character = character;
             IncreasePointCommand = new ViewModelCommand(IncreasePoint, true);

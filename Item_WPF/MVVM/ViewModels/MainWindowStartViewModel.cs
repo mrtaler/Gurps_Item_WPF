@@ -4,12 +4,6 @@ using Item_WPF.MVVM.GurpsSkill_m;
 using Item_WPF.MVVM.Serialize;
 using Item_WPF.MVVM.View;
 using Microsoft.Windows.Controls.Ribbon;
-using Item_WPF.ItemEntityModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 

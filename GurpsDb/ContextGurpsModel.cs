@@ -6,7 +6,7 @@ namespace GurpsDb.GurpsModel
     public partial class ContextGurpsModel : DbContext
     {
         public ContextGurpsModel()
-            : base("name=GurpsModel")
+            : base("name=ContextGurpsModel")
         {
         }
 

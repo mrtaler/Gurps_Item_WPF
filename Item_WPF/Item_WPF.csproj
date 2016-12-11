@@ -164,13 +164,8 @@
     </Compile>
     <Compile Include="MVVM\GurpsSkill_m\GurpsSkillViewModel.cs" />
     <Compile Include="MVVM\Models\Advantage.cs" />
-    <Compile Include="MVVM\Models\AnyBoxNameType.cs" />
     <Compile Include="MVVM\Models\AttackOption.cs" />
-    <Compile Include="MVVM\Models\BoxItem.cs" />
-    <Compile Include="MVVM\Char\MainCharacter\Character.cs" />
     <Compile Include="MVVM\Models\CombineWeapModel.cs" />
-    <Compile Include="MVVM\Models\DB\CharSkill.cs" />
-    <Compile Include="MVVM\Models\DiceString.cs" />
     <Compile Include="MVVM\Models\Item.cs" />
     <Compile Include="MVVM\Models\ItemsForSortModel.cs" />
     <Compile Include="MVVM\Models\ItemToGridModel.cs" />

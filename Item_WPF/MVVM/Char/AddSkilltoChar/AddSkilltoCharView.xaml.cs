@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using Item_WPF.ItemEntityModel;
+using GurpsDb.GurpsModel;
 using Item_WPF.MVVM.Char.AddSkilltoChar;
 
 namespace Item_WPF.MVVM.AddSkilltoChar
@@ -14,7 +14,7 @@ namespace Item_WPF.MVVM.AddSkilltoChar
             InitializeComponent();
         }
 
-        public AddSkilltoCharView(GurpsDb.GurpsModel.CharacterDb Char, GurpsDb.GurpsModel.GurpsModel context)
+        public AddSkilltoCharView(GurpsDb.GurpsModel.CharacterDb Char, ContextGurpsModel context)
         //       :base()
         {
             DataContext = new AddSkilltoCharViewModel(Char, context);

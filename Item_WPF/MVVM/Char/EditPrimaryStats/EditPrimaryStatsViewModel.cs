@@ -1,16 +1,17 @@
-﻿using Item_WPF.addin;
+﻿using GurpsDb.GurpsModel;
+using Item_WPF.addin;
 
 namespace Item_WPF.MVVM.EditPrimaryStats
 {
     class EditPrimaryStatsViewModel : ViewModelBase
     {
-        public ItemEntityModel.CharacterDB Character { get; set; }
+        public CharacterDb Character { get; set; }
         public ViewModelCommand IncreasePointCommand { get; set; }
         public ViewModelCommand DecreasePointCommand { get; set; }
-        public EditPrimaryStatsViewModel() : this(new ItemEntityModel.CharacterDB())
+        public EditPrimaryStatsViewModel() : this(new CharacterDb())
         {
         }
-        public EditPrimaryStatsViewModel(ItemEntityModel.CharacterDB character)
+        public EditPrimaryStatsViewModel(CharacterDb character)
         {
             Character = character;
             IncreasePointCommand = new ViewModelCommand(IncreasePoint, true);

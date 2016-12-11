@@ -46,6 +46,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GurpsExtendModel\AnyBoxNameType.cs" />
     <Compile Include="GurpsExtendModel\CharacterDb.cs" />
     <Compile Include="GurpsExtendModel\CharSkill.cs" />
     <Compile Include="GurpsExtendModel\DiceString.cs" />

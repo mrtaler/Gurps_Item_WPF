@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Item_WPF.MVVM.Models;
 using Item_WPF.addin;
 using Item_WPF.MVVM.View;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using Item_WPF.ItemEntityModel;
+using GurpsDb.GurpsModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {
 
     class CombineWeapViewModel : ViewModelBase
     {
-        private item1Entities _context;
+        private ContextGurpsModel _context;
         private byte[] _Weapon_Item_Image;
         public byte[] Weapon_Item_Image
         {
@@ -35,10 +30,10 @@ namespace Item_WPF.MVVM.ViewModels
         public ItemToGridModel ItemToGrid { get; set; }
         public ObservableCollection<ItemToGridModel> ItemToGridColl { get; set; }
         public CombineWeapModel combineweap { get; set; }
-        public ITEM AllItemToGridChangeWin { get; set; }
+        public GurpsDb.GurpsModel.Item AllItemToGridChangeWin { get; set; }
         public CombineWeapViewModel()
         {
-            _context = new item1Entities();
+            _context = new ContextGurpsModel();
             ItemToGridColl = new ObservableCollection<ItemToGridModel>();
 
             CSelectWeapon = new ViewModelCommand(SelectWeapon);//work
@@ -63,7 +58,7 @@ namespace Item_WPF.MVVM.ViewModels
         private void AmmoSelect(object parameter)
         {
             AmmoView AmmoviewWinn = new AmmoView();
-            AmmoViewModel AmmoviewMod = new AmmoViewModel(combineweap.idCalibre);
+            AmmoViewModel AmmoviewMod = new AmmoViewModel(combineweap.IdCalibre);
             AmmoviewWinn.DataContext = AmmoviewMod;
             AmmoviewWinn.ShowDialog();
         }
@@ -83,9 +78,9 @@ namespace Item_WPF.MVVM.ViewModels
             if (_SIVM.SelectedItems != null)
             {
 
-                
-                AllItemToGridChangeWin = _SIVM.Items.FirstOrDefault(p => p.uiIndex == _SIVM.SelectedItems.ID);
-                Weapon_Item_Image = AllItemToGridChangeWin.Item_Image;
+
+                AllItemToGridChangeWin = _SIVM.Items.FirstOrDefault(p => p.UiIndex == _SIVM.SelectedItems.Id);
+                Weapon_Item_Image = AllItemToGridChangeWin?.ItemImage;
                 combineweap = new CombineWeapModel(AllItemToGridChangeWin);
                 ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin);
 
@@ -131,9 +126,9 @@ namespace Item_WPF.MVVM.ViewModels
 
             if (_SIVM.SelectedItems != null)
             {
-                if (_SIVM.SelectedItems.ID != 0)
+                if (_SIVM.SelectedItems.Id != 0)
                 {
-                    AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+                    AllItemToGridChangeWin = _context.ItemDbSet.First(p => p.UiIndex == _SIVM.SelectedItems.Id);
                     ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "Scope");
                     ItemToGridColl.Add(ItemToGrid);
                     _SIVM.Dispose();
@@ -157,9 +152,9 @@ namespace Item_WPF.MVVM.ViewModels
             SIWindow.ShowDialog();
             if (_SIVM.SelectedItems != null)
             {
-                if (_SIVM.SelectedItems.ID != 0)
+                if (_SIVM.SelectedItems.Id != 0)
                 {
-                    AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+                    AllItemToGridChangeWin = _context.ItemDbSet.First(p => p.UiIndex == _SIVM.SelectedItems.Id);
 
                     ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "Laser");
                     ItemToGridColl.Add(ItemToGrid);
@@ -181,9 +176,9 @@ namespace Item_WPF.MVVM.ViewModels
             SIWindow.ShowDialog();
             if (_SIVM.SelectedItems != null)
             {
-                if (_SIVM.SelectedItems.ID != 0)
+                if (_SIVM.SelectedItems.Id != 0)
                 {
-                    AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+                    AllItemToGridChangeWin = _context.ItemDbSet.First(p => p.UiIndex == _SIVM.SelectedItems.Id);
 
                     ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "Light");
                     ItemToGridColl.Add(ItemToGrid);
@@ -206,9 +201,9 @@ namespace Item_WPF.MVVM.ViewModels
             SIWindow.ShowDialog();
             if (_SIVM.SelectedItems != null)
             {
-                if (_SIVM.SelectedItems.ID != 0)
+                if (_SIVM.SelectedItems.Id != 0)
                 {
-                    AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+                    AllItemToGridChangeWin = _context.ItemDbSet.First(p => p.UiIndex == _SIVM.SelectedItems.Id);
 
                     ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "Bipod");
                     ItemToGridColl.Add(ItemToGrid);
@@ -230,9 +225,9 @@ namespace Item_WPF.MVVM.ViewModels
             SIWindow.ShowDialog();
             if (_SIVM.SelectedItems != null)
             {
-                if (_SIVM.SelectedItems.ID != 0)
+                if (_SIVM.SelectedItems.Id != 0)
                 {
-                    AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+                    AllItemToGridChangeWin = _context.ItemDbSet.First(p => p.UiIndex == _SIVM.SelectedItems.Id);
 
                     ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "Silenser");
                     ItemToGridColl.Add(ItemToGrid);
@@ -253,9 +248,9 @@ namespace Item_WPF.MVVM.ViewModels
             SIWindow.ShowDialog();
             if (_SIVM.SelectedItems != null)
             {
-                if (_SIVM.SelectedItems.ID != 0)
+                if (_SIVM.SelectedItems.Id != 0)
                 {
-                    AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+                    AllItemToGridChangeWin = _context.ItemDbSet.First(p => p.UiIndex == _SIVM.SelectedItems.Id);
 
                     ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "Launcher");
                     ItemToGridColl.Add(ItemToGrid);
@@ -277,9 +272,9 @@ namespace Item_WPF.MVVM.ViewModels
             SIWindow.ShowDialog();
             if (_SIVM.SelectedItems != null)
             {
-                if (_SIVM.SelectedItems.ID != 0)
+                if (_SIVM.SelectedItems.Id != 0)
                 {
-                    AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+                    AllItemToGridChangeWin = _context.ItemDbSet.First(p => p.UiIndex == _SIVM.SelectedItems.Id);
 
                     ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "Stock");
                     ItemToGridColl.Add(ItemToGrid);
@@ -302,15 +297,16 @@ namespace Item_WPF.MVVM.ViewModels
             SIWindow.ShowDialog();
             if (_SIVM.SelectedItems != null)
             {
-                if (_SIVM.SelectedItems.ID != 0)
+                if (_SIVM.SelectedItems.Id != 0)
                 {
-                    AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+                    AllItemToGridChangeWin = _context.ItemDbSet.First(p => p.UiIndex == _SIVM.SelectedItems.Id);
 
                     ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "Bayonet");
                     ItemToGridColl.Add(ItemToGrid);
                     _SIVM.Dispose();
                 }
-            } }
+            }
+        }
         public ViewModelCommand CBayonetSelect { get; set; }
         #endregion
         #region Command SelectMagazine
@@ -325,9 +321,9 @@ namespace Item_WPF.MVVM.ViewModels
             SIWindow.ShowDialog();
             if (_SIVM.SelectedItems != null)
             {
-                if (_SIVM.SelectedItems.ID != 0)
+                if (_SIVM.SelectedItems.Id != 0)
                 {
-                    AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+                    AllItemToGridChangeWin = _context.ItemDbSet.First(p => p.UiIndex == _SIVM.SelectedItems.Id);
 
                     ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "Magazine");
                     ItemToGridColl.Add(ItemToGrid);
@@ -350,9 +346,9 @@ namespace Item_WPF.MVVM.ViewModels
             SIWindow.ShowDialog();
             if (_SIVM.SelectedItems != null)
             {
-                if (_SIVM.SelectedItems.ID != 0)
+                if (_SIVM.SelectedItems.Id != 0)
                 {
-                    AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+                    AllItemToGridChangeWin = _context.ItemDbSet.First(p => p.UiIndex == _SIVM.SelectedItems.Id);
 
                     ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "Internal");
                     ItemToGridColl.Add(ItemToGrid);
@@ -374,19 +370,20 @@ namespace Item_WPF.MVVM.ViewModels
             SIWindow.ShowDialog();
             if (_SIVM.SelectedItems != null)
             {
-                if (_SIVM.SelectedItems.ID != 0)
+                if (_SIVM.SelectedItems.Id != 0)
                 {
-                    AllItemToGridChangeWin = _context.ITEMs.First(p => p.uiIndex == _SIVM.SelectedItems.ID);
+                    AllItemToGridChangeWin = _context.ItemDbSet.First(p => p.UiIndex == _SIVM.SelectedItems.Id);
 
                     ItemToGrid = new ItemToGridModel(AllItemToGridChangeWin, "External");
                     ItemToGridColl.Add(ItemToGrid);
                     _SIVM.Dispose();
                 }
-            } }
+            }
+        }
         public ViewModelCommand CExternalSelect { get; set; }
         #endregion
     }
 }
- 
 
-   
+
+

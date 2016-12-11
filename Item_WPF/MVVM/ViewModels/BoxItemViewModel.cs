@@ -1,21 +1,21 @@
 ﻿using Item_WPF.addin;
-using Item_WPF.ItemEntityModel;
 using System;
 
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
+using GurpsDb.GurpsModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {
     public class BoxItemViewModel : ViewModelBase
     {
-        private item1Entities _context;
-        public ObservableCollection<AnyBoxNameType> anyBoxNameType111 { get; set; }
-        public ObservableCollection<AnyBoxNameType> anyBoxNameTypeAll { get; set; }
+        private ContextGurpsModel _context;
+        public ObservableCollection<AnyBoxNameType> AnyBoxNameType111 { get; set; }
+        public ObservableCollection<AnyBoxNameType> AnyBoxNameTypeAll { get; set; }
         public ObservableCollection<ItemClass> ItemsClass { get; set; }
-        private ItemEntityModel.AnyBoxNameType _bx;
-        public ItemEntityModel.AnyBoxNameType bx
+        private AnyBoxNameType _bx;
+        public AnyBoxNameType Bx
         {
             get
             {
@@ -26,33 +26,33 @@ namespace Item_WPF.MVVM.ViewModels
                 if (_bx != value)
                 {
                     _bx = value;
-                    NotifyPropertyChanged("bx");
+                    NotifyPropertyChanged("Bx");
                 };
             }
         }
-        private ItemEntityModel.BoxItem _BoxItemforWork;
-        public ItemEntityModel.BoxItem BoxItemforWork
+        private BoxItem _boxItemforWork;
+        public BoxItem BoxItemforWork
         {
-            get { return _BoxItemforWork; }
+            get { return _boxItemforWork; }
             set
             {
-                if (_BoxItemforWork != value)
+                if (_boxItemforWork != value)
                 {
-                    _BoxItemforWork = value;
-                    NotifyPropertyChanged("boxItem");
+                    _boxItemforWork = value;
+                    NotifyPropertyChanged("BoxItemforWork");
                 }
             }
         }
-        public ITEM itemtobox { get; set; }
-        public ObservableCollection<BoxItem> boxItem { get; set; }
-        #region public ObservableCollection<Item> ItemsFromDB
-        public ObservableCollection<ITEM> ItemsFromDB
+        public Item ItemToBox { get; set; }
+        public ObservableCollection<BoxItem> BoxItem { get; set; }
+        #region public ObservableCollection<Item> ItemsFromDb
+        public ObservableCollection<Item> ItemsFromDb
         {
             get
             {
                 if (SelectedItClassforSort == 1 || SelectedItClassforSort == 0 || SelectedItClassforSort == null)
-                    return new ObservableCollection<ITEM>(_context.ITEMs);
-                else return new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.usItemClass == SelectedItClassforSort));
+                    return new ObservableCollection<Item>(_context.ItemDbSet);
+                else return new ObservableCollection<Item>(_context.ItemDbSet.Where(p => p.UsItemClass == SelectedItClassforSort));
             }
         }
         #endregion
@@ -84,22 +84,22 @@ namespace Item_WPF.MVVM.ViewModels
                 {
                     _Test = value;
                     NotifyPropertyChanged("Test");
-                    NotifyPropertyChanged("boxItem");
+                    NotifyPropertyChanged("BoxItem");
                 }
             }
         }
         public BoxItemViewModel(object parameter)
         {
             int Boxindex = Convert.ToInt32(parameter);
-            _context = new item1Entities();
-            anyBoxNameType111 = new ObservableCollection<AnyBoxNameType>(_context.AnyBoxNameTypes.Where(p => p.ParentBoxName == null));
-            anyBoxNameTypeAll = new ObservableCollection<AnyBoxNameType>(_context.AnyBoxNameTypes);
-            boxItem = new ObservableCollection<BoxItem>();
-            ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClasses);
+            _context = new ContextGurpsModel();
+            AnyBoxNameType111 = new ObservableCollection<AnyBoxNameType>(_context.AnyBoxNameTypeDbSet.Where(p => p.ParentBoxName == null));
+            AnyBoxNameTypeAll = new ObservableCollection<AnyBoxNameType>(_context.AnyBoxNameTypeDbSet);
+            BoxItem = new ObservableCollection<BoxItem>();
+            ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClassDbSet);
             BoxItemforWork = null;
 
-            anyBoxNameType111.CollectionChanged += new NotifyCollectionChangedEventHandler(anyBoxNameType111_CollectionChanged);
-            anyBoxNameTypeAll.CollectionChanged += new NotifyCollectionChangedEventHandler(anyBoxNameTypeAll_CollectionChanged);
+            AnyBoxNameType111.CollectionChanged += new NotifyCollectionChangedEventHandler(anyBoxNameType111_CollectionChanged);
+            AnyBoxNameTypeAll.CollectionChanged += new NotifyCollectionChangedEventHandler(anyBoxNameTypeAll_CollectionChanged);
             AddCommand = new ViewModelCommand(Add, true);
             RemCommand = new ViewModelCommand(Rem, true);
             DellCommand = new ViewModelCommand(Dell, true);
@@ -112,7 +112,7 @@ namespace Item_WPF.MVVM.ViewModels
             Save = new ViewModelCommand(SaveChanges);
             AddNewMainBoxCommand = new ViewModelCommand(AddNewMainBox, true);
             AddNewSubMainBoxCommand = new ViewModelCommand(AddNewSubMainBox, true);
-            PropertyDependencyMap.Add("SelectedItClassforSort", new[] { "ItemsFromDB" });
+            PropertyDependencyMap.Add("SelectedItClassforSort", new[] { "ItemsFromDb" });
 
 
 
@@ -125,9 +125,9 @@ namespace Item_WPF.MVVM.ViewModels
             // AnyBoxNameType vx = (parameter as AnyBoxNameType);
 
 
-            boxItem = new ObservableCollection<BoxItem>(_context.BoxItems.Where(p => p.BoxName == vx));
-            boxItem.CollectionChanged += new NotifyCollectionChangedEventHandler(boxItem_CollectionChanged);
-            NotifyPropertyChanged("boxItem");
+            BoxItem = new ObservableCollection<BoxItem>(_context.BoxItemDbSet.Where(p => p.BoxName == vx));
+            BoxItem.CollectionChanged += new NotifyCollectionChangedEventHandler(boxItem_CollectionChanged);
+            NotifyPropertyChanged("BoxItem");
         }
         //private ViewModelCommand _SelectedItemChangedCommand;
         public ViewModelCommand SelectedItemChangedCommand { get; set; }
@@ -138,19 +138,19 @@ namespace Item_WPF.MVVM.ViewModels
         private void Add(object parameter)
         {
             int param = Convert.ToInt32(parameter);
-            BoxItemforWork = boxItem.Where(p => p.BoxName == param).FirstOrDefault(p => p.ITEM == itemtobox);
+            BoxItemforWork = BoxItem.Where(p => p.BoxName == param).FirstOrDefault(p => p.Item == ItemToBox);
 
-            if (itemtobox != null)
+            if (ItemToBox != null)
             {
                 if (BoxItemforWork == null)
                 {
-                    boxItem.Add(new BoxItem { ITEM = itemtobox, BoxName = param, CountItems = 1 });
-                    NotifyPropertyChanged("boxItem");
+                    BoxItem.Add(new BoxItem { Item = ItemToBox, BoxName = param, CountItems = 1 });
+                    NotifyPropertyChanged("BoxItem");
                 }
                 else
                 {
                     BoxItemforWork.CountItems += 1;
-                    NotifyPropertyChanged("boxItem");
+                    NotifyPropertyChanged("BoxItem");
                 }
             }
             BoxItemforWork = null;
@@ -163,7 +163,7 @@ namespace Item_WPF.MVVM.ViewModels
             if (BoxItemforWork != null)
             {
                 if (BoxItemforWork.CountItems > 1) BoxItemforWork.CountItems -= 1;
-                else boxItem.Remove(BoxItemforWork);
+                else BoxItem.Remove(BoxItemforWork);
             }
         }
 
@@ -176,7 +176,7 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 foreach (BoxItem item in e.OldItems)
                 {
-                    _context.BoxItems.Remove(item);
+                    _context.BoxItemDbSet.Remove(item);
                 }
                 SaveChanges(1);
             }
@@ -184,7 +184,7 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 foreach (BoxItem item in e.NewItems)
                 {
-                    _context.BoxItems.Add(/*new BoxItem { Item = itemtobox, BoxName = Test, CountItems = 1 }*/item);
+                    _context.BoxItemDbSet.Add(/*new BoxItem { Item = itemtobox, BoxName = Test, CountItems = 1 }*/item);
                 }
                 SaveChanges(1);
             }
@@ -202,7 +202,7 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 foreach (AnyBoxNameType item in e.OldItems)
                 {
-                    _context.AnyBoxNameTypes.Remove(item);
+                    _context.AnyBoxNameTypeDbSet.Remove(item);
                 }
                 SaveChanges(1);
             }
@@ -210,7 +210,7 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 foreach (AnyBoxNameType item in e.NewItems)
                 {
-                    _context.AnyBoxNameTypes.Add(item);
+                    _context.AnyBoxNameTypeDbSet.Add(item);
                 }
                 SaveChanges(1);
                 NotifyPropertyChanged("AnyBoxNameTypes");
@@ -222,7 +222,7 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 foreach (AnyBoxNameType item in e.OldItems)
                 {
-                    _context.AnyBoxNameTypes.Remove(item);
+                    _context.AnyBoxNameTypeDbSet.Remove(item);
                 }
                 SaveChanges(1);
             }
@@ -230,7 +230,7 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 foreach (AnyBoxNameType item in e.NewItems)
                 {
-                    _context.AnyBoxNameTypes.Add(item);
+                    _context.AnyBoxNameTypeDbSet.Add(item);
                 }
                 SaveChanges(1);
                 NotifyPropertyChanged("AnyBoxNameTypes");
@@ -239,10 +239,10 @@ namespace Item_WPF.MVVM.ViewModels
         #region public ViewModelCommand AddNewBoxCommand { get; set; }
         private void AddNewMainBox(object parameter)
         {
-            anyBoxNameType111.Add(new AnyBoxNameType { nameOfBox = "newBox", TypeOfBox = 1 });
+            AnyBoxNameType111.Add(new AnyBoxNameType { NameOfBox = "newBox", TypeOfBox = 1 });
             SaveChanges(1);
 
-            NotifyPropertyChanged("anyBoxNameType111");
+            NotifyPropertyChanged("AnyBoxNameType111");
         }
 
         public ViewModelCommand AddNewMainBoxCommand { get; set; }
@@ -253,17 +253,17 @@ namespace Item_WPF.MVVM.ViewModels
         {
             int param = Convert.ToInt32(parameter);
 
-            anyBoxNameType111.Add
+            AnyBoxNameType111.Add
                 (
                 new AnyBoxNameType
                 {
-                    nameOfBox = "newSubBox",
+                    NameOfBox = "newSubBox",
                     TypeOfBox = 1,
                     ParentBoxName = param
                 }
                 );
             SaveChanges(1);
-            NotifyPropertyChanged("anyBoxNameType111");
+            NotifyPropertyChanged("AnyBoxNameType111");
         }
 
         public ViewModelCommand AddNewSubMainBoxCommand { get; set; }
@@ -273,9 +273,9 @@ namespace Item_WPF.MVVM.ViewModels
         private void Dell(object parameter)
         {
             int param = Convert.ToInt32(parameter);
-            bx = _context.AnyBoxNameTypes.First(p => p.id == param);
-            anyBoxNameTypeAll.Remove(bx);
-            NotifyPropertyChanged("anyBoxNameType111");
+            Bx = _context.AnyBoxNameTypeDbSet.First(p => p.Id == param);
+            AnyBoxNameTypeAll.Remove(Bx);
+            NotifyPropertyChanged("AnyBoxNameType111");
         }
 
         public ViewModelCommand DellCommand { get; set; }

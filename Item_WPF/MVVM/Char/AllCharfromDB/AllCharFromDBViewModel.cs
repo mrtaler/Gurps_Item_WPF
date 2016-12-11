@@ -1,7 +1,7 @@
 ﻿using Item_WPF.addin;
-using Item_WPF.ItemEntityModel;
 using System.Collections.ObjectModel;
 using System.Linq;
+using GurpsDb.GurpsModel;
 
 namespace Item_WPF.MVVM.AllCharfromDB
 {
@@ -11,7 +11,7 @@ namespace Item_WPF.MVVM.AllCharfromDB
     public class AllCharFromDbViewModel : ViewModelBase
     {
         //private item1Entities _context;
-        GurpsDb.GurpsModel.GurpsModel _context;
+        ContextGurpsModel _context;
         /// <summary>
         /// Collection for all character from db
         /// </summary>
@@ -27,12 +27,12 @@ namespace Item_WPF.MVVM.AllCharfromDB
         /// Constructor for view char in this context
         /// </summary>
         /// <param name="context">Now working context</param>
-        public AllCharFromDbViewModel(GurpsDb.GurpsModel.GurpsModel context)
+        public AllCharFromDbViewModel(ContextGurpsModel context)
         {
             _context = context;
             //  _context = new item1Entities();
             SelectedCharacterDb = null;
-            CharacterDbCollection = new ObservableCollection<GurpsDb.GurpsModel.CharacterDb>(_context.CharacterDB);
+            CharacterDbCollection = new ObservableCollection<GurpsDb.GurpsModel.CharacterDb>(_context.CharacterDbDbSet);
             SelectedCharacterFromDbCommand = new ViewModelCommand(SelectedCharacterFromDb);
         }
 
@@ -41,7 +41,7 @@ namespace Item_WPF.MVVM.AllCharfromDB
         {
             if (SelectedCharacterDb != null)
             {
-                ChacFromDb = _context.CharacterDB.FirstOrDefault(p => p.Id == SelectedCharacterDb.Id);
+                ChacFromDb = _context.CharacterDbDbSet.FirstOrDefault(p => p.Id == SelectedCharacterDb.Id);
                 /*  var commentsOfMembers = _context.CharSkills
       .Where(mc => mc.CharacterDb.id == SelectedCharacterDb.id)
       .Select(mc => mc)

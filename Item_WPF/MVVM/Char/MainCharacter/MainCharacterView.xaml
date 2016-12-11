@@ -20,7 +20,7 @@
                     <ribbon:RibbonApplicationMenuItem Command="{Binding NewCommand}" Header="{x:Static p:Resources.RibbonAppMenuItemNew}" />
                     <ribbon:RibbonApplicationMenuItem Command="{Binding OpenCommand}" Header="{x:Static p:Resources.RibbonAppMenuItemOpen}" />
                     <ribbon:RibbonApplicationMenuItem Command="{Binding OpenDbCommand}" Header="Open From DB" />
-                    <ribbon:RibbonApplicationMenuItem Command="{Binding SaveDBCommand}" Header="SaveDBCommand" />
+                    <ribbon:RibbonApplicationMenuItem Command="{Binding SaveDBCommand}" Header="SaveDbCommand" />
                     <ribbon:RibbonApplicationMenuItem Command="{Binding SaveAsCommand}" Header="{x:Static p:Resources.RibbonAppMenuItemSaveAs}" />
                     <ribbon:RibbonApplicationMenuItem Command="{Binding AboutCommand}" Header="{x:Static p:Resources.RibbonAppMenuItemAbout}" />
                     <ribbon:RibbonApplicationMenuItem Click="QuitClick" Header="{x:Static p:Resources.RibbonAppMenuItemQuit}" />
@@ -224,9 +224,13 @@
 
                                             <TextBlock Grid.Column="2" Text="{Binding Path=PointOfSkill}" />
 
-                                            <TextBlock Grid.Column="3" Text="{Binding Path=SkillPointCost}"  Background="Aqua"/>
+                                            <TextBlock Grid.Column="3"
+                                                       Background="Aqua"
+                                                       Text="{Binding Path=SkillPointCost}" />
 
-                                            <TextBlock Grid.Column="4" Text="{Binding Path=LevelSkills}" FontStyle="Oblique" />
+                                            <TextBlock Grid.Column="4"
+                                                       FontStyle="Oblique"
+                                                       Text="{Binding Path=LevelSkills}" />
                                         </Grid>
                                     </StackPanel>
                                 </DataTemplate>

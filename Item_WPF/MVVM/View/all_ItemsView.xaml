@@ -75,12 +75,12 @@
                 <DataGridTextColumn Width="30"
                                     Binding="{Binding TL1.name_TL,
                                                       Mode=OneWay}"
-                                    Header="TL"
+                                    Header="Tl"
                                     IsReadOnly="True" />
                 <DataGridTextColumn Width="30"
                                     Binding="{Binding LC1.Name_LC,
                                                       Mode=OneWay}"
-                                    Header="LC"
+                                    Header="Lc"
                                     IsReadOnly="True" />
                 <DataGridTextColumn Width="100"
                                     Binding="{Binding usPrice,

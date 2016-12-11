@@ -1,40 +1,27 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Xml.Serialization;
-using Item_WPF.addin;
-using Item_WPF.MVVM.Models;
-using Item_WPF.Properties;
-using Item_WPF.MVVM.View;
-using Microsoft.Win32;
-using Item_WPF.ItemEntityModel;
-using Item_WPF.MVVM.AddSkilltoChar;
-using Item_WPF.MVVM.EditPrimaryStats;
-using Item_WPF.MVVM.EditSecondaryStats;
-using EditPrimaryStatsWindowView = Item_WPF.MVVM.EditPrimaryStats.EditPrimaryStatsWindowView;
-using EditSecondaryStatsWindowView = Item_WPF.MVVM.EditSecondaryStats.EditSecondaryStatsWindowView;
-using Item_WPF.MVVM.AllCharfromDB;
 using com.trollworks.gcs.character.names;
-using GurpsDb;
+using GurpsDb.GurpsModel;
+using Item_WPF.addin;
 using Item_WPF.litForms.TextInput;
-using Advantage = Item_WPF.ItemEntityModel.Advantage;
-using CharacterDB = Item_WPF.ItemEntityModel.CharacterDB;
-using CharSkill = Item_WPF.ItemEntityModel.CharSkill;
-using GurpsSkill = Item_WPF.ItemEntityModel.GurpsSkill;
-using ITEM = Item_WPF.ItemEntityModel.ITEM;
+using Item_WPF.MVVM.AddSkilltoChar;
+using Item_WPF.MVVM.AllCharfromDB;
+using Item_WPF.MVVM.View;
+using Item_WPF.Properties;
+using Microsoft.Win32;
 
-namespace Item_WPF.MVVM.ViewModels
+namespace Item_WPF.MVVM.Char.MainCharacter
 {
     class MainCharacterViewModel : ViewModelBase
     {
         protected Window Owner;
-        private item1Entities contextitem1Entities;
-        private GurpsDb.GurpsModel.ContextGurpsModel contextGurpsModel;
+        private ContextGurpsModel contextGurpsModel;
 
         // public CharacterDb Character { get; set; }
-        public GurpsDb.GurpsModel.CharacterDb Character { get; set; }
+        public CharacterDb Character { get; set; }
 
         public ViewModelCommand AboutCommand { get; private set; }
         public ViewModelCommand EditPrimaryStatsCommand { get; private set; }
@@ -44,7 +31,7 @@ namespace Item_WPF.MVVM.ViewModels
         public ViewModelCommand AddSkillCommand { get; private set; }
         public ViewModelCommand NewCommand { get; private set; }
         public ViewModelCommand OpenCommand { get; private set; }
-        public ViewModelCommand SaveDBCommand { get; private set; }
+        public ViewModelCommand SaveDbCommand { get; private set; }
         public ViewModelCommand OpenDbCommand { get; private set; }
         public ViewModelCommand SaveAsCommand { get; private set; }
         public ViewModelCommand OwnerCloseCommand { get; private set; }
@@ -52,14 +39,14 @@ namespace Item_WPF.MVVM.ViewModels
         public ViewModelCommand ChangeNameCommand { get; private set; }
 
         public MainCharacterViewModel(Window owner)
-            : this(owner, new GurpsDb.GurpsModel.CharacterDb())
+            : this(owner, new CharacterDb())
         {
         }
 
-        public MainCharacterViewModel(Window owner, GurpsDb.GurpsModel.CharacterDb character)
+        public MainCharacterViewModel(Window owner, CharacterDb character)
         {
             //  contextitem1Entities = new item1Entities();
-            contextGurpsModel = new GurpsDb.GurpsModel.ContextGurpsModel();
+            contextGurpsModel = new ContextGurpsModel();
 
 
             Owner = owner;
@@ -77,12 +64,12 @@ namespace Item_WPF.MVVM.ViewModels
             AddAdvantageCommand = new ViewModelCommand(AddAdvantage);
             AddSkillCommand = new ViewModelCommand(AddSkill);
             NewCommand = new ViewModelCommand(New);
-            OpenCommand = new ViewModelCommand(Open);
+            OpenCommand = new ViewModelCommand(Open, false);
             OpenDbCommand = new ViewModelCommand(OpenDb);
-            SaveAsCommand = new ViewModelCommand(SaveAs);
+            SaveAsCommand = new ViewModelCommand(SaveAs, false);
             OwnerCloseCommand = new ViewModelCommand(OwnerClose);
 
-            SaveDBCommand = new ViewModelCommand(SaveDb);
+            SaveDbCommand = new ViewModelCommand(SaveDb);
 
             ChangeNameCommand = new ViewModelCommand(ChangeName);
 
@@ -209,18 +196,18 @@ namespace Item_WPF.MVVM.ViewModels
         //    get { return Character.Advantages; }
         //}
 
-        public ObservableCollection<GurpsDb.GurpsModel.GurpsSkill> Skills
+        public ObservableCollection<GurpsSkill> Skills
         {
             get
             {
-                return new ObservableCollection<GurpsDb.GurpsModel.GurpsSkill>(Character.CharSkillCollection.Select(p => p.GurpsSkill));
+                return new ObservableCollection<GurpsSkill>(Character.CharSkillCollection.Select(p => p.GurpsSkill));
             }
         }
-        public ObservableCollection<GurpsDb.GurpsModel.CharSkill> ChaSkills
+        public ObservableCollection<CharSkill> ChaSkills
         {
             get
             {
-                return new ObservableCollection<GurpsDb.GurpsModel.CharSkill>(Character.CharSkillCollection);
+                return new ObservableCollection<CharSkill>(Character.CharSkillCollection);
             }
         }
 
@@ -319,7 +306,7 @@ namespace Item_WPF.MVVM.ViewModels
         /// <param name="parameter"></param>
         public void AddSkill(object parameter)
         {
-            AddSkilltoCharView window = new AddSkilltoCharView(Character, /*contextitem1Entities*/ contextGurpsModel);
+            AddSkilltoCharView window = new AddSkilltoCharView(Character, contextGurpsModel);
             window.Owner = Owner;
 
             bool? result = window.ShowDialog();
@@ -386,7 +373,7 @@ namespace Item_WPF.MVVM.ViewModels
         /// <param name="parameter"></param>
         private void New(object parameter)
         {
-            Character = new GurpsDb.GurpsModel.CharacterDb();
+            Character = new CharacterDb();
             if (string.IsNullOrEmpty(Character.Name))
                 Character.Name = USCensusNames.INSTANCE.GetFullName(true);
             // Notify all properties changed
@@ -401,15 +388,14 @@ namespace Item_WPF.MVVM.ViewModels
             AllCharfromDBView window = new AllCharfromDBView(contextGurpsModel);
             window.Owner = Owner;
 
-            GurpsDb.GurpsModel.CharacterDb copy = Character.Copy();
+            CharacterDb copy = Character.Copy();
             bool? result = window.ShowDialog();
 
             if (result.HasValue && (result == true))
             {
-                if ((window.DataContext as AllCharFromDbViewModel).SelectedCharacterDb != null)
+                if ((window.DataContext as AllCharFromDbViewModel)?.SelectedCharacterDb != null)
                 {
                     Character = (window.DataContext as AllCharFromDbViewModel).SelectedCharacterDb;
-                    var qq2 = Character.CharSkillCollection;
                     if (string.IsNullOrEmpty(Character.Name))
                         Character.Name = USCensusNames.INSTANCE.GetFullName(true);
                 }
@@ -481,15 +467,9 @@ namespace Item_WPF.MVVM.ViewModels
         {
             if (Character.Id == 0 || Character.Id == -1)
             {
-                contextGurpsModel.CharacterDB.Add(Character);
-                contextitem1Entities.SaveChanges();
+                contextGurpsModel.CharacterDbDbSet.Add(Character);
             }
-            else
-            {
-                contextGurpsModel.SaveChanges();
-                //contextitem1Entities.SaveChanges();
-            }
-
+            contextGurpsModel.SaveChanges();
         }
 
         private void ChangeName(object parameter)
@@ -498,7 +478,7 @@ namespace Item_WPF.MVVM.ViewModels
             bool? result = txInputView.ShowDialog();
             if (result.HasValue && (result == true))
             {
-                Character.Name = (txInputView.DataContext as TextInputViewModel).Text;
+                Character.Name = (txInputView.DataContext as TextInputViewModel)?.Text;
                 NotifyPropertyChanged("Name");
                 NotifyPropertyChanged("Title");
             }

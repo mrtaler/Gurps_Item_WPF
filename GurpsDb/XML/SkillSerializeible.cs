@@ -1,10 +1,12 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Forms;
 using System.Xml.Linq;
 using GurpsDb.GurpsModel;
 using GurpsDb.XML.XSD;
+using GurpsDb.XML.XSD.List;
 using GurpsDb.XML.XSD.prereq_list;
-using GurpsSkill = Item_WPF.ItemEntityModel.GurpsSkill;
+
 
 namespace GurpsDb.XML
 {
@@ -37,18 +39,18 @@ namespace GurpsDb.XML
                 qwerty.EncumbrancePenaltyMultiplier = skillElement.Element("encumbrance_penalty_multiplier");
                 qwerty.Notes = skillElement.Element("notes");
                 #region  Default Collection
-                qwerty.Default = new ObservableCollection<DefaultXML>();
+                qwerty.Default = new ObservableCollection<DefaultXml>();
                 foreach (var itemdefault in skillElement.Elements("default"))
                 {
-                    DefaultXML def = new DefaultXML(itemdefault);
+                    DefaultXml def = new DefaultXml(itemdefault);
                     qwerty.Default.Add(def);
                 }
                 #endregion
                 #region categories Collection
-                qwerty.Categories = new ObservableCollection<CategoriesXML>();
+                qwerty.Categories = new ObservableCollection<CategoriesXml>();
                 foreach (var itemCategory in skillElement.Elements("categories").Elements("category"))
                 {
-                    CategoriesXML cat = new CategoriesXML(itemCategory);
+                    CategoriesXml cat = new CategoriesXml(itemCategory);
                     qwerty.Categories.Add(cat);
                 }
                 #endregion
@@ -63,14 +65,14 @@ namespace GurpsDb.XML
                 #region attribute_bonus
                 foreach (XElement itemskillElement in skillElement.Elements("attribute_bonus"))
                 {
-                    Attribute_bonusXML atrbns = new Attribute_bonusXML(itemskillElement);
+                    AttributeBonusXml atrbns = new AttributeBonusXml(itemskillElement);
                     qwerty.AttributeBonus.Add(atrbns);
                 }
                 #endregion
                 #region Weapon_bonusXML
                 foreach (var itemweaponBonus in skillElement.Elements("weapon_bonus"))
                 {
-                    Weapon_bonusXML wpnbns = new Weapon_bonusXML(itemweaponBonus);
+                    WeaponBonusXml wpnbns = new WeaponBonusXml(itemweaponBonus);
                     qwerty.WeaponBonus.Add(wpnbns);
                 }
                 #endregion
@@ -94,18 +96,18 @@ namespace GurpsDb.XML
                 techXml.Version = techElement.Attribute("version");
                 techXml.Limit = techElement.Attribute("limit");
                 #region  Default Collection
-                techXml.Default = new ObservableCollection<DefaultXML>();
+                techXml.Default = new ObservableCollection<DefaultXml>();
                 foreach (var itemdefault in techElement.Elements("default"))
                 {
-                    DefaultXML def = new DefaultXML(itemdefault);
+                    DefaultXml def = new DefaultXml(itemdefault);
                     techXml.Default.Add(def);
                 }
                 #endregion
                 #region categories Collection
-                techXml.Categories = new ObservableCollection<CategoriesXML>();
+                techXml.Categories = new ObservableCollection<CategoriesXml>();
                 foreach (var itemCategory in techElement.Elements("categories").Elements("category"))
                 {
-                    CategoriesXML cat = new CategoriesXML(itemCategory);
+                    CategoriesXml cat = new CategoriesXml(itemCategory);
                     techXml.Categories.Add(cat);
                 }
                 #endregion
@@ -137,12 +139,12 @@ namespace GurpsDb.XML
                     .Where(p => p.TypeSkTh == typeSkill)
                     .Where(p => p.NameSkill == nameSkill)
                     .Where(p => p.Specialization == specSkill)
-                    .FirstOrDefault(p => p.version == versSkill);
+                    .FirstOrDefault(p => p.Version == versSkill);
 
                 //if (item.Specialization.Value.ToString() == "Conducting")
                 //  {
                 skillAstronomy.FGurpsSkill(item, _context, CollectionCategiry);
-                _context.GurpsSkills.Add(skillAstronomy);
+                _context.GurpsSkillDbSet.Add(skillAstronomy);
                 // }
             }
             _context.SaveChanges();

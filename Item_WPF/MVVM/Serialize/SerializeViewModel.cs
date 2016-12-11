@@ -1,29 +1,23 @@
 ﻿using Item_WPF.addin;
-using Item_WPF.ItemEntityModel;
 using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
+using GurpsDb.GurpsModel;
 using GurpsDb.XML;
 
 namespace Item_WPF.MVVM.Serialize
 {
     public class SerializeViewModel : ViewModelBase
     {
-        private ItemEntityModel.item1Entities _context;
+        private ContextGurpsModel context;
         #region Commands
         public ViewModelCommand LoadFileCommand { get; set; }
         public ViewModelCommand SerializeSkillCommand { get; set; }
         #endregion
-        public string XMLSkillPatch { get; set; }
+        public string XmlSkillPatch { get; set; }
         public SerializeViewModel()
         {
-            _context = new ItemEntityModel.item1Entities();
-            LoadFileCommand = new ViewModelCommand(LoadFile, true);
+            context = new ContextGurpsModel();
+            LoadFileCommand = new ViewModelCommand(LoadFile);
             SerializeSkillCommand = new ViewModelCommand(SerializeSkill, false);
         }
         #region Command 
@@ -39,14 +33,14 @@ namespace Item_WPF.MVVM.Serialize
                 dlg.ShowDialog();
                 if (dlg.FileName != "")
                 {
-                    XMLSkillPatch = dlg.FileName;
-                    NotifyPropertyChanged("XMLSkillPatch");
+                    XmlSkillPatch = dlg.FileName;
+                    NotifyPropertyChanged("XmlSkillPatch");
                     SerializeSkillCommand.CanExecute = true;
                 }
                 else
                 {
-                    XMLSkillPatch = null;
-                    NotifyPropertyChanged("XMLSkillPatch");
+                    XmlSkillPatch = null;
+                    NotifyPropertyChanged("XmlSkillPatch");
                     SerializeSkillCommand.CanExecute = true;
                 }
             }
@@ -55,8 +49,8 @@ namespace Item_WPF.MVVM.Serialize
         {
             int InsertInToGurpsSkillCategory = 0;
             // ObservableCollection<GurpsSkillCategory> GSCColl = new ObservableCollection<GurpsSkillCategory>(_context.GurpsSkillCategories);
-            //   Category CAt = new Category(XMLSkillPatch, @"C:\Users\Derdan\Dropbox\_Wor\Category.txt");
-            Category CAt = new Category(XMLSkillPatch, @"d:\Category.txt");
+            //   Category CAt = new Category(XmlSkillPatch, @"C:\Users\Derdan\Dropbox\_Wor\Category.txt");
+            Category cAt = new Category(XmlSkillPatch, @"d:\Category.txt");
             //foreach (var item in CAt.ResultOrder)
             // {
             // var qe = _context.GurpsSkillCategories.FirstOrDefault(p => p.NamelCategory.Contains(item));
@@ -69,10 +63,10 @@ namespace Item_WPF.MVVM.Serialize
             // InsertInToGurpsSkillCategory += 1;
             // }
             // 
-            _context.SaveChanges();
+            context.SaveChanges();
             MessageBox.Show(InsertInToGurpsSkillCategory.ToString());
-            // SkillSerializeible sklsrib = new SkillSerializeible(XMLSkillPatch, @"C:\Users\Derdan\Dropbox\_Wor\skill.txt");
-            SkillSerializeible sklsrib = new SkillSerializeible(XMLSkillPatch, @"d:\skill.txt");
+            // SkillSerializeible sklsrib = new SkillSerializeible(XmlSkillPatch, @"C:\Users\Derdan\Dropbox\_Wor\skill.txt");
+            SkillSerializeible sklsrib = new SkillSerializeible(XmlSkillPatch, @"d:\skill.txt");
         }
         #endregion
     }

@@ -1,23 +1,21 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using Item_WPF.addin;
-using Item_WPF.MVVM.View;
-using System.ComponentModel;
 using System.Collections.Specialized;
-using Item_WPF.ItemEntityModel;
+using GurpsDb.GurpsModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {
     public class CaliberViewModel : ViewModelBase, IDisposable
     {
-        private item1Entities _context;
+        private ContextGurpsModel _context;
         public ObservableCollection<Caliber> CaliberOk { get; set; }
         public CaliberViewModel()
         {
-            _context = new item1Entities();
-            CaliberOk = new ObservableCollection<Caliber>(_context.Calibers);
+            _context = new ContextGurpsModel();
+            CaliberOk = new ObservableCollection<Caliber>(_context.CaliberDbSet);
             Save = new ViewModelCommand(SaveChanges);
-            CaliberOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_ammoOK_CollectionChanged);
+            CaliberOk.CollectionChanged += _ammoOK_CollectionChanged;
         }
         private void _ammoOK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
@@ -25,7 +23,7 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 foreach (Caliber item in e.OldItems)
                 {
-                    _context.Calibers.Remove(item);
+                    _context.CaliberDbSet.Remove(item);
                 }
                 SaveChanges(1);
             }
@@ -33,9 +31,9 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 foreach (Caliber item in e.NewItems)
                 {
-                    item.Caliber_name = "new item";
-                    item.Class_of_Caliber = "1";
-                    _context.Calibers.Add(item);
+                    item.CaliberName = "new item";
+                    item.ClassOfCaliber = "1";
+                    _context.CaliberDbSet.Add(item);
                     SaveChanges(1);
                 }
             }

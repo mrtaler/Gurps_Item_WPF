@@ -1,246 +1,243 @@
-﻿using Item_WPF.ItemEntityModel;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Item_WPF.MVVM.Models
+
+// ReSharper disable once CheckNamespace
+namespace GurpsDb.GurpsModel
 {
     class CombineWeapModel : INotifyPropertyChanged
     {
         #region Implement INotifyPropertyChanged
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
             {
-                PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
 
         #endregion
         #region IdWeaponItem
-        private int? _IdWeaponItem;
+        private int? _idWeaponItem;
         public int? IdWeaponItem
         {
             get
             {
-                return _IdWeaponItem;
+                return _idWeaponItem;
             }
             set
             {
-                if (_IdWeaponItem != value)
+                if (_idWeaponItem != value)
                 {
-                    _IdWeaponItem = value;
+                    _idWeaponItem = value;
                     OnPropertyChanged("IdWeaponItem");
                 }
             }
         }
         #endregion
         #region IdScopeItem
-        private int? _IdScopeItem;
+        private int? _idScopeItem;
         public int? IdScopeItem
         {
             get
             {
-                return _IdScopeItem;
+                return _idScopeItem;
             }
             set
             {
-                if (_IdScopeItem != value)
+                if (_idScopeItem != value)
                 {
-                    _IdScopeItem = value;
+                    _idScopeItem = value;
                     OnPropertyChanged("IdScopeItem");
                 }
             }
         }
         #endregion
         #region IdLaserItem
-        private int? _IdLaserItem;
+        private int? _idLaserItem;
         public int? IdLaserItem
         {
             get
             {
-                return _IdLaserItem;
+                return _idLaserItem;
             }
             set
             {
-                if (_IdLaserItem != value)
+                if (_idLaserItem != value)
                 {
-                    _IdLaserItem = value;
+                    _idLaserItem = value;
                     OnPropertyChanged("IdLaserItem");
                 }
             }
         }
         #endregion
         #region IdLightItem
-        private int? _IdLightItem;
+        private int? _idLightItem;
         public int? IdLightItem
         {
             get
             {
-                return _IdLightItem;
+                return _idLightItem;
             }
             set
             {
-                if (_IdLightItem != value)
+                if (_idLightItem != value)
                 {
-                    _IdLightItem = value;
+                    _idLightItem = value;
                     OnPropertyChanged("IdLightItem");
                 }
             }
         }
         #endregion
         #region IdBipodItem
-        private int? _IdBipodItem;
+        private int? _idBipodItem;
         public int? IdBipodItem
         {
             get
             {
-                return _IdBipodItem;
+                return _idBipodItem;
             }
             set
             {
-                if (_IdBipodItem != value)
+                if (_idBipodItem != value)
                 {
-                    _IdBipodItem = value;
+                    _idBipodItem = value;
                     OnPropertyChanged("IdBipodItem");
                 }
             }
         }
         #endregion
         #region IdSilenserItem
-        private int? _IdSilenserItem;
+        private int? _idSilenserItem;
         public int? IdSilenserItem
         {
             get
             {
-                return _IdSilenserItem;
+                return _idSilenserItem;
             }
             set
             {
-                if (_IdSilenserItem != value)
+                if (_idSilenserItem != value)
                 {
-                    _IdSilenserItem = value;
+                    _idSilenserItem = value;
                     OnPropertyChanged("IdSilenserItem");
                 }
             }
         }
         #endregion
         #region IdLauncherItem
-        private int? _IdLauncherItem;
+        private int? _idLauncherItem;
         public int? IdLauncherItem
         {
             get
             {
-                return _IdLauncherItem;
+                return _idLauncherItem;
             }
             set
             {
-                if (_IdLauncherItem != value)
+                if (_idLauncherItem != value)
                 {
-                    _IdLauncherItem = value;
+                    _idLauncherItem = value;
                     OnPropertyChanged("IdLauncherItem");
                 }
             }
         }
         #endregion
         #region IdStockItem
-        private int? _IdStockItem;
+        private int? _idStockItem;
         public int? IdStockItem
         {
             get
             {
-                return _IdStockItem;
+                return _idStockItem;
             }
             set
             {
-                if (_IdStockItem != value)
+                if (_idStockItem != value)
                 {
-                    _IdStockItem = value;
+                    _idStockItem = value;
                     OnPropertyChanged("IdStockItem");
                 }
             }
         }
         #endregion
         #region IdBayonetItem
-        private int? _IdBayonetItem;
+        private int? _idBayonetItem;
         public int? IdBayonetItem
         {
             get
             {
-                return _IdBayonetItem;
+                return _idBayonetItem;
             }
             set
             {
-                if (_IdBayonetItem != value)
+                if (_idBayonetItem != value)
                 {
-                    _IdBayonetItem = value;
+                    _idBayonetItem = value;
                     OnPropertyChanged("IdBayonetItem");
                 }
             }
         }
         #endregion
         #region IdMagazineItem
-        private int? _IdMagazineItem;
+        private int? _idMagazineItem;
         public int? IdMagazineItem
         {
             get
             {
-                return _IdMagazineItem;
+                return _idMagazineItem;
             }
             set
             {
-                if (_IdMagazineItem != value)
+                if (_idMagazineItem != value)
                 {
-                    _IdMagazineItem = value;
+                    _idMagazineItem = value;
                     OnPropertyChanged("IdMagazineItem");
                 }
             }
         }
         #endregion
         #region IdInternalItem
-        private int? _IdInternalItem;
+        private int? _idInternalItem;
         public int? IdInternalItem
         {
             get
             {
-                return _IdInternalItem;
+                return _idInternalItem;
             }
             set
             {
-                if (_IdInternalItem != value)
+                if (_idInternalItem != value)
                 {
-                    _IdInternalItem = value;
+                    _idInternalItem = value;
                     OnPropertyChanged("IdInternalItem");
                 }
             }
         }
         #endregion
         #region IdExternalItem
-        private int? _IdExternalItem;
+        private int? _idExternalItem;
         public int? IdExternalItem
         {
             get
             {
-                return _IdExternalItem;
+                return _idExternalItem;
             }
             set
             {
-                if (_IdExternalItem != value)
+                if (_idExternalItem != value)
                 {
-                    _IdExternalItem = value;
+                    _idExternalItem = value;
                     OnPropertyChanged("IdExternalItem");
                 }
             }
         }
 
         #endregion
-        #region idCalibre
+        #region IdCalibre
         private int? _idCalibre;
-        public int? idCalibre
+        public int? IdCalibre
         {
             get
             {
@@ -251,7 +248,7 @@ namespace Item_WPF.MVVM.Models
                 if (_idCalibre != value)
                 {
                     _idCalibre = value;
-                    OnPropertyChanged("idCalibre");
+                    OnPropertyChanged("IdCalibre");
                 }
             }
         }
@@ -260,33 +257,33 @@ namespace Item_WPF.MVVM.Models
         /// <summary>
         /// обнуление комбинатора
         /// </summary>
-        public CombineWeapModel(ITEM itt)
+        public CombineWeapModel(Item itt)
         {
 
-            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 1) != null)
-                IdScopeItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 1).rAttachmentmount;
-            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 2) != null)
-                IdLaserItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 2).rAttachmentmount;
-            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 3) != null)
-                IdLightItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 3).rAttachmentmount;
-            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 4) != null)
-                IdBipodItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 4).rAttachmentmount;
-            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 5) != null)
-                IdSilenserItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 5).rAttachmentmount;
-            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 6) != null)
-                IdLauncherItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 6).rAttachmentmount;
-            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 7) != null)
-                IdStockItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 7).rAttachmentmount;
-            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 8) != null)
-                IdBayonetItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 8).rAttachmentmount;
-            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 9) != null)
-                IdMagazineItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 9).rAttachmentmount;
-            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 10) != null)
-                IdInternalItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 10).rAttachmentmount;
-            if (itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 11) != null)
-                IdExternalItem = itt.AvailableAttachSlots.FirstOrDefault(p => p.rATTACHMENTSLOT == 11).rAttachmentmount;
-            if (itt.ubCalibre!=null)
-                idCalibre = itt.ubCalibre;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 1) != null)
+                IdScopeItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 1)?.RAttachmentmount;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 2) != null)
+                IdLaserItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 2)?.RAttachmentmount;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 3) != null)
+                IdLightItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 3)?.RAttachmentmount;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 4) != null)
+                IdBipodItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 4)?.RAttachmentmount;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 5) != null)
+                IdSilenserItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 5)?.RAttachmentmount;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 6) != null)
+                IdLauncherItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 6)?.RAttachmentmount;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 7) != null)
+                IdStockItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 7)?.RAttachmentmount;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 8) != null)
+                IdBayonetItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 8)?.RAttachmentmount;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 9) != null)
+                IdMagazineItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 9)?.RAttachmentmount;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 10) != null)
+                IdInternalItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 10)?.RAttachmentmount;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 11) != null)
+                IdExternalItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 11)?.RAttachmentmount;
+            if (itt.UbCalibre != null)
+                IdCalibre = itt.UbCalibre;
         }
     }
 }

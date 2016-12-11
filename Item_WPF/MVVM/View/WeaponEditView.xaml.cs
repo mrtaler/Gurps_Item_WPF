@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Item_WPF.MVVM.ViewModels;
-using Item_WPF.ItemEntityModel;
+using GurpsDb.GurpsModel;
 
 namespace Item_WPF.MVVM.View
 {
@@ -22,10 +12,10 @@ namespace Item_WPF.MVVM.View
     public partial class WeaponEditView : Window
     {
         private WeaponEditViewModel _weaponEditView;
-        public WeaponEditView(ITEM itSell)
+        public WeaponEditView(Item itSell)
         {
             InitializeComponent();
-            _weaponEditView = new WeaponEditViewModel(this,itSell);
+            _weaponEditView = new WeaponEditViewModel(this, itSell);
             DataContext = _weaponEditView;
         }
         protected override void OnClosed(EventArgs e)
