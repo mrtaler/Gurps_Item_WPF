@@ -1,6 +1,6 @@
 ﻿using System.Xml.Linq;
 
-namespace Item_WPF.MVVM.Serialize.Model
+namespace GurpsDb.XML.XSD.prereq_list
 {
     public partial class PrereqListXml
     {

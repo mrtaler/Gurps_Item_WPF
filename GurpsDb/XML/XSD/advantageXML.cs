@@ -1,29 +1,31 @@
 ﻿using System.Collections.ObjectModel;
 using System.Xml.Linq;
+using GurpsDb.XML.XSD.List;
+using GurpsDb.XML.XSD.prereq_list;
 
-namespace Item_WPF.MVVM.Serialize.Model
+namespace GurpsDb.XML.XSD
 {
     public partial class AdvantageXml
     {
         public int NumPp;
         /**/
-        public ObservableCollection<CategoriesXML> Categories;//y
+        public ObservableCollection<CategoriesXml> Categories;//y
                                                               /**/
         public ObservableCollection<PrereqListXml> PrereqList; //y
-        public ObservableCollection<dr_bonusXml> DrBonus;
+        public ObservableCollection<DrBonusXml> DrBonus;
         /**/
-        public ObservableCollection<Attribute_bonusXML> AttributeBonus;//y
-        public ObservableCollection<skill_bonusXML> SkillBonus;
-        public ObservableCollection<spell_bonusXML> SpellBonus;
+        public ObservableCollection<AttributeBonusXml> AttributeBonus;//y
+        public ObservableCollection<SkillBonusXml> SkillBonus;
+        public ObservableCollection<SpellBonusXml> SpellBonus;
         /**/
-        public ObservableCollection<Weapon_bonusXML> WeaponBonus; //y
-        public ObservableCollection<melee_weaponXML> MeleeWeapon;
-        public ObservableCollection<ranged_weaponXML> RangedWeapon;
-        public ObservableCollection<cost_reductionXML> CostReduction;
+        public ObservableCollection<WeaponBonusXml> WeaponBonus; //y
+        public ObservableCollection<MeleeWeaponXml> MeleeWeapon;
+        public ObservableCollection<RangedWeaponXml> RangedWeapon;
+        public ObservableCollection<CostReductionXml> CostReduction;
         //  public ObservableCollection<crXML> cr;
         public XElement Cr;
         /**/
-        public ObservableCollection<modifierXML> Modifier;//y
+        public ObservableCollection<ModifierXml> Modifier;//y
 
         /// <summary>
         /// 1

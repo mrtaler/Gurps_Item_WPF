@@ -1,20 +1,23 @@
-﻿using System.Linq;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
+using System.Linq;
 using System.Xml.Linq;
-using Item_WPF.ItemEntityModel;
+using GurpsDb.GurpsModel;
+using GurpsDb.XML.XSD;
+using GurpsDb.XML.XSD.prereq_list;
+using GurpsSkill = Item_WPF.ItemEntityModel.GurpsSkill;
 
-namespace Item_WPF.MVVM.Serialize.Model
+namespace GurpsDb.XML
 {
     public class SkillSerializeible
     {
-        private item1Entities _context;
+        private ContextGurpsModel _context;
         public ObservableCollection<GurpsSkill> CollectionCategiry = new ObservableCollection<GurpsSkill>();
         public ObservableCollection<SkillXmlModel> OutstringCollectionSkill = new ObservableCollection<SkillXmlModel>();
         //   public ObservableCollection<GurpsSkillCategory> gurpsSkillCategories = new ObservableCollection<GurpsSkillCategory>();
         public ObservableCollection<string> Retcompare;
         public SkillSerializeible(string xmlString, string writePath)
         {
-            _context = new item1Entities();
+            _context = new ContextGurpsModel();
             Retcompare = new ObservableCollection<string>();
             int contextAdded = 1;
             XDocument xdoc = XDocument.Load(xmlString);

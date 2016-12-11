@@ -1,4 +1,6 @@
-﻿namespace GurpsDb.XML.XSD.List
+﻿using System.Xml.Linq;
+
+namespace GurpsDb.XML.XSD.List
 {
     public class WeaponBonusXml
     {

@@ -1,4 +1,7 @@
-﻿namespace GurpsDb.XML.XSD.List
+﻿using System.Collections.ObjectModel;
+using System.Xml.Linq;
+
+namespace GurpsDb.XML.XSD.List
 {
     /// <summary>
     /// work

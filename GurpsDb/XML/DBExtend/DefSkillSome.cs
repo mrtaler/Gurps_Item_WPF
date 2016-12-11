@@ -1,14 +1,18 @@
-﻿namespace Item_WPF.ItemEntityModel
+﻿
+using GurpsDb.XML.XSD.List;
+
+// ReSharper disable once CheckNamespace
+namespace GurpsDb.GurpsModel
 {
     public partial class DefSkillSome
     {
         public DefSkillSome() { }
-        public DefSkillSome(DefaultXML itemDefault)
+        public DefSkillSome(DefaultXml itemDefault)
         {
-            nameSkill = itemDefault.nameDefaultXml.Value.ToString();
-            specialization = itemDefault.specializationDefaultXml.Value.ToString();
-            type = itemDefault.typeDefaultXml.Value.ToString();
-            Modifier = itemDefault.modifierDefaultXml.Value.ToString();
+            NameSkill = itemDefault.NameDefaultXml.Value.ToString();
+            Specialization = itemDefault.SpecializationDefaultXml.Value.ToString();
+            Type = itemDefault.TypeDefaultXml.Value.ToString();
+            Modifier = itemDefault.ModifierDefaultXml.Value.ToString();
         }
     }
 }

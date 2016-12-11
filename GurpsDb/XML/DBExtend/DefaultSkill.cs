@@ -1,21 +1,31 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.ObjectModel;
+using GurpsDb.XML.XSD.List;
 
-namespace Item_WPF.ItemEntityModel
+// ReSharper disable once CheckNamespace
+namespace GurpsDb.GurpsModel
 {
     public partial class DefaultSkill
     {
+        /// <summary>
+        /// default constructor
+        /// </summary>
         public DefaultSkill() { }
-        public DefaultSkill(DefaultXML itemDefault, ObservableCollection<GurpsSkill> collectionCategiry)
+        /// <summary>
+        /// Constructor for XML
+        /// </summary>
+        /// <param name="itemDefault"></param>
+        /// <param name="collectionCategiry"></param>
+        public DefaultSkill(DefaultXml itemDefault, ObservableCollection<GurpsSkill> collectionCategiry)
         {
-            string typex = itemDefault.typeDefaultXml != null ? itemDefault.typeDefaultXml.Value.ToString() : null;
-            string modf = itemDefault.modifierDefaultXml != null ? itemDefault.modifierDefaultXml.Value.ToString() : null;
+            string typex = itemDefault.TypeDefaultXml?.Value;
+            string modf = itemDefault.ModifierDefaultXml?.Value;
 
             if (typex.ToLower().Contains("skill"))
             {
-                string name = itemDefault.nameDefaultXml != null ? itemDefault.nameDefaultXml.Value.ToString() : null;
-                string spec = itemDefault.specializationDefaultXml != null ? itemDefault.specializationDefaultXml.Value.ToString() : null;
+                string name = itemDefault.NameDefaultXml?.Value;
+                string spec = itemDefault.SpecializationDefaultXml?.Value;
                 GurpsSkill referenseSkillFind;
                 if (spec != null)
                 {
@@ -29,12 +39,12 @@ namespace Item_WPF.ItemEntityModel
                             .FirstOrDefault(p => p.NameSkill == name);
                 }
                 Modifier = Convert.ToInt32(modf);
-                type = typex;
+                Type = typex;
                 GurpsSkill1 = referenseSkillFind;
             }
             else
             {
-                type = typex;
+                Type = typex;
                 Modifier = Convert.ToInt32(modf);
             }
         }

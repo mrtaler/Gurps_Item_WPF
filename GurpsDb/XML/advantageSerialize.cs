@@ -1,8 +1,10 @@
 ﻿using System.Collections.ObjectModel;
-using Item_WPF.ItemEntityModel;
 using System.Xml.Linq;
+using GurpsDb.XML.XSD;
+using GurpsDb.XML.XSD.prereq_list;
+using Item_WPF.ItemEntityModel;
 
-namespace Item_WPF.MVVM.Serialize.Model
+namespace GurpsDb.XML
 {
     class AdvantageSerialize
     {

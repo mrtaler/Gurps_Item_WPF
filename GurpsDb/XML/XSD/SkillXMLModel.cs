@@ -1,7 +1,9 @@
-﻿using System.Xml.Linq;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
+using System.Xml.Linq;
+using GurpsDb.XML.XSD.List;
+using GurpsDb.XML.XSD.prereq_list;
 
-namespace Item_WPF.MVVM.Serialize.Model
+namespace GurpsDb.XML.XSD
 {
     public class SkillXmlModel
     {
@@ -47,11 +49,11 @@ namespace Item_WPF.MVVM.Serialize.Model
         /// <summary>
         /// 1_1 element ref="default" 
         /// </summary>
-        public ObservableCollection<DefaultXML> Default;
+        public ObservableCollection<DefaultXml> Default;
         /// <summary>
         /// 1_2 element ref="categories" 
         /// </summary>
-        public ObservableCollection<CategoriesXML> Categories;
+        public ObservableCollection<CategoriesXml> Categories;
         /// <summary>
         /// 1_3 element ref="prereq_list" 
         /// </summary>
@@ -59,10 +61,10 @@ namespace Item_WPF.MVVM.Serialize.Model
         /// <summary>
         /// 1_4 element ref="attribute_bonus" 
         /// </summary>
-        public ObservableCollection<Attribute_bonusXML> AttributeBonus = new ObservableCollection<Attribute_bonusXML>();
+        public ObservableCollection<AttributeBonusXml> AttributeBonus = new ObservableCollection<AttributeBonusXml>();
         /// <summary>
         /// 1_5 element ref="weapon_bonus" 
         /// </summary>
-        public ObservableCollection<Weapon_bonusXML> WeaponBonus = new ObservableCollection<Weapon_bonusXML>();
+        public ObservableCollection<WeaponBonusXml> WeaponBonus = new ObservableCollection<WeaponBonusXml>();
     }
 }

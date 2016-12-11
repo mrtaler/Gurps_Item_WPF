@@ -1,4 +1,6 @@
-﻿namespace GurpsDb.XML.XSD
+﻿using System.Xml.Linq;
+
+namespace GurpsDb.XML.XSD
 {
     public class CrXml
     {

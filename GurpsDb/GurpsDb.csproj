@@ -118,33 +118,33 @@
     <Compile Include="XML\advantageSerialize.cs" />
     <Compile Include="XML\Category.cs" />
     <Compile Include="XML\DBExtend\AdvantageDB.cs" />
-    <Compile Include="XML\DBExtend\attribute_bonus.cs" />
-    <Compile Include="XML\DBExtend\cost_reduction.cs" />
+    <Compile Include="XML\DBExtend\AttributeBonus.cs" />
+    <Compile Include="XML\DBExtend\CostReduction.cs" />
     <Compile Include="XML\DBExtend\DefaultSkill.cs" />
     <Compile Include="XML\DBExtend\DefSkillSome.cs" />
     <Compile Include="XML\DBExtend\GurpsSkill.cs" />
-    <Compile Include="XML\DBExtend\melee_weapon.cs" />
-    <Compile Include="XML\DBExtend\modifier.cs" />
-    <Compile Include="XML\DBExtend\prereq_listDB.cs" />
-    <Compile Include="XML\DBExtend\ranged_weapon.cs" />
-    <Compile Include="XML\DBExtend\skill_bonusDB.cs" />
-    <Compile Include="XML\DBExtend\spell_bonus.cs" />
-    <Compile Include="XML\DBExtend\weapon_bonus.cs" />
+    <Compile Include="XML\DBExtend\MeleeWeapon.cs" />
+    <Compile Include="XML\DBExtend\Modifier.cs" />
+    <Compile Include="XML\DBExtend\PrereqListDb.cs" />
+    <Compile Include="XML\DBExtend\RangedWeapon.cs" />
+    <Compile Include="XML\DBExtend\SkillBonusDb.cs" />
+    <Compile Include="XML\DBExtend\SpellBonus.cs" />
+    <Compile Include="XML\DBExtend\WeaponBonus.cs" />
     <Compile Include="XML\Program.cs" />
     <Compile Include="XML\SkillSerializeible.cs" />
-    <Compile Include="XML\XSD\advantageXML.cs" />
+    <Compile Include="XML\XSD\AdvantageXml.cs" />
     <Compile Include="XML\XSD\DefaultSkill.cs" />
     <Compile Include="XML\XSD\prereq_list\Prereq_listXML%28list%29.cs" />
     <Compile Include="XML\XSD\prereq_list\Prereq_listXML%28single%29.cs" />
     <Compile Include="XML\XSD\prereq_list\Prereq_listXML.cs" />
-    <Compile Include="XML\XSD\SkillXMLModel.cs" />
-    <Compile Include="XML\XSD\advantage_prereqXml.cs" />
-    <Compile Include="XML\XSD\amountXml.cs" />
-    <Compile Include="XML\XSD\attributeXml.cs" />
-    <Compile Include="XML\XSD\attribute_prereqXml.cs" />
-    <Compile Include="XML\XSD\contained_weight_prereqXml.cs" />
-    <Compile Include="XML\XSD\cost_reductionXML.cs" />
-    <Compile Include="XML\XSD\crXML.cs" />
+    <Compile Include="XML\XSD\SkillXmlModel.cs" />
+    <Compile Include="XML\XSD\AdvantagePrereqXml.cs" />
+    <Compile Include="XML\XSD\AmountXml.cs" />
+    <Compile Include="XML\XSD\AttributeXml.cs" />
+    <Compile Include="XML\XSD\AttributePrereqXml.cs" />
+    <Compile Include="XML\XSD\ContainedWeightPrereqXml.cs" />
+    <Compile Include="XML\XSD\CostReductionXml.cs" />
+    <Compile Include="XML\XSD\CrXml.cs" />
     <Compile Include="XML\XSD\List\Attribute_bonusXML.cs" />
     <Compile Include="XML\XSD\List\CategoriesXML.cs" />
     <Compile Include="XML\XSD\List\DefaultXML.cs" />
@@ -155,8 +155,8 @@
     <Compile Include="XML\XSD\List\skill_bonusXML.cs" />
     <Compile Include="XML\XSD\List\spell_bonusXML.cs" />
     <Compile Include="XML\XSD\List\Weapon_bonusXML.cs" />
-    <Compile Include="XML\XSD\skill_prereqXml.cs" />
-    <Compile Include="XML\XSD\spell_prereqXml.cs" />
+    <Compile Include="XML\XSD\SkillPrereqXml.cs" />
+    <Compile Include="XML\XSD\SpellPrereqXml.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -164,7 +164,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="XML\DBExtend\cost_reduction" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

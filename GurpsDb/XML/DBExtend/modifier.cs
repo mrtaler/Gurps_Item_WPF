@@ -1,42 +1,31 @@
-﻿namespace Item_WPF.ItemEntityModel
+﻿using GurpsDb.XML.XSD.List;
+
+// ReSharper disable once CheckNamespace
+namespace GurpsDb.GurpsModel
 {
     public partial class Modifier
     {
+        /// <summary>
+        /// Default
+        /// </summary>
         public Modifier() { }
-        public Modifier(modifierXML item)
+        /// <summary>
+        /// Contructor from XML
+        /// </summary>
+        /// <param name="item">ModifierXml</param>
+        public Modifier(ModifierXml item)
         {
-            name = item.name.Value.ToString();
-            nameC = item.name.Attribute("compare") != null
-                           ? item.name.Attribute("compare").Value.ToString() : null;
-            notes = item.notes != null
-                           ? item.notes.Value.ToString() : null;
-            if (item.notes != null)
-            {
-                notesC = item.notes.Attribute("compare") != null
-                     ? item.notes.Attribute("compare").Value.ToString() : null;
-            }
-            levels = item.levels != null
-            ? item.levels.Value.ToString() : null;
-
-            reference = item.reference != null
-                ? item.reference.Value.ToString() : null;
-
-            affects = item.affects != null
-            ? item.affects.Value.ToString() : null;
-
-            version = item.version != null
-            ? item.version.Value.ToString() : null;
-
-            enabled = item.enabled != null
-            ? item.enabled.Value.ToString() : null;
-
-            Cost = item.cost != null
-            ? item.cost.Value.ToString() : null;
-
-            CostType = item.cost.Attribute("compare") != null
-               ? item.cost.Attribute("compare").Value.ToString() : null;
-
-
+            Name = item.Name.Value;
+            NameC = item.Name.Attribute("compare")?.Value;
+            Notes = item.Notes?.Value;
+            NotesC = item.Notes?.Attribute("compare")?.Value;
+            Levels = item.Levels?.Value;
+            Reference = item.Reference?.Value;
+            Affects = item.Affects?.Value;
+            Version = item.Version?.Value;
+            Enabled = item.Enabled?.Value;
+            Cost = item.Cost?.Value;
+            CostType = item.Cost?.Attribute("compare")?.Value;
         }
     }
 }

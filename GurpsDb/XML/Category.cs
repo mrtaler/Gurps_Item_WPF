@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Linq;
-using System.Xml.Linq;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
+using System.Xml.Linq;
 
-namespace Item_WPF.MVVM.Serialize.Model
+namespace GurpsDb.XML
 
 {
     public class Category

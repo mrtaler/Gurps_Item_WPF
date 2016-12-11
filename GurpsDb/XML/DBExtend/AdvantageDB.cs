@@ -1,39 +1,33 @@
-﻿using Item_WPF.MVVM.Serialize.Model;
+﻿using System.Linq;
+using GurpsDb.XML.XSD;
+using GurpsDb.XML.XSD.List;
+using GurpsDb.XML.XSD.prereq_list;
 
-namespace Item_WPF.ItemEntityModel
+// ReSharper disable once CheckNamespace
+namespace GurpsDb.GurpsModel
 {
     public partial class Advantage
     {
-        //  public Advantage() { }
+        /// <summary>
+        /// Constructor for XML
+        /// </summary>
+        /// <param name="advXml"></param>
         public Advantage(AdvantageXml advXml)
         {
-            name = advXml.Name != null
-                                  ? advXml.Name.Value.ToString() : null;
-            nameCompare = advXml.Name.Attribute("Compare") != null
-                                        ? advXml.Name.Attribute("Compare").Value.ToString() : null;
-            typeadc = advXml.Type != null
-                                        ? advXml.Type.Value.ToString() : null;
-            levels = advXml.Levels != null
-                                        ? advXml.Levels.Value.ToString() : null;
-            points_per_level = advXml.PointsPerLevel != null
-                                        ? advXml.PointsPerLevel.Value.ToString() : null;
-            base_points = advXml.BasePoints != null
-                                        ? advXml.BasePoints.Value.ToString() : null;
-            reference = advXml.Reference != null
-                                        ? advXml.Reference.Value.ToString() : null;
-            notes = advXml.Notes != null
-                                        ? advXml.Notes.Value.ToString() : null;
-            cr = advXml.Cr != null
-                                        ? advXml.Cr.Value.ToString() : null;
-            versionadv = advXml.Version != null
-                                        ? advXml.Version.Value.ToString() : null;
-            round_down = advXml.RoundDown != null
-                                        ? advXml.RoundDown.Value.ToString() : null;
+            Name = advXml.Name?.Value;
+            NameCompare = advXml.Name?.Attribute("Compare")?.Value;
+            Typeadc = advXml.Type?.Value;
+            Levels = advXml.Levels?.Value;
+            PointsPerLevel = advXml.PointsPerLevel?.Value;
+            BasePoints = advXml.BasePoints?.Value;
+            Reference = advXml.Reference?.Value;
+            Notes = advXml.Notes?.Value;
+            Cr = advXml.Cr?.Value;
+            Versionadv = advXml.Version?.Value;
+            RoundDown = advXml.RoundDown?.Value;
             #region Prereq_listXML
             if (advXml.PrereqList != null)
             {
-                //  prereq_listDB = new System.Data.Objects.DataClasses.EntityCollection<ItemEntityModel.prereq_listDB>();
-                //     var q = advXML.prereq_list;
                 foreach (PrereqListXml item in advXml.PrereqList)
                 {
                     PrereqListDb.Add(new PrereqListDb(item));
@@ -55,16 +49,15 @@ namespace Item_WPF.ItemEntityModel
 
 
         }
-        public void Fcategory(AdvantageXml advFromXml, item1Entities context)
+        public void Fcategory(AdvantageXml advFromXml, ContextGurpsModel context)
         {
-            foreach (CategoriesXML itemCategory in advFromXml.Categories)
+            foreach (CategoriesXml itemCategory in advFromXml.Categories)
             {
-                string qery = itemCategory.category.Value.ToString();
+                string qery = itemCategory.Category.Value;
 
-                var qe = context.GurpsCategories.
+                var qe = context.GurpsCategoryDbSet.
                       FirstOrDefault(p => p.NamelCategory.Contains(qery));
-                GurpsCategories.
-                      Add(qe);
+                GurpsCategory.Add(qe);
             }
         }
         public void Fdr_bonus(AdvantageXml advFromXml)
@@ -73,13 +66,12 @@ namespace Item_WPF.ItemEntityModel
             {
                 foreach (var itemdrBonus in advFromXml.DrBonus)
                 {
-                    dr_bonusDB drb = new dr_bonusDB();
-                    drb.location = itemdrBonus.location.Value.ToString();
+                    DrBonusDb drb = new DrBonusDb();
+                    drb.Location = itemdrBonus.Location.Value;
 
-                    drb.per_level = itemdrBonus.amount.Attribute("per_level") != null
-                                        ? itemdrBonus.amount.Attribute("per_level").Value.ToString() : null;
-                    drb.Value = itemdrBonus.amount.Value.ToString();
-                    dr_bonusDB.Add(drb);
+                    drb.PerLevel = itemdrBonus.Amount.Attribute("per_level")?.Value;
+                    drb.Value = itemdrBonus.Amount.Value;
+                    DrBonusDb.Add(drb);
                 }
             }
         }
@@ -87,7 +79,7 @@ namespace Item_WPF.ItemEntityModel
         {
             if (advFromXml.AttributeBonus != null)
             {
-                foreach (Attribute_bonusXML item in advFromXml.AttributeBonus)
+                foreach (AttributeBonusXml item in advFromXml.AttributeBonus)
                 {
                     AttributeBonus.Add(new AttributeBonus(item));
                 }
@@ -98,7 +90,7 @@ namespace Item_WPF.ItemEntityModel
         {
             if (advFromXml.WeaponBonus != null)
             {
-                foreach (Weapon_bonusXML itemWeaponBonus in advFromXml.WeaponBonus)
+                foreach (WeaponBonusXml itemWeaponBonus in advFromXml.WeaponBonus)
                 {
                     WeaponBonus.Add(new WeaponBonus(itemWeaponBonus));
                 }
@@ -108,7 +100,7 @@ namespace Item_WPF.ItemEntityModel
         {
             if (advFromXml.CostReduction != null)
             {
-                foreach (cost_reductionXML item in advFromXml.CostReduction)
+                foreach (CostReductionXml item in advFromXml.CostReduction)
                 {
                     CostReduction.Add(new CostReduction(item));
                 }
@@ -119,7 +111,7 @@ namespace Item_WPF.ItemEntityModel
         {
             if (advFromXml.MeleeWeapon != null)
             {
-                foreach (melee_weaponXML item in advFromXml.MeleeWeapon)
+                foreach (MeleeWeaponXml item in advFromXml.MeleeWeapon)
                 {
                     MeleeWeapon.Add(new MeleeWeapon(item));
                 }
@@ -129,7 +121,7 @@ namespace Item_WPF.ItemEntityModel
         {
             if (advFromXml.RangedWeapon != null)
             {
-                foreach (ranged_weaponXML item in advFromXml.RangedWeapon)
+                foreach (RangedWeaponXml item in advFromXml.RangedWeapon)
                 {
                     RangedWeapon.Add(new RangedWeapon(item));
                 }
@@ -139,7 +131,7 @@ namespace Item_WPF.ItemEntityModel
         {
             if (advFromXml.SkillBonus != null)
             {
-                foreach (skill_bonusXML item in advFromXml.SkillBonus)
+                foreach (SkillBonusXml item in advFromXml.SkillBonus)
                 {
                     SkillBonusDb.Add(new SkillBonusDb(item));
                 }
@@ -149,7 +141,7 @@ namespace Item_WPF.ItemEntityModel
         {
             if (advFromXml.SpellBonus != null)
             {
-                foreach (spell_bonusXML item in advFromXml.SpellBonus)
+                foreach (SpellBonusXml item in advFromXml.SpellBonus)
                 {
                     SpellBonus.Add(new SpellBonus(item));
                 }
@@ -159,9 +151,9 @@ namespace Item_WPF.ItemEntityModel
         {
             if (advFromXml.Modifier != null)
             {
-                foreach (modifierXML item in advFromXml.Modifier)
+                foreach (ModifierXml item in advFromXml.Modifier)
                 {
-                    modifiers.Add(new Modifier(item));
+                    Modifier.Add(new Modifier(item));
                 }
             }
         }
