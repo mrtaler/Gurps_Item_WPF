@@ -144,180 +144,7 @@
     <Compile Include="GCS\xsd\skill_list.Designer.cs" />
     <Compile Include="GCS\xsd\spell_list.Designer.cs" />
     <Compile Include="GCS\xsd\template.Designer.cs" />
-    <Compile Include="ItemEntityModel\Advantage.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\advantage_prereq.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\AMMOUPGRATE.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\AnyBoxNameType.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\ARMOUR.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\Attachment.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\Attachmentmount.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\ATTACHMENTSLOT.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\attribute_bonus.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\attribute_prereq.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\AvailableAttachSlot.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\Battery.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\BoxItem.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\Caliber.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\CharacterDB.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\CharSkill.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\Cloth.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\CombineWeap.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\contained_weight_prereq.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\cost_reduction.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\DefaultSkill.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\DefSkillSome.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\DifficultySkill.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\Drug.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\dr_bonusDB.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\EXPLOSIVE.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\FOOD.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\GurpsCategory.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\GurpsClass.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\GurpsSkill.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\G_AttachClass.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\G_AvAttachClass.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\G_SubAttachClass.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\InventoryOfChar.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\ITEM.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\ItemClass.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\ItemSubClass.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\LaserColorEf.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\LC.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\LOADBEARINGEQUIPMENT.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\melee_weapon.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\modifier.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\NeedSkill.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\prereq_listDB.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\ranged_weapon.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\skill_bonusDB.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\skill_prereqDB.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\spell_bonus.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\spell_prereqDB.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\TL.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\TypeOfDamage.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\Type_of_Box.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\WEAPON.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\WeaponAttackType.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\WeaponDamage.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\weapon_bonus.cs">
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
     <Compile Include="addin\Dice.cs" />
-    <Compile Include="ItemEntityModel\Gurps_Item.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Gurps_Item.tt</DependentUpon>
-    </Compile>
     <Compile Include="litForms\TextInput\TextInputView.xaml.cs">
       <DependentUpon>TextInputView.xaml</DependentUpon>
     </Compile>
@@ -350,7 +177,6 @@
     <Compile Include="MVVM\Models\Skill.cs" />
     <Compile Include="MVVM\Serialize\Model\ContextModel\AdvantageDB.cs" />
     <Compile Include="MVVM\Serialize\Model\advantageSerialize.cs" />
-    <Compile Include="MVVM\Serialize\Model\advantageXML.cs" />
     <Compile Include="MVVM\Serialize\Model\Category.cs" />
     <Compile Include="MVVM\Serialize\Model\ContextModel\attribute_bonus.cs" />
     <Compile Include="MVVM\Serialize\Model\ContextModel\cost_reduction.cs" />
@@ -362,15 +188,9 @@
     <Compile Include="MVVM\Serialize\Model\ContextModel\skill_bonusDB.cs" />
     <Compile Include="MVVM\Serialize\Model\ContextModel\spell_bonus.cs" />
     <Compile Include="MVVM\Serialize\Model\ContextModel\weapon_bonus.cs" />
-    <Compile Include="MVVM\Serialize\Model\Default.cs" />
     <Compile Include="MVVM\Serialize\Model\ContextModel\DefaultSkill.cs" />
-    <Compile Include="MVVM\Serialize\Model\ew.cs" />
     <Compile Include="MVVM\Serialize\Model\ContextModel\GurpsSkill.cs" />
-    <Compile Include="MVVM\Serialize\Model\prereq_list\Prereq_listXML%28list%29.cs" />
-    <Compile Include="MVVM\Serialize\Model\prereq_list\Prereq_listXML%28single%29.cs" />
-    <Compile Include="MVVM\Serialize\Model\prereq_list\Prereq_listXML.cs" />
     <Compile Include="MVVM\Serialize\Model\Program.cs" />
-    <Compile Include="MVVM\Serialize\Model\SkillXMLModel.cs" />
     <Compile Include="MVVM\Serialize\SerializeView.xaml.cs">
       <DependentUpon>SerializeView.xaml</DependentUpon>
     </Compile>
@@ -479,16 +299,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ItemEntityModel\Gurps_Item.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Gurps_Item.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ItemEntityModel\Gurps_Item.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Gurps_Item.edmx</DependentUpon>
     </Compile>
     <Page Include="litForms\TextInput\TextInputView.xaml">
       <SubType>Designer</SubType>
@@ -620,10 +430,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="ItemEntityModel\Gurps_Item.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Gurps_Item.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="addin\oldDB\ItemModelDiagram.dbd" />
     <None Include="addin\Диаграмма1.dbd" />
     <None Include="addin\Копия Fall_weap.xlsx" />
@@ -1017,10 +823,6 @@
     <None Include="GCS\xsd\template.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="ItemEntityModel\Gurps_Item.edmx.diagram">
-      <DependentUpon>Gurps_Item.edmx</DependentUpon>
-    </None>
-    <None Include="MVVM\Serialize\Model\bs.skl" />
     <None Include="MVVM\Serialize\Model\ContextModel\cost_reduction" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -1297,16 +1099,6 @@
     <Compile Include="GCS\src\com\trollworks\gcs\weapon\WeaponEditor.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\weapon\WeaponOutline.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\weapon\WeaponStats.cs" />
-    <Content Include="ItemEntityModel\Gurps_Item.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Gurps_Item.edmx</DependentUpon>
-      <LastGenOutput>Gurps_Item.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="ItemEntityModel\Gurps_Item.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Gurps_Item.edmx</DependentUpon>
-      <LastGenOutput>Gurps_Item.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
