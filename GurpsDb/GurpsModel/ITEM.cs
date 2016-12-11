@@ -169,7 +169,7 @@ namespace GurpsDb.GurpsModel
 
         public virtual Tl Tl1 { get; set; }
 
-        public virtual Loadbearingequipment Loadbearingequipment { get; set; }
+        public virtual LoadBearingEquipment Loadbearingequipment { get; set; }
 
         public virtual Weapon Weapon { get; set; }
     }

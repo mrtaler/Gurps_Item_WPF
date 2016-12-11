@@ -57,7 +57,7 @@ namespace GurpsDb.GurpsModel
         public virtual DbSet<ItemSubClass> ItemSubClassDbSet { get; set; }
         public virtual DbSet<LaserColorEf> LaserColorEfDbSet { get; set; }
         public virtual DbSet<Lc> LcDbSet { get; set; }
-        public virtual DbSet<Loadbearingequipment> LoadbearingequipmentDbSet { get; set; }
+        public virtual DbSet<LoadBearingEquipment> LoadbearingequipmentDbSet { get; set; }
         public virtual DbSet<Tl> TlDbSet { get; set; }
         public virtual DbSet<TypeOfBox> TypeOfBoxeDbSet { get; set; }
         public virtual DbSet<TypeOfDamage> TypeOfDamageDbSet { get; set; }

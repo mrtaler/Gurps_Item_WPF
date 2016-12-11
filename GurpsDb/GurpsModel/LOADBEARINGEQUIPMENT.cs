@@ -4,7 +4,7 @@ namespace GurpsDb.GurpsModel
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Loadbearingequipment")]
-    public partial class Loadbearingequipment
+    public partial class LoadBearingEquipment
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
