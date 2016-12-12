@@ -65,15 +65,15 @@ namespace GurpsDb.GurpsModel
             }
         }
         #region BasicSpeed
-        public float BasicSpeed
+        public decimal BasicSpeed
         {
             get
             {
-                float bs = (Health + Dexterity) / 4F;
+                decimal bs = (Health + Dexterity) / 4M;
                 return bs + BasicSpeedPoints;
             }
         }
-        public int BasicSpeedCost => (int)(BasicCost.BsCost * (BasicSpeedPoints / 0.25F));
+        public int BasicSpeedCost => (int)(BasicCost.BsCost * (BasicSpeedPoints / 0.25M));
         #endregion
         #region BasicMove
         public int BasicMove

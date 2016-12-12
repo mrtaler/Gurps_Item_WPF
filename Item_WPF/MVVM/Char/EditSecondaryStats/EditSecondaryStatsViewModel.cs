@@ -91,9 +91,9 @@ namespace Item_WPF.MVVM.EditSecondaryStats
         }
         #endregion
         #region BasicSpeedPoints
-        public float BasicSpeed => Character.BasicSpeed;
+        public decimal BasicSpeed => Character.BasicSpeed;
         public float BasicSpeedCost => Character.BasicSpeedCost;
-        public float BasicSpeedPoints
+        public decimal BasicSpeedPoints
         {
             get
             {
@@ -141,7 +141,7 @@ namespace Item_WPF.MVVM.EditSecondaryStats
                     PerceptionPoints += 1;
                     break;
                 case "BasicSpeedPoints":
-                    BasicSpeedPoints += 0.25F;
+                    BasicSpeedPoints += 0.25M;
                     break;
                 case "BasicMovePoints":
                     BasicMovePoints += 1;
@@ -166,7 +166,7 @@ namespace Item_WPF.MVVM.EditSecondaryStats
                     PerceptionPoints -= 1;
                     break;
                 case "BasicSpeedPoints":
-                    BasicSpeedPoints -= 0.25F;
+                    BasicSpeedPoints -= 0.25M;
                     break;
                 case "BasicMovePoints":
                     BasicMovePoints -= 1;

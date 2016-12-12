@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 // ReSharper disable once CheckNamespace
 namespace GurpsDb.GurpsModel
@@ -8,6 +9,7 @@ namespace GurpsDb.GurpsModel
         /// <summary>
         /// Start point for this skill
         /// </summary>
+        [NotMapped]
         private int StartPoint
         {
             get
@@ -18,6 +20,7 @@ namespace GurpsDb.GurpsModel
         /// <summary>
         /// Skill point cost for all point
         /// </summary>
+        [NotMapped]
         public int SkillPointCost
         {
             get
@@ -28,6 +31,7 @@ namespace GurpsDb.GurpsModel
         /// <summary>
         /// Curent skill value 
         /// </summary>
+        [NotMapped]
         public int? CurrentSkillValue
         {
             get
@@ -38,6 +42,7 @@ namespace GurpsDb.GurpsModel
         /// <summary>
         /// Наименование 
         /// </summary>
+        [NotMapped]
         public string LevelSkills
         {
             get

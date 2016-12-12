@@ -6255,10 +6255,10 @@
         </Children>
         <ViewPort>
           <ScaleMode>Free</ScaleMode>
-          <Scale>1.25</Scale>
+          <Scale>0.72</Scale>
           <Location>
-            <X>2455.19998779297 px</X>
-            <Y>2837.59999389648 px</Y>
+            <X>2374.99990435 px</X>
+            <Y>2538.8887990073 px</Y>
           </Location>
         </ViewPort>
       </Model>

@@ -7,12 +7,12 @@ namespace GurpsDb.GurpsModel
     public partial class CharSkill
     {
         [Key]
-        [Column(Order = 0)]
+        [Column("idSkill", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int IdSkill { get; set; }
 
         [Key]
-        [Column(Order = 1)]
+        [Column("idChar", Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int IdChar { get; set; }
 

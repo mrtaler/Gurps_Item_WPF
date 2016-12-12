@@ -20,7 +20,7 @@
                     <ribbon:RibbonApplicationMenuItem Command="{Binding NewCommand}" Header="{x:Static p:Resources.RibbonAppMenuItemNew}" />
                     <ribbon:RibbonApplicationMenuItem Command="{Binding OpenCommand}" Header="{x:Static p:Resources.RibbonAppMenuItemOpen}" />
                     <ribbon:RibbonApplicationMenuItem Command="{Binding OpenDbCommand}" Header="Open From DB" />
-                    <ribbon:RibbonApplicationMenuItem Command="{Binding SaveDBCommand}" Header="SaveDbCommand" />
+                    <ribbon:RibbonApplicationMenuItem Command="{Binding SaveDbCommand}" Header="SaveDbCommand" />
                     <ribbon:RibbonApplicationMenuItem Command="{Binding SaveAsCommand}" Header="{x:Static p:Resources.RibbonAppMenuItemSaveAs}" />
                     <ribbon:RibbonApplicationMenuItem Command="{Binding AboutCommand}" Header="{x:Static p:Resources.RibbonAppMenuItemAbout}" />
                     <ribbon:RibbonApplicationMenuItem Click="QuitClick" Header="{x:Static p:Resources.RibbonAppMenuItemQuit}" />

@@ -151,7 +151,7 @@ namespace Item_WPF.MVVM.Char.MainCharacter
             get { return Character.BasicLift; }
         }
 
-        public float BasicSpeed
+        public decimal BasicSpeed
         {
             get { return Character.BasicSpeed; }
         }

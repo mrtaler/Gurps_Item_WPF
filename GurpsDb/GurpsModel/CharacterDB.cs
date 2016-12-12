@@ -13,10 +13,11 @@ namespace GurpsDb.GurpsModel
             CharSkillCollection = new HashSet<CharSkill>();
             InventoryOfChar = new HashSet<InventoryOfChar>();
         }
-
+        [Column("id")]
         public int Id { get; set; }
 
         [StringLength(80)]
+        [Column("name")]
         public string Name { get; set; }
 
         public int StrengthPoints { get; set; }
@@ -35,7 +36,7 @@ namespace GurpsDb.GurpsModel
 
         public int WillpowerPoints { get; set; }
 
-        public float BasicSpeedPoints { get; set; }
+        public decimal BasicSpeedPoints { get; set; }
 
         public int BasicMovePoints { get; set; }
 

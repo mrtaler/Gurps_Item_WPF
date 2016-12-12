@@ -69,6 +69,13 @@ namespace GurpsDb.GurpsModel
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            #region CharSkill
+
+            #endregion
+
+
+
+
             modelBuilder.Entity<Advantage>()
                 .HasMany(e => e.AttributeBonus)
                 .WithOptional(e => e.Advantage)

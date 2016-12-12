@@ -116,6 +116,11 @@
     <Compile Include="GurpsModel\WeaponAttackType.cs" />
     <Compile Include="GurpsModel\WeaponDamage.cs" />
     <Compile Include="GurpsModel\WeaponBonus.cs" />
+    <Compile Include="Poco\GurpsDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GurpsDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XML\advantageSerialize.cs" />
     <Compile Include="XML\Category.cs" />
@@ -166,8 +171,15 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Poco\EF.Reverse.POCO.Core.ttinclude" />
+    <None Include="Poco\EF.Reverse.POCO.ttinclude" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Poco\GurpsDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GurpsDb.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
