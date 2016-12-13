@@ -4,7 +4,7 @@ namespace GurpsDb.GurpsModel
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("Caliber")]
+    [Table("Caliber", Schema = "dbo")]
     public partial class Caliber
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

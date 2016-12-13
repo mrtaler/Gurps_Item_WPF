@@ -91,7 +91,7 @@ namespace Item_WPF.addin
         {
             if ((bool)values[1])
             {
-                ObservableCollection<Attachmentmount> avAttMount = (ObservableCollection<Attachmentmount>)values[0];
+                ObservableCollection<AttachmentMount> avAttMount = (ObservableCollection<AttachmentMount>)values[0];
                 return avAttMount;
             }
             else return null;
@@ -227,14 +227,14 @@ namespace Item_WPF.addin
                               object parameter,
                               CultureInfo culture)
         {
-            ObservableCollection<Attachmentmount> MountForColl = (ObservableCollection<Attachmentmount>)values[1];
+            ObservableCollection<AttachmentMount> MountForColl = (ObservableCollection<AttachmentMount>)values[1];
             int findClass = (int)values[0];
             ObservableCollection<GSubAttachClass> G_SubAttachClass = (ObservableCollection<GSubAttachClass>)values[2];
 
             int attSlot = (from p in G_SubAttachClass
                            where p.Id == findClass
                            select p.Attachmentslot1.UiSlotIndex).First();
-            return new ObservableCollection<Attachmentmount>(MountForColl.Where(p => p.IdAttacClass == attSlot));
+            return new ObservableCollection<AttachmentMount>(MountForColl.Where(p => p.IdAttacClass == attSlot));
 
         }
     }

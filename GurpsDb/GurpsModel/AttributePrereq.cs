@@ -3,7 +3,7 @@ namespace GurpsDb.GurpsModel
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("CharDB.attribute_prereq")]
+    [Table("AttributePrereq", Schema = "CharDB")]
     public partial class AttributePrereq
     {
         public int Id { get; set; }

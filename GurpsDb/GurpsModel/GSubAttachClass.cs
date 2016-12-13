@@ -1,8 +1,10 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace GurpsDb.GurpsModel
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-
+    [Table("GSubAttachClass", Schema = "dbo")]
     public partial class GSubAttachClass
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,7 +25,7 @@ namespace GurpsDb.GurpsModel
 
         public int Attachmentslot { get; set; }
 
-        public virtual Attachmentslot Attachmentslot1 { get; set; }
+        public virtual AttachmentSlot Attachmentslot1 { get; set; }
 
         public virtual GAttachClass GAttachClass { get; set; }
 

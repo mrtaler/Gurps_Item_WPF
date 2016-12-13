@@ -3,7 +3,8 @@ namespace GurpsDb.GurpsModel
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("CharDB.weapon_bonus")]
+
+    [Table("WeaponBonus", Schema = "CharDB")]
     public partial class WeaponBonus
     {
         public int Id { get; set; }

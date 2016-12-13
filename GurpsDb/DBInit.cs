@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GurpsDb.GurpsModels;
+﻿using System.Data.Entity;
+using GurpsDb.GurpsModel;
 
 namespace GurpsDb
 {
-    public class DbInit : DropCreateDatabaseIfModelChanges<GurpsModel>
+    public class DbInit : DropCreateDatabaseIfModelChanges<ContextGurpsModel>
     {
-        protected override void Seed(GurpsModel context)
+        protected override void Seed(ContextGurpsModel context)
         {
             //List<CharacterDb> characterDbs = new List<CharacterDb>
             //{

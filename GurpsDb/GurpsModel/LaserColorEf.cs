@@ -3,7 +3,7 @@ namespace GurpsDb.GurpsModel
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("LaserColorEf")]
+    [Table("LaserColorEf", Schema = "dbo")]
     public partial class LaserColorEf
     {
         public int Id { get; set; }

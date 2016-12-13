@@ -2,7 +2,7 @@ namespace GurpsDb.GurpsModel
 {
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("AvailableAttachSlot")]
+    [Table("AvailableAttachSlot", Schema = "dbo")]
     public partial class AvailableAttachSlot
     {
         public int Id { get; set; }
@@ -13,7 +13,7 @@ namespace GurpsDb.GurpsModel
 
         public int RAttachmentmount { get; set; }
 
-        public virtual Attachmentmount Attachmentmount { get; set; }
+        public virtual AttachmentMount Attachmentmount { get; set; }
 
         public virtual Item Item { get; set; }
     }

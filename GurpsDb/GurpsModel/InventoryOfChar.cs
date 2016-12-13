@@ -2,7 +2,7 @@ namespace GurpsDb.GurpsModel
 {
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("CharDB.InventoryOfChar")]
+    [Table("InventoryOfChar", Schema = "CharDB")]
     public partial class InventoryOfChar
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]

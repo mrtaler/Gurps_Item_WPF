@@ -3,7 +3,7 @@ namespace GurpsDb.GurpsModel
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("CharDB.contained_weight_prereq")]
+    [Table("ContainedWeightPrereq", Schema = "CharDB")]
     public partial class ContainedWeightPrereq
     {
         public int Id { get; set; }

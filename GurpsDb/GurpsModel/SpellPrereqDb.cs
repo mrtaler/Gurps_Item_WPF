@@ -3,7 +3,8 @@ namespace GurpsDb.GurpsModel
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("CharDB.spell_prereqDB")]
+
+    [Table("SpellPrereqDb", Schema = "CharDB")]
     public partial class SpellPrereqDb
     {
         public int Id { get; set; }

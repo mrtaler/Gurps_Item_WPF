@@ -4,7 +4,7 @@ namespace GurpsDb.GurpsModel
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("Attachment")]
+    [Table("Attachment", Schema = "dbo")]
     public partial class Attachment
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -125,7 +125,7 @@ namespace GurpsDb.GurpsModel
 
         public int? UsedBatType { get; set; }
 
-        public virtual Attachmentmount Attachmentmount1 { get; set; }
+        public virtual AttachmentMount Attachmentmount1 { get; set; }
 
         public virtual Item Item { get; set; }
 

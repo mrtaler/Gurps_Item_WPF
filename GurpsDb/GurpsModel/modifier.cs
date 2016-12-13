@@ -3,7 +3,7 @@ namespace GurpsDb.GurpsModel
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("CharDB.modifier")]
+    [Table("Modifier", Schema = "CharDB")]
     public partial class Modifier
     {
         public int Id { get; set; }

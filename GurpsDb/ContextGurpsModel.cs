@@ -8,6 +8,8 @@ namespace GurpsDb.GurpsModel
         public ContextGurpsModel()
             : base("name=ContextGurpsModel")
         {
+            // Установить новый инициализатор
+            Database.SetInitializer<ContextGurpsModel>(new DbInit());
         }
 
         public virtual DbSet<Advantage> AdvantageDbSet { get; set; }
@@ -37,8 +39,8 @@ namespace GurpsDb.GurpsModel
         public virtual DbSet<AnyBoxNameType> AnyBoxNameTypeDbSet { get; set; }
         public virtual DbSet<Armour> ArmourDbSet { get; set; }
         public virtual DbSet<Attachment> AttachmentDbSet { get; set; }
-        public virtual DbSet<Attachmentmount> AttachmentmountDbSet { get; set; }
-        public virtual DbSet<Attachmentslot> AttachmentslotDbSet { get; set; }
+        public virtual DbSet<AttachmentMount> AttachmentmountDbSet { get; set; }
+        public virtual DbSet<AttachmentSlot> AttachmentslotDbSet { get; set; }
         public virtual DbSet<AvailableAttachSlot> AvailableAttachSlotDbSet { get; set; }
         public virtual DbSet<Battery> BatteryDbSet { get; set; }
         public virtual DbSet<BoxItem> BoxItemDbSet { get; set; }
@@ -563,25 +565,25 @@ namespace GurpsDb.GurpsModel
                 .WithRequired(e => e.Attachment)
                 .HasForeignKey(e => e.IdAttach);
 
-            modelBuilder.Entity<Attachmentmount>()
+            modelBuilder.Entity<AttachmentMount>()
                 .HasMany(e => e.Attachment)
                 .WithRequired(e => e.Attachmentmount1)
                 .HasForeignKey(e => e.IdAttachmentmount)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Attachmentmount>()
+            modelBuilder.Entity<AttachmentMount>()
                 .HasMany(e => e.AvailableAttachSlot)
                 .WithRequired(e => e.Attachmentmount)
                 .HasForeignKey(e => e.RAttachmentmount)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Attachmentslot>()
+            modelBuilder.Entity<AttachmentSlot>()
                 .HasMany(e => e.Attachmentmount)
                 .WithRequired(e => e.Attachmentslot)
                 .HasForeignKey(e => e.IdAttacClass)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Attachmentslot>()
+            modelBuilder.Entity<AttachmentSlot>()
                 .HasMany(e => e.GSubAttachClass)
                 .WithRequired(e => e.Attachmentslot1)
                 .HasForeignKey(e => e.Attachmentslot)

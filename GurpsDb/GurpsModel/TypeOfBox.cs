@@ -1,8 +1,11 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace GurpsDb.GurpsModel
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
+    [Table("TypeOfBox", Schema = "dbo")]
     public partial class TypeOfBox
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

@@ -4,11 +4,11 @@ namespace GurpsDb.GurpsModel
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("Attachmentmount")]
-    public partial class Attachmentmount
+    [Table("AttachmentMount", Schema = "dbo")]
+    public partial class AttachmentMount
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Attachmentmount()
+        public AttachmentMount()
         {
             Attachment = new HashSet<Attachment>();
             AvailableAttachSlot = new HashSet<AvailableAttachSlot>();
@@ -24,7 +24,7 @@ namespace GurpsDb.GurpsModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Attachment> Attachment { get; set; }
 
-        public virtual Attachmentslot Attachmentslot { get; set; }
+        public virtual AttachmentSlot Attachmentslot { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AvailableAttachSlot> AvailableAttachSlot { get; set; }

@@ -35,17 +35,17 @@ namespace Item_WPF.MVVM.ViewModels
         public ObservableCollection<TypeOfDamage> TypeOfDamagesCollection { get; set; }
         //private ObservableCollection<AMMO> _AmmoscCollection;
         public ObservableCollection<Caliber> CalibersCollection { get; set; }
-        public ObservableCollection<Attachmentmount> ScopeComboBox { get; set; }
-        public ObservableCollection<Attachmentmount> LaserComboBox { get; set; }
-        public ObservableCollection<Attachmentmount> LightComboBox { get; set; }
-        public ObservableCollection<Attachmentmount> BipodComboBox { get; set; }
-        public ObservableCollection<Attachmentmount> SilenserComboBox { get; set; }
-        public ObservableCollection<Attachmentmount> LauncherComboBox { get; set; }
-        public ObservableCollection<Attachmentmount> StockComboBox { get; set; }
-        public ObservableCollection<Attachmentmount> BayonetComboBox { get; set; }
-        public ObservableCollection<Attachmentmount> MagazineComboBox { get; set; }
-        public ObservableCollection<Attachmentmount> InternalComboBox { get; set; }
-        public ObservableCollection<Attachmentmount> ExternalComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> ScopeComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> LaserComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> LightComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> BipodComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> SilenserComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> LauncherComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> StockComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> BayonetComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> MagazineComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> InternalComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> ExternalComboBox { get; set; }
 
         public ObservableCollection<WeaponDamage> WeaponDamageColl { get; set; }
         private Item _ItemLoad;
@@ -67,8 +67,8 @@ namespace Item_WPF.MVVM.ViewModels
         public Weapon WeaponLoad { get; set; }
         public ObservableCollection<AvailableAttachSlot> avSlot { get; set; }
 
-        private ObservableCollection<Attachmentmount> _attMount;
-        public ObservableCollection<Attachmentmount> AttMount
+        private ObservableCollection<AttachmentMount> _attMount;
+        public ObservableCollection<AttachmentMount> AttMount
         {
             get
             {
@@ -106,19 +106,19 @@ namespace Item_WPF.MVVM.ViewModels
             WeaponDamageColl = new ObservableCollection<WeaponDamage>(_context.WeaponDamageDbSet.Where((p => p.IdWeapon == WeaponLoad.UiIndex)));
 
             avSlot = new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlotDbSet.Where(p => p.RItemId == WeaponLoad.UiIndex));
-            AttMount = new ObservableCollection<Attachmentmount>(_context.AttachmentmountDbSet);
+            AttMount = new ObservableCollection<AttachmentMount>(_context.AttachmentmountDbSet);
 
-            ScopeComboBox = new ObservableCollection<Attachmentmount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("Scope")));
-            LaserComboBox = new ObservableCollection<Attachmentmount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("Laser")));
-            LightComboBox = new ObservableCollection<Attachmentmount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("Light")));
-            BipodComboBox = new ObservableCollection<Attachmentmount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("Bipod")));
-            SilenserComboBox = new ObservableCollection<Attachmentmount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("Silenser")));
-            LauncherComboBox = new ObservableCollection<Attachmentmount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("Launcher")));
-            StockComboBox = new ObservableCollection<Attachmentmount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("Stock")));
-            BayonetComboBox = new ObservableCollection<Attachmentmount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("Bayonet")));
-            MagazineComboBox = new ObservableCollection<Attachmentmount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("Magazine")));
-            InternalComboBox = new ObservableCollection<Attachmentmount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("Internal")));
-            ExternalComboBox = new ObservableCollection<Attachmentmount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("External")));
+            ScopeComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("Scope")));
+            LaserComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("Laser")));
+            LightComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("Light")));
+            BipodComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("Bipod")));
+            SilenserComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("Silenser")));
+            LauncherComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("Launcher")));
+            StockComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("Stock")));
+            BayonetComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("Bayonet")));
+            MagazineComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("Magazine")));
+            InternalComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("Internal")));
+            ExternalComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentmountDbSet.Where(p => p.Attachmentslot.SzSlotName.Contains("External")));
 
             #region Load Command
             Save = new ViewModelCommand(SaveChanges);       // сохранение контекста
@@ -208,57 +208,57 @@ namespace Item_WPF.MVVM.ViewModels
 
             if ((parameter as string) == "Scope")
             {
-                ScopeComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("Scope")));
+                ScopeComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("Scope")));
                 NotifyPropertyChanged("ScopeComboBox");
             }
             else if ((parameter as string) == "Laser")
             {
-                LaserComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("Laser")));
+                LaserComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("Laser")));
                 NotifyPropertyChanged("LaserComboBox");
             }
             else if ((parameter as string) == "Light")
             {
-                LightComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("Light")));
+                LightComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("Light")));
                 NotifyPropertyChanged("LightComboBox");
             }
             else if ((parameter as string) == "Bipod")
             {
-                BipodComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("Bipod")));
+                BipodComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("Bipod")));
                 NotifyPropertyChanged("BipodComboBox");
             }
             else if ((parameter as string) == "Silenser")
             {
-                SilenserComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("Silenser")));
+                SilenserComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("Silenser")));
                 NotifyPropertyChanged("SilenserComboBox");
             }
             else if ((parameter as string) == "Launcher")
             {
-                LauncherComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("Launcher")));
+                LauncherComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("Launcher")));
                 NotifyPropertyChanged("LauncherComboBox");
             }
             else if ((parameter as string) == "Stock")
             {
-                StockComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("Stock")));
+                StockComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("Stock")));
                 NotifyPropertyChanged("StockComboBox");
             }
             else if ((parameter as string) == "Bayonet")
             {
-                BayonetComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("Bayonet")));
+                BayonetComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("Bayonet")));
                 NotifyPropertyChanged("BayonetComboBox");
             }
             else if ((parameter as string) == "Magazine")
             {
-                MagazineComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("Magazine")));
+                MagazineComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("Magazine")));
                 NotifyPropertyChanged("MagazineComboBox");
             }
             else if ((parameter as string) == "Internal")
             {
-                InternalComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("Internal")));
+                InternalComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("Internal")));
                 NotifyPropertyChanged("InternalComboBox");
             }
             else if ((parameter as string) == "External")
             {
-                ExternalComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("External")));
+                ExternalComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.Attachmentslot.SzSlotName.Contains("External")));
                 NotifyPropertyChanged("ExternalComboBox");
             }
         }

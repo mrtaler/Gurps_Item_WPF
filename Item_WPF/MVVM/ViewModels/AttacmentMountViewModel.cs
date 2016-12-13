@@ -12,31 +12,31 @@ namespace Item_WPF.MVVM.ViewModels
     {
         private ContextGurpsModel _context;
         private string _slot;
-        public ObservableCollection<Attachmentmount> AvvAttSlotOk { get; set; }
-        public ObservableCollection<Attachmentmount> AvvAttSlotOkForWork { get; set; }
+        public ObservableCollection<AttachmentMount> AvvAttSlotOk { get; set; }
+        public ObservableCollection<AttachmentMount> AvvAttSlotOkForWork { get; set; }
         public AttacmentMountViewModel(string slot)
         {
             _slot = slot;
             _context = new ContextGurpsModel();
-            AvvAttSlotOk = new ObservableCollection<Attachmentmount>(_context.AttachmentmountDbSet);
-            AvvAttSlotOkForWork = new ObservableCollection<Attachmentmount>(AvvAttSlotOk.Where(p => p.Attachmentslot.SzSlotName.Contains(_slot)));
+            AvvAttSlotOk = new ObservableCollection<AttachmentMount>(_context.AttachmentmountDbSet);
+            AvvAttSlotOkForWork = new ObservableCollection<AttachmentMount>(AvvAttSlotOk.Where(p => p.Attachmentslot.SzSlotName.Contains(_slot)));
             Save = new ViewModelCommand(SaveChanges);
             AvvAttSlotOkForWork.CollectionChanged += _Avv_att_slot_OK_CollectionChanged;
         }
 
-        public AttacmentMountViewModel(string slot, ObservableCollection<Attachmentmount> avvAttSlotOk, ContextGurpsModel context)
+        public AttacmentMountViewModel(string slot, ObservableCollection<AttachmentMount> avvAttSlotOk, ContextGurpsModel context)
         {
             _slot = slot;
             _context = context;
-            AvvAttSlotOk = new ObservableCollection<Attachmentmount>(_context.AttachmentmountDbSet);
-            AvvAttSlotOkForWork = new ObservableCollection<Attachmentmount>(AvvAttSlotOk.Where(p => p.Attachmentslot.SzSlotName.Contains(_slot)));
+            AvvAttSlotOk = new ObservableCollection<AttachmentMount>(_context.AttachmentmountDbSet);
+            AvvAttSlotOkForWork = new ObservableCollection<AttachmentMount>(AvvAttSlotOk.Where(p => p.Attachmentslot.SzSlotName.Contains(_slot)));
             //    avvAttSlotOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_Avv_att_slot_OK_CollectionChanged_with_context);
         }
         private void _Avv_att_slot_OK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Remove)
             {
-                foreach (Attachmentmount item in e.OldItems)
+                foreach (AttachmentMount item in e.OldItems)
                 {
                     _context.AttachmentmountDbSet.Remove(item);
                     AvvAttSlotOk.Remove(item);
@@ -45,7 +45,7 @@ namespace Item_WPF.MVVM.ViewModels
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
-                foreach (Attachmentmount item in e.NewItems)
+                foreach (AttachmentMount item in e.NewItems)
                 {
                     item.Name = "New_slot";
                     item.IdAttacClass = (_context.AttachmentslotDbSet.First(p => p.SzSlotName.Contains(_slot)).UiSlotIndex);
@@ -60,7 +60,7 @@ namespace Item_WPF.MVVM.ViewModels
         {
             if (e.Action == NotifyCollectionChangedAction.Remove)
             {
-                foreach (Attachmentmount item in e.OldItems)
+                foreach (AttachmentMount item in e.OldItems)
                 {
                     _context.AttachmentmountDbSet.Remove(item);
                 }
@@ -68,7 +68,7 @@ namespace Item_WPF.MVVM.ViewModels
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
-                foreach (Attachmentmount item in e.NewItems)
+                foreach (AttachmentMount item in e.NewItems)
                 {
                     item.Name = "New_slot";
                     item.IdAttacClass = (_context.AttachmentslotDbSet.First(p => p.SzSlotName.Contains(_slot)).UiSlotIndex);

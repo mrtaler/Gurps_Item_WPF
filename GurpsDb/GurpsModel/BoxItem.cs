@@ -2,7 +2,7 @@ namespace GurpsDb.GurpsModel
 {
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("BoxItem")]
+    [Table("BoxItem", Schema = "dbo")]
     public partial class BoxItem
     {
         public int Id { get; set; }

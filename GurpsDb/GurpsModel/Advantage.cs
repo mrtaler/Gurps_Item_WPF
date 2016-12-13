@@ -4,7 +4,7 @@ namespace GurpsDb.GurpsModel
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("CharDB.Advantage")]
+    [Table("Advantage", Schema = "CharDB")]
     public partial class Advantage
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,40 +22,40 @@ namespace GurpsDb.GurpsModel
             WeaponBonus = new HashSet<WeaponBonus>();
             GurpsCategory = new HashSet<GurpsCategory>();
         }
-
+        //[Column("id")]
         public int Id { get; set; }
-
         [StringLength(50)]
+        //[Column("name")]
         public string Name { get; set; }
-
         [StringLength(50)]
+        //[Column("nameCompare")]
         public string NameCompare { get; set; }
-
         [StringLength(50)]
+        //[Column("typeadc")]
         public string Typeadc { get; set; }
-
         [StringLength(50)]
+        //[Column("levels")]
         public string Levels { get; set; }
-
         [StringLength(50)]
+        //[Column("points_per_level")]
         public string PointsPerLevel { get; set; }
-
         [StringLength(50)]
+        //[Column("base_points")]
         public string BasePoints { get; set; }
-
         [StringLength(50)]
+        //[Column("reference")]
         public string Reference { get; set; }
-
         [StringLength(500)]
+        //[Column("notes")]
         public string Notes { get; set; }
-
         [StringLength(50)]
+        //[Column("cr")]
         public string Cr { get; set; }
-
         [StringLength(50)]
+        //[Column("versionadv")]
         public string Versionadv { get; set; }
-
         [StringLength(50)]
+        //[Column("round_down")]
         public string RoundDown { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

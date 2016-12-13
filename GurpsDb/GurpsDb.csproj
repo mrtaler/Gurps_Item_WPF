@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBInit.cs" />
     <Compile Include="GurpsExtendModel\AnyBoxNameType.cs" />
     <Compile Include="GurpsExtendModel\CharacterDb.cs" />
     <Compile Include="GurpsExtendModel\CharSkill.cs" />
@@ -65,8 +66,8 @@
     <Compile Include="GurpsModel\AnyBoxNameType.cs" />
     <Compile Include="GurpsModel\Armour.cs" />
     <Compile Include="GurpsModel\Attachment.cs" />
-    <Compile Include="GurpsModel\Attachmentmount.cs" />
-    <Compile Include="GurpsModel\Attachmentslot.cs" />
+    <Compile Include="GurpsModel\AttachmentMount.cs" />
+    <Compile Include="GurpsModel\AttachmentSlot.cs" />
     <Compile Include="GurpsModel\AttributeBonus.cs" />
     <Compile Include="GurpsModel\AttributePrereq.cs" />
     <Compile Include="GurpsModel\AvailableAttachSlot.cs" />
