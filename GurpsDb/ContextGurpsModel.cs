@@ -9,7 +9,7 @@ namespace GurpsDb.GurpsModel
             : base("name=ContextGurpsModel")
         {
             // Установить новый инициализатор
-            Database.SetInitializer<ContextGurpsModel>(new DbInit());
+            // Database.SetInitializer<ContextGurpsModel>(new DbInit());
         }
 
         public virtual DbSet<Advantage> AdvantageDbSet { get; set; }
@@ -182,35 +182,35 @@ namespace GurpsDb.GurpsModel
                 .HasForeignKey(e => e.IdDifficulty);
 
             modelBuilder.Entity<GurpsSkill>()
-                .HasMany(e => e.AttributeBonus)
+                .HasMany(e => e.AttributeBonusCollection)
                 .WithOptional(e => e.GurpsSkill)
                 .HasForeignKey(e => e.FkSkill)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<GurpsSkill>()
-                .HasMany(e => e.DefaultSkill)
+                .HasMany(e => e.DefaultSkillInNeedCollection)
                 .WithRequired(e => e.GurpsSkill)
                 .HasForeignKey(e => e.IdSkillIn);
 
             modelBuilder.Entity<GurpsSkill>()
-                .HasMany(e => e.DefaultSkill1)
+                .HasMany(e => e.DefaultSkillOutNeededCollection)
                 .WithOptional(e => e.GurpsSkill1)
                 .HasForeignKey(e => e.IdSkillOut);
 
             modelBuilder.Entity<GurpsSkill>()
-                .HasMany(e => e.DefSkillSome)
+                .HasMany(e => e.DefSkillSomeCollection)
                 .WithOptional(e => e.GurpsSkill)
                 .HasForeignKey(e => e.IdSkill)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<GurpsSkill>()
-                .HasMany(e => e.CharSkill)
+                .HasMany(e => e.CharSkillCollection)
                 .WithRequired(e => e.GurpsSkill)
                 .HasForeignKey(e => e.IdSkill);
 
             modelBuilder.Entity<GurpsSkill>()
-                .HasMany(e => e.GurpsSkill1)
-                .WithOptional(e => e.GurpsSkill2)
+                .HasMany(e => e.GurpsSkillCollection)
+                .WithOptional(e => e.GurpsSkillSelf)
                 .HasForeignKey(e => e.IdSpecialization);
 
             modelBuilder.Entity<GurpsSkill>()
@@ -219,24 +219,24 @@ namespace GurpsDb.GurpsModel
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<GurpsSkill>()
-                .HasMany(e => e.NeedSkill1)
+                .HasMany(e => e.NeedSkillOutCollection)
                 .WithOptional(e => e.GurpsSkill1)
                 .HasForeignKey(e => e.IdSkillOut);
 
             modelBuilder.Entity<GurpsSkill>()
-                .HasMany(e => e.PrereqListDb)
+                .HasMany(e => e.PrereqListDbCollection)
                 .WithOptional(e => e.GurpsSkill)
                 .HasForeignKey(e => e.FkSkill)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<GurpsSkill>()
-                .HasMany(e => e.WeaponBonus)
+                .HasMany(e => e.WeaponBonusCollection)
                 .WithOptional(e => e.GurpsSkill)
                 .HasForeignKey(e => e.FkSkill)
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<GurpsSkill>()
-                .HasMany(e => e.GurpsCategory)
+                .HasMany(e => e.GurpsCategoryCollection)
                 .WithMany(e => e.GurpsSkill)
                 .Map(m => m.ToTable("GurpsSkillCategory88", "CharDB").MapLeftKey("IdSkill").MapRightKey("idSkillCategory"));
 

@@ -10,16 +10,17 @@ namespace GurpsDb.GurpsModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public GurpsSkill()
         {
-            AttributeBonus = new HashSet<AttributeBonus>();
-            DefaultSkill = new HashSet<DefaultSkill>();
-            DefaultSkill1 = new HashSet<DefaultSkill>();
-            DefSkillSome = new HashSet<DefSkillSome>();
-            CharSkill = new HashSet<CharSkill>();
-            GurpsSkill1 = new HashSet<GurpsSkill>();
-            NeedSkill1 = new HashSet<NeedSkill>();
-            PrereqListDb = new HashSet<PrereqListDb>();
-            WeaponBonus = new HashSet<WeaponBonus>();
-            GurpsCategory = new HashSet<GurpsCategory>();
+            AttributeBonusCollection = new HashSet<AttributeBonus>();
+            DefaultSkillInNeedCollection = new HashSet<DefaultSkill>();
+            DefaultSkillOutNeededCollection = new HashSet<DefaultSkill>();
+            DefSkillSomeCollection = new HashSet<DefSkillSome>();
+            CharSkillCollection = new HashSet<CharSkill>();
+            GurpsSkillCollection = new HashSet<GurpsSkill>();
+            NeedSkillOutCollection = new HashSet<NeedSkill>();
+            PrereqListDbCollection = new HashSet<PrereqListDb>();
+            WeaponBonusCollection = new HashSet<WeaponBonus>();
+            GurpsCategoryCollection = new HashSet<GurpsCategory>();
+            GetHashCode();
         }
         public int Id { get; set; }
         [StringLength(50)]
@@ -48,41 +49,61 @@ namespace GurpsDb.GurpsModel
         public string TypeSkTh { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AttributeBonus> AttributeBonus { get; set; }
+        public virtual ICollection<AttributeBonus> AttributeBonusCollection { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DefaultSkill> DefaultSkill { get; set; }
+        public virtual ICollection<DefaultSkill> DefaultSkillInNeedCollection { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DefaultSkill> DefaultSkill1 { get; set; }
+        public virtual ICollection<DefaultSkill> DefaultSkillOutNeededCollection { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DefSkillSome> DefSkillSome { get; set; }
+        public virtual ICollection<DefSkillSome> DefSkillSomeCollection { get; set; }
 
         public virtual DifficultySkill DifficultySkill { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CharSkill> CharSkill { get; set; }
+        public virtual ICollection<CharSkill> CharSkillCollection { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GurpsSkill> GurpsSkill1 { get; set; }
+        public virtual ICollection<GurpsSkill> GurpsSkillCollection { get; set; }
 
-        public virtual GurpsSkill GurpsSkill2 { get; set; }
+        public virtual GurpsSkill GurpsSkillSelf { get; set; }
 
         public virtual Tl Tl { get; set; }
 
         public virtual NeedSkill NeedSkill { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NeedSkill> NeedSkill1 { get; set; }
+        public virtual ICollection<NeedSkill> NeedSkillOutCollection { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PrereqListDb> PrereqListDb { get; set; }
+        public virtual ICollection<PrereqListDb> PrereqListDbCollection { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<WeaponBonus> WeaponBonus { get; set; }
+        public virtual ICollection<WeaponBonus> WeaponBonusCollection { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GurpsCategory> GurpsCategory { get; set; }
+        public virtual ICollection<GurpsCategory> GurpsCategoryCollection { get; set; }
+
+        public int HashCode
+        {
+            get
+            {
+                return GetHashCode();
+
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            int hash = 0;
+            if (TypeSkTh != null) hash ^= TypeSkTh.GetHashCode();
+            if (NameSkill != null) hash ^= NameSkill.GetHashCode();
+            if (Specialization != null) hash ^= Specialization.GetHashCode();
+            if (Version != null) hash ^= Version.GetHashCode();
+
+            return hash;
+        }
     }
 }

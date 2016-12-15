@@ -29,28 +29,26 @@ namespace GurpsDb.GurpsModel
         }
         public void Fcategory(SkillXmlModel skillFromXml, ContextGurpsModel context)
         {
-            //foreach (CategoriesXML itemCategory in SkillFromXml.categories)
-            //{
-            //    string qery = itemCategory.category.Value.ToString();
-            //    var qe = _context.GurpsSkillCategories.
-            //          FirstOrDefault(p => p.NamelCategory.Contains(qery));
-            //    GurpsSkillCategories.
-            //          Add(qe);
-            //}
+            foreach (CategoriesXml itemCategory in skillFromXml.Categories)
+            {
+                string qery = itemCategory.Category.Value.ToString();
+                var qe = context.GurpsCategoryDbSet.
+                      FirstOrDefault(p => p.NameCategory.Contains(qery));
+                GurpsCategoryCollection.
+                      Add(qe);
+            }
         }
         public void FDefault(SkillXmlModel skillFromXml, ObservableCollection<GurpsSkill> collectionCategiry)
         {
             foreach (DefaultXml itemDefault in skillFromXml.Default)
             {
                 DefaultSkill dfSk = new DefaultSkill(itemDefault, collectionCategiry);
-                DefaultSkill.Add(dfSk);
+                DefaultSkillInNeedCollection.Add(dfSk);
             }
         }
 
         public void FSpecialization(SkillXmlModel skillFromXml, ObservableCollection<GurpsSkill> collectionCategiry)
         {
-
-
             string nameSkill = skillFromXml.NameSkill != null
                              ? skillFromXml.NameSkill.Value : null;
             string specSkill = skillFromXml.Specialization != null
@@ -59,8 +57,6 @@ namespace GurpsDb.GurpsModel
               ? skillFromXml.Version.Value : null;
             string typeSkill = skillFromXml.Type != null
              ? skillFromXml.Type : null;
-            if (nameSkill == "Area Knowledge")
-            { }
 
             if (specSkill != null)
             {
@@ -73,7 +69,7 @@ namespace GurpsDb.GurpsModel
                     .FirstOrDefault(p => p.Specialization == null || (p.Specialization.StartsWith("@") && p.Specialization.EndsWith("@")));
                     if (gsSpec != null)
                     {
-                        GurpsSkill2 = gsSpec;
+                        GurpsSkillSelf = gsSpec;
                         //   GurpsSkill1.Add(GSSpec);    
                     }
                 }
@@ -84,7 +80,7 @@ namespace GurpsDb.GurpsModel
             foreach (AttributeBonusXml item in skillFromXml.AttributeBonus)
             {
                 AttributeBonus atrbnr = new AttributeBonus();
-                AttributeBonus.Add(atrbnr);
+                AttributeBonusCollection.Add(atrbnr);
             }
         }
         /// <summary>
@@ -102,7 +98,7 @@ namespace GurpsDb.GurpsModel
                 weapbns.Specialization = itemWeaponBonus.Specialization.Value.ToString();
                 weapbns.LevelCompare = itemWeaponBonus.Level.Attribute("compare")?.Value.ToString(); ;
                 weapbns.Level = itemWeaponBonus.Level.Value.ToString();
-                WeaponBonus.Add(weapbns);
+                WeaponBonusCollection.Add(weapbns);
             }
         }
 
@@ -134,7 +130,7 @@ namespace GurpsDb.GurpsModel
             #region Prereq_listXML
             foreach (PrereqListXml item in skillFromXml.PrereqList)
             {
-                PrereqListDb.Add(new PrereqListDb(item));
+                PrereqListDbCollection.Add(new PrereqListDb(item));
             }
             #endregion
         }

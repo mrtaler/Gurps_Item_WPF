@@ -66,5 +66,17 @@ namespace GurpsDb.XML.XSD
         /// 1_5 element ref="weapon_bonus" 
         /// </summary>
         public ObservableCollection<WeaponBonusXml> WeaponBonus = new ObservableCollection<WeaponBonusXml>();
+
+        public override int GetHashCode()
+        {
+            int hash = 0;
+            if (Type != null) hash ^= Type.GetHashCode();
+            if (NameSkill != null) hash ^= NameSkill.Value.GetHashCode();
+            if (Specialization != null) hash ^= Specialization.Value.GetHashCode();
+            if (Version != null) hash ^= Version.Value.GetHashCode();
+
+            return hash;
+        }
+
     }
 }

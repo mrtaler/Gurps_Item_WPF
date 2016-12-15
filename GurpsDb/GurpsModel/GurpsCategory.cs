@@ -18,12 +18,17 @@ namespace GurpsDb.GurpsModel
         public int Id { get; set; }
 
         [StringLength(50)]
-        public string NamelCategory { get; set; }
+        public string NameCategory { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Advantage> Advantage { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GurpsSkill> GurpsSkill { get; set; }
+
+        public GurpsCategory(string name)
+        {
+            NameCategory = name;
+        }
     }
 }

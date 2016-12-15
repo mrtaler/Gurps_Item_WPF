@@ -9,28 +9,42 @@ namespace GurpsDb.XML
 {
     public class Category
     {
-        public ObservableCollection<string> CollectionCategiry = new ObservableCollection<string>();
-        public ObservableCollection<string> ResultOrder;
+        private ObservableCollection<string> collectionCategory;
+        public ObservableCollection<string> CollectionCategiry
+        {
+            get
+            {
+                return new ObservableCollection<string>(collectionCategory.Distinct().OrderBy(i => i));
+
+            }
+        }
+
         /// <summary>
         /// Получение в файл категорий
         /// </summary>
-        /// <param name="xdoc">извлёчённый документ</param>
+        /// <param name="xmlString"></param>
         /// <param name="writePath">файл для записи результата</param>
         public Category(string xmlString, string writePath)
         {
-
+            collectionCategory = new ObservableCollection<string>();
             XDocument xdoc = XDocument.Load(xmlString);
             if (xmlString.Contains(".skl"))
             {
                 foreach (XElement skillElement in xdoc.Element("skill_list").Elements("skill").Elements("categories").Elements("category"))
                 {
                     string cat = skillElement != null ? skillElement.Value.ToString() : "0";
-                    CollectionCategiry.Add(cat);
+                    if (!collectionCategory.Contains(cat))
+                    {
+                        collectionCategory.Add(cat);
+                    }
                 }
                 foreach (XElement skillElement in xdoc.Element("skill_list").Elements("technique").Elements("categories").Elements("category"))
                 {
                     string cat = skillElement != null ? skillElement.Value.ToString() : "0";
-                    CollectionCategiry.Add(cat);
+                    if (!collectionCategory.Contains(cat))
+                    {
+                        collectionCategory.Add(cat);
+                    }
                 }
             }
             else if (xmlString.Contains(".adq"))
@@ -38,14 +52,16 @@ namespace GurpsDb.XML
                 foreach (XElement skillElement in xdoc.Element("advantage_list").Elements("advantage").Elements("categories").Elements("category"))
                 {
                     string cat = skillElement != null ? skillElement.Value.ToString() : "0";
-                    CollectionCategiry.Add(cat);
+                    if (!collectionCategory.Contains(cat))
+                    {
+                        collectionCategory.Add(cat);
+                    }
                 }
             }
-            ResultOrder = new ObservableCollection<string>(CollectionCategiry.Distinct().OrderBy(i => i));
         }
         public void ToSqlFromCollString(ObservableCollection<string> outSting)
         {
-            foreach (var item in ResultOrder)
+            foreach (var item in collectionCategory)
             {
                 outSting.Add("INSERT INTO CharDB.GurpsSkillCategory(  NamelCategory) VALUES(N'"
                     + item

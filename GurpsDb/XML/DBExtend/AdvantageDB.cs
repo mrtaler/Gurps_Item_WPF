@@ -56,7 +56,7 @@ namespace GurpsDb.GurpsModel
                 string qery = itemCategory.Category.Value;
 
                 var qe = context.GurpsCategoryDbSet.
-                      FirstOrDefault(p => p.NamelCategory.Contains(qery));
+                      FirstOrDefault(p => p.NameCategory.Contains(qery));
                 GurpsCategory.Add(qe);
             }
         }

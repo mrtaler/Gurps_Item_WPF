@@ -125,6 +125,14 @@
     <Compile Include="Migrations\201612131908008_InitialMigration.Designer.cs">
       <DependentUpon>201612131908008_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612151638496_FirstMigrations.cs" />
+    <Compile Include="Migrations\201612151638496_FirstMigrations.Designer.cs">
+      <DependentUpon>201612151638496_FirstMigrations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612152030218_FirstMigrations1.cs" />
+    <Compile Include="Migrations\201612152030218_FirstMigrations1.Designer.cs">
+      <DependentUpon>201612152030218_FirstMigrations1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XML\advantageSerialize.cs" />
@@ -180,6 +188,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201612131908008_InitialMigration.resx">
       <DependentUpon>201612131908008_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612151638496_FirstMigrations.resx">
+      <DependentUpon>201612151638496_FirstMigrations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612152030218_FirstMigrations1.resx">
+      <DependentUpon>201612152030218_FirstMigrations1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
