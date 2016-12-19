@@ -4,10 +4,11 @@ using GurpsDb.GurpsModel;
 using GurpsDb.XML.XSD;
 using GurpsDb.XML.XSD.List;
 using GurpsDb.XML.XSD.prereq_list;
+using System;
 
 namespace GurpsDb.XML
 {
-    class AdvantageSerialize
+    class AdvantageSerialize:IDisposable
     {
         private ContextGurpsModel _context;
         public ObservableCollection<AdvantageXml> AdvantageXmlCollection = new ObservableCollection<AdvantageXml>();
@@ -157,6 +158,11 @@ namespace GurpsDb.XML
                 _context.AdvantageDbSet.Add(new Advantage(advXml));
             }
             _context.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
         }
     }
 }

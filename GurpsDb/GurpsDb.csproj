@@ -129,10 +129,6 @@
     <Compile Include="Migrations\201612151638496_FirstMigrations.Designer.cs">
       <DependentUpon>201612151638496_FirstMigrations.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612152030218_FirstMigrations1.cs" />
-    <Compile Include="Migrations\201612152030218_FirstMigrations1.Designer.cs">
-      <DependentUpon>201612152030218_FirstMigrations1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XML\advantageSerialize.cs" />
@@ -191,9 +187,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612151638496_FirstMigrations.resx">
       <DependentUpon>201612151638496_FirstMigrations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612152030218_FirstMigrations1.resx">
-      <DependentUpon>201612152030218_FirstMigrations1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

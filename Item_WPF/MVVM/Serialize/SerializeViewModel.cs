@@ -10,16 +10,13 @@ namespace Item_WPF.MVVM.Serialize
     public class SerializeViewModel : ViewModelBase
     {
         private ContextGurpsModel context;
-
         #region Commands
 
         public ViewModelCommand LoadFileCommand { get; set; }
         public ViewModelCommand SerializeSkillCommand { get; set; }
 
         #endregion
-
-        public string XmlSkillPatch { get; set; }
-
+       public string XmlSkillPatch { get; set; }
         public SerializeViewModel()
         {
             context = new ContextGurpsModel();
@@ -36,7 +33,8 @@ namespace Item_WPF.MVVM.Serialize
             {
                 string filter = "GCS Skill files (*." + str + ")| *." + str + "| All Files(*.*) | *.* ";
                 OpenFileDialog dlg = new OpenFileDialog();
-                dlg.InitialDirectory = @"E:\Win8\Desktop\gcs-4.0.2-windows-32\Library\Skills";
+                //  dlg.InitialDirectory = @"E:\Win8\Desktop\gcs-4.0.2-windows-32\Library\Skills";
+                dlg.InitialDirectory = @"C:\Users\Taler\Documents\GitHub\Gurps_Item_WPF\Item_WPF\GCS\Library\Skills";
                 dlg.Filter = filter;
                 dlg.ShowDialog();
                 if (dlg.FileName != "")
@@ -60,23 +58,23 @@ namespace Item_WPF.MVVM.Serialize
         /// <param name="parameter">NameGurpsCaltegoruCollection</param>
         private void SerializeSkill(object parameter)
         {
-            int InsertInToGurpsSkillCategory = 0;
+            int insertInToGurpsSkillCategory = 0;
             // ObservableCollection<GurpsSkillCategory> GSCColl = new ObservableCollection<GurpsSkillCategory>(_context.GurpsSkillCategories);
             //   Category CAt = new Category(XmlSkillPatch, @"C:\Users\Derdan\Dropbox\_Wor\Category.txt");
             Category cAt = new Category(XmlSkillPatch, @"d:\Category.txt");
-            foreach (var item in cAt.CollectionCategiry)
+            foreach (var item in cAt.GurpsCategoryColleList)
             {
-                var qe = context.GurpsCategoryDbSet.FirstOrDefault(p => p.NameCategory.Contains(item));
+                var qe = context.GurpsCategoryDbSet.FirstOrDefault(p => p.NameCategory.Contains(item.NameCategory));
                 if (qe == null)
                 {
                     //GSCColl.Add(gm);
-                    context.GurpsCategoryDbSet.Add(new GurpsCategory(item));
-                    InsertInToGurpsSkillCategory += 1;
+                    context.GurpsCategoryDbSet.Add(item);
+                    insertInToGurpsSkillCategory += 1;
                 }
             }
             // 
             context.SaveChanges();
-            MessageBox.Show(InsertInToGurpsSkillCategory.ToString());
+            MessageBox.Show(insertInToGurpsSkillCategory.ToString());
             // SkillSerializeible sklsrib = new SkillSerializeible(XmlSkillPatch, @"C:\Users\Derdan\Dropbox\_Wor\skill.txt");
             SkillSerializeible sklsrib = new SkillSerializeible(XmlSkillPatch, @"d:\skill.txt");
 
