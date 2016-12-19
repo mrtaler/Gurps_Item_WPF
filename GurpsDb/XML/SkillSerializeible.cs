@@ -126,40 +126,32 @@ namespace GurpsDb.XML
             }
             #endregion
             contextAdded = 0;
+
+
             foreach (SkillXmlModel item in OutstringCollectionSkill)
             {
-                string nameSkill = item.NameSkill != null
-                                 ? item.NameSkill.Value.ToString() : null;
-                string specSkill = item.Specialization != null
-                                 ? item.Specialization.Value.ToString() : null;
-                string versSkill = item.Version != null
-                  ? item.Version.Value.ToString() : null;
-                string typeSkill = item.Type != null
-                 ? item.Type : null;
+                //string nameSkill = item.NameSkill != null
+                //                 ? item.NameSkill.Value.ToString() : null;
+                //string specSkill = item.Specialization != null
+                //                 ? item.Specialization.Value.ToString() : null;
+                //string versSkill = item.Version != null
+                //  ? item.Version.Value.ToString() : null;
+                //string typeSkill = item.Type != null
+                // ? item.Type : null;
 
-                GurpsSkill skillFromHash = CollectionCategiry.FirstOrDefault(p => p.GetHashCode() == item.GetHashCode());
-                var skillDbHash =
-                    _context.GurpsSkillDbSet.ToList();
-                var qwe = skillDbHash.Find(p => p.GetHashCode() == item.GetHashCode());
+                GurpsSkill skillFromHash = CollectionCategiry.
+                    FirstOrDefault(p => p.GetHashCode() == item.GetHashCode());
 
-                GurpsSkill skillAstronomy = CollectionCategiry
-                    .Where(p => p.TypeSkTh == typeSkill)
-                    .Where(p => p.NameSkill == nameSkill)
-                    .Where(p => p.Specialization == specSkill)
-                    .FirstOrDefault(p => p.Version == versSkill);
+                GurpsSkill tt = _context.GurpsSkillDbSet.
+                    FirstOrDefault(p => p.GetHashCode() == item.GetHashCode());
 
 
-                GurpsSkill tt = _context.GurpsSkillDbSet
-                    .Where(p => p.TypeSkTh == typeSkill)
-                    .Where(p => p.NameSkill == nameSkill)
-                    .Where(p => p.Specialization == specSkill)
-                    .FirstOrDefault(p => p.Version == versSkill);
-                var tqt1 = skillAstronomy.GetHashCode();
-                var tqt2 = tt.GetHashCode();
-                var tqt3 = item.GetHashCode();
-
-                skillAstronomy.FGurpsSkill(item, _context, CollectionCategiry);
-                _context.GurpsSkillDbSet.Add(skillAstronomy);
+                skillFromHash.FGurpsSkill(item, _context, CollectionCategiry);
+                if (tt==null)
+                {
+                    _context.GurpsSkillDbSet.Add(skillFromHash);
+                }
+               
                 // }
             }
             _context.SaveChanges();

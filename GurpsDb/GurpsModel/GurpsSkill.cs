@@ -86,15 +86,6 @@ namespace GurpsDb.GurpsModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GurpsCategory> GurpsCategoryCollection { get; set; }
 
-        public int HashCode
-        {
-            get
-            {
-                return GetHashCode();
-
-            }
-        }
-
         public override int GetHashCode()
         {
             int hash = 0;
@@ -105,5 +96,6 @@ namespace GurpsDb.GurpsModel
 
             return hash;
         }
+
     }
 }
