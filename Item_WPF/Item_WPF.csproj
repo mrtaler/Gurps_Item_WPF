@@ -155,6 +155,10 @@
     </Compile>
     <Compile Include="MVVM\Char\AddSkilltoChar\AddSkilltoCharViewModel.cs" />
     <Compile Include="MVVM\Char\AllCharfromDB\AllCharFromDBViewModel.cs" />
+    <Compile Include="MVVM\Char\EditCharacterSkill\EditCharacterSkillView.xaml.cs">
+      <DependentUpon>EditCharacterSkillView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\Char\EditCharacterSkill\EditCharacterSkillViewModel.cs" />
     <Compile Include="MVVM\GurpsSkill_m\AllGurpsSkillView.xaml.cs">
       <DependentUpon>AllGurpsSkillView.xaml</DependentUpon>
     </Compile>
@@ -284,6 +288,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\Char\AddSkilltoChar\AddSkilltoCharView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\Char\EditCharacterSkill\EditCharacterSkillView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -889,18 +897,18 @@
     <Compile Include="GCS\src\com\trollworks\gcs\character\HitPointsPanel.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\character\IdentityPanel.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\character\LiftPanel.cs" />
-    <Resource Include="GCS_Ser\names\USCensus1990FemaleFirstNames.txt">
+    <AdditionalFiles Include="GCS_Ser\names\USCensus1990FemaleFirstNames.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <CustomToolNamespace>com.trollworks.gcs.character.names</CustomToolNamespace>
-    </Resource>
-    <Resource Include="GCS_Ser\names\USCensus1990LastNames.txt">
+      <CustomToolNamespace>Item_WPF.GCS_Ser.names</CustomToolNamespace>
+    </AdditionalFiles>
+    <AdditionalFiles Include="GCS_Ser\names\USCensus1990LastNames.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <CustomToolNamespace>com.trollworks.gcs.character.names</CustomToolNamespace>
-    </Resource>
-    <Resource Include="GCS_Ser\names\USCensus1990MaleFirstNames.txt">
+      <CustomToolNamespace>Item_WPF.GCS_Ser.names</CustomToolNamespace>
+    </AdditionalFiles>
+    <AdditionalFiles Include="GCS_Ser\names\USCensus1990MaleFirstNames.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <CustomToolNamespace>com.trollworks.gcs.character.names</CustomToolNamespace>
-    </Resource>
+      <CustomToolNamespace>Item_WPF.GCS_Ser.names</CustomToolNamespace>
+    </AdditionalFiles>
     <Compile Include="GCS\src\com\trollworks\gcs\character\NotesPanel.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\character\OutlineInfo.cs" />
     <Compile Include="GCS\src\com\trollworks\gcs\character\Page.cs" />

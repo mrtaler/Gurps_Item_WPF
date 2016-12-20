@@ -1,10 +1,10 @@
-﻿using com.trollworks.gcs.character.names;
-using Item_WPF.addin;
+﻿using Item_WPF.addin;
 using Item_WPF.MVVM.GurpsSkill_m;
 using Item_WPF.MVVM.Serialize;
 using Item_WPF.MVVM.View;
 using Microsoft.Windows.Controls.Ribbon;
 using System.Windows;
+using Item_WPF.GCS_Ser.names;
 
 
 namespace Item_WPF.MVVM.ViewModels
@@ -108,10 +108,10 @@ namespace Item_WPF.MVVM.ViewModels
         {
             if (parameter.ToString() == "male")
             {
-                MessageBox.Show(USCensusNames.INSTANCE.GetFullName(true));
+                MessageBox.Show(USCensusNames.Instance.GetFullName(true));
             }
             else
-                MessageBox.Show(USCensusNames.INSTANCE.GetFullName(false));
+                MessageBox.Show(USCensusNames.Instance.GetFullName(false));
         }
         private void AllGurpsSkillViewLaunch(object parameter)
         {

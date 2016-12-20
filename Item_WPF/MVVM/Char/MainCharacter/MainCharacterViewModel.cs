@@ -3,15 +3,16 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Xml.Serialization;
-using com.trollworks.gcs.character.names;
 using GurpsDb.GurpsModel;
 using Item_WPF.addin;
+using Item_WPF.GCS_Ser.names;
 using Item_WPF.litForms.TextInput;
 using Item_WPF.MVVM.AddSkilltoChar;
 using Item_WPF.MVVM.AllCharfromDB;
 using Item_WPF.MVVM.View;
 using Item_WPF.Properties;
 using Microsoft.Win32;
+using Item_WPF.MVVM.Char.EditCharacterSkill;
 
 namespace Item_WPF.MVVM.Char.MainCharacter
 {
@@ -38,6 +39,8 @@ namespace Item_WPF.MVVM.Char.MainCharacter
 
         public ViewModelCommand ChangeNameCommand { get; private set; }
 
+        public ViewModelCommand EditSkillDblClkCommand { get; private set; }
+
         public MainCharacterViewModel(Window owner)
             : this(owner, new CharacterDb())
         {
@@ -54,7 +57,7 @@ namespace Item_WPF.MVVM.Char.MainCharacter
 
             //name
             if (string.IsNullOrEmpty(Character.Name))
-                Character.Name = USCensusNames.INSTANCE.GetFullName(true);
+                Character.Name = USCensusNames.Instance.GetFullName(true);
 
             // Create commands
             AboutCommand = new ViewModelCommand(ShowAboutWindow);
@@ -68,6 +71,8 @@ namespace Item_WPF.MVVM.Char.MainCharacter
             OpenDbCommand = new ViewModelCommand(OpenDb);
             SaveAsCommand = new ViewModelCommand(SaveAs, false);
             OwnerCloseCommand = new ViewModelCommand(OwnerClose);
+
+            EditSkillDblClkCommand=new ViewModelCommand(EditSkillDblClk);
 
             SaveDbCommand = new ViewModelCommand(SaveDb);
 
@@ -375,7 +380,7 @@ namespace Item_WPF.MVVM.Char.MainCharacter
         {
             Character = new CharacterDb();
             if (string.IsNullOrEmpty(Character.Name))
-                Character.Name = USCensusNames.INSTANCE.GetFullName(true);
+                Character.Name = USCensusNames.Instance.GetFullName(true);
             // Notify all properties changed
             NotifyPropertyChanged(string.Empty);
         }
@@ -397,7 +402,7 @@ namespace Item_WPF.MVVM.Char.MainCharacter
                 {
                     Character = (window.DataContext as AllCharFromDbViewModel).SelectedCharacterDb;
                     if (string.IsNullOrEmpty(Character.Name))
-                        Character.Name = USCensusNames.INSTANCE.GetFullName(true);
+                        Character.Name = USCensusNames.Instance.GetFullName(true);
                 }
 
                 // Notify all properties changed
@@ -482,6 +487,15 @@ namespace Item_WPF.MVVM.Char.MainCharacter
                 NotifyPropertyChanged("Name");
                 NotifyPropertyChanged("Title");
             }
+        }
+
+        private void EditSkillDblClk(object parametr)
+        {
+            GurpsSkill charSkillForEdit = (GurpsSkill) parametr;
+            var findCharSkill = Character.CharSkillCollection.FirstOrDefault(p => p.GurpsSkill == charSkillForEdit);
+
+            EditCharacterSkillView editSkillView=new EditCharacterSkillView(findCharSkill);
+            editSkillView.ShowDialog();
         }
 
         /// <summary>

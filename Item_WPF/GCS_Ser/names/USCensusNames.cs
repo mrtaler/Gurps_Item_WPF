@@ -9,16 +9,14 @@
  * by the Mozilla Public License, version 2.0.
  */
 
-using Item_WPF.GCS_Ser.names;
-
-namespace com.trollworks.gcs.character.names
+namespace Item_WPF.GCS_Ser.names
 {
 
     /** Generates random names from the 1990 U.S. census data. */
     public class USCensusNames : Names
     {
         /** The one and only global instance of this class. */
-        public static USCensusNames INSTANCE = new USCensusNames();
+        public static USCensusNames Instance = new USCensusNames();
         private static string[] female = LoadNames("USCensus1990FemaleFirstNames.txt", "Mary"); //$NON-NLS-1$ //$NON-NLS-2$
         private static string[] male = LoadNames("USCensus1990MaleFirstNames.txt", "Richard");  //$NON-NLS-1$ //$NON-NLS-2$
         private static string[] last = LoadNames("USCensus1990LastNames.txt", "Wilkes");        //$NON-NLS-1$ //$NON-NLS-2$

@@ -12,19 +12,28 @@ namespace Item_WPF.MVVM.Char.AddSkilltoChar
         /// Character With now work
         /// </summary>
         public CharacterDb Character;
+
         /// <summary>
         /// Context with now work
         /// </summary>
         public ContextGurpsModel Context { get; set; }
+
         /// <summary>
         /// Collection for All Gurps Skill in DB
         /// </summary>
         public ObservableCollection<GurpsSkill> AllGurpsSkillCollection { get; set; }
+
         /// <summary>
         /// COllection from Character Skill 
         /// </summary>
-        public ObservableCollection<CharSkill> CharSkillCollection =>
-            new ObservableCollection<CharSkill>(Character.CharSkillCollection);
+        public ObservableCollection<CharSkill> CharSkillCollection
+        {
+            get
+            {
+                return new ObservableCollection<CharSkill>(Character.CharSkillCollection);
+            }
+        }
+
         /// <summary>
         /// Collection for gurps char skill
         /// </summary>

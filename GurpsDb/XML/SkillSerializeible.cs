@@ -6,20 +6,24 @@ using GurpsDb.GurpsModel;
 using GurpsDb.XML.XSD;
 using GurpsDb.XML.XSD.List;
 using GurpsDb.XML.XSD.prereq_list;
-
+using System.Collections.Generic;
 
 namespace GurpsDb.XML
 {
     public class SkillSerializeible
     {
         private ContextGurpsModel _context;
-        public ObservableCollection<GurpsSkill> CollectionCategiry = new ObservableCollection<GurpsSkill>();
+        List<GurpsCategory> gurpsList;
+        public ObservableCollection<GurpsSkill> GurpsSkillCollection = new ObservableCollection<GurpsSkill>();
+        private ObservableCollection<GurpsSkill> collectionGurpsSkills;
         public ObservableCollection<SkillXmlModel> OutstringCollectionSkill = new ObservableCollection<SkillXmlModel>();
         //   public ObservableCollection<GurpsSkillCategory> gurpsSkillCategories = new ObservableCollection<GurpsSkillCategory>();
         public ObservableCollection<string> Retcompare;
         public SkillSerializeible(string xmlString, string writePath)
         {
             _context = new ContextGurpsModel();
+            collectionGurpsSkills = new ObservableCollection<GurpsSkill>(_context.GurpsSkillDbSet);
+           gurpsList=new List<GurpsCategory>(_context.GurpsCategoryDbSet);
             Retcompare = new ObservableCollection<string>();
             int contextAdded = 1;
             XDocument xdoc = XDocument.Load(xmlString);
@@ -78,7 +82,7 @@ namespace GurpsDb.XML
                 #endregion
                 qwerty.Type = "skill";
                 OutstringCollectionSkill.Add(qwerty);
-                CollectionCategiry.Add(new GurpsSkill(qwerty, "skill"));
+                GurpsSkillCollection.Add(new GurpsSkill(qwerty, "skill"));
                 //qwerty.weapon_bonus =       new ObservableCollection<Weapon_bonusXML>   (skillElement.Elements("weapon_bonus"));
                 //OutstringCollection.Add(qwerty);
                 //contextAdded += 1;
@@ -122,7 +126,7 @@ namespace GurpsDb.XML
                 #endregion
                 techXml.Type = "technique";
                 OutstringCollectionSkill.Add(techXml);
-                CollectionCategiry.Add(new GurpsSkill(techXml, "technique"));
+                GurpsSkillCollection.Add(new GurpsSkill(techXml, "technique"));
             }
             #endregion
             contextAdded = 0;
@@ -139,23 +143,24 @@ namespace GurpsDb.XML
                 //string typeSkill = item.Type != null
                 // ? item.Type : null;
 
-                GurpsSkill skillFromHash = CollectionCategiry.
+                GurpsSkill skillFromHash = GurpsSkillCollection.
                     FirstOrDefault(p => p.GetHashCode() == item.GetHashCode());
 
-                GurpsSkill tt = _context.GurpsSkillDbSet.
+                GurpsSkill tt = collectionGurpsSkills.
                     FirstOrDefault(p => p.GetHashCode() == item.GetHashCode());
 
 
-                skillFromHash.FGurpsSkill(item, _context, CollectionCategiry);
+                skillFromHash.FGurpsSkill(item, gurpsList, GurpsSkillCollection);
                 if (tt==null)
                 {
                     _context.GurpsSkillDbSet.Add(skillFromHash);
+                    contextAdded++;
                 }
                
                 // }
             }
             _context.SaveChanges();
-            MessageBox.Show("_context SaveChanges");
+            MessageBox.Show("_context SaveChanges"+ contextAdded);
         }
     }
 }

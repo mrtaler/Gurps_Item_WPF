@@ -200,6 +200,12 @@
                                 <DataTemplate>
                                     <StackPanel Height="20">
                                         <Grid>
+                                            <Grid.InputBindings>
+                                                <MouseBinding Gesture="LeftDoubleClick" 
+                                                              Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBox}},
+                                                    Path=DataContext.EditSkillDblClkCommand}" 
+                                                              CommandParameter="{Binding Path=GurpsSkill}"/>
+                                            </Grid.InputBindings>
                                             <Grid.ColumnDefinitions>
                                                 <!--  0  -->
                                                 <ColumnDefinition Width="*" />

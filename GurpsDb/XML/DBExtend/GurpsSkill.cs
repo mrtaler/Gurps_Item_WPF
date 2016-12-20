@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using GurpsDb.XML.XSD;
 using GurpsDb.XML.XSD.List;
 using GurpsDb.XML.XSD.prereq_list;
+using System.Collections.Generic;
 
 namespace GurpsDb.GurpsModel
 {
@@ -27,12 +28,12 @@ namespace GurpsDb.GurpsModel
                 IdtechLevel = null;
             TypeSkTh = type;
         }
-        public void Fcategory(SkillXmlModel skillFromXml, ContextGurpsModel context)
+        public void Fcategory(SkillXmlModel skillFromXml, List<GurpsCategory> gurpsCategories)
         {
             foreach (CategoriesXml itemCategory in skillFromXml.Categories)
             {
-                string qery = itemCategory.Category.Value.ToString();
-                var qe = context.GurpsCategoryDbSet.
+                string qery = itemCategory.Category.Value;
+                var qe = gurpsCategories.
                       FirstOrDefault(p => p.NameCategory.Contains(qery));
                 GurpsCategoryCollection.
                       Add(qe);
@@ -118,10 +119,10 @@ namespace GurpsDb.GurpsModel
             Fmain(skillFromXml, type);
         }
 
-        public void FGurpsSkill(SkillXmlModel skillFromXml, ContextGurpsModel context, ObservableCollection<GurpsSkill> collectionCategiry)
+        public void FGurpsSkill(SkillXmlModel skillFromXml, List<GurpsCategory> gurpsCategories, ObservableCollection<GurpsSkill> collectionCategiry)
         // :this()
         {
-            Fcategory(skillFromXml, context);
+            Fcategory(skillFromXml, gurpsCategories);
             FSpecialization(skillFromXml, collectionCategiry);
             FDefault(skillFromXml, collectionCategiry);
             Fattribute_bonus(skillFromXml);
