@@ -496,6 +496,10 @@ namespace Item_WPF.MVVM.Char.MainCharacter
 
             EditCharacterSkillView editSkillView=new EditCharacterSkillView(findCharSkill);
             editSkillView.ShowDialog();
+
+            NotifyPropertyChanged("Skills");
+            NotifyPropertyChanged("CharSkills");
+            NotifyPropertyChanged("ChaSkills");
         }
 
         /// <summary>

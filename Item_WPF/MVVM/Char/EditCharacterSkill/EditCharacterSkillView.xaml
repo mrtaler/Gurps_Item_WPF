@@ -10,7 +10,7 @@
         <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="124"/>
         <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="124"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="139,10,0,0" TextWrapping="Wrap" 
-                 Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                 Text="{Binding CharSkillForEdit.PointOfSkill}" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="139,38,0,0" TextWrapping="Wrap" 
                 Text="{Binding  CharSkillForEdit.GurpsSkill.NameSkill}" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="139,66,0,0" TextWrapping="Wrap" 
@@ -19,6 +19,8 @@
                 Text="{Binding CharSkillForEdit.CurrentSkillValue, Mode=OneWay}" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="139,122,0,0" TextWrapping="Wrap" 
                  Text="{Binding CharSkillForEdit.LevelSkills, Mode=OneWay}" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button" Content="incr" Command="{Binding SkillPointIncreaseCommand}" HorizontalAlignment="Left" Margin="280,10,0,0" VerticalAlignment="Top" Width="74"/>
+        <Button x:Name="button1" Content="decr" Command="{Binding SkillPointDecreaseCommand}" HorizontalAlignment="Left" Margin="280,35,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
