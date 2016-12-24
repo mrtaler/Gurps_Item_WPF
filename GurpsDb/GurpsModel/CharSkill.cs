@@ -1,10 +1,11 @@
 namespace GurpsDb.GurpsModel
 {
+    using BaseModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("CharSkill", Schema = "CharDB")]
-    public partial class CharSkill
+    public partial class CharSkill : ViewModelBase
     {
         [Key]
         [Column("idSkill", Order = 0)]
@@ -16,10 +17,28 @@ namespace GurpsDb.GurpsModel
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int IdChar { get; set; }
 
-        public int? PointOfSkill { get; set; }
+
 
         public virtual CharacterDb CharacterDb { get; set; }
 
         public virtual GurpsSkill GurpsSkill { get; set; }
+
+        [NotMapped]
+        private int? pointOfSkill;
+        public int? PointOfSkill
+        {
+            get
+            {
+                return pointOfSkill;
+            }
+            set
+            {
+                if (pointOfSkill!=value)
+                {
+                    pointOfSkill = value;
+                    NotifyPropertyChanged("PointOfSkill");
+                }
+            }
+        }
     }
 }

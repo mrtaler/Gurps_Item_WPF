@@ -4,6 +4,7 @@ using Item_WPF.addin;
 using Item_WPF.MVVM.View;
 using System.Collections.ObjectModel;
 using GurpsDb.GurpsModel;
+using GurpsDb.BaseModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {

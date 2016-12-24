@@ -1,4 +1,5 @@
-﻿using GurpsDb.GurpsModel;
+﻿using GurpsDb.BaseModel;
+using GurpsDb.GurpsModel;
 using Item_WPF.addin;
 
 namespace Item_WPF.MVVM.EditPrimaryStats

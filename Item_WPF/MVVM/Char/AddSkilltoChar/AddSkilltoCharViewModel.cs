@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using GurpsDb.GurpsModel;
 using Item_WPF.addin;
+using GurpsDb.BaseModel;
 
 namespace Item_WPF.MVVM.Char.AddSkilltoChar
 {

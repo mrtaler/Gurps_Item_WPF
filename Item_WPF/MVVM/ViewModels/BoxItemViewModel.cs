@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
 using GurpsDb.GurpsModel;
+using GurpsDb.BaseModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {

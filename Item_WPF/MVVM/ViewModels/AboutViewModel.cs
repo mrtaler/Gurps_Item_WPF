@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Item_WPF.addin;
+using GurpsDb.BaseModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {

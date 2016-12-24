@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace Item_WPF.addin
+namespace GurpsDb.BaseModel
 {
     // Base class for the viewmodels, which implements the INotifyPropertyChanged interface.
     public class ViewModelBase : INotifyPropertyChanged

@@ -2,6 +2,7 @@
 using Item_WPF.addin;
 using Microsoft.Win32;
 using System.Windows;
+using GurpsDb.BaseModel;
 using GurpsDb.GurpsModel;
 using GurpsDb.XML;
 

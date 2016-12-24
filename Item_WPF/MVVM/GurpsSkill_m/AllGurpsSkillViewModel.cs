@@ -1,6 +1,7 @@
 ﻿using Item_WPF.addin;
 using System.Collections.ObjectModel;
 using System.Linq;
+using GurpsDb.BaseModel;
 using GurpsDb.GurpsModel;
 
 namespace Item_WPF.MVVM.GurpsSkill_m

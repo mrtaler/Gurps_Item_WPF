@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseModel\ViewModelBase.cs" />
     <Compile Include="DBInit.cs" />
     <Compile Include="GurpsExtendModel\AnyBoxNameType.cs" />
     <Compile Include="GurpsExtendModel\CharacterDb.cs" />

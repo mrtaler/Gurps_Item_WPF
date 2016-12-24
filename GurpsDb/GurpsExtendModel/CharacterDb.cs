@@ -340,7 +340,7 @@ namespace GurpsDb.GurpsModel
             get
             {
 
-                return Convert.ToInt32(CharSkillCollection.Sum(p => p.PointOfSkill));
+                return Convert.ToInt32(CharSkillCollection.Sum(p => p.CurrentSkillValue));
 
 
                 //.Sum(p => p.SkillPointCost);

@@ -198,7 +198,6 @@
     <Compile Include="MVVM\ViewModels\NewBoxViewModel.cs" />
     <Compile Include="MVVM\ViewModels\NewItemsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\SelectItemsViewModel.cs" />
-    <Compile Include="addin\ViewModelBase.cs" />
     <Compile Include="MVVM\ViewModels\WeaponEditViewModel.cs" />
     <Compile Include="MVVM\View\AboutWindowView.xaml.cs">
       <DependentUpon>AboutWindowView.xaml</DependentUpon>

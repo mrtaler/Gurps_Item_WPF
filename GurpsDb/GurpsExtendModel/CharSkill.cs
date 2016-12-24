@@ -1,9 +1,11 @@
-﻿using System;
+﻿using GurpsDb.BaseModel;
+using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
 // ReSharper disable once CheckNamespace
 namespace GurpsDb.GurpsModel
 {
+    
     public partial class CharSkill
     {
         /// <summary>
@@ -55,6 +57,12 @@ namespace GurpsDb.GurpsModel
         /// </summary>
         public CharSkill()
         {
+            PropertyDependencyMap.Add("PointOfSkill", new []
+            {
+                "SkillPointCost",
+                "CurrentSkillValue",
+                "LevelSkills"
+            });
             //    CharacterDb = null;
             //    GurpsSkill = null;
             //    PointOfSkill = 1;
@@ -65,6 +73,7 @@ namespace GurpsDb.GurpsModel
         /// <param name="characterDb">Персонаж</param>
         /// <param name="gurpsSkill">Навык</param>
         public CharSkill(/*CharacterDb characterDb, */GurpsSkill gurpsSkill)
+            :base()
         {
             //  CharacterDb  = characterDb;
             GurpsSkill = gurpsSkill;
