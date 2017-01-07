@@ -126,8 +126,18 @@ namespace Item_WPF.MVVM.Char.AddSkilltoChar
             int gsid = Convert.ToInt32(param);
             if (CharGurpsSkillCollection.FirstOrDefault(p => p.Id == gsid) == null)
             {
-                CharSkill charSkill = new CharSkill(AllGurpsSkillCollection.First(p => p.Id == gsid));
+                var cha = Character;
+
+                //  if (Character.Id > 0)
+                //{
+                CharSkill charSkill = new CharSkill(Character, AllGurpsSkillCollection.First(p => p.Id == gsid));
                 Character.CharSkillCollection.Add(charSkill);
+                //}
+                //else
+                //{
+                //CharSkill charSkill = new CharSkill(Character, AllGurpsSkillCollection.First(p => p.Id == gsid));
+                //Character.CharSkillCollection.Add(charSkill);
+                //}
                 NotifyPropertyChanged("CharGurpsSkillCollection");
                 NotifyPropertyChanged("CharSkillCollection");
             }

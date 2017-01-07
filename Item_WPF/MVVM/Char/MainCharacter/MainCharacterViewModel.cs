@@ -73,7 +73,7 @@ namespace Item_WPF.MVVM.Char.MainCharacter
             SaveAsCommand = new ViewModelCommand(SaveAs, false);
             OwnerCloseCommand = new ViewModelCommand(OwnerClose);
 
-            EditSkillDblClkCommand=new ViewModelCommand(EditSkillDblClk);
+            EditSkillDblClkCommand = new ViewModelCommand(EditSkillDblClk);
 
             SaveDbCommand = new ViewModelCommand(SaveDb);
 
@@ -316,8 +316,11 @@ namespace Item_WPF.MVVM.Char.MainCharacter
             window.Owner = Owner;
 
             bool? result = window.ShowDialog();
+
+
             if (result.HasValue && (result == true))
             {
+                var ch = Character;
                 NotifyPropertyChanged("Skills");
                 NotifyPropertyChanged("CharSkills");
                 NotifyPropertyChanged("ChaSkills");
@@ -492,10 +495,10 @@ namespace Item_WPF.MVVM.Char.MainCharacter
 
         private void EditSkillDblClk(object parametr)
         {
-            GurpsSkill charSkillForEdit = (GurpsSkill) parametr;
+            GurpsSkill charSkillForEdit = (GurpsSkill)parametr;
             var findCharSkill = Character.CharSkillCollection.FirstOrDefault(p => p.GurpsSkill == charSkillForEdit);
 
-            EditCharacterSkillView editSkillView=new EditCharacterSkillView(findCharSkill);
+            EditCharacterSkillView editSkillView = new EditCharacterSkillView(findCharSkill);
             editSkillView.ShowDialog();
 
             NotifyPropertyChanged("Skills");
