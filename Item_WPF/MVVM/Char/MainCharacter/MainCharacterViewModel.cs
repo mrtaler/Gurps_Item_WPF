@@ -318,13 +318,13 @@ namespace Item_WPF.MVVM.Char.MainCharacter
             bool? result = window.ShowDialog();
 
 
-            if (result.HasValue && (result == true))
-            {
-                var ch = Character;
-                NotifyPropertyChanged("Skills");
-                NotifyPropertyChanged("CharSkills");
-                NotifyPropertyChanged("ChaSkills");
-            }
+            // if (result.HasValue && (result == true))
+            // {
+            //     var ch = Character;
+            NotifyPropertyChanged("Skills");
+            NotifyPropertyChanged("CharSkills");
+            NotifyPropertyChanged("ChaSkills");
+            //}
         }
         /// <summary>
         /// Method for open window to edit Primary start

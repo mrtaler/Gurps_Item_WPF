@@ -19,8 +19,8 @@ namespace Item_WPF.MVVM.ViewModels
         {
             _slot = slot;
             _context = new ContextGurpsModel();
-            AvvAttSlotOk = new ObservableCollection<AttachmentMount>(_context.AttachmentmountDbSet);
-            AvvAttSlotOkForWork = new ObservableCollection<AttachmentMount>(AvvAttSlotOk.Where(p => p.Attachmentslot.SzSlotName.Contains(_slot)));
+            AvvAttSlotOk = new ObservableCollection<AttachmentMount>(_context.AttachmentMountDbSet);
+            AvvAttSlotOkForWork = new ObservableCollection<AttachmentMount>(AvvAttSlotOk.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains(_slot)));
             Save = new ViewModelCommand(SaveChanges);
             AvvAttSlotOkForWork.CollectionChanged += _Avv_att_slot_OK_CollectionChanged;
         }
@@ -29,8 +29,8 @@ namespace Item_WPF.MVVM.ViewModels
         {
             _slot = slot;
             _context = context;
-            AvvAttSlotOk = new ObservableCollection<AttachmentMount>(_context.AttachmentmountDbSet);
-            AvvAttSlotOkForWork = new ObservableCollection<AttachmentMount>(AvvAttSlotOk.Where(p => p.Attachmentslot.SzSlotName.Contains(_slot)));
+            AvvAttSlotOk = new ObservableCollection<AttachmentMount>(_context.AttachmentMountDbSet);
+            AvvAttSlotOkForWork = new ObservableCollection<AttachmentMount>(AvvAttSlotOk.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains(_slot)));
             //    avvAttSlotOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_Avv_att_slot_OK_CollectionChanged_with_context);
         }
         private void _Avv_att_slot_OK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -39,7 +39,7 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 foreach (AttachmentMount item in e.OldItems)
                 {
-                    _context.AttachmentmountDbSet.Remove(item);
+                    _context.AttachmentMountDbSet.Remove(item);
                     AvvAttSlotOk.Remove(item);
                 }
                 SaveChanges(1);
@@ -49,9 +49,9 @@ namespace Item_WPF.MVVM.ViewModels
                 foreach (AttachmentMount item in e.NewItems)
                 {
                     item.Name = "New_slot";
-                    item.IdAttacClass = (_context.AttachmentslotDbSet.First(p => p.SzSlotName.Contains(_slot)).UiSlotIndex);
+                    item.IdAttacClass = (_context.AttachmentSlotDbSet.First(p => p.AttachmentSlotName.Contains(_slot)).Id);
                     AvvAttSlotOk.Add(item);
-                    _context.AttachmentmountDbSet.Add(item);
+                    _context.AttachmentMountDbSet.Add(item);
                     SaveChanges(1);
                 }
 
@@ -63,7 +63,7 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 foreach (AttachmentMount item in e.OldItems)
                 {
-                    _context.AttachmentmountDbSet.Remove(item);
+                    _context.AttachmentMountDbSet.Remove(item);
                 }
                 SaveChanges(1);
             }
@@ -72,8 +72,8 @@ namespace Item_WPF.MVVM.ViewModels
                 foreach (AttachmentMount item in e.NewItems)
                 {
                     item.Name = "New_slot";
-                    item.IdAttacClass = (_context.AttachmentslotDbSet.First(p => p.SzSlotName.Contains(_slot)).UiSlotIndex);
-                    _context.AttachmentmountDbSet.Add(item);
+                    item.IdAttacClass = (_context.AttachmentSlotDbSet.First(p => p.AttachmentSlotName.Contains(_slot)).Id);
+                    _context.AttachmentMountDbSet.Add(item);
                     SaveChanges(1);
                 }
             }

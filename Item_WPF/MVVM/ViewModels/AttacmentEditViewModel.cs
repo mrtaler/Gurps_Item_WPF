@@ -34,7 +34,7 @@ namespace Item_WPF.MVVM.ViewModels
             AttachClassColl = new ObservableCollection<GAttachClass>(_context.GAttachClassDbSet);
             SubAttachClassColl = new ObservableCollection<GSubAttachClass>(_context.GSubAttachClassDbSet);
             LaserColorEfColl = new ObservableCollection<LaserColorEf>(_context.LaserColorEfDbSet);
-            AttMount = new ObservableCollection<AttachmentMount>(_context.AttachmentmountDbSet);
+            AttMount = new ObservableCollection<AttachmentMount>(_context.AttachmentMountDbSet);
             BatteryColl = new ObservableCollection<Battery>(_context.BatteryDbSet);
 
             #region Commands

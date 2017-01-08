@@ -214,7 +214,7 @@ namespace Item_WPF.addin
 
             string QT = (from p in SubAttachClassCollection
                          where p.Id == findClass
-                         select p.Attachmentslot1.SzSlotName).First().ToString();
+                         select p.Attachmentslot1.AttachmentSlotName).First().ToString();
             return QT;
         }
     }
@@ -233,7 +233,7 @@ namespace Item_WPF.addin
 
             int attSlot = (from p in G_SubAttachClass
                            where p.Id == findClass
-                           select p.Attachmentslot1.UiSlotIndex).First();
+                           select p.Attachmentslot1.Id).First();
             return new ObservableCollection<AttachmentMount>(MountForColl.Where(p => p.IdAttacClass == attSlot));
 
         }

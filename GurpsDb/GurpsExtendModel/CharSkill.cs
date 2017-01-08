@@ -79,7 +79,7 @@ namespace GurpsDb.GurpsModel
      */
 
         public CharSkill(CharacterDb characterDb, GurpsSkill gurpsSkill)
-            : base()
+            : this()
         {
             CharacterDb = characterDb;
             GurpsSkill = gurpsSkill;

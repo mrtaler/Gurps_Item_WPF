@@ -171,6 +171,7 @@
     <Compile Include="MVVM\Models\Advantage.cs" />
     <Compile Include="MVVM\Models\AttackOption.cs" />
     <Compile Include="MVVM\Models\CombineWeapModel.cs" />
+    <Compile Include="MVVM\Models\DbInitial.cs" />
     <Compile Include="MVVM\Models\Item.cs" />
     <Compile Include="MVVM\Models\ItemsForSortModel.cs" />
     <Compile Include="MVVM\Models\ItemToGridModel.cs" />
@@ -411,6 +412,7 @@
     <EmbeddedResource Include="Properties\Resources.ru-RU.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.ru-RU.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

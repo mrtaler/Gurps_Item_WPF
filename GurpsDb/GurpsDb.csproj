@@ -71,8 +71,8 @@
     <Compile Include="GurpsModel\AnyBoxNameType.cs" />
     <Compile Include="GurpsModel\Armour.cs" />
     <Compile Include="GurpsModel\Attachment.cs" />
-    <Compile Include="GurpsModel\AttachmentMount.cs" />
-    <Compile Include="GurpsModel\AttachmentSlot.cs" />
+    <Compile Include="GurpsModel\end\AttachmentMount.cs" />
+    <Compile Include="GurpsModel\end\AttachmentSlot.cs" />
     <Compile Include="GurpsModel\AttributeBonus.cs" />
     <Compile Include="GurpsModel\AttributePrereq.cs" />
     <Compile Include="GurpsModel\AvailableAttachSlot.cs" />
@@ -104,7 +104,7 @@
     <Compile Include="GurpsModel\ItemClass.cs" />
     <Compile Include="GurpsModel\ItemSubClass.cs" />
     <Compile Include="GurpsModel\LaserColorEf.cs" />
-    <Compile Include="GurpsModel\Lc.cs" />
+    <Compile Include="GurpsModel\end\Lc.cs" />
     <Compile Include="GurpsModel\LoadBearingEquipment.cs" />
     <Compile Include="GurpsModel\MeleeWeapon.cs" />
     <Compile Include="GurpsModel\Modifier.cs" />
@@ -115,7 +115,7 @@
     <Compile Include="GurpsModel\SkillPrereqDb.cs" />
     <Compile Include="GurpsModel\SpellBonus.cs" />
     <Compile Include="GurpsModel\SpellPrereqDb.cs" />
-    <Compile Include="GurpsModel\Tl.cs" />
+    <Compile Include="GurpsModel\end\Tl.cs" />
     <Compile Include="GurpsModel\TypeOfDamage.cs" />
     <Compile Include="GurpsModel\TypeOfBox.cs" />
     <Compile Include="GurpsModel\Weapon.cs" />
@@ -129,6 +129,10 @@
     <Compile Include="Migrations\201612151638496_FirstMigrations.cs" />
     <Compile Include="Migrations\201612151638496_FirstMigrations.Designer.cs">
       <DependentUpon>201612151638496_FirstMigrations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701082155516_1Migrations.cs" />
+    <Compile Include="Migrations\201701082155516_1Migrations.Designer.cs">
+      <DependentUpon>201701082155516_1Migrations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -189,6 +193,12 @@
     <EmbeddedResource Include="Migrations\201612151638496_FirstMigrations.resx">
       <DependentUpon>201612151638496_FirstMigrations.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701082155516_1Migrations.resx">
+      <DependentUpon>201701082155516_1Migrations.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MIgrationCommand.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

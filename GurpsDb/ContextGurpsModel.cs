@@ -39,8 +39,8 @@ namespace GurpsDb.GurpsModel
         public virtual DbSet<AnyBoxNameType> AnyBoxNameTypeDbSet { get; set; }
         public virtual DbSet<Armour> ArmourDbSet { get; set; }
         public virtual DbSet<Attachment> AttachmentDbSet { get; set; }
-        public virtual DbSet<AttachmentMount> AttachmentmountDbSet { get; set; }
-        public virtual DbSet<AttachmentSlot> AttachmentslotDbSet { get; set; }
+        public virtual DbSet<AttachmentMount> AttachmentMountDbSet { get; set; }
+        public virtual DbSet<AttachmentSlot> AttachmentSlotDbSet { get; set; }
         public virtual DbSet<AvailableAttachSlot> AvailableAttachSlotDbSet { get; set; }
         public virtual DbSet<Battery> BatteryDbSet { get; set; }
         public virtual DbSet<BoxItem> BoxItemDbSet { get; set; }
@@ -579,7 +579,7 @@ namespace GurpsDb.GurpsModel
 
             modelBuilder.Entity<AttachmentSlot>()
                 .HasMany(e => e.Attachmentmount)
-                .WithRequired(e => e.Attachmentslot)
+                .WithRequired(e => e.AttachmentSlot)
                 .HasForeignKey(e => e.IdAttacClass)
                 .WillCascadeOnDelete(false);
 
