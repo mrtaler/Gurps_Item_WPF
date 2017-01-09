@@ -49,22 +49,22 @@ namespace Item_WPF.MVVM.ViewModels
         public ObservableCollection<AttachmentMount> ExternalComboBox { get; set; }
 
         public ObservableCollection<WeaponDamage> WeaponDamageColl { get; set; }
-        private Item _ItemLoad;
-        public Item ItemLoad
-        {
-            get
-            {
-                return _ItemLoad;
-            }
-            set
-            {
-                if (_ItemLoad != value)
-                {
-                    _ItemLoad = value;
-                    NotifyPropertyChanged("ItemLoad");
-                }
-            }
-        }
+        /*   private Item _ItemLoad;
+           public Item ItemLoad
+           {
+               get
+               {
+                   return _ItemLoad;
+               }
+               set
+               {
+                   if (_ItemLoad != value)
+                   {
+                       _ItemLoad = value;
+                       NotifyPropertyChanged("ItemLoad");
+                   }
+               }
+           }*/
         public Weapon WeaponLoad { get; set; }
         public ObservableCollection<AvailableAttachSlot> avSlot { get; set; }
 
@@ -86,12 +86,11 @@ namespace Item_WPF.MVVM.ViewModels
         }
 
         #region Constructor
-        public WeaponEditViewModel(Window owner, Item itemselect)
+        public WeaponEditViewModel(Window owner, Weapon itemselect)
         {
             Owner = owner;
             _context = new ContextGurpsModel();
-            ItemLoad = _context.ItemDbSet.Find(itemselect.UiIndex);
-            WeaponLoad = ItemLoad.Weapon;
+            WeaponLoad = itemselect;
 
 
 
@@ -100,7 +99,7 @@ namespace Item_WPF.MVVM.ViewModels
             TlCollection = new ObservableCollection<Tl>(_context.TlDbSet);
             LccCollection = new ObservableCollection<Lc>(_context.LcDbSet);
 
-            WeaponClassReed = ItemLoad.ItemSubClass.GurpsClass.Id;
+            WeaponClassReed = WeaponLoad.ItemSubClass.GurpsClass.Id;
 
             TypeOfDamagesCollection = new ObservableCollection<TypeOfDamage>(_context.TypeOfDamageDbSet);
 
@@ -269,7 +268,7 @@ namespace Item_WPF.MVVM.ViewModels
         private void SaveChanges(object parameter)
         {
             var Nwe = (from p in _context.ItemSubClassDbSet
-                       where p.Id == ItemLoad.UsItemClass
+                       where p.Id == WeaponLoad.UsItemClass
                        select p.NameSub).First();
             if (Nwe != "Shotgun")
                 WeaponLoad.RofForSh = 0;
@@ -291,7 +290,7 @@ namespace Item_WPF.MVVM.ViewModels
             if (dlg.FileName != "")
             {
                 //  ImageBitmapSourse = new BitmapImage(new Uri(dlg.FileName));
-                ItemLoad.ItemImage = System.IO.File.ReadAllBytes(dlg.FileName);
+                WeaponLoad.ItemImage = System.IO.File.ReadAllBytes(dlg.FileName);
             }
         }
         #endregion
@@ -299,7 +298,7 @@ namespace Item_WPF.MVVM.ViewModels
         public ViewModelCommand DellImage { get; set; }
         private void DellImageFromAll(object parameter)
         {
-            ItemLoad.ItemImage = null;
+            WeaponLoad.ItemImage = null;
         }
         #endregion
         #endregion

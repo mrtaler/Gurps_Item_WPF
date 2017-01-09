@@ -5,7 +5,7 @@ namespace GurpsDb.GurpsModel
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Weapon", Schema = "dbo")]
-    public partial class Weapon
+    public partial class Weapon : Item
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Weapon()
@@ -13,13 +13,15 @@ namespace GurpsDb.GurpsModel
             WeaponDamage = new HashSet<WeaponDamage>();
         }
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int UiIndex { get; set; }
+        /*  [Key]
+          [DatabaseGenerated(DatabaseGeneratedOption.None)]
+          public int UiIndex { get; set; }
+          */
 
-        [Required]
-        [StringLength(80)]
-        public string SzWeaponName { get; set; }
+        /* [Required]
+         [StringLength(80)]
+         public string SzWeaponName { get; set; }
+         */
 
         public int DefAcc { get; set; }
 
@@ -73,7 +75,7 @@ namespace GurpsDb.GurpsModel
 
         public int HcrofValue { get; set; }
 
-        public virtual Item Item { get; set; }
+        //public virtual Item Item { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WeaponDamage> WeaponDamage { get; set; }

@@ -28,14 +28,16 @@ namespace Item_WPF.MVVM.Models
 
         public ItemToGridModel(GurpsDb.GurpsModel.Item itt)
         {
-            if (itt.ItemSubClass.ItemClass.Name == "Weapon")
+            // if (itt.ItemSubClass.ItemClass.Name == "Weapon")
+            if (itt.GetType() == typeof(Weapon))
             {
-
+                Weapon WeapToGrid = (Weapon)itt;
                 Name = itt.SzItemName;
                 Tl = itt.Tl1.NameTl;
-                DamagePrim = itt.Weapon.WeaponDamage.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary"));
-                DamageLinked = itt.Weapon.WeaponDamage.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Linke"));
-                DamageFollowUp = itt.Weapon.WeaponDamage.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Follow"));
+
+                DamagePrim = WeapToGrid.WeaponDamage.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary"));
+                DamageLinked = WeapToGrid.WeaponDamage.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Linke"));
+                DamageFollowUp = WeapToGrid.WeaponDamage.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Follow"));
                 if (DamagePrim != null)
                 {
                     if (DamagePrim.IdTypeOfDamage1 != null && DamagePrim.IdTypeOfDamage2 != null)
@@ -86,29 +88,29 @@ namespace Item_WPF.MVVM.Models
                         else Damage += "\r\n" + DamageFollowUp.Damage;
                     }
                 }
-                if (itt.Weapon.AccAddin != null)
-                    DefAcc = itt.Weapon.DefAcc + "+" + itt.Weapon.AccAddin;
-                else DefAcc = itt.Weapon.DefAcc.ToString();
-                Range = Convert.ToDouble(itt.Weapon.HalfRange) + "/" + Convert.ToDouble(itt.Weapon.FullRange);
+                if (WeapToGrid.AccAddin != null)
+                    DefAcc = WeapToGrid.DefAcc + "+" + WeapToGrid.AccAddin;
+                else DefAcc = WeapToGrid.DefAcc.ToString();
+                Range = Convert.ToDouble(WeapToGrid.HalfRange) + "/" + Convert.ToDouble(WeapToGrid.FullRange);
                 Weigth = Convert.ToDouble(itt.UbWeight) + "/";// + itt.WEAPON.Shots * Convert.ToDouble(itt.AMMO.WPS);
                 //ROF
-                Rof = itt.Weapon.Rof.ToString();
-                if (itt.ItemSubClass.NameSub == "Shotgun") Rof = itt.Weapon.Rof + "x" + itt.Weapon.Rof;
-                if (itt.Weapon.FullAuto) Rof = itt.Weapon.Rof + "!";
+                Rof = WeapToGrid.Rof.ToString();
+                if (itt.ItemSubClass.NameSub == "Shotgun") Rof = WeapToGrid.Rof + "x" + WeapToGrid.Rof;
+                if (WeapToGrid.FullAuto) Rof = WeapToGrid.Rof + "!";
 
-                Shots = itt.Weapon.Shots.ToString();
-                if (itt.Weapon.AddInChamber) Shots = itt.Weapon.Shots + "+1";
-                if (itt.Weapon.SingleReload) Shots = itt.Weapon.Shots + "(" + itt.Weapon.TimeForReload + "i)";
-                else Shots = Shots + "(" + itt.Weapon.TimeForReload + ")";
+                Shots = WeapToGrid.Shots.ToString();
+                if (WeapToGrid.AddInChamber) Shots = WeapToGrid.Shots + "+1";
+                if (WeapToGrid.SingleReload) Shots = WeapToGrid.Shots + "(" + WeapToGrid.TimeForReload + "i)";
+                else Shots = Shots + "(" + WeapToGrid.TimeForReload + ")";
                 //st
                 MinSt = itt.MinSt.ToString();
                 if (itt.TwoHanded) MinSt = itt.MinSt + "†";
                 //Bulk
                 Bulk = itt.ItemSize;
-                if (itt.Weapon.Bulkfolded) Bulk = itt.ItemSize + "*";
+                if (WeapToGrid.Bulkfolded) Bulk = itt.ItemSize + "*";
                 //RCL%cost%Lc
-                Rcl = itt.Weapon.Recoil.ToString();
-                Cost = "$" + Convert.ToDouble(itt.UsPrice) + "/$" + itt.Weapon.Shots;// * Convert.ToDouble(itt.WEAPON.AMMO.CPS);
+                Rcl = WeapToGrid.Recoil.ToString();
+                Cost = "$" + Convert.ToDouble(itt.UsPrice) + "/$" + WeapToGrid.Shots;// * Convert.ToDouble(itt.WEAPON.AMMO.CPS);
                 Lc = itt.Lc1.NameLc;
                 //Type
                 Type = itt.ItemSubClass.NameSub;

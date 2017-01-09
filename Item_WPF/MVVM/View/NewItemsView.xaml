@@ -33,10 +33,10 @@
                   Margin="90,46,0,0"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
-                  DisplayMemberPath="name"
+                  DisplayMemberPath="Name"
                   ItemsSource="{Binding ItemsClass}"
                   SelectedItem="{Binding SelectedItemClass}"
-                  SelectedValuePath="id" />
+                  SelectedValuePath="Id" />
         <Button x:Name="OkButton"
                 Width="75"
                 Margin="10,86,0,0"

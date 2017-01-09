@@ -104,8 +104,8 @@ namespace Item_WPF.MVVM.ViewModels
                     SelectedItemForWork.Used = true;
                     SelectedItemForWork.Dt = System.DateTime.UtcNow;
                     SaveChanges(1);
-
-                    WeaponEditView avView = new WeaponEditView(SelectedItemForWork);
+                    Weapon weapToEdit = _context.WeaponDbSet.First(p => p.UiIndex == SelectedItemForWork.UiIndex);
+                    WeaponEditView avView = new WeaponEditView(weapToEdit);
                     avView.Owner = Owner;
                     bool? result = avView.ShowDialog();
 

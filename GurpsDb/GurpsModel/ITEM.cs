@@ -171,6 +171,6 @@ namespace GurpsDb.GurpsModel
 
         public virtual LoadBearingEquipment Loadbearingequipment { get; set; }
 
-        public virtual Weapon Weapon { get; set; }
+        //  public virtual Weapon Weapon { get; set; }
     }
 }
