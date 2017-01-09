@@ -4,18 +4,32 @@ namespace GurpsDb.GurpsModel
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-
+    /// <summary>
+    /// Class for box type
+    /// </summary>
     [Table("TypeOfBox", Schema = "dbo")]
     public partial class TypeOfBox
     {
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TypeOfBox()
         {
             AnyBoxNameType = new HashSet<AnyBoxNameType>();
         }
-
+        /// <summary>
+        /// Constructor for new Type of Box
+        /// </summary>
+        /// <param name="nameOfType">Box Type Name</param>
+        public TypeOfBox(string nameOfType)
+        {
+            NameOfType = nameOfType;
+        }
         public int Id { get; set; }
-
+        /// <summary>
+        /// name box type
+        /// </summary>
         [StringLength(50)]
         public string NameOfType { get; set; }
 

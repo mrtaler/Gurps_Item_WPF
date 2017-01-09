@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 using GurpsDb.GurpsModel;
 
 namespace GurpsDb
 {
-    public class DbInit : DropCreateDatabaseIfModelChanges<ContextGurpsModel>
+    public class DbInit : DropCreateDatabaseAlways<ContextGurpsModel>
     {
         protected override void Seed(ContextGurpsModel context)
         {
@@ -31,52 +32,349 @@ namespace GurpsDb
             context.LcDbSet.Add(new Lc("LC0", "Запрещенный", "Запрещенный. Изделие ограничено вооруженными силами отдельных государств, которые очень постараются не допустить к нему частных лиц и страны «третьего мира». Примеры: ядерное и биологическое оружие."));
             #endregion
             #region ATTACHMENTSLOT + Attachmentmount
+            List<AttachmentSlot> AttachmentSlotList = new List<AttachmentSlot>
+            {
+                new AttachmentSlot("Scope Attachments"),
+                new AttachmentSlot("Laser Attachments"),     //2
+                new AttachmentSlot("Light Attachments"),      //3
+                new AttachmentSlot("Bipod Attachments"),      //4
+                new AttachmentSlot("Silenser Attachments"),   //5
+                new AttachmentSlot("Launcher Attachments"), //6
+                new AttachmentSlot("Stock Attachments"),    //7
+                new AttachmentSlot("Bayonet Attachments"),   //8
+                new AttachmentSlot("Magazine Attachments"),   //9
+                new AttachmentSlot("Internal Attachments"), //10
+                new AttachmentSlot("External Attachments"),  //11
+                new AttachmentSlot("Rifle Grenade"),
+                new AttachmentSlot("Rocket Launcher Slot")
+            };
 
-            AttachmentSlot Laser = new AttachmentSlot("Laser Attachments");     //2
-            AttachmentSlot Light = new AttachmentSlot("Light Attachments");      //3
-            AttachmentSlot Bipod = new AttachmentSlot("Bipod Attachments");      //4
-            AttachmentSlot Silenser = new AttachmentSlot("Silenser Attachments");   //5
-            AttachmentSlot Launcher = new AttachmentSlot("Launcher Attachments");  //6
-            AttachmentSlot Stock = new AttachmentSlot("Stock Attachments");     //7
-            AttachmentSlot Bayonet = new AttachmentSlot("Bayonet Attachments");   //8
-            AttachmentSlot Magazine = new AttachmentSlot("Magazine Attachments");   //9
-            AttachmentSlot Internal = new AttachmentSlot("Internal Attachments");  //10
-            AttachmentSlot External = new AttachmentSlot("External Attachments");  //11
-            AttachmentSlot Rifle = new AttachmentSlot("Rifle Grenade");
-            AttachmentSlot RocketLauncher = new AttachmentSlot("Rocket Launcher Slot");
+
 
             #region "Scope Attachments"
-            AttachmentSlot Scope = new AttachmentSlot("Scope Attachments"); //1
-            context.AttachmentMountDbSet.Add(new AttachmentMount("AK", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("M16A1-A2", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("m16a3", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("Mini14 Scope", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("HK G36 Scope", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("Galil", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("M14_Scope", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("Scout", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("SIG551_Scope", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("WR", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("HK MP5", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("built-in", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("SA80 Handle", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("SVD", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("L96A1 optic", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("M24_Scope", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("SIG Sniper Scope", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("L85A2 SCOPE", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("PSG", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("HK MSG-90", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("F2000 Scope", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("Zrak", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("Groza scope", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("Mosin_PU", Scope));
-            context.AttachmentMountDbSet.Add(new AttachmentMount("G11 built-in", Scope));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("AK", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("M16A1-A2", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("m16a3", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("Mini14 Scope", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("HK G36 Scope", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("Galil", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("M14_Scope", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("Scout", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("SIG551_Scope", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("WR", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("HK MP5", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("built-in", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("SA80 Handle", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("SVD", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("L96A1 optic", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("M24_Scope", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("SIG Sniper Scope", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("L85A2 SCOPE", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("PSG", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("HK MSG-90", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("F2000 Scope", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("Zrak", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("Groza scope", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("Mosin_PU", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("G11 built-in", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));
+            #endregion
+            #region Laser Attachments--2
+            context.AttachmentMountDbSet.Add(new AttachmentMount("built-in", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Laser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("WR", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Laser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("HK", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Laser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("Barrel Mount", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Laser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("F2000 Laser", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Laser Attachments"))));
+            #endregion
+            #region Light Attachments--3
+            context.AttachmentMountDbSet.Add(new AttachmentMount("F2000 Light", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Light Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("WR", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Light Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("HK", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Light Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("Barrel Mount", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Light Attachments"))));
+            #endregion
+            #region Bipod Attachments--4
+            context.AttachmentMountDbSet.Add(new AttachmentMount("built-in", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bipod Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("WR", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bipod Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("Г‘Г‚98", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bipod Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("SniperBipod", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bipod Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("L96A1 bipod", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bipod Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("L86_Bipod", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bipod Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("G36_bipod", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bipod Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("BM1", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bipod Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("AssaultBipod", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bipod Attachments"))));
+
+            #endregion
+            #region--  (N'Silenser Attachments'),   --5
+
+            context.AttachmentMountDbSet.Add(new AttachmentMount(".300 BLK", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("5,7mm (FN)", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("5,7mm (P90)", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("VZ82", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("Std 9mm Para", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("APB", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("Bizon 9x18", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("GSh-18", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("HK MP5-40", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("Std 45 ACP", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("UMP45", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("AEK919K", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("M24x1,5", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("MAC", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("PBS-7,62x39", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("UZI", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("RM", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("QM", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("Supressor-5,56", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("L85A2", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("SR25", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("SIG - 7,62", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("Saiga", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("AK", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("Galil", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("M76", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("PBS - 5,45", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("Supressor-7,62", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("SV98", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("built-in", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));
+            #endregion
+            #region--  (N'Launcher Attachments'),   --6
+
+            context.AttachmentMountDbSet.Add(new AttachmentMount("Scar", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Launcher Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("built-in", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Launcher Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("M203PI", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Launcher Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("M203", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Launcher Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("GP-30", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Launcher Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("HK", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Launcher Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("F2000 Launcher", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Launcher Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("IMC40", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Launcher Attachments"))));
+            #endregion
+            #region--(N'Stock Attachments'),      --7
+
+            context.AttachmentMountDbSet.Add(new AttachmentMount("WR", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Stock Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("built-in", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Stock Attachments"))));
+            #endregion
+            #region--(N'Bayonet Attachments'),    --8
+
+            context.AttachmentMountDbSet.Add(new AttachmentMount("Knifes", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bayonet Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("StdBayonet", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bayonet Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("built-in", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bayonet Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("Mosin_Bayonet", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bayonet Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("M9", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bayonet Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("FAL", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bayonet Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("HK", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bayonet Attachments"))));
+            context.AttachmentMountDbSet.Add(new AttachmentMount("throw", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bayonet Attachments"))));
             #endregion
 
+            context.AttachmentMountDbSet.Add(new AttachmentMount("None", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments"))));//1
+            context.AttachmentMountDbSet.Add(new AttachmentMount("None", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Laser Attachments"))));//2
+            context.AttachmentMountDbSet.Add(new AttachmentMount("None", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Light Attachments"))));//3
+            context.AttachmentMountDbSet.Add(new AttachmentMount("None", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bipod Attachments"))));//4
+            context.AttachmentMountDbSet.Add(new AttachmentMount("None", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments"))));//5
+            context.AttachmentMountDbSet.Add(new AttachmentMount("None", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Launcher Attachments"))));//6
+            context.AttachmentMountDbSet.Add(new AttachmentMount("None", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Stock Attachments"))));//7
+            context.AttachmentMountDbSet.Add(new AttachmentMount("None", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bayonet Attachments"))));//8
+            context.AttachmentMountDbSet.Add(new AttachmentMount("None", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Magazine Attachments"))));//9
+            context.AttachmentMountDbSet.Add(new AttachmentMount("None", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Internal Attachments"))));//10
+            context.AttachmentMountDbSet.Add(new AttachmentMount("None", AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("External Attachments"))));//11
+            #endregion
+            #region GAttack+gSubAttach
+            List<GAttachClass> GAttachClassList = new List<GAttachClass>
+            {
+             new GAttachClass { NameClass = "Def" },//1
+             new GAttachClass { NameClass = "SIGHTS AND AIMING AIDS" },//2
+             new GAttachClass { NameClass = "SOUND SUPPRESSORS" },//3
+             new GAttachClass { NameClass = "STOCKS, TRIPODS, AND BIPODS" } ,//4
+             new GAttachClass { NameClass = "HOLSTERS, SCABBARDS, AND SLINGS" }  ,//5
+             new GAttachClass { NameClass = "MAGAZINE MODIFICATIONS AND RELOADING AIDS" } ,//6
+             new GAttachClass { NameClass = "MISCELLANEOUS ACCESSORIES AND MODIFICATIONS" } //7
+            };
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Telescopic Sights", GAttachClass = GAttachClassList.First(p => p.NameClass == "SIGHTS AND AIMING AIDS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments")) });//1
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Improved-Visibility Sights", GAttachClass = GAttachClassList.First(p => p.NameClass == "SIGHTS AND AIMING AIDS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments")) });//2
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Collimating Sight", GAttachClass = GAttachClassList.First(p => p.NameClass == "SIGHTS AND AIMING AIDS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments")) });//3
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Reflex Sight", GAttachClass = GAttachClassList.First(p => p.NameClass == "SIGHTS AND AIMING AIDS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments")) });//4
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Night Sights", GAttachClass = GAttachClassList.First(p => p.NameClass == "SIGHTS AND AIMING AIDS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments")) });//5
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Computer Sights", GAttachClass = GAttachClassList.First(p => p.NameClass == "SIGHTS AND AIMING AIDS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments")) });//6
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Thermal-Imaging Sights", GAttachClass = GAttachClassList.First(p => p.NameClass == "SIGHTS AND AIMING AIDS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Scope Attachments")) });//7
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Targeting Lasers", GAttachClass = GAttachClassList.First(p => p.NameClass == "SIGHTS AND AIMING AIDS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Laser Attachments")) });                        //8
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Tactical Lights", GAttachClass = GAttachClassList.First(p => p.NameClass == "SIGHTS AND AIMING AIDS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Light Attachments")) });                        // --9
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Tripods and Other Mounts", GAttachClass = GAttachClassList.First(p => p.NameClass == "STOCKS, TRIPODS, AND BIPODS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bipod Attachments")) });               // --10
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Bipods", GAttachClass = GAttachClassList.First(p => p.NameClass == "STOCKS, TRIPODS, AND BIPODS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Bipod Attachments")) });                                 // --11
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Baffle Suppressors", GAttachClass = GAttachClassList.First(p => p.NameClass == "SOUND SUPPRESSORS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments")) });                    //  --12
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Wiper Suppressors", GAttachClass = GAttachClassList.First(p => p.NameClass == "SOUND SUPPRESSORS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Silenser Attachments")) });                     //  --13
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Extended Magazines", GAttachClass = GAttachClassList.First(p => p.NameClass == "MAGAZINE MODIFICATIONS AND RELOADING AIDS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Magazine Attachments")) });                    // --14
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Drum magazines", GAttachClass = GAttachClassList.First(p => p.NameClass == "MAGAZINE MODIFICATIONS AND RELOADING AIDS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Magazine Attachments")) });                      //    --15
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "High-density magazines", GAttachClass = GAttachClassList.First(p => p.NameClass == "MAGAZINE MODIFICATIONS AND RELOADING AIDS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Magazine Attachments")) });   //               --16
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Speedloaders", GAttachClass = GAttachClassList.First(p => p.NameClass == "MAGAZINE MODIFICATIONS AND RELOADING AIDS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Magazine Attachments")) });//                            --17
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Clamped Magazines", GAttachClass = GAttachClassList.First(p => p.NameClass == "MAGAZINE MODIFICATIONS AND RELOADING AIDS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Magazine Attachments")) });//                      --18
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Pistol Stocks", GAttachClass = GAttachClassList.First(p => p.NameClass == "STOCKS, TRIPODS, AND BIPODS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Stock Attachments")) });
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Shooting Sticks", GAttachClass = GAttachClassList.First(p => p.NameClass == "STOCKS, TRIPODS, AND BIPODS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Stock Attachments")) });
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Folding Stock", GAttachClass = GAttachClassList.First(p => p.NameClass == "STOCKS, TRIPODS, AND BIPODS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("Stock Attachments")) });
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Belt Holster (TL5)", GAttachClass = GAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("External Attachments")) });
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Lanyard (TL5)", GAttachClass = GAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("External Attachments")) });
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Military Holster (TL5)", GAttachClass = GAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("External Attachments")) });
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Rifle Sling (TL5)", GAttachClass = GAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("External Attachments")) });
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Scabbard (TL5)", GAttachClass = GAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("External Attachments")) });
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Shoulder Holster (TL5)", GAttachClass = GAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("External Attachments")) });
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Sleeve Holster (TL6)", GAttachClass = GAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("External Attachments")) });
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Fast-Draw Rig (TL7)", GAttachClass = GAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("External Attachments")) });
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Patrol Sling (TL7)", GAttachClass = GAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("External Attachments")) });
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Undercover Holster (TL7)", GAttachClass = GAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("External Attachments")) });
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Retention Holster (TL8)", GAttachClass = GAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("External Attachments")) });
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Gun-Cleaning Kit", GAttachClass = GAttachClassList.First(p => p.NameClass == "MISCELLANEOUS ACCESSORIES AND MODIFICATIONS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("External Attachments")) });
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Gun Case", GAttachClass = GAttachClassList.First(p => p.NameClass == "MISCELLANEOUS ACCESSORIES AND MODIFICATIONS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("External Attachments")) });
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Brass Catchers", GAttachClass = GAttachClassList.First(p => p.NameClass == "MISCELLANEOUS ACCESSORIES AND MODIFICATIONS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("External Attachments")) });
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Slide-Lock", GAttachClass = GAttachClassList.First(p => p.NameClass == "MISCELLANEOUS ACCESSORIES AND MODIFICATIONS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("External Attachments")) });
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Accessory Rails", GAttachClass = GAttachClassList.First(p => p.NameClass == "MISCELLANEOUS ACCESSORIES AND MODIFICATIONS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("External Attachments")) });
+            context.GSubAttachClassDbSet.Add(new GSubAttachClass { SubAttachName = "Drag Bag", GAttachClass = GAttachClassList.First(p => p.NameClass == "MISCELLANEOUS ACCESSORIES AND MODIFICATIONS"), SubAttachDescription = "", Attachmentslot1 = AttachmentSlotList.First(p => p.AttachmentSlotName.Contains("External Attachments")) });
+            #endregion
+            #region INSERT dbo.GurpsClass(name)
+            context.GurpsClassDbSet.Add(new GurpsClass { Name = "None" });              //1
+            context.GurpsClassDbSet.Add(new GurpsClass { Name = "Artillery" });         //2
+            context.GurpsClassDbSet.Add(new GurpsClass { Name = "Beam Weapons" });      //3
+            context.GurpsClassDbSet.Add(new GurpsClass { Name = "Gunner" });            //4
+            context.GurpsClassDbSet.Add(new GurpsClass { Name = "Guns" });              //5
+            context.GurpsClassDbSet.Add(new GurpsClass { Name = "Liquid Projector" });  // 6     
+            context.GurpsClassDbSet.Add(new GurpsClass { Name = "Thrown Weapon" });     //7
+            #endregion
+            #region INSERT dbo.ItemClass(name)
+            context.ItemClassDbSet.Add(new ItemClass { Name = "All" });
+            context.ItemClassDbSet.Add(new ItemClass { Name = "Weapon" });
+            context.ItemClassDbSet.Add(new ItemClass { Name = "Ammo" });
+            context.ItemClassDbSet.Add(new ItemClass { Name = "Attachment" });
+            context.ItemClassDbSet.Add(new ItemClass { Name = "Random Item" });
+            context.ItemClassDbSet.Add(new ItemClass { Name = "EXPLOSIVE" });
+            context.ItemClassDbSet.Add(new ItemClass { Name = "Drug" });
+            context.ItemClassDbSet.Add(new ItemClass { Name = "LOADBEARINGEQUIPMENT" });
+            context.ItemClassDbSet.Add(new ItemClass { Name = "ARMOUR" });
+
+            #endregion
+            #region INSERT dbo.ItemSubClass
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Normal", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Stun", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Tear Gas", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Mustard Gas", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Flare", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Noise", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Smoke", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Creature Gas", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Fire", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Flashbang", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Signal Shell", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("None", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Adrenaline", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Alcohol", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Regeneration", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Damage Resistance", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Strength", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Agility", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Dexterity", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Wisdom", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Perception", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Psychosis", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Nervousness", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Reflex", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Claustrophobia", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Heat Intolerance", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Fear of Insects", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Forgetfulness", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Stim", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Blindness", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Unconsciousness", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Barrage", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Vision", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Tunnel Vision", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Occulin", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Cure", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Nothing", context.ItemClassDbSet.Local.First(p => p.Name == "LOADBEARINGEQUIPMENT"), "LBEClass", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Thigh Pack", context.ItemClassDbSet.Local.First(p => p.Name == "LOADBEARINGEQUIPMENT"), "LBEClass", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Vest", context.ItemClassDbSet.Local.First(p => p.Name == "LOADBEARINGEQUIPMENT"), "LBEClass", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Combat Pack", context.ItemClassDbSet.Local.First(p => p.Name == "LOADBEARINGEQUIPMENT"), "LBEClass", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Backpack", context.ItemClassDbSet.Local.First(p => p.Name == "LOADBEARINGEQUIPMENT"), "LBEClass", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Helmet", context.ItemClassDbSet.Local.First(p => p.Name == "ARMOUR"), "ArmourClass", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Vest", context.ItemClassDbSet.Local.First(p => p.Name == "ARMOUR"), "ArmourClass", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Leggings", context.ItemClassDbSet.Local.First(p => p.Name == "ARMOUR"), "ArmourClass", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Plate", context.ItemClassDbSet.Local.First(p => p.Name == "ARMOUR"), "ArmourClass", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Vehicle", context.ItemClassDbSet.Local.First(p => p.Name == "ARMOUR"), "ArmourClass", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Firearm", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "Weapon", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("винтовки", context.ItemClassDbSet.Local.First(p => p.Name == "Ammo"), "Ammo", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("пистолет", context.ItemClassDbSet.Local.First(p => p.Name == "Ammo"), "Ammo", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Гранатомёты", context.ItemClassDbSet.Local.First(p => p.Name == "Ammo"), "Ammo", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Автоматические Пушки", context.ItemClassDbSet.Local.First(p => p.Name == "Ammo"), "Ammo", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("дробовики", context.ItemClassDbSet.Local.First(p => p.Name == "Ammo"), "Ammo", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("миномёты", context.ItemClassDbSet.Local.First(p => p.Name == "Ammo"), "Ammo", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("противотанковые пушки", context.ItemClassDbSet.Local.First(p => p.Name == "Ammo"), "Ammo", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Attachment", context.ItemClassDbSet.Local.First(p => p.Name == "Attachment"), "Attachment", null));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Normal", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Liquid Projector")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Guided Missile", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Artillery")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Torpedoes", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Artillery")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Catapult", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Artillery")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Cannon", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Artillery")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Beams", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Artillery")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Bombs", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Artillery")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Projector", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Beam Weapons")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Pistol", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Beam Weapons")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Rifle", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Beam Weapons")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Machine Gun", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Gunner")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Catapult", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Gunner")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Rockets", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Gunner")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Cannon", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Gunner")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Beams", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Gunner")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Light Anti-Armor Weapon", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Guns")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Light Machine Gun", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Guns")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Grenade Launcher", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Guns")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Submachine Gun", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Guns")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Shotgun", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Guns")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Musket", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Guns")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Pistol", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Guns")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Gyroc", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Guns")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Rifle", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Guns")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Flamethrower", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Liquid Projector")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Water Cannon", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Liquid Projector")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Squirt Gun", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Liquid Projector")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Sprayer", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Liquid Projector")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Axe/Mace", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Thrown Weapon")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Shuriken", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Thrown Weapon")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Harpoon", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Thrown Weapon")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Knife", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Thrown Weapon")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Spear", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Thrown Weapon")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Stick", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Thrown Weapon")));
+            context.ItemSubClassDbSet.Add(new ItemSubClass("Dart", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Thrown Weapon")));
+            #endregion
+
+            #region INSERT INTO TypeOfDamage      
+            context.TypeOfDamageDbSet.Add(new TypeOfDamage("pi+", "piersing", "0.5"));
+            context.TypeOfDamageDbSet.Add(new TypeOfDamage("pi-", "", "0.5"));
+            context.TypeOfDamageDbSet.Add(new TypeOfDamage("pi", "", "1.0"));
+            context.TypeOfDamageDbSet.Add(new TypeOfDamage("pi++", "", "2.0"));
+            context.TypeOfDamageDbSet.Add(new TypeOfDamage("spec", "", "1.0"));
+            context.TypeOfDamageDbSet.Add(new TypeOfDamage("tox", "", "1.0"));
+            context.TypeOfDamageDbSet.Add(new TypeOfDamage("aff", "", "1.0"));
+            context.TypeOfDamageDbSet.Add(new TypeOfDamage("burn", "", "1.0"));
+            context.TypeOfDamageDbSet.Add(new TypeOfDamage("cor", "", "1.0"));
+            context.TypeOfDamageDbSet.Add(new TypeOfDamage("cr", "", "1.0"));
+            context.TypeOfDamageDbSet.Add(new TypeOfDamage("cut", "", "1.5"));
+            context.TypeOfDamageDbSet.Add(new TypeOfDamage("fat", "", "1.0"));
+            context.TypeOfDamageDbSet.Add(new TypeOfDamage("imp", "", "2.0"));
+            context.TypeOfDamageDbSet.Add(new TypeOfDamage("ex", "", "1.0"));
+            #endregion
+            #region INSERT INTO Type_of_Box
+            context.TypeOfBoxeDbSet.Add(new TypeOfBox("Shop"));
+            context.TypeOfBoxeDbSet.Add(new TypeOfBox("LootBox"));
+            context.TypeOfBoxeDbSet.Add(new TypeOfBox("PersonalBox"));
+            #endregion
+            #region INSERT INTO[LaserColorEf]
+            context.LaserColorEfDbSet.Add(new LaserColorEf("Red", 0.33M));
+            context.LaserColorEfDbSet.Add(new LaserColorEf("Orange", 0.50M));
+            context.LaserColorEfDbSet.Add(new LaserColorEf("Green", 2.00M));
+            context.LaserColorEfDbSet.Add(new LaserColorEf("Infrared", 1.00M));
+            #endregion
+            #region INSERT INTO WeaponAttackType
+            context.WeaponAttackTypeDbSet.Add(new WeaponAttackType("Primary", "ee"));
+            context.WeaponAttackTypeDbSet.Add(new WeaponAttackType("Follow-up", "ee"));
+            context.WeaponAttackTypeDbSet.Add(new WeaponAttackType("Linked", "ee"));
             #endregion
 
 
+            var qt = context.ItemClassDbSet.ToList();
             context.SaveChanges();
             base.Seed(context);
         }

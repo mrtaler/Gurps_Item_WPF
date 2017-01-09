@@ -102,8 +102,8 @@
     <Compile Include="GurpsModel\InventoryOfChar.cs" />
     <Compile Include="GurpsModel\Item.cs" />
     <Compile Include="GurpsModel\ItemClass.cs" />
-    <Compile Include="GurpsModel\ItemSubClass.cs" />
-    <Compile Include="GurpsModel\LaserColorEf.cs" />
+    <Compile Include="GurpsModel\end\ItemSubClass.cs" />
+    <Compile Include="GurpsModel\end\LaserColorEf.cs" />
     <Compile Include="GurpsModel\end\Lc.cs" />
     <Compile Include="GurpsModel\LoadBearingEquipment.cs" />
     <Compile Include="GurpsModel\MeleeWeapon.cs" />
@@ -116,10 +116,10 @@
     <Compile Include="GurpsModel\SpellBonus.cs" />
     <Compile Include="GurpsModel\SpellPrereqDb.cs" />
     <Compile Include="GurpsModel\end\Tl.cs" />
-    <Compile Include="GurpsModel\TypeOfDamage.cs" />
-    <Compile Include="GurpsModel\TypeOfBox.cs" />
+    <Compile Include="GurpsModel\end\TypeOfDamage.cs" />
+    <Compile Include="GurpsModel\end\TypeOfBox.cs" />
     <Compile Include="GurpsModel\Weapon.cs" />
-    <Compile Include="GurpsModel\WeaponAttackType.cs" />
+    <Compile Include="GurpsModel\end\WeaponAttackType.cs" />
     <Compile Include="GurpsModel\WeaponDamage.cs" />
     <Compile Include="GurpsModel\WeaponBonus.cs" />
     <Compile Include="Migrations\201612131908008_InitialMigration.cs" />
@@ -183,7 +183,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

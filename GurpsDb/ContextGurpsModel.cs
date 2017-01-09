@@ -693,9 +693,9 @@ namespace GurpsDb.GurpsModel
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<Item>()
-                .HasOptional(e => e.Weapon)
-                .WithRequired(e => e.Item)
-                .WillCascadeOnDelete();
+                 .HasOptional(e => e.Weapon)
+                 .WithRequired(e => e.Item)
+                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<ItemClass>()
                 .HasMany(e => e.ItemSubClass)

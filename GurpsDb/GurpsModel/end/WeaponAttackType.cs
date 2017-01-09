@@ -3,34 +3,38 @@ namespace GurpsDb.GurpsModel
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-
-    [Table("TypeOfDamage", Schema = "dbo")]
-    public partial class TypeOfDamage
+    /// <summary>
+    /// Class for Weapon Attack Type
+    /// </summary>
+    [Table("WeaponAttackType", Schema = "dbo")]
+    public partial class WeaponAttackType
     {
+        /// <summary>
+        /// Default constructor 
+        /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TypeOfDamage()
+        public WeaponAttackType()
         {
             WeaponDamage = new HashSet<WeaponDamage>();
-            WeaponDamage1 = new HashSet<WeaponDamage>();
         }
-
+        public WeaponAttackType(string name, string descr)
+        {
+            Name = name;
+            Descr = descr;
+        }
         public int Id { get; set; }
-
-        [Required]
-        [StringLength(5)]
+        /// <summary>
+        /// name lengh 20
+        /// </summary>
+        [StringLength(20)]
         public string Name { get; set; }
-
-        [StringLength(30)]
-        public string LongName { get; set; }
-
-        [Required]
-        [StringLength(5)]
-        public string MDamage { get; set; }
+        /// <summary>
+        /// description length 150
+        /// </summary>
+        [StringLength(150)]
+        public string Descr { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WeaponDamage> WeaponDamage { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<WeaponDamage> WeaponDamage1 { get; set; }
     }
 }
