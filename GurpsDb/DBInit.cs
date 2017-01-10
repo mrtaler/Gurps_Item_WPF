@@ -373,6 +373,49 @@ namespace GurpsDb
             context.WeaponAttackTypeDbSet.Add(new WeaponAttackType("Linked", "ee"));
             #endregion
 
+            /*   SET @name = N'Royal Ordnance L1A1 w/SUIT (7.62x51mm)'
+                    SET @class_ofItem = N'Gun'
+                    SET @WeaponClass = N'Guns'
+                    SET @WeaponType = N'Rifle'
+                    SET @Weight = 11.5
+                    SET @ST = 11
+                    SET @Bulk = N'-5'
+                    SET @Cost = 1100
+            SET @Desc = N''
+                    SET @TwoHanded = 1
+                    SET @Damagee = N'7d'
+                    SET @Half_Rangee = 1000
+                    SET @FullRangee = 4200
+                    SET @ROF = 3
+                    SET @ROF_for_Sh = null
+                    SET @Full_auto = 0
+                    SET @Shotss = 20
+                    SET @AddinChamber = 1
+                    SET @TimeForreload = 3
+                    SET @singlereload = 0
+                    SET @ArmorDivision = 1
+                    SET @TypeOfDamage1 = N'pi'
+                    SET @TypeOfDam1 = N''
+                    SET @TypeOfDamage2 = N'null'
+                    SET @TypeOfDam2 = N''
+                    SET @DefACCc = 5
+                    SET @ACCAddin = 2
+                    SET @Recoill = 3*/
+
+            var primaryDamType = context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary"));
+            var itemSubClass = context.ItemSubClassDbSet.Local.First(p => p.NameSub.Contains("Rifle"));
+            var tl = context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7"));
+            var lc = context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2"));
+            context.WeaponDbSet.Add(new Weapon(
+                weaponDamage:
+                    new WeaponDamage("7d", primaryDamType, 1),
+                name: "Royal Ordnance L1A1 w/SUIT (7.62x51mm)",
+                itemSubClass: itemSubClass,
+                tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")),
+                lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2"))
+                ));
+
+
 
             var qt = context.ItemClassDbSet.ToList();
             context.SaveChanges();

@@ -6,10 +6,11 @@ namespace GurpsDb.GurpsModel
     public partial class ContextGurpsModel : DbContext
     {
         public ContextGurpsModel()
-            : base("name=ContextGurpsModel")
+          //  : base("name=ContextGurpsModel")
+          : base("name=offlineContextGurpsModel")
         {
             // Установить новый инициализатор
-            // Database.SetInitializer<ContextGurpsModel>(new DbInit());
+            Database.SetInitializer<ContextGurpsModel>(new DbInit());
         }
 
         public virtual DbSet<Advantage> AdvantageDbSet { get; set; }

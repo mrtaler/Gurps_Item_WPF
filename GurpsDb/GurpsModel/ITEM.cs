@@ -15,7 +15,107 @@ namespace GurpsDb.GurpsModel
             AvailableAttachSlot = new HashSet<AvailableAttachSlot>();
             BoxItem = new HashSet<BoxItem>();
         }
+        /// <summary>
+        /// Constructor for create new def item
+        /// </summary>
+        /// <param name="szItemName">Item name</param>
+        /// <param name="itemSubClass">item class</param>
+        /// <param name="lc1">LC</param>
+        /// <param name="tl1">TL</param>
+        public Item(
+            string szItemName,
+            ItemSubClass itemSubClass,
+            Lc lc1,
+            Tl tl1)
+        {
+            InventoryOfChar = new HashSet<InventoryOfChar>();
+            AvailableAttachSlot = new HashSet<AvailableAttachSlot>();
+            BoxItem = new HashSet<BoxItem>();
 
+            SzItemName = szItemName;
+            ItemSubClass = itemSubClass;
+
+            Lc1 = lc1;
+            Tl1 = tl1;
+            WorksOnBat = "";
+
+
+            SzLongItemName = "";
+
+            SzItemDesc = "";
+
+            UbWeight = 0M;
+            ItemSize = "-3";
+
+            UsPrice = 120M;
+
+
+            UbCalibre = null;
+
+            Damageable = true;
+
+            Repairable = true;
+
+            WaterDamages = true;
+
+            Metal = true;
+
+            TwoHanded = true;
+
+            Electronic = true;
+
+            Ht = true;
+
+            Ut = false;
+
+            RemoteTrigger = false;
+
+            GasMask = false;
+
+            Alcohol = false;
+
+            Hardware = false;
+
+            Medical = false;
+
+            CamouflageKit = false;
+            LocksmithKit = false;
+
+            Toolkit = false;
+
+            FirstAidKit = false;
+
+            MedicalKit = false;
+
+
+            WireCutters = false;
+
+            Canteen = false;
+
+            GasCan = false;
+
+            Batteries = false;
+
+            NeedsBatteries = false;
+
+            ContainsLiquid = false;
+
+            MetalDetector = false;
+            FingerPrintId = false;
+            TripWireActivation = false;
+            TripWire = false;
+            Mount = false;
+            SizeBatteries = "";
+            LockPickModifier = 0;
+            CrowbarModifier = 0;
+            DisarmModifier = 0;
+            RepairModifier = 0;
+            DamageChance = 0;
+            MinSt = 2;
+
+            Link = "";
+            CountOfBat = 0;
+        }
         [Key]
         public int UiIndex { get; set; }
 

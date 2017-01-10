@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -118,9 +133,9 @@
     <Compile Include="GurpsModel\end\Tl.cs" />
     <Compile Include="GurpsModel\end\TypeOfDamage.cs" />
     <Compile Include="GurpsModel\end\TypeOfBox.cs" />
-    <Compile Include="GurpsModel\Weapon.cs" />
+    <Compile Include="GurpsModel\end\Weapon.cs" />
     <Compile Include="GurpsModel\end\WeaponAttackType.cs" />
-    <Compile Include="GurpsModel\WeaponDamage.cs" />
+    <Compile Include="GurpsModel\end\WeaponDamage.cs" />
     <Compile Include="GurpsModel\WeaponBonus.cs" />
     <Compile Include="Migrations\201612131908008_InitialMigration.cs" />
     <Compile Include="Migrations\201612131908008_InitialMigration.Designer.cs">
@@ -208,6 +223,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MIgrationCommand.txt" />
+    <Content Include="OfflineDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OfflineDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>OfflineDB.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

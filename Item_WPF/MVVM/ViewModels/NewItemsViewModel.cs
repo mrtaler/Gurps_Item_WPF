@@ -45,13 +45,21 @@ namespace Item_WPF.MVVM.ViewModels
                                 || SelectedItemClass.Name == "Thrown Weapon"
                                 || SelectedItemClass.Name == "Blunt Weapon")
             {
-                Weapon _newItem = new Weapon
+                Weapon _newItem = new Weapon(
+                    new WeaponDamage(
+                        "5d6",
+                        _context.WeaponAttackTypeDbSet.First(p => p.Name.Contains("primary"))),
+                    NewItemName,
+                    _context.ItemSubClassDbSet.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name.Contains("Guns")),
+                    _context.TlDbSet.First(p => p.NameTl.Contains("8")),
+                    _context.LcDbSet.First(p => p.NameLc.Contains("3")))
                 {
-                    SzItemName = NewItemName,
                     Dt = System.DateTime.UtcNow
                 };
+                _context.WeaponDbSet.Add(_newItem);
+                _context.SaveChanges();
 
-                WeaponEditView WeapView = new WeaponEditView(_newItem);
+                WeaponEditView WeapView = new WeaponEditView(_context.WeaponDbSet.Find(_newItem));
                 WeapView.ShowDialog();
             }
 
