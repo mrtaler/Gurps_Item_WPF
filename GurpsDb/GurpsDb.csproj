@@ -153,6 +153,10 @@
     <Compile Include="Migrations\201701091929482_1m.Designer.cs">
       <DependentUpon>201701091929482_1m.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701112109066_2m.cs" />
+    <Compile Include="Migrations\201701112109066_2m.Designer.cs">
+      <DependentUpon>201701112109066_2m.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XML\advantageSerialize.cs" />
@@ -220,14 +224,14 @@
     <EmbeddedResource Include="Migrations\201701091929482_1m.resx">
       <DependentUpon>201701091929482_1m.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701112109066_2m.resx">
+      <DependentUpon>201701112109066_2m.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MIgrationCommand.txt" />
-    <Content Include="OfflineDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="OfflineDB.mdf" />
     <Content Include="OfflineDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>OfflineDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>

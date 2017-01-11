@@ -5,9 +5,9 @@
   <SchemaVersion>1.2</SchemaVersion>
   <DatabaseProvider>aa8afe9c-7d62-4564-b477-c12e62e0f440</DatabaseProvider>
   <Connection>
-    <Name>Item1.gurpssqlserver.database.windows.net,1433</Name>
+    <Name>LocalDB\</Name>
     <Category>00000000-0000-0000-0000-000000000000</Category>
-    <ConnectionString>Data Source=gurpssqlserver.database.windows.net,1433;Initial Catalog=Item1;Integrated Security=False;User ID=mrtaler</ConnectionString>
+    <ConnectionString>AttachDBFilename=E:\Win8\Documents\GitHub\Gurps_Item_WPF\GurpsDb\OfflineDB.mdf;Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4;Integrated Security=True</ConnectionString>
   </Connection>
   <Settings>
     <DbDiagramOptions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -54,14 +54,14 @@
             </CustomProperties>
             <Location>
               <X>598 px</X>
-              <Y>4603 px</Y>
+              <Y>4543 px</Y>
             </Location>
             <Size>
               <Width>194 px</Width>
               <Height>280 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.Advantage</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.Advantage</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -76,15 +76,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1397 px</X>
-              <Y>4693 px</Y>
+              <X>1440 px</X>
+              <Y>4633 px</Y>
             </Location>
             <Size>
               <Width>204 px</Width>
               <Height>124 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.AdvantageCategory88</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.AdvantageCategory88</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -106,8 +106,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0.312500000000227 px</X>
-                  <Y>9.14732142857156 px</Y>
+                  <X>-0.165178571428442 px</X>
+                  <Y>9.04910714285779 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -119,7 +119,7 @@
               <Port>
                 <Location>
                   <X>193.794642857143 px</X>
-                  <Y>99.1473214285716 px</Y>
+                  <Y>99.0491071428578 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -131,7 +131,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.AdvantageCategory88.[FK_CharDB.AdvantageCategory88_CharDB.Advantage_idAdvantage]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.AdvantageCategory88.[FK_CharDB.AdvantageCategory88_CharDB.Advantage_idAdvantage]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -145,8 +145,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>302.5 px</X>
-                  <Y>-0.000139508928441501 px</Y>
+                  <X>324 px</X>
+                  <Y>-0.000209263392207504 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -169,14 +169,14 @@
             </CustomProperties>
             <Location>
               <X>912 px</X>
-              <Y>4344 px</Y>
+              <Y>4284 px</Y>
             </Location>
             <Size>
               <Width>194 px</Width>
               <Height>246 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.AdvantagePrereq</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.AdvantagePrereq</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -191,15 +191,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>730 px</X>
-              <Y>1300 px</Y>
+              <X>605 px</X>
+              <Y>3242 px</Y>
             </Location>
             <Size>
               <Width>216 px</Width>
               <Height>212 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.AttributeBonus</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.AttributeBonus</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -221,8 +221,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>31 px</X>
-                  <Y>0 px</Y>
+                  <X>182.258928571429 px</X>
+                  <Y>211.691964285715 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -233,8 +233,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>163 px</X>
-                  <Y>0 px</Y>
+                  <X>189.258928571429 px</X>
+                  <Y>-0.169642857142208 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -246,7 +246,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.AttributeBonus.[FK_CharDB.AttributeBonus_CharDB.Advantage_FkAdvantage]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.AttributeBonus.[FK_CharDB.AttributeBonus_CharDB.Advantage_FkAdvantage]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -260,8 +260,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>0 px</X>
-                  <Y>-1545.5 px</Y>
+                  <X>1.74386161688744E-05 px</X>
+                  <Y>-544.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -284,14 +284,14 @@
             </CustomProperties>
             <Location>
               <X>1249 px</X>
-              <Y>4439 px</Y>
+              <Y>4378 px</Y>
             </Location>
             <Size>
               <Width>192 px</Width>
               <Height>195 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.AttributePrereq</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.AttributePrereq</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -306,15 +306,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>3046 px</X>
-              <Y>698 px</Y>
+              <X>3290 px</X>
+              <Y>715 px</Y>
             </Location>
             <Size>
               <Width>211 px</Width>
               <Height>280 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.CharacterDb</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.CharacterDb</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -329,15 +329,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>3084 px</X>
-              <Y>511 px</Y>
+              <X>3328 px</X>
+              <Y>528 px</Y>
             </Location>
             <Size>
               <Width>135 px</Width>
               <Height>127 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.CharSkill</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.CharSkill</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -359,8 +359,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>67.5000000000005 px</X>
-                  <Y>126.580357142857 px</Y>
+                  <X>67.8616071428578 px</X>
+                  <Y>126.589285714286 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -371,8 +371,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>105.5 px</X>
-                  <Y>-0.321428571428896 px</Y>
+                  <X>105.861607142858 px</X>
+                  <Y>-0.312499999999545 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -384,7 +384,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.CharSkill.[FK_CharDB.CharSkill_CharDB.CharacterDb_idChar]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.CharSkill.[FK_CharDB.CharSkill_CharDB.CharacterDb_idChar]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -398,7 +398,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>4.54747350886464E-13 px</X>
+                  <X>3.48772327924962E-05 px</X>
                   <Y>-30 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -422,14 +422,14 @@
             </CustomProperties>
             <Location>
               <X>1524 px</X>
-              <Y>4175 px</Y>
+              <Y>4115 px</Y>
             </Location>
             <Size>
               <Width>216 px</Width>
               <Height>161 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.ContainedWeightPrereq</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.ContainedWeightPrereq</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -445,14 +445,14 @@
             </CustomProperties>
             <Location>
               <X>40 px</X>
-              <Y>4580 px</Y>
+              <Y>4520 px</Y>
             </Location>
             <Size>
               <Width>164 px</Width>
               <Height>144 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.CostReduction</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.CostReduction</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -474,8 +474,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>82.2098214285716 px</X>
-                  <Y>143.691964285715 px</Y>
+                  <X>82.2098214285713 px</X>
+                  <Y>143.593750000001 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -486,8 +486,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>-0.107142857142776 px</X>
-                  <Y>180.223214285715 px</Y>
+                  <X>-0.10714285714289 px</X>
+                  <Y>180.125000000001 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -499,13 +499,13 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>122.209821428572 px</X>
-                <Y>4783.22321428571 px</Y>
+                <X>122.209821428571 px</X>
+                <Y>4723.125 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.CostReduction.[FK_CharDB.CostReduction_CharDB.Advantage_IdAdv]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.CostReduction.[FK_CharDB.CostReduction_CharDB.Advantage_IdAdv]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -520,7 +520,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>-237.895098005022 px</X>
-                  <Y>-59.22314453125 px</Y>
+                  <Y>-59.125 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -550,7 +550,7 @@
               <Height>161 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.DefaultSkill</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.DefaultSkill</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -565,15 +565,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>460 px</X>
-              <Y>1270 px</Y>
+              <X>324 px</X>
+              <Y>4007 px</Y>
             </Location>
             <Size>
               <Width>182 px</Width>
               <Height>212 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.DefSkillSome</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.DefSkillSome</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -596,7 +596,7 @@
               <Height>144 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.DifficultySkill</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.DifficultySkill</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -612,14 +612,14 @@
             </CustomProperties>
             <Location>
               <X>383 px</X>
-              <Y>4843 px</Y>
+              <Y>4783 px</Y>
             </Location>
             <Size>
               <Width>155 px</Width>
               <Height>161 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.DrBonusDb</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.DrBonusDb</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -642,7 +642,7 @@
               <Port>
                 <Location>
                   <X>154.794642857143 px</X>
-                  <Y>30.9375 px</Y>
+                  <Y>30.8392857142862 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -653,8 +653,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>-0.107142857142776 px</X>
-                  <Y>270.9375 px</Y>
+                  <X>-0.10714285714289 px</X>
+                  <Y>270.839285714286 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -666,7 +666,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.DrBonusDb.[FK_CharDB.DrBonusDb_CharDB.Advantage_IdAdv]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.DrBonusDb.[FK_CharDB.DrBonusDb_CharDB.Advantage_IdAdv]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -681,7 +681,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>-30 px</X>
-                  <Y>0 px</Y>
+                  <Y>-6.9754463766003E-05 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
@@ -703,15 +703,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1280 px</X>
-              <Y>1090 px</Y>
+              <X>1704 px</X>
+              <Y>4633 px</Y>
             </Location>
             <Size>
-              <Width>197 px</Width>
+              <Width>193 px</Width>
               <Height>124 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.GurpsCategory</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.GurpsCategory</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -733,11 +733,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>40 px</X>
-                  <Y>0 px</Y>
+                  <X>203.941964285714 px</X>
+                  <Y>62.3437500000009 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>42</OID>
                   <PortType>FloatAnchor</PortType>
@@ -745,62 +745,20 @@
               </Port>
               <Port>
                 <Location>
-                  <X>157 px</X>
-                  <Y>0 px</Y>
+                  <X>0.0401785714286689 px</X>
+                  <Y>62.3437500000009 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>43</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>1437 px</X>
-                <Y>4673 px</Y>
-              </PointD>
-              <PointD>
-                <X>1460 px</X>
-                <Y>4673 px</Y>
-              </PointD>
-              <PointD>
-                <X>1460 px</X>
-                <Y>4023 px</Y>
-              </PointD>
-              <PointD>
-                <X>1411 px</X>
-                <Y>4023 px</Y>
-              </PointD>
-              <PointD>
-                <X>1411 px</X>
-                <Y>4355 px</Y>
-              </PointD>
-              <PointD>
-                <X>1230 px</X>
-                <Y>4355 px</Y>
-              </PointD>
-              <PointD>
-                <X>1230 px</X>
-                <Y>4325 px</Y>
-              </PointD>
-              <PointD>
-                <X>1071 px</X>
-                <Y>4325 px</Y>
-              </PointD>
-              <PointD>
-                <X>1071 px</X>
-                <Y>2144.5 px</Y>
-              </PointD>
-              <PointD>
-                <X>1437 px</X>
-                <Y>2144.5 px</Y>
-              </PointD>
-            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.AdvantageCategory88.[FK_CharDB.AdvantageCategory88_CharDB.GurpsCategory_idGurpsCategory]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.AdvantageCategory88.[FK_CharDB.AdvantageCategory88_CharDB.GurpsCategory_idGurpsCategory]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -814,11 +772,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>366 px</X>
-                  <Y>1458.25 px</Y>
+                  <X>-30 px</X>
+                  <Y>9.09494701772928E-13 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Top</Align>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>44</OID>
                   <PortType>FixedAnchor</PortType>
@@ -837,15 +795,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>690 px</X>
-              <Y>670 px</Y>
+              <X>424 px</X>
+              <Y>381 px</Y>
             </Location>
             <Size>
               <Width>285 px</Width>
               <Height>348 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.GurpsSkill</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.GurpsSkill</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -867,11 +825,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>212.5 px</X>
-                  <Y>0 px</Y>
+                  <X>285.584821428571 px</X>
+                  <Y>94.9955357142862 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>48</OID>
                   <PortType>FloatAnchor</PortType>
@@ -879,11 +837,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>72.5 px</X>
-                  <Y>0 px</Y>
+                  <X>-0.21875 px</X>
+                  <Y>117.995535714286 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>49</OID>
                   <PortType>FloatAnchor</PortType>
@@ -892,7 +850,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.GurpsSkill.[FK_CharDB.GurpsSkill_CharDB.DifficultySkill_IdDifficulty]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.GurpsSkill.[FK_CharDB.GurpsSkill_CharDB.DifficultySkill_IdDifficulty]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -906,11 +864,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>0 px</X>
-                  <Y>84 px</Y>
+                  <X>-60.5 px</X>
+                  <Y>-8.71930751600303E-06 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Top</Align>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>50</OID>
                   <PortType>FixedAnchor</PortType>
@@ -936,7 +894,7 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>Undefined</X>
+                  <X>0 px</X>
                   <Y>174 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
@@ -948,8 +906,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>Undefined</X>
-                  <Y>261 px</Y>
+                  <X>0 px</X>
+                  <Y>87 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -961,17 +919,17 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>570 px</X>
-                <Y>844 px</Y>
+                <X>405 px</X>
+                <Y>555 px</Y>
               </PointD>
               <PointD>
-                <X>570 px</X>
-                <Y>931 px</Y>
+                <X>405 px</X>
+                <Y>468 px</Y>
               </PointD>
             </BendPoints>
-            <IsManuallyRouted>true</IsManuallyRouted>
+            <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.GurpsSkill.[FK_CharDB.GurpsSkill_CharDB.GurpsSkill_IdSpecialization]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.GurpsSkill.[FK_CharDB.GurpsSkill_CharDB.GurpsSkill_IdSpecialization]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -985,8 +943,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>120 px</X>
-                  <Y>-43.5 px</Y>
+                  <X>19 px</X>
+                  <Y>43.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -1015,8 +973,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>108 px</X>
-                  <Y>0 px</Y>
+                  <X>8.20089285714289 px</X>
+                  <Y>-0.352678571427532 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -1027,8 +985,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>148 px</X>
-                  <Y>0 px</Y>
+                  <X>189.200892857143 px</X>
+                  <Y>348.428571428572 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -1040,7 +998,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.AttributeBonus.[FK_CharDB.AttributeBonus_CharDB.GurpsSkill_FkSkill]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.AttributeBonus.[FK_CharDB.AttributeBonus_CharDB.GurpsSkill_FkSkill]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -1054,8 +1012,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>0 px</X>
-                  <Y>141 px</Y>
+                  <X>2.61579241396248E-05 px</X>
+                  <Y>1256.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Top</Align>
@@ -1084,8 +1042,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>63.5 px</Y>
+                  <X>0.392857142857793 px</X>
+                  <Y>34.1741071428578 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -1096,26 +1054,20 @@
               </Port>
               <Port>
                 <Location>
-                  <X>142.5 px</X>
-                  <Y>0 px</Y>
+                  <X>285.584821428571 px</X>
+                  <Y>181.174107142858 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>64</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>832.5 px</X>
-                <Y>574.5 px</Y>
-              </PointD>
-            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.CharSkill.[FK_CharDB.CharSkill_CharDB.GurpsSkill_idSkill]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.CharSkill.[FK_CharDB.CharSkill_CharDB.GurpsSkill_idSkill]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -1129,8 +1081,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>1125.75 px</X>
-                  <Y>0 px</Y>
+                  <X>1309.5 px</X>
+                  <Y>-2.61579234575038E-05 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -1159,8 +1111,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>153 px</X>
-                  <Y>Undefined</Y>
+                  <X>7.23660714285711 px</X>
+                  <Y>161.017857142858 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -1171,8 +1123,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>10 px</X>
-                  <Y>Undefined</Y>
+                  <X>130.236607142857 px</X>
+                  <Y>0.3125 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -1182,27 +1134,9 @@
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>700 px</X>
-                <Y>318.25 px</Y>
-              </PointD>
-              <PointD>
-                <X>530 px</X>
-                <Y>318.25 px</Y>
-              </PointD>
-              <PointD>
-                <X>530 px</X>
-                <Y>552.75 px</Y>
-              </PointD>
-              <PointD>
-                <X>700 px</X>
-                <Y>552.75 px</Y>
-              </PointD>
-            </BendPoints>
-            <IsManuallyRouted>true</IsManuallyRouted>
+            <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.DefaultSkill.[FK_CharDB.DefaultSkill_CharDB.GurpsSkill_IdSkillIn]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.DefaultSkill.[FK_CharDB.DefaultSkill_CharDB.GurpsSkill_IdSkillIn]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -1216,8 +1150,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>170 px</X>
-                  <Y>-234.5 px</Y>
+                  <X>-2.61579241396248E-05 px</X>
+                  <Y>-90 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -1229,8 +1163,8 @@
               </Port>
             </PortAnchors>
             <CommentOffset>
-              <X>269 px</X>
-              <Y>-330 px</Y>
+              <X>22 px</X>
+              <Y>2 px</Y>
             </CommentOffset>
           </Model>
           <Model xsi:type="RelationLinkModel">
@@ -1246,8 +1180,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>158 px</X>
-                  <Y>Undefined</Y>
+                  <X>154.080357142857 px</X>
+                  <Y>161.017857142858 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -1258,8 +1192,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>15 px</X>
-                  <Y>Undefined</Y>
+                  <X>277.080357142857 px</X>
+                  <Y>0.3125 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -1269,27 +1203,9 @@
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>705 px</X>
-                <Y>318.25 px</Y>
-              </PointD>
-              <PointD>
-                <X>760 px</X>
-                <Y>318.25 px</Y>
-              </PointD>
-              <PointD>
-                <X>760 px</X>
-                <Y>552.75 px</Y>
-              </PointD>
-              <PointD>
-                <X>705 px</X>
-                <Y>552.75 px</Y>
-              </PointD>
-            </BendPoints>
-            <IsManuallyRouted>true</IsManuallyRouted>
+            <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.DefaultSkill.[FK_CharDB.DefaultSkill_CharDB.GurpsSkill_IdSkillOut]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.DefaultSkill.[FK_CharDB.DefaultSkill_CharDB.GurpsSkill_IdSkillOut]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -1303,8 +1219,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-55 px</X>
-                  <Y>-234.5 px</Y>
+                  <X>-2.6157924025938E-05 px</X>
+                  <Y>-90 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -1316,8 +1232,8 @@
               </Port>
             </PortAnchors>
             <CommentOffset>
-              <X>209 px</X>
-              <Y>-35 px</Y>
+              <X>22 px</X>
+              <Y>2 px</Y>
             </CommentOffset>
           </Model>
           <Model xsi:type="RelationLinkModel">
@@ -1333,8 +1249,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>91 px</X>
-                  <Y>0 px</Y>
+                  <X>173.540178571429 px</X>
+                  <Y>0.0491071428577925 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -1345,26 +1261,20 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>217.5 px</Y>
+                  <X>73.5401785714287 px</X>
+                  <Y>348.428571428572 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>79</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>551 px</X>
-                <Y>887.5 px</Y>
-              </PointD>
-            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.DefSkillSome.[FK_CharDB.DefSkillSome_CharDB.GurpsSkill_IdSkill]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.DefSkillSome.[FK_CharDB.DefSkillSome_CharDB.GurpsSkill_IdSkill]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -1378,8 +1288,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>0 px</X>
-                  <Y>191.25 px</Y>
+                  <X>-1.30789619561256E-05 px</X>
+                  <Y>1639 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Top</Align>
@@ -1401,15 +1311,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1190 px</X>
-              <Y>790 px</Y>
+              <X>1295 px</X>
+              <Y>3182 px</Y>
             </Location>
             <Size>
               <Width>201 px</Width>
               <Height>124 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.GurpsSkillCategory88</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.GurpsSkillCategory88</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -1431,11 +1341,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>145.5 px</X>
-                  <Y>0 px</Y>
+                  <X>200.964285714286 px</X>
+                  <Y>115.209821428572 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>84</OID>
                   <PortType>FloatAnchor</PortType>
@@ -1443,8 +1353,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>55.5 px</X>
-                  <Y>0 px</Y>
+                  <X>96.4241071428573 px</X>
+                  <Y>0.544642857144026 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -1454,9 +1364,15 @@
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>1800.42410714286 px</X>
+                <Y>3297.20982142857 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.GurpsSkillCategory88.[FK_CharDB.GurpsSkillCategory88_CharDB.GurpsCategory_idSkillCategory]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.GurpsSkillCategory88.[FK_CharDB.GurpsSkillCategory88_CharDB.GurpsCategory_idSkillCategory]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -1470,11 +1386,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>0 px</X>
-                  <Y>-88 px</Y>
+                  <X>-304.424072265625 px</X>
+                  <Y>-667.895159040178 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Bottom</Align>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>86</OID>
                   <PortType>FixedAnchor</PortType>
@@ -1500,11 +1416,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>62 px</Y>
+                  <X>8.19642857142867 px</X>
+                  <Y>-0.450892857142208 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>89</OID>
                   <PortType>FloatAnchor</PortType>
@@ -1512,20 +1428,30 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>182 px</Y>
+                  <X>281.049107142857 px</X>
+                  <Y>348.428571428572 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>90</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>1303.19642857143 px</X>
+                <Y>3121.45089285714 px</Y>
+              </PointD>
+              <PointD>
+                <X>705.049107142857 px</X>
+                <Y>3121.45089285714 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.GurpsSkillCategory88.[FK_CharDB.GurpsSkillCategory88_CharDB.GurpsSkill_IdSkill]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.GurpsSkillCategory88.[FK_CharDB.GurpsSkillCategory88_CharDB.GurpsSkill_IdSkill]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -1539,11 +1465,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>107.5 px</X>
-                  <Y>0 px</Y>
+                  <X>598.147295270647 px</X>
+                  <Y>1256.77453613281 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Left</Align>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>91</OID>
                   <PortType>FixedAnchor</PortType>
@@ -1562,7 +1488,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>3068 px</X>
+              <X>3312 px</X>
               <Y>1386 px</Y>
             </Location>
             <Size>
@@ -1570,7 +1496,7 @@
               <Height>144 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.InventoryOfChar</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.InventoryOfChar</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -1592,8 +1518,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>83.5000000000005 px</X>
-                  <Y>-0.0267857142857793 px</Y>
+                  <X>83.8616071428578 px</X>
+                  <Y>-0.0267857142853245 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -1604,8 +1530,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>105.5 px</X>
-                  <Y>279.758928571428 px</Y>
+                  <X>105.861607142858 px</X>
+                  <Y>279.767857142857 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -1617,7 +1543,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.InventoryOfChar.[FK_CharDB.InventoryOfChar_CharDB.CharacterDb_IdCharacter]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.InventoryOfChar.[FK_CharDB.InventoryOfChar_CharDB.CharacterDb_IdCharacter]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -1631,8 +1557,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>4.54747350886464E-13 px</X>
-                  <Y>204 px</Y>
+                  <X>3.48772327924962E-05 px</X>
+                  <Y>195.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Top</Align>
@@ -1655,14 +1581,14 @@
             </CustomProperties>
             <Location>
               <X>341 px</X>
-              <Y>4339 px</Y>
+              <Y>4279 px</Y>
             </Location>
             <Size>
               <Width>148 px</Width>
               <Height>212 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.MeleeWeapon</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.MeleeWeapon</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -1684,8 +1610,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>74.3303571428573 px</X>
-                  <Y>212.334821428572 px</Y>
+                  <X>74.3303571428571 px</X>
+                  <Y>212.236607142858 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -1696,8 +1622,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>-0.107142857142776 px</X>
-                  <Y>8.43303571428623 px</Y>
+                  <X>-0.10714285714289 px</X>
+                  <Y>8.33482142857247 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -1710,12 +1636,12 @@
             <BendPoints>
               <PointD>
                 <X>415.330357142857 px</X>
-                <Y>4611.43303571429 px</Y>
+                <Y>4551.33482142857 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.MeleeWeapon.[FK_CharDB.MeleeWeapon_CharDB.Advantage_IdAdv]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.MeleeWeapon.[FK_CharDB.MeleeWeapon_CharDB.Advantage_IdAdv]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -1729,8 +1655,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-91.3348039899552 px</X>
-                  <Y>-60.43310546875 px</Y>
+                  <X>-91.3348039899554 px</X>
+                  <Y>-60.3349609375 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -1759,8 +1685,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>14.5 px</X>
-                  <Y>0 px</Y>
+                  <X>91.3303571428571 px</X>
+                  <Y>212.093750000001 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -1771,8 +1697,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>133.5 px</X>
-                  <Y>0 px</Y>
+                  <X>74.3303571428571 px</X>
+                  <Y>0.191964285715585 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -1784,7 +1710,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.DefSkillSome.[FK_CharDB.DefSkillSome_CharDB.MeleeWeapon_IdMeleWeap]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.DefSkillSome.[FK_CharDB.DefSkillSome_CharDB.MeleeWeapon_IdMeleWeap]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -1798,8 +1724,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>0 px</X>
-                  <Y>-1428.5 px</Y>
+                  <X>4.35965398537519E-06 px</X>
+                  <Y>-30 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -1822,14 +1748,14 @@
             </CustomProperties>
             <Location>
               <X>613 px</X>
-              <Y>5003 px</Y>
+              <Y>4943 px</Y>
             </Location>
             <Size>
               <Width>165 px</Width>
               <Height>297 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.Modifier</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.Modifier</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -1851,8 +1777,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>81.8437500000001 px</X>
-                  <Y>-0.361607142856883 px</Y>
+                  <X>81.84375 px</X>
+                  <Y>-0.459821428570649 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -1863,8 +1789,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>96.8437500000001 px</X>
-                  <Y>279.441964285715 px</Y>
+                  <X>96.84375 px</X>
+                  <Y>279.343750000001 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -1876,7 +1802,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.Modifier.[FK_CharDB.Modifier_CharDB.Advantage_IdAdv]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.Modifier.[FK_CharDB.Modifier_CharDB.Advantage_IdAdv]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -1890,7 +1816,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>1.13686837721616E-13 px</X>
+                  <X>0 px</X>
                   <Y>60 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -1914,14 +1840,14 @@
             </CustomProperties>
             <Location>
               <X>81 px</X>
-              <Y>609 px</Y>
+              <Y>600 px</Y>
             </Location>
             <Size>
               <Width>163 px</Width>
               <Height>127 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.NeedSkill</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.NeedSkill</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -1943,8 +1869,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>94 px</Y>
+                  <X>163.107142857143 px</X>
+                  <Y>120.924107142857 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -1955,8 +1881,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>33 px</Y>
+                  <X>0.401785714285779 px</X>
+                  <Y>339.924107142857 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -1968,7 +1894,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.NeedSkill.[FK_CharDB.NeedSkill_CharDB.GurpsSkill_IdSkillIn]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.NeedSkill.[FK_CharDB.NeedSkill_CharDB.GurpsSkill_IdSkillIn]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -1982,8 +1908,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-223 px</X>
-                  <Y>0 px</Y>
+                  <X>-90 px</X>
+                  <Y>-2.61579239122511E-05 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
@@ -1995,8 +1921,8 @@
               </Port>
             </PortAnchors>
             <CommentOffset>
-              <X>16 px</X>
-              <Y>-13 px</Y>
+              <X>22 px</X>
+              <Y>2 px</Y>
             </CommentOffset>
           </Model>
           <Model xsi:type="RelationLinkModel">
@@ -2012,8 +1938,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>110.5 px</Y>
+                  <X>163.107142857143 px</X>
+                  <Y>63.6607142857147 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -2024,8 +1950,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>49.5 px</Y>
+                  <X>0.401785714285779 px</X>
+                  <Y>253.745535714286 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -2035,9 +1961,19 @@
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>304.205357142857 px</X>
+                <Y>663.660714285715 px</Y>
+              </PointD>
+              <PointD>
+                <X>304.205357142857 px</X>
+                <Y>634.745535714286 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.NeedSkill.[FK_CharDB.NeedSkill_CharDB.GurpsSkill_IdSkillOut]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.NeedSkill.[FK_CharDB.NeedSkill_CharDB.GurpsSkill_IdSkillOut]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -2051,8 +1987,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-223 px</X>
-                  <Y>0 px</Y>
+                  <X>-120.102661132813 px</X>
+                  <Y>28.9151698521209 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
@@ -2074,15 +2010,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1090 px</X>
-              <Y>1610 px</Y>
+              <X>1226 px</X>
+              <Y>4072 px</Y>
             </Location>
             <Size>
               <Width>238 px</Width>
               <Height>246 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.PrereqListDb</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.PrereqListDb</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -2104,11 +2040,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>119 px</X>
-                  <Y>0 px</Y>
+                  <X>0.0892857142857793 px</X>
+                  <Y>151.629464285716 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>129</OID>
                   <PortType>FloatAnchor</PortType>
@@ -2116,8 +2052,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>140 px</Y>
+                  <X>193.794642857143 px</X>
+                  <Y>8.33482142857247 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -2129,21 +2065,17 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>1209 px</X>
-                <Y>1876 px</Y>
+                <X>851.892857142857 px</X>
+                <Y>4223.62946428572 px</Y>
               </PointD>
               <PointD>
-                <X>812 px</X>
-                <Y>1876 px</Y>
-              </PointD>
-              <PointD>
-                <X>812 px</X>
-                <Y>4743 px</Y>
+                <X>851.892857142857 px</X>
+                <Y>4551.33482142857 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.PrereqListDb.[FK_CharDB.PrereqListDb_CharDB.Advantage_FkAdvantage]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.PrereqListDb.[FK_CharDB.PrereqListDb_CharDB.Advantage_FkAdvantage]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -2157,11 +2089,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>397 px</X>
-                  <Y>-1453.5 px</Y>
+                  <X>374.107116699219 px</X>
+                  <Y>-163.852957589284 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Bottom</Align>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>131</OID>
                   <PortType>FixedAnchor</PortType>
@@ -2187,8 +2119,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>119 px</X>
-                  <Y>0 px</Y>
+                  <X>8.59375 px</X>
+                  <Y>0.250000000000909 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -2199,11 +2131,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>261 px</Y>
+                  <X>235.125 px</X>
+                  <Y>348.428571428572 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>135</OID>
                   <PortType>FloatAnchor</PortType>
@@ -2212,13 +2144,17 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>1209 px</X>
-                <Y>931 px</Y>
+                <X>1234.59375 px</X>
+                <Y>3181.54910714286 px</Y>
+              </PointD>
+              <PointD>
+                <X>659.125 px</X>
+                <Y>3181.54910714286 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.PrereqListDb.[FK_CharDB.PrereqListDb_CharDB.GurpsSkill_FkSkill]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.PrereqListDb.[FK_CharDB.PrereqListDb_CharDB.GurpsSkill_FkSkill]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -2232,8 +2168,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>0 px</X>
-                  <Y>339.5 px</Y>
+                  <X>575.46875 px</X>
+                  <Y>2116.72546386719 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Top</Align>
@@ -2263,7 +2199,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>123 px</Y>
+                  <Y>184.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -2275,7 +2211,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>184.5 px</Y>
+                  <Y>61.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -2287,17 +2223,17 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>1071 px</X>
-                <Y>1733 px</Y>
+                <X>1207 px</X>
+                <Y>4256.5 px</Y>
               </PointD>
               <PointD>
-                <X>1071 px</X>
-                <Y>1794.5 px</Y>
+                <X>1207 px</X>
+                <Y>4133.5 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.PrereqListDb.[FK_CharDB.PrereqListDb_CharDB.PrereqListDb_FkPrereqList]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.PrereqListDb.[FK_CharDB.PrereqListDb_CharDB.PrereqListDb_FkPrereqList]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -2312,7 +2248,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>19 px</X>
-                  <Y>-30.75 px</Y>
+                  <Y>61.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -2341,11 +2277,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>186 px</X>
-                  <Y>0 px</Y>
+                  <X>193.892857142857 px</X>
+                  <Y>25.8080357142862 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>144</OID>
                   <PortType>FloatAnchor</PortType>
@@ -2353,11 +2289,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>8 px</X>
-                  <Y>0 px</Y>
+                  <X>0.0892857142857793 px</X>
+                  <Y>237.808035714286 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>145</OID>
                   <PortType>FloatAnchor</PortType>
@@ -2366,7 +2302,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.AdvantagePrereq.[FK_CharDB.AdvantagePrereq_CharDB.PrereqListDb_IdPrqList]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.AdvantagePrereq.[FK_CharDB.AdvantagePrereq_CharDB.PrereqListDb_IdPrqList]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -2380,11 +2316,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>0 px</X>
-                  <Y>1244 px</Y>
+                  <X>-60 px</X>
+                  <Y>-6.9754463766003E-05 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Top</Align>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>146</OID>
                   <PortType>FixedAnchor</PortType>
@@ -2410,8 +2346,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>39.5 px</X>
-                  <Y>0 px</Y>
+                  <X>96.1517857142858 px</X>
+                  <Y>0.410714285715585 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -2422,8 +2358,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>198.5 px</X>
-                  <Y>0 px</Y>
+                  <X>119.151785714286 px</X>
+                  <Y>246.312500000001 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -2433,27 +2369,9 @@
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>1288.5 px</X>
-                <Y>3223 px</Y>
-              </PointD>
-              <PointD>
-                <X>1358.5 px</X>
-                <Y>3223 px</Y>
-              </PointD>
-              <PointD>
-                <X>1358.5 px</X>
-                <Y>2127 px</Y>
-              </PointD>
-              <PointD>
-                <X>1288.5 px</X>
-                <Y>2127 px</Y>
-              </PointD>
-            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.AttributePrereq.[FK_CharDB.AttributePrereq_CharDB.PrereqListDb_IdPrqList]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.AttributePrereq.[FK_CharDB.AttributePrereq_CharDB.PrereqListDb_IdPrqList]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -2467,8 +2385,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-70 px</X>
-                  <Y>1764 px</Y>
+                  <X>5.23158482792496E-05 px</X>
+                  <Y>30 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Top</Align>
@@ -2497,11 +2415,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>108 px</X>
-                  <Y>0 px</Y>
+                  <X>0.312500000000227 px</X>
+                  <Y>80.2812500000009 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>154</OID>
                   <PortType>FloatAnchor</PortType>
@@ -2509,8 +2427,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>123 px</Y>
+                  <X>238.214285714286 px</X>
+                  <Y>123.281250000001 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -2520,31 +2438,9 @@
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>1632 px</X>
-                <Y>4023 px</Y>
-              </PointD>
-              <PointD>
-                <X>1677 px</X>
-                <Y>4023 px</Y>
-              </PointD>
-              <PointD>
-                <X>1677 px</X>
-                <Y>3223 px</Y>
-              </PointD>
-              <PointD>
-                <X>1369 px</X>
-                <Y>3223 px</Y>
-              </PointD>
-              <PointD>
-                <X>1369 px</X>
-                <Y>1733 px</Y>
-              </PointD>
-            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.ContainedWeightPrereq.[FK_CharDB.ContainedWeightPrereq_CharDB.PrereqListDb_IdPrqList]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.ContainedWeightPrereq.[FK_CharDB.ContainedWeightPrereq_CharDB.PrereqListDb_IdPrqList]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -2558,11 +2454,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>263 px</X>
-                  <Y>1697 px</Y>
+                  <X>30 px</X>
+                  <Y>9.09494701772928E-13 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Top</Align>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>156</OID>
                   <PortType>FixedAnchor</PortType>
@@ -2582,14 +2478,14 @@
             </CustomProperties>
             <Location>
               <X>566 px</X>
-              <Y>4042 px</Y>
+              <Y>3982 px</Y>
             </Location>
             <Size>
               <Width>161 px</Width>
               <Height>263 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.RangedWeapon</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.RangedWeapon</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -2611,8 +2507,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>80.6517857142859 px</X>
-                  <Y>262.705357142858 px</Y>
+                  <X>80.6517857142858 px</X>
+                  <Y>262.607142857144 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -2623,8 +2519,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>48.6517857142859 px</X>
-                  <Y>-0.0714285714284415 px</Y>
+                  <X>48.6517857142858 px</X>
+                  <Y>-0.169642857142208 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -2636,7 +2532,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.RangedWeapon.[FK_CharDB.RangedWeapon_CharDB.Advantage_IdAdv]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.RangedWeapon.[FK_CharDB.RangedWeapon_CharDB.Advantage_IdAdv]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -2650,7 +2546,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-8.71930785706354E-06 px</X>
+                  <X>-8.71930797075038E-06 px</X>
                   <Y>-149 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -2680,11 +2576,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>144 px</X>
-                  <Y>0 px</Y>
+                  <X>182.044642857143 px</X>
+                  <Y>106.071428571429 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>165</OID>
                   <PortType>FloatAnchor</PortType>
@@ -2692,38 +2588,20 @@
               </Port>
               <Port>
                 <Location>
-                  <X>38 px</X>
-                  <Y>0 px</Y>
+                  <X>0.14285714285711 px</X>
+                  <Y>131.071428571429 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>166</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>604 px</X>
-                <Y>1502 px</Y>
-              </PointD>
-              <PointD>
-                <X>576 px</X>
-                <Y>1502 px</Y>
-              </PointD>
-              <PointD>
-                <X>576 px</X>
-                <Y>4022 px</Y>
-              </PointD>
-              <PointD>
-                <X>604 px</X>
-                <Y>4022 px</Y>
-              </PointD>
-            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.DefSkillSome.[FK_CharDB.DefSkillSome_CharDB.RangedWeapon_IdRangeWeap]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.DefSkillSome.[FK_CharDB.DefSkillSome_CharDB.RangedWeapon_IdRangeWeap]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -2737,11 +2615,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>28 px</X>
-                  <Y>-1280 px</Y>
+                  <X>-30 px</X>
+                  <Y>0.000139508929350995 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Bottom</Align>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>167</OID>
                   <PortType>FixedAnchor</PortType>
@@ -2761,14 +2639,14 @@
             </CustomProperties>
             <Location>
               <X>852 px</X>
-              <Y>4848 px</Y>
+              <Y>4788 px</Y>
             </Location>
             <Size>
               <Width>230 px</Width>
               <Height>212 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.SkillBonusDb</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.SkillBonusDb</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -2790,8 +2668,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>-0.107142857142662 px</X>
-                  <Y>25.9375 px</Y>
+                  <X>-0.107142857142776 px</X>
+                  <Y>25.8392857142862 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -2803,7 +2681,7 @@
               <Port>
                 <Location>
                   <X>193.794642857143 px</X>
-                  <Y>270.9375 px</Y>
+                  <Y>270.839285714286 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -2815,7 +2693,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.SkillBonusDb.[FK_CharDB.SkillBonusDb_CharDB.Advantage_FkAdv]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.SkillBonusDb.[FK_CharDB.SkillBonusDb_CharDB.Advantage_FkAdv]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -2830,7 +2708,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>30 px</X>
-                  <Y>0 px</Y>
+                  <Y>-6.9754463766003E-05 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -2853,14 +2731,14 @@
             </CustomProperties>
             <Location>
               <X>1430 px</X>
-              <Y>3783 px</Y>
+              <Y>3723 px</Y>
             </Location>
             <Size>
               <Width>240 px</Width>
               <Height>229 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.SkillPrereqDb</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.SkillPrereqDb</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -2882,11 +2760,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>120 px</X>
-                  <Y>0 px</Y>
+                  <X>25.7098214285716 px</X>
+                  <Y>229.053571428572 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>177</OID>
                   <PortType>FloatAnchor</PortType>
@@ -2894,42 +2772,20 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>184.5 px</Y>
+                  <X>229.709821428572 px</X>
+                  <Y>0.250000000000909 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>178</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>1550 px</X>
-                <Y>3763 px</Y>
-              </PointD>
-              <PointD>
-                <X>1156 px</X>
-                <Y>3763 px</Y>
-              </PointD>
-              <PointD>
-                <X>1156 px</X>
-                <Y>1893.5 px</Y>
-              </PointD>
-              <PointD>
-                <X>1348 px</X>
-                <Y>1893.5 px</Y>
-              </PointD>
-              <PointD>
-                <X>1348 px</X>
-                <Y>1794.5 px</Y>
-              </PointD>
-            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.SkillPrereqDb.[FK_CharDB.SkillPrereqDb_CharDB.PrereqListDb_IdprereqList]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.SkillPrereqDb.[FK_CharDB.SkillPrereqDb_CharDB.PrereqListDb_IdprereqList]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -2943,11 +2799,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>394 px</X>
-                  <Y>954.75 px</Y>
+                  <X>-1.74386159415008E-05 px</X>
+                  <Y>-60 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Top</Align>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>179</OID>
                   <PortType>FixedAnchor</PortType>
@@ -2967,14 +2823,14 @@
             </CustomProperties>
             <Location>
               <X>1142 px</X>
-              <Y>4762 px</Y>
+              <Y>4702 px</Y>
             </Location>
             <Size>
               <Width>195 px</Width>
               <Height>229 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.SpellBonus</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.SpellBonus</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -2997,7 +2853,7 @@
               <Port>
                 <Location>
                   <X>0.178571428571559 px</X>
-                  <Y>25.7589285714294 px</Y>
+                  <Y>25.6607142857156 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -3009,7 +2865,7 @@
               <Port>
                 <Location>
                   <X>193.794642857143 px</X>
-                  <Y>184.758928571429 px</Y>
+                  <Y>184.660714285716 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -3021,7 +2877,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.SpellBonus.[FK_CharDB.SpellBonus_CharDB.Advantage_IdAdv]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.SpellBonus.[FK_CharDB.SpellBonus_CharDB.Advantage_IdAdv]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -3036,7 +2892,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>175 px</X>
-                  <Y>0.000139508929350995 px</Y>
+                  <Y>6.97544655849924E-05 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -3059,14 +2915,14 @@
             </CustomProperties>
             <Location>
               <X>1295 px</X>
-              <Y>3426 px</Y>
+              <Y>3366 px</Y>
             </Location>
             <Size>
               <Width>238 px</Width>
               <Height>297 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.SpellPrereqDb</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.SpellPrereqDb</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -3088,11 +2944,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>16.5 px</X>
-                  <Y>0 px</Y>
+                  <X>74.53125 px</X>
+                  <Y>296.901785714286 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>189</OID>
                   <PortType>FloatAnchor</PortType>
@@ -3100,38 +2956,20 @@
               </Port>
               <Port>
                 <Location>
-                  <X>221.5 px</X>
-                  <Y>0 px</Y>
+                  <X>143.53125 px</X>
+                  <Y>0.250000000000909 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>190</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>1311.5 px</X>
-                <Y>3406 px</Y>
-              </PointD>
-              <PointD>
-                <X>1143.5 px</X>
-                <Y>3406 px</Y>
-              </PointD>
-              <PointD>
-                <X>1143.5 px</X>
-                <Y>2109.5 px</Y>
-              </PointD>
-              <PointD>
-                <X>1311.5 px</X>
-                <Y>2109.5 px</Y>
-              </PointD>
-            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.SpellPrereqDb.[FK_CharDB.SpellPrereqDb_CharDB.PrereqListDb_IdPrqlist]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.SpellPrereqDb.[FK_CharDB.SpellPrereqDb_CharDB.PrereqListDb_IdPrqlist]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -3145,11 +2983,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>168 px</X>
-                  <Y>668.25 px</Y>
+                  <X>0 px</X>
+                  <Y>-204.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Top</Align>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>191</OID>
                   <PortType>FixedAnchor</PortType>
@@ -3168,15 +3006,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>30 px</X>
-              <Y>1230 px</Y>
+              <X>198 px</X>
+              <Y>850 px</Y>
             </Location>
             <Size>
               <Width>240 px</Width>
               <Height>263 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.CharDB.WeaponBonus</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.WeaponBonus</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -3198,8 +3036,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>120 px</X>
-                  <Y>0 px</Y>
+                  <X>65.9508928571429 px</X>
+                  <Y>262.696428571429 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -3210,8 +3048,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>70 px</Y>
+                  <X>-0.10714285714289 px</X>
+                  <Y>94.513392857144 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -3223,21 +3061,13 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>150 px</X>
-                <Y>4561 px</Y>
-              </PointD>
-              <PointD>
-                <X>578 px</X>
-                <Y>4561 px</Y>
-              </PointD>
-              <PointD>
-                <X>578 px</X>
-                <Y>4673 px</Y>
+                <X>263.950892857143 px</X>
+                <Y>4637.51339285714 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.WeaponBonus.[FK_CharDB.WeaponBonus_CharDB.Advantage_FkAdv]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.WeaponBonus.[FK_CharDB.WeaponBonus_CharDB.Advantage_FkAdv]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -3251,8 +3081,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>0 px</X>
-                  <Y>-1534 px</Y>
+                  <X>-4.35965398537519E-06 px</X>
+                  <Y>-1762.25659179688 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -3281,11 +3111,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>131.5 px</Y>
+                  <X>230.9375 px</X>
+                  <Y>-0.374999999999545 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>200</OID>
                   <PortType>FloatAnchor</PortType>
@@ -3293,8 +3123,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>71.25 px</X>
-                  <Y>0 px</Y>
+                  <X>4.9375 px</X>
+                  <Y>348.428571428572 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -3304,23 +3134,9 @@
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>290 px</X>
-                <Y>1361.5 px</Y>
-              </PointD>
-              <PointD>
-                <X>290 px</X>
-                <Y>1038 px</Y>
-              </PointD>
-              <PointD>
-                <X>761.25 px</X>
-                <Y>1038 px</Y>
-              </PointD>
-            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.WeaponBonus.[FK_CharDB.WeaponBonus_CharDB.GurpsSkill_FkSkill]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.WeaponBonus.[FK_CharDB.WeaponBonus_CharDB.GurpsSkill_FkSkill]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -3334,11 +3150,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-255.625 px</X>
-                  <Y>323.5 px</Y>
+                  <X>0 px</X>
+                  <Y>60.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Right</Align>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>202</OID>
                   <PortType>FixedAnchor</PortType>
@@ -3347,8 +3163,8 @@
               </Port>
             </PortAnchors>
             <CommentOffset>
-              <X>-150 px</X>
-              <Y>-171.5 px</Y>
+              <X>22 px</X>
+              <Y>2 px</Y>
             </CommentOffset>
           </Model>
           <Model xsi:type="TableModel">
@@ -3357,7 +3173,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>4548 px</X>
+              <X>4786 px</X>
               <Y>-6 px</Y>
             </Location>
             <Size>
@@ -3365,7 +3181,7 @@
               <Height>144 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.__MigrationHistory</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.__MigrationHistory</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -3380,7 +3196,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1410 px</X>
+              <X>1598 px</X>
               <Y>2979 px</Y>
             </Location>
             <Size>
@@ -3388,7 +3204,7 @@
               <Height>161 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.AnyBoxNameType</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.AnyBoxNameType</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -3435,17 +3251,17 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>1391 px</X>
+                <X>1579 px</X>
                 <Y>3099.75 px</Y>
               </PointD>
               <PointD>
-                <X>1391 px</X>
+                <X>1579 px</X>
                 <Y>3019.25 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.AnyBoxNameType.[FK_dbo.AnyBoxNameType_dbo.AnyBoxNameType_ParentBoxName]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.AnyBoxNameType.[FK_dbo.AnyBoxNameType_dbo.AnyBoxNameType_ParentBoxName]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -3482,7 +3298,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>3159 px</X>
+              <X>3347 px</X>
               <Y>2596 px</Y>
             </Location>
             <Size>
@@ -3490,7 +3306,7 @@
               <Height>195 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.Armour</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Armour</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -3505,7 +3321,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1590 px</X>
+              <X>1778 px</X>
               <Y>840 px</Y>
             </Location>
             <Size>
@@ -3513,7 +3329,7 @@
               <Height>977 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.Attachment</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Attachment</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -3528,7 +3344,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2382 px</X>
+              <X>2627 px</X>
               <Y>717 px</Y>
             </Location>
             <Size>
@@ -3536,7 +3352,7 @@
               <Height>127 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.AttachmentMount</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.AttachmentMount</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -3558,8 +3374,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>140.120535714286 px</X>
-                  <Y>0.553571428571104 px</Y>
+                  <X>140.352678571429 px</X>
+                  <Y>0.553571428572013 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -3570,8 +3386,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0.129464285714676 px</X>
-                  <Y>63.4553571428569 px</Y>
+                  <X>-0.508928571428442 px</X>
+                  <Y>63.4553571428573 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -3583,13 +3399,13 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>1730.12053571429 px</X>
+                <X>1918.35267857143 px</X>
                 <Y>780.455357142857 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.Attachment.[FK_dbo.Attachment_dbo.AttachmentMount_IdAttachmentmount]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Attachment.[FK_dbo.Attachment_dbo.AttachmentMount_IdAttachmentmount]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -3603,7 +3419,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-325.939767020089 px</X>
+                  <X>-354.323590959821 px</X>
                   <Y>59.5446166992188 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -3626,15 +3442,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2478 px</X>
+              <X>2667 px</X>
               <Y>1267 px</Y>
             </Location>
             <Size>
-              <Width>176 px</Width>
+              <Width>232 px</Width>
               <Height>124 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.AttachmentSlot</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.AttachmentSlot</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -3656,7 +3472,7 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>170.785714285715 px</X>
+                  <X>89.0714285714289 px</X>
                   <Y>126.955357142857 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
@@ -3668,8 +3484,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>74.7857142857147 px</X>
-                  <Y>-0.0892857142857793 px</Y>
+                  <X>49.0714285714289 px</X>
+                  <Y>-0.0892857142853245 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -3681,7 +3497,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.AttachmentMount.[FK_dbo.AttachmentMount_dbo.AttachmentSlot_IdAttacClass]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.AttachmentMount.[FK_dbo.AttachmentMount_dbo.AttachmentSlot_IdAttacClass]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -3695,7 +3511,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>6.97544651302451E-05 px</X>
+                  <X>-0.000104631696103752 px</X>
                   <Y>-211.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -3718,7 +3534,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2621 px</X>
+              <X>2866 px</X>
               <Y>708 px</Y>
             </Location>
             <Size>
@@ -3726,7 +3542,7 @@
               <Height>144 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.AvailableAttachSlot</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.AvailableAttachSlot</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -3748,8 +3564,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0.388392857143117 px</X>
-                  <Y>72.4553571428569 px</Y>
+                  <X>-0.25 px</X>
+                  <Y>72.4553571428573 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -3760,8 +3576,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>179.290178571429 px</X>
-                  <Y>63.4553571428569 px</Y>
+                  <X>178.651785714286 px</X>
+                  <Y>63.4553571428573 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -3773,7 +3589,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.AvailableAttachSlot.[FK_dbo.AvailableAttachSlot_dbo.AttachmentMount_RAttachmentmount]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.AvailableAttachSlot.[FK_dbo.AvailableAttachSlot_dbo.AttachmentMount_RAttachmentmount]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -3788,7 +3604,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>30 px</X>
-                  <Y>-2.61579243669985E-05 px</Y>
+                  <Y>-2.61579239122511E-05 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -3810,7 +3626,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>4338 px</X>
+              <X>4576 px</X>
               <Y>-6 px</Y>
             </Location>
             <Size>
@@ -3818,7 +3634,7 @@
               <Height>178 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.Battery</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Battery</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -3833,7 +3649,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1663 px</X>
+              <X>1852 px</X>
               <Y>2987 px</Y>
             </Location>
             <Size>
@@ -3841,7 +3657,7 @@
               <Height>144 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.BoxItem</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.BoxItem</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -3863,8 +3679,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0.218750000000227 px</X>
-                  <Y>72.0848214285716 px</Y>
+                  <X>-0.549107142856883 px</X>
+                  <Y>72.084821428572 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -3875,8 +3691,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>193.120535714286 px</X>
-                  <Y>80.0848214285716 px</Y>
+                  <X>193.352678571429 px</X>
+                  <Y>80.084821428572 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -3888,7 +3704,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.BoxItem.[FK_dbo.BoxItem_dbo.AnyBoxNameType_BoxName]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.BoxItem.[FK_dbo.BoxItem_dbo.AnyBoxNameType_BoxName]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -3902,8 +3718,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>30 px</X>
-                  <Y>0.000104631696558499 px</Y>
+                  <X>30.5 px</X>
+                  <Y>0.000104631697013247 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -3925,7 +3741,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1889 px</X>
+              <X>2077 px</X>
               <Y>3642 px</Y>
             </Location>
             <Size>
@@ -3933,7 +3749,7 @@
               <Height>178 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.Caliber</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Caliber</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -3948,7 +3764,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2175 px</X>
+              <X>2363 px</X>
               <Y>2997 px</Y>
             </Location>
             <Size>
@@ -3956,7 +3772,7 @@
               <Height>124 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.Clothes</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Clothes</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -3971,7 +3787,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>4138 px</X>
+              <X>4376 px</X>
               <Y>-6 px</Y>
             </Location>
             <Size>
@@ -3979,7 +3795,7 @@
               <Height>297 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.CombineWeap</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.CombineWeap</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -3994,7 +3810,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2923 px</X>
+              <X>3111 px</X>
               <Y>2578 px</Y>
             </Location>
             <Size>
@@ -4002,7 +3818,7 @@
               <Height>127 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.Drug</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Drug</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -4017,15 +3833,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2644 px</X>
-              <Y>2168 px</Y>
+              <X>3320 px</X>
+              <Y>2210 px</Y>
             </Location>
             <Size>
               <Width>219 px</Width>
               <Height>450 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.Explosive</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Explosive</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -4040,7 +3856,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>3399 px</X>
+              <X>3587 px</X>
               <Y>2753 px</Y>
             </Location>
             <Size>
@@ -4048,7 +3864,7 @@
               <Height>124 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.Food</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Food</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -4063,7 +3879,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2199 px</X>
+              <X>2387 px</X>
               <Y>1065 px</Y>
             </Location>
             <Size>
@@ -4071,7 +3887,7 @@
               <Height>124 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.GAttachClass</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.GAttachClass</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -4086,7 +3902,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1931 px</X>
+              <X>2119 px</X>
               <Y>1266 px</Y>
             </Location>
             <Size>
@@ -4094,7 +3910,7 @@
               <Height>127 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.GAvAttachClass</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.GAvAttachClass</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -4116,8 +3932,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>-0.174107142856883 px</X>
-                  <Y>63.2767857142858 px</Y>
+                  <X>0.0580357142857793 px</X>
+                  <Y>63.2767857142862 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -4128,7 +3944,7 @@
               </Port>
               <Port>
                 <Location>
-                  <X>280.727678571429 px</X>
+                  <X>280.959821428572 px</X>
                   <Y>489.276785714286 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
@@ -4141,7 +3957,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.GAvAttachClass.[FK_dbo.GAvAttachClass_dbo.Attachment_IdAttach]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.GAvAttachClass.[FK_dbo.GAvAttachClass_dbo.Attachment_IdAttach]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -4156,7 +3972,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>30 px</X>
-                  <Y>5.23158482792496E-05 px</Y>
+                  <Y>5.2315848733997E-05 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -4178,7 +3994,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2150 px</X>
+              <X>2338 px</X>
               <Y>1249 px</Y>
             </Location>
             <Size>
@@ -4186,7 +4002,7 @@
               <Height>161 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.GSubAttachClass</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.GSubAttachClass</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -4208,8 +4024,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>268.415178571429 px</X>
-                  <Y>80.2767857142858 px</Y>
+                  <X>268.647321428572 px</X>
+                  <Y>80.2767857142862 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -4220,8 +4036,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0.513392857143117 px</X>
-                  <Y>62.2767857142858 px</Y>
+                  <X>-0.254464285713766 px</X>
+                  <Y>62.2767857142862 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -4233,7 +4049,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.GSubAttachClass.[FK_dbo.GSubAttachClass_dbo.AttachmentSlot_Attachmentslot]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.GSubAttachClass.[FK_dbo.GSubAttachClass_dbo.AttachmentSlot_Attachmentslot]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -4247,8 +4063,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-29.5 px</X>
-                  <Y>5.23158482792496E-05 px</Y>
+                  <X>-30 px</X>
+                  <Y>5.2315848733997E-05 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
@@ -4277,8 +4093,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>134.044642857143 px</X>
-                  <Y>-0.232142857143117 px</Y>
+                  <X>134.276785714286 px</X>
+                  <Y>-0.232142857142208 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -4289,7 +4105,7 @@
               </Port>
               <Port>
                 <Location>
-                  <X>85.0446428571431 px</X>
+                  <X>85.2767857142862 px</X>
                   <Y>123.669642857143 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
@@ -4302,7 +4118,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.GSubAttachClass.[FK_dbo.GSubAttachClass_dbo.GAttachClass_AttachClass]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.GSubAttachClass.[FK_dbo.GSubAttachClass_dbo.GAttachClass_AttachClass]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -4316,7 +4132,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-3.48772318830015E-05 px</X>
+                  <X>-6.9754463766003E-05 px</X>
                   <Y>30 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -4346,8 +4162,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>158.575892857143 px</X>
-                  <Y>63.2767857142858 px</Y>
+                  <X>158.808035714286 px</X>
+                  <Y>63.2767857142862 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -4358,8 +4174,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>-0.325892857142662 px</X>
-                  <Y>80.2767857142858 px</Y>
+                  <X>-0.09375 px</X>
+                  <Y>80.2767857142862 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -4371,7 +4187,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.GAvAttachClass.[FK_dbo.GAvAttachClass_dbo.GSubAttachClass_IdGSubClass]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.GAvAttachClass.[FK_dbo.GAvAttachClass_dbo.GSubAttachClass_IdGSubClass]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -4386,7 +4202,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>-30 px</X>
-                  <Y>5.23158482792496E-05 px</Y>
+                  <Y>5.2315848733997E-05 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
@@ -4408,15 +4224,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2609 px</X>
-              <Y>1763 px</Y>
+              <X>2680 px</X>
+              <Y>3010 px</Y>
             </Location>
             <Size>
               <Width>139 px</Width>
               <Height>124 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.GurpsClass</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.GurpsClass</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -4431,7 +4247,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1861 px</X>
+              <X>2049 px</X>
               <Y>2537 px</Y>
             </Location>
             <Size>
@@ -4439,7 +4255,7 @@
               <Height>1045 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.Item</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Item</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -4461,7 +4277,7 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>126.522321428572 px</X>
+                  <X>126.754464285715 px</X>
                   <Y>1044.82589285714 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
@@ -4473,8 +4289,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>98.5223214285718 px</X>
-                  <Y>-0.0758928571426623 px</Y>
+                  <X>98.7544642857147 px</X>
+                  <Y>-0.0758928571422075 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -4486,7 +4302,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.Item.[FK_dbo.Item_dbo.Caliber_UbCalibre]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Item.[FK_dbo.Item_dbo.Caliber_UbCalibre]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -4500,7 +4316,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-1.74386154867534E-05 px</X>
+                  <X>6.97544646754977E-05 px</X>
                   <Y>-30 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -4530,7 +4346,7 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>253.522321428572 px</X>
+                  <X>253.754464285715 px</X>
                   <Y>522.084821428572 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
@@ -4542,8 +4358,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>-0.379464285713766 px</X>
-                  <Y>62.0848214285716 px</Y>
+                  <X>-0.147321428571104 px</X>
+                  <Y>62.084821428572 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -4555,7 +4371,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.Item.[FK_dbo.Item_dbo.Clothes_Clothestype]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Item.[FK_dbo.Item_dbo.Clothes_Clothestype]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -4599,8 +4415,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>253.522321428572 px</X>
-                  <Y>400.1875 px</Y>
+                  <X>253.754464285715 px</X>
+                  <Y>400.187500000001 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -4611,7 +4427,7 @@
               </Port>
               <Port>
                 <Location>
-                  <X>69.4330357142862 px</X>
+                  <X>69.6651785714294 px</X>
                   <Y>124.089285714286 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
@@ -4624,13 +4440,13 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>3468.43303571429 px</X>
+                <X>3656.66517857143 px</X>
                 <Y>2937.1875 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.Item.[FK_dbo.Item_dbo.Food_FoodType]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Item.[FK_dbo.Item_dbo.Food_FoodType]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -4644,8 +4460,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-676.716552734375 px</X>
-                  <Y>0 px</Y>
+                  <X>-676.83251953125 px</X>
+                  <Y>9.09494701772928E-13 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
@@ -4674,11 +4490,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>8.09375000000045 px</X>
-                  <Y>143.982142857143 px</Y>
+                  <X>0 px</X>
+                  <Y>72 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>285</OID>
                   <PortType>FloatAnchor</PortType>
@@ -4686,8 +4502,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>160.540178571429 px</X>
-                  <Y>-0.0892857142857793 px</Y>
+                  <X>63.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -4699,17 +4515,21 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>3076.09375 px</X>
-                <Y>1590.08035714286 px</Y>
+                <X>3292 px</X>
+                <Y>1458 px</Y>
               </PointD>
               <PointD>
-                <X>2021.54017857143 px</X>
-                <Y>1590.08035714286 px</Y>
+                <X>3292 px</X>
+                <Y>2517 px</Y>
+              </PointD>
+              <PointD>
+                <X>2112.5 px</X>
+                <Y>2517 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.InventoryOfChar.[FK_CharDB.InventoryOfChar_dbo.Item_IdItem]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.InventoryOfChar.[FK_CharDB.InventoryOfChar_dbo.Item_IdItem]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -4723,11 +4543,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>527.27685546875 px</X>
-                  <Y>-60.080322265625 px</Y>
+                  <X>609.75 px</X>
+                  <Y>-1059 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Bottom</Align>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>287</OID>
                   <PortType>FixedAnchor</PortType>
@@ -4753,7 +4573,7 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>90.0178571428578 px</X>
+                  <X>90.2500000000005 px</X>
                   <Y>194.910714285715 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
@@ -4765,8 +4585,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>253.522321428572 px</X>
-                  <Y>314.008928571428 px</Y>
+                  <X>253.754464285715 px</X>
+                  <Y>314.008928571429 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -4778,13 +4598,13 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>3249.01785714286 px</X>
+                <X>3437.25 px</X>
                 <Y>2851.00892857143 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.Armour.[FK_dbo.Armour_dbo.Item_UiIndex]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Armour.[FK_dbo.Armour_dbo.Item_UiIndex]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -4798,7 +4618,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>567.009068080358 px</X>
+                  <X>567.125 px</X>
                   <Y>-60.009033203125 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -4828,7 +4648,7 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>272.223214285715 px</X>
+                  <X>272.455357142857 px</X>
                   <Y>977.433035714286 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
@@ -4840,8 +4660,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>1.22321428571468 px</X>
-                  <Y>-0.0892857142857793 px</Y>
+                  <X>1.45535714285734 px</X>
+                  <Y>-0.0892857142853245 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -4853,7 +4673,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.Attachment.[FK_dbo.Attachment_dbo.Item_UiIndex]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Attachment.[FK_dbo.Attachment_dbo.Item_UiIndex]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -4867,7 +4687,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-5.23158473697549E-05 px</X>
+                  <X>3.48772323377489E-05 px</X>
                   <Y>-360 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -4897,8 +4717,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>93.3705357142862 px</X>
-                  <Y>144.459821428571 px</Y>
+                  <X>93 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -4909,11 +4729,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>115.183035714286 px</X>
-                  <Y>-0.0892857142857793 px</Y>
+                  <X>0 px</X>
+                  <Y>130.625 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>301</OID>
                   <PortType>FloatAnchor</PortType>
@@ -4922,17 +4742,13 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>2714.37053571429 px</X>
-                <Y>1469.88392857143 px</Y>
-              </PointD>
-              <PointD>
-                <X>1976.18303571429 px</X>
-                <Y>1469.88392857143 px</Y>
+                <X>2959 px</X>
+                <Y>2667.625 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.AvailableAttachSlot.[FK_dbo.AvailableAttachSlot_dbo.Item_RItemId]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.AvailableAttachSlot.[FK_dbo.AvailableAttachSlot_dbo.Item_RItemId]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -4946,8 +4762,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>369.093680245536 px</X>
-                  <Y>-617.883911132813 px</Y>
+                  <X>0 px</X>
+                  <Y>-907.8125 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -4976,8 +4792,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>137.424107142857 px</X>
-                  <Y>72.0848214285716 px</Y>
+                  <X>136.65625 px</X>
+                  <Y>72.084821428572 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -4988,7 +4804,7 @@
               </Port>
               <Port>
                 <Location>
-                  <X>-0.477678571428214 px</X>
+                  <X>-0.245535714285325 px</X>
                   <Y>522.084821428572 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
@@ -5001,7 +4817,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.BoxItem.[FK_dbo.BoxItem_dbo.Item_Items]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.BoxItem.[FK_dbo.BoxItem_dbo.Item_Items]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -5015,8 +4831,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-30.5 px</X>
-                  <Y>0.000104631696558499 px</Y>
+                  <X>-30 px</X>
+                  <Y>0.000104631697013247 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
@@ -5045,8 +4861,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>87.8928571428578 px</X>
-                  <Y>126.732142857143 px</Y>
+                  <X>88.1250000000005 px</X>
+                  <Y>126.732142857144 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -5057,8 +4873,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>253.522321428572 px</X>
-                  <Y>227.830357142857 px</Y>
+                  <X>253.754464285715 px</X>
+                  <Y>227.830357142858 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -5070,13 +4886,13 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>3010.89285714286 px</X>
+                <X>3199.125 px</X>
                 <Y>2764.83035714286 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.Drug.[FK_dbo.Drug_dbo.Item_Id]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Drug.[FK_dbo.Drug_dbo.Item_Id]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -5090,7 +4906,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>447.946568080358 px</X>
+                  <X>448.0625 px</X>
                   <Y>-59.830322265625 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -5120,11 +4936,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>109.491071428572 px</X>
-                  <Y>450.553571428572 px</Y>
+                  <X>0 px</X>
+                  <Y>388.5 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>315</OID>
                   <PortType>FloatAnchor</PortType>
@@ -5132,8 +4948,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>253.522321428572 px</X>
-                  <Y>141.651785714286 px</Y>
+                  <X>0 px</X>
+                  <Y>61.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -5145,13 +4961,25 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>2753.49107142857 px</X>
-                <Y>2678.65178571429 px</Y>
+                <X>3300 px</X>
+                <Y>2598.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>3300 px</X>
+                <Y>2570.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>2323 px</X>
+                <Y>2570.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>2323 px</X>
+                <Y>2598.5 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.Explosive.[FK_dbo.Explosive_dbo.Item_UiIndex]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Explosive.[FK_dbo.Explosive_dbo.Item_UiIndex]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -5165,11 +4993,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>319.245465959822 px</X>
-                  <Y>-60.65185546875 px</Y>
+                  <X>508.5 px</X>
+                  <Y>28 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Bottom</Align>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>317</OID>
                   <PortType>FixedAnchor</PortType>
@@ -5188,15 +5016,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2376 px</X>
-              <Y>1965 px</Y>
+              <X>3150 px</X>
+              <Y>3230 px</Y>
             </Location>
             <Size>
               <Width>139 px</Width>
               <Height>124 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.ItemClass</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.ItemClass</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -5211,15 +5039,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2575 px</X>
-              <Y>1947 px</Y>
+              <X>2620 px</X>
+              <Y>3230 px</Y>
             </Location>
             <Size>
               <Width>206 px</Width>
               <Height>161 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.ItemSubClass</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.ItemSubClass</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -5241,8 +5069,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>103.651785714286 px</X>
-                  <Y>0.267857142857338 px</Y>
+                  <X>129.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -5253,8 +5081,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>69.6517857142862 px</X>
-                  <Y>124.169642857143 px</Y>
+                  <X>69.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -5266,7 +5094,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.ItemSubClass.[FK_dbo.ItemSubClass_dbo.GurpsClass_IdGurpsSubClass]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.ItemSubClass.[FK_dbo.ItemSubClass_dbo.GurpsClass_IdGurpsSubClass]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -5280,8 +5108,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-6.9754463766003E-05 px</X>
-                  <Y>30 px</Y>
+                  <X>0 px</X>
+                  <Y>48 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Top</Align>
@@ -5310,11 +5138,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0.464285714286234 px</X>
-                  <Y>80.7767857142858 px</Y>
+                  <X>0 px</X>
+                  <Y>62 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>327</OID>
                   <PortType>FloatAnchor</PortType>
@@ -5322,11 +5150,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>139.366071428572 px</X>
-                  <Y>62.7767857142858 px</Y>
+                  <X>0 px</X>
+                  <Y>62 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>328</OID>
                   <PortType>FloatAnchor</PortType>
@@ -5335,7 +5163,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.ItemSubClass.[FK_dbo.ItemSubClass_dbo.ItemClass_IdItemClass]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.ItemSubClass.[FK_dbo.ItemSubClass_dbo.ItemClass_IdItemClass]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -5349,11 +5177,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>30 px</X>
-                  <Y>5.23158482792496E-05 px</Y>
+                  <X>-162 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Left</Align>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>329</OID>
                   <PortType>FixedAnchor</PortType>
@@ -5379,11 +5207,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>251.254464285715 px</X>
-                  <Y>-0.0892857142857793 px</Y>
+                  <X>0 px</X>
+                  <Y>773.5 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>332</OID>
                   <PortType>FloatAnchor</PortType>
@@ -5391,30 +5219,20 @@
               </Port>
               <Port>
                 <Location>
-                  <X>8.96875000000045 px</X>
-                  <Y>161.285714285714 px</Y>
+                  <X>0 px</X>
+                  <Y>80.5 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>333</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>2112.25446428571 px</X>
-                <Y>2476.8125 px</Y>
-              </PointD>
-              <PointD>
-                <X>2583.96875 px</X>
-                <Y>2476.8125 px</Y>
-              </PointD>
-            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.Item.[FK_dbo.Item_dbo.ItemSubClass_UsItemClass]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Item.[FK_dbo.Item_dbo.ItemSubClass_UsItemClass]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -5428,11 +5246,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-235.85710797991 px</X>
-                  <Y>60.1875 px</Y>
+                  <X>-158.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Top</Align>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>334</OID>
                   <PortType>FixedAnchor</PortType>
@@ -5451,7 +5269,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>3838 px</X>
+              <X>4076 px</X>
               <Y>524 px</Y>
             </Location>
             <Size>
@@ -5459,7 +5277,7 @@
               <Height>127 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.LaserColorEf</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.LaserColorEf</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -5474,15 +5292,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2127 px</X>
-              <Y>2213 px</Y>
+              <X>2100 px</X>
+              <Y>1850 px</Y>
             </Location>
             <Size>
               <Width>172 px</Width>
               <Height>144 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.Lc</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Lc</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -5504,8 +5322,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>228.575892857143 px</X>
-                  <Y>-0.0892857142857793 px</Y>
+                  <X>137 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -5516,8 +5334,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>8.50000000000045 px</X>
-                  <Y>143.616071428572 px</Y>
+                  <X>86 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -5527,19 +5345,9 @@
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>2089.57589285714 px</X>
-                <Y>2416.71428571429 px</Y>
-              </PointD>
-              <PointD>
-                <X>2135.5 px</X>
-                <Y>2416.71428571429 px</Y>
-              </PointD>
-            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.Item.[FK_dbo.Item_dbo.Lc_Lc]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Item.[FK_dbo.Item_dbo.Lc_Lc]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -5553,8 +5361,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-3.48772318830015E-05 px</X>
-                  <Y>60.142822265625 px</Y>
+                  <X>0 px</X>
+                  <Y>271.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Top</Align>
@@ -5576,7 +5384,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2104 px</X>
+              <X>2293 px</X>
               <Y>1710 px</Y>
             </Location>
             <Size>
@@ -5584,7 +5392,7 @@
               <Height>382 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.LoadBearingEquipment</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.LoadBearingEquipment</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -5606,8 +5414,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>8.8214285714289 px</X>
-                  <Y>382.410714285714 px</Y>
+                  <X>8.05357142857156 px</X>
+                  <Y>382.410714285715 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -5618,8 +5426,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>205.897321428572 px</X>
-                  <Y>-0.0892857142857793 px</Y>
+                  <X>206.129464285715 px</X>
+                  <Y>-0.0892857142853245 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -5631,17 +5439,17 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>2112.82142857143 px</X>
+                <X>2301.05357142857 px</X>
                 <Y>2152.50892857143 px</Y>
               </PointD>
               <PointD>
-                <X>2066.89732142857 px</X>
+                <X>2255.12946428571 px</X>
                 <Y>2152.50892857143 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.LoadBearingEquipment.[FK_dbo.LoadBearingEquipment_dbo.Item_LbeIndex]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.LoadBearingEquipment.[FK_dbo.LoadBearingEquipment_dbo.Item_LbeIndex]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -5655,7 +5463,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>45.9242117745539 px</X>
+                  <X>45.9241768973216 px</X>
                   <Y>-252.75439453125 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -5678,7 +5486,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>2774 px</X>
+              <X>3019 px</X>
               <Y>1326 px</Y>
             </Location>
             <Size>
@@ -5686,7 +5494,7 @@
               <Height>144 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.Tl</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Tl</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -5708,8 +5516,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>87 px</Y>
+                  <X>285.584821428571 px</X>
+                  <Y>267.352678571429 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -5720,8 +5528,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>86.5 px</X>
-                  <Y>0 px</Y>
+                  <X>92.8125000000005 px</X>
+                  <Y>-0.124999999999545 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -5733,21 +5541,13 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>995 px</X>
-                <Y>757 px</Y>
-              </PointD>
-              <PointD>
-                <X>995 px</X>
-                <Y>701 px</Y>
-              </PointD>
-              <PointD>
-                <X>2860.5 px</X>
-                <Y>701 px</Y>
+                <X>3111.8125 px</X>
+                <Y>648.352678571429 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.CharDB.GurpsSkill.[FK_CharDB.GurpsSkill_dbo.Tl_IdtechLevel]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.CharDB.GurpsSkill.[FK_CharDB.GurpsSkill_dbo.Tl_IdtechLevel]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -5761,8 +5561,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-952.75 px</X>
-                  <Y>56 px</Y>
+                  <X>-1201.40625 px</X>
+                  <Y>1.74386163962481E-05 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
@@ -5791,8 +5591,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>137.861607142857 px</X>
-                  <Y>-0.0892857142857793 px</Y>
+                  <X>222.25 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -5803,11 +5603,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>173.392857142858 px</X>
-                  <Y>135.379464285714 px</Y>
+                  <X>0 px</X>
+                  <Y>72 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>357</OID>
                   <PortType>FloatAnchor</PortType>
@@ -5816,21 +5616,21 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>1998.86160714286 px</X>
-                <Y>1529.98214285714 px</Y>
+                <X>2271.25 px</X>
+                <Y>2499.5 px</Y>
               </PointD>
               <PointD>
-                <X>3007.49107142857 px</X>
-                <Y>1529.98214285714 px</Y>
+                <X>2999 px</X>
+                <Y>2499.5 px</Y>
               </PointD>
               <PointD>
-                <X>3007.49107142857 px</X>
-                <Y>1461.37946428571 px</Y>
+                <X>2999 px</X>
+                <Y>1398 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.Item.[FK_dbo.Item_dbo.Tl_Tl]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Item.[FK_dbo.Item_dbo.Tl_Tl]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -5844,8 +5644,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-504.314662388393 px</X>
-                  <Y>1007.01782226563 px</Y>
+                  <X>-727.75 px</X>
+                  <Y>588.25 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Top</Align>
@@ -5867,7 +5667,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1175 px</X>
+              <X>1363 px</X>
               <Y>2997 px</Y>
             </Location>
             <Size>
@@ -5875,7 +5675,7 @@
               <Height>124 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.TypeOfBox</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.TypeOfBox</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -5897,8 +5697,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0.352678571428896 px</X>
-                  <Y>80.0848214285716 px</Y>
+                  <X>0.584821428571559 px</X>
+                  <Y>80.084821428572 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -5909,8 +5709,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>175.254464285714 px</X>
-                  <Y>62.0848214285716 px</Y>
+                  <X>175.486607142857 px</X>
+                  <Y>62.084821428572 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -5922,7 +5722,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.AnyBoxNameType.[FK_dbo.AnyBoxNameType_dbo.TypeOfBox_TypeOfBox]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.AnyBoxNameType.[FK_dbo.AnyBoxNameType_dbo.TypeOfBox_TypeOfBox]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -5937,7 +5737,7 @@
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>30 px</X>
-                  <Y>0.000104631696558499 px</Y>
+                  <Y>0.000104631697013247 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -5959,15 +5759,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>3619 px</X>
-              <Y>978 px</Y>
+              <X>5070 px</X>
+              <Y>2390 px</Y>
             </Location>
             <Size>
               <Width>169 px</Width>
               <Height>144 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.TypeOfDamage</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.TypeOfDamage</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -5982,15 +5782,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>3295 px</X>
-              <Y>1038 px</Y>
+              <X>3610 px</X>
+              <Y>3010 px</Y>
             </Location>
             <Size>
-              <Width>264 px</Width>
-              <Height>552 px</Height>
+              <Width>258 px</Width>
+              <Height>535 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.Weapon</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Weapon</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -6012,11 +5812,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>264.147321428572 px</X>
-                  <Y>543.575892857143 px</Y>
+                  <X>0 px</X>
+                  <Y>401.25 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>369</OID>
                   <PortType>FloatAnchor</PortType>
@@ -6024,34 +5824,20 @@
               </Port>
               <Port>
                 <Location>
-                  <X>183.21875 px</X>
-                  <Y>-0.0892857142857793 px</Y>
+                  <X>0 px</X>
+                  <Y>874.25 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>370</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>3619.24553571429 px</X>
-                <Y>1581.57589285714 px</Y>
-              </PointD>
-              <PointD>
-                <X>3619.24553571429 px</X>
-                <Y>1650.17857142857 px</Y>
-              </PointD>
-              <PointD>
-                <X>2044.21875 px</X>
-                <Y>1650.17857142857 px</Y>
-              </PointD>
-            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.Weapon.[FK_dbo.Weapon_dbo.Item_UiIndex]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.Weapon.[FK_dbo.Weapon_dbo.Item_UiIndex]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -6065,11 +5851,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>727.267822265625 px</X>
-                  <Y>-68.6026960100444 px</Y>
+                  <X>653.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Right</Align>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>371</OID>
                   <PortType>FixedAnchor</PortType>
@@ -6088,15 +5874,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>3435 px</X>
-              <Y>484 px</Y>
+              <X>5150 px</X>
+              <Y>1890 px</Y>
             </Location>
             <Size>
               <Width>185 px</Width>
               <Height>127 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.WeaponAttackType</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.WeaponAttackType</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -6111,15 +5897,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>3410 px</X>
-              <Y>672 px</Y>
+              <X>4400 px</X>
+              <Y>1980 px</Y>
             </Location>
             <Size>
               <Width>234 px</Width>
               <Height>246 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.dbo.WeaponDamage</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.WeaponDamage</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -6141,8 +5927,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>234.191964285715 px</X>
-                  <Y>237.15625 px</Y>
+                  <X>0 px</X>
+                  <Y>123 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -6153,8 +5939,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>85.2901785714294 px</X>
-                  <Y>-0.241071428571559 px</Y>
+                  <X>84.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -6166,13 +5952,13 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>3704.29017857143 px</X>
-                <Y>909.15625 px</Y>
+                <X>5154.5 px</X>
+                <Y>2103 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.WeaponDamage.[FK_dbo.WeaponDamage_dbo.TypeOfDamage_IdTypeOfDamage1]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.WeaponDamage.[FK_dbo.WeaponDamage_dbo.TypeOfDamage_IdTypeOfDamage1]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -6186,8 +5972,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-60.290283203125 px</X>
-                  <Y>-34.421875 px</Y>
+                  <X>-260.25 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
@@ -6216,8 +6002,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>234.191964285715 px</X>
-                  <Y>150.977678571428 px</Y>
+                  <X>0 px</X>
+                  <Y>184.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -6228,8 +6014,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>161.830357142858 px</X>
-                  <Y>-0.241071428571559 px</Y>
+                  <X>42.25 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -6241,13 +6027,13 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>3780.83035714286 px</X>
-                <Y>822.977678571428 px</Y>
+                <X>5112.25 px</X>
+                <Y>2164.5 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.WeaponDamage.[FK_dbo.WeaponDamage_dbo.TypeOfDamage_IdTypeOfDamage2]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.WeaponDamage.[FK_dbo.WeaponDamage_dbo.TypeOfDamage_IdTypeOfDamage2]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -6261,8 +6047,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-136.830322265625 px</X>
-                  <Y>-77.5111519949783 px</Y>
+                  <X>-239.125 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
@@ -6291,8 +6077,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>17.0446428571431 px</X>
-                  <Y>245.660714285714 px</Y>
+                  <X>117 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -6303,20 +6089,26 @@
               </Port>
               <Port>
                 <Location>
-                  <X>132.044642857143 px</X>
-                  <Y>-0.142857142857338 px</Y>
+                  <X>0 px</X>
+                  <Y>267.5 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>387</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>4517 px</X>
+                <Y>3277.5 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.WeaponDamage.[FK_dbo.WeaponDamage_dbo.Weapon_IdWeapon]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.WeaponDamage.[FK_dbo.WeaponDamage_dbo.Weapon_IdWeapon]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -6330,8 +6122,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-3.48772318830015E-05 px</X>
-                  <Y>-60 px</Y>
+                  <X>0 px</X>
+                  <Y>-525.75 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -6360,11 +6152,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>117.397321428572 px</X>
-                  <Y>-0.401785714285779 px</Y>
+                  <X>0 px</X>
+                  <Y>18.5 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>391</OID>
                   <PortType>FloatAnchor</PortType>
@@ -6372,11 +6164,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>92.397321428572 px</X>
-                  <Y>127.5 px</Y>
+                  <X>0 px</X>
+                  <Y>108.5 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>392</OID>
                   <PortType>FloatAnchor</PortType>
@@ -6385,7 +6177,7 @@
             </PortAnchors>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>Item1.dbo.WeaponDamage.[FK_dbo.WeaponDamage_dbo.WeaponAttackType_IdWeaponAttackType]</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.dbo.WeaponDamage.[FK_dbo.WeaponDamage_dbo.WeaponAttackType_IdWeaponAttackType]</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -6399,11 +6191,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>0.000104631697013247 px</X>
-                  <Y>30.5 px</Y>
+                  <X>-258 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Top</Align>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>393</OID>
                   <PortType>FixedAnchor</PortType>
@@ -6422,7 +6214,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>3838 px</X>
+              <X>4076 px</X>
               <Y>-6 px</Y>
             </Location>
             <Size>
@@ -6430,7 +6222,7 @@
               <Height>484 px</Height>
             </Size>
             <DbOid>
-              <Path>Item1.pbo.Ammoupgrates</Path>
+              <Path>OFFLINEDB_a6cdfe3c634c435c94751c8e4f54fcc4.pbo.Ammoupgrates</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -6442,10 +6234,10 @@
         </Children>
         <ViewPort>
           <ScaleMode>Free</ScaleMode>
-          <Scale>0.64</Scale>
+          <Scale>0.91</Scale>
           <Location>
-            <X>6.25003160676056 px</X>
-            <Y>-71.8749859603118 px</Y>
+            <X>4237.36250775806 px</X>
+            <Y>1773.62631579474 px</Y>
           </Location>
         </ViewPort>
       </Model>

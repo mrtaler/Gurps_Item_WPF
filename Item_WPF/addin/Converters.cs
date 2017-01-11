@@ -277,9 +277,9 @@ namespace Item_WPF.addin
                 else return System.Convert.ToString(weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary")).ArmorDivision, culture);
             }
             else if ((parameter as string) == "ToD")
-                return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary")).IdTypeOfDamage1;
+                return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary")).TypeOfDamage.Id;
             else if ((parameter as string) == "ToD2")
-                return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary")).IdTypeOfDamage2;
+                return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary")).TypeOfDamage1.Id;
             else if ((parameter as string) == "TD1")
                 return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary")).TypeOfDamage1Text;
             else if ((parameter as string) == "TD2")
@@ -299,9 +299,9 @@ namespace Item_WPF.addin
                 else weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary")).ArmorDivision = System.Convert.ToDecimal((value as string).Replace('.', AY));
             }
             else if ((parameter as string) == "ToD")
-                weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary")).IdTypeOfDamage1 = System.Convert.ToInt32(value);
+                weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary")).TypeOfDamage.Id = System.Convert.ToInt32(value);
             else if ((parameter as string) == "ToD2")
-                weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary")).IdTypeOfDamage2 = System.Convert.ToInt32(value);
+                weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary")).TypeOfDamage1.Id = System.Convert.ToInt32(value);
             else if ((parameter as string) == "TD1")
                 weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary")).TypeOfDamage1Text = value as string;
             else if ((parameter as string) == "TD2")
@@ -389,9 +389,9 @@ namespace Item_WPF.addin
                 else return weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 2).ArmorDivision;
             }
             else if ((parameter as string) == "ToD" && FollowUpdamageVar)
-                return weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 2).IdTypeOfDamage1;
+                return weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 2).TypeOfDamage.Id;
             else if ((parameter as string) == "ToD2" && FollowUpdamageVar)
-                return weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 2).IdTypeOfDamage2;
+                return weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 2).TypeOfDamage1.Id;
             else if ((parameter as string) == "TD1" && FollowUpdamageVar)
                 return weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 2).TypeOfDamage1Text;
             else if ((parameter as string) == "TD2" && FollowUpdamageVar)
@@ -409,9 +409,9 @@ namespace Item_WPF.addin
                 else weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 2).ArmorDivision = System.Convert.ToDecimal((value as string).Replace('.', CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0]));
             }
             else if ((parameter as string) == "ToD")
-                weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 2).IdTypeOfDamage1 = System.Convert.ToInt32(value);
+                weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 2).TypeOfDamage.Id = System.Convert.ToInt32(value);
             else if ((parameter as string) == "ToD2")
-                weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 2).IdTypeOfDamage2 = System.Convert.ToInt32(value);
+                weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 2).TypeOfDamage1.Id = System.Convert.ToInt32(value);
             else if ((parameter as string) == "TD1")
                 weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 2).TypeOfDamage1Text = value as string;
             else if ((parameter as string) == "TD2")
@@ -439,9 +439,9 @@ namespace Item_WPF.addin
                 else return weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 3).ArmorDivision;
             }
             else if ((parameter as string) == "ToD" && LinkedDamageVar)
-                return weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 3).IdTypeOfDamage1;
+                return weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 3).TypeOfDamage.Id;
             else if ((parameter as string) == "ToD2" && LinkedDamageVar)
-                return weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 3).IdTypeOfDamage2;
+                return weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 3).TypeOfDamage1.Id;
             else if ((parameter as string) == "TD1" && LinkedDamageVar)
                 return weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 3).TypeOfDamage1Text;
             else if ((parameter as string) == "TD2" && LinkedDamageVar)
@@ -459,9 +459,9 @@ namespace Item_WPF.addin
                 else weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 3).ArmorDivision = System.Convert.ToDecimal((value as string).Replace('.', CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0]));
             }
             else if ((parameter as string) == "ToD")
-                weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 3).IdTypeOfDamage1 = System.Convert.ToInt32(value);
+                weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 3).TypeOfDamage.Id = System.Convert.ToInt32(value);
             else if ((parameter as string) == "ToD2")
-                weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 3).IdTypeOfDamage2 = System.Convert.ToInt32(value);
+                weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 3).TypeOfDamage1.Id = System.Convert.ToInt32(value);
             else if ((parameter as string) == "TD1")
                 weaponDamCollConvert.FirstOrDefault(p => p.IdWeaponAttackType == 3).TypeOfDamage1Text = value as string;
             else if ((parameter as string) == "TD2")

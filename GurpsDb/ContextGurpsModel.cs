@@ -7,7 +7,7 @@ namespace GurpsDb.GurpsModel
     {
         public ContextGurpsModel()
           //  : base("name=ContextGurpsModel")
-          : base("name=offlineContextGurpsModel")
+          : base("offlineContextGurpsModel")
         {
             // Установить новый инициализатор
             Database.SetInitializer<ContextGurpsModel>(new DbInit());
@@ -76,7 +76,7 @@ namespace GurpsDb.GurpsModel
 
             #endregion
 
-
+            modelBuilder.Configurations.Add(new ItemConfiguration());
 
 
             modelBuilder.Entity<Advantage>()
@@ -611,22 +611,22 @@ namespace GurpsDb.GurpsModel
                 .WithOptional(e => e.Caliber)
                 .HasForeignKey(e => e.UbCalibre);
 
-            modelBuilder.Entity<Clothes>()
-                .HasMany(e => e.Item)
-                .WithRequired(e => e.Clothes)
-                .HasForeignKey(e => e.Clothestype)
-                .WillCascadeOnDelete(false);
-
+            /*  modelBuilder.Entity<Clothes>()
+                  .HasMany(e => e.Item)
+                  .WithRequired(e => e.Clothes)
+                  .HasForeignKey(e => e.Clothestype)
+                  .WillCascadeOnDelete(false);
+                  */
             modelBuilder.Entity<Explosive>()
                 .Property(e => e.BIndoorModifier)
                 .HasPrecision(38, 0);
-
-            modelBuilder.Entity<Food>()
-                .HasMany(e => e.Item)
-                .WithRequired(e => e.Food)
-                .HasForeignKey(e => e.FoodType)
-                .WillCascadeOnDelete(false);
-
+            /*
+                        modelBuilder.Entity<Food>()
+                            .HasMany(e => e.Item)
+                            .WithRequired(e => e.Food)
+                            .HasForeignKey(e => e.FoodType)
+                            .WillCascadeOnDelete(false);
+                            */
             modelBuilder.Entity<GAttachClass>()
                 .HasMany(e => e.GSubAttachClass)
                 .WithRequired(e => e.GAttachClass)
@@ -644,60 +644,7 @@ namespace GurpsDb.GurpsModel
                 .WithOptional(e => e.GurpsClass)
                 .HasForeignKey(e => e.IdGurpsSubClass);
 
-            modelBuilder.Entity<Item>()
-                .Property(e => e.UbWeight)
-                .HasPrecision(7, 3);
 
-            modelBuilder.Entity<Item>()
-                .Property(e => e.UsPrice)
-                .HasPrecision(19, 4);
-
-            modelBuilder.Entity<Item>()
-                .HasMany(e => e.InventoryOfChar)
-                .WithRequired(e => e.Item)
-                .HasForeignKey(e => e.IdItem);
-
-            modelBuilder.Entity<Item>()
-                .HasOptional(e => e.Armour)
-                .WithRequired(e => e.Item)
-                .WillCascadeOnDelete();
-
-            modelBuilder.Entity<Item>()
-                .HasOptional(e => e.Attachment)
-                .WithRequired(e => e.Item)
-                .WillCascadeOnDelete();
-
-            modelBuilder.Entity<Item>()
-                .HasMany(e => e.AvailableAttachSlot)
-                .WithRequired(e => e.Item)
-                .HasForeignKey(e => e.RItemId)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Item>()
-                .HasMany(e => e.BoxItem)
-                .WithRequired(e => e.Item)
-                .HasForeignKey(e => e.Items)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Item>()
-                .HasOptional(e => e.Drug)
-                .WithRequired(e => e.Item);
-
-            modelBuilder.Entity<Item>()
-                .HasOptional(e => e.Explosive)
-                .WithRequired(e => e.Item)
-                .WillCascadeOnDelete();
-
-            modelBuilder.Entity<Item>()
-                .HasOptional(e => e.Loadbearingequipment)
-                .WithRequired(e => e.Item)
-                .WillCascadeOnDelete();
-
-            /*  modelBuilder.Entity<Item>()
-                   .HasOptional(e => e.Weapon)
-                   .WithRequired(e => e.Item)
-                   .WillCascadeOnDelete();
-                   */
             modelBuilder.Entity<ItemClass>()
                 .HasMany(e => e.ItemSubClass)
                 .WithRequired(e => e.ItemClass)

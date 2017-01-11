@@ -40,14 +40,14 @@ namespace Item_WPF.MVVM.Models
                 DamageFollowUp = WeapToGrid.WeaponDamage.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Follow"));
                 if (DamagePrim != null)
                 {
-                    if (DamagePrim.IdTypeOfDamage1 != null && DamagePrim.IdTypeOfDamage2 != null)
+                    if (DamagePrim.TypeOfDamage.Id != null && DamagePrim.TypeOfDamage1.Id != null)
                     {
                         if (DamagePrim.ArmorDivision != 1) Damage = DamagePrim.Damage
                                 + " (" + Convert.ToDouble(DamagePrim.ArmorDivision) + ") "
                                 + DamagePrim.TypeOfDamage.Name + " " + DamagePrim.TypeOfDamage1Text + " " + DamagePrim.TypeOfDamage1.Name + " " + DamagePrim.TypeOfDamage2Text;
                         else Damage = DamagePrim.Damage + " " + DamagePrim.TypeOfDamage.Name + " " + DamagePrim.TypeOfDamage1.Name;
                     }
-                    else if (DamagePrim.IdTypeOfDamage1 != null && DamagePrim.IdTypeOfDamage2 == null)
+                    else if (DamagePrim.TypeOfDamage != null && DamagePrim.TypeOfDamage1 == null)
                     {
                         if (DamagePrim.ArmorDivision != 1) Damage = DamagePrim.Damage + " (" + Convert.ToDouble(DamagePrim.ArmorDivision) + ") " + DamagePrim.TypeOfDamage.Name;
                         else Damage = DamagePrim.Damage + " " + DamagePrim.TypeOfDamage.Name;
@@ -63,7 +63,7 @@ namespace Item_WPF.MVVM.Models
                 if (DamageLinked != null)
                 {
                     Name += "\r\n" + "    -- Linked";
-                    if (DamageLinked.IdTypeOfDamage1 != null)
+                    if (DamageLinked.TypeOfDamage != null)
                     {
                         if (DamageLinked.ArmorDivision != 1) Damage += "\r\n" + DamageLinked.Damage + " (" + Convert.ToDouble(DamageLinked.ArmorDivision) + ") " + DamageLinked.TypeOfDamage.Name;
                         else Damage += "\r\n" + DamageLinked.Damage + " " + DamageLinked.TypeOfDamage.Name;
@@ -77,7 +77,7 @@ namespace Item_WPF.MVVM.Models
                 if (DamageFollowUp != null)
                 {
                     Name += "\r\n" + "    -- Follow-Up";
-                    if (DamageFollowUp.IdTypeOfDamage1 != null)
+                    if (DamageFollowUp.TypeOfDamage != null)
                     {
                         if (DamageFollowUp.ArmorDivision != 1) Damage += "\r\n" + DamageFollowUp.Damage + " (" + Convert.ToDouble(DamageFollowUp.ArmorDivision) + ") " + DamageFollowUp.TypeOfDamage.Name;
                         else Damage += "\r\n" + DamageFollowUp.Damage + " " + DamageFollowUp.TypeOfDamage.Name;

@@ -178,7 +178,7 @@ namespace Item_WPF.MVVM.ViewModels
             //{
 
             //   WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).idTypeOfDamage1 = "";
-            WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.Name == "Primary").IdTypeOfDamage2 = null;
+            WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.Name == "Primary").TypeOfDamage1 = null;
             WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.Name == "Primary").TypeOfDamage1Text = null;
             WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.Name == "Primary").TypeOfDamage2Text = null;
 
