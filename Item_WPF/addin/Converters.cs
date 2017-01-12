@@ -279,7 +279,7 @@ namespace Item_WPF.addin
             else if ((parameter as string) == "ToD")
                 return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary")).TypeOfDamage.Id;
             else if ((parameter as string) == "ToD2")
-                return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary")).TypeOfDamage1.Id;
+                return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary")).TypeOfDamage1?.Id;
             else if ((parameter as string) == "TD1")
                 return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary")).TypeOfDamage1Text;
             else if ((parameter as string) == "TD2")

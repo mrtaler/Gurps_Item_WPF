@@ -257,7 +257,7 @@ namespace GurpsDb.GurpsModel
         public ItemConfiguration()
         {
             this.Property(e => e.UbWeight)
-               .HasPrecision(7, 3);
+               .HasPrecision(19, 4);
 
             this.Property(e => e.UsPrice)
                 .HasPrecision(19, 4);

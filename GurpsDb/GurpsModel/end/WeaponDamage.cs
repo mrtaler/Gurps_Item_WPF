@@ -21,11 +21,13 @@ namespace GurpsDb.GurpsModel
         /// <param name="damage">Gurps damage</param>
         /// <param name="weaponAttackType">weapon attack type</param>
         /// <param name="typeOfDamage">pi++</param>
+        /// <param name="typeOfDamage1">crex</param>
         /// <param name="armorDivision">Armor Division (def 1)</param>
         public WeaponDamage(
             string damage,
             WeaponAttackType weaponAttackType,
             TypeOfDamage typeOfDamage,
+            TypeOfDamage typeOfDamage1 = null,
             decimal armorDivision = 1.0M)
         {
             Damage = damage;
@@ -33,7 +35,7 @@ namespace GurpsDb.GurpsModel
             WeaponAttackType = weaponAttackType;
 
             TypeOfDamage = typeOfDamage;
-            TypeOfDamage1 = null;
+            TypeOfDamage1 = typeOfDamage1;
 
 
             TypeOfDamage1Text = string.Empty;
