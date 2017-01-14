@@ -4,13 +4,8 @@ namespace GurpsDb.GurpsModel
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Drug", Schema = "dbo")]
-    public partial class Drug
+    public partial class Drug : Item
     {
-        public int Id { get; set; }
-
-        [StringLength(255)]
-        public string Name { get; set; }
-
         public int? IdDrugType { get; set; }
 
         public virtual Item Item { get; set; }

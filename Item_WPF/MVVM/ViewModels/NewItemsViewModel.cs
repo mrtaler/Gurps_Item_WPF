@@ -60,7 +60,7 @@ namespace Item_WPF.MVVM.ViewModels
                  _context.SaveChanges();
                  */
 
-                WeaponEditView WeapView = new WeaponEditView(_context.WeaponDbSet.Find(_newItem));
+                WeaponEditView WeapView = new WeaponEditView(_context.WeaponDbSet.Find(_newItem), _context);
                 WeapView.ShowDialog();
             }
 

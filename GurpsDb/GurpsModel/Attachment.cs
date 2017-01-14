@@ -5,21 +5,13 @@ namespace GurpsDb.GurpsModel
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Attachment", Schema = "dbo")]
-    public partial class Attachment
+    public partial class Attachment : Item
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Attachment()
         {
             GAvAttachClass = new HashSet<GAvAttachClass>();
         }
-
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int UiIndex { get; set; }
-
-        [Required]
-        [StringLength(80)]
-        public string SzAttName { get; set; }
 
         public int RAttachmentClass { get; set; }
 

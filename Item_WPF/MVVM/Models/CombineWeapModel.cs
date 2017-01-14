@@ -257,7 +257,7 @@ namespace GurpsDb.GurpsModel
         /// <summary>
         /// обнуление комбинатора
         /// </summary>
-        public CombineWeapModel(Item itt)
+        public CombineWeapModel(Weapon itt)
         {
 
             if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 1) != null)

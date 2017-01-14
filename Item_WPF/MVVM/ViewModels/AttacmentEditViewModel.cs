@@ -22,12 +22,12 @@ namespace Item_WPF.MVVM.ViewModels
         public ObservableCollection<LaserColorEf> LaserColorEfColl { get; set; }
 
         public ObservableCollection<AttachmentMount> AttMount { get; set; }
-        public AttacmentEditViewModel(Item itemselect)
+        public AttacmentEditViewModel(Attachment itemselect)
         {
             _context = new ContextGurpsModel();
-            ItemLoad = _context.ItemDbSet.Find(itemselect.UiIndex);
+            ItemLoad = (Item)itemselect;
+            AttachLoad = itemselect;
 
-            AttachLoad = ItemLoad.Attachment;
             AttachSlot = new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlotDbSet);
             TlCollection = new ObservableCollection<Tl>(_context.TlDbSet);
             LccCollection = new ObservableCollection<Lc>(_context.LcDbSet);

@@ -270,12 +270,14 @@ namespace Item_WPF.addin
 
             if ((parameter as string) == "Damage")
                 return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary")).Damage;
+
             else if ((parameter as string) == "AD")
             {
                 if (weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary")).ArmorDivision == 1)
                     return "";
                 else return System.Convert.ToString(weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary")).ArmorDivision, culture);
             }
+
             else if ((parameter as string) == "ToD")
                 return weaponDamCollConvert.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary")).TypeOfDamage.Id;
             else if ((parameter as string) == "ToD2")

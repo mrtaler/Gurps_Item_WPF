@@ -56,6 +56,14 @@
                   ItemsSource="{Binding Items}"
                   SelectedItem="{Binding SelectedItemForWork}"
                   SelectedValuePath="uiIndex">
+            <DataGrid.InputBindings>
+                <MouseBinding Command="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                               AncestorType={x:Type DataGrid}},
+                                                Path=DataContext.CSelItem}"
+                              CommandParameter="{Binding Path=GurpsSkill}"
+                              Gesture="LeftDoubleClick" />
+            </DataGrid.InputBindings>
+
             <DataGrid.Columns>
                 <DataGridTextColumn Width="20"
                                     Binding="{Binding UiIndex,

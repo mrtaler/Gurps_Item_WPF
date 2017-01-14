@@ -436,24 +436,87 @@ namespace GurpsDb
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5dx12", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "9K120 Refleks ATGM(125mm Tank Round)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
-                           { Rof = 1, FullAuto = false, Recoil = 1, DefAcc = 7, AccAddin = null, RofForSh = null, HalfRange = 330M, FullRange = 5000M, Shots = 1, AddInChamber = false, TimeForReload = 6, SingleReload = false, UbWeight = 46.4M, MinSt = 0, ItemSize = "--", UsPrice = 13800M, TwoHanded = false });
+                                   damage: "5dx12",
+                                   weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "9K120 Refleks ATGM(125mm Tank Round)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                           {
+                               Rof = 1,
+                               FullAuto = false,
+                               Recoil = 1,
+                               DefAcc = 7,
+                               AccAddin = null,
+                               RofForSh = null,
+                               HalfRange = 330M,
+                               FullRange = 5000M,
+                               Shots = 1,
+                               AddInChamber = false,
+                               TimeForReload = 6,
+                               SingleReload = false,
+                               UbWeight = 46.4M,
+                               MinSt = 0,
+                               ItemSize = "--",
+                               UsPrice = 13800M,
+                               TwoHanded = false
+                           });
             context.WeaponDbSet.Add
                        (
                            new Weapon
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "6dx13", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "9M1114 Kokon ATGM", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
-                           { Rof = 1, FullAuto = false, Recoil = 1, DefAcc = 3, AccAddin = null, RofForSh = null, HalfRange = 450M, FullRange = 5000M, Shots = 2, AddInChamber = false, TimeForReload = 20, SingleReload = false, UbWeight = 132.5M, MinSt = 0, ItemSize = "--", UsPrice = 6400M, TwoHanded = false });
+                                   damage: "6dx13",
+                                   weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")),
+                                   typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")
+                                   ),
+                               name: "9M1114 Kokon ATGM",
+                               itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"),
+                               tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")),
+                               lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                           {
+                               Rof = 1,
+                               FullAuto = false,
+                               Recoil = 1,
+                               DefAcc = 3,
+                               AccAddin = null,
+                               RofForSh = null,
+                               HalfRange = 450M,
+                               FullRange = 5000M,
+                               Shots = 2,
+                               AddInChamber = false,
+                               TimeForReload = 20,
+                               SingleReload = false,
+                               UbWeight = 132.5M,
+                               MinSt = 0,
+                               ItemSize = "--",
+                               UsPrice = 6400M,
+                               TwoHanded = false
+                           });
             context.WeaponDbSet.Add
                        (
                            new Weapon
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5dx12", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "9M119 Svir ATGM(125mm Tank Round)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
-                           { Rof = 1, FullAuto = false, Recoil = 1, DefAcc = 8, AccAddin = null, RofForSh = null, HalfRange = 340M, FullRange = 4100M, Shots = 1, AddInChamber = false, TimeForReload = 6, SingleReload = false, UbWeight = 41.4M, MinSt = 0, ItemSize = "--", UsPrice = 13400M, TwoHanded = false });
+                                   damage: "5dx12", weaponAttackType:
+                                   context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "9M119 Svir ATGM(125mm Tank Round)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                           {
+                               Rof = 1,
+                               FullAuto = false,
+                               Recoil = 1,
+                               DefAcc = 8,
+                               AccAddin = null,
+                               RofForSh = null,
+                               HalfRange = 340M,
+                               FullRange = 4100M,
+                               Shots = 1,
+                               AddInChamber = false,
+                               TimeForReload = 6,
+                               SingleReload = false,
+                               UbWeight = 41.4M,
+                               MinSt = 0,
+                               ItemSize = "--",
+                               UsPrice = 13400M,
+                               TwoHanded = false
+                           });
             context.WeaponDbSet.Add
                        (
                            new Weapon

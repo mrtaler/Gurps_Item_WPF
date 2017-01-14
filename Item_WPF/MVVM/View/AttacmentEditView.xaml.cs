@@ -11,7 +11,7 @@ namespace Item_WPF.MVVM.View
     public partial class AttacmentEditView : Window
     {
         private AttacmentEditViewModel _AttacmentEditViewModel;
-        public AttacmentEditView(Item itSell)
+        public AttacmentEditView(Attachment itSell)
         {
             InitializeComponent();
             _AttacmentEditViewModel = new AttacmentEditViewModel(itSell);

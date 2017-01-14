@@ -4,11 +4,8 @@ namespace GurpsDb.GurpsModel
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Explosive", Schema = "dbo")]
-    public partial class Explosive
+    public partial class Explosive : Item
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int UiIndex { get; set; }
 
         public int UbType { get; set; }
 

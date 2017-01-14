@@ -115,7 +115,7 @@
     <Compile Include="GurpsModel\GAvAttachClass.cs" />
     <Compile Include="GurpsModel\GSubAttachClass.cs" />
     <Compile Include="GurpsModel\InventoryOfChar.cs" />
-    <Compile Include="GurpsModel\Item.cs" />
+    <Compile Include="GurpsModel\end\Item.cs" />
     <Compile Include="GurpsModel\ItemClass.cs" />
     <Compile Include="GurpsModel\end\ItemSubClass.cs" />
     <Compile Include="GurpsModel\end\LaserColorEf.cs" />
@@ -160,6 +160,10 @@
     <Compile Include="Migrations\201701121957590_3m.cs" />
     <Compile Include="Migrations\201701121957590_3m.Designer.cs">
       <DependentUpon>201701121957590_3m.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701141825075_4m.cs" />
+    <Compile Include="Migrations\201701141825075_4m.Designer.cs">
+      <DependentUpon>201701141825075_4m.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -233,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701121957590_3m.resx">
       <DependentUpon>201701121957590_3m.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701141825075_4m.resx">
+      <DependentUpon>201701141825075_4m.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -11,7 +11,7 @@ using GurpsDb.BaseModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {
-    class WeaponEditViewModel : ViewModelBase, IDisposable
+    class WeaponEditViewModel : ViewModelBase//, IDisposable
     {
         protected Window Owner;
         private ContextGurpsModel _context;
@@ -86,10 +86,10 @@ namespace Item_WPF.MVVM.ViewModels
         }
 
         #region Constructor
-        public WeaponEditViewModel(Window owner, Weapon itemselect)
+        public WeaponEditViewModel(Window owner, Weapon itemselect, ContextGurpsModel context)
         {
             Owner = owner;
-            _context = new ContextGurpsModel();
+            _context = context;
             WeaponLoad = itemselect;
 
 
@@ -164,7 +164,7 @@ namespace Item_WPF.MVVM.ViewModels
         private void CloseWindow(object parameter)
         {
 
-            Dispose();
+            // Dispose();
             Owner.DialogResult = true;
             Owner.Close();
         }
@@ -304,10 +304,10 @@ namespace Item_WPF.MVVM.ViewModels
         #endregion
 
 
-        public void Dispose()
-        {
-            _context?.Dispose();
-        }
+        //public void Dispose()
+        //{
+        //    _context?.Dispose();
+        //}
 
         private void _WeaponDamageColl_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {

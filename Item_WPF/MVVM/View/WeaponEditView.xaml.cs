@@ -12,20 +12,20 @@ namespace Item_WPF.MVVM.View
     public partial class WeaponEditView : Window
     {
         private WeaponEditViewModel _weaponEditView;
-        public WeaponEditView(Weapon itSell)
+        public WeaponEditView(Weapon itSell, ContextGurpsModel context)
         {
             InitializeComponent();
-            _weaponEditView = new WeaponEditViewModel(this, itSell);
+            _weaponEditView = new WeaponEditViewModel(this, itSell, context);
             DataContext = _weaponEditView;
         }
         protected override void OnClosed(EventArgs e)
         {
-            _weaponEditView.Dispose();
+            // _weaponEditView.Dispose();
             base.OnClosed(e);
         }
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            _weaponEditView.Dispose();
+            //_weaponEditView.Dispose();
             DialogResult = true;
             this.Close();
         }

@@ -4,12 +4,8 @@ namespace GurpsDb.GurpsModel
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Armour", Schema = "dbo")]
-    public partial class Armour
+    public partial class Armour : Item
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int UiIndex { get; set; }
-
         public int UbArmourClass { get; set; }
 
         public int UbProtection { get; set; }

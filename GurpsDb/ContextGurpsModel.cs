@@ -606,11 +606,11 @@ namespace GurpsDb.GurpsModel
                 .Property(e => e.DimOfBulletUs)
                 .HasPrecision(8, 4);
 
-            modelBuilder.Entity<Caliber>()
-                .HasMany(e => e.Item)
-                .WithOptional(e => e.Caliber)
-                .HasForeignKey(e => e.UbCalibre);
-
+            /*   modelBuilder.Entity<Caliber>()
+                   .HasMany(e => e.Item)
+                   .WithOptional(e => e.Caliber)
+                   .HasForeignKey(e => e.UbCalibre);
+                   */
             /*  modelBuilder.Entity<Clothes>()
                   .HasMany(e => e.Item)
                   .WithRequired(e => e.Clothes)

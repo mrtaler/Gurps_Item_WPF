@@ -29,7 +29,9 @@ namespace Item_WPF.MVVM.Models
         public ItemToGridModel(GurpsDb.GurpsModel.Item itt)
         {
             // if (itt.ItemSubClass.ItemClass.Name == "Weapon")
-            if (itt.GetType() == typeof(Weapon))
+            var qq = itt.GetType().BaseType.Name;
+            var qt = typeof(Weapon).Name;
+            if (qq == qt)
             {
                 Weapon WeapToGrid = (Weapon)itt;
                 Name = itt.SzItemName;
@@ -40,7 +42,7 @@ namespace Item_WPF.MVVM.Models
                 DamageFollowUp = WeapToGrid.WeaponDamage.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Follow"));
                 if (DamagePrim != null)
                 {
-                    if (DamagePrim.TypeOfDamage.Id != null && DamagePrim.TypeOfDamage1.Id != null)
+                    if (DamagePrim.TypeOfDamage?.Id != null && DamagePrim.TypeOfDamage1?.Id != null)
                     {
                         if (DamagePrim.ArmorDivision != 1) Damage = DamagePrim.Damage
                                 + " (" + Convert.ToDouble(DamagePrim.ArmorDivision) + ") "
@@ -117,14 +119,13 @@ namespace Item_WPF.MVVM.Models
             }
         }
 
-        public ItemToGridModel(GurpsDb.GurpsModel.Item itt, string type)
+        public ItemToGridModel(Attachment itt, string type)
         {
             Name = itt.SzItemName;
             Tl = itt.Tl1.NameTl;
             Type = type;
 
-
-            DefAcc = itt.Attachment.AccAddmax.ToString();
+            DefAcc = itt.AccAddmax.ToString();
             Weigth = itt.UbWeight.ToString(CultureInfo.InvariantCulture);
             //ROF
             Bulk = itt.ItemSize;

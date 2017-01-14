@@ -97,15 +97,14 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 // if (SelectedItemForWork.used == false)// созаем сущьность для сравнения
                 //  {
-                int att = _context.ItemClassDbSet.FirstOrDefault(p => p.Name.Contains("Att")).Id;
-                int gun = _context.ItemClassDbSet.FirstOrDefault(p => p.Name.Contains("Weapon")).Id;
-                if (SelectedItemForWork.ItemSubClass.ItemClass.Id == gun)
+
+                if (SelectedItemForWork.ItemSubClass.ItemClass.Name == "Weapon")
                 {
                     SelectedItemForWork.Used = true;
                     SelectedItemForWork.Dt = System.DateTime.UtcNow;
                     SaveChanges(1);
                     Weapon weapToEdit = _context.WeaponDbSet.First(p => p.UiIndex == SelectedItemForWork.UiIndex);
-                    WeaponEditView avView = new WeaponEditView(weapToEdit);
+                    WeaponEditView avView = new WeaponEditView(weapToEdit, _context);
                     avView.Owner = Owner;
                     bool? result = avView.ShowDialog();
 
@@ -117,13 +116,13 @@ namespace Item_WPF.MVVM.ViewModels
 
                     }
                 }
-                else if (SelectedItemForWork.UsItemClass == att)
+                else if (SelectedItemForWork.ItemSubClass.ItemClass.Name == "Attachment")
                 {
                     SelectedItemForWork.Used = true;
                     SelectedItemForWork.Dt = System.DateTime.UtcNow;
                     SaveChanges(1);
 
-                    AttacmentEditView attachNr = new AttacmentEditView(SelectedItemForWork);
+                    AttacmentEditView attachNr = new AttacmentEditView((Attachment)SelectedItemForWork);
                     attachNr.ShowDialog();
                 }
                 //}
