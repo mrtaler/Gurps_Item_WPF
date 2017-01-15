@@ -48,7 +48,5 @@ namespace GurpsDb.GurpsModel
         public bool Directional { get; set; }
 
         public bool ShapedCharge { get; set; }
-
-        public virtual Item Item { get; set; }
     }
 }

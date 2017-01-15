@@ -282,8 +282,8 @@ namespace GurpsDb.GurpsModel
                 IdInternalItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 10)?.RAttachmentmount;
             if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 11) != null)
                 IdExternalItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 11)?.RAttachmentmount;
-            if (itt.UbCalibre != null)
-                IdCalibre = itt.UbCalibre;
+            if (itt.Caliber != null)
+                IdCalibre = itt.Caliber.Id;
         }
     }
 }

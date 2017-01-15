@@ -7,13 +7,13 @@ namespace GurpsDb.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitialMigration : IMigrationMetadata
+    public sealed partial class _1m : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(_1m));
         
         string IMigrationMetadata.Id
         {
-            get { return "201612131908008_InitialMigration"; }
+            get { return "201701142355002_1m"; }
         }
         
         string IMigrationMetadata.Source

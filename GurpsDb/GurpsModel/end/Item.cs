@@ -47,7 +47,6 @@ namespace GurpsDb.GurpsModel
             UbWeight = 10M;
             ItemSize = "0"; UsPrice = 10M;
 
-            UbCalibre = null;
             Damageable = false;
             Repairable = false;
             WaterDamages = false;
@@ -233,21 +232,7 @@ namespace GurpsDb.GurpsModel
             }
         }
 
-        public int? UbCalibre
-        {
-            get
-            {
-                return ubCalibre;
-            }
-            set
-            {
-                if (ubCalibre != value)
-                {
-                    ubCalibre = value;
-                    NotifyPropertyChanged("UbCalibre");
-                }
-            }
-        }
+
 
         [DefaultValue("false")]
         public bool Damageable
@@ -379,7 +364,6 @@ namespace GurpsDb.GurpsModel
                 }
             }
         }
-
         [DefaultValue("false")]
         public bool NeedsBatteries
         {
@@ -396,8 +380,6 @@ namespace GurpsDb.GurpsModel
                 }
             }
         }
-
-
         [DefaultValue("false")]
         public bool HaveFingerPrintId
         {
@@ -414,7 +396,6 @@ namespace GurpsDb.GurpsModel
                 }
             }
         }
-
         public int Tl
         {
             get
@@ -430,7 +411,6 @@ namespace GurpsDb.GurpsModel
                 }
             }
         }
-
         public int Lc
         {
             get
@@ -446,7 +426,6 @@ namespace GurpsDb.GurpsModel
                 }
             }
         }
-
         [StringLength(4)]
         public string SizeBatteries
         {
@@ -463,11 +442,6 @@ namespace GurpsDb.GurpsModel
                 }
             }
         }
-
-
-
-
-
         //   public int FoodType{get{return uiIndex;}set{if (uiIndex != value){uiIndex = value;NotifyPropertyChanged("SzLongItemName");}}}
         public decimal? LockPickModifier
         {
@@ -484,7 +458,6 @@ namespace GurpsDb.GurpsModel
                 }
             }
         }
-
         public decimal? CrowbarModifier
         {
             get
@@ -500,7 +473,6 @@ namespace GurpsDb.GurpsModel
                 }
             }
         }
-
         public decimal? DisarmModifier
         {
             get
@@ -516,7 +488,6 @@ namespace GurpsDb.GurpsModel
                 }
             }
         }
-
         public decimal? RepairModifier
         {
             get
@@ -532,7 +503,6 @@ namespace GurpsDb.GurpsModel
                 }
             }
         }
-
         public decimal? DamageChance
         {
             get
@@ -548,11 +518,8 @@ namespace GurpsDb.GurpsModel
                 }
             }
         }
-
         // public int Clothestype{get{return uiIndex;}set{if (uiIndex != value){uiIndex = value;NotifyPropertyChanged("SzLongItemName");}}}
-
         //public int DrugType{get{return uiIndex;}set{if (uiIndex != value){uiIndex = value;NotifyPropertyChanged("SzLongItemName");}}}
-
         public byte[] ItemImage
         {
             get { return itemImage; }
@@ -606,7 +573,6 @@ namespace GurpsDb.GurpsModel
                 if (used != value) { used = value; NotifyPropertyChanged("Used"); }
             }
         }
-
         public DateTime? Dt
         {
             get
@@ -622,7 +588,6 @@ namespace GurpsDb.GurpsModel
                 }
             }
         }
-
         [DefaultValue("0")]
         public int CountOfBat
         {
@@ -638,7 +603,6 @@ namespace GurpsDb.GurpsModel
                 }
             }
         }
-
         [Required]
         [StringLength(15)]
         [DefaultValue("0")]
@@ -653,7 +617,6 @@ namespace GurpsDb.GurpsModel
                 if (worksOnBat != value) { worksOnBat = value; NotifyPropertyChanged("WorksOnBat"); }
             }
         }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage",
             "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<InventoryOfChar> InventoryOfChar
@@ -671,23 +634,6 @@ namespace GurpsDb.GurpsModel
                 }
             }
         }
-
-        //public virtual Armour Armour
-        //{
-        //    get
-        //    {
-        //        return uiIndex;
-        //    }
-        //    set { if (uiIndex != value) { uiIndex = value;
-        //            NotifyPropertyChanged("Armour"); } }
-        //}
-
-        //public virtual Attachment Attachment
-        //{
-        //    get { return uiIndex; }
-        //    set { if (uiIndex != value) { uiIndex = value; NotifyPropertyChanged("SzLongItemName"); } }
-        //}
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage",
             "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AvailableAttachSlot> AvailableAttachSlot
@@ -705,7 +651,6 @@ namespace GurpsDb.GurpsModel
                 }
             }
         }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage",
             "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BoxItem> BoxItem
@@ -723,62 +668,21 @@ namespace GurpsDb.GurpsModel
                 }
             }
         }
-
-        //public virtual Caliber Caliber
-        //{
-        //    get { return caliber; }
-        //    set { if (caliber != value) { caliber = value; NotifyPropertyChanged("Caliber"); } }
-        //}
-
-        //public virtual Clothes Clothes
-        //{
-        //    get { return uiIndex; }
-        //    set { if (uiIndex != value) { uiIndex = value; NotifyPropertyChanged("SzLongItemName"); } }
-        //}
-
-        //public virtual Drug Drug
-        //{
-        //    get { return uiIndex; }
-        //    set { if (uiIndex != value) { uiIndex = value; NotifyPropertyChanged("SzLongItemName"); } }
-        //}
-
-        //public virtual Explosive Explosive
-        //{
-        //    get { return uiIndex; }
-        //    set { if (uiIndex != value) { uiIndex = value; NotifyPropertyChanged("SzLongItemName"); } }
-        //}
-
-        //public virtual Food Food
-        //{
-        //    get { return uiIndex; }
-        //    set { if (uiIndex != value) { uiIndex = value; NotifyPropertyChanged("SzLongItemName"); } }
-        //}
-
         public virtual ItemSubClass ItemSubClass
         {
             get { return itemSubClass; }
             set { if (itemSubClass != value) { itemSubClass = value; NotifyPropertyChanged("ItemSubClass"); } }
         }
-
         public virtual Lc Lc1
         {
             get { return lc1; }
             set { if (lc1 != value) { lc1 = value; NotifyPropertyChanged("Lc1"); } }
         }
-
         public virtual Tl Tl1
         {
             get { return tl1; }
             set { if (tl1 != value) { tl1 = value; NotifyPropertyChanged("Tl1"); } }
         }
-
-        //public virtual LoadBearingEquipment Loadbearingequipment
-        //{
-        //    get { return uiIndex; }
-        //    set { if (uiIndex != value) { uiIndex = value; NotifyPropertyChanged("SzLongItemName"); } }
-        //}
-
-        //  public virtual Weapon Weapon{get{return uiIndex;}set{if (uiIndex != value){uiIndex = value;NotifyPropertyChanged("SzLongItemName");}}}
 
         private int uiIndex;
         private string szItemName;
@@ -848,38 +752,6 @@ namespace GurpsDb.GurpsModel
                 .WithRequired(e => e.Item)
                 .HasForeignKey(e => e.Items)
                 .WillCascadeOnDelete(false);
-
-            /*    this.HasOptional(e => e.Drug)
-                    .WithRequired(e => e.Item);
-
-                this.HasOptional(e => e.Explosive)
-                    .WithRequired(e => e.Item)
-                    .WillCascadeOnDelete();
-
-                this.HasOptional(e => e.Loadbearingequipment)
-                    .WithRequired(e => e.Item)
-                    .WillCascadeOnDelete();
-                  
-            
-            
-            
-            
-            
-            
-            
-            this.HasOptional(e => e.Armour)
-                    .WithRequired(e => e.Item)
-                    .WillCascadeOnDelete();
-
-                this.HasOptional(e => e.Attachment)
-                    .WithRequired(e => e.Item)
-                    .WillCascadeOnDelete();
-                 
-             *  modelBuilder.Entity<Item>()
-                   .HasOptional(e => e.Weapon)
-                   .WithRequired(e => e.Item)
-                   .WillCascadeOnDelete();
-                   */
         }
     }
 }

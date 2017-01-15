@@ -1,3 +1,5 @@
+using System.Data.Entity.ModelConfiguration;
+
 namespace GurpsDb.GurpsModel
 {
     using System.Collections.Generic;
@@ -10,7 +12,7 @@ namespace GurpsDb.GurpsModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Caliber()
         {
-            Item = new HashSet<Item>();
+            Weapons = new HashSet<Weapon>();
         }
 
         public int Id { get; set; }
@@ -31,6 +33,22 @@ namespace GurpsDb.GurpsModel
         public decimal? DimOfBulletUs { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Item> Item { get; set; }
+        public ICollection<Weapon> Weapons { get; set; }
+    }
+
+    public class CaliberConfiguration : EntityTypeConfiguration<Caliber>
+    {
+        public CaliberConfiguration()
+        {
+            this.Property(e => e.DimOfBulletSi)
+                       .HasPrecision(8, 4);
+
+            this.Property(e => e.DimOfBulletUs)
+                        .HasPrecision(8, 4);
+
+            //this.HasMany(e => e.Weapons)
+            //               .WithOptional(e => e.Caliber)
+            //               .HasForeignKey(e => e.UbCalibre);
+        }
     }
 }

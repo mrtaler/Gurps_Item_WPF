@@ -119,8 +119,6 @@ namespace GurpsDb.GurpsModel
 
         public virtual AttachmentMount Attachmentmount1 { get; set; }
 
-        public virtual Item Item { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GAvAttachClass> GAvAttachClass { get; set; }
     }

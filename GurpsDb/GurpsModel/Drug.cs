@@ -6,8 +6,8 @@ namespace GurpsDb.GurpsModel
     [Table("Drug", Schema = "dbo")]
     public partial class Drug : Item
     {
-        public int? IdDrugType { get; set; }
-
-        public virtual Item Item { get; set; }
+        public string Type { get; set; }
+        public string Wearout { get; set; }
+        public string Addict { get; set; }
     }
 }

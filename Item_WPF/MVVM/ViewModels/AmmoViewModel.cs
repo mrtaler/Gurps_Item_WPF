@@ -28,7 +28,7 @@ namespace Item_WPF.MVVM.ViewModels
             int? param = (parametr as int?);
             Save = new ViewModelCommand(SaveChanges);
             caliber = new ObservableCollection<Caliber>(_context.CaliberDbSet);
-            AmmoOk = new ObservableCollection<Item>(_context.ItemDbSet.Where(p => p.ItemSubClass.ItemClass.Name.Contains("ammo")).Where(p => p.UbCalibre == param));
+            // AmmoOk = new ObservableCollection<Item>(_context.ItemDbSet.Where(p => p.ItemSubClass.ItemClass.Name.Contains("ammo")).Where(p => p.UbCalibre == param));
             AmmoOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_ammoOK_CollectionChanged);
 
         }

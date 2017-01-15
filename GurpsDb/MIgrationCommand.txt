@@ -1,3 +1,5 @@
 ﻿
 Add-Migration   -ProjectName "GurpsDb"
 Update-Database -ProjectName "GurpsDb" -verbose
+
+Update-Database -TargetMigration 201701141825075_4m -ProjectName "GurpsDb"

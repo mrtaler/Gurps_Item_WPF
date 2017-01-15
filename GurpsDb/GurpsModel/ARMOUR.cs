@@ -18,6 +18,5 @@ namespace GurpsDb.GurpsModel
 
         public bool LeatherJacket { get; set; }
 
-        public virtual Item Item { get; set; }
     }
 }

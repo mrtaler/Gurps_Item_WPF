@@ -4,12 +4,8 @@ namespace GurpsDb.GurpsModel
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("LoadBearingEquipment", Schema = "dbo")]
-    public partial class LoadBearingEquipment
+    public partial class LoadBearingEquipment : Item
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int LbeIndex { get; set; }
-
         public int LbeClass { get; set; }
 
         public int LbeCombo { get; set; }
@@ -44,6 +40,5 @@ namespace GurpsDb.GurpsModel
 
         public int LbePocketIndex12 { get; set; }
 
-        public virtual Item Item { get; set; }
     }
 }

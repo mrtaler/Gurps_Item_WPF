@@ -178,7 +178,26 @@ namespace GurpsDb.GurpsModel
         public bool Bulkfolded { get; set; }
 
         public bool Hcrof { get; set; }
-
+        //public int? UbCalibre
+        //{
+        //    get
+        //    {
+        //        return ubCalibre;
+        //    }
+        //    set
+        //    {
+        //        if (ubCalibre != value)
+        //        {
+        //            ubCalibre = value;
+        //            NotifyPropertyChanged("UbCalibre");
+        //        }
+        //    }
+        //}
+        public virtual Caliber Caliber { get; set; }
+        /* {
+             get { return caliber; }
+             set { if (caliber != value) { caliber = value; NotifyPropertyChanged("Caliber"); } }
+         }*/
         public int HcrofValue { get; set; }
 
         //public virtual Item Item { get; set; }

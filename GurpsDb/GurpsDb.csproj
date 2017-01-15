@@ -137,33 +137,13 @@
     <Compile Include="GurpsModel\end\WeaponAttackType.cs" />
     <Compile Include="GurpsModel\end\WeaponDamage.cs" />
     <Compile Include="GurpsModel\WeaponBonus.cs" />
-    <Compile Include="Migrations\201612131908008_InitialMigration.cs" />
-    <Compile Include="Migrations\201612131908008_InitialMigration.Designer.cs">
-      <DependentUpon>201612131908008_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201701142355002_1m.cs" />
+    <Compile Include="Migrations\201701142355002_1m.Designer.cs">
+      <DependentUpon>201701142355002_1m.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612151638496_FirstMigrations.cs" />
-    <Compile Include="Migrations\201612151638496_FirstMigrations.Designer.cs">
-      <DependentUpon>201612151638496_FirstMigrations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701082155516_1Migrations.cs" />
-    <Compile Include="Migrations\201701082155516_1Migrations.Designer.cs">
-      <DependentUpon>201701082155516_1Migrations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701091929482_1m.cs" />
-    <Compile Include="Migrations\201701091929482_1m.Designer.cs">
-      <DependentUpon>201701091929482_1m.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701112109066_2m.cs" />
-    <Compile Include="Migrations\201701112109066_2m.Designer.cs">
-      <DependentUpon>201701112109066_2m.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701121957590_3m.cs" />
-    <Compile Include="Migrations\201701121957590_3m.Designer.cs">
-      <DependentUpon>201701121957590_3m.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701141825075_4m.cs" />
-    <Compile Include="Migrations\201701141825075_4m.Designer.cs">
-      <DependentUpon>201701141825075_4m.cs</DependentUpon>
+    <Compile Include="Migrations\201701150010315_2m.cs" />
+    <Compile Include="Migrations\201701150010315_2m.Designer.cs">
+      <DependentUpon>201701150010315_2m.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -220,29 +200,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612131908008_InitialMigration.resx">
-      <DependentUpon>201612131908008_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612151638496_FirstMigrations.resx">
-      <DependentUpon>201612151638496_FirstMigrations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701082155516_1Migrations.resx">
-      <DependentUpon>201701082155516_1Migrations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701091929482_1m.resx">
-      <DependentUpon>201701091929482_1m.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701112109066_2m.resx">
-      <DependentUpon>201701112109066_2m.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701121957590_3m.resx">
-      <DependentUpon>201701121957590_3m.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701141825075_4m.resx">
-      <DependentUpon>201701141825075_4m.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="MIgrationCommand.txt" />
     <Content Include="OfflineDB.mdf" />
     <Content Include="OfflineDB_log.ldf">
@@ -260,6 +217,14 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201701142355002_1m.resx">
+      <DependentUpon>201701142355002_1m.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701150010315_2m.resx">
+      <DependentUpon>201701150010315_2m.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
