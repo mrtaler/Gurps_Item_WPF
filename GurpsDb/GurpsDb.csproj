@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -137,13 +137,9 @@
     <Compile Include="GurpsModel\end\WeaponAttackType.cs" />
     <Compile Include="GurpsModel\end\WeaponDamage.cs" />
     <Compile Include="GurpsModel\WeaponBonus.cs" />
-    <Compile Include="Migrations\201701142355002_1m.cs" />
-    <Compile Include="Migrations\201701142355002_1m.Designer.cs">
-      <DependentUpon>201701142355002_1m.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701150010315_2m.cs" />
-    <Compile Include="Migrations\201701150010315_2m.Designer.cs">
-      <DependentUpon>201701150010315_2m.cs</DependentUpon>
+    <Compile Include="Migrations\201701251658346_InitFromEmptyDB.cs" />
+    <Compile Include="Migrations\201701251658346_InitFromEmptyDB.Designer.cs">
+      <DependentUpon>201701251658346_InitFromEmptyDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -201,9 +197,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MIgrationCommand.txt" />
-    <Content Include="OfflineDB.mdf" />
+    <Content Include="OfflineDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="OfflineDB_log.ldf">
       <DependentUpon>OfflineDB.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
@@ -219,11 +218,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201701142355002_1m.resx">
-      <DependentUpon>201701142355002_1m.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701150010315_2m.resx">
-      <DependentUpon>201701150010315_2m.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201701251658346_InitFromEmptyDB.resx">
+      <DependentUpon>201701251658346_InitFromEmptyDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

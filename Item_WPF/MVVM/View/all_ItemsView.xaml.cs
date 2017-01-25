@@ -18,7 +18,7 @@ namespace Item_WPF.MVVM.View
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
+            //   DialogResult = true;
             this.Close();
         }
     }

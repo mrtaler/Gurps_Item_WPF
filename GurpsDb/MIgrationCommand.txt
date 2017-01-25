@@ -1,4 +1,4 @@
-﻿
+﻿Enable-Migrations -ProjectName "GurpsDb" -StartUpProjectName "Item_WPF" 
 Add-Migration   -ProjectName "GurpsDb"
 Update-Database -ProjectName "GurpsDb" -verbose
 
