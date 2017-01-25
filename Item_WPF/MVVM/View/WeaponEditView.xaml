@@ -12,9 +12,17 @@
         mc:Ignorable="d">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <Style TargetType="TextBox">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="True">
+                    <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}" />
+                    <Setter Property="Foreground" Value="Red" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
-    <Grid>
 
+    <Grid>
         <TabControl x:Name="TabControl" Margin="0,25,0,35">
             <TabItem x:Name="MainTi" Header="Main">
                 <Grid x:Name="MainGrid"
@@ -44,18 +52,30 @@
                              Margin="102,14,0,0"
                              HorizontalAlignment="Left"
                              VerticalAlignment="Top"
-                             Text="{Binding WeaponLoad.SzItemName}"
-                             TextWrapping="Wrap" />
+                             TextWrapping="Wrap">
+                        <TextBox.Text>
+                            <Binding Path="WeaponLoad.SzItemName" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <DataErrorValidationRule />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
                     <TextBox x:Name="LongNameTb"
                              Width="302"
                              Height="23"
                              Margin="102,45,0,0"
                              HorizontalAlignment="Left"
                              VerticalAlignment="Top"
-                             Text="{Binding WeaponLoad.SzLongItemName,
-                                            Mode=TwoWay,
-                                            UpdateSourceTrigger=PropertyChanged}"
-                             TextWrapping="Wrap" />
+                             TextWrapping="Wrap">
+                        <TextBox.Text>
+                            <Binding Path="WeaponLoad.SzLongItemName" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <DataErrorValidationRule />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
                     <TextBox x:Name="DescriptionTb"
                              Width="394"
                              Margin="10,101,0,10"

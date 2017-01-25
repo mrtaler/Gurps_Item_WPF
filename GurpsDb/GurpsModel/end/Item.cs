@@ -11,7 +11,7 @@ namespace GurpsDb.GurpsModel
     using System.Data.Entity.ModelConfiguration;
 
     [Table("Item", Schema = "dbo")]
-    public partial class Item : ViewModelBase
+    public partial class Item : ViewModelBase, IDataErrorInfo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Item()
@@ -726,6 +726,36 @@ namespace GurpsDb.GurpsModel
         private ItemSubClass itemSubClass;
         private Lc lc1;
         private Tl tl1;
+        #region error
+        public string this[string columnName]
+        {
+            get
+            {
+                string error = String.Empty;
+                switch (columnName)
+                {
+                    case "SzItemName":
+                    case "SzLongItemName":
+                        if (SzItemName.Length > 80)
+                        {
+                            error = "не более 80 символов";
+                        }
+                        break;
+                        // case "Name":
+                        //Обработка ошибок для свойства Name
+                        //    break;
+                        // case "Position":
+                        //Обработка ошибок для свойства Position
+                        //   break;
+                }
+                return error;
+            }
+        }
+        public string Error
+        {
+            get { throw new NotImplementedException(); }
+        }
+        #endregion
     }
 
     public class ItemConfiguration : EntityTypeConfiguration<Item>
