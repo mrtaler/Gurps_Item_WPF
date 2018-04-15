@@ -1,10 +1,5 @@
-﻿using Item_WPF.ItemEntityModel;
-using System;
-using System.Collections.Generic;
+﻿using GurpsDb.GurpsModel;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Item_WPF.addin
 {

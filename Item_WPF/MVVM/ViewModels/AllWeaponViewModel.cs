@@ -1,26 +1,22 @@
 ﻿using Item_WPF.MVVM.Models;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using Item_WPF.ItemEntityModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using GurpsDb.GurpsModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {
-   public class AllWeaponViewModel
+    public class AllWeaponViewModel
     {
-        private item1Entities _context;
-        private ObservableCollection<ITEM> Itt;
+        private ContextGurpsModel _context;
+        private ObservableCollection<GurpsDb.GurpsModel.Item> Itt;
         private ItemToGridModel itemcom;
         public ObservableCollection<ItemToGridModel> ItemToGridColl { get; set; }
         public AllWeaponViewModel()
         {
-            _context = new item1Entities();
+            _context = new ContextGurpsModel();
             ItemToGridColl = new ObservableCollection<ItemToGridModel>();
-            Itt = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.ItemSubClass.ItemClass.name == "Weapon"));
-            foreach (var item in Itt )
+            Itt = new ObservableCollection<GurpsDb.GurpsModel.Item>(_context.ItemDbSet.Where(p => p.ItemSubClass.ItemClass.Name == "Weapon"));
+            foreach (var item in Itt)
 
             {
                 itemcom = new ItemToGridModel(item);

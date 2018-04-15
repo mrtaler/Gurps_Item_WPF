@@ -1,31 +1,28 @@
 ﻿using Item_WPF.addin;
-using Item_WPF.ItemEntityModel;
 using Item_WPF.MVVM.View;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
+using GurpsDb.GurpsModel;
+using GurpsDb.BaseModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {
-    public  class all_ItemsViewModel : ViewModelBase, IDisposable
+    public class all_ItemsViewModel : ViewModelBase, IDisposable
     {
         protected Window Owner;
-        private item1Entities _context;
+        private ContextGurpsModel _context;
         public string pass { get; set; }
         public ObservableCollection<ItemClass> ItemsClass { get; set; }
-        #region  public ObservableCollection<ITEM> Items
-        public ObservableCollection<ITEM> Items
+        #region  public ObservableCollection<Item> Items
+        public ObservableCollection<Item> Items
         {
             get
             {
                 if (SelectedItClassforSort == 1 || SelectedItClassforSort == 0 || SelectedItClassforSort == null)
-                    return new ObservableCollection<ITEM>(_context.ITEMs);
-                else return new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.usItemClass == SelectedItClassforSort));
+                    return new ObservableCollection<Item>(_context.ItemDbSet);
+                else return new ObservableCollection<Item>(_context.ItemDbSet.Where(p => p.UsItemClass == SelectedItClassforSort));
             }
         }
         #endregion
@@ -47,9 +44,9 @@ namespace Item_WPF.MVVM.ViewModels
             }
         }
         #endregion
-        #region public  ITEM SelectedItemForWork
-        private ITEM _SelectedItemForWork;
-        public ITEM SelectedItemForWork
+        #region public  Item SelectedItemForWork
+        private Item _SelectedItemForWork;
+        public Item SelectedItemForWork
         {
             get
             {
@@ -69,16 +66,16 @@ namespace Item_WPF.MVVM.ViewModels
         public all_ItemsViewModel(Window owner, object param)
         {
             Owner = owner;
-            _context = new item1Entities();
+            _context = new ContextGurpsModel();
             string Param = param as string;
             //SelectedItClassforSort = _context.ItemClasses.FirstOrDefault(p => p.name.Contains(Param)).id;
-            ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClasses);
+            ItemsClass = new ObservableCollection<ItemClass>(_context.ItemClassDbSet);
 
-            Refresh = new DelegateCommand(Refreshnew) ;
-            CSelItem = new DelegateCommand(CSelectedItem);
-            Save = new DelegateCommand(SaveChanges) ;
-            CDelItem = new DelegateCommand(DelItem);
-            CNewItem = new DelegateCommand(NewItem);
+            Refresh = new ViewModelCommand(Refreshnew);
+            CSelItem = new ViewModelCommand(CSelectedItem);
+            Save = new ViewModelCommand(SaveChanges);
+            CDelItem = new ViewModelCommand(DelItem);
+            CNewItem = new ViewModelCommand(NewItem);
             PropertyDependencyMap.Add("SelectedItClassforSort", new[] { "Items" });
         }
 
@@ -86,12 +83,12 @@ namespace Item_WPF.MVVM.ViewModels
         private void Refreshnew(object parame)
         {
             _context?.Dispose();
-            _context = new item1Entities();
-            //  Items = new ObservableCollection<ITEM>(_context.ITEMs);
+            _context = new ContextGurpsModel();
+            //  Items = new ObservableCollection<Item>(_context.ITEMs);
             SelectedItClassforSort = 1;
-            //else Items = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.usItemClass == SelectedItClassforSort));
+            //else Items = new ObservableCollection<Item>(_context.ITEMs.Where(p => p.usItemClass == SelectedItClassforSort));
         }
-        public DelegateCommand Refresh { get; set; }
+        public ViewModelCommand Refresh { get; set; }
         #endregion
         #region Command CSelectedItem
         private void CSelectedItem(object parameter)
@@ -100,33 +97,32 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 // if (SelectedItemForWork.used == false)// созаем сущьность для сравнения
                 //  {
-                int att = _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Att")).id;
-                int gun = _context.ItemClasses.FirstOrDefault(p => p.name.Contains("Weapon")).id;
-                if (SelectedItemForWork.ItemSubClass.ItemClass.id == gun)
-                {
-                    SelectedItemForWork.used = true;
-                    SelectedItemForWork.dt = System.DateTime.UtcNow;
-                    SaveChanges(1);
 
-                    WeaponEditView avView = new WeaponEditView(SelectedItemForWork);
+                if (SelectedItemForWork.ItemSubClass.ItemClass.Name == "Weapon")
+                {
+                    SelectedItemForWork.Used = true;
+                    SelectedItemForWork.Dt = System.DateTime.UtcNow;
+                    SaveChanges(1);
+                    Weapon weapToEdit = _context.WeaponDbSet.First(p => p.UiIndex == SelectedItemForWork.UiIndex);
+                    WeaponEditView avView = new WeaponEditView(weapToEdit, _context);
                     avView.Owner = Owner;
                     bool? result = avView.ShowDialog();
-   
+
                     if (result.HasValue && (result == true))
                     {
                         _context?.Dispose();
-                        _context = new item1Entities();
+                        _context = new ContextGurpsModel();
                         NotifyPropertyChanged("SelectedItClassforSort");
 
                     }
                 }
-                else if (SelectedItemForWork.usItemClass ==att)
+                else if (SelectedItemForWork.ItemSubClass.ItemClass.Name == "Attachment")
                 {
-                    SelectedItemForWork.used = true;
-                    SelectedItemForWork.dt = System.DateTime.UtcNow;
+                    SelectedItemForWork.Used = true;
+                    SelectedItemForWork.Dt = System.DateTime.UtcNow;
                     SaveChanges(1);
 
-                    AttacmentEditView attachNr = new AttacmentEditView(SelectedItemForWork);
+                    AttacmentEditView attachNr = new AttacmentEditView((Attachment)SelectedItemForWork);
                     attachNr.ShowDialog();
                 }
                 //}
@@ -134,7 +130,7 @@ namespace Item_WPF.MVVM.ViewModels
             }
         }
 
-        public DelegateCommand CSelItem { get; set; }
+        public ViewModelCommand CSelItem { get; set; }
         #endregion
         #region Command DelItem
         private void DelItem(object parameter)
@@ -146,25 +142,25 @@ namespace Item_WPF.MVVM.ViewModels
             InputBoxViewModel ib_datacontext = new InputBoxViewModel("Password for Del entity", "Type Password", "");
             ib.DataContext = ib_datacontext;
             ib.ShowDialog();
-            pass = ib_datacontext.passinput;            
+            pass = ib_datacontext.passinput;
             if (pass == "123")
             {
                 MessageBox.Show("Correct Pass");
-                _context.ITEMs.Remove(SelectedItemForWork);
+                _context.ItemDbSet.Remove(SelectedItemForWork);
                 Items.Remove(SelectedItemForWork);
                 _context.SaveChanges();
             }
             else MessageBox.Show("This rows is used");
         }
 
-        public DelegateCommand CDelItem { get; set; }
+        public ViewModelCommand CDelItem { get; set; }
         #endregion
         #region Command Save
         private void SaveChanges(object parameter)
         {
             _context.SaveChanges();
         }
-        public DelegateCommand Save { get; set; }
+        public ViewModelCommand Save { get; set; }
         #endregion
         #region Command NewItem
         private void NewItem(object parameter)
@@ -172,7 +168,7 @@ namespace Item_WPF.MVVM.ViewModels
             NewItemsView _newItemView = new NewItemsView();
             _newItemView.ShowDialog();
         }
-        public DelegateCommand CNewItem { get; set; }
+        public ViewModelCommand CNewItem { get; set; }
         #endregion
 
         #region intrfeis       
@@ -187,8 +183,8 @@ namespace Item_WPF.MVVM.ViewModels
         private void dataGridViewAllItems_LoadingRow(object sender, DataGridRowEventArgs e)
         {
             bool ew2;
-            //ITEM item1 = (ITEM)e.Row.Item;
-            ITEM item1 = e.Row.DataContext as ITEM;
+            //Item item1 = (Item)e.Row.Item;
+            Item item1 = e.Row.DataContext as Item;
             if (item1 != null)
             {
                 ew2 = item1.used;

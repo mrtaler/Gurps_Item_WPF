@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Windows.Input;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Item_WPF.addin
 {
@@ -17,7 +13,7 @@ namespace Item_WPF.addin
         /// </summary>
         /// <param name="action">The action.</param>
         /// <param name="canExecute">if set to <c>true</c> [can execute].</param>
-        public ViewModelCommand(Action action, bool canExecute)
+        public ViewModelCommand(Action action, bool canExecute = true)
         {
             //  Set the action.
             this.action = action;
@@ -28,7 +24,7 @@ namespace Item_WPF.addin
         /// </summary>
         /// <param name="parameterizedAction">The parameterized action.</param>
         /// <param name="canExecute">if set to <c>true</c> [can execute].</param>
-        public ViewModelCommand(Action<object> parameterizedAction, bool canExecute)
+        public ViewModelCommand(Action<object> parameterizedAction, bool canExecute = true)
         {
             //  Set the action.
             this.parameterizedAction = parameterizedAction;

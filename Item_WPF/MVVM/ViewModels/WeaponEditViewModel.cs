@@ -1,34 +1,28 @@
 ﻿using Item_WPF.addin;
-using Item_WPF.ItemEntityModel;
 using Item_WPF.MVVM.View;
 using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.ComponentModel;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Input;
-using System.Windows.Media.Imaging;
+using GurpsDb.GurpsModel;
+using GurpsDb.BaseModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {
-    class WeaponEditViewModel : ViewModelBase, IDisposable
+    class WeaponEditViewModel : ViewModelBase//, IDisposable
     {
         protected Window Owner;
-        private item1Entities _context;
-        public int selInd { get; set; }
-        public ObservableCollection<TL> TlCollection { get; set; }
-        public ObservableCollection<LC> LccCollection { get; set; }
+        private ContextGurpsModel _context;
+        public int SelInd { get; set; }
+        public ObservableCollection<Tl> TlCollection { get; set; }
+        public ObservableCollection<Lc> LccCollection { get; set; }
         public ObservableCollection<GurpsClass> WeaponClasscCollection
         {
             get
             {
-                return new ObservableCollection<GurpsClass>(_context.GurpsClasses);
+                return new ObservableCollection<GurpsClass>(_context.GurpsClassDbSet);
             }
         }
         public int WeaponClassReed { get; set; }
@@ -36,46 +30,46 @@ namespace Item_WPF.MVVM.ViewModels
         {
             get
             {
-                return new ObservableCollection<ItemSubClass>(_context.ItemSubClasses);
+                return new ObservableCollection<ItemSubClass>(_context.ItemSubClassDbSet);
             }
         }
         public ObservableCollection<TypeOfDamage> TypeOfDamagesCollection { get; set; }
         //private ObservableCollection<AMMO> _AmmoscCollection;
         public ObservableCollection<Caliber> CalibersCollection { get; set; }
-        public ObservableCollection<Attachmentmount> ScopeComboBox { get; set; }
-        public ObservableCollection<Attachmentmount> LaserComboBox { get; set; }
-        public ObservableCollection<Attachmentmount> LightComboBox { get; set; }
-        public ObservableCollection<Attachmentmount> BipodComboBox { get; set; }
-        public ObservableCollection<Attachmentmount> SilenserComboBox { get; set; }
-        public ObservableCollection<Attachmentmount> LauncherComboBox { get; set; }
-        public ObservableCollection<Attachmentmount> StockComboBox { get; set; }
-        public ObservableCollection<Attachmentmount> BayonetComboBox { get; set; }
-        public ObservableCollection<Attachmentmount> MagazineComboBox { get; set; }
-        public ObservableCollection<Attachmentmount> InternalComboBox { get; set; }
-        public ObservableCollection<Attachmentmount> ExternalComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> ScopeComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> LaserComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> LightComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> BipodComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> SilenserComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> LauncherComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> StockComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> BayonetComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> MagazineComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> InternalComboBox { get; set; }
+        public ObservableCollection<AttachmentMount> ExternalComboBox { get; set; }
 
         public ObservableCollection<WeaponDamage> WeaponDamageColl { get; set; }
-        private ITEM _ItemLoad;
-        public ITEM ItemLoad
-        {
-            get
-            {
-                return _ItemLoad;
-            }
-            set
-            {
-                if (_ItemLoad != value)
-                {
-                    _ItemLoad = value;
-                    NotifyPropertyChanged("ItemLoad");
-                }
-            }
-        }
-        public WEAPON WeaponLoad { get; set; }
+        /*   private Item _ItemLoad;
+           public Item ItemLoad
+           {
+               get
+               {
+                   return _ItemLoad;
+               }
+               set
+               {
+                   if (_ItemLoad != value)
+                   {
+                       _ItemLoad = value;
+                       NotifyPropertyChanged("ItemLoad");
+                   }
+               }
+           }*/
+        public Weapon WeaponLoad { get; set; }
         public ObservableCollection<AvailableAttachSlot> avSlot { get; set; }
 
-        private ObservableCollection<Attachmentmount> _attMount;
-        public ObservableCollection<Attachmentmount> AttMount
+        private ObservableCollection<AttachmentMount> _attMount;
+        public ObservableCollection<AttachmentMount> AttMount
         {
             get
             {
@@ -92,51 +86,49 @@ namespace Item_WPF.MVVM.ViewModels
         }
 
         #region Constructor
-        public WeaponEditViewModel(Window owner, ITEM itemselect)
+        public WeaponEditViewModel(Window owner, Weapon itemselect, ContextGurpsModel context)
         {
             Owner = owner;
-            _context = new item1Entities();
-            ItemLoad = _context.ITEMs.Find(itemselect.uiIndex);
-            WeaponLoad = ItemLoad.WEAPON;
+            _context = context;
+            WeaponLoad = itemselect;
 
-            
 
-             CalibersCollection = new ObservableCollection<Caliber>(_context.Calibers);
 
-            TlCollection = new ObservableCollection<TL>(_context.TLs);
-            LccCollection = new ObservableCollection<LC>(_context.LCs);
+            CalibersCollection = new ObservableCollection<Caliber>(_context.CaliberDbSet);
 
-            WeaponClassReed = ItemLoad.ItemSubClass.GurpsClass.id;
+            TlCollection = new ObservableCollection<Tl>(_context.TlDbSet);
+            LccCollection = new ObservableCollection<Lc>(_context.LcDbSet);
 
-            TypeOfDamagesCollection = new ObservableCollection<TypeOfDamage>(_context.TypeOfDamages);
+            WeaponClassReed = WeaponLoad.ItemSubClass.GurpsClass.Id;
 
-            WeaponDamageColl = new ObservableCollection<WeaponDamage>(_context.WeaponDamages.Where((p => p.idWeapon == WeaponLoad.uiIndex)));
+            TypeOfDamagesCollection = new ObservableCollection<TypeOfDamage>(_context.TypeOfDamageDbSet);
 
-            avSlot = new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlots.Where(p => p.rItemId == WeaponLoad.uiIndex));
-            AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
+            WeaponDamageColl = new ObservableCollection<WeaponDamage>(_context.WeaponDamageDbSet.Where((p => p.IdWeapon == WeaponLoad.UiIndex)));
 
-            ScopeComboBox = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Scope")));
-            LaserComboBox = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Laser")));
-            LightComboBox = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Light")));
-            BipodComboBox = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Bipod")));
-            SilenserComboBox = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Silenser")));
-            LauncherComboBox = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Launcher")));
-            StockComboBox = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Stock")));
-            BayonetComboBox = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Bayonet")));
-            MagazineComboBox = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Magazine")));
-            InternalComboBox = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Internal")));
-            ExternalComboBox = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("External")));
+            avSlot = new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlotDbSet.Where(p => p.RItemId == WeaponLoad.UiIndex));
+            AttMount = new ObservableCollection<AttachmentMount>(_context.AttachmentMountDbSet);
 
+            ScopeComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentMountDbSet.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("Scope")));
+            LaserComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentMountDbSet.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("Laser")));
+            LightComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentMountDbSet.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("Light")));
+            BipodComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentMountDbSet.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("Bipod")));
+            SilenserComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentMountDbSet.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("Silenser")));
+            LauncherComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentMountDbSet.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("Launcher")));
+            StockComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentMountDbSet.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("Stock")));
+            BayonetComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentMountDbSet.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("Bayonet")));
+            MagazineComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentMountDbSet.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("Magazine")));
+            InternalComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentMountDbSet.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("Internal")));
+            ExternalComboBox = new ObservableCollection<AttachmentMount>(_context.AttachmentMountDbSet.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("External")));
 
             #region Load Command
-            Save =                  new DelegateCommand(SaveChanges);       // сохранение контекста
-            LoadImage =             new DelegateCommand(LoadImageToForm);   //загрузка картинки
-            DellImage =             new DelegateCommand(DellImageFromAll);  //удаление картинки
-            CExtendDamage =         new DelegateCommand(ExtendDamage);
-            AddMountslot1 =         new DelegateCommand(AddMountslot1_Execute);
-            CheckThreeCheckBox =    new DelegateCommand(CheckThreeCheckBox_Execute); //
-            CloseWindowC =          new DelegateCommand(CloseWindow);       //Закрытие окна
-            CalliberWindowC =       new DelegateCommand(CalliberWindow);    //Caliber
+            Save = new ViewModelCommand(SaveChanges);       // сохранение контекста
+            LoadImage = new ViewModelCommand(LoadImageToForm);   //загрузка картинки
+            DellImage = new ViewModelCommand(DellImageFromAll);  //удаление картинки
+            CExtendDamage = new ViewModelCommand(ExtendDamage);
+            AddMountslot1 = new ViewModelCommand(AddMountslot1_Execute);
+            CheckThreeCheckBox = new ViewModelCommand(CheckThreeCheckBox_Execute); //
+            CloseWindowC = new ViewModelCommand(CloseWindow);       //Закрытие окна
+            CalliberWindowC = new ViewModelCommand(CalliberWindow);    //Caliber
 
             //AddMountslot1 = new ActionCommand(AddMountslot1_Execute) { IsExecutable = true };
             #endregion
@@ -150,7 +142,7 @@ namespace Item_WPF.MVVM.ViewModels
         #endregion
         #region Command
         #region Command CalliberWindow
-        public DelegateCommand CalliberWindowC { get; set; }
+        public ViewModelCommand CalliberWindowC { get; set; }
         private void CalliberWindow(object parameter)
         {
             CaliberView AmmoViewWindow = new CaliberView();
@@ -159,7 +151,7 @@ namespace Item_WPF.MVVM.ViewModels
 
             if (result.HasValue && (result == true))
             {
-                CalibersCollection = AmmoViewWindow.AVM.CaliberOk;
+                CalibersCollection = AmmoViewWindow.Avm.CaliberOk;
                 //NotifyPropertyChanged("ubCalibre");
                 NotifyPropertyChanged("CalibersCollection");
             }
@@ -168,17 +160,17 @@ namespace Item_WPF.MVVM.ViewModels
         #endregion
 
         #region Command CloseWindow
-        public DelegateCommand CloseWindowC { get; set; }
+        public ViewModelCommand CloseWindowC { get; set; }
         private void CloseWindow(object parameter)
         {
 
-            Dispose();
+            // Dispose();
             Owner.DialogResult = true;
             Owner.Close();
         }
         #endregion
         #region Command ExtendDamage
-        public DelegateCommand CExtendDamage { get; set; }
+        public ViewModelCommand CExtendDamage { get; set; }
         private void ExtendDamage(object parameter)
         {
 
@@ -186,25 +178,22 @@ namespace Item_WPF.MVVM.ViewModels
             //{
 
             //   WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.name.Contains("Primary")).idTypeOfDamage1 = "";
-
-            WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.name == "Primary").idTypeOfDamage2 = null;
-
-            WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.name == "Primary").TypeOfDamage1text = null;
-
-            WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.name == "Primary").TypeOfDamage2text = null;
+            WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.Name == "Primary").TypeOfDamage1 = null;
+            WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.Name == "Primary").TypeOfDamage1Text = null;
+            WeaponDamageColl.FirstOrDefault(p => p.WeaponAttackType.Name == "Primary").TypeOfDamage2Text = null;
 
             //}
         }
         #endregion
         #region Command CheckThreeCheckBox
-        public DelegateCommand CheckThreeCheckBox { get; set; }
+        public ViewModelCommand CheckThreeCheckBox { get; set; }
         private void CheckThreeCheckBox_Execute(object parameter)
         {
             bool Param = (bool)parameter;
         }
         #endregion
         #region Command AddMountslot1
-        public DelegateCommand AddMountslot1 { get; set; }
+        public ViewModelCommand AddMountslot1 { get; set; }
         private void AddMountslot1_Execute(object parameter)
         {
             AttacmentMountView AddMountslotWindow = new AttacmentMountView(parameter);
@@ -214,84 +203,84 @@ namespace Item_WPF.MVVM.ViewModels
 
             if (result.HasValue && (result == true))
             {
-                AttMount = AddMountslotWindow._AttacWiew.avvAttSlotOk;
+                AttMount = AddMountslotWindow._AttacWiew.AvvAttSlotOk;
             }
 
             if ((parameter as string) == "Scope")
             {
-                ScopeComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Scope")));
+                ScopeComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("Scope")));
                 NotifyPropertyChanged("ScopeComboBox");
             }
             else if ((parameter as string) == "Laser")
             {
-                LaserComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Laser")));
+                LaserComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("Laser")));
                 NotifyPropertyChanged("LaserComboBox");
             }
             else if ((parameter as string) == "Light")
             {
-                LightComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Light")));
+                LightComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("Light")));
                 NotifyPropertyChanged("LightComboBox");
             }
             else if ((parameter as string) == "Bipod")
             {
-                BipodComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Bipod")));
+                BipodComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("Bipod")));
                 NotifyPropertyChanged("BipodComboBox");
             }
             else if ((parameter as string) == "Silenser")
             {
-                SilenserComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Silenser")));
+                SilenserComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("Silenser")));
                 NotifyPropertyChanged("SilenserComboBox");
             }
             else if ((parameter as string) == "Launcher")
             {
-                LauncherComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Launcher")));
+                LauncherComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("Launcher")));
                 NotifyPropertyChanged("LauncherComboBox");
             }
             else if ((parameter as string) == "Stock")
             {
-                StockComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Stock")));
+                StockComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("Stock")));
                 NotifyPropertyChanged("StockComboBox");
             }
             else if ((parameter as string) == "Bayonet")
             {
-                BayonetComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Bayonet")));
+                BayonetComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("Bayonet")));
                 NotifyPropertyChanged("BayonetComboBox");
             }
             else if ((parameter as string) == "Magazine")
             {
-                MagazineComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Magazine")));
+                MagazineComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("Magazine")));
                 NotifyPropertyChanged("MagazineComboBox");
             }
             else if ((parameter as string) == "Internal")
             {
-                InternalComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("Internal")));
+                InternalComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("Internal")));
                 NotifyPropertyChanged("InternalComboBox");
             }
             else if ((parameter as string) == "External")
             {
-                ExternalComboBox = new ObservableCollection<Attachmentmount>(AttMount.Where(p => p.ATTACHMENTSLOT.szSlotName.Contains("External")));
+                ExternalComboBox = new ObservableCollection<AttachmentMount>(AttMount.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains("External")));
                 NotifyPropertyChanged("ExternalComboBox");
             }
         }
         #endregion
         #region Command SaveChanges
-        public DelegateCommand Save { get; set; }
+        public ViewModelCommand Save { get; set; }
         private void SaveChanges(object parameter)
         {
-            var Nwe = (from p in _context.ItemSubClasses
-                       where p.id == ItemLoad.usItemClass
+            var Nwe = (from p in _context.ItemSubClassDbSet
+                       where p.Id == WeaponLoad.UsItemClass
                        select p.NameSub).First();
             if (Nwe != "Shotgun")
-                WeaponLoad.ROF_for_Sh = 0;
-            if (!WeaponLoad.CutOff_shots)
-                WeaponLoad.CutOff_shotsCount = 0;
-            if (!WeaponLoad.HCROF)
-                WeaponLoad.HCROFValue = 0;
+                WeaponLoad.RofForSh = 0;
+            if (!WeaponLoad.CutOffShots)
+                WeaponLoad.CutOffShotsCount = 0;
+            if (!WeaponLoad.Hcrof)
+                WeaponLoad.HcrofValue = 0;
             _context.SaveChanges();
         }
         #endregion
         #region Command LoadImage
-        public DelegateCommand LoadImage { get; set; }
+        public ViewModelCommand LoadImage { get; set; }
         private void LoadImageToForm(object parameter)
         {
             OpenFileDialog dlg = new OpenFileDialog();
@@ -301,24 +290,24 @@ namespace Item_WPF.MVVM.ViewModels
             if (dlg.FileName != "")
             {
                 //  ImageBitmapSourse = new BitmapImage(new Uri(dlg.FileName));
-                ItemLoad.Item_Image = System.IO.File.ReadAllBytes(dlg.FileName);
+                WeaponLoad.ItemImage = System.IO.File.ReadAllBytes(dlg.FileName);
             }
         }
         #endregion
         #region Command DellImageFromAll
-        public DelegateCommand DellImage { get; set; }
+        public ViewModelCommand DellImage { get; set; }
         private void DellImageFromAll(object parameter)
         {
-            ItemLoad.Item_Image = null;
+            WeaponLoad.ItemImage = null;
         }
         #endregion
         #endregion
 
 
-        public void Dispose()
-        {
-            _context?.Dispose();
-        }
+        //public void Dispose()
+        //{
+        //    _context?.Dispose();
+        //}
 
         private void _WeaponDamageColl_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
@@ -326,7 +315,7 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 foreach (WeaponDamage item in e.OldItems)
                 {
-                    _context.WeaponDamages.Remove(item);
+                    _context.WeaponDamageDbSet.Remove(item);
                 }
                 //  SaveChanges();
             }
@@ -334,7 +323,7 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 foreach (WeaponDamage item in e.NewItems)
                 {
-                    _context.WeaponDamages.Add(item);
+                    _context.WeaponDamageDbSet.Add(item);
                 }
             }
         }
@@ -344,7 +333,7 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 foreach (AvailableAttachSlot item in e.OldItems)
                 {
-                    _context.AvailableAttachSlots.Remove(item);
+                    _context.AvailableAttachSlotDbSet.Remove(item);
                 }
                 //  SaveChanges();
             }
@@ -352,7 +341,7 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 foreach (AvailableAttachSlot item in e.NewItems)
                 {
-                    _context.AvailableAttachSlots.Add(item);
+                    _context.AvailableAttachSlotDbSet.Add(item);
                 }
             }
         }
