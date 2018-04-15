@@ -1,92 +1,90 @@
 ﻿using Item_WPF.addin;
-using Item_WPF.ItemEntityModel;
+
 using Item_WPF.MVVM.Models;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
+using GurpsDb.GurpsModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {
     class SelectItemsViewModel : IDisposable
     {
-        private item1Entities _context;
+        private ContextGurpsModel _context;
         private Window _win;
         private string _parametr;
-        public ObservableCollection<ITEM> Items { get; set; }
+        public ObservableCollection<GurpsDb.GurpsModel.Item> Items { get; set; }
         public ItemsForSortModel SelectedItems { get; set; }
         public ObservableCollection<ItemsForSortModel> IttForSort { get; set; }
-        public SelectItemsViewModel(string Parametr, int? mount, Window win)
+        public SelectItemsViewModel(string parametr, int? mount, Window win)
         {
             _win = win;
-            CSelectItem = new ViewModelCommand(SelectItem, true);
-            CSelectItemClose = new ViewModelCommand(SelectItemClose, true);
+            CSelectItem = new ViewModelCommand(SelectItem);
+            CSelectItemClose = new ViewModelCommand(SelectItemClose);
             SelectedItems = new ItemsForSortModel();
-            _context = new item1Entities();
-            Items = new ObservableCollection<ITEM>(_context.ITEMs);
+            _context = new ContextGurpsModel();
+            Items = new ObservableCollection<GurpsDb.GurpsModel.Item>(_context.ItemDbSet);
 
-            _parametr = Parametr;
-            #region if (Parametr=="Weapon")
-            if (Parametr == "Weapon")
+            _parametr = parametr;
+            #region if (parametr=="Weapon")
+            if (parametr == "Weapon")
             {
-                IttForSort = new ObservableCollection<ItemsForSortModel>(_context.ITEMs.
-                Where(p => p.ItemSubClass.ItemClass.name == Parametr).
+                IttForSort = new ObservableCollection<ItemsForSortModel>(_context.ItemDbSet.
+                Where(p => p.ItemSubClass.ItemClass.Name == parametr).
                 Select(p => new
                 {
-                    _uiIndex = p.uiIndex,
-                    _szItemName = p.szItemName,
-                    _ItemClassname = p.ItemSubClass.ItemClass.name,
-                    _TL1name_TL = p.TL1.name_TL,
-                    _LC1Name_LC = p.LC1.Name_LC,
-                    _usPrice = p.usPrice
+                    _uiIndex = p.UiIndex,
+                    _szItemName = p.SzItemName,
+                    _ItemClassname = p.ItemSubClass.ItemClass.Name,
+                    _TL1name_TL = p.Tl1.NameTl,
+                    _LC1Name_LC = p.Lc1.NameLc,
+                    _usPrice = p.UsPrice
                 })./*AsEnumerable().*/
                 Select(an => new ItemsForSortModel
                 {
-                    ID = an._uiIndex,
+                    Id = an._uiIndex,
                     Name = an._szItemName,
                     Class = an._ItemClassname,
-                    TL = an._TL1name_TL,
-                    LC = an._LC1Name_LC,
+                    Tl = an._TL1name_TL,
+                    Lc = an._LC1Name_LC,
                     Price = an._usPrice
                 }));
             }
             #endregion
-            #region else if (Parametr=="Attachment")
-            else if (Parametr == "Attachment")
+            #region else if (parametr=="Attachment")
+            else if (parametr == "Attachment")
             {
 
-                ObservableCollection<ITEM> ITTFORSelect = new ObservableCollection<ITEM>(_context.ITEMs
-                    .Where(p => p.ItemSubClass.ItemClass.name == Parametr));
-                var q = (from p in _context.AvailableAttachSlots
-                         where p.rAttachmentmount == mount && p.rATTACHMENTSLOT == 31958
-                         select p.ITEM).ToList();
+                ObservableCollection<GurpsDb.GurpsModel.Item> ITTFORSelect = new ObservableCollection<GurpsDb.GurpsModel.Item>(_context.ItemDbSet
+                    .Where(p => p.ItemSubClass.ItemClass.Name == parametr));
+                var q = (from p in _context.AvailableAttachSlotDbSet
+                         where p.RAttachmentmount == mount && p.RAttachmentslot == 31958
+                         select p.Item).ToList();
 
                 IttForSort = new ObservableCollection<ItemsForSortModel>(//_context.AvailableAttachSlots.
                 q.
 
 
-                Where(p => p.ItemSubClass.ItemClass.name == Parametr).
-                //Select(P => P.ITEM).
+                Where(p => p.ItemSubClass.ItemClass.Name == parametr).
+                //Select(P => P.Item).
                 Select(p => new
                 {
-                    _uiIndex = p.uiIndex,
-                    _szItemName = p.szItemName,
-                    _ItemClassname = p.ItemSubClass.ItemClass.name,
-                    _TL1name_TL = p.TL1.name_TL,
-                    _LC1Name_LC = p.LC1.Name_LC,
-                    _usPrice = p.usPrice
+                    _uiIndex = p.UiIndex,
+                    _szItemName = p.SzItemName,
+                    _ItemClassname = p.ItemSubClass.ItemClass.Name,
+                    _TL1name_TL = p.Tl1.NameTl,
+                    _LC1Name_LC = p.Lc1.NameLc,
+                    _usPrice = p.UsPrice
                 }).
                 /*AsEnumerable().*/
                 Select(an => new ItemsForSortModel
                 {
-                    ID = an._uiIndex,
+                    Id = an._uiIndex,
                     Name = an._szItemName,
                     Class = an._ItemClassname,
-                    TL = an._TL1name_TL,
-                    LC = an._LC1Name_LC,
+                    Tl = an._TL1name_TL,
+                    Lc = an._LC1Name_LC,
                     Price = an._usPrice
                 }));
             }
@@ -186,7 +184,7 @@ public partial class SelectItems : Window
                 List<Attachment> att = (from p in context.Attachments
                                         where p.G_SubAttachClass == attslot && p.id_Attachmentmount == attmount
                                         select p).ToList();
-                List<ITEM> itemsAtt = new List<ITEM>();
+                List<Item> itemsAtt = new List<Item>();
                 foreach (var itt in att)
                 {
                     var qwery = (from p in context.ITEMs

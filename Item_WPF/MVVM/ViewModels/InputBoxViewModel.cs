@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using Item_WPF.ItemEntityModel;
-using System.Threading.Tasks;
-
-using Item_WPF.addin;
-using Item_WPF.MVVM.Models;
+﻿using System.ComponentModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {
@@ -45,7 +36,7 @@ namespace Item_WPF.MVVM.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-           #endregion   
-       
+        #endregion
+
     }
 }

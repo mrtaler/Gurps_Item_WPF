@@ -1,55 +1,46 @@
 ﻿using Item_WPF.addin;
 using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using Item_WPF.ItemEntityModel;
-using System.Threading.Tasks;
+using GurpsDb.GurpsModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {
     class AttacmentEditViewModel : INotifyPropertyChanged, IDisposable
     {
-        private item1Entities _context;
-        public ITEM ItemLoad { get; set; }
+        private ContextGurpsModel _context;
+        public Item ItemLoad { get; set; }
         public Attachment AttachLoad { get; set; }
-        public ObservableCollection<TL> TlCollection { get; set; }
-        public ObservableCollection<LC> LccCollection { get; set; }
-        public string QT { get; set; }
+        public ObservableCollection<Tl> TlCollection { get; set; }
+        public ObservableCollection<Lc> LccCollection { get; set; }
+        public string Qt { get; set; }
         public ObservableCollection<AvailableAttachSlot> AttachSlot { get; set; }
-        public ObservableCollection<G_AttachClass> AttachClassColl { get; set; }
-        public ObservableCollection<G_SubAttachClass> SubAttachClassColl { get; set; }
+        public ObservableCollection<GAttachClass> AttachClassColl { get; set; }
+        public ObservableCollection<GSubAttachClass> SubAttachClassColl { get; set; }
         public ObservableCollection<Battery> BatteryColl { get; set; }
         public ObservableCollection<LaserColorEf> LaserColorEfColl { get; set; }
 
-        public ObservableCollection<Attachmentmount> AttMount { get; set; }
-        public AttacmentEditViewModel(ITEM itemselect)
+        public ObservableCollection<AttachmentMount> AttMount { get; set; }
+        public AttacmentEditViewModel(Attachment itemselect)
         {
-            _context = new item1Entities();
-            ItemLoad = _context.ITEMs.Find(itemselect.uiIndex);
-                       
-            AttachLoad = ItemLoad.Attachment;
-            AttachSlot = new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlots);
-            TlCollection = new ObservableCollection<TL>(_context.TLs);
-            LccCollection = new ObservableCollection<LC>(_context.LCs);
+            _context = new ContextGurpsModel();
+            ItemLoad = (Item)itemselect;
+            AttachLoad = itemselect;
 
-            
-
-            AttachClassColl = new ObservableCollection<G_AttachClass>(_context.G_AttachClass);
-            SubAttachClassColl = new ObservableCollection<G_SubAttachClass>(_context.G_SubAttachClass);
-
-            LaserColorEfColl = new ObservableCollection<LaserColorEf>(_context.LaserColorEfs);
-
-            AttMount = new ObservableCollection<Attachmentmount>(_context.Attachmentmounts);
-            BatteryColl = new ObservableCollection<Battery>(_context.Batteries);
+            AttachSlot = new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlotDbSet);
+            TlCollection = new ObservableCollection<Tl>(_context.TlDbSet);
+            LccCollection = new ObservableCollection<Lc>(_context.LcDbSet);
+            AttachClassColl = new ObservableCollection<GAttachClass>(_context.GAttachClassDbSet);
+            SubAttachClassColl = new ObservableCollection<GSubAttachClass>(_context.GSubAttachClassDbSet);
+            LaserColorEfColl = new ObservableCollection<LaserColorEf>(_context.LaserColorEfDbSet);
+            AttMount = new ObservableCollection<AttachmentMount>(_context.AttachmentMountDbSet);
+            BatteryColl = new ObservableCollection<Battery>(_context.BatteryDbSet);
 
             #region Commands
-            Save = new DelegateCommand(SaveChanges);
-            LoadImage = new DelegateCommand(LoadImageToForm) ;
-            DellImage = new DelegateCommand(DellImageFromAll);
+            Save = new ViewModelCommand(SaveChanges);
+            LoadImage = new ViewModelCommand(LoadImageToForm);
+            DellImage = new ViewModelCommand(DellImageFromAll);
             #endregion
         }
 
@@ -66,19 +57,19 @@ namespace Item_WPF.MVVM.ViewModels
             dlg.ShowDialog();
             if (dlg.FileName != "")
             {
-                ItemLoad.Item_Image = System.IO.File.ReadAllBytes(dlg.FileName);
+                ItemLoad.ItemImage = System.IO.File.ReadAllBytes(dlg.FileName);
             }
         }
         private void DellImageFromAll(object parameter)
         {
-            ItemLoad.Item_Image = null;
+            ItemLoad.ItemImage = null;
         }
         #endregion
 
         #region Declaration Command
-        public DelegateCommand Save { get; set; }
-        public DelegateCommand LoadImage { get; set; }
-        public DelegateCommand DellImage { get; set; }
+        public ViewModelCommand Save { get; set; }
+        public ViewModelCommand LoadImage { get; set; }
+        public ViewModelCommand DellImage { get; set; }
         #endregion
 
         #region Реализация интерфейса

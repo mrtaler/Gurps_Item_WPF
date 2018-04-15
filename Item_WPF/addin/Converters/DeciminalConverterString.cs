@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Linq;
-using System.Windows.Data;
-using System.Windows.Media.Imaging;
 using System.Globalization;
-using System.Collections.ObjectModel;
-using System.Windows;
-using System.Windows.Media;
-using System.Collections.Generic;
-
-using System.Text;
 
 
 namespace Item_WPF.addin.Converters

@@ -1,37 +1,34 @@
 ﻿using Item_WPF.addin;
-using Item_WPF.ItemEntityModel;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using GurpsDb.GurpsModel;
+using GurpsDb.BaseModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {
-    public class AmmoViewModel: ViewModelBase
+    public class AmmoViewModel : ViewModelBase
     {
-        private item1Entities _context;
+        private ContextGurpsModel _context;
         public ObservableCollection<Caliber> caliber { get; set; }
-        public ObservableCollection<ITEM> AmmoOk { get; set; }
+        public ObservableCollection<Item> AmmoOk { get; set; }
         public AmmoViewModel()
         {
-            _context = new item1Entities();
-           
-            Save = new DelegateCommand(SaveChanges);
-            caliber = new ObservableCollection<Caliber>(_context.Calibers);
-            AmmoOk = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.ItemSubClass.ItemClass.name.Contains("ammo")));
+            _context = new ContextGurpsModel();
+
+            Save = new ViewModelCommand(SaveChanges);
+            caliber = new ObservableCollection<Caliber>(_context.CaliberDbSet);
+            AmmoOk = new ObservableCollection<Item>(_context.ItemDbSet.Where(p => p.ItemSubClass.ItemClass.Name.Contains("ammo")));
             AmmoOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_ammoOK_CollectionChanged);
-           
+
         }
         public AmmoViewModel(object parametr)
         {
-            _context = new item1Entities();
-            int? param = (parametr as int?);    
-            Save = new DelegateCommand(SaveChanges);
-            caliber = new ObservableCollection<Caliber>(_context.Calibers);
-            AmmoOk = new ObservableCollection<ITEM>(_context.ITEMs.Where(p => p.ItemSubClass.ItemClass.name.Contains("ammo")).Where(p=>p.ubCalibre==param));
+            _context = new ContextGurpsModel();
+            int? param = (parametr as int?);
+            Save = new ViewModelCommand(SaveChanges);
+            caliber = new ObservableCollection<Caliber>(_context.CaliberDbSet);
+            // AmmoOk = new ObservableCollection<Item>(_context.ItemDbSet.Where(p => p.ItemSubClass.ItemClass.Name.Contains("ammo")).Where(p => p.UbCalibre == param));
             AmmoOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_ammoOK_CollectionChanged);
 
         }
@@ -39,19 +36,19 @@ namespace Item_WPF.MVVM.ViewModels
         {
             if (e.Action == NotifyCollectionChangedAction.Remove)
             {
-                foreach (ITEM item in e.OldItems)
+                foreach (Item item in e.OldItems)
                 {
-                    _context.ITEMs.Remove(item);
+                    _context.ItemDbSet.Remove(item);
                 }
                 SaveChanges(1);
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
-                foreach (ITEM item in e.NewItems)
+                foreach (Item item in e.NewItems)
                 {
-                    item.szItemName = "new Ammo";
-                    item.usItemClass = _context.ItemClasses.First(p => p.name.Contains("Ammo")).id;
-                    _context.ITEMs.Add(item);
+                    item.SzItemName = "new Ammo";
+                    item.UsItemClass = _context.ItemClassDbSet.First(p => p.Name.Contains("Ammo")).Id;
+                    _context.ItemDbSet.Add(item);
                     SaveChanges(1);
                 }
             }
@@ -61,7 +58,7 @@ namespace Item_WPF.MVVM.ViewModels
             _context.SaveChanges();
         }
 
-        public DelegateCommand Save { get; set; }
+        public ViewModelCommand Save { get; set; }
 
         //      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 

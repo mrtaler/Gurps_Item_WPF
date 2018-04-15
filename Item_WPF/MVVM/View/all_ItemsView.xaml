@@ -44,11 +44,11 @@
                   Margin="343,10,0,0"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
-                  DisplayMemberPath="name"
+                  DisplayMemberPath="Name"
                   IsEditable="True"
                   ItemsSource="{Binding ItemsClass}"
                   SelectedValue="{Binding SelectedItClassforSort}"
-                  SelectedValuePath="id" />
+                  SelectedValuePath="Id" />
         <DataGrid x:Name="DataGridViewAllItems"
                   Margin="10,37,10,44"
                   AutoGenerateColumns="False"
@@ -56,39 +56,47 @@
                   ItemsSource="{Binding Items}"
                   SelectedItem="{Binding SelectedItemForWork}"
                   SelectedValuePath="uiIndex">
+            <DataGrid.InputBindings>
+                <MouseBinding Command="{Binding RelativeSource={RelativeSource FindAncestor,
+                                                                               AncestorType={x:Type DataGrid}},
+                                                Path=DataContext.CSelItem}"
+                              CommandParameter="{Binding Path=GurpsSkill}"
+                              Gesture="LeftDoubleClick" />
+            </DataGrid.InputBindings>
+
             <DataGrid.Columns>
                 <DataGridTextColumn Width="20"
-                                    Binding="{Binding uiIndex,
+                                    Binding="{Binding UiIndex,
                                                       Mode=OneWay}"
                                     Header="id"
                                     IsReadOnly="True" />
                 <DataGridTextColumn Width="*"
-                                    Binding="{Binding szItemName,
+                                    Binding="{Binding SzItemName,
                                                       Mode=OneWay}"
                                     Header="Name"
                                     IsReadOnly="True" />
                 <DataGridTextColumn Width="70"
-                                    Binding="{Binding ItemClass.name,
+                                    Binding="{Binding ItemSubClass.NameSub,
                                                       Mode=OneWay}"
                                     Header="Class"
                                     IsReadOnly="True" />
                 <DataGridTextColumn Width="30"
-                                    Binding="{Binding TL1.name_TL,
+                                    Binding="{Binding Tl1.NameTl,
                                                       Mode=OneWay}"
-                                    Header="TL"
+                                    Header="Tl"
                                     IsReadOnly="True" />
                 <DataGridTextColumn Width="30"
-                                    Binding="{Binding LC1.Name_LC,
+                                    Binding="{Binding Lc1.NameLc,
                                                       Mode=OneWay}"
-                                    Header="LC"
+                                    Header="Lc"
                                     IsReadOnly="True" />
                 <DataGridTextColumn Width="100"
-                                    Binding="{Binding usPrice,
+                                    Binding="{Binding UsPrice,
                                                       Mode=OneWay}"
                                     Header="Cost"
                                     IsReadOnly="True" />
                 <DataGridTextColumn Width="100"
-                                    Binding="{Binding ubWeight,
+                                    Binding="{Binding UbWeight,
                                                       Mode=OneWay}"
                                     Header="Weight"
                                     IsReadOnly="True" />
@@ -110,7 +118,7 @@
                Margin="10,0,0,10"
                HorizontalAlignment="Left"
                VerticalAlignment="Bottom"
-               Content="{Binding SelectedItemForWork.szItemName}" />
+               Content="{Binding SelectedItemForWork.SzItemName}" />
         <Label x:Name="Label02"
                Width="204"
                Height="26"
@@ -125,6 +133,12 @@
                HorizontalAlignment="Left"
                VerticalAlignment="Bottom"
                Content="{Binding SelectedItClassforSort}" />
-        <Button x:Name="Closed" Content="Close" HorizontalAlignment="Left" Margin="275,289,0,0" VerticalAlignment="Top" Width="75" Click="Close_Click"/>
+        <Button x:Name="Closed"
+                Width="75"
+                Margin="275,289,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="Close_Click"
+                Content="Close" />
     </Grid>
 </Window>
