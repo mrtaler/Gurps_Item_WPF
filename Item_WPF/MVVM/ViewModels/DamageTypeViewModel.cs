@@ -1,25 +1,21 @@
 ﻿using Item_WPF.addin;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using Item_WPF.ItemEntityModel;
-using System.Threading.Tasks;
+using GurpsDb.GurpsModel;
 
 namespace Item_WPF.MVVM.ViewModels
 {
     public class DamageTypeViewModel : INotifyPropertyChanged, IDisposable
     {
-        private item1Entities _context;
+        private ContextGurpsModel _context;
         public ObservableCollection<TypeOfDamage> TypeOfDamageOk { get; set; }
         public DamageTypeViewModel()
         {
-            _context = new item1Entities();
-            TypeOfDamageOk = new ObservableCollection<TypeOfDamage>(_context.TypeOfDamages);
-            Save = new DelegateCommand(SaveChanges);
+            _context = new ContextGurpsModel();
+            TypeOfDamageOk = new ObservableCollection<TypeOfDamage>(_context.TypeOfDamageDbSet);
+            Save = new ViewModelCommand(SaveChanges);
             TypeOfDamageOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_TypeOfDamageOK_CollectionChanged);
         }
         private void _TypeOfDamageOK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -28,7 +24,7 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 foreach (TypeOfDamage item in e.OldItems)
                 {
-                    _context.TypeOfDamages.Remove(item);
+                    _context.TypeOfDamageDbSet.Remove(item);
                 }
                 SaveChanges(1);
             }
@@ -36,10 +32,10 @@ namespace Item_WPF.MVVM.ViewModels
             {
                 foreach (TypeOfDamage item in e.NewItems)
                 {
-                    item.name = "";
+                    item.Name = "";
                     item.LongName = "";
-                    item.mDamage = "";
-                    _context.TypeOfDamages.Add(item);
+                    item.MDamage = "";
+                    _context.TypeOfDamageDbSet.Add(item);
                     SaveChanges(1);
                 }
             }
@@ -48,7 +44,7 @@ namespace Item_WPF.MVVM.ViewModels
         {
             _context.SaveChanges();
         }
-        public DelegateCommand Save { get; set; }
+        public ViewModelCommand Save { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertyChanged(string propertyName)
         {

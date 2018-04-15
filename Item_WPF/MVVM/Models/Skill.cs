@@ -1,4 +1,4 @@
-﻿using Item_WPF.ItemEntityModel;
+﻿using GurpsDb.GurpsModel;
 
 namespace Item_WPF.MVVM.Models
 {
@@ -64,7 +64,7 @@ namespace Item_WPF.MVVM.Models
         }
 
         // The effective skill level.
-        public int? Level(CharacterDB character)
+        public int? Level(CharacterDb character)
         {
             // If skill is not learned
             if (RelativeLevel == null)
@@ -107,7 +107,8 @@ namespace Item_WPF.MVVM.Models
             }
         }
 
-        public SkillnotDB() {
+        public SkillnotDB()
+        {
         }
 
         public SkillnotDB(string name, string description, SkillStat stat, SkillDifficulty difficulty)

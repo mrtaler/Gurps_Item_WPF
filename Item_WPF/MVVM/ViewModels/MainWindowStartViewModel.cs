@@ -1,16 +1,10 @@
-﻿using com.trollworks.gcs.character.names;
-using Item_WPF.addin;
+﻿using Item_WPF.addin;
 using Item_WPF.MVVM.GurpsSkill_m;
 using Item_WPF.MVVM.Serialize;
 using Item_WPF.MVVM.View;
 using Microsoft.Windows.Controls.Ribbon;
-using Item_WPF.ItemEntityModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
+using Item_WPF.GCS_Ser.names;
 
 
 namespace Item_WPF.MVVM.ViewModels
@@ -20,40 +14,40 @@ namespace Item_WPF.MVVM.ViewModels
 
         protected RibbonWindow Owner;
 
-        public DelegateCommand AboutCommand { get; private set; }
-        public DelegateCommand DropDiceCommand { get; private set; }
-        public DelegateCommand ShowAllItemsCommand { get; private set; }
-        public DelegateCommand ShowCombineCommand { get; private set; }
-        public DelegateCommand ShowCharacterCommand { get; private set; }
-        public DelegateCommand ShowAmmoCommand { get; private set; }
-        public DelegateCommand OwnerCloseCommand { get; private set; }
-        public DelegateCommand NewBoxCommand { get; private set; }
-        public DelegateCommand ListBoxCommand { get; private set; }
-        public DelegateCommand BoxChangeCommand { get; private set; }
-        public DelegateCommand NewNameCommand { get; private set; }
-        public DelegateCommand SerializeCommand { get; private set; }
-        public DelegateCommand AllGurpsSkillViewLaunchCommand { get; private set; }
-    public MainWindowStartViewModel(RibbonWindow owner)
+        public ViewModelCommand AboutCommand { get; private set; }
+        public ViewModelCommand DropDiceCommand { get; private set; }
+        public ViewModelCommand ShowAllItemsCommand { get; private set; }
+        public ViewModelCommand ShowCombineCommand { get; private set; }
+        public ViewModelCommand ShowCharacterCommand { get; private set; }
+        public ViewModelCommand ShowAmmoCommand { get; private set; }
+        public ViewModelCommand OwnerCloseCommand { get; private set; }
+        public ViewModelCommand NewBoxCommand { get; private set; }
+        public ViewModelCommand ListBoxCommand { get; private set; }
+        public ViewModelCommand BoxChangeCommand { get; private set; }
+        public ViewModelCommand NewNameCommand { get; private set; }
+        public ViewModelCommand SerializeCommand { get; private set; }
+        public ViewModelCommand AllGurpsSkillViewLaunchCommand { get; private set; }
+        public MainWindowStartViewModel(RibbonWindow owner)
         {
             Owner = owner;
 
             // Create commands
-            AboutCommand = new DelegateCommand(ShowAboutWindow);
-            DropDiceCommand = new DelegateCommand(DropDice);//+
-            ShowAllItemsCommand = new DelegateCommand(ShowAllItems);//+
-            ShowCombineCommand = new DelegateCommand(ShowCombine);//+
-            ShowCharacterCommand = new DelegateCommand(ShowCharacter);//+
-            OwnerCloseCommand = new DelegateCommand(OwnerClose);//+
-            ShowAmmoCommand = new DelegateCommand(ShowAmmo);
-            NewBoxCommand = new DelegateCommand(NewBox);
-            ListBoxCommand = new DelegateCommand(ListBox);
-            BoxChangeCommand = new DelegateCommand(BoxChange);
-                 NewNameCommand = new DelegateCommand(randomname);
+            AboutCommand = new ViewModelCommand(ShowAboutWindow);
+            DropDiceCommand = new ViewModelCommand(DropDice);//+
+            ShowAllItemsCommand = new ViewModelCommand(ShowAllItems);//+
+            ShowCombineCommand = new ViewModelCommand(ShowCombine);//+
+            ShowCharacterCommand = new ViewModelCommand(ShowCharacter);//+
+            OwnerCloseCommand = new ViewModelCommand(OwnerClose);//+
+            ShowAmmoCommand = new ViewModelCommand(ShowAmmo);
+            NewBoxCommand = new ViewModelCommand(NewBox);
+            ListBoxCommand = new ViewModelCommand(ListBox);
+            BoxChangeCommand = new ViewModelCommand(BoxChange);
+            NewNameCommand = new ViewModelCommand(randomname);
 
-            SerializeCommand = new DelegateCommand(Serialize);
+            SerializeCommand = new ViewModelCommand(Serialize);
 
 
-            AllGurpsSkillViewLaunchCommand = new DelegateCommand(AllGurpsSkillViewLaunch);
+            AllGurpsSkillViewLaunchCommand = new ViewModelCommand(AllGurpsSkillViewLaunch);
         }
         public void ShowAboutWindow(object parameter)
         {
@@ -112,12 +106,12 @@ namespace Item_WPF.MVVM.ViewModels
         }
         private void randomname(object parameter)
         {
-            if (parameter.ToString()=="male")
+            if (parameter.ToString() == "male")
             {
-                MessageBox.Show(USCensusNames.INSTANCE.getFullName(true));
+                MessageBox.Show(USCensusNames.Instance.GetFullName(true));
             }
             else
-            MessageBox.Show(USCensusNames.INSTANCE.getFullName(false));
+                MessageBox.Show(USCensusNames.Instance.GetFullName(false));
         }
         private void AllGurpsSkillViewLaunch(object parameter)
         {

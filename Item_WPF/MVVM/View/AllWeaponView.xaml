@@ -53,7 +53,7 @@
                                     IsReadOnly="True" />
                 <DataGridTextColumn x:Name="TL"
                                     Binding="{Binding Path=Tl}"
-                                    Header="TL"
+                                    Header="Tl"
                                     IsReadOnly="True" />
                 <DataGridTextColumn x:Name="Damage"
                                     Binding="{Binding Path=Damage}"

@@ -133,12 +133,12 @@
                                    Margin="10,122,0,0"
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Top"
-                                   Content="TL" />
+                                   Content="Tl" />
                             <Label x:Name="Label10"
                                    Margin="10,149,0,0"
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Top"
-                                   Content="LC" />
+                                   Content="Lc" />
                             <TextBox x:Name="WeigthTb"
                                      Width="120"
                                      Height="23"
@@ -190,7 +190,7 @@
                                       Margin="93,122,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      DisplayMemberPath="name_TL"
+                                      DisplayMemberPath="name_Tl"
                                       IsReadOnly="True"
                                       ItemsSource="{Binding TlCollection}"
                                       SelectedValue="{Binding ItemLoad.TL}"
@@ -200,11 +200,11 @@
                                       Margin="93,149,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      DisplayMemberPath="Name_LC"
+                                      DisplayMemberPath="Name_Lc"
                                       IsReadOnly="True"
                                       ItemsSource="{Binding LccCollection}"
                                       SelectedValue="{Binding ItemLoad.LC}"
-                                      SelectedValuePath="Id_LC" />
+                                      SelectedValuePath="Id_Lc" />
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="GroupBox"
@@ -213,7 +213,7 @@
                               Margin="275,10,0,0"
                               HorizontalAlignment="Left"
                               VerticalAlignment="Top"
-                              Header="TL">
+                              Header="Tl">
                         <TextBlock x:Name="TlTextBlock"
                                    Margin="10,0,-2,5"
                                    Text="{Binding ElementName=TlCb,
@@ -227,7 +227,7 @@
                               Margin="275,107,0,0"
                               HorizontalAlignment="Left"
                               VerticalAlignment="Top"
-                              Header="LC">
+                              Header="Lc">
                         <TextBlock x:Name="LcTextBlock"
                                    Margin="10,10,2,6"
                                    Text="{Binding ElementName=LcCb,

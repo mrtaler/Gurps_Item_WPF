@@ -18,7 +18,7 @@
                   IsReadOnly="True"
                   ItemsSource="{Binding IttForSort}"
                   SelectedItem="{Binding SelectedItems}"
-                  SelectedValuePath="ID" />
+                  SelectedValuePath="Id" />
         <Button x:Name="SelectButton"
                 Width="75"
                 Height="20"
