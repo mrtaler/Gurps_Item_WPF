@@ -4,6 +4,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
+using GurpsDb;
 using GurpsDb.GurpsModel;
 using GurpsDb.BaseModel;
 

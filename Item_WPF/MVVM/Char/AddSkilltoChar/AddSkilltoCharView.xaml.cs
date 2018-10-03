@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using GurpsDb;
 using GurpsDb.GurpsModel;
 using Item_WPF.MVVM.Char.AddSkilltoChar;
 

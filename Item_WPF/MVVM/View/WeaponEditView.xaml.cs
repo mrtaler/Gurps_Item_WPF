@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using GurpsDb;
 using Item_WPF.MVVM.ViewModels;
 using GurpsDb.GurpsModel;
 

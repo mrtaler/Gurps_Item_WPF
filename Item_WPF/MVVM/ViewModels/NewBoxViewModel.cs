@@ -1,5 +1,6 @@
 ﻿using Item_WPF.addin;
 using System.Collections.ObjectModel;
+using GurpsDb;
 using GurpsDb.GurpsModel;
 using GurpsDb.BaseModel;
 

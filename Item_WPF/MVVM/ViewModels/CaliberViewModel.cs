@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using Item_WPF.addin;
 using System.Collections.Specialized;
+using GurpsDb;
 using GurpsDb.GurpsModel;
 using GurpsDb.BaseModel;
 

@@ -1,5 +1,6 @@
 ﻿using Item_WPF.MVVM.AllCharfromDB;
 using System.Windows;
+using GurpsDb;
 
 namespace Item_WPF.MVVM.View
 {
@@ -8,7 +9,7 @@ namespace Item_WPF.MVVM.View
     /// </summary>
     public partial class AllCharfromDBView : Window
     {
-        public AllCharfromDBView(GurpsDb.GurpsModel.ContextGurpsModel context)
+        public AllCharfromDBView(ContextGurpsModel context)
         {
             DataContext = new AllCharFromDbViewModel(context);
             InitializeComponent();

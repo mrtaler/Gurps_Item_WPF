@@ -1,7 +1,8 @@
-// ReSharper disable once CheckNamespace
-namespace GurpsDb.GurpsModel
+using System.Data.Entity;
+using GurpsDb.GurpsModel;
+
+namespace GurpsDb
 {
-    using System.Data.Entity;
 
     public partial class ContextGurpsModel : DbContext
     {
@@ -9,7 +10,6 @@ namespace GurpsDb.GurpsModel
           //  : base("name=ContextGurpsModel")
           : base("offlineContextGurpsModel")
         {
-            // Установить новый инициализатор
             Database.SetInitializer<ContextGurpsModel>(new DbInit());
         }
 

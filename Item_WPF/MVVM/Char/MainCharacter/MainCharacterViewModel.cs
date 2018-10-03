@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Xml.Serialization;
+using GurpsDb;
 using GurpsDb.BaseModel;
 using GurpsDb.GurpsModel;
 using Item_WPF.addin;

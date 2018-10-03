@@ -5,14 +5,14 @@ namespace GurpsDb.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<GurpsDb.GurpsModel.ContextGurpsModel>
+    internal sealed class Configuration : DbMigrationsConfiguration<ContextGurpsModel>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(GurpsDb.GurpsModel.ContextGurpsModel context)
+        protected override void Seed(ContextGurpsModel context)
         {
             //  This method will be called after migrating to the latest version.
 

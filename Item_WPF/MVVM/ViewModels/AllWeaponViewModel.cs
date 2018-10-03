@@ -1,6 +1,7 @@
 ﻿using Item_WPF.MVVM.Models;
 using System.Collections.ObjectModel;
 using System.Linq;
+using GurpsDb;
 using GurpsDb.GurpsModel;
 
 namespace Item_WPF.MVVM.ViewModels
