@@ -1,76 +1,75 @@
-using System.Data.Entity;
 using GurpsDb.GurpsModel;
 
 namespace GurpsDb
 {
 
-    public partial class ContextGurpsModel : DbContext
+    public partial class ContextGurpsModel : System.Data.Entity.DbContext
     {
         public ContextGurpsModel()
           //  : base("name=ContextGurpsModel")
           : base("offlineContextGurpsModel")
         {
-            Database.SetInitializer<ContextGurpsModel>(new DbInit());
+            System.Data.Entity.Database.SetInitializer<ContextGurpsModel>(new DbInit());
         }
 
-        public virtual DbSet<Advantage> AdvantageDbSet { get; set; }
-        public virtual DbSet<AdvantagePrereq> AdvantagePrereqDbSet { get; set; }
-        public virtual DbSet<AttributeBonus> AttributeBonusDbSet { get; set; }
-        public virtual DbSet<AttributePrereq> AttributePrereqDbSet { get; set; }
-        public virtual DbSet<CharacterDb> CharacterDbDbSet { get; set; }
-        public virtual DbSet<ContainedWeightPrereq> ContainedWeightPrereqDbSet { get; set; }
-        public virtual DbSet<CostReduction> CostReductionDbSet { get; set; }
-        public virtual DbSet<DefaultSkill> DefaultSkillDbSet { get; set; }
-        public virtual DbSet<DefSkillSome> DefSkillSomeDbSet { get; set; }
-        public virtual DbSet<DifficultySkill> DifficultySkillDbSet { get; set; }
-        public virtual DbSet<DrBonusDb> DrBonusDbDbSet { get; set; }
-        public virtual DbSet<GurpsCategory> GurpsCategoryDbSet { get; set; }
-        public virtual DbSet<GurpsSkill> GurpsSkillDbSet { get; set; }
-        public virtual DbSet<InventoryOfChar> InventoryOfCharDbSet { get; set; }
-        public virtual DbSet<MeleeWeapon> MeleeWeaponDbSet { get; set; }
-        public virtual DbSet<Modifier> ModifierDbSet { get; set; }
-        public virtual DbSet<PrereqListDb> PrereqListDbDbSet { get; set; }
-        public virtual DbSet<RangedWeapon> RangedWeaponDbSet { get; set; }
-        public virtual DbSet<SkillBonusDb> SkillBonusDbDbSet { get; set; }
-        public virtual DbSet<SkillPrereqDb> SkillPrereqDbDbSet { get; set; }
-        public virtual DbSet<SpellBonus> SpellBonusDbSet { get; set; }
-        public virtual DbSet<SpellPrereqDb> SpellPrereqDbDbSet { get; set; }
-        public virtual DbSet<WeaponBonus> WeaponBonusDbSet { get; set; }
-        public virtual DbSet<Ammoupgrates> AmmoupgratesDbSet { get; set; }
-        public virtual DbSet<AnyBoxNameType> AnyBoxNameTypeDbSet { get; set; }
-        public virtual DbSet<Armour> ArmourDbSet { get; set; }
-        public virtual DbSet<Attachment> AttachmentDbSet { get; set; }
-        public virtual DbSet<AttachmentMount> AttachmentMountDbSet { get; set; }
-        public virtual DbSet<AttachmentSlot> AttachmentSlotDbSet { get; set; }
-        public virtual DbSet<AvailableAttachSlot> AvailableAttachSlotDbSet { get; set; }
-        public virtual DbSet<Battery> BatteryDbSet { get; set; }
-        public virtual DbSet<BoxItem> BoxItemDbSet { get; set; }
-        public virtual DbSet<Caliber> CaliberDbSet { get; set; }
-        public virtual DbSet<Clothes> ClothesDbSet { get; set; }
-        public virtual DbSet<CombineWeap> CombineWeapDbSet { get; set; }
-        public virtual DbSet<Drug> DrugDbSet { get; set; }
-        public virtual DbSet<Explosive> ExplosiveDbSet { get; set; }
-        public virtual DbSet<Food> FoodDbSet { get; set; }
-        public virtual DbSet<GAttachClass> GAttachClassDbSet { get; set; }
-        public virtual DbSet<GAvAttachClass> GAvAttachClassDbSet { get; set; }
-        public virtual DbSet<GSubAttachClass> GSubAttachClassDbSet { get; set; }
-        public virtual DbSet<GurpsClass> GurpsClassDbSet { get; set; }
-        public virtual DbSet<Item> ItemDbSet { get; set; }
-        public virtual DbSet<ItemClass> ItemClassDbSet { get; set; }
-        public virtual DbSet<ItemSubClass> ItemSubClassDbSet { get; set; }
-        public virtual DbSet<LaserColorEf> LaserColorEfDbSet { get; set; }
-        public virtual DbSet<Lc> LcDbSet { get; set; }
-        public virtual DbSet<LoadBearingEquipment> LoadbearingequipmentDbSet { get; set; }
-        public virtual DbSet<Tl> TlDbSet { get; set; }
-        public virtual DbSet<TypeOfBox> TypeOfBoxeDbSet { get; set; }
-        public virtual DbSet<TypeOfDamage> TypeOfDamageDbSet { get; set; }
-        public virtual DbSet<Weapon> WeaponDbSet { get; set; }
-        public virtual DbSet<WeaponAttackType> WeaponAttackTypeDbSet { get; set; }
-        public virtual DbSet<WeaponDamage> WeaponDamageDbSet { get; set; }
-        public virtual DbSet<CharSkill> CharSkillDbSet { get; set; }
-        public virtual DbSet<NeedSkill> NeedSkillDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<Advantage> AdvantageDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<AdvantagePrereq> AdvantagePrereqDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<AttributeBonus> AttributeBonusDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<AttributePrereq> AttributePrereqDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<CharacterDb> CharacterDbDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<ContainedWeightPrereq> ContainedWeightPrereqDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<CostReduction> CostReductionDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<DefaultSkill> DefaultSkillDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<DefSkillSome> DefSkillSomeDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<DifficultySkill> DifficultySkillDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<DrBonusDb> DrBonusDbDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<GurpsCategory> GurpsCategoryDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<GurpsSkill> GurpsSkillDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<InventoryOfChar> InventoryOfCharDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<MeleeWeapon> MeleeWeaponDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<Modifier> ModifierDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<PrereqListDb> PrereqListDbDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<RangedWeapon> RangedWeaponDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<SkillBonusDb> SkillBonusDbDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<SkillPrereqDb> SkillPrereqDbDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<SpellBonus> SpellBonusDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<SpellPrereqDb> SpellPrereqDbDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<WeaponBonus> WeaponBonusDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<Ammoupgrates> AmmoupgratesDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<AnyBoxNameType> AnyBoxNameTypeDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<Armour> ArmourDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<Attachment> AttachmentDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<AttachmentMount> AttachmentMountDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<AttachmentSlot> AttachmentSlotDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<AvailableAttachSlot> AvailableAttachSlotDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<Battery> BatteryDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<BoxItem> BoxItemDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<Caliber> CaliberDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<Clothes> ClothesDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<CombineWeap> CombineWeapDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<Drug> DrugDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<Explosive> ExplosiveDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<Food> FoodDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<GAttachClass> GAttachClassDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<GAvAttachClass> GAvAttachClassDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<GSubAttachClass> GSubAttachClassDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<GurpsClass> GurpsClassDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<Item> ItemDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<ItemClass> ItemClassDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<ItemSubClass> ItemSubClassDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<LaserColorEf> LaserColorEfDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<Lc> LcDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<LoadBearingEquipment> LoadbearingequipmentDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<Tl> TlDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<TypeOfBox> TypeOfBoxeDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<TypeOfDamage> TypeOfDamageDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<Weapon> WeaponDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<WeaponAttackType> WeaponAttackTypeDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<WeaponDamage> WeaponDamageDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<CharSkill> CharSkillDbSet { get; set; }
+        public virtual System.Data.Entity.DbSet<NeedSkill> NeedSkillDbSet { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        protected override void OnModelCreating(System.Data.Entity.DbModelBuilder modelBuilder)
         {
             #region CharSkill
 
