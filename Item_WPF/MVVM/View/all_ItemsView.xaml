@@ -55,7 +55,7 @@
                   CanUserAddRows="False"
                   ItemsSource="{Binding Items}"
                   SelectedItem="{Binding SelectedItemForWork}"
-                  SelectedValuePath="uiIndex">
+                  SelectedValuePath="UiIndex">
             <DataGrid.InputBindings>
                 <MouseBinding Command="{Binding RelativeSource={RelativeSource FindAncestor,
                                                                                AncestorType={x:Type DataGrid}},

@@ -72,6 +72,7 @@
     <Compile Include="DBInit.cs" />
     <Compile Include="DbInitialData\AttachmentMountInit.cs" />
     <Compile Include="DbInitialData\AttachmentSlotInit.cs" />
+    <Compile Include="DbInitialData\GurpsAttachClassInit.cs" />
     <Compile Include="DbInitialData\InitLc.cs" />
     <Compile Include="DbInitialData\InitTl.cs" />
     <Compile Include="GurpsExtendModel\AnyBoxNameType.cs" />

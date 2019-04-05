@@ -41,7 +41,7 @@
                         <DataTemplate>
                             <ComboBox
                                 ItemsSource="{Binding DataContext.caliber, RelativeSource={RelativeSource AncestorType=local:AmmoView}}"
-                                SelectedValue="{Binding ubCalibre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                SelectedValue="{Binding UbCalibre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                 SelectedValuePath="id"
                                 DisplayMemberPath="Caliber_name">
                             </ComboBox>
@@ -54,7 +54,7 @@
                    
                     DisplayMemberPath="Caliber_name"
                     Header="caliber"
-                    SelectedValueBinding="{Binding ubCalibre, Mode=TwoWay}"
+                    SelectedValueBinding="{Binding UbCalibre, Mode=TwoWay}"
                     SelectedValuePath="id">
                     <DataGridComboBoxColumn.ElementStyle>
                         <Style TargetType="ComboBox">

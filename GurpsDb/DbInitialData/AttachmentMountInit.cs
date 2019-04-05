@@ -17,7 +17,7 @@
             SIG551Scope = new AttachmentMount("SIG551", AttachmentSlotInit.ScopeAttachmentSlot);
             WRScope = new AttachmentMount("WR", AttachmentSlotInit.ScopeAttachmentSlot);
             HKMP5Scope = new AttachmentMount("HK MP5", AttachmentSlotInit.ScopeAttachmentSlot);
-            BULTTINScope = new AttachmentMount("built-in", AttachmentSlotInit.ScopeAttachmentSlot);
+            BUILTINScope = new AttachmentMount("built-in", AttachmentSlotInit.ScopeAttachmentSlot);
             SA80Scope = new AttachmentMount("SA80", AttachmentSlotInit.ScopeAttachmentSlot);
             SVDScope = new AttachmentMount("SVD", AttachmentSlotInit.ScopeAttachmentSlot);
             L96A1Scope = new AttachmentMount("L96A1", AttachmentSlotInit.ScopeAttachmentSlot);
@@ -31,6 +31,19 @@
             GROZAScope = new AttachmentMount("Groza", AttachmentSlotInit.ScopeAttachmentSlot);
             MOSINScope = new AttachmentMount("Mosin", AttachmentSlotInit.ScopeAttachmentSlot);
             G11Scope = new AttachmentMount("G11", AttachmentSlotInit.ScopeAttachmentSlot);
+
+            BUILTINLaser = new AttachmentMount("built-in", AttachmentSlotInit.LaserAttachmentSlot);
+            WRLaser = new AttachmentMount("WR", AttachmentSlotInit.LaserAttachmentSlot);
+            HKLaser = new AttachmentMount("HK", AttachmentSlotInit.LaserAttachmentSlot);
+            BarrelMountLaser = new AttachmentMount("Barrel Mount", AttachmentSlotInit.LaserAttachmentSlot);
+            F2000Laser = new AttachmentMount("F2000 Laser", AttachmentSlotInit.LaserAttachmentSlot);
+
+            F2000Light = new AttachmentMount("F2000 Light", AttachmentSlotInit.LightAttachmentSlot);
+            WRLight = new AttachmentMount("WR", AttachmentSlotInit.LightAttachmentSlot);
+            HKLight = new AttachmentMount("HK", AttachmentSlotInit.LightAttachmentSlot);
+            BarrelMountLight = new AttachmentMount("Barrel Mount", AttachmentSlotInit.LightAttachmentSlot);
+
+
         }
 
 
@@ -46,7 +59,7 @@
         public static readonly AttachmentMount SIG551Scope;
         public static readonly AttachmentMount WRScope;
         public static readonly AttachmentMount HKMP5Scope;
-        public static readonly AttachmentMount BULTTINScope;
+        public static readonly AttachmentMount BUILTINScope;
         public static readonly AttachmentMount SA80Scope;
         public static readonly AttachmentMount SVDScope;
         public static readonly AttachmentMount L96A1Scope;
@@ -60,5 +73,16 @@
         public static readonly AttachmentMount GROZAScope;
         public static readonly AttachmentMount G11Scope;
         public static readonly AttachmentMount MOSINScope;
+
+        public static readonly AttachmentMount BUILTINLaser;
+        public static readonly AttachmentMount WRLaser;
+        public static readonly AttachmentMount HKLaser;
+        public static readonly AttachmentMount BarrelMountLaser;
+        public static readonly AttachmentMount F2000Laser;
+
+        public static readonly AttachmentMount F2000Light;
+        public static readonly AttachmentMount WRLight;
+        public static readonly AttachmentMount HKLight;
+        public static readonly AttachmentMount BarrelMountLight;
     }
 }

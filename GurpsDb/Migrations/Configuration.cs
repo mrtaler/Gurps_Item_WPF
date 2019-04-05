@@ -69,7 +69,7 @@
             context.AttachmentMountDbSet.AddOrUpdate(AttachmentMountInit.SIG551Scope);
             context.AttachmentMountDbSet.AddOrUpdate(AttachmentMountInit.WRScope);
             context.AttachmentMountDbSet.AddOrUpdate(AttachmentMountInit.HKMP5Scope);
-            context.AttachmentMountDbSet.AddOrUpdate(AttachmentMountInit.BULTTINScope);
+            context.AttachmentMountDbSet.AddOrUpdate(AttachmentMountInit.BUILTINScope);
             context.AttachmentMountDbSet.AddOrUpdate(AttachmentMountInit.SA80Scope);
             context.AttachmentMountDbSet.AddOrUpdate(AttachmentMountInit.SVDScope);
             context.AttachmentMountDbSet.AddOrUpdate(AttachmentMountInit.L96A1Scope);
@@ -85,22 +85,25 @@
             context.AttachmentMountDbSet.AddOrUpdate(AttachmentMountInit.G11Scope);
             #endregion
             #region Laser Attachments--2
-            context.AttachmentMountDbSet.AddOrUpdate(new AttachmentMount("built-in", AttachmentSlotInit.LaserAttachmentSlot));
-            context.AttachmentMountDbSet.AddOrUpdate(new AttachmentMount("WR", AttachmentSlotInit.LaserAttachmentSlot));
-            context.AttachmentMountDbSet.AddOrUpdate(new AttachmentMount("HK", AttachmentSlotInit.LaserAttachmentSlot));
-            context.AttachmentMountDbSet.AddOrUpdate(new AttachmentMount("Barrel Mount", AttachmentSlotInit.LaserAttachmentSlot));
-            context.AttachmentMountDbSet.AddOrUpdate(new AttachmentMount("F2000 Laser", AttachmentSlotInit.LaserAttachmentSlot));
+
+            context.AttachmentMountDbSet.AddOrUpdate(AttachmentMountInit.BUILTINLaser);
+            context.AttachmentMountDbSet.AddOrUpdate(AttachmentMountInit.WRLaser);
+            context.AttachmentMountDbSet.AddOrUpdate(AttachmentMountInit.HKLaser);
+            context.AttachmentMountDbSet.AddOrUpdate(AttachmentMountInit.BarrelMountLaser);
+            context.AttachmentMountDbSet.AddOrUpdate(AttachmentMountInit.F2000Laser);
             #endregion
             #region Light Attachments--3
-            context.AttachmentMountDbSet.AddOrUpdate(new AttachmentMount("F2000 Light", AttachmentSlotInit.LightAttachmentSlot));
-            context.AttachmentMountDbSet.AddOrUpdate(new AttachmentMount("WR", AttachmentSlotInit.LightAttachmentSlot));
-            context.AttachmentMountDbSet.AddOrUpdate(new AttachmentMount("HK", AttachmentSlotInit.LightAttachmentSlot));
-            context.AttachmentMountDbSet.AddOrUpdate(new AttachmentMount("Barrel Mount", AttachmentSlotInit.LightAttachmentSlot));
+
+            context.AttachmentMountDbSet.AddOrUpdate(AttachmentMountInit.F2000Light);
+            context.AttachmentMountDbSet.AddOrUpdate(AttachmentMountInit.WRLight);
+            context.AttachmentMountDbSet.AddOrUpdate(AttachmentMountInit.HKLight);
+            context.AttachmentMountDbSet.AddOrUpdate(AttachmentMountInit.BarrelMountLight);
+            
             #endregion
             #region Bipod Attachments--4
             context.AttachmentMountDbSet.AddOrUpdate(new AttachmentMount("built-in", AttachmentSlotInit.BipodAttachmentSlot));
             context.AttachmentMountDbSet.AddOrUpdate(new AttachmentMount("WR", AttachmentSlotInit.BipodAttachmentSlot));
-            context.AttachmentMountDbSet.AddOrUpdate(new AttachmentMount("Г‘Г‚98", AttachmentSlotInit.BipodAttachmentSlot));
+            context.AttachmentMountDbSet.AddOrUpdate(new AttachmentMount("СВ-98", AttachmentSlotInit.BipodAttachmentSlot));
             context.AttachmentMountDbSet.AddOrUpdate(new AttachmentMount("SniperBipod", AttachmentSlotInit.BipodAttachmentSlot));
             context.AttachmentMountDbSet.AddOrUpdate(new AttachmentMount("L96A1 bipod", AttachmentSlotInit.BipodAttachmentSlot));
             context.AttachmentMountDbSet.AddOrUpdate(new AttachmentMount("L86_Bipod", AttachmentSlotInit.BipodAttachmentSlot));
@@ -183,399 +186,371 @@
             context.AttachmentMountDbSet.AddOrUpdate(new AttachmentMount("None", AttachmentSlotInit.ExternalAttachmentSlot));// 11
             #endregion
             #region GAttack+gSubAttach
-            List<GAttachClass> gAttachClassList = new List<GAttachClass>
-            {
-             new GAttachClass { NameClass = "Def" }, // 1
-             new GAttachClass { NameClass = "SIGHTS AND AIMING AIDS" }, // 2
-             new GAttachClass { NameClass = "SOUND SUPPRESSORS" }, // 3
-             new GAttachClass { NameClass = "STOCKS, TRIPODS, AND BIPODS" } , // 4
-             new GAttachClass { NameClass = "HOLSTERS, SCABBARDS, AND SLINGS" }  , // 5
-             new GAttachClass { NameClass = "MAGAZINE MODIFICATIONS AND RELOADING AIDS" } , // 6
-             new GAttachClass { NameClass = "MISCELLANEOUS ACCESSORIES AND MODIFICATIONS" } // 7
-            };
+
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Telescopic Sights",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "SIGHTS AND AIMING AIDS"),
+                                                     GAttachClass = GurpsAttachClassInit.SIGHTS_AND_AIMING_AIDS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ScopeAttachmentSlot
-                                                 });// 1
+                                                 });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Improved-Visibility Sights",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "SIGHTS AND AIMING AIDS"),
+                                                     GAttachClass = GurpsAttachClassInit.SIGHTS_AND_AIMING_AIDS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ScopeAttachmentSlot
-                                                 });// 2
+                                                 });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Collimating Sight",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "SIGHTS AND AIMING AIDS"),
+                                                     GAttachClass = GurpsAttachClassInit.SIGHTS_AND_AIMING_AIDS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ScopeAttachmentSlot
-                                                 });// 3
+                                                 });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Reflex Sight",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "SIGHTS AND AIMING AIDS"),
+                                                     GAttachClass = GurpsAttachClassInit.SIGHTS_AND_AIMING_AIDS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ScopeAttachmentSlot
-                                                 });// 4
+                                                 });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Night Sights",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "SIGHTS AND AIMING AIDS"),
+                                                     GAttachClass = GurpsAttachClassInit.SIGHTS_AND_AIMING_AIDS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ScopeAttachmentSlot
-                                                 });// 5
+                                                 });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Computer Sights",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "SIGHTS AND AIMING AIDS"),
+                                                     GAttachClass = GurpsAttachClassInit.SIGHTS_AND_AIMING_AIDS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ScopeAttachmentSlot
-                                                 });// 6
+                                                 });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Thermal-Imaging Sights",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "SIGHTS AND AIMING AIDS"),
+                                                     GAttachClass = GurpsAttachClassInit.SIGHTS_AND_AIMING_AIDS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ScopeAttachmentSlot
-                                                 });// 7
+                                                 });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Targeting Lasers",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "SIGHTS AND AIMING AIDS"),
+                                                     GAttachClass = GurpsAttachClassInit.SIGHTS_AND_AIMING_AIDS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.LaserAttachmentSlot
-                                                 });                        // 8
+                                                 });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Tactical Lights",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "SIGHTS AND AIMING AIDS"),
+                                                     GAttachClass = GurpsAttachClassInit.SIGHTS_AND_AIMING_AIDS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.LightAttachmentSlot
-                                                 });                        // --9
+                                                 });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Tripods and Other Mounts",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "STOCKS, TRIPODS, AND BIPODS"),
+                                                     GAttachClass = GurpsAttachClassInit.STOCKS_TRIPODS_AND_BIPODS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.BipodAttachmentSlot
-                                                 });               // --10
+                                                 });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Bipods",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "STOCKS, TRIPODS, AND BIPODS"),
+                                                     GAttachClass = GurpsAttachClassInit.STOCKS_TRIPODS_AND_BIPODS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.BipodAttachmentSlot
-                                                 });                                 // --11
+                                                 });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Baffle Suppressors",
 
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "SOUND SUPPRESSORS"),
+                                                     GAttachClass = GurpsAttachClassInit.SOUND_SUPPRESSORS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.SilenserAttachmentSlot
-                                                 });                    // --12
+                                                 });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Wiper Suppressors",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "SOUND SUPPRESSORS"),
+                                                     GAttachClass = GurpsAttachClassInit.SOUND_SUPPRESSORS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.SilenserAttachmentSlot
-                                                 });                     // --13
+                                                 });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Extended Magazines",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "MAGAZINE MODIFICATIONS AND RELOADING AIDS"),
+                                                     GAttachClass = GurpsAttachClassInit.MAGAZINE_MODIFICATIONS_AND_RELOADING_AIDS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.MagazineAttachmentSlot
-                                                 });                    // --14
+                                                 });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Drum magazines",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "MAGAZINE MODIFICATIONS AND RELOADING AIDS"),
+                                                     GAttachClass = GurpsAttachClassInit.MAGAZINE_MODIFICATIONS_AND_RELOADING_AIDS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.MagazineAttachmentSlot
-                                                 });                      // --15
+                                                 });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "High-density magazines",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "MAGAZINE MODIFICATIONS AND RELOADING AIDS"),
+                                                     GAttachClass = GurpsAttachClassInit.MAGAZINE_MODIFICATIONS_AND_RELOADING_AIDS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.MagazineAttachmentSlot
-                                                 });   // --16
+                                                 });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Speedloaders",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "MAGAZINE MODIFICATIONS AND RELOADING AIDS"),
+                                                     GAttachClass = GurpsAttachClassInit.MAGAZINE_MODIFICATIONS_AND_RELOADING_AIDS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.MagazineAttachmentSlot
-                                                 });// --17
+                                                 });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Clamped Magazines",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "MAGAZINE MODIFICATIONS AND RELOADING AIDS"),
+                                                     GAttachClass = GurpsAttachClassInit.MAGAZINE_MODIFICATIONS_AND_RELOADING_AIDS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.MagazineAttachmentSlot
-                                                 });// --18
+                                                 });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Pistol Stocks",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "STOCKS, TRIPODS, AND BIPODS"),
+                                                     GAttachClass = GurpsAttachClassInit.STOCKS_TRIPODS_AND_BIPODS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.StockAttachmentSlot
                                                  });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Shooting Sticks",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "STOCKS, TRIPODS, AND BIPODS"),
+                                                     GAttachClass = GurpsAttachClassInit.STOCKS_TRIPODS_AND_BIPODS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.StockAttachmentSlot
                                                  });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Folding Stock",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "STOCKS, TRIPODS, AND BIPODS"),
+                                                     GAttachClass = GurpsAttachClassInit.STOCKS_TRIPODS_AND_BIPODS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.StockAttachmentSlot
                                                  });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Belt Holster (TL5)",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"),
+                                                     GAttachClass = GurpsAttachClassInit.HOLSTERS_SCABBARDS_AND_SLINGS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ExternalAttachmentSlot
                                                  });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Lanyard (TL5)",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"),
+                                                     GAttachClass = GurpsAttachClassInit.HOLSTERS_SCABBARDS_AND_SLINGS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ExternalAttachmentSlot
                                                  });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Military Holster (TL5)",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"),
+                                                     GAttachClass = GurpsAttachClassInit.HOLSTERS_SCABBARDS_AND_SLINGS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ExternalAttachmentSlot
                                                  });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Rifle Sling (TL5)",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"),
+                                                     GAttachClass = GurpsAttachClassInit.HOLSTERS_SCABBARDS_AND_SLINGS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ExternalAttachmentSlot
                                                  });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Scabbard (TL5)",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"),
+                                                     GAttachClass = GurpsAttachClassInit.HOLSTERS_SCABBARDS_AND_SLINGS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ExternalAttachmentSlot
                                                  });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Shoulder Holster (TL5)",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"),
+                                                     GAttachClass = GurpsAttachClassInit.HOLSTERS_SCABBARDS_AND_SLINGS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ExternalAttachmentSlot
                                                  });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Sleeve Holster (TL6)",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"),
+                                                     GAttachClass = GurpsAttachClassInit.HOLSTERS_SCABBARDS_AND_SLINGS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ExternalAttachmentSlot
                                                  });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Fast-Draw Rig (TL7)",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"),
+                                                     GAttachClass = GurpsAttachClassInit.HOLSTERS_SCABBARDS_AND_SLINGS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ExternalAttachmentSlot
                                                  });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Patrol Sling (TL7)",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"),
+                                                     GAttachClass = GurpsAttachClassInit.HOLSTERS_SCABBARDS_AND_SLINGS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ExternalAttachmentSlot
                                                  });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Undercover Holster (TL7)",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"),
+                                                     GAttachClass = GurpsAttachClassInit.HOLSTERS_SCABBARDS_AND_SLINGS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ExternalAttachmentSlot
                                                  });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Retention Holster (TL8)",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "HOLSTERS, SCABBARDS, AND SLINGS"),
+                                                     GAttachClass = GurpsAttachClassInit.HOLSTERS_SCABBARDS_AND_SLINGS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ExternalAttachmentSlot
                                                  });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Gun-Cleaning Kit",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "MISCELLANEOUS ACCESSORIES AND MODIFICATIONS"),
+                                                     GAttachClass = GurpsAttachClassInit.MISCELLANEOUS_ACCESSORIES_AND_MODIFICATIONS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ExternalAttachmentSlot
                                                  });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Gun Case",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "MISCELLANEOUS ACCESSORIES AND MODIFICATIONS"),
+                                                     GAttachClass = GurpsAttachClassInit.MISCELLANEOUS_ACCESSORIES_AND_MODIFICATIONS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ExternalAttachmentSlot
                                                  });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Brass Catchers",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "MISCELLANEOUS ACCESSORIES AND MODIFICATIONS"),
+                                                     GAttachClass = GurpsAttachClassInit.MISCELLANEOUS_ACCESSORIES_AND_MODIFICATIONS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ExternalAttachmentSlot
                                                  });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Slide-Lock",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "MISCELLANEOUS ACCESSORIES AND MODIFICATIONS"),
+                                                     GAttachClass = GurpsAttachClassInit.MISCELLANEOUS_ACCESSORIES_AND_MODIFICATIONS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ExternalAttachmentSlot
                                                  });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Accessory Rails",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "MISCELLANEOUS ACCESSORIES AND MODIFICATIONS"),
+                                                     GAttachClass = GurpsAttachClassInit.MISCELLANEOUS_ACCESSORIES_AND_MODIFICATIONS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ExternalAttachmentSlot
                                                  });
             context.GSubAttachClassDbSet.AddOrUpdate(new GSubAttachClass
                                                  {
                                                      SubAttachName = "Drag Bag",
-                                                     GAttachClass = gAttachClassList.First(p => p.NameClass == "MISCELLANEOUS ACCESSORIES AND MODIFICATIONS"),
+                                                     GAttachClass = GurpsAttachClassInit.MISCELLANEOUS_ACCESSORIES_AND_MODIFICATIONS,
                                                      SubAttachDescription = " ",
                                                      Attachmentslot1 = AttachmentSlotInit.ExternalAttachmentSlot
                                                  });
             #endregion
-            #region INSERT dbo.GurpsClass(name)
-            context.GurpsClassDbSet.AddOrUpdate(new GurpsClass { Name = "None" });              // 1
-            context.GurpsClassDbSet.AddOrUpdate(new GurpsClass { Name = "Artillery" });         // 2
-            context.GurpsClassDbSet.AddOrUpdate(new GurpsClass { Name = "Beam Weapons" });      // 3
-            context.GurpsClassDbSet.AddOrUpdate(new GurpsClass { Name = "Gunner" });            // 4
-            context.GurpsClassDbSet.AddOrUpdate(new GurpsClass { Name = "Guns" });              // 5
-            context.GurpsClassDbSet.AddOrUpdate(new GurpsClass { Name = "Liquid Projector" });  // 6     
-            context.GurpsClassDbSet.AddOrUpdate(new GurpsClass { Name = "Thrown Weapon" });     // 7
-            #endregion
 
 
+            context.GurpsClassDbSet.InitAddOrUpdate();
+            context.ItemClassDbSet.InitAddOrUpdate();
 
-            #region INSERT dbo.ItemClass(name)
-            context.ItemClassDbSet.AddOrUpdate(new ItemClass { Name = "All" });
-            context.ItemClassDbSet.AddOrUpdate(new ItemClass { Name = "Weapon" });
-            context.ItemClassDbSet.AddOrUpdate(new ItemClass { Name = "Ammo" });
-            context.ItemClassDbSet.AddOrUpdate(new ItemClass { Name = "Attachment" });
-            context.ItemClassDbSet.AddOrUpdate(new ItemClass { Name = "Random Item" });
-            context.ItemClassDbSet.AddOrUpdate(new ItemClass { Name = "EXPLOSIVE" });
-            context.ItemClassDbSet.AddOrUpdate(new ItemClass { Name = "Drug" });
-            context.ItemClassDbSet.AddOrUpdate(new ItemClass { Name = "LOADBEARINGEQUIPMENT" });
-            context.ItemClassDbSet.AddOrUpdate(new ItemClass { Name = "ARMOUR" });
-
-            #endregion
             #region INSERT dbo.ItemSubClass
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Normal", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Stun", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Tear Gas", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Mustard Gas", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Flare", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Noise", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Smoke", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Creature Gas", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Fire", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Flashbang", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Signal Shell", context.ItemClassDbSet.Local.First(p => p.Name == "EXPLOSIVE"), "ExplosionType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("None", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Adrenaline", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Alcohol", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Regeneration", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Damage Resistance", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Strength", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Agility", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Dexterity", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Wisdom", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Perception", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Psychosis", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Nervousness", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Reflex", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Claustrophobia", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Heat Intolerance", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Fear of Insects", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Forgetfulness", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Stim", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Blindness", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Unconsciousness", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Barrage", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Vision", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Tunnel Vision", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Occulin", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Cure", context.ItemClassDbSet.Local.First(p => p.Name == "Drug"), "DrugType", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Nothing", context.ItemClassDbSet.Local.First(p => p.Name == "LOADBEARINGEQUIPMENT"), "LBEClass", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Thigh Pack", context.ItemClassDbSet.Local.First(p => p.Name == "LOADBEARINGEQUIPMENT"), "LBEClass", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Vest", context.ItemClassDbSet.Local.First(p => p.Name == "LOADBEARINGEQUIPMENT"), "LBEClass", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Combat Pack", context.ItemClassDbSet.Local.First(p => p.Name == "LOADBEARINGEQUIPMENT"), "LBEClass", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Backpack", context.ItemClassDbSet.Local.First(p => p.Name == "LOADBEARINGEQUIPMENT"), "LBEClass", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Helmet", context.ItemClassDbSet.Local.First(p => p.Name == "ARMOUR"), "ArmourClass", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Vest", context.ItemClassDbSet.Local.First(p => p.Name == "ARMOUR"), "ArmourClass", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Leggings", context.ItemClassDbSet.Local.First(p => p.Name == "ARMOUR"), "ArmourClass", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Plate", context.ItemClassDbSet.Local.First(p => p.Name == "ARMOUR"), "ArmourClass", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Vehicle", context.ItemClassDbSet.Local.First(p => p.Name == "ARMOUR"), "ArmourClass", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Firearm", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "Weapon", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("винтовки", context.ItemClassDbSet.Local.First(p => p.Name == "Ammo"), "Ammo", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("пистолет", context.ItemClassDbSet.Local.First(p => p.Name == "Ammo"), "Ammo", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Гранатомёты", context.ItemClassDbSet.Local.First(p => p.Name == "Ammo"), "Ammo", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Автоматические Пушки", context.ItemClassDbSet.Local.First(p => p.Name == "Ammo"), "Ammo", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("дробовики", context.ItemClassDbSet.Local.First(p => p.Name == "Ammo"), "Ammo", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("миномёты", context.ItemClassDbSet.Local.First(p => p.Name == "Ammo"), "Ammo", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("противотанковые пушки", context.ItemClassDbSet.Local.First(p => p.Name == "Ammo"), "Ammo", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Attachment", context.ItemClassDbSet.Local.First(p => p.Name == "Attachment"), "Attachment", null));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Normal", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Liquid Projector")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Guided Missile", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Artillery")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Torpedoes", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Artillery")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Catapult", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Artillery")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Cannon", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Artillery")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Beams", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Artillery")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Bombs", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Artillery")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Projector", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Beam Weapons")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Pistol", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Beam Weapons")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Rifle", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Beam Weapons")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Machine Gun", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Gunner")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Catapult", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Gunner")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Rockets", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Gunner")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Cannon", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Gunner")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Beams", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Gunner")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Light Anti-Armor Weapon", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Guns")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Light Machine Gun", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Guns")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Grenade Launcher", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Guns")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Submachine Gun", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Guns")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Shotgun", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Guns")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Musket", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Guns")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Pistol", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Guns")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Gyroc", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Guns")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Rifle", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Guns")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Flamethrower", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Liquid Projector")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Water Cannon", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Liquid Projector")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Squirt Gun", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Liquid Projector")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Sprayer", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Liquid Projector")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Axe/Mace", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Thrown Weapon")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Shuriken", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Thrown Weapon")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Harpoon", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Thrown Weapon")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Knife", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Thrown Weapon")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Spear", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Thrown Weapon")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Stick", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Thrown Weapon")));
-            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Dart", context.ItemClassDbSet.Local.First(p => p.Name == "Weapon"), "WeaponType", context.GurpsClassDbSet.Local.First(p => p.Name == "Thrown Weapon")));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Normal", ItemClassInit.EXPLOSIVE, "ExplosionType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Stun", ItemClassInit.EXPLOSIVE, "ExplosionType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Tear Gas", ItemClassInit.EXPLOSIVE, "ExplosionType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Mustard Gas", ItemClassInit.EXPLOSIVE, "ExplosionType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Flare", ItemClassInit.EXPLOSIVE, "ExplosionType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Noise", ItemClassInit.EXPLOSIVE, "ExplosionType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Smoke", ItemClassInit.EXPLOSIVE, "ExplosionType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Creature Gas", ItemClassInit.EXPLOSIVE, "ExplosionType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Fire", ItemClassInit.EXPLOSIVE, "ExplosionType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Flashbang", ItemClassInit.EXPLOSIVE, "ExplosionType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Signal Shell", ItemClassInit.EXPLOSIVE, "ExplosionType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("None", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Adrenaline", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Alcohol", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Regeneration", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Damage Resistance", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Strength", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Agility", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Dexterity", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Wisdom", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Perception", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Psychosis", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Nervousness", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Reflex", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Claustrophobia", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Heat Intolerance", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Fear of Insects", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Forgetfulness", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Stim", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Blindness", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Unconsciousness", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Barrage", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Vision", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Tunnel Vision", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Occulin", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Cure", ItemClassInit.Drug, "DrugType", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Nothing", ItemClassInit.LOADBEARINGEQUIPMENT, "LBEClass", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Thigh Pack", ItemClassInit.LOADBEARINGEQUIPMENT, "LBEClass", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Vest", ItemClassInit.LOADBEARINGEQUIPMENT, "LBEClass", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Combat Pack", ItemClassInit.LOADBEARINGEQUIPMENT, "LBEClass", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Backpack", ItemClassInit.LOADBEARINGEQUIPMENT, "LBEClass", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Helmet", ItemClassInit.ARMOUR, "ArmourClass", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Vest", ItemClassInit.ARMOUR, "ArmourClass", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Leggings", ItemClassInit.ARMOUR, "ArmourClass", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Plate", ItemClassInit.ARMOUR, "ArmourClass", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Vehicle", ItemClassInit.ARMOUR, "ArmourClass", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Firearm", ItemClassInit.Weapon, "Weapon", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("винтовки", ItemClassInit.Ammo, "Ammo", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("пистолет", ItemClassInit.Ammo, "Ammo", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Гранатомёты", ItemClassInit.Ammo, "Ammo", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Автоматические Пушки", ItemClassInit.Ammo, "Ammo", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("дробовики", ItemClassInit.Ammo, "Ammo", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("миномёты", ItemClassInit.Ammo, "Ammo", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("противотанковые пушки", ItemClassInit.Ammo, "Ammo", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Attachment", ItemClassInit.Attachment, "Attachment", null));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Normal", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.LiquidProjector));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Guided Missile", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.Artillery));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Torpedoes", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.Artillery));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Catapult", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.Artillery));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Cannon", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.Artillery));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Beams", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.Artillery));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Bombs", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.Artillery));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Projector", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.BeamWeapons));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Pistol", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.BeamWeapons));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Rifle", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.BeamWeapons));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Machine Gun", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.Gunner));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Catapult", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.Gunner));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Rockets", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.Gunner));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Cannon", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.Gunner));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Beams", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.Gunner));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Light Anti-Armor Weapon", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.Guns));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Light Machine Gun", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.Guns));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Grenade Launcher", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.Guns));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Submachine Gun", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.Guns));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Shotgun", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.Guns));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Musket", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.Guns));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Pistol", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.Guns));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Gyroc", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.Guns));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Rifle", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.Guns));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Flamethrower", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.LiquidProjector));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Water Cannon", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.LiquidProjector));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Squirt Gun", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.LiquidProjector));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Sprayer", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.LiquidProjector));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Axe/Mace", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.ThrownWeapon));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Shuriken", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.ThrownWeapon));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Harpoon", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.ThrownWeapon));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Knife", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.ThrownWeapon));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Spear", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.ThrownWeapon));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Stick", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.ThrownWeapon));
+            context.ItemSubClassDbSet.AddOrUpdate(new ItemSubClass("Dart", ItemClassInit.Weapon, "WeaponType", GurpsClassInit.ThrownWeapon));
             #endregion
             #region INSERT INTO TypeOfDamage      
             context.TypeOfDamageDbSet.AddOrUpdate(new TypeOfDamage("pi+", "piersing", "0.5"));
@@ -605,22 +580,22 @@
             context.LaserColorEfDbSet.AddOrUpdate(new LaserColorEf("Infrared", 1.00M));
             #endregion
             #region INSERT INTO WeaponAttackType
-            context.WeaponAttackTypeDbSet.AddOrUpdate(new WeaponAttackType("Primary", "ee"));
-            context.WeaponAttackTypeDbSet.AddOrUpdate(new WeaponAttackType("Follow-up", "ee"));
-            context.WeaponAttackTypeDbSet.AddOrUpdate(new WeaponAttackType("Linked", "ee"));
+            context.WeaponAttackTypeDbSet.AddOrUpdate(WeaponAttackTypeInit.Primary);
+            context.WeaponAttackTypeDbSet.AddOrUpdate(WeaponAttackTypeInit.Linked);
+            context.WeaponAttackTypeDbSet.AddOrUpdate(WeaponAttackTypeInit.FollowUp);
             #endregion
 
             context.WeaponDbSet.AddOrUpdate(
                 new Weapon(
                     weaponDamage: new WeaponDamage(
                         damage: "7d",
-                        weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")),
+                        weaponAttackType: WeaponAttackTypeInit.Primary,
                         typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi+"),
                         typeOfDamage1: null),
                     name: "Royal Ordnance L1A1 w/SUIT (7.62x51mm)",
                     itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"),
-                    tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")),
-                    lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                    tl: InitTl.Tl7,
+                    lc: InitLc.Ll2)
                 {
                     // weapon
                     Rof = 3,
@@ -653,7 +628,7 @@
                  (
                      weaponDamage: new WeaponDamage
                      (
-                         damage: "5dx15", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "9K112 Kobra ATGM(125mm Tank Round)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                         damage: "5dx15", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "9K112 Kobra ATGM(125mm Tank Round)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll1)
                  {
                      Rof = 1,
                      FullAuto = false,
@@ -679,7 +654,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "6dx6", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "9K116 Bastion ATGM(100mm Tank Round)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   damage: "6dx6", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "9K116 Bastion ATGM(100mm Tank Round)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll1)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -706,7 +681,7 @@
                                weaponDamage: new WeaponDamage
                                (
                                    damage: "5dx12",
-                                   weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "9K120 Refleks ATGM(125mm Tank Round)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "9K120 Refleks ATGM(125mm Tank Round)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll1)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -733,13 +708,13 @@
                                weaponDamage: new WeaponDamage
                                (
                                    damage: "6dx13",
-                                   weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")),
+                                   weaponAttackType: WeaponAttackTypeInit.Primary,
                                    typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")
                                    ),
                                name: "9M1114 Kokon ATGM",
                                itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"),
                                tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")),
-                               lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                               lc: InitLc.Ll1)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -766,7 +741,7 @@
                                weaponDamage: new WeaponDamage
                                (
                                    damage: "5dx12", weaponAttackType:
-                                   context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "9M119 Svir ATGM(125mm Tank Round)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "9M119 Svir ATGM(125mm Tank Round)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll1)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -792,7 +767,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "6dx13", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "9P135M Konkurs - M ATGM", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   damage: "6dx13", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "9P135M Konkurs - M ATGM", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll1)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -818,7 +793,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "6dx25", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "BGM - 71D TOW2 ATGM", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   damage: "6dx25", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "BGM - 71D TOW2 ATGM", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll1)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -844,7 +819,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "6dx17", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "BGM - 71F TOW2B ATGM", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   damage: "6dx17", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "BGM - 71F TOW2B ATGM", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll1)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -870,7 +845,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "6dx50", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "SA - 19 SAM", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   damage: "6dx50", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "SA - 19 SAM", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Guided Missile")).First(p => p.GurpsClass.Name == "Artillery"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll1)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -896,7 +871,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5dx7", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "Armbrust(80mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Light Anti-Armor Weapon")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   damage: "5dx7", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "Armbrust(80mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Light Anti-Armor Weapon")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll1)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -922,7 +897,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "4d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "Colt M203(40x46mmSR)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Grenade Launcher")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   damage: "4d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "Colt M203(40x46mmSR)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Grenade Launcher")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll1)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -948,7 +923,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "3d - 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi-"), typeOfDamage1: null), name: "CZ Vz.24(7.62x25mm Tokarev)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Submachine Gun")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "3d - 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi-"), typeOfDamage1: null), name: "CZ Vz.24(7.62x25mm Tokarev)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Submachine Gun")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll2)
                            {
                                Rof = 10,
                                FullAuto = false,
@@ -974,7 +949,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "3d - 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Enfield Sterling L - 2A3(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Submachine Gun")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "3d - 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Enfield Sterling L - 2A3(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Submachine Gun")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll2)
                            {
                                Rof = 9,
                                FullAuto = false,
@@ -1000,7 +975,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "2d - 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Enfield Sterling L - 34A1(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Submachine Gun")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   damage: "2d - 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Enfield Sterling L - 34A1(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Submachine Gun")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll1)
                            {
                                Rof = 8,
                                FullAuto = false,
@@ -1026,7 +1001,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "3d - 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "ERMA MP.40(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Submachine Gun")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "3d - 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "ERMA MP.40(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Submachine Gun")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: InitLc.Ll2)
                            {
                                Rof = 8,
                                FullAuto = true,
@@ -1052,10 +1027,10 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "2d + 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi+"), typeOfDamage1: null), name: "Guide Lamp M - 3A1 \"Greasegun\"(.45 ACP)",
+                                   damage: "2d + 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi+"), typeOfDamage1: null), name: "Guide Lamp M - 3A1 \"Greasegun\"(.45 ACP)",
                                itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Submachine Gun")).First(p => p.GurpsClass.Name == "Guns"),
-                               tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")),
-                               lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                               tl: InitTl.Tl7,
+                               lc: InitLc.Ll2)
                            {
                                Rof = 8,
                                FullAuto = true,
@@ -1082,8 +1057,8 @@
                                weaponDamage: new WeaponDamage
                                (
                                    damage: "7d",
-                                   weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")),
-                                   typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "H & K PSG1(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   weaponAttackType: WeaponAttackTypeInit.Primary,
+                                   typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "H & K PSG1(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll3)
                 {
                     Rof = 1,
                     FullAuto = false,
@@ -1109,7 +1084,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "6d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "IMI BT / AT 52 Rifle Grenade", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Grenade Launcher")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   damage: "6d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "IMI BT / AT 52 Rifle Grenade", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Grenade Launcher")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll1)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -1135,7 +1110,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "3d - 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "IMI MP1 \"Uzi\"(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Submachine Gun")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "3d - 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "IMI MP1 \"Uzi\"(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Submachine Gun")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll2)
                            {
                                Rof = 10,
                                FullAuto = false,
@@ -1161,7 +1136,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "1d + 2", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "KBP GP - 30(40mm VOG - 25)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Grenade Launcher")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   damage: "1d + 2", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "KBP GP - 30(40mm VOG - 25)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Grenade Launcher")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll1)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -1187,7 +1162,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "6dx6", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "M136 AT - 4(84mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Light Anti-Armor Weapon")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   damage: "6dx6", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "M136 AT - 4(84mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Light Anti-Armor Weapon")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll1)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -1213,7 +1188,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "6dx4", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "M72A2(66mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Light Anti-Armor Weapon")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   damage: "6dx4", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "M72A2(66mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Light Anti-Armor Weapon")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll1)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -1239,7 +1214,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "8d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "Mecar 35mm HE - RFL - 35 Rifle Grenade", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Grenade Launcher")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   damage: "8d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "Mecar 35mm HE - RFL - 35 Rifle Grenade", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Grenade Launcher")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll1)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -1265,7 +1240,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "6dx6", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "Mk.153 Mod.1 SMAW(83mm Rocket)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Light Anti-Armor Weapon")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   damage: "6dx6", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "cr"), typeOfDamage1: context.TypeOfDamageDbSet.Local.First(p => p.Name == "ex")), name: "Mk.153 Mod.1 SMAW(83mm Rocket)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Light Anti-Armor Weapon")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll1)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -1291,7 +1266,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5d + 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Tulamash SKS(7.62x39mm M - 43)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "5d + 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Tulamash SKS(7.62x39mm M - 43)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1317,7 +1292,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "7d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "ZB Vz.54(7.62x54mmR)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "7d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "ZB Vz.54(7.62x54mmR)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: InitLc.Ll3)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -1343,7 +1318,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "2d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "S & W Military and Police(.38 Special)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "2d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "S & W Military and Police(.38 Special)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1369,7 +1344,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "1d + 2", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington 396 Sporting(12ga 2 3 / 4\")", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Shotgun")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC4")))
+                                   damage: "1d + 2", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington 396 Sporting(12ga 2 3 / 4\")", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Shotgun")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll4)
                            {
                                Rof = 2,
                                FullAuto = false,
@@ -1395,7 +1370,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "1d + 2", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Stoeger / IGA Uplander(12ga 2 3 / 4\")", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Shotgun")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC4")))
+                                   damage: "1d + 2", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Stoeger / IGA Uplander(12ga 2 3 / 4\")", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Shotgun")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll4)
                            {
                                Rof = 2,
                                FullAuto = false,
@@ -1421,7 +1396,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "2d + 2", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Beretta M92(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "2d + 2", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Beretta M92(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1447,7 +1422,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "2d + 2", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Browning \"Highpower\"(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "2d + 2", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Browning \"Highpower\"(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1473,7 +1448,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "2d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi+"), typeOfDamage1: null), name: "Colt M1911A1(.45 ACP)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "2d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi+"), typeOfDamage1: null), name: "Colt M1911A1(.45 ACP)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1499,7 +1474,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "2d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "H & K P7K3(.380 ACP)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "2d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "H & K P7K3(.380 ACP)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1525,7 +1500,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "2d + 2", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "H & K P7M13(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "2d + 2", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "H & K P7M13(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1551,7 +1526,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "2d + 2", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "H & K P7M8(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "2d + 2", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "H & K P7M8(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1577,7 +1552,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "2d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Izhmekh Makarov(9x18mm Makarov)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "2d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Izhmekh Makarov(9x18mm Makarov)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1603,7 +1578,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "1d + 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi-"), typeOfDamage1: null), name: "Ruger Standard MK1(.22 LR)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "1d + 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi-"), typeOfDamage1: null), name: "Ruger Standard MK1(.22 LR)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1629,7 +1604,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "2d + 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "SIG - Sauer M11(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "2d + 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "SIG - Sauer M11(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1655,7 +1630,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "2d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi+"), typeOfDamage1: null), name: "Springfield Armory XD - 45(.45 ACP)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "2d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi+"), typeOfDamage1: null), name: "Springfield Armory XD - 45(.45 ACP)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1681,7 +1656,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "2d + 2", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi-"), typeOfDamage1: null), name: "Tokarev TT - 33(7.62x25mm Tokarev)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "2d + 2", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi-"), typeOfDamage1: null), name: "Tokarev TT - 33(7.62x25mm Tokarev)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1707,7 +1682,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "1d + 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi-"), typeOfDamage1: null), name: "Walther PP(.22 LR)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "1d + 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi-"), typeOfDamage1: null), name: "Walther PP(.22 LR)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1733,7 +1708,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "2d - 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi-"), typeOfDamage1: null), name: "Walther PP(.32 ACP)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "2d - 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi-"), typeOfDamage1: null), name: "Walther PP(.32 ACP)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1759,7 +1734,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "2d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Walther PP(.380 ACP)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "2d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Walther PP(.380 ACP)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1785,7 +1760,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "2d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Z.M.Lucznik P - 64(9x18mm Makarov)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "2d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Z.M.Lucznik P - 64(9x18mm Makarov)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1811,7 +1786,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "2d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Z.M.Lucznik P - 83(9x18mm Makarov)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "2d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Z.M.Lucznik P - 83(9x18mm Makarov)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Pistol")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1837,7 +1812,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "8d + 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Accuracy International G22(.300 Win Mag)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "8d + 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Accuracy International G22(.300 Win Mag)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -1863,7 +1838,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "9d + 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Accuracy International L115A1(.338 Lapua Magnum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "9d + 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Accuracy International L115A1(.338 Lapua Magnum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -1889,7 +1864,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "7d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Accuracy International L96A1(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "7d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Accuracy International L96A1(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -1915,7 +1890,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "13d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi+"), typeOfDamage1: null), name: "Barrett M82A1A(.50 BMG)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "13d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi+"), typeOfDamage1: null), name: "Barrett M82A1A(.50 BMG)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1941,7 +1916,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "13d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi+"), typeOfDamage1: null), name: "Barrett M82A1A w / AN / PVS10(.50 BMG)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "13d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi+"), typeOfDamage1: null), name: "Barrett M82A1A w / AN / PVS10(.50 BMG)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1967,7 +1942,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "13d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi+"), typeOfDamage1: null), name: "Barrett M82A1A w / Simrad KN - 200(.50 BMG)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "13d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi+"), typeOfDamage1: null), name: "Barrett M82A1A w / Simrad KN - 200(.50 BMG)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -1993,7 +1968,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Bushmaster M15(5.56x45mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "5d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Bushmaster M15(5.56x45mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -2019,7 +1994,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Colt M16A1(5.56x45mm M - 193)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "5d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Colt M16A1(5.56x45mm M - 193)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll2)
                            {
                                Rof = 13,
                                FullAuto = false,
@@ -2045,7 +2020,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Colt M16A2(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "5d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Colt M16A2(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll2)
                            {
                                Rof = 9,
                                FullAuto = false,
@@ -2071,7 +2046,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "4d + 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi-"), typeOfDamage1: null), name: "Colt M4A1(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "4d + 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi-"), typeOfDamage1: null), name: "Colt M4A1(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll2)
                            {
                                Rof = 15,
                                FullAuto = false,
@@ -2097,7 +2072,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Diemaco C - 7(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "5d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Diemaco C - 7(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll2)
                            {
                                Rof = 13,
                                FullAuto = false,
@@ -2123,7 +2098,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Diemaco C - 7FT w / C79 ELCAN(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "5d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Diemaco C - 7FT w / C79 ELCAN(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll2)
                            {
                                Rof = 13,
                                FullAuto = false,
@@ -2149,7 +2124,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "7d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Enfield L42A1(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "7d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Enfield L42A1(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: InitLc.Ll3)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -2175,7 +2150,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "7d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "FN FAL(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "7d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "FN FAL(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll2)
                            {
                                Rof = 11,
                                FullAuto = false,
@@ -2201,7 +2176,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "4d + 2", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi-"), typeOfDamage1: null), name: "H & K G11(4.73x33mm CLTA)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   damage: "4d + 2", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi-"), typeOfDamage1: null), name: "H & K G11(4.73x33mm CLTA)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll1)
                            {
                                Rof = 9,
                                FullAuto = false,
@@ -2227,7 +2202,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "7d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "H & K G3(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "7d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "H & K G3(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll2)
                            {
                                Rof = 10,
                                FullAuto = false,
@@ -2253,7 +2228,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "H & K G41(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "5d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "H & K G41(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll2)
                            {
                                Rof = 14,
                                FullAuto = false,
@@ -2279,7 +2254,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "3d - 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "H & K MP5A2(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Submachine Gun")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "3d - 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "H & K MP5A2(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Submachine Gun")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll2)
                            {
                                Rof = 13,
                                FullAuto = false,
@@ -2305,7 +2280,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "3d - 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "H & K MP5A3(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Submachine Gun")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "3d - 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "H & K MP5A3(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Submachine Gun")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll2)
                            {
                                Rof = 13,
                                FullAuto = false,
@@ -2331,7 +2306,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "2d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "H & K MP5SD2(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Submachine Gun")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   damage: "2d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "H & K MP5SD2(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Submachine Gun")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll1)
                            {
                                Rof = 13,
                                FullAuto = false,
@@ -2357,7 +2332,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "2d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "H & K MP5SD3(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Submachine Gun")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   damage: "2d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "H & K MP5SD3(9x19mm Parabellum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Submachine Gun")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll1)
                            {
                                Rof = 13,
                                FullAuto = false,
@@ -2383,7 +2358,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Izhmash AK - 74(5.45x39mm M - 74)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "5d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Izhmash AK - 74(5.45x39mm M - 74)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll2)
                            {
                                Rof = 11,
                                FullAuto = false,
@@ -2409,7 +2384,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5d + 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Izhmash AKM(7.62x39mm M - 43)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "5d + 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Izhmash AKM(7.62x39mm M - 43)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll2)
                            {
                                Rof = 10,
                                FullAuto = false,
@@ -2435,7 +2410,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "4d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi-"), typeOfDamage1: null), name: "Izhmash AKS - 74U(5.45x39mm M - 74)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "4d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi-"), typeOfDamage1: null), name: "Izhmash AKS - 74U(5.45x39mm M - 74)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll2)
                            {
                                Rof = 11,
                                FullAuto = false,
@@ -2461,7 +2436,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Izhmash AN - 94(5.45x39mm M - 74)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "5d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Izhmash AN - 94(5.45x39mm M - 74)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll2)
                            {
                                Rof = 10,
                                FullAuto = false,
@@ -2487,7 +2462,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5d + 2", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Izhmash RPK(7.62x39mm M - 43)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   damage: "5d + 2", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Izhmash RPK(7.62x39mm M - 43)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll1)
                            {
                                Rof = 10,
                                FullAuto = false,
@@ -2513,7 +2488,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5d + 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Izhmash RPK - 74(5.45x39mm M - 74)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC1")))
+                                   damage: "5d + 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Izhmash RPK - 74(5.45x39mm M - 74)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll1)
                            {
                                Rof = 11,
                                FullAuto = false,
@@ -2539,7 +2514,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "7d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Izhmash SVD(7.62x54mmR)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "7d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Izhmash SVD(7.62x54mmR)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -2565,7 +2540,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "7d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Mauser K.98k(7.92x57mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "7d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Mauser K.98k(7.92x57mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: InitLc.Ll3)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -2591,7 +2566,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "7d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Parker - Hale C3A1 MRSW(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "7d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Parker - Hale C3A1 MRSW(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll3)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -2617,7 +2592,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "7d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington M21(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "7d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington M21(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll2)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -2643,7 +2618,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "8d + 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington M24A1 SWS(.300 Win Mag)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "8d + 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington M24A1 SWS(.300 Win Mag)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -2669,7 +2644,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "8d + 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington M24A1 SWS w / AN / PVS10(.300 Win Mag)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "8d + 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington M24A1 SWS w / AN / PVS10(.300 Win Mag)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -2695,7 +2670,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "9d + 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington M24A2 SWS(.338 Lapua Magnum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "9d + 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington M24A2 SWS(.338 Lapua Magnum)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -2721,7 +2696,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "9d + 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington M24A2 SWS w / AN / PVS10(.338 Lapua Mag)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "9d + 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington M24A2 SWS w / AN / PVS10(.338 Lapua Mag)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -2747,7 +2722,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "7d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Royal Ordnance L1A1(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "7d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Royal Ordnance L1A1(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll2)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -2773,7 +2748,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "7d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Royal Ordnance L1A1 w / SUIT(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "7d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Royal Ordnance L1A1 w / SUIT(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll2)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -2799,7 +2774,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Royal Ordnance L85A1(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "5d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Royal Ordnance L85A1(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll2)
                            {
                                Rof = 12,
                                FullAuto = false,
@@ -2825,7 +2800,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Royal Ordnance L85A1 w / SUSAT(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "5d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Royal Ordnance L85A1 w / SUSAT(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll2)
                            {
                                Rof = 12,
                                FullAuto = false,
@@ -2851,7 +2826,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Royal Ordnance L85A2(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "5d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Royal Ordnance L85A2(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll2)
                            {
                                Rof = 12,
                                FullAuto = false,
@@ -2877,7 +2852,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Royal Ordnance L85A2 w / SUSAT(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "5d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Royal Ordnance L85A2 w / SUSAT(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll2)
                            {
                                Rof = 12,
                                FullAuto = false,
@@ -2903,7 +2878,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Royal Ordnance L86A1(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "5d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Royal Ordnance L86A1(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll2)
                            {
                                Rof = 13,
                                FullAuto = false,
@@ -2929,7 +2904,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Royal Ordnance L86A2(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "5d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Royal Ordnance L86A2(5.56x45mm NATO)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll2)
                            {
                                Rof = 13,
                                FullAuto = false,
@@ -2955,7 +2930,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "1d + 2", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi-"), typeOfDamage1: null), name: "Ruger 10 / 22(.22 LR)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC4")))
+                                   damage: "1d + 2", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi-"), typeOfDamage1: null), name: "Ruger 10 / 22(.22 LR)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll4)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -2981,7 +2956,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Ruger Mini - 14(5.56x45mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "5d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Ruger Mini - 14(5.56x45mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -3007,7 +2982,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "7d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Springfield M14(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "7d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Springfield M14(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll2)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -3033,7 +3008,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "1d + 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Benelli M1014(12ga 3\")", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Shotgun")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "1d + 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Benelli M1014(12ga 3\")", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Shotgun")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 3,
                                FullAuto = false,
@@ -3059,7 +3034,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "5d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Marlin Model 336(.30 - 30 Win)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "5d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Marlin Model 336(.30 - 30 Win)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL6")), lc: InitLc.Ll3)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -3085,7 +3060,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "1d + 2", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi-"), typeOfDamage1: null), name: "Marlin Model 881(.22 LR)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC4")))
+                                   damage: "1d + 2", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi-"), typeOfDamage1: null), name: "Marlin Model 881(.22 LR)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll4)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -3111,7 +3086,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "1d + 1", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Mossberg M590(12ga 3\")", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Shotgun")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC4")))
+                                   damage: "1d + 1", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Mossberg M590(12ga 3\")", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Shotgun")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll4)
                            {
                                Rof = 2,
                                FullAuto = false,
@@ -3137,7 +3112,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "7d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington M24 SWS(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "7d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington M24 SWS(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -3163,7 +3138,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "7d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington M24 SWS w / AN / PVS10(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC2")))
+                                   damage: "7d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington M24 SWS w / AN / PVS10(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll2)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -3189,7 +3164,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "7d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington M40A3 RWS(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "7d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington M40A3 RWS(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -3215,7 +3190,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "7d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington M40A3 RWS w / AN / PVS10(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "7d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington M40A3 RWS w / AN / PVS10(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -3241,7 +3216,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "7d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington M40A3 RWS w / Simrad KN - 200(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "7d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington M40A3 RWS w / Simrad KN - 200(7.62x51mm)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL8")), lc: InitLc.Ll3)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -3268,7 +3243,7 @@
                                weaponDamage: new WeaponDamage
                                (
 
-                                   damage: "1d + 2", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington Model 870P(12ga 3\")", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Shotgun")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC4")))
+                                   damage: "1d + 2", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Remington Model 870P(12ga 3\")", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Shotgun")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll4)
                            {
                                Rof = 2,
                                FullAuto = false,
@@ -3294,7 +3269,7 @@
                            (
                                weaponDamage: new WeaponDamage
                                (
-                                   damage: "7d", weaponAttackType: context.WeaponAttackTypeDbSet.Local.First(p => p.Name.Contains("Primary")), typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Winchester Model 70(.30 - 06)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: context.TlDbSet.Local.First(p => p.NameTl.Contains("TL7")), lc: context.LcDbSet.Local.First(p => p.NameLc.Contains("LC3")))
+                                   damage: "7d", weaponAttackType: WeaponAttackTypeInit.Primary, typeOfDamage: context.TypeOfDamageDbSet.Local.First(p => p.Name == "pi"), typeOfDamage1: null), name: "Winchester Model 70(.30 - 06)", itemSubClass: context.ItemSubClassDbSet.Local.Where(p => p.NameSub.Contains("Rifle")).First(p => p.GurpsClass.Name == "Guns"), tl: InitTl.Tl7, lc: InitLc.Ll3)
                            {
                                Rof = 1,
                                FullAuto = false,
@@ -3318,9 +3293,8 @@
 
             #endregion
 
-            var qt = context.ItemClassDbSet.ToList();
             context.SaveChanges();
-            base.Seed(context);
+        //    base.Seed(context);
 
             // This method will be called after migrating to the latest version.
 
