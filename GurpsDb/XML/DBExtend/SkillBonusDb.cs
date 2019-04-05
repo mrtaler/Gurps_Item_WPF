@@ -9,18 +9,19 @@ namespace GurpsDb.GurpsModel
         /// Default Constructor
         /// </summary>
         public SkillBonusDb() { }
+
         /// <summary>
         /// Constructor for work with XML
         /// </summary>
         /// <param name="item"></param>
         public SkillBonusDb(SkillBonusXml item)
         {
-            Name = item.Name.Value;
-            Namecompare = item.Name.Attribute("compare")?.Value;
-            Specialization = item.Specialization.ToString();
-            Specializationcompare = item.Specialization.Attribute("compare")?.Value;
-            AmountValue = item.Amount.Value;
-            AmountPerLevel = item.Amount.Attribute("per_level")?.Value;
+            this.Name = item.Name.Value;
+            this.Namecompare = item.Name.Attribute("compare")?.Value;
+            this.Specialization = item.Specialization.ToString();
+            this.Specializationcompare = item.Specialization.Attribute("compare")?.Value;
+            this.AmountValue = item.Amount.Value;
+            this.AmountPerLevel = item.Amount.Attribute("per_level")?.Value;
         }
     }
 }

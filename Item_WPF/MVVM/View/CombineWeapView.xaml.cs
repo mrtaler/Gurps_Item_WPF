@@ -1,5 +1,6 @@
-﻿using Item_WPF.MVVM.ViewModels;
-using System.Windows;
+﻿using System.Windows;
+
+using Item_WPF.MVVM.ViewModels;
 
 namespace Item_WPF.MVVM.View
 {
@@ -11,9 +12,9 @@ namespace Item_WPF.MVVM.View
         private CombineWeapViewModel _CombineWeapViewModel;
         public CombineWeapView()
         {
-            _CombineWeapViewModel = new CombineWeapViewModel();
-            DataContext = _CombineWeapViewModel;
-            InitializeComponent();
+            this._CombineWeapViewModel = new CombineWeapViewModel();
+            this.DataContext = this._CombineWeapViewModel;
+            this.InitializeComponent();
         }
     }
 }

@@ -19,13 +19,14 @@ namespace Item_WPF.addin
             int roll;
             int total = 0;
             Random rand = new Random();
-            string Dice = "";
+            string Dice = string.Empty;
             for (int i = 1; i < (numDice) + 1; i++)
             {
                 roll = (rand.Next(1, (dice + 1)));
                 total += roll;
                 Dice += roll + "\r\n";
             }
+
             Dice += total.ToString();
             return total;
         }

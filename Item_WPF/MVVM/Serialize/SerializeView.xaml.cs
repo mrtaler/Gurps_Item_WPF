@@ -10,8 +10,8 @@ namespace Item_WPF.MVVM.Serialize
 
         public SerializeView()
         {
-            DataContext = new SerializeViewModel();
-            InitializeComponent();
+            this.DataContext = new SerializeViewModel();
+            this.InitializeComponent();
         }
     }
 }

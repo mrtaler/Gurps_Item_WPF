@@ -14,8 +14,8 @@ namespace Item_WPF.MVVM.ViewModels
         public BoxItemChangeViewModel(object param)
         {
             int idparam = Convert.ToInt32(param);
-            _context = new ContextGurpsModel();
-            MainBox = _context.AnyBoxNameTypeDbSet.FirstOrDefault(p => p.Id == idparam);
+            this._context = new ContextGurpsModel();
+            this.MainBox = this._context.AnyBoxNameTypeDbSet.FirstOrDefault(p => p.Id == idparam);
         }
     }
 }

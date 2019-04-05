@@ -1,7 +1,8 @@
-﻿using GurpsDb.GurpsModel;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Linq;
+
+using GurpsDb.GurpsModel;
 
 namespace Item_WPF.MVVM.Models
 {
@@ -34,106 +35,141 @@ namespace Item_WPF.MVVM.Models
             if (qq == qt)
             {
                 Weapon WeapToGrid = (Weapon)itt;
-                Name = itt.SzItemName;
-                Tl = itt.Tl1.NameTl;
+                this.Name = itt.SzItemName;
+                this.Tl = itt.Tl1.NameTl;
 
-                DamagePrim = WeapToGrid.WeaponDamage.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary"));
-                DamageLinked = WeapToGrid.WeaponDamage.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Linke"));
-                DamageFollowUp = WeapToGrid.WeaponDamage.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Follow"));
-                if (DamagePrim != null)
+                this.DamagePrim =
+                    WeapToGrid.WeaponDamage.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Primary"));
+                this.DamageLinked =
+                    WeapToGrid.WeaponDamage.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Linke"));
+                this.DamageFollowUp =
+                    WeapToGrid.WeaponDamage.FirstOrDefault(p => p.WeaponAttackType.Name.Contains("Follow"));
+                if (this.DamagePrim != null)
                 {
-                    if (DamagePrim.TypeOfDamage?.Id != null && DamagePrim.TypeOfDamage1?.Id != null)
+                    if (this.DamagePrim.TypeOfDamage?.Id != null && this.DamagePrim.TypeOfDamage1?.Id != null)
                     {
-                        if (DamagePrim.ArmorDivision != 1) Damage = DamagePrim.Damage
-                                + " (" + Convert.ToDouble(DamagePrim.ArmorDivision) + ") "
-                                + DamagePrim.TypeOfDamage.Name + " " + DamagePrim.TypeOfDamage1Text + " " + DamagePrim.TypeOfDamage1.Name + " " + DamagePrim.TypeOfDamage2Text;
-                        else Damage = DamagePrim.Damage + " " + DamagePrim.TypeOfDamage.Name + " " + DamagePrim.TypeOfDamage1.Name;
+                        if (this.DamagePrim.ArmorDivision != 1)
+                            this.Damage = this.DamagePrim.Damage + " ("
+                                                                 + Convert.ToDouble(this.DamagePrim.ArmorDivision)
+                                                                 + ") " + this.DamagePrim.TypeOfDamage.Name + " "
+                                                                 + this.DamagePrim.TypeOfDamage1Text + " "
+                                                                 + this.DamagePrim.TypeOfDamage1.Name + " "
+                                                                 + this.DamagePrim.TypeOfDamage2Text;
+                        else
+                            this.Damage = this.DamagePrim.Damage + " " + this.DamagePrim.TypeOfDamage.Name + " "
+                                          + this.DamagePrim.TypeOfDamage1.Name;
                     }
-                    else if (DamagePrim.TypeOfDamage != null && DamagePrim.TypeOfDamage1 == null)
+                    else if (this.DamagePrim.TypeOfDamage != null && this.DamagePrim.TypeOfDamage1 == null)
                     {
-                        if (DamagePrim.ArmorDivision != 1) Damage = DamagePrim.Damage + " (" + Convert.ToDouble(DamagePrim.ArmorDivision) + ") " + DamagePrim.TypeOfDamage.Name;
-                        else Damage = DamagePrim.Damage + " " + DamagePrim.TypeOfDamage.Name;
+                        if (this.DamagePrim.ArmorDivision != 1)
+                            this.Damage = this.DamagePrim.Damage + " ("
+                                                                 + Convert.ToDouble(this.DamagePrim.ArmorDivision)
+                                                                 + ") " + this.DamagePrim.TypeOfDamage.Name;
+                        else this.Damage = this.DamagePrim.Damage + " " + this.DamagePrim.TypeOfDamage.Name;
                     }
                     else
                     {
-                        if (DamagePrim.ArmorDivision != 1) Damage = DamagePrim.Damage + " (" + Convert.ToDouble(DamagePrim.ArmorDivision) + ")";
-                        else Damage = DamagePrim.Damage;
+                        if (this.DamagePrim.ArmorDivision != 1)
+                            this.Damage = this.DamagePrim.Damage + " ("
+                                                                 + Convert.ToDouble(this.DamagePrim.ArmorDivision)
+                                                                 + ")";
+                        else this.Damage = this.DamagePrim.Damage;
                     }
-
                 }
 
-                if (DamageLinked != null)
+                if (this.DamageLinked != null)
                 {
-                    Name += "\r\n" + "    -- Linked";
-                    if (DamageLinked.TypeOfDamage != null)
+                    this.Name += "\r\n" + "    -- Linked";
+                    if (this.DamageLinked.TypeOfDamage != null)
                     {
-                        if (DamageLinked.ArmorDivision != 1) Damage += "\r\n" + DamageLinked.Damage + " (" + Convert.ToDouble(DamageLinked.ArmorDivision) + ") " + DamageLinked.TypeOfDamage.Name;
-                        else Damage += "\r\n" + DamageLinked.Damage + " " + DamageLinked.TypeOfDamage.Name;
+                        if (this.DamageLinked.ArmorDivision != 1)
+                            this.Damage += "\r\n" + this.DamageLinked.Damage + " ("
+                                           + Convert.ToDouble(this.DamageLinked.ArmorDivision) + ") "
+                                           + this.DamageLinked.TypeOfDamage.Name;
+                        else
+                            this.Damage += "\r\n" + this.DamageLinked.Damage + " "
+                                           + this.DamageLinked.TypeOfDamage.Name;
                     }
                     else
                     {
-                        if (DamageLinked.ArmorDivision != 1) Damage += "\r\n" + DamageLinked.Damage + " (" + Convert.ToDouble(DamageLinked.ArmorDivision) + ")";
-                        else Damage += "\r\n" + DamageLinked.Damage;
+                        if (this.DamageLinked.ArmorDivision != 1)
+                            this.Damage += "\r\n" + this.DamageLinked.Damage + " ("
+                                           + Convert.ToDouble(this.DamageLinked.ArmorDivision) + ")";
+                        else this.Damage += "\r\n" + this.DamageLinked.Damage;
                     }
                 }
-                if (DamageFollowUp != null)
+
+                if (this.DamageFollowUp != null)
                 {
-                    Name += "\r\n" + "    -- Follow-Up";
-                    if (DamageFollowUp.TypeOfDamage != null)
+                    this.Name += "\r\n" + "    -- Follow-Up";
+                    if (this.DamageFollowUp.TypeOfDamage != null)
                     {
-                        if (DamageFollowUp.ArmorDivision != 1) Damage += "\r\n" + DamageFollowUp.Damage + " (" + Convert.ToDouble(DamageFollowUp.ArmorDivision) + ") " + DamageFollowUp.TypeOfDamage.Name;
-                        else Damage += "\r\n" + DamageFollowUp.Damage + " " + DamageFollowUp.TypeOfDamage.Name;
+                        if (this.DamageFollowUp.ArmorDivision != 1)
+                            this.Damage += "\r\n" + this.DamageFollowUp.Damage + " ("
+                                           + Convert.ToDouble(this.DamageFollowUp.ArmorDivision) + ") "
+                                           + this.DamageFollowUp.TypeOfDamage.Name;
+                        else
+                            this.Damage += "\r\n" + this.DamageFollowUp.Damage + " "
+                                           + this.DamageFollowUp.TypeOfDamage.Name;
                     }
                     else
                     {
-                        if (DamageFollowUp.ArmorDivision != 1) Damage += "\r\n" + DamageFollowUp.Damage + " (" + Convert.ToDouble(DamageFollowUp.ArmorDivision) + ")";
-                        else Damage += "\r\n" + DamageFollowUp.Damage;
+                        if (this.DamageFollowUp.ArmorDivision != 1)
+                            this.Damage += "\r\n" + this.DamageFollowUp.Damage + " ("
+                                           + Convert.ToDouble(this.DamageFollowUp.ArmorDivision) + ")";
+                        else this.Damage += "\r\n" + this.DamageFollowUp.Damage;
                     }
                 }
-                if (WeapToGrid.AccAddin != null)
-                    DefAcc = WeapToGrid.DefAcc + "+" + WeapToGrid.AccAddin;
-                else DefAcc = WeapToGrid.DefAcc.ToString();
-                Range = Convert.ToDouble(WeapToGrid.HalfRange) + "/" + Convert.ToDouble(WeapToGrid.FullRange);
-                Weigth = Convert.ToDouble(itt.UbWeight) + "/";// + itt.WEAPON.Shots * Convert.ToDouble(itt.AMMO.WPS);
-                //ROF
-                Rof = WeapToGrid.Rof.ToString();
-                if (itt.ItemSubClass.NameSub == "Shotgun") Rof = WeapToGrid.Rof + "x" + WeapToGrid.Rof;
-                if (WeapToGrid.FullAuto) Rof = WeapToGrid.Rof + "!";
 
-                Shots = WeapToGrid.Shots.ToString();
-                if (WeapToGrid.AddInChamber) Shots = WeapToGrid.Shots + "+1";
-                if (WeapToGrid.SingleReload) Shots = WeapToGrid.Shots + "(" + WeapToGrid.TimeForReload + "i)";
-                else Shots = Shots + "(" + WeapToGrid.TimeForReload + ")";
-                //st
-                MinSt = itt.MinSt.ToString();
-                if (itt.TwoHanded) MinSt = itt.MinSt + "†";
-                //Bulk
-                Bulk = itt.ItemSize;
-                if (WeapToGrid.Bulkfolded) Bulk = itt.ItemSize + "*";
-                //RCL%cost%Lc
-                Rcl = WeapToGrid.Recoil.ToString();
-                Cost = "$" + Convert.ToDouble(itt.UsPrice) + "/$" + WeapToGrid.Shots;// * Convert.ToDouble(itt.WEAPON.AMMO.CPS);
-                Lc = itt.Lc1.NameLc;
-                //Type
-                Type = itt.ItemSubClass.NameSub;
+                if (WeapToGrid.AccAddin != null) this.DefAcc = WeapToGrid.DefAcc + "+" + WeapToGrid.AccAddin;
+                else this.DefAcc = WeapToGrid.DefAcc.ToString();
+                this.Range = Convert.ToDouble(WeapToGrid.HalfRange) + "/" + Convert.ToDouble(WeapToGrid.FullRange);
+                this.Weigth =
+                    Convert.ToDouble(itt.UbWeight) + "/"; // + itt.WEAPON.Shots * Convert.ToDouble(itt.AMMO.WPS);
+
+                // ROF
+                this.Rof = WeapToGrid.Rof.ToString();
+                if (itt.ItemSubClass.NameSub == "Shotgun") this.Rof = WeapToGrid.Rof + "x" + WeapToGrid.Rof;
+                if (WeapToGrid.FullAuto) this.Rof = WeapToGrid.Rof + "!";
+
+                this.Shots = WeapToGrid.Shots.ToString();
+                if (WeapToGrid.AddInChamber) this.Shots = WeapToGrid.Shots + "+1";
+                if (WeapToGrid.SingleReload) this.Shots = WeapToGrid.Shots + "(" + WeapToGrid.TimeForReload + "i)";
+                else this.Shots = this.Shots + "(" + WeapToGrid.TimeForReload + ")";
+
+                // st
+                this.MinSt = itt.MinSt.ToString();
+                if (itt.TwoHanded) this.MinSt = itt.MinSt + "†";
+
+                // Bulk
+                this.Bulk = itt.ItemSize;
+                if (WeapToGrid.Bulkfolded) this.Bulk = itt.ItemSize + "*";
+
+                // RCL%cost%Lc
+                this.Rcl = WeapToGrid.Recoil.ToString();
+                this.Cost = "$" + Convert.ToDouble(itt.UsPrice) + "/$"
+                            + WeapToGrid.Shots; // * Convert.ToDouble(itt.WEAPON.AMMO.CPS);
+                this.Lc = itt.Lc1.NameLc;
+
+                // Type
+                this.Type = itt.ItemSubClass.NameSub;
             }
         }
 
         public ItemToGridModel(Attachment itt, string type)
         {
-            Name = itt.SzItemName;
-            Tl = itt.Tl1.NameTl;
-            Type = type;
+            this.Name = itt.SzItemName;
+            this.Tl = itt.Tl1.NameTl;
+            this.Type = type;
 
-            DefAcc = itt.AccAddmax.ToString();
-            Weigth = itt.UbWeight.ToString(CultureInfo.InvariantCulture);
-            //ROF
-            Bulk = itt.ItemSize;
-            Cost = "$" + Convert.ToDouble(itt.UsPrice);
-            Lc = itt.Lc1.NameLc;
+            this.DefAcc = itt.AccAddmax.ToString();
+            this.Weigth = itt.UbWeight.ToString(CultureInfo.InvariantCulture);
+
+            // ROF
+            this.Bulk = itt.ItemSize;
+            this.Cost = "$" + Convert.ToDouble(itt.UsPrice);
+            this.Lc = itt.Lc1.NameLc;
         }
-
-
     }
 }
 

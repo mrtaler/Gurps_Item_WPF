@@ -1,8 +1,10 @@
-﻿using Item_WPF.addin;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
+
 using GurpsDb;
-using GurpsDb.GurpsModel;
 using GurpsDb.BaseModel;
+using GurpsDb.GurpsModel;
+
+using Item_WPF.addin;
 
 namespace Item_WPF.MVVM.ViewModels
 {
@@ -14,27 +16,22 @@ namespace Item_WPF.MVVM.ViewModels
         public AnyBoxNameType NewBox { get; set; }
         public NewBoxViewModel()
         {
-            NewBox = new AnyBoxNameType();
-            _context = new ContextGurpsModel();
-            BoxType = new ObservableCollection<TypeOfBox>(_context.TypeOfBoxeDbSet);
-            ParentBoxName = new ObservableCollection<AnyBoxNameType>(_context.AnyBoxNameTypeDbSet);
+            this.NewBox = new AnyBoxNameType();
+            this._context = new ContextGurpsModel();
+            this.BoxType = new ObservableCollection<TypeOfBox>(this._context.TypeOfBoxeDbSet);
+            this.ParentBoxName = new ObservableCollection<AnyBoxNameType>(this._context.AnyBoxNameTypeDbSet);
 
-            SaveCommand = new ViewModelCommand(Save);
+            this.SaveCommand = new ViewModelCommand(this.Save);
         }
+
         private void Save(object parameter)
         {
-            _context.AnyBoxNameTypeDbSet.Add(NewBox);
-            NewBox = new AnyBoxNameType()
-            {
-                NameOfBox = "new",
-                ParentBoxName = null,
-                TypeOfBox = 1
-            };
-            NotifyPropertyChanged("NewBox");
+            this._context.AnyBoxNameTypeDbSet.Add(this.NewBox);
+            this.NewBox = new AnyBoxNameType() { NameOfBox = "new", ParentBoxName = null, TypeOfBox = 1 };
+            this.NotifyPropertyChanged("NewBox");
+
             // NotifyPropertyChanged("ParentBoxName");
-
-
-            _context.SaveChanges();
+            this._context.SaveChanges();
         }
 
         public ViewModelCommand SaveCommand { get; set; }

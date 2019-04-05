@@ -5,7 +5,7 @@
         public string Text { get; set; }
         public TextInputViewModel(string text)
         {
-            Text = text;
+            this.Text = text;
         }
     }
 }

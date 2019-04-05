@@ -8,7 +8,7 @@ namespace GurpsDb.XML.XSD
         public AmountXml() { }
         public AmountXml(XElement item)
         {
-            Amount = item;
+            this.Amount = item;
         }
     }
 }

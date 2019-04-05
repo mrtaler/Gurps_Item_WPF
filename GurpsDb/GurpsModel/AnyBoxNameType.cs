@@ -10,8 +10,8 @@ namespace GurpsDb.GurpsModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public AnyBoxNameType()
         {
-            AnyBoxNameType1 = new HashSet<AnyBoxNameType>();
-            BoxItem = new HashSet<BoxItem>();
+            this.AnyBoxNameType1 = new HashSet<AnyBoxNameType>();
+            this.BoxItem = new HashSet<BoxItem>();
         }
 
         public int Id { get; set; }

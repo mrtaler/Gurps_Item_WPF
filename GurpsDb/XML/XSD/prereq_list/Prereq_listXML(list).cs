@@ -10,13 +10,12 @@ namespace GurpsDb.XML.XSD.prereq_list
         /// <param name="itemprereqList">Prereq_listXML</param>
         public void FPrereq_list(XElement itemprereqList)
         {
-            //
             foreach (var item in itemprereqList.Elements("prereq_list"))
             {
                 PrereqListXml prqList = new PrereqListXml();
                 prqList.FSkill_prereq(item.Elements("skill_prereq"));
 
-                //  prqList.FSkill_prereq(item.Elements("prereq_list"));
+                // prqList.FSkill_prereq(item.Elements("prereq_list"));
                 prqList.FSpell_prereq(item.Elements("prereq_list"));
                 prqList.FAttribute_prereq(item.Elements("prereq_list"));
                 prqList.FAdvantage_prereq(item.Elements("prereq_list"));
@@ -42,7 +41,8 @@ namespace GurpsDb.XML.XSD.prereq_list
                     prqListSub.All = itprereqList.Attribute("all");
                     prqList.PrereqList.Add(prqListSub);
                 }
-                PrereqList.Add(prqList);
+
+                this.PrereqList.Add(prqList);
             }
         }
     }

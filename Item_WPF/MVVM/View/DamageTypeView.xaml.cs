@@ -10,8 +10,8 @@ namespace Item_WPF.MVVM.View
     {
         public DamageTypeView()
         {
-            InitializeComponent();
-            DataContext = new DamageTypeViewModel();
+            this.InitializeComponent();
+            this.DataContext = new DamageTypeViewModel();
         }
 
         private void Close_button_Click(object sender, RoutedEventArgs e)

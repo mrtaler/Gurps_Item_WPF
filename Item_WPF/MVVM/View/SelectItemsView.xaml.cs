@@ -9,7 +9,7 @@ namespace Item_WPF.MVVM.View
     {
         public SelectItemsView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
     }

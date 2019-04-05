@@ -1,5 +1,6 @@
-﻿using Item_WPF.MVVM.ViewModels;
-using System.Windows;
+﻿using System.Windows;
+
+using Item_WPF.MVVM.ViewModels;
 
 namespace Item_WPF.MVVM.View
 {
@@ -10,8 +11,8 @@ namespace Item_WPF.MVVM.View
     {
         public NewBoxView()
         {
-            InitializeComponent();
-            DataContext = new NewBoxViewModel();
+            this.InitializeComponent();
+            this.DataContext = new NewBoxViewModel();
         }
     }
 }

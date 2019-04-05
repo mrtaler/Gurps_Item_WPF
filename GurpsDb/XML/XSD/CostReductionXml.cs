@@ -8,8 +8,8 @@ namespace GurpsDb.XML.XSD
         public XElement Percentage;
         public CostReductionXml(XElement item)
         {
-            Attribute = item.Element("attribute");
-            Percentage = item.Element("percentage");
+            this.Attribute = item.Element("attribute");
+            this.Percentage = item.Element("percentage");
         }
     }
 }

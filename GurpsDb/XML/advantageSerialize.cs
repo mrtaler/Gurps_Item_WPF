@@ -1,10 +1,11 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Xml.Linq;
+
 using GurpsDb.GurpsModel;
 using GurpsDb.XML.XSD;
 using GurpsDb.XML.XSD.List;
 using GurpsDb.XML.XSD.prereq_list;
-using System;
 
 namespace GurpsDb.XML
 {
@@ -14,11 +15,11 @@ namespace GurpsDb.XML
         public ObservableCollection<AdvantageXml> AdvantageXmlCollection = new ObservableCollection<AdvantageXml>();
         public AdvantageSerialize(string xmlString, string writePath)
         {
-            _context = new ContextGurpsModel();
+            this._context = new ContextGurpsModel();
             int contextAdded = 0;
             XDocument xdoc = XDocument.Load(xmlString);
 
-            #region Read XML For AdvantageXML
+            
             foreach (XElement skillElement in xdoc.Element("advantage_list").Elements("advantage"))
             {
                 contextAdded += 1;
@@ -36,6 +37,7 @@ namespace GurpsDb.XML
                 advXml.Cr = skillElement.Element("cr");
 
                 #region categories
+
                 if (skillElement.Element("categories").Elements("category") != null)
                 {
                     advXml.Categories = new ObservableCollection<CategoriesXml>();
@@ -45,8 +47,11 @@ namespace GurpsDb.XML
                         advXml.Categories.Add(cat);
                     }
                 }
+
                 #endregion
+
                 #region prereq_list
+
                 if (skillElement.Element("prereq_list") != null)
                 {
                     advXml.PrereqList = new ObservableCollection<PrereqListXml>();
@@ -56,8 +61,11 @@ namespace GurpsDb.XML
                         advXml.PrereqList.Add(prl);
                     }
                 }
+
                 #endregion
+
                 #region attribute_bonus
+
                 if (skillElement.Element("attribute_bonus") != null)
                 {
                     advXml.AttributeBonus = new ObservableCollection<AttributeBonusXml>();
@@ -67,8 +75,11 @@ namespace GurpsDb.XML
                         advXml.AttributeBonus.Add(atrbns);
                     }
                 }
+
                 #endregion
+
                 #region Weapon_bonusXML
+
                 if (skillElement.Element("weapon_bonus") != null)
                 {
                     advXml.WeaponBonus = new ObservableCollection<WeaponBonusXml>();
@@ -78,8 +89,11 @@ namespace GurpsDb.XML
                         advXml.WeaponBonus.Add(wpnbns);
                     }
                 }
+
                 #endregion
+
                 #region modifier
+
                 if (skillElement.Element("modifier") != null)
                 {
                     advXml.Modifier = new ObservableCollection<ModifierXml>();
@@ -89,75 +103,107 @@ namespace GurpsDb.XML
                         advXml.Modifier.Add(mdf);
                     }
                 }
+
                 #endregion
+
                 #region   skill_bonus
+
                 if (skillElement.Element("skill_bonus") != null)
                 {
                     advXml.SkillBonus = new ObservableCollection<SkillBonusXml>();
                     foreach (var itemmodifier in skillElement.Elements("skill_bonus"))
-                    { advXml.SkillBonus.Add(new SkillBonusXml(itemmodifier)); }
+                    {
+                        advXml.SkillBonus.Add(new SkillBonusXml(itemmodifier));
+                    }
                 }
+
                 #endregion
+
                 #region     spell_bonus
+
                 if (skillElement.Element("spell_bonus") != null)
                 {
                     advXml.SpellBonus = new ObservableCollection<SpellBonusXml>();
                     foreach (var itemmodifier in skillElement.Elements("spell_bonus"))
-                    { advXml.SpellBonus.Add(new SpellBonusXml(itemmodifier)); }
+                    {
+                        advXml.SpellBonus.Add(new SpellBonusXml(itemmodifier));
+                    }
                 }
+
                 #endregion
+
                 #region  dr_bonus
+
                 if (skillElement.Element("dr_bonus") != null)
                 {
                     advXml.DrBonus = new ObservableCollection<DrBonusXml>();
                     foreach (var itemmodifier in skillElement.Elements("dr_bonus"))
-                    { advXml.DrBonus.Add(new DrBonusXml(itemmodifier)); }
+                    {
+                        advXml.DrBonus.Add(new DrBonusXml(itemmodifier));
+                    }
                 }
+
                 #endregion
+
                 #region   melee_weapon;
+
                 if (skillElement.Element("melee_weapon") != null)
                 {
                     advXml.MeleeWeapon = new ObservableCollection<MeleeWeaponXml>();
                     foreach (var itemmodifier in skillElement.Elements("melee_weapon"))
-                    { advXml.MeleeWeapon.Add(new MeleeWeaponXml(itemmodifier)); }
+                    {
+                        advXml.MeleeWeapon.Add(new MeleeWeaponXml(itemmodifier));
+                    }
                 }
+
                 #endregion
+
                 #region      ranged_weapon;
+
                 if (skillElement.Element("ranged_weapon") != null)
                 {
                     advXml.RangedWeapon = new ObservableCollection<RangedWeaponXml>();
                     foreach (var itemmodifier in skillElement.Elements("ranged_weapon"))
-                    { advXml.RangedWeapon.Add(new RangedWeaponXml(itemmodifier)); }
+                    {
+                        advXml.RangedWeapon.Add(new RangedWeaponXml(itemmodifier));
+                    }
                 }
+
                 #endregion
+
                 #region        cost_reduction;
+
                 if (skillElement.Element("cost_reduction") != null)
                 {
                     advXml.CostReduction = new ObservableCollection<CostReductionXml>();
                     foreach (var itemmodifier in skillElement.Elements("cost_reduction"))
-                    { advXml.CostReduction.Add(new CostReductionXml(itemmodifier)); }
+                    {
+                        advXml.CostReduction.Add(new CostReductionXml(itemmodifier));
+                    }
                 }
+
                 #endregion
+
                 #region          cr;
-                //if (skillElement.Element("cr") != null)
-                //{
-                //    advXML.cr = new ObservableCollection<crXML>();
-                //    foreach (var itemmodifier in skillElement.Elements("cr"))
-                //    { advXML.cr.Add(new crXML(itemmodifier)); }
-                //}
+
+                // if (skillElement.Element("cr") != null)
+                // {
+                // advXML.cr = new ObservableCollection<crXML>();
+                // foreach (var itemmodifier in skillElement.Elements("cr"))
+                // { advXML.cr.Add(new crXML(itemmodifier)); }
+                // }
                 #endregion
 
-                AdvantageXmlCollection.Add(advXml);
-
+                this.AdvantageXmlCollection.Add(advXml);
             }
-            #endregion
-            foreach (AdvantageXml advXml in AdvantageXmlCollection)
+
+            foreach (AdvantageXml advXml in this.AdvantageXmlCollection)
             {
-                //   Advantage adv = 
-
-                _context.AdvantageDbSet.Add(new Advantage(advXml));
+                // Advantage adv = 
+                this._context.AdvantageDbSet.Add(new Advantage(advXml));
             }
-            _context.SaveChanges();
+
+            this._context.SaveChanges();
         }
 
         public void Dispose()

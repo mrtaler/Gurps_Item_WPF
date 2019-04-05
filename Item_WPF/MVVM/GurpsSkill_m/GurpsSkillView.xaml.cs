@@ -9,7 +9,7 @@ namespace Item_WPF.MVVM.GurpsSkill_m
     {
         public GurpsSkillView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

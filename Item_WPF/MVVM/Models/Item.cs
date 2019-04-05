@@ -4,39 +4,41 @@ namespace Item_WPF.MVVM.Models
 {
     // This item represents an inventory item, which can be carried by a
     // character.
-    //
     // This class is mutable - do not use as key in dictionaries.
     public class Item
     {
         public string Name { get; set; }
+
         public string Description { get; set; }
+
         public int Value { get; set; }
+
         public int Weight { get; set; }
 
         public List<AttackOption> AttackOptions { get; set; }
 
         public Item()
         {
-            Name = "";
-            Description = "";
-            Value = 0;
-            Weight = 0;
+            this.Name = string.Empty;
+            this.Description = string.Empty;
+            this.Value = 0;
+            this.Weight = 0;
         }
 
         public Item(string name, int value, int weight)
         {
-            Name = name;
-            Description = "";
-            Value = value;
-            Weight = weight;
+            this.Name = name;
+            this.Description = string.Empty;
+            this.Value = value;
+            this.Weight = weight;
         }
 
         public Item(Item item)
         {
-            Name = item.Name;
-            Description = item.Description;
-            Value = item.Value;
-            Weight = item.Weight;
+            this.Name = item.Name;
+            this.Description = item.Description;
+            this.Value = item.Value;
+            this.Weight = item.Weight;
         }
 
         public override bool Equals(object obj)
@@ -48,23 +50,25 @@ namespace Item_WPF.MVVM.Models
 
             Item item = (Item)obj;
 
-            return (item.Name.Equals(Name)) && (item.Description.Equals(Description)) && (item.Value.Equals(Value)) && (item.Weight.Equals(Weight));
+            return (item.Name.Equals(this.Name)) && (item.Description.Equals(this.Description))
+                                                 && (item.Value.Equals(this.Value))
+                                                 && (item.Weight.Equals(this.Weight));
         }
 
         public override int GetHashCode()
         {
             int hash = 17;
-            hash = hash * 23 + Name.GetHashCode();
-            hash = hash * 23 + Description.GetHashCode();
-            hash = hash * 23 + Value.GetHashCode();
-            hash = hash * 23 + Weight.GetHashCode();
+            hash = hash * 23 + this.Name.GetHashCode();
+            hash = hash * 23 + this.Description.GetHashCode();
+            hash = hash * 23 + this.Value.GetHashCode();
+            hash = hash * 23 + this.Weight.GetHashCode();
 
             return hash;
         }
 
         public override string ToString()
         {
-            return Name;
+            return this.Name;
         }
     }
 }

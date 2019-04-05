@@ -10,9 +10,9 @@ namespace GurpsDb.XML.XSD.List
 
         public SkillBonusXml(XElement item)
         {
-            Name = item.Element("name");
-            Specialization = item.Element("specialization");
-            Amount = item.Element("amount");
+            this.Name = item.Element("name");
+            this.Specialization = item.Element("specialization");
+            this.Amount = item.Element("amount");
         }
     }
 }

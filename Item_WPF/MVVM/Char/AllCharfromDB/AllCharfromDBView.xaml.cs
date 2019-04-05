@@ -1,6 +1,8 @@
-﻿using Item_WPF.MVVM.AllCharfromDB;
-using System.Windows;
+﻿using System.Windows;
+
 using GurpsDb;
+
+using Item_WPF.MVVM.AllCharfromDB;
 
 namespace Item_WPF.MVVM.View
 {
@@ -11,16 +13,18 @@ namespace Item_WPF.MVVM.View
     {
         public AllCharfromDBView(ContextGurpsModel context)
         {
-            DataContext = new AllCharFromDbViewModel(context);
-            InitializeComponent();
+            this.DataContext = new AllCharFromDbViewModel(context);
+            this.InitializeComponent();
         }
+
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
+            this.DialogResult = true;
         }
+
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult = false;
+            this.DialogResult = false;
         }
     }
 }

@@ -1,12 +1,14 @@
-﻿using Item_WPF.addin;
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Windows;
+
 using GurpsDb;
-using GurpsDb.GurpsModel;
 using GurpsDb.BaseModel;
+using GurpsDb.GurpsModel;
+
+using Item_WPF.addin;
 
 namespace Item_WPF.MVVM.ViewModels
 {
@@ -18,72 +20,79 @@ namespace Item_WPF.MVVM.ViewModels
         public ObservableCollection<AttachmentMount> AvvAttSlotOkForWork { get; set; }
         public AttacmentMountViewModel(string slot)
         {
-            _slot = slot;
-            _context = new ContextGurpsModel();
-            AvvAttSlotOk = new ObservableCollection<AttachmentMount>(_context.AttachmentMountDbSet);
-            AvvAttSlotOkForWork = new ObservableCollection<AttachmentMount>(AvvAttSlotOk.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains(_slot)));
-            Save = new ViewModelCommand(SaveChanges);
-            AvvAttSlotOkForWork.CollectionChanged += _Avv_att_slot_OK_CollectionChanged;
+            this._slot = slot;
+            this._context = new ContextGurpsModel();
+            this.AvvAttSlotOk = new ObservableCollection<AttachmentMount>(this._context.AttachmentMountDbSet);
+            this.AvvAttSlotOkForWork = new ObservableCollection<AttachmentMount>(this.AvvAttSlotOk.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains(this._slot)));
+            this.Save = new ViewModelCommand(this.SaveChanges);
+            this.AvvAttSlotOkForWork.CollectionChanged += this._Avv_att_slot_OK_CollectionChanged;
         }
 
         public AttacmentMountViewModel(string slot, ObservableCollection<AttachmentMount> avvAttSlotOk, ContextGurpsModel context)
         {
-            _slot = slot;
-            _context = context;
-            AvvAttSlotOk = new ObservableCollection<AttachmentMount>(_context.AttachmentMountDbSet);
-            AvvAttSlotOkForWork = new ObservableCollection<AttachmentMount>(AvvAttSlotOk.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains(_slot)));
-            //    avvAttSlotOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_Avv_att_slot_OK_CollectionChanged_with_context);
+            this._slot = slot;
+            this._context = context;
+            this.AvvAttSlotOk = new ObservableCollection<AttachmentMount>(this._context.AttachmentMountDbSet);
+            this.AvvAttSlotOkForWork = new ObservableCollection<AttachmentMount>(
+                this.AvvAttSlotOk.Where(p => p.AttachmentSlot.AttachmentSlotName.Contains(this._slot)));
+
+            // avvAttSlotOk.CollectionChanged += new NotifyCollectionChangedEventHandler(_Avv_att_slot_OK_CollectionChanged_with_context);
         }
+
         private void _Avv_att_slot_OK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Remove)
             {
                 foreach (AttachmentMount item in e.OldItems)
                 {
-                    _context.AttachmentMountDbSet.Remove(item);
-                    AvvAttSlotOk.Remove(item);
+                    this._context.AttachmentMountDbSet.Remove(item);
+                    this.AvvAttSlotOk.Remove(item);
                 }
-                SaveChanges(1);
+
+                this.SaveChanges(1);
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
                 foreach (AttachmentMount item in e.NewItems)
                 {
                     item.Name = "New_slot";
-                    item.IdAttacClass = (_context.AttachmentSlotDbSet.First(p => p.AttachmentSlotName.Contains(_slot)).Id);
-                    AvvAttSlotOk.Add(item);
-                    _context.AttachmentMountDbSet.Add(item);
-                    SaveChanges(1);
+                    item.IdAttacClass = (this._context.AttachmentSlotDbSet.First(p => p.AttachmentSlotName.Contains(this._slot)).Id);
+                    this.AvvAttSlotOk.Add(item);
+                    this._context.AttachmentMountDbSet.Add(item);
+                    this.SaveChanges(1);
                 }
 
             }
         }
+
         private void _Avv_att_slot_OK_CollectionChanged_with_context(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Remove)
             {
                 foreach (AttachmentMount item in e.OldItems)
                 {
-                    _context.AttachmentMountDbSet.Remove(item);
+                    this._context.AttachmentMountDbSet.Remove(item);
                 }
-                SaveChanges(1);
+
+                this.SaveChanges(1);
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
                 foreach (AttachmentMount item in e.NewItems)
                 {
                     item.Name = "New_slot";
-                    item.IdAttacClass = (_context.AttachmentSlotDbSet.First(p => p.AttachmentSlotName.Contains(_slot)).Id);
-                    _context.AttachmentMountDbSet.Add(item);
-                    SaveChanges(1);
+                    item.IdAttacClass = (this._context.AttachmentSlotDbSet.First(p => p.AttachmentSlotName.Contains(this._slot)).Id);
+                    this._context.AttachmentMountDbSet.Add(item);
+                    this.SaveChanges(1);
                 }
             }
         }
+
         private void SaveChanges(object parameter)
         {
             try
             {
-                _context.SaveChanges();
+                this._context.SaveChanges();
 
             }
             catch (Exception ex)
@@ -91,11 +100,12 @@ namespace Item_WPF.MVVM.ViewModels
                 MessageBox.Show(ex.ToString());
             }
         }
+
         public ViewModelCommand Save { get; set; }
 
         public void Dispose()
         {
-            _context?.Dispose();
+            this._context?.Dispose();
         }
     }
 }

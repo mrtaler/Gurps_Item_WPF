@@ -12,24 +12,24 @@ namespace Item_WPF.MVVM.AddSkilltoChar
     {
         public AddSkilltoCharView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
-        public AddSkilltoCharView(GurpsDb.GurpsModel.CharacterDb Char, ContextGurpsModel context)
-        //       :base()
+        public AddSkilltoCharView(CharacterDb Char, ContextGurpsModel context)
         {
-            DataContext = new AddSkilltoCharViewModel(Char, context);
-            InitializeComponent();
+            // :base()
+            this.DataContext = new AddSkilltoCharViewModel(Char, context);
+            this.InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
+            this.DialogResult = true;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            DialogResult = false;
+            this.DialogResult = false;
         }
     }
 }

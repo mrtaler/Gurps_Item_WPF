@@ -1,5 +1,6 @@
-﻿using Item_WPF.MVVM.ViewModels;
-using System.Windows;
+﻿using System.Windows;
+
+using Item_WPF.MVVM.ViewModels;
 
 namespace Item_WPF.MVVM.View
 {
@@ -11,14 +12,14 @@ namespace Item_WPF.MVVM.View
         private NewItemsViewModel _newItemsViewModel;
         public NewItemsView()
         {
-            _newItemsViewModel = new NewItemsViewModel();
-            DataContext = _newItemsViewModel;
-            InitializeComponent();
+            this._newItemsViewModel = new NewItemsViewModel();
+            this.DataContext = this._newItemsViewModel;
+            this.InitializeComponent();
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            _newItemsViewModel.Dispose();
+            this._newItemsViewModel.Dispose();
             this.Close();
         }
     }

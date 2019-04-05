@@ -11,18 +11,19 @@ namespace Item_WPF.MVVM.View
         public AttacmentMountViewModel _AttacWiew { get; set; }
         public AttacmentMountView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
+
         public AttacmentMountView(object parameter)
         {
-            _AttacWiew = new AttacmentMountViewModel((string)parameter);
-            DataContext = _AttacWiew;
-            InitializeComponent();
+            this._AttacWiew = new AttacmentMountViewModel((string)parameter);
+            this.DataContext = this._AttacWiew;
+            this.InitializeComponent();
         }
 
         private void Canselbutton_OnClick(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
+            this.DialogResult = true;
             this.Close();
         }
 

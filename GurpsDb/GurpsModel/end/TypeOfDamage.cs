@@ -3,6 +3,7 @@ namespace GurpsDb.GurpsModel
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+
     /// <summary>
     /// Class for Type Of Damage
     /// </summary>
@@ -15,9 +16,10 @@ namespace GurpsDb.GurpsModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TypeOfDamage()
         {
-            WeaponDamage = new HashSet<WeaponDamage>();
-            WeaponDamage1 = new HashSet<WeaponDamage>();
+            this.WeaponDamage = new HashSet<WeaponDamage>();
+            this.WeaponDamage1 = new HashSet<WeaponDamage>();
         }
+
         /// <summary>
         /// Constructor for new Type Of Damage
         /// </summary>

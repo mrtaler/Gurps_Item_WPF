@@ -14,41 +14,42 @@ namespace GurpsDb.GurpsModel
         /// <param name="advXml"></param>
         public Advantage(AdvantageXml advXml)
         {
-            Name = advXml.Name?.Value;
-            NameCompare = advXml.Name?.Attribute("Compare")?.Value;
-            Typeadc = advXml.Type?.Value;
-            Levels = advXml.Levels?.Value;
-            PointsPerLevel = advXml.PointsPerLevel?.Value;
-            BasePoints = advXml.BasePoints?.Value;
-            Reference = advXml.Reference?.Value;
-            Notes = advXml.Notes?.Value;
-            Cr = advXml.Cr?.Value;
-            Versionadv = advXml.Version?.Value;
-            RoundDown = advXml.RoundDown?.Value;
-            #region Prereq_listXML
+            this.Name = advXml.Name?.Value;
+            this.NameCompare = advXml.Name?.Attribute("Compare")?.Value;
+            this.Typeadc = advXml.Type?.Value;
+            this.Levels = advXml.Levels?.Value;
+            this.PointsPerLevel = advXml.PointsPerLevel?.Value;
+            this.BasePoints = advXml.BasePoints?.Value;
+            this.Reference = advXml.Reference?.Value;
+            this.Notes = advXml.Notes?.Value;
+            this.Cr = advXml.Cr?.Value;
+            this.Versionadv = advXml.Version?.Value;
+            this.RoundDown = advXml.RoundDown?.Value;
+            
             if (advXml.PrereqList != null)
             {
                 foreach (PrereqListXml item in advXml.PrereqList)
                 {
-                    PrereqListDb.Add(new PrereqListDb(item));
+                    this.PrereqListDb.Add(new PrereqListDb(item));
                 }
             }
-            #endregion
-            //  FCATEGORY(advXML);
-            Fdr_bonus(advXml);
-            Fattribute_bonus(advXml);
+            
+            // FCATEGORY(advXML);
+            this.Fdr_bonus(advXml);
+            this.Fattribute_bonus(advXml);
 
-            Fweapon_bonus(advXml);
-            Fcost_reduction(advXml);
+            this.Fweapon_bonus(advXml);
+            this.Fcost_reduction(advXml);
 
-            Fmelee_weapon(advXml);
-            Franged_weapon(advXml);
-            Fskill_bonus(advXml);
-            Fspell_bonus(advXml);
-            Fmodifier(advXml);
+            this.Fmelee_weapon(advXml);
+            this.Franged_weapon(advXml);
+            this.Fskill_bonus(advXml);
+            this.Fspell_bonus(advXml);
+            this.Fmodifier(advXml);
 
 
         }
+
         public void Fcategory(AdvantageXml advFromXml, ContextGurpsModel context)
         {
             foreach (CategoriesXml itemCategory in advFromXml.Categories)
@@ -57,9 +58,10 @@ namespace GurpsDb.GurpsModel
 
                 var qe = context.GurpsCategoryDbSet.
                       FirstOrDefault(p => p.NameCategory.Contains(qery));
-                GurpsCategory.Add(qe);
+                this.GurpsCategory.Add(qe);
             }
         }
+
         public void Fdr_bonus(AdvantageXml advFromXml)
         {
             if (advFromXml.DrBonus != null)
@@ -71,17 +73,18 @@ namespace GurpsDb.GurpsModel
 
                     drb.PerLevel = itemdrBonus.Amount.Attribute("per_level")?.Value;
                     drb.Value = itemdrBonus.Amount.Value;
-                    DrBonusDb.Add(drb);
+                    this.DrBonusDb.Add(drb);
                 }
             }
         }
+
         public void Fattribute_bonus(AdvantageXml advFromXml)
         {
             if (advFromXml.AttributeBonus != null)
             {
                 foreach (AttributeBonusXml item in advFromXml.AttributeBonus)
                 {
-                    AttributeBonus.Add(new AttributeBonus(item));
+                    this.AttributeBonus.Add(new AttributeBonus(item));
                 }
             }
         }
@@ -92,17 +95,18 @@ namespace GurpsDb.GurpsModel
             {
                 foreach (WeaponBonusXml itemWeaponBonus in advFromXml.WeaponBonus)
                 {
-                    WeaponBonus.Add(new WeaponBonus(itemWeaponBonus));
+                    this.WeaponBonus.Add(new WeaponBonus(itemWeaponBonus));
                 }
             }
         }
+
         public void Fcost_reduction(AdvantageXml advFromXml)
         {
             if (advFromXml.CostReduction != null)
             {
                 foreach (CostReductionXml item in advFromXml.CostReduction)
                 {
-                    CostReduction.Add(new CostReduction(item));
+                    this.CostReduction.Add(new CostReduction(item));
                 }
             }
         }
@@ -113,47 +117,51 @@ namespace GurpsDb.GurpsModel
             {
                 foreach (MeleeWeaponXml item in advFromXml.MeleeWeapon)
                 {
-                    MeleeWeapon.Add(new MeleeWeapon(item));
+                    this.MeleeWeapon.Add(new MeleeWeapon(item));
                 }
             }
         }
+
         public void Franged_weapon(AdvantageXml advFromXml)
         {
             if (advFromXml.RangedWeapon != null)
             {
                 foreach (RangedWeaponXml item in advFromXml.RangedWeapon)
                 {
-                    RangedWeapon.Add(new RangedWeapon(item));
+                    this.RangedWeapon.Add(new RangedWeapon(item));
                 }
             }
         }
+
         public void Fskill_bonus(AdvantageXml advFromXml)
         {
             if (advFromXml.SkillBonus != null)
             {
                 foreach (SkillBonusXml item in advFromXml.SkillBonus)
                 {
-                    SkillBonusDb.Add(new SkillBonusDb(item));
+                    this.SkillBonusDb.Add(new SkillBonusDb(item));
                 }
             }
         }
+
         public void Fspell_bonus(AdvantageXml advFromXml)
         {
             if (advFromXml.SpellBonus != null)
             {
                 foreach (SpellBonusXml item in advFromXml.SpellBonus)
                 {
-                    SpellBonus.Add(new SpellBonus(item));
+                    this.SpellBonus.Add(new SpellBonus(item));
                 }
             }
         }
+
         public void Fmodifier(AdvantageXml advFromXml)
         {
             if (advFromXml.Modifier != null)
             {
                 foreach (ModifierXml item in advFromXml.Modifier)
                 {
-                    Modifier.Add(new Modifier(item));
+                    this.Modifier.Add(new Modifier(item));
                 }
             }
         }

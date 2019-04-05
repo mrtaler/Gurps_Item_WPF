@@ -7,88 +7,135 @@ namespace GurpsDb.GurpsModel
     [Table("Advantage", Schema = "CharDB")]
     public partial class Advantage
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Usage",
+            "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Advantage()
         {
-            AttributeBonus = new HashSet<AttributeBonus>();
-            CostReduction = new HashSet<CostReduction>();
-            DrBonusDb = new HashSet<DrBonusDb>();
-            MeleeWeapon = new HashSet<MeleeWeapon>();
-            Modifier = new HashSet<Modifier>();
-            PrereqListDb = new HashSet<PrereqListDb>();
-            RangedWeapon = new HashSet<RangedWeapon>();
-            SkillBonusDb = new HashSet<SkillBonusDb>();
-            SpellBonus = new HashSet<SpellBonus>();
-            WeaponBonus = new HashSet<WeaponBonus>();
-            GurpsCategory = new HashSet<GurpsCategory>();
+            this.AttributeBonus = new HashSet<AttributeBonus>();
+            this.CostReduction = new HashSet<CostReduction>();
+            this.DrBonusDb = new HashSet<DrBonusDb>();
+            this.MeleeWeapon = new HashSet<MeleeWeapon>();
+            this.Modifier = new HashSet<Modifier>();
+            this.PrereqListDb = new HashSet<PrereqListDb>();
+            this.RangedWeapon = new HashSet<RangedWeapon>();
+            this.SkillBonusDb = new HashSet<SkillBonusDb>();
+            this.SpellBonus = new HashSet<SpellBonus>();
+            this.WeaponBonus = new HashSet<WeaponBonus>();
+            this.GurpsCategory = new HashSet<GurpsCategory>();
         }
-        //[Column("id")]
+
+        // [Column("id")]
         public int Id { get; set; }
+
         [StringLength(50)]
-        //[Column("name")]
+
+        // [Column("name")]
         public string Name { get; set; }
+
         [StringLength(50)]
-        //[Column("nameCompare")]
+
+        // [Column("nameCompare")]
         public string NameCompare { get; set; }
+
         [StringLength(50)]
-        //[Column("typeadc")]
+
+        // [Column("typeadc")]
         public string Typeadc { get; set; }
+
         [StringLength(50)]
-        //[Column("levels")]
+
+        // [Column("levels")]
         public string Levels { get; set; }
+
         [StringLength(50)]
-        //[Column("points_per_level")]
+
+        // [Column("points_per_level")]
         public string PointsPerLevel { get; set; }
+
         [StringLength(50)]
-        //[Column("base_points")]
+
+        // [Column("base_points")]
         public string BasePoints { get; set; }
+
         [StringLength(50)]
-        //[Column("reference")]
+
+        // [Column("reference")]
         public string Reference { get; set; }
+
         [StringLength(500)]
-        //[Column("notes")]
+
+        // [Column("notes")]
         public string Notes { get; set; }
+
         [StringLength(50)]
-        //[Column("cr")]
+
+        // [Column("cr")]
         public string Cr { get; set; }
+
         [StringLength(50)]
-        //[Column("versionadv")]
+
+        // [Column("versionadv")]
         public string Versionadv { get; set; }
+
         [StringLength(50)]
-        //[Column("round_down")]
+
+        // [Column("round_down")]
         public string RoundDown { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Usage",
+            "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AttributeBonus> AttributeBonus { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Usage",
+            "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CostReduction> CostReduction { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Usage",
+            "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DrBonusDb> DrBonusDb { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Usage",
+            "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MeleeWeapon> MeleeWeapon { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Usage",
+            "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Modifier> Modifier { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Usage",
+            "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PrereqListDb> PrereqListDb { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Usage",
+            "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RangedWeapon> RangedWeapon { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Usage",
+            "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SkillBonusDb> SkillBonusDb { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Usage",
+            "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SpellBonus> SpellBonus { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Usage",
+            "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WeaponBonus> WeaponBonus { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Usage",
+            "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GurpsCategory> GurpsCategory { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.ObjectModel;
+using System.Linq;
+
 using GurpsDb.XML.XSD.List;
 
 // ReSharper disable once CheckNamespace
@@ -12,6 +13,7 @@ namespace GurpsDb.GurpsModel
         /// default constructor
         /// </summary>
         public DefaultSkill() { }
+
         /// <summary>
         /// Constructor for XML
         /// </summary>
@@ -38,14 +40,15 @@ namespace GurpsDb.GurpsModel
                     referenseSkillFind = collectionCategiry
                             .FirstOrDefault(p => p.NameSkill == name);
                 }
-                Modifier = Convert.ToInt32(modf);
-                Type = typex;
-                GurpsSkill1 = referenseSkillFind;
+
+                this.Modifier = Convert.ToInt32(modf);
+                this.Type = typex;
+                this.GurpsSkill1 = referenseSkillFind;
             }
             else
             {
-                Type = typex;
-                Modifier = Convert.ToInt32(modf);
+                this.Type = typex;
+                this.Modifier = Convert.ToInt32(modf);
             }
         }
     }

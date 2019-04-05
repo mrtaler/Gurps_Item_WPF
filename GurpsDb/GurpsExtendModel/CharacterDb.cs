@@ -1,10 +1,10 @@
-﻿using GurpsDb.GurpsExtendModel;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Linq;
 
-// ReSharper disable CheckNamespace
+using GurpsDb.GurpsExtendModel;
 
+// ReSharper disable CheckNamespace
 namespace GurpsDb.GurpsModel
 {
     public partial class CharacterDb
@@ -14,51 +14,50 @@ namespace GurpsDb.GurpsModel
         // The Points properties contains the number of points to be
         // added/subtracted from the base value of the stat, thus acting
         // as a modifier.
-        //
         // For example the base value of Strength is 10. If StrengthPoints
         // is 3, then the effective Strength is 13.
         // These read-only properties returns the effective value of the stats.
         #region MainAttrib
         #region Strength
-        public int Strength => HumanStat + StrengthPoints;
-        public int StrengthCost => BasicCost.StCost * StrengthPoints;
+        public int Strength => HumanStat + this.StrengthPoints;
+        public int StrengthCost => BasicCost.StCost * this.StrengthPoints;
         #endregion
         #region Dexterity
-        public int Dexterity => HumanStat + DexterityPoints;
-        public int DexterityCost => BasicCost.DxCost * DexterityPoints;
+        public int Dexterity => HumanStat + this.DexterityPoints;
+        public int DexterityCost => BasicCost.DxCost * this.DexterityPoints;
         #endregion
         #region Intelligence
-        public int Intelligence => HumanStat + IntelligencePoints;
-        public int IntelligenceCost => BasicCost.IqCost * IntelligencePoints;
+        public int Intelligence => HumanStat + this.IntelligencePoints;
+        public int IntelligenceCost => BasicCost.IqCost * this.IntelligencePoints;
         #endregion
         #region Health
-        public int Health => HumanStat + HealthPoints;
-        public int HealtCost => BasicCost.HtCost * HealthPoints;
+        public int Health => HumanStat + this.HealthPoints;
+        public int HealtCost => BasicCost.HtCost * this.HealthPoints;
         #endregion
-        public int CharacterPointsPrimarySkill => StrengthCost + IntelligenceCost + DexterityCost + HealtCost;
+        public int CharacterPointsPrimarySkill => this.StrengthCost + this.IntelligenceCost + this.DexterityCost + this.HealtCost;
         #endregion
         #region SecAtrib
         #region MaxHP
-        public int MaxHP => MaxHPPoints + Strength;
-        public int MaxHPCost => BasicCost.HPCost * MaxHPPoints;
+        public int MaxHP => this.MaxHPPoints + this.Strength;
+        public int MaxHPCost => BasicCost.HPCost * this.MaxHPPoints;
         #endregion
         #region MaxFP
-        public int MaxFP => MaxFPPoints + Health;
-        public int MaxFPCost => BasicCost.FPCost * MaxFPPoints;
+        public int MaxFP => this.MaxFPPoints + this.Health;
+        public int MaxFPCost => BasicCost.FPCost * this.MaxFPPoints;
         #endregion
         #region Willpower
-        public int Willpower => WillpowerPoints + Intelligence;
-        public int WillpowerCost => BasicCost.WlCost * WillpowerPoints;
+        public int Willpower => this.WillpowerPoints + this.Intelligence;
+        public int WillpowerCost => BasicCost.WlCost * this.WillpowerPoints;
         #endregion
         #region Perception
-        public int Perception => PerceptionPoints + Intelligence;
-        public int PerceptionCost => BasicCost.PrCost * PerceptionPoints;
+        public int Perception => this.PerceptionPoints + this.Intelligence;
+        public int PerceptionCost => BasicCost.PrCost * this.PerceptionPoints;
         #endregion
         public float BasicLift
         {
             get
             {
-                float bl = Strength * Strength / 5F;
+                float bl = this.Strength * this.Strength / 5F;
                 if (bl >= 10)
                     bl = (float)Math.Round(bl);
                 return bl;
@@ -69,37 +68,32 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                decimal bs = (Health + Dexterity) / 4M;
-                return bs + BasicSpeedPoints;
+                decimal bs = (this.Health + this.Dexterity) / 4M;
+                return bs + this.BasicSpeedPoints;
             }
         }
-        public int BasicSpeedCost => (int)(BasicCost.BsCost * (BasicSpeedPoints / 0.25M));
+        public int BasicSpeedCost => (int)(BasicCost.BsCost * (this.BasicSpeedPoints / 0.25M));
         #endregion
         #region BasicMove
         public int BasicMove
         {
             get
             {
-                int bm = (int)Math.Floor(BasicSpeed);
-                return bm + BasicMovePoints;
+                int bm = (int)Math.Floor(this.BasicSpeed);
+                return bm + this.BasicMovePoints;
             }
         }
-        public int BasicMoveCost => BasicCost.BmCost * BasicMovePoints;
+        public int BasicMoveCost => BasicCost.BmCost * this.BasicMovePoints;
         #endregion
         public int CharacterPointsSecondarySkill =>
-            MaxHPCost +
-            MaxFPCost +
-            PerceptionCost +
-            WillpowerCost +
-            BasicSpeedCost +
-            BasicMoveCost;
+            this.MaxHPCost + this.MaxFPCost + this.PerceptionCost + this.WillpowerCost + this.BasicSpeedCost + this.BasicMoveCost;
 
         public int Move
         {
             get
             {
-                if (Encumbrance.HasValue)
-                    return Math.Max(BasicMove - (int)Encumbrance, 1);
+                if (this.Encumbrance.HasValue)
+                    return Math.Max(this.BasicMove - (int)this.Encumbrance, 1);
                 else
                     return 0;
             }
@@ -108,8 +102,8 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                if (Encumbrance.HasValue)
-                    return Math.Max((int)Math.Floor(BasicSpeed + 3) - (int)Encumbrance, 1);
+                if (this.Encumbrance.HasValue)
+                    return Math.Max((int)Math.Floor(this.BasicSpeed + 3) - (int)this.Encumbrance, 1);
                 else
                     return 0;
             }
@@ -121,7 +115,7 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                int str = Strength;
+                int str = this.Strength;
                 if (str <= 40)
                 {
                     switch (str / 2)
@@ -148,6 +142,7 @@ namespace GurpsDb.GurpsModel
                         case 20: return new DiceString(4, 1);
                     }
                 }
+
                 if (str <= 100)
                 {
                     switch ((str - 40) / 5)
@@ -167,6 +162,7 @@ namespace GurpsDb.GurpsModel
                         case 12: return new DiceString(11);
                     }
                 }
+
                 Debug.Assert(str > 100);
                 return new DiceString(11 + (str - 100) / 10);
             }
@@ -175,7 +171,7 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                int str = Strength;
+                int str = this.Strength;
                 if (str <= 40)
                 {
                     switch (str)
@@ -251,6 +247,7 @@ namespace GurpsDb.GurpsModel
                             return new DiceString(7, -1);
                     }
                 }
+
                 if (str <= 100)
                 {
                     switch ((str - 40) / 5)
@@ -270,36 +267,37 @@ namespace GurpsDb.GurpsModel
                         case 12: return new DiceString(13);
                     }
                 }
+
                 Debug.Assert(str > 100);
                 return new DiceString(13 + (str - 100) / 10);
             }
         }
 
         // Inventory of the character.
-        //private ObservableCollection<Item> inventory = new ObservableCollection<Item>();
-        //public ObservableCollection<Item> Inventory
-        //{
-        //    get
-        //    {
-        //        return inventory;
-        //    }
-        //}
+        // private ObservableCollection<Item> inventory = new ObservableCollection<Item>();
+        // public ObservableCollection<Item> Inventory
+        // {
+        // get
+        // {
+        // return inventory;
+        // }
+        // }
         public int TotalWeight
         {
             get
             {
-                //    int w = 0;
-                //    foreach (Item item in Inventory)
-                //        w += Convert.ToInt32(item.ubWeight);
-                return 0; //w;
+                // int w = 0;
+                // foreach (Item item in Inventory)
+                // w += Convert.ToInt32(item.ubWeight);
+                return 0; // w;
             }
         }
         public int? Encumbrance
         {
             get
             {
-                float bl = BasicLift;
-                float weight = TotalWeight;
+                float bl = this.BasicLift;
+                float weight = this.TotalWeight;
 
                 if (weight <= bl) return 0;
                 if (weight <= 2 * bl) return 1;
@@ -311,16 +309,15 @@ namespace GurpsDb.GurpsModel
         }
 
         // Character advantages and disadvantages
-        //private ObservableCollection<Advantage> advantages = new ObservableCollection<Advantage>();
-        //public ObservableCollection<Advantage> Advantages
-        //{
-        //    get
-        //    {
-        //        return advantages;
-        //    }
-        //}
+        // private ObservableCollection<Advantage> advantages = new ObservableCollection<Advantage>();
+        // public ObservableCollection<Advantage> Advantages
+        // {
+        // get
+        // {
+        // return advantages;
+        // }
+        // }
         // Calculation of character points spent on this character
-
 
 
         public int CharacterPointsAdvantages
@@ -328,10 +325,11 @@ namespace GurpsDb.GurpsModel
             get
             {
                 int points = 0;
-                //foreach (Advantage advantage in Advantages)
-                //{
-                //    //     points += advantage.Points;
-                //}
+
+                // foreach (Advantage advantage in Advantages)
+                // {
+                // //     points += advantage.Points;
+                // }
                 return points;
             }
         }
@@ -340,41 +338,41 @@ namespace GurpsDb.GurpsModel
             get
             {
 
-                return Convert.ToInt32(CharSkillCollection.Sum(p => p.SkillPointCost));
+                return Convert.ToInt32(this.CharSkillCollection.Sum(p => p.SkillPointCost));
 
 
-                //.Sum(p => p.SkillPointCost);
+                // .Sum(p => p.SkillPointCost);
 
-                //    int? points = 0;
-                //    foreach (GurpsSkill skill in Skills)
-                //    {
-                //        points += skill.Points;
-                //    }
-                //    return Convert.ToInt32(points);
+                // int? points = 0;
+                // foreach (GurpsSkill skill in Skills)
+                // {
+                // points += skill.Points;
+                // }
+                // return Convert.ToInt32(points);
             }
         }
         public int CharacterPoints
         {
             get
             {
-                return CharacterPointsPrimarySkill + CharacterPointsSecondarySkill +/* CharacterPointsAdvantages */+CharacterPointsSkills;
+                return this.CharacterPointsPrimarySkill + this.CharacterPointsSecondarySkill +/* CharacterPointsAdvantages */+this.CharacterPointsSkills;
             }
         }
 
-        //public CharacterDb()
-        //{
-        //}
-
+        // public CharacterDb()
+        // {
+        // }
         public CharacterDb Copy()
         {
-            return (CharacterDb)MemberwiseClone();
+            return (CharacterDb)this.MemberwiseClone();
         }
 
         public override string ToString()
         {
             // return Name;
-            return Name;
+            return this.Name;
         }
+
         public class BasicCost
         {
             public const int StCost = 10;

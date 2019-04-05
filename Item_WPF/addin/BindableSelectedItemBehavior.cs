@@ -11,8 +11,9 @@ namespace Item_WPF.addin
 
         public object SelectedItem
         {
-            get { return GetValue(SelectedItemProperty); }
-            set { SetValue(SelectedItemProperty, value); }
+            get { return this.GetValue(SelectedItemProperty); }
+            set {
+                this.SetValue(SelectedItemProperty, value); }
         }
 
         public static readonly DependencyProperty SelectedItemProperty =
@@ -31,22 +32,22 @@ namespace Item_WPF.addin
         {
             base.OnAttached();
 
-            AssociatedObject.SelectedItemChanged += OnTreeViewSelectedItemChanged;
+            this.AssociatedObject.SelectedItemChanged += this.OnTreeViewSelectedItemChanged;
         }
 
         protected override void OnDetaching()
         {
             base.OnDetaching();
 
-            if (AssociatedObject != null)
+            if (this.AssociatedObject != null)
             {
-                AssociatedObject.SelectedItemChanged -= OnTreeViewSelectedItemChanged;
+                this.AssociatedObject.SelectedItemChanged -= this.OnTreeViewSelectedItemChanged;
             }
         }
 
         private void OnTreeViewSelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
-            SelectedItem = e.NewValue;
+            this.SelectedItem = e.NewValue;
         }
     }
 }

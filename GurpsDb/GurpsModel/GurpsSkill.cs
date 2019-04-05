@@ -10,18 +10,19 @@ namespace GurpsDb.GurpsModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public GurpsSkill()
         {
-            AttributeBonusCollection = new HashSet<AttributeBonus>();
-            DefaultSkillInNeedCollection = new HashSet<DefaultSkill>();
-            DefaultSkillOutNeededCollection = new HashSet<DefaultSkill>();
-            DefSkillSomeCollection = new HashSet<DefSkillSome>();
-            CharSkillCollection = new HashSet<CharSkill>();
-            GurpsSkillCollection = new HashSet<GurpsSkill>();
-            NeedSkillOutCollection = new HashSet<NeedSkill>();
-            PrereqListDbCollection = new HashSet<PrereqListDb>();
-            WeaponBonusCollection = new HashSet<WeaponBonus>();
-            GurpsCategoryCollection = new HashSet<GurpsCategory>();
-            GetHashCode();
+            this.AttributeBonusCollection = new HashSet<AttributeBonus>();
+            this.DefaultSkillInNeedCollection = new HashSet<DefaultSkill>();
+            this.DefaultSkillOutNeededCollection = new HashSet<DefaultSkill>();
+            this.DefSkillSomeCollection = new HashSet<DefSkillSome>();
+            this.CharSkillCollection = new HashSet<CharSkill>();
+            this.GurpsSkillCollection = new HashSet<GurpsSkill>();
+            this.NeedSkillOutCollection = new HashSet<NeedSkill>();
+            this.PrereqListDbCollection = new HashSet<PrereqListDb>();
+            this.WeaponBonusCollection = new HashSet<WeaponBonus>();
+            this.GurpsCategoryCollection = new HashSet<GurpsCategory>();
+            this.GetHashCode();
         }
+
         public int Id { get; set; }
         [StringLength(50)]
         public string NameSkill { get; set; }
@@ -89,10 +90,10 @@ namespace GurpsDb.GurpsModel
         public override int GetHashCode()
         {
             int hash = 0;
-            if (TypeSkTh != null) hash ^= TypeSkTh.GetHashCode();
-            if (NameSkill != null) hash ^= NameSkill.GetHashCode();
-            if (Specialization != null) hash ^= Specialization.GetHashCode();
-            if (Version != null) hash ^= Version.GetHashCode();
+            if (this.TypeSkTh != null) hash ^= this.TypeSkTh.GetHashCode();
+            if (this.NameSkill != null) hash ^= this.NameSkill.GetHashCode();
+            if (this.Specialization != null) hash ^= this.Specialization.GetHashCode();
+            if (this.Version != null) hash ^= this.Version.GetHashCode();
 
             return hash;
         }

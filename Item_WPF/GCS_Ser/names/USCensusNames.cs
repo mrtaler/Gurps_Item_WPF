@@ -17,9 +17,9 @@ namespace Item_WPF.GCS_Ser.names
     {
         /** The one and only global instance of this class. */
         public static USCensusNames Instance = new USCensusNames();
-        private static string[] female = LoadNames("USCensus1990FemaleFirstNames.txt", "Mary"); //$NON-NLS-1$ //$NON-NLS-2$
-        private static string[] male = LoadNames("USCensus1990MaleFirstNames.txt", "Richard");  //$NON-NLS-1$ //$NON-NLS-2$
-        private static string[] last = LoadNames("USCensus1990LastNames.txt", "Wilkes");        //$NON-NLS-1$ //$NON-NLS-2$
+        private static string[] female = LoadNames("USCensus1990FemaleFirstNames.txt", "Mary"); // $NON-NLS-1$ //$NON-NLS-2$
+        private static string[] male = LoadNames("USCensus1990MaleFirstNames.txt", "Richard");  // $NON-NLS-1$ //$NON-NLS-2$
+        private static string[] last = LoadNames("USCensus1990LastNames.txt", "Wilkes");        // $NON-NLS-1$ //$NON-NLS-2$
 
         private USCensusNames()
         {
@@ -34,6 +34,7 @@ namespace Item_WPF.GCS_Ser.names
         {
             return last[Random.Next(last.Length)];
         }
+
         /// <summary>
         /// Get female first name
         /// </summary>
@@ -42,6 +43,7 @@ namespace Item_WPF.GCS_Ser.names
         {
             return female[Random.Next(female.Length)];
         }
+
         /// <summary>
         /// Get male first name
         /// </summary>

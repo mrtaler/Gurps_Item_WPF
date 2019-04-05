@@ -9,17 +9,18 @@ namespace Item_WPF.litForms.TextInput
     {
         public TextInputView(string text)
         {
-            DataContext = new TextInputViewModel(text);
-            InitializeComponent();
+            this.DataContext = new TextInputViewModel(text);
+            this.InitializeComponent();
         }
+
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
+            this.DialogResult = true;
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            DialogResult = false;
+            this.DialogResult = false;
         }
 
     }

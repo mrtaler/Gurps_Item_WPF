@@ -4,6 +4,7 @@ namespace GurpsDb.GurpsModel
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+
     /// <summary>
     /// Class for box type
     /// </summary>
@@ -16,17 +17,20 @@ namespace GurpsDb.GurpsModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TypeOfBox()
         {
-            AnyBoxNameType = new HashSet<AnyBoxNameType>();
+            this.AnyBoxNameType = new HashSet<AnyBoxNameType>();
         }
+
         /// <summary>
         /// Constructor for new Type of Box
         /// </summary>
         /// <param name="nameOfType">Box Type Name</param>
         public TypeOfBox(string nameOfType)
         {
-            NameOfType = nameOfType;
+            this.NameOfType = nameOfType;
         }
+
         public int Id { get; set; }
+
         /// <summary>
         /// name box type
         /// </summary>

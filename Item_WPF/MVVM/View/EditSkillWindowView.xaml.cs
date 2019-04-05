@@ -9,19 +9,19 @@ namespace Item_WPF.MVVM.View
     {
         public EditSkillWindowView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
-            Close();
+            this.DialogResult = true;
+            this.Close();
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            DialogResult = false;
-            Close();
+            this.DialogResult = false;
+            this.Close();
         }
     }
 }

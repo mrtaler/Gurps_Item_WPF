@@ -10,8 +10,8 @@ namespace Item_WPF.MVVM.View
     {
         public MainWindowStartView()
         {
-            DataContext = new MainWindowStartViewModel(this);
-            InitializeComponent();
+            this.DataContext = new MainWindowStartViewModel(this);
+            this.InitializeComponent();
         }
     }
 }

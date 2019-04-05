@@ -48,8 +48,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -68,6 +70,10 @@
   <ItemGroup>
     <Compile Include="BaseModel\ViewModelBase.cs" />
     <Compile Include="DBInit.cs" />
+    <Compile Include="DbInitialData\AttachmentMountInit.cs" />
+    <Compile Include="DbInitialData\AttachmentSlotInit.cs" />
+    <Compile Include="DbInitialData\InitLc.cs" />
+    <Compile Include="DbInitialData\InitTl.cs" />
     <Compile Include="GurpsExtendModel\AnyBoxNameType.cs" />
     <Compile Include="GurpsExtendModel\CharacterDb.cs" />
     <Compile Include="GurpsExtendModel\CharSkill.cs" />
@@ -129,9 +135,10 @@
     <Compile Include="GurpsModel\end\WeaponAttackType.cs" />
     <Compile Include="GurpsModel\end\WeaponDamage.cs" />
     <Compile Include="GurpsModel\WeaponBonus.cs" />
-    <Compile Include="Migrations\201701251658346_InitFromEmptyDB.cs" />
-    <Compile Include="Migrations\201701251658346_InitFromEmptyDB.Designer.cs">
-      <DependentUpon>201701251658346_InitFromEmptyDB.cs</DependentUpon>
+    <Compile Include="DbInitialData\InitDatabase.cs" />
+    <Compile Include="Migrations\201904041133358_Init.cs" />
+    <Compile Include="Migrations\201904041133358_Init.Designer.cs">
+      <DependentUpon>201904041133358_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -182,20 +189,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="MIgrationCommand.txt" />
-    <Content Include="OfflineDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="OfflineDB_log.ldf">
-      <DependentUpon>OfflineDB.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -210,8 +204,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201701251658346_InitFromEmptyDB.resx">
-      <DependentUpon>201701251658346_InitFromEmptyDB.cs</DependentUpon>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201904041133358_Init.resx">
+      <DependentUpon>201904041133358_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,5 +1,6 @@
-﻿using Item_WPF.MVVM.ViewModels;
-using System.Windows;
+﻿using System.Windows;
+
+using Item_WPF.MVVM.ViewModels;
 
 namespace Item_WPF.MVVM.View
 {
@@ -12,7 +13,7 @@ namespace Item_WPF.MVVM.View
         {
             AllWeaponViewModel allweaponviewmodel = new AllWeaponViewModel();
             this.DataContext = allweaponviewmodel;
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace GurpsDb.XML.XSD.List
         public CategoriesXml() { }
         public CategoriesXml(XElement itemCategoryx)
         {
-            Category = itemCategoryx;
+            this.Category = itemCategoryx;
         }
     }
 }

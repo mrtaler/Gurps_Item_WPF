@@ -10,9 +10,10 @@ namespace GurpsDb.GurpsModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CharacterDb()
         {
-            CharSkillCollection = new HashSet<CharSkill>();
-            InventoryOfChar = new HashSet<InventoryOfChar>();
+            this.CharSkillCollection = new HashSet<CharSkill>();
+            this.InventoryOfChar = new HashSet<InventoryOfChar>();
         }
+
         public int Id { get; set; }
 
         [StringLength(80)]

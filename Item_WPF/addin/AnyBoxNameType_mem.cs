@@ -1,5 +1,6 @@
-﻿using GurpsDb.GurpsModel;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
+
+using GurpsDb.GurpsModel;
 
 namespace Item_WPF.addin
 {
@@ -9,6 +10,7 @@ namespace Item_WPF.addin
         {
             this.Members = new ObservableCollection<AnyBoxNameType>();
         }
+
         public ObservableCollection<AnyBoxNameType> Members { get; set; }
 
     }

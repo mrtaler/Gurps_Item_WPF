@@ -8,8 +8,8 @@ namespace GurpsDb.XML.XSD.List
         public XElement Location;
         public DrBonusXml(XElement item)
         {
-            Location = item.Element("location");
-            Amount = item.Element("amount");
+            this.Location = item.Element("location");
+            this.Amount = item.Element("amount");
         }
     }
 }

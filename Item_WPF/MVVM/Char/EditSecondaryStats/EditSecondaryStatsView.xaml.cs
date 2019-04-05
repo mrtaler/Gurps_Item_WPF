@@ -9,18 +9,18 @@ namespace Item_WPF.MVVM.EditSecondaryStats
     {
         public EditSecondaryStatsWindowView()
         {
-            DataContext = new EditSecondaryStatsViewModel();
-            InitializeComponent();
+            this.DataContext = new EditSecondaryStatsViewModel();
+            this.InitializeComponent();
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
+            this.DialogResult = true;
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            DialogResult = false;
+            this.DialogResult = false;
         }
     }
 }

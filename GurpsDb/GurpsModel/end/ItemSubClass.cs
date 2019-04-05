@@ -16,8 +16,9 @@ namespace GurpsDb.GurpsModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ItemSubClass()
         {
-            Item = new HashSet<Item>();
+            this.Item = new HashSet<Item>();
         }
+
         /// <summary>
         /// Constructor for init new ItemSubClass
         /// </summary>
@@ -27,15 +28,17 @@ namespace GurpsDb.GurpsModel
         /// <param name="itemClass">Item Class</param>
         public ItemSubClass(string nameSub, ItemClass itemClass, string type, GurpsClass gurpsClass)
         {
-            NameSub = nameSub;
-            GurpsClass = gurpsClass;
-            Type = type;
-            ItemClass = itemClass;
+            this.NameSub = nameSub;
+            this.GurpsClass = gurpsClass;
+            this.Type = type;
+            this.ItemClass = itemClass;
         }
+
         /// <summary>
         /// Id
         /// </summary>
         public int Id { get; set; }
+
         /// <summary>
         /// Name (length=50)
         /// </summary>
@@ -43,6 +46,7 @@ namespace GurpsDb.GurpsModel
         public string NameSub { get; set; }
 
         public int IdItemClass { get; set; }
+
         /// <summary>
         /// Type (length=50)
         /// </summary>
@@ -50,6 +54,7 @@ namespace GurpsDb.GurpsModel
         public string Type { get; set; }
 
         public int? IdGurpsSubClass { get; set; }
+
         /// <summary>
         /// Gurps Class
         /// </summary>
@@ -57,6 +62,7 @@ namespace GurpsDb.GurpsModel
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Item> Item { get; set; }
+
         /// <summary>
         /// Item Class
         /// </summary>

@@ -12,22 +12,22 @@ namespace Item_WPF.MVVM.View
         public AmmoViewModel AmmoVM { get; set; }
         public AmmoView()
         {
-            AmmoVM = new AmmoViewModel();
-            DataContext = AmmoVM;
-            InitializeComponent();
+            this.AmmoVM = new AmmoViewModel();
+            this.DataContext = this.AmmoVM;
+            this.InitializeComponent();
 
         }
 
         private void Closebutton_OnClick(object sender, RoutedEventArgs e)
         {
-            AmmoVM.Dispose();
-            DialogResult = true;
+            this.AmmoVM.Dispose();
+            this.DialogResult = true;
             this.Close();
         }
 
         private void AmmoView_OnClosed(object sender, EventArgs e)
         {
-            AmmoVM.Dispose();
+            this.AmmoVM.Dispose();
         }
     }
 }

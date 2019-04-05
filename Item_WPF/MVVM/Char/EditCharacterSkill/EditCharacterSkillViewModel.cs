@@ -13,10 +13,12 @@ namespace Item_WPF.MVVM.Char.EditCharacterSkill
     public class EditCharacterSkillViewModel : ViewModelBase
     {
         public CharSkill CharSkillForEdit { get; set; }
+
         /// <summary>
         /// increase skill point in char skill collection
         /// </summary>
         public ViewModelCommand SkillPointIncreaseCommand { get; set; }
+
         /// <summary>
         /// Decrease skill point in char skill collection
         /// </summary>
@@ -24,29 +26,31 @@ namespace Item_WPF.MVVM.Char.EditCharacterSkill
 
         public EditCharacterSkillViewModel(CharSkill param)
         {
-            CharSkillForEdit = param;
+            this.CharSkillForEdit = param;
 
-            SkillPointIncreaseCommand = new ViewModelCommand(SkillPointIncrease);
-            SkillPointDecreaseCommand = new ViewModelCommand(SkillPointDecrease);
+            this.SkillPointIncreaseCommand = new ViewModelCommand(this.SkillPointIncrease);
+            this.SkillPointDecreaseCommand = new ViewModelCommand(this.SkillPointDecrease);
 
             // var exit = String.Format("{0,10}", param.GurpsSkill.NameSkill);
             // MessageBox.Show(exit);
         }
+
         /// <summary>
         /// Increase Skill point in char
         /// </summary>
         /// <param name="param">GurpsSkill as object</param>
         private void SkillPointIncrease(object param)
         {
-            CharSkillForEdit.IncreasePoint();
+            this.CharSkillForEdit.IncreasePoint();
         }
+
         /// <summary>
         /// Decrease Skill point in char
         /// </summary>
         /// <param name="param">GurpsSkill as object</param>
         private void SkillPointDecrease(object param)
         {
-            CharSkillForEdit.DecreasePoint();
+            this.CharSkillForEdit.DecreasePoint();
         }
     }
 }

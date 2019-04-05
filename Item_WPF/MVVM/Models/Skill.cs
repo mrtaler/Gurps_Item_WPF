@@ -3,14 +3,33 @@
 namespace Item_WPF.MVVM.Models
 {
     // This enum is used to denote the difficulty of a skill.
-    public enum SkillDifficulty { Easy, Average, Hard, VeryHard };
+    public enum SkillDifficulty
+    {
+        Easy,
+
+        Average,
+
+        Hard,
+
+        VeryHard
+    };
 
     // This enum is used to specify which stat a skill is based on.
-    public enum SkillStat { Strength, Dexterity, Intelligence, Health }
+    public enum SkillStat
+    {
+        Strength,
+
+        Dexterity,
+
+        Intelligence,
+
+        Health
+    }
 
     public class SkillnotDB
     {
         public string Name { get; set; }
+
         public string Description { get; set; }
 
         // The stat this skill is based on.
@@ -32,12 +51,12 @@ namespace Item_WPF.MVVM.Models
             get
             {
                 // If not learned, then 0 points are spent.
-                if (RelativeLevel == null)
+                if (this.RelativeLevel == null)
                     return 0;
 
                 // Compensate for skill difficulty.
-                int level = (int)RelativeLevel;
-                switch (Difficulty)
+                int level = (int)this.RelativeLevel;
+                switch (this.Difficulty)
                 {
                     case SkillDifficulty.Average:
                         level += 1;
@@ -67,23 +86,23 @@ namespace Item_WPF.MVVM.Models
         public int? Level(CharacterDb character)
         {
             // If skill is not learned
-            if (RelativeLevel == null)
+            if (this.RelativeLevel == null)
             {
                 // Skill impossible
-                if (DefaultRelativeLevel == null)
+                if (this.DefaultRelativeLevel == null)
                     return null;
 
                 // Default skill level;
-                switch (Stat)
+                switch (this.Stat)
                 {
                     case SkillStat.Strength:
-                        return character.Strength + (int)DefaultRelativeLevel;
+                        return character.Strength + (int)this.DefaultRelativeLevel;
                     case SkillStat.Dexterity:
-                        return character.Dexterity + (int)DefaultRelativeLevel;
+                        return character.Dexterity + (int)this.DefaultRelativeLevel;
                     case SkillStat.Intelligence:
-                        return character.Intelligence + (int)DefaultRelativeLevel;
+                        return character.Intelligence + (int)this.DefaultRelativeLevel;
                     case SkillStat.Health:
-                        return character.Health + (int)DefaultRelativeLevel;
+                        return character.Health + (int)this.DefaultRelativeLevel;
                     default:
                         return null;
                 }
@@ -91,16 +110,16 @@ namespace Item_WPF.MVVM.Models
             else
             {
                 // Add base skill level to relative level.
-                switch (Stat)
+                switch (this.Stat)
                 {
                     case SkillStat.Strength:
-                        return character.Strength + (int)RelativeLevel;
+                        return character.Strength + (int)this.RelativeLevel;
                     case SkillStat.Dexterity:
-                        return character.Dexterity + (int)RelativeLevel;
+                        return character.Dexterity + (int)this.RelativeLevel;
                     case SkillStat.Intelligence:
-                        return character.Intelligence + (int)RelativeLevel;
+                        return character.Intelligence + (int)this.RelativeLevel;
                     case SkillStat.Health:
-                        return character.Health + (int)RelativeLevel;
+                        return character.Health + (int)this.RelativeLevel;
                     default:
                         return null;
                 }
@@ -113,16 +132,16 @@ namespace Item_WPF.MVVM.Models
 
         public SkillnotDB(string name, string description, SkillStat stat, SkillDifficulty difficulty)
         {
-            Name = name;
-            Description = description;
-            Stat = stat;
-            Difficulty = difficulty;
-            RelativeLevel = null;
+            this.Name = name;
+            this.Description = description;
+            this.Stat = stat;
+            this.Difficulty = difficulty;
+            this.RelativeLevel = null;
         }
 
         public override string ToString()
         {
-            return Name;
+            return this.Name;
         }
     }
 }

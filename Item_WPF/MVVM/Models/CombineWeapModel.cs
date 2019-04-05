@@ -11,9 +11,9 @@ namespace GurpsDb.GurpsModel
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
+            if (this.PropertyChanged != null)
             {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
 
@@ -24,14 +24,15 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return _idWeaponItem;
+                return this._idWeaponItem;
             }
+
             set
             {
-                if (_idWeaponItem != value)
+                if (this._idWeaponItem != value)
                 {
-                    _idWeaponItem = value;
-                    OnPropertyChanged("IdWeaponItem");
+                    this._idWeaponItem = value;
+                    this.OnPropertyChanged("IdWeaponItem");
                 }
             }
         }
@@ -42,14 +43,15 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return _idScopeItem;
+                return this._idScopeItem;
             }
+
             set
             {
-                if (_idScopeItem != value)
+                if (this._idScopeItem != value)
                 {
-                    _idScopeItem = value;
-                    OnPropertyChanged("IdScopeItem");
+                    this._idScopeItem = value;
+                    this.OnPropertyChanged("IdScopeItem");
                 }
             }
         }
@@ -60,14 +62,15 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return _idLaserItem;
+                return this._idLaserItem;
             }
+
             set
             {
-                if (_idLaserItem != value)
+                if (this._idLaserItem != value)
                 {
-                    _idLaserItem = value;
-                    OnPropertyChanged("IdLaserItem");
+                    this._idLaserItem = value;
+                    this.OnPropertyChanged("IdLaserItem");
                 }
             }
         }
@@ -78,14 +81,15 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return _idLightItem;
+                return this._idLightItem;
             }
+
             set
             {
-                if (_idLightItem != value)
+                if (this._idLightItem != value)
                 {
-                    _idLightItem = value;
-                    OnPropertyChanged("IdLightItem");
+                    this._idLightItem = value;
+                    this.OnPropertyChanged("IdLightItem");
                 }
             }
         }
@@ -96,14 +100,15 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return _idBipodItem;
+                return this._idBipodItem;
             }
+
             set
             {
-                if (_idBipodItem != value)
+                if (this._idBipodItem != value)
                 {
-                    _idBipodItem = value;
-                    OnPropertyChanged("IdBipodItem");
+                    this._idBipodItem = value;
+                    this.OnPropertyChanged("IdBipodItem");
                 }
             }
         }
@@ -114,14 +119,15 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return _idSilenserItem;
+                return this._idSilenserItem;
             }
+
             set
             {
-                if (_idSilenserItem != value)
+                if (this._idSilenserItem != value)
                 {
-                    _idSilenserItem = value;
-                    OnPropertyChanged("IdSilenserItem");
+                    this._idSilenserItem = value;
+                    this.OnPropertyChanged("IdSilenserItem");
                 }
             }
         }
@@ -132,14 +138,15 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return _idLauncherItem;
+                return this._idLauncherItem;
             }
+
             set
             {
-                if (_idLauncherItem != value)
+                if (this._idLauncherItem != value)
                 {
-                    _idLauncherItem = value;
-                    OnPropertyChanged("IdLauncherItem");
+                    this._idLauncherItem = value;
+                    this.OnPropertyChanged("IdLauncherItem");
                 }
             }
         }
@@ -150,14 +157,15 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return _idStockItem;
+                return this._idStockItem;
             }
+
             set
             {
-                if (_idStockItem != value)
+                if (this._idStockItem != value)
                 {
-                    _idStockItem = value;
-                    OnPropertyChanged("IdStockItem");
+                    this._idStockItem = value;
+                    this.OnPropertyChanged("IdStockItem");
                 }
             }
         }
@@ -168,14 +176,15 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return _idBayonetItem;
+                return this._idBayonetItem;
             }
+
             set
             {
-                if (_idBayonetItem != value)
+                if (this._idBayonetItem != value)
                 {
-                    _idBayonetItem = value;
-                    OnPropertyChanged("IdBayonetItem");
+                    this._idBayonetItem = value;
+                    this.OnPropertyChanged("IdBayonetItem");
                 }
             }
         }
@@ -186,14 +195,15 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return _idMagazineItem;
+                return this._idMagazineItem;
             }
+
             set
             {
-                if (_idMagazineItem != value)
+                if (this._idMagazineItem != value)
                 {
-                    _idMagazineItem = value;
-                    OnPropertyChanged("IdMagazineItem");
+                    this._idMagazineItem = value;
+                    this.OnPropertyChanged("IdMagazineItem");
                 }
             }
         }
@@ -204,14 +214,15 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return _idInternalItem;
+                return this._idInternalItem;
             }
+
             set
             {
-                if (_idInternalItem != value)
+                if (this._idInternalItem != value)
                 {
-                    _idInternalItem = value;
-                    OnPropertyChanged("IdInternalItem");
+                    this._idInternalItem = value;
+                    this.OnPropertyChanged("IdInternalItem");
                 }
             }
         }
@@ -222,14 +233,15 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return _idExternalItem;
+                return this._idExternalItem;
             }
+
             set
             {
-                if (_idExternalItem != value)
+                if (this._idExternalItem != value)
                 {
-                    _idExternalItem = value;
-                    OnPropertyChanged("IdExternalItem");
+                    this._idExternalItem = value;
+                    this.OnPropertyChanged("IdExternalItem");
                 }
             }
         }
@@ -241,49 +253,39 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return _idCalibre;
+                return this._idCalibre;
             }
+
             set
             {
-                if (_idCalibre != value)
+                if (this._idCalibre != value)
                 {
-                    _idCalibre = value;
-                    OnPropertyChanged("IdCalibre");
+                    this._idCalibre = value;
+                    this.OnPropertyChanged("IdCalibre");
                 }
             }
         }
 
         #endregion
+
         /// <summary>
         /// обнуление комбинатора
         /// </summary>
         public CombineWeapModel(Weapon itt)
         {
 
-            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 1) != null)
-                IdScopeItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 1)?.RAttachmentmount;
-            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 2) != null)
-                IdLaserItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 2)?.RAttachmentmount;
-            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 3) != null)
-                IdLightItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 3)?.RAttachmentmount;
-            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 4) != null)
-                IdBipodItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 4)?.RAttachmentmount;
-            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 5) != null)
-                IdSilenserItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 5)?.RAttachmentmount;
-            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 6) != null)
-                IdLauncherItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 6)?.RAttachmentmount;
-            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 7) != null)
-                IdStockItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 7)?.RAttachmentmount;
-            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 8) != null)
-                IdBayonetItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 8)?.RAttachmentmount;
-            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 9) != null)
-                IdMagazineItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 9)?.RAttachmentmount;
-            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 10) != null)
-                IdInternalItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 10)?.RAttachmentmount;
-            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 11) != null)
-                IdExternalItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 11)?.RAttachmentmount;
-            if (itt.Caliber != null)
-                IdCalibre = itt.Caliber.Id;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 1) != null) this.IdScopeItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 1)?.RAttachmentmount;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 2) != null) this.IdLaserItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 2)?.RAttachmentmount;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 3) != null) this.IdLightItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 3)?.RAttachmentmount;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 4) != null) this.IdBipodItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 4)?.RAttachmentmount;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 5) != null) this.IdSilenserItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 5)?.RAttachmentmount;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 6) != null) this.IdLauncherItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 6)?.RAttachmentmount;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 7) != null) this.IdStockItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 7)?.RAttachmentmount;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 8) != null) this.IdBayonetItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 8)?.RAttachmentmount;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 9) != null) this.IdMagazineItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 9)?.RAttachmentmount;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 10) != null) this.IdInternalItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 10)?.RAttachmentmount;
+            if (itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 11) != null) this.IdExternalItem = itt.AvailableAttachSlot.FirstOrDefault(p => p.RAttachmentslot == 11)?.RAttachmentmount;
+            if (itt.Caliber != null) this.IdCalibre = itt.Caliber.Id;
         }
     }
 }

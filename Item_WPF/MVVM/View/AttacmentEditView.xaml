@@ -6,7 +6,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Item_WPF.MVVM.View"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        Title="{Binding AttachLoad.szAttName,
+        Title="{Binding AttachLoad.SzItemName,
                         UpdateSourceTrigger=PropertyChanged}"
         Width="805.025"
         Height="429.648"
@@ -39,17 +39,8 @@
                              Margin="102,10,0,0"
                              HorizontalAlignment="Left"
                              VerticalAlignment="Top"
-                             TextWrapping="Wrap">
-                        <TextBox.Text>
-                            <MultiBinding Converter="{addin:textBoxtotwoSource}" UpdateSourceTrigger="PropertyChanged">
-                                <Binding Mode="TwoWay"
-                                         Path="ItemLoad.szItemName"
-                                         UpdateSourceTrigger="PropertyChanged" />
-                                <Binding Mode="TwoWay"
-                                         Path="AttachLoad.szAttName"
-                                         UpdateSourceTrigger="PropertyChanged" />
-                            </MultiBinding>
-                        </TextBox.Text>
+                             TextWrapping="Wrap"
+                             Text="{Binding  Path=ItemLoad.SzItemName, UpdateSourceTrigger=PropertyChanged}">
                     </TextBox>
 
 
@@ -59,7 +50,7 @@
                              Margin="102,38,0,0"
                              HorizontalAlignment="Left"
                              VerticalAlignment="Top"
-                             Text="{Binding ItemLoad.szLongItemName,
+                             Text="{Binding ItemLoad.SzLongItemName,
                                             Mode=TwoWay,
                                             UpdateSourceTrigger=PropertyChanged}"
                              TextWrapping="Wrap" />
@@ -69,7 +60,7 @@
                              Margin="10,97,0,0"
                              HorizontalAlignment="Left"
                              VerticalAlignment="Top"
-                             Text="{Binding ItemLoad.szItemDesc,
+                             Text="{Binding ItemLoad.SzItemDesc,
                                             Mode=TwoWay,
                                             UpdateSourceTrigger=PropertyChanged}"
                              TextWrapping="Wrap" />
@@ -79,7 +70,7 @@
                            Margin="400,10,0,0"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Top"
-                           Source="{Binding ItemLoad.Item_Image,
+                           Source="{Binding ItemLoad.ItemImage,
                                             Mode=TwoWay,
                                             UpdateSourceTrigger=PropertyChanged,
                                             Converter={addins:ImageConverter}}" />
@@ -128,7 +119,7 @@
                                    Margin="10,94,0,0"
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Top"
-                                   Content="MinST" />
+                                   Content="MinSt" />
                             <Label x:Name="Label9"
                                    Margin="10,122,0,0"
                                    HorizontalAlignment="Left"
@@ -150,7 +141,7 @@
                                     <Binding Converter="{addins:DeciminalConverterString}"
                                              ConverterParameter=" lbs"
                                              Mode="TwoWay"
-                                             Path="ItemLoad.ubWeight" />
+                                             Path="ItemLoad.UbWeight" />
                                 </TextBox.Text>
                             </TextBox>
                             <TextBox x:Name="CostTb"
@@ -164,7 +155,7 @@
                                     <Binding Converter="{addins:DeciminalConverterString}"
                                              ConverterParameter=" $"
                                              Mode="TwoWay"
-                                             Path="ItemLoad.usPrice" />
+                                             Path="ItemLoad.UsPrice" />
                                 </TextBox.Text>
                             </TextBox>
                             <TextBox x:Name="BulkTb"
@@ -182,7 +173,7 @@
                                      Margin="93,94,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
-                                     Text="{Binding ItemLoad.minST,
+                                     Text="{Binding ItemLoad.MinSt,
                                                     Mode=TwoWay}"
                                      TextWrapping="Wrap" />
                             <ComboBox x:Name="TlCb"
@@ -190,21 +181,21 @@
                                       Margin="93,122,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      DisplayMemberPath="name_Tl"
+                                      DisplayMemberPath="NameTl"
                                       IsReadOnly="True"
                                       ItemsSource="{Binding TlCollection}"
-                                      SelectedValue="{Binding ItemLoad.TL}"
-                                      SelectedValuePath="Id_Tl" />
+                                      SelectedValue="{Binding ItemLoad.Tl}"
+                                      SelectedValuePath="IdTl" />
                             <ComboBox x:Name="LcCb"
                                       Width="120"
                                       Margin="93,149,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      DisplayMemberPath="Name_Lc"
+                                      DisplayMemberPath="NameLc"
                                       IsReadOnly="True"
                                       ItemsSource="{Binding LccCollection}"
-                                      SelectedValue="{Binding ItemLoad.LC}"
-                                      SelectedValuePath="Id_Lc" />
+                                      SelectedValue="{Binding ItemLoad.Lc}"
+                                      SelectedValuePath="IdLc" />
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="GroupBox"
@@ -248,7 +239,7 @@
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       Content="HT"
-                                      IsChecked="{Binding Path=ItemLoad.HT,
+                                      IsChecked="{Binding Path=ItemLoad.Ht,
                                                           Mode=TwoWay,
                                                           UpdateSourceTrigger=PropertyChanged}" />
                             <CheckBox x:Name="UtChB"
@@ -256,7 +247,7 @@
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
                                       Content="UT"
-                                      IsChecked="{Binding Path=ItemLoad.UT,
+                                      IsChecked="{Binding Path=ItemLoad.Ut,
                                                           Mode=TwoWay,
                                                           UpdateSourceTrigger=PropertyChanged}" />
                             <CheckBox x:Name="DamagebleChB"
@@ -341,29 +332,29 @@
                                       Margin="164,10,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      DisplayMemberPath="name_class"
+                                      DisplayMemberPath="NameClass"
                                       ItemsSource="{Binding AttachClassColl,
                                                             Mode=TwoWay,
                                                             UpdateSourceTrigger=PropertyChanged}"
-                                      SelectedValue="{Binding AttachLoad.G_AttachClass,
+                                      SelectedValue="{Binding AttachLoad.GAttachClass,
                                                               Mode=TwoWay,
                                                               UpdateSourceTrigger=PropertyChanged}"
-                                      SelectedValuePath="id" />
+                                      SelectedValuePath="Id" />
                             <ComboBox x:Name="GAttClassComboBox"
                                       Width="151"
                                       Margin="164,37,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      DisplayMemberPath="SubAttach_name"
+                                      DisplayMemberPath="SubAttachName"
                                       IsSynchronizedWithCurrentItem="True"
-                                      SelectedValue="{Binding AttachLoad.G_SubAttachClass,
+                                      SelectedValue="{Binding AttachLoad.GSubAttachClass,
                                                               Mode=TwoWay,
                                                               UpdateSourceTrigger=PropertyChanged}"
-                                      SelectedValuePath="id">
+                                      SelectedValuePath="Id">
                                 <ComboBox.ItemsSource>
                                     <MultiBinding Converter="{addin:DatacontextAttachClass}">
                                         <Binding Path="SubAttachClassColl" />
-                                        <Binding Path="AttachLoad.G_AttachClass" />
+                                        <Binding Path="AttachLoad.GAttachClass" />
                                     </MultiBinding>
                                 </ComboBox.ItemsSource>
                             </ComboBox>
@@ -373,22 +364,22 @@
                                       Margin="164,92,0,0"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      DisplayMemberPath="name"
+                                      DisplayMemberPath="Name"
                                       IsSynchronizedWithCurrentItem="True"
-                                      SelectedValuePath="id">
+                                      SelectedValuePath="Id">
                                 <!--  SelectedValue="{Binding AttachLoad.id_Attachmentmount}"  -->
                                 <ComboBox.SelectedValue>
                                     <MultiBinding Converter="{addin:MountAttachmentPointConvert}"
                                                   ConverterParameter="31958"
                                                   UpdateSourceTrigger="PropertyChanged">
                                         <Binding Path="AttachSlot" />
-                                        <Binding Path="ItemLoad.uiIndex" />
+                                        <Binding Path="ItemLoad.UiIndex" />
                                     </MultiBinding>
                                 </ComboBox.SelectedValue>
 
                                 <ComboBox.ItemsSource>
                                     <MultiBinding Converter="{addin:MountTypeColl}">
-                                        <Binding Path="AttachLoad.G_SubAttachClass" />
+                                        <Binding Path="AttachLoad.GSubAttachClass" />
                                         <Binding Path="AttMount" />
                                         <Binding Path="SubAttachClassColl" />
                                     </MultiBinding>
@@ -405,7 +396,7 @@
                                 <TextBox.Text>
                                     <MultiBinding Converter="{addin:AttachSlotText}">
                                         <Binding Path="SubAttachClassColl" />
-                                        <Binding Path="AttachLoad.G_SubAttachClass" />
+                                        <Binding Path="AttachLoad.GSubAttachClass" />
                                     </MultiBinding>
                                 </TextBox.Text>
                             </TextBox>
@@ -590,7 +581,7 @@
                                              Margin="105,58,0,0"
                                              HorizontalAlignment="Left"
                                              VerticalAlignment="Top"
-                                             Text="{Binding AttachLoad.LaserRFAcc}"
+                                             Text="{Binding AttachLoad.LaserRfAcc}"
                                              TextWrapping="Wrap" />
 
                                 </Grid>
@@ -769,8 +760,8 @@
                                               VerticalAlignment="Top"
                                               DisplayMemberPath="SmolName"
                                               ItemsSource="{Binding BatteryColl}"
-                                              SelectedValue="{Binding AttachLoad.usedBatType}"
-                                              SelectedValuePath="id" />
+                                              SelectedValue="{Binding AttachLoad.UsedBatType}"
+                                              SelectedValuePath="Id" />
                                     <Label x:Name="Label31"
                                            Margin="10,42,0,-1"
                                            HorizontalAlignment="Left"
@@ -810,7 +801,7 @@
                                               HorizontalAlignment="Left"
                                               VerticalAlignment="Top"
                                               Content="IR Filter"
-                                              IsChecked="{Binding AttachLoad.IRFilter}" />
+                                              IsChecked="{Binding AttachLoad.IrFilter}" />
                                     <Label x:Name="Label26"
                                            Margin="10,25,0,0"
                                            HorizontalAlignment="Left"
@@ -835,7 +826,7 @@
                                              Margin="103,56,0,0"
                                              HorizontalAlignment="Left"
                                              VerticalAlignment="Top"
-                                             Text="{Binding AttachLoad.IRLigRange}"
+                                             Text="{Binding AttachLoad.IrLigRange}"
                                              TextWrapping="Wrap" />
 
                                 </Grid>
@@ -883,10 +874,10 @@
                                               Margin="89,41,0,0"
                                               HorizontalAlignment="Left"
                                               VerticalAlignment="Top"
-                                              DisplayMemberPath="name"
+                                              DisplayMemberPath="Name"
                                               ItemsSource="{Binding LaserColorEfColl}"
                                               SelectedValue="{Binding AttachLoad.LaserColor}"
-                                              SelectedValuePath="id" />
+                                              SelectedValuePath="Id" />
                                 </Grid>
                             </GroupBox>
 

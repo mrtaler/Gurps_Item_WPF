@@ -1,5 +1,6 @@
-﻿using Item_WPF.MVVM.ViewModels;
-using System.Windows;
+﻿using System.Windows;
+
+using Item_WPF.MVVM.ViewModels;
 
 namespace Item_WPF.MVVM.View
 {
@@ -11,9 +12,9 @@ namespace Item_WPF.MVVM.View
         public BoxItemChangeViewModel DCon { get; set; }
         public BoxItemChangeView(object Param)
         {
-            InitializeComponent();
-            DCon = new BoxItemChangeViewModel(Param);
-            this.DataContext = DCon;
+            this.InitializeComponent();
+            this.DCon = new BoxItemChangeViewModel(Param);
+            this.DataContext = this.DCon;
         }
     }
 }

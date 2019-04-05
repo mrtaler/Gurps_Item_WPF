@@ -12,13 +12,14 @@ namespace GurpsDb.GurpsModel
         /// <param name="item">PrereqListXml</param>
         public void FPPrereq_list(PrereqListXml item)
         {
-            WhenTlCompare = item.WhenTl?.Attribute("compare")?.Value;
-            WhenTl = item.WhenTl?.Value;
-            CollegeCountCompare = item.CollegeCount?.Attribute("compare")?.Value;
-            CollegeCount = item.CollegeCount?.Value;
-            All = item.All?.Value;
+            this.WhenTlCompare = item.WhenTl?.Attribute("compare")?.Value;
+            this.WhenTl = item.WhenTl?.Value;
+            this.CollegeCountCompare = item.CollegeCount?.Attribute("compare")?.Value;
+            this.CollegeCount = item.CollegeCount?.Value;
+            this.All = item.All?.Value;
 
         }
+
         /// <summary>
         /// Method for skill_prereq
         /// </summary>
@@ -36,7 +37,7 @@ namespace GurpsDb.GurpsModel
                 sklprq.LevelSpCompare = itemSkillPrereq.Level?.Attribute("compare")?.Value;
                 sklprq.LevelSp = itemSkillPrereq.Level?.Value;
                 sklprq.Has = itemSkillPrereq.Has?.Value;
-                SkillPrereqDb.Add(sklprq);
+                this.SkillPrereqDb.Add(sklprq);
             }
 
         }
@@ -61,8 +62,9 @@ namespace GurpsDb.GurpsModel
                 splprq.Quantity = itemspellPrereqDb.Quantity?.Value;
                 splprq.Anyt = itemspellPrereqDb.Any?.Value;
                 splprq.Has = itemspellPrereqDb.Has?.Value;
-                //  splprq.Value =itemspell_prereqDB.
-                SpellPrereqDb.Add(splprq);
+
+                // splprq.Value =itemspell_prereqDB.
+                this.SpellPrereqDb.Add(splprq);
             }
         }
 
@@ -76,7 +78,7 @@ namespace GurpsDb.GurpsModel
                 atrprq.Compare = itemAttributePrereq.Compare?.Value;
                 atrprq.CombinedWith = itemAttributePrereq.CombinedWith?.Value;
                 atrprq.Value = itemAttributePrereq.Value;
-                AttributePrereq.Add(atrprq);
+                this.AttributePrereq.Add(atrprq);
             }
         }
 
@@ -92,9 +94,10 @@ namespace GurpsDb.GurpsModel
                 advprq.LevelCompare = itemAdvantagePrereq.Level?.Attribute("compare")?.Value;
                 advprq.Level = itemAdvantagePrereq.Level?.Value;
                 advprq.Has = itemAdvantagePrereq.Has?.Value;
-                AdvantagePrereq.Add(advprq);
+                this.AdvantagePrereq.Add(advprq);
             }
         }
+
         public void FPcontained_weight_prereq(PrereqListXml item)
         {
             foreach (var itemContainedWeightPrereq in item.ContainedWeightPrereq)
@@ -103,9 +106,10 @@ namespace GurpsDb.GurpsModel
                 contprq.Has = itemContainedWeightPrereq.Has?.Value;
                 contprq.Compare = itemContainedWeightPrereq.Compare?.Value;
                 contprq.Value = itemContainedWeightPrereq.Value;
-                ContainedWeightPrereq.Add(contprq);
+                this.ContainedWeightPrereq.Add(contprq);
             }
         }
+
         /// <summary>
         /// Constructor for Work With XML
         /// </summary>
@@ -113,16 +117,15 @@ namespace GurpsDb.GurpsModel
         public PrereqListDb(PrereqListXml item)
             : this()
         {
+            this.FPPrereq_list(item);
 
-            FPPrereq_list(item);
+            this.FPskill_prereq(item);
+            this.FPspell_prereq(item);
+            this.FPattribute_prereq(item);
+            this.FPadvantage_prereq(item);
+            this.FPcontained_weight_prereq(item);
 
-            FPskill_prereq(item);
-            FPspell_prereq(item);
-            FPattribute_prereq(item);
-            FPadvantage_prereq(item);
-            FPcontained_weight_prereq(item);
-
-            #region prq_list
+            
             if (item.PrereqList != null)
             {
                 foreach (var itemPrereqList in item.PrereqList)
@@ -155,10 +158,11 @@ namespace GurpsDb.GurpsModel
                             prlDbSub.PrereqListDb1.Add(prlDbSubSub);
                         }
                     }
-                    PrereqListDb1.Add(prlDbSub);
+
+                    this.PrereqListDb1.Add(prlDbSub);
                 }
             }
-            #endregion
+            
         }
     }
 }

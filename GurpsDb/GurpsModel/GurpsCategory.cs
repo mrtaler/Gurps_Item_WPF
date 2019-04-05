@@ -12,8 +12,8 @@ namespace GurpsDb.GurpsModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public GurpsCategory()
         {
-            Advantage = new HashSet<Advantage>();
-            GurpsSkill = new HashSet<GurpsSkill>();
+            this.Advantage = new HashSet<Advantage>();
+            this.GurpsSkill = new HashSet<GurpsSkill>();
         }
 
         public int Id { get; set; }
@@ -29,13 +29,13 @@ namespace GurpsDb.GurpsModel
 
         public GurpsCategory(string name)
         {
-            NameCategory = name;
+            this.NameCategory = name;
         }
 
         public int CompareTo(object obj)
         {
             GurpsCategory gs = (GurpsCategory) obj;
-            return String.CompareOrdinal(this.NameCategory, gs.NameCategory);
+            return string.CompareOrdinal(this.NameCategory, gs.NameCategory);
         }
     }
 }

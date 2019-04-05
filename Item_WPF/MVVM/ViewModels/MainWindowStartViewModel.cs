@@ -1,11 +1,12 @@
-﻿using Item_WPF.addin;
+﻿using System.Windows;
+
+using Item_WPF.addin;
+using Item_WPF.GCS_Ser.names;
 using Item_WPF.MVVM.GurpsSkill_m;
 using Item_WPF.MVVM.Serialize;
 using Item_WPF.MVVM.View;
-using Microsoft.Windows.Controls.Ribbon;
-using System.Windows;
-using Item_WPF.GCS_Ser.names;
 
+using Microsoft.Windows.Controls.Ribbon;
 
 namespace Item_WPF.MVVM.ViewModels
 {
@@ -29,36 +30,37 @@ namespace Item_WPF.MVVM.ViewModels
         public ViewModelCommand AllGurpsSkillViewLaunchCommand { get; private set; }
         public MainWindowStartViewModel(RibbonWindow owner)
         {
-            Owner = owner;
+            this.Owner = owner;
 
             // Create commands
-            AboutCommand = new ViewModelCommand(ShowAboutWindow);
-            DropDiceCommand = new ViewModelCommand(DropDice);//+
-            ShowAllItemsCommand = new ViewModelCommand(ShowAllItems);//+
-            ShowCombineCommand = new ViewModelCommand(ShowCombine);//+
-            ShowCharacterCommand = new ViewModelCommand(ShowCharacter);//+
-            OwnerCloseCommand = new ViewModelCommand(OwnerClose);//+
-            ShowAmmoCommand = new ViewModelCommand(ShowAmmo);
-            NewBoxCommand = new ViewModelCommand(NewBox);
-            ListBoxCommand = new ViewModelCommand(ListBox);
-            BoxChangeCommand = new ViewModelCommand(BoxChange);
-            NewNameCommand = new ViewModelCommand(randomname);
+            this.AboutCommand = new ViewModelCommand(this.ShowAboutWindow);
+            this.DropDiceCommand = new ViewModelCommand(this.DropDice);// +
+            this.ShowAllItemsCommand = new ViewModelCommand(this.ShowAllItems);// +
+            this.ShowCombineCommand = new ViewModelCommand(this.ShowCombine);// +
+            this.ShowCharacterCommand = new ViewModelCommand(this.ShowCharacter);// +
+            this.OwnerCloseCommand = new ViewModelCommand(this.OwnerClose);// +
+            this.ShowAmmoCommand = new ViewModelCommand(this.ShowAmmo);
+            this.NewBoxCommand = new ViewModelCommand(this.NewBox);
+            this.ListBoxCommand = new ViewModelCommand(this.ListBox);
+            this.BoxChangeCommand = new ViewModelCommand(this.BoxChange);
+            this.NewNameCommand = new ViewModelCommand(this.randomname);
 
-            SerializeCommand = new ViewModelCommand(Serialize);
+            this.SerializeCommand = new ViewModelCommand(this.Serialize);
 
-
-            AllGurpsSkillViewLaunchCommand = new ViewModelCommand(AllGurpsSkillViewLaunch);
+            this.AllGurpsSkillViewLaunchCommand = new ViewModelCommand(this.AllGurpsSkillViewLaunch);
         }
+
         public void ShowAboutWindow(object parameter)
         {
             AboutWindowView window = new AboutWindowView();
-            window.Owner = Owner;
+            window.Owner = this.Owner;
             window.ShowDialog();
         }
+
         public void ShowAmmo(object parameter)
         {
             AmmoView window = new AmmoView();
-            window.Owner = Owner;
+            window.Owner = this.Owner;
             window.ShowDialog();
         }
 
@@ -67,6 +69,7 @@ namespace Item_WPF.MVVM.ViewModels
             MainCharacterView window = new MainCharacterView();
             window.ShowDialog();
         }
+
         public void DropDice(object parameter)
         {
             MessageBox.Show(Dice.RollDie(6, 3).ToString());
@@ -75,24 +78,27 @@ namespace Item_WPF.MVVM.ViewModels
         public void ShowAllItems(object parameter)
         {
             if ((parameter as string) == "Weapon") { AllWeaponView allItems = new AllWeaponView(); allItems.Show(); }
-
             else { all_ItemsView allItems = new all_ItemsView(parameter); allItems.Show(); }
 
         }
+
         public void OwnerClose(object parameter)
         {
-            Owner.Close();
+            this.Owner.Close();
         }
+
         public void ShowCombine(object parameter)
         {
             CombineWeapView combine = new CombineWeapView();
             combine.Show();
         }
+
         public void NewBox(object parameter)
         {
             NewBoxView newbox = new NewBoxView();
             newbox.Show();
         }
+
         public void ListBox(object parameter)
         {
             BoxItemView boxitem = new BoxItemView(parameter);
@@ -104,6 +110,7 @@ namespace Item_WPF.MVVM.ViewModels
             BoxItemChangeView box_change = new BoxItemChangeView(parameter);
             box_change.Show();
         }
+
         private void randomname(object parameter)
         {
             if (parameter.ToString() == "male")
@@ -113,11 +120,13 @@ namespace Item_WPF.MVVM.ViewModels
             else
                 MessageBox.Show(USCensusNames.Instance.GetFullName(false));
         }
+
         private void AllGurpsSkillViewLaunch(object parameter)
         {
             AllGurpsSkillView allgurpsSkillView = new AllGurpsSkillView();
             allgurpsSkillView.Show();
         }
+
         private void Serialize(object parameter)
         {
             SerializeView serializeViewV = new SerializeView();

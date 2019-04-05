@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using Item_WPF.addin;
 using System.Collections.Specialized;
+
 using GurpsDb;
-using GurpsDb.GurpsModel;
 using GurpsDb.BaseModel;
+using GurpsDb.GurpsModel;
+
+using Item_WPF.addin;
 
 namespace Item_WPF.MVVM.ViewModels
 {
@@ -14,20 +16,22 @@ namespace Item_WPF.MVVM.ViewModels
         public ObservableCollection<Caliber> CaliberOk { get; set; }
         public CaliberViewModel()
         {
-            _context = new ContextGurpsModel();
-            CaliberOk = new ObservableCollection<Caliber>(_context.CaliberDbSet);
-            Save = new ViewModelCommand(SaveChanges);
-            CaliberOk.CollectionChanged += _ammoOK_CollectionChanged;
+            this._context = new ContextGurpsModel();
+            this.CaliberOk = new ObservableCollection<Caliber>(this._context.CaliberDbSet);
+            this.Save = new ViewModelCommand(this.SaveChanges);
+            this.CaliberOk.CollectionChanged += this._ammoOK_CollectionChanged;
         }
+
         private void _ammoOK_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Remove)
             {
                 foreach (Caliber item in e.OldItems)
                 {
-                    _context.CaliberDbSet.Remove(item);
+                    this._context.CaliberDbSet.Remove(item);
                 }
-                SaveChanges(1);
+
+                this.SaveChanges(1);
             }
             else if (e.Action == NotifyCollectionChangedAction.Add)
             {
@@ -35,23 +39,24 @@ namespace Item_WPF.MVVM.ViewModels
                 {
                     item.CaliberName = "new item";
                     item.ClassOfCaliber = "1";
-                    _context.CaliberDbSet.Add(item);
-                    SaveChanges(1);
+                    this._context.CaliberDbSet.Add(item);
+                    this.SaveChanges(1);
                 }
             }
         }
+
         private void SaveChanges(object parameter)
         {
-            _context.SaveChanges();
+            this._context.SaveChanges();
         }
+
         public ViewModelCommand Save { get; set; }
 
-        //      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
+        // PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         public void Dispose()
         {
-            _context?.Dispose();
+            this._context?.Dispose();
         }
     }
 

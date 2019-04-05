@@ -9,14 +9,15 @@ namespace Item_WPF.MVVM.ViewModels
         {
             get
             {
-                return _passinput;
+                return this._passinput;
             }
+
             set
             {
-                if (_passinput != value)
+                if (this._passinput != value)
                 {
-                    _passinput = value;
-                    RaisePropertyChanged("passinput");
+                    this._passinput = value;
+                    this.RaisePropertyChanged("passinput");
                 }
             }
         }
@@ -25,17 +26,18 @@ namespace Item_WPF.MVVM.ViewModels
 
         public InputBoxViewModel(string title_caption, string label_caption, string Pass)
         {
-            Title_caption = title_caption;
-            Label_caption = label_caption;
-            passinput = Pass;
+            this.Title_caption = title_caption;
+            this.Label_caption = label_caption;
+            this.passinput = Pass;
         }
 
         #region intrfeis
         public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         #endregion
 
     }

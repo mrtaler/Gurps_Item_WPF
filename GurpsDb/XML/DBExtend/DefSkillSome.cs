@@ -9,10 +9,10 @@ namespace GurpsDb.GurpsModel
         public DefSkillSome() { }
         public DefSkillSome(DefaultXml itemDefault)
         {
-            NameSkill = itemDefault.NameDefaultXml.Value.ToString();
-            Specialization = itemDefault.SpecializationDefaultXml.Value.ToString();
-            Type = itemDefault.TypeDefaultXml.Value.ToString();
-            Modifier = itemDefault.ModifierDefaultXml.Value.ToString();
+            this.NameSkill = itemDefault.NameDefaultXml.Value.ToString();
+            this.Specialization = itemDefault.SpecializationDefaultXml.Value.ToString();
+            this.Type = itemDefault.TypeDefaultXml.Value.ToString();
+            this.Modifier = itemDefault.ModifierDefaultXml.Value.ToString();
         }
     }
 }

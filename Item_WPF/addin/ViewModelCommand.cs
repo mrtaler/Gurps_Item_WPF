@@ -15,10 +15,11 @@ namespace Item_WPF.addin
         /// <param name="canExecute">if set to <c>true</c> [can execute].</param>
         public ViewModelCommand(Action action, bool canExecute = true)
         {
-            //  Set the action.
+            // Set the action.
             this.action = action;
             this.canExecute = canExecute;
         }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ViewModelCommand"/> class.
         /// </summary>
@@ -26,38 +27,39 @@ namespace Item_WPF.addin
         /// <param name="canExecute">if set to <c>true</c> [can execute].</param>
         public ViewModelCommand(Action<object> parameterizedAction, bool canExecute = true)
         {
-            //  Set the action.
+            // Set the action.
             this.parameterizedAction = parameterizedAction;
             this.canExecute = canExecute;
         }
+
         /// <summary>
         /// Executes the command.
         /// </summary>
         /// <param name="param">The param.</param>
         public virtual void DoExecute(object param)
         {
-            //  Get copies of the two event handlers we'll be using.
-            //  We get them here to protect against the event timing anti-pattern.
-            CancelCommandEventHandler executing = Executing;
-            CommandEventHandler executed = Executed;
+            // Get copies of the two event handlers we'll be using.
+            // We get them here to protect against the event timing anti-pattern.
+            CancelCommandEventHandler executing = this.Executing;
+            CommandEventHandler executed = this.Executed;
 
-            //  Do we have an 'executing' event?
+            // Do we have an 'executing' event?
             if (executing != null)
             {
-                //  Call the event.
-                CancelCommandEventArgs args =
-                    new CancelCommandEventArgs() { Parameter = param };
+                // Call the event.
+                CancelCommandEventArgs args = new CancelCommandEventArgs() { Parameter = param };
                 executing(this, args);
-                //  If the event has been cancelled, bail now.
+
+                // If the event has been cancelled, bail now.
                 if (args.Cancel)
                     return;
             }
-            //  Call the action or the parameterized action, whichever has been set.
-            if (action != null)
-                action();
-            else if (parameterizedAction != null)
-                parameterizedAction(param);
-            //  Call the executed event.
+
+            // Call the action or the parameterized action, whichever has been set.
+            if (this.action != null) this.action();
+            else if (this.parameterizedAction != null) this.parameterizedAction(param);
+
+            // Call the executed event.
             if (executed != null)
                 executed(this, new CommandEventArgs() { Parameter = param });
         }
@@ -68,10 +70,12 @@ namespace Item_WPF.addin
         /// </summary>
         protected Action action = null;
         protected Action<object> parameterizedAction = null;
+
         /// <summary>
         /// Bool indicating whether the command can execute.
         /// </summary>
         private bool canExecute = false;
+
         /// <summary>
         /// Gets or sets a value indicating whether this instance can execute.
         /// </summary>
@@ -80,19 +84,20 @@ namespace Item_WPF.addin
         /// </value>
         public bool CanExecute
         {
-            get { return canExecute; }
+            get { return this.canExecute; }
             set
             {
-                if (canExecute != value)
+                if (this.canExecute != value)
                 {
-                    canExecute = value;
-                    EventHandler canExecuteChanged = CanExecuteChanged;
+                    this.canExecute = value;
+                    EventHandler canExecuteChanged = this.CanExecuteChanged;
                     if (canExecuteChanged != null)
                         canExecuteChanged(this, EventArgs.Empty);
                 }
             }
         }
         #region ICommand Members
+
         /// <summary>
         /// Defines the method that determines whether
         /// the command can execute in its current state.
@@ -105,8 +110,9 @@ namespace Item_WPF.addin
         /// </returns>
         bool ICommand.CanExecute(object parameter)
         {
-            return canExecute;
+            return this.canExecute;
         }
+
         /// <summary>
         /// Defines the method to be called when the command is invoked.
         /// </summary>
@@ -117,30 +123,36 @@ namespace Item_WPF.addin
         {
             this.DoExecute(parameter);
         }
+
         #endregion
 
         /// <summary>
         /// Occurs when can execute is changed.
         /// </summary>
         public event EventHandler CanExecuteChanged;
+
         /// <summary>
         /// Occurs when the command is about to execute.
         /// </summary>
         public event CancelCommandEventHandler Executing;
+
         /// <summary>
         /// Occurs when the command executed.
         /// </summary>
         public event CommandEventHandler Executed;
     }
+
     /// <summary>
     /// The CommandEventHandler delegate.
     /// </summary>
     public delegate void CommandEventHandler(object sender, CommandEventArgs args);
+
     /// <summary>
     /// The CancelCommandEvent delegate.
     /// </summary>
     public delegate void CancelCommandEventHandler(object sender,
                     CancelCommandEventArgs args);
+
     /// <summary>
     /// CommandEventArgs - simply holds the command parameter.
     /// </summary>
@@ -152,6 +164,7 @@ namespace Item_WPF.addin
         /// <value>The parameter.</value>
         public object Parameter { get; set; }
     }
+
     /// <summary>
     /// CancelCommandEventArgs - just like above but allows the event to 
     /// be cancelled.

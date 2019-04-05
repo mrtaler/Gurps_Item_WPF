@@ -9,18 +9,18 @@ namespace Item_WPF.MVVM.EditPrimaryStats
     {
         public EditPrimaryStatsWindowView()
         {
-            DataContext = new EditPrimaryStatsViewModel();
-            InitializeComponent();
+            this.DataContext = new EditPrimaryStatsViewModel();
+            this.InitializeComponent();
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
+            this.DialogResult = true;
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            DialogResult = false;
+            this.DialogResult = false;
         }
     }
 }

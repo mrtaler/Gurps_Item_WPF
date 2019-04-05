@@ -17,21 +17,21 @@ namespace GurpsDb.XML.XSD.List
         public XElement Bulk;
         public RangedWeaponXml(XElement item)
         {
-            Damage = item.Element("damage");
-            Strength = item.Element("strength");
-            Usage = item.Element("usage");
-            Accuracy = item.Element("accuracy");
-            Range = item.Element("range");
-            RateOfFire = item.Element("rate_of_fire");
-            Recoil = item.Element("recoil");
-            Shots = item.Element("shots");
-            Bulk = item.Element("bulk");
+            this.Damage = item.Element("damage");
+            this.Strength = item.Element("strength");
+            this.Usage = item.Element("usage");
+            this.Accuracy = item.Element("accuracy");
+            this.Range = item.Element("range");
+            this.RateOfFire = item.Element("rate_of_fire");
+            this.Recoil = item.Element("recoil");
+            this.Shots = item.Element("shots");
+            this.Bulk = item.Element("bulk");
             if (item.Element("default") != null)
             {
-                Default = new ObservableCollection<DefaultXml>();
+                this.Default = new ObservableCollection<DefaultXml>();
                 foreach (var itemdefault in item.Elements("default"))
                 {
-                    Default.Add(new DefaultXml(itemdefault));
+                    this.Default.Add(new DefaultXml(itemdefault));
                 }
             }
         }

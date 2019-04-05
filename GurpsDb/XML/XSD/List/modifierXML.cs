@@ -20,39 +20,39 @@ namespace GurpsDb.XML.XSD.List
         public XAttribute Enabled;
         public ModifierXml(XElement itemmodifier)
         {
-            Name = itemmodifier.Element("name") != null
+            this.Name = itemmodifier.Element("name") != null
             ? itemmodifier.Element("name") : null;
 
-            Notes = itemmodifier.Element("notes") != null
+            this.Notes = itemmodifier.Element("notes") != null
             ? itemmodifier.Element("notes") : null;
-            Levels = itemmodifier.Element("levels") != null
+            this.Levels = itemmodifier.Element("levels") != null
               ? itemmodifier.Element("levels") : null;
-            Cost = itemmodifier.Element("cost") != null
+            this.Cost = itemmodifier.Element("cost") != null
                ? itemmodifier.Element("cost") : null;
-            Reference = itemmodifier.Element("reference") != null
+            this.Reference = itemmodifier.Element("reference") != null
                ? itemmodifier.Element("reference") : null;
-            Affects = itemmodifier.Element("affects") != null
+            this.Affects = itemmodifier.Element("affects") != null
                ? itemmodifier.Element("affects") : null;
-            Version = itemmodifier.Attribute("version") != null
+            this.Version = itemmodifier.Attribute("version") != null
                 ? itemmodifier.Attribute("version") : null;
-            Enabled = itemmodifier.Attribute("enabled") != null
+            this.Enabled = itemmodifier.Attribute("enabled") != null
                 ? itemmodifier.Attribute("enabled") : null;
 
             if (itemmodifier.Element("skill_bonus") != null)
             {
-                SkillBonus = new ObservableCollection<SkillBonusXml>();
+                this.SkillBonus = new ObservableCollection<SkillBonusXml>();
                 foreach (var item in itemmodifier.Elements("skill_bonus"))
                 {
-                    SkillBonus.Add(new SkillBonusXml(item));
+                    this.SkillBonus.Add(new SkillBonusXml(item));
                 }
             }
 
             if (itemmodifier.Element("attribute_bonus") != null)
             {
-                AttributeBonus = new ObservableCollection<AttributeBonusXml>();
+                this.AttributeBonus = new ObservableCollection<AttributeBonusXml>();
                 foreach (var itemattributeBonus in itemmodifier.Elements("attribute_bonus"))
                 {
-                    AttributeBonus.Add(new AttributeBonusXml(itemattributeBonus));
+                    this.AttributeBonus.Add(new AttributeBonusXml(itemattributeBonus));
                 }
             }
         }

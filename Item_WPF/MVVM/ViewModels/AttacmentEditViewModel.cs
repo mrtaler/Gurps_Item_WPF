@@ -1,13 +1,19 @@
-﻿using Item_WPF.addin;
-using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+
 using GurpsDb;
 using GurpsDb.GurpsModel;
 
+using Item_WPF.addin;
+
+using Microsoft.Win32;
+
 namespace Item_WPF.MVVM.ViewModels
 {
+    using System.Data.Entity.Migrations;
+    using System.Windows;
+
     class AttacmentEditViewModel : INotifyPropertyChanged, IDisposable
     {
         private ContextGurpsModel _context;
@@ -23,48 +29,54 @@ namespace Item_WPF.MVVM.ViewModels
         public ObservableCollection<LaserColorEf> LaserColorEfColl { get; set; }
 
         public ObservableCollection<AttachmentMount> AttMount { get; set; }
-        public AttacmentEditViewModel(Attachment itemselect)
+        public AttacmentEditViewModel(Window owner, Attachment itemselect, ContextGurpsModel context)
         {
-            _context = new ContextGurpsModel();
-            ItemLoad = (Item)itemselect;
-            AttachLoad = itemselect;
+            this._context = context;
+            this.ItemLoad = itemselect;
+            this.AttachLoad = itemselect;
 
-            AttachSlot = new ObservableCollection<AvailableAttachSlot>(_context.AvailableAttachSlotDbSet);
-            TlCollection = new ObservableCollection<Tl>(_context.TlDbSet);
-            LccCollection = new ObservableCollection<Lc>(_context.LcDbSet);
-            AttachClassColl = new ObservableCollection<GAttachClass>(_context.GAttachClassDbSet);
-            SubAttachClassColl = new ObservableCollection<GSubAttachClass>(_context.GSubAttachClassDbSet);
-            LaserColorEfColl = new ObservableCollection<LaserColorEf>(_context.LaserColorEfDbSet);
-            AttMount = new ObservableCollection<AttachmentMount>(_context.AttachmentMountDbSet);
-            BatteryColl = new ObservableCollection<Battery>(_context.BatteryDbSet);
+            this.AttachSlot = new ObservableCollection<AvailableAttachSlot>(this._context.AvailableAttachSlotDbSet);
+            this.TlCollection = new ObservableCollection<Tl>(this._context.TlDbSet);
+            this.LccCollection = new ObservableCollection<Lc>(this._context.LcDbSet);
+            this.AttachClassColl = new ObservableCollection<GAttachClass>(this._context.GAttachClassDbSet);
+            this.SubAttachClassColl = new ObservableCollection<GSubAttachClass>(this._context.GSubAttachClassDbSet);
+            this.LaserColorEfColl = new ObservableCollection<LaserColorEf>(this._context.LaserColorEfDbSet);
+            this.AttMount = new ObservableCollection<AttachmentMount>(this._context.AttachmentMountDbSet);
+            this.BatteryColl = new ObservableCollection<Battery>(this._context.BatteryDbSet);
 
-            #region Commands
-            Save = new ViewModelCommand(SaveChanges);
-            LoadImage = new ViewModelCommand(LoadImageToForm);
-            DellImage = new ViewModelCommand(DellImageFromAll);
-            #endregion
+            this.Save = new ViewModelCommand(this.SaveChanges);
+            this.LoadImage = new ViewModelCommand(this.LoadImageToForm);
+            this.DellImage = new ViewModelCommand(this.DellImageFromAll);
+            
         }
 
         #region Description Command
         private void SaveChanges(object parameter)
         {
-            _context.SaveChanges();
+            this.AttachLoad.WorksOnBat = "false";
+           
+            this._context.AttachmentDbSet.AddOrUpdate(this.AttachLoad);
+
+            this._context.SaveChanges();
         }
+
         private void LoadImageToForm(object parameter)
         {
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.InitialDirectory = "C:\\Users\\Derdan\\Dropbox\\Weapon";
             dlg.Filter = "Image files (*.jpg,*.png,*.bmp,*.gif)|*.jpg;*.png;*.bmp,*.gif|All Files (*.*)|*.*";
             dlg.ShowDialog();
-            if (dlg.FileName != "")
+            if (!string.Equals(dlg.FileName, string.Empty, StringComparison.InvariantCulture))
             {
-                ItemLoad.ItemImage = System.IO.File.ReadAllBytes(dlg.FileName);
+                this.ItemLoad.ItemImage = System.IO.File.ReadAllBytes(dlg.FileName);
             }
         }
+
         private void DellImageFromAll(object parameter)
         {
-            ItemLoad.ItemImage = null;
+            this.ItemLoad.ItemImage = null;
         }
+
         #endregion
 
         #region Declaration Command
@@ -76,13 +88,15 @@ namespace Item_WPF.MVVM.ViewModels
         #region Реализация интерфейса
         public void Dispose()
         {
-            _context?.Dispose();
+            this._context?.Dispose();
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         #endregion
     }
 }

@@ -10,7 +10,7 @@ namespace GurpsDb.GurpsModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Attachment()
         {
-            GAvAttachClass = new HashSet<GAvAttachClass>();
+            this.GAvAttachClass = new HashSet<GAvAttachClass>();
         }
 
         public int RAttachmentClass { get; set; }

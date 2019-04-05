@@ -11,22 +11,22 @@ namespace Item_WPF.MVVM.View
         public CaliberViewModel Avm { get; set; }
         public CaliberView()
         {
-            Avm = new CaliberViewModel();
-            DataContext = Avm;
-            InitializeComponent();
+            this.Avm = new CaliberViewModel();
+            this.DataContext = this.Avm;
+            this.InitializeComponent();
 
         }
 
         private void Closebutton_OnClick(object sender, RoutedEventArgs e)
         {
-            Avm.Dispose();
-            DialogResult = true;
-            Close();
+            this.Avm.Dispose();
+            this.DialogResult = true;
+            this.Close();
         }
 
-        //private void AmmoView_OnClosed(object sender, EventArgs e)
-        //{
-        //    Avm.Dispose();
-        //}
+        // private void AmmoView_OnClosed(object sender, EventArgs e)
+        // {
+        // Avm.Dispose();
+        // }
     }
 }

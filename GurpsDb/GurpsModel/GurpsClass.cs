@@ -11,7 +11,7 @@ namespace GurpsDb.GurpsModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public GurpsClass()
         {
-            ItemSubClass = new HashSet<ItemSubClass>();
+            this.ItemSubClass = new HashSet<ItemSubClass>();
         }
 
         public int Id { get; set; }

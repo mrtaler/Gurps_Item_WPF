@@ -10,7 +10,7 @@ namespace Item_WPF.MVVM.View
 
         public InputBoxView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
 
 
         }

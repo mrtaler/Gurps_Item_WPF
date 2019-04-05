@@ -11,19 +11,19 @@ namespace GurpsDb.GurpsExtendModel
         {
             Debug.Assert(count > 0);
 
-            Count = count;
-            Modifier = modifier;
+            this.Count = count;
+            this.Modifier = modifier;
         }
 
         public override string ToString()
         {
-            if (Modifier > 0)
-                return Count.ToString() + "d+" + Modifier.ToString();
-            if (Modifier < 0)
-                return Count.ToString() + "d-" + (-Modifier).ToString();
+            if (this.Modifier > 0)
+                return this.Count.ToString() + "d+" + this.Modifier.ToString();
+            if (this.Modifier < 0)
+                return this.Count.ToString() + "d-" + (-this.Modifier).ToString();
 
-            Debug.Assert(Modifier == 0);
-            return Count.ToString() + "d";
+            Debug.Assert(this.Modifier == 0);
+            return this.Count.ToString() + "d";
         }
     }
 }

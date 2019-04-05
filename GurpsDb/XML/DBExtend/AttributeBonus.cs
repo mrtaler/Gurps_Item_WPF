@@ -8,10 +8,10 @@ namespace GurpsDb.GurpsModel
         public AttributeBonus() { }
         public AttributeBonus(AttributeBonusXml item)
         {
-            AttributeLimitation = item.Attribute.Attribute("limitation")?.Value;
-            AttributeValue = item.Attribute.Value;
-            AmountPerLevel = item.Amount.Attribute("per_level")?.Value;
-            AmountValue = item.Amount.Value;
+            this.AttributeLimitation = item.Attribute.Attribute("limitation")?.Value;
+            this.AttributeValue = item.Attribute.Value;
+            this.AmountPerLevel = item.Amount.Attribute("per_level")?.Value;
+            this.AmountValue = item.Amount.Value;
         }
     }
 }

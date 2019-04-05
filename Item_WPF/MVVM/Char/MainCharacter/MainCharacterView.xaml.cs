@@ -12,13 +12,13 @@ namespace Item_WPF.MVVM.View
     {
         public MainCharacterView()
         {
-            DataContext = new MainCharacterViewModel(this);
-            InitializeComponent();
+            this.DataContext = new MainCharacterViewModel(this);
+            this.InitializeComponent();
         }
 
         private void QuitClick(object sender, RoutedEventArgs e)
         {
-            Close();
+            this.Close();
         }
     }
 }

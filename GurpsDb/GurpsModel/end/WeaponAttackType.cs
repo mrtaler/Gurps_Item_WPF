@@ -3,6 +3,7 @@ namespace GurpsDb.GurpsModel
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+
     /// <summary>
     /// Class for Weapon Attack Type
     /// </summary>
@@ -15,19 +16,23 @@ namespace GurpsDb.GurpsModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public WeaponAttackType()
         {
-            WeaponDamage = new HashSet<WeaponDamage>();
+            this.WeaponDamage = new HashSet<WeaponDamage>();
         }
+
         public WeaponAttackType(string name, string descr)
         {
-            Name = name;
-            Descr = descr;
+            this.Name = name;
+            this.Descr = descr;
         }
+
         public int Id { get; set; }
+
         /// <summary>
         /// name lengh 20
         /// </summary>
         [StringLength(20)]
         public string Name { get; set; }
+
         /// <summary>
         /// description length 150
         /// </summary>

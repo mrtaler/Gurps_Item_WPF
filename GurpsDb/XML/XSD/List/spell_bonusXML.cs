@@ -10,10 +10,10 @@ namespace GurpsDb.XML.XSD.List
         public XAttribute AllColleges;
         public SpellBonusXml(XElement item)
         {
-            SpellName = item.Element("spell_name");
-            CollegeName = item.Element("college_name");
-            AllColleges = item.Attribute("all_colleges");
-            Amount = item.Element("amount");
+            this.SpellName = item.Element("spell_name");
+            this.CollegeName = item.Element("college_name");
+            this.AllColleges = item.Attribute("all_colleges");
+            this.Amount = item.Element("amount");
         }
     }
 }

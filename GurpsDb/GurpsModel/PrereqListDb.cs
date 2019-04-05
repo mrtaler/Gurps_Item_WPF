@@ -11,12 +11,12 @@ namespace GurpsDb.GurpsModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PrereqListDb()
         {
-            AdvantagePrereq = new HashSet<AdvantagePrereq>();
-            AttributePrereq = new HashSet<AttributePrereq>();
-            ContainedWeightPrereq = new HashSet<ContainedWeightPrereq>();
-            PrereqListDb1 = new HashSet<PrereqListDb>();
-            SkillPrereqDb = new HashSet<SkillPrereqDb>();
-            SpellPrereqDb = new HashSet<SpellPrereqDb>();
+            this.AdvantagePrereq = new HashSet<AdvantagePrereq>();
+            this.AttributePrereq = new HashSet<AttributePrereq>();
+            this.ContainedWeightPrereq = new HashSet<ContainedWeightPrereq>();
+            this.PrereqListDb1 = new HashSet<PrereqListDb>();
+            this.SkillPrereqDb = new HashSet<SkillPrereqDb>();
+            this.SpellPrereqDb = new HashSet<SpellPrereqDb>();
         }
 
         public int Id { get; set; }

@@ -13,20 +13,20 @@ namespace GurpsDb.GurpsModel
         /// <param name="item"></param>
         public RangedWeapon(RangedWeaponXml item)
         {
-            Damage = item.Damage.Value;
-            Strength = item.Strength.Value;
-            Usage = item.Usage.Value;
-            Accuracy = item.Accuracy.Value;
-            Range = item.Range.Value;
-            RateOfFire = item.RateOfFire.Value;
-            Recoil = item.Recoil.Value;
-            Shots = item.Shots.Value;
-            Bulk = item.Bulk.Value;
+            this.Damage = item.Damage.Value;
+            this.Strength = item.Strength.Value;
+            this.Usage = item.Usage.Value;
+            this.Accuracy = item.Accuracy.Value;
+            this.Range = item.Range.Value;
+            this.RateOfFire = item.RateOfFire.Value;
+            this.Recoil = item.Recoil.Value;
+            this.Shots = item.Shots.Value;
+            this.Bulk = item.Bulk.Value;
             if (item.Default != null)
             {
                 foreach (DefaultXml itemDefault in item.Default)
                 {
-                    DefSkillSome.Add(new DefSkillSome(itemDefault));
+                    this.DefSkillSome.Add(new DefSkillSome(itemDefault));
                 }
             }
         }

@@ -10,10 +10,10 @@ namespace GurpsDb.XML.XSD.List
         public XElement Level;
         public WeaponBonusXml(XElement itemWeaponBonusXml)
         {
-            Amount = itemWeaponBonusXml.Element("amount");
-            Name = itemWeaponBonusXml.Element("name");
-            Specialization = itemWeaponBonusXml.Element("specialization");
-            Level = itemWeaponBonusXml.Element("level");
+            this.Amount = itemWeaponBonusXml.Element("amount");
+            this.Name = itemWeaponBonusXml.Element("name");
+            this.Specialization = itemWeaponBonusXml.Element("specialization");
+            this.Level = itemWeaponBonusXml.Element("level");
         }
     }
 }

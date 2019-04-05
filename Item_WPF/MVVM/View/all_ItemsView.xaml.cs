@@ -1,5 +1,6 @@
-﻿using Item_WPF.MVVM.ViewModels;
-using System.Windows;
+﻿using System.Windows;
+
+using Item_WPF.MVVM.ViewModels;
 
 namespace Item_WPF.MVVM.View
 {
@@ -11,14 +12,14 @@ namespace Item_WPF.MVVM.View
         public all_ItemsViewModel _allItemsViewModel;
         public all_ItemsView(object parametr)
         {
-            _allItemsViewModel = new all_ItemsViewModel(this, parametr);
-            DataContext = _allItemsViewModel;
-            InitializeComponent();
+            this._allItemsViewModel = new all_ItemsViewModel(this, parametr);
+            this.DataContext = this._allItemsViewModel;
+            this.InitializeComponent();
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
-            //   DialogResult = true;
+            // DialogResult = true;
             this.Close();
         }
     }

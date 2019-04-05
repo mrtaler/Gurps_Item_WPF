@@ -13,13 +13,16 @@ namespace GurpsDb.GurpsModel
     [Table("Item", Schema = "dbo")]
     public partial class Item : ViewModelBase, IDataErrorInfo
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Usage",
+            "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Item()
         {
-            InventoryOfChar = new HashSet<InventoryOfChar>();
-            AvailableAttachSlot = new HashSet<AvailableAttachSlot>();
-            BoxItem = new HashSet<BoxItem>();
+            this.InventoryOfChar = new HashSet<InventoryOfChar>();
+            this.AvailableAttachSlot = new HashSet<AvailableAttachSlot>();
+            this.BoxItem = new HashSet<BoxItem>();
         }
+
         /// <summary>
         /// Constructor for create new def item
         /// </summary>
@@ -27,69 +30,60 @@ namespace GurpsDb.GurpsModel
         /// <param name="itemSubClass">item class</param>
         /// <param name="lc1">LC</param>
         /// <param name="tl1">TL</param>
-        public Item(
-            string szItemName,
-
-            ItemSubClass itemSubClass,
-            Lc lc1,
-            Tl tl1)
+        public Item(string szItemName, ItemSubClass itemSubClass, Lc lc1, Tl tl1)
         {
-            SzItemName = szItemName;
-            ItemSubClass = itemSubClass;
+            this.SzItemName = szItemName;
+            this.ItemSubClass = itemSubClass;
 
-            Lc1 = lc1;
-            Tl1 = tl1;
+            this.Lc1 = lc1;
+            this.Tl1 = tl1;
 
-            SzLongItemName = "0";
-            SzItemDesc = "0";
+            this.SzLongItemName = "0";
+            this.SzItemDesc = "0";
 
-            UbClassIndex = 0;
-            UbWeight = 10M;
-            ItemSize = "0"; UsPrice = 10M;
+            this.UbClassIndex = 0;
+            this.UbWeight = 10M;
+            this.ItemSize = "0";
+            this.UsPrice = 10M;
 
-            Damageable = false;
-            Repairable = false;
-            WaterDamages = false;
-            Metal = false;
-            TwoHanded = false;
-            Electronic = false;
-            Ht = false;
-            Ut = false;
-            NeedsBatteries = false;
-            HaveFingerPrintId = false;
-            SizeBatteries = "0";
-            LockPickModifier = 0;
-            CrowbarModifier = 0;
-            DisarmModifier = 0;
-            RepairModifier = 0;
-            DamageChance = 0;
-            ItemImage = null;
-            MinSt = 1;
-            Link = string.Empty;
-            Used = false;
+            this.Damageable = false;
+            this.Repairable = false;
+            this.WaterDamages = false;
+            this.Metal = false;
+            this.TwoHanded = false;
+            this.Electronic = false;
+            this.Ht = false;
+            this.Ut = false;
+            this.NeedsBatteries = false;
+            this.HaveFingerPrintId = false;
+            this.SizeBatteries = "0";
+            this.LockPickModifier = 0;
+            this.CrowbarModifier = 0;
+            this.DisarmModifier = 0;
+            this.RepairModifier = 0;
+            this.DamageChance = 0;
+            this.ItemImage = null;
+            this.MinSt = 1;
+            this.Link = string.Empty;
+            this.Used = false;
 
+            this.Dt = DateTime.Now;
 
-            Dt = DateTime.Now;
-
-            CountOfBat = 0;
-            WorksOnBat = "0";
-
+            this.CountOfBat = 0;
+            this.WorksOnBat = "0";
         }
-
 
         [Key]
         public int UiIndex
         {
-            get
-            {
-                return uiIndex;
-            }
+            get => this.uiIndex;
+
             set
             {
-                if (uiIndex != value)
+                if (this.uiIndex != value)
                 {
-                    uiIndex = value;
-                    NotifyPropertyChanged("UiIndex");
+                    this.uiIndex = value;
+                    this.NotifyPropertyChanged("UiIndex");
                 }
             }
         }
@@ -100,14 +94,15 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return szItemName;
+                return this.szItemName;
             }
+
             set
             {
-                if (szItemName != value)
+                if (this.szItemName != value)
                 {
-                    szItemName = value;
-                    NotifyPropertyChanged("SzItemName");
+                    this.szItemName = value;
+                    this.NotifyPropertyChanged("SzItemName");
                 }
             }
         }
@@ -117,14 +112,15 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return szLongItemName;
+                return this.szLongItemName;
             }
+
             set
             {
-                if (szLongItemName != value)
+                if (this.szLongItemName != value)
                 {
-                    szLongItemName = value;
-                    NotifyPropertyChanged("SzLongItemName");
+                    this.szLongItemName = value;
+                    this.NotifyPropertyChanged("SzLongItemName");
                 }
             }
         }
@@ -133,14 +129,15 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return szItemDesc;
+                return this.szItemDesc;
             }
+
             set
             {
-                if (szItemDesc != value)
+                if (this.szItemDesc != value)
                 {
-                    szItemDesc = value;
-                    NotifyPropertyChanged("SzItemDesc");
+                    this.szItemDesc = value;
+                    this.NotifyPropertyChanged("SzItemDesc");
                 }
             }
         }
@@ -149,14 +146,15 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return usItemClass;
+                return this.usItemClass;
             }
+
             set
             {
-                if (usItemClass != value)
+                if (this.usItemClass != value)
                 {
-                    usItemClass = value;
-                    NotifyPropertyChanged("UsItemClass");
+                    this.usItemClass = value;
+                    this.NotifyPropertyChanged("UsItemClass");
                 }
             }
         }
@@ -165,35 +163,35 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return ubClassIndex;
+                return this.ubClassIndex;
             }
+
             set
             {
-                if (ubClassIndex != value)
+                if (this.ubClassIndex != value)
                 {
-                    ubClassIndex = value;
-                    NotifyPropertyChanged("UbClassIndex");
+                    this.ubClassIndex = value;
+                    this.NotifyPropertyChanged("UbClassIndex");
                 }
             }
         }
 
         public decimal UbWeight
         {
-            get { return ubWeight; }
+            get
+            {
+                return this.ubWeight;
+            }
+
             set
             {
-                if (ubWeight != value)
+                if (this.ubWeight != value)
                 {
-                    ubWeight = value;
-                    NotifyPropertyChanged("UbWeight");
+                    this.ubWeight = value;
+                    this.NotifyPropertyChanged("UbWeight");
                 }
             }
         }
-
-
-
-
-
 
         [DefaultValue("0")]
         [Required]
@@ -202,15 +200,15 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return itemSize;
-
+                return this.itemSize;
             }
+
             set
             {
-                if (itemSize != value)
+                if (this.itemSize != value)
                 {
-                    itemSize = value;
-                    NotifyPropertyChanged("ItemSize");
+                    this.itemSize = value;
+                    this.NotifyPropertyChanged("ItemSize");
                 }
             }
         }
@@ -220,33 +218,33 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return usPrice;
+                return this.usPrice;
             }
+
             set
             {
-                if (usPrice != value)
+                if (this.usPrice != value)
                 {
-                    usPrice = value;
-                    NotifyPropertyChanged("UsPrice");
+                    this.usPrice = value;
+                    this.NotifyPropertyChanged("UsPrice");
                 }
             }
         }
-
-
 
         [DefaultValue("false")]
         public bool Damageable
         {
             get
             {
-                return damageable;
+                return this.damageable;
             }
+
             set
             {
-                if (damageable != value)
+                if (this.damageable != value)
                 {
-                    damageable = value;
-                    NotifyPropertyChanged("Damageable");
+                    this.damageable = value;
+                    this.NotifyPropertyChanged("Damageable");
                 }
             }
         }
@@ -256,353 +254,409 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return repairable;
-
+                return this.repairable;
             }
+
             set
             {
-                if (repairable != value)
+                if (this.repairable != value)
                 {
-                    repairable = value;
-                    NotifyPropertyChanged("Repairable");
+                    this.repairable = value;
+                    this.NotifyPropertyChanged("Repairable");
                 }
             }
         }
+
         [DefaultValue("false")]
         public bool WaterDamages
         {
             get
             {
-                return waterDamages;
+                return this.waterDamages;
             }
+
             set
             {
-                if (waterDamages != value)
+                if (this.waterDamages != value)
                 {
-                    waterDamages = value;
-                    NotifyPropertyChanged("WaterDamages");
+                    this.waterDamages = value;
+                    this.NotifyPropertyChanged("WaterDamages");
                 }
             }
         }
+
         [DefaultValue("false")]
         public bool Metal
         {
             get
             {
-                return metal;
+                return this.metal;
             }
+
             set
             {
-                if (metal != value)
+                if (this.metal != value)
                 {
-                    metal = value;
-                    NotifyPropertyChanged("Metal");
+                    this.metal = value;
+                    this.NotifyPropertyChanged("Metal");
                 }
             }
         }
+
         [DefaultValue("false")]
         public bool TwoHanded
         {
             get
             {
-                return twoHanded;
+                return this.twoHanded;
             }
+
             set
             {
-                if (twoHanded != value)
+                if (this.twoHanded != value)
                 {
-                    twoHanded = value;
-                    NotifyPropertyChanged("TwoHanded");
+                    this.twoHanded = value;
+                    this.NotifyPropertyChanged("TwoHanded");
                 }
             }
         }
+
         [DefaultValue("false")]
         public bool Electronic
         {
             get
             {
-                return electronic;
+                return this.electronic;
             }
+
             set
             {
-                if (electronic != value)
+                if (this.electronic != value)
                 {
-                    electronic = value;
-                    NotifyPropertyChanged("Electronic");
+                    this.electronic = value;
+                    this.NotifyPropertyChanged("Electronic");
                 }
             }
         }
+
         [DefaultValue("false")]
         public bool Ht
         {
             get
             {
-                return ht;
+                return this.ht;
             }
+
             set
             {
-                if (ht != value)
+                if (this.ht != value)
                 {
-                    ht = value;
-                    NotifyPropertyChanged("Ht");
+                    this.ht = value;
+                    this.NotifyPropertyChanged("Ht");
                 }
             }
         }
+
         [DefaultValue("false")]
         public bool Ut
         {
             get
             {
-                return ut;
+                return this.ut;
             }
+
             set
             {
-                if (ut != value)
+                if (this.ut != value)
                 {
-                    ut = value;
-                    NotifyPropertyChanged("Ut");
+                    this.ut = value;
+                    this.NotifyPropertyChanged("Ut");
                 }
             }
         }
+
         [DefaultValue("false")]
         public bool NeedsBatteries
         {
             get
             {
-                return needsBatteries;
+                return this.needsBatteries;
             }
+
             set
             {
-                if (needsBatteries != value)
+                if (this.needsBatteries != value)
                 {
-                    needsBatteries = value;
-                    NotifyPropertyChanged("NeedsBatteries");
+                    this.needsBatteries = value;
+                    this.NotifyPropertyChanged("NeedsBatteries");
                 }
             }
         }
+
         [DefaultValue("false")]
         public bool HaveFingerPrintId
         {
             get
             {
-                return haveFingerPrintId;
+                return this.haveFingerPrintId;
             }
+
             set
             {
-                if (haveFingerPrintId != value)
+                if (this.haveFingerPrintId != value)
                 {
-                    haveFingerPrintId = value;
-                    NotifyPropertyChanged("HaveFingerPrintId");
+                    this.haveFingerPrintId = value;
+                    this.NotifyPropertyChanged("HaveFingerPrintId");
                 }
             }
         }
+
         public int Tl
         {
             get
             {
-                return tl;
+                return this.tl;
             }
+
             set
             {
-                if (tl != value)
+                if (this.tl != value)
                 {
-                    tl = value;
-                    NotifyPropertyChanged("Tl");
+                    this.tl = value;
+                    this.NotifyPropertyChanged("Tl");
                 }
             }
         }
+
         public int Lc
         {
             get
             {
-                return lc;
+                return this.lc;
             }
+
             set
             {
-                if (lc != value)
+                if (this.lc != value)
                 {
-                    lc = value;
-                    NotifyPropertyChanged("Lc");
+                    this.lc = value;
+                    this.NotifyPropertyChanged("Lc");
                 }
             }
         }
+
         [StringLength(4)]
         public string SizeBatteries
         {
             get
             {
-                return sizeBatteries;
+                return this.sizeBatteries;
             }
+
             set
             {
-                if (sizeBatteries != value)
+                if (this.sizeBatteries != value)
                 {
-                    sizeBatteries = value;
-                    NotifyPropertyChanged("SizeBatteries");
+                    this.sizeBatteries = value;
+                    this.NotifyPropertyChanged("SizeBatteries");
                 }
             }
         }
-        //   public int FoodType{get{return uiIndex;}set{if (uiIndex != value){uiIndex = value;NotifyPropertyChanged("SzLongItemName");}}}
+
+        // public int FoodType{get{return uiIndex;}set{if (uiIndex != value){uiIndex = value;NotifyPropertyChanged("SzLongItemName");}}}
         public decimal? LockPickModifier
         {
             get
             {
-                return lockPickModifier;
+                return this.lockPickModifier;
             }
+
             set
             {
-                if (lockPickModifier != value)
+                if (this.lockPickModifier != value)
                 {
-                    lockPickModifier = value;
-                    NotifyPropertyChanged("LockPickModifier");
+                    this.lockPickModifier = value;
+                    this.NotifyPropertyChanged("LockPickModifier");
                 }
             }
         }
+
         public decimal? CrowbarModifier
         {
             get
             {
-                return crowbarModifier;
+                return this.crowbarModifier;
             }
+
             set
             {
-                if (crowbarModifier != value)
+                if (this.crowbarModifier != value)
                 {
-                    crowbarModifier = value;
-                    NotifyPropertyChanged("CrowbarModifier");
+                    this.crowbarModifier = value;
+                    this.NotifyPropertyChanged("CrowbarModifier");
                 }
             }
         }
+
         public decimal? DisarmModifier
         {
             get
             {
-                return disarmModifier;
+                return this.disarmModifier;
             }
+
             set
             {
-                if (disarmModifier != value)
+                if (this.disarmModifier != value)
                 {
-                    disarmModifier = value;
-                    NotifyPropertyChanged("DisarmModifier");
+                    this.disarmModifier = value;
+                    this.NotifyPropertyChanged("DisarmModifier");
                 }
             }
         }
+
         public decimal? RepairModifier
         {
             get
             {
-                return repairModifier;
+                return this.repairModifier;
             }
+
             set
             {
-                if (repairModifier != value)
+                if (this.repairModifier != value)
                 {
-                    repairModifier = value;
-                    NotifyPropertyChanged("RepairModifier");
+                    this.repairModifier = value;
+                    this.NotifyPropertyChanged("RepairModifier");
                 }
             }
         }
+
         public decimal? DamageChance
         {
             get
             {
-                return damageChance;
+                return this.damageChance;
             }
+
             set
             {
-                if (damageChance != value)
+                if (this.damageChance != value)
                 {
-                    damageChance = value;
-                    NotifyPropertyChanged("DamageChance");
+                    this.damageChance = value;
+                    this.NotifyPropertyChanged("DamageChance");
                 }
             }
         }
+
         // public int Clothestype{get{return uiIndex;}set{if (uiIndex != value){uiIndex = value;NotifyPropertyChanged("SzLongItemName");}}}
-        //public int DrugType{get{return uiIndex;}set{if (uiIndex != value){uiIndex = value;NotifyPropertyChanged("SzLongItemName");}}}
+        // public int DrugType{get{return uiIndex;}set{if (uiIndex != value){uiIndex = value;NotifyPropertyChanged("SzLongItemName");}}}
         public byte[] ItemImage
         {
-            get { return itemImage; }
+            get
+            {
+                return this.itemImage;
+            }
+
             set
             {
-                if (itemImage != value)
+                if (this.itemImage != value)
                 {
-                    itemImage = value;
-                    NotifyPropertyChanged("ItemImage");
+                    this.itemImage = value;
+                    this.NotifyPropertyChanged("ItemImage");
                 }
             }
         }
+
         [DefaultValue("1")]
         public int MinSt
         {
-            get { return minSt; }
+            get
+            {
+                return this.minSt;
+            }
+
             set
             {
-                if (minSt != value)
+                if (this.minSt != value)
                 {
-                    minSt = value;
-                    NotifyPropertyChanged("MinSt");
+                    this.minSt = value;
+                    this.NotifyPropertyChanged("MinSt");
                 }
             }
         }
+
         [DefaultValue("")]
         public string Link
         {
             get
             {
-                return link;
+                return this.link;
             }
+
             set
             {
-                if (link != value)
+                if (this.link != value)
                 {
-                    link = value;
-                    NotifyPropertyChanged("Link");
+                    this.link = value;
+                    this.NotifyPropertyChanged("Link");
                 }
             }
         }
+
         [DefaultValue("false")]
         public bool Used
         {
             get
             {
-                return used;
+                return this.used;
             }
+
             set
             {
-                if (used != value) { used = value; NotifyPropertyChanged("Used"); }
+                if (this.used != value)
+                {
+                    this.used = value;
+                    this.NotifyPropertyChanged("Used");
+                }
             }
         }
+
         public DateTime? Dt
         {
             get
             {
-                return dt;
+                return this.dt;
             }
+
             set
             {
-                if (dt != value)
+                if (this.dt != value)
                 {
-                    dt = value;
-                    NotifyPropertyChanged("Dt");
+                    this.dt = value;
+                    this.NotifyPropertyChanged("Dt");
                 }
             }
         }
+
         [DefaultValue("0")]
         public int CountOfBat
         {
             get
             {
-                return countOfBat;
+                return this.countOfBat;
             }
+
             set
             {
-                if (countOfBat != value)
+                if (this.countOfBat != value)
                 {
-                    countOfBat = value; NotifyPropertyChanged("CountOfBat");
+                    this.countOfBat = value;
+                    this.NotifyPropertyChanged("CountOfBat");
                 }
             }
         }
+
         [Required]
         [StringLength(15)]
         [DefaultValue("0")]
@@ -610,151 +664,252 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return worksOnBat;
+                return this.worksOnBat;
             }
+
             set
             {
-                if (worksOnBat != value) { worksOnBat = value; NotifyPropertyChanged("WorksOnBat"); }
+                if (this.worksOnBat != value)
+                {
+                    this.worksOnBat = value;
+                    this.NotifyPropertyChanged("WorksOnBat");
+                }
             }
         }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage",
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Usage",
             "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<InventoryOfChar> InventoryOfChar
         {
             get
             {
-                return inventoryOfChar;
+                return this.inventoryOfChar;
             }
+
             set
             {
-                if (inventoryOfChar != value)
+                if (this.inventoryOfChar != value)
                 {
-                    inventoryOfChar = value;
-                    NotifyPropertyChanged("InventoryOfChar");
+                    this.inventoryOfChar = value;
+                    this.NotifyPropertyChanged("InventoryOfChar");
                 }
             }
         }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage",
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Usage",
             "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AvailableAttachSlot> AvailableAttachSlot
         {
             get
             {
-                return availableAttachSlot;
+                return this.availableAttachSlot;
             }
+
             set
             {
-                if (availableAttachSlot != value)
+                if (this.availableAttachSlot != value)
                 {
-                    availableAttachSlot = value;
-                    NotifyPropertyChanged("AvailableAttachSlot");
+                    this.availableAttachSlot = value;
+                    this.NotifyPropertyChanged("AvailableAttachSlot");
                 }
             }
         }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage",
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Usage",
             "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BoxItem> BoxItem
         {
             get
             {
-                return boxItem;
+                return this.boxItem;
             }
+
             set
             {
-                if (boxItem != value)
+                if (this.boxItem != value)
                 {
-                    boxItem = value;
-                    NotifyPropertyChanged("BoxItem");
+                    this.boxItem = value;
+                    this.NotifyPropertyChanged("BoxItem");
                 }
             }
         }
+
         public virtual ItemSubClass ItemSubClass
         {
-            get { return itemSubClass; }
-            set { if (itemSubClass != value) { itemSubClass = value; NotifyPropertyChanged("ItemSubClass"); } }
+            get
+            {
+                return this.itemSubClass;
+            }
+
+            set
+            {
+                if (this.itemSubClass != value)
+                {
+                    this.itemSubClass = value;
+                    this.NotifyPropertyChanged("ItemSubClass");
+                }
+            }
         }
+
         public virtual Lc Lc1
         {
-            get { return lc1; }
-            set { if (lc1 != value) { lc1 = value; NotifyPropertyChanged("Lc1"); } }
+            get
+            {
+                return this.lc1;
+            }
+
+            set
+            {
+                if (this.lc1 != value)
+                {
+                    this.lc1 = value;
+                    this.NotifyPropertyChanged("Lc1");
+                }
+            }
         }
+
         public virtual Tl Tl1
         {
-            get { return tl1; }
-            set { if (tl1 != value) { tl1 = value; NotifyPropertyChanged("Tl1"); } }
+            get
+            {
+                return this.tl1;
+            }
+
+            set
+            {
+                if (this.tl1 != value)
+                {
+                    this.tl1 = value;
+                    this.NotifyPropertyChanged("Tl1");
+                }
+            }
         }
 
         private int uiIndex;
+
         private string szItemName;
+
         private string szLongItemName;
+
         private string szItemDesc;
+
         private int usItemClass;
+
         private int ubClassIndex;
+
         private decimal ubWeight;
+
         private string itemSize;
+
         private decimal usPrice;
+
         private int? ubCalibre;
+
         private bool damageable;
+
         private bool repairable;
+
         private bool waterDamages;
+
         private bool metal;
+
         private bool twoHanded;
+
         private bool electronic;
+
         private bool ht;
+
         private bool ut;
+
         private bool batteries;
+
         private bool needsBatteries;
+
         private bool haveFingerPrintId;
+
         private int tl;
+
         private int lc;
+
         private string sizeBatteries;
+
         private decimal? lockPickModifier;
+
         private decimal? crowbarModifier;
+
         private decimal? disarmModifier;
+
         private decimal? repairModifier;
+
         private decimal? damageChance;
+
         private byte[] itemImage;
+
         private int minSt;
+
         private string link;
+
         private bool used;
+
         private DateTime? dt;
+
         private int countOfBat;
+
         private string worksOnBat;
+
         private ICollection<InventoryOfChar> inventoryOfChar;
+
         private ICollection<AvailableAttachSlot> availableAttachSlot;
+
         private ICollection<BoxItem> boxItem;
+
         private ItemSubClass itemSubClass;
+
         private Lc lc1;
+
         private Tl tl1;
+
         #region error
+
         public string this[string columnName]
         {
             get
             {
-                string error = String.Empty;
+                string error = string.Empty;
                 switch (columnName)
                 {
                     case "SzItemName":
                     case "SzLongItemName":
-                        if (SzItemName.Length > 80)
+                        if (this.SzItemName.Length > 80)
                         {
                             error = "не более 80 символов";
                         }
+
                         break;
-                        // case "Name":
-                        //Обработка ошибок для свойства Name
-                        //    break;
-                        // case "Position":
-                        //Обработка ошибок для свойства Position
-                        //   break;
+
+                    // case "Name":
+                    // Обработка ошибок для свойства Name
+                    // break;
+                    // case "Position":
+                    // Обработка ошибок для свойства Position
+                    // break;
                 }
+
                 return error;
             }
         }
+
         public string Error
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
+
         #endregion
     }
 

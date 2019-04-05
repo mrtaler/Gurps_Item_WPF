@@ -1,8 +1,9 @@
 namespace GurpsDb.GurpsModel
 {
-    using BaseModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+
+    using BaseModel;
 
     [Table("CharSkill", Schema = "CharDB")]
     public partial class CharSkill : ViewModelBase
@@ -29,14 +30,15 @@ namespace GurpsDb.GurpsModel
         {
             get
             {
-                return pointOfSkill;
+                return this.pointOfSkill;
             }
+
             set
             {
-                if (pointOfSkill!=value)
+                if (this.pointOfSkill!=value)
                 {
-                    pointOfSkill = value;
-                    NotifyPropertyChanged("PointOfSkill");
+                    this.pointOfSkill = value;
+                    this.NotifyPropertyChanged("PointOfSkill");
                 }
             }
         }

@@ -13,10 +13,11 @@ namespace GurpsDb.GurpsModel
         {
 
         }
+
         public LaserColorEf(string name, decimal? laserColorDayEfect)
         {
-            Name = name;
-            LaserColorDayEfect = laserColorDayEfect;
+            this.Name = name;
+            this.LaserColorDayEfect = laserColorDayEfect;
         }
 
         public int Id { get; set; }

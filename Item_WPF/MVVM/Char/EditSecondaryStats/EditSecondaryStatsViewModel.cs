@@ -12,114 +12,120 @@ namespace Item_WPF.MVVM.EditSecondaryStats
         public EditSecondaryStatsViewModel() : this(new CharacterDb())
         {
         }
+
         public EditSecondaryStatsViewModel(CharacterDb character)
         {
-            Character = character;
-            IncreasePointCommand = new ViewModelCommand(IncreasePoint, true);
-            DecreasePointCommand = new ViewModelCommand(DecreasePoint, true);
+            this.Character = character;
+            this.IncreasePointCommand = new ViewModelCommand(this.IncreasePoint, true);
+            this.DecreasePointCommand = new ViewModelCommand(this.DecreasePoint, true);
 
-
-            PropertyDependencyMap.Add("MaxHPPoints", new[] { "HPPoints", "HPPointsCost" });
-            PropertyDependencyMap.Add("MaxFPPoints", new[] { "FPPoints", "FPPointsCost" });
-            PropertyDependencyMap.Add("WillpowerPoints", new[] { "Willpower", "WillpowerCost" });
-            PropertyDependencyMap.Add("PerceptionPoints", new[] { "Perception", "PerceptionCost" });
-            PropertyDependencyMap.Add("BasicSpeedPoints", new[] { "BasicSpeed", "BasicSpeedCost", "BasicMovePoints" });
-            PropertyDependencyMap.Add("BasicMovePoints", new[] { "BasicMove", "BasicMoveCost" });
+            this.PropertyDependencyMap.Add("MaxHPPoints", new[] { "HPPoints", "HPPointsCost" });
+            this.PropertyDependencyMap.Add("MaxFPPoints", new[] { "FPPoints", "FPPointsCost" });
+            this.PropertyDependencyMap.Add("WillpowerPoints", new[] { "Willpower", "WillpowerCost" });
+            this.PropertyDependencyMap.Add("PerceptionPoints", new[] { "Perception", "PerceptionCost" });
+            this.PropertyDependencyMap.Add("BasicSpeedPoints", new[] { "BasicSpeed", "BasicSpeedCost", "BasicMovePoints" });
+            this.PropertyDependencyMap.Add("BasicMovePoints", new[] { "BasicMove", "BasicMoveCost" });
         }
 
         #region HPPoints
-        public int HPPoints => Character.MaxHP;
-        public int HPPointsCost => Character.MaxHPCost;
+        public int HPPoints => this.Character.MaxHP;
+        public int HPPointsCost => this.Character.MaxHPCost;
         public int MaxHPPoints
         {
             get
             {
-                return Character.MaxHPPoints;
+                return this.Character.MaxHPPoints;
             }
+
             set
             {
-                Character.MaxHPPoints = value;
-                NotifyPropertyChanged("MaxHPPoints");
+                this.Character.MaxHPPoints = value;
+                this.NotifyPropertyChanged("MaxHPPoints");
             }
         }
         #endregion
         #region FPPoints
-        public int FPPoints => Character.MaxFP;
-        public int FPPointsCost => Character.MaxFPCost;
+        public int FPPoints => this.Character.MaxFP;
+        public int FPPointsCost => this.Character.MaxFPCost;
         public int MaxFPPoints
         {
             get
             {
-                return Character.MaxFPPoints;
+                return this.Character.MaxFPPoints;
             }
+
             set
             {
-                Character.MaxFPPoints = value;
-                NotifyPropertyChanged("MaxFPPoints");
+                this.Character.MaxFPPoints = value;
+                this.NotifyPropertyChanged("MaxFPPoints");
             }
         }
         #endregion
         #region Willpower
-        public int Willpower => Character.Willpower;
-        public int WillpowerCost => Character.WillpowerCost;
+        public int Willpower => this.Character.Willpower;
+        public int WillpowerCost => this.Character.WillpowerCost;
         public int WillpowerPoints
         {
             get
             {
-                return Character.WillpowerPoints;
+                return this.Character.WillpowerPoints;
             }
+
             set
             {
-                Character.WillpowerPoints = value;
-                NotifyPropertyChanged("WillpowerPoints");
+                this.Character.WillpowerPoints = value;
+                this.NotifyPropertyChanged("WillpowerPoints");
             }
         }
         #endregion
         #region Perception
-        public int Perception => Character.Perception;
-        public int PerceptionCost => Character.PerceptionCost;
+        public int Perception => this.Character.Perception;
+        public int PerceptionCost => this.Character.PerceptionCost;
         public int PerceptionPoints
         {
             get
             {
-                return Character.PerceptionPoints;
+                return this.Character.PerceptionPoints;
             }
+
             set
             {
-                Character.PerceptionPoints = value;
-                NotifyPropertyChanged("PerceptionPoints");
+                this.Character.PerceptionPoints = value;
+                this.NotifyPropertyChanged("PerceptionPoints");
             }
         }
         #endregion
         #region BasicSpeedPoints
-        public decimal BasicSpeed => Character.BasicSpeed;
-        public float BasicSpeedCost => Character.BasicSpeedCost;
+        public decimal BasicSpeed => this.Character.BasicSpeed;
+        public float BasicSpeedCost => this.Character.BasicSpeedCost;
         public decimal BasicSpeedPoints
         {
             get
             {
-                return Character.BasicSpeedPoints;
+                return this.Character.BasicSpeedPoints;
             }
+
             set
             {
-                Character.BasicSpeedPoints = value;
-                NotifyPropertyChanged("BasicSpeedPoints");
+                this.Character.BasicSpeedPoints = value;
+                this.NotifyPropertyChanged("BasicSpeedPoints");
             }
         }
         #endregion
         #region BasicMove
-        public float BasicMove => Character.BasicMove;
-        public float BasicMoveCost => Character.BasicMoveCost;
+        public float BasicMove => this.Character.BasicMove;
+        public float BasicMoveCost => this.Character.BasicMoveCost;
         public int BasicMovePoints
         {
             get
             {
-                return Character.BasicMovePoints;
+                return this.Character.BasicMovePoints;
             }
+
             set
             {
-                Character.BasicMovePoints = value;
-                NotifyPropertyChanged("BasicMovePoints");
+                this.Character.BasicMovePoints = value;
+                this.NotifyPropertyChanged("BasicMovePoints");
             }
         }
         #endregion
@@ -130,47 +136,48 @@ namespace Item_WPF.MVVM.EditSecondaryStats
             switch (param)
             {
                 case "MaxHPPoints":
-                    MaxHPPoints += 1;
+                    this.MaxHPPoints += 1;
                     break;
                 case "MaxFPPoints":
-                    MaxFPPoints += 1;
+                    this.MaxFPPoints += 1;
                     break;
                 case "WillpowerPoints":
-                    WillpowerPoints += 1;
+                    this.WillpowerPoints += 1;
                     break;
                 case "PerceptionPoints":
-                    PerceptionPoints += 1;
+                    this.PerceptionPoints += 1;
                     break;
                 case "BasicSpeedPoints":
-                    BasicSpeedPoints += 0.25M;
+                    this.BasicSpeedPoints += 0.25M;
                     break;
                 case "BasicMovePoints":
-                    BasicMovePoints += 1;
+                    this.BasicMovePoints += 1;
                     break;
             }
         }
+
         private void DecreasePoint(object parameter)
         {
             string param = parameter.ToString();
             switch (param)
             {
                 case "MaxHPPoints":
-                    MaxHPPoints -= 1;
+                    this.MaxHPPoints -= 1;
                     break;
                 case "MaxFPPoints":
-                    MaxFPPoints -= 1;
+                    this.MaxFPPoints -= 1;
                     break;
                 case "WillpowerPoints":
-                    WillpowerPoints -= 1;
+                    this.WillpowerPoints -= 1;
                     break;
                 case "PerceptionPoints":
-                    PerceptionPoints -= 1;
+                    this.PerceptionPoints -= 1;
                     break;
                 case "BasicSpeedPoints":
-                    BasicSpeedPoints -= 0.25M;
+                    this.BasicSpeedPoints -= 0.25M;
                     break;
                 case "BasicMovePoints":
-                    BasicMovePoints -= 1;
+                    this.BasicMovePoints -= 1;
                     break;
             }
         }

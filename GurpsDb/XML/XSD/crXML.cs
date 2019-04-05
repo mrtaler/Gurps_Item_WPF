@@ -7,7 +7,7 @@ namespace GurpsDb.XML.XSD
         public XAttribute Adj;
         public CrXml(XElement item)
         {
-            Adj = item.Attribute("adj");
+            this.Adj = item.Attribute("adj");
         }
     }
 }

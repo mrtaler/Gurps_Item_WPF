@@ -1,37 +1,41 @@
-﻿using Item_WPF.addin;
-
-using Item_WPF.MVVM.Models;
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
+
 using GurpsDb;
 using GurpsDb.GurpsModel;
 
+using Item_WPF.addin;
+using Item_WPF.MVVM.Models;
+
 namespace Item_WPF.MVVM.ViewModels
 {
+    using Item = GurpsDb.GurpsModel.Item;
+
     class SelectItemsViewModel : IDisposable
     {
         private ContextGurpsModel _context;
         private Window _win;
         private string _parametr;
-        public ObservableCollection<GurpsDb.GurpsModel.Item> Items { get; set; }
+        public ObservableCollection<Item> Items { get; set; }
         public ItemsForSortModel SelectedItems { get; set; }
         public ObservableCollection<ItemsForSortModel> IttForSort { get; set; }
         public SelectItemsViewModel(string parametr, int? mount, Window win)
         {
-            _win = win;
-            CSelectItem = new ViewModelCommand(SelectItem);
-            CSelectItemClose = new ViewModelCommand(SelectItemClose);
-            SelectedItems = new ItemsForSortModel();
-            _context = new ContextGurpsModel();
-            Items = new ObservableCollection<GurpsDb.GurpsModel.Item>(_context.ItemDbSet);
+            this._win = win;
+            this.CSelectItem = new ViewModelCommand(this.SelectItem);
+            this.CSelectItemClose = new ViewModelCommand(this.SelectItemClose);
+            this.SelectedItems = new ItemsForSortModel();
+            this._context = new ContextGurpsModel();
+            this.Items = new ObservableCollection<Item>(this._context.ItemDbSet);
 
-            _parametr = parametr;
-            #region if (parametr=="Weapon")
+            this._parametr = parametr;
+            
             if (parametr == "Weapon")
             {
-                IttForSort = new ObservableCollection<ItemsForSortModel>(_context.ItemDbSet.
+                this.IttForSort = new ObservableCollection<ItemsForSortModel>(
+                    this._context.ItemDbSet.
                 Where(p => p.ItemSubClass.ItemClass.Name == parametr).
                 Select(p => new
                 {
@@ -52,34 +56,34 @@ namespace Item_WPF.MVVM.ViewModels
                     Price = an._usPrice
                 }));
             }
-            #endregion
+            
             #region else if (parametr=="Attachment")
             else if (parametr == "Attachment")
             {
 
-                ObservableCollection<GurpsDb.GurpsModel.Item> ITTFORSelect = new ObservableCollection<GurpsDb.GurpsModel.Item>(_context.ItemDbSet
+                ObservableCollection<Item> ITTFORSelect = new ObservableCollection<Item>(
+                    this._context.ItemDbSet
                     .Where(p => p.ItemSubClass.ItemClass.Name == parametr));
-                var q = (from p in _context.AvailableAttachSlotDbSet
+                var q = (from p in this._context.AvailableAttachSlotDbSet
                          where p.RAttachmentmount == mount && p.RAttachmentslot == 31958
                          select p.Item).ToList();
 
-                IttForSort = new ObservableCollection<ItemsForSortModel>(//_context.AvailableAttachSlots.
-                q.
+                this.IttForSort = new ObservableCollection<ItemsForSortModel>(// _context.AvailableAttachSlots.
+                    q.Where(p => p.ItemSubClass.ItemClass.Name == parametr).
 
-
-                Where(p => p.ItemSubClass.ItemClass.Name == parametr).
-                //Select(P => P.Item).
-                Select(p => new
-                {
-                    _uiIndex = p.UiIndex,
-                    _szItemName = p.SzItemName,
-                    _ItemClassname = p.ItemSubClass.ItemClass.Name,
-                    _TL1name_TL = p.Tl1.NameTl,
-                    _LC1Name_LC = p.Lc1.NameLc,
-                    _usPrice = p.UsPrice
-                }).
-                /*AsEnumerable().*/
-                Select(an => new ItemsForSortModel
+                        // Select(P => P.Item).
+                        Select(
+                            p => new
+                                     {
+                                         _uiIndex = p.UiIndex,
+                                         _szItemName = p.SzItemName,
+                                         _ItemClassname = p.ItemSubClass.ItemClass.Name,
+                                         _TL1name_TL = p.Tl1.NameTl,
+                                         _LC1Name_LC = p.Lc1.NameLc,
+                                         _usPrice = p.UsPrice
+                                     }).
+                        /*AsEnumerable().*/
+                        Select(an => new ItemsForSortModel
                 {
                     Id = an._uiIndex,
                     Name = an._szItemName,
@@ -89,18 +93,21 @@ namespace Item_WPF.MVVM.ViewModels
                     Price = an._usPrice
                 }));
             }
+
             #endregion
         }
 
         public void Dispose()
         {
-            _context.Dispose();
+            this._context.Dispose();
         }
+
         #region CSelectItem
         private void SelectItem(object parameter)
         {
-            _win.Close();
+            this._win.Close();
         }
+
         public ViewModelCommand CSelectItem { get; set; }
 
         #endregion
@@ -108,9 +115,9 @@ namespace Item_WPF.MVVM.ViewModels
 
         private void SelectItemClose(object parameter)
         {
-            SelectedItems = null;
-            _win.Close();
-            Dispose();
+            this.SelectedItems = null;
+            this._win.Close();
+            this.Dispose();
         }
 
         public ViewModelCommand CSelectItemClose { get; set; }

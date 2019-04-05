@@ -30,6 +30,7 @@ namespace Item_WPF.GCS_Ser.names
         /// </summary>
         /// <returns>A newly generated male first name</returns>
         public abstract string GetMaleFirstName();
+
         /// <summary>
         /// Get female first name
         /// </summary>
@@ -43,7 +44,7 @@ namespace Item_WPF.GCS_Ser.names
         /// <returns>A newly generated first name.</returns>
         public string GetGivenName(bool male)
         {
-            return male ? GetMaleFirstName() : GetFemaleFirstName();
+            return male ? this.GetMaleFirstName() : this.GetFemaleFirstName();
         }
 
         /// <summary>
@@ -58,7 +59,7 @@ namespace Item_WPF.GCS_Ser.names
         /// </summary>
         public string GetFullName(bool male)
         {
-            return GetGivenName(male) + " " + GetLastName(); //$NON-NLS-1$
+            return this.GetGivenName(male) + " " + this.GetLastName(); // $NON-NLS-1$
         }
 
         /// <summary>
@@ -86,6 +87,7 @@ namespace Item_WPF.GCS_Ser.names
                             {
                                 count++;
                             }
+
                             line = ins.ReadLine();
                         }
                     }
@@ -110,6 +112,7 @@ namespace Item_WPF.GCS_Ser.names
                             {
                                 names[count++] = line;
                             }
+
                             line = ins.ReadLine();
                         }
                     }
@@ -125,6 +128,7 @@ namespace Item_WPF.GCS_Ser.names
                     };
 
                 }
+
                 return names;
             }
             catch (Exception exception)

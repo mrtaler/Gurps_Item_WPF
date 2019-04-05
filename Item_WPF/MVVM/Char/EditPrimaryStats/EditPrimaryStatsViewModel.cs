@@ -12,80 +12,86 @@ namespace Item_WPF.MVVM.EditPrimaryStats
         public EditPrimaryStatsViewModel() : this(new CharacterDb())
         {
         }
+
         public EditPrimaryStatsViewModel(CharacterDb character)
         {
-            Character = character;
-            IncreasePointCommand = new ViewModelCommand(IncreasePoint, true);
-            DecreasePointCommand = new ViewModelCommand(DecreasePoint, true);
-            PropertyDependencyMap.Add("StrengthPoints", new[] { "Strength", "CharacterPoints", "StrengthCost", "TotalPoint" });
+            this.Character = character;
+            this.IncreasePointCommand = new ViewModelCommand(this.IncreasePoint, true);
+            this.DecreasePointCommand = new ViewModelCommand(this.DecreasePoint, true);
+            this.PropertyDependencyMap.Add("StrengthPoints", new[] { "Strength", "CharacterPoints", "StrengthCost", "TotalPoint" });
 
-            PropertyDependencyMap.Add("DexterityPoints", new[] { "Dexterity", "CharacterPoints", "DexterityCost", "TotalPoint" });
-            PropertyDependencyMap.Add("IntelligencePoints", new[] { "Intelligence", "CharacterPoints", "IntelligenceCost", "TotalPoint" });
-            PropertyDependencyMap.Add("HealthPoints", new[] { "Health", "CharacterPoints", "HealthCost", "TotalPoint" });
+            this.PropertyDependencyMap.Add("DexterityPoints", new[] { "Dexterity", "CharacterPoints", "DexterityCost", "TotalPoint" });
+            this.PropertyDependencyMap.Add("IntelligencePoints", new[] { "Intelligence", "CharacterPoints", "IntelligenceCost", "TotalPoint" });
+            this.PropertyDependencyMap.Add("HealthPoints", new[] { "Health", "CharacterPoints", "HealthCost", "TotalPoint" });
         }
+
         #region Strength
-        public int Strength => Character.Strength;
-        public int StrengthCost => Character.StrengthCost;
+        public int Strength => this.Character.Strength;
+        public int StrengthCost => this.Character.StrengthCost;
         public int StrengthPoints
         {
             get
             {
-                return Character.StrengthPoints;
+                return this.Character.StrengthPoints;
             }
+
             set
             {
-                Character.StrengthPoints = value;
-                NotifyPropertyChanged("StrengthPoints");
+                this.Character.StrengthPoints = value;
+                this.NotifyPropertyChanged("StrengthPoints");
             }
         }
         #endregion
 
-        public int Dexterity => Character.Dexterity;
-        public int DexterityCost => Character.DexterityCost;
+        public int Dexterity => this.Character.Dexterity;
+        public int DexterityCost => this.Character.DexterityCost;
         public int DexterityPoints
         {
             get
             {
-                return Character.DexterityPoints;
+                return this.Character.DexterityPoints;
             }
+
             set
             {
-                Character.DexterityPoints = value;
-                NotifyPropertyChanged("DexterityPoints");
+                this.Character.DexterityPoints = value;
+                this.NotifyPropertyChanged("DexterityPoints");
             }
         }
 
-        public int Intelligence => Character.Intelligence;
-        public int IntelligenceCost => Character.IntelligenceCost;
+        public int Intelligence => this.Character.Intelligence;
+        public int IntelligenceCost => this.Character.IntelligenceCost;
         public int IntelligencePoints
         {
             get
             {
-                return Character.IntelligencePoints;
+                return this.Character.IntelligencePoints;
             }
+
             set
             {
-                Character.IntelligencePoints = value;
-                NotifyPropertyChanged("IntelligencePoints");
+                this.Character.IntelligencePoints = value;
+                this.NotifyPropertyChanged("IntelligencePoints");
             }
         }
 
-        public int Health => Character.Health;
-        public int HealthCost => Character.HealtCost;
+        public int Health => this.Character.Health;
+        public int HealthCost => this.Character.HealtCost;
         public int HealthPoints
         {
             get
             {
-                return Character.HealthPoints;
+                return this.Character.HealthPoints;
             }
+
             set
             {
-                Character.HealthPoints = value;
-                NotifyPropertyChanged("HealthPoints");
+                this.Character.HealthPoints = value;
+                this.NotifyPropertyChanged("HealthPoints");
             }
         }
 
-        public int TotalPoint => Character.CharacterPoints;
+        public int TotalPoint => this.Character.CharacterPoints;
 
 
 
@@ -95,35 +101,36 @@ namespace Item_WPF.MVVM.EditPrimaryStats
             switch (param)
             {
                 case "StrengthPoints":
-                    StrengthPoints += 1;
+                    this.StrengthPoints += 1;
                     break;
                 case "DexterityPoints":
-                    DexterityPoints += 1;
+                    this.DexterityPoints += 1;
                     break;
                 case "IntelligencePoints":
-                    IntelligencePoints += 1;
+                    this.IntelligencePoints += 1;
                     break;
                 case "HealthPoints":
-                    HealthPoints += 1;
+                    this.HealthPoints += 1;
                     break;
             }
         }
+
         private void DecreasePoint(object parameter)
         {
             string param = parameter.ToString();
             switch (param)
             {
                 case "StrengthPoints":
-                    StrengthPoints -= 1;
+                    this.StrengthPoints -= 1;
                     break;
                 case "DexterityPoints":
-                    DexterityPoints -= 1;
+                    this.DexterityPoints -= 1;
                     break;
                 case "IntelligencePoints":
-                    IntelligencePoints -= 1;
+                    this.IntelligencePoints -= 1;
                     break;
                 case "HealthPoints":
-                    HealthPoints -= 1;
+                    this.HealthPoints -= 1;
                     break;
             }
         }

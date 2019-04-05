@@ -22,8 +22,8 @@ namespace Item_WPF.MVVM.Char.EditCharacterSkill
     {
         public EditCharacterSkillView(CharSkill param)
         {
-            DataContext=new EditCharacterSkillViewModel(param);
-            InitializeComponent();
+            this.DataContext=new EditCharacterSkillViewModel(param);
+            this.InitializeComponent();
         }
     }
 }

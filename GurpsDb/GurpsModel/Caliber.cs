@@ -12,7 +12,7 @@ namespace GurpsDb.GurpsModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Caliber()
         {
-            Weapons = new HashSet<Weapon>();
+            this.Weapons = new HashSet<Weapon>();
         }
 
         public int Id { get; set; }
@@ -46,9 +46,9 @@ namespace GurpsDb.GurpsModel
             this.Property(e => e.DimOfBulletUs)
                         .HasPrecision(8, 4);
 
-            //this.HasMany(e => e.Weapons)
-            //               .WithOptional(e => e.Caliber)
-            //               .HasForeignKey(e => e.UbCalibre);
+            // this.HasMany(e => e.Weapons)
+            // .WithOptional(e => e.Caliber)
+            // .HasForeignKey(e => e.UbCalibre);
         }
     }
 }

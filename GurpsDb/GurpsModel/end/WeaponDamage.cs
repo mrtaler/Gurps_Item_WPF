@@ -2,6 +2,7 @@ namespace GurpsDb.GurpsModel
 {
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+
     /// <summary>
     /// Class for description weapod damage
     /// </summary>
@@ -30,16 +31,15 @@ namespace GurpsDb.GurpsModel
             TypeOfDamage typeOfDamage1 = null,
             decimal armorDivision = 1.0M)
         {
-            Damage = damage;
-            ArmorDivision = armorDivision;
-            WeaponAttackType = weaponAttackType;
+            this.Damage = damage;
+            this.ArmorDivision = armorDivision;
+            this.WeaponAttackType = weaponAttackType;
 
-            TypeOfDamage = typeOfDamage;
-            TypeOfDamage1 = typeOfDamage1;
+            this.TypeOfDamage = typeOfDamage;
+            this.TypeOfDamage1 = typeOfDamage1;
 
-
-            TypeOfDamage1Text = string.Empty;
-            TypeOfDamage2Text = string.Empty;
+            this.TypeOfDamage1Text = string.Empty;
+            this.TypeOfDamage2Text = string.Empty;
         }
 
         public int Id { get; set; }
@@ -47,11 +47,13 @@ namespace GurpsDb.GurpsModel
         public int IdWeapon { get; set; }
 
         public int IdWeaponAttackType { get; set; }
+
         /// <summary>
         /// Gurps damage
         /// </summary>
         [StringLength(50)]
         public string Damage { get; set; }
+
         /// <summary>
         /// Armor division
         /// </summary>

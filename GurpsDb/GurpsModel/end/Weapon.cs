@@ -3,6 +3,7 @@ namespace GurpsDb.GurpsModel
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+
     /// <summary>
     /// Class for description Gurps Firearm weapon
     /// </summary>
@@ -12,10 +13,12 @@ namespace GurpsDb.GurpsModel
         /// <summary>
         /// default constructor
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Usage",
+            "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Weapon()
         {
-            WeaponDamage = new HashSet<WeaponDamage>();
+            this.WeaponDamage = new HashSet<WeaponDamage>();
         }
 
         /// <summary>
@@ -79,43 +82,38 @@ namespace GurpsDb.GurpsModel
             bool singleShotRocketLauncher = false,
             bool rocketRifle = false,
             bool bulkfolded = true,
-            bool hcrof = false
-            )
-       : base(szItemName: name, itemSubClass: itemSubClass, lc1: lc, tl1: tl)
-
+            bool hcrof = false)
+            : base(szItemName: name, itemSubClass: itemSubClass, lc1: lc, tl1: tl)
         {
+            this.DefAcc = defAcc;
+            this.HalfRange = halfRange;
+            this.FullRange = fullRange;
+            this.MinRange = minRange;
+            this.AWeight = aWeight;
+            this.Rof = rof;
+            this.FullAuto = fullAuto;
 
-            DefAcc = defAcc;
-            HalfRange = halfRange;
-            FullRange = fullRange;
-            MinRange = minRange;
-            AWeight = aWeight;
-            Rof = rof;
-            FullAuto = fullAuto;
+            this.Shots = shots;
+            this.TimeForReload = timeForReload;
+            this.SingleReload = singleReload;
+            this.Recoil = recoil;
+            this.HeavyWeapon = heavyWeapon;
+            this.AddInChamber = addInChamber;
+            this.CutOffShots = cutOffShots;
+            this.CutOffShotsCount = cutOffShotsCount;
+            this.GrenadeLauncher = grenadeLauncher;
+            this.RocketLauncher = rocketLauncher;
+            this.Mortar = mortar;
+            this.Cannon = cannon;
+            this.SingleShotRocketLauncher = singleShotRocketLauncher;
+            this.RocketRifle = rocketRifle;
+            this.Bulkfolded = bulkfolded;
+            this.Hcrof = hcrof;
+            this.HcrofValue = hcrofValue;
 
-            Shots = shots;
-            TimeForReload = timeForReload;
-            SingleReload = singleReload;
-            Recoil = recoil;
-            HeavyWeapon = heavyWeapon;
-            AddInChamber = addInChamber;
-            CutOffShots = cutOffShots;
-            CutOffShotsCount = cutOffShotsCount;
-            GrenadeLauncher = grenadeLauncher;
-            RocketLauncher = rocketLauncher;
-            Mortar = mortar;
-            Cannon = cannon;
-            SingleShotRocketLauncher = singleShotRocketLauncher;
-            RocketRifle = rocketRifle;
-            Bulkfolded = bulkfolded;
-            Hcrof = hcrof;
-            HcrofValue = hcrofValue;
-
-            WeaponDamage = new HashSet<WeaponDamage>();
-            WeaponDamage.Add(weaponDamage);
-
+            this.WeaponDamage = new HashSet<WeaponDamage>();
+            this.WeaponDamage.Add(weaponDamage);
         }
-
 
         /*  [Key]
           [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -126,6 +124,7 @@ namespace GurpsDb.GurpsModel
          [StringLength(80)]
          public string SzWeaponName { get; set; }
          */
+
         /// <summary>
         /// Default Acc
         /// </summary>
@@ -178,31 +177,34 @@ namespace GurpsDb.GurpsModel
         public bool Bulkfolded { get; set; }
 
         public bool Hcrof { get; set; }
-        //public int? UbCalibre
-        //{
-        //    get
-        //    {
-        //        return ubCalibre;
-        //    }
-        //    set
-        //    {
-        //        if (ubCalibre != value)
-        //        {
-        //            ubCalibre = value;
-        //            NotifyPropertyChanged("UbCalibre");
-        //        }
-        //    }
-        //}
+
+        // public int? UbCalibre
+        // {
+        // get
+        // {
+        // return ubCalibre;
+        // }
+        // set
+        // {
+        // if (ubCalibre != value)
+        // {
+        // ubCalibre = value;
+        // NotifyPropertyChanged("UbCalibre");
+        // }
+        // }
+        // }
         public virtual Caliber Caliber { get; set; }
+
         /* {
              get { return caliber; }
              set { if (caliber != value) { caliber = value; NotifyPropertyChanged("Caliber"); } }
          }*/
         public int HcrofValue { get; set; }
 
-        //public virtual Item Item { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        // public virtual Item Item { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Usage",
+            "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WeaponDamage> WeaponDamage { get; set; }
     }
 }

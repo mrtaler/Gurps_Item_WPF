@@ -14,18 +14,18 @@ namespace GurpsDb.XML.XSD.List
         public XElement Block;
         public MeleeWeaponXml(XElement item)
         {
-            Damage = item.Element("damage");
-            Strength = item.Element("strength");
-            Usage = item.Element("usage");
-            Reach = item.Element("reach");
-            Parry = item.Element("parry");
-            Block = item.Element("block");
+            this.Damage = item.Element("damage");
+            this.Strength = item.Element("strength");
+            this.Usage = item.Element("usage");
+            this.Reach = item.Element("reach");
+            this.Parry = item.Element("parry");
+            this.Block = item.Element("block");
             if (item.Element("default") != null)
             {
-                Default = new ObservableCollection<DefaultXml>();
+                this.Default = new ObservableCollection<DefaultXml>();
                 foreach (var itemdefault in item.Elements("default"))
                 {
-                    Default.Add(new DefaultXml(itemdefault));
+                    this.Default.Add(new DefaultXml(itemdefault));
                 }
             }
 

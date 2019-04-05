@@ -11,7 +11,7 @@ namespace GurpsDb.GurpsModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public RangedWeapon()
         {
-            DefSkillSome = new HashSet<DefSkillSome>();
+            this.DefSkillSome = new HashSet<DefSkillSome>();
         }
 
         public int Id { get; set; }

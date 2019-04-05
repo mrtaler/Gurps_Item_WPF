@@ -10,17 +10,17 @@ namespace GurpsDb.GurpsModel
         /// <param name="item"></param>
         public MeleeWeapon(MeleeWeaponXml item)
         {
-            Damage = item.Damage.Value;
-            Strength = item.Strength.Value;
-            Usage = item.Usage.Value;
-            Reach = item.Reach.Value;
-            Parry = item.Parry.Value;
-            Block = item.Block.Value;
+            this.Damage = item.Damage.Value;
+            this.Strength = item.Strength.Value;
+            this.Usage = item.Usage.Value;
+            this.Reach = item.Reach.Value;
+            this.Parry = item.Parry.Value;
+            this.Block = item.Block.Value;
             if (item.Default != null)
             {
                 foreach (DefaultXml itemDefault in item.Default)
                 {
-                    DefSkillSome.Add(new DefSkillSome(itemDefault));
+                    this.DefSkillSome.Add(new DefSkillSome(itemDefault));
                 }
             }
 

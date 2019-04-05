@@ -1,9 +1,11 @@
 ﻿using System;
-using System.Windows.Media.Imaging;
 using System.Globalization;
+using System.Windows.Media.Imaging;
 
 namespace Item_WPF.addin.Converters
 {
+    using System.IO;
+
     public class ImageConverter : ConvertorBase<ImageConverter>
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -12,7 +14,7 @@ namespace Item_WPF.addin.Converters
 
             if (bytes != null)
             {
-                using (System.IO.MemoryStream ms = new System.IO.MemoryStream(bytes, 0, bytes.Length))
+                using (MemoryStream ms = new System.IO.MemoryStream(bytes, 0, bytes.Length))
                 {
                     BitmapImage image = new BitmapImage();
                     image.BeginInit();

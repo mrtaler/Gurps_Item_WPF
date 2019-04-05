@@ -9,8 +9,8 @@ namespace Item_WPF.MVVM.GurpsSkill_m
     {
         public AllGurpsSkillView()
         {
-            InitializeComponent();
-            DataContext = new AllGurpsSkillViewModel();
+            this.InitializeComponent();
+            this.DataContext = new AllGurpsSkillViewModel();
         }
     }
 }

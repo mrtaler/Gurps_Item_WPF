@@ -10,60 +10,69 @@ namespace GurpsDb.XML.XSD.prereq_list
         /// 1 coll prereq_list
         /// </summary>
         public ObservableCollection<PrereqListXml> PrereqList;
+
         /// <summary>
         /// 2 coll skill_prereq
         /// </summary>
         public ObservableCollection<SkillPrereqXml> SkillPrereq;
+
         /// <summary>
         /// 3 coll spell_prereq
         /// </summary>
         public ObservableCollection<SpellPrereqXml> SpellPrereq;
+
         /// <summary>
         /// 4 coll attribute_prereq
         /// </summary>
         public ObservableCollection<AttributePrereqXml> AttributePrereq;
+
         /// <summary>
         /// 5 coll advantage_prereq
         /// </summary>
         public ObservableCollection<AdvantagePrereqXml> AdvantagePrereq;
+
         /// <summary>
         /// 6 coll contained_weight_prereq
         /// </summary>
         public ObservableCollection<ContainedWeightPrereqXml> ContainedWeightPrereq;
+
         /// <summary>
         /// 1_1 Element   when_tl
         /// </summary>
         public XElement WhenTl;
+
         /// <summary>
         /// 1_2 Element college_count
         /// </summary>
         public XElement CollegeCount;
+
         /// <summary>
         /// 1_3  Attribute all
         /// </summary>
         public XAttribute All;
         public PrereqListXml()
         {
-            PrereqList = new ObservableCollection<PrereqListXml>();
-            SkillPrereq = new ObservableCollection<SkillPrereqXml>();
-            SpellPrereq = new ObservableCollection<SpellPrereqXml>();
-            AttributePrereq = new ObservableCollection<AttributePrereqXml>();
-            AdvantagePrereq = new ObservableCollection<AdvantagePrereqXml>();
-            ContainedWeightPrereq = new ObservableCollection<ContainedWeightPrereqXml>();
+            this.PrereqList = new ObservableCollection<PrereqListXml>();
+            this.SkillPrereq = new ObservableCollection<SkillPrereqXml>();
+            this.SpellPrereq = new ObservableCollection<SpellPrereqXml>();
+            this.AttributePrereq = new ObservableCollection<AttributePrereqXml>();
+            this.AdvantagePrereq = new ObservableCollection<AdvantagePrereqXml>();
+            this.ContainedWeightPrereq = new ObservableCollection<ContainedWeightPrereqXml>();
         }
+
         public PrereqListXml(XElement itemprereqList, XElement skillElement) :
             this()
         {
-            FPrereq_list(itemprereqList);                                  //1
-            FSkill_prereq(itemprereqList.Elements("skill_prereq"));        //2
-            FSpell_prereq(itemprereqList.Elements("spell_prereq"));            //3
-            FAttribute_prereq(itemprereqList.Elements("attribute_prereq"));        //4
-            FAdvantage_prereq(itemprereqList.Elements("advantage_prereq"));        //5
-            FContained_weight_prereq(itemprereqList.Elements("contained_weight_prereq")); //6
+            this.FPrereq_list(itemprereqList);                                  // 1
+            this.FSkill_prereq(itemprereqList.Elements("skill_prereq"));        // 2
+            this.FSpell_prereq(itemprereqList.Elements("spell_prereq"));            // 3
+            this.FAttribute_prereq(itemprereqList.Elements("attribute_prereq"));        // 4
+            this.FAdvantage_prereq(itemprereqList.Elements("advantage_prereq"));        // 5
+            this.FContained_weight_prereq(itemprereqList.Elements("contained_weight_prereq")); // 6
 
-            WhenTl = itemprereqList.Element("when_tl");
-            CollegeCount = itemprereqList.Element("college_count");
-            All = itemprereqList.Attribute("all");
+            this.WhenTl = itemprereqList.Element("when_tl");
+            this.CollegeCount = itemprereqList.Element("college_count");
+            this.All = itemprereqList.Attribute("all");
         }
 
         /// <summary>
@@ -77,13 +86,14 @@ namespace GurpsDb.XML.XSD.prereq_list
                 if (items.Elements("skill_prereq") != null)
                 {
                     SkillPrereqXml sclprq = new SkillPrereqXml();
-                    //FSingleSkill_prereq(items, sclprq);
+
+                    // FSingleSkill_prereq(items, sclprq);
                     sclprq.Name = items.Element("name");
 
                     sclprq.Level = items.Element("level");
                     sclprq.Specialization = items.Element("specialization");
                     sclprq.Has = items.Attribute("has");
-                    SkillPrereq.Add(sclprq);
+                    this.SkillPrereq.Add(sclprq);
                 }
             }
         }
@@ -103,9 +113,10 @@ namespace GurpsDb.XML.XSD.prereq_list
                 splrprq.Quantity = item.Element("quantity");
                 splrprq.Any = item.Element("any");
                 splrprq.Has = item.Attribute("has");
-                SpellPrereq.Add(splrprq);
+                this.SpellPrereq.Add(splrprq);
             }
         }
+
         /// <summary>
         /// 4 coll attribute_prereq
         /// </summary>
@@ -121,10 +132,11 @@ namespace GurpsDb.XML.XSD.prereq_list
                 atrprq.Compare = item.Attribute("compare");
                 atrprq.CombinedWith = item.Attribute("combined_with");
                 atrprq.Value = item.Value.ToString();
-                AttributePrereq.Add(atrprq);
+                this.AttributePrereq.Add(atrprq);
             }
 
         }
+
         /// <summary>
         ///  5 coll advantage_prereq
         /// </summary>
@@ -139,10 +151,11 @@ namespace GurpsDb.XML.XSD.prereq_list
                 advprq.Notes = itemAdvantagePrereq.Element("notes");
                 advprq.Level = itemAdvantagePrereq.Element("level");
                 advprq.Has = itemAdvantagePrereq.Attribute("has");
-                AdvantagePrereq.Add(advprq);
+                this.AdvantagePrereq.Add(advprq);
             }
 
         }
+
         /// <summary>
         /// 6 coll contained_weight_prereq
         /// </summary>
@@ -155,7 +168,7 @@ namespace GurpsDb.XML.XSD.prereq_list
                 cwprq.Has = item.Attribute("has");
                 cwprq.Compare = item.Attribute("compare");
                 cwprq.Value = item.Value;
-                ContainedWeightPrereq.Add(cwprq);
+                this.ContainedWeightPrereq.Add(cwprq);
             }
         }
     }

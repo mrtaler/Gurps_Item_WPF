@@ -1,5 +1,6 @@
-﻿using Item_WPF.MVVM.ViewModels;
-using System.Windows;
+﻿using System.Windows;
+
+using Item_WPF.MVVM.ViewModels;
 
 namespace Item_WPF.MVVM.View
 {
@@ -10,13 +11,13 @@ namespace Item_WPF.MVVM.View
     {
         public AboutWindowView()
         {
-            DataContext = new AboutViewModel();
-            InitializeComponent();
+            this.DataContext = new AboutViewModel();
+            this.InitializeComponent();
         }
 
         private void CloseButtonClick(object sender, RoutedEventArgs e)
         {
-            Close();
+            this.Close();
         }
     }
 }
